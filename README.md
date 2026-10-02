@@ -77,4 +77,6 @@ node tests/check-electrical-full.cjs
 node tests/check-tester-lesson.cjs
 node tests/check-full-code-review.cjs
 node tests/check-random-accuracy-review.cjs
+node tests/check-mechanical-audit.cjs
+node tests/check-interface-audit.cjs
 ```
