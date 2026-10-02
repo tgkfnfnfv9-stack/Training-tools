@@ -1,0 +1,101 @@
+'use strict';
+let machineProfile=null,machineReference=null,machineSavedBest=null;
+function machineLinearKeys(){return axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>a.key);}
+function machineSeed(){
+ const values=new Uint32Array(1);
+ if(window.crypto&&typeof window.crypto.getRandomValues==='function')window.crypto.getRandomValues(values);
+ else values[0]=Math.floor(Math.random()*4294967296);
+ if(machineProfile&&values[0]===machineProfile.seed)values[0]=(values[0]+1)>>>0;
+ return values[0];
+}
+function initializeMachineAccuracy(profile,bestState){
+ const restored=profile&&window.MachineAccuracy.valid(profile,machineLinearKeys(),supports.length);
+ machineProfile=restored?JSON.parse(JSON.stringify(profile)):window.MachineAccuracy.generate('new',machineSeed(),machineLinearKeys(),supports.length);
+ machineReference=null;machineSavedBest=restored&&bestState?JSON.parse(JSON.stringify(bestState)):null;
+ $('machineCondition').value=machineProfile.condition;
+ if(!restored)supportHeights=[...machineProfile.initialHeights];
+ levelExercise={solved:false};
+}
+function machineSolution(heights){return window.Leveling.solve(supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:heights[i]})));}
+function machineEvaluation(heights){
+ const solution=machineSolution(heights),samples=geometrySamples(solution,machineProfile,window.MachineAccuracy.referenceLength);
+ return machineEvaluationFrom(samples,solution);
+}
+function machineEvaluationFrom(samples,solution){
+ const values=[];
+ for(const {geometry:g} of samples){
+  g.pairs.forEach(p=>values.push(p.deviationMicroradians*.3));
+  // Relative posture is a supplementary objective; paired-axis errors take
+  // priority. Gate disagreement cannot disappear behind an average frame.
+  values.push(g.relativeLean.front*.3*.25,g.relativeLean.right*.3*.25);
+  if(g.columns.length===2)values.push((g.columns[1].front-g.columns[0].front)*.3);
+ }
+ const weight=Math.sqrt(samples.length)*.15;
+ values.push(solution.lr*300*weight,solution.fb*300*weight);
+ return {values,objective:window.MachineAccuracy.rms(values),maxSquareness:Math.max(...samples.flatMap(s=>s.geometry.pairs.map(p=>Math.abs(p.deviationMicroradians*.3))))};
+}
+function findMachineReference(key){
+ const zeros=supports.map(()=>0),bias=machineEvaluation(zeros).values;
+ const columns=zeros.map((_,i)=>{
+  const plus=[...zeros],minus=[...zeros];plus[i]=.05;minus[i]=-.05;
+  const a=machineEvaluation(plus).values,b=machineEvaluation(minus).values;
+  return a.map((v,j)=>(v-b[j])/.1);
+ });
+ const matrix=bias.map((_,i)=>columns.map(c=>c[i]));
+ const searched=window.MachineAccuracy.optimize(matrix,bias,machineProfile.initialHeights);
+ const saved=machineSavedBest&&['width','depth','columnX','columnZ'].every(k=>machineSavedBest[k]===levelConfig[k])?[machineSavedBest.heights]:[];
+ const candidates=[searched.heights,zeros,machineProfile.initialHeights,...saved].map(heights=>({heights:[...heights],metric:machineEvaluation(heights)}));
+ const best=candidates.reduce((a,b)=>a.metric.objective<=b.metric.objective?a:b);
+ return {key,initial:machineEvaluation(machineProfile.initialHeights),best};
+}
+function updateMachineAccuracy(){
+ if(!machineProfile){$('machineScenario').hidden=true;return null;}
+ $('machineScenario').hidden=false;
+ const key=JSON.stringify([current.id,current.kind,machineProfile,levelConfig.width,levelConfig.depth,levelConfig.columnX,levelConfig.columnZ]);
+ if(!machineReference||machineReference.key!==key)machineReference=findMachineReference(key);
+ const metric=machineEvaluationFrom(accuracyRange,levelSolution);
+ // A manually discovered better result becomes the reference, too.
+ if(metric.objective<machineReference.best.metric.objective-1e-8)machineReference.best={heights:[...supportHeights],metric:machineEvaluation(supportHeights)};
+ const best=machineReference.best,initial=machineReference.initial;
+ const gap=Math.sqrt(Math.max(0,metric.objective**2-best.metric.objective**2)),target=gap<=.1;
+ const total=Math.max(.000001,Math.sqrt(Math.max(0,initial.objective**2-best.metric.objective**2)));
+ const progress=Math.max(0,Math.min(100,(1-gap/total)*100));
+ const condition=machineProfile.condition==='new'?'新品':'中古';
+ $('machineIdentity').textContent=condition+'個体 #'+machineProfile.seed+' · 固有誤差は調整中に変わりません';
+ $('guideMetrics').replaceChildren();
+ for(const [axis,item] of Object.entries(machineProfile.guides)){
+  const row=document.createElement('p');row.className='guide-metric';row.textContent=axis+'ガイド：'+cleanNumber(item.microns/1000,3)+' mm ('+cleanNumber(item.microns,1)+' µm) · 真直度PV';$('guideMetrics').append(row);
+ }
+ $('intrinsicMetrics').textContent=Object.entries(machineProfile.squareness).map(([pair,item])=>pair+' '+signed(item.microns/1000,3)+' mm / 300 mm').join(' ／ ');
+ $('accuracyComparison').replaceChildren();
+ const guideMax=Math.max(...Object.values(machineProfile.guides).map(q=>q.microns));
+ for(const [label,measure] of [['調整前',initial],['現在',metric],['参考最良',best.metric]]){
+  const row=document.createElement('tr');
+  for(const value of [label,cleanNumber(measure.maxSquareness,2),cleanNumber(measure.objective,2),cleanNumber(guideMax,1)]){const cell=document.createElement(row.children.length?'td':'th');if(!row.children.length)cell.setAttribute('scope','row');cell.textContent=value;row.append(cell);}
+  $('accuracyComparison').append(row);
+ }
+ $('machineProgress').textContent=(target?'参考最良の近傍です。':'参考最良への残り '+cleanNumber(gap,2)+' µm（固定誤差を差し引いた評価）。')+' 改善の進み '+cleanNumber(target?100:progress,0)+'%。ガイドの曲がりはレベル調整では消えません。';
+ $('applyBestLevel').disabled=best.heights.every((h,i)=>Math.abs(h-supportHeights[i])<.0005);
+ const hints=best.heights.map((h,i)=>({i,delta:Math.round((h-supportHeights[i])*1000)/1000})).filter(q=>Math.abs(q.delta)>=.0005);
+ const hint=hints.length?hints.map(q=>String.fromCharCode(65+q.i)+'を '+cleanNumber(Math.abs(q.delta),3)+' mm'+(q.delta>0?'上げる':'下げる')).join('、')+'。探索で得た調整例です。':'探索例の支持高さと一致しています。';
+ machineSavedBest=machineBestRecord();
+ return {target,hint,gap,progress};
+}
+function machineBestRecord(){
+ if(!machineReference)return null;
+ return {width:levelConfig.width,depth:levelConfig.depth,columnX:levelConfig.columnX,columnZ:levelConfig.columnZ,heights:[...machineReference.best.heights]};
+}
+function validMachineBest(record){
+ const b=record.bestState;if(b===undefined)return true;
+ return b&&typeof b==='object'&&!Array.isArray(b)&&Object.keys(b).length===5&&['width','depth','columnX','columnZ'].every(k=>b[k]===(record[k]??0))&&Array.isArray(b.heights)&&b.heights.length===supports.length&&b.heights.every(h=>bounded(h,-.5,.5)&&Math.abs(h*1000-Math.round(h*1000))<1e-7);
+}
+function drawMachine(condition){
+ stopMotion();invalidateLevelImport();
+ machineProfile=window.MachineAccuracy.generate(condition,machineSeed(),machineLinearKeys(),supports.length);machineReference=null;machineSavedBest=null;
+ supportHeights=[...machineProfile.initialHeights];positions={X:0,Y:0,Z:0,A:0,C:0};updateAxisValues();levelExercise={solved:false};
+ $('machineCondition').value=condition;$('levelInputMessage').textContent=(condition==='used'?'中古':'新品')+'の別個体と据付状態を抽選しました。';updateLeveling();
+}
+$('machineCondition').onchange=()=>drawMachine($('machineCondition').value);
+$('drawMachine').onclick=()=>drawMachine($('machineCondition').value);
+$('restoreInitialLevel').onclick=()=>{stopMotion();invalidateLevelImport();supportHeights=[...machineProfile.initialHeights];levelExercise={solved:false};$('levelInputMessage').textContent='同じ個体の初期支持高さへ戻しました。寸法・コラム配置は現在の設定です。';updateLeveling();};
+$('applyBestLevel').onclick=()=>{stopMotion();invalidateLevelImport();updateMachineAccuracy();supportHeights=[...machineReference.best.heights];$('levelInputMessage').textContent='探索で得た参考調整を適用しました。残る固有誤差も確認してください。';updateLeveling();};

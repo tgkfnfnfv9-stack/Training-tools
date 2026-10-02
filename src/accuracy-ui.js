@@ -7,7 +7,7 @@ function columnLayoutOffset(m){
  if(!levelConfig||!singleColumnKinds.includes(m.kind))return {x:0,z:0};
  return {x:m.w*.2*levelConfig.columnX/100,z:m.d*.1*levelConfig.columnZ/100};
 }
-function geometryModel(state=positions){
+function geometryModel(state=positions,solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
  const m=current,W=m.w,D=m.d,layout=columnLayoutOffset(m),move=(key)=>{const a=axisConfig(m).find(v=>v.key===key);return a?a.amp*state[key]/100:0;};
  let toolPoints,workPoint,toolAxes;
  if(['vertical','compact','five','portal'].includes(m.kind)){
@@ -25,17 +25,20 @@ function geometryModel(state=positions){
   toolPoints=[{x:-W*.35,z:0}];workPoint={x:.08+move('Z'),z:-.58+move('X')};toolAxes=['Z'];
  }
  const axes=axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>({key:a.key,vector:a.vector,source:toolAxes.includes(a.key)?'tool':'work'}));
- const metric=window.Leveling.geometry(levelSolution,{toolPoints:toolPoints.map(p=>levelCoordinates(p.x,p.z)),workPoints:[levelCoordinates(workPoint.x,workPoint.z)],axes,length:levelConfig.offset});
+ const intrinsicAxes=window.MachineAccuracy.directions(axes,profile);
+ const options={toolPoints:toolPoints.map(p=>levelCoordinates(p.x,p.z)),workPoints:[levelCoordinates(workPoint.x,workPoint.z)],axes:intrinsicAxes,length};
+ const metric=window.Leveling.geometry(solution,options);
+ const levelPairs=profile?window.Leveling.geometry(solution,{...options,axes}).pairs:metric.pairs;
  const average=points=>({x:points.reduce((s,p)=>s+p.x/points.length,0),z:points.reduce((s,p)=>s+p.z/points.length,0)});
  const poses={tool:{anchor:average(toolPoints),slope:metric.toolSlope},work:{anchor:workPoint,slope:metric.workSlope}};
- if(toolPoints.length===2)toolPoints.forEach((p,i)=>{const q=levelCoordinates(p.x,p.z);poses[i?'rightColumn':'leftColumn']={anchor:p,slope:levelSolution.slopeAt(q.x,q.z)};});
- return {...metric,poses,toolPoints,workPoint,axes};
+ if(toolPoints.length===2)toolPoints.forEach((p,i)=>{const q=levelCoordinates(p.x,p.z);poses[i?'rightColumn':'leftColumn']={anchor:p,slope:solution.slopeAt(q.x,q.z)};});
+ return {...metric,poses,toolPoints,workPoint,axes:intrinsicAxes,levelPairs};
 }
-function geometrySamples(){
- const keys=current.kind==='horizontal'?['X','Z']:['vertical','compact','portal','five','lathe'].includes(current.kind)?['X',current.kind==='lathe'?'Z':'Y']:['X'];
+function geometrySamples(solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
+ const keys=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>a.key);
  let states=[{X:0,Y:0,Z:0,A:0,C:0}];
  for(const key of keys)states=states.flatMap(state=>[-100,0,100].map(value=>({...state,[key]:value})));
- return states.map(state=>({state,geometry:geometryModel(state)}));
+ return states.map(state=>({state,geometry:geometryModel(state,solution,profile,length)}));
 }
 function signed(value,d=1){return (value>Math.pow(10,-d)/2?'+':'')+cleanNumber(value,d);}
 function leanDescription(value,negative,positive){return Math.abs(value)<.00001?'倒れなし':(value>0?positive:negative)+' '+cleanNumber(Math.abs(value),1)+' µrad';}
@@ -51,13 +54,14 @@ function accuracyDiagram(g){
 }
 function updateAccuracy(){
  if(!levelSolution||!levelConfig)return;
- const rangeKey=JSON.stringify([current.id,current.kind,supportHeights,levelConfig]);
+ const rangeKey=JSON.stringify([current.id,current.kind,supportHeights,levelConfig,machineProfile]);
  const key=rangeKey+JSON.stringify([positions.X,positions.Y,positions.Z]);
  if(key===accuracyKey&&levelGeometry)return;
  accuracyKey=key;
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel(),maximumSlope=Math.max(.001,Math.hypot(levelSolution.lr,levelSolution.fb),...Object.values(g.poses).map(p=>Math.hypot(p.slope.lr,p.slope.fb)),...accuracyRange.flatMap(s=>Object.values(s.geometry.poses).map(p=>Math.hypot(p.slope.lr,p.slope.fb))));
- g.visualFactor=Math.min(1000,200/maximumSlope);levelGeometry=g;
+ const intrinsicAngle=machineProfile?Math.max(...Object.values(machineProfile.squareness).map(q=>Math.abs(q.microns)/300000)):.000001;
+ g.visualFactor=Math.min(1000,200/maximumSlope,.15/Math.max(intrinsicAngle,.000001));levelGeometry=g;
  const lengthMm=Math.round(levelConfig.offset*1000),maxError=Math.max(...g.pairs.map(p=>Math.abs(p.errorMicrons)));
  $('accuracyLength').textContent=lengthMm+' mmで確認';
  const columnDifference=g.columns.length===2?Math.abs(g.columns[1].front-g.columns[0].front):0;
@@ -69,7 +73,7 @@ function updateAccuracy(){
   const label=document.createElement('span'),value=document.createElement('strong'),angle=document.createElement('small'),travel=document.createElement('small');
   label.textContent=current.kind==='lathe'?'主軸Z基準–X方向':p.key+' 直角度';value.textContent=signed(p.errorMicrons)+' µm';
   angle.textContent=cleanNumber(p.angleDegrees,6)+'° · 90°との差';travel.textContent='端・中央の比較 '+signed(low)+' 〜 '+signed(high)+' µm';
-  box.append(label,value,angle,travel);$('accuracyMetrics').append(box);
+  if(machineProfile){const split=document.createElement('small'),base=machineProfile.squareness[p.key].microns*levelConfig.offset/window.MachineAccuracy.referenceLength,lev=g.levelPairs.find(q=>q.key===p.key).errorMicrons;split.textContent='固有 '+signed(base)+' ／ 支持姿勢 '+signed(lev)+' µm（微小角の内訳）';box.append(label,value,angle,travel,split);}else box.append(label,value,angle,travel);$('accuracyMetrics').append(box);
  }
  $('columnLean').textContent=leanDescription(g.toolLean.front,'後ろ倒れ','前倒れ')+' ／ '+leanDescription(g.toolLean.right,'左倒れ','右倒れ');
  $('relativeLean').textContent='前後 '+signed(g.relativeLean.front)+' µrad ／ 左右 '+signed(g.relativeLean.right)+' µrad';
@@ -81,7 +85,7 @@ function updateAccuracy(){
  $('geometryPosition').textContent=(dual?'門中心':current.kind==='lathe'?'主軸台':'コラム')+'：'+coordinates(g.poses.tool.anchor)+' ／ '+(current.kind==='lathe'?'刃物台':'テーブル基準')+'：'+coordinates(g.workPoint);
  const rangeMax=Math.max(...accuracyRange.flatMap(s=>s.geometry.pairs.map(p=>Math.abs(p.errorMicrons))));
  const postureDifference=Math.hypot(g.relativeLean.front,g.relativeLean.right);
- $('accuracyDiagnosis').textContent=columnDifference>.001?'左右コラムが違う姿勢です。平均の直角度だけでは門のねじれを見落とすため、左右の前後倒れ差も確認してください。':maxError<.00001?(rangeMax>.001?'今の位置では直角です。端・中央の比較では直角度が変わります。軸を動かして確認してください。':postureDifference>.001?'表示した軸間の直角差は0ですが、工具側とテーブル側の姿勢差は残っています。前後・左右の姿勢差も確認してください。':'工具側と案内側が同じ姿勢です。全体が傾いても、相対直角度は保たれています。'):'支持面の局所姿勢が違うため、直角度が変化しています。支持点を調整して、端・中央の値を比べてください。';
+ $('accuracyDiagnosis').textContent=columnDifference>.001?'左右コラムが違う姿勢です。平均の直角度だけでは門のねじれを見落とすため、左右の前後倒れ差も確認してください。':maxError<.00001?(rangeMax>.001?'今の位置では直角です。端・中央の比較では直角度が変わります。軸を動かして確認してください。':postureDifference>.001?'表示した軸間の直角差は0ですが、工具側とテーブル側の姿勢差は残っています。前後・左右の姿勢差も確認してください。':'工具側と案内側が同じ姿勢です。全体が傾いても、相対直角度は保たれています。'):(machineProfile?'個体固有の直角差と、支持調整による姿勢変化を合わせた値です。端・中央を比べ、個体の参考最良へ近づけてください。':'支持面の局所姿勢が違うため、直角度が変化しています。支持点を調整して、端・中央の値を比べてください。');
  const localSource=key=>g.axes.filter(a=>a.source===key).map(a=>a.key).join('・');
  $('geometryAssumption').textContent=current.kind==='lathe'?'主軸台のZ方向と刃物台側のX方向を比べる教材です。Y軸はありません。':localSource('tool')+'はコラム／主軸側、'+localSource('work')+'はテーブル／案内側の参照姿勢を使う教材です。'+(current.kind==='five'?'A/Cの旋回誤差は含みません。':'');
  $('columnLayout').hidden=!singleColumnKinds.includes(current.kind);
@@ -106,3 +110,10 @@ $('demoColumn').onclick=()=>{
  if(singleColumnKinds.includes(current.kind)){levelConfig.columnX=60;levelConfig.columnZ=0;$('columnX').value='60';$('columnZ').value='0';}
  $('levelInputMessage').textContent=current.kind==='lathe'?'奥側の支持点を上げました。主軸台と刃物台の姿勢差を比べてください。':'奥側の支持点を上げました。コラムの倒れと、テーブルとの姿勢差を比べてください。';updateLeveling();
 };
+
+function accuracyVisualVector(key){
+ const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key));
+ const factor=$('exaggerate').checked?levelGeometry.visualFactor:1;
+ const profile=machineProfile?{squareness:Object.fromEntries(Object.entries(machineProfile.squareness).map(([pair,item])=>[pair,{microns:item.microns*factor}]))}:null;
+ return window.MachineAccuracy.directions(axes,profile).find(a=>a.key===key).vector;
+}
