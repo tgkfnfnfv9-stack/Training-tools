@@ -5,16 +5,16 @@ const levelStoragePrefix='training-level-v1:';
 const cleanNumber=(v,d=3)=>Math.abs(v)<Math.pow(10,-d)/2?(0).toFixed(d):v.toFixed(d);
 const bounded=(v,min,max)=>typeof v==='number'&&Number.isFinite(v)&&v>=min&&v<=max;
 function levelKey(){return levelStoragePrefix+current.id+':'+machineMode;}
-function levelRecord(){return {version:1,machine:current.id,mode:machineMode,width:levelConfig.width,depth:levelConfig.depth,heights:[...supportHeights],sensitivity:Number($('levelSensitivity').value),measurePos:Number($('measurePos').value),offset:Number($('impactOffset').value),step:Number($('adjustStep').value),exaggerate:$('exaggerate').checked};}
+function levelRecord(){return {version:1,machine:current.id,mode:machineMode,width:levelConfig.width,depth:levelConfig.depth,heights:[...supportHeights],sensitivity:Number($('levelSensitivity').value),measurePos:Number($('measurePos').value),offset:levelConfig.offset,step:Number($('adjustStep').value),exaggerate:$('exaggerate').checked};}
 function validLevelRecord(r){
  return r&&r.version===1&&r.machine===current.id&&r.mode===machineMode&&bounded(r.width,.5,20)&&bounded(r.depth,.5,20)&&Array.isArray(r.heights)&&r.heights.length===supports.length&&r.heights.every(h=>bounded(h,-.5,.5)&&Math.abs(h*100-Math.round(h*100))<1e-7)&&[.02,.05,.1].includes(r.sensitivity)&&[-1,0,1].includes(r.measurePos)&&bounded(r.offset,.1,2)&&[.01,.05,.1].includes(r.step)&&typeof r.exaggerate==='boolean';
 }
 function applyLevelRecord(r){
- levelConfig={width:r.width,depth:r.depth};supportHeights=[...r.heights];
+ levelConfig={width:r.width,depth:r.depth,offset:r.offset};supportHeights=[...r.heights];
  $('supportWidth').value=r.width;$('supportDepth').value=r.depth;$('levelSensitivity').value=String(r.sensitivity);$('measurePos').value=String(r.measurePos);$('impactOffset').value=r.offset;$('adjustStep').value=String(r.step);$('exaggerate').checked=r.exaggerate;
 }
 function initializeLeveling(){
- supportHeights=supports.map(()=>0);levelConfig={width:Number((current.w*.8).toFixed(2)),depth:Number((current.d*.8).toFixed(2))};levelExercise=null;
+ supportHeights=supports.map(()=>0);levelConfig={width:Number((current.w*.8).toFixed(2)),depth:Number((current.d*.8).toFixed(2)),offset:.5};levelExercise=null;
  $('supportWidth').value=levelConfig.width;$('supportDepth').value=levelConfig.depth; $('levelSensitivity').value='0.05';$('adjustStep').value='0.01';$('impactOffset').value=.5;$('exaggerate').checked=true;
  $('levelInputMessage').textContent='';
  $('twistPreset').disabled=supports.length===3;$('twistPreset').title=supports.length===3?'3点支持は平面になるため、ねじれパターンはありません。':'';
@@ -47,18 +47,18 @@ function levelSurfaceFaces(m){
  for(let i=1;i<xs.length;i++)for(let j=1;j<zs.length;j++)faces.push(face([[xs[i-1],y,zs[j-1]],[xs[i],y,zs[j-1]],[xs[i],y,zs[j]],[xs[i-1],y,zs[j]]]));
  return faces;
 }
-function refreshSupportControls(){
- supports.forEach((s,i)=>{const input=$('height'+i);if(!input)return;input.value=cleanNumber(supportHeights[i],2);input.closest('.support-row').classList.toggle('selected',selected===i);$('down'+i).disabled=supportHeights[i]<=-.5+1e-9;$('up'+i).disabled=supportHeights[i]>=.5-1e-9;});
+function refreshSupportControls(editingIndex=-1){
+ supports.forEach((s,i)=>{const input=$('height'+i);if(!input)return;if(i!==editingIndex)input.value=cleanNumber(supportHeights[i],2);input.closest('.support-row').classList.toggle('selected',selected===i);$('down'+i).disabled=supportHeights[i]<=-.5+1e-9;$('up'+i).disabled=supportHeights[i]>=.5-1e-9;});
  $('supportMap').querySelectorAll('.map-point').forEach((b,i)=>{const index=Number(b.dataset.support);b.classList.toggle('active',index===selected);b.setAttribute('aria-pressed',String(index===selected));});
 }
-function setSupportHeight(i,value){
- if(!bounded(value,-.5,.5)){$('levelInputMessage').textContent='高さは−0.50〜＋0.50 mmの数値で入力してください。';refreshSupportControls();return;}
- supportHeights[i]=Math.round(value*100)/100;selected=i;$('levelInputMessage').textContent=String.fromCharCode(65+i)+'を '+cleanNumber(supportHeights[i],2)+' mmに調整しました。';updateLeveling();
+function setSupportHeight(i,value,editing=false){
+ if(!bounded(value,-.5,.5)){$('levelInputMessage').textContent='高さは−0.50〜＋0.50 mmの数値で入力してください。';$('height'+i).value=cleanNumber(supportHeights[i],2);refreshSupportControls();return;}
+ supportHeights[i]=Math.round(value*100)/100;if(!editing)$('height'+i).value=cleanNumber(supportHeights[i],2);selected=i;$('levelInputMessage').textContent=String.fromCharCode(65+i)+'を '+cleanNumber(supportHeights[i],2)+' mmに調整しました。';updateLeveling(true,editing?i:-1);
 }
 function changeSupportHeight(i,delta){setSupportHeight(i,Math.max(-.5,Math.min(.5,Math.round((supportHeights[i]+delta)*100)/100)));}
-function updateLeveling(save=true){
+function updateLeveling(save=true,editingIndex=-1){
  const points=supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:supportHeights[i]}));
- levelSolution=window.Leveling.solve(points);refreshSupportControls();
+ levelSolution=window.Leveling.solve(points);refreshSupportControls(editingIndex);
  const z=Number($('measurePos').value)*levelConfig.depth/2,local=levelSolution.slopeAt(0,z);
  $('lr').textContent=cleanNumber(levelSolution.lr)+' mm/m';$('fb').textContent=cleanNumber(levelSolution.fb)+' mm/m';$('twist').textContent=cleanNumber(levelSolution.twist)+' mm/m';$('residual').textContent=cleanNumber(levelSolution.residual)+' mm';
  const sensitivity=Number($('levelSensitivity').value);
@@ -78,7 +78,7 @@ function updateLeveling(save=true){
  const target=maxSlope<=.020000001&&Math.abs(levelSolution.twist)<=.020000001&&levelSolution.residual<=.010000001;
  if(target)notices.unshift('教材の調整目標内です。実機の精度・合否を示すものではありません。');
  $('diagnosis').replaceChildren();notices.forEach(text=>{const p=document.createElement('p');p.className='diagnosis-item'+(target?' neutral':'');p.textContent=text;$('diagnosis').append(p);});
- const example=window.Leveling.impact(levelSolution,{span:levelConfig.width,offset:Number($('impactOffset').value)});
+ const example=window.Leveling.impact(levelSolution,{span:levelConfig.width,offset:levelConfig.offset});
  $('tiltExample').textContent=cleanNumber(example.tiltOffsetMicrons,1)+' µm';$('twistExample').textContent=cleanNumber(example.twistOffsetMicrons,1)+' µm';$('straightExample').textContent=cleanNumber(example.straightnessMicrons,1)+' µm';
  const average=supportHeights.reduce((a,b)=>a+b,0)/supportHeights.length;
  const hints=supportHeights.map((h,i)=>({i,delta:average-h})).filter(q=>Math.abs(q.delta)>=.005).map(q=>String.fromCharCode(65+q.i)+'を約'+cleanNumber(Math.abs(q.delta),2)+' mm'+(q.delta>0?'上げる':'下げる'));
@@ -99,8 +99,9 @@ function applyLevelPreset(type){
 $('zero').onclick=()=>{supportHeights=supports.map(()=>0);levelExercise=null;$('levelInputMessage').textContent='全支持点を0.00 mmへ戻しました。';updateLeveling();};
 document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>applyLevelPreset(b.dataset.preset));
 $('measurePos').onchange=()=>updateLeveling();$('levelSensitivity').onchange=()=>updateLeveling();$('exaggerate').onchange=()=>updateLeveling();$('showLevelSurface').onchange=()=>drawScene();$('adjustStep').onchange=()=>updateLeveling();
-for(const [id,key,min,max] of [['supportWidth','width',.5,20],['supportDepth','depth',.5,20]])$(id).onchange=()=>{const value=Number($(id).value);if(!bounded(value,min,max)){$(id).value=levelConfig[key];$('levelInputMessage').textContent='支持幅は0.50〜20.00 mで入力してください。';return;}levelConfig[key]=value;$('levelInputMessage').textContent='支持寸法を更新しました。';updateLeveling();};
-$('impactOffset').onchange=()=>{const value=Number($('impactOffset').value);if(!bounded(value,.1,2)){$('impactOffset').value=.5;$('levelInputMessage').textContent='腕の長さは0.10〜2.00 mです。0.50 mへ戻しました。';}updateLeveling();};
+for(const [id,key,min,max] of [['supportWidth','width',.5,20],['supportDepth','depth',.5,20]]){const apply=()=>{const value=Number($(id).value);if(!bounded(value,min,max))return false;levelConfig[key]=value;$('levelInputMessage').textContent='支持寸法を更新しました。';updateLeveling();return true;};$(id).oninput=apply;$(id).onchange=()=>{if(!apply()){$(id).value=levelConfig[key];$('levelInputMessage').textContent='支持幅は0.50〜20.00 mで入力してください。';}};}
+$('impactOffset').oninput=()=>{const value=Number($('impactOffset').value);if(bounded(value,.1,2)){levelConfig.offset=value;updateLeveling();}};
+$('impactOffset').onchange=()=>{const value=Number($('impactOffset').value);if(!bounded(value,.1,2)){$('impactOffset').value=levelConfig.offset;$('levelInputMessage').textContent='腕の長さは0.10〜2.00 mです。直前の有効値へ戻しました。';}else levelConfig.offset=value;updateLeveling();};
 $('startLevelExercise').onclick=()=>{supportHeights=supports.map(()=>Math.round((Math.random()*.4-.2)*100)/100);const sign=Math.random()<.5?-1:1;supportHeights[0]=-.4*sign;supportHeights[1]=.4*sign;levelExercise={solved:false};$('levelInputMessage').textContent='新しい調整問題を設定しました。';updateLeveling();};
 $('exportLevel').onclick=()=>{const blob=new Blob([JSON.stringify(levelRecord(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='leveling-'+current.id+'-'+(machineMode||'standard')+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('levelSaveStatus').textContent='調整データのダウンロードを開始しました。';};
 $('importLevel').onchange=async event=>{const file=event.target.files[0];event.target.value='';if(!file)return;try{if(file.size>250000)throw Error('大きすぎる');const data=JSON.parse(await file.text());if(!validLevelRecord(data))throw Error('不正な調整データ');applyLevelRecord(data);levelExercise=null;updateLeveling();$('levelInputMessage').textContent='調整データを読み込みました。';}catch{$('levelInputMessage').textContent='読込できません。同じ機械・方式の調整JSONと、数値範囲を確認してください。';}};
