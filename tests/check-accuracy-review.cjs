@@ -86,9 +86,11 @@ async function main(){
   const low=Math.min(...sampleValues),high=Math.max(...sampleValues),before=json('accuracyRange.map(s=>s.state)');axis('X',37);
   assert.deepEqual(json('accuracyRange.map(s=>s.state)'),before);assert.equal(json('geometrySamples()').length,27);
   const yzBox=r.accuracyMetrics.children.find(box=>box.children[0].textContent==='YZ 直角度');
-  assert.match(yzBox.children[3].textContent,new RegExp(low.toFixed(1).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
-  assert.match(yzBox.children[3].textContent,new RegExp(high.toFixed(1).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
-  near(Number.parseFloat(yzBox.children[1].textContent),pair(current(),'YZ').errorMicrons,.051);
+  const rangeText=yzBox.querySelectorAll('small').find(el=>el.textContent.startsWith('端・中央の比較'));
+  assert.ok(rangeText,'代表位置の比較値が表示されている');
+  assert.match(rangeText.textContent,new RegExp(low.toFixed(2).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
+  assert.match(rangeText.textContent,new RegExp(high.toFixed(2).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
+  near(Number.parseFloat(yzBox.children[1].textContent),pair(current(),'YZ').errorMicrons,.0051);
  });
  open(2);preset('twist');axis('X',-100);const travelLeft=pair(current(),'XZ').errorMicrons;axis('X',100);
  check('移動コラムは X 位置で XZ 姿勢が変化',()=>{assert.notEqual(pair(current(),'XZ').errorMicrons,travelLeft);near(current().toolPoints[0].x,.5);});
