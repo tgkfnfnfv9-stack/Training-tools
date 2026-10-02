@@ -88,11 +88,11 @@ function createGeometry(m){
  const faces=[],labels=[],c={base:'#80949c',fixed:'#799198',table:'#4c9b8b',spindle:'#dfab62',rail:'#c8d6d9',work:'#d1ddd7'};
  let group=[];
  function withGroup(axes,fn){const prev=group;group=axes;fn();group=prev;}
- function label(p,text){labels.push({p,axes:[...group],text:text+(group.length?'［'+group.join('/')+'］':'［固定］')});}
+ function label(p,name){labels.push({p,axes:[...group],name,text:name+(group.length?'［'+group.join('/')+'］':'［固定］')});}
  function box(x,y,z,w,h,d,color,text){const v=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]].map(([a,b,e])=>[x+a*w/2,y+b*h/2,z+e*d/2]);[[0,1,2,3],[4,7,6,5],[0,4,5,1],[3,2,6,7],[0,3,7,4],[1,5,6,2]].forEach((ix,i)=>faces.push({v:ix.map(j=>v[j]),axes:[...group],color,shade:[.83,.85,.65,1.08,.88,.94][i]}));if(text)label([x,y+h/2,z],text);}
  function cyl(x,y,z,r,len,color,axis='y',text){const n=20,ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],color,shade:.8},{v:ring[1],axes:[...group],color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
  const W=m.w,D=m.d;
- box(0,.42,0,W,.45,D,c.base,'ベース');
+ box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
  function spindle(x,y,z,axes){withGroup(axes,()=>{cyl(x,y,z,.16,.42,c.spindle,'y');cyl(x,y-.3,z,.045,.18,c.spindle);});}
  function table(width,depth,y,z,axes){withGroup(axes,()=>{box(0,y,z,width,.2,depth,c.table,'テーブル');for(let i=-3;i<=3;i++)box(i*width*.11,y+.105,z,.018,.012,depth*.97,c.rail);box(0,y+.3,z,.42,.38,.36,c.work);});}
  if(['vertical','compact','travel'].includes(m.kind)){
@@ -103,7 +103,7 @@ function createGeometry(m){
  else {withGroup(['Z'],()=>box(0,2.85,.05,.75,.6,1.1,c.fixed,'主軸頭'));spindle(0,2.37,-.3,['Z']);withGroup(['Y'],()=>box(0,.81,-D*.1,W*.58,.22,D*.45,c.fixed,'サドル'));table(W*.78,D*.42,1.06,-D*.1,['X','Y']);}
  }else if(['portal','double','gantry'].includes(m.kind)){
  const gate=m.kind==='gantry',cross=m.kind==='portal',gateAxes=gate?['X']:[],gz=cross?D*.24:0;
- [-1,1].forEach(k=>box(k*(gate?W*.4:W*.17),.72,0,.14,.12,D*.91,c.rail,k===1?'走行レール':null));
+ [-1,1].forEach(k=>box(k*(gate?W*.4:W*.17),.72,0,.14,.12,D*.91,c.rail,k===1?(gate?'走行レール':'案内レール'):null));
  withGroup(gateAxes,()=>{[-1,1].forEach(k=>box(k*W*.4,1.96,gz,.5,2.6,.65,c.fixed,k===-1?'門／コラム':null));box(0,3.17,gz,W*.94,.55,.65,c.fixed,'梁');box(0,2.9,gz-.37,W*.83,.1,.1,c.rail);});
  const headAxes=cross?['Z']:gate?['X','Y','Z']:['Y','Z'];
  if(!cross)withGroup(gate?['X','Y']:['Y'],()=>box(.15,2.76,gz-.2,.72,.65,.65,c.fixed,'主軸サドル'));
@@ -185,7 +185,21 @@ function buildAxisUI(){
  $('fixedText').textContent=fixedParts(current);$('absentAxis').hidden=current.kind!=='lathe';updateAxisValues();selectAxis(selectedAxis);
 }
 function updateAxisValues(){for(const a of axisConfig(current)){$('axis-'+a.key).value=positions[a.key];$('value-'+a.key).textContent=positions[a.key]===0?'中央':positions[a.key]>0?'端2側 '+Math.abs(Math.round(positions[a.key]))+'%':'端1側 '+Math.abs(Math.round(positions[a.key]))+'%';}}
-function selectAxis(key){stopMotion();selectedAxis=key;const a=axisConfig(current).find(a=>a.key===key);Array.from($('axisTabs').children).forEach(b=>b.setAttribute('aria-pressed',b.textContent===key+'軸'?'true':'false'));$('movingText').textContent=key+'軸：'+a.part+'が'+a.direction+'に動く';$('movingText').style.setProperty('--axis',axisColors[key]);drawScene();}
+function updatePartMap(){
+ const parts=createGeometry(current).labels;
+ const moving=parts.filter(p=>p.axes.includes(selectedAxis));
+ $('movingParts').replaceChildren();moving.forEach(p=>{const chip=document.createElement('span');chip.className='part-chip';chip.textContent=p.name;$('movingParts').append(chip);});
+ $('movingParts').style.setProperty('--axis',axisColors[selectedAxis]);
+ $('partMapHeading').textContent=selectedAxis+'軸で一緒に動く主な部品';
+ $('partMapBody').replaceChildren();
+ parts.forEach(p=>{const row=document.createElement('tr'),name=document.createElement('th'),axes=document.createElement('td'),state=document.createElement('td');name.setAttribute('scope','row');name.textContent=p.name;
+ p.axes.forEach(key=>{const badge=document.createElement('span');badge.className='part-axis'+(key===selectedAxis?' selected':'');badge.style.setProperty('--axis',axisColors[key]);badge.textContent=key;axes.append(badge);});
+ if(!p.axes.length)axes.textContent='固定';
+ const moves=p.axes.includes(selectedAxis);row.className=moves?'moving-part':'';row.style.setProperty('--axis',axisColors[selectedAxis]);state.textContent=moves?'一緒に動く':'今回静止';row.append(name);row.append(axes);row.append(state);$('partMapBody').append(row);
+ });
+ $('partStateHeading').textContent=selectedAxis+'軸を動かすと';
+}
+function selectAxis(key){stopMotion();selectedAxis=key;const a=axisConfig(current).find(a=>a.key===key);Array.from($('axisTabs').children).forEach(b=>b.setAttribute('aria-pressed',b.textContent===key+'軸'?'true':'false'));$('movingText').textContent=key+'軸：'+a.part+'が'+a.direction+'に動く';$('movingText').style.setProperty('--axis',axisColors[key]);updatePartMap();drawScene();}
 let motionFrame=null,motionStart=null;
 function stopMotion(){if(motionFrame!==null)cancelAnimationFrame(motionFrame);motionFrame=null;motionStart=null;if($('playAxis')){$('playAxis').textContent='選んだ軸を動かす';$('playAxis').setAttribute('aria-pressed','false');}}
 $('playAxis').onclick=()=>{if(motionFrame!==null){stopMotion();return;}$('playAxis').textContent='動きを止める';$('playAxis').setAttribute('aria-pressed','true');const key=selectedAxis;
