@@ -17,12 +17,12 @@
  body.in-lab .training-heading h1{font-size:16px;line-height:1.4;margin:0;overflow-wrap:anywhere}
  body.in-lab .training-heading .eyebrow,body.in-lab .training-heading p{display:none}
  body.in-lab .training-heading .secondary{flex:none;font-size:12px;padding:8px 10px;min-height:44px;margin:0}
- body.in-lab .training-workspace{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,42%) auto minmax(0,1fr);gap:0;overflow:hidden;align-items:stretch}
+ body.in-lab .training-workspace{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,50%) auto minmax(0,1fr);gap:0;overflow:hidden;align-items:stretch}
  body.in-lab .pinned-visual{grid-column:1;grid-row:1;min-height:0;min-width:0;display:flex;flex-direction:column;position:relative;top:auto;z-index:auto;align-self:stretch;border:0;border-radius:0;overflow:hidden}
  body.in-lab .viewer-top{flex:none;padding:5px 12px;font-size:11px;line-height:1.5}
  body.in-lab #scene{height:0;min-height:0;flex:1;width:100%;touch-action:pan-y}
- body.in-lab .viewer-controls{flex:none;padding:3px 12px 5px;gap:8px}
- body.in-lab .viewer-controls button{font-size:12px;min-height:44px;padding:6px 12px}
+ body.in-lab .viewer-controls{flex:none;padding:3px 8px 5px;gap:6px;flex-wrap:nowrap}
+ body.in-lab .viewer-controls button{font-size:12px;min-width:44px;min-height:44px;padding:6px 8px;white-space:nowrap}
  body.in-lab .controls-bar{display:block;grid-column:1;grid-row:2;padding:3px 12px;background:#dce9e6;color:#23594f;font-size:10px;line-height:1.5;border-top:1px solid #c4d8d2}
  body.in-lab .scroll-controls{display:block;grid-column:1;grid-row:3;min-height:0;min-width:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:12px max(12px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));scroll-padding-block:12px}
  body.in-lab .scroll-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
@@ -40,3 +40,5 @@
  body.in-lab .scroll-controls{grid-column:2;grid-row:1;border-left:1px solid var(--line)}
  body.in-lab .training-heading{padding-top:max(4px,env(safe-area-inset-top));padding-bottom:4px}
 }
+
+.viewer-controls #zoomIn,.viewer-controls #zoomOut{min-width:44px;min-height:44px;font-size:20px;padding:4px 10px}.viewer-controls #viewReset{min-height:44px}

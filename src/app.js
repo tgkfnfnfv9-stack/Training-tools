@@ -46,7 +46,7 @@ function transformedPoint(p,axes,m){
  return q;
 }
 const $=id=>document.getElementById(id);
-let current=displayMachine(machines[0]), page='home', yaw=-0.45, selected=0, supports=[];
+let current=displayMachine(machines[0]), page='home', yaw=-0.45, viewZoom=1, selected=0, supports=[];
 function supportList(m){
  if(!m.grid)return [{x:-m.w*.4,z:-m.d*.4,name:'左・手前'},{x:m.w*.4,z:-m.d*.4,name:'右・手前'},{x:0,z:m.d*.4,name:'奥・中央'}];
  const [nx,nz]=m.grid,list=[];
@@ -66,7 +66,7 @@ $('mechanical').onclick=()=>navigate('topics');$('electric').onclick=()=>navigat
 $('testerEntry').onclick=()=>{if(window.resetTesterLesson)window.resetTesterLesson();navigate('tester');};
 $('testerBack').onclick=()=>navigate('electricTopics');
 function openMachine(m){
- stopMotion();machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
+ stopMotion();machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;viewZoom=1;updateZoomControls();populateMachine();navigate('training');
 }
 function populateMachine(){
  const m=current;supports=supportList(m);
@@ -140,8 +140,10 @@ function render(canvas,m,angle,showLabels,active){
  ctx.fillStyle='#eaf0f2';ctx.fillRect(0,0,width,height);
  const model=createGeometry(m),pitch=.24;
  function project(p){const [x,y,z]=p;const xx=x*Math.cos(angle)+z*Math.sin(angle),zz=-x*Math.sin(angle)+z*Math.cos(angle);const yy=(y-1.65)*Math.cos(pitch)+zz*Math.sin(pitch),depth=11+zz*Math.cos(pitch)-(y-1.65)*Math.sin(pitch);return [xx/depth,-yy/depth,depth];}
- const fitPoints=model.faces.flatMap(f=>f.v.map(p=>[...p]));fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
- const margin=showLabels?48:20,scale=Math.min((width-margin*2)/(maxX-minX),(height-75)/(maxY-minY));const cx=width/2-(minX+maxX)*scale/2,cy=height*.48-(minY+maxY)*scale/2;
+ const fitPoints=model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
+ // Fit the machine itself, rather than the empty ground around it. Keep axis motion independent of camera framing.
+ const margin=showLabels?56:18,verticalSpace=active>=0?height-44:height-75;
+ const scale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY))*(active>=0?viewZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-20)/2:height*.48)-(minY+maxY)*scale/2;
  const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const movingScreen=(p,axes)=>screen(transformedPoint(p,axes,m));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
@@ -150,7 +152,7 @@ function render(canvas,m,angle,showLabels,active){
  if(active>=0){supportList(m).forEach((s,i)=>{const p=screen([s.x,.15,s.z]);ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda79':'#ffffffed';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  if(showLabels){
  const labs=model.labels.map(l=>({...l,screen:movingScreen(l.p,l.axes)}));const sides=[labs.filter(l=>l.screen[0]<width/2),labs.filter(l=>l.screen[0]>=width/2)];
- sides.forEach((side,k)=>{side.sort((a,b)=>a.screen[1]-b.screen[1]);let last=15;side.forEach(l=>{let ly=Math.max(last+24,Math.min(height-40,l.screen[1]-8));last=ly;const lx=k?width-10:10;ctx.strokeStyle='#65818b99';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(l.screen[0],l.screen[1]);ctx.lineTo(k?lx-5:lx+5,ly);ctx.stroke();ctx.font='10px sans-serif';ctx.textAlign=k?'right':'left';ctx.textBaseline='middle';const tw=ctx.measureText(l.text).width;ctx.fillStyle='#f8fbf9ed';ctx.fillRect(k?lx-tw-4:lx-4,ly-9,tw+8,18);ctx.fillStyle='#365564';ctx.fillText(l.text,lx,ly);});});
+ sides.forEach((side,k)=>{side.sort((a,b)=>a.screen[1]-b.screen[1]);const gap=Math.min(24,(height-52)/Math.max(1,side.length));let last=16-gap;side.forEach((l,i)=>{let ly=Math.max(last+gap,Math.min(height-36-(side.length-1-i)*gap,l.screen[1]-8));last=ly;const lx=k?width-10:10;ctx.strokeStyle='#65818b99';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(l.screen[0],l.screen[1]);ctx.lineTo(k?lx-5:lx+5,ly);ctx.stroke();ctx.font='10px sans-serif';ctx.textAlign=k?'right':'left';ctx.textBaseline='middle';const tw=ctx.measureText(l.text).width;ctx.fillStyle='#f8fbf9ed';ctx.fillRect(k?lx-tw-4:lx-4,ly-9,tw+8,18);ctx.fillStyle='#365564';ctx.fillText(l.text,lx,ly);});});
  }
  if(active>=0&&$('showAxes').checked){
  const a=axisConfig(m).find(a=>a.key===selectedAxis);if(a&&['X','Y','Z'].includes(a.key)){
@@ -168,7 +170,10 @@ function render(canvas,m,angle,showLabels,active){
 function drawThumbnails(){const previous=positions;positions={X:0,Y:0,Z:0,A:0,C:0};machines.forEach(m=>render($('thumb-'+m.id),m,-.55,false,-1));positions=previous;}
 function drawScene(){if(page==='training')render($('scene'),current,yaw,$('labels').checked,selected);}
 function rotate(delta){yaw+=delta;drawScene();}
-$('rotateLeft').onclick=()=>rotate(-Math.PI/12);$('rotateRight').onclick=()=>rotate(Math.PI/12);$('viewReset').onclick=()=>{yaw=0;drawScene()};$('labels').onchange=drawScene;$('showAxes').onchange=drawScene;
+function updateZoomControls(){const percent=Math.round(viewZoom*100);$('zoomOut').disabled=percent<=70;$('zoomIn').disabled=percent>=180;$('zoomStatus').textContent=percent+'%';}
+function changeZoom(step){viewZoom=Math.max(.7,Math.min(1.8,Math.round((viewZoom+step)*10)/10));updateZoomControls();drawScene();}
+$('zoomIn').onclick=()=>changeZoom(.1);$('zoomOut').onclick=()=>changeZoom(-.1);updateZoomControls();
+$('rotateLeft').onclick=()=>rotate(-Math.PI/12);$('rotateRight').onclick=()=>rotate(Math.PI/12);$('viewReset').onclick=()=>{yaw=0;viewZoom=1;updateZoomControls();drawScene()};$('labels').onchange=drawScene;$('showAxes').onchange=drawScene;
 $('measurePos').onchange=()=>{$('bubbleText').textContent=`${$('measurePos').selectedOptions[0].textContent}に置いた水準器の表示例（測定値は未計算）`;};
 let drag=null;
 $('scene').addEventListener('pointerdown',e=>{if(!e.isPrimary||e.button!==0)return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,moved:false};$('scene').setPointerCapture(e.pointerId);});
@@ -180,7 +185,7 @@ function buildModeUI(){
  const base=machines.find(m=>m.id===current.id),box=$('machineModeBox');box.hidden=!base.modes;
  const select=$('machineMode');select.replaceChildren();(base.modes||[]).forEach(([value,text])=>{const option=document.createElement('option');option.value=value;option.textContent=text;select.append(option);});select.value=machineMode;
 }
-$('machineMode').onchange=()=>{stopMotion();machineMode=$('machineMode').value;current=displayMachine(machines.find(m=>m.id===current.id));positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;populateMachine();drawScene();};
+$('machineMode').onchange=()=>{stopMotion();machineMode=$('machineMode').value;current=displayMachine(machines.find(m=>m.id===current.id));positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;viewZoom=1;updateZoomControls();populateMachine();drawScene();};
 function buildAxisUI(){
  const axes=axisConfig(current);$('axisTabs').replaceChildren();$('axisSliders').replaceChildren();
  axes.forEach(a=>{const btn=document.createElement('button');btn.textContent=a.key+'軸';btn.className='axis-tab';btn.style.setProperty('--axis',axisColors[a.key]);btn.setAttribute('aria-pressed',a.key===selectedAxis?'true':'false');btn.onclick=()=>selectAxis(a.key);$('axisTabs').append(btn);
