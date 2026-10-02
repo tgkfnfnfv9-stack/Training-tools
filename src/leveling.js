@@ -58,5 +58,44 @@
   if(span<0||offset<0||residual<0)throw new RangeError('span、offset、residualは0以上にしてください。');
   return {tiltOffsetMicrons:checked(Math.hypot(lr,fb)*offset*1000),twistOffsetMicrons:checked(Math.abs(twist)*span*1000),straightnessMicrons:checked(residual*1000)};
  }
- return Object.freeze({solve,impact});
+ // A right-handed orthonormal frame for a local support slope. Heights are mm,
+ // horizontal dimensions m; convert mm/m to a dimensionless gradient first.
+ // Equal slopes always give the same rigid rotation, including compound tilt.
+ function orientation(slope){
+  const a=finite(slope.lr,'lr')/1000,b=finite(slope.fb,'fb')/1000;
+  const normalLength=Math.hypot(a,1,b),xLength=Math.hypot(1,a);
+  const up=[-a/normalLength,1/normalLength,-b/normalLength],right=[1/xLength,a/xLength,0];
+  const back=[right[1]*up[2],-right[0]*up[2],right[0]*up[1]-right[1]*up[0]];
+  const rotate=v=>{if(!Array.isArray(v)||v.length!==3)throw new TypeError('3成分のベクトルが必要です。');v.forEach(q=>finite(q,'vector'));return right.map((q,i)=>checked(q*v[0]+up[i]*v[1]+back[i]*v[2]));};
+  return {right,up,back,rotate};
+ }
+ function geometry(solution,options){
+  if(!solution||typeof solution.slopeAt!=='function'||!options)throw new TypeError('支持面と幾何モデルの設定が必要です。');
+  const length=finite(options.length,'length');if(length<=0)throw new RangeError('評価長は0より大きくしてください。');
+  const sample=list=>{
+   if(!Array.isArray(list)||!list.length)throw new TypeError('姿勢の参照位置が必要です。');
+   const slopes=list.map(p=>solution.slopeAt(finite(p.x,'x'),finite(p.z,'z')));
+   return {slopes,slope:{lr:mean(slopes.map(s=>s.lr)),fb:mean(slopes.map(s=>s.fb))}};
+  };
+  const tool=sample(options.toolPoints),work=sample(options.workPoints),toolFrame=orientation(tool.slope),workFrame=orientation(work.slope);
+  const axes=options.axes;
+  if(!Array.isArray(axes)||axes.length<2)throw new TypeError('2軸以上の方向が必要です。');
+  const keys=new Set();
+  const directions=axes.map(axis=>{
+   if(keys.has(axis.key)||!['X','Y','Z'].includes(axis.key)||!['tool','work'].includes(axis.source))throw new TypeError('軸名と参照姿勢が不正です。');
+   keys.add(axis.key);const v=(axis.source==='tool'?toolFrame:workFrame).rotate(axis.vector),n=Math.hypot(...v);
+   if(n===0)throw new RangeError('軸方向はゼロにできません。');return {...axis,direction:v.map(q=>q/n)};
+  });
+  const pairs=[];
+  for(let i=0;i<directions.length;i++)for(let j=i+1;j<directions.length;j++){
+   const a=directions[i],b=directions[j],dot=Math.max(-1,Math.min(1,a.direction.reduce((sum,q,k)=>sum+q*b.direction[k],0)));
+   const radians=Math.abs(dot)<1e-14?0:-Math.asin(dot);
+   pairs.push({key:a.key+b.key,angleDegrees:90+radians*180/Math.PI,deviationMicroradians:radians*1e6,errorMicrons:checked(radians*1e6*length)});
+  }
+  const lean=s=>({front:Math.atan(s.fb/1000)*1e6,right:-Math.atan(s.lr/1000)*1e6});
+  const toolLean=lean(tool.slope),workLean=lean(work.slope);
+  return {pairs,toolSlope:tool.slope,workSlope:work.slope,toolFrame,workFrame,
+   columns:tool.slopes.map(lean),toolLean,relativeLean:{front:toolLean.front-workLean.front,right:toolLean.right-workLean.right},length};
+ }
+ return Object.freeze({solve,impact,orientation,geometry});
 });
