@@ -63,7 +63,7 @@
     for(const id of ['testerBlackLead','testerRedLead','testerPrepared','testerPolarity','testerWire'])$(id).disabled=state.measured;
     root.querySelectorAll('[data-tester-mode]').forEach(button=>button.disabled=state.measured);
     root.querySelectorAll('[data-tester-case]').forEach(button=>button.disabled=state.measured);
-    $('testerMeasure').disabled=state.measured;$('testerDisconnect').disabled=!state.measured;
+    $('testerMeasure').disabled=state.measured;$('testerMeasure').textContent=state.measured?'測定中 · プローブを離して終了':'プローブを両端に当てて測る';$('testerDisconnect').disabled=!state.measured;
     renderDiagram();
   }
   function measure(){

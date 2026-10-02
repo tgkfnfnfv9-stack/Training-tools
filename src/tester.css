@@ -9,3 +9,4 @@
 @media(max-width:950px){.tester-workspace>.scroll-controls{display:block;grid-column:auto;grid-row:auto}.tester-workspace>.pinned-visual{grid-column:auto;grid-row:auto}}
 
 .tester-feedback-detail{font-size:13px;line-height:1.6;padding:10px 12px;border-left:3px solid #90aba3;background:#f0f5f4;border-radius:4px}.tester-feedback-detail[data-status="blocked"]{border-color:#b05a27;background:#fff3e6}
+.tester-primary:disabled,.tester-primary:disabled:hover{background:#dfe9e6;color:#415a52;opacity:1;border-color:#cfdbd6}
