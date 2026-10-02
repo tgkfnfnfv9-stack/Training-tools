@@ -36,13 +36,13 @@ function fixedParts(m){
  if(m.kind==='five')return 'ベース・コラム・案内レール';
  return 'ベッド・主軸台・心押台（加工中の位置）';
 }
-function transformedPoint(p,axes,m){
+function transformedPoint(p,axes,m,state=positions){
  let q=[...p];
  // C回転はA傾斜前のテーブル座標で適用し、Aの親子関係を保つ。
  const pivot=[0,1.25,-.45];
- if(axes.includes('C')){const t=positions.C*Math.PI/100,dx=q[0]-pivot[0],dz=q[2]-pivot[2];q[0]=pivot[0]+dx*Math.cos(t)+dz*Math.sin(t);q[2]=pivot[2]-dx*Math.sin(t)+dz*Math.cos(t);}
- if(axes.includes('A')){const t=positions.A*.45/100,dy=q[1]-pivot[1],dz=q[2]-pivot[2];q[1]=pivot[1]+dy*Math.cos(t)-dz*Math.sin(t);q[2]=pivot[2]+dy*Math.sin(t)+dz*Math.cos(t);}
- for(const a of axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)))if(axes.includes(a.key))q=q.map((v,i)=>v+a.vector[i]*a.amp*positions[a.key]/100);
+ if(axes.includes('C')){const t=state.C*Math.PI/100,dx=q[0]-pivot[0],dz=q[2]-pivot[2];q[0]=pivot[0]+dx*Math.cos(t)+dz*Math.sin(t);q[2]=pivot[2]-dx*Math.sin(t)+dz*Math.cos(t);}
+ if(axes.includes('A')){const t=state.A*.45/100,dy=q[1]-pivot[1],dz=q[2]-pivot[2];q[1]=pivot[1]+dy*Math.cos(t)-dz*Math.sin(t);q[2]=pivot[2]+dy*Math.sin(t)+dz*Math.cos(t);}
+ for(const a of axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)))if(axes.includes(a.key))q=q.map((v,i)=>v+a.vector[i]*a.amp*state[a.key]/100);
  return q;
 }
 const $=id=>document.getElementById(id);
@@ -133,6 +133,14 @@ function createGeometry(m){
  return {faces,labels};
 }
 function tone(hex,s){const v=hex.slice(1).match(/../g).map(x=>Math.min(255,Math.round(parseInt(x,16)*s)));return `rgb(${v.join(',')})`;}
+// Cache a fixed movement envelope, so operating an axis never auto-zooms the machine.
+const framingCache=new Map();
+function framingPoints(m,model){
+ const key=m.kind+':'+m.w+':'+m.d;if(framingCache.has(key))return framingCache.get(key);
+ const ends=[];for(const X of [-100,100])for(const Y of [-100,100])for(const Z of [-100,100])ends.push({X,Y,Z,A:0,C:0});
+ const points=model.faces.flatMap(f=>f.v.flatMap(p=>f.axes.length?ends.map(state=>transformedPoint(p,f.axes,m,state)):[[...p]]));
+ framingCache.set(key,points);return points;
+}
 function render(canvas,m,angle,showLabels,active){
  const rect=canvas.getBoundingClientRect();if(!rect.width||!rect.height)return;
  const ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.height*ratio);
@@ -140,8 +148,8 @@ function render(canvas,m,angle,showLabels,active){
  ctx.fillStyle='#eaf0f2';ctx.fillRect(0,0,width,height);
  const model=createGeometry(m),pitch=.24;
  function project(p){const [x,y,z]=p;const xx=x*Math.cos(angle)+z*Math.sin(angle),zz=-x*Math.sin(angle)+z*Math.cos(angle);const yy=(y-1.65)*Math.cos(pitch)+zz*Math.sin(pitch),depth=11+zz*Math.cos(pitch)-(y-1.65)*Math.sin(pitch);return [xx/depth,-yy/depth,depth];}
- const fitPoints=model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
- // Fit the machine itself, rather than the empty ground around it. Keep axis motion independent of camera framing.
+ const fitPoints=active>=0?framingPoints(m,model):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
+ // Fit the machine and its fixed movement envelope, without the empty ground around it.
  const margin=showLabels?56:18,verticalSpace=active>=0?height-48:height-75;
  const scale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY))*(active>=0?viewZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-20)/2:height*.48)-(minY+maxY)*scale/2;
  const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const movingScreen=(p,axes)=>screen(transformedPoint(p,axes,m));
