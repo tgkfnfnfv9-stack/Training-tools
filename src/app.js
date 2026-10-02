@@ -54,13 +54,17 @@ function supportList(m){
  return list;
 }
 function navigate(next){
- if(next!=='training')stopMotion();page=next; for(const id of ['home','topics','catalog','training'])$(id).hidden=id!==next;
- const paths=[['home','トップ'],['topics','機械'],['catalog','レベル出し'],['training',current.name]];
- const depth=['home','topics','catalog','training'].indexOf(next);
+ if(next!=='training')stopMotion();page=next; for(const id of ['home','topics','catalog','training','electricTopics','tester'])$(id).hidden=id!==next;
+ document.body.classList.toggle('in-lab',next==='training'||next==='tester');
+ const controls=$(next+'Controls');if(controls)controls.scrollTop=0;
+ const paths=next==='electricTopics'||next==='tester'?[['home','トップ'],['electricTopics','電気'],['tester','テスターの使い方']]:[['home','トップ'],['topics','機械'],['catalog','レベル出し'],['training',current.name]];
+ const depth=paths.findIndex(([dest])=>dest===next);
  $('crumbs').replaceChildren();paths.slice(0,depth+1).forEach(([dest,label],i)=>{if(i){const s=document.createElement('span');s.textContent='›';$('crumbs').append(s);}const el=document.createElement(i===depth?'span':'button');el.textContent=label;if(i!==depth)el.onclick=()=>navigate(dest);$('crumbs').append(el);});
  window.scrollTo({top:0,behavior:'instant'}); if(next==='catalog')requestAnimationFrame(drawThumbnails);if(next==='training')requestAnimationFrame(drawScene);
 }
-$('mechanical').onclick=()=>navigate('topics');$('electric').onclick=()=>{$('electricNote').hidden=false};$('leveling').onclick=()=>navigate('catalog');$('changeMachine').onclick=()=>navigate('catalog');
+$('mechanical').onclick=()=>navigate('topics');$('electric').onclick=()=>navigate('electricTopics');$('leveling').onclick=()=>navigate('catalog');$('changeMachine').onclick=()=>navigate('catalog');
+$('testerEntry').onclick=()=>{if(window.resetTesterLesson)window.resetTesterLesson();navigate('tester');};
+$('testerBack').onclick=()=>navigate('electricTopics');
 function openMachine(m){
  stopMotion();machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
