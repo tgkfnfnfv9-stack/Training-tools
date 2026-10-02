@@ -105,7 +105,7 @@ async function main(){
   });
   const guideText=r.guideMetrics.textContent;
   r.height0.change('0.003');r.adjustStep.change('0.005');r.up0.click();
-  trigger('axis-'+keys[0],'input','37');r.rotateRight.click();
+  trigger('axis-'+keys[0],'input','37');r.scene.events.keydown({key:'ArrowRight',preventDefault(){}});
   check('fine support movement retains intrinsic profile '+index+' '+mode,()=>{
    near(read('supportHeights[0]'),.008);assert.equal(r.height0.value,'0.008');assert.equal(r.height0.getAttribute('step'),'0.001');
    assert.deepEqual(json('machineProfile'),initial);assert.equal(r.guideMetrics.textContent,guideText);assert(read('validLevelRecord(levelRecord())'));
