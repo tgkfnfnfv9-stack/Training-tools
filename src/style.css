@@ -58,3 +58,9 @@
 
 /* Long desktop controls extend below the left cards, without gaps between them. */
 @media(min-width:951px){.training-workspace.lab-grid{grid-template-rows:auto max-content max-content minmax(0,1fr) auto auto}}
+
+/* Pointwise initial/current comparisons are the main lesson. */
+.comparison-context{font-size:11px;line-height:1.6;background:#edf5f1;color:#285f56;padding:8px;border-radius:6px;overflow-wrap:anywhere}.accuracy-delta{font-weight:700;color:var(--ink)}.accuracy-trend{margin-top:3px}.accuracy-trend.better{color:#166f62}.accuracy-trend.worse{color:#956020}.accuracy-trend.similar{color:var(--muted)}.accuracy-metric.improved{border-color:#8fbeb2}.accuracy-detail{margin-top:7px}.accuracy-detail summary{font-size:11px;cursor:pointer;color:var(--green)}.accuracy-detail small{margin-top:4px}.accuracy-signs{margin-top:8px}.posture-comparison-row{font-size:12px;line-height:1.65;margin:5px 0;overflow-wrap:anywhere}.posture-comparison+.posture-comparison{margin-top:8px;padding-top:5px;border-top:1px solid #e1e9e5}.geometry-notes strong{display:block;font-size:12px}.card>summary{font-size:14px;font-weight:650;color:var(--green);cursor:pointer;overflow-wrap:anywhere}.machine-scenario>.scenario-actions{margin-top:12px}.machine-scenario h3{margin-top:18px}#geometryStatus{white-space:pre-line;font-variant-numeric:tabular-nums}.support-adjustment{border-color:#8fbeb2}
+@media(max-width:560px){.comparison-context{font-size:10px}.posture-comparison-row{font-size:11px}.accuracy-diagnosis{font-size:11px}.accuracy-metric strong{font-size:20px}.card>summary{font-size:13px}}
+
+.support-adjustment>.text-button{min-height:44px;margin:0 0 6px;padding:5px 8px}

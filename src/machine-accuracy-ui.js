@@ -61,10 +61,10 @@ function updateMachineAccuracy(){
  const total=Math.max(.000001,Math.sqrt(Math.max(0,initial.objective**2-best.metric.objective**2)));
  const progress=Math.max(0,Math.min(100,(1-gap/total)*100));
  const condition=machineProfile.condition==='new'?'新品':'中古';
- $('machineIdentity').textContent=condition+'個体 #'+machineProfile.seed+' · 固有誤差は調整中に変わりません';
+ $('machineIdentity').textContent=condition+'個体 #'+machineProfile.seed+' · 抽選した固有成分をこのモデルで保持し、支持による姿勢の影響を重ねます。';
  $('guideMetrics').replaceChildren();
  for(const [axis,item] of Object.entries(machineProfile.guides)){
-  const row=document.createElement('p');row.className='guide-metric';row.textContent=axis+'ガイド：'+cleanNumber(item.microns/1000,3)+' mm ('+cleanNumber(item.microns,1)+' µm) · 真直度PV';$('guideMetrics').append(row);
+  const row=document.createElement('p');row.className='guide-metric';row.textContent=axis+'ガイド曲がり成分：'+cleanNumber(item.microns/1000,3)+' mm ('+cleanNumber(item.microns,2)+' µm) · 抽選したPV';$('guideMetrics').append(row);
  }
  $('intrinsicMetrics').textContent=Object.entries(machineProfile.squareness).map(([pair,item])=>pair+' '+signed(item.microns/1000,3)+' mm / 300 mm').join(' ／ ');
  $('accuracyComparison').replaceChildren();
@@ -74,7 +74,7 @@ function updateMachineAccuracy(){
   for(const value of [label,cleanNumber(measure.maxSquareness,2),cleanNumber(measure.objective,2),cleanNumber(guideMax,1)]){const cell=document.createElement(row.children.length?'td':'th');if(!row.children.length)cell.setAttribute('scope','row');cell.textContent=value;row.append(cell);}
   $('accuracyComparison').append(row);
  }
- $('machineProgress').textContent=(target?'参考最良の近傍です。':'参考最良への残り '+cleanNumber(gap,2)+' µm（固定誤差を差し引いた評価）。')+' 改善の進み '+cleanNumber(target?100:progress,0)+'%。ガイドの曲がりはレベル調整では消えません。';
+ $('machineProgress').textContent=(target?'補助の参考最良の近傍です。':'補助の参考最良への残り '+cleanNumber(gap,2)+' µm。')+' 補助評価の進み '+cleanNumber(target?100:progress,0)+'%。今の位置の初期→現在は上の主表示で確認します。抽選したガイドの曲がり成分は、このモデルで保持します。';
  const adjustment=machineBestHeights();
  $('applyBestLevel').disabled=adjustment.every((h,i)=>Math.abs(h-supportHeights[i])<.0005);
  const hints=adjustment.map((h,i)=>({i,delta:Math.round((h-supportHeights[i])*1000)/1000})).filter(q=>Math.abs(q.delta)>=.0005);
@@ -108,5 +108,5 @@ function drawMachine(condition){
 }
 $('machineCondition').onchange=()=>drawMachine($('machineCondition').value);
 $('drawMachine').onclick=()=>drawMachine($('machineCondition').value);
-$('restoreInitialLevel').onclick=()=>{stopMotion();invalidateLevelImport();supportHeights=[...machineProfile.initialHeights];levelExercise={solved:false};$('levelInputMessage').textContent='同じ個体の初期支持高さへ戻しました。寸法・コラム配置は現在の設定です。';updateLeveling();};
+$('restoreInitialLevel').onclick=()=>{stopMotion();invalidateLevelImport();supportHeights=[...machineProfile.initialHeights];levelExercise={solved:false};$('levelInputMessage').textContent='同じ個体の抽選時の支持高さへ戻しました。寸法・コラム配置・軸位置は現在の設定で比較します。';updateLeveling();};
 $('applyBestLevel').onclick=()=>{stopMotion();invalidateLevelImport();updateMachineAccuracy();supportHeights=machineBestHeights();$('levelInputMessage').textContent='探索で得た参考調整を適用しました。残る固有誤差も確認してください。';updateLeveling();};

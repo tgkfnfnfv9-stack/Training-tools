@@ -82,7 +82,7 @@ function updateLeveling(save=true,editingIndex=-1){
  levelSolution=window.Leveling.solve(points);refreshSupportControls(editingIndex);
  updateAccuracy();
  const z=Number($('measurePos').value)*levelConfig.depth/2,local=levelSolution.slopeAt(0,z);
- $('lr').textContent=cleanNumber(levelSolution.lr)+' mm/m';$('fb').textContent=cleanNumber(levelSolution.fb)+' mm/m';$('twist').textContent=cleanNumber(levelSolution.twist)+' mm/m';$('residual').textContent=cleanNumber(levelSolution.residual)+' mm';
+ $('lr').textContent=cleanNumber(levelSolution.lr,4)+' mm/m';$('fb').textContent=cleanNumber(levelSolution.fb,4)+' mm/m';$('twist').textContent=cleanNumber(levelSolution.twist,6)+' mm/m';$('residual').textContent=cleanNumber(levelSolution.residual)+' mm';
  const sensitivity=Number($('levelSensitivity').value);
  function gauge(value,bubble,readout,text,negative,positive){
   $(readout).textContent=cleanNumber(value)+' mm/m';const divisions=value/sensitivity;$(bubble).style.left=(50+Math.max(-40,Math.min(40,divisions*7)))+'%';
@@ -103,15 +103,17 @@ function updateLeveling(save=true,editingIndex=-1){
  if(maxPosture>20.000001)notices.push('相対姿勢差・左右コラムの倒れ差が残っています。平均値だけでなく、個別の姿勢も確認してください。');
  const machineResult=updateMachineAccuracy();
  const target=machineResult?machineResult.target:maxSlope<=.020000001&&Math.abs(levelSolution.twist)<=.020000001&&levelSolution.residual<=.010000001&&maxAngle<=20.000001&&maxPosture<=20.000001;
- if(target)notices.unshift(machineResult?'この個体の参考最良近傍です。固有誤差は残ります。':'教材の調整目標内です。実機の精度・合否を示すものではありません。');
+ if(target)notices.unshift(machineResult?'補助の参考探索では最良近傍です。倒れ・ねじれ・直角度の変化を主表示で見比べてください。':'教材の調整目標内です。実機の精度・合否を示すものではありません。');
  $('diagnosis').replaceChildren();notices.forEach(text=>{const p=document.createElement('p');p.className='diagnosis-item'+(target?' neutral':'');p.textContent=text;$('diagnosis').append(p);});
  const example=window.Leveling.impact(levelSolution,{span:levelConfig.width,offset:levelConfig.offset});
  $('tiltExample').textContent=cleanNumber(example.tiltOffsetMicrons,1)+' µm';$('twistExample').textContent=cleanNumber(example.twistOffsetMicrons,1)+' µm';$('straightExample').textContent=cleanNumber(example.straightnessMicrons,1)+' µm';
  const average=supportHeights.reduce((a,b)=>a+b,0)/supportHeights.length;
  const hints=supportHeights.map((h,i)=>({i,delta:average-h})).filter(q=>Math.abs(q.delta)>=.005).map(q=>String.fromCharCode(65+q.i)+'を約'+cleanNumber(Math.abs(q.delta),2)+' mm'+(q.delta>0?'上げる':'下げる'));
  $('levelHint').textContent=machineResult?machineResult.hint:hints.length?hints.join('、')+'と、支持高さを同じ平均値へ揃えられます。':'支持高さは揃っています。';
- if(levelExercise){if(target)levelExercise.solved=true;$('levelExerciseStatus').textContent=levelExercise.solved?(target?'調整練習を達成しました。別の問題にも挑戦できます。':'達成後に再調整しています。現在は目標外です。'):'練習中：支持点を調整して、教材目標へ近づけてください。';}
- else $('levelExerciseStatus').textContent='問題を出し、支持点を手動で調整して目標へ近づけましょう。';
+ if(levelExercise){
+  if(target)levelExercise.solved=true;
+  $('levelExerciseStatus').textContent=machineResult?'支持点を少し動かし、初期と現在の変化を読み取る練習です。比較基準は抽選時の支持高さです。'+(target?'補助の参考探索は達成しました。':'補助の参考探索も必要に応じて確認できます。'):levelExercise.solved?(target?'調整練習を達成しました。別の問題にも挑戦できます。':'達成後に再調整しています。現在は目標外です。'):'練習中：支持点を調整して、教材目標へ近づけてください。';
+ }else $('levelExerciseStatus').textContent=machineResult?'支持点を少し動かし、抽選時からの変化を読み取ってみましょう。':'問題を出し、支持点を手動で調整して目標へ近づけましょう。';
  if(save)saveLeveling();
  drawScene();
 }
@@ -134,7 +136,7 @@ $('measurePos').onchange=()=>updateLeveling();$('levelSensitivity').onchange=()=
 for(const [id,key,min,max] of [['supportWidth','width',.5,20],['supportDepth','depth',.5,20]]){const apply=()=>{invalidateLevelImport();const value=Number($(id).value);if(!bounded(value,min,max))return false;levelConfig[key]=value;$('levelInputMessage').textContent='支持寸法を更新しました。';updateLeveling();return true;};$(id).oninput=apply;$(id).onchange=()=>{if(!apply()){$(id).value=levelConfig[key];$('levelInputMessage').textContent='支持幅は0.50〜20.00 mで入力してください。';}};}
 $('impactOffset').oninput=()=>{invalidateLevelImport();const value=Number($('impactOffset').value);if(bounded(value,.1,2)){levelConfig.offset=value;updateLeveling();}};
 $('impactOffset').onchange=()=>{const value=Number($('impactOffset').value);if(!bounded(value,.1,2)){$('impactOffset').value=levelConfig.offset;$('levelInputMessage').textContent='評価長は0.10〜2.00 mです。直前の有効値へ戻しました。';}else levelConfig.offset=value;updateLeveling();};
-$('startLevelExercise').onclick=()=>{invalidateLevelImport();stopMotion();supportHeights=supports.map(()=>Math.round((Math.random()*.4-.2)*1000)/1000);const sign=Math.random()<.5?-1:1;supportHeights[0]=-.4*sign;supportHeights[1]=.4*sign;levelExercise={solved:false};$('levelInputMessage').textContent='新しい調整問題を設定しました。';updateLeveling();};
+$('startLevelExercise').onclick=()=>{invalidateLevelImport();stopMotion();supportHeights=supports.map(()=>Math.round((Math.random()*.4-.2)*1000)/1000);const sign=Math.random()<.5?-1:1;supportHeights[0]=-.4*sign;supportHeights[1]=.4*sign;levelExercise={solved:false};$('levelInputMessage').textContent=machineProfile?'同じ個体で別の支持状態を設定しました。比較基準は抽選時の支持高さのままです。':'新しい調整問題を設定しました。';updateLeveling();};
 $('exportLevel').onclick=()=>{const blob=new Blob([JSON.stringify(levelRecord(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='leveling-'+current.id+'-'+(machineMode||'standard')+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('levelSaveStatus').textContent='調整データのダウンロードを開始しました。';};
 $('importLevel').onchange=async event=>{
  const file=event.target.files[0];event.target.value='';if(!file)return;
