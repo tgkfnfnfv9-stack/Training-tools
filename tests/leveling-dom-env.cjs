@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('node:fs'),vm=require('node:vm');
-module.exports=function createEnvironment(){
+module.exports=function createEnvironment(options={}){
  const registry={},storage=new Map(),downloads=[],timers=[];
  const voids=new Set(['input','br','hr','img','meta','link','source','wbr']);
  class El{
@@ -53,6 +53,7 @@ module.exports=function createEnvironment(){
   requestAnimationFrame:f=>{f(0);return 1;},cancelAnimationFrame(){},setTimeout:f=>{timers.push(f);return timers.length;},clearTimeout(){},Blob,
   URL:{createObjectURL:blob=>{context.exportedBlob=blob;return 'blob:test';},revokeObjectURL:url=>{context.revokedUrl=url;}}};
  vm.createContext(context);
- for(const file of ['leveling.js','app.js','leveling-ui.js','accuracy-ui.js'])vm.runInContext(fs.readFileSync('src/'+file,'utf8'),context,{filename:file});
+ for(const file of ['leveling.js','machine-accuracy.js','app.js','leveling-ui.js','accuracy-ui.js','machine-accuracy-ui.js'])vm.runInContext(fs.readFileSync('src/'+file,'utf8'),context,{filename:file});
+ if(options.pureLeveling)vm.runInContext('initializeMachineAccuracy=()=>{machineProfile=null;machineReference=null;};',context);
  return {registry,body,storage,downloads,timers,context,read:code=>vm.runInContext(code,context),json:code=>JSON.parse(vm.runInContext('JSON.stringify('+code+')',context))};
 };

@@ -48,7 +48,7 @@ check('左右コラムの平均が水平でも反対の前後倒れを保持',()
 for(const options of [{length:0},{length:-1},{length:NaN}])check('不正な評価長を拒否 '+options.length,()=>assert.throws(()=>geometry(saddle,{toolPoints:[{x:0,z:0}],workPoints:[{x:0,z:0}],axes:verticalAxes,...options})));
 
 async function main(){
- const env=createEnvironment(),{registry:r,read,json,storage}=env;
+ const env=createEnvironment({pureLeveling:true}),{registry:r,read,json,storage}=env;
  const open=(index,mode)=>{storage.clear();read(`openMachine(machines[${index}])`);if(mode)r.machineMode.change(mode);};
  const preset=t=>read(`applyLevelPreset('${t}')`);
  const axis=(key,value)=>{const input=r['axis-'+key];input.value=String(value);input.events.input({target:input});};
@@ -84,7 +84,7 @@ async function main(){
  const sampleValues=json("accuracyRange.map(s=>s.geometry.pairs.find(p=>p.key==='YZ').errorMicrons)");
  check('端中央の比較は現在位置とは独立の代表値',()=>{
   const low=Math.min(...sampleValues),high=Math.max(...sampleValues),before=json('accuracyRange.map(s=>s.state)');axis('X',37);
-  assert.deepEqual(json('accuracyRange.map(s=>s.state)'),before);assert.equal(json('geometrySamples()').length,9);
+  assert.deepEqual(json('accuracyRange.map(s=>s.state)'),before);assert.equal(json('geometrySamples()').length,27);
   const yzBox=r.accuracyMetrics.children.find(box=>box.children[0].textContent==='YZ 直角度');
   assert.match(yzBox.children[3].textContent,new RegExp(low.toFixed(1).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
   assert.match(yzBox.children[3].textContent,new RegExp(high.toFixed(1).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
