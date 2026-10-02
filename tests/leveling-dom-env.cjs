@@ -53,6 +53,6 @@ module.exports=function createEnvironment(){
   requestAnimationFrame:f=>{f(0);return 1;},cancelAnimationFrame(){},setTimeout:f=>{timers.push(f);return timers.length;},clearTimeout(){},Blob,
   URL:{createObjectURL:blob=>{context.exportedBlob=blob;return 'blob:test';},revokeObjectURL:url=>{context.revokedUrl=url;}}};
  vm.createContext(context);
- for(const file of ['leveling.js','app.js','leveling-ui.js'])vm.runInContext(fs.readFileSync('src/'+file,'utf8'),context,{filename:file});
+ for(const file of ['leveling.js','app.js','leveling-ui.js','accuracy-ui.js'])vm.runInContext(fs.readFileSync('src/'+file,'utf8'),context,{filename:file});
  return {registry,body,storage,downloads,timers,context,read:code=>vm.runInContext(code,context),json:code=>JSON.parse(vm.runInContext('JSON.stringify('+code+')',context))};
 };

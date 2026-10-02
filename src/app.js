@@ -69,7 +69,7 @@ function openMachine(m){
  stopMotion();machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;viewZoom=1;updateZoomControls();populateMachine();navigate('training');
 }
 function populateMachine(){
- const m=current;supports=supportList(m);
+ const m=current;supports=supportList(m);levelSolution=null;levelGeometry=null;
  $('machineTitle').textContent=m.name;$('machineSubtitle').textContent=m.example+' ｜ '+m.tag;
  $('structureText').textContent=m.structure;$('motionText').textContent=axisConfig(m).map(a=>a.key+'：'+a.part+'（'+a.direction+'）').join(' ／ ');$('focusText').textContent=m.focus;
  $('impactText').textContent=m.impact;$('supportNote').textContent=`本図は学習用の${supports.length}点支持です。実機の支持点位置・個数・荷重配分を再現したものではありません。`;
@@ -90,44 +90,44 @@ const grid=$('machineGrid');machines.forEach(m=>{const card=document.createEleme
 // 部品に軸の親子関係を持たせ、固定部は動かさない。
 function createGeometry(m){
  const faces=[],labels=[],c={base:'#80949c',fixed:'#799198',table:'#4c9b8b',spindle:'#dfab62',rail:'#c8d6d9',work:'#d1ddd7'};
- let group=[];
- function withGroup(axes,fn){const prev=group;group=axes;fn();group=prev;}
- function label(p,name){labels.push({p,axes:[...group],name,text:name+(group.length?'［'+group.join('/')+'］':'［固定］')});}
- function box(x,y,z,w,h,d,color,text){const v=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]].map(([a,b,e])=>[x+a*w/2,y+b*h/2,z+e*d/2]);[[0,1,2,3],[4,7,6,5],[0,4,5,1],[3,2,6,7],[0,3,7,4],[1,5,6,2]].forEach((ix,i)=>faces.push({v:ix.map(j=>v[j]),axes:[...group],color,shade:[.83,.85,.65,1.08,.88,.94][i]}));if(text)label([x,y+h/2,z],text);}
- function cyl(x,y,z,r,len,color,axis='y',text){const n=20,ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],color,shade:.8},{v:ring[1],axes:[...group],color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
+ let group=[],pose='bed';
+ function withGroup(axes,fn,partPose=pose){const prev=group,previousPose=pose;group=axes;pose=partPose;fn();group=prev;pose=previousPose;}
+ function label(p,name){labels.push({p,axes:[...group],pose,name,text:name+(group.length?'［'+group.join('/')+'］':'［固定］')});}
+ function box(x,y,z,w,h,d,color,text){const v=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]].map(([a,b,e])=>[x+a*w/2,y+b*h/2,z+e*d/2]);[[0,1,2,3],[4,7,6,5],[0,4,5,1],[3,2,6,7],[0,3,7,4],[1,5,6,2]].forEach((ix,i)=>faces.push({v:ix.map(j=>v[j]),axes:[...group],pose,color,shade:[.83,.85,.65,1.08,.88,.94][i]}));if(text)label([x,y+h/2,z],text);}
+ function cyl(x,y,z,r,len,color,axis='y',text){const n=20,ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8},{v:ring[1],axes:[...group],pose,color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
  const W=m.w,D=m.d;
  box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
- function spindle(x,y,z,axes){withGroup(axes,()=>{cyl(x,y,z,.16,.42,c.spindle,'y');cyl(x,y-.3,z,.045,.18,c.spindle);});}
- function table(width,depth,y,z,axes){withGroup(axes,()=>{box(0,y,z,width,.2,depth,c.table,'テーブル');for(let i=-3;i<=3;i++)box(i*width*.11,y+.105,z,.018,.012,depth*.97,c.rail);box(0,y+.3,z,.42,.38,.36,c.work);});}
+ function spindle(x,y,z,axes){withGroup(axes,()=>{cyl(x,y,z,.16,.42,c.spindle,'y');cyl(x,y-.3,z,.045,.18,c.spindle);},'tool');}
+ function table(width,depth,y,z,axes){withGroup(axes,()=>{box(0,y,z,width,.2,depth,c.table,'テーブル');for(let i=-3;i<=3;i++)box(i*width*.11,y+.105,z,.018,.012,depth*.97,c.rail);box(0,y+.3,z,.42,.38,.36,c.work);},'work');}
  if(['vertical','compact','travel'].includes(m.kind)){
  const travel=m.kind==='travel',cx=travel?-.5:0;
  [-1,1].forEach(k=>box(travel?0:k*.36,.7,travel?D*.22+k*.1:-D*.05,travel?W*.9:.1,.1,travel?.09:D*.7,c.rail));
- withGroup(travel?['X']:[],()=>{box(cx,1.97,D*.29,.85,2.6,.68,c.fixed,'コラム');box(cx,2.2,D*.17,.2,2.0,.1,c.rail);});
- if(travel){withGroup(['X','Y'],()=>box(cx,2.85,.13,.72,.6,1.05,c.fixed,'前後スライド'));withGroup(['X','Y','Z'],()=>box(cx,2.45,-.25,.67,.55,.65,c.fixed,'主軸頭'));spindle(cx,2.04,-.3,['X','Y','Z']);table(W*.93,D*.39,1,-D*.18,[]);}
- else {withGroup(['Z'],()=>box(0,2.85,.05,.75,.6,1.1,c.fixed,'主軸頭'));spindle(0,2.37,-.3,['Z']);withGroup(['Y'],()=>box(0,.81,-D*.1,W*.58,.22,D*.45,c.fixed,'サドル'));table(W*.78,D*.42,1.06,-D*.1,['X','Y']);}
+ withGroup(travel?['X']:[],()=>{box(cx,1.97,D*.29,.85,2.6,.68,c.fixed,'コラム');box(cx,2.2,D*.17,.2,2.0,.1,c.rail);},'tool');
+ if(travel){withGroup(['X','Y'],()=>box(cx,2.85,.13,.72,.6,1.05,c.fixed,'前後スライド'),'tool');withGroup(['X','Y','Z'],()=>box(cx,2.45,-.25,.67,.55,.65,c.fixed,'主軸頭'),'tool');spindle(cx,2.04,-.3,['X','Y','Z']);table(W*.93,D*.39,1,-D*.18,[]);}
+ else {withGroup(['Z'],()=>box(0,2.85,.05,.75,.6,1.1,c.fixed,'主軸頭'),'tool');spindle(0,2.37,-.3,['Z']);withGroup(['Y'],()=>box(0,.81,-D*.1,W*.58,.22,D*.45,c.fixed,'サドル'),'work');table(W*.78,D*.42,1.06,-D*.1,['X','Y']);}
  }else if(['portal','double','gantry'].includes(m.kind)){
  const gate=m.kind==='gantry',cross=m.kind==='portal',gateAxes=gate?['X']:[],gz=cross?D*.24:0;
  [-1,1].forEach(k=>box(k*(gate?W*.4:W*.17),.72,0,.14,.12,D*.91,c.rail,k===1?(gate?'走行レール':'案内レール'):null));
- withGroup(gateAxes,()=>{[-1,1].forEach(k=>box(k*W*.4,1.96,gz,.5,2.6,.65,c.fixed,k===-1?'門／コラム':null));box(0,3.17,gz,W*.94,.55,.65,c.fixed,'梁');box(0,2.9,gz-.37,W*.83,.1,.1,c.rail);});
+ withGroup(gateAxes,()=>{[-1,1].forEach(k=>withGroup(gateAxes,()=>box(k*W*.4,1.96,gz,.5,2.6,.65,c.fixed,k===-1?'門／コラム':null),k===-1?'leftColumn':'rightColumn'));box(0,3.17,gz,W*.94,.55,.65,c.fixed,'梁');box(0,2.9,gz-.37,W*.83,.1,.1,c.rail);},'tool');
  const headAxes=cross?['Z']:gate?['X','Y','Z']:['Y','Z'];
- if(!cross)withGroup(gate?['X','Y']:['Y'],()=>box(.15,2.76,gz-.2,.72,.65,.65,c.fixed,'主軸サドル'));
- withGroup(headAxes,()=>box(.15,2.67,gz-.23,.42,.9,.45,c.fixed,'ラム／主軸頭'));spindle(.15,2.3,gz-.23,headAxes);
- if(cross)withGroup(['Y'],()=>box(0,.82,0,W*.6,.23,D*.6,c.fixed,'サドル'));
+ if(!cross)withGroup(gate?['X','Y']:['Y'],()=>box(.15,2.76,gz-.2,.72,.65,.65,c.fixed,'主軸サドル'),'tool');
+ withGroup(headAxes,()=>box(.15,2.67,gz-.23,.42,.9,.45,c.fixed,'ラム／主軸頭'),'tool');spindle(.15,2.3,gz-.23,headAxes);
+ if(cross)withGroup(['Y'],()=>box(0,.82,0,W*.6,.23,D*.6,c.fixed,'サドル'),'work');
  table(W*.57,D*(cross?.43:.65),1.02,0,cross?['X','Y']:gate?[]:['X']);
  }else if(m.kind==='horizontal'){
  [-1,1].forEach(k=>box(0,.7,D*.28+k*.13,W*.86,.12,.1,c.rail));
- withGroup(['X'],()=>{box(0,1.95,D*.29,.95,2.5,.7,c.fixed,'コラム');box(0,2,D*.18,.16,2.0,.12,c.rail);});
- withGroup(['X','Y'],()=>{box(0,2.55,.25,.75,.62,1.1,c.fixed,'主軸頭');cyl(0,2.55,-.45,.2,.6,c.spindle,'z');cyl(0,2.55,-.83,.045,.2,c.spindle,'z');});
- withGroup(['Z'],()=>{box(0,.8,-.85,1.6,.23,1.6,c.fixed,'パレット台');cyl(0,1.03,-.85,.73,.2,c.table);box(0,1.2,-.85,1.45,.14,1.45,c.table,'パレット');box(0,1.75,-.85,.72,.95,.72,c.work);});
+ withGroup(['X'],()=>{box(0,1.95,D*.29,.95,2.5,.7,c.fixed,'コラム');box(0,2,D*.18,.16,2.0,.12,c.rail);},'tool');
+ withGroup(['X','Y'],()=>{box(0,2.55,.25,.75,.62,1.1,c.fixed,'主軸頭');cyl(0,2.55,-.45,.2,.6,c.spindle,'z');cyl(0,2.55,-.83,.045,.2,c.spindle,'z');},'tool');
+ withGroup(['Z'],()=>{box(0,.8,-.85,1.6,.23,1.6,c.fixed,'パレット台');cyl(0,1.03,-.85,.73,.2,c.table);box(0,1.2,-.85,1.45,.14,1.45,c.table,'パレット');box(0,1.75,-.85,.72,.95,.72,c.work);},'work');
  }else if(m.kind==='five'){
- box(0,1.95,D*.3,1.0,2.6,.6,c.fixed,'コラム');withGroup(['Z'],()=>box(0,2.95,0,.72,.65,1.1,c.fixed,'主軸頭'));spindle(0,2.54,-.3,['Z']);
- withGroup(['Y'],()=>box(0,.77,-.45,2.6,.18,1.5,c.fixed,'サドル'));
- withGroup(['X','Y'],()=>{box(0,.91,-.45,2.4,.13,1.25,c.table);[-1,1].forEach(k=>box(k*.95,1.23,-.45,.3,.66,1.0,c.fixed,k===-1?'トラニオン支持':null));});
- withGroup(['X','Y','A'],()=>{cyl(0,1.25,-.45,.3,1.6,c.table,'x');box(0,1.19,-.45,1.45,.15,1.15,c.table,'揺りかご');});
- withGroup(['X','Y','A','C'],()=>{cyl(0,1.47,-.45,.65,.18,c.table,'y','回転テーブル');box(.18,1.68,-.45,.45,.25,.32,c.work);});
+ withGroup([],()=>box(0,1.95,D*.3,1.0,2.6,.6,c.fixed,'コラム'),'tool');withGroup(['Z'],()=>box(0,2.95,0,.72,.65,1.1,c.fixed,'主軸頭'),'tool');spindle(0,2.54,-.3,['Z']);
+ withGroup(['Y'],()=>box(0,.77,-.45,2.6,.18,1.5,c.fixed,'サドル'),'work');
+ withGroup(['X','Y'],()=>{box(0,.91,-.45,2.4,.13,1.25,c.table);[-1,1].forEach(k=>box(k*.95,1.23,-.45,.3,.66,1.0,c.fixed,k===-1?'トラニオン支持':null));},'work');
+ withGroup(['X','Y','A'],()=>{cyl(0,1.25,-.45,.3,1.6,c.table,'x');box(0,1.19,-.45,1.45,.15,1.15,c.table,'揺りかご');},'work');
+ withGroup(['X','Y','A','C'],()=>{cyl(0,1.47,-.45,.65,.18,c.table,'y','回転テーブル');box(.18,1.68,-.45,.45,.25,.32,c.work);},'work');
  }else {
- [-1,1].forEach(k=>box(0,.72,k*.4,W*.93,.11,.13,c.rail));box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24,1.5,0,.4,.25,c.spindle,'x');cyl(0,1.5,0,.14,W*.45,c.work,'x');box(W*.33,1.13,0,.55,.9,.65,c.fixed,'心押台');cyl(W*.2,1.5,0,.1,.4,c.spindle,'x');
- withGroup(['Z'],()=>box(.08,.87,-.15,.8,.22,1.35,c.fixed,'往復台'));withGroup(['X','Z'],()=>{box(.08,1.18,-.58,.64,.5,.55,c.table,'刃物台');box(.08,1.45,-.33,.08,.08,.38,c.spindle);});
+ [-1,1].forEach(k=>box(0,.72,k*.4,W*.93,.11,.13,c.rail));withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24,1.5,0,.4,.25,c.spindle,'x');cyl(0,1.5,0,.14,W*.45,c.work,'x');},'tool');box(W*.33,1.13,0,.55,.9,.65,c.fixed,'心押台');cyl(W*.2,1.5,0,.1,.4,c.spindle,'x');
+ withGroup(['Z'],()=>box(.08,.87,-.15,.8,.22,1.35,c.fixed,'往復台'),'work');withGroup(['X','Z'],()=>{box(.08,1.18,-.58,.64,.5,.55,c.table,'刃物台');box(.08,1.45,-.33,.08,.08,.38,c.spindle);},'work');
  }
  supportList(m).forEach(t=>{cyl(t.x,.18,t.z,.14,.22,'#7d8991');cyl(t.x,.07,t.z,.23,.09,'#52616d');});
  return {faces,labels};
@@ -152,20 +152,20 @@ function render(canvas,m,angle,showLabels,active){
  // Fit the machine and its fixed movement envelope, without the empty ground around it.
  const margin=showLabels?56:18,verticalSpace=active>=0?height-48:height-75;
  const scale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY))*(active>=0?viewZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-20)/2:height*.48)-(minY+maxY)*scale/2;
- const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=p=>active>=0?levelVisualPoint(p):p;const movingScreen=(p,axes)=>screen(surfacePoint(transformedPoint(p,axes,m)));
+ const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(surfacePoint(transformedPoint(p,axes,m),pose));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
  if(active>=0)model.faces.push(...levelSurfaceFaces(m));
- model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
+ model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
  if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.15,s.z]));ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda79':'#ffffffed';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  if(showLabels){
- const labs=model.labels.map(l=>({...l,screen:movingScreen(l.p,l.axes)}));const sides=[labs.filter(l=>l.screen[0]<width/2),labs.filter(l=>l.screen[0]>=width/2)];
+ const labs=model.labels.map(l=>({...l,screen:movingScreen(l.p,l.axes,l.pose)}));const sides=[labs.filter(l=>l.screen[0]<width/2),labs.filter(l=>l.screen[0]>=width/2)];
  sides.forEach((side,k)=>{side.sort((a,b)=>a.screen[1]-b.screen[1]);const gap=Math.min(24,(height-52)/Math.max(1,side.length));let last=16-gap;side.forEach((l,i)=>{let ly=Math.max(last+gap,Math.min(height-36-(side.length-1-i)*gap,l.screen[1]-8));last=ly;const lx=k?width-10:10;ctx.strokeStyle='#65818b99';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(l.screen[0],l.screen[1]);ctx.lineTo(k?lx-5:lx+5,ly);ctx.stroke();ctx.font='10px sans-serif';ctx.textAlign=k?'right':'left';ctx.textBaseline='middle';const tw=ctx.measureText(l.text).width;ctx.fillStyle='#f8fbf9ed';ctx.fillRect(k?lx-tw-4:lx-4,ly-9,tw+8,18);ctx.fillStyle='#365564';ctx.fillText(l.text,lx,ly);});});
  }
  if(active>=0&&$('showAxes').checked){
  const a=axisConfig(m).find(a=>a.key===selectedAxis);if(a&&['X','Y','Z'].includes(a.key)){
- const moved=model.faces.filter(f=>f.axes.includes(a.key)).flatMap(f=>f.v.map(p=>transformedPoint(p,f.axes,m)));const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2),len=.6,from=origin.map((v,i)=>v-a.vector[i]*len),to=origin.map((v,i)=>v+a.vector[i]*len),pa=screen(surfacePoint(from)),pb=screen(surfacePoint(to));
+ const moved=model.faces.filter(f=>f.axes.includes(a.key)).flatMap(f=>f.v.map(p=>transformedPoint(p,f.axes,m)));const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2),len=.6,from=origin.map((v,i)=>v-a.vector[i]*len),to=origin.map((v,i)=>v+a.vector[i]*len),pose=levelGeometry?levelGeometry.axes.find(q=>q.key===a.key).source:'bed',pa=screen(surfacePoint(from,pose)),pb=screen(surfacePoint(to,pose));
  ctx.strokeStyle=axisColors[a.key];ctx.fillStyle=axisColors[a.key];ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(pa[0],pa[1]);ctx.lineTo(pb[0],pb[1]);ctx.stroke();
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-12*Math.cos(t-.45),p[1]-12*Math.sin(t-.45));ctx.lineTo(p[0]-12*Math.cos(t+.45),p[1]-12*Math.sin(t+.45));ctx.closePath();ctx.fill();}arrow(pa,pb);arrow(pb,pa);
  ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';const tx=(pa[0]+pb[0])/2,ty=(pa[1]+pb[1])/2-18;ctx.fillStyle='#ffffffed';ctx.fillRect(tx-17,ty-11,34,22);ctx.fillStyle=axisColors[a.key];ctx.fillText(a.key+'軸',tx,ty);
@@ -177,7 +177,7 @@ function render(canvas,m,angle,showLabels,active){
  ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#526e7b';ctx.font='10px sans-serif';ctx.fillText('外装を省いた構造模式図',width/2,height-15);
 }
 function drawThumbnails(){const previous=positions;positions={X:0,Y:0,Z:0,A:0,C:0};machines.forEach(m=>render($('thumb-'+m.id),m,-.55,false,-1));positions=previous;}
-function drawScene(){if(page==='training')render($('scene'),current,yaw,$('labels').checked,selected);}
+function drawScene(){if(levelSolution)updateAccuracy();if(page==='training')render($('scene'),current,yaw,$('labels').checked,selected);}
 function rotate(delta){yaw+=delta;drawScene();}
 function updateZoomControls(){const percent=Math.round(viewZoom*100);$('zoomOut').disabled=percent<=70;$('zoomIn').disabled=percent>=180;$('zoomStatus').textContent=percent+'%';}
 function changeZoom(step){viewZoom=Math.max(.7,Math.min(1.8,Math.round((viewZoom+step)*10)/10));updateZoomControls();drawScene();}
@@ -198,7 +198,7 @@ function buildAxisUI(){
  const axes=axisConfig(current);$('axisTabs').replaceChildren();$('axisSliders').replaceChildren();
  axes.forEach(a=>{const btn=document.createElement('button');btn.textContent=a.key+'軸';btn.className='axis-tab';btn.style.setProperty('--axis',axisColors[a.key]);btn.setAttribute('aria-pressed',a.key===selectedAxis?'true':'false');btn.onclick=()=>selectAxis(a.key);$('axisTabs').append(btn);
  const row=document.createElement('div');row.className='axis-row';row.style.setProperty('--axis',axisColors[a.key]);row.innerHTML=`<label for="axis-${a.key}"><strong>${a.key}軸</strong><span>${a.part}<small>${a.direction}</small></span><output id="value-${a.key}">中央</output></label><input type="range" id="axis-${a.key}" min="-100" max="100" step="1" value="${positions[a.key]}" aria-label="${a.key}軸の部品位置"><div class="range-ends"><span>端1</span><span>端2</span></div>`;$('axisSliders').append(row);
- $('axis-'+a.key).addEventListener('input',e=>{stopMotion();positions[a.key]=Number(e.target.value);selectAxis(a.key);updateAxisValues();drawScene();});});
+ $('axis-'+a.key).addEventListener('input',e=>{stopMotion();positions[a.key]=Number(e.target.value);selectAxis(a.key);updateAxisValues();saveLeveling();drawScene();});});
  $('fixedText').textContent=fixedParts(current);$('absentAxis').hidden=current.kind!=='lathe';updateAxisValues();selectAxis(selectedAxis);
 }
 function updateAxisValues(){for(const a of axisConfig(current)){$('axis-'+a.key).value=positions[a.key];$('value-'+a.key).textContent=positions[a.key]===0?'中央':positions[a.key]>0?'端2側 '+Math.abs(Math.round(positions[a.key]))+'%':'端1側 '+Math.abs(Math.round(positions[a.key]))+'%';}}
@@ -218,13 +218,13 @@ function updatePartMap(){
 }
 function selectAxis(key){stopMotion();selectedAxis=key;const a=axisConfig(current).find(a=>a.key===key);Array.from($('axisTabs').children).forEach(b=>b.setAttribute('aria-pressed',b.textContent===key+'軸'?'true':'false'));$('movingText').textContent=key+'軸：'+a.part+'が'+a.direction+'に動く';$('movingText').style.setProperty('--axis',axisColors[key]);updatePartMap();drawScene();}
 let motionFrame=null,motionStart=null;
-function stopMotion(){if(motionFrame!==null)cancelAnimationFrame(motionFrame);motionFrame=null;motionStart=null;if($('playAxis')){$('playAxis').textContent='選んだ軸を動かす';$('playAxis').setAttribute('aria-pressed','false');}}
+function stopMotion(){const running=motionFrame!==null;if(running)cancelAnimationFrame(motionFrame);motionFrame=null;motionStart=null;if($('playAxis')){$('playAxis').textContent='選んだ軸を動かす';$('playAxis').setAttribute('aria-pressed','false');}if(running&&typeof saveLeveling==='function')saveLeveling();}
 $('playAxis').onclick=()=>{if(motionFrame!==null){stopMotion();return;}$('playAxis').textContent='動きを止める';$('playAxis').setAttribute('aria-pressed','true');const key=selectedAxis;
  // A single round trip demonstrates the chosen part; no endless motion.
  function step(t){if(motionStart===null)motionStart=t;const progress=Math.min((t-motionStart)/3500,1);positions[key]=Math.sin(progress*2*Math.PI)*85;updateAxisValues();drawScene();if(progress<1)motionFrame=requestAnimationFrame(step);else{positions[key]=0;updateAxisValues();stopMotion();drawScene();}}
  motionFrame=requestAnimationFrame(step);
 };
-$('resetAxes').onclick=()=>{stopMotion();positions={X:0,Y:0,Z:0,A:0,C:0};updateAxisValues();drawScene();};
+$('resetAxes').onclick=()=>{stopMotion();positions={X:0,Y:0,Z:0,A:0,C:0};updateAxisValues();saveLeveling();drawScene();};
 window.addEventListener('pagehide',stopMotion);document.addEventListener('visibilitychange',()=>{if(document.hidden)stopMotion();});
 let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(page==='catalog')drawThumbnails();drawScene();},80);});
 navigate('home');

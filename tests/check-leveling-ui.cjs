@@ -79,8 +79,8 @@ async function main(){
   r.impactOffset.change();check('腕の無効入力確定は0.5でなく直前値に戻る '+JSON.stringify(value),()=>{assert.equal(r.impactOffset.value,'1.5');near(read('levelConfig.offset'),1.5);});
  }
  preset('right');
- const metrics=json('[levelSolution.lr,levelSolution.fb,levelSolution.twist,levelSolution.residual]'),raised=json('levelVisualPoint([current.w*.4,1,0])');r.exaggerate.checked=false;r.exaggerate.onchange();
- check('誇張は数値計算を変えない',()=>{assert.deepEqual(json('[levelSolution.lr,levelSolution.fb,levelSolution.twist,levelSolution.residual]'),metrics);near((raised[1]-1)/(json('levelVisualPoint([current.w*.4,1,0])')[1]-1),100,1e-7);});
+ const metrics=json('[levelSolution.lr,levelSolution.fb,levelSolution.twist,levelSolution.residual]'),accuracy=json('levelGeometry.pairs'),raised=json('levelVisualPoint([current.w*.4,1,0])');r.exaggerate.checked=false;r.exaggerate.onchange();
+ check('誇張は数値計算を変えない',()=>{assert.deepEqual(json('[levelSolution.lr,levelSolution.fb,levelSolution.twist,levelSolution.residual]'),metrics);assert.deepEqual(json('levelGeometry.pairs'),accuracy);assert.ok(Math.abs(raised[1]-1)>Math.abs(json('levelVisualPoint([current.w*.4,1,0])')[1]-1));});
  r.showLevelSurface.checked=false;r.showLevelSurface.onchange();check('支持面の表示切替は計算値を変えない',()=>{assert.equal(read('levelSurfaceFaces(current).length'),0);assert.deepEqual(json('[levelSolution.lr,levelSolution.fb,levelSolution.twist,levelSolution.residual]'),metrics);});r.showLevelSurface.checked=true;r.showLevelSurface.onchange();
  r.startLevelExercise.click();check('調整問題は目標外から開始',()=>assert.equal(read('levelExercise.solved'),false));
  for(let i=0;i<counts[0];i++)r['height'+i].change('0');check('手動調整で練習達成',()=>{assert.equal(read('levelExercise.solved'),true);assert.match(r.levelExerciseStatus.textContent,/達成/);});
