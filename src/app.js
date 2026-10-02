@@ -142,7 +142,7 @@ function render(canvas,m,angle,showLabels,active){
  function project(p){const [x,y,z]=p;const xx=x*Math.cos(angle)+z*Math.sin(angle),zz=-x*Math.sin(angle)+z*Math.cos(angle);const yy=(y-1.65)*Math.cos(pitch)+zz*Math.sin(pitch),depth=11+zz*Math.cos(pitch)-(y-1.65)*Math.sin(pitch);return [xx/depth,-yy/depth,depth];}
  const fitPoints=model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
  // Fit the machine itself, rather than the empty ground around it. Keep axis motion independent of camera framing.
- const margin=showLabels?56:18,verticalSpace=active>=0?height-44:height-75;
+ const margin=showLabels?56:18,verticalSpace=active>=0?height-48:height-75;
  const scale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY))*(active>=0?viewZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-20)/2:height*.48)-(minY+maxY)*scale/2;
  const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const movingScreen=(p,axes)=>screen(transformedPoint(p,axes,m));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
