@@ -142,7 +142,7 @@ function render(canvas,m,angle,showLabels,active){
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
- model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?f.color:'#8b9da3';ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle='#35546933';ctx.lineWidth=.6;ctx.stroke();});
+ model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle='#35546933';ctx.lineWidth=.6;ctx.stroke();});
  if(active>=0){supportList(m).forEach((s,i)=>{const p=screen([s.x,.15,s.z]);ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda79':'#ffffffed';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  if(showLabels){
  const labs=model.labels.map(l=>({...l,screen:movingScreen(l.p,l.axes)}));const sides=[labs.filter(l=>l.screen[0]<width/2),labs.filter(l=>l.screen[0]>=width/2)];
@@ -150,7 +150,7 @@ function render(canvas,m,angle,showLabels,active){
  }
  if(active>=0&&$('showAxes').checked){
  const a=axisConfig(m).find(a=>a.key===selectedAxis);if(a&&['X','Y','Z'].includes(a.key)){
- const origin=[0,1.55,-.2],len=.7,from=origin.map((v,i)=>v-a.vector[i]*len),to=origin.map((v,i)=>v+a.vector[i]*len),pa=screen(from),pb=screen(to);
+ const moved=model.faces.filter(f=>f.axes.includes(a.key)).flatMap(f=>f.v.map(p=>transformedPoint(p,f.axes,m)));const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2),len=.6,from=origin.map((v,i)=>v-a.vector[i]*len),to=origin.map((v,i)=>v+a.vector[i]*len),pa=screen(from),pb=screen(to);
  ctx.strokeStyle=axisColors[a.key];ctx.fillStyle=axisColors[a.key];ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(pa[0],pa[1]);ctx.lineTo(pb[0],pb[1]);ctx.stroke();
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-12*Math.cos(t-.45),p[1]-12*Math.sin(t-.45));ctx.lineTo(p[0]-12*Math.cos(t+.45),p[1]-12*Math.sin(t+.45));ctx.closePath();ctx.fill();}arrow(pa,pb);arrow(pb,pa);
  ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';const tx=(pa[0]+pb[0])/2,ty=(pa[1]+pb[1])/2-18;ctx.fillStyle='#ffffffed';ctx.fillRect(tx-17,ty-11,34,22);ctx.fillStyle=axisColors[a.key];ctx.fillText(a.key+'軸',tx,ty);
