@@ -40,7 +40,10 @@ function levelVisualPoint(p,pose='bed'){
  const factor=$('exaggerate').checked?levelGeometry.visualFactor:1,plane=levelSolution.plane;
  const common=window.Leveling.orientation({lr:plane.a*factor,fb:plane.b*factor}),base=[0,.66,0];
  const commonPoint=q=>{const r=common.rotate([q[0],q[1]-base[1],q[2]]);return [r[0],r[1]+base[1]+plane.c/1000*factor,r[2]];};
- const heightResidual=q=>{const c=levelCoordinates(q[0],q[2]);return (levelSolution.heightAt(c.x,c.z)-(plane.a*c.x+plane.b*c.z+plane.c))/1000*factor;};
+ // The outline stays the same size when virtual support dimensions change.
+ // Subtract the plane actually drawn in that outline, rather than a plane in
+ // virtual metres, so equal support heights remain equal in the height map.
+ const heightResidual=q=>{const c=levelCoordinates(q[0],q[2]),drawn=common.rotate([q[0],0,q[2]])[1]+plane.c/1000*factor;return levelSolution.heightAt(c.x,c.z)/1000*factor-drawn;};
  if(pose==='bed'){const q=commonPoint(p);q[1]+=heightResidual(p);return q;}
  const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,offset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0};
  const point=[p[0]+offset.x,p[1],p[2]+offset.z],anchor=[info.anchor.x,.66,info.anchor.z],origin=commonPoint(anchor);

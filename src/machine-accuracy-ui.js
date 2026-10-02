@@ -75,11 +75,22 @@ function updateMachineAccuracy(){
   $('accuracyComparison').append(row);
  }
  $('machineProgress').textContent=(target?'参考最良の近傍です。':'参考最良への残り '+cleanNumber(gap,2)+' µm（固定誤差を差し引いた評価）。')+' 改善の進み '+cleanNumber(target?100:progress,0)+'%。ガイドの曲がりはレベル調整では消えません。';
- $('applyBestLevel').disabled=best.heights.every((h,i)=>Math.abs(h-supportHeights[i])<.0005);
- const hints=best.heights.map((h,i)=>({i,delta:Math.round((h-supportHeights[i])*1000)/1000})).filter(q=>Math.abs(q.delta)>=.0005);
- const hint=hints.length?hints.map(q=>String.fromCharCode(65+q.i)+'を '+cleanNumber(Math.abs(q.delta),3)+' mm'+(q.delta>0?'上げる':'下げる')).join('、')+'。探索で得た調整例です。':'探索例の支持高さと一致しています。';
+ const adjustment=machineBestHeights();
+ $('applyBestLevel').disabled=adjustment.every((h,i)=>Math.abs(h-supportHeights[i])<.0005);
+ const hints=adjustment.map((h,i)=>({i,delta:Math.round((h-supportHeights[i])*1000)/1000})).filter(q=>Math.abs(q.delta)>=.0005);
+ const hint=hints.length?hints.map(q=>String.fromCharCode(65+q.i)+'を '+cleanNumber(Math.abs(q.delta),3)+' mm'+(q.delta>0?'上げる':'下げる')).join('、')+'。探索で得た調整例です。':'探索例と同じ支持高さの関係です。一様な高さ変更は不要です。';
  machineSavedBest=machineBestRecord();
  return {target,hint,gap,progress};
+}
+function machineBestHeights(){
+ const heights=machineReference.best.heights;
+ // A common height offset changes position, not accuracy. Keep the current
+ // common height where the support limits allow it, and recommend only the
+ // relative adjustment needed for the reference geometry.
+ const average=supportHeights.reduce((sum,h,i)=>sum+(h-heights[i])/heights.length,0);
+ const lower=Math.max(...heights.map(h=>-.5-h)),upper=Math.min(...heights.map(h=>.5-h));
+ const offset=Math.round(Math.max(lower,Math.min(upper,average))*1000)/1000;
+ return heights.map(h=>Math.round((h+offset)*1000)/1000);
 }
 function machineBestRecord(){
  if(!machineReference)return null;
@@ -98,4 +109,4 @@ function drawMachine(condition){
 $('machineCondition').onchange=()=>drawMachine($('machineCondition').value);
 $('drawMachine').onclick=()=>drawMachine($('machineCondition').value);
 $('restoreInitialLevel').onclick=()=>{stopMotion();invalidateLevelImport();supportHeights=[...machineProfile.initialHeights];levelExercise={solved:false};$('levelInputMessage').textContent='同じ個体の初期支持高さへ戻しました。寸法・コラム配置は現在の設定です。';updateLeveling();};
-$('applyBestLevel').onclick=()=>{stopMotion();invalidateLevelImport();updateMachineAccuracy();supportHeights=[...machineReference.best.heights];$('levelInputMessage').textContent='探索で得た参考調整を適用しました。残る固有誤差も確認してください。';updateLeveling();};
+$('applyBestLevel').onclick=()=>{stopMotion();invalidateLevelImport();updateMachineAccuracy();supportHeights=machineBestHeights();$('levelInputMessage').textContent='探索で得た参考調整を適用しました。残る固有誤差も確認してください。';updateLeveling();};
