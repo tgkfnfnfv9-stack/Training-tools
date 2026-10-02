@@ -43,6 +43,10 @@
 }
 
 .viewer-controls #zoomIn,.viewer-controls #zoomOut{min-width:44px;min-height:44px;font-size:20px;padding:4px 10px}.viewer-controls #viewReset{min-height:44px}
+/* Level calculation and practice controls */
+.level-dimensions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 8px}.level-dimensions label{font-size:12px}.level-dimensions input,#impactOffset{display:block;min-height:44px;width:100%;border:1px solid #c1d0d6;border-radius:6px;padding:8px;background:#fff;color:var(--ink)}.level-message{min-height:1.5em;font-size:12px;color:#285f56}.level-exercise{background:#f2f7f5;padding:12px;border-radius:8px;margin-top:16px}.level-exercise h3{margin-top:0}.level-exercise p,.level-exercise summary{font-size:12px}.level-exercise details{margin-top:12px}.level-storage{grid-column:1/-1;grid-row:6;margin-top:0}.level-storage summary{cursor:pointer;font-size:13px;font-weight:650;color:var(--green)}.level-storage button,.import-level{min-height:44px;display:inline-flex;align-items:center;margin:6px 6px 6px 0}.import-level{font-size:12px;flex-wrap:wrap;gap:8px}.import-level input{max-width:100%;min-height:44px;font-size:12px}.support-row button{min-height:44px}.support-row input{min-height:44px}.gauge .vial{background:repeating-linear-gradient(90deg,transparent 0,transparent calc(7% - 1px),#77925e55 calc(7% - 1px),#77925e55 7%),#deeadb}.level-storage p{overflow-wrap:anywhere}#levelExerciseStatus{font-weight:650;color:#246755}
+@media(max-width:560px){.level-dimensions input,.support-row input{font-size:16px}.level-dimensions{gap:8px}.support-row{grid-template-columns:minmax(70px,1fr) 44px 76px 44px;gap:5px}.support-row input{padding:4px 2px}.geometric-examples{grid-template-columns:1fr}}
+.gauge .vial{background:#deeadb}.gauge .vial::before{content:"";position:absolute;inset:0 15%;border-left:1px solid #77925e66;border-right:1px solid #77925e66;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(10% - 1px),#77925e66 calc(10% - 1px),#77925e66 10%)}.gauge .center-lines{left:43%;width:14%}
 </style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
 .tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
 @media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}#testerDiagram{max-height:300px}}
@@ -55,16 +59,18 @@
 
 .tester-feedback-detail{font-size:13px;line-height:1.6;padding:10px 12px;border-left:3px solid #90aba3;background:#f0f5f4;border-radius:4px}.tester-feedback-detail[data-status="blocked"]{border-color:#b05a27;background:#fff3e6}
 .tester-primary:disabled,.tester-primary:disabled:hover{background:#dfe9e6;color:#415a52;opacity:1;border-color:#cfdbd6}
+/* Six modes and five lessons remain within the independently scrolling controls. */
+.tester-case-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.tester-mode-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.tester-progress{font-size:12px;line-height:1.7;background:#edf6f1;border-radius:6px;padding:10px}.tester-case-tabs [data-complete="true"]::after{content:" ✓"}.tester-completion-steps{display:flex;flex-wrap:wrap;gap:7px 14px;padding:0;list-style:none;font-size:12px;color:var(--green)}.tester-controls [id$="CaseBox"],#testerCurrentConnectionBox{margin-bottom:12px}
 </style></head>
-<body><header><div class="brand"><span class="brand-mark">T</span><div>社内訓練ツール<small>構造を見て、調整して、理解する</small></div></div><span class="version">UI確認用</span></header>
+<body><header><div class="brand"><span class="brand-mark">T</span><div>社内訓練ツール<small>構造を見て、調整して、理解する</small></div></div><span class="version">訓練シミュレーター</span></header>
 <main><nav id="crumbs" aria-label="現在位置"></nav>
 <section id="home"><div class="intro"><p class="eyebrow">TRAINING LIBRARY</p><h1>どちらを学びますか？</h1><p>電気と機械。現場の理解を、一つずつ深める。</p></div><div class="category-grid"><button class="category" id="electric"><span class="symbol">⚡</span><h2>電気</h2><p>回路・制御・点検の基礎</p><span class="go">テスターの使い方 →</span></button><button class="category" id="mechanical"><span class="symbol">⚙</span><h2>機械</h2><p>工作機械の構造と調整</p><span class="go">訓練項目を見る →</span></button></div></section>
-<section id="electricTopics" hidden><div class="intro"><p class="eyebrow">ELECTRICAL TRAINING</p><h1>電気の訓練</h1><p>テスターの準備、測定モード、つなぎ方を順番に学びます。</p></div><button class="topic" id="testerEntry"><span class="topic-icon">01</span><div><h2>テスターの使い方</h2><p>乾電池のDC電圧・抵抗・導通を模擬測定</p><span class="pill">初めてのテスター</span></div><span class="topic-arrow">→</span></button></section>
+<section id="electricTopics" hidden><div class="intro"><p class="eyebrow">ELECTRICAL TRAINING</p><h1>電気の訓練</h1><p>テスターの準備、測定モード、つなぎ方を順番に学びます。</p></div><button class="topic" id="testerEntry"><span class="topic-icon">01</span><div><h2>テスターの使い方</h2><p>DC・AC電圧、抵抗、導通、低電圧の電流を模擬測定</p><span class="pill">初めてのテスター</span></div><span class="topic-arrow">→</span></button></section>
 <section id="topics" hidden><div class="intro"><p class="eyebrow">MECHANICAL TRAINING</p><h1>機械の訓練</h1><p>まずは、据付と精度の土台となるレベル出しから。</p></div><button class="topic" id="leveling"><span class="topic-icon">01</span><div><h2>工作機械のレベル出し</h2><p>構造の違い・支持点・傾き・ねじれを3Dで学ぶ</p><span class="pill">7つの構造カテゴリ</span></div><span class="topic-arrow">→</span></button></section>
 <section id="catalog" hidden><div class="intro"><p class="eyebrow">LEVELING / MACHINE TYPES</p><h1>機械の構造を選ぶ</h1><p>同じ構造はまとめて、動く側・固定する側の違いで選びましょう。</p></div><p class="note">3Dは外装を省いた構造模式図です。代表機の寸法・支持点・据付仕様を再現したものではありません。</p><div id="machineGrid" class="machine-grid"></div><details class="survey"><summary>分類の考え方・調査資料</summary><p>ロボドリル系と標準立形は同じカテゴリ。固定門形は移動方式を切り替えて比較します。「立形／横形」は主軸の向き、「門形／片持ち」は構造、「5軸」は制御軸の構成です。これらは重なります。立形でも門形構造の機械があり、門形にも5軸機があります。</p><p>追加候補：NCフライス、ヘッド旋回式5軸、複合加工機、平面・円筒研削盤、テーブル形／床上形横中ぐり盤。詳しくは同梱の調査資料をご覧ください。</p></details></section>
-<section id="training" hidden><div class="training-heading"><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div><button id="changeMachine" class="secondary">機械を選び直す</button></div><div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top"><span>軸と部品の動きを3Dで確認</span><span class="pill">大きさ <output id="zoomStatus" aria-live="polite">100%</output></span></div><canvas id="scene" tabindex="0" aria-label="工作機械の3D模式図。左右にドラッグ、または左右矢印キーで回転"></canvas><div class="viewer-controls"><button id="zoomOut" aria-label="絵を縮小">−</button><button id="rotateLeft" aria-label="左に回転">↶ 左</button><button id="viewReset" aria-label="正面と標準の大きさに戻す">正面に戻す</button><button id="rotateRight" aria-label="右に回転">右 ↷</button><button id="zoomIn" aria-label="絵を拡大">＋</button></div></div><div class="controls-bar">操作・説明 ↓ この下をスクロール</div><div class="scroll-controls" id="trainingControls" tabindex="0" role="region" aria-label="機械の操作と説明"><p class="note ui-notice">今回はUIの確認用です。画面移動・機械選択・左右回転・XYZ軸の部品移動を試せます。高さ調整、水準器、精度影響の計算は次の段階で追加します。</p><div class="control-column"><div class="card motion-card"><div class="section-title"><h2>どこが動く？どこが固定？</h2><button id="resetAxes" class="text-button">中央へ戻す</button></div><div id="machineModeBox" hidden><label class="select-label" for="machineMode">この構造の方式／サイズ</label><select id="machineMode"></select></div><div id="axisTabs" class="axis-tabs" aria-label="確認する軸"></div><div id="movingText" class="moving-info" role="status"></div><div class="moving-parts"><p id="partMapHeading"></p><div id="movingParts" class="part-chips"></div></div><div class="fixed-info"><strong>固定</strong><span id="fixedText"></span></div><p id="absentAxis" class="note" hidden>この2軸旋盤にY軸はありません。Xは径方向、Zは主軸方向です。</p><details class="part-details"><summary>部品と軸の対応を見る</summary><p class="hint">同じ部品に複数の軸が付くのは、親のスライドと一緒に動くためです。「固定」は軸移動しない部品、「今回静止」は選んだ軸では動かない部品です。</p><div class="part-table-wrap"><table class="part-table"><caption>模型の主な部品と、各部品を動かす軸</caption><thead><tr><th scope="col">部品</th><th scope="col">動く軸</th><th scope="col" id="partStateHeading"></th></tr></thead><tbody id="partMapBody"></tbody></table></div></details><div id="axisSliders"></div><button id="playAxis" class="play-axis" aria-pressed="false">選んだ軸を動かす</button><p class="hint">矢印は部品の移動方向です。端1／端2は模型の位置で、NCの＋／−指令や実ストロークを表すものではありません。</p><p class="note">軸分担を明示した学習用の構成です。メーカー・機種によって動く側や回転軸名は異なります。</p></div><div class="card"><div class="section-title"><h2>状態パターン</h2><button disabled id="zero" class="text-button">調整をリセット</button></div><div class="presets"><button disabled data-preset="right">右側が高い</button><button disabled data-preset="front">手前が高い</button><button disabled data-preset="twist" id="twistPreset">対角にねじれる</button><button disabled data-preset="middle" id="middlePreset">中間支持が高い</button></div><label class="select-label" for="measurePos">水準器を置く位置（前後）</label><select id="measurePos"><option value="-1">手前</option><option value="0" selected>中央</option><option value="1">奥</option></select><div class="gauge" aria-label="左右方向の模擬水準器"><div class="gauge-heading"><span>左右方向</span><strong id="localLevel">— mm/m</strong></div><div class="vial"><span class="center-lines"></span><span id="bubble" class="bubble"></span></div><div class="gauge-ends"><span>機械の左側</span><span>機械の右側</span></div><p id="bubbleText"></p></div><p class="hint">水準器を置く位置を切り替えるUIです。気泡と測定値の計算は今後追加します。</p></div>
-<div class="card"><h2>支持点の高さを調整</h2><p class="hint">支持点を選ぶと3D上で強調されます。高さの＋／−操作は今後追加します。</p><div id="supportMap" class="support-map" aria-label="上から見た支持点配置"></div><div id="supportControls"></div></div>
-<div class="card results"><h2>調整による変化</h2><p class="hint">ここに傾き・ねじれと、加工精度への影響を表示する予定です。</p><div class="metrics"><div><span>平均の左右傾き</span><strong id="lr"></strong></div><div><span>平均の前後傾き</span><strong id="fb"></strong></div><div><span>手前と奥の左右傾きの差</span><strong id="twist"></strong></div><div><span>平面からの支持点のずれ</span><strong id="residual"></strong></div></div><div id="diagnosis" role="status"></div><div class="impact"><h3>加工精度との関係</h3><p id="impactText"></p></div><p class="note">レベル調整は現在、表示項目の配置のみです。メーカー別の支持点・調整手順、実機の加工誤差や合格判定は未実装です。</p></div></div><details class="card viewer-settings"><summary>3Dの表示設定・色の見方</summary><div class="viewer-options"><label><input id="exaggerate" type="checkbox" disabled> 変形表示（今後追加）</label><label><input id="showAxes" type="checkbox" checked> 軸の矢印を表示</label><label><input id="labels" type="checkbox" checked> 部品名を表示</label></div><p class="viewer-caption">指／マウスで左右ドラッグ。丸いA〜Hは学習用の支持点です。<br>灰：固定　淡色：他軸の部品　赤X／緑Y／青Z：選択軸で動く部品　黄：支持点</p></details><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>次の段階で追加する訓練内容</summary><ol><li>支持点を上げ下げし、全体の傾きが変わる様子を確認。</li><li>手前・中央・奥の水準器を比べ、中央だけでは判断できないねじれを学習。</li><li>多点支持の機械で、中間支持の調整による変化を確認。</li><li>水平・ねじれ・真直度・直角度の関係を段階的に学習。</li></ol><p>今回の確認対象は画面構成と操作導線です。訓練ロジックと実機別の仕様は、UIを固めた後に追加します。</p></details></div></div></section>
+<section id="training" hidden><div class="training-heading"><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div><button id="changeMachine" class="secondary">機械を選び直す</button></div><div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top"><span>軸と高さ分布を3Dで確認</span><span class="pill">大きさ <output id="zoomStatus" aria-live="polite">100%</output></span></div><canvas id="scene" tabindex="0" aria-label="工作機械の3D模式図。左右にドラッグ、または左右矢印キーで回転"></canvas><div class="viewer-controls"><button id="zoomOut" aria-label="絵を縮小">−</button><button id="rotateLeft" aria-label="左に回転">↶ 左</button><button id="viewReset" aria-label="正面と標準の大きさに戻す">正面に戻す</button><button id="rotateRight" aria-label="右に回転">右 ↷</button><button id="zoomIn" aria-label="絵を拡大">＋</button></div></div><div class="controls-bar">操作・説明 ↓ この下をスクロール</div><div class="scroll-controls" id="trainingControls" tabindex="0" role="region" aria-label="機械の操作と説明"><p class="note ui-notice">支持点を調整すると、水準器・高さ分布・結果が連動します。支持寸法と数値は教材用です。実機の荷重・剛性・メーカー許容値を再現するものではありません。</p><div class="control-column"><div class="card motion-card"><div class="section-title"><h2>どこが動く？どこが固定？</h2><button id="resetAxes" class="text-button">中央へ戻す</button></div><div id="machineModeBox" hidden><label class="select-label" for="machineMode">この構造の方式／サイズ</label><select id="machineMode"></select></div><div id="axisTabs" class="axis-tabs" aria-label="確認する軸"></div><div id="movingText" class="moving-info" role="status"></div><div class="moving-parts"><p id="partMapHeading"></p><div id="movingParts" class="part-chips"></div></div><div class="fixed-info"><strong>固定</strong><span id="fixedText"></span></div><p id="absentAxis" class="note" hidden>この2軸旋盤にY軸はありません。Xは径方向、Zは主軸方向です。</p><details class="part-details"><summary>部品と軸の対応を見る</summary><p class="hint">同じ部品に複数の軸が付くのは、親のスライドと一緒に動くためです。「固定」は軸移動しない部品、「今回静止」は選んだ軸では動かない部品です。</p><div class="part-table-wrap"><table class="part-table"><caption>模型の主な部品と、各部品を動かす軸</caption><thead><tr><th scope="col">部品</th><th scope="col">動く軸</th><th scope="col" id="partStateHeading"></th></tr></thead><tbody id="partMapBody"></tbody></table></div></details><div id="axisSliders"></div><button id="playAxis" class="play-axis" aria-pressed="false">選んだ軸を動かす</button><p class="hint">矢印は部品の移動方向です。端1／端2は模型の位置で、NCの＋／−指令や実ストロークを表すものではありません。</p><p class="note">軸分担を明示した学習用の構成です。メーカー・機種によって動く側や回転軸名は異なります。</p></div><div class="card"><div class="section-title"><h2>状態パターン</h2><button id="zero" class="text-button">調整をリセット</button></div><div class="presets"><button data-preset="right">右側が高い</button><button data-preset="front">手前が高い</button><button data-preset="twist" id="twistPreset">対角にねじれる</button><button data-preset="middle" id="middlePreset">中間支持が高い</button></div><div class="level-dimensions"><label>左右の支持幅（m）<input id="supportWidth" type="number" min="0.5" max="20" step="0.01" value="2.72"></label><label>前後の支持幅（m）<input id="supportDepth" type="number" min="0.5" max="20" step="0.01" value="2.64"></label></div><p class="hint">支持点間の仮想寸法です。3Dの外観サイズは変えず、傾きの計算に使います。</p><label class="select-label" for="levelSensitivity">水準器の感度（1目盛の傾き）</label><select id="levelSensitivity"><option value="0.02">0.02 mm/m</option><option value="0.05" selected>0.05 mm/m</option><option value="0.1">0.10 mm/m</option></select><label class="select-label" for="measurePos">水準器を置く位置（前後）</label><select id="measurePos"><option value="-1">手前</option><option value="0" selected>中央</option><option value="1">奥</option></select><div class="gauge" aria-label="左右方向の模擬水準器"><div class="gauge-heading"><span>左右方向</span><strong id="localLevel">— mm/m</strong></div><div class="vial"><span class="center-lines"></span><span id="bubble" class="bubble"></span></div><div class="gauge-ends"><span>機械の左側</span><span>機械の右側</span></div><p id="bubbleText"></p></div><div class="gauge" aria-label="前後方向の模擬水準器"><div class="gauge-heading"><span>前後方向</span><strong id="localLevelFB">0.000 mm/m</strong></div><div class="vial"><span class="center-lines"></span><span id="bubbleFB" class="bubble"></span></div><div class="gauge-ends"><span>手前</span><span>奥</span></div><p id="bubbleTextFB"></p></div><p class="hint">気泡は高い側へ動きます。正は右高／奥高、負は左高／手前高。支持面の左右・前後方向で、NCのXYZ軸名とは別です。水準器は左右幅の中央で、選んだ前後位置の面の局所勾配を読みます。折れ目では右／奥側の勾配を採用し、有限長の実水準器の読みを再現するものではありません。</p></div>
+<div class="card"><h2>支持点の高さを調整</h2><p class="hint">支持点を選び、＋／−または数値入力で調整します。教材の高さ範囲は−0.50〜＋0.50 mmです。</p><label class="select-label" for="adjustStep">ボタン1回の調整量</label><select id="adjustStep"><option value="0.01" selected>0.01 mm</option><option value="0.05">0.05 mm</option><option value="0.1">0.10 mm</option></select><p id="levelInputMessage" class="level-message" role="status"></p><div id="supportMap" class="support-map" aria-label="上から見た支持点配置"></div><div id="supportControls"></div></div>
+<div class="card results"><h2>調整による変化</h2><p class="hint">支持点の高さから面を補間した学習用の計算です。全体の傾きと、平面からのずれを分けて確認します。</p><div class="metrics"><div><span>平均の左右傾き</span><strong id="lr"></strong></div><div><span>平均の前後傾き</span><strong id="fb"></strong></div><div><span>手前と奥の左右傾きの差</span><strong id="twist"></strong></div><div><span>平面からの支持点のずれ</span><strong id="residual"></strong></div></div><div id="diagnosis" role="status"></div><div class="level-exercise"><h3>調整練習</h3><p>教材目標：左右・前後の傾き（全支持列）とねじれが0.02 mm/m以内、平面偏差が0.01 mm以内。実機の許容値ではありません。</p><button id="startLevelExercise">調整問題を出す</button><p id="levelExerciseStatus" role="status">問題を出し、支持点を手動で調整して目標へ近づけましょう。</p><details><summary>模擬調整のヒント</summary><p id="levelHint"></p><p class="hint">教材内で高さを揃える例です。実機の調整順序・荷重配分は機種の据付手順を優先します。</p></details></div><div class="impact"><h3>加工精度との関係</h3><p id="impactText"></p><label class="select-label" for="impactOffset">幾何の比較例：腕の長さ（m）</label><input id="impactOffset" type="number" min="0.1" max="2" step="0.05" value="0.5"><div class="metrics geometric-examples"><div><span>腕に換算した全体傾きのずれ例</span><strong id="tiltExample"></strong></div><div><span>支持幅に換算した前後の左右高低差変化</span><strong id="twistExample"></strong></div><div><span>支持点の平面偏差の換算</span><strong id="straightExample"></strong></div></div><p class="hint">µmへの単位換算と幾何の比較例です。加工誤差・真直度検査値ではありません。</p></div><p class="note">全体が一緒に傾くだけで、工具とワークの相対精度が必ず悪化するわけではありません。ねじれや案内の姿勢差は別に確認します。この教材は剛性・荷重解析や実機加工誤差の予測を行いません。</p></div></div><details class="card viewer-settings"><summary>3Dの表示設定・色の見方</summary><div class="viewer-options"><label><input id="exaggerate" type="checkbox" checked> 高さ分布を100倍で表示</label><label><input id="showLevelSurface" type="checkbox" checked> 支持面の高さマップ</label><label><input id="showAxes" type="checkbox" checked> 軸の矢印を表示</label><label><input id="labels" type="checkbox" checked> 部品名を表示</label></div><p class="viewer-caption">指／マウスで左右ドラッグ。丸いA〜Hは学習用の支持点です。<br>灰：固定　淡色：他軸の部品　赤X／緑Y／青Z：選択軸で動く部品　黄：支持点<br>高さ分布は縦方向だけを拡大した模式図です。黄〜緑の分割面は支持高さをつないだ面（黄＝相対的に高い、緑＝低い）です。コラム・主軸の弾性変形を再現しません。</p></details><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>訓練の進め方・計算の前提</summary><ol><li>「右側が高い」で、気泡が高い右側へ動くことを確認。</li><li>「対角にねじれる」で手前・中央・奥を比べる。中央が水平でも端で傾きが残る場合があります。</li><li>6・8点支持では「中間支持が高い」を選び、ねじれ差だけでなく平面偏差・前後の傾きも確認。</li><li>高さを調整し、教材目標へ近づける。寸法や水準器感度を変えて表示の違いを確認。</li></ol><p>3点は支持点を通る平面、4・6・8点は隣接支持点間を補間した面です。中間の境界では勾配が切り替わる場合があり、実機の滑らかな弾性変形とは異なります。平均傾きは全支持点の最小二乗平面、ねじれは奥の左右傾き−手前の左右傾き、平面偏差は支持点と最小二乗平面の最大差です。三点モデルのねじれ・平面偏差は0です。</p><p>左右回転は視点の変更、XYZACは部品移動、支持点の高さは面の計算です。支持点より外側は境界の面を延長した表示になります。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/leveling---vmc.html" target="_blank" rel="noopener noreferrer">Haas：立形MCのレベル確認（英語）</a> ／ <a href="https://www.wylerag.com/en/support/faq/" target="_blank" rel="noopener noreferrer">WYLER：精密水準器の基礎（英語）</a></p></details><details class="card level-storage"><summary>調整データの保存・読込</summary><p id="levelSaveStatus" class="hint" role="status"></p><button id="exportLevel">調整データを保存</button><label class="import-level">調整データを読み込む<input id="importLevel" type="file" accept=".json,application/json"></label><p class="hint">現在の機械・方式に対応するJSONを読み込みます。入力チェックを通ったデータだけ反映します。高さは0.01 mm刻みです。</p></details></div></div></section>
 <section id="tester" hidden>
   <div class="training-heading"><div><p class="eyebrow">ELECTRICAL / TESTER BASICS</p><h1>テスターの使い方</h1><p>端子 → モード → 接続 → 読み取りを練習</p></div><button id="testerBack" class="secondary">電気の訓練へ</button></div>
   <div class="training-workspace tester-workspace">
@@ -75,18 +81,80 @@
     </div>
     <div class="controls-bar">操作・手順 ↓ この下をスクロール</div>
     <div id="testerControls" class="scroll-controls tester-controls" tabindex="0" role="region" aria-label="テスターの操作と説明">
-      <div class="card tester-card"><div class="section-title"><h2>測るものを選ぶ</h2><button id="testerReset" class="text-button">最初から</button></div><div class="tester-case-tabs" aria-label="測定の練習"><button data-tester-case="voltage" aria-pressed="true">DC電圧</button><button data-tester-case="resistance" aria-pressed="false">抵抗</button><button data-tester-case="continuity" aria-pressed="false">導通</button></div><p id="testerGoal" class="tester-goal"></p><p class="hint">乾電池・単体部品・電源のない配線を使った固定値の教材です。実測値や実機の合否を計算するものではありません。</p></div>
-      <div class="card tester-card"><h2>1. リードを差す</h2><p class="hint">黒はCOM。電圧・抵抗・導通の赤はVΩ端子を使います。</p><div class="tester-leads"><label for="testerBlackLead">黒リード<select id="testerBlackLead"><option value="none">まだ差していない</option><option value="com">COM</option></select></label><label for="testerRedLead">赤リード<select id="testerRedLead"><option value="none">まだ差していない</option><option value="vohm">VΩ</option><option value="a">A（電流用）</option></select></label></div><p id="testerJackNotice" class="tester-inline-note" hidden>この教材は電流を測りません。赤をVΩへ戻してください。A端子のまま電池の両端に当てると短絡につながります。</p></div>
-      <div class="card tester-card"><h2>2. 測定モードを選ぶ</h2><div class="tester-mode-tabs" aria-label="テスターの測定モード"><button data-tester-mode="off" aria-pressed="true">OFF</button><button data-tester-mode="dcv" aria-pressed="false">V⎓<small>DC電圧</small></button><button data-tester-mode="ohm" aria-pressed="false">Ω<small>抵抗</small></button><button data-tester-mode="beep" aria-pressed="false">導通<small>ブザー</small></button></div><p class="hint">V⎓は直流、V〜は交流。この教材はオートレンジ設定の模式図です。実機では記号・レンジ・最大入力を取扱説明書で確認します。</p></div>
-      <div class="card tester-card"><h2>3. 接続して読み取る</h2><div id="testerPreparationBox" hidden><label class="tester-check"><input id="testerPrepared" type="checkbox"><span>電源を外し、残留電圧がないことを確認した</span></label><p class="hint">抵抗・導通は通電中に測りません。コンデンサ等がある回路は、所定の放電手順と無電圧の確認が必要です。この教材の部品は電源から切り離されています。</p></div><div id="testerPolarityBox"><label for="testerPolarity">プローブを当てる向き<select id="testerPolarity"><option value="normal">赤を＋、黒を−</option><option value="reverse">赤を−、黒を＋（比較）</option></select></label></div><div id="testerWireBox" hidden><label for="testerWire">配線の状態<select id="testerWire"><option value="connected">つながっている</option><option value="broken">途中で切れている</option></select></label></div><p id="testerConnectionHint" class="tester-connection-hint"></p><button id="testerMeasure" class="tester-primary">プローブを両端に当てて測る</button><button id="testerDisconnect" class="tester-disconnect">プローブを離す</button><p id="testerFeedbackDetail" class="tester-feedback-detail" role="status"></p><p class="hint">測定中は設定を変更できません。「プローブを離す」を押してから、端子・モード・測るものを変えます。「最初から」は接続も解除します。</p></div>
+      <div class="card tester-card"><div class="section-title"><h2>測るものを選ぶ</h2><button id="testerReset" class="text-button">最初から</button></div><div class="tester-case-tabs" aria-label="測定の練習"><button data-tester-case="voltage" aria-pressed="true">DC電圧</button><button data-tester-case="acvoltage" aria-pressed="false">AC電圧</button><button data-tester-case="current" aria-pressed="false">DC電流</button><button data-tester-case="resistance" aria-pressed="false">抵抗</button><button data-tester-case="continuity" aria-pressed="false">導通</button></div><p id="testerProgress" class="tester-progress" role="status"></p><p class="hint">完了は各教材の基本操作1回（測定 → 接続解除 → OFF）の達成です。電流は赤リードをVΩに戻す操作も必要です。値・向き・断線の比較は追加練習です。</p><button id="testerResetAll" class="text-button">全練習の記録を消して最初から</button><p id="testerGoal" class="tester-goal"></p><p class="hint">乾電池・低電圧の交流源・単体部品を使う画面内の練習です。電流は3Vと120Ωの理想回路で計算します。商用電源や制御盤での操作は扱いません。</p></div>
+      <div class="card tester-card"><h2>1. リードを差す</h2><p class="hint">黒はCOM。電圧・抵抗・導通の赤はVΩ、電流の赤は対応するA端子です。実機のmA端子・ヒューズ・測定範囲は機種ごとに確認します。</p><div class="tester-leads"><label for="testerBlackLead">黒リード<select id="testerBlackLead"><option value="none">まだ差していない</option><option value="com">COM</option></select></label><label for="testerRedLead">赤リード<select id="testerRedLead"><option value="none">まだ差していない</option><option value="vohm">VΩ</option><option value="a">A（電流用）</option></select></label></div><p id="testerJackNotice" class="tester-inline-note" hidden>A端子は電流の直列測定専用です。電圧・抵抗・導通ではVΩに戻してください。A端子で電源の両端へ並列接続すると短絡につながります。</p></div>
+      <div class="card tester-card"><h2>2. 測定モードを選ぶ</h2><div class="tester-mode-tabs" aria-label="テスターの測定モード"><button data-tester-mode="off" aria-pressed="true">OFF</button><button data-tester-mode="dcv" aria-pressed="false">V⎓<small>DC電圧</small></button><button data-tester-mode="acv" aria-pressed="false">V〜<small>AC電圧</small></button><button data-tester-mode="dca" aria-pressed="false">A⎓<small>DC電流</small></button><button data-tester-mode="ohm" aria-pressed="false">Ω<small>抵抗</small></button><button data-tester-mode="beep" aria-pressed="false">導通<small>ブザー</small></button></div><p class="hint">V⎓は直流、V〜は交流。この教材はオートレンジ設定の模式図です。実機では記号・レンジ・最大入力を取扱説明書で確認します。</p></div>
+      <div class="card tester-card"><h2>3. 接続して読み取る</h2><div id="testerPreparationBox" hidden><label class="tester-check"><input id="testerPrepared" type="checkbox"><span id="testerPreparationLabel">電源を外し、残留電圧がないことを確認した</span></label><p id="testerPreparationHint" class="hint">抵抗・導通は通電中に測りません。コンデンサ等がある回路は、所定の放電手順と無電圧の確認が必要です。この教材の部品は電源から切り離されています。</p></div><div id="testerVoltageCaseBox"><label for="testerVoltageCase">電池の教材値<select id="testerVoltageCase"><option value="1.5">1.5 V</option><option value="1">1.0 V（比較用）</option></select></label></div><div id="testerResistanceCaseBox" hidden><label for="testerResistanceCase">抵抗の教材値<select id="testerResistanceCase"><option value="1000">1 kΩ</option><option value="100">100 Ω</option><option value="10000">10 kΩ</option></select></label></div><div id="testerCurrentConnectionBox" hidden><label for="testerCurrentConnection">電流計の接続<select id="testerCurrentConnection"><option value="series">回路を開き、切れ目へ直列</option><option value="parallel">電源の両端へ並列（誤操作の確認）</option></select></label></div><div id="testerPolarityBox"><label for="testerPolarity"><span id="testerPolarityLabel">プローブを当てる向き</span><select id="testerPolarity"><option value="normal">赤を＋、黒を−</option><option value="reverse">赤を−、黒を＋（比較）</option></select></label></div><div id="testerWireBox" hidden><label for="testerWire">配線の状態<select id="testerWire"><option value="connected">つながっている</option><option value="broken">途中で切れている</option></select></label></div><ol id="testerCompletionSteps" class="tester-completion-steps"></ol><p id="testerConnectionHint" class="tester-connection-hint"></p><button id="testerMeasure" class="tester-primary">プローブを両端に当てて測る</button><button id="testerDisconnect" class="tester-disconnect">プローブを離す</button><p id="testerFeedbackDetail" class="tester-feedback-detail" role="status"></p><p class="hint">測定中は設定を変更できません。「プローブを離す」を押してから、端子・モード・測るものを変えます。「最初から」は接続も解除します。</p></div>
       <div class="card tester-card"><h2>読み取りのポイント</h2><ol id="testerSteps" class="tester-steps"></ol><p id="testerInterpretation" class="tester-interpretation"></p></div>
-      <details class="card tester-card tester-reference"><summary>実機を使う前に・電流測定との違い</summary><p>測定前に本体とリードの破損を確認し、プローブのつばより先へ指を出さないようにします。商用電源・制御盤・通電設備の実習はこの教材に含めません。</p><p><strong>電流は別の接続です。</strong>対応する電流端子・レンジ・ヒューズ定格を確認し、電源を切って回路を開き、テスターを直列に入れます。電流端子のまま電源や部品へ並列接続してはいけません。ここでは説明のみです。</p><p>導通のブザーが鳴る抵抗値、OLの意味や入力端子名は機種で異なります。実機の取扱説明書を優先してください。</p></details>
-      <details class="card tester-card tester-reference"><summary>参照したメーカー公式資料</summary><ul><li><a href="https://www.hioki.com/jp-ja/learning/how-to/h-d-multimeter.html" target="_blank" rel="noopener noreferrer">HIOKI：デジタルマルチメーターの使い方</a></li><li><a href="https://www.hioki.com/jp-ja/learning/methods/voltage-measurement-methods.html" target="_blank" rel="noopener noreferrer">HIOKI：電圧の測定方法</a></li><li><a href="https://www.hioki.com/jp-ja/learning/methods/resistance-measurement-methods.html" target="_blank" rel="noopener noreferrer">HIOKI：抵抗の測定方法</a></li><li><a href="https://www.fluke.com/en-us/learn/blog/digital-multimeters/how-to-test-for-continuity" target="_blank" rel="noopener noreferrer">Fluke：導通の確認方法（英語）</a></li><li><a href="https://media.fluke.com/f640860c-6f58-4c4c-8096-b10800c17e13_original%20file.pdf" target="_blank" rel="noopener noreferrer">Fluke 287/289：取扱説明書（英語PDF）</a></li></ul><p class="hint">説明用の配置・数値です。特定機種の操作部や精度を再現していません。</p></details>
+      <details class="card tester-card tester-reference"><summary>実機を使う前に・電流測定との違い</summary><p>測定前に本体とリードの破損を確認し、プローブのつばより先へ指を出さないようにします。商用電源・制御盤・通電設備の実習はこの教材に含めません。</p><p><strong>電流は別の接続です。</strong>対応する電流端子・レンジ・ヒューズ定格を確認し、電源を切って回路を開き、テスターを直列に入れます。電流端子のまま電源や部品へ並列接続してはいけません。この教材では3V・120Ωの理想回路のみを扱います。25mAが流れる計算で、テスター内部の電圧降下・電池の内部抵抗・実機の精度は再現しません。</p><p>導通のブザーが鳴る抵抗値、OLの意味や入力端子名は機種で異なります。実機の取扱説明書を優先してください。</p></details>
+      <details class="card tester-card tester-reference"><summary>参照したメーカー公式資料</summary><ul><li><a href="https://www.hioki.com/global/learning/usage/testers_2.html" target="_blank" rel="noopener noreferrer">HIOKI：DC電流の直列接続・AC電圧の実効値（英語）</a></li><li><a href="https://www.hioki.com/jp-ja/learning/how-to/h-d-multimeter.html" target="_blank" rel="noopener noreferrer">HIOKI：デジタルマルチメーターの使い方</a></li><li><a href="https://www.hioki.com/jp-ja/learning/methods/voltage-measurement-methods.html" target="_blank" rel="noopener noreferrer">HIOKI：電圧の測定方法</a></li><li><a href="https://www.hioki.com/jp-ja/learning/methods/resistance-measurement-methods.html" target="_blank" rel="noopener noreferrer">HIOKI：抵抗の測定方法</a></li><li><a href="https://www.fluke.com/en-us/learn/blog/digital-multimeters/how-to-test-for-continuity" target="_blank" rel="noopener noreferrer">Fluke：導通の確認方法（英語）</a></li><li><a href="https://media.fluke.com/f640860c-6f58-4c4c-8096-b10800c17e13_original%20file.pdf" target="_blank" rel="noopener noreferrer">Fluke 287/289：取扱説明書（英語PDF）</a></li></ul><p class="hint">説明用の配置・数値です。特定機種の操作部や精度を再現していません。</p></details>
     </div>
   </div>
 </section>
 
-</main><footer>社内訓練ツール · 学習用の模式図・模擬測定 · 電気 / 機械</footer><script>'use strict';
+</main><footer>社内訓練ツール · 学習用の模式図・模擬測定 · 電気 / 機械</footer><script>(function(root,factory){
+ 'use strict';
+ const api=factory();
+ if(typeof module==='object'&&module.exports)module.exports=api;
+ if(root)root.Leveling=api;
+})(typeof window!=='undefined'?window:typeof globalThis!=='undefined'?globalThis:null,function(){
+ 'use strict';
+ const finite=(value,name)=>{if(typeof value!=='number'||!Number.isFinite(value))throw new TypeError(name+'は有限の数値で指定してください。');return value;};
+ const checked=(value)=>{if(!Number.isFinite(value))throw new RangeError('入力の桁が大きすぎるか、支持点間隔が小さすぎて計算できません。');return value;};
+ const mean=values=>checked(values.reduce((sum,v)=>sum+v/values.length,0));
+ function solve(input){
+  if(!Array.isArray(input)||input.length<3)throw new TypeError('3点以上の支持点が必要です。');
+  const points=input.map((p,i)=>{if(!p||typeof p!=='object')throw new TypeError('支持点'+i+'が不正です。');return {x:finite(p.x,'x'),z:finite(p.z,'z'),h:finite(p.h,'h')};});
+  const seen=new Set();
+  for(const p of points){const key=p.x+','+p.z;if(seen.has(key))throw new RangeError('支持点の座標が重複しています。');seen.add(key);}
+  const xs=[...new Set(points.map(p=>p.x))].sort((a,b)=>a-b),zs=[...new Set(points.map(p=>p.z))].sort((a,b)=>a-b);
+  if(xs.length<2||zs.length<2)throw new RangeError('支持点が一直線に並んでいます。');
+  const xm=mean(points.map(p=>p.x)),zm=mean(points.map(p=>p.z));
+  const sx=Math.max(...points.map(p=>Math.abs(checked(p.x-xm)))),sz=Math.max(...points.map(p=>Math.abs(checked(p.z-zm))));
+  if(sx===0||sz===0)throw new RangeError('支持点間隔が不足しています。');
+  // 座標と高さを正規化して、大きな原点・高さに対する丸め誤差を抑える。
+  const hs=Math.max(...points.map(p=>Math.abs(p.h)))||1,hm=points.every(p=>p.h===points[0].h)?points[0].h/hs:mean(points.map(p=>p.h/hs));
+  let xx=0,zz=0,xz=0,xh=0,zh=0;
+  for(const p of points){const x=(p.x-xm)/sx,z=(p.z-zm)/sz,h=p.h/hs-hm;xx+=x*x;zz+=z*z;xz+=x*z;xh+=x*h;zh+=z*h;}
+  const det=xx*zz-xz*xz;
+  if(det<=Number.EPSILON*64*xx*zz)throw new RangeError('支持点が一直線、またはほぼ一直線に並んでいます。');
+  const an=(xh*zz-zh*xz)/det,bn=(zh*xx-xh*xz)/det;
+  const a=checked(an*hs/sx),b=checked(bn*hs/sz),heightMean=checked(hm*hs);
+  const planeHeight=(x,z)=>checked(heightMean+checked(a*(x-xm))+checked(b*(z-zm)));
+  const c=checked(heightMean-checked(a*xm)-checked(b*zm));
+  let heightAt,slopeAt;
+  if(points.length===3){
+   heightAt=(x,z)=>planeHeight(finite(x,'x'),finite(z,'z'));
+   slopeAt=(x,z)=>{finite(x,'x');finite(z,'z');return {lr:a,fb:b};};
+  }else{
+   if(points.length!==xs.length*zs.length)throw new RangeError('4点以上は欠けのない長方形格子で指定してください。');
+   const rows=zs.map(z=>xs.map(x=>points.find(p=>p.x===x&&p.z===z).h));
+   // 内部境界では右／奥側のセル、最外境界では内側のセルを使う。
+   // 範囲外も最外セルを延長し、ゼロ勾配になるclampは行わない。
+   const interval=(values,value)=>{let i=0;while(i<values.length-2&&value>=values[i+1])i++;return i;};
+   const cell=(x,z)=>{
+    finite(x,'x');finite(z,'z');const i=interval(xs,x),j=interval(zs,z),dx=checked(xs[i+1]-xs[i]),dz=checked(zs[j+1]-zs[j]);
+    return {u:checked((x-xs[i])/dx),v:checked((z-zs[j])/dz),dx,dz,h00:rows[j][i],h10:rows[j][i+1],h01:rows[j+1][i],h11:rows[j+1][i+1]};
+   };
+   heightAt=(x,z)=>{const q=cell(x,z),front=q.h00+(q.h10-q.h00)*q.u,back=q.h01+(q.h11-q.h01)*q.u;return checked(front+(back-front)*q.v);};
+   slopeAt=(x,z)=>{const q=cell(x,z);return {lr:checked(((q.h10-q.h00)*(1-q.v)+(q.h11-q.h01)*q.v)/q.dx),fb:checked(((q.h01-q.h00)*(1-q.u)+(q.h11-q.h10)*q.u)/q.dz)};};
+  }
+  const x0=xs[0],x1=xs[xs.length-1],z0=zs[0],z1=zs[zs.length-1],width=checked(x1-x0);
+  const frontSlope=checked((heightAt(x1,z0)-heightAt(x0,z0))/width),backSlope=checked((heightAt(x1,z1)-heightAt(x0,z1))/width);
+  const twist=points.length===3?0:checked(backSlope-frontSlope);
+  const residual=points.length===3?0:Math.max(...points.map(p=>Math.abs(checked(p.h-planeHeight(p.x,p.z)))));
+  return {lr:a,fb:b,twist,residual,plane:{a,b,c},heightAt,slopeAt};
+ }
+ function impact(solution,options){
+  if(!solution||!options)throw new TypeError('計算結果とspan/offsetを指定してください。');
+  const lr=finite(solution.lr,'lr'),fb=finite(solution.fb,'fb'),twist=finite(solution.twist,'twist'),residual=finite(solution.residual,'residual');
+  const span=finite(options.span,'span'),offset=finite(options.offset,'offset');
+  if(span<0||offset<0||residual<0)throw new RangeError('span、offset、residualは0以上にしてください。');
+  return {tiltOffsetMicrons:checked(Math.hypot(lr,fb)*offset*1000),twistOffsetMicrons:checked(Math.abs(twist)*span*1000),straightnessMicrons:checked(residual*1000)};
+ }
+ return Object.freeze({solve,impact});
+});
+</script><script>'use strict';
 // 編集する場合、機械の名称・説明・モデル種別はこの一覧で変更できます。
 const machines = [
 {id:'vertical',name:'立形・片側コラム',tag:'テーブルXY移動',example:'小型：ロボドリル系 ／ 標準：立形MC',kind:'vertical',w:3.4,d:3.3,grid:[2,2],modes:[['standard','標準サイズ'],['compact','小型（ロボドリル系）']],structure:'片側コラムから主軸頭が張り出す基本構造。ロボドリル系と標準立形はこの一つの項目にまとめ、サイズの例を切り替えます。',focus:'テーブルの移動位置ごとの姿勢と、ベースのねじれ。',impact:'全体の傾きと、案内面の相対関係が変わるねじれを分けて学びます。',source:'https://www.fanuc.co.jp/ja/product/robodrill/alphadibplus.html'},
@@ -163,16 +231,16 @@ function populateMachine(){
  $('impactText').textContent=m.impact;$('supportNote').textContent=`本図は学習用の${supports.length}点支持です。実機の支持点位置・個数・荷重配分を再現したものではありません。`;
  $('sourceLinks').innerHTML=`<div class="source-links"><a href="${m.source}" target="_blank" rel="noopener noreferrer">メーカー公式資料で代表例を確認 ↗</a></div>`;
  $('measurePos').value='0'; $('labels').checked=true;
- ['lr','fb','twist'].forEach(id=>$(id).textContent='— mm/m');$('residual').textContent='— mm';$('diagnosis').innerHTML='<p class="diagnosis-item neutral">訓練計算は今後追加。現在は画面構成を確認できます。</p>';
- $('bubbleText').textContent='中央に置いた水準器の表示例（測定値は未計算）';
- buildSupports();buildAxisUI();buildModeUI();
+ 
+ 
+ buildAxisUI();buildModeUI();initializeLeveling();
 }
-function selectSupport(i){selected=i;buildSupports();drawScene();}
+function selectSupport(i){selected=i;refreshSupportControls();drawScene();}
 function buildSupports(){
  const map=$('supportMap');map.replaceChildren();const caption=document.createElement('div');caption.className='map-caption';caption.textContent='奥 ｜ 上から見た支持点配置';map.append(caption);
  const groups=current.grid?Array.from({length:current.grid[1]},(_,j)=>supports.map((s,i)=>({s,i})).filter(v=>Math.floor(v.i/current.grid[0])===j)).reverse():[[{s:supports[2],i:2}],[{s:supports[0],i:0},{s:supports[1],i:1}]];
- groups.forEach(group=>{const row=document.createElement('div');row.className='map-row';group.forEach(({s,i})=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.onclick=()=>selectSupport(i);row.append(b);});map.append(row);});const front=document.createElement('div');front.className='map-caption';front.textContent='手前';map.append(front);
- const controls=$('supportControls');controls.replaceChildren();supports.forEach((s,i)=>{const row=document.createElement('div');row.className='support-row'+(i===selected?' selected':'');const id=String.fromCharCode(65+i);row.innerHTML=`<label for="height${i}"><span class="point-id">${id}</span>${s.name}</label><button disabled aria-label="${id}を下げる">−</button><input id="height${i}" aria-label="${id}の高さ mm" value="0.00 mm" disabled><button disabled aria-label="${id}を上げる">＋</button>`;controls.append(row);});
+ groups.forEach(group=>{const row=document.createElement('div');row.className='map-row';group.forEach(({s,i})=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.dataset.support=String(i);b.onclick=()=>selectSupport(i);row.append(b);});map.append(row);});const front=document.createElement('div');front.className='map-caption';front.textContent='手前';map.append(front);
+ const controls=$('supportControls');controls.replaceChildren();supports.forEach((s,i)=>{const row=document.createElement('div');row.className='support-row'+(i===selected?' selected':'');const id=String.fromCharCode(65+i);row.innerHTML=`<label for="height${i}"><span class="point-id">${id}</span>${s.name}</label><button id="down${i}" aria-label="${id}を下げる">−</button><input type="number" id="height${i}" aria-label="${id}の高さ mm" min="-0.5" max="0.5" step="0.01" value="${supportHeights[i]||0}"><button id="up${i}" aria-label="${id}を上げる">＋</button>`;controls.append(row);$('down'+i).onclick=()=>changeSupportHeight(i,-Number($('adjustStep').value));$('up'+i).onclick=()=>changeSupportHeight(i,Number($('adjustStep').value));$('height'+i).onchange=()=>setSupportHeight(i,$('height'+i).value.trim()===''?NaN:Number($('height'+i).value));});
 }
 const grid=$('machineGrid');machines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>openMachine(m);grid.append(card);});
 // 部品に軸の親子関係を持たせ、固定部は動かさない。
@@ -236,23 +304,24 @@ function render(canvas,m,angle,showLabels,active){
  ctx.fillStyle='#eaf0f2';ctx.fillRect(0,0,width,height);
  const model=createGeometry(m),pitch=.24;
  function project(p){const [x,y,z]=p;const xx=x*Math.cos(angle)+z*Math.sin(angle),zz=-x*Math.sin(angle)+z*Math.cos(angle);const yy=(y-1.65)*Math.cos(pitch)+zz*Math.sin(pitch),depth=11+zz*Math.cos(pitch)-(y-1.65)*Math.sin(pitch);return [xx/depth,-yy/depth,depth];}
- const fitPoints=active>=0?framingPoints(m,model):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
+ const fitPoints=active>=0?framingPoints(m,model).flatMap(p=>[[p[0],p[1]-.25,p[2]],[p[0],p[1]+.25,p[2]]]):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
  // Fit the machine and its fixed movement envelope, without the empty ground around it.
  const margin=showLabels?56:18,verticalSpace=active>=0?height-48:height-75;
  const scale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY))*(active>=0?viewZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-20)/2:height*.48)-(minY+maxY)*scale/2;
- const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const movingScreen=(p,axes)=>screen(transformedPoint(p,axes,m));
+ const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=p=>active>=0?levelVisualPoint(p):p;const movingScreen=(p,axes)=>screen(surfacePoint(transformedPoint(p,axes,m)));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
- model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle='#35546933';ctx.lineWidth=.6;ctx.stroke();});
- if(active>=0){supportList(m).forEach((s,i)=>{const p=screen([s.x,.15,s.z]);ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda79':'#ffffffed';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
+ if(active>=0)model.faces.push(...levelSurfaceFaces(m));
+ model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
+ if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.15,s.z]));ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda79':'#ffffffed';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  if(showLabels){
  const labs=model.labels.map(l=>({...l,screen:movingScreen(l.p,l.axes)}));const sides=[labs.filter(l=>l.screen[0]<width/2),labs.filter(l=>l.screen[0]>=width/2)];
  sides.forEach((side,k)=>{side.sort((a,b)=>a.screen[1]-b.screen[1]);const gap=Math.min(24,(height-52)/Math.max(1,side.length));let last=16-gap;side.forEach((l,i)=>{let ly=Math.max(last+gap,Math.min(height-36-(side.length-1-i)*gap,l.screen[1]-8));last=ly;const lx=k?width-10:10;ctx.strokeStyle='#65818b99';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(l.screen[0],l.screen[1]);ctx.lineTo(k?lx-5:lx+5,ly);ctx.stroke();ctx.font='10px sans-serif';ctx.textAlign=k?'right':'left';ctx.textBaseline='middle';const tw=ctx.measureText(l.text).width;ctx.fillStyle='#f8fbf9ed';ctx.fillRect(k?lx-tw-4:lx-4,ly-9,tw+8,18);ctx.fillStyle='#365564';ctx.fillText(l.text,lx,ly);});});
  }
  if(active>=0&&$('showAxes').checked){
  const a=axisConfig(m).find(a=>a.key===selectedAxis);if(a&&['X','Y','Z'].includes(a.key)){
- const moved=model.faces.filter(f=>f.axes.includes(a.key)).flatMap(f=>f.v.map(p=>transformedPoint(p,f.axes,m)));const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2),len=.6,from=origin.map((v,i)=>v-a.vector[i]*len),to=origin.map((v,i)=>v+a.vector[i]*len),pa=screen(from),pb=screen(to);
+ const moved=model.faces.filter(f=>f.axes.includes(a.key)).flatMap(f=>f.v.map(p=>transformedPoint(p,f.axes,m)));const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2),len=.6,from=origin.map((v,i)=>v-a.vector[i]*len),to=origin.map((v,i)=>v+a.vector[i]*len),pa=screen(surfacePoint(from)),pb=screen(surfacePoint(to));
  ctx.strokeStyle=axisColors[a.key];ctx.fillStyle=axisColors[a.key];ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(pa[0],pa[1]);ctx.lineTo(pb[0],pb[1]);ctx.stroke();
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-12*Math.cos(t-.45),p[1]-12*Math.sin(t-.45));ctx.lineTo(p[0]-12*Math.cos(t+.45),p[1]-12*Math.sin(t+.45));ctx.closePath();ctx.fill();}arrow(pa,pb);arrow(pb,pa);
  ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';const tx=(pa[0]+pb[0])/2,ty=(pa[1]+pb[1])/2-18;ctx.fillStyle='#ffffffed';ctx.fillRect(tx-17,ty-11,34,22);ctx.fillStyle=axisColors[a.key];ctx.fillText(a.key+'軸',tx,ty);
@@ -270,7 +339,6 @@ function updateZoomControls(){const percent=Math.round(viewZoom*100);$('zoomOut'
 function changeZoom(step){viewZoom=Math.max(.7,Math.min(1.8,Math.round((viewZoom+step)*10)/10));updateZoomControls();drawScene();}
 $('zoomIn').onclick=()=>changeZoom(.1);$('zoomOut').onclick=()=>changeZoom(-.1);updateZoomControls();
 $('rotateLeft').onclick=()=>rotate(-Math.PI/12);$('rotateRight').onclick=()=>rotate(Math.PI/12);$('viewReset').onclick=()=>{yaw=0;viewZoom=1;updateZoomControls();drawScene()};$('labels').onchange=drawScene;$('showAxes').onchange=drawScene;
-$('measurePos').onchange=()=>{$('bubbleText').textContent=`${$('measurePos').selectedOptions[0].textContent}に置いた水準器の表示例（測定値は未計算）`;};
 let drag=null;
 $('scene').addEventListener('pointerdown',e=>{if(!e.isPrimary||e.button!==0)return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,moved:false};$('scene').setPointerCapture(e.pointerId);});
 $('scene').addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.x;if(Math.abs(dx)>2)drag.moved=true;rotate(dx*.009);drag.x=e.clientX;});
@@ -316,98 +384,222 @@ $('resetAxes').onclick=()=>{stopMotion();positions={X:0,Y:0,Z:0,A:0,C:0};updateA
 window.addEventListener('pagehide',stopMotion);document.addEventListener('visibilitychange',()=>{if(document.hidden)stopMotion();});
 let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(page==='catalog')drawThumbnails();drawScene();},80);});
 navigate('home');
+</script><script>'use strict';
+// All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
+let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null;
+const levelStoragePrefix='training-level-v1:';
+const cleanNumber=(v,d=3)=>Math.abs(v)<Math.pow(10,-d)/2?(0).toFixed(d):v.toFixed(d);
+const bounded=(v,min,max)=>typeof v==='number'&&Number.isFinite(v)&&v>=min&&v<=max;
+function levelKey(){return levelStoragePrefix+current.id+':'+machineMode;}
+function levelRecord(){return {version:1,machine:current.id,mode:machineMode,width:levelConfig.width,depth:levelConfig.depth,heights:[...supportHeights],sensitivity:Number($('levelSensitivity').value),measurePos:Number($('measurePos').value),offset:Number($('impactOffset').value),step:Number($('adjustStep').value),exaggerate:$('exaggerate').checked};}
+function validLevelRecord(r){
+ return r&&r.version===1&&r.machine===current.id&&r.mode===machineMode&&bounded(r.width,.5,20)&&bounded(r.depth,.5,20)&&Array.isArray(r.heights)&&r.heights.length===supports.length&&r.heights.every(h=>bounded(h,-.5,.5)&&Math.abs(h*100-Math.round(h*100))<1e-7)&&[.02,.05,.1].includes(r.sensitivity)&&[-1,0,1].includes(r.measurePos)&&bounded(r.offset,.1,2)&&[.01,.05,.1].includes(r.step)&&typeof r.exaggerate==='boolean';
+}
+function applyLevelRecord(r){
+ levelConfig={width:r.width,depth:r.depth};supportHeights=[...r.heights];
+ $('supportWidth').value=r.width;$('supportDepth').value=r.depth;$('levelSensitivity').value=String(r.sensitivity);$('measurePos').value=String(r.measurePos);$('impactOffset').value=r.offset;$('adjustStep').value=String(r.step);$('exaggerate').checked=r.exaggerate;
+}
+function initializeLeveling(){
+ supportHeights=supports.map(()=>0);levelConfig={width:Number((current.w*.8).toFixed(2)),depth:Number((current.d*.8).toFixed(2))};levelExercise=null;
+ $('supportWidth').value=levelConfig.width;$('supportDepth').value=levelConfig.depth; $('levelSensitivity').value='0.05';$('adjustStep').value='0.01';$('impactOffset').value=.5;$('exaggerate').checked=true;
+ $('levelInputMessage').textContent='';
+ $('twistPreset').disabled=supports.length===3;$('twistPreset').title=supports.length===3?'3点支持は平面になるため、ねじれパターンはありません。':'';
+ const hasMiddle=!!current.grid&&(current.grid[0]>2||current.grid[1]>2);
+ $('middlePreset').disabled=!hasMiddle;$('middlePreset').title=hasMiddle?'':'この支持配置には中間支持点がありません。';
+ let restored=false;
+ try{const raw=localStorage.getItem(levelKey());if(raw){const data=JSON.parse(raw);if(validLevelRecord(data)){applyLevelRecord(data);restored=true;}}}catch{}
+ $('levelSaveStatus').textContent=restored?'前回の調整をこのブラウザから復元しました。':'調整はこのブラウザに自動保存します。';
+ buildSupports();updateLeveling(false);
+}
+function levelCoordinates(x,z){return {x:x/(current.w*.8)*levelConfig.width,z:z/(current.d*.8)*levelConfig.depth};}
+function levelVisualPoint(p){
+ if(!levelSolution||!levelConfig)return p;
+ const q=levelCoordinates(p[0],p[2]),factor=$('exaggerate').checked?100:1;
+ return [p[0],p[1]+levelSolution.heightAt(q.x,q.z)/1000*factor,p[2]];
+}
+// A subdivided teaching surface makes middle supports visible, unlike an unsplit box.
+function levelSurfaceFaces(m){
+ if(!levelSolution||!$('showLevelSurface').checked)return [];
+ const points=supportList(m),y=.66;
+ const face=v=>{const heights=v.map(p=>{const q=levelCoordinates(p[0],p[2]);return levelSolution.heightAt(q.x,q.z);});return {v,axes:[],shade:1,surface:true,height:heights.reduce((a,b)=>a+b,0)/heights.length};};
+ if(points.length===3){
+  const [a,b,c]=points,n=4,out=[];
+  const v=(i,j)=>[a.x+(b.x-a.x)*i/n+(c.x-a.x)*j/n,y,a.z+(b.z-a.z)*i/n+(c.z-a.z)*j/n];
+  for(let i=0;i<n;i++)for(let j=0;i+j<n;j++){out.push(face([v(i,j),v(i+1,j),v(i,j+1)]));if(i+j<n-1)out.push(face([v(i+1,j),v(i+1,j+1),v(i,j+1)]));}
+  return out;
+ }
+ const subdivide=values=>{const a=[...new Set(values)].sort((x,z)=>x-z),out=[a[0]];for(let i=1;i<a.length;i++)for(let j=1;j<=4;j++)out.push(a[i-1]+(a[i]-a[i-1])*j/4);return out;};
+ const xs=subdivide(points.map(p=>p.x)),zs=subdivide(points.map(p=>p.z)),faces=[];
+ for(let i=1;i<xs.length;i++)for(let j=1;j<zs.length;j++)faces.push(face([[xs[i-1],y,zs[j-1]],[xs[i],y,zs[j-1]],[xs[i],y,zs[j]],[xs[i-1],y,zs[j]]]));
+ return faces;
+}
+function refreshSupportControls(){
+ supports.forEach((s,i)=>{const input=$('height'+i);if(!input)return;input.value=cleanNumber(supportHeights[i],2);input.closest('.support-row').classList.toggle('selected',selected===i);$('down'+i).disabled=supportHeights[i]<=-.5+1e-9;$('up'+i).disabled=supportHeights[i]>=.5-1e-9;});
+ $('supportMap').querySelectorAll('.map-point').forEach((b,i)=>{const index=Number(b.dataset.support);b.classList.toggle('active',index===selected);b.setAttribute('aria-pressed',String(index===selected));});
+}
+function setSupportHeight(i,value){
+ if(!bounded(value,-.5,.5)){$('levelInputMessage').textContent='高さは−0.50〜＋0.50 mmの数値で入力してください。';refreshSupportControls();return;}
+ supportHeights[i]=Math.round(value*100)/100;selected=i;$('levelInputMessage').textContent=String.fromCharCode(65+i)+'を '+cleanNumber(supportHeights[i],2)+' mmに調整しました。';updateLeveling();
+}
+function changeSupportHeight(i,delta){setSupportHeight(i,Math.max(-.5,Math.min(.5,Math.round((supportHeights[i]+delta)*100)/100)));}
+function updateLeveling(save=true){
+ const points=supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:supportHeights[i]}));
+ levelSolution=window.Leveling.solve(points);refreshSupportControls();
+ const z=Number($('measurePos').value)*levelConfig.depth/2,local=levelSolution.slopeAt(0,z);
+ $('lr').textContent=cleanNumber(levelSolution.lr)+' mm/m';$('fb').textContent=cleanNumber(levelSolution.fb)+' mm/m';$('twist').textContent=cleanNumber(levelSolution.twist)+' mm/m';$('residual').textContent=cleanNumber(levelSolution.residual)+' mm';
+ const sensitivity=Number($('levelSensitivity').value);
+ function gauge(value,bubble,readout,text,negative,positive){
+  $(readout).textContent=cleanNumber(value)+' mm/m';const divisions=value/sensitivity;$(bubble).style.left=(50+Math.max(-40,Math.min(40,divisions*7)))+'%';
+  $(text).textContent=Math.abs(value)<1e-8?'水平（気泡は中央）':(value>0?positive:negative)+'が高い · '+cleanNumber(Math.abs(divisions),1)+'目盛'+(Math.abs(divisions)>40/7?'（表示範囲外）':'');
+ }
+ gauge(local.lr,'bubble','localLevel','bubbleText','左側','右側');gauge(local.fb,'bubbleFB','localLevelFB','bubbleTextFB','手前','奥');
+ const xs=[...new Set(points.map(p=>p.x))],zs=[...new Set(points.map(p=>p.z))].sort((a,b)=>a-b);const sampleZ=[...zs,...zs.slice(1).map((v,i)=>(v+zs[i])/2)];
+ let maxSlope=0;for(const x of [...xs,0])for(const q of sampleZ){const slope=levelSolution.slopeAt(x,q);maxSlope=Math.max(maxSlope,Math.abs(slope.lr),Math.abs(slope.fb));}
+ const notices=[];
+ if(Math.hypot(levelSolution.lr,levelSolution.fb)>.02)notices.push('全体の傾きが残っています。右／奥が高いと数値は正になります。');
+ if(Math.abs(levelSolution.twist)>.02)notices.push('手前と奥で左右傾きが違います。測定位置を切り替えて比較してください。');
+ if(levelSolution.residual>.01)notices.push('支持点が同じ平面に揃っていません。中間支持の高さも確認してください。');
+ if(maxSlope>.02&&Math.hypot(levelSolution.lr,levelSolution.fb)<=.02&&Math.abs(levelSolution.twist)<=.02)notices.push('平均傾き・両端のねじれ差が小さくても、局所的な傾きが残っています。');
+ if(supports.length===3)notices.push('この3点支持モデルは必ず平面です。ねじれ・平面偏差は0になります。');
+ const target=maxSlope<=.020000001&&Math.abs(levelSolution.twist)<=.020000001&&levelSolution.residual<=.010000001;
+ if(target)notices.unshift('教材の調整目標内です。実機の精度・合否を示すものではありません。');
+ $('diagnosis').replaceChildren();notices.forEach(text=>{const p=document.createElement('p');p.className='diagnosis-item'+(target?' neutral':'');p.textContent=text;$('diagnosis').append(p);});
+ const example=window.Leveling.impact(levelSolution,{span:levelConfig.width,offset:Number($('impactOffset').value)});
+ $('tiltExample').textContent=cleanNumber(example.tiltOffsetMicrons,1)+' µm';$('twistExample').textContent=cleanNumber(example.twistOffsetMicrons,1)+' µm';$('straightExample').textContent=cleanNumber(example.straightnessMicrons,1)+' µm';
+ const average=supportHeights.reduce((a,b)=>a+b,0)/supportHeights.length;
+ const hints=supportHeights.map((h,i)=>({i,delta:average-h})).filter(q=>Math.abs(q.delta)>=.005).map(q=>String.fromCharCode(65+q.i)+'を約'+cleanNumber(Math.abs(q.delta),2)+' mm'+(q.delta>0?'上げる':'下げる'));
+ $('levelHint').textContent=hints.length?hints.join('、')+'と、支持高さを同じ平均値へ揃えられます。':'支持高さは揃っています。';
+ if(levelExercise){if(target)levelExercise.solved=true;$('levelExerciseStatus').textContent=levelExercise.solved?(target?'調整練習を達成しました。別の問題にも挑戦できます。':'達成後に再調整しています。現在は目標外です。'):'練習中：支持点を調整して、教材目標へ近づけてください。';}
+ else $('levelExerciseStatus').textContent='問題を出し、支持点を手動で調整して目標へ近づけましょう。';
+ if(save){try{localStorage.setItem(levelKey(),JSON.stringify(levelRecord()));$('levelSaveStatus').textContent='調整をこのブラウザに自動保存しました。';}catch{$('levelSaveStatus').textContent='このブラウザでは自動保存できません。JSONで保存できます。';}}
+ drawScene();
+}
+function applyLevelPreset(type){
+ if(type==='twist'&&supports.length===3||type==='middle'&&(!current.grid||(current.grid[0]<3&&current.grid[1]<3)))return;
+ levelExercise=null;
+ supportHeights=supports.map(s=>{
+  const x=s.x/(current.w*.4),z=s.z/(current.d*.4);
+  return Math.round((type==='right'?.1*x:type==='front'?-.1*z:type==='twist'?.1*x*z:Math.abs(x)<.99||Math.abs(z)<.99?.15:0)*100)/100;
+ });$('levelInputMessage').textContent='状態パターンを設定しました。';updateLeveling();
+}
+$('zero').onclick=()=>{supportHeights=supports.map(()=>0);levelExercise=null;$('levelInputMessage').textContent='全支持点を0.00 mmへ戻しました。';updateLeveling();};
+document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>applyLevelPreset(b.dataset.preset));
+$('measurePos').onchange=()=>updateLeveling();$('levelSensitivity').onchange=()=>updateLeveling();$('exaggerate').onchange=()=>updateLeveling();$('showLevelSurface').onchange=()=>drawScene();$('adjustStep').onchange=()=>updateLeveling();
+for(const [id,key,min,max] of [['supportWidth','width',.5,20],['supportDepth','depth',.5,20]])$(id).onchange=()=>{const value=Number($(id).value);if(!bounded(value,min,max)){$(id).value=levelConfig[key];$('levelInputMessage').textContent='支持幅は0.50〜20.00 mで入力してください。';return;}levelConfig[key]=value;$('levelInputMessage').textContent='支持寸法を更新しました。';updateLeveling();};
+$('impactOffset').onchange=()=>{const value=Number($('impactOffset').value);if(!bounded(value,.1,2)){$('impactOffset').value=.5;$('levelInputMessage').textContent='腕の長さは0.10〜2.00 mです。0.50 mへ戻しました。';}updateLeveling();};
+$('startLevelExercise').onclick=()=>{supportHeights=supports.map(()=>Math.round((Math.random()*.4-.2)*100)/100);const sign=Math.random()<.5?-1:1;supportHeights[0]=-.4*sign;supportHeights[1]=.4*sign;levelExercise={solved:false};$('levelInputMessage').textContent='新しい調整問題を設定しました。';updateLeveling();};
+$('exportLevel').onclick=()=>{const blob=new Blob([JSON.stringify(levelRecord(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='leveling-'+current.id+'-'+(machineMode||'standard')+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('levelSaveStatus').textContent='調整データのダウンロードを開始しました。';};
+$('importLevel').onchange=async event=>{const file=event.target.files[0];event.target.value='';if(!file)return;try{if(file.size>250000)throw Error('大きすぎる');const data=JSON.parse(await file.text());if(!validLevelRecord(data))throw Error('不正な調整データ');applyLevelRecord(data);levelExercise=null;updateLeveling();$('levelInputMessage').textContent='調整データを読み込みました。';}catch{$('levelInputMessage').textContent='読込できません。同じ機械・方式の調整JSONと、数値範囲を確認してください。';}};
 </script><script>(()=>{
   'use strict';
   const root=document.getElementById('tester');
   if(!root)return;
   const $=id=>document.getElementById(id);
   const lessons={
-    voltage:{title:'乾電池のDC電圧',mode:'dcv',goal:'1.5Vの乾電池を、DC電圧モードで測ってみましょう。',connection:'電圧は対象の両端へ並列接続。赤を＋、黒を−に当てます。',steps:['黒をCOM、赤をVΩに差す。','V⎓（DC電圧）を選ぶ。','赤を電池の＋、黒を−へ当て、単位Vと符号を読む。','プローブを離してからOFFに戻す。'],interpretation:'この教材の値は1.500 V。赤と黒を逆にすると−1.500 Vになり、極性が逆であることが分かります。値だけで電池の負荷時性能までは判断できません。'},
-    resistance:{title:'単体抵抗の抵抗値',mode:'ohm',goal:'電源から切り離された1kΩの単体抵抗を測りましょう。',connection:'電源・残留電圧がないことを確認し、抵抗の両端へ当てます。',steps:['対象の電源を切り離し、残留電圧がないことを確認する。','黒をCOM、赤をVΩに差し、Ω（抵抗）を選ぶ。','単体抵抗の両端へ当て、kΩの単位も読む。','プローブを離してからOFFに戻す。'],interpretation:'この教材の値は1.000 kΩ＝1000 Ω。赤と黒の向きは問いません。回路につながったままでは、並列経路の影響で単体の抵抗値とは異なることがあります。'},
-    continuity:{title:'配線の導通確認',mode:'beep',goal:'電源のない配線で、「つながる」と「切れる」を比較しましょう。',connection:'電源・残留電圧がないことを確認し、配線の両端へ当てます。',steps:['配線を電源から外し、残留電圧がないことを確認する。','黒をCOM、赤をVΩに差し、導通（ブザー）を選ぶ。','配線の両端へ当て、表示とブザーの有無を確認する。','プローブを離してから「途中で切れている」に替え、もう一度測る。'],interpretation:'つながる配線は0.3 Ω・ブザーあり、断線はOL・ブザーなしの模擬表示です。OLはこの教材では測定範囲を超える開放状態です。ブザーのしきい値は機種により違い、鳴るだけで配線の品質を保証するものではありません。'}
+    voltage:{title:'乾電池のDC電圧',mode:'dcv',goal:'まず乾電池のDC電圧を1回測り、接続解除・OFFまで練習します。追加練習では1.5Vと1.0V、逆向きの符号を比較します。',connection:'電圧は対象の両端へ並列接続。赤を＋、黒を−に当てます。',steps:['黒をCOM、赤をVΩに差す。','V⎓（DC電圧）を選ぶ。','電池の教材値と向きを選び、両端へ当ててVと符号を読む。','プローブを離し、OFFに戻すと練習完了。'],interpretation:'赤と黒を逆にすると負の表示になります。1.0Vと1.5Vは比較用の値です。電圧の値だけで電池の負荷時性能を判断できません。'},
+    acvoltage:{title:'低電圧交流源のAC電圧',mode:'acv',goal:'画面内の6V実効値・50Hz正弦波交流源をAC電圧モードで測ります。',connection:'交流電圧も並列接続。端子1と端子2へ当て、向きを逆にしても同じ実効値です。',steps:['黒をCOM、赤をVΩに差す。','V〜（AC電圧）を選ぶ。','交流源の両端へ当て、6.000 V ACの実効値を読む。','プローブを離し、OFFに戻すと練習完了。'],interpretation:'6.000 V ACは正弦波の実効値（RMS）です。瞬間値やピーク値ではありません。プローブを逆にしても表示は同じです。教材は低電圧交流源の模擬測定で、コンセントの実習は含みません。'},
+    current:{title:'低電圧回路のDC電流',mode:'dca',goal:'3Vの電池と120Ωの負荷の理想回路に、テスターを直列に入れて電流を読みます。',connection:'電源を切って回路を開き、切れ目へ直列接続します。電源の両端への並列接続は遮断します。',steps:['回路の電源を切り、無電圧・残留電圧なしを確認して回路を開く。','黒をCOM、赤を対応する電流用A端子へ差し、A⎓（DC電流）を選ぶ。','「切れ目へ直列」を選び、準備を確認する。','「直列接続して模擬電源を入れる」を押し、25.00 mAを読む。','「電源を切ってプローブを離す」を押し、VΩへ戻してからOFFにする。'],interpretation:'I＝V÷R＝3÷120＝0.025 A＝25.00 mA。テスターを流れる経路に直列に入れます。表示は理想計算で、実機の内部抵抗・ヒューズ・分解能は再現しません。実機は対応端子・レンジ・ヒューズ定格を確認します。'},
+    resistance:{title:'単体抵抗の抵抗値',mode:'ohm',goal:'まず電源から切り離した単体抵抗を1回測り、接続解除・OFFまで練習します。追加練習では100Ω・1kΩ・10kΩの単位を比較します。',connection:'電源・残留電圧がないことを確認し、抵抗の両端へ当てます。',steps:['対象の電源を切り離し、残留電圧がないことを確認する。','黒をCOM、赤をVΩに差し、Ω（抵抗）を選ぶ。','抵抗の教材値を選び、両端へ当ててΩ・kΩの単位を読む。','プローブを離し、OFFに戻すと練習完了。'],interpretation:'1 kΩ＝1000 Ω、10 kΩ＝10000 Ω。プローブの向きは問いません。回路につながったままでは並列経路の影響で単体の抵抗値と異なる場合があります。'},
+    continuity:{title:'配線の導通確認',mode:'beep',goal:'まず電源のない配線を1回測り、接続解除・OFFまで練習します。追加練習では「つながる」と「切れる」を比較します。',connection:'電源・残留電圧がないことを確認し、配線の両端へ当てます。',steps:['配線を電源から外し、残留電圧がないことを確認する。','黒をCOM、赤をVΩに差し、導通（ブザー）を選ぶ。','つながる配線と途中で切れた配線を、プローブを離して切り替える。','表示とブザーを読み、プローブを離してOFFに戻す。'],interpretation:'接続された配線は0.3 Ω・模擬ブザーあり、断線はOL・ブザーなし。OLはこの教材では開放状態です。ブザーのしきい値は機種により違い、音だけで配線品質を保証しません。音は鳴らさず表示で示します。'}
   };
-  let state={lesson:'voltage',mode:'off',black:'none',red:'none',prepared:false,polarity:'normal',wire:'connected',measured:false,status:'idle',message:'下の操作欄で、リードと測定モードを選びましょう。'};
-  const modes={off:'OFF',dcv:'V⎓',ohm:'Ω',beep:'導通'};
+  const modes={off:'OFF',dcv:'V⎓',acv:'V〜',dca:'A⎓',ohm:'Ω',beep:'導通'};
+  let completed={},state;
+  const initial=lesson=>({lesson,mode:'off',black:'none',red:'none',prepared:false,polarity:'normal',wire:'connected',voltage:'1.5',resistance:'1000',connection:'series',measured:false,hadReading:false,disconnected:false,status:'idle',message:'下の操作欄で、リードと測定モードを選びましょう。'});
   function reading(){
     if(!state.measured)return state.mode==='off'?'OFF':'—';
-    if(state.lesson==='voltage')return state.polarity==='reverse'?'−1.500 V':'1.500 V';
-    if(state.lesson==='resistance')return '1.000 kΩ';
+    if(state.lesson==='voltage')return (state.polarity==='reverse'?'−':'')+Number(state.voltage).toFixed(3)+' V';
+    if(state.lesson==='acvoltage')return '6.000 V AC';
+    if(state.lesson==='current')return '25.00 mA';
+    if(state.lesson==='resistance')return state.resistance==='100'?'100.0 Ω':(Number(state.resistance)/1000).toFixed(3)+' kΩ';
     return state.wire==='broken'?'OL':'0.3 Ω';
   }
-  function fresh(message='設定を確認し、プローブを両端に当てて測りましょう。'){
-    state.measured=false;state.status='idle';state.message=message;render();
+  function finish(){
+    if(state.hadReading&&state.disconnected&&state.mode==='off'&&(state.lesson!=='current'||state.red==='vohm')){
+      completed[state.lesson]=true;
+      state.message='練習完了。測定 → 接続解除 → OFFまで確認できました。';
+    }
   }
+  function fresh(message='設定を確認してから測りましょう。'){state.measured=false;state.status='idle';state.message=message;finish();render();}
   function renderDiagram(){
-    const measured=state.measured,reverse=state.lesson==='voltage'&&state.polarity==='reverse';
-    const redX=reverse?535:350,blackX=reverse?350:535;
-    const targetY=155,probeY=measured?targetY:214;
-    const redJack=state.red==='a'?60:174;
+    const measured=state.measured,reverse=['voltage','acvoltage'].includes(state.lesson)&&state.polarity==='reverse';
+    const redX=reverse?535:350,blackX=reverse?350:535,targetY=155,probeY=measured?targetY:214,redJack=state.red==='a'?60:174;
     let target;
     if(state.lesson==='voltage'){
-      target='<rect x="368" y="116" width="151" height="79" rx="10" fill="#eef0da" stroke="#879260" stroke-width="3"/><rect x="350" y="135" width="18" height="40" rx="3" fill="#bdc5a0" stroke="#879260" stroke-width="2"/><path d="M519 155H535" stroke="#687a82" stroke-width="4"/><text x="400" y="149" font-size="23" font-weight="700">1.5 V</text><text x="409" y="177" font-size="16">乾電池</text><text x="341" y="119" font-size="24" fill="#bb3636">＋</text><text x="524" y="120" font-size="26">−</text>';
+      target=`<rect x="368" y="116" width="151" height="79" rx="10" fill="#eef0da" stroke="#879260" stroke-width="3"/><rect x="350" y="135" width="18" height="40" rx="3" fill="#bdc5a0"/><path d="M519 155H535" stroke="#687a82" stroke-width="4"/><text x="400" y="149" font-size="23" font-weight="700">${Number(state.voltage).toFixed(1)} V</text><text x="409" y="177" font-size="16">乾電池</text><text x="341" y="119" font-size="24" fill="#bb3636">＋</text><text x="524" y="120" font-size="26">−</text>`;
+    }else if(state.lesson==='acvoltage'){
+      target='<path d="M350 155H408M480 155H535" stroke="#687a82" stroke-width="4"/><circle cx="444" cy="155" r="36" fill="#e0ecf5" stroke="#4b80a5" stroke-width="3"/><path d="M420 155Q432 125 444 155T468 155" fill="none" stroke="#367ba8" stroke-width="3"/><text x="365" y="110" font-size="20" font-weight="700">6 V RMS · 50 Hz</text><text x="360" y="207" font-size="15">端子1　低電圧交流源　端子2</text>';
+    }else if(state.lesson==='current'){
+      target='<path d="M350 155V85H400M480 85H535V115M535 129V155" stroke="#687a82" stroke-width="4" fill="none"/><rect x="400" y="73" width="80" height="24" rx="4" fill="#e5d7a9" stroke="#8b774b" stroke-width="2"/><text x="410" y="64" font-size="18">120 Ω</text><path d="M517 115H553M525 129H545" stroke="#687a82" stroke-width="4"/><text x="552" y="130" font-size="16">3 V</text><text x="327" y="182" font-size="15">負荷側</text><text x="490" y="182" font-size="15">電池−側</text><text x="386" y="198" font-size="15">回路の切れ目</text>';
     }else if(state.lesson==='resistance'){
-      target='<path d="M350 155H400M488 155H535" stroke="#687a82" stroke-width="4"/><rect x="400" y="135" width="88" height="40" rx="5" fill="#e5d7a9" stroke="#8b774b" stroke-width="3"/><path d="M413 136V174" stroke="#8b4513" stroke-width="5"/><path d="M431 136V174" stroke="#222222" stroke-width="5"/><path d="M449 136V174" stroke="#c64242" stroke-width="5"/><path d="M477 136V174" stroke="#c5a342" stroke-width="4"/><text x="400" y="116" font-size="21" font-weight="700">1 kΩ</text><text x="373" y="200" font-size="15">電源から切り離した抵抗</text>';
+      const band={100:'#8b4513',1000:'#c64242',10000:'#e8a137'}[state.resistance],label=state.resistance==='100'?'100 Ω':Number(state.resistance)/1000+' kΩ';
+      target=`<path d="M350 155H400M488 155H535" stroke="#687a82" stroke-width="4"/><rect x="400" y="135" width="88" height="40" rx="5" fill="#e5d7a9" stroke="#8b774b" stroke-width="3"/><path d="M413 136V174" stroke="#8b4513" stroke-width="5"/><path d="M431 136V174" stroke="#222222" stroke-width="5"/><path d="M449 136V174" stroke="${band}" stroke-width="5"/><path d="M477 136V174" stroke="#c5a342" stroke-width="4"/><text x="400" y="116" font-size="21" font-weight="700">${label}</text><text x="373" y="200" font-size="15">電源から切り離した抵抗</text>`;
     }else{
       target=state.wire==='broken'?'<path d="M350 155H429M459 155H535" stroke="#3a7370" stroke-width="7"/><path d="M435 145L448 166M447 145L434 166" stroke="#bd633b" stroke-width="3"/><text x="406" y="118" font-size="21" font-weight="700">断線</text>':'<path d="M350 155H535" stroke="#3a7370" stroke-width="7"/><text x="389" y="118" font-size="21" font-weight="700">導通する配線</text>';
       target+='<text x="389" y="199" font-size="15">電源のない配線</text>';
     }
-    const angle={off:-65,dcv:-20,ohm:35,beep:75}[state.mode];
-    const blackWire=state.black==='com'?`<path d="M117 218V270H${blackX}V${probeY}" fill="none" stroke="#2e3c47" stroke-width="5" stroke-linejoin="round"/><circle cx="117" cy="218" r="6" fill="#2e3c47"/>`:'';
-    const redWire=state.red!=='none'?`<path d="M${redJack} 218V248H${redX}V${probeY}" fill="none" stroke="#c64242" stroke-width="5" stroke-linejoin="round"/><circle cx="${redJack}" cy="218" r="6" fill="#c64242"/>`:'';
+    const angle={off:-75,dcv:-40,acv:-7,dca:25,ohm:57,beep:85}[state.mode];
+    const blackWire=state.black==='com'?`<path d="M117 218V270H${blackX}V${probeY}" fill="none" stroke="#2e3c47" stroke-width="5" stroke-linejoin="round"/>`:'';
+    const redWire=state.red!=='none'?`<path d="M${redJack} 218V248H${redX}V${probeY}" fill="none" stroke="#c64242" stroke-width="5" stroke-linejoin="round"/>`:'';
     const probes=(state.black==='com'?`<rect x="${blackX-5}" y="${probeY+3}" width="10" height="20" rx="3" fill="#2e3c47"/><path d="M${blackX} ${probeY}v8" stroke="#8b9ca5" stroke-width="3"/>`:'')+(state.red!=='none'?`<rect x="${redX-5}" y="${probeY+3}" width="10" height="20" rx="3" fill="#c64242"/><path d="M${redX} ${probeY}v8" stroke="#8b9ca5" stroke-width="3"/>`:'');
     const beep=measured&&state.lesson==='continuity'&&state.wire==='connected';
-    const description=`${lessons[state.lesson].title}。黒リードは${state.black==='com'?'COM':'未接続'}、赤リードは${state.red==='vohm'?'VΩ':state.red==='a'?'電流用A':'未接続'}。モード${modes[state.mode]}。${measured?'プローブを両端に接続し、表示'+reading():'プローブを対象から離した状態'}。${beep?'模擬ブザーあり':''}`;
-    $('testerDiagram').innerHTML=`<title id="testerSvgTitle">テスターと測定対象の接続図</title><desc id="testerSvgDesc">${description}</desc><g fill="#203a47" font-family="system-ui,sans-serif"><rect x="25" y="17" width="189" height="215" rx="16" fill="#dbc45a" stroke="#a18f36" stroke-width="3"/><rect x="42" y="37" width="155" height="51" rx="5" fill="#e5eed7" stroke="#738363"/><text x="120" y="71" text-anchor="middle" font-family="monospace" font-size="24" font-weight="700">${reading()}</text><text x="57" y="119" font-size="13">OFF</text><text x="105" y="106" font-size="15">V⎓</text><text x="165" y="121" font-size="16">Ω</text><text x="169" y="152" font-size="12">導通</text><circle cx="119" cy="143" r="27" fill="#495b64"/><path d="M119 157V125" stroke="#faf6d9" stroke-width="6" stroke-linecap="round" transform="rotate(${angle} 119 143)"/><text x="49" y="191" font-size="15">A</text><text x="99" y="191" font-size="14">COM</text><text x="157" y="191" font-size="14">VΩ</text><circle cx="60" cy="213" r="9" fill="#883f37"/><circle cx="117" cy="213" r="9" fill="#283945"/><circle cx="174" cy="213" r="9" fill="#883f37"/>${target}${blackWire}${redWire}${probes}<circle cx="350" cy="155" r="5" fill="#879ca7"/><circle cx="535" cy="155" r="5" fill="#879ca7"/><text x="328" y="40" font-size="16" font-weight="650">測定対象の両端へ接続</text><text x="371" y="68" font-size="14">${state.lesson==='voltage'?'電圧は並列': '電源なし・残留電圧なし'}</text>${beep?'<text x="353" y="290" font-size="17" fill="#166f62" font-weight="700">♪ ブザーあり（表示のみ）</text>':''}</g>`;
+    const current=state.lesson==='current';
+    const description=`${lessons[state.lesson].title}。黒リードは${state.black==='com'?'COM':'未接続'}、赤リードは${state.red==='vohm'?'VΩ':state.red==='a'?'電流用A':'未接続'}。モード${modes[state.mode]}。${measured?(current?'回路の切れ目に直列接続し、模擬電源ON、表示':'プローブを両端に接続し、表示')+reading():'プローブを対象から離した状態'}。${beep?'模擬ブザーあり':''}`;
+    const hint=current?(measured?'直列 · 模擬電源ON':state.connection==='parallel'?'並列は誤操作 · 測定を遮断':'模擬電源OFF · 直列の準備'):['voltage','acvoltage'].includes(state.lesson)?'電圧は並列':'電源なし・残留電圧なし';
+    const svgReading=state.lesson==='acvoltage'&&measured?'6.000 V':reading();
+    $('testerDiagram').innerHTML=`<title id="testerSvgTitle">テスターと測定対象の接続図</title><desc id="testerSvgDesc">${description}</desc><g fill="#203a47" font-family="system-ui,sans-serif"><rect x="25" y="17" width="189" height="215" rx="16" fill="#dbc45a" stroke="#a18f36" stroke-width="3"/><rect x="42" y="37" width="155" height="51" rx="5" fill="#e5eed7" stroke="#738363"/><text x="120" y="71" text-anchor="middle" font-family="monospace" font-size="23" font-weight="700">${svgReading}</text><text x="44" y="125" font-size="11">OFF</text><text x="66" y="104" font-size="12">V⎓</text><text x="112" y="103" font-size="12">V〜</text><text x="161" y="110" font-size="12">A⎓</text><text x="174" y="137" font-size="13">Ω</text><text x="163" y="167" font-size="11">導通</text><circle cx="119" cy="143" r="27" fill="#495b64"/><path d="M119 157V125" stroke="#faf6d9" stroke-width="6" stroke-linecap="round" transform="rotate(${angle} 119 143)"/><text x="49" y="191" font-size="15">A</text><text x="99" y="191" font-size="14">COM</text><text x="157" y="191" font-size="14">VΩ</text><circle cx="60" cy="213" r="9" fill="#883f37"/><circle cx="117" cy="213" r="9" fill="#283945"/><circle cx="174" cy="213" r="9" fill="#883f37"/>${target}${blackWire}${redWire}${probes}<circle cx="350" cy="155" r="5" fill="#879ca7"/><circle cx="535" cy="155" r="5" fill="#879ca7"/><text x="305" y="27" font-size="15" font-weight="650">${current?'回路の切れ目へ直列':'測定対象の両端へ接続'}</text><text x="304" y="46" font-size="12">${hint}</text>${beep?'<text x="353" y="290" font-size="17" fill="#166f62" font-weight="700">♪ ブザーあり（表示のみ）</text>':''}</g>`;
   }
   function render(){
-    const lesson=lessons[state.lesson];
-    $('testerVisualTitle').textContent=lesson.title;
-    $('testerGoal').textContent=lesson.goal;
-    $('testerConnectionHint').textContent=lesson.connection;
-    $('testerSteps').innerHTML=lesson.steps.map(text=>`<li>${text}</li>`).join('');
-    $('testerInterpretation').textContent=lesson.interpretation;
-    $('testerPreparationBox').hidden=state.lesson==='voltage';
-    $('testerPolarityBox').hidden=state.lesson!=='voltage';
-    $('testerWireBox').hidden=state.lesson!=='continuity';
-    $('testerBlackLead').value=state.black;$('testerRedLead').value=state.red;
-    $('testerPrepared').checked=state.prepared;$('testerPolarity').value=state.polarity;$('testerWire').value=state.wire;
-    $('testerJackNotice').hidden=state.red!=='a';
-    root.querySelectorAll('[data-tester-case]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.testerCase===state.lesson)));
+    const lesson=lessons[state.lesson],current=state.lesson==='current';
+    $('testerVisualTitle').textContent=lesson.title;$('testerGoal').textContent=lesson.goal;$('testerConnectionHint').textContent=lesson.connection;
+    $('testerSteps').innerHTML=lesson.steps.map(text=>`<li>${text}</li>`).join('');$('testerInterpretation').textContent=lesson.interpretation;
+    $('testerPreparationBox').hidden=['voltage','acvoltage'].includes(state.lesson);
+    $('testerPreparationLabel').textContent=current?'模擬電源を切り、無電圧・残留電圧なしを確認して回路を開いた':'電源を外し、残留電圧がないことを確認した';
+    $('testerPreparationHint').textContent=current?'準備後に直列接続し、測定時だけ模擬電源を入れます。解除ボタンで電源を切ってからプローブを離します。':'抵抗・導通は通電中に測りません。この教材の対象は電源から切り離されています。実機にコンデンサ等がある場合は所定の放電手順と無電圧確認が必要です。';
+    $('testerPolarityBox').hidden=!['voltage','acvoltage'].includes(state.lesson);
+    $('testerPolarityLabel').textContent=state.lesson==='acvoltage'?'端子の向き（交流の実効値は極性なし）':'プローブを当てる向き';
+    const polarityOptions=$('testerPolarity').options;
+    if(polarityOptions){polarityOptions[0].textContent=state.lesson==='acvoltage'?'赤を端子1、黒を端子2':'赤を＋、黒を−';polarityOptions[1].textContent=state.lesson==='acvoltage'?'赤を端子2、黒を端子1（比較）':'赤を−、黒を＋（比較）';}
+    $('testerWireBox').hidden=state.lesson!=='continuity';$('testerVoltageCaseBox').hidden=state.lesson!=='voltage';$('testerResistanceCaseBox').hidden=state.lesson!=='resistance';$('testerCurrentConnectionBox').hidden=!current;
+    for(const [id,key] of controls)$(id).value=state[key];$('testerPrepared').checked=state.prepared;$('testerJackNotice').hidden=state.red!=='a';
+    root.querySelectorAll('[data-tester-case]').forEach(button=>{button.setAttribute('aria-pressed',String(button.dataset.testerCase===state.lesson));button.dataset.complete=String(!!completed[button.dataset.testerCase]);});
     root.querySelectorAll('[data-tester-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.testerMode===state.mode)));
     $('testerReadout').dataset.status=state.status;
     $('testerResult').textContent=state.measured?reading()+(state.lesson==='continuity'?(state.wire==='connected'?' · ブザーあり':' · ブザーなし'):''):state.status==='blocked'?'設定を確認':'未測定';
-    $('testerFeedback').textContent=state.status==='blocked'?'設定を確認してください。理由は下の操作欄へ。':state.measured?'単位と符号を確認し、測定後はプローブを離します。':'リードとモードを選び、下の操作欄で測定します。';
+    $('testerFeedback').textContent=state.status==='blocked'?'設定を確認してください。理由は下の操作欄へ。':state.measured?'表示を読み、測定後は接続を解除します。':'端子 → モード → 接続 → 読み取り → 解除 → OFF';
     $('testerFeedbackDetail').textContent=state.message;$('testerFeedbackDetail').dataset.status=state.status;
-    for(const id of ['testerBlackLead','testerRedLead','testerPrepared','testerPolarity','testerWire'])$(id).disabled=state.measured;
-    root.querySelectorAll('[data-tester-mode]').forEach(button=>button.disabled=state.measured);
-    root.querySelectorAll('[data-tester-case]').forEach(button=>button.disabled=state.measured);
-    $('testerMeasure').disabled=state.measured;$('testerMeasure').textContent=state.measured?'測定中 · プローブを離して終了':'プローブを両端に当てて測る';$('testerDisconnect').disabled=!state.measured;
-    renderDiagram();
+    $('testerProgress').textContent=`完了 ${Object.keys(completed).length} / 5：${Object.keys(lessons).map(key=>(completed[key]?'✓ ':'○ ')+({voltage:'DC電圧',acvoltage:'AC電圧',current:'DC電流',resistance:'抵抗',continuity:'導通'}[key])).join(' ／ ')}`;
+    const steps=[['測定して値を読む',state.hadReading],['プローブを離す',state.disconnected],...(current?[['赤をVΩに戻す',state.red==='vohm'&&state.disconnected]]:[]),['OFFに戻す',state.mode==='off'&&state.disconnected]];
+    $('testerCompletionSteps').innerHTML=steps.map(([text,done])=>`<li>${done?'✓':'○'} ${text}</li>`).join('');
+    for(const [id] of controls)$(id).disabled=state.measured;$('testerPrepared').disabled=state.measured;
+    root.querySelectorAll('[data-tester-mode]').forEach(button=>button.disabled=state.measured);root.querySelectorAll('[data-tester-case]').forEach(button=>button.disabled=state.measured);
+    $('testerMeasure').disabled=state.measured;$('testerMeasure').textContent=state.measured?'測定中 · 接続を解除して終了':current?'直列接続して模擬電源を入れる':'プローブを両端に当てて測る';
+    $('testerDisconnect').disabled=!state.measured;$('testerDisconnect').textContent=current?'電源を切ってプローブを離す':'プローブを離す';renderDiagram();
   }
   function measure(){
-    let warning='';
-    if(state.red==='a')warning='赤リードが電流用A端子です。電池や部品の両端への接続は短絡につながるため、VΩへ差し替えてください。';
-    else if(state.black!=='com'||state.red!=='vohm')warning='黒をCOM、赤をVΩへ差してから測定します。';
-    else if(state.lesson!=='voltage'&&!state.prepared)warning='抵抗・導通の測定前に、対象の電源を外し、残留電圧がないことを確認してください。';
+    if(state.measured)return;
+    const current=state.lesson==='current';let warning='';
+    if(current&&state.connection==='parallel')warning='電流計を電源の両端へ並列接続すると短絡につながります。模擬電源は入りません。回路を開き、切れ目への直列接続を選んでください。';
+    else if(!current&&state.red==='a')warning='赤リードが電流用A端子です。電池や部品の両端への接続は短絡につながるため、VΩへ差し替えてください。';
+    else if(state.black!=='com'||state.red!==(current?'a':'vohm'))warning=current?'黒をCOM、赤を対応する電流用A端子に差してください。電圧用VΩ端子で電流を測りません。':'黒をCOM、赤をVΩへ差してから測定します。';
+    else if(!['voltage','acvoltage'].includes(state.lesson)&&!state.prepared)warning=current?'電流測定は、電源を切り、無電圧・残留電圧なしを確認して回路を開いてから直列接続します。準備を確認してください。':'抵抗・導通の測定前に、対象の電源を外し、残留電圧がないことを確認してください。';
     else if(state.mode!==lessons[state.lesson].mode)warning=`この測定は「${modes[lessons[state.lesson].mode]}」モードです。プローブを離した状態でモードを合わせてください。`;
-    if(warning){state.measured=false;state.status='blocked';state.message=warning;}
+    if(warning){state.status='blocked';state.message=warning;}
     else{
-      state.measured=true;state.status='success';
-      state.message=state.lesson==='voltage'?(state.polarity==='reverse'?'−の符号は、プローブの極性が逆であることを示します。':'電池の両端へ並列接続。単位Vと＋／−の符号も確認します。'):state.lesson==='resistance'?'1.000 kΩは1000 Ω。単位のkを見落とさないようにします。':state.wire==='connected'?'低い抵抗値なので模擬ブザーあり。音は鳴らさず、表示で示しています。':'OL・模擬ブザーなし。この教材では配線が途中で切れています。';
+      state.measured=true;state.hadReading=true;state.disconnected=false;state.status='success';
+      state.message=current?'電源OFFで直列接続し、模擬電源をONにしました。3 V ÷ 120 Ω＝25.00 mA。解除は電源を切ってから行います。':state.lesson==='acvoltage'?'6.000 V ACは実効値です。逆向きでも同じ値になります。':state.lesson==='voltage'?(state.polarity==='reverse'?'−の符号は、プローブの極性が逆であることを示します。':'電池の両端へ並列接続。単位Vと＋／−の符号も確認します。'):state.lesson==='resistance'?`${reading()}。ΩとkΩの単位を確認します。`:state.wire==='connected'?'低い抵抗値なので模擬ブザーあり。音は鳴らさず、表示で示しています。':'OL・模擬ブザーなし。この教材では配線が途中で切れています。';
     }
     render();
   }
-  function reset(lesson=state.lesson){
-    state={lesson,mode:'off',black:'none',red:'none',prepared:false,polarity:'normal',wire:'connected',measured:false,status:'idle',message:'下の操作欄で、リードと測定モードを選びましょう。'};render();
-  }
-  root.querySelectorAll('[data-tester-case]').forEach(button=>button.addEventListener('click',()=>reset(button.dataset.testerCase)));
+  function reset(lesson=state.lesson){state=initial(lesson);render();}
+  const controls=[['testerBlackLead','black'],['testerRedLead','red'],['testerPolarity','polarity'],['testerWire','wire'],['testerVoltageCase','voltage'],['testerResistanceCase','resistance'],['testerCurrentConnection','connection']];
+  root.querySelectorAll('[data-tester-case]').forEach(button=>button.addEventListener('click',()=>{if(!state.measured)reset(button.dataset.testerCase);}));
   root.querySelectorAll('[data-tester-mode]').forEach(button=>button.addEventListener('click',()=>{if(state.measured)return;state.mode=button.dataset.testerMode;fresh();}));
-  for(const [id,key] of [['testerBlackLead','black'],['testerRedLead','red'],['testerPolarity','polarity'],['testerWire','wire']])$(id).addEventListener('change',event=>{if(state.measured)return;state[key]=event.target.value;fresh();});
+  for(const [id,key] of controls)$(id).addEventListener('change',event=>{if(state.measured)return;state[key]=event.target.value;fresh();});
   $('testerPrepared').addEventListener('change',event=>{if(state.measured)return;state.prepared=event.target.checked;fresh();});
   $('testerMeasure').addEventListener('click',measure);
-  $('testerDisconnect').addEventListener('click',()=>fresh('プローブを離しました。設定を変更するか、測定を終えてOFFに戻します。'));
-  $('testerReset').addEventListener('click',()=>reset());
+  $('testerDisconnect').addEventListener('click',()=>{if(!state.measured)return;state.disconnected=true;fresh(state.lesson==='current'?'模擬電源をOFFにしてプローブを離しました。赤をVΩに戻し、OFFにしてください。':'プローブを離しました。OFFにすると練習完了です。');});
+  $('testerReset').addEventListener('click',()=>reset());$('testerResetAll').addEventListener('click',()=>{completed={};reset('voltage');});
   window.resetTesterLesson=()=>reset('voltage');
-  render();
+  reset('voltage');
 })();
 </script></body></html>
