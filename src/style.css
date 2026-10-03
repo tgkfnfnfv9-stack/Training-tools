@@ -64,3 +64,26 @@
 @media(max-width:560px){.comparison-context{font-size:10px}.posture-comparison-row{font-size:11px}.accuracy-diagnosis{font-size:11px}.accuracy-metric strong{font-size:20px}.card>summary{font-size:13px}}
 
 .support-adjustment>.text-button{min-height:44px;margin:0 0 6px;padding:5px 8px}
+
+/* Mechanical desktop: keep the model visible while only its controls scroll. */
+@media(min-width:951px){
+ body.in-mechanical-lab{height:100vh;height:100dvh;overflow:hidden;overscroll-behavior:none}
+ body.in-mechanical-lab>header,body.in-mechanical-lab>footer,body.in-mechanical-lab>main>nav{display:none}
+ body.in-mechanical-lab>main{height:100%;max-width:none;padding:0;overflow:hidden}
+ body.in-mechanical-lab #training{height:100%;display:flex;flex-direction:column;overflow:hidden}
+ body.in-mechanical-lab #training>.training-heading{flex:none;margin:0;padding:12px 20px;border-bottom:1px solid var(--line);background:white}
+ body.in-mechanical-lab .training-heading .eyebrow{display:none}
+ body.in-mechanical-lab .training-heading h1{font-size:22px;margin:0}
+ body.in-mechanical-lab .training-heading p{font-size:12px;margin:4px 0 0}
+ body.in-mechanical-lab .training-heading .secondary{min-height:44px}
+ body.in-mechanical-lab #training .training-workspace{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(370px,1fr);grid-template-rows:minmax(0,1fr);gap:0;overflow:hidden;align-items:stretch}
+ body.in-mechanical-lab #training .pinned-visual{grid-column:1;grid-row:1;min-height:0;min-width:0;display:flex;flex-direction:column;align-self:stretch;border:0;border-radius:0;overflow:hidden}
+ body.in-mechanical-lab #training .viewer-top{flex:none}
+ body.in-mechanical-lab #scene{height:0;min-height:0;flex:1;width:100%}
+ body.in-mechanical-lab #training .controls-bar{display:none}
+ body.in-mechanical-lab #training .scroll-controls{display:block;grid-column:2;grid-row:1;min-height:0;min-width:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;padding:18px;scroll-padding-block:18px;border-left:1px solid var(--line)}
+ body.in-mechanical-lab #training .control-column{display:grid;gap:14px}
+ body.in-mechanical-lab #training .scroll-controls>.card,body.in-mechanical-lab #training .scroll-controls>.lesson{margin:14px 0 0}
+ body.in-mechanical-lab #training .scroll-controls>.ui-notice{margin:0 0 14px}
+ body.in-mechanical-lab #training .scroll-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
+}

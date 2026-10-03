@@ -56,6 +56,7 @@ function supportList(m){
 function navigate(next){
  if(next!=='training')stopMotion();page=next; for(const id of ['home','topics','catalog','training','electricTopics','tester'])$(id).hidden=id!==next;
  document.body.classList.toggle('in-lab',next==='training'||next==='tester');
+ document.body.classList.toggle('in-mechanical-lab',next==='training');
  const controls=$(next+'Controls');if(controls)controls.scrollTop=0;
  const paths=next==='electricTopics'||next==='tester'?[['home','トップ'],['electricTopics','電気'],['tester','テスターの使い方']]:[['home','トップ'],['topics','機械'],['catalog','レベル出し'],['training',current.name]];
  const depth=paths.findIndex(([dest])=>dest===next);
