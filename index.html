@@ -65,6 +65,29 @@
 @media(max-width:560px){.comparison-context{font-size:10px}.posture-comparison-row{font-size:11px}.accuracy-diagnosis{font-size:11px}.accuracy-metric strong{font-size:20px}.card>summary{font-size:13px}}
 
 .support-adjustment>.text-button{min-height:44px;margin:0 0 6px;padding:5px 8px}
+
+/* Mechanical desktop: keep the model visible while only its controls scroll. */
+@media(min-width:951px){
+ body.in-mechanical-lab{height:100vh;height:100dvh;overflow:hidden;overscroll-behavior:none}
+ body.in-mechanical-lab>header,body.in-mechanical-lab>footer,body.in-mechanical-lab>main>nav{display:none}
+ body.in-mechanical-lab>main{height:100%;max-width:none;padding:0;overflow:hidden}
+ body.in-mechanical-lab #training{height:100%;display:flex;flex-direction:column;overflow:hidden}
+ body.in-mechanical-lab #training>.training-heading{flex:none;margin:0;padding:12px 20px;border-bottom:1px solid var(--line);background:white}
+ body.in-mechanical-lab .training-heading .eyebrow{display:none}
+ body.in-mechanical-lab .training-heading h1{font-size:22px;margin:0}
+ body.in-mechanical-lab .training-heading p{font-size:12px;margin:4px 0 0}
+ body.in-mechanical-lab .training-heading .secondary{min-height:44px}
+ body.in-mechanical-lab #training .training-workspace{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(370px,1fr);grid-template-rows:minmax(0,1fr);gap:0;overflow:hidden;align-items:stretch}
+ body.in-mechanical-lab #training .pinned-visual{grid-column:1;grid-row:1;min-height:0;min-width:0;display:flex;flex-direction:column;align-self:stretch;border:0;border-radius:0;overflow:hidden}
+ body.in-mechanical-lab #training .viewer-top{flex:none}
+ body.in-mechanical-lab #scene{height:0;min-height:0;flex:1;width:100%}
+ body.in-mechanical-lab #training .controls-bar{display:none}
+ body.in-mechanical-lab #training .scroll-controls{display:block;grid-column:2;grid-row:1;min-height:0;min-width:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;padding:18px;scroll-padding-block:18px;border-left:1px solid var(--line)}
+ body.in-mechanical-lab #training .control-column{display:grid;gap:14px}
+ body.in-mechanical-lab #training .scroll-controls>.card,body.in-mechanical-lab #training .scroll-controls>.lesson{margin:14px 0 0}
+ body.in-mechanical-lab #training .scroll-controls>.ui-notice{margin:0 0 14px}
+ body.in-mechanical-lab #training .scroll-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
+}
 </style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
 .tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
 @media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}#testerDiagram{max-height:300px}}
@@ -411,6 +434,7 @@ function supportList(m){
 function navigate(next){
  if(next!=='training')stopMotion();page=next; for(const id of ['home','topics','catalog','training','electricTopics','tester'])$(id).hidden=id!==next;
  document.body.classList.toggle('in-lab',next==='training'||next==='tester');
+ document.body.classList.toggle('in-mechanical-lab',next==='training');
  const controls=$(next+'Controls');if(controls)controls.scrollTop=0;
  const paths=next==='electricTopics'||next==='tester'?[['home','トップ'],['electricTopics','電気'],['tester','テスターの使い方']]:[['home','トップ'],['topics','機械'],['catalog','レベル出し'],['training',current.name]];
  const depth=paths.findIndex(([dest])=>dest===next);

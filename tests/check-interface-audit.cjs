@@ -89,6 +89,16 @@ async function main(){
  press(caseButton('current'));change('testerBlackLead','com');change('testerRedLead','a');press(modeButton('dca'));r.testerPrepared.checked=true;r.testerPrepared.events.change({target:r.testerPrepared});press(r.testerMeasure);
  r.testerBack.click();r.testerEntry.click();
  check('re-entering tester releases previous current and keeps completed lessons',()=>{assert.match(r.testerProgress.textContent,/完了 5 \/ 5/);assert.match(r.testerResult.textContent,/未測定/);assert.equal(r.testerBlackLead.value,'none');assert.equal(r.testerRedLead.value,'none');assert.equal(r.testerMeasure.disabled,false);});
+ // The desktop mechanical shell hides the document and scrolls its controls.
+ // It must be released on every exit, including a direct electrical transition.
+ check('mechanical fixed shell never leaks into the catalog or electrical lesson',()=>{
+  for(const next of ['home','topics','catalog','electricTopics','tester']){
+   read("navigate('training')");assert(context.document.body.classList.contains('in-mechanical-lab'));
+   read(`navigate('${next}')`);assert(!context.document.body.classList.contains('in-mechanical-lab'),next);
+   assert.equal(context.document.body.classList.contains('in-lab'),next==='tester',next);
+  }
+  read("navigate('home')");assert(!context.document.body.classList.contains('in-lab'));
+ });
  // Help commands are intended for direct copy/paste; every local verification
  // file linked in the electrical guide must exist in this repository.
  check('electrical guide verification paths exist',()=>{
