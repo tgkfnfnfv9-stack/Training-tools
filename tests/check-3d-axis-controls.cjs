@@ -4,6 +4,7 @@ const {registry:r,context,read,json}=require('./leveling-dom-env.cjs')();
 let checks=0;
 function check(name,fn){try{fn();checks++;}catch(e){throw new Error(name+': '+e.message);}}
 const source=fs.readFileSync('src/index.html','utf8');
+check('viewer stacks its flexible Canvas vertically',()=>assert.match(fs.readFileSync('src/style.css','utf8'),/\.scene-viewport\{[^}]*display:flex;[^}]*flex-direction:column;/));
 check('removed explanation is not hidden elsewhere',()=>{
  assert(!source.includes('どこが動く？どこが固定？'));assert(!source.includes('motion-card'));
  for(const id of ['movingText','movingParts','partMapHeading','partMapBody','partStateHeading','fixedText','absentAxis'])assert(!r[id],id);
