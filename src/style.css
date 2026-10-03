@@ -87,7 +87,7 @@
 }
 
 /* Axis selection and its small menu belong to the rotating 3D viewer. */
-.scene-viewport{position:relative;display:flex;flex:1;min-height:0;min-width:0;overflow:hidden}
+.scene-viewport{position:relative;display:flex;flex-direction:column;flex:1;min-height:0;min-width:0;overflow:hidden}
 .scene-toolbar{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);z-index:2;display:flex;align-items:center;gap:4px;width:max-content;max-width:calc(100% - 8px);padding:4px;border:1px solid #c1d2d5;border-radius:9px;background:#ffffffed;box-shadow:0 2px 7px #23404e16}
 .scene-toolbar .axis-tabs{margin:0;gap:2px;flex-wrap:nowrap}
 .scene-toolbar .axis-tab{min-width:44px;min-height:44px;padding:4px;font-size:12px}
