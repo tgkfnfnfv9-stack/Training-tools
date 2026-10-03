@@ -27,15 +27,6 @@ function axisConfig(m){
  if(m.kind==='five')return [a('X','トラニオン一式','左右',[1,0,0],.35),a('Y','サドル＋トラニオン一式','前後',[0,0,1],.35),a('Z','主軸頭＋工具','上下',[0,1,0],.3),a('A','揺りかご＋テーブル','X軸回りの傾斜',[1,0,0],.55),a('C','回転テーブル＋ワーク','テーブル軸回りの回転',[0,1,0],1.1)];
  return [a('X','刃物台','径方向',[0,0,1],.35),a('Z','往復台＋刃物台','主軸方向（左右）',[1,0,0],.7)];
 }
-function fixedParts(m){
- if(['vertical','compact','portal'].includes(m.kind))return 'ベース・コラム／門・案内レール';
- if(m.kind==='travel')return 'ベース・テーブル・ワーク・コラム走行レール';
- if(m.kind==='horizontal')return 'ベース・コラム／テーブルの案内レール';
- if(m.kind==='double')return 'ベース・左右コラム・梁・長手案内レール';
- if(m.kind==='gantry')return '基礎側ベース・テーブル・ワーク・走行レール';
- if(m.kind==='five')return 'ベース・コラム・案内レール';
- return 'ベッド・主軸台・心押台（加工中の位置）';
-}
 function transformedPoint(p,axes,m,state=positions){
  let q=[...p];
  // C回転はA傾斜前のテーブル座標で適用し、Aの親子関係を保つ。
@@ -54,6 +45,7 @@ function supportList(m){
  return list;
 }
 function navigate(next){
+ setAxisMenuOpen(false);
  if(next!=='training')stopMotion();page=next; for(const id of ['home','topics','catalog','training','electricTopics','tester'])$(id).hidden=id!==next;
  document.body.classList.toggle('in-lab',next==='training'||next==='tester');
  document.body.classList.toggle('in-mechanical-lab',next==='training');
@@ -70,6 +62,7 @@ function openMachine(m){
  stopMotion();machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
 function populateMachine(){
+ setAxisMenuOpen(false);
  const m=current;supports=supportList(m);levelSolution=null;levelGeometry=null;
  $('machineTitle').textContent=m.name;$('machineSubtitle').textContent=m.example+' ｜ '+m.tag;
  $('structureText').textContent=m.structure;$('motionText').textContent=axisConfig(m).map(a=>a.key+'：'+a.part+'（'+a.direction+'）').join(' ／ ');$('focusText').textContent=m.focus;
@@ -142,6 +135,24 @@ function framingPoints(m,model){
  const points=model.faces.flatMap(f=>f.v.flatMap(p=>f.axes.length?ends.map(state=>transformedPoint(p,f.axes,m,state)):[[...p]]));
  framingCache.set(key,points);return points;
 }
+// Every available axis has an indicator on its moving assembly. C follows
+// the A parent tilt; neither rotary arrow is drawn as a linear slide.
+function axisIndicators(m,model){
+ return axisConfig(m).map(a=>{
+  if(['X','Y','Z'].includes(a.key)){
+   const moved=model.faces.filter(f=>f.axes.includes(a.key)).flatMap(f=>f.v.map(p=>transformedPoint(p,f.axes,m)));
+   const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2);
+   const vector=levelGeometry?accuracyVisualVector(a.key):a.vector,pose=levelGeometry?levelGeometry.axes.find(q=>q.key===a.key).source:'bed';
+   return {key:a.key,pose,curved:false,points:[-1,1].map(sign=>origin.map((v,i)=>v+sign*vector[i]*.6))};
+  }
+  const points=Array.from({length:25},(_,i)=>{
+   const t=-Math.PI*.65+i/24*Math.PI*1.3;
+   const p=a.key==='A'?[-1.2,1.25+Math.cos(t)*.72,-.45+Math.sin(t)*.72]:[Math.cos(t)*.8,1.68,-.45+Math.sin(t)*.8];
+   return transformedPoint(p,a.key==='A'?['X','Y']:['X','Y','A'],m);
+  });
+  return {key:a.key,pose:'work',curved:true,points};
+ });
+}
 function render(canvas,m,angle,showLabels,active){
  const rect=canvas.getBoundingClientRect();if(!rect.width||!rect.height)return;
  const ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.height*ratio);
@@ -165,24 +176,35 @@ function render(canvas,m,angle,showLabels,active){
  sides.forEach((side,k)=>{side.sort((a,b)=>a.screen[1]-b.screen[1]);const gap=Math.min(24,(height-52)/Math.max(1,side.length));let last=16-gap;side.forEach((l,i)=>{let ly=Math.max(last+gap,Math.min(height-36-(side.length-1-i)*gap,l.screen[1]-8));last=ly;const lx=k?width-10:10;ctx.strokeStyle='#65818b99';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(l.screen[0],l.screen[1]);ctx.lineTo(k?lx-5:lx+5,ly);ctx.stroke();ctx.font='10px sans-serif';ctx.textAlign=k?'right':'left';ctx.textBaseline='middle';const tw=ctx.measureText(l.text).width;ctx.fillStyle='#f8fbf9ed';ctx.fillRect(k?lx-tw-4:lx-4,ly-9,tw+8,18);ctx.fillStyle='#365564';ctx.fillText(l.text,lx,ly);});});
  }
  if(active>=0&&$('showAxes').checked){
- const a=axisConfig(m).find(a=>a.key===selectedAxis);if(a&&['X','Y','Z'].includes(a.key)){
- const moved=model.faces.filter(f=>f.axes.includes(a.key)).flatMap(f=>f.v.map(p=>transformedPoint(p,f.axes,m)));const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2),len=.6,vector=levelGeometry?accuracyVisualVector(a.key):a.vector,from=origin.map((v,i)=>v-vector[i]*len),to=origin.map((v,i)=>v+vector[i]*len),pose=levelGeometry?levelGeometry.axes.find(q=>q.key===a.key).source:'bed',pa=screen(surfacePoint(from,pose)),pb=screen(surfacePoint(to,pose));
- ctx.strokeStyle=axisColors[a.key];ctx.fillStyle=axisColors[a.key];ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(pa[0],pa[1]);ctx.lineTo(pb[0],pb[1]);ctx.stroke();
- function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-12*Math.cos(t-.45),p[1]-12*Math.sin(t-.45));ctx.lineTo(p[0]-12*Math.cos(t+.45),p[1]-12*Math.sin(t+.45));ctx.closePath();ctx.fill();}arrow(pa,pb);arrow(pb,pa);
- ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';const tx=(pa[0]+pb[0])/2,ty=(pa[1]+pb[1])/2-18;ctx.fillStyle='#ffffffed';ctx.fillRect(tx-17,ty-11,34,22);ctx.fillStyle=axisColors[a.key];ctx.fillText(a.key+'軸',tx,ty);
+ const labels=[];
+ function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
+ for(const a of axisIndicators(m,model)){
+  const path=a.points.map(p=>screen(surfacePoint(p,a.pose)));
+  ctx.strokeStyle=axisColors[a.key];ctx.fillStyle=axisColors[a.key];ctx.lineWidth=a.key===selectedAxis?4:2.5;
+  ctx.beginPath();path.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.stroke();
+  arrow(path[0],path[1]);arrow(path[path.length-1],path[path.length-2]);
+  const p=a.curved?path[Math.floor(path.length/2)]:[(path[0][0]+path[1][0])/2,(path[0][1]+path[1][1])/2];labels.push({key:a.key,p});
+ }
+ const occupied=[];ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+ for(const label of labels){
+  let tx,ty;for(const [dx,dy] of [[0,-18],[28,-18],[-28,-18],[0,-44],[28,10],[-28,10],[0,-70]]){
+   tx=Math.max(25,Math.min(width-25,label.p[0]+dx));ty=Math.max(15,Math.min(height-76,label.p[1]+dy));
+   if(!occupied.some(p=>Math.abs(tx-p[0])<44&&Math.abs(ty-p[1])<25))break;
+  }
+  occupied.push([tx,ty]);ctx.fillStyle='#ffffffed';ctx.fillRect(tx-20,ty-11,40,22);ctx.fillStyle=axisColors[label.key];ctx.fillText(label.key+'軸',tx,ty);
  }
  // Always-visible machine-relative orientation triad rotates with the model; this is not CNC +/- motion.
- const o=[48,height-56];ctx.font='bold 12px sans-serif';ctx.textAlign='center';
+ const o=[48,height-88];ctx.font='bold 12px sans-serif';ctx.textAlign='center';
  for(const a of axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key))){const pa=project([0,1.5,0]),pb=project(a.vector.map((v,i)=>v*.75+[0,1.5,0][i]));let dx=pb[0]-pa[0],dy=pb[1]-pa[1],n=Math.hypot(dx,dy)||1;const p=[o[0]+dx/n*30,o[1]+dy/n*30];ctx.strokeStyle=axisColors[a.key];ctx.fillStyle=axisColors[a.key];ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(...o);ctx.lineTo(...p);ctx.stroke();ctx.fillText(a.key,p[0]+dx/n*10,p[1]+dy/n*10);}
  }
- ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#526e7b';ctx.font='10px sans-serif';ctx.fillText('外装を省いた構造模式図',width/2,height-15);
+ if(active<0){ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#526e7b';ctx.font='10px sans-serif';ctx.fillText('外装を省いた構造模式図',width/2,height-15);}
 }
 function drawThumbnails(){const previous=positions;positions={X:0,Y:0,Z:0,A:0,C:0};machines.forEach(m=>render($('thumb-'+m.id),m,-.55,false,-1));positions=previous;}
 function drawScene(){if(levelSolution)updateAccuracy();if(page==='training')render($('scene'),current,yaw,$('labels').checked,selected);}
 function rotate(delta){yaw+=delta;drawScene();}
 $('labels').onchange=drawScene;$('showAxes').onchange=drawScene;
 let drag=null;
-$('scene').addEventListener('pointerdown',e=>{if(!e.isPrimary||e.button!==0)return;drag={id:e.pointerId,x:e.clientX,y:e.clientY,moved:false};$('scene').setPointerCapture(e.pointerId);});
+$('scene').addEventListener('pointerdown',e=>{if(!e.isPrimary||e.button!==0)return;setAxisMenuOpen(false);drag={id:e.pointerId,x:e.clientX,y:e.clientY,moved:false};$('scene').setPointerCapture(e.pointerId);});
 $('scene').addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.x;if(Math.abs(dx)>2)drag.moved=true;rotate(dx*.009);drag.x=e.clientX;});
 function endDrag(e){if(drag&&drag.id===e.pointerId){drag=null;}}
 $('scene').addEventListener('pointerup',endDrag);$('scene').addEventListener('pointercancel',endDrag);$('scene').addEventListener('lostpointercapture',()=>drag=null);
@@ -197,27 +219,24 @@ function buildAxisUI(){
  axes.forEach(a=>{const btn=document.createElement('button');btn.textContent=a.key+'軸';btn.className='axis-tab';btn.style.setProperty('--axis',axisColors[a.key]);btn.setAttribute('aria-pressed',a.key===selectedAxis?'true':'false');btn.onclick=()=>selectAxis(a.key);$('axisTabs').append(btn);
  const row=document.createElement('div');row.className='axis-row';row.style.setProperty('--axis',axisColors[a.key]);row.innerHTML=`<label for="axis-${a.key}"><strong>${a.key}軸</strong><span>${a.part}<small>${a.direction}</small></span><output id="value-${a.key}">中央</output></label><input type="range" id="axis-${a.key}" min="-100" max="100" step="1" value="${positions[a.key]}" aria-label="${a.key}軸の部品位置"><div class="range-ends"><span>端1</span><span>端2</span></div>`;$('axisSliders').append(row);
  $('axis-'+a.key).addEventListener('input',e=>{stopMotion();positions[a.key]=Number(e.target.value);selectAxis(a.key);updateAxisValues();saveLeveling();drawScene();});});
- $('fixedText').textContent=fixedParts(current);$('absentAxis').hidden=current.kind!=='lathe';updateAxisValues();selectAxis(selectedAxis);
+ updateAxisValues();selectAxis(selectedAxis);
 }
 function updateAxisValues(){for(const a of axisConfig(current)){$('axis-'+a.key).value=positions[a.key];$('value-'+a.key).textContent=positions[a.key]===0?'中央':positions[a.key]>0?'端2側 '+Math.abs(Math.round(positions[a.key]))+'%':'端1側 '+Math.abs(Math.round(positions[a.key]))+'%';}}
-function updatePartMap(){
- const parts=createGeometry(current).labels;
- const moving=parts.filter(p=>p.axes.includes(selectedAxis));
- $('movingParts').replaceChildren();moving.forEach(p=>{const chip=document.createElement('span');chip.className='part-chip';chip.textContent=p.name;$('movingParts').append(chip);});
- $('movingParts').style.setProperty('--axis',axisColors[selectedAxis]);
- $('partMapHeading').textContent=selectedAxis+'軸で一緒に動く主な部品';
- $('partMapBody').replaceChildren();
- parts.forEach(p=>{const row=document.createElement('tr'),name=document.createElement('th'),axes=document.createElement('td'),state=document.createElement('td');name.setAttribute('scope','row');name.textContent=p.name;
- p.axes.forEach(key=>{const badge=document.createElement('span');badge.className='part-axis'+(key===selectedAxis?' selected':'');badge.style.setProperty('--axis',axisColors[key]);badge.textContent=key;axes.append(badge);});
- if(!p.axes.length)axes.textContent='固定';
- const moves=p.axes.includes(selectedAxis);row.className=moves?'moving-part':'';row.style.setProperty('--axis',axisColors[selectedAxis]);state.textContent=moves?'一緒に動く':'今回静止';row.append(name);row.append(axes);row.append(state);$('partMapBody').append(row);
- });
- $('partStateHeading').textContent=selectedAxis+'軸を動かすと';
+function selectAxis(key){
+ const a=axisConfig(current).find(a=>a.key===key);if(!a)return;stopMotion();selectedAxis=key;
+ Array.from($('axisTabs').children).forEach(b=>b.setAttribute('aria-pressed',b.textContent===key+'軸'?'true':'false'));
+ for(const axis of axisConfig(current))$('axis-'+axis.key).parentElement.hidden=axis.key!==key;
+ $('axisMenuTitle').textContent=key+'軸の操作';
+ $('scene').setAttribute('aria-label',current.name+'の3D模式図。左右ドラッグまたは左右矢印キーで回転。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+key+'軸で動く部品を同色で強調。');drawScene();
 }
-function selectAxis(key){stopMotion();selectedAxis=key;const a=axisConfig(current).find(a=>a.key===key);Array.from($('axisTabs').children).forEach(b=>b.setAttribute('aria-pressed',b.textContent===key+'軸'?'true':'false'));$('movingText').textContent=key+'軸：'+a.part+'が'+a.direction+'に動く';$('movingText').style.setProperty('--axis',axisColors[key]);updatePartMap();drawScene();}
+function setAxisMenuOpen(open,focusToggle=false){$('axisMenu').hidden=!open;$('axisControlsToggle').setAttribute('aria-expanded',String(open));if(focusToggle&&$('axisControlsToggle').focus)$('axisControlsToggle').focus();}
+$('axisControlsToggle').onclick=()=>setAxisMenuOpen($('axisMenu').hidden);
+$('closeAxisControls').onclick=()=>setAxisMenuOpen(false,true);
+$('axisMenu').addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();setAxisMenuOpen(false,true);}});
 let motionFrame=null,motionStart=null;
-function stopMotion(){const running=motionFrame!==null;if(running)cancelAnimationFrame(motionFrame);motionFrame=null;motionStart=null;if($('playAxis')){$('playAxis').textContent='選んだ軸を動かす';$('playAxis').setAttribute('aria-pressed','false');}if(running&&typeof saveLeveling==='function')saveLeveling();}
+function stopMotion(){const running=motionFrame!==null;if(running)cancelAnimationFrame(motionFrame);motionFrame=null;motionStart=null;if($('playAxis')){$('playAxis').textContent='選んだ軸を動かす';$('playAxis').setAttribute('aria-pressed','false');}if(running){$('axisDemoStatus').textContent=selectedAxis+'軸の動作を終了しました。';if(typeof saveLeveling==='function')saveLeveling();}}
 $('playAxis').onclick=()=>{if(motionFrame!==null){stopMotion();return;}$('playAxis').textContent='動きを止める';$('playAxis').setAttribute('aria-pressed','true');const key=selectedAxis;
+ setAxisMenuOpen(false);$('axisDemoStatus').textContent=key+'軸の動作を確認中です。軸操作から停止できます。';
  // A single round trip demonstrates the chosen part; no endless motion.
  function step(t){if(motionStart===null)motionStart=t;const progress=Math.min((t-motionStart)/3500,1);positions[key]=Math.sin(progress*2*Math.PI)*85;updateAxisValues();drawScene();if(progress<1)motionFrame=requestAnimationFrame(step);else{positions[key]=0;updateAxisValues();stopMotion();drawScene();}}
  motionFrame=requestAnimationFrame(step);
