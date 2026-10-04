@@ -5,7 +5,7 @@
 @media(prefers-reduced-motion:reduce){.bubble{transition:none}}
 
 /* Training shell: the picture and controls have separate layout/scroll areas. */
-.controls-bar{display:none}.training-workspace>.scroll-controls{display:contents}.training-workspace>.pinned-visual{grid-column:1;grid-row:2}.training-workspace .ui-notice{grid-column:1/-1;grid-row:1;margin:0}.training-workspace .control-column{grid-column:2;grid-row:2/span 3;align-self:start}.training-workspace .viewer-settings{grid-column:1;grid-row:3}.training-workspace .structure{grid-column:1;grid-row:4}.training-workspace .lesson{grid-column:1/-1;grid-row:5;margin:0}.viewer-settings summary{cursor:pointer;font-size:13px;font-weight:650;color:var(--green)}.viewer-settings .viewer-options{margin-top:10px}.viewer-settings .viewer-caption{padding:8px 0 0}
+.controls-bar{display:none}.training-workspace>.scroll-controls{display:contents}.training-workspace>.pinned-visual{grid-column:1;grid-row:2}.training-workspace .ui-notice{grid-column:1/-1;grid-row:1;margin:0}.training-workspace .control-column{grid-template-columns:minmax(0,1fr);grid-column:2;grid-row:2/span 3;align-self:start}.training-workspace .viewer-settings{grid-column:1;grid-row:3}.training-workspace .structure{grid-column:1;grid-row:4}.training-workspace .lesson{grid-column:1/-1;grid-row:5;margin:0}.viewer-settings summary{cursor:pointer;font-size:13px;font-weight:650;color:var(--green)}.viewer-settings .viewer-options{margin-top:10px}.viewer-settings .viewer-caption{padding:8px 0 0}
 @media(max-width:950px){
  body.in-lab{height:100vh;height:100dvh;overflow:hidden;overscroll-behavior:none}
  body.in-lab>header,body.in-lab>footer,body.in-lab>main>nav{display:none}
@@ -124,7 +124,7 @@ body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 .live-squareness-item{flex:1;min-width:0;max-width:180px}.live-pair-title{display:block;text-align:center;font-size:11px;font-weight:650;line-height:14px;white-space:nowrap}.live-squareness-diagram{display:block;min-width:0;width:100%;height:48px;fill:var(--ink);font-size:12px}
 .pair-title{font-size:13px;font-weight:650}.pair-axis{font-size:13px;font-weight:650}.right-angle{font-size:13px;fill:#607782}.live-pair-limit{font-size:13px;fill:#80541e}.measurement-start,.measurement-end{font-size:13px;fill:#536776;font-weight:600}.measurement-end{font-variant-numeric:tabular-nums}
 .measurement-summary{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.accuracy-diagram-scroll{max-width:100%;overflow-x:auto;margin:8px 0}.accuracy-diagram-scroll .accuracy-diagram{min-width:var(--diagram-min-width,88px);margin:0}
+.accuracy-diagram-scroll{width:100%;min-width:0;max-width:100%;overflow-x:auto;margin:8px 0}.accuracy-diagram-scroll .accuracy-diagram{min-width:var(--diagram-min-width,88px);margin:0}
 @media(max-width:950px) and (orientation:portrait){body.in-lab #training .training-workspace{grid-template-rows:minmax(0,56%) auto minmax(0,1fr)}}
 @media(max-width:950px) and (orientation:landscape) and (max-height:600px){body.in-lab #training .training-workspace{grid-template-columns:minmax(0,1.27fr) minmax(0,1fr)}.live-squareness-diagram{height:42px}}
 @media(max-width:360px){.stage-flow{gap:4px}.stage-flow li{padding:5px}.stage-flow strong{font-size:10px}.stage-readings>div{padding:6px}.stage-readings strong{font-size:12px}}
@@ -133,7 +133,7 @@ body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 .adjustment-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
 .adjustment-tabs button{min-height:44px;font-size:14px;font-weight:650}
 .adjustment-tabs button[aria-pressed="true"]{background:#e5f2ec;border-color:#176e63;color:#176e63}
-.fine-adjustment{border-color:#8fbeb2;background:#f8fbf9}
+.fine-adjustment{min-width:0;border-color:#8fbeb2;background:#f8fbf9}
 .fine-adjustment .section-title{align-items:flex-start;flex-wrap:wrap;gap:6px}
 .adjustment-hint{background:#edf4f1;border-left:3px solid #8eb6a8;padding:10px;font-size:12px;overflow-wrap:anywhere}
 .fine-precision-summary{display:grid;gap:5px;margin:12px 0}

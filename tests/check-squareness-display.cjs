@@ -2,6 +2,7 @@
 // Verify the visible line against the measured relative angle, rather than
 // duplicating the renderer's trigonometric endpoint calculation.
 const assert=require('node:assert/strict');
+const css=require('node:fs').readFileSync('src/style.css','utf8');
 const makeEnvironment=require('./leveling-dom-env.cjs');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const {registry:r,read,json,storage}=makeEnvironment();
@@ -11,6 +12,11 @@ function check(label,fn){fn();checks++;}
 function near(a,b,tolerance=1e-9){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tolerance,`${a} != ${b}`);}
 function diagrams(){return r.liveSquareness.querySelectorAll('svg');}
 function verify(g){
+ // The SVG may be wider than its viewport, but it must not set the minimum
+ // width of the ancestor grid track/card. Browser layout is checked separately.
+ assert.match(css,/\.training-workspace \.control-column\{[^}]*grid-template-columns:minmax\(0,1fr\)/);
+ assert.match(css,/\.fine-adjustment\{[^}]*min-width:0/);
+ assert.match(css,/\.accuracy-diagram-scroll\{[^}]*width:100%;min-width:0;max-width:100%;overflow-x:auto/);
  const scroll=r.accuracyDiagram.parentElement;assert(scroll.classList.contains('accuracy-diagram-scroll'));assert.equal(scroll.getAttribute('tabindex'),'0');assert.equal(scroll.getAttribute('role'),'region');assert.match(scroll.getAttribute('aria-label'),/左右にスクロール/);
  assert.equal(r.accuracyDiagram.style['--diagram-min-width'],g.pairs.length*88+'px');
  const svgs=diagrams();assert.deepEqual(svgs.map(svg=>svg.getAttribute('data-pair')),g.pairs.map(p=>p.key));
