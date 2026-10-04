@@ -188,11 +188,10 @@ function render(canvas,m,angle,showLabels,active){
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
  if(active>=0)model.faces.push(...levelSurfaceFaces(m));
  model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
- if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.15,s.z]));ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda79':'#ffffffed';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
- if(showLabels){
- const labs=model.labels.map(l=>({...l,screen:movingScreen(l.p,l.axes,l.pose)}));const sides=[labs.filter(l=>l.screen[0]<width/2),labs.filter(l=>l.screen[0]>=width/2)];
- sides.forEach((side,k)=>{side.sort((a,b)=>a.screen[1]-b.screen[1]);const gap=Math.min(24,(height-52)/Math.max(1,side.length));let last=16-gap;side.forEach((l,i)=>{let ly=Math.max(last+gap,Math.min(height-36-(side.length-1-i)*gap,l.screen[1]-8));last=ly;const lx=k?width-10:10;ctx.strokeStyle='#65818b99';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(l.screen[0],l.screen[1]);ctx.lineTo(k?lx-5:lx+5,ly);ctx.stroke();ctx.font='10px sans-serif';ctx.textAlign=k?'right':'left';ctx.textBaseline='middle';const tw=ctx.measureText(l.text).width;ctx.fillStyle='#f8fbf9ed';ctx.fillRect(k?lx-tw-4:lx-4,ly-9,tw+8,18);ctx.fillStyle='#365564';ctx.fillText(l.text,lx,ly);});});
- }
+ // Reserve support markers before placing any text. Labels use the entire
+ // Canvas now that the operation bar has its own row below it.
+ const labelBoxes=[],freeLabel=(box)=>box.x>=4&&box.y>=4&&box.x+box.w<=width-4&&box.y+box.h<=height-4&&!labelBoxes.some(b=>box.x<b.x+b.w+2&&b.x<box.x+box.w+2&&box.y<b.y+b.h+2&&b.y<box.y+box.h+2);
+ if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.15,s.z]));labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda79':'#ffffffed';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  if(active>=0&&$('showAxes').checked){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
@@ -203,14 +202,30 @@ function render(canvas,m,angle,showLabels,active){
   arrow(path[0],path[1]);arrow(path[path.length-1],path[path.length-2]);
   const p=a.curved?path[Math.floor(path.length/2)]:[(path[0][0]+path[1][0])/2,(path[0][1]+path[1][1])/2];labels.push({key:a.key,p});
  }
- const occupied=[];ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+ ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+ labels.sort((a,b)=>Number(b.key===selectedAxis)-Number(a.key===selectedAxis));
  for(const label of labels){
-  let tx,ty;for(const [dx,dy] of [[0,-18],[28,-18],[-28,-18],[0,-44],[28,10],[-28,10],[0,-70]]){
-   tx=Math.max(25,Math.min(width-25,label.p[0]+dx));ty=Math.max(15,Math.min(height-76,label.p[1]+dy));
-   if(!occupied.some(p=>Math.abs(tx-p[0])<44&&Math.abs(ty-p[1])<25))break;
-  }
-  occupied.push([tx,ty]);ctx.fillStyle='#ffffffed';ctx.fillRect(tx-20,ty-11,40,22);ctx.fillStyle=axisColors[label.key];ctx.fillText(label.key+'軸',tx,ty);
+  const candidates=[[0,-18],[28,-18],[-28,-18],[0,-44],[28,10],[-28,10],[0,-70]].map(([dx,dy])=>[Math.max(24,Math.min(width-24,label.p[0]+dx)),Math.max(15,Math.min(height-15,label.p[1]+dy))]);
+  const columns=Math.max(1,Math.floor((width-48)/44)+1),rows=Math.max(1,Math.floor((height-30)/26)+1);
+  for(let y=0;y<rows;y++)for(let x=0;x<columns;x++)candidates.push([columns===1?width/2:24+x*(width-48)/(columns-1),rows===1?height/2:15+y*(height-30)/(rows-1)]);
+  candidates.sort((a,b)=>Math.hypot(a[0]-label.p[0],a[1]-label.p[1])-Math.hypot(b[0]-label.p[0],b[1]-label.p[1]));
+  const place=candidates.find(([x,y])=>freeLabel({x:x-20,y:y-11,w:40,h:22}));if(!place)continue;
+  const [tx,ty]=place;labelBoxes.push({x:tx-20,y:ty-11,w:40,h:22});ctx.fillStyle='#ffffffed';ctx.fillRect(tx-20,ty-11,40,22);ctx.fillStyle=axisColors[label.key];ctx.fillText(label.key+'軸',tx,ty);
  }
+ }
+ if(showLabels){
+  // Prefer the selected moving assembly and the base/column. A short Canvas
+  // omits lower-priority part names rather than compressing their 18px boxes.
+  const priority=l=>(active>=0&&l.axes.includes(selectedAxis)?10:0)+(/^(コラム|門|ベース|ベッド|主軸台)/.test(l.text)?2:0),labs=model.labels.map(l=>({...l,screen:movingScreen(l.p,l.axes,l.pose)})).sort((a,b)=>priority(b)-priority(a));
+  ctx.font='10px sans-serif';ctx.textBaseline='middle';
+  const rows=Math.max(1,Math.floor((height-26)/20)+1);
+  for(const l of labs){
+   const tw=ctx.measureText(l.text).width,side=l.screen[0]>=width/2?1:0,candidates=[];
+   for(const k of [side,1-side])for(let y=0;y<rows;y++){const ly=rows===1?height/2:13+y*(height-26)/(rows-1);candidates.push({k,ly,x:k?width-14-tw:6,y:ly-9,w:tw+8,h:18});}
+   candidates.sort((a,b)=>Math.abs(a.ly-l.screen[1])-Math.abs(b.ly-l.screen[1])+(a.k===side?0:12)-(b.k===side?0:12));
+   const box=candidates.find(freeLabel);if(!box)continue;labelBoxes.push(box);
+   const lx=box.k?width-10:10;ctx.strokeStyle='#65818b99';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(l.screen[0],l.screen[1]);ctx.lineTo(box.k?lx-5:lx+5,box.ly);ctx.stroke();ctx.textAlign=box.k?'right':'left';ctx.fillStyle='#f8fbf9ed';ctx.fillRect(box.x,box.y,box.w,box.h);ctx.fillStyle='#365564';ctx.fillText(l.text,lx,box.ly);
+  }
  }
  if(active<0){ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#526e7b';ctx.font='10px sans-serif';ctx.fillText('外装を省いた構造模式図',width/2,height-15);}
 }
