@@ -191,7 +191,7 @@ function render(canvas,m,angle,showLabels,active){
  // Reserve support markers before placing any text. Labels use the entire
  // Canvas now that the operation bar has its own row below it.
  const labelBoxes=[],freeLabel=(box)=>box.x>=4&&box.y>=4&&box.x+box.w<=width-4&&box.y+box.h<=height-4&&!labelBoxes.some(b=>box.x<b.x+b.w+2&&b.x<box.x+box.w+2&&box.y<b.y+b.h+2&&b.y<box.y+box.h+2);
- if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.15,s.z]));labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda79':'#ffffffed';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
+ if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.15,s.z]));labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda794d':'#ffffff26';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  if(active>=0&&$('showAxes').checked){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
@@ -202,7 +202,7 @@ function render(canvas,m,angle,showLabels,active){
   arrow(path[0],path[1]);arrow(path[path.length-1],path[path.length-2]);
   const p=a.curved?path[Math.floor(path.length/2)]:[(path[0][0]+path[1][0])/2,(path[0][1]+path[1][1])/2];labels.push({key:a.key,p});
  }
- ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+ ctx.font='12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
  labels.sort((a,b)=>Number(b.key===selectedAxis)-Number(a.key===selectedAxis));
  for(const label of labels){
   const candidates=[[0,-18],[28,-18],[-28,-18],[0,-44],[28,10],[-28,10],[0,-70]].map(([dx,dy])=>[Math.max(24,Math.min(width-24,label.p[0]+dx)),Math.max(15,Math.min(height-15,label.p[1]+dy))]);
@@ -210,7 +210,7 @@ function render(canvas,m,angle,showLabels,active){
   for(let y=0;y<rows;y++)for(let x=0;x<columns;x++)candidates.push([columns===1?width/2:24+x*(width-48)/(columns-1),rows===1?height/2:15+y*(height-30)/(rows-1)]);
   candidates.sort((a,b)=>Math.hypot(a[0]-label.p[0],a[1]-label.p[1])-Math.hypot(b[0]-label.p[0],b[1]-label.p[1]));
   const place=candidates.find(([x,y])=>freeLabel({x:x-20,y:y-11,w:40,h:22}));if(!place)continue;
-  const [tx,ty]=place;labelBoxes.push({x:tx-20,y:ty-11,w:40,h:22});ctx.fillStyle='#ffffffed';ctx.fillRect(tx-20,ty-11,40,22);ctx.fillStyle=axisColors[label.key];ctx.fillText(label.key+'軸',tx,ty);
+  const [tx,ty]=place;labelBoxes.push({x:tx-20,y:ty-11,w:40,h:22});ctx.fillStyle='#ffffff26';ctx.fillRect(tx-20,ty-11,40,22);ctx.fillStyle=tone(axisColors[label.key],.55);ctx.fillText(label.key+'軸',tx,ty);
  }
  }
  if(showLabels){
@@ -224,7 +224,7 @@ function render(canvas,m,angle,showLabels,active){
    for(const k of [side,1-side])for(let y=0;y<rows;y++){const ly=rows===1?height/2:13+y*(height-26)/(rows-1);candidates.push({k,ly,x:k?width-14-tw:6,y:ly-9,w:tw+8,h:18});}
    candidates.sort((a,b)=>Math.abs(a.ly-l.screen[1])-Math.abs(b.ly-l.screen[1])+(a.k===side?0:12)-(b.k===side?0:12));
    const box=candidates.find(freeLabel);if(!box)continue;labelBoxes.push(box);
-   const lx=box.k?width-10:10;ctx.strokeStyle='#65818b99';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(l.screen[0],l.screen[1]);ctx.lineTo(box.k?lx-5:lx+5,box.ly);ctx.stroke();ctx.textAlign=box.k?'right':'left';ctx.fillStyle='#f8fbf9ed';ctx.fillRect(box.x,box.y,box.w,box.h);ctx.fillStyle='#365564';ctx.fillText(l.text,lx,box.ly);
+   const lx=box.k?width-10:10;ctx.strokeStyle='#65818b40';ctx.lineWidth=.8;ctx.beginPath();ctx.moveTo(l.screen[0],l.screen[1]);ctx.lineTo(box.k?lx-5:lx+5,box.ly);ctx.stroke();ctx.textAlign=box.k?'right':'left';ctx.fillStyle='#f8fbf91f';ctx.fillRect(box.x,box.y,box.w,box.h);ctx.fillStyle='#365564';ctx.fillText(l.text,lx,box.ly);
   }
  }
  if(active<0){ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#526e7b';ctx.font='10px sans-serif';ctx.fillText('外装を省いた構造模式図',width/2,height-15);}

@@ -9,13 +9,12 @@ const ctx={
  scale(){},beginPath(){},closePath(){},moveTo(){},lineTo(){},fill(){},stroke(){},
  arc(x,y,radius){if(radius===13)supports.push({x,y,radius});},
  fillRect(x,y,w,h){
-  if(x===0&&y===0&&w===width&&h===height){rects=[];supports=[];lastBackground=null;}
-  if(['#f8fbf9ed','#ffffffed'].includes(this.fillStyle)){
-   const item={x,y,w,h,kind:this.fillStyle==='#ffffffed'?'axis':'part',text:''};
-   rects.push(item);lastBackground=item;
-  }
+  if(x===0&&y===0&&w===width&&h===height){rects=[];supports=[];lastBackground=null;return;}
+  // Background transparency must not make annotations disappear from the
+  // inspection. Classify a real rectangle by its following text, not its color.
+  lastBackground={x,y,w,h};
  },
- fillText(text){if(lastBackground){lastBackground.text=text;lastBackground=null;}},
+ fillText(text){if(lastBackground){rects.push({...lastBackground,text,kind:/^[XYZAC]軸$/.test(text)?'axis':'part'});lastBackground=null;}},
  measureText(text){const px=Number(/(\d+)px/.exec(this.font||'10px')?.[1]||10);return {width:[...text].reduce((n,ch)=>n+(/[\x00-\x7f]/.test(ch)?.56:1)*px,0)};}
 };
 r.scene.getContext=()=>ctx;r.scene.getBoundingClientRect=()=>({width,height});
@@ -42,4 +41,4 @@ for(const [i,mode] of variants){
  }}
 }
 console.log(JSON.stringify({frames,backgroundRectangles,axisRectangles,partRectangles,expectedAxisLabels,collisionFrames,outsideFrames,missingAxisFrames,supportCollisionFrames,examples},null,2));
-if(collisionFrames||outsideFrames||missingAxisFrames||supportCollisionFrames)process.exitCode=1;
+if(collisionFrames||outsideFrames||missingAxisFrames||supportCollisionFrames||axisRectangles!==expectedAxisLabels||partRectangles===0)process.exitCode=1;
