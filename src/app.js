@@ -76,6 +76,21 @@ function displayMovement(axes,m,state,pose){
 function displayTransformedPoint(p,axes,m,state=positions,pose='bed'){
  const q=displayRotatedPoint(p,axes,state),move=displayMovement(axes,m,state,pose);return q.map((v,i)=>v+move[i]);
 }
+// The ideal comparison is a separate display transform. It never replaces
+// support heights, intrinsic data, the initial comparison or the saved state.
+function idealDisplayContext(m,state=positions){
+ const scaleX=levelConfig.width/(m.w*.8),scaleZ=levelConfig.depth/(m.d*.8),offset=columnLayoutOffset(m);
+ return {scaleX,scaleZ,state:{...state},axes:axisConfig(m),offset:[offset.x*scaleX,0,offset.z*scaleZ],lift:displayClearance()+displayFactor()*supportHeights.reduce((sum,h)=>sum+h,0)/(1000*Math.max(1,supportHeights.length))};
+}
+function idealDisplayPoint(p,axes,pose,context){
+ const {scaleX,scaleZ,state,offset,lift}=context,q=[p[0]*scaleX,p[1],p[2]*scaleZ],pivot=[0,1.25,-.45*scaleZ];
+ if(axes.includes('C')){const t=state.C*Math.PI/100,dx=q[0]-pivot[0],dz=q[2]-pivot[2];q[0]=pivot[0]+dx*Math.cos(t)+dz*Math.sin(t);q[2]=pivot[2]-dx*Math.sin(t)+dz*Math.cos(t);}
+ if(axes.includes('A')){const t=state.A*.45/100,dy=q[1]-pivot[1],dz=q[2]-pivot[2];q[1]=pivot[1]+dy*Math.cos(t)-dz*Math.sin(t);q[2]=pivot[2]+dy*Math.sin(t)+dz*Math.cos(t);}
+ for(const a of context.axes)if(['X','Y','Z'].includes(a.key)&&axes.includes(a.key)){
+  const distance=a.amp*state[a.key]/100;q[0]+=a.vector[0]*scaleX*distance;q[1]+=a.vector[1]*distance;q[2]+=a.vector[2]*scaleZ*distance;
+ }
+ if(pose==='tool'){q[0]+=offset[0];q[2]+=offset[2];}q[1]+=lift;return q;
+}
 const $=id=>document.getElementById(id);
 let current=displayMachine(machines[0]), page='home', yaw=-0.45, selected=0, supports=[];
 // Viewing scale is deliberately separate from machine, leveling and saved state.
@@ -174,6 +189,56 @@ function createGeometry(m){
  supportList(m).forEach((t,i)=>{withGroup([],()=>cyl(t.x,.18,t.z,.14,.22,'#7d8991'),'support:'+i);withGroup([],()=>cyl(t.x,.045,t.z,.23,.09,'#52616d'),'pad:'+i);});
  return {faces,labels,references};
 }
+function idealFaceNormal(points){
+ const a=points[1].map((v,i)=>v-points[0][i]),b=points[2].map((v,i)=>v-points[0][i]),n=[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],length=Math.hypot(...n);return length?n.map(v=>v/length):[0,0,0];
+}
+function idealOutlineEdges(model){
+ const edges=new Map(),pointKey=p=>p.map(v=>Math.round(v*1e9)).join(',');
+ for(const f of model.faces){
+  // Floor pads, adjustable rods, height maps and small rail details remain
+  // solely on the current model, keeping the posture comparison uncluttered.
+  if(f.surface||!['bed','tool','work','leftColumn','rightColumn'].includes(f.pose)||f.color==='#c8d6d9')continue;
+  for(let i=0;i<f.v.length;i++){
+   const a=f.v[i],b=f.v[(i+1)%f.v.length],pa=pointKey(a),pb=pointKey(b),key=f.pose+':'+f.axes.join('/')+':'+[pa,pb].sort().join('|');
+   if(edges.has(key))edges.get(key).faces.push(f);else edges.set(key,{a,b,axes:f.axes,pose:f.pose,faces:[f],smooth:false});
+  }
+ }
+ return [...edges.values()].filter(edge=>{
+  if(edge.faces.length!==2)return true;
+  const a=idealFaceNormal(edge.faces[0].v),b=idealFaceNormal(edge.faces[1].v),dot=Math.abs(a.reduce((sum,v,i)=>sum+v*b[i],0));
+  if(dot>1-1e-8)return false;edge.smooth=dot>Math.cos(Math.PI/6);return true;
+ });
+}
+function idealOutlineSegments(edges,context,angle,view){
+ const pitch=scenePitch(view),sight=[-Math.sin(angle)*Math.cos(pitch),-Math.sin(pitch),Math.cos(angle)*Math.cos(pitch)],normals=new Map();
+ const facing=f=>{
+  if(!normals.has(f)){const n=idealFaceNormal(f.v.slice(0,3).map(p=>idealDisplayPoint(p,f.axes,f.pose,context)));normals.set(f,n.reduce((sum,v,i)=>sum+v*sight[i],0));}return normals.get(f);
+ };
+ return edges.filter(edge=>!edge.smooth||facing(edge.faces[0])*facing(edge.faces[1])<0).map(edge=>({a:idealDisplayPoint(edge.a,edge.axes,edge.pose,context),b:idealDisplayPoint(edge.b,edge.axes,edge.pose,context)}));
+}
+const idealOutlineCache=new Map();
+function drawIdealOutline(ctx,m,model,screen,angle,view){
+ const key=m.kind+':'+m.w+':'+m.d;
+ if(!idealOutlineCache.has(key)){if(idealOutlineCache.size>=24)idealOutlineCache.clear();idealOutlineCache.set(key,idealOutlineEdges(model));}
+ const segments=idealOutlineSegments(idealOutlineCache.get(key),idealDisplayContext(m),angle,view),points=new Map(),edges=[],dedup=new Set(),pointKey=p=>p.map(v=>Math.round(v*100)).join(',');
+ for(const segment of segments){
+  const a=screen(segment.a),b=screen(segment.b);if(Math.hypot(a[0]-b[0],a[1]-b[1])<.4)continue;
+  const ka=pointKey(a.slice(0,2)),kb=pointKey(b.slice(0,2)),edgeKey=[ka,kb].sort().join('|');if(dedup.has(edgeKey))continue;dedup.add(edgeKey);
+  const edge={a:a.slice(0,2),b:b.slice(0,2),ka,kb,used:false};edges.push(edge);
+  for(const k of [ka,kb]){if(!points.has(k))points.set(k,[]);points.get(k).push(edge);}
+ }
+ ctx.strokeStyle='rgba(57,111,142,.34)';ctx.lineWidth=1;ctx.setLineDash?.([4,4]);
+ // Join degree-two rim segments so dashes continue around a cylinder instead
+ // of restarting on every short polygon edge. Box corners stay distinct.
+ const trace=(first,start)=>{
+  let edge=first,k=start;ctx.beginPath();ctx.moveTo(...(k===edge.ka?edge.a:edge.b));
+  while(edge&&!edge.used){edge.used=true;k=k===edge.ka?edge.kb:edge.ka;ctx.lineTo(...(k===edge.ka?edge.a:edge.b));const adjoining=points.get(k);edge=adjoining.length===2?adjoining.find(e=>!e.used):null;}
+  ctx.stroke();
+ };
+ for(const edge of edges)if(!edge.used&&(points.get(edge.ka).length!==2||points.get(edge.kb).length!==2))trace(edge,points.get(edge.ka).length!==2?edge.ka:edge.kb);
+ for(const edge of edges)if(!edge.used)trace(edge,edge.ka);
+ ctx.setLineDash?.([]);
+}
 function tone(hex,s){const v=hex.slice(1).match(/../g).map(x=>Math.min(255,Math.round(parseInt(x,16)*s)));return `rgb(${v.join(',')})`;}
 // Cache a fixed movement envelope, so operating an axis never auto-zooms the machine.
 const framingCache=new Map();
@@ -257,6 +322,7 @@ function render(canvas,m,angle,showLabels,active){
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
  if(active>=0)model.faces.push(...levelSurfaceFaces(m));
  model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
+ if(training&&$('showIdealOutline').checked)drawIdealOutline(ctx,m,model,screen,angle,sceneView);
  // Reserve support markers before placing any text. Labels use the entire
  // Canvas now that the operation bar has its own row below it.
  const labelBoxes=[],freeLabel=(box)=>box.x>=4&&box.y>=4&&box.x+box.w<=width-4&&box.y+box.h<=height-4&&!labelBoxes.some(b=>box.x<b.x+b.w+2&&b.x<box.x+box.w+2&&box.y<b.y+b.h+2&&b.y<box.y+box.h+2);
@@ -311,7 +377,7 @@ function drawThumbnails(){const previous=positions;positions={X:0,Y:0,Z:0,A:0,C:
 function updateSceneViewUI(){
  $('sceneView').value=sceneView;
  $('sceneDirection').textContent=sceneView==='front'?'正面：左 → 右':sceneView==='side'?'側面：手前 → 奥':'斜め：左右回転';
- $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
+ $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。薄い破線の理想輪郭は'+($('showIdealOutline').checked?'表示中':'非表示')+'。操作欄の先頭で切り替えます。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
 }
 function drawScene(){if(levelSolution)updateAccuracy();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){
@@ -320,7 +386,7 @@ function setSceneView(view){
 }
 function rotate(delta){if(!Number.isFinite(delta)||delta===0)return;sceneView='oblique';yaw+=delta;drawScene();}
 $('sceneView').onchange=()=>setSceneView($('sceneView').value);
-$('labels').onchange=drawScene;$('showAxes').onchange=drawScene;
+$('labels').onchange=drawScene;$('showAxes').onchange=drawScene;$('showIdealOutline').onchange=drawScene;
 const scenePointers=new Map();let scenePinch=null;
 function scenePointerDistance(){const [a,b]=[...scenePointers.values()];return a&&b?Math.hypot(a.x-b.x,a.y-b.y):0;}
 function resetSceneGesture(){scenePinch=scenePointers.size>=2?{distance:scenePointerDistance(),zoom:sceneZoom}:null;}
