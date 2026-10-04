@@ -11,7 +11,15 @@ function check(name,fn){try{fn();checks++;}catch(error){throw new Error(name+': 
 function near(a,b,tolerance=1e-7){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tolerance,`${a} != ${b}`);}
 function visibleText(el){if(el.hidden)return '';return el._text+' '+el.children.map(visibleText).join(' ');}
 function visibleElements(el,out=[]){if(el.hidden)return out;out.push(el);for(const child of el.children)visibleElements(child,out);return out;}
+function compactCoach(){
+ const coarse=read('adjustmentStage')==='coarse',hint=coarse?r.coarseHint:r.fineHint,ready=(coarse?r.stageStatus.getAttribute('data-coarse-ready'):r.fineStatus.getAttribute('data-target'))==='true';
+ assert.equal(r.supportStageStatus.getAttribute('data-stage'),coarse?'coarse':'fine');assert.equal(r.supportStageStatus.getAttribute('data-ready'),String(ready));assert.match(r.supportStageStatus.textContent,coarse?/粗調整/:/精調整/);
+ const reminder=r.supportStageHint,mode=ready?'goal':hint.getAttribute('data-support')!==''?'candidate':'stalled';assert.equal(reminder.getAttribute('data-mode'),mode);assert.ok(reminder.textContent.length<=20);assert.ok(r.supportStageStatus.textContent.length<=20);
+ if(mode==='candidate'){assert.equal(reminder.getAttribute('data-support'),hint.getAttribute('data-support'));assert.equal(reminder.getAttribute('data-direction'),hint.getAttribute('data-direction'));assert.match(reminder.textContent,new RegExp(String.fromCharCode(65+Number(hint.getAttribute('data-support')))+'を少し'+(Number(hint.getAttribute('data-direction'))>0?'上げる':'下げる')));}
+ else{assert.equal(reminder.getAttribute('data-support'),'');assert.equal(reminder.getAttribute('data-direction'),'');assert.match(reminder.textContent,mode==='goal'?/残る誤差/:/単独候補なし/);}
+}
 function nonnumeric(){
+ compactCoach();
  const text=visibleText(r.training).replace(/(?:5|2)軸/g,'');
  assert.doesNotMatch(text,/[0-9０-９%％°µμ]|\bmm\b|\brad\b/);
  for(const el of visibleElements(r.training)){
@@ -52,9 +60,9 @@ for(const [index,mode] of variants)for(const condition of ['new','used']){
  r.fineAdjust.click();r.coarseAdjust.click();
  check('tabs preserve individual, support heights and initial diagram '+label,()=>{assert.deepEqual(json('levelRecord()'),original);assert.deepEqual(json('levelInitialGeometry'),initial);assert.equal(r.coarseAdjust.getAttribute('aria-pressed'),'true');assert.equal(r.finePanel.hidden,true);});
  const height=read('supportHeights[0]');r.up0.click();
- check('coarse step moves actual support and mean bubble '+label,()=>{near(read('supportHeights[0]'),height+.01,1e-12);assert.equal(r.supportState0.textContent,'上げた');assert.equal(r.supportStageHint.textContent,r.coarseHint.textContent);hintCandidate('coarseHint','coarse');verifyDiagrams();});
+ check('coarse step moves actual support and mean bubble '+label,()=>{near(read('supportHeights[0]'),height+.01,1e-12);assert.equal(r.supportState0.textContent,'上げた');compactCoach();hintCandidate('coarseHint','coarse');verifyDiagrams();});
  r.coarseExample.click();
- check('coarse example actually levels the support plane '+label,()=>{near(read('levelSolution.lr'),0);near(read('levelSolution.fb'),0);assert.equal(r.stageStatus.getAttribute('data-coarse-ready'),'true');assert.deepEqual(json('machineProfile'),profile);assert.deepEqual(json('supportHeights'),profile.initialHeights.map(()=>0));});
+ check('coarse example actually levels the support plane '+label,()=>{near(read('levelSolution.lr'),0);near(read('levelSolution.fb'),0);compactCoach();assert.equal(r.stageStatus.getAttribute('data-coarse-ready'),'true');assert.deepEqual(json('machineProfile'),profile);assert.deepEqual(json('supportHeights'),profile.initialHeights.map(()=>0));});
  const coarseScore=read('machineEvaluation(supportHeights).objective');r.fineAdjust.click();
  check('fine entry has its own aggregate comparison, not a new initial angle '+label,()=>{near(Number(r.fineOverallProgress.getAttribute('data-before')),coarseScore);assert.equal(r.fineOverallProgress.getAttribute('data-trend'),'similar');assert.equal(r.coarsePanel.hidden,true);assert.equal(r.finePanel.hidden,false);assert.equal(read('levelRecord().step'),.001);hintCandidate('fineHint','fine');});
  const actualBest=json('machineBestHeights()');if(!r.fineExample.disabled)r.fineExample.click();
@@ -78,7 +86,7 @@ check('small RMS difference cannot hide significant remaining adjustment',()=>{
 });
 for(const [index,mode,condition,heights] of [[2,'','new',[-.097,-.107,-.067,-.077,-.079,-.089]],[3,'long','used',[.036,-.015,.074,.173,-.009,.09]]])check('single-support stagnation is not completed, real reference can help '+index+'/'+condition,()=>{
  const profile=loadProfile(index,mode,condition,42);r.fineAdjust.click();read(`supportHeights=${JSON.stringify(heights)};updateLeveling();`);
- assert(Number(r.fineStatus.getAttribute('data-gap'))>.1);assert.equal(r.fineStatus.getAttribute('data-target'),'false');assert.equal(r.fineHint.getAttribute('data-support'),'');assert.match(r.fineHint.textContent,/複数の支持点/);assert.doesNotMatch(r.fineStatus.textContent,/目安内/);
+ compactCoach();assert(Number(r.fineStatus.getAttribute('data-gap'))>.1);assert.equal(r.fineStatus.getAttribute('data-target'),'false');assert.equal(r.fineHint.getAttribute('data-support'),'');assert.match(r.fineHint.textContent,/複数の支持点/);assert.doesNotMatch(r.fineStatus.textContent,/目安内/);
  const before=read('machineEvaluation(supportHeights).objective');
  for(let i=0;i<heights.length;i++)for(const direction of [-1,1]){const candidate=[...heights];candidate[i]=Math.round((candidate[i]+direction*.001)*1000)/1000;assert(read(`machineEvaluation(${JSON.stringify(candidate)}).objective`)>=before-1e-10);}
  const wanted=json('machineBestHeights()');r.fineExample.click();assert.deepEqual(json('supportHeights'),wanted);assert.notDeepEqual(json('supportHeights'),heights);assert.equal(r.fineStatus.getAttribute('data-target'),'true');assert.deepEqual(json('machineProfile'),profile);nonnumeric();
