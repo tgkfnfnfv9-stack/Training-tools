@@ -884,7 +884,21 @@ for(const [id,key,min,max] of [['supportWidth','width',.5,20],['supportDepth','d
 $('impactOffset').oninput=()=>{invalidateLevelImport();const value=Number($('impactOffset').value);if(bounded(value,.1,2)){levelConfig.offset=value;updateLeveling();}};
 $('impactOffset').onchange=()=>{const value=Number($('impactOffset').value);if(!bounded(value,.1,2)){$('impactOffset').value=levelConfig.offset;$('levelInputMessage').textContent='評価長は0.10〜2.00 mです。直前の有効値へ戻しました。';}else levelConfig.offset=value;updateLeveling();};
 $('startLevelExercise').onclick=()=>{invalidateLevelImport();stopMotion();supportHeights=supports.map(()=>Math.round((Math.random()*.4-.2)*1000)/1000);const sign=Math.random()<.5?-1:1;supportHeights[0]=-.4*sign;supportHeights[1]=.4*sign;levelExercise={solved:false};$('levelInputMessage').textContent=machineProfile?'同じ個体で別の支持状態を設定しました。比較基準は抽選時の支持高さのままです。':'新しい調整問題を設定しました。';updateLeveling();};
-$('exportLevel').onclick=()=>{const blob=new Blob([JSON.stringify(levelRecord(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download='leveling-'+current.id+'-'+(machineMode||'standard')+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('levelSaveStatus').textContent='調整データのダウンロードを開始しました。';};
+$('exportLevel').onclick=()=>{
+ let url=null,link=null;
+ try{
+  const blob=new Blob([JSON.stringify(levelRecord(),null,2)],{type:'application/json'});
+  url=URL.createObjectURL(blob);link=document.createElement('a');link.href=url;link.download='leveling-'+current.id+'-'+(machineMode||'standard')+'.json';link.hidden=true;
+  document.body.append(link);link.click();
+  // Keep the Blob available while the browser starts the download. The link
+  // belongs to the live document only for the synchronous click itself.
+  const downloadUrl=url;setTimeout(()=>URL.revokeObjectURL(downloadUrl),30000);url=null;
+  $('levelSaveStatus').textContent='調整データのダウンロードを開始しました。';
+ }catch{
+  if(url)URL.revokeObjectURL(url);
+  $('levelSaveStatus').textContent='保存を開始できませんでした。もう一度「調整データを保存」を押してください。';
+ }finally{if(link)link.remove();}
+};
 $('importLevel').onchange=async event=>{
  const file=event.target.files[0];event.target.value='';if(!file)return;
  stopMotion();
