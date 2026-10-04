@@ -36,11 +36,52 @@ function transformedPoint(p,axes,m,state=positions){
  for(const a of axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)))if(axes.includes(a.key))q=q.map((v,i)=>v+a.vector[i]*a.amp*state[a.key]/100);
  return q;
 }
+function displayRotatedPoint(p,axes,state=positions){
+ let q=displayCoordinates(p);const pivot=displayCoordinates([0,1.25,-.45]);
+ if(axes.includes('C')){const t=state.C*Math.PI/100,dx=q[0]-pivot[0],dz=q[2]-pivot[2];q[0]=pivot[0]+dx*Math.cos(t)+dz*Math.sin(t);q[2]=pivot[2]-dx*Math.sin(t)+dz*Math.cos(t);}
+ if(axes.includes('A')){const t=state.A*.45/100,dy=q[1]-pivot[1],dz=q[2]-pivot[2];q[1]=pivot[1]+dy*Math.cos(t)-dz*Math.sin(t);q[2]=pivot[2]+dy*Math.sin(t)+dz*Math.cos(t);}
+ return q;
+}
+function inverseDisplayRotation(frame,v){const basis=[[1,0,0],[0,1,0],[0,0,1]].map(q=>frame.rotate(q));return basis.map(q=>q.reduce((sum,n,i)=>sum+n*v[i],0));}
+const displayMovementCache=new Map();let displayMovementKey='',displayMovementGeometry=null;
+function prepareDisplayMovement(){
+ if(displayMovementGeometry===levelGeometry)return;
+ const key=JSON.stringify([current.id,current.kind,levelConfig,displayFactor(),supportHeights,machineProfile]);
+ if(key!==displayMovementKey){displayMovementKey=key;displayMovementCache.clear();}
+ displayMovementGeometry=levelGeometry;
+}
+function displayMovement(axes,m,state,pose){
+ if(!levelGeometry||pose==='bed'||pose.startsWith('pad:')||pose.startsWith('support:'))return [0,0,0];
+ prepareDisplayMovement();
+ const groupKey=JSON.stringify([axes,state,pose]);if(displayMovementCache.has(groupKey))return displayMovementCache.get(groupKey);
+ const active=axisConfig(m).filter(a=>axes.includes(a.key)&&['X','Y','Z'].includes(a.key)),baseState={...state};active.forEach(a=>baseState[a.key]=0);
+ const g=state===positions?levelGeometry:geometryModel(state),before=geometryModel(baseState),info=g.poses[pose]||g.poses.tool,baseInfo=before.poses[pose]||before.poses.tool;
+ const anchor=displayCoordinates([info.anchor.x,.66,info.anchor.z]),baseAnchor=displayCoordinates([baseInfo.anchor.x,.66,baseInfo.anchor.z]),dA=anchor.map((v,i)=>v-baseAnchor[i]);
+ const s=displaySurfacePoint(anchor[0],anchor[2]),s0=displaySurfacePoint(baseAnchor[0],baseAnchor[2]),dS=s.map((v,i)=>v-s0[i]),desired=[0,0,0],transport=[0,0,0],nonuniform=levelSolution.residual>1e-10||Math.abs(levelSolution.twist)>1e-10;
+ for(const a of active){
+  const source=g.axes.find(q=>q.key===a.key).source,axisFrame=displaySupportFrame(g.poses[source].slope),amplitude=Math.hypot(...displayCoordinates(a.vector))*a.amp*state[a.key]/100,direction=axisFrame.rotate(accuracyVisualVector(a.key));direction.forEach((v,i)=>desired[i]+=v*amplitude);
+  if(nonuniform){
+   const axisBase=geometryModel({...state,[a.key]:0}),axisInfo=axisBase.poses[pose]||axisBase.poses.tool,axisAnchor=displayCoordinates([axisInfo.anchor.x,.66,axisInfo.anchor.z]),axisDA=anchor.map((v,i)=>v-axisAnchor[i]),movesAnchor=Math.hypot(...axisDA)>1e-12,nominal=axisFrame.rotate(a.vector);
+   const axisWorld=direction.map((v,i)=>(v-(movesAnchor?nominal[i]:0))*amplitude),parent=inverseDisplayRotation(displaySupportFrame(info.slope),axisWorld),local=machineProfile&&pose!=='work'?inverseDisplayRotation(displayBodyFrame(),parent):parent;
+   local.forEach((v,i)=>transport[i]+=v+(movesAnchor?axisDA[i]:0));
+  }
+ }
+ // On a nonuniform support surface, preserve the nominal contact transport.
+ // Only the intrinsic guide-direction difference is added. Local posture
+ // changes naturally add vertex motion beyond a representative guide arrow.
+ if(nonuniform){displayMovementCache.set(groupKey,transport);return transport;}
+ const parentDelta=inverseDisplayRotation(displaySupportFrame(info.slope),desired.map((v,i)=>v-dS[i])),localDelta=machineProfile&&pose!=='work'?inverseDisplayRotation(displayBodyFrame(),parentDelta):parentDelta;
+ const result=dA.map((v,i)=>v+localDelta[i]);displayMovementCache.set(groupKey,result);return result;
+}
+function displayTransformedPoint(p,axes,m,state=positions,pose='bed'){
+ const q=displayRotatedPoint(p,axes,state),move=displayMovement(axes,m,state,pose);return q.map((v,i)=>v+move[i]);
+}
 const $=id=>document.getElementById(id);
 let current=displayMachine(machines[0]), page='home', yaw=-0.45, selected=0, supports=[];
 // Viewing scale is deliberately separate from machine, leveling and saved state.
 const SCENE_ZOOM_MIN=.65,SCENE_ZOOM_MAX=1.8;
 let sceneZoom=1;
+let sceneView='oblique';
 function supportList(m){
  if(!m.grid)return [{x:-m.w*.4,z:-m.d*.4,name:'左・手前'},{x:m.w*.4,z:-m.d*.4,name:'右・手前'},{x:0,z:m.d*.4,name:'奥・中央'}];
  const [nx,nz]=m.grid,list=[];
@@ -63,7 +104,7 @@ $('mechanical').onclick=()=>navigate('topics');$('electric').onclick=()=>navigat
 $('testerEntry').onclick=()=>{if(window.resetTesterLesson)window.resetTesterLesson();navigate('tester');};
 $('testerBack').onclick=()=>navigate('electricTopics');
 function openMachine(m){
- stopMotion();sceneZoom=1;machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
+ stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
 function populateMachine(){
  setAxisMenuOpen(false);
@@ -87,11 +128,14 @@ function buildSupports(){
 const grid=$('machineGrid');machines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>openMachine(m);grid.append(card);});
 // 部品に軸の親子関係を持たせ、固定部は動かさない。
 function createGeometry(m){
- const faces=[],labels=[],c={base:'#80949c',fixed:'#799198',table:'#4c9b8b',spindle:'#dfab62',rail:'#c8d6d9',work:'#d1ddd7'};
+ const faces=[],labels=[],references=[],c={base:'#80949c',fixed:'#799198',table:'#4c9b8b',spindle:'#dfab62',rail:'#c8d6d9',work:'#d1ddd7'};
  let group=[],pose='bed';
  function withGroup(axes,fn,partPose=pose){const prev=group,previousPose=pose;group=axes;pose=partPose;fn();group=prev;pose=previousPose;}
  function label(p,name){labels.push({p,axes:[...group],pose,name,text:name+(group.length?'［'+group.join('/')+'］':'［固定］')});}
- function box(x,y,z,w,h,d,color,text){const v=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]].map(([a,b,e])=>[x+a*w/2,y+b*h/2,z+e*d/2]);[[0,1,2,3],[4,7,6,5],[0,4,5,1],[3,2,6,7],[0,3,7,4],[1,5,6,2]].forEach((ix,i)=>faces.push({v:ix.map(j=>v[j]),axes:[...group],pose,color,shade:[.83,.85,.65,1.08,.88,.94][i]}));if(text)label([x,y+h/2,z],text);}
+ function box(x,y,z,w,h,d,color,text){const v=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]].map(([a,b,e])=>[x+a*w/2,y+b*h/2,z+e*d/2]);[[0,1,2,3],[4,7,6,5],[0,4,5,1],[3,2,6,7],[0,3,7,4],[1,5,6,2]].forEach((ix,i)=>faces.push({v:ix.map(j=>v[j]),axes:[...group],pose,color,shade:[.83,.85,.65,1.08,.88,.94][i]}));if(text)label([x,y+h/2,z],text);
+  if(text==='主軸台')references.push({base:[x-w/2,y,z-d/2],tip:[x+w/2,y,z-d/2],direction:[1,0,0],length:w,axes:[...group],pose});
+  else if(text==='コラム'||pose==='leftColumn'||pose==='rightColumn')references.push({base:[x+w/2,y-h/2,z-d/2],tip:[x+w/2,y+h/2,z-d/2],direction:[0,1,0],length:h,axes:[...group],pose});
+ }
  function cyl(x,y,z,r,len,color,axis='y',text){const n=20,ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8},{v:ring[1],axes:[...group],pose,color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
  const W=m.w,D=m.d;
  box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
@@ -127,8 +171,8 @@ function createGeometry(m){
  [-1,1].forEach(k=>box(0,.72,k*.4,W*.93,.11,.13,c.rail));withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24,1.5,0,.4,.25,c.spindle,'x');cyl(0,1.5,0,.14,W*.45,c.work,'x');},'tool');box(W*.33,1.13,0,.55,.9,.65,c.fixed,'心押台');cyl(W*.2,1.5,0,.1,.4,c.spindle,'x');
  withGroup(['Z'],()=>box(.08,.87,-.15,.8,.22,1.35,c.fixed,'往復台'),'work');withGroup(['X','Z'],()=>{box(.08,1.18,-.58,.64,.5,.55,c.table,'刃物台');box(.08,1.45,-.33,.08,.08,.38,c.spindle);},'work');
  }
- supportList(m).forEach(t=>{cyl(t.x,.18,t.z,.14,.22,'#7d8991');cyl(t.x,.07,t.z,.23,.09,'#52616d');});
- return {faces,labels};
+ supportList(m).forEach((t,i)=>{withGroup([],()=>cyl(t.x,.18,t.z,.14,.22,'#7d8991'),'support:'+i);withGroup([],()=>cyl(t.x,.045,t.z,.23,.09,'#52616d'),'pad:'+i);});
+ return {faces,labels,references};
 }
 function tone(hex,s){const v=hex.slice(1).match(/../g).map(x=>Math.min(255,Math.round(parseInt(x,16)*s)));return `rgb(${v.join(',')})`;}
 // Cache a fixed movement envelope, so operating an axis never auto-zooms the machine.
@@ -139,40 +183,60 @@ function framingPoints(m,model){
  const points=model.faces.flatMap(f=>f.v.flatMap(p=>f.axes.length?ends.map(state=>transformedPoint(p,f.axes,m,state)):[[...p]]));
  framingCache.set(key,points);return points;
 }
+const displayFramingCache=new Map();
+function displayFramingPoints(m,model){
+ const clearance=displayClearance(),key=JSON.stringify([m.kind,m.w,m.d,levelConfig.width,levelConfig.depth,levelConfig.columnX,levelConfig.columnZ,displayFactor(),clearance]);if(displayFramingCache.has(key))return displayFramingCache.get(key);
+ const points=[];
+ for(const f of model.faces)for(const p of f.v){
+  const rotations=f.axes.includes('C')?[-100,-50,0,50,100]:[0],tilts=f.axes.includes('A')?[-100,0,100]:[0];
+  for(const A of tilts)for(const C of rotations){const q=displayRotatedPoint(p,f.axes,{A,C});if(f.pose==='tool'){const offset=columnLayoutOffset(m),mapped=displayCoordinates([offset.x,0,offset.z]);q[0]+=mapped[0];q[2]+=mapped[2];}const amplitude=[0,0,0];for(const a of axisConfig(m))if(f.axes.includes(a.key)&&['X','Y','Z'].includes(a.key)){const vector=displayCoordinates(a.vector);vector.forEach((v,i)=>amplitude[i]+=Math.abs(v*a.amp));}
+   for(const sign of [-1,1])points.push(q.map((v,i)=>v+(i===1&&!f.pose.startsWith('pad:')?clearance:0)+sign*(amplitude[i]+(i===1?.63+clearance:.55))));
+  }
+ }
+ if(displayFramingCache.size>=24)displayFramingCache.clear();displayFramingCache.set(key,points);return points;
+}
 // Every available axis has an indicator on its moving assembly. C follows
 // the A parent tilt; neither rotary arrow is drawn as a linear slide.
 function axisIndicators(m,model){
  return axisConfig(m).map(a=>{
   if(['X','Y','Z'].includes(a.key)){
-   const movingFaces=model.faces.filter(f=>f.axes.includes(a.key)),moved=movingFaces.flatMap(f=>f.v.map(p=>transformedPoint(p,f.axes,m)));
+   const movingFaces=model.faces.filter(f=>f.axes.includes(a.key)),moved=movingFaces.flatMap(f=>f.v.map(p=>displayTransformedPoint(p,f.axes,m,positions,f.pose)));
    const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2);
-   const bodyPoints=levelGeometry?movingFaces.flatMap(f=>f.v.map(p=>levelBodyVisualPoint(transformedPoint(p,f.axes,m),f.pose))):moved,bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
+   const bodyPoints=levelGeometry?movingFaces.flatMap(f=>f.v.map(p=>levelMappedBodyVisualPoint(displayTransformedPoint(p,f.axes,m,positions,f.pose),f.pose))):moved,bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
    const vector=levelGeometry?accuracyVisualVector(a.key):a.vector,pose=levelGeometry?levelGeometry.axes.find(q=>q.key===a.key).source:'bed';
    return {key:a.key,pose,bodyOrigin,curved:false,points:[-1,1].map(sign=>origin.map((v,i)=>v+sign*vector[i]*.6))};
   }
   const points=Array.from({length:25},(_,i)=>{
    const t=-Math.PI*.65+i/24*Math.PI*1.3;
    const p=a.key==='A'?[-1.2,1.25+Math.cos(t)*.72,-.45+Math.sin(t)*.72]:[Math.cos(t)*.8,1.68,-.45+Math.sin(t)*.8];
-   return transformedPoint(p,a.key==='A'?['X','Y']:['X','Y','A'],m);
+   return displayTransformedPoint(p,a.key==='A'?['X','Y']:['X','Y','A'],m,positions,'work');
   });
   return {key:a.key,pose:'work',curved:true,points};
  });
 }
 // Keep each reference direction separate from the model and from the other axes.
 // Only the viewing angle is projected here; support posture and accuracy stay on the model.
+function scenePitch(view=sceneView){return view==='front'||view==='side'?0:.24;}
+function sceneProject(p,angle,view='oblique',perspective=false){
+ const [x,y,z]=p,pitch=scenePitch(view),xx=x*Math.cos(angle)+z*Math.sin(angle),zz=-x*Math.sin(angle)+z*Math.cos(angle);
+ const yy=(y-1.65)*Math.cos(pitch)+zz*Math.sin(pitch),depth=11+zz*Math.cos(pitch)-(y-1.65)*Math.sin(pitch);
+ // A shared divisor preserves the scale convention without perspective lean.
+ const divisor=perspective?depth:11;return [xx/divisor,-yy/divisor,depth];
+}
 function orientationArrows(m,angle){
- const pitch=.24;
+ const pitch=scenePitch();
  return axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>{
-  const [x,y,z]=a.vector,dx=x*Math.cos(angle)+z*Math.sin(angle),dy=-y*Math.cos(pitch)-(-x*Math.sin(angle)+z*Math.cos(angle))*Math.sin(pitch),length=Math.hypot(dx,dy)||1;
-  return {key:a.key,dx:dx/length,dy:dy/length};
+  const [x,y,z]=a.vector,dx=x*Math.cos(angle)+z*Math.sin(angle),dy=-y*Math.cos(pitch)-(-x*Math.sin(angle)+z*Math.cos(angle))*Math.sin(pitch),length=Math.hypot(dx,dy),depth=length<1e-8;
+  return {key:a.key,dx:depth?0:dx/length,dy:depth?0:dy/length,depth};
  });
 }
 function drawOrientationGuide(){
  const guide=$('orientationGuide');guide.hidden=!$('showAxes').checked;if(guide.hidden)return;
  $('orientationRotaryNote').hidden=current.kind!=='five';
- $('orientationAxes').innerHTML=orientationArrows(current,yaw).map(({key,dx,dy})=>{
+ $('orientationAxes').innerHTML=orientationArrows(current,yaw).map(({key,dx,dy,depth})=>{
   const x=48+dx*28,y=72+dy*28,color=axisColors[key],backX=x-dx*9,backY=y-dy*9;
-  return `<svg class="orientation-axis" viewBox="0 0 96 116" role="img" aria-label="${key}軸の向きの目安"><text x="48" y="19" text-anchor="middle" fill="${color}">${key}軸</text><line x1="48" y1="72" x2="${x}" y2="${y}" stroke="${color}" stroke-width="3"/><path d="M ${x} ${y} L ${backX-dy*4.5} ${backY+dx*4.5} L ${backX+dy*4.5} ${backY-dx*4.5} Z" fill="${color}"/><circle cx="48" cy="72" r="3" fill="#526e7b"/></svg>`;
+  const direction=depth?`<title>画面の奥行方向</title><circle cx="48" cy="72" r="5" fill="none" stroke="${color}" stroke-width="2"/>`:`<line x1="48" y1="72" x2="${x}" y2="${y}" stroke="${color}" stroke-width="3"/><path d="M ${x} ${y} L ${backX-dy*4.5} ${backY+dx*4.5} L ${backX+dy*4.5} ${backY-dx*4.5} Z" fill="${color}"/>`;
+  return `<svg class="orientation-axis" viewBox="0 0 96 116" role="img" aria-label="${key}軸の向きの目安"><text x="48" y="19" text-anchor="middle" fill="${color}">${key}軸</text>${direction}<circle cx="48" cy="72" r="3" fill="#526e7b"/></svg>`;
  }).join('');
 }
 function render(canvas,m,angle,showLabels,active){
@@ -180,14 +244,14 @@ function render(canvas,m,angle,showLabels,active){
  const ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.height*ratio);
  const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);const width=rect.width,height=rect.height;
  ctx.fillStyle='#eaf0f2';ctx.fillRect(0,0,width,height);
- const model=createGeometry(m),pitch=.24;
- function project(p){const [x,y,z]=p;const xx=x*Math.cos(angle)+z*Math.sin(angle),zz=-x*Math.sin(angle)+z*Math.cos(angle);const yy=(y-1.65)*Math.cos(pitch)+zz*Math.sin(pitch),depth=11+zz*Math.cos(pitch)-(y-1.65)*Math.sin(pitch);return [xx/depth,-yy/depth,depth];}
- const fitPoints=active>=0?framingPoints(m,model).flatMap(p=>[[p[0],p[1]-.25,p[2]],[p[0],p[1]+.25,p[2]]]):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
+ const model=createGeometry(m),training=canvas===$('scene')&&active>=0;
+ const project=p=>sceneProject(p,angle,training?sceneView:'oblique',!training);
+ const fitPoints=training?displayFramingPoints(m,model):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
  // Fit the machine and its fixed movement envelope, without the empty ground around it.
  const margin=showLabels?Math.min(56,width*.16):18,verticalSpace=active>=0?height-48:height-75;
  const fitScale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY));
  const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-20)/2:height*.48)-(minY+maxY)*scale/2;
- const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(active>=0?levelBodyVisualPoint(transformedPoint(p,axes,m),pose):transformedPoint(p,axes,m));
+ const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelMappedVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(active>=0?levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,positions,pose||'bed'),pose):transformedPoint(p,axes,m));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
@@ -196,15 +260,24 @@ function render(canvas,m,angle,showLabels,active){
  // Reserve support markers before placing any text. Labels use the entire
  // Canvas now that the operation bar has its own row below it.
  const labelBoxes=[],freeLabel=(box)=>box.x>=4&&box.y>=4&&box.x+box.w<=width-4&&box.y+box.h<=height-4&&!labelBoxes.some(b=>box.x<b.x+b.w+2&&b.x<box.x+box.w+2&&box.y<b.y+b.h+2&&b.y<box.y+box.h+2);
- if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.15,s.z]));labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda794d':'#ffffff26';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
+ if(training){
+  ctx.strokeStyle='#536d786e';ctx.lineWidth=.8;ctx.setLineDash?.([3,3]);
+  for(const ref of model.references){
+   const from=levelMappedBodyVisualPoint(displayTransformedPoint(ref.base,ref.axes,m,positions,ref.pose),ref.pose),physicalLength=Math.hypot(...displayCoordinates(ref.direction.map(v=>v*ref.length))),to=from.map((v,i)=>v+ref.direction[i]*physicalLength),a=screen(from),b=screen(to),dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy);
+   if(length<4)continue;const offset=[-dy/length*5,dx/length*5];
+   ctx.beginPath();ctx.moveTo(a[0]+offset[0],a[1]+offset[1]);ctx.lineTo(b[0]+offset[0],b[1]+offset[1]);ctx.stroke();
+  }
+  ctx.setLineDash?.([]);
+ }
+ if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.195,s.z]));labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda794d':'#ffffff26';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  if(active>=0&&$('showAxes').checked){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
  for(const a of axisIndicators(m,model)){
   const origin=a.curved?null:a.points[0].map((v,i)=>(v+a.points[1][i])/2),path=a.points.map(p=>screen(origin?levelAxisVisualPoint(p,origin,a.pose,a.bodyOrigin):surfacePoint(p,a.pose)));
   ctx.strokeStyle=axisColors[a.key];ctx.fillStyle=axisColors[a.key];ctx.lineWidth=a.key===selectedAxis?4:2.5;
-  ctx.beginPath();path.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.stroke();
-  arrow(path[0],path[1]);arrow(path[path.length-1],path[path.length-2]);
+  if(!a.curved&&Math.hypot(path[1][0]-path[0][0],path[1][1]-path[0][1])<2){ctx.beginPath();ctx.arc(path[0][0],path[0][1],3,0,Math.PI*2);ctx.stroke();}
+  else{ctx.beginPath();path.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.stroke();arrow(path[0],path[1]);arrow(path[path.length-1],path[path.length-2]);}
   const p=a.curved?path[Math.floor(path.length/2)]:[(path[0][0]+path[1][0])/2,(path[0][1]+path[1][1])/2];labels.push({key:a.key,p});
  }
  ctx.font='12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
@@ -235,8 +308,18 @@ function render(canvas,m,angle,showLabels,active){
  if(active<0){ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#526e7b';ctx.font='10px sans-serif';ctx.fillText('外装を省いた構造模式図',width/2,height-15);}
 }
 function drawThumbnails(){const previous=positions;positions={X:0,Y:0,Z:0,A:0,C:0};machines.forEach(m=>render($('thumb-'+m.id),m,-.55,false,-1));positions=previous;}
-function drawScene(){if(levelSolution)updateAccuracy();if(page==='training'){drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
-function rotate(delta){yaw+=delta;drawScene();}
+function updateSceneViewUI(){
+ $('sceneView').value=sceneView;
+ $('sceneDirection').textContent=sceneView==='front'?'正面：左 → 右':sceneView==='side'?'側面：手前 → 奥':'斜め：左右回転';
+ $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
+}
+function drawScene(){if(levelSolution)updateAccuracy();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
+function setSceneView(view){
+ if(!['oblique','front','side'].includes(view))return;clearScenePointers();sceneView=view;
+ yaw=view==='front'?0:view==='side'?Math.PI/2:-.45;updateSceneViewUI();drawScene();
+}
+function rotate(delta){if(!Number.isFinite(delta)||delta===0)return;sceneView='oblique';yaw+=delta;drawScene();}
+$('sceneView').onchange=()=>setSceneView($('sceneView').value);
 $('labels').onchange=drawScene;$('showAxes').onchange=drawScene;
 const scenePointers=new Map();let scenePinch=null;
 function scenePointerDistance(){const [a,b]=[...scenePointers.values()];return a&&b?Math.hypot(a.x-b.x,a.y-b.y):0;}
@@ -281,7 +364,7 @@ function selectAxis(key){
  Array.from($('axisTabs').children).forEach(b=>b.setAttribute('aria-pressed',b.textContent===key+'軸'?'true':'false'));
  for(const axis of axisConfig(current))$('axis-'+axis.key).parentElement.hidden=axis.key!==key;
  $('axisMenuTitle').textContent=key+'軸の操作';
- $('scene').setAttribute('aria-label',current.name+'の構造模型。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+key+'軸で動く部品を同色で強調。');drawScene();
+ updateSceneViewUI();drawScene();
 }
 function setAxisMenuOpen(open,focusToggle=false){
  $('axisMenu').hidden=!open;$('axisControlsToggle').setAttribute('aria-expanded',String(open));

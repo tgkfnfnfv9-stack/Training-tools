@@ -115,9 +115,10 @@ for(const angle of [-90,0,75]){
  const indicator=json("axisIndicators(current,createGeometry(current)).find(a=>a.key==='C')"),state=json('positions');
  check('C curved arrow follows the tilted A parent '+angle,()=>{
   assert(indicator.curved);assert.equal(indicator.pose,'work');
+  const pivot=json('displayCoordinates([0,1.25,-.45])'),translation=json("displayMovement(['X','Y','A'],current,positions,'work')");
   indicator.points.forEach((p,i)=>{
-   const t=-Math.PI*.65+i/24*Math.PI*1.3,x=Math.cos(t)*.8,y=1.68,z=-.45+Math.sin(t)*.8,a=angle*.45/100;
-   const expected=[x+.35*state.X/100,1.25+(y-1.25)*Math.cos(a)-(z+.45)*Math.sin(a),-.45+(y-1.25)*Math.sin(a)+(z+.45)*Math.cos(a)+.35*state.Y/100];
+   const t=-Math.PI*.65+i/24*Math.PI*1.3,base=json(`displayCoordinates(${JSON.stringify([Math.cos(t)*.8,1.68,-.45+Math.sin(t)*.8])})`),a=angle*.45/100,dy=base[1]-pivot[1],dz=base[2]-pivot[2];
+   const rotated=[base[0],pivot[1]+dy*Math.cos(a)-dz*Math.sin(a),pivot[2]+dy*Math.sin(a)+dz*Math.cos(a)],expected=rotated.map((v,j)=>v+translation[j]);
    p.forEach((v,j)=>assert(Math.abs(v-expected[j])<1e-12));
   });
  });

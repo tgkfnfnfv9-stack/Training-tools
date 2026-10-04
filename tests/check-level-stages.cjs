@@ -83,7 +83,7 @@ for(const [index,mode] of variants){
    for(const a of arrows.filter(a=>!a.curved)){
     const origin=scale(add(...a.points),.5),endpoints=a.points.map(p=>json(`levelAxisVisualPoint(${JSON.stringify(p)},${JSON.stringify(origin)},'${a.pose}',${JSON.stringify(a.bodyOrigin)})`)),actual=unit(sub(endpoints[1],endpoints[0])),slope=a.pose==='tool'?wanted.toolSlope:wanted.workSlope,expectedDirection=supportRotation({lr:slope.lr*factor,fb:slope.fb*factor})(wanted.directions[wanted.axes.findIndex(q=>q.key===a.key)]);
     actual.forEach((v,i)=>near(v,expectedDirection[i],1e-11));scale(add(...endpoints),.5).forEach((v,i)=>near(v,a.bodyOrigin[i],1e-11));
-    const bodyPoints=json(`createGeometry(current).faces.filter(f=>f.axes.includes('${a.key}')).flatMap(f=>f.v.map(p=>levelBodyVisualPoint(transformedPoint(p,f.axes,current),f.pose)))`),center=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);center.forEach((v,i)=>near(v,a.bodyOrigin[i],1e-11));
+    const bodyPoints=json(`createGeometry(current).faces.filter(f=>f.axes.includes('${a.key}')).flatMap(f=>f.v.map(p=>levelMappedBodyVisualPoint(displayTransformedPoint(p,f.axes,current,positions,f.pose),f.pose)))`),center=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);center.forEach((v,i)=>near(v,a.bodyOrigin[i],1e-11));
    }
   });
  }

@@ -109,7 +109,38 @@ check('navigation releases every capture and ignores old motion when returning',
  resetView();down(1,100);down(2,200);read("navigate('catalog')");assert.equal(read('scenePointers.size'),0);assert(!captures.size);read("navigate('training')");const yaw=read('yaw');move(1,300);move(2,400);near(read('yaw'),yaw);near(read('sceneZoom'),1);down(1,100);move(1,110);near(read('yaw'),yaw+.09);end('pointerup',1);
 });
 check('all cancellation, limit and navigation paths preserve the teaching model and JSON',()=>assert.deepEqual(physical(),original));
+for(const view of ['front','side']){
+ read('openMachine(machines[5])');const teaching=physical(),saved=[...storage];
+ check(`${view} selection has an exact orthographic direction and preserves zoom/model`,()=>{
+  read('setSceneZoom(1.25)');r.sceneView.change(view);assert.equal(read('sceneView'),view);near(read('yaw'),view==='front'?0:Math.PI/2);near(read('scenePitch()'),0);near(read('sceneZoom'),1.25);
+  assert.equal(r.sceneView.closest('.viewer-settings').closest('#trainingControls'),r.trainingControls);assert.equal(r.sceneView.closest('#sceneToolbar'),null);assert.deepEqual(physical(),teaching);assert.deepEqual([...storage],saved);
+ });
+ check(`${view} viewing guides use depth dots instead of normalizing tiny vectors`,()=>{
+  const depthComponent=view==='front'?2:0,depthKeys=json(`axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)&&Math.abs(a.vector[${depthComponent}])===1).map(a=>a.key)`);
+  for(const key of depthKeys){const guide=r.orientationAxes.children.find(s=>s.getAttribute('aria-label')===key+'軸の向きの目安');assert(guide);assert.equal(guide.querySelectorAll('line').length,0);assert.equal(guide.querySelectorAll('path').length,0);assert.equal(guide.querySelectorAll('circle').length,2);assert.match(guide.textContent,/奥行方向/);}
+ });
+ check(`${view} wheel, pinch and zoom keys keep the fixed observation direction`,()=>{
+  wheel(-50);down(1,100);down(2,200);move(2,210);end('pointerup',2);end('pointerup',1);key('+');key('-');key('Home');
+  assert.equal(read('sceneView'),view);assert.equal(r.sceneView.value,view);near(read('yaw'),view==='front'?0:Math.PI/2);near(read('sceneZoom'),1);
+ });
+ check(`${view} stationary and vertical pointer events do not trigger free rotation`,()=>{
+  down(1,100);move(1,100,110);assert.equal(read('sceneView'),view);near(read('yaw'),view==='front'?0:Math.PI/2);end('pointercancel',1);
+ });
+ check(`${view} single-finger drag returns to oblique rotation without stale pinch`,()=>{
+  const yaw=read('yaw');down(1,100);down(2,200);move(2,210);end('pointerup',2);const zoom=read('sceneZoom');move(1,110);
+  assert.equal(read('sceneView'),'oblique');assert.equal(r.sceneView.value,'oblique');near(read('yaw'),yaw+.09);near(read('scenePitch()'),.24);near(read('sceneZoom'),zoom);end('pointerup',1);assert.deepEqual(physical(),teaching);
+ });
+ check(`${view} switching observation mode releases a live gesture and keeps JSON`,()=>{
+  down(1,100);down(2,200);r.sceneView.change(view);assert(!captures.size);assert.equal(read('scenePointers.size'),0);const yaw=read('yaw');move(1,300);move(2,400);near(read('yaw'),yaw);assert.deepEqual(physical(),teaching);assert.deepEqual([...storage],saved);
+ });
+ check(`${view} arrow keys intentionally resume oblique rotation`,()=>{
+  assert.equal(key('ArrowLeft'),1);assert.equal(read('sceneView'),'oblique');near(read('yaw'),(view==='front'?0:Math.PI/2)-.12);assert.deepEqual(physical(),teaching);
+ });
+ check(`${view} invalid observation choices cannot corrupt the current view`,()=>{
+  const state=json('({sceneView,yaw,sceneZoom})');read("setSceneView('invalid')");assert.deepEqual(json('({sceneView,yaw,sceneZoom})'),state);
+ });
+}
 check('opening another machine starts with the normal viewing scale and fresh pointers',()=>{
- read('setSceneZoom(1.8)');down(1,100);read('openMachine(machines[6])');near(read('sceneZoom'),1);assert.equal(read('scenePointers.size'),0);assert(!captures.size);assert.deepEqual(json('axisConfig(current).map(a=>a.key)'),['X','Z']);
+ read("setSceneView('side');setSceneZoom(1.8)");down(1,100);read('openMachine(machines[6])');near(read('sceneZoom'),1);assert.equal(read('sceneView'),'oblique');assert.equal(r.sceneView.value,'oblique');assert.equal(read('scenePointers.size'),0);assert(!captures.size);assert.deepEqual(json('axisConfig(current).map(a=>a.key)'),['X','Z']);
 });
 console.log(`Scene zoom: ${checks} interaction/rendering checks passed; ${frames} Canvas frames and ${coordinates} finite coordinate values inspected.`);

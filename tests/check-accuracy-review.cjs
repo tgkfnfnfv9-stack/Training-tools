@@ -132,7 +132,7 @@ async function main(){
   const moved=json("createGeometry(current).faces.filter(f=>f.axes.includes('Z')).flatMap(f=>f.v.map(p=>levelVisualPoint(transformedPoint(p,f.axes,current),f.pose)))"),center=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2),direction=poseDirection([0,1,0],'tool');
   const expected=[-1,1].map(sign=>center.map((v,i)=>v+sign*direction[i]*.6));
   const yaw=read('yaw'),pitch=.24;
-  const project=p=>{const x=p[0]*Math.cos(yaw)+p[2]*Math.sin(yaw),z=-p[0]*Math.sin(yaw)+p[2]*Math.cos(yaw),y=(p[1]-1.65)*Math.cos(pitch)+z*Math.sin(pitch),depth=11+z*Math.cos(pitch)-(p[1]-1.65)*Math.sin(pitch);return [x/depth,-y/depth];};
+  const project=p=>{const x=p[0]*Math.cos(yaw)+p[2]*Math.sin(yaw),z=-p[0]*Math.sin(yaw)+p[2]*Math.cos(yaw),y=(p[1]-1.65)*Math.cos(pitch)+z*Math.sin(pitch),depth=11+z*Math.cos(pitch)-(p[1]-1.65)*Math.sin(pitch);return [x/11,-y/11];};
   const actualDirection=unit(sub(strokes[0][1],strokes[0][0])),expectedDirection=unit(sub(project(expected[1]),project(expected[0])));
   near(dot(actualDirection,expectedDirection),1,1e-10);
   r.scene.getBoundingClientRect=()=>({width:0,height:0});
