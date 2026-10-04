@@ -39,7 +39,7 @@ for(const [index,mode] of variants){
     for(const pose of ['tool','work']){
      const points=pure.json(`[[0,.66,0],[1,.66,0],[0,1.66,0],[0,.66,1]].map(p=>levelVisualPoint(p,'${pose}'))`);
      const vectors=points.slice(1).map(p=>difference(p,points[0]));
-     vectors.forEach(v=>near(magnitude(v),1,1e-12));
+     const expectedLengths=[width/pure.read("current.w*.8"),1,depth/pure.read("current.d*.8")];vectors.forEach((v,i)=>near(magnitude(v),expectedLengths[i],1e-12));
      for(let i=0;i<3;i++)for(let j=i+1;j<3;j++)near(dot(vectors[i],vectors[j]),0,1e-12);
     }
    });

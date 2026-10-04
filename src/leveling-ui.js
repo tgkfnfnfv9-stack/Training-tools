@@ -40,35 +40,60 @@ function initializeLeveling(){
  if(restored)$('levelSaveStatus').textContent=saved?'前回の個体・調整をこのブラウザから復元しました。':'前回の個体・調整を復元しました。このブラウザでは自動保存できません。JSONで保存できます。';
 }
 function levelCoordinates(x,z){return {x:x/(current.w*.8)*levelConfig.width,z:z/(current.d*.8)*levelConfig.depth};}
-function levelVisualPoint(p,pose='bed'){
- if(!levelSolution||!levelConfig||!levelGeometry)return p;
- const factor=$('exaggerate').checked?levelGeometry.visualFactor:1,plane=levelSolution.plane;
- const common=window.Leveling.orientation({lr:plane.a*factor,fb:plane.b*factor}),base=[0,.66,0];
- const commonPoint=q=>{const r=common.rotate([q[0],q[1]-base[1],q[2]]);return [r[0],r[1]+base[1]+plane.c/1000*factor,r[2]];};
- // The outline stays the same size when virtual support dimensions change.
- // Subtract the plane actually drawn in that outline, rather than a plane in
- // virtual metres, so equal support heights remain equal in the height map.
- const heightResidual=q=>{const c=levelCoordinates(q[0],q[2]),drawn=common.rotate([q[0],0,q[2]])[1]+plane.c/1000*factor;return levelSolution.heightAt(c.x,c.z)/1000*factor-drawn;};
- if(pose==='bed'){const q=commonPoint(p);q[1]+=heightResidual(p);return q;}
- const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,offset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0};
- const point=[p[0]+offset.x,p[1],p[2]+offset.z],anchor=[info.anchor.x,.66,info.anchor.z],origin=commonPoint(anchor);
- origin[1]+=heightResidual(anchor);
- const frame=window.Leveling.orientation({lr:info.slope.lr*factor,fb:info.slope.fb*factor}),q=frame.rotate(point.map((v,i)=>v-anchor[i]));
- return q.map((v,i)=>v+origin[i]);
+// Display coordinates use the same physical support dimensions as the solver.
+// Mapping happens before rigid rotary motion; precision and stored raw positions
+// retain their existing coordinate contract.
+function displayCoordinates(p){
+ if(!levelConfig)return [...p];const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];
 }
+function displayFactor(){return $('exaggerate').checked&&levelGeometry?levelGeometry.visualFactor:1;}
+let displayClearanceKey='',displayClearanceValue=0;
+function displayClearance(){
+ if(!levelSolution||!levelGeometry)return 0;
+ const factor=displayFactor(),key=JSON.stringify([current.kind,current.w,current.d,levelConfig.width,levelConfig.depth,factor]);
+ if(key===displayClearanceKey)return displayClearanceValue;
+ const bedPoints=createGeometry(current).faces.filter(f=>f.pose==='bed').flatMap(f=>f.v);
+ const basis=supports.map((_,i)=>machineSolution(supports.map((s,j)=>i===j?1:0)));
+ let heightBound=.5,thickness=0;
+ for(const p of bedPoints){const q=levelCoordinates(p[0],p[2]);heightBound=Math.max(heightBound,basis.reduce((sum,solution)=>sum+Math.abs(solution.heightAt(q.x,q.z))*.5,0));thickness=Math.max(thickness,.66-p[1]);}
+ // Bound extrapolated perimeter heights as well as actual support heights.
+ // This fixed margin never follows the current supports or moving-axis state.
+ displayClearanceKey=key;displayClearanceValue=Math.max(0,factor*heightBound/1000+thickness+.09+.025-.66);return displayClearanceValue;
+}
+function displaySurfacePoint(x,z){return [x,.66+displayClearance()+displayFactor()*levelSolution.heightAt(x,z)/1000,z];}
+function displaySupportFrame(slope){const factor=displayFactor();return window.Leveling.orientation({lr:slope.lr*factor,fb:slope.fb*factor});}
+function levelMappedVisualPoint(p,pose='bed'){
+ if(!levelSolution||!levelConfig||!levelGeometry)return [...p];
+ if(pose.startsWith('pad:'))return [...p];
+ if(pose.startsWith('support:')){
+  const top=levelMappedVisualPoint([p[0],.195,p[2]],'bed'),bottom=[p[0],.09,p[2]],t=(p[1]-.07)/.22;
+  return bottom.map((v,i)=>v+(top[i]-v)*t);
+ }
+ if(pose==='bed'){
+  const top=displaySurfacePoint(p[0],p[2]),normal=displaySupportFrame(levelSolution.slopeAt(p[0],p[2])).up,thickness=p[1]-.66;
+  return top.map((v,i)=>v+normal[i]*thickness);
+ }
+ const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,rawOffset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0},offset=displayCoordinates([rawOffset.x,0,rawOffset.z]);
+ const anchor=displayCoordinates([info.anchor.x,.66,info.anchor.z]),origin=displaySurfacePoint(anchor[0],anchor[2]),point=[p[0]+offset[0],p[1],p[2]+offset[2]];
+ const q=displaySupportFrame(info.slope).rotate(point.map((v,i)=>v-anchor[i]));return q.map((v,i)=>v+origin[i]);
+}
+function levelVisualPoint(p,pose='bed'){return levelMappedVisualPoint(displayCoordinates(p),pose);}
 let bodyVisualFrame=null,bodyVisualFrameProfile=null,bodyVisualFrameKind='',bodyVisualFrameFactor=0;
-function levelBodyVisualPoint(p,pose='bed'){
- if(!levelGeometry||!machineProfile||pose==='bed'||pose==='work')return levelVisualPoint(p,pose);
- const factor=$('exaggerate').checked?levelGeometry.visualFactor:1;
+function displayBodyFrame(){
+ const factor=displayFactor();
  if(machineProfile!==bodyVisualFrameProfile||current.kind!==bodyVisualFrameKind||factor!==bodyVisualFrameFactor){bodyVisualFrameProfile=machineProfile;bodyVisualFrameKind=current.kind;bodyVisualFrameFactor=factor;bodyVisualFrame=intrinsicBodyFrame(axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),machineProfile,factor);}
- const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,offset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0},anchor=[info.anchor.x,.66,info.anchor.z];
- const relative=[p[0]+offset.x-anchor[0],p[1]-anchor[1],p[2]+offset.z-anchor[2]],rotated=bodyVisualFrame.rotate(relative);
- return levelVisualPoint([rotated[0]+anchor[0]-offset.x,rotated[1]+anchor[1],rotated[2]+anchor[2]-offset.z],pose);
+ return bodyVisualFrame;
 }
-function levelAxisVisualPoint(p,origin,pose,bodyOrigin=levelBodyVisualPoint(origin,pose)){
- const q=levelVisualPoint(p,pose),supportOrigin=levelVisualPoint(origin,pose);
- // Move only the arrow's centre with its body. Its direction already contains
- // the intrinsic defect and must receive the support rotation just once.
+function levelMappedBodyVisualPoint(p,pose='bed'){
+ if(!levelGeometry||!machineProfile||pose==='bed'||pose==='work'||pose.startsWith('pad:')||pose.startsWith('support:'))return levelMappedVisualPoint(p,pose);
+ const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,rawOffset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0},offset=displayCoordinates([rawOffset.x,0,rawOffset.z]),anchor=displayCoordinates([info.anchor.x,.66,info.anchor.z]);
+ const relative=[p[0]+offset[0]-anchor[0],p[1]-anchor[1],p[2]+offset[2]-anchor[2]],rotated=displayBodyFrame().rotate(relative);
+ return levelMappedVisualPoint([rotated[0]+anchor[0]-offset[0],rotated[1]+anchor[1],rotated[2]+anchor[2]-offset[2]],pose);
+}
+function levelBodyVisualPoint(p,pose='bed'){return levelMappedBodyVisualPoint(displayCoordinates(p),pose);}
+function levelAxisVisualPoint(p,origin,pose,bodyOrigin=levelMappedBodyVisualPoint(origin,pose)){
+ const q=levelMappedVisualPoint(p,pose),supportOrigin=levelMappedVisualPoint(origin,pose);
+ // Arrow points are already physical and contain intrinsic direction once.
  return q.map((v,i)=>v+bodyOrigin[i]-supportOrigin[i]);
 }
 function updateLevelStages(machineResult=null,target=false){
