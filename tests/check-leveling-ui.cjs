@@ -13,7 +13,7 @@ async function main(){
   check(`機種${i}:支持点数`,()=>assert.equal(read('supports.length'),counts[i]));
   check(`機種${i}:初期水平`,()=>{near(read('levelSolution.lr'),0);near(read('levelSolution.fb'),0);assert.equal(r.localLevel.textContent,'0.000 mm/m');});
   check(`機種${i}:支持面は全支持点を表示`,()=>{const mesh=json('levelSurfaceFaces(current)'),points=json('supports');assert.ok(mesh.length>0);for(const p of points)assert.ok(mesh.some(f=>f.v.some(v=>Math.abs(v[0]-p.x)<1e-10&&Math.abs(v[2]-p.z)<1e-10)));});
-  r.up0.click();check(`機種${i}:高さ＋連動`,()=>{near(read('supportHeights[0]'),.001);assert.equal(r.height0.value,'0.001');assert.ok(read('levelSolution.heightAt(...[levelCoordinates(supports[0].x,supports[0].z).x,levelCoordinates(supports[0].x,supports[0].z).z])')>.0009);});
+  r.fineAdjust.click();r.up0.click();check(`機種${i}:高さ＋連動`,()=>{near(read('supportHeights[0]'),.001);assert.equal(r.height0.value,'0.001');assert.ok(read('levelSolution.heightAt(...[levelCoordinates(supports[0].x,supports[0].z).x,levelCoordinates(supports[0].x,supports[0].z).z])')>.0009);});
   r.down0.click();check(`機種${i}:高さ−連動`,()=>near(read('supportHeights[0]'),0));
   check(`機種${i}:中間支持の可否`,()=>assert.equal(r.middlePreset.disabled,counts[i]<=4));
   check(`機種${i}:3点ねじれ無効`,()=>assert.equal(r.twistPreset.disabled,counts[i]===3));

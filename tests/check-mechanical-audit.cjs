@@ -71,7 +71,7 @@ for(const [index,mode] of variants){
    near(live.read('machineEvaluation(supportHeights).objective'),before.objective,1e-7);
    assert.equal(live.registry.applyBestLevel.disabled,true,'同じ精度で全支持点を戻す必要はない');
    assert.doesNotMatch(live.registry.levelHint.textContent,/を [0-9.]+ mm(?:上げる|下げる)/);
-   assert.match(live.registry.machineProgress.textContent,/近傍/);
+   assert.match(live.registry.machineProgress.textContent,/調整の目安内/);
   });
   check(`共通高さの変更後も個体とガイド値は再抽選しない ${label} ${condition}`,()=>{
    assert.deepEqual(live.json('machineProfile'),profile);
