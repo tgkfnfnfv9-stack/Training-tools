@@ -31,6 +31,14 @@ check('axis controls use normal flow and wrap within narrow viewer widths',()=>{
  assert.match(css,/\.scene-toolbar \.axis-tabs\{[^}]*flex-wrap:wrap/);
  assert.match(css,/\.scene-toolbar \.axis-tab\{[^}]*min-width:44px;min-height:44px/);
 });
+check('reference directions have their own wrapping area in the scrolling settings',()=>{
+ assert.equal(r.orientationGuide.closest('.viewer-settings').closest('#trainingControls'),r.trainingControls);
+ assert.equal(r.orientationGuide.closest('#sceneViewport'),null);
+ assert.equal(r.orientationAxes.parentElement,r.orientationGuide);
+ assert.equal(r.orientationGuide.getAttribute('aria-labelledby'),'orientationGuideTitle');
+ assert.match(css,/\.orientation-axes\{[^}]*flex-wrap:wrap;[^}]*min-width:0/);
+ assert.match(css,/\.orientation-axis\{[^}]*min-width:0;max-width:100%;height:auto/);
+});
 let focused=null;
 for(const el of [r.closeAxisControls,r.axisControlsToggle])el.focus=options=>{assert.equal(options.preventScroll,true);focused=el;};
 const pending=new Map();let sequence=0;
@@ -41,6 +49,9 @@ let paths=[],texts=[],path=[];
 const canvas={scale(){},fillRect(){},beginPath(){path=[];},moveTo(x,y){assert(Number.isFinite(x)&&Number.isFinite(y));path.push([x,y]);},lineTo(x,y){assert(Number.isFinite(x)&&Number.isFinite(y));path.push([x,y]);},closePath(){},arc(){},fill(){},fillText(text,x,y){assert(Number.isFinite(x)&&Number.isFinite(y));texts.push(text);},measureText(text){return {width:text.length*6};},stroke(){if(this.lineWidth===4||this.lineWidth===2.5)paths.push({color:this.strokeStyle,width:this.lineWidth,points:path.map(p=>[...p])});}};
 r.scene.getBoundingClientRect=()=>({width:390,height:340});r.scene.getContext=()=>canvas;
 const layouts=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+function referenceTips(){return r.orientationAxes.children.map(svg=>{
+ const line=svg.querySelectorAll('line')[0];return [svg.getAttribute('aria-label'),Number(line.getAttribute('x2')),Number(line.getAttribute('y2'))];
+});}
 for(const [index,mode] of layouts){
  read(`openMachine(machines[${index}])`);if(mode)r.machineMode.change(mode);pending.clear();
  const keys=json('axisConfig(current).map(a=>a.key)'),colors=json('axisColors');
@@ -64,12 +75,40 @@ for(const [index,mode] of layouts){
   r.axisMenu.events.keydown({key:'Escape',preventDefault(){}});
   check('Escape closes the selected-axis menu '+index+' '+mode+' '+key,()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.axisControlsToggle);});
  }
+ const linearKeys=keys.filter(k=>['X','Y','Z'].includes(k));
+ check('reference axes are separate while actual motion arrows stay on the model '+index+' '+mode,()=>{
+  assert(!r.orientationGuide.hidden);assert.equal(r.orientationRotaryNote.hidden,index!==5);
+  assert.deepEqual(r.orientationAxes.children.map(svg=>svg.getAttribute('aria-label')),linearKeys.map(k=>k+'軸の向きの目安'));
+  assert.equal(texts.filter(text=>linearKeys.includes(text)).length,0,'bare coordinate labels no longer occupy the Canvas');
+  for(const svg of r.orientationAxes.children){assert.equal(svg.getAttribute('viewBox'),'0 0 96 116');assert.equal(svg.getAttribute('role'),'img');assert.equal(svg.querySelectorAll('line').length,1);assert.equal(svg.querySelectorAll('text')[0].getAttribute('y'),'19');}
+ });
+ const recordBeforeRotation=json('levelRecord()'),tipsBeforeRotation=referenceTips();
+ r.scene.events.keydown({key:'ArrowRight',preventDefault(){}});
+ check('keyboard viewing rotation updates reference directions without changing precision '+index+' '+mode,()=>{
+  assert.notDeepEqual(referenceTips(),tipsBeforeRotation);assert.deepEqual(json('levelRecord()'),recordBeforeRotation);
+ });
+ read('yaw=Math.PI/2;drawScene()');
+ const quarterTurn=index===6?{X:[76,72],Z:[48,100]}:index===1?{X:[48,100],Y:[48,44],Z:[76,72]}:(index===3&&mode==='long')||index===4?{X:[76,72],Y:[48,100],Z:[48,44]}:{X:[48,100],Y:[76,72],Z:[48,44]};
+ check('reference directions preserve machine-specific assignments at a quarter turn '+index+' '+mode,()=>{
+  referenceTips().forEach(([label,x,y],i)=>{assert.equal(label,linearKeys[i]+'軸の向きの目安');const expected=quarterTurn[linearKeys[i]];assert(Math.abs(x-expected[0])<1e-9);assert(Math.abs(y-expected[1])<1e-9);});
+ });
+ check('rotating reference lines stay below their fixed labels and inside each small diagram '+index+' '+mode,()=>{
+  for(let step=-12;step<=12;step++){
+   read(`yaw=${step}*Math.PI/6;drawScene()`);
+   for(const [,x,y] of referenceTips()){assert(Number.isFinite(x)&&Number.isFinite(y));assert(x>=19&&x<=77);assert(y>=43&&y<=101);}
+  }
+ });
  r.showAxes.checked=false;paths=[];read('drawScene()');
- check('axis visibility option hides all motion arrows '+index+' '+mode,()=>assert.equal(paths.length,0));
- r.showAxes.checked=true;
+ check('axis visibility option hides motion arrows and their separate reference guide '+index+' '+mode,()=>{assert.equal(paths.length,0);assert(r.orientationGuide.hidden);});
+ r.showAxes.checked=true;read('drawScene()');
+ check('axis visibility option restores the matching reference axes '+index+' '+mode,()=>{assert(!r.orientationGuide.hidden);assert.equal(paths.length,keys.length);assert.equal(r.orientationAxes.children.length,linearKeys.length);});
  const before=json('levelRecord()');read("selectAxis('B')");
  check('unavailable axis is ignored '+index+' '+mode,()=>assert.deepEqual(json('levelRecord()'),before));
 }
+const tipsBeforeZeroSize=referenceTips();r.scene.getBoundingClientRect=()=>({width:0,height:0});
+read('rotate(.23)');
+check('reference SVG updates even when the model or settings have no measurable size',()=>{assert.notDeepEqual(referenceTips(),tipsBeforeZeroSize);for(const svg of r.orientationAxes.children)assert.equal(svg.getAttribute('viewBox'),'0 0 96 116');});
+r.scene.getBoundingClientRect=()=>({width:390,height:340});
 read('openMachine(machines[5])');pending.clear();
 for(const angle of [-90,0,75]){
  read(`positions.A=${angle};positions.X=42;positions.Y=-31;`);

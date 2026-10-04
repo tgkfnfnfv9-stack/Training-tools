@@ -153,6 +153,23 @@ function axisIndicators(m,model){
   return {key:a.key,pose:'work',curved:true,points};
  });
 }
+// Keep each reference direction separate from the model and from the other axes.
+// Only the viewing angle is projected here; support posture and accuracy stay on the model.
+function orientationArrows(m,angle){
+ const pitch=.24;
+ return axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>{
+  const [x,y,z]=a.vector,dx=x*Math.cos(angle)+z*Math.sin(angle),dy=-y*Math.cos(pitch)-(-x*Math.sin(angle)+z*Math.cos(angle))*Math.sin(pitch),length=Math.hypot(dx,dy)||1;
+  return {key:a.key,dx:dx/length,dy:dy/length};
+ });
+}
+function drawOrientationGuide(){
+ const guide=$('orientationGuide');guide.hidden=!$('showAxes').checked;if(guide.hidden)return;
+ $('orientationRotaryNote').hidden=current.kind!=='five';
+ $('orientationAxes').innerHTML=orientationArrows(current,yaw).map(({key,dx,dy})=>{
+  const x=48+dx*28,y=72+dy*28,color=axisColors[key],backX=x-dx*9,backY=y-dy*9;
+  return `<svg class="orientation-axis" viewBox="0 0 96 116" role="img" aria-label="${key}軸の向きの目安"><text x="48" y="19" text-anchor="middle" fill="${color}">${key}軸</text><line x1="48" y1="72" x2="${x}" y2="${y}" stroke="${color}" stroke-width="3"/><path d="M ${x} ${y} L ${backX-dy*4.5} ${backY+dx*4.5} L ${backX+dy*4.5} ${backY-dx*4.5} Z" fill="${color}"/><circle cx="48" cy="72" r="3" fill="#526e7b"/></svg>`;
+ }).join('');
+}
 function render(canvas,m,angle,showLabels,active){
  const rect=canvas.getBoundingClientRect();if(!rect.width||!rect.height)return;
  const ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.height*ratio);
@@ -193,14 +210,11 @@ function render(canvas,m,angle,showLabels,active){
   }
   occupied.push([tx,ty]);ctx.fillStyle='#ffffffed';ctx.fillRect(tx-20,ty-11,40,22);ctx.fillStyle=axisColors[label.key];ctx.fillText(label.key+'軸',tx,ty);
  }
- // Always-visible machine-relative orientation triad rotates with the model; this is not CNC +/- motion.
- const o=[48,height-88];ctx.font='bold 12px sans-serif';ctx.textAlign='center';
- for(const a of axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key))){const pa=project([0,1.5,0]),pb=project(a.vector.map((v,i)=>v*.75+[0,1.5,0][i]));let dx=pb[0]-pa[0],dy=pb[1]-pa[1],n=Math.hypot(dx,dy)||1;const p=[o[0]+dx/n*30,o[1]+dy/n*30];ctx.strokeStyle=axisColors[a.key];ctx.fillStyle=axisColors[a.key];ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(...o);ctx.lineTo(...p);ctx.stroke();ctx.fillText(a.key,p[0]+dx/n*10,p[1]+dy/n*10);}
  }
  if(active<0){ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#526e7b';ctx.font='10px sans-serif';ctx.fillText('外装を省いた構造模式図',width/2,height-15);}
 }
 function drawThumbnails(){const previous=positions;positions={X:0,Y:0,Z:0,A:0,C:0};machines.forEach(m=>render($('thumb-'+m.id),m,-.55,false,-1));positions=previous;}
-function drawScene(){if(levelSolution)updateAccuracy();if(page==='training')render($('scene'),current,yaw,$('labels').checked,selected);}
+function drawScene(){if(levelSolution)updateAccuracy();if(page==='training'){drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function rotate(delta){yaw+=delta;drawScene();}
 $('labels').onchange=drawScene;$('showAxes').onchange=drawScene;
 let drag=null;
