@@ -38,6 +38,9 @@ function transformedPoint(p,axes,m,state=positions){
 }
 const $=id=>document.getElementById(id);
 let current=displayMachine(machines[0]), page='home', yaw=-0.45, selected=0, supports=[];
+// Viewing scale is deliberately separate from machine, leveling and saved state.
+const SCENE_ZOOM_MIN=.65,SCENE_ZOOM_MAX=1.8;
+let sceneZoom=1;
 function supportList(m){
  if(!m.grid)return [{x:-m.w*.4,z:-m.d*.4,name:'左・手前'},{x:m.w*.4,z:-m.d*.4,name:'右・手前'},{x:0,z:m.d*.4,name:'奥・中央'}];
  const [nx,nz]=m.grid,list=[];
@@ -45,6 +48,7 @@ function supportList(m){
  return list;
 }
 function navigate(next){
+ clearScenePointers();
  setAxisMenuOpen(false);
  if(next!=='training')stopMotion();page=next; for(const id of ['home','topics','catalog','training','electricTopics','tester'])$(id).hidden=id!==next;
  document.body.classList.toggle('in-lab',next==='training'||next==='tester');
@@ -59,7 +63,7 @@ $('mechanical').onclick=()=>navigate('topics');$('electric').onclick=()=>navigat
 $('testerEntry').onclick=()=>{if(window.resetTesterLesson)window.resetTesterLesson();navigate('tester');};
 $('testerBack').onclick=()=>navigate('electricTopics');
 function openMachine(m){
- stopMotion();machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
+ stopMotion();sceneZoom=1;machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
 function populateMachine(){
  setAxisMenuOpen(false);
@@ -180,8 +184,9 @@ function render(canvas,m,angle,showLabels,active){
  function project(p){const [x,y,z]=p;const xx=x*Math.cos(angle)+z*Math.sin(angle),zz=-x*Math.sin(angle)+z*Math.cos(angle);const yy=(y-1.65)*Math.cos(pitch)+zz*Math.sin(pitch),depth=11+zz*Math.cos(pitch)-(y-1.65)*Math.sin(pitch);return [xx/depth,-yy/depth,depth];}
  const fitPoints=active>=0?framingPoints(m,model).flatMap(p=>[[p[0],p[1]-.25,p[2]],[p[0],p[1]+.25,p[2]]]):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
  // Fit the machine and its fixed movement envelope, without the empty ground around it.
- const margin=showLabels?56:18,verticalSpace=active>=0?height-48:height-75;
- const scale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY));const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-20)/2:height*.48)-(minY+maxY)*scale/2;
+ const margin=showLabels?Math.min(56,width*.16):18,verticalSpace=active>=0?height-48:height-75;
+ const fitScale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY));
+ const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-20)/2:height*.48)-(minY+maxY)*scale/2;
  const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(active>=0?levelBodyVisualPoint(transformedPoint(p,axes,m),pose):transformedPoint(p,axes,m));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
@@ -233,12 +238,31 @@ function drawThumbnails(){const previous=positions;positions={X:0,Y:0,Z:0,A:0,C:
 function drawScene(){if(levelSolution)updateAccuracy();if(page==='training'){drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function rotate(delta){yaw+=delta;drawScene();}
 $('labels').onchange=drawScene;$('showAxes').onchange=drawScene;
-let drag=null;
-$('scene').addEventListener('pointerdown',e=>{if(!e.isPrimary||e.button!==0)return;setAxisMenuOpen(false);drag={id:e.pointerId,x:e.clientX,y:e.clientY,moved:false};$('scene').setPointerCapture(e.pointerId);});
-$('scene').addEventListener('pointermove',e=>{if(!drag||drag.id!==e.pointerId)return;const dx=e.clientX-drag.x;if(Math.abs(dx)>2)drag.moved=true;rotate(dx*.009);drag.x=e.clientX;});
-function endDrag(e){if(drag&&drag.id===e.pointerId){drag=null;}}
-$('scene').addEventListener('pointerup',endDrag);$('scene').addEventListener('pointercancel',endDrag);$('scene').addEventListener('lostpointercapture',()=>drag=null);
-$('scene').addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();rotate(e.key==='ArrowLeft'?-.12:.12)}});
+const scenePointers=new Map();let scenePinch=null;
+function scenePointerDistance(){const [a,b]=[...scenePointers.values()];return a&&b?Math.hypot(a.x-b.x,a.y-b.y):0;}
+function resetSceneGesture(){scenePinch=scenePointers.size>=2?{distance:scenePointerDistance(),zoom:sceneZoom}:null;}
+function clearScenePointers(){const ids=[...scenePointers.keys()];scenePointers.clear();scenePinch=null;for(const id of ids)if($('scene').hasPointerCapture?.(id))$('scene').releasePointerCapture(id);}
+function setSceneZoom(value){if(!Number.isFinite(value))return;const next=Math.max(SCENE_ZOOM_MIN,Math.min(SCENE_ZOOM_MAX,value));if(next===sceneZoom)return;sceneZoom=next;if(page==='training')render($('scene'),current,yaw,$('labels').checked,selected);}
+$('scene').addEventListener('pointerdown',e=>{
+ if(e.button!==0||e.pointerType!=='touch'&&e.isPrimary===false)return;setAxisMenuOpen(false);scenePointers.set(e.pointerId,{x:e.clientX,y:e.clientY});$('scene').setPointerCapture(e.pointerId);resetSceneGesture();
+});
+$('scene').addEventListener('pointermove',e=>{
+ const point=scenePointers.get(e.pointerId);if(!point)return;const dx=e.clientX-point.x;point.x=e.clientX;point.y=e.clientY;
+ if(scenePointers.size>=2){if(!scenePinch||scenePinch.distance<1)resetSceneGesture();else setSceneZoom(scenePinch.zoom*scenePointerDistance()/scenePinch.distance);}
+ else rotate(dx*.009);
+});
+function endScenePointer(e){if(scenePointers.delete(e.pointerId))resetSceneGesture();}
+$('scene').addEventListener('pointerup',endScenePointer);$('scene').addEventListener('pointercancel',endScenePointer);$('scene').addEventListener('lostpointercapture',endScenePointer);
+window.addEventListener('blur',clearScenePointers);
+$('scene').addEventListener('wheel',e=>{
+ if(!e.deltaY)return;e.preventDefault();const pixels=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?$('scene').getBoundingClientRect().height:1);
+ setSceneZoom(sceneZoom*Math.exp(-Math.max(-300,Math.min(300,pixels))*.0015));
+},{passive:false});
+$('scene').addEventListener('keydown',e=>{
+ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();rotate(e.key==='ArrowLeft'?-.12:.12);}
+ else if(['+','=','-','_','Home'].includes(e.key)){e.preventDefault();setSceneZoom(e.key==='Home'?1:sceneZoom*(e.key==='-'||e.key==='_'?1/1.12:1.12));}
+});
+$('resetSceneZoom').onclick=()=>setSceneZoom(1);
 function buildModeUI(){
  const base=machines.find(m=>m.id===current.id),box=$('machineModeBox');box.hidden=!base.modes;
  const select=$('machineMode');select.replaceChildren();(base.modes||[]).forEach(([value,text])=>{const option=document.createElement('option');option.value=value;option.textContent=text;select.append(option);});select.value=machineMode;
@@ -257,7 +281,7 @@ function selectAxis(key){
  Array.from($('axisTabs').children).forEach(b=>b.setAttribute('aria-pressed',b.textContent===key+'軸'?'true':'false'));
  for(const axis of axisConfig(current))$('axis-'+axis.key).parentElement.hidden=axis.key!==key;
  $('axisMenuTitle').textContent=key+'軸の操作';
- $('scene').setAttribute('aria-label',current.name+'の構造模型。左右ドラッグまたは左右矢印キーで回転。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+key+'軸で動く部品を同色で強調。');drawScene();
+ $('scene').setAttribute('aria-label',current.name+'の構造模型。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+key+'軸で動く部品を同色で強調。');drawScene();
 }
 function setAxisMenuOpen(open,focusToggle=false){
  $('axisMenu').hidden=!open;$('axisControlsToggle').setAttribute('aria-expanded',String(open));

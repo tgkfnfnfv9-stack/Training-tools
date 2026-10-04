@@ -34,23 +34,24 @@ async function main(){
    assert(gap<=(centreAnchored&&middleBaseline?1e-9:20),`selector is ${gap.toFixed(1)}° away from the ${label} label`);
   });
  }
- // Pointer capture must ignore secondary/right pointers and stop cleanly when
- // the OS cancels a touch or capture is lost. Rotation preserves all precision.
+ // Non-primary mouse/pen and right-button pointers are not gestures. Touch
+ // pointers have separate pinch coverage. Capture loss names the real pointer.
  read('openMachine(machines[0])');
  const saved=json('levelRecord()');let captured=null;
  r.scene.setPointerCapture=id=>captured=id;
- const event=(id,x,extra={})=>({pointerId:id,clientX:x,clientY:100,isPrimary:true,button:0,...extra});
+ const event=(id,x,extra={})=>({pointerId:id,clientX:x,clientY:100,pointerType:'mouse',isPrimary:true,button:0,...extra});
  const yaw=read('yaw');
  r.scene.events.pointerdown(event(2,50,{isPrimary:false}));r.scene.events.pointermove(event(2,100));
+ r.scene.events.pointerdown(event(22,50,{pointerType:'pen',isPrimary:false}));r.scene.events.pointermove(event(22,100));
  r.scene.events.pointerdown(event(3,50,{button:2}));r.scene.events.pointermove(event(3,100));
- check('secondary and right pointer cannot rotate',()=>{near(read('yaw'),yaw);assert.equal(captured,null);});
+ check('non-primary mouse/pen and right pointer cannot rotate',()=>{near(read('yaw'),yaw);assert.equal(captured,null);assert.equal(read('scenePointers.size'),0);});
  r.scene.events.pointerdown(event(4,80));r.scene.events.pointermove(event(5,180));
  check('capture ignores another pointer',()=>{assert.equal(captured,4);near(read('yaw'),yaw);});
  r.scene.events.pointermove(event(4,140));
  check('primary drag rotates without changing the adjusted individual',()=>{near(read('yaw'),yaw+.54);assert.deepEqual(json('levelRecord()'),saved);});
  r.scene.events.pointercancel(event(4,140));r.scene.events.pointermove(event(4,190));
  check('cancelled touch cannot continue rotation',()=>near(read('yaw'),yaw+.54));
- r.scene.events.pointerdown(event(6,140));r.scene.events.lostpointercapture();r.scene.events.pointermove(event(6,190));
+ r.scene.events.pointerdown(event(6,140));r.scene.events.lostpointercapture(event(6,140));r.scene.events.pointermove(event(6,190));
  check('lost capture cannot continue rotation',()=>near(read('yaw'),yaw+.54));
  r.scene.events.pointerdown(event(7,140));r.scene.events.pointerup(event(8,140));r.scene.events.pointermove(event(7,150));
  check('another pointer up does not cancel the primary drag',()=>near(read('yaw'),yaw+.63));
