@@ -70,12 +70,18 @@ function updateLevelStages(){
  const averageLevel=Math.max(Math.abs(levelSolution.lr),Math.abs(levelSolution.fb)),coarse=averageLevel<=.020000001;
  $('stageStatus').textContent=coarse?'平均レベルの目安内 · 残る精度を確認':'まず平均レベルを粗調整';
  $('stageStatus').className='stage-status'+(coarse?' within':'');
- $('stageAverageLR').textContent=signed(levelSolution.lr,4)+' mm/m';$('stageAverageFB').textContent=signed(levelSolution.fb,4)+' mm/m';
+ $('stageAverageLR').textContent=Math.abs(levelSolution.lr)<=.020000001?'目安内':levelSolution.lr>0?'右が高い':'左が高い';
+ $('stageAverageFB').textContent=Math.abs(levelSolution.fb)<=.020000001?'目安内':levelSolution.fb>0?'奥が高い':'手前が高い';
  $('stageAverageLR').setAttribute('data-value',String(levelSolution.lr));$('stageAverageFB').setAttribute('data-value',String(levelSolution.fb));
  $('stageStatus').setAttribute('data-coarse-ready',String(coarse));
  $('stageResidual').textContent=coarse?'平均の傾きが揃っても、本体の固有精度は残ります。局所姿勢差・支持面のねじれも別に確認し、同じ支持点を微調整します。':'初期状態はランダムな支持高さと、本体の固有精度を重ねています。支持点を動かし、まず平均の左右・前後傾きを目安へ近づけます。';
  for(const [id,value] of [['coarseAdjust',.01],['fineAdjust',.001]])$(id).setAttribute('aria-pressed',String(Number($('adjustStep').value)===value));
 }
+// The input shows what the learner has moved, while the solver and saved
+// record continue to use the original absolute support heights.
+function supportBaseline(i){return machineProfile?.initialHeights[i]??0;}
+function supportAdjustment(i){return Math.round((supportHeights[i]-supportBaseline(i))*1000)/1000;}
+function supportHeightFromAdjustment(i,value){return Number.isFinite(value)?supportBaseline(i)+value:NaN;}
 // A subdivided teaching surface makes middle supports visible, unlike an unsplit box.
 function levelSurfaceFaces(m){
  if(!levelSolution||!$('showLevelSurface').checked)return [];
@@ -93,13 +99,13 @@ function levelSurfaceFaces(m){
  return faces;
 }
 function refreshSupportControls(editingIndex=-1){
- supports.forEach((s,i)=>{const input=$('height'+i);if(!input)return;if(i!==editingIndex)input.value=cleanNumber(supportHeights[i],3);input.closest('.support-row').classList.toggle('selected',selected===i);$('down'+i).disabled=supportHeights[i]<=-.5+1e-9;$('up'+i).disabled=supportHeights[i]>=.5-1e-9;});
+ supports.forEach((s,i)=>{const input=$('height'+i);if(!input)return;if(i!==editingIndex)input.value=cleanNumber(supportAdjustment(i),3);input.setAttribute('min',String(-.5-supportBaseline(i)));input.setAttribute('max',String(.5-supportBaseline(i)));input.closest('.support-row').classList.toggle('selected',selected===i);$('down'+i).disabled=supportHeights[i]<=-.5+1e-9;$('up'+i).disabled=supportHeights[i]>=.5-1e-9;});
  $('supportMap').querySelectorAll('.map-point').forEach((b,i)=>{const index=Number(b.dataset.support);b.classList.toggle('active',index===selected);b.setAttribute('aria-pressed',String(index===selected));});
 }
 function setSupportHeight(i,value,editing=false){
  invalidateLevelImport();stopMotion();
- if(!bounded(value,-.5,.5)){$('levelInputMessage').textContent='高さは−0.500〜＋0.500 mmの数値で入力してください。';$('height'+i).value=cleanNumber(supportHeights[i],3);refreshSupportControls();return;}
- supportHeights[i]=Math.round(value*1000)/1000;if(!editing)$('height'+i).value=cleanNumber(supportHeights[i],3);selected=i;$('levelInputMessage').textContent=String.fromCharCode(65+i)+'を '+cleanNumber(supportHeights[i],3)+' mmに調整しました。';updateLeveling(true,editing?i:-1);
+ if(!bounded(value,-.5,.5)){$('levelInputMessage').textContent='調整可能な範囲の数値を入力してください。直前の調整量へ戻しました。';$('height'+i).value=cleanNumber(supportAdjustment(i),3);refreshSupportControls();return;}
+ supportHeights[i]=Math.round(value*1000)/1000;if(!editing)$('height'+i).value=cleanNumber(supportAdjustment(i),3);selected=i;$('levelInputMessage').textContent=String.fromCharCode(65+i)+'の調整量 '+signed(supportAdjustment(i),3)+' mm。絵と現在の測定を確認してください。';updateLeveling(true,editing?i:-1);
 }
 function changeSupportHeight(i,delta){setSupportHeight(i,Math.max(-.5,Math.min(.5,Math.round((supportHeights[i]+delta)*1000)/1000)));}
 function updateLeveling(save=true,editingIndex=-1){
@@ -156,7 +162,7 @@ function applyLevelPreset(type){
   return Math.round((type==='right'?.1*x:type==='front'?-.1*z:type==='twist'?.1*x*z:Math.abs(x)<.99||Math.abs(z)<.99?.15:0)*1000)/1000;
  });$('levelInputMessage').textContent='状態パターンを設定しました。';updateLeveling();
 }
-$('zero').onclick=()=>{invalidateLevelImport();stopMotion();supportHeights=supports.map(()=>0);levelExercise=null;$('levelInputMessage').textContent='全支持点を0.000 mmへ戻しました。';updateLeveling();};
+$('zero').onclick=()=>{invalidateLevelImport();stopMotion();supportHeights=supports.map(()=>0);levelExercise=null;$('levelInputMessage').textContent='全支持点を同じ高さへ揃えました。各欄は抽選時からの調整量です。';updateLeveling();};
 document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>applyLevelPreset(b.dataset.preset));
 $('measurePos').onchange=()=>updateLeveling();$('levelSensitivity').onchange=()=>updateLeveling();$('exaggerate').onchange=()=>updateLeveling();$('showLevelSurface').onchange=()=>drawScene();$('adjustStep').onchange=()=>updateLeveling();
 for(const [id,value] of [['coarseAdjust',.01],['fineAdjust',.001]])$(id).onclick=()=>{$('adjustStep').value=String(value);$('levelInputMessage').textContent=(value===.01?'粗調整':'微調整')+'：ボタン1回 '+cleanNumber(value)+' mmに切り替えました。支持高さはそのままです。';updateLeveling();};

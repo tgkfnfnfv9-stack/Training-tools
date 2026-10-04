@@ -77,9 +77,8 @@ function rowMetrics(id){
 function numericText(element){const match=/[+−-]?\d+(?:\.\d+)?/.exec(element.textContent);assert.ok(match,'数値の表示がない');return Number(match[0].replace('−','-'));}
 function assertRowText(element,before,current,tolerance){
  const values=[...element.textContent.matchAll(/[+−-]?\d+(?:\.\d+)?/g)].map(m=>Number(m[0].replace('−','-')));
- assert.ok(values.length>=3,'初期・現在・変化の表示が不足');
- [before,current,current-before].forEach((v,i)=>near(values[i],v,tolerance));
- assert.match(element.textContent,/抽選時/);assert.match(element.textContent,/現在/);assert.match(element.textContent,/Δ/);
+ assert.equal(values.length,1,'現在の測定値だけを表示する');near(values[0],current,tolerance);
+ assert.match(element.textContent,/現在/);assert.doesNotMatch(element.textContent,/抽選時|Δ/);
 }
 function assertPairDOM(before,after){
  for(const p of after.pairs){
@@ -87,8 +86,8 @@ function assertPairDOM(before,after){
   for(const [part,value] of [['before',b],['current',p.error],['delta',p.error-b]]){
    const node=r[`accuracy-${part}-${p.key}`];assert.ok(node,`accuracy-${part}-${p.key}がない`);
    near(Number(data(node,'value')),value);
-   if(part==='delta'&&/表示桁未満/.test(node.textContent))assert.ok(Math.abs(value)<.00000051&&value!==0);
-   else near(numericText(node),value,.0050001);
+   if(part==='current')near(numericText(node),value,.0050001);
+   else {assert.equal(node.hidden,true);assert.equal(node.textContent,'','初期と差分は数値表示しない');}
   }
   const trend=r[`accuracy-trend-${p.key}`];assert.ok(trend,'改善/悪化表示がない');
   const absolute=Math.abs(p.error)-Math.abs(b),expectedTrend=Math.abs(absolute)<=.005?'similar':absolute<0?'better':'worse';
@@ -168,7 +167,7 @@ check('小型の1µm調整は倒れ・ねじれ・XZへ小さく連動する',()
  near(after.twist-before.twist,.00048076923076923074,1e-12);
  near(after.toolLean.front-before.toolLean.front,-.208333333030708,1e-7);
  near(after.pairs.find(p=>p.key==='XZ').error-before.pairs.find(p=>p.key==='XZ').error,.12380920513457,1e-7);
- assert.notEqual(numericText(r['accuracy-delta-XZ']),0);
+ assert.notEqual(Number(data(r['accuracy-delta-XZ'],'value')),0);assert.equal(r['accuracy-delta-XZ'].hidden,true);
  assert.deepEqual(json('machineProfile'),compact);
 });
 // These actual geometry cases cross zero or move a negative deviation toward

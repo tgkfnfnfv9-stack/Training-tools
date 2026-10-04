@@ -101,13 +101,13 @@ async function main(){
    assert.equal(read('levelRecord().version'),2);assert(read('validLevelRecord(levelRecord())'));
    assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))).machineProfile,initial);
    assert.match(r.machineIdentity.textContent,new RegExp('#'+initial.seed));assert.equal(r.guideMetrics.children.length,keys.length);
-   assert.equal(r.accuracyComparison.children.length,3);for(const row of r.accuracyComparison.children){assert.equal(row.children.length,4);for(const cell of row.children.slice(1))assert(Number.isFinite(Number(cell.textContent)));}
+   assert.equal(r.accuracyComparison.children.length,2);for(const row of r.accuracyComparison.children){assert.equal(row.children.length,4);for(const cell of row.children.slice(1,3))assert(Number.isFinite(Number(cell.textContent)));assert.equal(row.children[3].textContent,'固定成分');}
   });
   const guideText=r.guideMetrics.textContent;
   r.height0.change('0.003');r.adjustStep.change('0.005');r.up0.click();
   trigger('axis-'+keys[0],'input','37');r.scene.events.keydown({key:'ArrowRight',preventDefault(){}});
   check('fine support movement retains intrinsic profile '+index+' '+mode,()=>{
-   near(read('supportHeights[0]'),.008);assert.equal(r.height0.value,'0.008');assert.equal(r.height0.getAttribute('step'),'0.001');
+   near(read('supportHeights[0]'),initial.initialHeights[0]+.008);assert.equal(r.height0.value,'0.008');assert.equal(r.height0.getAttribute('step'),'0.001');
    assert.deepEqual(json('machineProfile'),initial);assert.equal(r.guideMetrics.textContent,guideText);assert(read('validLevelRecord(levelRecord())'));
   });
   r.machineCondition.change('used');const used=json('machineProfile');

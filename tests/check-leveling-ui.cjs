@@ -35,13 +35,13 @@ async function main(){
  for(let n=0;n<8;n++)r.up0.click();check('＋上限制限',()=>{near(read('supportHeights[0]'),.5);assert.equal(r.up0.disabled,true);});
  for(let n=0;n<12;n++)r.down0.click();check('−下限制限',()=>{near(read('supportHeights[0]'),-.5);assert.equal(r.down0.disabled,true);});
  r.height0.change('.23');check('高さ数値入力',()=>{near(read('supportHeights[0]'),.23);assert.equal(r.height0.value,'0.230');});
- for(const value of ['', 'not-a-number','-0.51','0.51']){r.height0.change(value);check('無効高さ拒否 '+JSON.stringify(value),()=>{near(read('supportHeights[0]'),.23);assert.equal(r.height0.value,'0.230');assert.match(r.levelInputMessage.textContent,/−0.50/);});}
+ for(const value of ['', 'not-a-number','-0.51','0.51']){r.height0.change(value);check('無効高さ拒否 '+JSON.stringify(value),()=>{near(read('supportHeights[0]'),.23);assert.equal(r.height0.value,'0.230');assert.match(r.levelInputMessage.textContent,/調整可能/);});}
  const typeHeight=(i,value)=>{const input=r['height'+i];input.value=value;input.oninput({target:input});};
  const synchronized=()=>{const heights=json('supportHeights');heights.forEach((h,i)=>near(Number(r['height'+i].value),h));};
  const activeField=r.height0;typeHeight(0,'.5');check('inputイベントで上限と計算を即更新',()=>{near(read('supportHeights[0]'),.5);assert.equal(r.height0.value,'.5');assert.equal(r.up0.disabled,true);assert.equal(r.height0,activeField);assert.ok(read('levelSolution.residual')>.1);synchronized();});
  const beforeBlank=json('[levelSolution.lr,levelSolution.fb,levelSolution.twist,levelSolution.residual]');typeHeight(0,'');
  check('入力中の空欄は計算を維持',()=>{assert.equal(r.height0.value,'');near(read('supportHeights[0]'),.5);assert.deepEqual(json('[levelSolution.lr,levelSolution.fb,levelSolution.twist,levelSolution.residual]'),beforeBlank);});
- r.height0.change();check('空欄確定は拒否して最後の有効値を復元',()=>{assert.equal(r.height0.value,'0.500');near(read('supportHeights[0]'),.5);assert.match(r.levelInputMessage.textContent,/−0.50/);});
+ r.height0.change();check('空欄確定は拒否して最後の有効値を復元',()=>{assert.equal(r.height0.value,'0.500');near(read('supportHeights[0]'),.5);assert.match(r.levelInputMessage.textContent,/調整可能/);});
  typeHeight(0,'.0004');check('入力途中は表記を保ち計算だけ丸める',()=>{near(read('supportHeights[0]'),0);assert.equal(r.height0.value,'.0004');assert.equal(r.up0.disabled,false);near(read('levelSolution.residual'),0);});
  r.height0.change();check('確定時に三桁表示へ揃える',()=>assert.equal(r.height0.value,'0.000'));
  for(const value of ['0','0.1','0.12','0.123']){typeHeight(0,value);check('連続入力を途中で書き換えない '+value,()=>{assert.equal(r.height0.value,value);assert.equal(r.height0,activeField);near(read('supportHeights[0]'),Math.round(Number(value)*1000)/1000);});}

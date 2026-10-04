@@ -64,17 +64,17 @@ function updateMachineAccuracy(){
  $('machineIdentity').textContent=condition+'個体 #'+machineProfile.seed+' · 抽選した固有成分をこのモデルで保持し、支持による姿勢の影響を重ねます。';
  $('guideMetrics').replaceChildren();
  for(const [axis,item] of Object.entries(machineProfile.guides)){
-  const row=document.createElement('p');row.className='guide-metric';row.textContent=axis+'ガイド曲がり成分：'+cleanNumber(item.microns/1000,3)+' mm ('+cleanNumber(item.microns,2)+' µm) · 抽選したPV';$('guideMetrics').append(row);
+  const row=document.createElement('p');row.className='guide-metric';row.textContent=axis+'ガイド曲がり成分：この個体の固定成分です。';$('guideMetrics').append(row);
  }
- $('intrinsicMetrics').textContent=Object.entries(machineProfile.squareness).map(([pair,item])=>pair+' '+signed(item.microns/1000,3)+' mm / 300 mm').join(' ／ ');
+ $('intrinsicMetrics').textContent=Object.keys(machineProfile.squareness).join('・')+'の固有直角差を保持しています。初期差の数値は示しません。';
  $('accuracyComparison').replaceChildren();
  const guideMax=Math.max(...Object.values(machineProfile.guides).map(q=>q.microns));
- for(const [label,measure] of [['調整前',initial],['現在',metric],['参考最良',best.metric]]){
+ for(const [label,measure] of [['現在',metric],['参考最良',best.metric]]){
   const row=document.createElement('tr');
-  for(const value of [label,cleanNumber(measure.maxSquareness,2),cleanNumber(measure.objective,2),cleanNumber(guideMax,1)]){const cell=document.createElement(row.children.length?'td':'th');if(!row.children.length)cell.setAttribute('scope','row');cell.textContent=value;row.append(cell);}
+  for(const value of [label,cleanNumber(measure.maxSquareness,2),cleanNumber(measure.objective,2),'固定成分']){const cell=document.createElement(row.children.length?'td':'th');if(!row.children.length)cell.setAttribute('scope','row');cell.textContent=value;row.append(cell);}
   $('accuracyComparison').append(row);
  }
- $('machineProgress').textContent=(target?'補助の参考最良の近傍です。':'補助の参考最良への残り '+cleanNumber(gap,2)+' µm。')+' 補助評価の進み '+cleanNumber(target?100:progress,0)+'%。今の位置の初期→現在は上の主表示で確認します。抽選したガイドの曲がり成分は、このモデルで保持します。';
+ $('machineProgress').textContent=(target?'補助の参考最良の近傍です。':'参考調整の余地があります。')+' 今の直角図と現在の測定値を上の主表示で確認します。抽選したガイドの曲がり成分は、このモデルで保持します。';
  const adjustment=machineBestHeights();
  $('applyBestLevel').disabled=adjustment.every((h,i)=>Math.abs(h-supportHeights[i])<.0005);
  const hints=adjustment.map((h,i)=>({i,delta:Math.round((h-supportHeights[i])*1000)/1000})).filter(q=>Math.abs(q.delta)>=.0005);
