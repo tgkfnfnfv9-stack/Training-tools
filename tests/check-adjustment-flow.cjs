@@ -9,7 +9,14 @@ const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'
 let checks=0;
 function check(name,fn){try{fn();checks++;}catch(error){throw new Error(name+': '+error.message,{cause:error});}}
 function near(a,b,tolerance=1e-7){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tolerance,`${a} != ${b}`);}
-function visibleText(el){if(el.hidden)return '';return el._text+' '+el.children.map(visibleText).join(' ');}
+// Only these exact, dedicated measurement-position labels may contain numbers.
+// All precision values, adjustment amounts and other numeric text stay banned.
+const positionLabels={'measurement-start':'0','measurement-end':'300 mm','measurement-start-note':'0','measurement-origin-note':'O（0,0）','measurement-length-note':'300 mm'};
+function visibleText(el){
+ if(el.hidden)return '';
+ for(const [className,label] of Object.entries(positionLabels))if(el.classList.contains(className)){assert.equal(el.textContent,label);assert.equal(el.children.length,0);assert(['TEXT','SPAN'].includes(el.tagName));return '';}
+ return el._text+' '+el.children.map(visibleText).join(' ');
+}
 function visibleElements(el,out=[]){if(el.hidden)return out;out.push(el);for(const child of el.children)visibleElements(child,out);return out;}
 function compactCoach(){
  const coarse=read('adjustmentStage')==='coarse',hint=coarse?r.coarseHint:r.fineHint,ready=(coarse?r.stageStatus.getAttribute('data-coarse-ready'):r.fineStatus.getAttribute('data-target'))==='true';
@@ -50,7 +57,9 @@ function verifyDiagrams(){
    near(Math.hypot(dx,dy),28,1e-10);near(Math.atan2(-dx,dy),Math.max(-.65,Math.min(.65,dev*Number(svg.getAttribute('data-gain'))/1e6)),1e-12);
   }
   if(Math.abs(p.deviationMicroradians-b.deviationMicroradians)<=1e-6){assert.equal(svg.getAttribute('data-direction'),'unchanged');assert.equal(svg.querySelectorAll('.pair-change-area').length,0);}
-  assert.doesNotMatch(svg.textContent+svg.getAttribute('aria-label'),/[0-9°µμ]/);
+  assert.equal(svg.querySelectorAll('.measurement-start')[0].textContent,'0');assert.equal(svg.querySelectorAll('.measurement-end')[0].textContent,'300 mm');
+  near(Number(svg.getAttribute('data-current-error-300')),p.deviationMicroradians*.3);near(Number(svg.getAttribute('data-before-error-300')),b.deviationMicroradians*.3);near(Number(svg.getAttribute('data-delta-error-300')),(p.deviationMicroradians-b.deviationMicroradians)*.3);
+  assert.doesNotMatch(visibleText(svg)+svg.getAttribute('aria-label'),/[0-9°µμ]/);
  }
 }
 for(const [index,mode] of variants)for(const condition of ['new','used']){
@@ -101,5 +110,11 @@ for(const [before,current,trend,direction] of [[-20,-10,'better','opened'],[10,-
  const svg=r.liveSquareness.querySelectorAll('svg')[0];assert.equal(svg.getAttribute('data-trend'),trend);assert.equal(svg.getAttribute('data-direction'),direction);near(Number(svg.getAttribute('data-delta')),current-before);
  assert.equal(svg.getAttribute('data-before-limited'),String(Math.abs(before*5000/1e6)>.65));assert.equal(svg.getAttribute('data-limited'),String(Math.abs(current*5000/1e6)>.65));assert.equal(svg.getAttribute('data-any-limited'),String(Math.max(Math.abs(before),Math.abs(current))*5000/1e6>.65));
  if(Math.max(Math.abs(before),Math.abs(current))*5000/1e6>.65)assert.match(svg.getAttribute('aria-label'),/図の範囲外/);
+});
+check('position-label exception cannot hide numeric precision or other positions',()=>{
+ loadProfile(0,'standard');nonnumeric();
+ const leak=e.context.document.createElement('span');leak.textContent='0 µm';r.training.append(leak);assert.throws(nonnumeric);leak.remove();
+ const marker=r.liveSquareness.querySelectorAll('.measurement-end')[0];marker.textContent='300 mm 0 µm';assert.throws(nonnumeric);marker.textContent='400 mm';assert.throws(nonnumeric);marker.textContent='300 mm';nonnumeric();
+ const start=r.liveSquareness.querySelectorAll('.measurement-start')[0];start.textContent='0.001';assert.throws(nonnumeric);start.textContent='0';nonnumeric();
 });
 console.log('Adjustment flow: '+checks+' nonnumeric, actual-improvement, invariant-pair and legacy checks passed.');
