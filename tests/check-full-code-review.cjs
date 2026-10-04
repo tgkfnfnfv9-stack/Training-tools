@@ -150,7 +150,8 @@ async function main(){
    for(const key of keys){
     strokes.length=0;read(`selectAxis('${key}')`);
     const faces=json(`createGeometry(current).faces.filter(f=>f.axes.includes('${key}')).flatMap(f=>f.v.map(p=>transformedPoint(p,f.axes,current)))`),origin=[0,1,2].map(i=>(Math.min(...faces.map(p=>p[i]))+Math.max(...faces.map(p=>p[i])))/2),vector=vectors[keys.indexOf(key)],pose=json('levelGeometry.axes').find(a=>a.key===key).source;
-    const endpoints=[-1,1].map(sign=>json(`levelVisualPoint(${JSON.stringify(origin.map((v,i)=>v+sign*vector[i]*.6))},'${pose}')`));
+    const supportOrigin=json(`levelVisualPoint(${JSON.stringify(origin)},'${pose}')`),bodyPoints=json(`createGeometry(current).faces.filter(f=>f.axes.includes('${key}')).flatMap(f=>f.v.map(p=>levelBodyVisualPoint(transformedPoint(p,f.axes,current),f.pose)))`),bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
+    const endpoints=[-1,1].map(sign=>json(`levelVisualPoint(${JSON.stringify(origin.map((v,i)=>v+sign*vector[i]*.6))},'${pose}')`).map((v,i)=>v+bodyOrigin[i]-supportOrigin[i]));
     const yaw=read('yaw'),project=p=>{const x=p[0]*Math.cos(yaw)+p[2]*Math.sin(yaw),z=-p[0]*Math.sin(yaw)+p[2]*Math.cos(yaw),y=(p[1]-1.65)*Math.cos(.24)+z*Math.sin(.24),depth=11+z*Math.cos(.24)-(p[1]-1.65)*Math.sin(.24);return [x/depth,-y/depth];};
     check('Canvas arrow agrees with intrinsic model '+index+' '+mode+' '+key+' '+exaggerate,()=>{assert.equal(strokes.length,1);const actual=unit(sub(strokes[0][1],strokes[0][0])),expected=unit(sub(project(endpoints[1]),project(endpoints[0])));assert(Math.hypot(...sub(actual,expected))<1e-10);});
    }

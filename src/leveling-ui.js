@@ -51,6 +51,31 @@ function levelVisualPoint(p,pose='bed'){
  const frame=window.Leveling.orientation({lr:info.slope.lr*factor,fb:info.slope.fb*factor}),q=frame.rotate(point.map((v,i)=>v-anchor[i]));
  return q.map((v,i)=>v+origin[i]);
 }
+let bodyVisualFrame=null,bodyVisualFrameProfile=null,bodyVisualFrameKind='',bodyVisualFrameFactor=0;
+function levelBodyVisualPoint(p,pose='bed'){
+ if(!levelGeometry||!machineProfile||pose==='bed'||pose==='work')return levelVisualPoint(p,pose);
+ const factor=$('exaggerate').checked?levelGeometry.visualFactor:1;
+ if(machineProfile!==bodyVisualFrameProfile||current.kind!==bodyVisualFrameKind||factor!==bodyVisualFrameFactor){bodyVisualFrameProfile=machineProfile;bodyVisualFrameKind=current.kind;bodyVisualFrameFactor=factor;bodyVisualFrame=intrinsicBodyFrame(axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),machineProfile,factor);}
+ const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,offset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0},anchor=[info.anchor.x,.66,info.anchor.z];
+ const relative=[p[0]+offset.x-anchor[0],p[1]-anchor[1],p[2]+offset.z-anchor[2]],rotated=bodyVisualFrame.rotate(relative);
+ return levelVisualPoint([rotated[0]+anchor[0]-offset.x,rotated[1]+anchor[1],rotated[2]+anchor[2]-offset.z],pose);
+}
+function levelAxisVisualPoint(p,origin,pose,bodyOrigin=levelBodyVisualPoint(origin,pose)){
+ const q=levelVisualPoint(p,pose),supportOrigin=levelVisualPoint(origin,pose);
+ // Move only the arrow's centre with its body. Its direction already contains
+ // the intrinsic defect and must receive the support rotation just once.
+ return q.map((v,i)=>v+bodyOrigin[i]-supportOrigin[i]);
+}
+function updateLevelStages(){
+ const averageLevel=Math.max(Math.abs(levelSolution.lr),Math.abs(levelSolution.fb)),coarse=averageLevel<=.020000001;
+ $('stageStatus').textContent=coarse?'平均レベルの目安内 · 残る精度を確認':'まず平均レベルを粗調整';
+ $('stageStatus').className='stage-status'+(coarse?' within':'');
+ $('stageAverageLR').textContent=signed(levelSolution.lr,4)+' mm/m';$('stageAverageFB').textContent=signed(levelSolution.fb,4)+' mm/m';
+ $('stageAverageLR').setAttribute('data-value',String(levelSolution.lr));$('stageAverageFB').setAttribute('data-value',String(levelSolution.fb));
+ $('stageStatus').setAttribute('data-coarse-ready',String(coarse));
+ $('stageResidual').textContent=coarse?'平均の傾きが揃っても、本体の固有精度は残ります。局所姿勢差・支持面のねじれも別に確認し、同じ支持点を微調整します。':'初期状態はランダムな支持高さと、本体の固有精度を重ねています。支持点を動かし、まず平均の左右・前後傾きを目安へ近づけます。';
+ for(const [id,value] of [['coarseAdjust',.01],['fineAdjust',.001]])$(id).setAttribute('aria-pressed',String(Number($('adjustStep').value)===value));
+}
 // A subdivided teaching surface makes middle supports visible, unlike an unsplit box.
 function levelSurfaceFaces(m){
  if(!levelSolution||!$('showLevelSurface').checked)return [];
@@ -81,6 +106,7 @@ function updateLeveling(save=true,editingIndex=-1){
  const points=supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:supportHeights[i]}));
  levelSolution=window.Leveling.solve(points);refreshSupportControls(editingIndex);
  updateAccuracy();
+ updateLevelStages();
  const z=Number($('measurePos').value)*levelConfig.depth/2,local=levelSolution.slopeAt(0,z);
  $('lr').textContent=cleanNumber(levelSolution.lr,4)+' mm/m';$('fb').textContent=cleanNumber(levelSolution.fb,4)+' mm/m';$('twist').textContent=cleanNumber(levelSolution.twist,6)+' mm/m';$('residual').textContent=cleanNumber(levelSolution.residual)+' mm';
  const sensitivity=Number($('levelSensitivity').value);
@@ -133,6 +159,7 @@ function applyLevelPreset(type){
 $('zero').onclick=()=>{invalidateLevelImport();stopMotion();supportHeights=supports.map(()=>0);levelExercise=null;$('levelInputMessage').textContent='全支持点を0.000 mmへ戻しました。';updateLeveling();};
 document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>applyLevelPreset(b.dataset.preset));
 $('measurePos').onchange=()=>updateLeveling();$('levelSensitivity').onchange=()=>updateLeveling();$('exaggerate').onchange=()=>updateLeveling();$('showLevelSurface').onchange=()=>drawScene();$('adjustStep').onchange=()=>updateLeveling();
+for(const [id,value] of [['coarseAdjust',.01],['fineAdjust',.001]])$(id).onclick=()=>{$('adjustStep').value=String(value);$('levelInputMessage').textContent=(value===.01?'粗調整':'微調整')+'：ボタン1回 '+cleanNumber(value)+' mmに切り替えました。支持高さはそのままです。';updateLeveling();};
 for(const [id,key,min,max] of [['supportWidth','width',.5,20],['supportDepth','depth',.5,20]]){const apply=()=>{invalidateLevelImport();const value=Number($(id).value);if(!bounded(value,min,max))return false;levelConfig[key]=value;$('levelInputMessage').textContent='支持寸法を更新しました。';updateLeveling();return true;};$(id).oninput=apply;$(id).onchange=()=>{if(!apply()){$(id).value=levelConfig[key];$('levelInputMessage').textContent='支持幅は0.50〜20.00 mで入力してください。';}};}
 $('impactOffset').oninput=()=>{invalidateLevelImport();const value=Number($('impactOffset').value);if(bounded(value,.1,2)){levelConfig.offset=value;updateLeveling();}};
 $('impactOffset').onchange=()=>{const value=Number($('impactOffset').value);if(!bounded(value,.1,2)){$('impactOffset').value=levelConfig.offset;$('levelInputMessage').textContent='評価長は0.10〜2.00 mです。直前の有効値へ戻しました。';}else levelConfig.offset=value;updateLeveling();};

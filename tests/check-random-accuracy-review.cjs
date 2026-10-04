@@ -164,7 +164,8 @@ async function main(){
   const ctx={scale(){},fillRect(){},beginPath(){path=[];},moveTo(x,y){path.push([x,y]);},lineTo(x,y){path.push([x,y]);},closePath(){},arc(){},fill(){},fillText(){},measureText(text){return {width:text.length*5};},stroke(){if(this.lineWidth===4&&path.length===2)strokes.push(path.map(p=>[...p]));}};
   r.scene.getBoundingClientRect=()=>({width:390,height:340});r.scene.getContext=()=>ctx;context.window.devicePixelRatio=1;read('drawScene()');assert.equal(strokes.length,1);
   const moved=json("createGeometry(current).faces.filter(f=>f.axes.includes('Z')).flatMap(f=>f.v.map(p=>transformedPoint(p,f.axes,current)))"),origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2),vector=json("accuracyVisualVector('Z')");
-  const expected=[origin.map((v,i)=>v-vector[i]*.6),origin.map((v,i)=>v+vector[i]*.6)].map(p=>json(`levelVisualPoint(${JSON.stringify(p)},'tool')`));
+  const supportOrigin=json(`levelVisualPoint(${JSON.stringify(origin)},'tool')`),bodyPoints=json("createGeometry(current).faces.filter(f=>f.axes.includes('Z')).flatMap(f=>f.v.map(p=>levelBodyVisualPoint(transformedPoint(p,f.axes,current),f.pose)))"),bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
+  const expected=[origin.map((v,i)=>v-vector[i]*.6),origin.map((v,i)=>v+vector[i]*.6)].map(p=>json(`levelVisualPoint(${JSON.stringify(p)},'tool')`).map((v,i)=>v+bodyOrigin[i]-supportOrigin[i]));
   const yaw=read('yaw'),pitch=.24,project=p=>{const x=p[0]*Math.cos(yaw)+p[2]*Math.sin(yaw),z=-p[0]*Math.sin(yaw)+p[2]*Math.cos(yaw),y=(p[1]-1.65)*Math.cos(pitch)+z*Math.sin(pitch),depth=11+z*Math.cos(pitch)-(p[1]-1.65)*Math.sin(pitch);return [x/depth,-y/depth];};
   near(dot(unit(sub(strokes[0][1],strokes[0][0])),unit(sub(project(expected[1]),project(expected[0])))),1,1e-10);r.scene.getBoundingClientRect=()=>({width:0,height:0});
  });
