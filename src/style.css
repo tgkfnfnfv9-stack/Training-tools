@@ -86,16 +86,17 @@
  body.in-mechanical-lab #training .scroll-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
 }
 
-/* Axis selection and its small menu belong to the rotating 3D viewer. */
+/* The axis bar has its own row; its menu shares the scrolling controls. */
 .scene-viewport{position:relative;display:flex;flex-direction:column;flex:1;min-height:0;min-width:0;overflow:hidden}
-.scene-toolbar{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);z-index:2;display:flex;align-items:center;gap:4px;width:max-content;max-width:calc(100% - 8px);padding:4px;border:1px solid #c1d2d5;border-radius:9px;background:#ffffffed;box-shadow:0 2px 7px #23404e16}
-.scene-toolbar .axis-tabs{margin:0;gap:2px;flex-wrap:nowrap}
+.scene-toolbar{position:static;flex:none;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:4px;width:100%;min-width:0;padding:6px max(8px,env(safe-area-inset-right)) max(6px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));border-top:1px solid #c1d2d5;background:#f6faf9}
+.scene-toolbar .axis-tabs{margin:0;gap:2px;min-width:0;justify-content:center;flex-wrap:wrap}
 .scene-toolbar .axis-tab{min-width:44px;min-height:44px;padding:4px;font-size:12px}
-.axis-controls-toggle{min-width:64px;min-height:44px;padding:4px 6px;font-size:12px;white-space:nowrap}
+.axis-controls-toggle{flex:none;min-width:64px;min-height:44px;padding:4px 6px;font-size:12px;white-space:nowrap}
 .axis-controls-toggle[aria-expanded="true"]{background:#e3f1eb;border-color:#176e63;color:#176e63}
-.axis-menu{position:absolute;right:8px;bottom:68px;z-index:3;width:min(320px,calc(100% - 16px));max-height:calc(100% - 78px);overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scroll-padding:10px;padding:12px;background:#ffffff;border:1px solid #afc4c8;border-radius:9px;box-shadow:0 4px 18px #23404e26}
+.axis-menu{position:static;width:100%;min-width:0;margin:0 0 14px;padding:12px;background:#ffffff;border:1px solid #afc4c8;border-radius:9px}
 .axis-menu-heading{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:14px}
 .axis-menu-heading button{min-height:44px;font-size:12px;padding:4px 9px}
+.axis-menu-heading strong{min-width:0;overflow-wrap:anywhere}
 .axis-menu .play-axis{min-height:44px;margin:6px 0}
 .axis-menu #resetAxes{min-height:44px;width:100%;margin:0 0 6px}
 .axis-menu .axis-row input{min-height:44px}

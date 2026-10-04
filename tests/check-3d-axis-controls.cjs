@@ -4,16 +4,35 @@ const {registry:r,context,read,json}=require('./leveling-dom-env.cjs')();
 let checks=0;
 function check(name,fn){try{fn();checks++;}catch(e){throw new Error(name+': '+e.message);}}
 const source=fs.readFileSync('src/index.html','utf8');
-check('viewer stacks its flexible Canvas vertically',()=>assert.match(fs.readFileSync('src/style.css','utf8'),/\.scene-viewport\{[^}]*display:flex;[^}]*flex-direction:column;/));
+const css=fs.readFileSync('src/style.css','utf8');
+check('viewer stacks its flexible Canvas vertically',()=>assert.match(css,/\.scene-viewport\{[^}]*display:flex;[^}]*flex-direction:column;/));
 check('removed explanation is not hidden elsewhere',()=>{
  assert(!source.includes('どこが動く？どこが固定？'));assert(!source.includes('motion-card'));
  for(const id of ['movingText','movingParts','partMapHeading','partMapBody','partStateHeading','fixedText','absentAxis'])assert(!r[id],id);
 });
-check('all axis actions belong to the fixed 3D viewer',()=>{
- for(const id of ['axisTabs','axisMenu','playAxis','resetAxes','axisSliders','machineMode'])assert.equal(r[id].closest('#sceneViewport'),r.sceneViewport,id);
+check('Canvas is separate from the fixed axis bar and scrolling axis menu',()=>{
+ assert.deepEqual(r.sceneViewport.children,[r.scene]);
+ assert.equal(r.sceneToolbar.parentElement,r.sceneViewport.parentElement);
+ const viewerChildren=r.sceneViewport.parentElement.children;
+ assert(viewerChildren.indexOf(r.sceneToolbar)>viewerChildren.indexOf(r.sceneViewport));
+ for(const id of ['axisTabs','axisControlsToggle'])assert.equal(r[id].closest('#sceneToolbar'),r.sceneToolbar,id);
+ assert.equal(r.axisMenu.parentElement,r.trainingControls);
+ assert.equal(r.trainingControls.children[0],r.axisMenu);
+ for(const id of ['axisMenu','playAxis','resetAxes','axisSliders','machineMode']){assert.equal(r[id].closest('#trainingControls'),r.trainingControls,id);assert.equal(r[id].closest('#sceneViewport'),null,id);}
  assert.equal(r.sceneViewport.closest('.pinned-visual').parentElement.closest('#training'),r.training);
  assert.equal(r.axisControlsToggle.getAttribute('aria-controls'),'axisMenu');
 });
+check('axis controls use normal flow and wrap within narrow viewer widths',()=>{
+ for(const selector of ['scene-toolbar','axis-menu']){
+  const rules=new RegExp('\\.'+selector+'\\{([^}]*)\\}').exec(css)[1];
+  assert(!/position:(absolute|fixed)|transform:|bottom:|max-height:|overflow:auto/.test(rules),selector);
+ }
+ assert.match(css,/\.scene-toolbar\{[^}]*flex-wrap:wrap;/);
+ assert.match(css,/\.scene-toolbar \.axis-tabs\{[^}]*flex-wrap:wrap/);
+ assert.match(css,/\.scene-toolbar \.axis-tab\{[^}]*min-width:44px;min-height:44px/);
+});
+let focused=null;
+for(const el of [r.closeAxisControls,r.axisControlsToggle])el.focus=options=>{assert.equal(options.preventScroll,true);focused=el;};
 const pending=new Map();let sequence=0;
 context.requestAnimationFrame=fn=>{pending.set(++sequence,fn);return sequence;};
 context.cancelAnimationFrame=id=>pending.delete(id);
@@ -40,10 +59,10 @@ for(const [index,mode] of layouts){
    for(const k of keys)assert.equal(r['axis-'+k].parentElement.hidden,k!==key);
    assert.equal(r.axisMenuTitle.textContent,key+'軸の操作');assert.deepEqual(json('levelRecord()'),before);
   });
-  r.axisControlsToggle.click();
-  check('menu opens without resetting precision '+index+' '+mode+' '+key,()=>{assert(!r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'true');assert.deepEqual(json('levelRecord()'),before);});
+  r.trainingControls.scrollTop=900;r.axisControlsToggle.click();
+  check('menu opens inside its scrolled pane without resetting precision '+index+' '+mode+' '+key,()=>{assert(!r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'true');assert.equal(r.trainingControls.scrollTop,0);assert.equal(focused,r.closeAxisControls);assert.deepEqual(json('levelRecord()'),before);});
   r.axisMenu.events.keydown({key:'Escape',preventDefault(){}});
-  check('Escape closes the selected-axis menu '+index+' '+mode+' '+key,()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');});
+  check('Escape closes the selected-axis menu '+index+' '+mode+' '+key,()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.axisControlsToggle);});
  }
  r.showAxes.checked=false;paths=[];read('drawScene()');
  check('axis visibility option hides all motion arrows '+index+' '+mode,()=>assert.equal(paths.length,0));
@@ -66,14 +85,16 @@ for(const angle of [-90,0,75]){
 }
 read('openMachine(machines[0])');pending.clear();
 r.axisControlsToggle.click();r.closeAxisControls.click();
-check('explicit close restores closed toolbar state',()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');});
+check('explicit close restores toolbar focus',()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.axisControlsToggle);});
 r.axisControlsToggle.click();r.scene.setPointerCapture=()=>{};
 r.scene.events.pointerdown({isPrimary:true,button:0,pointerId:1,clientX:40,clientY:40});
-check('model drag dismisses the overlay',()=>assert(r.axisMenu.hidden));r.scene.events.pointerup({pointerId:1});
+check('model drag dismisses the controls menu',()=>assert(r.axisMenu.hidden));r.scene.events.pointerup({pointerId:1});
 r.axisControlsToggle.click();r.playAxis.click();
-check('demo starts with the model unobscured',()=>{assert(r.axisMenu.hidden);assert.equal(r.playAxis.getAttribute('aria-pressed'),'true');assert.match(r.axisDemoStatus.textContent,/X軸/);});
+check('demo starts with visible toolbar focus',()=>{assert(r.axisMenu.hidden);assert.equal(focused,r.axisControlsToggle);assert.equal(r.playAxis.getAttribute('aria-pressed'),'true');assert.match(r.axisDemoStatus.textContent,/X軸/);});
 tick(0);tick(875);check('demo changes the selected part position',()=>assert(read('positions.X')>80));tick(3500);
 check('single demo ends, keeps precision comparison live and saves center',()=>{assert.equal(read('motionFrame'),null);assert.equal(read('positions.X'),0);assert.equal(r.playAxis.getAttribute('aria-pressed'),'false');assert.equal(json('levelRecord()').axisPositions.X,0);assert(Number.isFinite(Number(r['accuracy-current-XZ'].getAttribute('data-value'))));});
+r.axisControlsToggle.click();r.machineMode.change('compact');
+check('mode change closes the controls menu and restores toolbar focus',()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.axisControlsToggle);assert.equal(read('machineMode'),'compact');});
 r.axisControlsToggle.click();read("navigate('catalog')");
-check('leaving closes the viewer menu',()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');});
+check('leaving closes the controls menu',()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');});
 console.log('3D axis controls: '+checks+' checks passed.');

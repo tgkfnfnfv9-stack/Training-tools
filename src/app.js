@@ -213,7 +213,7 @@ function buildModeUI(){
  const base=machines.find(m=>m.id===current.id),box=$('machineModeBox');box.hidden=!base.modes;
  const select=$('machineMode');select.replaceChildren();(base.modes||[]).forEach(([value,text])=>{const option=document.createElement('option');option.value=value;option.textContent=text;select.append(option);});select.value=machineMode;
 }
-$('machineMode').onchange=()=>{stopMotion();machineMode=$('machineMode').value;current=displayMachine(machines.find(m=>m.id===current.id));positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;populateMachine();drawScene();};
+$('machineMode').onchange=()=>{stopMotion();machineMode=$('machineMode').value;current=displayMachine(machines.find(m=>m.id===current.id));positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;populateMachine();setAxisMenuOpen(false,true);drawScene();};
 function buildAxisUI(){
  const axes=axisConfig(current);$('axisTabs').replaceChildren();$('axisSliders').replaceChildren();
  axes.forEach(a=>{const btn=document.createElement('button');btn.textContent=a.key+'軸';btn.className='axis-tab';btn.style.setProperty('--axis',axisColors[a.key]);btn.setAttribute('aria-pressed',a.key===selectedAxis?'true':'false');btn.onclick=()=>selectAxis(a.key);$('axisTabs').append(btn);
@@ -229,14 +229,21 @@ function selectAxis(key){
  $('axisMenuTitle').textContent=key+'軸の操作';
  $('scene').setAttribute('aria-label',current.name+'の3D模式図。左右ドラッグまたは左右矢印キーで回転。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+key+'軸で動く部品を同色で強調。');drawScene();
 }
-function setAxisMenuOpen(open,focusToggle=false){$('axisMenu').hidden=!open;$('axisControlsToggle').setAttribute('aria-expanded',String(open));if(focusToggle&&$('axisControlsToggle').focus)$('axisControlsToggle').focus();}
+function setAxisMenuOpen(open,focusToggle=false){
+ $('axisMenu').hidden=!open;$('axisControlsToggle').setAttribute('aria-expanded',String(open));
+ if(open){
+  // Reveal the menu inside the independent controls pane without moving the model.
+  $('trainingControls').scrollTop=0;
+  if($('closeAxisControls').focus)$('closeAxisControls').focus({preventScroll:true});
+ }else if(focusToggle&&$('axisControlsToggle').focus)$('axisControlsToggle').focus({preventScroll:true});
+}
 $('axisControlsToggle').onclick=()=>setAxisMenuOpen($('axisMenu').hidden);
 $('closeAxisControls').onclick=()=>setAxisMenuOpen(false,true);
 $('axisMenu').addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();setAxisMenuOpen(false,true);}});
 let motionFrame=null,motionStart=null;
 function stopMotion(){const running=motionFrame!==null;if(running)cancelAnimationFrame(motionFrame);motionFrame=null;motionStart=null;if($('playAxis')){$('playAxis').textContent='選んだ軸を動かす';$('playAxis').setAttribute('aria-pressed','false');}if(running){$('axisDemoStatus').textContent=selectedAxis+'軸の動作を終了しました。';if(typeof saveLeveling==='function')saveLeveling();}}
 $('playAxis').onclick=()=>{if(motionFrame!==null){stopMotion();return;}$('playAxis').textContent='動きを止める';$('playAxis').setAttribute('aria-pressed','true');const key=selectedAxis;
- setAxisMenuOpen(false);$('axisDemoStatus').textContent=key+'軸の動作を確認中です。軸操作から停止できます。';
+ setAxisMenuOpen(false,true);$('axisDemoStatus').textContent=key+'軸の動作を確認中です。軸操作から停止できます。';
  // A single round trip demonstrates the chosen part; no endless motion.
  function step(t){if(motionStart===null)motionStart=t;const progress=Math.min((t-motionStart)/3500,1);positions[key]=Math.sin(progress*2*Math.PI)*85;updateAxisValues();drawScene();if(progress<1)motionFrame=requestAnimationFrame(step);else{positions[key]=0;updateAxisValues();stopMotion();drawScene();}}
  motionFrame=requestAnimationFrame(step);
