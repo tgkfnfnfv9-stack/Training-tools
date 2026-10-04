@@ -175,7 +175,7 @@ body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 <div id="sceneToolbar" class="scene-toolbar" role="group" aria-label="軸の選択と操作"><div id="axisTabs" class="axis-tabs" role="group" aria-label="模型で確認する軸"></div><button id="axisControlsToggle" class="axis-controls-toggle" aria-expanded="false" aria-controls="axisMenu">軸操作 ▾</button></div>
 <span id="axisDemoStatus" class="axis-demo-status" role="status"></span></div><div class="controls-bar">軸操作・説明 ↓ この欄をスクロール</div><div class="scroll-controls" id="trainingControls" tabindex="0" role="region" aria-label="機械の操作と説明">
 <div id="axisMenu" class="axis-menu" role="region" aria-labelledby="axisMenuTitle" hidden><div class="axis-menu-heading"><strong id="axisMenuTitle">軸操作</strong><button id="closeAxisControls" aria-label="軸操作を閉じる">閉じる</button></div><p class="hint">絵の下の軸ボタンで選び、この欄で位置や動きを確認します。絵は常に表示されます。</p><button id="playAxis" class="play-axis" aria-pressed="false">選んだ軸を動かす</button><button id="resetAxes" class="text-button">中央へ戻す</button><div id="axisSliders"></div><div id="machineModeBox" hidden><label class="select-label" for="machineMode">この構造の方式／サイズ</label><select id="machineMode"></select></div><p class="hint">矢印は支持姿勢と固有直角差を合わせた軸方向の模式表示です。片側／反対側は模型の位置で、NCの移動指令や実ストロークではありません。</p></div>
-<p class="note ui-notice"><span class="measurement-start-note">0</span>：始点合わせ／<span class="measurement-length-note">300 mm</span>：比較終点。破線：直角／薄線：初期／色線：現在／薄面：変化（拡大表示）。</p><div class="control-column">
+<p class="note ui-notice"><span class="measurement-start-note">0</span>：共通の始点／<span class="measurement-length-note">300 mm</span>：比較終点。破線・白点：直角の基準／色線・色点：現在／点の間：直角のずれ／薄線：初期／薄面：初期からの変化（拡大表示）。</p><div class="control-column">
 <div class="adjustment-tabs" role="group" aria-label="調整の段階"><button id="coarseAdjust" aria-pressed="true" aria-controls="coarsePanel">粗調整</button><button id="fineAdjust" aria-pressed="false" aria-controls="finePanel">精調整</button></div>
 <div id="coarsePanel" class="card level-stages" aria-labelledby="levelStagesTitle">
 <div class="section-title"><h2 id="levelStagesTitle">粗調整 · 平均の傾きを整える</h2><span id="stageStatus" class="stage-status" role="status"></span></div>
@@ -188,7 +188,7 @@ body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 <p id="fineOverallProgress" class="hint" role="status"></p><p id="fineAverageNotice" class="hint"></p>
 <div id="finePrecisionSummary" class="fine-precision-summary"></div>
 <div class="fine-posture"><p id="fineLeanFront"></p><p id="fineLeanRight"></p><p id="fineTwist"></p><p id="fineFixedBody" class="hint"></p></div>
-<p class="hint">上の図は初期からの累積変化です。精調整では、代表位置全体の直角と姿勢を総合して比べます。総合評価が整っても、今の位置の直角がすべて初期より良くなるとは限りません。</p>
+<p class="hint">上の薄い面は、抽選時から現在までの変化です。精調整では、代表位置全体の直角と姿勢を総合して比べます。総合評価が整っても、今の位置の直角がすべて初期より良くなるとは限りません。</p>
 <p id="fineHint" class="adjustment-hint" role="status"></p><button id="fineExample">精調整の参考例を試す</button><p class="hint">参考例は、この個体で探索した支持高さを実際に適用する手本です。本体や支持姿勢に残る誤差は別に確認します。</p>
 <details class="geometry-notes"><summary>直角の変化を大きく見る</summary><div class="accuracy-diagram-scroll" tabindex="0" role="region" aria-label="直角図。狭い欄では左右にスクロール"><svg id="accuracyDiagram" class="accuracy-diagram" role="img" aria-label="軸の直角と初期からの変化" aria-describedby="squarenessMeasurementNote"></svg></div><p class="hint">基準軸を固定し、共通の始点から測る軸へ伸ばします。白い点は理想の直角、色の点は現在の終点。点を結ぶ細線は直角との差、薄い面は初期からの変化です。XYはX基準でY、XZはX基準でZ、YZはY基準でZを測り、旋盤はZ基準でXを測ります。拡大の割合は一定で、範囲外では線の変化を省略する場合があります。始点合わせは本体の精度をゼロにしません。模型の回転方向とは別の図です。狭い欄では図を左右へ動かせます。</p></details>
 </div>
