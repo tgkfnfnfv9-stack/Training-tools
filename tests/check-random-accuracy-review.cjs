@@ -69,7 +69,7 @@ async function main(){
  const evalNow=()=>json('machineEvaluation(supportHeights)');
  const current=()=>json('levelGeometry');
  const guideValues=()=>json('machineProfile.guides');
- const setHeight=(i,value)=>r['height'+i].change(String(value));
+ const setHeight=(i,value)=>r['height'+i].change(String(value-read(`machineProfile.initialHeights[${i}]`)));
  async function importRecord(record){r.importLevel.files=[{size:100,text:async()=>JSON.stringify(record)}];await r.importLevel.onchange({target:r.importLevel});}
  for(const [index,mode] of [[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']]){
   storage.clear();open(index,mode);const first=snapshot(),profile=json('machineProfile');
@@ -103,11 +103,11 @@ async function main(){
   check('据付状態の再出題はガイドや固有直角度を再抽選しない '+index+' '+mode,()=>{assert.deepEqual(json('machineProfile'),profile);assert.deepEqual(guideValues(),guides);assert.equal(read('validLevelRecord(levelRecord())'),true);});
  }
  storage.clear();open(0,'compact');const unchanged=json('machineProfile'),before=read('supportHeights[0]');r.up0.click();
- check('最小調整量は0.001 mmで表示と保存が同期',()=>{near(read('supportHeights[0]'),before+.001);assert.equal(r.height0.value,(before+.001).toFixed(3));assert.deepEqual(snapshot().machineProfile,unchanged);});
+ check('最小調整量は0.001 mmで表示と保存が同期',()=>{near(read('supportHeights[0]'),before+.001);assert.equal(r.height0.value,'0.001');assert.deepEqual(snapshot().machineProfile,unchanged);});
  r.height0.value='.1234';r.height0.oninput({target:r.height0});
- check('入力中は表記を保ち計算を0.001 mmへ丸める',()=>{assert.equal(r.height0.value,'.1234');near(read('supportHeights[0]'),.123);});r.height0.change();
+ check('入力中は表記を保ち計算を0.001 mmへ丸める',()=>{assert.equal(r.height0.value,'.1234');near(read('supportHeights[0]'),unchanged.initialHeights[0]+.123);});r.height0.change();
  check('入力確定後は三桁へ揃える',()=>assert.equal(r.height0.value,'0.123'));
- for(const value of ['', 'NaN', '0.5001', '-0.5001']){
+ for(const value of ['', 'NaN', String(.5001-unchanged.initialHeights[0]),String(-.5001-unchanged.initialHeights[0])]){
   const before=snapshot();r.height0.change(value);check('不正高さは計算個体を変えない '+JSON.stringify(value),()=>{assert.deepEqual(snapshot(),before);assert.equal(r.height0.value,'0.123');});
  }
  setHeight(0,.5);r.up0.click();check('0.001 mm操作でも上限を守る',()=>near(read('supportHeights[0]'),.5));setHeight(0,-.5);r.down0.click();check('0.001 mm操作でも下限を守る',()=>near(read('supportHeights[0]'),-.5));
