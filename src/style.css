@@ -62,6 +62,14 @@
 @media(max-width:560px){.comparison-context{font-size:10px}.posture-comparison-row{font-size:11px}.accuracy-diagnosis{font-size:11px}.accuracy-metric strong{font-size:20px}.card>summary{font-size:13px}}
 
 .support-adjustment>.text-button{min-height:44px;margin:0 0 6px;padding:5px 8px}
+.ideal-comparison{min-width:0;margin:0 0 12px;padding:0 10px 8px;border:1px solid #d7e4e8;border-radius:7px;background:#f7fafb}
+.ideal-outline-toggle{display:flex;align-items:center;gap:6px;min-height:44px;font-size:13px;cursor:pointer}
+.ideal-outline-toggle input{margin:0;flex:none}
+.ideal-outline-legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;font-size:11px;line-height:16px;color:#526b78}
+.ideal-outline-legend>span{display:inline-flex;align-items:center;gap:5px}
+.current-model-key{width:16px;height:10px;border:1px solid #80949c;background:#8b9da3}
+.ideal-outline-key{width:22px;height:0;border-top:1px dashed rgba(57,111,142,.6)}
+.ideal-comparison p{margin:6px 0 0;font-size:11px;line-height:1.65;color:var(--muted);overflow-wrap:anywhere}
 
 /* Mechanical desktop: keep the model visible while only its controls scroll. */
 @media(min-width:951px){
