@@ -126,3 +126,24 @@ body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 @media(max-width:950px) and (orientation:portrait){body.in-lab #training .training-workspace{grid-template-rows:minmax(0,56%) auto minmax(0,1fr)}}
 @media(max-width:950px) and (orientation:landscape) and (max-height:600px){body.in-lab #training .training-workspace{grid-template-columns:minmax(0,1.27fr) minmax(0,1fr)}.live-squareness-diagram{height:42px}}
 @media(max-width:360px){.stage-flow{gap:4px}.stage-flow li{padding:5px}.stage-flow strong{font-size:10px}.stage-readings>div{padding:6px}.stage-readings strong{font-size:12px}}
+
+/* The two learning stages use one shared set of support controls. */
+.adjustment-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.adjustment-tabs button{min-height:44px;font-size:14px;font-weight:650}
+.adjustment-tabs button[aria-pressed="true"]{background:#e5f2ec;border-color:#176e63;color:#176e63}
+.fine-adjustment{border-color:#8fbeb2;background:#f8fbf9}
+.fine-adjustment .section-title{align-items:flex-start;flex-wrap:wrap;gap:6px}
+.adjustment-hint{background:#edf4f1;border-left:3px solid #8eb6a8;padding:10px;font-size:12px;overflow-wrap:anywhere}
+.fine-precision-summary{display:grid;gap:5px;margin:12px 0}
+.fine-pair-reading{margin:0;padding:7px 9px;font-size:12px;background:#edf2f3;border-radius:6px;overflow-wrap:anywhere}
+.fine-pair-reading.better{background:#e9f4ee}.fine-pair-reading.worse{background:#fff5dd}
+.fine-posture{font-size:12px;padding:8px 10px;background:#f0f4f2;border-radius:7px}
+.fine-posture p{margin:5px 0;overflow-wrap:anywhere}
+.stage-readings .vial{margin:10px 0 5px}.stage-readings .gauge-ends span{font-size:10px}
+.support-row{grid-template-columns:minmax(85px,1fr) 54px minmax(46px,.5fr) 54px;gap:7px}
+.support-row button{font-size:12px;line-height:1.4;padding:4px 2px;min-width:44px;min-height:44px}
+.support-adjustment-state{text-align:center;font-size:11px;color:#49675e;overflow-wrap:anywhere}
+.pair-before{opacity:.22}.pair-change-area{opacity:.15}.right-angle{font-size:12px}
+@media(max-width:560px), (max-width:700px) and (orientation:landscape) and (max-height:600px){.support-row{grid-template-columns:54px minmax(0,1fr) 54px;gap:5px}.support-row>label{grid-column:1/-1}.fine-adjustment .section-title h2,.level-stages .section-title h2{font-size:16px}}
+
+.support-coach{margin:10px 0;padding:8px;background:#edf4f1;border-radius:6px;font-size:11px;overflow-wrap:anywhere}.support-coach p{margin:5px 0 0}.support-coach strong{font-size:12px;color:#285f56}

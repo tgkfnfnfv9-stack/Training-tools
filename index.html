@@ -127,6 +127,27 @@ body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 @media(max-width:950px) and (orientation:portrait){body.in-lab #training .training-workspace{grid-template-rows:minmax(0,56%) auto minmax(0,1fr)}}
 @media(max-width:950px) and (orientation:landscape) and (max-height:600px){body.in-lab #training .training-workspace{grid-template-columns:minmax(0,1.27fr) minmax(0,1fr)}.live-squareness-diagram{height:42px}}
 @media(max-width:360px){.stage-flow{gap:4px}.stage-flow li{padding:5px}.stage-flow strong{font-size:10px}.stage-readings>div{padding:6px}.stage-readings strong{font-size:12px}}
+
+/* The two learning stages use one shared set of support controls. */
+.adjustment-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.adjustment-tabs button{min-height:44px;font-size:14px;font-weight:650}
+.adjustment-tabs button[aria-pressed="true"]{background:#e5f2ec;border-color:#176e63;color:#176e63}
+.fine-adjustment{border-color:#8fbeb2;background:#f8fbf9}
+.fine-adjustment .section-title{align-items:flex-start;flex-wrap:wrap;gap:6px}
+.adjustment-hint{background:#edf4f1;border-left:3px solid #8eb6a8;padding:10px;font-size:12px;overflow-wrap:anywhere}
+.fine-precision-summary{display:grid;gap:5px;margin:12px 0}
+.fine-pair-reading{margin:0;padding:7px 9px;font-size:12px;background:#edf2f3;border-radius:6px;overflow-wrap:anywhere}
+.fine-pair-reading.better{background:#e9f4ee}.fine-pair-reading.worse{background:#fff5dd}
+.fine-posture{font-size:12px;padding:8px 10px;background:#f0f4f2;border-radius:7px}
+.fine-posture p{margin:5px 0;overflow-wrap:anywhere}
+.stage-readings .vial{margin:10px 0 5px}.stage-readings .gauge-ends span{font-size:10px}
+.support-row{grid-template-columns:minmax(85px,1fr) 54px minmax(46px,.5fr) 54px;gap:7px}
+.support-row button{font-size:12px;line-height:1.4;padding:4px 2px;min-width:44px;min-height:44px}
+.support-adjustment-state{text-align:center;font-size:11px;color:#49675e;overflow-wrap:anywhere}
+.pair-before{opacity:.22}.pair-change-area{opacity:.15}.right-angle{font-size:12px}
+@media(max-width:560px), (max-width:700px) and (orientation:landscape) and (max-height:600px){.support-row{grid-template-columns:54px minmax(0,1fr) 54px;gap:5px}.support-row>label{grid-column:1/-1}.fine-adjustment .section-title h2,.level-stages .section-title h2{font-size:16px}}
+
+.support-coach{margin:10px 0;padding:8px;background:#edf4f1;border-radius:6px;font-size:11px;overflow-wrap:anywhere}.support-coach p{margin:5px 0 0}.support-coach strong{font-size:12px;color:#285f56}
 </style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
 .tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
 @media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}#testerDiagram{max-height:300px}}
@@ -148,21 +169,29 @@ body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 <section id="electricTopics" hidden><div class="intro"><p class="eyebrow">ELECTRICAL TRAINING</p><h1>電気の訓練</h1><p>テスターの準備、測定モード、つなぎ方を順番に学びます。</p></div><button class="topic" id="testerEntry"><span class="topic-icon">01</span><div><h2>テスターの使い方</h2><p>DC・AC電圧、抵抗、導通、低電圧の電流を模擬測定</p><span class="pill">初めてのテスター</span></div><span class="topic-arrow">→</span></button></section>
 <section id="topics" hidden><div class="intro"><p class="eyebrow">MECHANICAL TRAINING</p><h1>機械の訓練</h1><p>まずは、据付と精度の土台となるレベル出しから。</p></div><button class="topic" id="leveling"><span class="topic-icon">01</span><div><h2>工作機械のレベル出し</h2><p>支持点の調整で、ねじれ・コラムの倒れ・直角度の変化を3Dで学ぶ</p><span class="pill">7つの構造カテゴリ</span></div><span class="topic-arrow">→</span></button></section>
 <section id="catalog" hidden><div class="intro"><p class="eyebrow">LEVELING / MACHINE TYPES</p><h1>機械の構造を選ぶ</h1><p>同じ構造はまとめて、動く側・固定する側の違いで選びましょう。</p></div><p class="note">3Dは外装を省いた構造模式図です。代表機の寸法・支持点・据付仕様を再現したものではありません。</p><div id="machineGrid" class="machine-grid"></div><details class="survey"><summary>分類の考え方・調査資料</summary><p>ロボドリル系と標準立形は同じカテゴリ。固定門形は移動方式を切り替えて比較します。「立形／横形」は主軸の向き、「門形／片持ち」は構造、「5軸」は制御軸の構成です。これらは重なります。立形でも門形構造の機械があり、門形にも5軸機があります。</p><p>追加候補：NCフライス、ヘッド旋回式5軸、複合加工機、平面・円筒研削盤、テーブル形／床上形横中ぐり盤。詳しくは同梱の調査資料をご覧ください。</p></details></section>
-<section id="training" hidden><div class="training-heading"><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div><button id="changeMachine" class="secondary">機械を選び直す</button></div><div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><output id="geometryStatus" class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output></div><div id="sceneViewport" class="scene-viewport"><canvas id="scene" tabindex="0" aria-label="工作機械の3D模式図。左右にドラッグ、または左右矢印キーで回転"></canvas></div>
-<div id="sceneToolbar" class="scene-toolbar" role="group" aria-label="軸の選択と操作"><div id="axisTabs" class="axis-tabs" role="group" aria-label="3Dで確認する軸"></div><button id="axisControlsToggle" class="axis-controls-toggle" aria-expanded="false" aria-controls="axisMenu">軸操作 ▾</button></div>
+<section id="training" hidden><div class="training-heading"><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div><button id="changeMachine" class="secondary">機械を選び直す</button></div><div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output></div><div id="sceneViewport" class="scene-viewport"><canvas id="scene" tabindex="0" aria-label="工作機械の構造模型。左右にドラッグ、または左右矢印キーで回転"></canvas></div>
+<div id="sceneToolbar" class="scene-toolbar" role="group" aria-label="軸の選択と操作"><div id="axisTabs" class="axis-tabs" role="group" aria-label="模型で確認する軸"></div><button id="axisControlsToggle" class="axis-controls-toggle" aria-expanded="false" aria-controls="axisMenu">軸操作 ▾</button></div>
 <span id="axisDemoStatus" class="axis-demo-status" role="status"></span></div><div class="controls-bar">軸操作・説明 ↓ この欄をスクロール</div><div class="scroll-controls" id="trainingControls" tabindex="0" role="region" aria-label="機械の操作と説明">
-<div id="axisMenu" class="axis-menu" role="region" aria-labelledby="axisMenuTitle" hidden><div class="axis-menu-heading"><strong id="axisMenuTitle">軸操作</strong><button id="closeAxisControls" aria-label="軸操作を閉じる">閉じる</button></div><p class="hint">絵の下の軸ボタンで選び、この欄で位置や動きを確認します。絵は常に表示されます。</p><button id="playAxis" class="play-axis" aria-pressed="false">選んだ軸を動かす</button><button id="resetAxes" class="text-button">中央へ戻す</button><div id="axisSliders"></div><div id="machineModeBox" hidden><label class="select-label" for="machineMode">この構造の方式／サイズ</label><select id="machineMode"></select></div><p class="hint">矢印は支持姿勢と固有直角差を合わせた軸方向の模式表示です。端1／端2は模型の位置で、NCの＋／−指令や実ストロークではありません。</p></div>
-<p class="note ui-notice">破線：90°、色線：現在。上の直角図は角度差を1000倍で拡大しています。初期はランダムな据付レベル＋本体の固有精度。粗レベル出しの後、残る精度を見ながら支持点を微調整します。</p><div class="control-column">
-<div class="card level-stages" aria-labelledby="levelStagesTitle">
-<div class="section-title"><h2 id="levelStagesTitle">レベルから精度を整える</h2><span id="stageStatus" class="stage-status" role="status"></span></div>
-<ol class="stage-flow"><li><strong>1 粗レベル出し</strong><span>平均の傾きを揃える</span></li><li><strong>2 残る精度を読む</strong><span>本体＋支持の誤差</span></li><li><strong>3 支持点を微調整</strong><span>直角度・姿勢差を比較</span></li></ol>
-<div class="stage-readings"><div><span>平均レベル · 左右</span><strong id="stageAverageLR"></strong></div><div><span>平均レベル · 前後</span><strong id="stageAverageFB"></strong></div></div>
-<p class="hint">粗調整の教材目安：左右・前後それぞれ±0.02 mm/m。水準器の局所読みと区別し、精度の完了判定には使いません。</p>
-<div class="stage-step-buttons"><button id="coarseAdjust" aria-pressed="false">粗調整 0.01 mm</button><button id="fineAdjust" aria-pressed="true">微調整 0.001 mm</button></div>
-<p id="stageResidual" class="hint"></p>
+<div id="axisMenu" class="axis-menu" role="region" aria-labelledby="axisMenuTitle" hidden><div class="axis-menu-heading"><strong id="axisMenuTitle">軸操作</strong><button id="closeAxisControls" aria-label="軸操作を閉じる">閉じる</button></div><p class="hint">絵の下の軸ボタンで選び、この欄で位置や動きを確認します。絵は常に表示されます。</p><button id="playAxis" class="play-axis" aria-pressed="false">選んだ軸を動かす</button><button id="resetAxes" class="text-button">中央へ戻す</button><div id="axisSliders"></div><div id="machineModeBox" hidden><label class="select-label" for="machineMode">この構造の方式／サイズ</label><select id="machineMode"></select></div><p class="hint">矢印は支持姿勢と固有直角差を合わせた軸方向の模式表示です。片側／反対側は模型の位置で、NCの移動指令や実ストロークではありません。</p></div>
+<p class="note ui-notice">破線：直角。薄線：初期（最初）。色線：現在。薄い面：初期からの変化（拡大表示）。</p><div class="control-column">
+<div class="adjustment-tabs" role="group" aria-label="調整の段階"><button id="coarseAdjust" aria-pressed="true" aria-controls="coarsePanel">粗調整</button><button id="fineAdjust" aria-pressed="false" aria-controls="finePanel">精調整</button></div>
+<div id="coarsePanel" class="card level-stages" aria-labelledby="levelStagesTitle">
+<div class="section-title"><h2 id="levelStagesTitle">粗調整 · 平均の傾きを整える</h2><span id="stageStatus" class="stage-status" role="status"></span></div>
+<div class="stage-readings"><div><span>平均レベル · 左右</span><strong id="stageAverageLR"></strong><div class="vial" aria-label="平均の左右傾きを示す気泡"><span class="center-lines"></span><span id="coarseBubbleLR" class="bubble"></span></div><div class="gauge-ends"><span>左側</span><span>右側</span></div></div><div><span>平均レベル · 前後</span><strong id="stageAverageFB"></strong><div class="vial" aria-label="平均の前後傾きを示す気泡"><span class="center-lines"></span><span id="coarseBubbleFB" class="bubble"></span></div><div class="gauge-ends"><span>手前</span><span>奥</span></div></div></div>
+<p class="hint">気泡は平均で高い側へ動きます。支持点を上げ下げし、平均の傾きを目安へ近づけます。平均が揃っても、本体の誤差や局所的な姿勢差は残ります。</p>
+<p id="stageResidual" class="hint"></p><p id="coarseHint" class="adjustment-hint" role="status"></p><button id="coarseExample">粗調整の手本を試す</button><p class="hint">手本は支持点を同じ高さへ揃えた例です。手動で少し動かす練習とは別に、変化を見比べられます。</p>
 </div>
-<div class="card support-adjustment"><h2>支持点を調整</h2><button id="restoreInitialLevel" class="text-button">抽選時の支持高さへ戻す</button><p class="hint">初期の支持高さは表示せず、各欄に抽選時からの調整量（mm）を示します。0は未調整で、水平・直角を意味しません。＋は上げる、−は下げる操作。まず粗調整で平均レベルを目安へ近づけ、次に直角図と現在の倒れ・ねじれを見ながら微調整します。</p><label class="select-label" for="adjustStep">ボタン1回の調整量</label><select id="adjustStep"><option value="0.001" selected>0.001 mm</option><option value="0.005">0.005 mm</option><option value="0.01">0.01 mm</option><option value="0.05">0.05 mm</option><option value="0.1">0.10 mm</option></select><p id="levelInputMessage" class="level-message" role="status"></p><div id="supportMap" class="support-map" aria-label="上から見た支持点配置"></div><div id="supportControls"></div></div>
-<div class="card accuracy-card">
+<div id="finePanel" class="card fine-adjustment" aria-labelledby="fineStageTitle" hidden>
+<div class="section-title"><h2 id="fineStageTitle">精調整 · 直角と姿勢を整える</h2><span id="fineStatus" class="stage-status" role="status"></span></div>
+<p id="fineOverallProgress" class="hint" role="status"></p><p id="fineAverageNotice" class="hint"></p>
+<div id="finePrecisionSummary" class="fine-precision-summary"></div>
+<div class="fine-posture"><p id="fineLeanFront"></p><p id="fineLeanRight"></p><p id="fineTwist"></p><p id="fineFixedBody" class="hint"></p></div>
+<p class="hint">上の図は初期からの累積変化です。精調整では、代表位置全体の直角と姿勢を総合して比べます。総合評価が整っても、今の位置の直角がすべて初期より良くなるとは限りません。</p>
+<p id="fineHint" class="adjustment-hint" role="status"></p><button id="fineExample">精調整の参考例を試す</button><p class="hint">参考例は、この個体で探索した支持高さを実際に適用する手本です。本体や支持姿勢に残る誤差は別に確認します。</p>
+<details class="geometry-notes"><summary>直角の変化を大きく見る</summary><svg id="accuracyDiagram" class="accuracy-diagram" role="img" aria-label="軸の直角と初期からの変化"></svg><p class="hint">基準軸を固定し、直角の基準・初期・現在を比較します。旋盤はZ基準のXZです。拡大の割合は調整中に変えません。図の範囲外では線の変化を省略する場合があります。模型の回転方向とは別の図です。</p></details>
+</div>
+<div class="card support-adjustment"><h2 id="supportPhaseTitle">粗調整で支持点を動かす</h2><button id="restoreInitialLevel" class="text-button">抽選時の支持高さへ戻す</button><p class="hint">支持点を選び、「上げる」「下げる」で動かします。「未調整」は水平・直角を意味しません。粗調整と精調整で同じ支持点を使い、精調整では小さく動かします。</p><label hidden class="select-label" for="adjustStep">内部の調整量</label><select hidden id="adjustStep"><option value="0.001" selected>0.001 mm</option><option value="0.005">0.005 mm</option><option value="0.01">0.01 mm</option><option value="0.05">0.05 mm</option><option value="0.1">0.10 mm</option></select><p id="levelInputMessage" class="level-message" role="status"></p><div class="support-coach"><strong id="supportStageStatus"></strong><p id="supportStageHint"></p></div><div id="supportMap" class="support-map" aria-label="上から見た支持点配置"></div><div id="supportControls"></div></div>
+<div hidden class="card accuracy-card">
 <div class="section-title"><h2>支持調整で何が変わる？</h2><span id="accuracyLength" class="pill"></span></div>
 <p class="hint">平均レベルを揃えても、本体の固有倒れ・直角差・ガイドの曲がりは残ります。固有精度＋据付姿勢の合成を見ながら、同じ支持点を微調整します。</p>
 <p id="comparisonContext" class="comparison-context"></p>
@@ -184,30 +213,31 @@ body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 <p class="hint">µradは小さな角度の単位。1 µradなら、長さ1 mで約1 µmのずれです。</p>
 </details>
 <details class="geometry-notes"><summary>直角図の見方・評価長</summary>
-<svg id="accuracyDiagram" class="accuracy-diagram" role="img" aria-label="軸の直角度の比較"></svg>
+
 <p class="hint">破線：90°。色線：現在。XY・XZはX、YZはYを基準に固定し、もう一方の軸との角度を比べます。旋盤はZ基準のXZだけです。支持点を調整すると色線が変わります。同じ姿勢の軸対は直角差が変わらない場合があります。角度差は常に1000倍で拡大し、表示限界を超えると「図の範囲外」と示します。模型の回転方向を示す図ではありません。現在の測定値は誇張しません。</p>
 <label class="select-label" for="impactOffset">直角度を確認する長さ（m）</label><input id="impactOffset" type="number" min="0.1" max="2" step="0.05" value="0.5">
 </details>
-<details class="geometry-notes"><summary>ねじれ・倒れの例を試す</summary><div class="accuracy-demos"><button id="demoTwist">ねじれと直角度を見る</button><button id="demoColumn">コラムの倒れを見る</button></div>
-<p class="hint">支持状態を例の高さへ変更します。比較の基準は抽選時の支持高さのままです。</p></details>
-<details id="columnLayout" class="column-layout"><summary>コラムの据付位置を変えて比較</summary><p class="hint">同じ支持高さでも、コラムを置く位置によって局所的な姿勢が変わります。初期・現在を同じ新しい配置で比較します。</p><label for="columnX">左右の配置 <output id="columnXValue">標準</output></label><input id="columnX" type="range" min="-100" max="100" step="1" value="0"><label for="columnZ">前後の配置 <output id="columnZValue">標準</output></label><input id="columnZ" type="range" min="-100" max="100" step="1" value="0"><button id="resetColumn">コラムの配置を戻す</button></details>
 <details class="geometry-notes"><summary>変化の読み方・計算の前提</summary><p id="geometryAssumption"></p>
 <p>同じ平面の共通傾斜だけでは、新たな直角差は生じません。同じ剛体側にある軸対も関係が保たれます。ねじれでは場所ごとに姿勢が変わり、XZ・YZなどの直角度に違いが出ます。軸を動かして比較してください。</p>
 <p>このモデルでは抽選した固有成分を保持し、支持面の姿勢を重ねます。ガイドPVは抽選した曲がり成分です。支持による姿勢の変化と、固定の抽選成分を分けて見ます。端・中央は代表位置の比較です。</p>
 <p>支持点の高さをつないだ面に工具側・案内側が従う仮定です。実機の剛性・荷重・接触による変形や加工誤差の予測、メーカーの合否判定は扱いません。</p>
 </details></div>
 
-<details class="card pattern-settings"><summary>支持面パターン・寸法・水準器（補助）</summary><div class="section-title"><h2>状態パターン</h2><button id="zero" class="text-button">全支持点を同じ高さへ揃える</button></div><div class="presets"><button data-preset="right">右側が高い</button><button data-preset="front">手前が高い</button><button data-preset="twist" id="twistPreset">対角にねじれる</button><button data-preset="middle" id="middlePreset">中間支持が高い</button></div><div class="level-dimensions"><label>左右の支持幅（m）<input id="supportWidth" type="number" min="0.5" max="20" step="0.01" value="2.72"></label><label>前後の支持幅（m）<input id="supportDepth" type="number" min="0.5" max="20" step="0.01" value="2.64"></label></div><p class="hint">支持点間の仮想寸法です。3Dの外観サイズは変えず、傾きの計算に使います。</p><details class="gauge-details"><summary>水準器で補助確認</summary><label class="select-label" for="levelSensitivity">水準器の感度（1目盛の傾き）</label><select id="levelSensitivity"><option value="0.02">0.02 mm/m</option><option value="0.05" selected>0.05 mm/m</option><option value="0.1">0.10 mm/m</option></select><label class="select-label" for="measurePos">水準器を置く位置（前後）</label><select id="measurePos"><option value="-1">手前</option><option value="0" selected>中央</option><option value="1">奥</option></select><div class="gauge" aria-label="左右方向の模擬水準器"><div class="gauge-heading"><span>左右方向</span><strong id="localLevel">— mm/m</strong></div><div class="vial"><span class="center-lines"></span><span id="bubble" class="bubble"></span></div><div class="gauge-ends"><span>機械の左側</span><span>機械の右側</span></div><p id="bubbleText"></p></div><div class="gauge" aria-label="前後方向の模擬水準器"><div class="gauge-heading"><span>前後方向</span><strong id="localLevelFB">0.000 mm/m</strong></div><div class="vial"><span class="center-lines"></span><span id="bubbleFB" class="bubble"></span></div><div class="gauge-ends"><span>手前</span><span>奥</span></div><p id="bubbleTextFB"></p></div><p class="hint">気泡は高い側へ動きます。正は右高／奥高、負は左高／手前高。支持面の左右・前後方向で、NCのXYZ軸名とは別です。水準器は左右幅の中央で、選んだ前後位置の面の局所勾配を読みます。折れ目では右／奥側の勾配を採用し、有限長の実水準器の読みを再現するものではありません。</p></details></details>
-<details class="card results"><summary>支持面の状態・練習・参考探索（補助）</summary><p class="hint">支持点の高さから面を補間した学習用の計算です。全体の傾きと、平面からのずれを分けて確認します。</p><div class="metrics"><div><span>平均の左右傾き</span><strong id="lr"></strong></div><div><span>平均の前後傾き</span><strong id="fb"></strong></div><div><span>手前と奥の左右傾きの差</span><strong id="twist"></strong></div><div><span>平面からの支持点のずれ</span><strong id="residual"></strong></div></div><div id="diagnosis" role="status"></div><div class="level-exercise"><h3>調整練習</h3><p>練習の目的は、支持点を少し動かしたときの変化を理解することです。別の支持状態も試せます。比較の基準は常に抽選時の支持高さで、この操作では変わりません。参考探索は補助として300 mm基準で確認できます。</p><button id="startLevelExercise">同じ個体で別の支持状態を試す</button><p id="levelExerciseStatus" role="status">問題を出し、支持点を手動で調整して目標へ近づけましょう。</p><details><summary>参考探索の調整例（補助）</summary><p id="levelHint"></p><p class="hint">この個体で探索した補助の支持調整例です。実機の調整順序・荷重配分は機種の据付手順を優先します。</p></details></div><details class="impact"><summary>支持面の幾何換算も見る</summary><p id="impactText"></p><div class="metrics geometric-examples"><div><span>腕に換算した全体傾きのずれ例</span><strong id="tiltExample"></strong></div><div><span>支持幅に換算した前後の左右高低差変化</span><strong id="twistExample"></strong></div><div><span>支持点の平面偏差の換算</span><strong id="straightExample"></strong></div></div><p class="hint">µmへの単位換算と幾何の比較例です。加工誤差・真直度検査値ではありません。</p></details><p class="note">全体が一緒に傾くだけで、工具とワークの相対精度が必ず悪化するわけではありません。ねじれや案内の姿勢差は別に確認します。この教材は剛性・荷重解析や実機加工誤差の予測を行いません。</p></details>
+<details class="card lesson-extras"><summary>姿勢・据付位置の例を比較</summary><details class="geometry-notes"><summary>ねじれ・倒れの例を試す</summary><div class="accuracy-demos"><button id="demoTwist">ねじれと直角度を見る</button><button id="demoColumn">コラムの倒れを見る</button></div>
+<p class="hint">支持状態を例の高さへ変更します。比較の基準は抽選時の支持高さのままです。</p></details>
+<details id="columnLayout" class="column-layout"><summary>コラムの据付位置を変えて比較</summary><p class="hint">同じ支持高さでも、コラムを置く位置によって局所的な姿勢が変わります。初期・現在を同じ新しい配置で比較します。</p><label for="columnX">左右の配置 <output id="columnXValue">標準</output></label><input id="columnX" type="range" min="-100" max="100" step="1" value="0"><label for="columnZ">前後の配置 <output id="columnZValue">標準</output></label><input id="columnZ" type="range" min="-100" max="100" step="1" value="0"><button id="resetColumn">コラムの配置を戻す</button></details>
+</details>
+<details class="card pattern-settings"><summary>支持面の状態パターンを比較</summary><button id="startLevelExercise">同じ個体で別の支持状態を試す</button><div class="section-title"><h2>状態パターン</h2><button id="zero" class="text-button">全支持点を同じ高さへ揃える</button></div><div class="presets"><button data-preset="right">右側が高い</button><button data-preset="front">手前が高い</button><button data-preset="twist" id="twistPreset">対角にねじれる</button><button data-preset="middle" id="middlePreset">中間支持が高い</button></div><div hidden class="level-dimensions"><label>左右の支持幅（m）<input id="supportWidth" type="number" min="0.5" max="20" step="0.01" value="2.72"></label><label>前後の支持幅（m）<input id="supportDepth" type="number" min="0.5" max="20" step="0.01" value="2.64"></label></div><p hidden class="hint">支持点間の仮想寸法です。3Dの外観サイズは変えず、傾きの計算に使います。</p><details hidden class="gauge-details"><summary>水準器で補助確認</summary><label class="select-label" for="levelSensitivity">水準器の感度（1目盛の傾き）</label><select id="levelSensitivity"><option value="0.02">0.02 mm/m</option><option value="0.05" selected>0.05 mm/m</option><option value="0.1">0.10 mm/m</option></select><label class="select-label" for="measurePos">水準器を置く位置（前後）</label><select id="measurePos"><option value="-1">手前</option><option value="0" selected>中央</option><option value="1">奥</option></select><div class="gauge" aria-label="左右方向の模擬水準器"><div class="gauge-heading"><span>左右方向</span><strong id="localLevel">— mm/m</strong></div><div class="vial"><span class="center-lines"></span><span id="bubble" class="bubble"></span></div><div class="gauge-ends"><span>機械の左側</span><span>機械の右側</span></div><p id="bubbleText"></p></div><div class="gauge" aria-label="前後方向の模擬水準器"><div class="gauge-heading"><span>前後方向</span><strong id="localLevelFB">0.000 mm/m</strong></div><div class="vial"><span class="center-lines"></span><span id="bubbleFB" class="bubble"></span></div><div class="gauge-ends"><span>手前</span><span>奥</span></div><p id="bubbleTextFB"></p></div><p class="hint">気泡は高い側へ動きます。正は右高／奥高、負は左高／手前高。支持面の左右・前後方向で、NCのXYZ軸名とは別です。水準器は左右幅の中央で、選んだ前後位置の面の局所勾配を読みます。折れ目では右／奥側の勾配を採用し、有限長の実水準器の読みを再現するものではありません。</p></details></details>
+<details hidden class="card results"><summary>支持面の状態・練習・参考探索（補助）</summary><p class="hint">支持点の高さから面を補間した学習用の計算です。全体の傾きと、平面からのずれを分けて確認します。</p><div class="metrics"><div><span>平均の左右傾き</span><strong id="lr"></strong></div><div><span>平均の前後傾き</span><strong id="fb"></strong></div><div><span>手前と奥の左右傾きの差</span><strong id="twist"></strong></div><div><span>平面からの支持点のずれ</span><strong id="residual"></strong></div></div><div id="diagnosis" role="status"></div><div class="level-exercise"><h3>調整練習</h3><p>練習の目的は、支持点を少し動かしたときの変化を理解することです。別の支持状態も試せます。比較の基準は常に抽選時の支持高さで、この操作では変わりません。参考探索は補助として300 mm基準で確認できます。</p><p id="levelExerciseStatus" role="status">問題を出し、支持点を手動で調整して目標へ近づけましょう。</p><details><summary>参考探索の調整例（補助）</summary><p id="levelHint"></p><p class="hint">この個体で探索した補助の支持調整例です。実機の調整順序・荷重配分は機種の据付手順を優先します。</p></details></div><details class="impact"><summary>支持面の幾何換算も見る</summary><p id="impactText"></p><div class="metrics geometric-examples"><div><span>腕に換算した全体傾きのずれ例</span><strong id="tiltExample"></strong></div><div><span>支持幅に換算した前後の左右高低差変化</span><strong id="twistExample"></strong></div><div><span>支持点の平面偏差の換算</span><strong id="straightExample"></strong></div></div><p class="hint">µmへの単位換算と幾何の比較例です。加工誤差・真直度検査値ではありません。</p></details><p class="note">全体が一緒に傾くだけで、工具とワークの相対精度が必ず悪化するわけではありません。ねじれや案内の姿勢差は別に確認します。この教材は剛性・荷重解析や実機加工誤差の予測を行いません。</p></details>
 <details class="card machine-scenario" id="machineScenario"><summary>個体の抽選・固定成分・参考調整（補助）</summary>
 <p class="hint">学習の主役は、少し調整して精度の変化を読むことです。別個体の抽選や参考探索は必要に応じて使います。</p>
 <div class="scenario-actions"><label for="machineCondition">機械の状態<select id="machineCondition"><option value="new">新品</option><option value="used">中古</option></select></label><button id="drawMachine">別の個体を抽選</button></div><p id="machineIdentity" class="hint"></p>
-<details><summary>抽選率・固有成分を見る</summary><p class="hint">各誤差項目ごとの教材用抽選率です。市場の実測統計ではありません。初期の測定値には支持姿勢と評価長も反映するため、この抽選帯と同じ値になるとは限りません。</p><div class="comparison-wrap"><table class="scenario-distribution"><caption>抽選する固有成分（直角差は300 mm基準、ガイドPVは仮想移動全域）</caption><thead><tr><th>状態</th><th>よく出る</th><th>大きめ</th><th>まれに大きい</th></tr></thead><tbody><tr><th>新品</th><td>95%：0.001〜0.020 mm</td><td colspan="2">5%：0.020〜0.040 mm</td></tr><tr><th>中古</th><td>60%：0.005〜0.020 mm</td><td>30%：0.020〜0.060 mm</td><td>10%：0.060〜0.150 mm</td></tr></tbody></table></div><p id="intrinsicMetrics" class="hint"></p>
+<details hidden><summary>抽選率・固有成分を見る</summary><p class="hint">各誤差項目ごとの教材用抽選率です。市場の実測統計ではありません。初期の測定値には支持姿勢と評価長も反映するため、この抽選帯と同じ値になるとは限りません。</p><div class="comparison-wrap"><table class="scenario-distribution"><caption>抽選する固有成分（直角差は300 mm基準、ガイドPVは仮想移動全域）</caption><thead><tr><th>状態</th><th>よく出る</th><th>大きめ</th><th>まれに大きい</th></tr></thead><tbody><tr><th>新品</th><td>95%：0.001〜0.020 mm</td><td colspan="2">5%：0.020〜0.040 mm</td></tr><tr><th>中古</th><td>60%：0.005〜0.020 mm</td><td>30%：0.020〜0.060 mm</td><td>10%：0.060〜0.150 mm</td></tr></tbody></table></div><p id="intrinsicMetrics" class="hint"></p>
 <div id="guideMetrics" class="guide-metrics"></div><p class="hint">この教材では、抽選したガイド真直度PV（曲がり成分）を固定成分として保持します。支持による姿勢が重なり、表示精度が変わります。実機ではガイド形状・据付姿勢・荷重の影響を個別に確認します。</p></details>
-<h3>参考探索で補助確認</h3><div class="comparison-wrap"><table class="accuracy-comparison"><caption>代表位置全体の補助評価（µm、同じ寸法・コラム配置）</caption><thead><tr><th>状態</th><th>直角差最大<br>300 mm基準</th><th>調整評価<br>300 mm基準</th><th>ガイド成分</th></tr></thead><tbody id="accuracyComparison"></tbody></table></div><p id="machineProgress" role="status"></p><button id="applyBestLevel">参考探索の調整例を適用（補助）</button>
-<details><summary>調整評価・参考最良の意味</summary><p class="hint">全直線軸の端・中央（3軸27位置、旋盤9位置）で直角差と姿勢差を比較。直角差・左右コラム差、25%重みの相対姿勢差、15%重みの平均傾きの二乗平均を小さくします。支持高さ±0.500 mm、0.001 mm刻みの探索例です。現在が良ければ参考値も更新します。評価長を変えてもこの判定は変わりません（補助の300 mm基準）。残り＝√(現在の調整評価²−参考最良の調整評価²)が0.1 µm以内を補助練習の目安とします。厳密な全球最適を保証しません。</p></details>
+<h3>この個体の参考調整</h3><div hidden class="comparison-wrap"><table class="accuracy-comparison"><caption>代表位置全体の補助評価（µm、同じ寸法・コラム配置）</caption><thead><tr><th>状態</th><th>直角差最大<br>300 mm基準</th><th>調整評価<br>300 mm基準</th><th>ガイド成分</th></tr></thead><tbody id="accuracyComparison"></tbody></table></div><p id="machineProgress" role="status"></p><button id="applyBestLevel">参考探索の調整例を適用（補助）</button>
+<details hidden><summary>調整評価・参考最良の意味</summary><p class="hint">全直線軸の端・中央（3軸27位置、旋盤9位置）で直角差と姿勢差を比較。直角差・左右コラム差、25%重みの相対姿勢差、15%重みの平均傾きの二乗平均を小さくします。支持高さ±0.500 mm、0.001 mm刻みの探索例です。現在が良ければ参考値も更新します。評価長を変えてもこの判定は変わりません（補助の300 mm基準）。残り＝√(現在の調整評価²−参考最良の調整評価²)が0.1 µm以内を補助練習の目安とします。厳密な全球最適を保証しません。</p></details>
 </details>
-</div><details class="card viewer-settings"><summary>3Dの表示設定・色の見方</summary><div class="viewer-options"><label><input id="exaggerate" type="checkbox" checked> 傾き・姿勢差を強調して表示（調整中は倍率固定、最大1000倍）</label><label><input id="showLevelSurface" type="checkbox" checked> 支持面の高さマップ</label><label><input id="showAxes" type="checkbox" checked> 軸の矢印を表示</label><label><input id="labels" type="checkbox" checked> 部品名を表示</label></div><section id="orientationGuide" class="orientation-guide" aria-labelledby="orientationGuideTitle"><h3 id="orientationGuideTitle">模型の向き（座標の目安）</h3><div id="orientationAxes" class="orientation-axes"></div><p>各軸の向きを別々に表示します。模型の左右回転に追従する目安で、NCの＋／−指令や支持姿勢・精度を示しません。</p><p id="orientationRotaryNote" hidden>A/Cは模型上の曲線矢印で確認します。</p></section><p class="viewer-caption">指／マウスで左右ドラッグ。絵の下で軸を選び、「軸操作」で説明・操作欄を開きます。丸いA〜Hは学習用の支持点です。軸名・部品名・支持点の背景は薄い半透明で、模型が透けて見えます。<br>灰：固定　淡色：他軸の部品　赤X／緑Y／青Z／紫A／橙C：選択軸で動く部品　黄：支持点<br>傾きと姿勢差を強調した模式図です。黄〜緑の分割面は支持高さをつないだ面（黄＝相対的に高い、緑＝低い）です。コラム／主軸は本体の固有方向と支持姿勢を重ねた代表姿勢、テーブルは支持姿勢で描きます。非直交のXYZ全てを一つの剛体で再現する図ではありません。軸の矢印には固有直角差を一度だけ重ねます。強調倍率は個体・寸法・配置から決め、支持調整や軸操作中に変えないため、レベル出しに合わせて絵も変化します。抽選したガイドの曲がり成分はモデル内部で固定して保持します。狭い絵では支持点と全軸名を確保し、部品名は選択軸の部品・ベース／コラムを優先して一部省略します。構造と軸構成は下の説明でも確認できます。弾性変形や荷重の移動は計算しません。</p></details><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>訓練の進め方・計算の前提</summary><ol><li>初期状態はランダムな据付レベルと、本体の固有精度が重なっています。粗調整0.01 mmで支持点を動かし、平均の左右・前後レベルを教材目安へ近づけます。絵も支持調整に合わせて変わります。</li><li>平均レベルが揃ったら、本体＋支持の合成倒れ、直角度、支持面のねじれ、固定ガイドPVを分けて確認します。支持による傾きが小さくても本体の固有誤差は残ります。</li><li>微調整0.001 mmへ切り替え、同じ支持点を少し動かします。直角図と現在の測定値を読み、1つが改善しても他が悪化する場合を比較します。切替で個体や支持高さは変わりません。</li><li>絵の下で軸を選び、「軸操作」を開いて位置を動かします。今の位置で計算した直角図と現在の測定値を比較します。場所によりXZ・YZの変化が違うことを確認します。</li><li>必要に応じて補助のねじれ・中間支持・コラム配置の例を使います。3点支持ではねじれが0になることも確認します。</li></ol><p>3点は支持点を通る平面、4・6・8点は隣接支持点間を補間した面です。中間の境界では勾配が切り替わる場合があり、実機の滑らかな弾性変形とは異なります。平均傾きは全支持点の最小二乗平面、ねじれは奥の左右傾き−手前の左右傾き、平面偏差は支持点と最小二乗平面の最大差です。三点モデルのねじれ・平面偏差は0です。</p><p>左右回転は視点の変更、XYZACは部品移動、支持点の高さは面の計算です。支持点より外側は境界の面を延長した表示になります。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/leveling---vmc.html" target="_blank" rel="noopener noreferrer">Haas：立形MCのレベル確認（英語）</a> ／ <a href="https://www.wylerag.com/en/support/faq/" target="_blank" rel="noopener noreferrer">WYLER：精密水準器の基礎（英語）</a></p></details><details class="card level-storage"><summary>調整と軸位置の保存・読込</summary><p id="levelSaveStatus" class="hint" role="status"></p><button id="exportLevel">調整データを保存</button><label class="import-level">調整データを読み込む<input id="importLevel" type="file" accept=".json,application/json"></label><p class="hint">現在の機械・方式に対応するJSONを読み込みます。支持高さ・コラム配置・軸位置を保存します。入力チェックを通ったデータだけ反映します。個体の種・初期支持高さ・参考最良の支持高さも保存します。高さは0.001 mm刻みです。旧版JSONの読み込み時は固有誤差を抽選します。</p></details></div></div></section>
+</div><details class="card viewer-settings"><summary>模型の表示設定・色の見方</summary><div class="viewer-options"><label><input id="exaggerate" type="checkbox" checked> 傾き・姿勢差を強調して表示（調整中は強調を一定に保つ）</label><label><input id="showLevelSurface" type="checkbox" checked> 支持面の高さマップ</label><label><input id="showAxes" type="checkbox" checked> 軸の矢印を表示</label><label><input id="labels" type="checkbox" checked> 部品名を表示</label></div><section id="orientationGuide" class="orientation-guide" aria-labelledby="orientationGuideTitle"><h3 id="orientationGuideTitle">模型の向き（座標の目安）</h3><div id="orientationAxes" class="orientation-axes"></div><p>各軸の向きを別々に表示します。模型の左右回転に追従する目安で、NCの＋／−指令や支持姿勢・精度を示しません。</p><p id="orientationRotaryNote" hidden>A/Cは模型上の曲線矢印で確認します。</p></section><p class="viewer-caption">指／マウスで左右ドラッグ。絵の下で軸を選び、「軸操作」で説明・操作欄を開きます。丸いA〜Hは学習用の支持点です。軸名・部品名・支持点の背景は薄い半透明で、模型が透けて見えます。<br>灰：固定　淡色：他軸の部品　赤X／緑Y／青Z／紫A／橙C：選択軸で動く部品　黄：支持点<br>傾きと姿勢差を強調した模式図です。黄〜緑の分割面は支持高さをつないだ面（黄＝相対的に高い、緑＝低い）です。コラム／主軸は本体の固有方向と支持姿勢を重ねた代表姿勢、テーブルは支持姿勢で描きます。非直交のXYZ全てを一つの剛体で再現する図ではありません。軸の矢印には固有直角差を一度だけ重ねます。強調倍率は個体・寸法・配置から決め、支持調整や軸操作中に変えないため、レベル出しに合わせて絵も変化します。抽選したガイドの曲がり成分はモデル内部で固定して保持します。狭い絵では支持点と全軸名を確保し、部品名は選択軸の部品・ベース／コラムを優先して一部省略します。構造と軸構成は下の説明でも確認できます。弾性変形や荷重の移動は計算しません。</p></details><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>訓練の進め方・計算の前提</summary><ol><li>初期はランダムな据付レベルと、本体の固有精度を重ねています。粗調整で平均の左右・前後の傾きを整え、模型の変化を見ます。</li><li>精調整では同じ支持点を小さく動かします。直角・倒れ・ねじれを見比べ、代表位置全体の総合評価を目安へ近づけます。本体の固有誤差とガイドの曲がりは保持されます。</li><li>上の直角図は、同じ今の軸位置で初期と現在を比べます。薄い面が初期からの累積変化です。最後の操作や粗調整後からの改善とは別に読みます。同じ剛体側の軸対は、支持調整で直角が変わらない場合があります。</li><li>絵の下で軸を選び、「軸操作」で位置を動かします。場所によって直角の変化や相対姿勢が異なることを確かめます。画面を切り替えても個体・支持高さ・初期の基準は変えません。</li><li>調整例は手本の支持高さを実際に適用します。手動練習と見比べ、本体の残る誤差まで支持点で消せるわけではないことを確認します。</li></ol><p>支持点をつないだ面の姿勢を、工具側と案内側に重ねる学習用の仮定です。平面になる支持配置では、支持面のねじれや軸間の直角が変化しない場合があります。支持点が多い面は隣接する点の間を補間し、境界で勾配が切り替わる場合があります。</p><p>左右回転は視点の変更、XYZACは部品移動、支持点は据付姿勢の調整です。支持点の外側は境界の面を延長して表示します。剛性・荷重・接触による弾性変形、加工誤差の予測、実機の合否判定は扱いません。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/leveling---vmc.html" target="_blank" rel="noopener noreferrer">Haas：立形MCのレベル確認（英語）</a> ／ <a href="https://www.wylerag.com/en/support/faq/" target="_blank" rel="noopener noreferrer">WYLER：精密水準器の基礎（英語）</a></p></details><details class="card level-storage"><summary>調整と軸位置の保存・読込</summary><p id="levelSaveStatus" class="hint" role="status"></p><button id="exportLevel">調整データを保存</button><label class="import-level">調整データを読み込む<input id="importLevel" type="file" accept=".json,application/json"></label><p class="hint">現在の機械・方式に対応するJSONを読み込みます。支持高さ・コラム配置・軸位置を保存します。入力チェックを通ったデータだけ反映します。個体の種・初期支持高さ・参考最良の支持高さも保存します。旧版JSONの読み込み時は固有誤差を抽選します。</p></details></div></div></section>
 <section id="tester" hidden>
   <div class="training-heading"><div><p class="eyebrow">ELECTRICAL / TESTER BASICS</p><h1>テスターの使い方</h1><p>端子 → モード → 接続 → 読み取りを練習</p></div><button id="testerBack" class="secondary">電気の訓練へ</button></div>
   <div class="training-workspace tester-workspace">
@@ -434,7 +464,7 @@ const machines = [
 {id:'vertical',name:'立形・片側コラム',tag:'テーブルXY移動',example:'小型：ロボドリル系 ／ 標準：立形MC',kind:'vertical',w:3.4,d:3.3,grid:[2,2],modes:[['standard','標準サイズ'],['compact','小型（ロボドリル系）']],structure:'片側コラムから主軸頭が張り出す基本構造。ロボドリル系と標準立形はこの一つの項目にまとめ、サイズの例を切り替えます。',focus:'テーブルの移動位置ごとの姿勢と、ベースのねじれ。',impact:'全体の傾きと、案内面の相対関係が変わるねじれを分けて学びます。',source:'https://www.fanuc.co.jp/ja/product/robodrill/alphadibplus.html'},
 {id:'horizontal',name:'横形マシニングセンタ',tag:'横向き主軸・回転パレット',example:'横マシの代表的な移動構成',kind:'horizontal',w:3.4,d:3.6,grid:[2,2],structure:'主軸が横向き。ここではコラムX移動・主軸頭Y移動・テーブルZ移動の構成を示します。',focus:'主軸側とパレット側の相対関係、移動範囲での姿勢。',impact:'直線軸・回転軸の幾何関係を確認する必要があります。',source:'https://www.makino.co.jp/ja-jp/machine-technology/machines/horizontal-4-axis/a51nx'},
 {id:'travel',name:'立形・移動コラム',tag:'テーブル固定・コラム移動',example:'固定テーブルの長尺加工機',kind:'travel',w:5.4,d:2.6,grid:[3,2],structure:'テーブルとワークは固定。コラムがX方向に走り、主軸頭側がY・Z方向に移動します。',focus:'長いベッドの各位置と、コラムの移動に伴う姿勢。',impact:'端だけでなく、中間位置の案内精度・姿勢も確認します。',source:'https://www.mazak.com/jp-ja/products/vtc/'},
-{id:'gate',name:'固定門形',tag:'門は固定・移動方式を比較',example:'門形構造の立形／大型門形を統合',kind:'double',w:4,d:5.8,grid:[2,3],modes:[['long','長手テーブルX＋主軸側Y'],['cross','テーブルXY移動']],structure:'左右コラムと梁からなる門は固定。似た外観でも、テーブルと主軸側の軸の分担が異なる2方式を切り替えて比較します。',focus:'長手方向のベッドの姿勢と、左右コラム側の支持。',impact:'門が固定でも、テーブル・主軸の相対関係を確認します。梁のたわみなどは別の確認項目です。',source:'https://www.shibaura-machine.co.jp/jp/product/machinetool/lineup/m_new/Line_up.html'},
+{id:'gate',name:'固定門形',tag:'門は固定・移動方式を比較',example:'門形構造の立形／大型門形を統合',kind:'double',w:4,d:5.8,grid:[2,3],modes:[['long','長手テーブルX＋主軸側Y'],['cross','テーブルXY移動']],structure:'左右コラムと梁からなる門は固定。似た外観でも、テーブルと主軸側の軸の分担が異なる方式を切り替えて比較します。',focus:'長手方向のベッドの姿勢と、左右コラム側の支持。',impact:'門が固定でも、テーブル・主軸の相対関係を確認します。梁のたわみなどは別の確認項目です。',source:'https://www.shibaura-machine.co.jp/jp/product/machinetool/lineup/m_new/Line_up.html'},
 {id:'gantry',name:'移動門形・ガントリー',tag:'テーブル固定・門全体が移動',example:'固定門形とは動く側が逆',kind:'gantry',w:4,d:5.8,grid:[2,4],structure:'テーブルとワークは固定。左右の走行レール上を門全体がX方向に移動します。',focus:'左右走行レールの相対姿勢と、移動範囲の基礎・支持。',impact:'左右レールの関係と門の姿勢を確認します。同期駆動などの機種固有の調整は別途必要です。',source:'https://www.shibaura-machine.co.jp/jp/product/machinetool/lineup/s_new/spec.html'},
 {id:'five',name:'5軸・テーブル旋回形',tag:'XYZ＋A/Cの旋回',example:'テーブルXY・主軸頭Zの学習モデル',kind:'five',w:3.4,d:3.3,grid:null,structure:'XYZの直線移動に、テーブルの傾斜Aと回転Cを加えた構成。ここではテーブル側XY・主軸頭Zを採用しています。',focus:'指定支持点での据付と、直線軸・回転軸の幾何関係。',impact:'回転中心や旋回軸の確認が必要です。軸の分担・名称は実機により異なります。',source:'https://us.dmgmori.com/products/machines/milling/5-axis-milling/monoblock/dmu-75-monoblock-2nd'},
 {id:'lathe',name:'NC旋盤・2軸',tag:'X径方向・Z主軸方向',example:'基本の2軸旋盤（Y軸なし）',kind:'lathe',w:5,d:2.1,grid:[3,2],structure:'主軸台を固定し、刃物台をZ（主軸方向）・X（径方向）に動かします。このモデルにY軸はありません。',focus:'ベッド長手方向の各位置での横断方向の水準器。',impact:'ベッドのねじれと主軸・案内の関係を確認します。テーパの原因は据付以外にもあります。',source:'https://www.haascnc.com/service/online-operator-s-manuals/lathe-operator-s-manual/lathe---introduction.html'}
@@ -471,7 +501,7 @@ let current=displayMachine(machines[0]), page='home', yaw=-0.45, selected=0, sup
 function supportList(m){
  if(!m.grid)return [{x:-m.w*.4,z:-m.d*.4,name:'左・手前'},{x:m.w*.4,z:-m.d*.4,name:'右・手前'},{x:0,z:m.d*.4,name:'奥・中央'}];
  const [nx,nz]=m.grid,list=[];
- for(let j=0;j<nz;j++)for(let i=0;i<nx;i++)list.push({x:(i/(nx-1)-.5)*m.w*.8,z:(j/(nz-1)-.5)*m.d*.8,name:`${nx===2?(i?'右':'左'):(['左','中央','右'][i])}・${j===0?'手前':j===nz-1?'奥':`中間${j}`}`});
+ for(let j=0;j<nz;j++)for(let i=0;i<nx;i++)list.push({x:(i/(nx-1)-.5)*m.w*.8,z:(j/(nz-1)-.5)*m.d*.8,name:`${nx===2?(i?'右':'左'):(['左','中央','右'][i])}・${j===0?'手前':j===nz-1?'奥':'中間'}`});
  return list;
 }
 function navigate(next){
@@ -496,7 +526,7 @@ function populateMachine(){
  const m=current;supports=supportList(m);levelSolution=null;levelGeometry=null;
  $('machineTitle').textContent=m.name;$('machineSubtitle').textContent=m.example+' ｜ '+m.tag;
  $('structureText').textContent=m.structure;$('motionText').textContent=axisConfig(m).map(a=>a.key+'：'+a.part+'（'+a.direction+'）').join(' ／ ');$('focusText').textContent=m.focus;
- $('impactText').textContent=m.impact;$('supportNote').textContent=`本図は学習用の${supports.length}点支持です。実機の支持点位置・個数・荷重配分を再現したものではありません。`;
+ $('impactText').textContent=m.impact;$('supportNote').textContent='丸い印は学習用の支持点です。実機の支持点位置・個数・荷重配分を再現したものではありません。';
  $('sourceLinks').innerHTML=`<div class="source-links"><a href="${m.source}" target="_blank" rel="noopener noreferrer">メーカー公式資料で代表例を確認 ↗</a></div>`;
  $('measurePos').value='0'; $('labels').checked=true;
  
@@ -507,8 +537,8 @@ function selectSupport(i){selected=i;refreshSupportControls();drawScene();}
 function buildSupports(){
  const map=$('supportMap');map.replaceChildren();const caption=document.createElement('div');caption.className='map-caption';caption.textContent='奥 ｜ 上から見た支持点配置';map.append(caption);
  const groups=current.grid?Array.from({length:current.grid[1]},(_,j)=>supports.map((s,i)=>({s,i})).filter(v=>Math.floor(v.i/current.grid[0])===j)).reverse():[[{s:supports[2],i:2}],[{s:supports[0],i:0},{s:supports[1],i:1}]];
- groups.forEach(group=>{const row=document.createElement('div');row.className='map-row';group.forEach(({s,i})=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.dataset.support=String(i);b.onclick=()=>selectSupport(i);row.append(b);});map.append(row);});const front=document.createElement('div');front.className='map-caption';front.textContent='手前';map.append(front);
- const controls=$('supportControls');controls.replaceChildren();supports.forEach((s,i)=>{const row=document.createElement('div');row.className='support-row'+(i===selected?' selected':'');const id=String.fromCharCode(65+i);row.innerHTML=`<label for="height${i}"><span class="point-id">${id}</span>${s.name}</label><button id="down${i}" aria-label="${id}を下げる">−</button><input type="number" id="height${i}" aria-label="${id}の抽選時からの調整量 mm" min="${-.5-supportBaseline(i)}" max="${.5-supportBaseline(i)}" step="0.001" value="${supportAdjustment(i)}"><button id="up${i}" aria-label="${id}を上げる">＋</button>`;controls.append(row);$('down'+i).onclick=()=>changeSupportHeight(i,-Number($('adjustStep').value));$('up'+i).onclick=()=>changeSupportHeight(i,Number($('adjustStep').value));$('height'+i).onchange=()=>setSupportHeight(i,supportHeightFromAdjustment(i,$('height'+i).value.trim()===''?NaN:Number($('height'+i).value)));$('height'+i).oninput=()=>{invalidateLevelImport();const field=$('height'+i),value=supportHeightFromAdjustment(i,field.value.trim()===''?NaN:Number(field.value));if(bounded(value,-.5,.5))setSupportHeight(i,value,true);};});
+ groups.forEach(group=>{const row=document.createElement('div');row.className='map-row';group.forEach(({s,i})=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',String.fromCharCode(65+i)+'、'+s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.dataset.support=String(i);b.onclick=()=>selectSupport(i);row.append(b);});map.append(row);});const front=document.createElement('div');front.className='map-caption';front.textContent='手前';map.append(front);
+ const controls=$('supportControls');controls.replaceChildren();supports.forEach((s,i)=>{const row=document.createElement('div');row.className='support-row'+(i===selected?' selected':'');const id=String.fromCharCode(65+i);row.innerHTML=`<label><span class="point-id">${id}</span>${s.name}</label><button id="down${i}" aria-label="${id}を下げる">下げる</button><span id="supportState${i}" class="support-adjustment-state"></span><input hidden type="number" id="height${i}" aria-label="${id}の抽選時からの調整量" min="${-.5-supportBaseline(i)}" max="${.5-supportBaseline(i)}" step="0.001" value="${supportAdjustment(i)}"><button id="up${i}" aria-label="${id}を上げる">上げる</button>`;controls.append(row);$('down'+i).onclick=()=>changeSupportHeight(i,-Number($('adjustStep').value));$('up'+i).onclick=()=>changeSupportHeight(i,Number($('adjustStep').value));$('height'+i).onchange=()=>setSupportHeight(i,supportHeightFromAdjustment(i,$('height'+i).value.trim()===''?NaN:Number($('height'+i).value)));$('height'+i).oninput=()=>{invalidateLevelImport();const field=$('height'+i),value=supportHeightFromAdjustment(i,field.value.trim()===''?NaN:Number(field.value));if(bounded(value,-.5,.5))setSupportHeight(i,value,true);};});
 }
 const grid=$('machineGrid');machines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>openMachine(m);grid.append(card);});
 // 部品に軸の親子関係を持たせ、固定部は動かさない。
@@ -677,17 +707,17 @@ $('machineMode').onchange=()=>{stopMotion();machineMode=$('machineMode').value;c
 function buildAxisUI(){
  const axes=axisConfig(current);$('axisTabs').replaceChildren();$('axisSliders').replaceChildren();
  axes.forEach(a=>{const btn=document.createElement('button');btn.textContent=a.key+'軸';btn.className='axis-tab';btn.style.setProperty('--axis',axisColors[a.key]);btn.setAttribute('aria-pressed',a.key===selectedAxis?'true':'false');btn.onclick=()=>selectAxis(a.key);$('axisTabs').append(btn);
- const row=document.createElement('div');row.className='axis-row';row.style.setProperty('--axis',axisColors[a.key]);row.innerHTML=`<label for="axis-${a.key}"><strong>${a.key}軸</strong><span>${a.part}<small>${a.direction}</small></span><output id="value-${a.key}">中央</output></label><input type="range" id="axis-${a.key}" min="-100" max="100" step="1" value="${positions[a.key]}" aria-label="${a.key}軸の部品位置"><div class="range-ends"><span>端1</span><span>端2</span></div>`;$('axisSliders').append(row);
+ const row=document.createElement('div');row.className='axis-row';row.style.setProperty('--axis',axisColors[a.key]);row.innerHTML=`<label for="axis-${a.key}"><strong>${a.key}軸</strong><span>${a.part}<small>${a.direction}</small></span><output id="value-${a.key}">中央</output></label><input type="range" id="axis-${a.key}" min="-100" max="100" step="1" value="${positions[a.key]}" aria-label="${a.key}軸の部品位置"><div class="range-ends"><span>片側</span><span>反対側</span></div>`;$('axisSliders').append(row);
  $('axis-'+a.key).addEventListener('input',e=>{stopMotion();positions[a.key]=Number(e.target.value);selectAxis(a.key);updateAxisValues();saveLeveling();drawScene();});});
  updateAxisValues();selectAxis(selectedAxis);
 }
-function updateAxisValues(){for(const a of axisConfig(current)){$('axis-'+a.key).value=positions[a.key];$('value-'+a.key).textContent=positions[a.key]===0?'中央':positions[a.key]>0?'端2側 '+Math.abs(Math.round(positions[a.key]))+'%':'端1側 '+Math.abs(Math.round(positions[a.key]))+'%';}}
+function updateAxisValues(){for(const a of axisConfig(current)){const label=positions[a.key]===0?'中央':positions[a.key]>0?'反対側':'片側';$('axis-'+a.key).value=positions[a.key];$('axis-'+a.key).setAttribute('aria-valuetext',label);$('value-'+a.key).textContent=label;}}
 function selectAxis(key){
  const a=axisConfig(current).find(a=>a.key===key);if(!a)return;stopMotion();selectedAxis=key;
  Array.from($('axisTabs').children).forEach(b=>b.setAttribute('aria-pressed',b.textContent===key+'軸'?'true':'false'));
  for(const axis of axisConfig(current))$('axis-'+axis.key).parentElement.hidden=axis.key!==key;
  $('axisMenuTitle').textContent=key+'軸の操作';
- $('scene').setAttribute('aria-label',current.name+'の3D模式図。左右ドラッグまたは左右矢印キーで回転。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+key+'軸で動く部品を同色で強調。');drawScene();
+ $('scene').setAttribute('aria-label',current.name+'の構造模型。左右ドラッグまたは左右矢印キーで回転。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+key+'軸で動く部品を同色で強調。');drawScene();
 }
 function setAxisMenuOpen(open,focusToggle=false){
  $('axisMenu').hidden=!open;$('axisControlsToggle').setAttribute('aria-expanded',String(open));
@@ -718,6 +748,10 @@ let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,lev
 const levelStoragePrefix='training-level-v1:';
 // An asynchronous file may finish after another import or a newer training state.
 let levelImportRequest=0,levelSessionEpoch=0,levelRevision=0;
+let adjustmentStage='coarse',adjustmentHintKey='',adjustmentHintValue=null,fineStartEvaluation=null;
+function adjustmentContextKey(){return JSON.stringify([current.id,current.kind,current.w,current.d,machineProfile,levelConfig]);}
+function resetAdjustmentProgress(){fineStartEvaluation=null;adjustmentHintKey='';adjustmentHintValue=null;}
+function captureFineStart(){fineStartEvaluation={key:adjustmentContextKey(),objective:machineEvaluation(supportHeights).objective};}
 function invalidateLevelImport(){levelRevision++;}
 const cleanNumber=(v,d=3)=>Math.abs(v)<Math.pow(10,-d)/2?(0).toFixed(d):v.toFixed(d);
 const bounded=(v,min,max)=>typeof v==='number'&&Number.isFinite(v)&&v>=min&&v<=max;
@@ -728,17 +762,18 @@ function validLevelRecord(r){
  return r&&((r.version===1&&r.machineProfile===undefined)||(r.version===2&&window.MachineAccuracy.valid(r.machineProfile,machineLinearKeys(),supports.length)&&validMachineBest(r)))&&r.machine===current.id&&r.mode===machineMode&&bounded(r.width,.5,20)&&bounded(r.depth,.5,20)&&Array.isArray(r.heights)&&r.heights.length===supports.length&&r.heights.every(h=>bounded(h,-.5,.5)&&Math.abs(h*1000-Math.round(h*1000))<1e-7)&&[.02,.05,.1].includes(r.sensitivity)&&[-1,0,1].includes(r.measurePos)&&bounded(r.offset,.1,2)&&['columnX','columnZ'].every(k=>r[k]===undefined||bounded(r[k],-100,100)&&Number.isInteger(r[k]))&&axisValid&&[.001,.005,.01,.05,.1].includes(r.step)&&typeof r.exaggerate==='boolean';
 }
 function applyLevelRecord(r){
+ resetAdjustmentProgress();
  levelConfig={width:r.width,depth:r.depth,offset:r.offset,columnX:r.columnX??0,columnZ:r.columnZ??0};supportHeights=[...r.heights];
  initializeMachineAccuracy(r.version===2?r.machineProfile:null,r.bestState);supportHeights=[...r.heights];
  positions={X:0,Y:0,Z:0,A:0,C:0,...r.axisPositions};updateAxisValues();
- $('supportWidth').value=r.width;$('supportDepth').value=r.depth;$('levelSensitivity').value=String(r.sensitivity);$('measurePos').value=String(r.measurePos);$('impactOffset').value=r.offset;$('columnX').value=levelConfig.columnX;$('columnZ').value=levelConfig.columnZ;$('adjustStep').value=String(r.step);$('exaggerate').checked=r.exaggerate;
+ $('supportWidth').value=r.width;$('supportDepth').value=r.depth;$('levelSensitivity').value=String(r.sensitivity);$('measurePos').value=String(r.measurePos);$('impactOffset').value=r.offset;$('columnX').value=levelConfig.columnX;$('columnZ').value=levelConfig.columnZ;$('adjustStep').value=String(r.step);$('exaggerate').checked=r.exaggerate;adjustmentStage=r.step>=.01?'coarse':'fine';
 }
 function initializeLeveling(){
- levelSessionEpoch++;invalidateLevelImport();
+ levelSessionEpoch++;invalidateLevelImport();resetAdjustmentProgress();adjustmentStage='coarse';
  supportHeights=supports.map(()=>0);levelConfig={width:Number((current.w*.8).toFixed(2)),depth:Number((current.d*.8).toFixed(2)),offset:.5,columnX:0,columnZ:0};levelExercise=null;levelGeometry=null;
- $('supportWidth').value=levelConfig.width;$('supportDepth').value=levelConfig.depth; $('levelSensitivity').value='0.05';$('adjustStep').value='0.001';$('impactOffset').value=.5;$('columnX').value='0';$('columnZ').value='0';$('exaggerate').checked=true;
+ $('supportWidth').value=levelConfig.width;$('supportDepth').value=levelConfig.depth; $('levelSensitivity').value='0.05';$('adjustStep').value='0.01';$('impactOffset').value=.5;$('columnX').value='0';$('columnZ').value='0';$('exaggerate').checked=true;
  $('levelInputMessage').textContent='';
- $('twistPreset').disabled=supports.length===3;$('twistPreset').title=supports.length===3?'3点支持は平面になるため、ねじれパターンはありません。':'';
+ $('twistPreset').disabled=supports.length===3;$('twistPreset').title=supports.length===3?'この支持配置は平面になるため、ねじれパターンはありません。':'';
  const hasMiddle=!!current.grid&&(current.grid[0]>2||current.grid[1]>2);
  $('middlePreset').disabled=!hasMiddle;$('middlePreset').title=hasMiddle?'':'この支持配置には中間支持点がありません。';
  initializeMachineAccuracy();
@@ -780,16 +815,53 @@ function levelAxisVisualPoint(p,origin,pose,bodyOrigin=levelBodyVisualPoint(orig
  // the intrinsic defect and must receive the support rotation just once.
  return q.map((v,i)=>v+bodyOrigin[i]-supportOrigin[i]);
 }
-function updateLevelStages(){
+function updateLevelStages(machineResult=null,target=false){
  const averageLevel=Math.max(Math.abs(levelSolution.lr),Math.abs(levelSolution.fb)),coarse=averageLevel<=.020000001;
- $('stageStatus').textContent=coarse?'平均レベルの目安内 · 残る精度を確認':'まず平均レベルを粗調整';
+ adjustmentStage=Number($('adjustStep').value)>=.01?'coarse':'fine';
+ $('coarsePanel').hidden=adjustmentStage!=='coarse';$('finePanel').hidden=adjustmentStage!=='fine';
+ $('supportPhaseTitle').textContent=adjustmentStage==='coarse'?'粗調整で支持点を動かす':'精調整で支持点を少し動かす';
+ $('stageStatus').textContent=coarse?'平均レベルの目安内 · 精調整へ':'まず平均の傾きを整える';
  $('stageStatus').className='stage-status'+(coarse?' within':'');
  $('stageAverageLR').textContent=Math.abs(levelSolution.lr)<=.020000001?'目安内':levelSolution.lr>0?'右が高い':'左が高い';
  $('stageAverageFB').textContent=Math.abs(levelSolution.fb)<=.020000001?'目安内':levelSolution.fb>0?'奥が高い':'手前が高い';
  $('stageAverageLR').setAttribute('data-value',String(levelSolution.lr));$('stageAverageFB').setAttribute('data-value',String(levelSolution.fb));
  $('stageStatus').setAttribute('data-coarse-ready',String(coarse));
  $('stageResidual').textContent=coarse?'平均の傾きが揃っても、本体の固有精度は残ります。局所姿勢差・支持面のねじれも別に確認し、同じ支持点を微調整します。':'初期状態はランダムな支持高さと、本体の固有精度を重ねています。支持点を動かし、まず平均の左右・前後傾きを目安へ近づけます。';
- for(const [id,value] of [['coarseAdjust',.01],['fineAdjust',.001]])$(id).setAttribute('aria-pressed',String(Number($('adjustStep').value)===value));
+ $('coarseAdjust').setAttribute('aria-pressed',String(adjustmentStage==='coarse'));$('fineAdjust').setAttribute('aria-pressed',String(adjustmentStage==='fine'));
+ $('coarseAdjust').setAttribute('aria-controls','coarsePanel');$('fineAdjust').setAttribute('aria-controls','finePanel');
+ for(const [id,value] of [['coarseBubbleLR',levelSolution.lr],['coarseBubbleFB',levelSolution.fb]])$(id).style.left=(50+Math.max(-40,Math.min(40,value/.02*6)))+'%';
+ const significant=machineProfile&&Math.max(...accuracyRange.flatMap(s=>s.geometry.pairs.map(p=>Math.abs(p.deviationMicroradians*.3))),...Object.values(machineProfile.guides).map(g=>g.microns))>20.000001;
+ $('fineStatus').textContent=target?(significant?'支持姿勢の調整目安内。残る誤差も確認':'精調整の目安内。本体や支持姿勢に残る誤差を確認'):'直角と姿勢を見ながら精調整';
+ $('fineStatus').setAttribute('data-target',String(target));$('fineStatus').setAttribute('data-body-significant',String(!!significant));if(machineResult)$('fineStatus').setAttribute('data-gap',String(machineResult.gap));
+ $('fineStatus').className='stage-status'+(target&&!significant?' within':'');
+ $('fineAverageNotice').textContent=coarse?'平均の傾きは粗調整の目安内です。精調整では直角と姿勢を整えるため、平均の傾きが少し動く場合があります。':'平均の傾きが粗調整の目安から外れています。精調整では直角と姿勢との釣り合いも見ます。必要なら粗調整に戻って比較してください。';
+ $('fineExample').disabled=$('applyBestLevel').disabled;
+ const progress=$('fineOverallProgress');
+ if(fineStartEvaluation?.key!==adjustmentContextKey())fineStartEvaluation=null;
+ const currentScore=machineEvaluation(supportHeights).objective;
+ if(fineStartEvaluation){
+  const delta=currentScore-fineStartEvaluation.objective,trend=delta < -1e-8?'better':delta>1e-8?'worse':'similar';
+  progress.textContent='精調整を始めた状態からの総合評価：'+(trend==='better'?'良くなりました':trend==='worse'?'悪くなっています':'ほぼ同じです')+'。初期からの直角図とは別に、代表位置全体の直角と姿勢を比べます。';
+  progress.setAttribute('data-before',String(fineStartEvaluation.objective));progress.setAttribute('data-current',String(currentScore));progress.setAttribute('data-delta',String(delta));progress.setAttribute('data-trend',trend);
+ }else{progress.textContent='精調整開始時の比較基準はまだありません。代表位置全体の直角と姿勢を総合して調整の目安を確認します。';for(const name of ['before','current','delta','trend'])progress.setAttribute('data-'+name,'');}
+ $('supportStageStatus').textContent=adjustmentStage==='coarse'?$('stageStatus').textContent:$('fineStatus').textContent;
+ updateAdjustmentHint(coarse,target);
+}
+function updateAdjustmentHint(coarse,target){
+ const step=Number($('adjustStep').value),key=JSON.stringify([current.id,current.kind,supportHeights,levelConfig,machineProfile,step]);
+ const score=heights=>adjustmentStage==='coarse'?(()=>{const s=machineSolution(heights);return s.lr*s.lr+s.fb*s.fb;})():machineEvaluation(heights).objective;
+ if(key!==adjustmentHintKey){
+  const before=score(supportHeights),threshold=Math.max(1e-12,Math.abs(before)*1e-10);let best=null;
+  for(let i=0;i<supports.length;i++)for(const direction of [-1,1]){
+   const next=[...supportHeights],height=Math.round((next[i]+direction*step)*1000)/1000;if(!bounded(height,-.5,.5)||height===next[i])continue;next[i]=height;
+   const after=score(next);if(after<before-threshold&&(!best||after<best.after))best={i,direction,before,after,step};
+  }
+  adjustmentHintKey=key;adjustmentHintValue=best;
+ }
+ const hint=$(adjustmentStage==='coarse'?'coarseHint':'fineHint'),best=adjustmentHintValue;
+ hint.setAttribute('data-support',best?String(best.i):'');hint.setAttribute('data-direction',best?String(best.direction):'');for(const [name,value] of [['before-score',best?.before],['after-score',best?.after],['step',best?.step]])hint.setAttribute('data-'+name,value===undefined?'':String(value));
+ hint.textContent=adjustmentStage==='coarse'&&coarse?'平均の傾きが揃いました。精調整へ切り替え、本体や支持姿勢に残る誤差を見ます。':adjustmentStage==='fine'&&target?'この個体の調整目安に近づきました。直角の変化と、本体や支持姿勢に残る誤差を確認します。':best?String.fromCharCode(65+best.i)+'を少し'+(best.direction>0?'上げる':'下げる')+'方向を試せます。'+(adjustmentStage==='fine'?'代表位置全体の総合評価が良くなる候補です。今の位置の各直角がすべて改善するとは限りません。':'平均の傾きが小さくなる候補です。'):'単独の支持点を少し動かすだけでは改善する候補がありません。複数の支持点の関係を見直すか、調整例を試してください。';
+ $('supportStageHint').textContent=hint.textContent;
 }
 // The input shows what the learner has moved, while the solver and saved
 // record continue to use the original absolute support heights.
@@ -813,20 +885,19 @@ function levelSurfaceFaces(m){
  return faces;
 }
 function refreshSupportControls(editingIndex=-1){
- supports.forEach((s,i)=>{const input=$('height'+i);if(!input)return;if(i!==editingIndex)input.value=cleanNumber(supportAdjustment(i),3);input.setAttribute('min',String(-.5-supportBaseline(i)));input.setAttribute('max',String(.5-supportBaseline(i)));input.closest('.support-row').classList.toggle('selected',selected===i);$('down'+i).disabled=supportHeights[i]<=-.5+1e-9;$('up'+i).disabled=supportHeights[i]>=.5-1e-9;});
+ supports.forEach((s,i)=>{const input=$('height'+i);if(!input)return;if(i!==editingIndex)input.value=cleanNumber(supportAdjustment(i),3);input.setAttribute('min',String(-.5-supportBaseline(i)));input.setAttribute('max',String(.5-supportBaseline(i)));input.closest('.support-row').classList.toggle('selected',selected===i);$('supportState'+i).textContent=supportAdjustment(i)>0?'上げた':supportAdjustment(i)<0?'下げた':'未調整';$('down'+i).disabled=supportHeights[i]<=-.5+1e-9;$('up'+i).disabled=supportHeights[i]>=.5-1e-9;});
  $('supportMap').querySelectorAll('.map-point').forEach((b,i)=>{const index=Number(b.dataset.support);b.classList.toggle('active',index===selected);b.setAttribute('aria-pressed',String(index===selected));});
 }
 function setSupportHeight(i,value,editing=false){
  invalidateLevelImport();stopMotion();
  if(!bounded(value,-.5,.5)){$('levelInputMessage').textContent='調整可能な範囲の数値を入力してください。直前の調整量へ戻しました。';$('height'+i).value=cleanNumber(supportAdjustment(i),3);refreshSupportControls();return;}
- supportHeights[i]=Math.round(value*1000)/1000;if(!editing)$('height'+i).value=cleanNumber(supportAdjustment(i),3);selected=i;$('levelInputMessage').textContent=String.fromCharCode(65+i)+'の調整量 '+signed(supportAdjustment(i),3)+' mm。絵と現在の測定を確認してください。';updateLeveling(true,editing?i:-1);
+ supportHeights[i]=Math.round(value*1000)/1000;if(!editing)$('height'+i).value=cleanNumber(supportAdjustment(i),3);selected=i;$('levelInputMessage').textContent=String.fromCharCode(65+i)+'を調整しました。模型と直角の変化を確認してください。';updateLeveling(true,editing?i:-1);
 }
 function changeSupportHeight(i,delta){setSupportHeight(i,Math.max(-.5,Math.min(.5,Math.round((supportHeights[i]+delta)*1000)/1000)));}
 function updateLeveling(save=true,editingIndex=-1){
  const points=supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:supportHeights[i]}));
  levelSolution=window.Leveling.solve(points);refreshSupportControls(editingIndex);
  updateAccuracy();
- updateLevelStages();
  const z=Number($('measurePos').value)*levelConfig.depth/2,local=levelSolution.slopeAt(0,z);
  $('lr').textContent=cleanNumber(levelSolution.lr,4)+' mm/m';$('fb').textContent=cleanNumber(levelSolution.fb,4)+' mm/m';$('twist').textContent=cleanNumber(levelSolution.twist,6)+' mm/m';$('residual').textContent=cleanNumber(levelSolution.residual)+' mm';
  const sensitivity=Number($('levelSensitivity').value);
@@ -849,6 +920,7 @@ function updateLeveling(save=true,editingIndex=-1){
  if(maxPosture>20.000001)notices.push('相対姿勢差・左右コラムの倒れ差が残っています。平均値だけでなく、個別の姿勢も確認してください。');
  const machineResult=updateMachineAccuracy();
  const target=machineResult?machineResult.target:maxSlope<=.020000001&&Math.abs(levelSolution.twist)<=.020000001&&levelSolution.residual<=.010000001&&maxAngle<=20.000001&&maxPosture<=20.000001;
+ updateLevelStages(machineResult,target);
  if(target)notices.unshift(machineResult?'補助の参考探索では最良近傍です。倒れ・ねじれ・直角度の変化を主表示で見比べてください。':'教材の調整目標内です。実機の精度・合否を示すものではありません。');
  $('diagnosis').replaceChildren();notices.forEach(text=>{const p=document.createElement('p');p.className='diagnosis-item'+(target?' neutral':'');p.textContent=text;$('diagnosis').append(p);});
  const example=window.Leveling.impact(levelSolution,{span:levelConfig.width,offset:levelConfig.offset});
@@ -876,14 +948,16 @@ function applyLevelPreset(type){
   return Math.round((type==='right'?.1*x:type==='front'?-.1*z:type==='twist'?.1*x*z:Math.abs(x)<.99||Math.abs(z)<.99?.15:0)*1000)/1000;
  });$('levelInputMessage').textContent='状態パターンを設定しました。';updateLeveling();
 }
-$('zero').onclick=()=>{invalidateLevelImport();stopMotion();supportHeights=supports.map(()=>0);levelExercise=null;$('levelInputMessage').textContent='全支持点を同じ高さへ揃えました。各欄は抽選時からの調整量です。';updateLeveling();};
+$('zero').onclick=()=>{invalidateLevelImport();stopMotion();supportHeights=supports.map(()=>0);levelExercise=null;$('levelInputMessage').textContent='全支持点を同じ高さへ揃えました。各欄は初期からの上げ下げを示します。';updateLeveling();};
 document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>applyLevelPreset(b.dataset.preset));
 $('measurePos').onchange=()=>updateLeveling();$('levelSensitivity').onchange=()=>updateLeveling();$('exaggerate').onchange=()=>updateLeveling();$('showLevelSurface').onchange=()=>drawScene();$('adjustStep').onchange=()=>updateLeveling();
-for(const [id,value] of [['coarseAdjust',.01],['fineAdjust',.001]])$(id).onclick=()=>{$('adjustStep').value=String(value);$('levelInputMessage').textContent=(value===.01?'粗調整':'微調整')+'：ボタン1回 '+cleanNumber(value)+' mmに切り替えました。支持高さはそのままです。';updateLeveling();};
+for(const [id,value] of [['coarseAdjust',.01],['fineAdjust',.001]])$(id).onclick=()=>{stopMotion();if(value===.001&&adjustmentStage==='coarse')captureFineStart();$('adjustStep').value=String(value);$('levelInputMessage').textContent=(value===.01?'粗調整':'精調整')+'へ切り替えました。同じ個体と支持点で続けます。';updateLeveling();$('trainingControls').scrollTop=0;};
+$('coarseExample').onclick=()=>{$('zero').onclick();$('levelInputMessage').textContent='粗調整の手本を適用しました。支持点を同じ高さへ揃えた例です。次は残る直角と姿勢を見ます。';};
+$('fineExample').onclick=()=>{$('applyBestLevel').onclick();$('levelInputMessage').textContent='精調整の参考例を適用しました。実際の支持高さを変えた手本です。本体や支持姿勢に残る誤差も見比べてください。';};
 for(const [id,key,min,max] of [['supportWidth','width',.5,20],['supportDepth','depth',.5,20]]){const apply=()=>{invalidateLevelImport();const value=Number($(id).value);if(!bounded(value,min,max))return false;levelConfig[key]=value;$('levelInputMessage').textContent='支持寸法を更新しました。';updateLeveling();return true;};$(id).oninput=apply;$(id).onchange=()=>{if(!apply()){$(id).value=levelConfig[key];$('levelInputMessage').textContent='支持幅は0.50〜20.00 mで入力してください。';}};}
 $('impactOffset').oninput=()=>{invalidateLevelImport();const value=Number($('impactOffset').value);if(bounded(value,.1,2)){levelConfig.offset=value;updateLeveling();}};
 $('impactOffset').onchange=()=>{const value=Number($('impactOffset').value);if(!bounded(value,.1,2)){$('impactOffset').value=levelConfig.offset;$('levelInputMessage').textContent='評価長は0.10〜2.00 mです。直前の有効値へ戻しました。';}else levelConfig.offset=value;updateLeveling();};
-$('startLevelExercise').onclick=()=>{invalidateLevelImport();stopMotion();supportHeights=supports.map(()=>Math.round((Math.random()*.4-.2)*1000)/1000);const sign=Math.random()<.5?-1:1;supportHeights[0]=-.4*sign;supportHeights[1]=.4*sign;levelExercise={solved:false};$('levelInputMessage').textContent=machineProfile?'同じ個体で別の支持状態を設定しました。比較基準は抽選時の支持高さのままです。':'新しい調整問題を設定しました。';updateLeveling();};
+$('startLevelExercise').onclick=()=>{invalidateLevelImport();stopMotion();resetAdjustmentProgress();supportHeights=supports.map(()=>Math.round((Math.random()*.4-.2)*1000)/1000);const sign=Math.random()<.5?-1:1;supportHeights[0]=-.4*sign;supportHeights[1]=.4*sign;levelExercise={solved:false};$('levelInputMessage').textContent=machineProfile?'同じ個体で別の支持状態を設定しました。比較基準は抽選時の支持高さのままです。':'新しい調整問題を設定しました。';updateLeveling();};
 $('exportLevel').onclick=()=>{
  let url=null,link=null;
  try{
@@ -1001,7 +1075,7 @@ function changeNumber(value,d=2){
 }
 function accuracyChange(before,current){
  const delta=current-before,absoluteChange=Math.abs(current)-Math.abs(before),trend=absoluteChange<-.005?'better':absoluteChange>.005?'worse':'similar';
- return {delta,absoluteChange,trend,text:trend==='better'?'90°からのずれが小さく':trend==='worse'?'90°からのずれが大きく':'90°からのずれはほぼ同じ'};
+ return {delta,absoluteChange,trend,text:trend==='better'?'初期より直角に近づいた':trend==='worse'?'初期より直角から離れた':'初期からほぼ同じ'};
 }
 function leanDescription(value,negative,positive){return Math.abs(value)<.00001?'倒れは表示桁未満':(value>0?positive:negative)+' '+cleanNumber(Math.abs(value),2)+' µrad';}
 function postureComparison(id,rows,unit,digits=2){
@@ -1014,26 +1088,51 @@ function postureComparison(id,rows,unit,digits=2){
 }
 // Each pair is a two-dimensional relative-angle comparison, independent of
 // camera rotation. The fixed gain makes support adjustments comparable.
-const squarenessDiagramGain=1000,squarenessDiagramLimit=.65;
+const squarenessDiagramGain=5000,squarenessDiagramLimit=.65;
 function squarenessPlot(pair){
  const base=current.kind==='lathe'?'Z':pair.key[0],other=[...pair.key].find(key=>key!==base),raw=pair.deviationMicroradians/1e6*squarenessDiagramGain;
  const angle=Math.max(-squarenessDiagramLimit,Math.min(squarenessDiagramLimit,raw)),x=32,y=54,length=28;
  return {base,other,angle,gain:squarenessDiagramGain,limited:Math.abs(raw)>squarenessDiagramLimit,origin:[x,y],tip:[x-length*Math.sin(angle),y-length*Math.cos(angle)]};
 }
-function squarenessMarkup(pair,plot){
- const [x,y]=plot.origin,[tx,ty]=plot.tip;
- return `<path d="M${x},26V${y}H88" fill="none" stroke="#81949d" stroke-width="1" stroke-dasharray="3 3"/><text x="75" y="43" class="right-angle">90°</text><line x1="${x}" y1="${y}" x2="88" y2="${y}" stroke="${axisColors[plot.base]}" stroke-width="2" class="pair-base"/><line x1="${x}" y1="${y}" x2="${tx}" y2="${ty}" stroke="${axisColors[plot.other]}" stroke-width="2.5" class="pair-current"/><text x="95" y="58" fill="${axisColors[plot.base]}" class="pair-axis">${plot.base}</text><text x="${tx}" y="${ty-4}" fill="${axisColors[plot.other]}" text-anchor="middle" class="pair-axis">${plot.other}</text>`;
+function squarenessMarkup(pair,plot,beforePlot){
+ const [x,y]=plot.origin,[tx,ty]=plot.tip,[bx,by]=beforePlot.tip,changed=Math.abs(pair.deviationMicroradians-beforePlot.deviation)>1e-6;
+ return `<path d="M${x},26V${y}H88" fill="none" stroke="#81949d" stroke-width="1" stroke-dasharray="3 3"/><text x="75" y="43" class="right-angle">直角</text><line x1="${x}" y1="${y}" x2="88" y2="${y}" stroke="${axisColors[plot.base]}" stroke-width="2" class="pair-base"/>${changed?`<path d="M${x},${y}L${bx},${by}L${tx},${ty}Z" fill="${axisColors[plot.other]}" class="pair-change-area"/>`:''}<line x1="${x}" y1="${y}" x2="${bx}" y2="${by}" stroke="${axisColors[plot.other]}" stroke-width="4" class="pair-before"/><line x1="${x}" y1="${y}" x2="${tx}" y2="${ty}" stroke="${axisColors[plot.other]}" stroke-width="2.5" class="pair-current"/><text x="95" y="58" fill="${axisColors[plot.base]}" class="pair-axis">${plot.base}</text><text x="${tx}" y="${ty-4}" fill="${axisColors[plot.other]}" text-anchor="middle" class="pair-axis">${plot.other}</text>`;
 }
-function accuracyDiagram(g){
+function diagramComparison(pair,initial){
+ const before=initial?.pairs.find(p=>p.key===pair.key)||pair,plot=squarenessPlot(pair),beforePlot={...squarenessPlot(before),deviation:before.deviationMicroradians};
+ const delta=pair.deviationMicroradians-before.deviationMicroradians,absoluteChange=Math.abs(pair.deviationMicroradians)-Math.abs(before.deviationMicroradians),epsilon=.005/(levelConfig?.offset||.5);
+ const trend=absoluteChange < -epsilon?'better':absoluteChange>epsilon?'worse':'similar',direction=Math.abs(delta)<=1e-6?'unchanged':delta>0?'opened':'closed';
+ const text=trend==='better'?'初期より直角に近づいた':trend==='worse'?'初期より直角から離れた':'初期からほぼ同じ';
+ const range=plot.limited&&beforePlot.limited?'初期・現在が図の範囲外':plot.limited?'現在が図の範囲外':beforePlot.limited?'初期が図の範囲外':'';
+ return {before,plot,beforePlot,delta,absoluteChange,trend,direction,text,range};
+}
+function accuracyDiagram(g,initial=levelInitialGeometry){
  const live=[];
  const columns=g.pairs.map((pair,i)=>{
-  const plot=squarenessPlot(pair),description=pair.key+'、基準'+plot.base+'。'+(pair.deviationMicroradians>0?'90度より広い':pair.deviationMicroradians<0?'90度より狭い':'90度')+(plot.limited?'。図の範囲外':''),attributes=Object.entries({pair:pair.key,base:plot.base,other:plot.other,gain:plot.gain,deviation:pair.deviationMicroradians,limited:plot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
-  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${pair.key} 基準${plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" ${attributes}>${squarenessMarkup(pair,plot)}${plot.limited?'<text x="110" y="19" text-anchor="end" class="live-pair-limit">図の範囲外</text>':''}</svg></div>`);
-  return `<g transform="translate(${i*112},0)" data-pair="${pair.key}" data-base="${plot.base}"><text x="56" y="11" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,12)">${squarenessMarkup(pair,plot)}</g>${plot.limited?'<text x="73" y="22" text-anchor="middle" class="pair-limit">図の範囲外</text>':''}</g>`;
+  const c=diagramComparison(pair,initial),{plot,beforePlot}=c;
+  const description=pair.key+'、基準'+plot.base+'。'+(pair.deviationMicroradians>0?'直角より広い':pair.deviationMicroradians<0?'直角より狭い':'直角')+'。'+c.text+(c.direction==='unchanged'?'。軸間の変化はほぼありません':c.direction==='opened'?'。初期から広がる方向へ変化':'。初期から狭まる方向へ変化')+(c.range?'。'+c.range:'');
+  const attributes=Object.entries({pair:pair.key,base:plot.base,other:plot.other,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
+  const markup=squarenessMarkup(pair,plot,beforePlot),limit=c.range?'<text x="110" y="19" text-anchor="end" class="live-pair-limit">範囲外</text>':'';
+  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${pair.key} 基準${plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" ${attributes}>${markup}${limit}</svg></div>`);
+  return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="11" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,12)">${markup}</g>${c.range?'<text x="80" y="22" text-anchor="middle" class="pair-limit">図の範囲外</text>':''}</g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
  $('accuracyDiagram').setAttribute('viewBox',`0 0 ${g.pairs.length*112} 76`);$('accuracyDiagram').innerHTML=columns.join('');
- $('accuracyDiagram').setAttribute('aria-label',g.pairs.map(p=>p.key+'、基準'+squarenessPlot(p).base+'で現在の直角度を比較').join('。'));
+ $('accuracyDiagram').setAttribute('aria-label',g.pairs.map(p=>p.key+'、基準'+squarenessPlot(p).base+'で直角と初期からの変化を比較').join('。'));
+}
+function updateFineQualitative(g,initial){
+ const lathe=current.kind==='lathe';
+ for(const [key,id,negative,positive,label] of [['front','fineLeanFront',lathe?'下向き':'後ろ倒れ',lathe?'上向き':'前倒れ',lathe?'主軸の上下方向':'本体＋支持の前後倒れ'],['right','fineLeanRight',lathe?'左向き':'左倒れ',lathe?'右向き':'右倒れ',lathe?'主軸の水平面方向':'本体＋支持の左右倒れ']]){
+  const value=g.bodyPosture[key];$(id).textContent=label+'：'+(Math.abs(value)<=20.000001?'小さめ':value>0?positive:negative);$(id).setAttribute('data-current',String(value));
+ }
+ const twist=levelSolution.twist;$('fineTwist').textContent='支持面のねじれ：'+(supports.length===3?'この支持配置は平面です':Math.abs(twist)<=.020000001?'小さめ':twist>0?'奥が手前より右高':'奥が手前より左高');$('fineTwist').setAttribute('data-current',String(twist));
+ $('fineFixedBody').textContent='本体の固有直角差・'+(lathe?'主軸の方向':'コラムの倒れ')+'・ガイドの曲がりは、この個体の固定成分です。支持姿勢を重ねた変化を見ます。';
+ $('finePrecisionSummary').replaceChildren();
+ for(const pair of g.pairs){
+  const c=diagramComparison(pair,initial),row=document.createElement('p');row.className='fine-pair-reading '+c.trend;
+  for(const [name,value] of Object.entries({pair:pair.key,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction}))row.setAttribute('data-'+name,String(value));
+  row.textContent=pair.key+'：'+c.text+(c.direction==='unchanged'?'（軸間の関係はほぼ不変）':'')+(c.range?' · '+c.range:'');$('finePrecisionSummary').append(row);
+ }
 }
 function updateAccuracy(){
  if(!levelSolution||!levelConfig)return;
@@ -1055,9 +1154,7 @@ function updateAccuracy(){
  $('comparisonContext').hidden=!initial;
  if(initial)$('comparisonContext').textContent=(machineProfile.condition==='new'?'新品':'中古')+'個体 #'+machineProfile.seed+'：初期の差は数値で示しません。今の軸位置、寸法、コラム配置、評価長で現在の精度を確認します。';
  const columnDifference=g.columns.length===2?Math.abs(g.columns[1].front-g.columns[0].front):0;
- if(initial){
-  $('geometryStatus').textContent=g.pairs.map(p=>p.key+' '+signed(p.errorMicrons,2)+' µm').join(' ／ ');
- }else $('geometryStatus').textContent=columnDifference>.001?'直角差 '+cleanNumber(maxError,2)+' µm ／ 左右コラム差 '+cleanNumber(columnDifference,2)+' µrad':g.pairs.map(p=>p.key+' '+cleanNumber(Math.abs(p.errorMicrons),2)+' µm').join(' ／ ');
+ $('geometryStatus').textContent=g.pairs.map(p=>p.key+' '+diagramComparison(p,initial).text).join(' ／ ');
  $('accuracyMetrics').replaceChildren();
  for(const p of g.pairs){
   const samples=accuracyRange.map(s=>s.geometry.pairs.find(q=>q.key===p.key).errorMicrons),low=Math.min(...samples),high=Math.max(...samples),box=document.createElement('div');
@@ -1114,10 +1211,10 @@ function updateAccuracy(){
  const localSource=key=>g.axes.filter(a=>a.source===key).map(a=>a.key).join('・');
  $('geometryAssumption').textContent=current.kind==='lathe'?'主軸台のZ方向と刃物台側のX方向を比べる教材です。Y軸はありません。':localSource('tool')+'はコラム／主軸側、'+localSource('work')+'はテーブル／案内側の参照姿勢を使う教材です。同じ剛体側の軸対は共通の傾きでは関係が変わりません。'+(current.kind==='five'?'A/Cの旋回誤差は含みません。':'');
  $('columnLayout').hidden=!singleColumnKinds.includes(current.kind);
- $('columnXValue').textContent=levelConfig.columnX===0?'標準':(levelConfig.columnX<0?'左':'右')+'へ '+Math.abs(levelConfig.columnX)+'%';
- $('columnZValue').textContent=levelConfig.columnZ===0?'標準':(levelConfig.columnZ<0?'手前':'奥')+'へ '+Math.abs(levelConfig.columnZ)+'%';
+ $('columnXValue').textContent=levelConfig.columnX===0?'標準':levelConfig.columnX<0?'左寄り':'右寄り';$('columnX').setAttribute('aria-valuetext',$('columnXValue').textContent);
+ $('columnZValue').textContent=levelConfig.columnZ===0?'標準':levelConfig.columnZ<0?'手前寄り':'奥寄り';$('columnZ').setAttribute('aria-valuetext',$('columnZValue').textContent);
  $('demoTwist').disabled=supports.length===3;
- accuracyDiagram(g);
+ accuracyDiagram(g,initial);updateFineQualitative(g,initial);
 }
 for(const id of ['columnX','columnZ'])$(id).oninput=()=>{const value=Number($(id).value);if(!bounded(value,-100,100)||!Number.isInteger(value))return;stopMotion();levelConfig[id]=value;updateLeveling();};
 $('resetColumn').onclick=()=>{stopMotion();levelConfig.columnX=0;levelConfig.columnZ=0;$('columnX').value='0';$('columnZ').value='0';updateLeveling();};
@@ -1205,7 +1302,7 @@ function updateMachineAccuracy(){
  const total=Math.max(.000001,Math.sqrt(Math.max(0,initial.objective**2-best.metric.objective**2)));
  const progress=Math.max(0,Math.min(100,(1-gap/total)*100));
  const condition=machineProfile.condition==='new'?'新品':'中古';
- $('machineIdentity').textContent=condition+'個体 #'+machineProfile.seed+' · 抽選した固有成分をこのモデルで保持し、支持による姿勢の影響を重ねます。';
+ $('machineIdentity').textContent=condition+'の学習個体です。抽選した本体の固有成分を保持し、支持姿勢の影響を重ねます。';$('machineIdentity').setAttribute('data-seed',String(machineProfile.seed));
  $('guideMetrics').replaceChildren();
  for(const [axis,item] of Object.entries(machineProfile.guides)){
   const row=document.createElement('p');row.className='guide-metric';row.textContent=axis+'ガイド曲がり成分：この個体の固定成分です。';$('guideMetrics').append(row);
@@ -1218,7 +1315,7 @@ function updateMachineAccuracy(){
   for(const value of [label,cleanNumber(measure.maxSquareness,2),cleanNumber(measure.objective,2),'固定成分']){const cell=document.createElement(row.children.length?'td':'th');if(!row.children.length)cell.setAttribute('scope','row');cell.textContent=value;row.append(cell);}
   $('accuracyComparison').append(row);
  }
- $('machineProgress').textContent=(target?'補助の参考最良の近傍です。':'参考調整の余地があります。')+' 今の直角図と現在の測定値を上の主表示で確認します。抽選したガイドの曲がり成分は、このモデルで保持します。';
+ $('machineProgress').textContent=(target?'この個体の参考調整の目安内です。':'この個体の参考調整の目安まで余地があります。')+' 今の直角図と姿勢の変化を確認してください。本体の直角差とガイドの曲がり成分は残る場合があります。';
  const adjustment=machineBestHeights();
  $('applyBestLevel').disabled=adjustment.every((h,i)=>Math.abs(h-supportHeights[i])<.0005);
  const hints=adjustment.map((h,i)=>({i,delta:Math.round((h-supportHeights[i])*1000)/1000})).filter(q=>Math.abs(q.delta)>=.0005);
@@ -1245,15 +1342,15 @@ function validMachineBest(record){
  return b&&typeof b==='object'&&!Array.isArray(b)&&Object.keys(b).length===5&&['width','depth','columnX','columnZ'].every(k=>b[k]===(record[k]??0))&&Array.isArray(b.heights)&&b.heights.length===supports.length&&b.heights.every(h=>bounded(h,-.5,.5)&&Math.abs(h*1000-Math.round(h*1000))<1e-7);
 }
 function drawMachine(condition){
- stopMotion();invalidateLevelImport();
+ stopMotion();invalidateLevelImport();resetAdjustmentProgress();$('adjustStep').value='0.01';adjustmentStage='coarse';
  machineProfile=window.MachineAccuracy.generate(condition,machineSeed(),machineLinearKeys(),supports.length);machineReference=null;machineSavedBest=null;
  supportHeights=[...machineProfile.initialHeights];positions={X:0,Y:0,Z:0,A:0,C:0};updateAxisValues();levelExercise={solved:false};
  $('machineCondition').value=condition;$('levelInputMessage').textContent=(condition==='used'?'中古':'新品')+'の別個体と据付状態を抽選しました。';updateLeveling();
 }
 $('machineCondition').onchange=()=>drawMachine($('machineCondition').value);
 $('drawMachine').onclick=()=>drawMachine($('machineCondition').value);
-$('restoreInitialLevel').onclick=()=>{stopMotion();invalidateLevelImport();supportHeights=[...machineProfile.initialHeights];levelExercise={solved:false};$('levelInputMessage').textContent='同じ個体の抽選時の支持高さへ戻しました。寸法・コラム配置・軸位置は現在の設定で比較します。';updateLeveling();};
-$('applyBestLevel').onclick=()=>{stopMotion();invalidateLevelImport();updateMachineAccuracy();supportHeights=machineBestHeights();$('levelInputMessage').textContent='探索で得た参考調整を適用しました。残る固有誤差も確認してください。';updateLeveling();};
+$('restoreInitialLevel').onclick=()=>{stopMotion();invalidateLevelImport();resetAdjustmentProgress();supportHeights=[...machineProfile.initialHeights];levelExercise={solved:false};$('levelInputMessage').textContent='同じ個体の抽選時の支持高さへ戻しました。寸法・コラム配置・軸位置は現在の設定で比較します。';updateLeveling();};
+$('applyBestLevel').onclick=()=>{stopMotion();invalidateLevelImport();updateMachineAccuracy();supportHeights=machineBestHeights();$('levelInputMessage').textContent='探索で得た参考調整を適用しました。本体や支持姿勢に残る誤差も確認してください。';updateLeveling();};
 </script><script>(()=>{
   'use strict';
   const root=document.getElementById('tester');

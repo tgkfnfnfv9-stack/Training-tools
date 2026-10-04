@@ -100,7 +100,7 @@ async function main(){
    assert.equal(initial.condition,'new');assert.deepEqual(json('supportHeights'),initial.initialHeights);assert(initial.initialHeights.some(v=>v!==0));
    assert.equal(read('levelRecord().version'),2);assert(read('validLevelRecord(levelRecord())'));
    assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))).machineProfile,initial);
-   assert.match(r.machineIdentity.textContent,new RegExp('#'+initial.seed));assert.equal(r.guideMetrics.children.length,keys.length);
+   assert.equal(Number(r.machineIdentity.getAttribute('data-seed')),initial.seed);assert.doesNotMatch(r.machineIdentity.textContent,/[0-9]/);assert.equal(r.guideMetrics.children.length,keys.length);
    assert.equal(r.accuracyComparison.children.length,2);for(const row of r.accuracyComparison.children){assert.equal(row.children.length,4);for(const cell of row.children.slice(1,3))assert(Number.isFinite(Number(cell.textContent)));assert.equal(row.children[3].textContent,'固定成分');}
   });
   const guideText=r.guideMetrics.textContent;

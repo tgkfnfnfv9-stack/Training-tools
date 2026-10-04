@@ -17,16 +17,16 @@ function verify(g){
   const x=Number(line.getAttribute('x1')),y=Number(line.getAttribute('y1')),dx=Number(line.getAttribute('x2'))-x,dy=y-Number(line.getAttribute('y2'));
   const visualAngle=Math.atan2(-dx,dy),limited=svg.getAttribute('data-limited')==='true';
   near(Math.hypot(dx,dy),28);near(Number(svg.getAttribute('data-deviation')),pair.deviationMicroradians);
-  const expected=Math.max(-.65,Math.min(.65,pair.deviationMicroradians*.001));near(visualAngle,expected,1e-12);
-  assert.equal(limited,Math.abs(pair.deviationMicroradians*.001)>.65);
-  assert.equal(svg.getAttribute('data-gain'),'1000');assert.equal(datum.getAttribute('y1'),datum.getAttribute('y2'));
+  const expected=Math.max(-.65,Math.min(.65,pair.deviationMicroradians*.005));near(visualAngle,expected,1e-12);
+  assert.equal(limited,Math.abs(pair.deviationMicroradians*.005)>.65);
+  assert.equal(svg.getAttribute('data-gain'),'5000');assert.equal(datum.getAttribute('y1'),datum.getAttribute('y2'));
   const key=read('current.kind')==='lathe'?'Z':pair.key[0];assert.equal(svg.getAttribute('data-base'),key);assert.equal(base.getAttribute('data-base'),key);
   assert.equal(svg.getAttribute('data-other'),[...pair.key].find(k=>k!==key));
   assert.equal(svg.parentElement.querySelectorAll('.live-pair-title')[0].textContent.includes(pair.key+' 基準'+key),true);
   assert.equal(base.querySelectorAll('.pair-current')[0].getAttribute('x2'),line.getAttribute('x2'));
   assert.equal(base.querySelectorAll('.pair-current')[0].getAttribute('y2'),line.getAttribute('y2'));
-  const match=/90度より(広い|狭い)|90度/.exec(svg.getAttribute('aria-label'));assert(match);
-  assert.equal(match[1]??'90度',pair.deviationMicroradians>0?'広い':pair.deviationMicroradians<0?'狭い':'90度');
+  const match=/直角より(広い|狭い)|直角/.exec(svg.getAttribute('aria-label'));assert(match);
+  assert.equal(match[1]??'直角',pair.deviationMicroradians>0?'広い':pair.deviationMicroradians<0?'狭い':'直角');
   if(limited)assert.match(svg.getAttribute('aria-label'),/図の範囲外/);
  }
 }
@@ -40,7 +40,7 @@ for(const [index,mode] of variants){
   assert.doesNotMatch(r.geometryStatus.textContent,/抽選時|Δ/);assert.doesNotMatch(r.bodyLeanValues.textContent,/本体 [+-]?\d|支持 [+-]?\d/);
  });
  check('全ペアを同じ基準と倍率で常時表示 '+index+'/'+mode,()=>verify(json('levelGeometry')));
- const before=json('levelGeometry.pairs');r.up0.click();
+ const before=json('levelGeometry.pairs');r.fineAdjust.click();r.up0.click();
  check('支持点の調整後に現在精度と図が同期 '+index+'/'+mode,()=>{
   near(Number(r.height0.value),.001,1e-12);near(read('supportHeights[0]'),profile.initialHeights[0]+.001,1e-12);verify(json('levelGeometry'));
   const pairs=json('levelGeometry.pairs');assert(pairs.every(p=>Number.isFinite(p.deviationMicroradians)));

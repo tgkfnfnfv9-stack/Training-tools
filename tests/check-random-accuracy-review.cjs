@@ -86,7 +86,7 @@ async function main(){
   });
   r.applyBestLevel.click();
   check('参考調整は達成判定と数値が同期 '+index+' '+mode,()=>{
-   near(evalNow().objective,json('machineReference.best.metric.objective'),1e-7);assert.equal(read('levelExercise.solved'),true);assert.equal(r.applyBestLevel.disabled,true);assert.match(r.machineProgress.textContent,/近傍/);assert.deepEqual(guideValues(),guides);
+   near(evalNow().objective,json('machineReference.best.metric.objective'),1e-7);assert.equal(read('levelExercise.solved'),true);assert.equal(r.applyBestLevel.disabled,true);assert.match(r.machineProgress.textContent,/調整の目安内/);assert.deepEqual(guideValues(),guides);
   });
   check('角度と表示長と300 mm評価を混同しない '+index+' '+mode,()=>{
    const metric=evalNow(),pairs=current().pairs,seed=read('machineProfile.seed');r.impactOffset.change('.1');const short=current().pairs;r.impactOffset.change('2');const long=current().pairs;
@@ -102,7 +102,7 @@ async function main(){
   r.startLevelExercise.click();
   check('据付状態の再出題はガイドや固有直角度を再抽選しない '+index+' '+mode,()=>{assert.deepEqual(json('machineProfile'),profile);assert.deepEqual(guideValues(),guides);assert.equal(read('validLevelRecord(levelRecord())'),true);});
  }
- storage.clear();open(0,'compact');const unchanged=json('machineProfile'),before=read('supportHeights[0]');r.up0.click();
+ storage.clear();open(0,'compact');const unchanged=json('machineProfile'),before=read('supportHeights[0]');r.fineAdjust.click();r.up0.click();
  check('最小調整量は0.001 mmで表示と保存が同期',()=>{near(read('supportHeights[0]'),before+.001);assert.equal(r.height0.value,'0.001');assert.deepEqual(snapshot().machineProfile,unchanged);});
  r.height0.value='.1234';r.height0.oninput({target:r.height0});
  check('入力中は表記を保ち計算を0.001 mmへ丸める',()=>{assert.equal(r.height0.value,'.1234');near(read('supportHeights[0]'),unchanged.initialHeights[0]+.123);});r.height0.change();

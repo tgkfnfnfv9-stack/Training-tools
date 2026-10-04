@@ -88,7 +88,7 @@ function changeNumber(value,d=2){
 }
 function accuracyChange(before,current){
  const delta=current-before,absoluteChange=Math.abs(current)-Math.abs(before),trend=absoluteChange<-.005?'better':absoluteChange>.005?'worse':'similar';
- return {delta,absoluteChange,trend,text:trend==='better'?'90°からのずれが小さく':trend==='worse'?'90°からのずれが大きく':'90°からのずれはほぼ同じ'};
+ return {delta,absoluteChange,trend,text:trend==='better'?'初期より直角に近づいた':trend==='worse'?'初期より直角から離れた':'初期からほぼ同じ'};
 }
 function leanDescription(value,negative,positive){return Math.abs(value)<.00001?'倒れは表示桁未満':(value>0?positive:negative)+' '+cleanNumber(Math.abs(value),2)+' µrad';}
 function postureComparison(id,rows,unit,digits=2){
@@ -101,26 +101,51 @@ function postureComparison(id,rows,unit,digits=2){
 }
 // Each pair is a two-dimensional relative-angle comparison, independent of
 // camera rotation. The fixed gain makes support adjustments comparable.
-const squarenessDiagramGain=1000,squarenessDiagramLimit=.65;
+const squarenessDiagramGain=5000,squarenessDiagramLimit=.65;
 function squarenessPlot(pair){
  const base=current.kind==='lathe'?'Z':pair.key[0],other=[...pair.key].find(key=>key!==base),raw=pair.deviationMicroradians/1e6*squarenessDiagramGain;
  const angle=Math.max(-squarenessDiagramLimit,Math.min(squarenessDiagramLimit,raw)),x=32,y=54,length=28;
  return {base,other,angle,gain:squarenessDiagramGain,limited:Math.abs(raw)>squarenessDiagramLimit,origin:[x,y],tip:[x-length*Math.sin(angle),y-length*Math.cos(angle)]};
 }
-function squarenessMarkup(pair,plot){
- const [x,y]=plot.origin,[tx,ty]=plot.tip;
- return `<path d="M${x},26V${y}H88" fill="none" stroke="#81949d" stroke-width="1" stroke-dasharray="3 3"/><text x="75" y="43" class="right-angle">90°</text><line x1="${x}" y1="${y}" x2="88" y2="${y}" stroke="${axisColors[plot.base]}" stroke-width="2" class="pair-base"/><line x1="${x}" y1="${y}" x2="${tx}" y2="${ty}" stroke="${axisColors[plot.other]}" stroke-width="2.5" class="pair-current"/><text x="95" y="58" fill="${axisColors[plot.base]}" class="pair-axis">${plot.base}</text><text x="${tx}" y="${ty-4}" fill="${axisColors[plot.other]}" text-anchor="middle" class="pair-axis">${plot.other}</text>`;
+function squarenessMarkup(pair,plot,beforePlot){
+ const [x,y]=plot.origin,[tx,ty]=plot.tip,[bx,by]=beforePlot.tip,changed=Math.abs(pair.deviationMicroradians-beforePlot.deviation)>1e-6;
+ return `<path d="M${x},26V${y}H88" fill="none" stroke="#81949d" stroke-width="1" stroke-dasharray="3 3"/><text x="75" y="43" class="right-angle">直角</text><line x1="${x}" y1="${y}" x2="88" y2="${y}" stroke="${axisColors[plot.base]}" stroke-width="2" class="pair-base"/>${changed?`<path d="M${x},${y}L${bx},${by}L${tx},${ty}Z" fill="${axisColors[plot.other]}" class="pair-change-area"/>`:''}<line x1="${x}" y1="${y}" x2="${bx}" y2="${by}" stroke="${axisColors[plot.other]}" stroke-width="4" class="pair-before"/><line x1="${x}" y1="${y}" x2="${tx}" y2="${ty}" stroke="${axisColors[plot.other]}" stroke-width="2.5" class="pair-current"/><text x="95" y="58" fill="${axisColors[plot.base]}" class="pair-axis">${plot.base}</text><text x="${tx}" y="${ty-4}" fill="${axisColors[plot.other]}" text-anchor="middle" class="pair-axis">${plot.other}</text>`;
 }
-function accuracyDiagram(g){
+function diagramComparison(pair,initial){
+ const before=initial?.pairs.find(p=>p.key===pair.key)||pair,plot=squarenessPlot(pair),beforePlot={...squarenessPlot(before),deviation:before.deviationMicroradians};
+ const delta=pair.deviationMicroradians-before.deviationMicroradians,absoluteChange=Math.abs(pair.deviationMicroradians)-Math.abs(before.deviationMicroradians),epsilon=.005/(levelConfig?.offset||.5);
+ const trend=absoluteChange < -epsilon?'better':absoluteChange>epsilon?'worse':'similar',direction=Math.abs(delta)<=1e-6?'unchanged':delta>0?'opened':'closed';
+ const text=trend==='better'?'初期より直角に近づいた':trend==='worse'?'初期より直角から離れた':'初期からほぼ同じ';
+ const range=plot.limited&&beforePlot.limited?'初期・現在が図の範囲外':plot.limited?'現在が図の範囲外':beforePlot.limited?'初期が図の範囲外':'';
+ return {before,plot,beforePlot,delta,absoluteChange,trend,direction,text,range};
+}
+function accuracyDiagram(g,initial=levelInitialGeometry){
  const live=[];
  const columns=g.pairs.map((pair,i)=>{
-  const plot=squarenessPlot(pair),description=pair.key+'、基準'+plot.base+'。'+(pair.deviationMicroradians>0?'90度より広い':pair.deviationMicroradians<0?'90度より狭い':'90度')+(plot.limited?'。図の範囲外':''),attributes=Object.entries({pair:pair.key,base:plot.base,other:plot.other,gain:plot.gain,deviation:pair.deviationMicroradians,limited:plot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
-  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${pair.key} 基準${plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" ${attributes}>${squarenessMarkup(pair,plot)}${plot.limited?'<text x="110" y="19" text-anchor="end" class="live-pair-limit">図の範囲外</text>':''}</svg></div>`);
-  return `<g transform="translate(${i*112},0)" data-pair="${pair.key}" data-base="${plot.base}"><text x="56" y="11" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,12)">${squarenessMarkup(pair,plot)}</g>${plot.limited?'<text x="73" y="22" text-anchor="middle" class="pair-limit">図の範囲外</text>':''}</g>`;
+  const c=diagramComparison(pair,initial),{plot,beforePlot}=c;
+  const description=pair.key+'、基準'+plot.base+'。'+(pair.deviationMicroradians>0?'直角より広い':pair.deviationMicroradians<0?'直角より狭い':'直角')+'。'+c.text+(c.direction==='unchanged'?'。軸間の変化はほぼありません':c.direction==='opened'?'。初期から広がる方向へ変化':'。初期から狭まる方向へ変化')+(c.range?'。'+c.range:'');
+  const attributes=Object.entries({pair:pair.key,base:plot.base,other:plot.other,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
+  const markup=squarenessMarkup(pair,plot,beforePlot),limit=c.range?'<text x="110" y="19" text-anchor="end" class="live-pair-limit">範囲外</text>':'';
+  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${pair.key} 基準${plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" ${attributes}>${markup}${limit}</svg></div>`);
+  return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="11" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,12)">${markup}</g>${c.range?'<text x="80" y="22" text-anchor="middle" class="pair-limit">図の範囲外</text>':''}</g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
  $('accuracyDiagram').setAttribute('viewBox',`0 0 ${g.pairs.length*112} 76`);$('accuracyDiagram').innerHTML=columns.join('');
- $('accuracyDiagram').setAttribute('aria-label',g.pairs.map(p=>p.key+'、基準'+squarenessPlot(p).base+'で現在の直角度を比較').join('。'));
+ $('accuracyDiagram').setAttribute('aria-label',g.pairs.map(p=>p.key+'、基準'+squarenessPlot(p).base+'で直角と初期からの変化を比較').join('。'));
+}
+function updateFineQualitative(g,initial){
+ const lathe=current.kind==='lathe';
+ for(const [key,id,negative,positive,label] of [['front','fineLeanFront',lathe?'下向き':'後ろ倒れ',lathe?'上向き':'前倒れ',lathe?'主軸の上下方向':'本体＋支持の前後倒れ'],['right','fineLeanRight',lathe?'左向き':'左倒れ',lathe?'右向き':'右倒れ',lathe?'主軸の水平面方向':'本体＋支持の左右倒れ']]){
+  const value=g.bodyPosture[key];$(id).textContent=label+'：'+(Math.abs(value)<=20.000001?'小さめ':value>0?positive:negative);$(id).setAttribute('data-current',String(value));
+ }
+ const twist=levelSolution.twist;$('fineTwist').textContent='支持面のねじれ：'+(supports.length===3?'この支持配置は平面です':Math.abs(twist)<=.020000001?'小さめ':twist>0?'奥が手前より右高':'奥が手前より左高');$('fineTwist').setAttribute('data-current',String(twist));
+ $('fineFixedBody').textContent='本体の固有直角差・'+(lathe?'主軸の方向':'コラムの倒れ')+'・ガイドの曲がりは、この個体の固定成分です。支持姿勢を重ねた変化を見ます。';
+ $('finePrecisionSummary').replaceChildren();
+ for(const pair of g.pairs){
+  const c=diagramComparison(pair,initial),row=document.createElement('p');row.className='fine-pair-reading '+c.trend;
+  for(const [name,value] of Object.entries({pair:pair.key,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction}))row.setAttribute('data-'+name,String(value));
+  row.textContent=pair.key+'：'+c.text+(c.direction==='unchanged'?'（軸間の関係はほぼ不変）':'')+(c.range?' · '+c.range:'');$('finePrecisionSummary').append(row);
+ }
 }
 function updateAccuracy(){
  if(!levelSolution||!levelConfig)return;
@@ -142,9 +167,7 @@ function updateAccuracy(){
  $('comparisonContext').hidden=!initial;
  if(initial)$('comparisonContext').textContent=(machineProfile.condition==='new'?'新品':'中古')+'個体 #'+machineProfile.seed+'：初期の差は数値で示しません。今の軸位置、寸法、コラム配置、評価長で現在の精度を確認します。';
  const columnDifference=g.columns.length===2?Math.abs(g.columns[1].front-g.columns[0].front):0;
- if(initial){
-  $('geometryStatus').textContent=g.pairs.map(p=>p.key+' '+signed(p.errorMicrons,2)+' µm').join(' ／ ');
- }else $('geometryStatus').textContent=columnDifference>.001?'直角差 '+cleanNumber(maxError,2)+' µm ／ 左右コラム差 '+cleanNumber(columnDifference,2)+' µrad':g.pairs.map(p=>p.key+' '+cleanNumber(Math.abs(p.errorMicrons),2)+' µm').join(' ／ ');
+ $('geometryStatus').textContent=g.pairs.map(p=>p.key+' '+diagramComparison(p,initial).text).join(' ／ ');
  $('accuracyMetrics').replaceChildren();
  for(const p of g.pairs){
   const samples=accuracyRange.map(s=>s.geometry.pairs.find(q=>q.key===p.key).errorMicrons),low=Math.min(...samples),high=Math.max(...samples),box=document.createElement('div');
@@ -201,10 +224,10 @@ function updateAccuracy(){
  const localSource=key=>g.axes.filter(a=>a.source===key).map(a=>a.key).join('・');
  $('geometryAssumption').textContent=current.kind==='lathe'?'主軸台のZ方向と刃物台側のX方向を比べる教材です。Y軸はありません。':localSource('tool')+'はコラム／主軸側、'+localSource('work')+'はテーブル／案内側の参照姿勢を使う教材です。同じ剛体側の軸対は共通の傾きでは関係が変わりません。'+(current.kind==='five'?'A/Cの旋回誤差は含みません。':'');
  $('columnLayout').hidden=!singleColumnKinds.includes(current.kind);
- $('columnXValue').textContent=levelConfig.columnX===0?'標準':(levelConfig.columnX<0?'左':'右')+'へ '+Math.abs(levelConfig.columnX)+'%';
- $('columnZValue').textContent=levelConfig.columnZ===0?'標準':(levelConfig.columnZ<0?'手前':'奥')+'へ '+Math.abs(levelConfig.columnZ)+'%';
+ $('columnXValue').textContent=levelConfig.columnX===0?'標準':levelConfig.columnX<0?'左寄り':'右寄り';$('columnX').setAttribute('aria-valuetext',$('columnXValue').textContent);
+ $('columnZValue').textContent=levelConfig.columnZ===0?'標準':levelConfig.columnZ<0?'手前寄り':'奥寄り';$('columnZ').setAttribute('aria-valuetext',$('columnZValue').textContent);
  $('demoTwist').disabled=supports.length===3;
- accuracyDiagram(g);
+ accuracyDiagram(g,initial);updateFineQualitative(g,initial);
 }
 for(const id of ['columnX','columnZ'])$(id).oninput=()=>{const value=Number($(id).value);if(!bounded(value,-100,100)||!Number.isInteger(value))return;stopMotion();levelConfig[id]=value;updateLeveling();};
 $('resetColumn').onclick=()=>{stopMotion();levelConfig.columnX=0;levelConfig.columnZ=0;$('columnX').value='0';$('columnZ').value='0';updateLeveling();};
