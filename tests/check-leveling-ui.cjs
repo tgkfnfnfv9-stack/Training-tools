@@ -96,9 +96,30 @@ async function main(){
  check('JSON値と表示値の桁が矛盾しない',()=>near(read('supportHeights[0]'),Number(r.height0.value)));
  const valid=structuredClone(original);valid.width=4;valid.depth=5;valid.heights=[.1,-.1,.2,-.2];valid.sensitivity=.1;valid.measurePos=-1;valid.offset=1.5;valid.step=.05;valid.exaggerate=false;
  typeHeight(0,'.333');await importData(valid);check('有効JSONのみ反映して編集中の欄も全同期',()=>{assert.deepEqual(json('levelRecord()'),valid);assert.match(r.levelInputMessage.textContent,/読み込みました/);synchronized();assert.equal(r.height0.value,'0.100');});
- r.exportLevel.click();check('JSONダウンロード開始',()=>{assert.equal(env.downloads.length,1);assert.match(env.downloads[0].download,/leveling-vertical-standard\.json/);});
+ const bodyBeforeExport=[...env.body.children];
+ r.exportLevel.click();check('JSONダウンロード開始はlive DOMの非表示リンクから行う',()=>{assert.equal(env.downloads.length,1);assert.match(env.downloads[0].download,/leveling-vertical-standard\.json/);assert.equal(env.downloads[0].connected,true);assert.equal(env.downloads[0].hidden,true);assert.deepEqual(env.body.children,bodyBeforeExport);assert.match(r.levelSaveStatus.textContent,/開始しました/);});
  const exported=JSON.parse(await context.exportedBlob.text());check('エクスポート内容一致',()=>assert.deepEqual(exported,valid));
+ check('エクスポートURLは即解放せず30秒保持',()=>{assert.equal(context.revokedUrl,undefined);assert.equal(env.timerDelays.at(-1),30000);});
  env.timers.forEach(fn=>fn());check('エクスポートURL解放',()=>assert.equal(context.revokedUrl,'blob:test'));
+ const originalCreate=context.document.createElement,originalAppend=env.body.append,originalUrl=context.URL.createObjectURL,originalBlob=context.Blob,originalTimeout=context.setTimeout;
+ for(const failure of ['blob','url','element','append','click','timer']){
+  context.revokedUrl=undefined;const timersBefore=env.timers.length,recordBefore=json('levelRecord()'),downloadsBefore=env.downloads.length;
+  if(failure==='blob')context.Blob=function(){throw Error('Blob unavailable');};
+  if(failure==='url')context.URL.createObjectURL=()=>{throw Error('URL unavailable');};
+  if(failure==='element')context.document.createElement=()=>{throw Error('DOM unavailable');};
+  if(failure==='append')env.body.append=()=>{throw Error('DOM append failed');};
+  if(failure==='click')context.document.createElement=tag=>{const el=originalCreate(tag);el.click=()=>{assert.equal(el.parentElement,env.body);throw Error('Click failed');};return el;};
+  if(failure==='timer')context.setTimeout=()=>{throw Error('Timer unavailable');};
+  r.exportLevel.click();
+  check('書出失敗 '+failure+' は開始表示せず一時資源を除去',()=>{
+   assert.match(r.levelSaveStatus.textContent,/保存を開始できません/);assert.doesNotMatch(r.levelSaveStatus.textContent,/開始しました/);
+   assert.deepEqual(env.body.children,bodyBeforeExport);assert.deepEqual(json('levelRecord()'),recordBefore);assert.equal(env.timers.length,timersBefore);
+   assert.equal(context.revokedUrl,['blob','url'].includes(failure)?undefined:'blob:test');
+   assert.equal(env.downloads.length,downloadsBefore+(failure==='timer'?1:0));
+  });
+  context.document.createElement=originalCreate;env.body.append=originalAppend;context.URL.createObjectURL=originalUrl;context.Blob=originalBlob;context.setTimeout=originalTimeout;
+ }
+ r.exportLevel.click();check('失敗後にも正常な書出しを再試行できる',()=>{assert.match(r.levelSaveStatus.textContent,/開始しました/);assert.deepEqual(env.body.children,bodyBeforeExport);assert.equal(env.timerDelays.at(-1),30000);});
  const oldSetter=context.localStorage.setItem;context.localStorage.setItem=()=>{throw new Error('Storage denied');};r.up0.click();
  check('保存不可でも操作継続',()=>{assert.match(r.levelSaveStatus.textContent,/自動保存できません/);assert.ok(Number.isFinite(read('levelSolution.lr')));});context.localStorage.setItem=oldSetter;
  storage.set(read('levelKey()'),'{bad JSON');open(0);check('壊れた自動保存を安全に無視',()=>assert.ok(read('supportHeights.every(h=>h===0)')));
