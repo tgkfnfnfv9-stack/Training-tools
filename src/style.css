@@ -164,6 +164,11 @@ body.in-lab #training #scene{height:0;min-height:0;flex:1;touch-action:none}
 body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 .live-squareness{display:flex;align-items:center;justify-content:center;min-width:0;gap:2px;width:100%}
 .live-squareness-item{flex:1;min-width:0;max-width:180px}.live-pair-title{display:block;text-align:center;font-size:11px;font-weight:650;line-height:14px;white-space:nowrap}.live-squareness-diagram{display:block;min-width:0;width:100%;height:48px;fill:var(--ink);font-size:12px}
+.live-pair-values{padding:1px 0 2px;text-align:center;font-size:12px;line-height:16px;font-variant-numeric:tabular-nums}
+.live-pair-base-value,.live-pair-error-value{display:block;white-space:nowrap}
+.live-pair-base-value{font-size:10px;color:var(--muted)}
+.live-pair-error-value{font-weight:700}
+.live-squareness-units{margin:0;text-align:center;font-size:10px;line-height:14px;color:var(--muted)}
 .pair-title{font-size:13px;font-weight:650}.pair-axis{font-size:13px;font-weight:650}.right-angle{font-size:13px;fill:#607782}.live-pair-limit{font-size:13px;fill:#80541e}.measurement-start,.measurement-end{font-size:13px;fill:#536776;font-weight:600}.measurement-end{font-variant-numeric:tabular-nums}
 .measurement-summary{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .accuracy-diagram-scroll{width:100%;min-width:0;max-width:100%;overflow-x:auto;margin:8px 0}.accuracy-diagram-scroll .accuracy-diagram{min-width:var(--diagram-min-width,88px);margin:0}

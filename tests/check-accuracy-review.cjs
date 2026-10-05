@@ -73,14 +73,14 @@ async function main(){
  check('小型四点ねじれの中央は YZ=0、XZ は変化',()=>{near(pair(current(),'YZ').errorMicrons,0);assert.ok(pair(current(),'XZ').errorMicrons>40);assert.equal(read('supports.length'),4);});
  axis('X',100);const yzRight=pair(current(),'YZ').errorMicrons;
  axis('X',-100);const yzLeft=pair(current(),'YZ').errorMicrons;
- check('小型四点ねじれの X 移動で YZ が反転',()=>{assert.ok(yzRight< -10&&yzLeft>10);near(yzRight,-yzLeft);});
+ check('小型のXテーブル送りはYサドルのベッド参照を動かさない',()=>{near(yzRight,0);near(yzLeft,0);near(current().workPoint.x,0);});
  axis('X',0);layout('columnX',100);const movedColumn=current();
  check('コラム左右配置で YZ と床基準前倒れが変化',()=>{assert.ok(pair(movedColumn,'YZ').errorMicrons>20);assert.ok(movedColumn.toolLean.front>40);assert.match(r.columnLean.textContent,/前倒れ/);});
  layout('columnX',0);const xzBefore=pair(current(),'XZ').errorMicrons;layout('columnZ',100);
  check('コラム前後配置で XZ が変化',()=>assert.ok(pair(current(),'XZ').errorMicrons>xzBefore+10));
  r.resetColumn.click();check('配置リセットで初期の幾何状態へ戻る',()=>{near(read('levelConfig.columnX'),0);near(read('levelConfig.columnZ'),0);near(pair(current(),'YZ').errorMicrons,0);near(pair(current(),'XZ').errorMicrons,xzBefore);});
  r.demoTwist.click();
- check('ねじれデモは YZ が出る位置へ移動し表示が同期',()=>{assert.ok(Math.abs(pair(current(),'YZ').errorMicrons)>10);assert.notEqual(read('positions.X'),0);assert.equal(Number(r['axis-X'].value),read('positions.X'));});
+ check('ねじれデモはサドルY位置によるXZ差を示して表示が同期',()=>{assert.ok(Math.abs(pair(current(),'XZ').errorMicrons)>10);assert.notEqual(read('positions.Y'),0);assert.equal(Number(r['axis-Y'].value),read('positions.Y'));near(pair(current(),'YZ').errorMicrons,0);});
  const sampleValues=json("accuracyRange.map(s=>s.geometry.pairs.find(p=>p.key==='YZ').errorMicrons)");
  check('端中央の比較は現在位置とは独立の代表値',()=>{
   const low=Math.min(...sampleValues),high=Math.max(...sampleValues),before=json('accuracyRange.map(s=>s.state)');axis('X',37);
@@ -93,13 +93,12 @@ async function main(){
   near(Number.parseFloat(yzBox.children[1].textContent),pair(current(),'YZ').errorMicrons,.0051);
  });
  open(2);preset('twist');axis('X',-100);const travelLeft=pair(current(),'XZ').errorMicrons,travelLean=current().toolLean.front;axis('X',100);
- // For h=k*x*z, the local front/back slope changes with X. The X guide
- // tangent and the column's Z direction nevertheless belong to the same
- // orthonormal carriage frame in this rigid-carriage teaching model: a
- // common rotation changes posture, never their internal right angle.
- check('移動コラムは X 移動で姿勢が変わっても同一剛体の XZ を保持',()=>{near(travelLeft,0);near(pair(current(),'XZ').errorMicrons,0);assert.notEqual(current().toolLean.front,travelLean);near(current().toolPoints[0].x,.5);});
+ // On h=k*x*z the two rail centre lines and the column seat occupy
+ // different z positions: their lr slopes differ, while front lean changes
+ // along X. The seat/guide relative deformation is a geometric assumption.
+ check('移動コラムはレールと柱座の姿勢差でXZが変わり、柱YZは保持',()=>{assert.ok(Math.abs(travelLeft)>1);assert.ok(travelLeft*pair(current(),'XZ').errorMicrons>0);near(pair(current(),'YZ').errorMicrons,0);assert.notEqual(current().toolLean.front,travelLean);near(current().toolPoints[0].x,.5);});
  open(1);preset('twist');axis('X',-100);const horizontalLeft=pair(current(),'YZ').errorMicrons;axis('X',100);
- check('横形は Y が上下、Z が前後の対応で直角度を表示',()=>{assert.ok(horizontalLeft*pair(current(),'YZ').errorMicrons<0);near(pair(current(),'XY').errorMicrons,0);assert.deepEqual(current().axes.find(a=>a.key==='Y').vector,[0,1,0]);});
+ check('横形は Y が上下、Z が前後の対応で直角度を表示',()=>{assert.ok(horizontalLeft*pair(current(),'YZ').errorMicrons<0);assert.ok(Math.abs(pair(current(),'XY').errorMicrons)>.001);assert.deepEqual(current().axes.find(a=>a.key==='Y').vector,[0,1,0]);});
  for(const [index,mode] of [[3,'l3-3000'],[4,'']]){
   open(index,mode);preset('twist');
   check('門形の左右逆向き倒れを保持 '+index+' '+mode,()=>{const g=current();assert.equal(g.columns.length,2);assert.ok(g.columns[0].front<0&&g.columns[1].front>0);assert.ok(!r.columnDifference.hidden);assert.match(r.columnDifference.textContent,/左右の前後倒れ差/);});

@@ -122,7 +122,7 @@ for(const side of ['left','right']){
 for(const index of [2,4])for(const X of [-100,0,100]){
  open(pure,index);
  pure.read(`positions={X:${X},Y:0,Z:0,A:0,C:0};supportHeights=supports.map(s=>{const q=levelCoordinates(s.x,s.z);return .02*q.x*q.z+.031*q.x+.017*q.z;});updateLeveling();`);
- const anchors=pure.json('levelGeometry.toolPoints.map(p=>levelCoordinates(p.x,p.z))');
+ const anchors=pure.json(`(current.kind==='travel'?[-1,1].map(k=>({x:-.5+positions.X/100,z:current.d*.22+k*.1})):levelGeometry.toolPoints).map(p=>levelCoordinates(p.x,p.z))`);
  const x=anchors.reduce((s,p)=>s+p.x/anchors.length,0),z=anchors.reduce((s,p)=>s+p.z/anchors.length,0);
  const a=(.02*z+.031)/1000,b=(.02*x+.017)/1000;
  const right=unit([1,a,0]),up=unit([-a,1,-b]);

@@ -134,9 +134,14 @@ async function main(){
  storage.clear();open(1);
  const highFloor=snapshot();delete highFloor.bestState;highFloor.width=20;highFloor.depth=20;highFloor.machineProfile=MachineAccuracy.generate('used',36,keys,8);highFloor.heights=[...highFloor.machineProfile.initialHeights];
  await importRecord(highFloor);
- check('固有誤差が大きい中古でも初期据付を誤って達成と判定しない',()=>{
+ // Construct a small, real departure from the reference instead of relying
+ // on a random initial fixture. The fixed intrinsic floor is about 65 RMS;
+ // a 0.020 mm support perturbation gives gap > .1 while RMS difference < .1.
+ // sqrt(now² - floor²), not now - floor, must govern completion.
+ read('supportHeights=machineBestHeights();supportHeights[0]=Math.round((supportHeights[0]+(supportHeights[0]<=.48?.02:-.02))*1000)/1000;levelExercise={solved:false};updateLeveling();');
+ check('固有誤差床が大きくても実際の残調整を達成と誤判定しない',()=>{
   const m=evalNow(),best=json('machineReference.best.metric'),result=json('updateMachineAccuracy()');
-  assert.ok(m.objective-best.objective<.1,'RMSの単純差なら誤判定する個体');assert.ok(result.gap>.1);assert.equal(result.target,false);assert.equal(read('levelExercise.solved'),false);
+  assert.ok(m.objective-best.objective<.1,'RMSの単純差なら誤判定する個体');const independentGap=Math.sqrt(m.objective*m.objective-best.objective*best.objective);assert.ok(independentGap>.1);near(result.gap,independentGap);assert.ok(result.gap>.1);assert.equal(result.target,false);assert.equal(read('levelExercise.solved'),false);
  });
  storage.clear();open(0,'compact');
  const preserved=snapshot(),preservedObjective=json('machineReference.best.metric.objective');

@@ -58,12 +58,12 @@ function expected(heights){
   const slopes=list.map(p=>{const q=coordinates(p);return independentSlope(points,q.x,q.z);});
   return {slopes,slope:{lr:slopes.reduce((s,p)=>s+p.lr/slopes.length,0),fb:slopes.reduce((s,p)=>s+p.fb/slopes.length,0)}};
  };
- const tool=avgSlope(g.toolPoints),work=avgSlope([g.workPoint]);
+ const tool=avgSlope(g.toolPoints),work=avgSlope([g.workPoint]),guide=g.guidePoints?avgSlope(g.guidePoints):null;
  const axes=json('axisConfig(current).filter(a=>["X","Y","Z"].includes(a.key))');
  const intrinsic=(i,j)=>profile.squareness[axes[i].key+axes[j].key].microns/300000;
  const xy=intrinsic(0,1),yx=-Math.sin(xy),yy=Math.cos(xy),vectors=[axes[0].vector,add(scale(axes[0].vector,yx),scale(axes[1].vector,yy))];
  if(axes.length===3){const zx=-Math.sin(intrinsic(0,2)),zy=(-Math.sin(intrinsic(1,2))-zx*yx)/yy,zz=Math.sqrt(1-zx*zx-zy*zy);vectors.push(add(add(scale(axes[0].vector,zx),scale(axes[1].vector,zy)),scale(axes[2].vector,zz)));}
- const rotateTool=frame(tool.slope),rotateWork=frame(work.slope),directions=axes.map((a,i)=>(g.axes.find(q=>q.key===a.key).source==='tool'||m.kind==='travel'&&a.key==='X'?rotateTool:rotateWork)(vectors[i]));
+ const rotateTool=frame(tool.slope),rotateWork=frame(work.slope),directions=axes.map((a,i)=>(guide&&a.key==='X'?frame(guide.slope):g.axes.find(q=>q.key===a.key).source==='tool'?rotateTool:rotateWork)(vectors[i]));
  const pairs=[];
  for(let i=0;i<axes.length;i++)for(let j=i+1;j<axes.length;j++){
   const product=Math.max(-1,Math.min(1,dot(directions[i],directions[j]))),deviation=Math.abs(product)<1e-14?0:-Math.asin(product)*1e6;
@@ -222,13 +222,14 @@ async function finish(){
  const originalRAF=env.context.requestAnimationFrame,originalCancel=env.context.cancelAnimationFrame,scheduled=[],cancelled=new Set();
  env.context.requestAnimationFrame=f=>{const id=scheduled.length+1;scheduled.push({id,f});return id;};
  env.context.cancelAnimationFrame=id=>cancelled.add(id);
- r.playAxis.click();scheduled[0].f(0);const atZero=json('levelInitialGeometry.pairs');scheduled[1].f(875);
+ // Y relocates the compact saddle on the bed; cross-slide X does not.
+ read("selectAxis('Y')");r.playAxis.click();scheduled[0].f(0);const atZero=json('levelInitialGeometry.pairs');scheduled[1].f(875);
  check('軸デモ中も現在位置の初期比較を更新する',()=>{
-  near(read('positions.X'),85);assertCurrentLesson();
+  near(read('positions.Y'),85);assertCurrentLesson();
   const now=json('levelInitialGeometry.pairs');assert.ok(now.some((p,i)=>Math.abs(p.errorMicrons-atZero[i].errorMicrons)>.001),'初期を軸0の位置へ固定している');
  });
  read('stopMotion()');env.context.requestAnimationFrame=originalRAF;env.context.cancelAnimationFrame=originalCancel;
- check('デモ停止後は最終位置と比較を保存して維持',()=>{assert.ok(cancelled.size>0);assert.equal(read('motionFrame'),null);assert.equal(json('levelRecord().axisPositions.X'),85);assertCurrentLesson();});
+ check('デモ停止後は最終位置と比較を保存して維持',()=>{assert.ok(cancelled.size>0);assert.equal(read('motionFrame'),null);assert.equal(json('levelRecord().axisPositions.Y'),85);assertCurrentLesson();});
  const baselineBeforeExercise=json('machineProfile.initialHeights');r.startLevelExercise.click();
  check('別支持状態の練習でも比較基準は抽選時のまま',()=>{assert.deepEqual(json('machineProfile.initialHeights'),baselineBeforeExercise);assertCurrentLesson();assert.match(r.levelInputMessage.textContent,/抽選時/);});
  // A newer manual change wins over a file that finishes reading later; the

@@ -9,14 +9,21 @@ const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 let checks=0;
 function check(name,fn){try{fn();checks++;}catch(error){throw new Error(name+': '+error.message,{cause:error});}}
 function near(a,b,tolerance=1e-7){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tolerance,`${a} != ${b}`);}
-// Only these exact, dedicated measurement-position labels may contain numbers.
-// All precision values, adjustment amounts and other numeric text stay banned.
+// Only the dedicated position labels and approved current 300 mm readings
+// may contain numbers. Adjustment amounts and initial/delta values stay hidden.
 const positionLabels={'measurement-start':'0','measurement-end':'300 mm','measurement-start-note':'0','measurement-origin-note':'O（0,0）','measurement-length-note':'300 mm'};
 function visibleText(el){
  if(el.hidden)return '';
  // Model identifiers, support counts and station names are not precision or
  // adjustment measurements. Their exact identities have separate UI checks.
  if(['machineTitle','machineSubtitle','structureText','supportNote','sourceLinks','selectedSupportLabel'].includes(el.id))return '';
+ if(el.id==='liveSquarenessUnits'){assert.equal(el.textContent,'300 mm換算・µm（1 µm＝0.001 mm）');assert.equal(el.children.length,0);return '';}
+ if(el.classList.contains('live-pair-base-value')||el.classList.contains('live-pair-error-value')){
+  const parent=el.closest('.live-pair-values');assert(parent&&parent.closest('#liveSquareness'));assert.equal(el.children.length,0);assert.equal(el.tagName,'SPAN');
+  const key=parent.getAttribute('data-pair'),pair=json('levelGeometry.pairs').find(p=>p.key===key);assert(pair);
+  const lathe=read("current.kind==='lathe'"),base=lathe?'Z':key[0],other=[...key].find(a=>a!==base),value=pair.deviationMicroradians*.3,magnitude=Math.round(Math.abs(value)),number=magnitude===0?'0':(value<0?'-':'+')+magnitude;
+  assert.equal(el.textContent,el.classList.contains('live-pair-base-value')?(lathe?'主軸Z':base)+'基準 0':other+'直角差 '+number);return '';
+ }
  for(const [className,label] of Object.entries(positionLabels))if(el.classList.contains(className)){assert.equal(el.textContent,label);assert.equal(el.children.length,0);assert(['TEXT','SPAN'].includes(el.tagName));return '';}
  return el._text+' '+el.children.map(visibleText).join(' ');
 }
@@ -88,10 +95,20 @@ for(const [index,mode] of variants)for(const condition of ['new','used']){
  check('another support exercise preserves initial angles but invalidates fine history '+label,()=>{assert.equal(read('fineStartEvaluation'),null);assert.deepEqual(json('machineProfile'),profile);verifyDiagrams();});
  r.restoreInitialLevel.click();check('restore returns unchanged pairs and no old completion '+label,()=>{assert.deepEqual(json('supportHeights'),profile.initialHeights);assert.equal(read('fineStartEvaluation'),null);verifyDiagrams();nonnumeric();});
 }
-// Seed 9 exhibits the same opposing local/global trend in the compact geometry.
-loadProfile(0,'compact','new',9);r.coarseExample.click();r.fineAdjust.click();r.fineExample.click();
-check('overall finishing can improve while a current pair is farther than initial',()=>{assert.equal(r.fineOverallProgress.getAttribute('data-trend'),'better');const xz=r.liveSquareness.querySelectorAll('svg').find(s=>s.getAttribute('data-pair')==='XZ');assert.equal(xz.getAttribute('data-trend'),'worse');assert.match(r.finePrecisionSummary.textContent,/初期より直角から離れた/);assert.equal(r.fineStatus.getAttribute('data-target'),'true');});
-loadProfile(0,'compact','new',4);r.fineAdjust.click();r.fineExample.click();
+// Fixed portal, seed 42: initial seating happens to nearly cancel XY while
+// XZ/YZ remain large. A balanced reference improves the aggregate after the
+// coarse plane, yet gives up part of that local XY cancellation. Verify both
+// inequalities from measured states, rather than assuming a trend by seed.
+loadProfile(3,'l3-3000','new',42);
+const initialXY=Math.abs(read("levelGeometry.pairs.find(p=>p.key==='XY').errorMicrons"));
+r.coarseExample.click();const beforeFinishing=read('machineEvaluation(supportHeights).objective');r.fineAdjust.click();r.fineExample.click();
+check('overall finishing can improve while a current pair is farther than initial',()=>{
+ assert(read('machineEvaluation(supportHeights).objective')<beforeFinishing-.1);
+ assert(Math.abs(read("levelGeometry.pairs.find(p=>p.key==='XY').errorMicrons"))>initialXY+.1);
+ assert.equal(r.fineOverallProgress.getAttribute('data-trend'),'better');const xy=r.liveSquareness.querySelectorAll('svg').find(s=>s.getAttribute('data-pair')==='XY');assert.equal(xy.getAttribute('data-trend'),'worse');assert.match(r.finePrecisionSummary.textContent,/初期より直角から離れた/);assert.equal(r.fineStatus.getAttribute('data-target'),'true');
+});
+// A used individual retains a deliberately substantial intrinsic/guide floor.
+loadProfile(0,'compact','used',4);r.fineAdjust.click();r.fineExample.click();
 check('large combined remainder is not blamed only on the machine body',()=>{assert.equal(r.fineStatus.getAttribute('data-target'),'true');assert.equal(r.fineStatus.getAttribute('data-body-significant'),'true');assert.match(r.fineStatus.textContent,/残る誤差/);assert.doesNotMatch(r.fineStatus.textContent,/本体の誤差は残ります/);});
 loadProfile(0,'compact','used',36);read('levelConfig.width=20;levelConfig.depth=20;updateLeveling();');r.fineAdjust.click();r.fineExample.click();
 read('setSupportHeight(0,supportHeights[0]+.05);');

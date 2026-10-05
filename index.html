@@ -165,6 +165,11 @@ body.in-lab #training #scene{height:0;min-height:0;flex:1;touch-action:none}
 body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 .live-squareness{display:flex;align-items:center;justify-content:center;min-width:0;gap:2px;width:100%}
 .live-squareness-item{flex:1;min-width:0;max-width:180px}.live-pair-title{display:block;text-align:center;font-size:11px;font-weight:650;line-height:14px;white-space:nowrap}.live-squareness-diagram{display:block;min-width:0;width:100%;height:48px;fill:var(--ink);font-size:12px}
+.live-pair-values{padding:1px 0 2px;text-align:center;font-size:12px;line-height:16px;font-variant-numeric:tabular-nums}
+.live-pair-base-value,.live-pair-error-value{display:block;white-space:nowrap}
+.live-pair-base-value{font-size:10px;color:var(--muted)}
+.live-pair-error-value{font-weight:700}
+.live-squareness-units{margin:0;text-align:center;font-size:10px;line-height:14px;color:var(--muted)}
 .pair-title{font-size:13px;font-weight:650}.pair-axis{font-size:13px;font-weight:650}.right-angle{font-size:13px;fill:#607782}.live-pair-limit{font-size:13px;fill:#80541e}.measurement-start,.measurement-end{font-size:13px;fill:#536776;font-weight:600}.measurement-end{font-variant-numeric:tabular-nums}
 .measurement-summary{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .accuracy-diagram-scroll{width:100%;min-width:0;max-width:100%;overflow-x:auto;margin:8px 0}.accuracy-diagram-scroll .accuracy-diagram{min-width:var(--diagram-min-width,88px);margin:0}
@@ -501,12 +506,12 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
 <h3>この個体の参考調整</h3><div hidden class="comparison-wrap"><table class="accuracy-comparison"><caption>代表位置全体の補助評価（µm、同じ寸法・コラム配置）</caption><thead><tr><th>状態</th><th>直角差最大<br>300 mm基準</th><th>調整評価<br>300 mm基準</th><th>ガイド成分</th></tr></thead><tbody id="accuracyComparison"></tbody></table></div><p id="machineProgress" role="status"></p><button id="applyBestLevel">参考探索の調整例を適用（補助）</button>
 <details hidden><summary>調整評価・参考最良の意味</summary><p class="hint">全直線軸の端・中央（3軸27位置、旋盤9位置）で直角差と姿勢差を比較。直角差・左右コラム差、25%重みの相対姿勢差、15%重みの平均傾きの二乗平均を小さくします。支持高さ±0.500 mm、0.001 mm刻みの探索例です。現在が良ければ参考値も更新します。評価長を変えてもこの判定は変わりません（補助の300 mm基準）。残り＝√(現在の調整評価²−参考最良の調整評価²)が0.1 µm以内を補助練習の目安とします。厳密な全球最適を保証しません。</p></details>
 </details>
-<details class="card level-storage"><summary>保存・読込</summary><p id="levelSaveStatus" class="hint" role="status"></p><button id="exportLevel">調整データを保存</button><label class="import-level">調整データを読み込む<input id="importLevel" type="file" accept=".json,application/json"></label><p class="hint">現在の機械・方式・支持配置に対応するJSONを読み込みます。小型・EC-630・L3 3000は配置IDと支点座標も照合します。旧小型4点は同じ配置と保存内容を検証して引き継ぎ、旧標準・旧横形・旧門形の異なる配置は割り当てません。支持高さ・コラム配置・軸位置を保存します。入力チェックを通ったデータだけ反映します。個体の種・初期支持高さ・参考最良の支持高さも保存します。変更していない教材では、対応する旧版JSONの読み込み時に固有誤差を抽選します。</p></details>
+<details class="card level-storage"><summary>保存・読込</summary><p id="levelSaveStatus" class="hint" role="status"></p><button id="exportLevel">調整データを保存</button><label class="import-level">調整データを読み込む<input id="importLevel" type="file" accept=".json,application/json"></label><p class="hint">現在の計算仕様・機械・方式・支持配置に対応するJSONを読み込みます。支持高さ・コラム配置・軸位置と、個体・初期支持高さ・参考最良の支持高さを保存します。計算仕様や支持配置が異なる旧データは自動で適用しません。旧ブラウザー保存は残し、新しい仕様は別に保存します。入力チェックを通ったデータだけ反映します。</p></details>
 <details class="card lesson-menu"><summary>説明・図の見方</summary><p class="note ui-notice"><span class="measurement-start-note">0</span>：共通の始点／<span class="measurement-length-note">300 mm</span>：比較終点。直角図の破線・白点：直角の基準／色線・色点：現在／点の間：直角のずれ／薄線：初期／薄面：初期からの変化（拡大表示）。</p><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>訓練の進め方・計算の前提</summary><ol><li>初期はランダムな据付レベルと、本体の固有精度を重ねています。機械の右枠の水準器を見ながら、粗調整で平均の左右・前後の傾きを整え、模型の変化を見ます。</li><li>微調整では同じ支持点を小さく動かします。直角・倒れ・ねじれを見比べ、代表位置全体の総合評価を目安へ近づけます。本体の固有誤差とガイドの曲がりは保持されます。</li><li>上の直角図は、同じ今の軸位置で初期と現在を比べます。薄い面が初期からの累積変化です。最後の操作や粗調整後からの改善とは別に読みます。同じ剛体側の軸対は、支持調整で直角が変わらない場合があります。</li><li>絵の下で軸を選び、左上の☰から「軸位置・デモ」で位置を動かします。場所によって直角の変化や相対姿勢が異なることを確かめます。画面を切り替えても個体・支持高さ・初期の基準は変えません。</li><li>調整例は手本の支持高さを実際に適用します。手動練習と見比べ、本体の残る誤差まで支持点で消せるわけではないことを確認します。</li></ol><p id="squarenessMeasurementNote">直角図の共通始点<span class="measurement-origin-note">O（0,0）</span>は、測定開始時のゼロ合わせです。本体の初期精度がゼロという意味ではありません。終点<span class="measurement-length-note">300 mm</span>は、今の軸位置の局所角度を固定長で比べる仮想の目印です。傾きと終点の差は拡大表示です。実NC座標・実際の移動・ガイドの全域走査を示す図ではありません。</p><p>支持点をつないだ面の姿勢を、工具側と案内側に重ねる学習用の仮定です。平面になる支持配置では、支持面のねじれや軸間の直角が変化しない場合があります。格子配置は隣接する点の間を補間するため、境界で勾配が切り替わる場合があります。L3 3000参考モデルは長手ベッド9点と左右柱側各3点の部位別支持姿勢を使い、柱天端を梁で結びます。支持面の補間は剛性や荷重を解く解析ではありません。</p><p>左右回転とピンチ／ホイールの拡大・縮小は模型の見え方の変更、XYZACは部品移動、支持点は据付姿勢の調整です。支持点の外側も教材用の支持面を延長して表示します。剛性・荷重・接触による弾性変形、加工誤差の予測、実機の合否判定は扱いません。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/leveling---vmc.html" target="_blank" rel="noopener noreferrer">Haas：立形MCのレベル確認（英語）</a> ／ <a href="https://www.wylerag.com/en/support/faq/" target="_blank" rel="noopener noreferrer">WYLER：精密水準器の基礎（英語）</a></p></details></details>
 </div></aside>
 <div id="trainingMainSlot" class="training-main-slot"><div id="trainingMain" class="training-main">
 <div class="training-heading"><button id="openTrainingMenu" class="training-menu-toggle" aria-label="設定メニューを開く" aria-expanded="false" aria-controls="trainingDrawer"><span aria-hidden="true">☰</span> 設定</button><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div></div>
-<div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output><div class="scene-readout-note"><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
+<div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><p id="liveSquarenessUnits" class="live-squareness-units">300 mm換算・µm（1 µm＝0.001 mm）</p><p id="squarenessValuesNote" class="visually-hidden">数値は現在と理想の直角との差です。基準はゼロ合わせ、比較軸は千分の一ミリ単位で四捨五入しています。プラスは直角より広い、マイナスは狭い。初期との差分やNC移動座標ではありません。図が範囲外でも換算値を表示します。</p><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output><div class="scene-readout-note"><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
 <div id="viewerLevels" class="viewer-levels" role="group" aria-label="支持面の平均レベル。気泡は高い側へ動きます">
 <div class="viewer-gauge viewer-gauge-lr"><span class="viewer-gauge-title">平均 · 左右</span><strong id="stageAverageLR" class="level-direction"></strong><div class="vial" role="img" aria-label="平均の左右傾きを示す気泡" aria-describedby="stageAverageLR"><span class="center-lines"></span><span id="coarseBubbleLR" class="bubble"></span></div><div class="gauge-ends"><span>左</span><span>右</span></div></div>
 <div class="viewer-gauge viewer-gauge-fb"><span class="viewer-gauge-title">平均 · 前後</span><strong id="stageAverageFB" class="level-direction"></strong><div class="vertical-gauge"><span>奥</span><div class="vial vial-vertical" role="img" aria-label="平均の前後傾きを示す気泡。上が奥、下が手前" aria-describedby="stageAverageFB"><span class="center-lines"></span><span id="coarseBubbleFB" class="bubble"></span></div><span>手前</span></div></div>
@@ -1362,7 +1367,7 @@ navigate('home');
 // All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
 let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,levelGeometry=null;
 const legacyLevelStoragePrefix='training-level-v1:',levelCalculationModel='connected-frames-v1';
-function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':levelCalculationModel;}
+function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':current.kind==='travel'?'travel-guide-v2':current.kind==='horizontal'?'horizontal-guide-v2':current.kind==='compact'?'compact-saddle-v2':current.kind==='lathe'?'lathe-carriage-v2':levelCalculationModel;}
 function levelStoragePrefix(){return 'training-level-'+currentCalculationModel()+':';}
 // An asynchronous file may finish after another import or a newer training state.
 let levelImportRequest=0,levelSessionEpoch=0,levelRevision=0;
@@ -1464,9 +1469,7 @@ function displayPoseFrame(pose){
  return displaySupportFrame((levelGeometry.poses[pose]||levelGeometry.poses.tool).slope);
 }
 function displayAxisFrame(key){
- if(key==='X'&&['travel','gantry'].includes(current.kind)){
-  const points=levelGeometry.toolPoints.map(p=>levelCoordinates(p.x,p.z)),s=points.map(p=>levelSolution.slopeAt(p.x,p.z));return displaySupportFrame({lr:s.reduce((v,p)=>v+p.lr/s.length,0),fb:s.reduce((v,p)=>v+p.fb/s.length,0)});
- }
+ if(key==='X'&&levelGeometry.guideSlope)return displaySupportFrame(levelGeometry.guideSlope);
  if(current.kind==='lathe'&&key==='Z')return displayPoseFrame('work');
  return displayPoseFrame(levelGeometry.axes.find(a=>a.key===key).source);
 }
@@ -1766,7 +1769,9 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  if(['vertical','compact','five','portal'].includes(m.kind)){
   const gate=m.kind==='portal',cz=D*(gate?.24:m.kind==='five'?.3:.29);
   toolPoints=gate?[-1,1].map(k=>({x:k*W*.4,z:cz})):[{x:layout.x,z:cz+layout.z}];
-  workPoint={x:move('X'),z:(gate?0:m.kind==='five'?-.45:-D*.1)+move('Y')};toolAxes=['Z'];
+  // Compact X is a cross-slide on the Y saddle: it does not relocate
+  // that saddle's bed reference when no moving-load deformation is solved.
+  workPoint={x:['vertical','compact'].includes(m.kind)?0:move('X'),z:(gate?0:m.kind==='five'?-.45:-D*.1)+move('Y')};toolAxes=['Z'];
  }else if(m.kind==='travel'){
   toolPoints=[{x:-.5+move('X')+layout.x,z:D*.29+layout.z}];workPoint={x:0,z:-D*.18};toolAxes=['Y','Z'];
  }else if(m.kind==='horizontal'){
@@ -1775,17 +1780,24 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
   toolPoints=[-1,1].map(k=>({x:k*(m.columnX??W*.4),z:m.kind==='gantry'?move('X'):(m.columnZ??0)}));
   workPoint={x:0,z:m.kind==='double'?move('X'):0};toolAxes=['Y','Z'];
  }else{
-  toolPoints=[{x:-W*.35,z:0}];workPoint={x:.08+move('Z'),z:-.58+move('X')};toolAxes=['Z'];
+  toolPoints=[{x:-W*.35,z:0}];// Cross-slide X moves on the carriage; it does not move the carriage's
+  // mounting reference across the bed. Only longitudinal feed Z relocates it.
+  workPoint={x:.08+move('Z'),z:-.15};toolAxes=['Z'];
  }
  const axes=axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>({key:a.key,vector:a.vector,source:toolAxes.includes(a.key)?'tool':'work'}));
  const intrinsicAxes=window.MachineAccuracy.directions(axes,profile);
  const options={toolPoints:toolPoints.map(p=>levelCoordinates(p.x,p.z)),workPoints:[levelCoordinates(workPoint.x,workPoint.z)],axes:intrinsicAxes,length};
  const portal=toolPoints.length===2?connectedPortal(solution,toolPoints):null;
  if(portal){options.toolFrame=portal.frame;options.columnFrames=portal.columns.map(c=>c.frame);if(solution.parts){const q=options.workPoints[0],s=solution.parts.bed.slopeAt(q.x,q.z);options.workFrame=window.Leveling.compose(portal.common,window.Leveling.orientation({lr:s.lr-solution.lr,fb:s.fb-solution.fb}));}}
- // Feed direction follows the travelling guide, not the fixed workpiece.
- if(m.kind==='travel'||m.kind==='gantry'){
-  const q=toolPoints.map(p=>levelCoordinates(p.x,p.z)),slopes=q.map(p=>solution.slopeAt(p.x,p.z)),s={lr:slopes.reduce((v,p)=>v+p.lr/slopes.length,0),fb:slopes.reduce((v,p)=>v+p.fb/slopes.length,0)};
-  options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:window.Leveling.orientation(s)}:a);
+ // A travelling column's guide direction comes from the two drawn rails.
+ // The column seat behind them may follow a different local support slope:
+ // this represents a deformable mounting base, without solving its stiffness.
+ const guidePoints=['travel','horizontal'].includes(m.kind)?[-1,1].map(k=>({x:toolPoints[0].x,z:D*(m.kind==='travel'?.22:.28)+k*(m.kind==='travel'?.1:.13)})):m.kind==='gantry'?toolPoints:null;
+ let guideSlope=null;
+ if(guidePoints){
+  const slopes=guidePoints.map(p=>{const q=levelCoordinates(p.x,p.z);return solution.slopeAt(q.x,q.z);});
+  guideSlope={lr:slopes.reduce((v,p)=>v+p.lr/slopes.length,0),fb:slopes.reduce((v,p)=>v+p.fb/slopes.length,0)};
+  options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:window.Leveling.orientation(guideSlope)}:a);
  }
  const metric=window.Leveling.geometry(solution,options);
  const levelPairs=profile?window.Leveling.geometry(solution,{...options,axes:axes.map(a=>({...a,frame:options.axes.find(q=>q.key===a.key).frame}))}).pairs:metric.pairs;
@@ -1795,7 +1807,7 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const bodyFrame=intrinsicBodyFrame(axes,profile),intrinsicUp=bodyFrame.rotate([0,1,0]),combinedUp=metric.toolFrame.rotate(intrinsicUp),combinedDirection=metric.toolFrame.rotate(bodyFrame.direction);
  const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean(window.Leveling.orientation(solution.slopeAt(q.x,q.z)).rotate(intrinsicUp));});
  const lathe=m.kind==='lathe',bodyPosture=lathe?spindleLean(combinedDirection):bodyLean,bodyIntrinsicPosture=lathe?spindleLean(bodyFrame.direction):bodyIntrinsicLean,bodySupportPosture=lathe?spindleLean(metric.toolFrame.rotate(bodyFrame.nominal)):directionLean(metric.toolFrame.rotate([0,1,0]));
- return {...metric,portal,poses,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
+ return {...metric,portal,poses,guidePoints,guideSlope,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
 }
 function geometrySamples(solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
  const keys=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>a.key);
@@ -1845,6 +1857,10 @@ function postureComparison(id,rows,unit,digits=2){
 // Each pair is a two-dimensional relative-angle comparison, independent of
 // camera rotation. The fixed gain makes support adjustments comparable.
 const squarenessDiagramGain=5000,squarenessDiagramLimit=.65,squarenessMeasurementLength=.3;
+function squarenessMicronText(value){
+ const magnitude=Math.round(Math.abs(value));
+ return magnitude===0?'0':(value<0?'-':'+')+magnitude;
+}
 function squarenessPlot(pair){
  const base=current.kind==='lathe'?'Z':pair.key[0],other=[...pair.key].find(key=>key!==base),raw=pair.deviationMicroradians/1e6*squarenessDiagramGain;
  const angle=Math.max(-squarenessDiagramLimit,Math.min(squarenessDiagramLimit,raw)),x=32,y=54,length=28;
@@ -1872,7 +1888,8 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   // change the engine's evaluation length or simulate an NC travel/guide scan.
   const attributes=Object.entries({pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="110" y="43" text-anchor="end" class="live-pair-limit">範囲外</text>':'<text x="80" y="43" text-anchor="middle" class="right-angle">直角</text>');
-  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${current.kind==='lathe'?'主軸基準XZ':pair.key+' 基準'+plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" aria-describedby="squarenessMeasurementNote" ${attributes}>${markup}</svg></div>`);
+  const microns=pair.deviationMicroradians*squarenessMeasurementLength,reading=squarenessMicronText(microns),baseLabel=current.kind==='lathe'?'主軸Z':plot.base;
+  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${current.kind==='lathe'?'主軸基準XZ':pair.key+' 基準'+plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" aria-describedby="squarenessMeasurementNote" ${attributes}>${markup}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value">${baseLabel}基準 0</span><span class="live-pair-error-value" data-current-error-300="${microns}">${plot.other}直角差 ${reading}</span></div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,15)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
@@ -1965,13 +1982,16 @@ function updateAccuracy(){
  postureComparison('twistComparison',initial?[{key:'twist',label:'支持面のねじれ（奥−手前）',before:levelInitialSolution.twist,current:levelSolution.twist}]:[],'mm/m',6);
  if(initial&&supports.length===3){const note=document.createElement('p');note.className='hint';note.textContent='3点支持モデルは必ず平面なので、ねじれは常に0です。倒れの変化を見比べます。';$('twistComparison').append(note);}
  const coordinates=p=>{const q=levelCoordinates(p.x,p.z);return '左右 '+signed(q.x,2)+' m・前後 '+signed(q.z,2)+' m';};
- $('geometryPosition').textContent=(dual?'門中心':current.kind==='lathe'?'主軸台':'コラム')+'：'+coordinates(g.poses.tool.anchor)+' ／ '+(current.kind==='lathe'?'刃物台':'テーブル基準')+'：'+coordinates(g.workPoint);
+ $('geometryPosition').textContent=(dual?'門中心':current.kind==='lathe'?'主軸台':'コラム')+'：'+coordinates(g.poses.tool.anchor)+' ／ '+(current.kind==='lathe'?'往復台基準':['vertical','compact'].includes(current.kind)?'サドル基準':'テーブル基準')+'：'+coordinates(g.workPoint);
  const rangeMax=Math.max(...accuracyRange.flatMap(s=>s.geometry.pairs.map(p=>Math.abs(p.errorMicrons))));
  const postureDifference=Math.hypot(g.relativeLean.front,g.relativeLean.right);
  $('accuracyDiagnosis').textContent=initial?(dual?'支持点を少し動かし、直角図と左右コラムの変化を見比べてください。':'支持点を少し動かし、固定表示の直角図と現在の倒れ・ねじれを見比べてください。')+' 90°からのずれの大小は絶対値で判断し、倒れの減少だけで全精度の改善とはしません。':columnDifference>.001?'左右コラムが違う姿勢です。平均の直角度だけでは門のねじれを見落とすため、左右の前後倒れ差も確認してください。':maxError<.00001?(rangeMax>.001?'今の位置では直角です。端・中央の比較では直角度が変わります。軸を動かして確認してください。':postureDifference>.001?'表示した軸間の直角差は0ですが、工具側とテーブル側の姿勢差は残っています。前後・左右の姿勢差も確認してください。':'工具側と案内側が同じ姿勢です。全体が傾いても、相対直角度は保たれています。'):'支持面の局所姿勢が違うため、直角度が変化しています。支持点を調整して、端・中央の値を比べてください。';
  const localSource=key=>g.axes.filter(a=>a.source===key).map(a=>a.key).join('・');
  $('geometryAssumption').textContent=current.kind==='lathe'?'直角図は主軸基準XZです（主軸方向と刃物台Xの比較）。NC送りX–Zの案内直角度ではありません。模型のZ矢印は往復台の送り方向です。Y軸はありません。':localSource('tool')+'はコラム／主軸側、'+localSource('work')+'はテーブル／案内側の参照姿勢を使う教材です。同じ剛体側の軸対は共通の傾きでは関係が変わりません。'+(current.kind==='five'?'A/Cの旋回誤差は含みません。':'');
  if(['travel','gantry'].includes(current.kind))$('geometryAssumption').textContent='Xは移動位置の走行案内、Y/Zはコラム・梁側の参照姿勢です。固定ワークの姿勢をX送りへ代用しません。';
+ if(['travel','horizontal'].includes(current.kind))$('geometryAssumption').textContent='Xは二本の走行レール、'+(current.kind==='travel'?'Y/Zはコラム取付部':'Yはコラム取付部、Zはパレット側')+'の姿勢を使います。取付ベースの相対変形を幾何的に近似する教材で、剛性・荷重・水平面内の曲がりは計算しません。';
+ if(['vertical','compact'].includes(current.kind))$('geometryAssumption').textContent+=' Xテーブル送りではサドルの支持参照は移動せず、Yサドル送りで移動します。';
+ if(current.kind==='lathe')$('geometryAssumption').textContent+=' 径送りXでは往復台のベッド参照は移動せず、長手Zで移動します。ベッドのロールによる刃先高さ差と水平面内の曲がりは、この直角図には含みません。';
  if(dual){$('bodyLeanHeading').textContent='梁側の案内代表方向：支持＋固有差';$('bodyLeanNote').textContent='門の骨格は接続した支持姿勢で描き、固有直角差は案内方向（軸矢印と直角図）へ重ねます。柱の平均倒れをラムZへ伝え、梁案内Yとの直角差を表示します。位置ごとの弾性ねじれ・主軸移動荷重は再現しません。';}
  if(dual)$('geometryAssumption').textContent+=' 左右柱の天端を梁で結び、平均倒れをラム方向へ伝えるせん断の幾何モデルです。柱・梁の接続中心を共有します。梁の反力・たわみ分布・接触荷重は計算しません。模型の門骨格は支持姿勢、固有直角差は軸矢印と直角図に示します。';
  $('columnLayout').hidden=!singleColumnKinds.includes(current.kind);
@@ -1984,7 +2004,7 @@ for(const id of ['columnX','columnZ'])$(id).oninput=()=>{const value=Number($(id
 $('resetColumn').onclick=()=>{stopMotion();levelConfig.columnX=0;levelConfig.columnZ=0;$('columnX').value='0';$('columnZ').value='0';updateLeveling();};
 $('demoTwist').onclick=()=>{
  if(supports.length===3)return;stopMotion();applyLevelPreset('twist');
- const preferred=current.kind==='vertical'||current.kind==='compact'?'YZ':null;
+ const preferred=current.kind==='vertical'||current.kind==='compact'?'XZ':null;
  const score=s=>Math.max(...s.geometry.pairs.filter(p=>!preferred||p.key===preferred).map(p=>Math.abs(p.errorMicrons)));
  const best=accuracyRange.reduce((a,b)=>score(a)>=score(b)?a:b);positions={...best.state};updateAxisValues();
  $('levelInputMessage').textContent=score(best)>.001?'対角ねじれを設定し、直角度の差が出る軸位置へ動かしました。':'対角ねじれを設定しました。左右コラムの姿勢差を確認してください。';updateLeveling();

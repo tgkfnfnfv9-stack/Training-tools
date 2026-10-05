@@ -2,7 +2,7 @@
 // All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
 let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,levelGeometry=null;
 const legacyLevelStoragePrefix='training-level-v1:',levelCalculationModel='connected-frames-v1';
-function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':levelCalculationModel;}
+function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':current.kind==='travel'?'travel-guide-v2':current.kind==='horizontal'?'horizontal-guide-v2':current.kind==='compact'?'compact-saddle-v2':current.kind==='lathe'?'lathe-carriage-v2':levelCalculationModel;}
 function levelStoragePrefix(){return 'training-level-'+currentCalculationModel()+':';}
 // An asynchronous file may finish after another import or a newer training state.
 let levelImportRequest=0,levelSessionEpoch=0,levelRevision=0;
@@ -104,9 +104,7 @@ function displayPoseFrame(pose){
  return displaySupportFrame((levelGeometry.poses[pose]||levelGeometry.poses.tool).slope);
 }
 function displayAxisFrame(key){
- if(key==='X'&&['travel','gantry'].includes(current.kind)){
-  const points=levelGeometry.toolPoints.map(p=>levelCoordinates(p.x,p.z)),s=points.map(p=>levelSolution.slopeAt(p.x,p.z));return displaySupportFrame({lr:s.reduce((v,p)=>v+p.lr/s.length,0),fb:s.reduce((v,p)=>v+p.fb/s.length,0)});
- }
+ if(key==='X'&&levelGeometry.guideSlope)return displaySupportFrame(levelGeometry.guideSlope);
  if(current.kind==='lathe'&&key==='Z')return displayPoseFrame('work');
  return displayPoseFrame(levelGeometry.axes.find(a=>a.key===key).source);
 }
