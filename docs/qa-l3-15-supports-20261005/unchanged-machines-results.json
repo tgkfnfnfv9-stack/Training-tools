@@ -1,0 +1,18 @@
+{
+  "baselineCommit": "3b5b969c3aaff1e14d58d28020acc718ff93a572",
+  "machines": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7
+  ],
+  "cases": 48,
+  "fieldsPerCase": 15,
+  "totalComparisons": 720,
+  "completeEquality": true,
+  "differences": [],
+  "beforeSha256": "4d0bffb123b5c6180b29b94f4220b1a139b11202410c7b324d3ea268bb0073eb",
+  "afterSha256": "4d0bffb123b5c6180b29b94f4220b1a139b11202410c7b324d3ea268bb0073eb"
+}

@@ -7,7 +7,7 @@ function near(a,b,tolerance=1e-9){assert.ok(Math.abs(a-b)<tolerance,`${a} != ${b
 async function main(){
  const env=createEnvironment({pureLeveling:true}),{registry:r,read,json,storage,context}=env;
  const open=i=>read(`openMachine(machines[${i}])`),preset=t=>context.document.querySelectorAll('[data-preset]').find(b=>b.dataset.preset===t).click();
- const counts=[4,8,6,24,8,3,6];
+ const counts=[4,8,6,15,8,3,6];
  for(let i=0;i<7;i++){
   storage.clear();open(i);
   check(`機種${i}:支持点数`,()=>assert.equal(read('supports.length'),counts[i]));
@@ -30,7 +30,7 @@ async function main(){
  // 機械を選び直しても自動保存した高さと寸法が復元する。
  storage.clear();open(2);r.up0.click();r.supportWidth.change('5');const saved=json('levelRecord()');open(1);open(2);
  check('機械別自動保存復元',()=>{assert.deepEqual(json('levelRecord()'),saved);assert.match(r.levelSaveStatus.textContent,/復元/);});
- for(const [machine,mode,kind,count] of [[0,'compact','compact',4],[1,'','horizontal',8],[3,'l3-3000','double',24]]){
+ for(const [machine,mode,kind,count] of [[0,'compact','compact',4],[1,'','horizontal',8],[3,'l3-3000','double',15]]){
   open(machine);check(`機種${mode}:単一方式と支持点`,()=>{assert.equal(read('machineMode'),mode);assert(r.machineModeBox.hidden);assert.equal(read('current.kind'),kind);assert.equal(read('supports.length'),count);assert.ok(Number.isFinite(read('levelSolution.lr')));});
  }
  storage.clear();open(2);

@@ -3,10 +3,9 @@ const assert=require('node:assert/strict');
 const {solve,geometry}=require('../src/leveling.js');
 let checks=0;
 function near(a,b,tol=1e-9){checks++;assert.ok(Math.abs(a-b)<=tol,`${a} != ${b}`);}
-// L3 3000 foundation: 16 bed-side, two bed-end and six column-wing supports.
+// Revised L3 teaching layout: nine requested bed points and six unchanged column points.
 const positions=[
- ...[-.770,.770].flatMap(x=>[.240,1.040,1.840,2.640,3.440,5.000,5.800,6.600].map(z=>({x,z:z-3.420}))),
- ...[0,6.840].map(z=>({x:0,z:z-3.420})),
+ ...[-.770,0,.770].flatMap(x=>[.240,3.440,6.600].map(z=>({x,z:z-3.420}))),
  ...[-1.060,1.060].flatMap(x=>[3.965,4.515].map(z=>({x,z:z-3.420}))),
  {x:-1.425,z:4.245-3.420},{x:1.420,z:4.245-3.420}
 ];

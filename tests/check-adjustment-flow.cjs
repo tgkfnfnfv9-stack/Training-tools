@@ -33,7 +33,7 @@ function nonnumeric(){
  const text=visibleText(r.training).replace(/(?:5|2)軸/g,'');
  assert.doesNotMatch(text,/[0-9０-９%％°µμ]|\bmm\b|\brad\b/);
  for(const el of visibleElements(r.training)){
-  let aria=(el.getAttribute('aria-label')||'').replace(/(?:5|2)軸/g,'').replace(/24か所/g,'');
+  let aria=(el.getAttribute('aria-label')||'').replace(/(?:5|2)軸/g,'').replace(/15か所/g,'');
   for(const identity of [read('current.name'),...json('supports.map(s=>s.name)')])aria=aria.split(identity).join('');
   assert.doesNotMatch(aria,/[0-9０-９%％°µμ]|\bmm\b|\brad\b/);
   if(el.type==='range')assert(el.getAttribute('aria-valuetext'));

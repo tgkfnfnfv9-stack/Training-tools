@@ -1,0 +1,294 @@
+{
+  "baselineCommit": "3b5b969c3aaff1e14d58d28020acc718ff93a572",
+  "key": "training-level-v1:gate:l3-3000:hwacheon-l3-3000-foundation-r139",
+  "record": {
+    "version": 3,
+    "supportLayout": {
+      "id": "hwacheon-l3-3000-foundation-r139",
+      "points": [
+        {
+          "id": "bed-left-1",
+          "x": -0.77,
+          "z": -3.1799999999999997,
+          "group": "bed"
+        },
+        {
+          "id": "bed-left-2",
+          "x": -0.77,
+          "z": -2.38,
+          "group": "bed"
+        },
+        {
+          "id": "bed-left-3",
+          "x": -0.77,
+          "z": -1.5799999999999998,
+          "group": "bed"
+        },
+        {
+          "id": "bed-left-4",
+          "x": -0.77,
+          "z": -0.7799999999999998,
+          "group": "bed"
+        },
+        {
+          "id": "bed-left-5",
+          "x": -0.77,
+          "z": 0.020000000000000018,
+          "group": "bed"
+        },
+        {
+          "id": "bed-left-6",
+          "x": -0.77,
+          "z": 1.58,
+          "group": "bed"
+        },
+        {
+          "id": "bed-left-7",
+          "x": -0.77,
+          "z": 2.38,
+          "group": "bed"
+        },
+        {
+          "id": "bed-left-8",
+          "x": -0.77,
+          "z": 3.1799999999999997,
+          "group": "bed"
+        },
+        {
+          "id": "bed-right-1",
+          "x": 0.77,
+          "z": -3.1799999999999997,
+          "group": "bed"
+        },
+        {
+          "id": "bed-right-2",
+          "x": 0.77,
+          "z": -2.38,
+          "group": "bed"
+        },
+        {
+          "id": "bed-right-3",
+          "x": 0.77,
+          "z": -1.5799999999999998,
+          "group": "bed"
+        },
+        {
+          "id": "bed-right-4",
+          "x": 0.77,
+          "z": -0.7799999999999998,
+          "group": "bed"
+        },
+        {
+          "id": "bed-right-5",
+          "x": 0.77,
+          "z": 0.020000000000000018,
+          "group": "bed"
+        },
+        {
+          "id": "bed-right-6",
+          "x": 0.77,
+          "z": 1.58,
+          "group": "bed"
+        },
+        {
+          "id": "bed-right-7",
+          "x": 0.77,
+          "z": 2.38,
+          "group": "bed"
+        },
+        {
+          "id": "bed-right-8",
+          "x": 0.77,
+          "z": 3.1799999999999997,
+          "group": "bed"
+        },
+        {
+          "id": "bed-front-end",
+          "x": 0,
+          "z": -3.42,
+          "group": "bed"
+        },
+        {
+          "id": "bed-back-end",
+          "x": 0,
+          "z": 3.42,
+          "group": "bed"
+        },
+        {
+          "id": "column-left-front",
+          "x": -1.06,
+          "z": 0.5449999999999999,
+          "group": "column-left"
+        },
+        {
+          "id": "column-left-back",
+          "x": -1.06,
+          "z": 1.0949999999999998,
+          "group": "column-left"
+        },
+        {
+          "id": "column-left-outer",
+          "x": -1.425,
+          "z": 0.8250000000000002,
+          "group": "column-left"
+        },
+        {
+          "id": "column-right-front",
+          "x": 1.06,
+          "z": 0.5449999999999999,
+          "group": "column-right"
+        },
+        {
+          "id": "column-right-back",
+          "x": 1.06,
+          "z": 1.0949999999999998,
+          "group": "column-right"
+        },
+        {
+          "id": "column-right-outer",
+          "x": 1.42,
+          "z": 0.8250000000000002,
+          "group": "column-right"
+        }
+      ]
+    },
+    "machineProfile": {
+      "version": 1,
+      "condition": "new",
+      "seed": 1349302630,
+      "keys": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "squareness": {
+        "XY": {
+          "band": 0,
+          "microns": -9.106
+        },
+        "XZ": {
+          "band": 0,
+          "microns": 14.306
+        },
+        "YZ": {
+          "band": 0,
+          "microns": 17.075
+        }
+      },
+      "guides": {
+        "X": {
+          "band": 0,
+          "microns": 15.349
+        },
+        "Y": {
+          "band": 0,
+          "microns": 6.718
+        },
+        "Z": {
+          "band": 1,
+          "microns": 32.766
+        }
+      },
+      "initialHeights": [
+        -0.15,
+        0.15,
+        -0.15,
+        0.022,
+        0.121,
+        -0.119,
+        -0.046,
+        0.048,
+        0.013,
+        -0.116,
+        0.033,
+        0.063,
+        0.085,
+        0.122,
+        0.149,
+        0.068,
+        -0.087,
+        0.085,
+        0.027,
+        -0.053,
+        0.01,
+        0.112,
+        0.079,
+        0.104
+      ]
+    },
+    "bestState": {
+      "width": 2.85,
+      "depth": 6.84,
+      "columnX": 0,
+      "columnZ": 0,
+      "heights": [
+        0.378,
+        -0.176,
+        0.03,
+        -0.021,
+        -0.025,
+        -0.003,
+        0.044,
+        -0.047,
+        -0.016,
+        0.08,
+        -0.048,
+        -0.037,
+        -0.024,
+        0.006,
+        0.038,
+        0.167,
+        -0.042,
+        0.043,
+        0,
+        0,
+        -0.008,
+        0,
+        0,
+        0
+      ]
+    },
+    "machine": "gate",
+    "mode": "l3-3000",
+    "width": 2.85,
+    "depth": 6.84,
+    "heights": [
+      -0.149,
+      0.15,
+      -0.15,
+      0.022,
+      0.121,
+      -0.119,
+      -0.046,
+      0.048,
+      0.013,
+      -0.116,
+      0.033,
+      0.063,
+      0.085,
+      0.122,
+      0.149,
+      0.068,
+      -0.087,
+      0.085,
+      0.027,
+      -0.053,
+      0.01,
+      0.112,
+      0.079,
+      0.104
+    ],
+    "sensitivity": 0.05,
+    "measurePos": 0,
+    "offset": 0.5,
+    "columnX": 0,
+    "columnZ": 0,
+    "axisPositions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "step": 0.001,
+    "exaggerate": true
+  }
+}

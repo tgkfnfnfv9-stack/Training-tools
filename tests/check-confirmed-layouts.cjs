@@ -6,6 +6,7 @@ const fs=require('node:fs'),path=require('node:path'),assert=require('node:asser
 const root=path.resolve(__dirname,'..');process.chdir(root);
 const {registry:r,read,json,storage,context}=require(path.join(root,'tests/leveling-dom-env.cjs'))();
 const legacy=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/legacy-level-records-pre-layouts.json'),'utf8')).records;
+const previousL3=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/legacy-l3-24-supports.json'),'utf8'));
 const results={checks:0,legacyAccepted:0,legacyCompactMigrated:0,legacyRejected:0,legacyV1Rejected:0,legacyV1CompactMigrated:0,legacyKeysPreserved:0,supportsExercised:0,failures:[],timings:[]};
 let label='',seed=902110;context.window.crypto={getRandomValues(a){a[0]=seed++;return a;}};
 function test(fn){results.checks++;try{fn();}catch(e){results.failures.push({label,message:e.message});}}
@@ -41,16 +42,23 @@ async function main(){
   test(()=>{for(const [key,value]of originals){assert.equal(storage.get(key),value);assert.notEqual(read('levelKey()'),key);}assert.match(r.levelSaveStatus.textContent,index===0?/復元|移行|引き継/:/旧|配置|対応/);});
   results.legacyKeysPreserved+=originals.length;
  }
- const counts=[4,8,6,24,8,3,6];
+ // The former 24-point v3 layout also needs explicit rejection: matching
+ // machine/mode/version alone must never reinterpret its height array.
+ storage.clear();const previousText=JSON.stringify(previousL3.record);storage.set(previousL3.key,previousText);open(3);
+ label='L3/previous-24-point-local-save-is-preserved';const currentL3=record();
+ test(()=>{assert.equal(storage.get(previousL3.key),previousText);assert.notEqual(read('levelKey()'),previousL3.key);assert.equal(currentL3.heights.length,15);assert.notEqual(currentL3.supportLayout.id,previousL3.record.supportLayout.id);assert.match(r.levelSaveStatus.textContent,/旧|配置|対応/);});
+ label='L3/previous-24-point-import-is-rejected';test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(previousL3.record)})`)),false));
+ await load(previousL3.record);test(()=>{assert.deepEqual(record(),currentL3);assert.equal(storage.get(previousL3.key),previousText);assert.match(r.levelInputMessage.textContent,/旧|配置|対応/);});
+ const counts=[4,8,6,15,8,3,6];
  for(let index=0;index<7;index++){
   storage.clear();let start=performance.now();open(index);results.timings.push({index,operation:'open',milliseconds:performance.now()-start});
   label=`current-layout/${index}`;const initial=record(),profile=json('machineProfile');
   test(()=>{assert.equal(read('supports.length'),counts[index]);assert.equal(initial.version,[0,1,3].includes(index)?3:2);assert.equal(read('validLevelRecord(levelRecord())'),true);});
   if(index===3){
-   label='L3/foundation-drawing-coordinate-match';
-   const stations=[240,1040,1840,2640,3440,5000,5800,6600],expected=[...[-770,770].flatMap(x=>stations.map(z=>[x,z-3420])),...[0,6840].map(z=>[0,z-3420]),...[-1060,1060].flatMap(x=>[3965,4515].map(z=>[x,z-3420])),[-1425,825],[1420,825]].map(([x,z])=>[x/1000,z/1000]);
+   label='L3/requested-nine-bed-points-and-original-column-coordinates';
+   const stations=[240,3440,6600],expected=[...[-770,0,770].flatMap(x=>stations.map(z=>[x,z-3420])),...[-1060,1060].flatMap(x=>[3965,4515].map(z=>[x,z-3420])),[-1425,825],[1420,825]].map(([x,z])=>[x/1000,z/1000]);
    const actual=json('supports.map(s=>levelCoordinates(s.x,s.z))');
-   test(()=>{assert.equal(actual.length,24);for(const p of expected)assert.equal(actual.filter(q=>Math.abs(q.x-p[0])<1e-12&&Math.abs(q.z-p[1])<1e-12).length,1,JSON.stringify(p));near(read('levelConfig.width'),2.85);near(read('levelConfig.depth'),6.84);assert.equal(read('supports.filter(s=>s.group==="bed").length'),18);assert.equal(read('supports.filter(s=>s.group==="column-left").length'),3);assert.equal(read('supports.filter(s=>s.group==="column-right").length'),3);});
+   test(()=>{assert.equal(actual.length,15);for(const p of expected)assert.equal(actual.filter(q=>Math.abs(q.x-p[0])<1e-12&&Math.abs(q.z-p[1])<1e-12).length,1,JSON.stringify(p));near(read('levelConfig.width'),2.85);near(read('levelConfig.depth'),6.84);assert.equal(read('supports.filter(s=>s.group==="bed").length'),9);assert.equal(read('supports.filter(s=>s.group==="column-left").length'),3);assert.equal(read('supports.filter(s=>s.group==="column-right").length'),3);});
   }
   const state=json('({profile:machineProfile,initial:levelInitialGeometry,initialSolution:levelInitialSolution})');
   const buttons=r.supportMap.querySelectorAll('.map-point');
@@ -69,7 +77,7 @@ async function main(){
   open(index);test(()=>assert.deepEqual(record(),saved));
   if(index===3){
    label='L3/middle-support-example-is-nonplanar';const individual=json('machineProfile'),initialShape=json('levelInitialGeometry');r.middlePreset.click();
-   test(()=>{const heights=json('supportHeights');assert.equal(heights.filter(h=>h===.15).length,12);assert.equal(heights.filter(h=>h===0).length,12);assert(read('levelSolution.residual')>1e-4,'middle example must bend the surface rather than lift every support equally');assert.deepEqual(json('machineProfile'),individual);assert.deepEqual(json('levelInitialGeometry'),initialShape);});
+   test(()=>{const heights=json('supportHeights');assert.equal(heights.filter(h=>h===.15).length,3);assert.equal(heights.filter(h=>h===0).length,12);assert(read('levelSolution.residual')>1e-4,'middle example must bend the surface rather than lift every support equally');assert.deepEqual(json('machineProfile'),individual);assert.deepEqual(json('levelInitialGeometry'),initialShape);});
    await load(saved);test(()=>assert.deepEqual(record(),saved));
   }
   if([0,1,3].includes(index)){

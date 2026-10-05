@@ -99,7 +99,7 @@ async function main(){
  check('settings',()=>{near(read('levelConfig.width'),4.5);near(read('levelConfig.depth'),3.75);near(read('levelConfig.columnX'),53);near(read('levelConfig.columnZ'),-27);assert.deepEqual(json('machineProfile'),intrinsic);assert.deepEqual(json('positions'),axisBefore);assert(read('validLevelRecord(levelRecord())'));});
  const beforeView=snapshot();r.showIdealOutline.checked=false;r.showIdealOutline.change();r.sceneView.change('front');r.resetSceneZoom.click();name='five/relocated-view-settings';check('settings',()=>{assert.deepEqual(snapshot(),beforeView);assert.equal(read('sceneView'),'front');near(read('sceneZoom'),1);});
  r.machineCondition.change('used');name='five/relocated-individual-draw';check('settings',()=>{assert.equal(read('machineProfile.condition'),'used');assert.notDeepEqual(json('machineProfile'),intrinsic);assert.deepEqual(json('supportHeights'),json('machineProfile.initialHeights'));assert(json('Object.values(positions)').every(v=>v===0));});
- for(const [index,mode,kind,count,removed] of [[0,'compact','compact',4,'standard'],[3,'l3-3000','double',24,'cross']]){
+ for(const [index,mode,kind,count,removed] of [[0,'compact','compact',4,'standard'],[3,'l3-3000','double',15,'cross']]){
   open(index,mode);r.openTrainingMenu.click();const before=snapshot();r.machineMode.change(removed);name='single-model/'+mode;
   check('settings',()=>{assert(r.machineModeBox.hidden);assert.equal(read('machineMode'),mode);assert.equal(read('current.kind'),kind);assert.equal(r.supportMap.querySelectorAll('.map-point').length,count);assert.deepEqual(snapshot(),before);});
  }

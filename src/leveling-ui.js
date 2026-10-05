@@ -44,7 +44,7 @@ function initializeLeveling(){
  $('middlePreset').disabled=!hasMiddle;$('middlePreset').title=hasMiddle?'':'この支持配置には中間支持点がありません。';
  initializeMachineAccuracy();
  let restored=false,previousLayout=false,migratedCompact=false;
- try{if(current.layoutId){const oldModes=current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''];previousLayout=oldModes.some(mode=>localStorage.getItem(levelStoragePrefix+current.id+':'+mode)!==null);}}catch{}
+ try{if(current.layoutId){const oldModes=current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''];previousLayout=oldModes.some(mode=>localStorage.getItem(levelStoragePrefix+current.id+':'+mode)!==null)||(current.previousLayouts||[]).some(layout=>localStorage.getItem(levelStoragePrefix+current.id+':'+machineMode+':'+layout)!==null);}}catch{}
  try{let raw=localStorage.getItem(levelKey());if(!raw&&current.id==='vertical'&&machineMode==='compact'){raw=localStorage.getItem(levelStoragePrefix+'vertical:compact');migratedCompact=!!raw;}if(raw){const data=JSON.parse(raw);if(validLevelRecord(data)){applyLevelRecord(data);restored=true;}}}catch{}
  $('levelSaveStatus').textContent=restored?'前回の調整をこのブラウザから復元しました。':'調整はこのブラウザに自動保存します。';
  buildSupports();updateLeveling(false);const saved=saveLeveling();
@@ -257,7 +257,7 @@ function applyLevelPreset(type){
  if(type==='twist'&&supports.length===3||type==='middle'&&!current.supportLayout&&(!current.grid||(current.grid[0]<3&&current.grid[1]<3)))return;
  invalidateLevelImport();stopMotion();levelExercise=null;
  supportHeights=supports.map(s=>{
-  if(type==='middle'&&current.supportLayout==='irregular')return s.group==='bed'&&/-(?:left|right)-[2-7]$/.test(s.id)? .15:0;
+  if(type==='middle'&&current.supportLayout==='irregular')return s.group==='bed'&&/^bed-(?:left|center|right)-2$/.test(s.id)? .15:0;
   const x=s.x/(current.w*.4),z=s.z/(current.d*.4);
   return Math.round((type==='right'?.1*x:type==='front'?-.1*z:type==='twist'?.1*x*z:Math.abs(x)<.99||Math.abs(z)<.99?.15:0)*1000)/1000;
  });$('levelInputMessage').textContent='状態パターンを設定しました。';updateLeveling();

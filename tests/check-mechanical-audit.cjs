@@ -67,7 +67,7 @@ for(const [index,mode] of variants){
   const delta=roomUp>=.1?.1:roomDown>=.1?-.1:0;
   if(delta!==0)live.read(`supportHeights=supportHeights.map(h=>Math.round((h+${delta})*1000)/1000);updateLeveling();`);
   else {
-   // A 24-point optimum can occupy both allowed height limits. Check the
+   // A many-support optimum can occupy both allowed height limits. Check the
    // geometric invariant directly without saving an out-of-range UI state.
    const translated=reference.map(h=>h+.1);
    near(live.read(`machineEvaluation(${JSON.stringify(translated)}).objective`),before.objective,1e-7);

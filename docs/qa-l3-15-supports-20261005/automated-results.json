@@ -1,0 +1,259 @@
+{
+  "complete": true,
+  "baselineCommit": "3b5b969c3aaff1e14d58d28020acc718ff93a572",
+  "tests": 28,
+  "passed": 28,
+  "failed": 0,
+  "seconds": 101.324,
+  "sourceAndTestsUnchanged": true,
+  "changedFiles": [],
+  "hashes": {
+    "src/style.css": "e8581dcea552139348d392fdfbfbedf556714e000cc664211655532953f96f0d",
+    "src/accuracy-ui.js": "81be039ed9641873c1ce154ec50ea9112e1207a34823498e9e59888cf5618afe",
+    "src/tester.css": "05818215f96effc3e1b38a7026c23c5ab66bfd84bfb147ef7641630b4f0ce663",
+    "src/app.js": "13e4952c80bb79140733339e4ada2c787284215483117abaf9444709d56476a6",
+    "src/leveling.js": "4de86c25f0a7efbe62c6452f293b6d8969b6236819f317c87df82b4f0f8bd4ac",
+    "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "src/tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409",
+    "src/machine-accuracy-ui.js": "243085cdd83bb7dd81f04be96fc9d5118a78c3daed7e9a48504ddfa86877e39b",
+    "src/tester.html": "c1cfc2b45ee63d13bf0dd38d69382901532d6e6a521050909734a9f133697866",
+    "src/index.html": "fce58ee7c4948f51dd3efc0c0dee31a35cc17d24ae121cd22c951dd8e0aef28a",
+    "src/leveling-ui.js": "a642383c1099ae937cba47d0ccd3230ba75646ca36608111521bb7110788624e",
+    "tests/check-accuracy-render.cjs": "0463ca6e3fa3653891343eed7a7372169477f8bb977075a6ae1a736cd3492a35",
+    "tests/check-interface-audit.cjs": "e1dbfd37ca8189b07a3109af56a133a6ba71cd7746f7305da2ad72f1c598b0bc",
+    "tests/check-full-code-review.cjs": "12f1b09cb8242e0247001eb3e54b67c90933d93f5d8750c85059b6e9e005902b",
+    "tests/check-ideal-outline-ui.cjs": "42e045efed60d9be59cba5e82864c9ce12062c4e80891fe46584eb23f9c8360f",
+    "tests/check-leveling-engine.cjs": "2dc5bb58c298150bb68a9747305724b1369cd6757421e53dfebe208353a4ce0b",
+    "tests/check-confirmed-layouts.cjs": "07f9e942b3a2eb2782d6243a50b3c034d0b570291d4d86711c295287db115b72",
+    "tests/check-display-motion.cjs": "db5f42770035ec99d497874814d104f4fb1a4966eb201e852c2e758b2d981408",
+    "tests/check-tester-lesson.cjs": "64814a94f35aaf318dcfeba6439f4038f4b76451e46aa030de1a1a314082e488",
+    "tests/leveling-dom-env.cjs": "aa9ecb09603ed26637754118c11642a7b98e3a5e2e638037bf1307b720a6063f",
+    "tests/check-3d-axis-controls.cjs": "ee6d756d36f64d0ad5f4caa651765eb6274affbd78e6c186eef18d2ce51d78df",
+    "tests/check-leveling-ui.cjs": "f07618ca8247f80bfdf9eace8a52ec39bb302058e5eff63593da095c06e16395",
+    "tests/check-accuracy-review.cjs": "4db32fb5be8a1afe5b31de26a6f4a0add0f723d4eee1c9db2b5ed4f1164daa26",
+    "tests/irregular-height-oracle.cjs": "10899dd80e7c0b59353d7db88151a91cff81264fad06b1c4de13678000e151cb",
+    "tests/check-level-stages.cjs": "4056ddbb67b0bfdfb092d700c1e0276ea14baa36bd66247691cff2f107b13cbf",
+    "tests/check-accuracy-engine.cjs": "d2e88cb7073cc7d144b76a689b04c8a3aadbb41c3a7784719af55339e3ff0b9c",
+    "tests/check-canvas-labels.cjs": "222dfa8a86971db1d28980d889dad36bf82e252e4276adc0a27de561362de31f",
+    "tests/check-settings-menu-ui.cjs": "5c842c5462fde1f03742baba2a2c93bb0654d74ad6392bb433875fc9f8ce61f3",
+    "tests/check-random-accuracy-review.cjs": "f3c86991ffd486affea28c04677111e7b072eb85f0fb96e9666fa4ca3aad3d9c",
+    "tests/check-model-posture.cjs": "5ec5756b795e6ab0d88612b7e6e7b33a29ffdda857c29ae853af9f42302a57d0",
+    "tests/check-site-navigation.cjs": "0b6be86c9487b0ba0a41649ff7f3f17b9e65ba592861d8ceb94591683bd1da4c",
+    "tests/check-mobile-navigation.cjs": "a4735c6c5b8414ec56d588c5c29fd4ec79e7742a79d396a982f87ff8e2cd323b",
+    "tests/check-squareness-display.cjs": "d79a6febfff3f66c50ff0c49c39c712b531148826f994ce01687caabd4bbea45",
+    "tests/check-settings-menu.cjs": "3b3ac2491b9462816e26182eddd9ce9baec9fd120275c0e27781c1475873e5d8",
+    "tests/check-ideal-display.cjs": "3f1a04afba68ea839c2bbaff539ecd00162d01ce9cdf7227a18cb992730da945",
+    "tests/check-mechanical-audit.cjs": "f04a63ba59b9b250d28ef64b52fe4cd82e51c3eca29786c757fe132b35f49840",
+    "tests/check-leveling-learning.cjs": "9fc51e123841c9551f00f78ad43265c0466e1e0b68edef608331804d0b61a4fa",
+    "tests/check-electrical-full.cjs": "b9b17a3fddf8e85640b1235f289aff27e569837f319f369947280390258b355b",
+    "tests/check-adjustment-flow.cjs": "c75392e53538f9472722e04a5947e0bf05ba4886c2988ebf886f6a7a950f2587",
+    "tests/check-scene-zoom.cjs": "4058d924fd3f38009e8c16da2cb725cdf3e81adb662c322c5100f6ad50e8fbbf",
+    "tests/check-irregular-leveling.cjs": "f91ad016b22f451437af3269e444dd8a90f86f66837e9f301742df2767579670",
+    "tests/fixtures/legacy-level-records-pre-layouts.json": "2ee75d3de82202084b5bb1d49199272a5c22b86f3880dbbb07c4fb8284fa0d9d",
+    "tests/fixtures/legacy-l3-24-supports.json": "95baead25e2264da458777924321365913a16b2107e3c495421d003a197dd3c3"
+  },
+  "results": [
+    {
+      "test": "tests/check-3d-axis-controls.cjs",
+      "exit": 0,
+      "seconds": 14.47,
+      "stdout": "3D axis controls: 138 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-accuracy-engine.cjs",
+      "exit": 0,
+      "seconds": 0.082,
+      "stdout": "Accuracy engine: 73 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-accuracy-render.cjs",
+      "exit": 0,
+      "seconds": 17.444,
+      "stdout": "Accuracy Canvas: 305 rendered frames, 905372 finite drawing operations passed (3 sizes, 7 machines, 2 extra modes).\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-accuracy-review.cjs",
+      "exit": 0,
+      "seconds": 0.679,
+      "stdout": "Accuracy review: 76 independent checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-adjustment-flow.cjs",
+      "exit": 0,
+      "seconds": 5.072,
+      "stdout": "Adjustment flow: 152 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-canvas-labels.cjs",
+      "exit": 0,
+      "seconds": 24.666,
+      "stdout": "{\n  \"frames\": 528,\n  \"backgroundRectangles\": 4954,\n  \"axisRectangles\": 1776,\n  \"partRectangles\": 3178,\n  \"expectedAxisLabels\": 1776,\n  \"collisionFrames\": 0,\n  \"outsideFrames\": 0,\n  \"missingAxisFrames\": 0,\n  \"supportCollisionFrames\": 0,\n  \"examples\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-confirmed-layouts.cjs",
+      "exit": 0,
+      "seconds": 6.049,
+      "stdout": "{\n  \"checks\": 318,\n  \"legacyAccepted\": 4,\n  \"legacyCompactMigrated\": 1,\n  \"legacyRejected\": 4,\n  \"legacyV1Rejected\": 4,\n  \"legacyV1CompactMigrated\": 1,\n  \"legacyKeysPreserved\": 5,\n  \"supportsExercised\": 50,\n  \"failures\": [],\n  \"timings\": [\n    {\n      \"index\": 0,\n      \"operation\": \"open\",\n      \"milliseconds\": 31.097201999999925\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 4.108537000000069\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 15.941184999999905\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"open\",\n      \"milliseconds\": 46.02075999999988\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 4.317159000000174\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 26.832000000000335\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"open\",\n      \"milliseconds\": 36.94901499999969\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 4.01026899999988\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 20.665386000000126\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"open\",\n      \"milliseconds\": 45.61092400000007\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 5.548087000000123\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 16.33049000000028\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"open\",\n      \"milliseconds\": 59.524836999999934\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 8.361268999999993\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 32.64940100000058\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"open\",\n      \"milliseconds\": 20.551244000000224\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 4.076778999999988\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 19.252435000000332\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"open\",\n      \"milliseconds\": 11.89670500000011\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 3.3219660000004296\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 7.606876999999258\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-display-motion.cjs",
+      "exit": 0,
+      "seconds": 15.476,
+      "stdout": "{\n  \"checks\": {\n    \"planarMotion\": 666,\n    \"localContact\": 240,\n    \"fixedAnchorMotion\": 132,\n    \"averageVersusLocal\": 5\n  },\n  \"maximumDirectionDifference\": 3.5492257604318314e-12,\n  \"maximumContactDifference\": 8.881784197001252e-16,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-electrical-full.cjs",
+      "exit": 0,
+      "seconds": 0.192,
+      "stdout": "{\n  \"passed\": true,\n  \"assertions\": 103,\n  \"combinations\": 720,\n  \"valid\": 13,\n  \"flows\": [\n    \"five full completion workflows\",\n    \"current serial calculation\",\n    \"parallel short circuit blocked\",\n    \"AC reverse direction\",\n    \"DC voltage alternatives\",\n    \"resistance unit alternatives\",\n    \"open continuity\",\n    \"setting lock and reset\",\n    \"all settings exhaustively checked\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-full-code-review.cjs",
+      "exit": 0,
+      "seconds": 8.61,
+      "stdout": "Full code review: 158 integration checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-ideal-display.cjs",
+      "exit": 0,
+      "seconds": 9.382,
+      "stdout": "{\n  \"checks\": {\n    \"nominalGeometry\": 504,\n    \"flatAgreement\": 126,\n    \"supportAdjustment\": 7,\n    \"intrinsicRemoval\": 7,\n    \"linearMotion\": 20,\n    \"rotaryRigidity\": 50,\n    \"viewAndToggle\": 126\n  },\n  \"vertices\": 319680,\n  \"maximumPointDifference\": 2.047902597024e-15,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-ideal-outline-ui.cjs",
+      "exit": 0,
+      "seconds": 42.494,
+      "stdout": "{\n  \"checks\": 743,\n  \"frames\": 790,\n  \"finiteCanvasCoordinates\": 4400503,\n  \"maximumIdealSegments\": 276,\n  \"maximumIdealToCurrentRatio\": 0.23509369676320271\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-interface-audit.cjs",
+      "exit": 0,
+      "seconds": 0.598,
+      "stdout": "Interface audit: 31 independent interaction and diagram checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-irregular-leveling.cjs",
+      "exit": 0,
+      "seconds": 0.073,
+      "stdout": "Irregular leveling: 621 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-level-stages.cjs",
+      "exit": 0,
+      "seconds": 2.516,
+      "stdout": "Level stages: 80 independent checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-leveling-engine.cjs",
+      "exit": 0,
+      "seconds": 0.056,
+      "stdout": "Leveling engine: 83 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-leveling-learning.cjs",
+      "exit": 0,
+      "seconds": 2.703,
+      "stdout": "Leveling learning: 91 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-leveling-ui.cjs",
+      "exit": 0,
+      "seconds": 1.524,
+      "stdout": "Leveling UI: 190 checks passed (7 machines, single-model selections, controls, exercise, save/import/export).\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-mechanical-audit.cjs",
+      "exit": 0,
+      "seconds": 3.379,
+      "stdout": "Mechanical audit: 220 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-mobile-navigation.cjs",
+      "exit": 0,
+      "seconds": 0.465,
+      "stdout": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-model-posture.cjs",
+      "exit": 0,
+      "seconds": 60.621,
+      "stdout": "{\n  \"checks\": {\n    \"projection\": 105,\n    \"surfaceNormals\": 491,\n    \"groundContact\": 560,\n    \"rigidMotion\": 30,\n    \"axisLabels\": 224\n  },\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-random-accuracy-review.cjs",
+      "exit": 0,
+      "seconds": 2.424,
+      "stdout": "Random accuracy independent review: 164 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-scene-zoom.cjs",
+      "exit": 0,
+      "seconds": 11.801,
+      "stdout": "Scene zoom: 84 interaction/rendering checks passed; 226 Canvas frames and 1129811 finite coordinate values inspected.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-settings-menu-ui.cjs",
+      "exit": 0,
+      "seconds": 15.567,
+      "stdout": "{\n  \"checks\": 173,\n  \"frames\": 270,\n  \"finiteCanvasCoordinates\": 1592586,\n  \"variants\": 7,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-settings-menu.cjs",
+      "exit": 0,
+      "seconds": 7.843,
+      "stdout": "{\n  \"checks\": {\n    \"drawerState\": 49,\n    \"supportSelection\": 50,\n    \"stageSteps\": 300,\n    \"limits\": 21,\n    \"axisControls\": 51,\n    \"demo\": 21,\n    \"saveImportExport\": 21,\n    \"legacyStep\": 63,\n    \"settings\": 5\n  },\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-site-navigation.cjs",
+      "exit": 0,
+      "seconds": 1.36,
+      "stdout": "Shared site navigation: 39 journeys/state/history checks passed across six pages and seven machines.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-squareness-display.cjs",
+      "exit": 0,
+      "seconds": 2.558,
+      "stdout": "Squareness display: 77 measured-angle, measurement-position, hidden-initial-value and relative-input checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "tests/check-tester-lesson.cjs",
+      "exit": 0,
+      "seconds": 0.067,
+      "stdout": "{\n  \"passed\": true,\n  \"assertions\": 27,\n  \"flows\": [\n    \"missing leads\",\n    \"A terminal blocked\",\n    \"wrong mode blocked\",\n    \"DC voltage\",\n    \"reverse polarity\",\n    \"disconnect\",\n    \"resistance preparation\",\n    \"1kΩ resistance\",\n    \"continuity connected/broken\",\n    \"reset/lesson reset\"\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "reportedCheckCount": 7515,
+  "suitesWithFrameOrJourneyMetrics": [
+    "tests/check-accuracy-render.cjs",
+    "tests/check-canvas-labels.cjs",
+    "tests/check-mobile-navigation.cjs"
+  ]
+}
