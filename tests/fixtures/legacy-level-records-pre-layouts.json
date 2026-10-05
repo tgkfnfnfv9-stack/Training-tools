@@ -1,0 +1,822 @@
+{
+  "baselineCommit": "a92b48be197929b6e260fc97898364d835eca719",
+  "description": "Actual version-2 exports from every legacy machine/mode before explicit support layout IDs. Version-1 cases are derived by removing intrinsic profile fields.",
+  "records": [
+    {
+      "index": 0,
+      "mode": "standard",
+      "condition": "new",
+      "stage": "initial",
+      "values": {
+        "record": {
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "new",
+            "seed": 518033,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.331
+              },
+              "XZ": {
+                "band": 1,
+                "microns": 33.02
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -11.968
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 23.016
+              },
+              "Y": {
+                "band": 0,
+                "microns": 4.164
+              },
+              "Z": {
+                "band": 0,
+                "microns": 17.831
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.116,
+              0.088
+            ]
+          },
+          "bestState": {
+            "width": 2.72,
+            "depth": 2.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.127,
+              0.125,
+              0.125,
+              -0.127
+            ]
+          },
+          "machine": "vertical",
+          "mode": "standard",
+          "width": 2.72,
+          "depth": 2.64,
+          "heights": [
+            -0.15,
+            0.15,
+            0.116,
+            0.088
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        }
+      }
+    },
+    {
+      "index": 0,
+      "mode": "compact",
+      "condition": "new",
+      "stage": "initial",
+      "values": {
+        "record": {
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "new",
+            "seed": 518039,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": -9.792
+              },
+              "XZ": {
+                "band": 0,
+                "microns": 8.663
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -15.878
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 7.187
+              },
+              "Y": {
+                "band": 0,
+                "microns": 18.734
+              },
+              "Z": {
+                "band": 0,
+                "microns": 10.254
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.058,
+              0.087
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.039,
+              0.009,
+              0.009,
+              -0.038
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            -0.15,
+            0.15,
+            0.058,
+            0.087
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        }
+      }
+    },
+    {
+      "index": 1,
+      "mode": "",
+      "condition": "new",
+      "stage": "initial",
+      "values": {
+        "record": {
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "new",
+            "seed": 518044,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 5.92
+              },
+              "XZ": {
+                "band": 1,
+                "microns": 39.786
+              },
+              "YZ": {
+                "band": 1,
+                "microns": -35.968
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 16.594
+              },
+              "Y": {
+                "band": 0,
+                "microns": 4.435
+              },
+              "Z": {
+                "band": 0,
+                "microns": 4.212
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              -0.139,
+              -0.054
+            ]
+          },
+          "bestState": {
+            "width": 2.72,
+            "depth": 2.88,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "horizontal",
+          "mode": "",
+          "width": 2.72,
+          "depth": 2.88,
+          "heights": [
+            -0.15,
+            0.15,
+            -0.139,
+            -0.054
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        }
+      }
+    },
+    {
+      "index": 2,
+      "mode": "",
+      "condition": "new",
+      "stage": "initial",
+      "values": {
+        "record": {
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "new",
+            "seed": 518048,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": -10.656
+              },
+              "XZ": {
+                "band": 1,
+                "microns": -31.459
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -7.733
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 3.64
+              },
+              "Y": {
+                "band": 0,
+                "microns": 3.525
+              },
+              "Z": {
+                "band": 0,
+                "microns": 4.906
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.043,
+              0.126,
+              -0.016,
+              -0.134
+            ]
+          },
+          "bestState": {
+            "width": 4.32,
+            "depth": 2.08,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.08,
+              0.144,
+              -0.104,
+              -0.04,
+              0.024,
+              0.135
+            ]
+          },
+          "machine": "travel",
+          "mode": "",
+          "width": 4.32,
+          "depth": 2.08,
+          "heights": [
+            -0.15,
+            0.15,
+            0.043,
+            0.126,
+            -0.016,
+            -0.134
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        }
+      }
+    },
+    {
+      "index": 3,
+      "mode": "long",
+      "condition": "new",
+      "stage": "initial",
+      "values": {
+        "record": {
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "new",
+            "seed": 518053,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": -6.517
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -16.2
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -7.055
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 15.162
+              },
+              "Y": {
+                "band": 0,
+                "microns": 16.384
+              },
+              "Z": {
+                "band": 0,
+                "microns": 3.329
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              -0.069,
+              0.138,
+              -0.075,
+              0.002
+            ]
+          },
+          "bestState": {
+            "width": 3.2,
+            "depth": 4.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.115,
+              0.093,
+              0.01,
+              0.033,
+              0.046,
+              0.069
+            ]
+          },
+          "machine": "gate",
+          "mode": "long",
+          "width": 3.2,
+          "depth": 4.64,
+          "heights": [
+            -0.15,
+            0.15,
+            -0.069,
+            0.138,
+            -0.075,
+            0.002
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        }
+      }
+    },
+    {
+      "index": 3,
+      "mode": "cross",
+      "condition": "new",
+      "stage": "initial",
+      "values": {
+        "record": {
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "new",
+            "seed": 518059,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": -11.52
+              },
+              "XZ": {
+                "band": 0,
+                "microns": 9.033
+              },
+              "YZ": {
+                "band": 0,
+                "microns": 9.368
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 4.813
+              },
+              "Y": {
+                "band": 0,
+                "microns": 15.087
+              },
+              "Z": {
+                "band": 0,
+                "microns": 8.963
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              -0.086,
+              -0.11
+            ]
+          },
+          "bestState": {
+            "width": 2.88,
+            "depth": 2.8,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.011,
+              0,
+              0,
+              -0.011
+            ]
+          },
+          "machine": "gate",
+          "mode": "cross",
+          "width": 2.88,
+          "depth": 2.8,
+          "heights": [
+            -0.15,
+            0.15,
+            -0.086,
+            -0.11
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        }
+      }
+    },
+    {
+      "index": 4,
+      "mode": "",
+      "condition": "new",
+      "stage": "initial",
+      "values": {
+        "record": {
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "new",
+            "seed": 518064,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 1,
+                "microns": 33.372
+              },
+              "XZ": {
+                "band": 0,
+                "microns": 3.761
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -8.268
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 17.633
+              },
+              "Y": {
+                "band": 0,
+                "microns": 11.287
+              },
+              "Z": {
+                "band": 0,
+                "microns": 9.569
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.035,
+              0.063,
+              -0.001,
+              -0.041,
+              0.109,
+              0.104
+            ]
+          },
+          "bestState": {
+            "width": 3.2,
+            "depth": 4.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.062,
+              0.101,
+              0.103,
+              0.063,
+              -0.002,
+              -0.042,
+              0.096,
+              0.137
+            ]
+          },
+          "machine": "gantry",
+          "mode": "",
+          "width": 3.2,
+          "depth": 4.64,
+          "heights": [
+            -0.15,
+            0.15,
+            0.035,
+            0.063,
+            -0.001,
+            -0.041,
+            0.109,
+            0.104
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        }
+      }
+    },
+    {
+      "index": 5,
+      "mode": "",
+      "condition": "new",
+      "stage": "initial",
+      "values": {
+        "record": {
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "new",
+            "seed": 518068,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": -18.543
+              },
+              "XZ": {
+                "band": 1,
+                "microns": 22.519
+              },
+              "YZ": {
+                "band": 0,
+                "microns": 6.232
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 6.492
+              },
+              "Y": {
+                "band": 0,
+                "microns": 18.686
+              },
+              "Z": {
+                "band": 0,
+                "microns": 14.947
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.09
+            ]
+          },
+          "bestState": {
+            "width": 2.72,
+            "depth": 2.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "five",
+          "mode": "",
+          "width": 2.72,
+          "depth": 2.64,
+          "heights": [
+            -0.15,
+            0.15,
+            0.09
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0,
+            "A": 0,
+            "C": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        }
+      }
+    },
+    {
+      "index": 6,
+      "mode": "",
+      "condition": "new",
+      "stage": "initial",
+      "values": {
+        "record": {
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "new",
+            "seed": 518072,
+            "keys": [
+              "X",
+              "Z"
+            ],
+            "squareness": {
+              "XZ": {
+                "band": 0,
+                "microns": 10.284
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 10.973
+              },
+              "Z": {
+                "band": 0,
+                "microns": 10.793
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              -0.109,
+              0.13,
+              -0.129,
+              0.075
+            ]
+          },
+          "bestState": {
+            "width": 4,
+            "depth": 1.68,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "lathe",
+          "mode": "",
+          "width": 4,
+          "depth": 1.68,
+          "heights": [
+            -0.15,
+            0.15,
+            -0.109,
+            0.13,
+            -0.129,
+            0.075
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        }
+      }
+    }
+  ]
+}

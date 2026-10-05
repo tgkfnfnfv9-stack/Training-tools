@@ -63,7 +63,7 @@ check('touch targets and scroll/transform contracts are present',()=>{
  assert.match(css,/\.common-support-actions button\{[^}]*min-height:44px/);
  const toggleRule=/\.training-menu-toggle[^{}]*\{([^}]*)\}/.exec(css)[1];assert(/(?:min-width|width):44px/.test(toggleRule)&&/(?:min-height|height):44px/.test(toggleRule),'menu trigger needs a 44px touch target');
 });
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 const sizes=[[320,480,232,116],[320,568,232,240],[390,844,302,430],[568,320,232,132],[844,390,384,180],[1024,768,800,440],[1363,936,1000,600]];
 for(const [index,mode] of variants){
  storage.clear();read(`openMachine(machines[${index}]);`);if(mode)r.machineMode.change(mode);const kind=read('current.kind');
@@ -71,7 +71,7 @@ for(const [index,mode] of variants){
   const buttons=r.mainAdjustment.querySelectorAll('button'),supports=json('supports');assert.equal(buttons.length,supports.length+4);
   assert.equal(r.mainAdjustment.querySelectorAll('input').length,0);assert.equal(r.mainAdjustment.querySelectorAll('select').length,0);
   assert.equal(r.coarseAdjust.closest('#mainAdjustment'),r.mainAdjustment);assert.equal(r.fineAdjust.textContent,'微調整');assert.equal(r.lowerSupport.closest('#mainAdjustment'),r.mainAdjustment);assert.equal(r.raiseSupport.closest('#mainAdjustment'),r.mainAdjustment);
-  assert.equal(r.selectedSupportLabel.getAttribute('role'),'status');assert.match(r.selectedSupportLabel.textContent,/支持点 A/);assert(!/mm|µm|µrad|[\d.]+/.test(r.selectedSupportLabel.textContent));
+  assert.equal(r.selectedSupportLabel.getAttribute('role'),'status');assert.equal(r.selectedSupportLabel.textContent,'支持点 A・'+supports[0].name);assert(!/mm|µm|µrad/.test(r.selectedSupportLabel.textContent));
   assert.equal(r.supportControls.closest('#trainingMain'),null);assert(r.supportControls.hidden);
   assert.deepEqual(r.axisTabs.children.map(b=>b.textContent),json('axisConfig(current).map(a=>a.key+"軸")'));
  });

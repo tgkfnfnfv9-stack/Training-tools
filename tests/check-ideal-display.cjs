@@ -6,7 +6,7 @@
 const assert=require('node:assert/strict');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const {registry:r,read,json,storage}=require('./leveling-dom-env.cjs')({pureLeveling:true});
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 const states=[{X:0,Y:0,Z:0,A:0,C:0},{X:73,Y:-42,Z:55,A:-67,C:82},{X:-100,Y:100,Z:-100,A:100,C:-100}];
 const literal=JSON.stringify,subtract=(a,b)=>a.map((v,i)=>v-b[i]),norm=v=>Math.hypot(...v),unit=v=>v.map(n=>n/norm(v));
 const result={checks:{nominalGeometry:0,flatAgreement:0,supportAdjustment:0,intrinsicRemoval:0,linearMotion:0,rotaryRigidity:0,viewAndToggle:0},vertices:0,maximumPointDifference:0,failures:[]};
@@ -47,7 +47,7 @@ for(const [index,mode] of variants){
  read('levelConfig.columnX=35;levelConfig.columnZ=-21;');
  for(const [width,depth] of [defaults,[.5,20],[20,.5]])for(const exaggerated of [false,true])for(const pattern of ['flat','tilt','twist','middle'])for(const state of states){
   read(`levelConfig.width=${width};levelConfig.depth=${depth};$('exaggerate').checked=${exaggerated};`);
-  setHeights((s,i)=>pattern==='flat'?.17:pattern==='tilt'?.14*s.x/(size[0]/2)-.11*s.z/(size[1]/2):pattern==='twist'?.2*s.x/(size[0]/2)*s.z/(size[1]/2):[.31,-.28,.14,-.09,.23,-.17,.34,-.21][i]);setState(state);
+  setHeights((s,i)=>pattern==='flat'?.17:pattern==='tilt'?.14*s.x/(size[0]/2)-.11*s.z/(size[1]/2):pattern==='twist'?.2*s.x/(size[0]/2)*s.z/(size[1]/2):[.31,-.28,.14,-.09,.23,-.17,.34,-.21][i%8]);setState(state);
   const faces=bodyFaces(),snapshot=physicalState(),saved=[...storage],actual=idealFaces(faces),p=parameters();name=`${kind}/${width}x${depth}/${pattern}/exaggerated=${exaggerated}/positions=${literal(state)}`;
   check('nominalGeometry',()=>{
    assert(actual.inputUnchanged&&actual.contextUnchanged,'ideal transformation mutates its inputs');

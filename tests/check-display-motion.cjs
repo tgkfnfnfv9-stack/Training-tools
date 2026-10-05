@@ -6,7 +6,7 @@
 const assert=require('node:assert/strict');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const {registry:r,read,json,storage}=require('./leveling-dom-env.cjs')({pureLeveling:true});
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 const literal=JSON.stringify,sub=(a,b)=>a.map((v,i)=>v-b[i]),length=v=>Math.hypot(...v),unit=v=>v.map(q=>q/length(v));
 const result={checks:{planarMotion:0,localContact:0,fixedAnchorMotion:0,averageVersusLocal:0},maximumDirectionDifference:0,maximumContactDifference:0,failures:[]};
 let name='';
@@ -110,6 +110,6 @@ for(const exaggerated of [false,true]){
  }
 }
 // Solid-body intrinsic error remains after the support plane is level.
-open(0,'standard');profile();heights(()=>0);setState({X:0,Y:0,Z:0,A:0,C:0});name='vertical/flat-support/intrinsic-remains';
+open(0,'compact');profile();heights(()=>0);setState({X:0,Y:0,Z:0,A:0,C:0});name='vertical/flat-support/intrinsic-remains';
 check('averageVersusLocal',()=>{near(read('levelSolution.fb'),0);near(read('levelGeometry.toolSlope.fb'),0);const a=json('levelGeometry.poses.tool.anchor'),p=json(`levelBodyVisualPoint([${a.x},1.66,${a.z}],'tool')`),o=json(`levelBodyVisualPoint([${a.x},.66,${a.z}],'tool')`);assert(Math.abs(p[2]-o[2])>1e-6,'intrinsic front lean was incorrectly removed');});
 console.log(JSON.stringify(result,null,2));if(result.failures.length)process.exitCode=1;

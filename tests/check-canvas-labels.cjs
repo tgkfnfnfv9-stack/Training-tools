@@ -20,7 +20,7 @@ const ctx={
 r.scene.getContext=()=>ctx;r.scene.getBoundingClientRect=()=>({width,height});
 const overlap=(a,b)=>a.x<b.x+b.w-1e-7&&b.x<a.x+a.w-1e-7&&a.y<b.y+b.h-1e-7&&b.y<a.y+a.h-1e-7;
 const circleOverlap=(a,c)=>{const nx=Math.max(a.x,Math.min(a.x+a.w,c.x)),ny=Math.max(a.y,Math.min(a.y+a.h,c.y));return (nx-c.x)**2+(ny-c.y)**2<(c.radius-1)**2;};
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 const sizes=[[320,153.5],[284,119],[390,291.5],[422,237],[768,381.5],[757.21875,733.203125]];
 let frames=0,collisionFrames=0,outsideFrames=0,missingAxisFrames=0,supportCollisionFrames=0;
 let backgroundRectangles=0,axisRectangles=0,partRectangles=0,expectedAxisLabels=0;

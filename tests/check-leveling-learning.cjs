@@ -5,6 +5,7 @@
 const assert=require('node:assert/strict');
 const makeEnvironment=require('./leveling-dom-env.cjs');
 const MachineAccuracy=require('../src/machine-accuracy.js');
+const irregularHeightOracle=require('./irregular-height-oracle.cjs');
 let checks=0;
 const failures=[];
 function check(name,fn){checks++;try{fn();}catch(error){failures.push(name+': '+error.message);}}
@@ -14,7 +15,7 @@ const add=(a,b)=>a.map((q,i)=>q+b[i]);
 const scale=(a,s)=>a.map(q=>q*s);
 const normalize=a=>scale(a,1/Math.hypot(...a));
 const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 const env=makeEnvironment();
 const {registry:r,read,json,storage}=env;
 read('Math.random=()=>.271828;');
@@ -25,13 +26,15 @@ function setProfile(condition,seed){
  return profile;
 }
 // Solve the derivative from the stated piecewise bilinear/three-point model,
-// rather than using Leveling.solve, geometryModel, or a before/after UI value.
+// rather than using geometryModel or before/after UI values. For irregular
+// supports the independently differenced height graph is used (see helper).
 function independentSlope(points,x,z){
  if(points.length===3){
   const [p,q,t]=points,dx=q.x-p.x,dz=q.z-p.z,tx=t.x-p.x,tz=t.z-p.z,dh=q.h-p.h,th=t.h-p.h,det=dx*tz-tx*dz;
   return {lr:(dh*tz-th*dz)/det,fb:(dx*th-tx*dh)/det};
  }
  const xs=[...new Set(points.map(p=>p.x))].sort((a,b)=>a-b),zs=[...new Set(points.map(p=>p.z))].sort((a,b)=>a-b);
+ if(points.length!==xs.length*zs.length)return irregularHeightOracle(points).slopeAt(x,z);
  const interval=(values,value)=>{let i=0;while(i<values.length-2&&value>=values[i+1])i++;return i;};
  const i=interval(xs,x),j=interval(zs,z),dx=xs[i+1]-xs[i],dz=zs[j+1]-zs[j],u=(x-xs[i])/dx,v=(z-zs[j])/dz;
  const h=(x,z)=>points.find(p=>p.x===x&&p.z===z).h;
@@ -65,7 +68,7 @@ function expected(heights){
  const lean=s=>({front:Math.atan(s.fb/1000)*1e6,right:-Math.atan(s.lr/1000)*1e6});
  const toolLean=lean(tool.slope),workLean=lean(work.slope),xs=points.map(p=>p.x),zs=points.map(p=>p.z);
  let twist=0;
- if(points.length>3){const x0=Math.min(...xs),x1=Math.max(...xs),z0=Math.min(...zs),z1=Math.max(...zs),h=(x,z)=>points.find(p=>p.x===x&&p.z===z).h;twist=(h(x1,z1)-h(x0,z1)-h(x1,z0)+h(x0,z0))/(x1-x0);}
+ if(points.length>3){const x0=Math.min(...xs),x1=Math.max(...xs),z0=Math.min(...zs),z1=Math.max(...zs),h=new Set(xs).size*new Set(zs).size===points.length?(x,z)=>points.find(p=>p.x===x&&p.z===z).h:irregularHeightOracle(points).heightAt;twist=(h(x1,z1)-h(x0,z1)-h(x1,z0)+h(x0,z0))/(x1-x0);}
  return {pairs,toolLean,relativeLean:{front:toolLean.front-workLean.front,right:toolLean.right-workLean.right},columns:tool.slopes.map(lean),twist};
 }
 const data=(element,key)=>element?.getAttribute('data-'+key)??element?.dataset?.[key];

@@ -6,7 +6,7 @@ const css=require('node:fs').readFileSync('src/style.css','utf8');
 const makeEnvironment=require('./leveling-dom-env.cjs');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const {registry:r,read,json,storage}=makeEnvironment();
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 let checks=0,changedPairs=0;
 function check(label,fn){fn();checks++;}
 function near(a,b,tolerance=1e-9){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tolerance,`${a} != ${b}`);}

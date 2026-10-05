@@ -58,7 +58,7 @@ async function main(){
   const anchor=json(`levelGeometry.poses.${pose}.anchor`),p=[anchor.x,.66,anchor.z];
   return sub(json(`levelVisualPoint(${JSON.stringify(p.map((v,i)=>v+vector[i]))},'${pose}')`),json(`levelVisualPoint(${JSON.stringify(p)},'${pose}')`));
  }
- for(const [index,mode] of [[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']]){
+ for(const [index,mode] of [[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']]){
   open(index,mode);
   read('supportHeights=supports.map(s=>{const p=levelCoordinates(s.x,s.z);return .027*p.x-.019*p.z+.05;});updateLeveling(false);');
   check('構造別・複合平面の直角保持 '+index+' '+mode,()=>{for(const p of current().pairs){near(p.errorMicrons,0);near(p.angleDegrees,90);}});
@@ -96,15 +96,15 @@ async function main(){
  check('移動コラムは X 位置で XZ 姿勢が変化',()=>{assert.notEqual(pair(current(),'XZ').errorMicrons,travelLeft);near(current().toolPoints[0].x,.5);});
  open(1);preset('twist');axis('X',-100);const horizontalLeft=pair(current(),'YZ').errorMicrons;axis('X',100);
  check('横形は Y が上下、Z が前後の対応で直角度を表示',()=>{assert.ok(horizontalLeft*pair(current(),'YZ').errorMicrons<0);near(pair(current(),'XY').errorMicrons,0);assert.deepEqual(current().axes.find(a=>a.key==='Y').vector,[0,1,0]);});
- for(const [index,mode] of [[3,'long'],[3,'cross'],[4,'']]){
+ for(const [index,mode] of [[3,'l3-3000'],[4,'']]){
   open(index,mode);preset('twist');
   check('門形の左右逆向き倒れを保持 '+index+' '+mode,()=>{const g=current();assert.equal(g.columns.length,2);assert.ok(g.columns[0].front<0&&g.columns[1].front>0);assert.ok(!r.columnDifference.hidden);assert.match(r.columnDifference.textContent,/左右の前後倒れ差/);});
   if(mode!=='cross')check('門形の診断は平均の相殺を同じ姿勢と断定しない '+index,()=>{assert.doesNotMatch(r.accuracyDiagnosis.textContent,/工具側と案内側が同じ姿勢です/);assert.match(r.accuracyDiagnosis.textContent,/左右|コラム|門/);});
   r.demoTwist.click();
   if(current().pairs.every(p=>Math.abs(p.errorMicrons)<1e-8))check('門のねじれデモは直角差が出たと断定しない '+index,()=>{assert.doesNotMatch(r.levelInputMessage.textContent,/直角度の差が出る/);assert.match(r.levelInputMessage.textContent,/左右|コラム|門|姿勢/);});
  }
- open(3,'long');r.supportWidth.change('5');r.supportDepth.change('1.3');
- read('supportHeights=supports.map(s=>Math.round(.01*(s.x/(current.w*.4))*(s.z/(current.d*.4))*100)/100);levelExercise={solved:false};updateLeveling(false);');
+ open(3,'l3-3000');r.supportWidth.change('5');r.supportDepth.change('1.3');
+ read('supportHeights=supports.map(s=>Math.round(.2*(s.x/(current.w*.4))*(s.z/(current.d*.4))*100)/100);levelExercise={solved:false};updateLeveling(false);');
  check('門の調整目標は平均の相殺で左右の倒れ差を見落とさない',()=>{const g=current();assert.ok(Math.abs(g.columns[1].front-g.columns[0].front)>20);assert.equal(read('levelExercise.solved'),false);assert.doesNotMatch(r.diagnosis.textContent,/教材の調整目標内/);});
  open(6);preset('twist');
  check('旋盤は主軸基準 XZ のみで Y 軸を表示しない',()=>{assert.deepEqual(current().pairs.map(p=>p.key),['XZ']);assert.deepEqual(current().axes.map(p=>p.key),['X','Z']);assert.match(r.accuracyMetrics.textContent,/主軸Z基準/);assert.match(r.geometryAssumption.textContent,/Y軸はありません/);assert.equal(r.columnLayout.hidden,true);});
@@ -138,8 +138,9 @@ async function main(){
   r.scene.getBoundingClientRect=()=>({width:0,height:0});
  });
 
- open(0,'compact');preset('twist');layout('columnX',-63);layout('columnZ',47);axis('X',37);axis('Y',-29);axis('Z',61);const record=json('levelRecord()'),beforeRestore=current().pairs.map(p=>p.errorMicrons);
- read('openMachine(machines[1]);openMachine(machines[0]);');r.machineMode.change('compact');
+ // Pure support records remain on an unchanged grid; v3 layouts require intrinsic profiles.
+ open(2);preset('twist');layout('columnX',-63);layout('columnZ',47);axis('X',37);axis('Y',-29);axis('Z',61);const record=json('levelRecord()'),beforeRestore=current().pairs.map(p=>p.errorMicrons);
+ read('openMachine(machines[1]);openMachine(machines[2]);');
  check('配置と支持高さは機械方式ごとに保存・復元',()=>{assert.deepEqual(json('levelRecord()'),record);assert.match(r.levelSaveStatus.textContent,/復元/);assert.equal(Number(r.columnX.value),-63);assert.equal(Number(r.columnZ.value),47);});
  check('軸位置と現在の直角度も保存復元で再現',()=>{assert.deepEqual(json('levelRecord().axisPositions'),{X:37,Y:-29,Z:61});assert.deepEqual(current().pairs.map(p=>p.errorMicrons),beforeRestore);for(const key of ['X','Y','Z'])assert.equal(Number(r['axis-'+key].value),record.axisPositions[key]);});
  const legacy=structuredClone(record);delete legacy.columnX;delete legacy.columnZ;delete legacy.axisPositions;
@@ -155,7 +156,7 @@ async function main(){
   await importRecord({...valid,axisPositions:value});
   check('不正な軸位置 JSON を拒否 '+JSON.stringify(value),()=>{assert.deepEqual(json('levelRecord()'),valid);assert.match(r.levelInputMessage.textContent,/読込できません/);});
  }
- r.exportLevel.click();check('JSON ダウンロード名は機械と方式を識別',()=>{assert.equal(env.downloads.length,1);assert.match(env.downloads[0].download,/leveling-vertical-compact\.json/);});
+ r.exportLevel.click();check('JSON ダウンロード名は機械と方式を識別',()=>{assert.equal(env.downloads.length,1);assert.match(env.downloads[0].download,/leveling-travel-standard\.json/);});
  const exported=JSON.parse(await env.context.exportedBlob.text());check('エクスポート内容は現在の記録と一致',()=>assert.deepEqual(exported,valid));
  const animation=[];env.context.requestAnimationFrame=f=>{animation.push(f);return animation.length;};
  read("selectAxis('X')");r.playAxis.click();animation.shift()(1000);animation.shift()(1750);const animated=read('positions.X');r.playAxis.click();

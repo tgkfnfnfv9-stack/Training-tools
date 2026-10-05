@@ -5,8 +5,9 @@
 const assert=require('node:assert/strict');
 const createEnvironment=require('./leveling-dom-env.cjs');
 const MachineAccuracy=require('../src/machine-accuracy.js');
+const irregularHeightOracle=require('./irregular-height-oracle.cjs');
 const env=createEnvironment(),{registry:r,read,json,storage}=env;
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 let checks=0;
 const failures=[];
 function check(name,fn){checks++;try{fn();}catch(error){failures.push(name+': '+error.message);}}
@@ -19,6 +20,7 @@ function independentSlope(points,x,z){
   return {lr:(dh*tz-th*dz)/det,fb:(dx*th-tx*dh)/det};
  }
  const xs=[...new Set(points.map(p=>p.x))].sort((a,b)=>a-b),zs=[...new Set(points.map(p=>p.z))].sort((a,b)=>a-b);
+ if(points.length!==xs.length*zs.length)return irregularHeightOracle(points).slopeAt(x,z);
  const interval=(values,value)=>{let i=0;while(i<values.length-2&&value>=values[i+1])i++;return i;};
  const i=interval(xs,x),j=interval(zs,z),dx=xs[i+1]-xs[i],dz=zs[j+1]-zs[j],u=(x-xs[i])/dx,v=(z-zs[j])/dz;
  const h=(x,z)=>points.find(p=>p.x===x&&p.z===z).h,h00=h(xs[i],zs[j]),h10=h(xs[i+1],zs[j]),h01=h(xs[i],zs[j+1]),h11=h(xs[i+1],zs[j+1]),bend=h11-h01-h10+h00;
@@ -92,7 +94,7 @@ for(const [index,mode] of variants){
  });
  if(index===5)check('3点支持のねじれ0と本体精度の残存を両立',()=>{r.zero.click();near(read('levelSolution.twist'),0,0);near(read('levelSolution.residual'),0,0);assert.ok(Math.hypot(...Object.values(json('levelGeometry.bodyPosture')))>.1);});
 }
-open(0,'standard');
+open(0,'compact');
 check('粗目安は局所読みに依存せず左右/前後の平均だけ',()=>{
  read('supportHeights=supports.map(s=>{const p=levelCoordinates(s.x,s.z);return p.x*.018+p.z*.018;});updateLeveling();');assert.equal(r.stageStatus.getAttribute('data-coarse-ready'),'true');
  r.levelSensitivity.change('0.1');r.measurePos.change('1');assert.equal(r.stageStatus.getAttribute('data-coarse-ready'),'true');

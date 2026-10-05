@@ -53,7 +53,7 @@ function tick(time){const entries=[...pending.values()];pending.clear();for(cons
 let paths=[],texts=[],path=[];
 const canvas={scale(){},fillRect(){},beginPath(){path=[];},moveTo(x,y){assert(Number.isFinite(x)&&Number.isFinite(y));path.push([x,y]);},lineTo(x,y){assert(Number.isFinite(x)&&Number.isFinite(y));path.push([x,y]);},closePath(){},arc(){},fill(){},fillText(text,x,y){assert(Number.isFinite(x)&&Number.isFinite(y));texts.push(text);},measureText(text){return {width:text.length*6};},stroke(){if(this.lineWidth===4||this.lineWidth===2.5)paths.push({color:this.strokeStyle,width:this.lineWidth,points:path.map(p=>[...p])});}};
 r.scene.getBoundingClientRect=()=>({width:390,height:340});r.scene.getContext=()=>canvas;
-const layouts=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const layouts=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 function referenceTips(){return r.orientationAxes.children.map(svg=>{
  const line=svg.querySelectorAll('line')[0];return [svg.getAttribute('aria-label'),Number(line.getAttribute('x2')),Number(line.getAttribute('y2'))];
 });}
@@ -93,7 +93,7 @@ for(const [index,mode] of layouts){
   assert.notDeepEqual(referenceTips(),tipsBeforeRotation);assert.deepEqual(json('levelRecord()'),recordBeforeRotation);
  });
  read('yaw=Math.PI/2;drawScene()');
- const quarterTurn=index===6?{X:[76,72],Z:[48,100]}:index===1?{X:[48,100],Y:[48,44],Z:[76,72]}:(index===3&&mode==='long')||index===4?{X:[76,72],Y:[48,100],Z:[48,44]}:{X:[48,100],Y:[76,72],Z:[48,44]};
+ const quarterTurn=index===6?{X:[76,72],Z:[48,100]}:index===1?{X:[48,100],Y:[48,44],Z:[76,72]}:(index===3&&mode==='l3-3000')||index===4?{X:[76,72],Y:[48,100],Z:[48,44]}:{X:[48,100],Y:[76,72],Z:[48,44]};
  check('reference directions preserve machine-specific assignments at a quarter turn '+index+' '+mode,()=>{
   referenceTips().forEach(([label,x,y],i)=>{assert.equal(label,linearKeys[i]+'軸の向きの目安');const expected=quarterTurn[linearKeys[i]];assert(Math.abs(x-expected[0])<1e-9);assert(Math.abs(y-expected[1])<1e-9);});
  });
@@ -139,8 +139,8 @@ r.axisControlsToggle.click();r.playAxis.click();
 check('demo starts with visible main trigger focus',()=>{assert(r.trainingDrawer.hidden);assert.equal(focused,r.openTrainingMenu);assert.equal(r.playAxis.getAttribute('aria-pressed'),'true');assert.match(r.axisDemoStatus.textContent,/X軸/);});
 tick(0);tick(875);check('demo changes the selected part position',()=>assert(read('positions.X')>80));tick(3500);
 check('single demo ends, keeps precision comparison live and saves center',()=>{assert.equal(read('motionFrame'),null);assert.equal(read('positions.X'),0);assert.equal(r.playAxis.getAttribute('aria-pressed'),'false');assert.equal(json('levelRecord()').axisPositions.X,0);assert(Number.isFinite(Number(r['accuracy-current-XZ'].getAttribute('data-value'))));});
-r.axisControlsToggle.click();r.machineMode.change('compact');
-check('mode change closes the controls menu and restores main trigger focus',()=>{assert(r.trainingDrawer.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.openTrainingMenu);assert.equal(read('machineMode'),'compact');});
+r.axisControlsToggle.click();const beforeRemovedMode=json('levelRecord()');r.machineMode.change('standard');
+check('removed standard mode cannot alter the compact model or its open settings',()=>{assert(!r.trainingDrawer.hidden);assert(r.machineModeBox.hidden);assert.equal(read('machineMode'),'compact');assert.deepEqual(json('levelRecord()'),beforeRemovedMode);});r.closeTrainingMenu.click();
 r.axisControlsToggle.click();read("navigate('catalog')");
 check('leaving closes the controls menu',()=>{assert(r.trainingDrawer.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');});
 console.log('3D axis controls: '+checks+' checks passed.');

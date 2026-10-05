@@ -12,7 +12,7 @@ for(const size of [[390,340],[320,225],[720,500]]){
  [width,height]=size;
  for(let i=0;i<7;i++){
   storage.clear();read(`openMachine(machines[${i}])`);
-  for(const mode of i===0?['standard','compact']:i===3?['long','cross']:['']){
+  for(const mode of i===0?['compact']:i===3?['l3-3000']:['']){
    if(mode)r.machineMode.change(mode);
    read('selectedAxis="Z";drawScene()');
    if(!r.demoTwist.disabled)r.demoTwist.click();

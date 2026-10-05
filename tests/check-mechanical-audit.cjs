@@ -13,7 +13,7 @@ function near(a,b,tolerance=1e-8){assert.ok(Number.isFinite(a)&&Number.isFinite(
 const dot=(a,b)=>a.reduce((s,q,i)=>s+q*b[i],0);
 const magnitude=a=>Math.hypot(...a);
 const difference=(a,b)=>a.map((q,i)=>q-b[i]);
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 function open(env,index,mode){env.read(`openMachine(machines[${index}])`);if(mode)env.registry.machineMode.change(mode);}
 function setProfile(env,condition,seed){
  const profile=MachineAccuracy.generate(condition,seed,env.json('machineLinearKeys()'),env.read('supports.length'));
@@ -25,7 +25,7 @@ for(const [index,mode] of variants){
  open(pure,index,mode);
  const label=`${index}/${mode}`;
  const count=pure.read('supports.length');
- const heights=Array.from({length:count},(_,i)=>[.2,.3,.2,-.3,.111,-.237,.407,-.101][i]);
+ const heights=Array.from({length:count},(_,i)=>[.2,.3,.2,-.3,.111,-.237,.407,-.101][i%8]);
  for(const [width,depth] of [[.5,.5],[20,20],[.5,20],[20,.5]]){
   pure.read(`levelConfig.width=${width};levelConfig.depth=${depth};supportHeights=${JSON.stringify(heights)};updateLeveling();`);
   for(const exaggerated of [false,true]){
@@ -65,8 +65,13 @@ for(const [index,mode] of variants){
   // optimization objective are invariant to this uniform vertical translation.
   const roomUp=.5-Math.max(...reference),roomDown=Math.min(...reference)+.5;
   const delta=roomUp>=.1?.1:roomDown>=.1?-.1:0;
-  assert.notEqual(delta,0,'reference feet leave no room to test translation');
-  live.read(`supportHeights=supportHeights.map(h=>Math.round((h+${delta})*1000)/1000);updateLeveling();`);
+  if(delta!==0)live.read(`supportHeights=supportHeights.map(h=>Math.round((h+${delta})*1000)/1000);updateLeveling();`);
+  else {
+   // A 24-point optimum can occupy both allowed height limits. Check the
+   // geometric invariant directly without saving an out-of-range UI state.
+   const translated=reference.map(h=>h+.1);
+   near(live.read(`machineEvaluation(${JSON.stringify(translated)}).objective`),before.objective,1e-7);
+  }
   check(`共通の高さ移動は精度を変えず追加調整を要求しない ${label} ${condition}`,()=>{
    near(live.read('machineEvaluation(supportHeights).objective'),before.objective,1e-7);
    assert.equal(live.registry.applyBestLevel.disabled,true,'同じ精度で全支持点を戻す必要はない');
@@ -86,7 +91,9 @@ for(const [index,mode] of variants){
   });
   // A true single plane moves all assemblies by the same orthonormal frame;
   // the fixed machine squareness must remain even with changed virtual sizes.
-  live.read('levelConfig.width=.5;levelConfig.depth=20;supportHeights=supports.map(s=>Math.round((.08+.07*s.x/(current.w*.4)-.06*s.z/(current.d*.4))*1000)/1000);updateLeveling();');
+  // Irregular foundation stations do not share a 0.001 mm height grid for an
+  // arbitrary plane. Do not quantize this mathematical plane-invariance case.
+  live.read('levelConfig.width=.5;levelConfig.depth=20;supportHeights=supports.map(s=>{const h=.08+.07*s.x/(current.w*.4)-.06*s.z/(current.d*.4);return current.supportLayout?h:Math.round(h*1000)/1000;});updateLeveling();');
   check(`共通平面では個体の直角差だけが残る ${label} ${condition}`,()=>{
    for(const p of live.json('levelGeometry.pairs'))near(p.errorMicrons,profile.squareness[p.key].microns*live.read('levelConfig.offset')/MachineAccuracy.referenceLength,1e-7);
   });
@@ -134,10 +141,10 @@ for(const heights of [[-.5,.5,0,.123],[-.499,-.498,-.487,-.5],[.499,.5,.487,.498
   });
  }
 }
-// A reproducible used-machine case actually reaches the +0.500 mm bound in
+// A reproducible used-machine case actually reaches the -0.500 mm bound in
 // the search. Test real application, invariance and restoration at that bound.
-live.storage.clear();open(live,0,'standard');
-setProfile(live,'used',0);
+live.storage.clear();open(live,0,'compact');
+setProfile(live,'used',16);
 live.read('levelConfig.width=20;levelConfig.depth=20;updateLeveling();');
 check('大きい中古誤差と長い支持幅で探索は実際に上限に達する',()=>assert.ok(live.json('machineReference.best.heights').some(h=>Math.abs(h)>=.499)));
 live.registry.applyBestLevel.click();
@@ -152,7 +159,7 @@ const boundHeights=live.json('supportHeights'),boundDelta=boundHeights.every(h=>
 assert.ok(boundHeights.every(h=>h+boundDelta>=-.500000001&&h+boundDelta<=.500000001));
 live.read(`supportHeights=supportHeights.map(h=>Math.round((h+${boundDelta})*1000)/1000);updateLeveling();`);
 const boundRecord=live.json('levelRecord()');
-open(live,0,'standard');
+open(live,0,'compact');
 check('境界の参考高さは共通移動後の保存・再評価でも保持',()=>{
  assert.deepEqual(live.json('levelRecord()'),boundRecord);
  assert.deepEqual(live.json('machineReference.best.heights'),boundReference);

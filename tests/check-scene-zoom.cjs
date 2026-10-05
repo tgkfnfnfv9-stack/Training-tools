@@ -35,7 +35,7 @@ r.scene.getBoundingClientRect=()=>({width:390,height:340});
 const span=()=>{assert(scene.trace.supports.length>=2);const [a,b]=scene.trace.supports;return Math.hypot(a[0]-b[0],a[1]-b[1]);};
 const physical=()=>json('({record:levelRecord(),heights:supportHeights,positions,solution:levelSolution,geometry:levelGeometry,profile:machineProfile,reference:machineReference,stage:adjustmentStage,fineStart:fineStartEvaluation})');
 function resetView(){read('clearScenePointers();setSceneZoom(1)');}
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 for(const [index,mode] of variants){
  storage.clear();read(`openMachine(machines[${index}])`);if(mode)r.machineMode.change(mode);
  const before=physical(),saved=[...storage],yaw=read('yaw');

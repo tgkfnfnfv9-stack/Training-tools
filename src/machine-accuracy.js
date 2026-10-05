@@ -12,7 +12,7 @@
  const quantize=v=>Math.round(v*1000)/1000;
  function random(seed){let value=seed>>>0;return ()=>{value=(value+0x6D2B79F5)>>>0;let t=value;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
  function generate(condition,seed,keys,count){
-  if(!distributions[condition]||!Number.isInteger(seed)||seed<0||seed>4294967295||!Array.isArray(keys)||keys.length<2||new Set(keys).size!==keys.length||keys.some(k=>!['X','Y','Z'].includes(k))||!Number.isInteger(count)||count<3||count>8)throw new TypeError('個体の抽選条件が不正です。');
+  if(!distributions[condition]||!Number.isInteger(seed)||seed<0||seed>4294967295||!Array.isArray(keys)||keys.length<2||new Set(keys).size!==keys.length||keys.some(k=>!['X','Y','Z'].includes(k))||!Number.isInteger(count)||count<3||count>24)throw new TypeError('個体の抽選条件が不正です。');
   const rng=random(seed),draw=()=>{
    const roll=rng()*100;let limit=0,index=distributions[condition].findIndex(q=>{limit+=q.weight;return roll<limit;});
    if(index<0)index=distributions[condition].length-1;

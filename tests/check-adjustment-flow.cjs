@@ -5,7 +5,7 @@ const assert=require('node:assert/strict');
 const createEnvironment=require('./leveling-dom-env.cjs');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const e=createEnvironment(),{registry:r,read,json,storage}=e;
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 let checks=0;
 function check(name,fn){try{fn();checks++;}catch(error){throw new Error(name+': '+error.message,{cause:error});}}
 function near(a,b,tolerance=1e-7){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tolerance,`${a} != ${b}`);}
@@ -14,6 +14,9 @@ function near(a,b,tolerance=1e-7){assert.ok(Number.isFinite(a)&&Number.isFinite(
 const positionLabels={'measurement-start':'0','measurement-end':'300 mm','measurement-start-note':'0','measurement-origin-note':'O（0,0）','measurement-length-note':'300 mm'};
 function visibleText(el){
  if(el.hidden)return '';
+ // Model identifiers, support counts and station names are not precision or
+ // adjustment measurements. Their exact identities have separate UI checks.
+ if(['machineTitle','machineSubtitle','structureText','supportNote','sourceLinks','selectedSupportLabel'].includes(el.id))return '';
  for(const [className,label] of Object.entries(positionLabels))if(el.classList.contains(className)){assert.equal(el.textContent,label);assert.equal(el.children.length,0);assert(['TEXT','SPAN'].includes(el.tagName));return '';}
  return el._text+' '+el.children.map(visibleText).join(' ');
 }
@@ -30,7 +33,9 @@ function nonnumeric(){
  const text=visibleText(r.training).replace(/(?:5|2)軸/g,'');
  assert.doesNotMatch(text,/[0-9０-９%％°µμ]|\bmm\b|\brad\b/);
  for(const el of visibleElements(r.training)){
-  const aria=(el.getAttribute('aria-label')||'').replace(/(?:5|2)軸/g,'');assert.doesNotMatch(aria,/[0-9０-９%％°µμ]|\bmm\b|\brad\b/);
+  let aria=(el.getAttribute('aria-label')||'').replace(/(?:5|2)軸/g,'').replace(/24か所/g,'');
+  for(const identity of [read('current.name'),...json('supports.map(s=>s.name)')])aria=aria.split(identity).join('');
+  assert.doesNotMatch(aria,/[0-9０-９%％°µμ]|\bmm\b|\brad\b/);
   if(el.type==='range')assert(el.getAttribute('aria-valuetext'));
  }
  for(const el of [r.adjustStep,r.supportWidth,r.supportDepth,r.impactOffset,r.levelSensitivity,r.measurePos,...r.supportControls.querySelectorAll('input')])assert(el.hidden||el.closest('.accuracy-card')?.hidden||el.closest('.level-dimensions')?.hidden||el.closest('.gauge-details')?.hidden);
@@ -83,17 +88,18 @@ for(const [index,mode] of variants)for(const condition of ['new','used']){
  check('another support exercise preserves initial angles but invalidates fine history '+label,()=>{assert.equal(read('fineStartEvaluation'),null);assert.deepEqual(json('machineProfile'),profile);verifyDiagrams();});
  r.restoreInitialLevel.click();check('restore returns unchanged pairs and no old completion '+label,()=>{assert.deepEqual(json('supportHeights'),profile.initialHeights);assert.equal(read('fineStartEvaluation'),null);verifyDiagrams();nonnumeric();});
 }
-loadProfile(0,'standard','new',3587474176);r.coarseExample.click();r.fineAdjust.click();r.fineExample.click();
+// Seed 9 exhibits the same opposing local/global trend in the compact geometry.
+loadProfile(0,'compact','new',9);r.coarseExample.click();r.fineAdjust.click();r.fineExample.click();
 check('overall finishing can improve while a current pair is farther than initial',()=>{assert.equal(r.fineOverallProgress.getAttribute('data-trend'),'better');const xz=r.liveSquareness.querySelectorAll('svg').find(s=>s.getAttribute('data-pair')==='XZ');assert.equal(xz.getAttribute('data-trend'),'worse');assert.match(r.finePrecisionSummary.textContent,/初期より直角から離れた/);assert.equal(r.fineStatus.getAttribute('data-target'),'true');});
-loadProfile(0,'standard','new',4);r.fineAdjust.click();r.fineExample.click();
+loadProfile(0,'compact','new',4);r.fineAdjust.click();r.fineExample.click();
 check('large combined remainder is not blamed only on the machine body',()=>{assert.equal(r.fineStatus.getAttribute('data-target'),'true');assert.equal(r.fineStatus.getAttribute('data-body-significant'),'true');assert.match(r.fineStatus.textContent,/残る誤差/);assert.doesNotMatch(r.fineStatus.textContent,/本体の誤差は残ります/);});
-loadProfile(0,'standard','used',36);read('levelConfig.width=20;levelConfig.depth=20;updateLeveling();');r.fineAdjust.click();r.fineExample.click();
+loadProfile(0,'compact','used',36);read('levelConfig.width=20;levelConfig.depth=20;updateLeveling();');r.fineAdjust.click();r.fineExample.click();
 read('setSupportHeight(0,supportHeights[0]+.05);');
 check('small RMS difference cannot hide significant remaining adjustment',()=>{
  const now=read('machineEvaluation(supportHeights).objective'),best=read('machineReference.best.metric.objective'),gap=Math.sqrt(Math.max(0,now*now-best*best));
  assert(now-best<.1);assert(gap>.1);near(Number(r.fineStatus.getAttribute('data-gap')),gap);assert.equal(r.fineStatus.getAttribute('data-target'),'false');assert.doesNotMatch(r.fineStatus.textContent,/目安内/);
 });
-for(const [index,mode,condition,heights] of [[2,'','new',[-.097,-.107,-.067,-.077,-.079,-.089]],[3,'long','used',[.036,-.015,.074,.173,-.009,.09]]])check('single-support stagnation is not completed, real reference can help '+index+'/'+condition,()=>{
+for(const [index,mode,condition,heights] of [[2,'','new',[-.097,-.107,-.067,-.077,-.079,-.089]]])check('single-support stagnation is not completed, real reference can help '+index+'/'+condition,()=>{
  const profile=loadProfile(index,mode,condition,42);r.fineAdjust.click();read(`supportHeights=${JSON.stringify(heights)};updateLeveling();`);
  compactCoach();assert(Number(r.fineStatus.getAttribute('data-gap'))>.1);assert.equal(r.fineStatus.getAttribute('data-target'),'false');assert.equal(r.fineHint.getAttribute('data-support'),'');assert.match(r.fineHint.textContent,/複数の支持点/);assert.doesNotMatch(r.fineStatus.textContent,/目安内/);
  const before=read('machineEvaluation(supportHeights).objective');
@@ -112,7 +118,7 @@ for(const [before,current,trend,direction] of [[-20,-10,'better','opened'],[10,-
  if(Math.max(Math.abs(before),Math.abs(current))*5000/1e6>.65)assert.match(svg.getAttribute('aria-label'),/図の範囲外/);
 });
 check('position-label exception cannot hide numeric precision or other positions',()=>{
- loadProfile(0,'standard');nonnumeric();
+ loadProfile(0,'compact');nonnumeric();
  const leak=e.context.document.createElement('span');leak.textContent='0 µm';r.training.append(leak);assert.throws(nonnumeric);leak.remove();
  const marker=r.liveSquareness.querySelectorAll('.measurement-end')[0];marker.textContent='300 mm 0 µm';assert.throws(nonnumeric);marker.textContent='400 mm';assert.throws(nonnumeric);marker.textContent='300 mm';nonnumeric();
  const start=r.liveSquareness.querySelectorAll('.measurement-start')[0];start.textContent='0.001';assert.throws(nonnumeric);start.textContent='0';nonnumeric();

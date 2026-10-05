@@ -8,7 +8,71 @@
  const finite=(value,name)=>{if(typeof value!=='number'||!Number.isFinite(value))throw new TypeError(name+'は有限の数値で指定してください。');return value;};
  const checked=(value)=>{if(!Number.isFinite(value))throw new RangeError('入力の桁が大きすぎるか、支持点間隔が小さすぎて計算できません。');return value;};
  const mean=values=>checked(values.reduce((sum,v)=>sum+v/values.length,0));
- function solve(input){
+ // Smooth geometric interpolation for explicitly selected irregular foundations.
+ // This matches every support and reproduces affine planes; it does not model
+ // machine stiffness, contact forces or a finite-element structural solution.
+ let irregularFactorization=null;
+ function irregularSurface(points,xm,zm,sx,sz,hs,planeHeight,a,b){
+  const nodes=points.map(p=>({x:(p.x-xm)/sx,z:(p.z-zm)/sz,h:(p.h-planeHeight(p.x,p.z))/hs}));
+  const n=nodes.length,size=n+3;
+  const kernel=(dx,dz)=>{const r2=dx*dx+dz*dz;return r2===0?0:.5*r2*Math.log(r2);};
+  // Support geometry stays fixed during repeated adjustments and hint searches.
+  // Cache only its elimination steps; each solve still owns fresh heights,
+  // weights and query closures. A single entry keeps memory bounded.
+  const key=JSON.stringify(nodes.map(p=>[p.x,p.z]));
+  if(!irregularFactorization||irregularFactorization.key!==key){
+  const matrix=Array.from({length:size},()=>Array(size).fill(0)),steps=[];
+  for(let i=0;i<n;i++){
+   for(let j=0;j<n;j++)matrix[i][j]=kernel(nodes[i].x-nodes[j].x,nodes[i].z-nodes[j].z);
+   matrix[i][n]=matrix[n][i]=1;
+   matrix[i][n+1]=matrix[n+1][i]=nodes[i].x;
+   matrix[i][n+2]=matrix[n+2][i]=nodes[i].z;
+  }
+  // Partial pivoting in normalized coordinates avoids dependence on model units.
+  for(let col=0;col<size;col++){
+   let pivot=col;
+   for(let row=col+1;row<size;row++)if(Math.abs(matrix[row][col])>Math.abs(matrix[pivot][col]))pivot=row;
+   if(Math.abs(matrix[pivot][col])<Number.EPSILON*size*64)throw new RangeError('不規則支持点の間隔が近すぎて計算できません。');
+   [matrix[col],matrix[pivot]]=[matrix[pivot],matrix[col]];
+   const scale=matrix[col][col];
+   const factors=[];
+   for(let j=col;j<size;j++)matrix[col][j]=checked(matrix[col][j]/scale);
+   for(let row=col+1;row<size;row++){
+    const factor=matrix[row][col];
+    factors.push(factor);
+    for(let j=col;j<size;j++)matrix[row][j]=checked(matrix[row][j]-factor*matrix[col][j]);
+   }
+   steps.push({pivot,scale,factors});
+  }
+  irregularFactorization={key,matrix,steps};
+  }
+  const {matrix,steps}=irregularFactorization,rhs=[...nodes.map(p=>p.h),0,0,0];
+  for(let col=0;col<size;col++){
+   const {pivot,scale,factors}=steps[col];
+   [rhs[col],rhs[pivot]]=[rhs[pivot],rhs[col]];
+   rhs[col]=checked(rhs[col]/scale);
+   for(let row=col+1;row<size;row++)rhs[row]=checked(rhs[row]-factors[row-col-1]*rhs[col]);
+  }
+  const weights=Array(size).fill(0);
+  for(let i=size-1;i>=0;i--){let value=rhs[i];for(let j=i+1;j<size;j++)value-=matrix[i][j]*weights[j];weights[i]=checked(value);}
+  const query=(x,z)=>({x:checked((finite(x,'x')-xm)/sx),z:checked((finite(z,'z')-zm)/sz)});
+  const heightAt=(x,z)=>{
+   const q=query(x,z);let value=weights[n]+weights[n+1]*q.x+weights[n+2]*q.z;
+   for(let i=0;i<n;i++)value+=weights[i]*kernel(q.x-nodes[i].x,q.z-nodes[i].z);
+   return checked(planeHeight(x,z)+value*hs);
+  };
+  const slopeAt=(x,z)=>{
+   const q=query(x,z);let dx=weights[n+1],dz=weights[n+2];
+   for(let i=0;i<n;i++){
+    const u=q.x-nodes[i].x,v=q.z-nodes[i].z,r2=u*u+v*v;
+    if(r2!==0){const factor=weights[i]*(Math.log(r2)+1);dx+=factor*u;dz+=factor*v;}
+   }
+   return {lr:checked(a+dx*hs/sx),fb:checked(b+dz*hs/sz)};
+  };
+  return {heightAt,slopeAt};
+ }
+ function solve(input,options){
+  if(options!==undefined&&(!options||(options.layout!==undefined&&options.layout!=='irregular')))throw new TypeError('不規則支持はlayout: irregularで指定してください。');
   if(!Array.isArray(input)||input.length<3)throw new TypeError('3点以上の支持点が必要です。');
   const points=input.map((p,i)=>{if(!p||typeof p!=='object')throw new TypeError('支持点'+i+'が不正です。');return {x:finite(p.x,'x'),z:finite(p.z,'z'),h:finite(p.h,'h')};});
   const seen=new Set();
@@ -32,6 +96,8 @@
   if(points.length===3){
    heightAt=(x,z)=>planeHeight(finite(x,'x'),finite(z,'z'));
    slopeAt=(x,z)=>{finite(x,'x');finite(z,'z');return {lr:a,fb:b};};
+  }else if(options&&options.layout==='irregular'){
+   ({heightAt,slopeAt}=irregularSurface(points,xm,zm,sx,sz,hs,planeHeight,a,b));
   }else{
    if(points.length!==xs.length*zs.length)throw new RangeError('4点以上は欠けのない長方形格子で指定してください。');
    const rows=zs.map(z=>xs.map(x=>points.find(p=>p.x===x&&p.z===z).h));

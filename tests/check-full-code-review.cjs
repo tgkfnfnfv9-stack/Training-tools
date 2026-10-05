@@ -47,7 +47,7 @@ async function main(){
  check('electrical to mechanical navigation hides old lesson',()=>{assert.equal(read('page'),'training');assert.equal(r.tester.hidden,true);assert.equal(r.training.hidden,false);});
  // Axis transforms must keep every unrelated component fixed, and preserve
  // rigid distances even for nested A/C rotary movement.
- for(const [index,mode] of [[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']]){
+ for(const [index,mode] of [[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']]){
   storage.clear();read(`openMachine(machines[${index}])`);if(mode)r.machineMode.change(mode);
   for(const axis of json('axisConfig(current)')){
    const base={X:0,Y:0,Z:0,A:0,C:0},moved={...base,[axis.key]:73};
@@ -92,13 +92,13 @@ async function main(){
  // Seed the user-facing profiles deterministically so this integration suite
  // verifies the same identities and JSON shapes on every run.
  let seed=13001;context.window.crypto={getRandomValues:values=>{values[0]=seed++;return values;}};
- const layouts=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+ const layouts=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
  for(const [index,mode] of layouts){
   storage.clear();read(`openMachine(machines[${index}])`);if(mode)r.machineMode.change(mode);pending.clear();
   const initial=json('machineProfile'),keys=json('machineLinearKeys()');
   check('random initial profile and immediate persistence '+index+' '+mode,()=>{
    assert.equal(initial.condition,'new');assert.deepEqual(json('supportHeights'),initial.initialHeights);assert(initial.initialHeights.some(v=>v!==0));
-   assert.equal(read('levelRecord().version'),2);assert(read('validLevelRecord(levelRecord())'));
+   assert.equal(read('levelRecord().version'),[0,1,3].includes(index)?3:2);assert(read('validLevelRecord(levelRecord())'));
    assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))).machineProfile,initial);
    assert.equal(Number(r.machineIdentity.getAttribute('data-seed')),initial.seed);assert.doesNotMatch(r.machineIdentity.textContent,/[0-9]/);assert.equal(r.guideMetrics.children.length,keys.length);
    assert.equal(r.accuracyComparison.children.length,2);for(const row of r.accuracyComparison.children){assert.equal(row.children.length,4);for(const cell of row.children.slice(1,3))assert(Number.isFinite(Number(cell.textContent)));assert.equal(row.children[3].textContent,'固定成分');}
@@ -119,7 +119,7 @@ async function main(){
   });
   const record=json('levelRecord()'),angles=json('levelGeometry.pairs');
   r.exportLevel.click();const exported=JSON.parse(await context.exportedBlob.text());
-  check('v2 export includes exact used profile '+index+' '+mode,()=>assert.deepEqual(exported,record));
+  check('export includes exact used profile '+index+' '+mode,()=>assert.deepEqual(exported,record));
   read(`openMachine(machines[${(index+1)%7}]);openMachine(machines[${index}]);`);if(mode)r.machineMode.change(mode);pending.clear();
   check('profile and precision reproduce after machine/mode navigation '+index+' '+mode,()=>{assert.deepEqual(json('levelRecord()'),record);assert.deepEqual(json('levelGeometry.pairs'),angles);assert.equal(r.machineCondition.value,'used');assert.match(r.levelSaveStatus.textContent,/復元/);});
   const corrupted=structuredClone(record);corrupted.machineProfile.guides[keys[0]].microns+=.001;
