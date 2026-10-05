@@ -50,7 +50,7 @@ function displayMovement(axes,m,state,pose){
  if(levelGeometry.portal)return axisConfig(m).filter(a=>axes.includes(a.key)&&['X','Y','Z'].includes(a.key)).reduce((sum,a)=>{
   const nominal=displayCoordinates(a.vector),length=Math.hypot(...nominal)*a.amp*state[a.key]/100;
   let v=pose==='tool'&&a.key!=='X'?accuracyVisualVector(a.key):a.vector;
-  if(pose==='tool'&&a.key!=='X'){const p=displayPortal(),span=levelCoordinates(levelGeometry.toolPoints[1].x,0).x-levelCoordinates(levelGeometry.toolPoints[0].x,0).x;v=[v[0]*span/p.span,v[1],v[2]];}
+  if(pose==='tool'&&a.key!=='X'){const p=displayPortal(),span=levelCoordinates(levelGeometry.toolPoints[1].x,0).x-levelCoordinates(levelGeometry.toolPoints[0].x,0).x,norm=Math.hypot(...p.local.rotate(v));v=[v[0]*span/p.span/norm,v[1]/norm,v[2]/norm];}
   return sum.map((q,i)=>q+v[i]*length);
  },[0,0,0]);
  prepareDisplayMovement();

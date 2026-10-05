@@ -39,7 +39,12 @@ function connectedPortal(solution,points,factor=1){
   const foot=[p.x,residual*factor/1000,p.z],top=relative.up.map((v,j)=>foot[j]+height*v);
   return {foot,top,relative,frame:L.compose(common,relative),slope};
  });
- const averageUp=columns[0].relative.up.map((v,i)=>(v+columns[1].relative.up[i])/2),local=L.bridge(columns[0].top,columns[1].top,averageUp),frame=L.compose(common,local);
+ // A single affine shear map keeps the guide and ram directions distinct.
+ // Do not orthogonalize Z against Y: column lean is allowed to change YZ.
+ // This is geometric deformation, not a stiffness/load calculation.
+ const unit=v=>{const n=Math.hypot(...v);return v.map(q=>q/n);};
+ const right=unit(columns[1].top.map((v,i)=>v-columns[0].top[i])),up=unit(columns[0].relative.up.map((v,i)=>(v+columns[1].relative.up[i])/2));
+ const back=unit([right[1]*up[2]-right[2]*up[1],right[2]*up[0]-right[0]*up[2],right[0]*up[1]-right[1]*up[0]]),local=L.frame(right,up,back),frame=L.compose(common,local);
  const centre=columns[0].top.map((v,i)=>(v+columns[1].top[i])/2),span=Math.hypot(...columns[1].top.map((v,i)=>v-columns[0].top[i]));
  const world=p=>common.rotate(p).map((v,i)=>v+(i===1?.66+solution.plane.c*factor/1000:0));
  return {common,local,frame,columns,centre,span,world,height};
@@ -256,8 +261,8 @@ function updateAccuracy(){
  const localSource=key=>g.axes.filter(a=>a.source===key).map(a=>a.key).join('・');
  $('geometryAssumption').textContent=current.kind==='lathe'?'直角図は主軸基準XZです（主軸方向と刃物台Xの比較）。NC送りX–Zの案内直角度ではありません。模型のZ矢印は往復台の送り方向です。Y軸はありません。':localSource('tool')+'はコラム／主軸側、'+localSource('work')+'はテーブル／案内側の参照姿勢を使う教材です。同じ剛体側の軸対は共通の傾きでは関係が変わりません。'+(current.kind==='five'?'A/Cの旋回誤差は含みません。':'');
  if(['travel','gantry'].includes(current.kind))$('geometryAssumption').textContent='Xは移動位置の走行案内、Y/Zはコラム・梁側の参照姿勢です。固定ワークの姿勢をX送りへ代用しません。';
- if(dual){$('bodyLeanHeading').textContent='梁側の案内代表方向：支持＋固有差';$('bodyLeanNote').textContent='門の骨格は接続した支持姿勢で描き、固有直角差は案内方向（軸矢印と直角図）へ重ねます。梁の弾性ねじれ・主軸移動荷重は再現しません。';}
- if(dual)$('geometryAssumption').textContent+=' 左右柱の天端を梁で結ぶ幾何モデルです。梁の反力・たわみ分布・接触荷重は計算しません。模型の門骨格は支持姿勢、固有直角差は軸矢印と直角図に示します。';
+ if(dual){$('bodyLeanHeading').textContent='梁側の案内代表方向：支持＋固有差';$('bodyLeanNote').textContent='門の骨格は接続した支持姿勢で描き、固有直角差は案内方向（軸矢印と直角図）へ重ねます。柱の平均倒れをラムZへ伝え、梁案内Yとの直角差を表示します。位置ごとの弾性ねじれ・主軸移動荷重は再現しません。';}
+ if(dual)$('geometryAssumption').textContent+=' 左右柱の天端を梁で結び、平均倒れをラム方向へ伝えるせん断の幾何モデルです。柱・梁の接続中心を共有します。梁の反力・たわみ分布・接触荷重は計算しません。模型の門骨格は支持姿勢、固有直角差は軸矢印と直角図に示します。';
  $('columnLayout').hidden=!singleColumnKinds.includes(current.kind);
  $('columnXValue').textContent=levelConfig.columnX===0?'標準':levelConfig.columnX<0?'左寄り':'右寄り';$('columnX').setAttribute('aria-valuetext',$('columnXValue').textContent);
  $('columnZValue').textContent=levelConfig.columnZ===0?'標準':levelConfig.columnZ<0?'手前寄り':'奥寄り';$('columnZ').setAttribute('aria-valuetext',$('columnZValue').textContent);

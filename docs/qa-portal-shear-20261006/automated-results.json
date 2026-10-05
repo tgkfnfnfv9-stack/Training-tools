@@ -1,0 +1,192 @@
+{
+  "count": 31,
+  "passed": 31,
+  "results": [
+    {
+      "name": "check-accuracy-engine.cjs",
+      "passed": true,
+      "ms": 77,
+      "output": "Accuracy engine: 73 checks passed."
+    },
+    {
+      "name": "check-accuracy-review.cjs",
+      "passed": true,
+      "ms": 1186,
+      "output": "Accuracy review: 75 independent checks passed."
+    },
+    {
+      "name": "check-adjustment-flow.cjs",
+      "passed": true,
+      "ms": 4837,
+      "output": "Adjustment flow: 152 nonnumeric, actual-improvement, invariant-pair and legacy checks passed."
+    },
+    {
+      "name": "check-confirmed-layouts.cjs",
+      "passed": true,
+      "ms": 5550,
+      "output": "{\n  \"checks\": 330,\n  \"legacyAccepted\": 0,\n  \"legacyCompactMigrated\": 0,\n  \"legacyRejected\": 9,\n  \"legacyV1Rejected\": 9,\n  \"legacyV1CompactMigrated\": 0,\n  \"legacyKeysPreserved\": 9,\n  \"supportsExercised\": 50,\n  \"failures\": [],\n  \"timings\": [\n    {\n      \"index\": 0,\n      \"operation\": \"open\",\n      \"milliseconds\": 31.220346999999947\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 4.76754700000015\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 20.51038399999993\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"open\",\n      \"milliseconds\": 42.00407600000017\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 4.392904000000044\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 22.71060999999986\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"open\",\n      \"milliseconds\": 32.61765299999979\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 5.72972800000025\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 20.73421499999995\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"open\",\n      \"milliseconds\": 42.01329399999986\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 7.051371999999901\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 16.570636999999806\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"open\",\n      \"milliseconds\": 56.26898099999971\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 4.996092999999746\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 31.444776000000275\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"open\",\n      \"milliseconds\": 36.65158500000052\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 3.296476999999868\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 11.272727000000486\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"open\",\n      \"milliseconds\": 10.748274999999921\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 1.4984039999999368\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 6.5365120000005845\n    }\n  ]\n}"
+    },
+    {
+      "name": "check-accuracy-render.cjs",
+      "passed": true,
+      "ms": 18554,
+      "output": "Accuracy Canvas: 305 rendered frames, 965030 finite drawing operations passed (3 sizes, 7 machines, 2 extra modes)."
+    },
+    {
+      "name": "check-electrical-full.cjs",
+      "passed": true,
+      "ms": 195,
+      "output": "{\n  \"passed\": true,\n  \"assertions\": 103,\n  \"combinations\": 720,\n  \"valid\": 13,\n  \"flows\": [\n    \"five full completion workflows\",\n    \"current serial calculation\",\n    \"parallel short circuit blocked\",\n    \"AC reverse direction\",\n    \"DC voltage alternatives\",\n    \"resistance unit alternatives\",\n    \"open continuity\",\n    \"setting lock and reset\",\n    \"all settings exhaustively checked\"\n  ]\n}"
+    },
+    {
+      "name": "check-3d-axis-controls.cjs",
+      "passed": true,
+      "ms": 27420,
+      "output": "3D axis controls: 138 checks passed."
+    },
+    {
+      "name": "check-display-motion.cjs",
+      "passed": true,
+      "ms": 19749,
+      "output": "{\n  \"checks\": {\n    \"planarMotion\": 666,\n    \"localContact\": 240,\n    \"fixedAnchorMotion\": 132,\n    \"averageVersusLocal\": 5\n  },\n  \"maximumDirectionDifference\": 4.469433677046628e-12,\n  \"maximumContactDifference\": 8.881784197001252e-16,\n  \"failures\": []\n}"
+    },
+    {
+      "name": "check-full-code-review.cjs",
+      "passed": true,
+      "ms": 15025,
+      "output": "Full code review: 158 integration checks passed."
+    },
+    {
+      "name": "check-interface-audit.cjs",
+      "passed": true,
+      "ms": 616,
+      "output": "Interface audit: 31 independent interaction and diagram checks passed."
+    },
+    {
+      "name": "check-irregular-leveling.cjs",
+      "passed": true,
+      "ms": 75,
+      "output": "Irregular leveling: 621 checks passed."
+    },
+    {
+      "name": "check-level-stages.cjs",
+      "passed": true,
+      "ms": 2923,
+      "output": "Level stages: 80 independent checks passed."
+    },
+    {
+      "name": "check-leveling-engine.cjs",
+      "passed": true,
+      "ms": 68,
+      "output": "Leveling engine: 83 checks passed."
+    },
+    {
+      "name": "check-leveling-learning.cjs",
+      "passed": true,
+      "ms": 2610,
+      "output": "Leveling learning: 91 checks passed."
+    },
+    {
+      "name": "check-leveling-ui.cjs",
+      "passed": true,
+      "ms": 1365,
+      "output": "Leveling UI: 190 checks passed (7 machines, single-model selections, controls, exercise, save/import/export)."
+    },
+    {
+      "name": "check-ideal-display.cjs",
+      "passed": true,
+      "ms": 18571,
+      "output": "{\n  \"checks\": {\n    \"nominalGeometry\": 504,\n    \"flatAgreement\": 126,\n    \"supportAdjustment\": 7,\n    \"intrinsicRemoval\": 7,\n    \"linearMotion\": 20,\n    \"rotaryRigidity\": 50,\n    \"viewAndToggle\": 126\n  },\n  \"vertices\": 385344,\n  \"maximumPointDifference\": 2.047902597024e-15,\n  \"failures\": []\n}"
+    },
+    {
+      "name": "check-mobile-navigation.cjs",
+      "passed": true,
+      "ms": 534,
+      "output": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed"
+    },
+    {
+      "name": "check-mechanical-audit.cjs",
+      "passed": true,
+      "ms": 5225,
+      "output": "Mechanical audit: 220 checks passed."
+    },
+    {
+      "name": "check-canvas-labels.cjs",
+      "passed": true,
+      "ms": 47597,
+      "output": "{\n  \"frames\": 528,\n  \"backgroundRectangles\": 4953,\n  \"axisRectangles\": 1776,\n  \"partRectangles\": 3177,\n  \"expectedAxisLabels\": 1776,\n  \"collisionFrames\": 0,\n  \"outsideFrames\": 0,\n  \"missingAxisFrames\": 0,\n  \"supportCollisionFrames\": 0,\n  \"examples\": []\n}"
+    },
+    {
+      "name": "check-portal-shear-invariants.cjs",
+      "passed": true,
+      "ms": 3656,
+      "output": "{\n  \"checks\": 165,\n  \"failures\": []\n}"
+    },
+    {
+      "name": "check-random-accuracy-review.cjs",
+      "passed": true,
+      "ms": 3165,
+      "output": "Random accuracy independent review: 164 checks passed."
+    },
+    {
+      "name": "check-scene-zoom.cjs",
+      "passed": true,
+      "ms": 9595,
+      "output": "Scene zoom: 84 interaction/rendering checks passed; 226 Canvas frames and 1175783 finite coordinate values inspected."
+    },
+    {
+      "name": "check-settings-menu.cjs",
+      "passed": true,
+      "ms": 6966,
+      "output": "{\n  \"checks\": {\n    \"drawerState\": 49,\n    \"supportSelection\": 50,\n    \"stageSteps\": 300,\n    \"limits\": 21,\n    \"axisControls\": 51,\n    \"demo\": 21,\n    \"saveImportExport\": 21,\n    \"legacyStep\": 63,\n    \"settings\": 5\n  },\n  \"failures\": []\n}"
+    },
+    {
+      "name": "check-site-navigation.cjs",
+      "passed": true,
+      "ms": 1675,
+      "output": "Shared site navigation: 39 journeys/state/history checks passed across six pages and seven machines."
+    },
+    {
+      "name": "check-squareness-display.cjs",
+      "passed": true,
+      "ms": 3432,
+      "output": "Squareness display: 77 measured-angle, measurement-position, hidden-initial-value and relative-input checks passed."
+    },
+    {
+      "name": "check-structural-connections.cjs",
+      "passed": true,
+      "ms": 1029,
+      "output": "Structural connections: 290 checks passed. {\"maxJoin\":4.440892098500626e-16,\"maxFoot\":0,\"maxBoundaryStep\":2.000510035535085e-8}"
+    },
+    {
+      "name": "check-ideal-outline-ui.cjs",
+      "passed": true,
+      "ms": 43638,
+      "output": "{\n  \"checks\": 743,\n  \"frames\": 790,\n  \"finiteCanvasCoordinates\": 4627288,\n  \"maximumIdealSegments\": 411,\n  \"maximumIdealToCurrentRatio\": 0.23509369676320271\n}"
+    },
+    {
+      "name": "check-tester-lesson.cjs",
+      "passed": true,
+      "ms": 76,
+      "output": "{\n  \"passed\": true,\n  \"assertions\": 27,\n  \"flows\": [\n    \"missing leads\",\n    \"A terminal blocked\",\n    \"wrong mode blocked\",\n    \"DC voltage\",\n    \"reverse polarity\",\n    \"disconnect\",\n    \"resistance preparation\",\n    \"1kΩ resistance\",\n    \"continuity connected/broken\",\n    \"reset/lesson reset\"\n  ]\n}"
+    },
+    {
+      "name": "check-settings-menu-ui.cjs",
+      "passed": true,
+      "ms": 25317,
+      "output": "{\n  \"checks\": 173,\n  \"frames\": 270,\n  \"finiteCanvasCoordinates\": 1691942,\n  \"variants\": 7,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}"
+    },
+    {
+      "name": "check-structural-invariants.cjs",
+      "passed": true,
+      "ms": 6209,
+      "output": "{\n  \"checks\": 212,\n  \"failures\": []\n}"
+    },
+    {
+      "name": "check-model-posture.cjs",
+      "passed": true,
+      "ms": 77656,
+      "output": "{\n  \"checks\": {\n    \"projection\": 105,\n    \"surfaceNormals\": 491,\n    \"groundContact\": 560,\n    \"rigidMotion\": 30,\n    \"axisLabels\": 224\n  },\n  \"failures\": []\n}"
+    }
+  ]
+}
