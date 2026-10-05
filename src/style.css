@@ -382,15 +382,43 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
 /* The many-point foundation keeps the model and shared raise/lower actions visible. */
 .main-adjustment .support-map.many-supports{max-height:104px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding-right:4px;scroll-padding:4px;border:1px solid var(--line);border-radius:6px;padding:4px}
 .main-adjustment .support-map.many-supports .map-point{flex:0 0 44px;max-width:44px;min-height:44px}
-/* Keep both gauges inside their own row on the short, many-point lesson view. */
+/* Budget the fixed model, 300 mm readout and axis bar before the scrolling controls. */
 @media(max-width:950px) and (orientation:portrait) and (max-height:640px){
  /* Unlike hidden, clip never scrolls this fixed ancestor when a child receives focus. */
- body.in-mechanical-lab #training:has(.many-supports) .training-main-slot{overflow:clip}
- body.in-mechanical-lab #training:has(.many-supports) .training-heading{padding-top:0;padding-bottom:0}
- body.in-mechanical-lab #training:has(.many-supports) .training-workspace{grid-template-rows:minmax(266px,1fr) minmax(0,auto)}
- body.in-mechanical-lab #training:has(.many-supports) .pinned-visual{grid-template-rows:auto minmax(150px,1fr) auto}
- body.in-mechanical-lab #training:has(.many-supports) .scene-toolbar{padding-top:2px;padding-bottom:2px}
- body.in-mechanical-lab #training:has(.many-supports) .main-adjustment{max-height:calc(100dvh - 366px - env(safe-area-inset-top));padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain}
- body.in-mechanical-lab #training:has(.many-supports) .selected-support-label{margin:3px 0}
+ body.in-mechanical-lab #training .training-main-slot{overflow:clip}
+ body.in-mechanical-lab #training .training-heading{padding-top:0;padding-bottom:0}
+ body.in-mechanical-lab #training .training-workspace{grid-template-rows:minmax(0,1fr) clamp(80px,calc(100dvh - 430px - env(safe-area-inset-top)),150px)}
+ body.in-mechanical-lab #training .scene-toolbar{padding-top:2px;padding-bottom:max(2px,env(safe-area-inset-bottom))}
+ body.in-mechanical-lab #training .main-adjustment{min-height:0;max-height:none;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
+ body.in-mechanical-lab #training .selected-support-label{margin:3px 0}
  body.in-mechanical-lab #training .support-map.many-supports{max-height:54px;margin-bottom:4px}
+ .viewer-levels{gap:2px;padding-top:2px;padding-bottom:2px}
+ .viewer-gauge-title{line-height:12px}
+ .viewer-gauge-lr .vial{height:20px;margin:2px 0 1px}
+ .viewer-gauge-lr .bubble{top:2px}
+ .viewer-gauge .gauge-ends{line-height:10px}
+ .viewer-gauge-fb{min-height:58px}
+ .vertical-gauge{min-height:46px;grid-template-rows:10px minmax(26px,1fr) 10px;line-height:10px;margin-top:0}
+}
+/* Short landscape keeps the fixed model and all readings; only spacing is condensed. */
+@media(max-width:950px) and (orientation:landscape) and (max-height:400px){
+ body.in-mechanical-lab #training .training-main-slot{overflow:clip}
+ body.in-mechanical-lab #training .training-heading{padding-top:0;padding-bottom:0}
+ body.in-mechanical-lab #training .scene-toolbar{padding-top:2px;padding-bottom:max(2px,env(safe-area-inset-bottom))}
+ .live-pair-values{display:flex;justify-content:center;align-items:baseline;flex-wrap:wrap;column-gap:4px;padding:0;line-height:14px;font-size:10px}
+ .live-pair-base-value{font-size:9px}
+ .live-pair-title{font-size:10px;line-height:12px}
+ .live-squareness-diagram{height:26px!important}
+ .live-squareness-units{line-height:12px}
+ .scene-readout-note{gap:4px;font-size:9px;line-height:10px}
+ .viewer-levels{gap:2px;padding-top:2px;padding-bottom:2px}
+ .viewer-gauge-title{line-height:10px}
+ .viewer-gauge-lr .vial{height:18px;margin:1px 0}
+ .viewer-gauge-lr .bubble{top:1px}
+ .viewer-gauge .gauge-ends{line-height:10px}
+ .viewer-gauge-fb{min-height:52px}
+ .vertical-gauge{min-height:42px;grid-template-rows:8px minmax(26px,1fr) 8px;font-size:9px;line-height:8px;margin-top:0}
+}
+@media(max-width:640px) and (orientation:landscape) and (max-height:400px){
+ body.in-mechanical-lab #training .training-workspace{grid-template-columns:minmax(0,1fr) 210px}
 }
