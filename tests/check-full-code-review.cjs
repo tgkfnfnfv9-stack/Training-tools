@@ -144,7 +144,9 @@ async function main(){
    const keys=json('machineLinearKeys()'),vectors=json('machineLinearKeys().map(key=>accuracyVisualVector(key))'),factor=exaggerate?read('levelGeometry.visualFactor'):1,profile=json('machineProfile');
    check('drawn intrinsic-axis angles use the stated exaggeration '+index+' '+mode+' '+exaggerate,()=>{
     for(let i=0;i<keys.length;i++)for(let j=i+1;j<keys.length;j++){
-     const dot=vectors[i].reduce((sum,v,k)=>sum+v*vectors[j][k],0);near(-Math.asin(dot),profile.squareness[keys[i]+keys[j]].microns/.3/1e6*factor,1e-10);
+     const dot=vectors[i].reduce((sum,v,k)=>sum+v*vectors[j][k],0);// Lathe arrows describe NC feed X/Z; its separate squareness lesson
+     // compares spindle Z against feed X and retains the intrinsic defect.
+     near(-Math.asin(dot),index===6?0:profile.squareness[keys[i]+keys[j]].microns/.3/1e6*factor,1e-10);
     }
    });
    for(const key of keys){

@@ -143,13 +143,13 @@
    const slopes=list.map(p=>solution.slopeAt(finite(p.x,'x'),finite(p.z,'z')));
    return {slopes,slope:{lr:mean(slopes.map(s=>s.lr)),fb:mean(slopes.map(s=>s.fb))}};
   };
-  const tool=sample(options.toolPoints),work=sample(options.workPoints),toolFrame=orientation(tool.slope),workFrame=orientation(work.slope);
+  const tool=sample(options.toolPoints),work=sample(options.workPoints),toolFrame=options.toolFrame||orientation(tool.slope),workFrame=options.workFrame||orientation(work.slope);
   const axes=options.axes;
   if(!Array.isArray(axes)||axes.length<2)throw new TypeError('2軸以上の方向が必要です。');
   const keys=new Set();
   const directions=axes.map(axis=>{
    if(keys.has(axis.key)||!['X','Y','Z'].includes(axis.key)||!['tool','work'].includes(axis.source))throw new TypeError('軸名と参照姿勢が不正です。');
-   keys.add(axis.key);const v=(axis.source==='tool'?toolFrame:workFrame).rotate(axis.vector),n=Math.hypot(...v);
+   keys.add(axis.key);const v=(axis.frame||(axis.source==='tool'?toolFrame:workFrame)).rotate(axis.vector),n=Math.hypot(...v);
    if(n===0)throw new RangeError('軸方向はゼロにできません。');return {...axis,direction:v.map(q=>q/n)};
   });
   const pairs=[];
@@ -159,9 +159,20 @@
    pairs.push({key:a.key+b.key,angleDegrees:90+radians*180/Math.PI,deviationMicroradians:radians*1e6,errorMicrons:checked(radians*1e6*length)});
   }
   const lean=s=>({front:Math.atan(s.fb/1000)*1e6,right:-Math.atan(s.lr/1000)*1e6});
-  const toolLean=lean(tool.slope),workLean=lean(work.slope);
-  return {pairs,toolSlope:tool.slope,workSlope:work.slope,toolFrame,workFrame,
-   columns:tool.slopes.map(lean),toolLean,relativeLean:{front:toolLean.front-workLean.front,right:toolLean.right-workLean.right},length};
+  const frameLean=f=>({front:Math.atan2(-f.up[2],f.up[1])*1e6,right:Math.atan2(f.up[0],f.up[1])*1e6});
+  const toolLean=options.toolFrame?frameLean(toolFrame):lean(tool.slope),workLean=options.workFrame?frameLean(workFrame):lean(work.slope);
+  return {pairs,directions,toolSlope:tool.slope,workSlope:work.slope,toolFrame,workFrame,
+   columns:options.columnFrames?options.columnFrames.map(frameLean):tool.slopes.map(lean),toolLean,relativeLean:{front:toolLean.front-workLean.front,right:toolLean.right-workLean.right},length};
  }
- return Object.freeze({solve,impact,orientation,geometry});
+
+ // Frame constructors used by the connected bridge teaching model. A common
+ // rotation is composed after local deformation; it cannot change dot products.
+ function frame(right,up,back){return {right,up,back,rotate:v=>right.map((q,i)=>q*v[0]+up[i]*v[1]+back[i]*v[2])};}
+ function compose(a,b){return frame(a.rotate(b.right),a.rotate(b.up),a.rotate(b.back));}
+ function bridge(left,right,up){
+  const unit=v=>{const n=Math.hypot(...v);if(n<1e-12)throw new RangeError('梁の両端が重なっています。');return v.map(q=>q/n);};
+  const x=unit(right.map((v,i)=>v-left[i])),dot=x.reduce((s,v,i)=>s+v*up[i],0),y=unit(up.map((v,i)=>v-dot*x[i]));
+  return frame(x,y,[x[1]*y[2]-x[2]*y[1],x[2]*y[0]-x[0]*y[2],x[0]*y[1]-x[1]*y[0]]);
+ }
+ return Object.freeze({solve,impact,orientation,geometry,frame,compose,bridge});
 });

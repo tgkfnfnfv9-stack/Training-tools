@@ -432,7 +432,7 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
 <aside id="trainingDrawer" class="training-drawer" hidden role="dialog" aria-modal="false" aria-labelledby="trainingMenuTitle">
 <div class="training-drawer-heading"><strong id="trainingMenuTitle">機械の設定</strong><button id="closeTrainingMenu" aria-label="設定メニューを閉じる">閉じる ×</button></div>
 <div class="scroll-controls" id="trainingControls" tabindex="0" role="region" aria-label="機械の設定と説明">
-<p class="drawer-group-label">表示と動き</p><details class="card viewer-settings" id="modelDisplaySettings"><summary>模型の表示・理想輪郭</summary><div id="idealComparison" class="ideal-comparison"><label class="ideal-outline-toggle"><input id="showIdealOutline" type="checkbox" checked aria-describedby="idealOutlineNote"> 理想輪郭を重ねる</label><div class="ideal-outline-legend"><span><i class="current-model-key" aria-hidden="true"></i>現在の模型</span><span><i class="ideal-outline-key" aria-hidden="true"></i>理想（薄い破線）</span></div><details class="setting-help"><summary>理想輪郭とは</summary><p id="idealOutlineNote">理想は支持の傾き・ねじれと本体の固有誤差を除いた輪郭です。寸法・軸位置は現在と同じで、上下位置だけ平均支持高さに揃えます。上の直角図の薄面は、初期からの変化です。</p></details></div><label class="scene-view-label" for="sceneView">観察方向（正投影）</label><select id="sceneView"><option value="oblique">斜め・自由回転</option><option value="front">正面 · 左 → 右</option><option value="side">側面 · 手前 → 奥</option></select><button id="resetSceneZoom">模型の大きさを戻す</button><div class="viewer-options"><label><input id="exaggerate" type="checkbox" checked> 傾き・姿勢差を強調</label><label><input id="showLevelSurface" type="checkbox" checked> 支持面の高さマップ</label><label><input id="showAxes" type="checkbox" checked> 軸の矢印を表示</label><label><input id="labels" type="checkbox" checked> 部品名を表示</label></div><details class="orientation-details"><summary>軸の向きを確認</summary><section id="orientationGuide" class="orientation-guide" aria-labelledby="orientationGuideTitle"><h3 id="orientationGuideTitle">模型の向き（座標の目安）</h3><div id="orientationAxes" class="orientation-axes"></div><p>各軸の向きを別々に表示します。模型の左右回転に追従する目安で、NCの＋／−指令や支持姿勢・精度を示しません。</p><p id="orientationRotaryNote" hidden>A/Cは模型上の曲線矢印で確認します。</p></section></details><details class="viewer-help"><summary>色・表示の説明</summary><p class="viewer-caption">模型は遠近による見かけの倒れを避ける正投影です。「観察方向」で正面・側面・斜めを切り替えます。正面／側面からドラッグすると斜めの自由回転に戻ります。部材のそばの破線は床に対する鉛直・水平基準です。水準器は支持全体の平均、模型は局所支持と本体固有の姿勢を重ねます。一様な支持の傾きでは、気泡は高い側へ動き、支持によるコラムの倒れは低い側へ向きます。本体固有差や、ねじれによる場所ごとの傾きも重なります。水準器の目安内は厳密な水平と同じではありません。<br>一本指／マウスの左右ドラッグで回転、二本指のピンチ／マウスホイールで模型を拡大・縮小できます。水準器は右枠に固定し、前後は上が奥・下が手前です。設定メニューは模型と別にスクロールします。開いている間は主画面全体が右へ縮小し、背景の操作を止めます。模型にフォーカスすると左右矢印キーで回転、＋／−キーで拡大・縮小、Homeキーで大きさを戻せます。拡大・縮小は表示だけを変え、支持高さ・軸位置・精度・保存内容は変えません。絵の下で軸を選び、左上の☰から「軸位置・デモ」を開きます。丸いアルファベットは学習用の支持点です。軸名・部品名・支持点の背景は薄い半透明で、模型が透けて見えます。<br>灰：固定　淡色：他軸の部品　赤X／緑Y／青Z／紫A／橙C：選択軸で動く部品　黄：支持点<br>傾きと姿勢差を強調した模式図です。黄〜緑の分割面は支持高さをつないだ面（黄＝相対的に高い、緑＝低い）です。コラム／主軸は本体の固有方向と支持姿勢を重ねた代表姿勢、テーブルは支持姿勢で描きます。非直交のXYZ全てを一つの剛体で再現する図ではありません。ねじれでは矢印は代表案内方向で、実体の動きには場所ごとの姿勢変化も重なります。軸の矢印には固有直角差を一度だけ重ねます。強調倍率は個体・寸法・配置から決め、支持調整や軸操作中に変えないため、レベル出しに合わせて絵も変化します。抽選したガイドの曲がり成分はモデル内部で固定して保持します。狭い絵では支持点と全軸名を確保し、部品名は選択軸の部品・ベース／コラムを優先して一部省略します。構造と軸構成は下の説明でも確認できます。弾性変形や荷重の移動は計算しません。</p></details></details>
+<p class="drawer-group-label">表示と動き</p><details class="card viewer-settings" id="modelDisplaySettings"><summary>模型の表示・理想輪郭</summary><div id="idealComparison" class="ideal-comparison"><label class="ideal-outline-toggle"><input id="showIdealOutline" type="checkbox" checked aria-describedby="idealOutlineNote"> 理想輪郭を重ねる</label><div class="ideal-outline-legend"><span><i class="current-model-key" aria-hidden="true"></i>現在の模型</span><span><i class="ideal-outline-key" aria-hidden="true"></i>理想（薄い破線）</span></div><details class="setting-help"><summary>理想輪郭とは</summary><p id="idealOutlineNote">理想は支持の傾き・ねじれと本体の固有誤差を除いた輪郭です。寸法・軸位置は現在と同じで、上下位置だけ平均支持高さに揃えます。上の直角図の薄面は、初期からの変化です。</p></details></div><label class="scene-view-label" for="sceneView">観察方向（正投影）</label><select id="sceneView"><option value="oblique">斜め・自由回転</option><option value="front">正面 · 左 → 右</option><option value="side">側面 · 手前 → 奥</option></select><button id="resetSceneZoom">模型の大きさを戻す</button><div class="viewer-options"><label><input id="exaggerate" type="checkbox" checked> 傾き・姿勢差を強調</label><label><input id="showLevelSurface" type="checkbox" checked> 支持面の高さマップ</label><label><input id="showAxes" type="checkbox" checked> 軸の矢印を表示</label><label><input id="labels" type="checkbox" checked> 部品名を表示</label></div><details class="orientation-details"><summary>軸の向きを確認</summary><section id="orientationGuide" class="orientation-guide" aria-labelledby="orientationGuideTitle"><h3 id="orientationGuideTitle">模型の向き（座標の目安）</h3><div id="orientationAxes" class="orientation-axes"></div><p>各軸の向きを別々に表示します。模型の左右回転に追従する目安で、NCの＋／−指令や支持姿勢・精度を示しません。</p><p id="orientationRotaryNote" hidden>A/Cは模型上の曲線矢印で確認します。</p></section></details><details class="viewer-help"><summary>色・表示の説明</summary><p class="viewer-caption">模型は遠近による見かけの倒れを避ける正投影です。「観察方向」で正面・側面・斜めを切り替えます。正面／側面からドラッグすると斜めの自由回転に戻ります。部材のそばの破線は床に対する鉛直・水平基準です。水準器は支持全体の平均、模型は局所支持と本体固有の姿勢を重ねます。ただし門形の骨格は接続した支持姿勢、固有直角差は軸矢印と直角図に示します。一様な支持の傾きでは、気泡は高い側へ動き、支持によるコラムの倒れは低い側へ向きます。本体固有差や、ねじれによる場所ごとの傾きも重なります。水準器の目安内は厳密な水平と同じではありません。<br>一本指／マウスの左右ドラッグで回転、二本指のピンチ／マウスホイールで模型を拡大・縮小できます。水準器は右枠に固定し、前後は上が奥・下が手前です。設定メニューは模型と別にスクロールします。開いている間は主画面全体が右へ縮小し、背景の操作を止めます。模型にフォーカスすると左右矢印キーで回転、＋／−キーで拡大・縮小、Homeキーで大きさを戻せます。拡大・縮小は表示だけを変え、支持高さ・軸位置・精度・保存内容は変えません。絵の下で軸を選び、左上の☰から「軸位置・デモ」を開きます。丸いアルファベットは学習用の支持点です。軸名・部品名・支持点の背景は薄い半透明で、模型が透けて見えます。<br>灰：固定　淡色：他軸の部品　赤X／緑Y／青Z／紫A／橙C：選択軸で動く部品　黄：支持点<br>傾きと姿勢差を強調した模式図です。黄〜緑の分割面は支持高さをつないだ面（黄＝相対的に高い、緑＝低い）です。コラム／主軸は本体の固有方向と支持姿勢を重ねた代表姿勢、テーブルは支持姿勢で描きます。非直交のXYZ全てを一つの剛体で再現する図ではありません。ねじれでは矢印は代表案内方向で、実体の動きには場所ごとの姿勢変化も重なります。軸の矢印には固有直角差を一度だけ重ねます。強調倍率は個体・寸法・配置から決め、支持調整や軸操作中に変えないため、レベル出しに合わせて絵も変化します。抽選したガイドの曲がり成分はモデル内部で固定して保持します。狭い絵では支持点と全軸名を確保し、部品名は選択軸の部品・ベース／コラムを優先して一部省略します。構造と軸構成は下の説明でも確認できます。弾性変形や荷重の移動は計算しません。</p></details></details>
 <details class="card" id="axisMenuSection"><summary>軸位置・デモ</summary><div id="axisMenu" class="axis-menu" role="region" aria-labelledby="axisMenuTitle"><div class="axis-menu-heading"><strong id="axisMenuTitle">軸操作</strong><button hidden id="closeAxisControls" aria-label="軸操作を閉じる">閉じる</button></div><button hidden id="axisControlsToggle" class="axis-controls-toggle" aria-expanded="false" aria-controls="axisMenu">軸操作 ▾</button><p class="hint">主画面の軸ボタン、または下の選択欄で軸を選び、位置や動きを確認します。</p><label class="select-label" for="drawerAxisSelect">操作する軸</label><select id="drawerAxisSelect" aria-label="操作する軸"></select><button id="playAxis" class="play-axis" aria-pressed="false">選んだ軸を動かす</button><button id="resetAxes" class="text-button">中央へ戻す</button><div id="axisSliders"></div><p class="hint">矢印は支持姿勢と固有直角差を合わせた軸方向の模式表示です。片側／反対側は模型の位置で、NCの移動指令や実ストロークではありません。</p></div></details>
 <details class="card machine-menu"><summary>方式・サイズ</summary><p class="hint">機種を選び直すときは、上の「機種選択」へ。</p><div id="machineModeBox" hidden><label class="select-label" for="machineMode">この構造の方式／サイズ</label><select id="machineMode"></select></div></details>
 <p class="drawer-group-label">調整を学ぶ</p><details class="card adjustment-menu"><summary>調整の状態・手本</summary><div id="coarsePanel" class="card level-stages" aria-labelledby="levelStagesTitle">
@@ -502,11 +502,11 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
 <details hidden><summary>調整評価・参考最良の意味</summary><p class="hint">全直線軸の端・中央（3軸27位置、旋盤9位置）で直角差と姿勢差を比較。直角差・左右コラム差、25%重みの相対姿勢差、15%重みの平均傾きの二乗平均を小さくします。支持高さ±0.500 mm、0.001 mm刻みの探索例です。現在が良ければ参考値も更新します。評価長を変えてもこの判定は変わりません（補助の300 mm基準）。残り＝√(現在の調整評価²−参考最良の調整評価²)が0.1 µm以内を補助練習の目安とします。厳密な全球最適を保証しません。</p></details>
 </details>
 <details class="card level-storage"><summary>保存・読込</summary><p id="levelSaveStatus" class="hint" role="status"></p><button id="exportLevel">調整データを保存</button><label class="import-level">調整データを読み込む<input id="importLevel" type="file" accept=".json,application/json"></label><p class="hint">現在の機械・方式・支持配置に対応するJSONを読み込みます。小型・EC-630・L3 3000は配置IDと支点座標も照合します。旧小型4点は同じ配置と保存内容を検証して引き継ぎ、旧標準・旧横形・旧門形の異なる配置は割り当てません。支持高さ・コラム配置・軸位置を保存します。入力チェックを通ったデータだけ反映します。個体の種・初期支持高さ・参考最良の支持高さも保存します。変更していない教材では、対応する旧版JSONの読み込み時に固有誤差を抽選します。</p></details>
-<details class="card lesson-menu"><summary>説明・図の見方</summary><p class="note ui-notice"><span class="measurement-start-note">0</span>：共通の始点／<span class="measurement-length-note">300 mm</span>：比較終点。直角図の破線・白点：直角の基準／色線・色点：現在／点の間：直角のずれ／薄線：初期／薄面：初期からの変化（拡大表示）。</p><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>訓練の進め方・計算の前提</summary><ol><li>初期はランダムな据付レベルと、本体の固有精度を重ねています。機械の右枠の水準器を見ながら、粗調整で平均の左右・前後の傾きを整え、模型の変化を見ます。</li><li>微調整では同じ支持点を小さく動かします。直角・倒れ・ねじれを見比べ、代表位置全体の総合評価を目安へ近づけます。本体の固有誤差とガイドの曲がりは保持されます。</li><li>上の直角図は、同じ今の軸位置で初期と現在を比べます。薄い面が初期からの累積変化です。最後の操作や粗調整後からの改善とは別に読みます。同じ剛体側の軸対は、支持調整で直角が変わらない場合があります。</li><li>絵の下で軸を選び、左上の☰から「軸位置・デモ」で位置を動かします。場所によって直角の変化や相対姿勢が異なることを確かめます。画面を切り替えても個体・支持高さ・初期の基準は変えません。</li><li>調整例は手本の支持高さを実際に適用します。手動練習と見比べ、本体の残る誤差まで支持点で消せるわけではないことを確認します。</li></ol><p id="squarenessMeasurementNote">直角図の共通始点<span class="measurement-origin-note">O（0,0）</span>は、測定開始時のゼロ合わせです。本体の初期精度がゼロという意味ではありません。終点<span class="measurement-length-note">300 mm</span>は、今の軸位置の局所角度を固定長で比べる仮想の目印です。傾きと終点の差は拡大表示です。実NC座標・実際の移動・ガイドの全域走査を示す図ではありません。</p><p>支持点をつないだ面の姿勢を、工具側と案内側に重ねる学習用の仮定です。平面になる支持配置では、支持面のねじれや軸間の直角が変化しない場合があります。格子配置は隣接する点の間を補間するため、境界で勾配が切り替わる場合があります。L3 3000参考モデルは教材用15点を通る滑らかな支持面として比較します。</p><p>左右回転とピンチ／ホイールの拡大・縮小は模型の見え方の変更、XYZACは部品移動、支持点は据付姿勢の調整です。支持点の外側も教材用の支持面を延長して表示します。剛性・荷重・接触による弾性変形、加工誤差の予測、実機の合否判定は扱いません。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/leveling---vmc.html" target="_blank" rel="noopener noreferrer">Haas：立形MCのレベル確認（英語）</a> ／ <a href="https://www.wylerag.com/en/support/faq/" target="_blank" rel="noopener noreferrer">WYLER：精密水準器の基礎（英語）</a></p></details></details>
+<details class="card lesson-menu"><summary>説明・図の見方</summary><p class="note ui-notice"><span class="measurement-start-note">0</span>：共通の始点／<span class="measurement-length-note">300 mm</span>：比較終点。直角図の破線・白点：直角の基準／色線・色点：現在／点の間：直角のずれ／薄線：初期／薄面：初期からの変化（拡大表示）。</p><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>訓練の進め方・計算の前提</summary><ol><li>初期はランダムな据付レベルと、本体の固有精度を重ねています。機械の右枠の水準器を見ながら、粗調整で平均の左右・前後の傾きを整え、模型の変化を見ます。</li><li>微調整では同じ支持点を小さく動かします。直角・倒れ・ねじれを見比べ、代表位置全体の総合評価を目安へ近づけます。本体の固有誤差とガイドの曲がりは保持されます。</li><li>上の直角図は、同じ今の軸位置で初期と現在を比べます。薄い面が初期からの累積変化です。最後の操作や粗調整後からの改善とは別に読みます。同じ剛体側の軸対は、支持調整で直角が変わらない場合があります。</li><li>絵の下で軸を選び、左上の☰から「軸位置・デモ」で位置を動かします。場所によって直角の変化や相対姿勢が異なることを確かめます。画面を切り替えても個体・支持高さ・初期の基準は変えません。</li><li>調整例は手本の支持高さを実際に適用します。手動練習と見比べ、本体の残る誤差まで支持点で消せるわけではないことを確認します。</li></ol><p id="squarenessMeasurementNote">直角図の共通始点<span class="measurement-origin-note">O（0,0）</span>は、測定開始時のゼロ合わせです。本体の初期精度がゼロという意味ではありません。終点<span class="measurement-length-note">300 mm</span>は、今の軸位置の局所角度を固定長で比べる仮想の目印です。傾きと終点の差は拡大表示です。実NC座標・実際の移動・ガイドの全域走査を示す図ではありません。</p><p>支持点をつないだ面の姿勢を、工具側と案内側に重ねる学習用の仮定です。平面になる支持配置では、支持面のねじれや軸間の直角が変化しない場合があります。格子配置は隣接する点の間を補間するため、境界で勾配が切り替わる場合があります。L3 3000参考モデルは長手ベッド9点と左右柱側各3点の部位別支持姿勢を使い、柱天端を梁で結びます。支持面の補間は剛性や荷重を解く解析ではありません。</p><p>左右回転とピンチ／ホイールの拡大・縮小は模型の見え方の変更、XYZACは部品移動、支持点は据付姿勢の調整です。支持点の外側も教材用の支持面を延長して表示します。剛性・荷重・接触による弾性変形、加工誤差の予測、実機の合否判定は扱いません。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/leveling---vmc.html" target="_blank" rel="noopener noreferrer">Haas：立形MCのレベル確認（英語）</a> ／ <a href="https://www.wylerag.com/en/support/faq/" target="_blank" rel="noopener noreferrer">WYLER：精密水準器の基礎（英語）</a></p></details></details>
 </div></aside>
 <div id="trainingMainSlot" class="training-main-slot"><div id="trainingMain" class="training-main">
 <div class="training-heading"><button id="openTrainingMenu" class="training-menu-toggle" aria-label="設定メニューを開く" aria-expanded="false" aria-controls="trainingDrawer"><span aria-hidden="true">☰</span> 設定</button><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div></div>
-<div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output><div class="scene-readout-note"><span>水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
+<div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output><div class="scene-readout-note"><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
 <div id="viewerLevels" class="viewer-levels" role="group" aria-label="支持面の平均レベル。気泡は高い側へ動きます">
 <div class="viewer-gauge viewer-gauge-lr"><span class="viewer-gauge-title">平均 · 左右</span><strong id="stageAverageLR" class="level-direction"></strong><div class="vial" role="img" aria-label="平均の左右傾きを示す気泡" aria-describedby="stageAverageLR"><span class="center-lines"></span><span id="coarseBubbleLR" class="bubble"></span></div><div class="gauge-ends"><span>左</span><span>右</span></div></div>
 <div class="viewer-gauge viewer-gauge-fb"><span class="viewer-gauge-title">平均 · 前後</span><strong id="stageAverageFB" class="level-direction"></strong><div class="vertical-gauge"><span>奥</span><div class="vial vial-vertical" role="img" aria-label="平均の前後傾きを示す気泡。上が奥、下が手前" aria-describedby="stageAverageFB"><span class="center-lines"></span><span id="coarseBubbleFB" class="bubble"></span></div><span>手前</span></div></div>
@@ -681,13 +681,13 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
    const slopes=list.map(p=>solution.slopeAt(finite(p.x,'x'),finite(p.z,'z')));
    return {slopes,slope:{lr:mean(slopes.map(s=>s.lr)),fb:mean(slopes.map(s=>s.fb))}};
   };
-  const tool=sample(options.toolPoints),work=sample(options.workPoints),toolFrame=orientation(tool.slope),workFrame=orientation(work.slope);
+  const tool=sample(options.toolPoints),work=sample(options.workPoints),toolFrame=options.toolFrame||orientation(tool.slope),workFrame=options.workFrame||orientation(work.slope);
   const axes=options.axes;
   if(!Array.isArray(axes)||axes.length<2)throw new TypeError('2軸以上の方向が必要です。');
   const keys=new Set();
   const directions=axes.map(axis=>{
    if(keys.has(axis.key)||!['X','Y','Z'].includes(axis.key)||!['tool','work'].includes(axis.source))throw new TypeError('軸名と参照姿勢が不正です。');
-   keys.add(axis.key);const v=(axis.source==='tool'?toolFrame:workFrame).rotate(axis.vector),n=Math.hypot(...v);
+   keys.add(axis.key);const v=(axis.frame||(axis.source==='tool'?toolFrame:workFrame)).rotate(axis.vector),n=Math.hypot(...v);
    if(n===0)throw new RangeError('軸方向はゼロにできません。');return {...axis,direction:v.map(q=>q/n)};
   });
   const pairs=[];
@@ -697,11 +697,22 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
    pairs.push({key:a.key+b.key,angleDegrees:90+radians*180/Math.PI,deviationMicroradians:radians*1e6,errorMicrons:checked(radians*1e6*length)});
   }
   const lean=s=>({front:Math.atan(s.fb/1000)*1e6,right:-Math.atan(s.lr/1000)*1e6});
-  const toolLean=lean(tool.slope),workLean=lean(work.slope);
-  return {pairs,toolSlope:tool.slope,workSlope:work.slope,toolFrame,workFrame,
-   columns:tool.slopes.map(lean),toolLean,relativeLean:{front:toolLean.front-workLean.front,right:toolLean.right-workLean.right},length};
+  const frameLean=f=>({front:Math.atan2(-f.up[2],f.up[1])*1e6,right:Math.atan2(f.up[0],f.up[1])*1e6});
+  const toolLean=options.toolFrame?frameLean(toolFrame):lean(tool.slope),workLean=options.workFrame?frameLean(workFrame):lean(work.slope);
+  return {pairs,directions,toolSlope:tool.slope,workSlope:work.slope,toolFrame,workFrame,
+   columns:options.columnFrames?options.columnFrames.map(frameLean):tool.slopes.map(lean),toolLean,relativeLean:{front:toolLean.front-workLean.front,right:toolLean.right-workLean.right},length};
  }
- return Object.freeze({solve,impact,orientation,geometry});
+
+ // Frame constructors used by the connected bridge teaching model. A common
+ // rotation is composed after local deformation; it cannot change dot products.
+ function frame(right,up,back){return {right,up,back,rotate:v=>right.map((q,i)=>q*v[0]+up[i]*v[1]+back[i]*v[2])};}
+ function compose(a,b){return frame(a.rotate(b.right),a.rotate(b.up),a.rotate(b.back));}
+ function bridge(left,right,up){
+  const unit=v=>{const n=Math.hypot(...v);if(n<1e-12)throw new RangeError('梁の両端が重なっています。');return v.map(q=>q/n);};
+  const x=unit(right.map((v,i)=>v-left[i])),dot=x.reduce((s,v,i)=>s+v*up[i],0),y=unit(up.map((v,i)=>v-dot*x[i]));
+  return frame(x,y,[x[1]*y[2]-x[2]*y[1],x[2]*y[0]-x[0]*y[2],x[0]*y[1]-x[1]*y[0]]);
+ }
+ return Object.freeze({solve,impact,orientation,geometry,frame,compose,bridge});
 });
 </script><script>(function(root,factory){
  'use strict';
@@ -850,6 +861,12 @@ function prepareDisplayMovement(){
 }
 function displayMovement(axes,m,state,pose){
  if(!levelGeometry||pose==='bed'||pose.startsWith('pad:')||pose.startsWith('support:'))return [0,0,0];
+ if(levelGeometry.portal)return axisConfig(m).filter(a=>axes.includes(a.key)&&['X','Y','Z'].includes(a.key)).reduce((sum,a)=>{
+  const nominal=displayCoordinates(a.vector),length=Math.hypot(...nominal)*a.amp*state[a.key]/100;
+  let v=pose==='tool'&&a.key!=='X'?accuracyVisualVector(a.key):a.vector;
+  if(pose==='tool'&&a.key!=='X'){const p=displayPortal(),span=levelCoordinates(levelGeometry.toolPoints[1].x,0).x-levelCoordinates(levelGeometry.toolPoints[0].x,0).x;v=[v[0]*span/p.span,v[1],v[2]];}
+  return sum.map((q,i)=>q+v[i]*length);
+ },[0,0,0]);
  prepareDisplayMovement();
  const groupKey=JSON.stringify([axes,state,pose]);if(displayMovementCache.has(groupKey))return displayMovementCache.get(groupKey);
  const active=axisConfig(m).filter(a=>axes.includes(a.key)&&['X','Y','Z'].includes(a.key)),baseState={...state};active.forEach(a=>baseState[a.key]=0);
@@ -857,10 +874,10 @@ function displayMovement(axes,m,state,pose){
  const anchor=displayCoordinates([info.anchor.x,.66,info.anchor.z]),baseAnchor=displayCoordinates([baseInfo.anchor.x,.66,baseInfo.anchor.z]),dA=anchor.map((v,i)=>v-baseAnchor[i]);
  const s=displaySurfacePoint(anchor[0],anchor[2]),s0=displaySurfacePoint(baseAnchor[0],baseAnchor[2]),dS=s.map((v,i)=>v-s0[i]),desired=[0,0,0],transport=[0,0,0],nonuniform=levelSolution.residual>1e-10||Math.abs(levelSolution.twist)>1e-10;
  for(const a of active){
-  const source=g.axes.find(q=>q.key===a.key).source,axisFrame=displaySupportFrame(g.poses[source].slope),amplitude=Math.hypot(...displayCoordinates(a.vector))*a.amp*state[a.key]/100,direction=axisFrame.rotate(accuracyVisualVector(a.key));direction.forEach((v,i)=>desired[i]+=v*amplitude);
+  const source=g.axes.find(q=>q.key===a.key).source,axisFrame=displayAxisFrame(a.key),amplitude=Math.hypot(...displayCoordinates(a.vector))*a.amp*state[a.key]/100,direction=axisFrame.rotate(accuracyVisualVector(a.key));direction.forEach((v,i)=>desired[i]+=v*amplitude);
   if(nonuniform){
    const axisBase=geometryModel({...state,[a.key]:0}),axisInfo=axisBase.poses[pose]||axisBase.poses.tool,axisAnchor=displayCoordinates([axisInfo.anchor.x,.66,axisInfo.anchor.z]),axisDA=anchor.map((v,i)=>v-axisAnchor[i]),movesAnchor=Math.hypot(...axisDA)>1e-12,nominal=axisFrame.rotate(a.vector);
-   const axisWorld=direction.map((v,i)=>(v-(movesAnchor?nominal[i]:0))*amplitude),parent=inverseDisplayRotation(displaySupportFrame(info.slope),axisWorld),local=machineProfile&&pose!=='work'?inverseDisplayRotation(displayBodyFrame(),parent):parent;
+   const axisWorld=direction.map((v,i)=>(v-(movesAnchor?nominal[i]:0))*amplitude),parent=inverseDisplayRotation(displayPoseFrame(pose),axisWorld),local=machineProfile&&pose!=='work'?inverseDisplayRotation(displayBodyFrame(),parent):parent;
    local.forEach((v,i)=>transport[i]+=v+(movesAnchor?axisDA[i]:0));
   }
  }
@@ -868,7 +885,7 @@ function displayMovement(axes,m,state,pose){
  // Only the intrinsic guide-direction difference is added. Local posture
  // changes naturally add vertex motion beyond a representative guide arrow.
  if(nonuniform){displayMovementCache.set(groupKey,transport);return transport;}
- const parentDelta=inverseDisplayRotation(displaySupportFrame(info.slope),desired.map((v,i)=>v-dS[i])),localDelta=machineProfile&&pose!=='work'?inverseDisplayRotation(displayBodyFrame(),parentDelta):parentDelta;
+ const parentDelta=inverseDisplayRotation(displayPoseFrame(pose),desired.map((v,i)=>v-dS[i])),localDelta=machineProfile&&pose!=='work'?inverseDisplayRotation(displayBodyFrame(),parentDelta):parentDelta;
  const result=dA.map((v,i)=>v+localDelta[i]);displayMovementCache.set(groupKey,result);return result;
 }
 function displayTransformedPoint(p,axes,m,state=positions,pose='bed'){
@@ -1000,7 +1017,13 @@ function createGeometry(m){
  }
  function cyl(x,y,z,r,len,color,axis='y',text){const n=20,ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8},{v:ring[1],axes:[...group],pose,color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
  const W=m.w,D=m.d;
- if(m.supportLayout==='irregular'){box(0,.42,0,1.78,.45,7.10,c.base,'長手ベッド');box(0,.42,m.columnZ,3.12,.45,.78,c.base,'柱側ベース');}
+ if(m.supportLayout==='irregular'){
+  // Split the connected base at its seating/transition boundaries, so its
+  // visible faces share the same continuous structural surface as the seats.
+  const xs=[-1.56,-1.06,-.89,-.77,0,.77,.89,1.06,1.56],zs=[-3.55,m.columnZ-.39,m.columnZ-.325,m.columnZ,m.columnZ+.325,m.columnZ+.39,3.55];
+  for(let i=0;i<xs.length-1;i++)for(let j=0;j<zs.length-1;j++){const x=(xs[i]+xs[i+1])/2,z=(zs[j]+zs[j+1])/2;if(Math.abs(x)>.89&&Math.abs(z-m.columnZ)>.39)continue;box(x,.42,z,xs[i+1]-xs[i],.45,zs[j+1]-zs[j],c.base);}
+  label([0,.645,-1.4],'長手ベッド');label([1.3,.645,m.columnZ],'柱側ベース');
+ }
  else box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
  function spindle(x,y,z,axes){withGroup(axes,()=>{cyl(x,y,z,.16,.42,c.spindle,'y');cyl(x,y-.3,z,.045,.18,c.spindle);},'tool');}
  function table(width,depth,y,z,axes){withGroup(axes,()=>{box(0,y,z,width,.2,depth,c.table,'テーブル');for(let i=-3;i<=3;i++)box(i*width*.11,y+.105,z,.018,.012,depth*.97,c.rail);box(0,y+.3,z,.42,.38,.36,c.work);},'work');}
@@ -1116,7 +1139,7 @@ function axisIndicators(m,model){
    const movingFaces=model.faces.filter(f=>f.axes.includes(a.key)),moved=movingFaces.flatMap(f=>f.v.map(p=>displayTransformedPoint(p,f.axes,m,positions,f.pose)));
    const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2);
    const bodyPoints=levelGeometry?movingFaces.flatMap(f=>f.v.map(p=>levelMappedBodyVisualPoint(displayTransformedPoint(p,f.axes,m,positions,f.pose),f.pose))):moved,bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
-   const vector=levelGeometry?accuracyVisualVector(a.key):a.vector,pose=levelGeometry?levelGeometry.axes.find(q=>q.key===a.key).source:'bed';
+   const vector=levelGeometry?accuracyVisualVector(a.key):a.vector,pose=levelGeometry?(current.kind==='lathe'&&a.key==='Z'?'work':levelGeometry.axes.find(q=>q.key===a.key).source):'bed';
    return {key:a.key,pose,bodyOrigin,curved:false,points:[-1,1].map(sign=>origin.map((v,i)=>v+sign*vector[i]*.6))};
   }
   const points=Array.from({length:25},(_,i)=>{
@@ -1188,7 +1211,7 @@ function render(canvas,m,angle,showLabels,active){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
  for(const a of axisIndicators(m,model)){
-  const origin=a.curved?null:a.points[0].map((v,i)=>(v+a.points[1][i])/2),path=a.points.map(p=>screen(origin?levelAxisVisualPoint(p,origin,a.pose,a.bodyOrigin):surfacePoint(p,a.pose)));
+  const origin=a.curved?null:a.points[0].map((v,i)=>(v+a.points[1][i])/2),path=a.points.map(p=>screen(origin?levelAxisVisualPoint(p,origin,a.pose,a.bodyOrigin,a.key):surfacePoint(p,a.pose)));
   ctx.strokeStyle=axisColors[a.key];ctx.fillStyle=axisColors[a.key];ctx.lineWidth=a.key===selectedAxis?4:2.5;
   if(!a.curved&&Math.hypot(path[1][0]-path[0][0],path[1][1]-path[0][1])<2){ctx.beginPath();ctx.arc(path[0][0],path[0][1],3,0,Math.PI*2);ctx.stroke();}
   else{ctx.beginPath();path.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.stroke();arrow(path[0],path[1]);arrow(path[path.length-1],path[path.length-2]);}
@@ -1338,7 +1361,7 @@ navigate('home');
 </script><script>'use strict';
 // All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
 let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,levelGeometry=null;
-const levelStoragePrefix='training-level-v1:';
+const legacyLevelStoragePrefix='training-level-v1:',levelCalculationModel='connected-frames-v1',levelStoragePrefix='training-level-'+levelCalculationModel+':';
 // An asynchronous file may finish after another import or a newer training state.
 let levelImportRequest=0,levelSessionEpoch=0,levelRevision=0;
 let adjustmentStage='coarse',adjustmentHintKey='',adjustmentHintValue=null,fineStartEvaluation=null;
@@ -1359,10 +1382,10 @@ function compatibleSupportLayout(r){
 }
 
 
-function levelRecord(){return {version:current.layoutId?3:machineProfile?2:1,...(current.layoutId?{supportLayout:supportLayoutRecord()}:{}),...(machineProfile?{machineProfile,...(machineReference?{bestState:machineBestRecord()}:{})}:{}),machine:current.id,mode:machineMode,width:levelConfig.width,depth:levelConfig.depth,heights:[...supportHeights],sensitivity:Number($('levelSensitivity').value),measurePos:Number($('measurePos').value),offset:levelConfig.offset,columnX:levelConfig.columnX,columnZ:levelConfig.columnZ,axisPositions:Object.fromEntries(axisConfig(current).map(a=>[a.key,positions[a.key]])),step:Number($('adjustStep').value),exaggerate:$('exaggerate').checked};}
+function levelRecord(){return {calculationModel:levelCalculationModel,version:current.layoutId?3:machineProfile?2:1,...(current.layoutId?{supportLayout:supportLayoutRecord()}:{}),...(machineProfile?{machineProfile,...(machineReference?{bestState:machineBestRecord()}:{})}:{}),machine:current.id,mode:machineMode,width:levelConfig.width,depth:levelConfig.depth,heights:[...supportHeights],sensitivity:Number($('levelSensitivity').value),measurePos:Number($('measurePos').value),offset:levelConfig.offset,columnX:levelConfig.columnX,columnZ:levelConfig.columnZ,axisPositions:Object.fromEntries(axisConfig(current).map(a=>[a.key,positions[a.key]])),step:Number($('adjustStep').value),exaggerate:$('exaggerate').checked};}
 function validLevelRecord(r){
  const keys=axisConfig(current).map(a=>a.key),axisValid=r?.axisPositions===undefined||r.axisPositions&&typeof r.axisPositions==='object'&&!Array.isArray(r.axisPositions)&&Object.keys(r.axisPositions).length===keys.length&&keys.every(k=>bounded(r.axisPositions[k],-100,100));
- return r&&compatibleSupportLayout(r)&&((r.version===1&&r.machineProfile===undefined)||((r.version===2||r.version===3)&&window.MachineAccuracy.valid(r.machineProfile,machineLinearKeys(),supports.length)&&validMachineBest(r)))&&r.machine===current.id&&r.mode===machineMode&&bounded(r.width,.5,20)&&bounded(r.depth,.5,20)&&Array.isArray(r.heights)&&r.heights.length===supports.length&&r.heights.every(h=>bounded(h,-.5,.5)&&Math.abs(h*1000-Math.round(h*1000))<1e-7)&&[.02,.05,.1].includes(r.sensitivity)&&[-1,0,1].includes(r.measurePos)&&bounded(r.offset,.1,2)&&['columnX','columnZ'].every(k=>r[k]===undefined||bounded(r[k],-100,100)&&Number.isInteger(r[k]))&&axisValid&&[.001,.005,.01,.05,.1].includes(r.step)&&typeof r.exaggerate==='boolean';
+ return r&&r.calculationModel===levelCalculationModel&&compatibleSupportLayout(r)&&((r.version===1&&r.machineProfile===undefined)||((r.version===2||r.version===3)&&window.MachineAccuracy.valid(r.machineProfile,machineLinearKeys(),supports.length)&&validMachineBest(r)))&&r.machine===current.id&&r.mode===machineMode&&bounded(r.width,.5,20)&&bounded(r.depth,.5,20)&&Array.isArray(r.heights)&&r.heights.length===supports.length&&r.heights.every(h=>bounded(h,-.5,.5)&&Math.abs(h*1000-Math.round(h*1000))<1e-7)&&[.02,.05,.1].includes(r.sensitivity)&&[-1,0,1].includes(r.measurePos)&&bounded(r.offset,.1,2)&&['columnX','columnZ'].every(k=>r[k]===undefined||bounded(r[k],-100,100)&&Number.isInteger(r[k]))&&axisValid&&[.001,.005,.01,.05,.1].includes(r.step)&&typeof r.exaggerate==='boolean';
 }
 function applyLevelRecord(r){
  resetAdjustmentProgress();
@@ -1380,12 +1403,14 @@ function initializeLeveling(){
  const hasMiddle=!!current.supportLayout||!!current.grid&&(current.grid[0]>2||current.grid[1]>2);
  $('middlePreset').disabled=!hasMiddle;$('middlePreset').title=hasMiddle?'':'この支持配置には中間支持点がありません。';
  initializeMachineAccuracy();
- let restored=false,previousLayout=false,migratedCompact=false;
+ let restored=false,previousLayout=false,migratedCompact=false,previousCalculation=false;
+ try{previousCalculation=[machineMode,...(current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''])].some(mode=>['',...(current.layoutId?[current.layoutId]:[]),...(current.previousLayouts||[])].some(layout=>localStorage.getItem(legacyLevelStoragePrefix+current.id+':'+mode+(layout?':'+layout:''))!==null));}catch{}
  try{if(current.layoutId){const oldModes=current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''];previousLayout=oldModes.some(mode=>localStorage.getItem(levelStoragePrefix+current.id+':'+mode)!==null)||(current.previousLayouts||[]).some(layout=>localStorage.getItem(levelStoragePrefix+current.id+':'+machineMode+':'+layout)!==null);}}catch{}
  try{let raw=localStorage.getItem(levelKey());if(!raw&&current.id==='vertical'&&machineMode==='compact'){raw=localStorage.getItem(levelStoragePrefix+'vertical:compact');migratedCompact=!!raw;}if(raw){const data=JSON.parse(raw);if(validLevelRecord(data)){applyLevelRecord(data);restored=true;}}}catch{}
  $('levelSaveStatus').textContent=restored?'前回の調整をこのブラウザから復元しました。':'調整はこのブラウザに自動保存します。';
  buildSupports();updateLeveling(false);const saved=saveLeveling();
  if(previousLayout&&!restored)$('levelSaveStatus').textContent='支持配置を更新したため、旧版の調整は適用していません。旧データはブラウザーに残しています。'+(saved?'新しい配置を自動保存しました。':'新しい配置はJSONで保存してください。');
+ if(previousCalculation&&!restored)$('levelSaveStatus').textContent='計算仕様を更新しました。旧版の保存は残し、新しい教材モデルの別データとして開始しました。旧JSONはそのまま適用できません。';
  if(restored)$('levelSaveStatus').textContent=(migratedCompact?'同じ4点配置の旧小型データを検証して引き継ぎました。':'前回の個体・調整をこのブラウザから復元しました。')+(saved?'':'このブラウザでは自動保存できません。JSONで保存できます。');
 }
 function levelCoordinates(x,z){return {x:x/(current.w*.8)*levelConfig.width,z:z/(current.d*.8)*levelConfig.depth};}
@@ -1409,22 +1434,66 @@ function displayClearance(){
  // This fixed margin never follows the current supports or moving-axis state.
  displayClearanceKey=key;displayClearanceValue=Math.max(0,factor*heightBound/1000+thickness+.09+.025-.66);return displayClearanceValue;
 }
-function displaySurfacePoint(x,z){return [x,.66+displayClearance()+displayFactor()*levelSolution.heightAt(x,z)/1000,z];}
+function structuralSurface(x){
+ if(!levelSolution.parts)return levelSolution;
+ const bed=levelSolution.parts.bed;
+ const blend=(qx,qz)=>{
+  const rawX=qx*(current.w*.8)/levelConfig.width,rawZ=qz*(current.d*.8)/levelConfig.depth,dx=(current.w*.8)/levelConfig.width,dz=(current.d*.8)/levelConfig.depth;
+  const smooth=t=>{const u=Math.max(0,Math.min(1,t));return {v:u*u*(3-2*u),d:t>0&&t<1?6*u*(1-u):0};};
+  const a=smooth((Math.abs(rawX)-.77)/.29),b=smooth((.39-Math.abs(rawZ-current.columnZ))/.065);
+  return {part:levelSolution.parts[rawX<0?'column-left':'column-right'],w:a.v*b.v,wx:a.d*Math.sign(rawX)*dx/.29*b.v,wz:-b.d*Math.sign(rawZ-current.columnZ)*dz/.065*a.v};
+ };
+ return {heightAt:(qx,qz)=>{const q=blend(qx,qz),h=bed.heightAt(qx,qz);return h+q.w*(q.part.heightAt(qx,qz)-h);},slopeAt:(qx,qz)=>{const q=blend(qx,qz),a=bed.slopeAt(qx,qz),b=q.part.slopeAt(qx,qz),d=q.part.heightAt(qx,qz)-bed.heightAt(qx,qz);return {lr:a.lr+q.w*(b.lr-a.lr)+q.wx*d,fb:a.fb+q.w*(b.fb-a.fb)+q.wz*d};}};
+}
+function displaySurfacePoint(x,z){
+ if(levelGeometry?.portal){const factor=displayFactor(),plane=levelSolution.plane,h=structuralSurface(x).heightAt(x,z)-(plane.a*x+plane.b*z+plane.c);return displayPortal().world([x,h*factor/1000,z]).map((v,i)=>v+(i===1?displayClearance():0));}
+ return [x,.66+displayClearance()+displayFactor()*levelSolution.heightAt(x,z)/1000,z];
+}
 function displaySupportFrame(slope){const factor=displayFactor();return window.Leveling.orientation({lr:slope.lr*factor,fb:slope.fb*factor});}
+let portalDisplayCache=null,portalDisplayGeometry=null,portalDisplayFactor=0;
+function displayPortal(){
+ const factor=displayFactor();
+ if(portalDisplayGeometry!==levelGeometry||portalDisplayFactor!==factor){portalDisplayGeometry=levelGeometry;portalDisplayFactor=factor;portalDisplayCache=connectedPortal(levelSolution,levelGeometry.toolPoints,factor);}
+ return portalDisplayCache;
+}
+function displayPoseFrame(pose){
+ if(levelGeometry.portal){const p=displayPortal();if(pose==='tool')return p.frame;if(pose==='leftColumn'||pose==='rightColumn')return p.columns[pose==='rightColumn'?1:0].frame;
+  if(pose==='work'&&levelSolution.parts){const q=levelCoordinates(levelGeometry.workPoint.x,levelGeometry.workPoint.z),s=levelSolution.parts.bed.slopeAt(q.x,q.z),factor=displayFactor();return window.Leveling.compose(p.common,window.Leveling.orientation({lr:(s.lr-levelSolution.lr)*factor,fb:(s.fb-levelSolution.fb)*factor}));}}
+ return displaySupportFrame((levelGeometry.poses[pose]||levelGeometry.poses.tool).slope);
+}
+function displayAxisFrame(key){
+ if(key==='X'&&['travel','gantry'].includes(current.kind)){
+  const points=levelGeometry.toolPoints.map(p=>levelCoordinates(p.x,p.z)),s=points.map(p=>levelSolution.slopeAt(p.x,p.z));return displaySupportFrame({lr:s.reduce((v,p)=>v+p.lr/s.length,0),fb:s.reduce((v,p)=>v+p.fb/s.length,0)});
+ }
+ if(current.kind==='lathe'&&key==='Z')return displayPoseFrame('work');
+ return displayPoseFrame(levelGeometry.axes.find(a=>a.key===key).source);
+}
+function portalVisualPoint(p,pose){
+ const gate=displayPortal(),i=pose==='rightColumn'?1:0,clearance=displayClearance();let local;
+ if(pose==='leftColumn'||pose==='rightColumn'){
+  const anchor=levelCoordinates(levelGeometry.toolPoints[i].x,levelGeometry.toolPoints[i].z),column=gate.columns[i],relative=[p[0]-anchor.x,p[1]-.66,p[2]-anchor.z];
+  local=column.relative.rotate(relative).map((v,j)=>v+column.foot[j]);
+ }else{
+  const anchor=levelCoordinates(levelGeometry.poses.tool.anchor.x,levelGeometry.poses.tool.anchor.z),nominalSpan=levelCoordinates(levelGeometry.toolPoints[1].x,0).x-levelCoordinates(levelGeometry.toolPoints[0].x,0).x;
+  local=gate.local.rotate([(p[0]-anchor.x)*gate.span/nominalSpan,p[1]-3.17,p[2]-anchor.z]).map((v,j)=>v+gate.centre[j]);
+ }
+ return gate.world(local).map((v,j)=>v+(j===1?clearance:0));
+}
 function levelMappedVisualPoint(p,pose='bed'){
  if(!levelSolution||!levelConfig||!levelGeometry)return [...p];
  if(pose.startsWith('pad:'))return [...p];
+ if(levelGeometry.portal&&['tool','leftColumn','rightColumn'].includes(pose))return portalVisualPoint(p,pose);
  if(pose.startsWith('support:')){
   const top=levelMappedVisualPoint([p[0],.195,p[2]],'bed'),bottom=[p[0],.09,p[2]],t=(p[1]-.07)/.22;
   return bottom.map((v,i)=>v+(top[i]-v)*t);
  }
  if(pose==='bed'){
-  const top=displaySurfacePoint(p[0],p[2]),normal=displaySupportFrame(levelSolution.slopeAt(p[0],p[2])).up,thickness=p[1]-.66;
+  const top=displaySurfacePoint(p[0],p[2]),slope=structuralSurface(p[0]).slopeAt(p[0],p[2]),normal=levelGeometry.portal?window.Leveling.compose(displayPortal().common,displaySupportFrame({lr:slope.lr-levelSolution.lr,fb:slope.fb-levelSolution.fb})).up:displaySupportFrame(slope).up,thickness=p[1]-.66;
   return top.map((v,i)=>v+normal[i]*thickness);
  }
  const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,rawOffset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0},offset=displayCoordinates([rawOffset.x,0,rawOffset.z]);
- const anchor=displayCoordinates([info.anchor.x,.66,info.anchor.z]),origin=displaySurfacePoint(anchor[0],anchor[2]),point=[p[0]+offset[0],p[1],p[2]+offset[2]];
- const q=displaySupportFrame(info.slope).rotate(point.map((v,i)=>v-anchor[i]));return q.map((v,i)=>v+origin[i]);
+ const anchor=displayCoordinates([info.anchor.x,.66,info.anchor.z]),origin=pose==='work'&&levelSolution.parts?(()=>{const gate=displayPortal(),h=levelSolution.parts.bed.heightAt(anchor[0],anchor[2])-(levelSolution.plane.a*anchor[0]+levelSolution.plane.b*anchor[2]+levelSolution.plane.c);return gate.world([anchor[0],h*displayFactor()/1000,anchor[2]]).map((v,i)=>v+(i===1?displayClearance():0));})():displaySurfacePoint(anchor[0],anchor[2]),point=[p[0]+offset[0],p[1],p[2]+offset[2]];
+ const q=displayPoseFrame(pose).rotate(point.map((v,i)=>v-anchor[i]));return q.map((v,i)=>v+origin[i]);
 }
 function levelVisualPoint(p,pose='bed'){return levelMappedVisualPoint(displayCoordinates(p),pose);}
 let bodyVisualFrame=null,bodyVisualFrameProfile=null,bodyVisualFrameKind='',bodyVisualFrameFactor=0;
@@ -1434,13 +1503,14 @@ function displayBodyFrame(){
  return bodyVisualFrame;
 }
 function levelMappedBodyVisualPoint(p,pose='bed'){
- if(!levelGeometry||!machineProfile||pose==='bed'||pose==='work'||pose.startsWith('pad:')||pose.startsWith('support:'))return levelMappedVisualPoint(p,pose);
+ if(!levelGeometry||levelGeometry.portal||!machineProfile||pose==='bed'||pose==='work'||pose.startsWith('pad:')||pose.startsWith('support:'))return levelMappedVisualPoint(p,pose);
  const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,rawOffset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0},offset=displayCoordinates([rawOffset.x,0,rawOffset.z]),anchor=displayCoordinates([info.anchor.x,.66,info.anchor.z]);
  const relative=[p[0]+offset[0]-anchor[0],p[1]-anchor[1],p[2]+offset[2]-anchor[2]],rotated=displayBodyFrame().rotate(relative);
  return levelMappedVisualPoint([rotated[0]+anchor[0]-offset[0],rotated[1]+anchor[1],rotated[2]+anchor[2]-offset[2]],pose);
 }
 function levelBodyVisualPoint(p,pose='bed'){return levelMappedBodyVisualPoint(displayCoordinates(p),pose);}
-function levelAxisVisualPoint(p,origin,pose,bodyOrigin=levelMappedBodyVisualPoint(origin,pose)){
+function levelAxisVisualPoint(p,origin,pose,bodyOrigin=levelMappedBodyVisualPoint(origin,pose),key){
+ if(key&&levelGeometry){const v=displayAxisFrame(key).rotate(p.map((q,i)=>q-origin[i]));return v.map((q,i)=>q+bodyOrigin[i]);}
  const q=levelMappedVisualPoint(p,pose),supportOrigin=levelMappedVisualPoint(origin,pose);
  // Arrow points are already physical and contain intrinsic direction once.
  return q.map((v,i)=>v+bodyOrigin[i]-supportOrigin[i]);
@@ -1546,9 +1616,9 @@ function setSupportHeight(i,value,editing=false){
 function changeSupportHeight(i,delta){setSupportHeight(i,Math.max(-.5,Math.min(.5,Math.round((supportHeights[i]+delta)*1000)/1000)));}
 function updateLeveling(save=true,editingIndex=-1){
  const points=supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:supportHeights[i]}));
- levelSolution=window.Leveling.solve(points,{layout:current.supportLayout});refreshSupportControls(editingIndex);
+ levelSolution=machineSolution(supportHeights);refreshSupportControls(editingIndex);
  updateAccuracy();
- const z=Number($('measurePos').value)*levelConfig.depth/2,local=levelSolution.slopeAt(0,z);
+ const z=Number($('measurePos').value)*levelConfig.depth/2,local=structuralSurface(0).slopeAt(0,z);
  $('lr').textContent=cleanNumber(levelSolution.lr,4)+' mm/m';$('fb').textContent=cleanNumber(levelSolution.fb,4)+' mm/m';$('twist').textContent=cleanNumber(levelSolution.twist,6)+' mm/m';$('residual').textContent=cleanNumber(levelSolution.residual)+' mm';
  const sensitivity=Number($('levelSensitivity').value);
  function gauge(value,bubble,readout,text,negative,positive){
@@ -1633,9 +1703,9 @@ $('importLevel').onchange=async event=>{
  try{
   if(file.size>250000)throw Error('大きすぎる');
   const text=await file.text();if(!isCurrent())return;
-  const data=JSON.parse(text);if(!compatibleSupportLayout(data))throw Error('support-layout');if(!validLevelRecord(data))throw Error('不正な調整データ');
+  const data=JSON.parse(text);if(data.calculationModel!==levelCalculationModel)throw Error('calculation-model');if(!compatibleSupportLayout(data))throw Error('support-layout');if(!validLevelRecord(data))throw Error('不正な調整データ');
   applyLevelRecord(data);updateLeveling();$('levelInputMessage').textContent='調整データを読み込みました。';$('levelSaveStatus').textContent='同じ機種・支持配置の調整データを読み込みました。';
- }catch(error){if(isCurrent()){const message=error.message==='support-layout'?'読込できません。支持配置が異なる旧版データです。同じ機種・支持配置で保存したJSONを選んでください。':'読込できません。同じ機械・方式の調整JSONと、数値範囲を確認してください。';$('levelInputMessage').textContent=message;$('levelSaveStatus').textContent=message;}}
+ }catch(error){if(isCurrent()){const message=error.message==='calculation-model'?'読込できません。計算仕様が異なる旧版データです。旧データは変更していません。新しい仕様で保存したJSONを選んでください。':error.message==='support-layout'?'読込できません。支持配置が異なる旧版データです。同じ機種・支持配置で保存したJSONを選んでください。':'読込できません。同じ機械・方式の調整JSONと、数値範囲を確認してください。';$('levelInputMessage').textContent=message;$('levelSaveStatus').textContent=message;}}
 };
 </script><script>'use strict';
 // Geometry lesson: sampled support slopes are assumed to set each rigid assembly's
@@ -1666,6 +1736,23 @@ function columnLayoutOffset(m){
  if(!levelConfig||!singleColumnKinds.includes(m.kind))return {x:0,z:0};
  return {x:m.w*.2*levelConfig.columnX/100,z:m.d*.1*levelConfig.columnZ/100};
 }
+// Connected portal geometry: separate seating planes, then join the actual
+// column tops. This closes the frame kinematically without claiming stiffness.
+function connectedPortal(solution,points,factor=1){
+ const L=window.Leveling,common=L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),height=2.51;
+ const seat=(p,i)=>solution.parts?.[i?'column-right':'column-left']||solution;
+ const physical=points.map(p=>levelCoordinates(p.x,p.z));
+ const columns=physical.map((p,i)=>{
+  const surface=seat(p,i),slope=surface.slopeAt(p.x,p.z),relative=L.orientation({lr:(slope.lr-solution.lr)*factor,fb:(slope.fb-solution.fb)*factor});
+  const residual=surface.heightAt(p.x,p.z)-(solution.plane.a*p.x+solution.plane.b*p.z+solution.plane.c);
+  const foot=[p.x,residual*factor/1000,p.z],top=relative.up.map((v,j)=>foot[j]+height*v);
+  return {foot,top,relative,frame:L.compose(common,relative),slope};
+ });
+ const averageUp=columns[0].relative.up.map((v,i)=>(v+columns[1].relative.up[i])/2),local=L.bridge(columns[0].top,columns[1].top,averageUp),frame=L.compose(common,local);
+ const centre=columns[0].top.map((v,i)=>(v+columns[1].top[i])/2),span=Math.hypot(...columns[1].top.map((v,i)=>v-columns[0].top[i]));
+ const world=p=>common.rotate(p).map((v,i)=>v+(i===1?.66+solution.plane.c*factor/1000:0));
+ return {common,local,frame,columns,centre,span,world,height};
+}
 function geometryModel(state=positions,solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
  const m=current,W=m.w,D=m.d,layout=columnLayoutOffset(m),move=(key)=>{const a=axisConfig(m).find(v=>v.key===key);return a?a.amp*state[key]/100:0;};
  let toolPoints,workPoint,toolAxes;
@@ -1686,15 +1773,22 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const axes=axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>({key:a.key,vector:a.vector,source:toolAxes.includes(a.key)?'tool':'work'}));
  const intrinsicAxes=window.MachineAccuracy.directions(axes,profile);
  const options={toolPoints:toolPoints.map(p=>levelCoordinates(p.x,p.z)),workPoints:[levelCoordinates(workPoint.x,workPoint.z)],axes:intrinsicAxes,length};
+ const portal=toolPoints.length===2?connectedPortal(solution,toolPoints):null;
+ if(portal){options.toolFrame=portal.frame;options.columnFrames=portal.columns.map(c=>c.frame);if(solution.parts){const q=options.workPoints[0],s=solution.parts.bed.slopeAt(q.x,q.z);options.workFrame=window.Leveling.compose(portal.common,window.Leveling.orientation({lr:s.lr-solution.lr,fb:s.fb-solution.fb}));}}
+ // Feed direction follows the travelling guide, not the fixed workpiece.
+ if(m.kind==='travel'||m.kind==='gantry'){
+  const q=toolPoints.map(p=>levelCoordinates(p.x,p.z)),slopes=q.map(p=>solution.slopeAt(p.x,p.z)),s={lr:slopes.reduce((v,p)=>v+p.lr/slopes.length,0),fb:slopes.reduce((v,p)=>v+p.fb/slopes.length,0)};
+  options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:window.Leveling.orientation(s)}:a);
+ }
  const metric=window.Leveling.geometry(solution,options);
- const levelPairs=profile?window.Leveling.geometry(solution,{...options,axes}).pairs:metric.pairs;
+ const levelPairs=profile?window.Leveling.geometry(solution,{...options,axes:axes.map(a=>({...a,frame:options.axes.find(q=>q.key===a.key).frame}))}).pairs:metric.pairs;
  const average=points=>({x:points.reduce((s,p)=>s+p.x/points.length,0),z:points.reduce((s,p)=>s+p.z/points.length,0)});
- const poses={tool:{anchor:average(toolPoints),slope:metric.toolSlope},work:{anchor:workPoint,slope:metric.workSlope}};
- if(toolPoints.length===2)toolPoints.forEach((p,i)=>{const q=levelCoordinates(p.x,p.z);poses[i?'rightColumn':'leftColumn']={anchor:p,slope:solution.slopeAt(q.x,q.z)};});
+ const poses={tool:{anchor:average(toolPoints),slope:metric.toolSlope,frame:metric.toolFrame},work:{anchor:workPoint,slope:metric.workSlope,frame:metric.workFrame}};
+ if(toolPoints.length===2)toolPoints.forEach((p,i)=>{const q=levelCoordinates(p.x,p.z);poses[i?'rightColumn':'leftColumn']={anchor:p,slope:portal?portal.columns[i].slope:solution.slopeAt(q.x,q.z),frame:portal?.columns[i].frame};});
  const bodyFrame=intrinsicBodyFrame(axes,profile),intrinsicUp=bodyFrame.rotate([0,1,0]),combinedUp=metric.toolFrame.rotate(intrinsicUp),combinedDirection=metric.toolFrame.rotate(bodyFrame.direction);
- const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean(window.Leveling.orientation(solution.slopeAt(q.x,q.z)).rotate(intrinsicUp));});
+ const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean(window.Leveling.orientation(solution.slopeAt(q.x,q.z)).rotate(intrinsicUp));});
  const lathe=m.kind==='lathe',bodyPosture=lathe?spindleLean(combinedDirection):bodyLean,bodyIntrinsicPosture=lathe?spindleLean(bodyFrame.direction):bodyIntrinsicLean,bodySupportPosture=lathe?spindleLean(metric.toolFrame.rotate(bodyFrame.nominal)):directionLean(metric.toolFrame.rotate([0,1,0]));
- return {...metric,poses,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
+ return {...metric,portal,poses,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
 }
 function geometrySamples(solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
  const keys=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>a.key);
@@ -1719,7 +1813,7 @@ function fixedVisualFactor(initialSolution){
   allowedMaximum=Math.max(allowedMaximum,Math.hypot(lr,fb));
  }
  const intrinsicAngle=machineProfile?Math.max(...Object.values(machineProfile.squareness).map(q=>Math.abs(q.microns)/300000)):.000001;
- visualReferenceFactor=Math.min(1000,200/Math.max(initialMaximum,allowedMaximum),.15/Math.max(intrinsicAngle,.000001));
+ visualReferenceFactor=Math.min(['double','gantry','portal'].includes(current.kind)?30:1000,200/Math.max(initialMaximum,allowedMaximum),.15/Math.max(intrinsicAngle,.000001));
  return visualReferenceFactor;
 }
 function signed(value,d=1){const text=cleanNumber(value,d);return (value>0&&Number(text)!==0?'+':'')+text;}
@@ -1771,7 +1865,7 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   // change the engine's evaluation length or simulate an NC travel/guide scan.
   const attributes=Object.entries({pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="110" y="43" text-anchor="end" class="live-pair-limit">範囲外</text>':'<text x="80" y="43" text-anchor="middle" class="right-angle">直角</text>');
-  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${pair.key} 基準${plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" aria-describedby="squarenessMeasurementNote" ${attributes}>${markup}</svg></div>`);
+  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${current.kind==='lathe'?'主軸基準XZ':pair.key+' 基準'+plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" aria-describedby="squarenessMeasurementNote" ${attributes}>${markup}</svg></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,15)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
@@ -1801,6 +1895,7 @@ function updateAccuracy(){
  accuracyKey=key;
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel();
+ $('modelSemantics').textContent=g.portal?'模型＝支持姿勢／軸・直角図＝固有差込み':'水準器＝平均／模型＝局所＋固有';
  // The comparison is pointwise: both states use the current axis position,
  // dimensions, layout and evaluation length. The reference-search aggregate
  // is deliberately not used for this initial/current comparison.
@@ -1820,7 +1915,7 @@ function updateAccuracy(){
   const before=initial?.pairs.find(q=>q.key===p.key),change=before?accuracyChange(before.errorMicrons,p.errorMicrons):null;
   box.className='accuracy-metric'+(change?.trend==='worse'?' changed':change?.trend==='better'?' improved':'');
   const label=document.createElement('span'),value=document.createElement('strong'),angle=document.createElement('small'),travel=document.createElement('small');
-  label.textContent=current.kind==='lathe'?'主軸Z基準–X方向':p.key+' 直角度';value.textContent=signed(p.errorMicrons,2)+' µm';
+  label.textContent=current.kind==='lathe'?'主軸基準XZ（送りZとは別）':p.key+' 直角度';value.textContent=signed(p.errorMicrons,2)+' µm';
   value.setAttribute('id','accuracy-current-'+p.key);value.setAttribute('data-value',String(p.errorMicrons));
   angle.textContent=cleanNumber(p.angleDegrees,6)+'° · 90°との差';travel.textContent='端・中央の比較 '+signed(low,2)+' 〜 '+signed(high,2)+' µm';box.append(label,value);
   if(before){
@@ -1868,7 +1963,10 @@ function updateAccuracy(){
  const postureDifference=Math.hypot(g.relativeLean.front,g.relativeLean.right);
  $('accuracyDiagnosis').textContent=initial?(dual?'支持点を少し動かし、直角図と左右コラムの変化を見比べてください。':'支持点を少し動かし、固定表示の直角図と現在の倒れ・ねじれを見比べてください。')+' 90°からのずれの大小は絶対値で判断し、倒れの減少だけで全精度の改善とはしません。':columnDifference>.001?'左右コラムが違う姿勢です。平均の直角度だけでは門のねじれを見落とすため、左右の前後倒れ差も確認してください。':maxError<.00001?(rangeMax>.001?'今の位置では直角です。端・中央の比較では直角度が変わります。軸を動かして確認してください。':postureDifference>.001?'表示した軸間の直角差は0ですが、工具側とテーブル側の姿勢差は残っています。前後・左右の姿勢差も確認してください。':'工具側と案内側が同じ姿勢です。全体が傾いても、相対直角度は保たれています。'):'支持面の局所姿勢が違うため、直角度が変化しています。支持点を調整して、端・中央の値を比べてください。';
  const localSource=key=>g.axes.filter(a=>a.source===key).map(a=>a.key).join('・');
- $('geometryAssumption').textContent=current.kind==='lathe'?'主軸台のZ方向と刃物台側のX方向を比べる教材です。Y軸はありません。':localSource('tool')+'はコラム／主軸側、'+localSource('work')+'はテーブル／案内側の参照姿勢を使う教材です。同じ剛体側の軸対は共通の傾きでは関係が変わりません。'+(current.kind==='five'?'A/Cの旋回誤差は含みません。':'');
+ $('geometryAssumption').textContent=current.kind==='lathe'?'直角図は主軸基準XZです（主軸方向と刃物台Xの比較）。NC送りX–Zの案内直角度ではありません。模型のZ矢印は往復台の送り方向です。Y軸はありません。':localSource('tool')+'はコラム／主軸側、'+localSource('work')+'はテーブル／案内側の参照姿勢を使う教材です。同じ剛体側の軸対は共通の傾きでは関係が変わりません。'+(current.kind==='five'?'A/Cの旋回誤差は含みません。':'');
+ if(['travel','gantry'].includes(current.kind))$('geometryAssumption').textContent='Xは移動位置の走行案内、Y/Zはコラム・梁側の参照姿勢です。固定ワークの姿勢をX送りへ代用しません。';
+ if(dual){$('bodyLeanHeading').textContent='梁側の案内代表方向：支持＋固有差';$('bodyLeanNote').textContent='門の骨格は接続した支持姿勢で描き、固有直角差は案内方向（軸矢印と直角図）へ重ねます。梁の弾性ねじれ・主軸移動荷重は再現しません。';}
+ if(dual)$('geometryAssumption').textContent+=' 左右柱の天端を梁で結ぶ幾何モデルです。梁の反力・たわみ分布・接触荷重は計算しません。模型の門骨格は支持姿勢、固有直角差は軸矢印と直角図に示します。';
  $('columnLayout').hidden=!singleColumnKinds.includes(current.kind);
  $('columnXValue').textContent=levelConfig.columnX===0?'標準':levelConfig.columnX<0?'左寄り':'右寄り';$('columnX').setAttribute('aria-valuetext',$('columnXValue').textContent);
  $('columnZValue').textContent=levelConfig.columnZ===0?'標準':levelConfig.columnZ<0?'手前寄り':'奥寄り';$('columnZ').setAttribute('aria-valuetext',$('columnZValue').textContent);
@@ -1894,6 +1992,7 @@ $('demoColumn').onclick=()=>{
 
 function accuracyVisualVector(key){
  const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key));
+ if(current.kind==='lathe'&&key==='Z')return [...axes.find(a=>a.key==='Z').vector];
  const factor=$('exaggerate').checked?levelGeometry.visualFactor:1;
  const profile=scaledAccuracyProfile(machineProfile,factor);
  return window.MachineAccuracy.directions(axes,profile).find(a=>a.key===key).vector;
@@ -1916,7 +2015,15 @@ function initializeMachineAccuracy(profile,bestState){
  if(!restored)supportHeights=[...machineProfile.initialHeights];
  levelExercise={solved:false};
 }
-function machineSolution(heights){return window.Leveling.solve(supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:heights[i]})),{layout:current.supportLayout});}
+function machineSolution(heights){
+ const points=supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:heights[i]})),solution=window.Leveling.solve(points,{layout:current.supportLayout});
+ // The interpolating sheet is an input diagram, not an elastic casting. The
+ // L3 teaching foundation has a bed and two distinct three-point column seats.
+ if(current.kind==='double'&&current.supportLayout==='irregular'){
+  solution.parts=Object.fromEntries(['bed','column-left','column-right'].map(group=>[group,window.Leveling.solve(points.filter((p,i)=>supports[i].group===group))]));
+ }
+ return solution;
+}
 function machineEvaluation(heights){
  const solution=machineSolution(heights),samples=geometrySamples(solution,machineProfile,window.MachineAccuracy.referenceLength);
  return machineEvaluationFrom(samples,solution);

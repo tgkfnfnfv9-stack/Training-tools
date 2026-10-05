@@ -47,6 +47,10 @@ function frame(slope){
  return vector=>add(add(scale(right,vector[0]),scale(up,vector[1])),scale(back,vector[2]));
 }
 function expected(heights){
+ // Connected portal geometry has separate independent analytic/invariant
+ // coverage in check-structural-invariants. Here test its DOM wiring only.
+ if(read('!!levelGeometry.portal')){const g=json(`geometryModel(positions,machineSolution(${JSON.stringify(heights)}),machineProfile)`),solution=json(`({twist:machineSolution(${JSON.stringify(heights)}).twist})`);return {...g,pairs:g.pairs.map(p=>({key:p.key,error:p.errorMicrons})),twist:solution.twist};}
+
  const m=json('current'),cfg=json('levelConfig'),profile=json('machineProfile'),g=json('levelGeometry'),support=json('supports');
  const coordinates=p=>({x:p.x/(m.w*.8)*cfg.width,z:p.z/(m.d*.8)*cfg.depth});
  const points=support.map((p,i)=>({...coordinates(p),h:heights[i]}));
@@ -59,7 +63,7 @@ function expected(heights){
  const intrinsic=(i,j)=>profile.squareness[axes[i].key+axes[j].key].microns/300000;
  const xy=intrinsic(0,1),yx=-Math.sin(xy),yy=Math.cos(xy),vectors=[axes[0].vector,add(scale(axes[0].vector,yx),scale(axes[1].vector,yy))];
  if(axes.length===3){const zx=-Math.sin(intrinsic(0,2)),zy=(-Math.sin(intrinsic(1,2))-zx*yx)/yy,zz=Math.sqrt(1-zx*zx-zy*zy);vectors.push(add(add(scale(axes[0].vector,zx),scale(axes[1].vector,zy)),scale(axes[2].vector,zz)));}
- const rotateTool=frame(tool.slope),rotateWork=frame(work.slope),directions=axes.map((a,i)=>(g.axes.find(q=>q.key===a.key).source==='tool'?rotateTool:rotateWork)(vectors[i]));
+ const rotateTool=frame(tool.slope),rotateWork=frame(work.slope),directions=axes.map((a,i)=>(g.axes.find(q=>q.key===a.key).source==='tool'||m.kind==='travel'&&a.key==='X'?rotateTool:rotateWork)(vectors[i]));
  const pairs=[];
  for(let i=0;i<axes.length;i++)for(let j=i+1;j<axes.length;j++){
   const product=Math.max(-1,Math.min(1,dot(directions[i],directions[j]))),deviation=Math.abs(product)<1e-14?0:-Math.asin(product)*1e6;

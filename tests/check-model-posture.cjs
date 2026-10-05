@@ -109,10 +109,12 @@ for(const [index,mode] of variants){
      const gradient=[0,1].map(k=>slopes.reduce((sum,s)=>sum+s[k]/slopes.length,0)*factor/1000),expected=unit([-gradient[0],1,-gradient[1]]);
      const a=[info.anchor.x,.66,info.anchor.z],b=[info.anchor.x,1.66,info.anchor.z];
      const actual=unit(subtract(json(`levelBodyVisualPoint(${literal(b)},${literal(pose)})`),json(`levelBodyVisualPoint(${literal(a)},${literal(pose)})`)));
-     pointNear(actual,expected,2e-8);
+     // Connected portal frames and seats have independent endpoint/analytic
+     // coverage in check-structural-invariants; this suite checks Canvas wiring.
+     pointNear(actual,read('!!levelGeometry.portal')?json(`displayPoseFrame('${pose}').up`):expected,2e-8);
     }
     // Each raw support coordinate lands on the solver's physical coordinate.
-    for(const s of json('supports')){const [x,z]=mapping(s),p=json(`levelVisualPoint([${s.x},.66,${s.z}])`);near(p[0],x);near(p[2],z);near(p[1],.66+read('displayClearance()')+factor*read(`levelSolution.heightAt(${x},${z})`)/1000);}
+    for(const s of json('supports')){const [x,z]=mapping(s),p=json(`levelVisualPoint([${s.x},.66,${s.z}])`);if(read('!!levelGeometry.portal'))pointNear(p,json(`displaySurfacePoint(${x},${z})`));else {near(p[0],x);near(p[2],z);near(p[1],.66+read('displayClearance()')+factor*read(`levelSolution.heightAt(${x},${z})`)/1000);}}
    });
    check('groundContact',()=>{
     const clearance=read('displayClearance()');if(fixedClearance===undefined)fixedClearance=clearance;else near(clearance,fixedClearance);

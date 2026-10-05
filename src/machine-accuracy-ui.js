@@ -16,7 +16,15 @@ function initializeMachineAccuracy(profile,bestState){
  if(!restored)supportHeights=[...machineProfile.initialHeights];
  levelExercise={solved:false};
 }
-function machineSolution(heights){return window.Leveling.solve(supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:heights[i]})),{layout:current.supportLayout});}
+function machineSolution(heights){
+ const points=supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:heights[i]})),solution=window.Leveling.solve(points,{layout:current.supportLayout});
+ // The interpolating sheet is an input diagram, not an elastic casting. The
+ // L3 teaching foundation has a bed and two distinct three-point column seats.
+ if(current.kind==='double'&&current.supportLayout==='irregular'){
+  solution.parts=Object.fromEntries(['bed','column-left','column-right'].map(group=>[group,window.Leveling.solve(points.filter((p,i)=>supports[i].group===group))]));
+ }
+ return solution;
+}
 function machineEvaluation(heights){
  const solution=machineSolution(heights),samples=geometrySamples(solution,machineProfile,window.MachineAccuracy.referenceLength);
  return machineEvaluationFrom(samples,solution);

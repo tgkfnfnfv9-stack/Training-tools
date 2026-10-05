@@ -81,7 +81,7 @@ for(const [index,mode] of variants){
  setState(states[0]);setHeights(()=>0);const p=parameters(),representative=p.axes.find(a=>Math.abs(a.vector[1])===1)||p.axes.find(a=>a.key==='Z'),end=q.map((v,i)=>v+representative.vector[i]);name=kind+'/intrinsic-only';
  check('intrinsicRemoval',()=>{
   const ideal=subtract(idealPoint(end),idealPoint(q)),current=subtract(currentPoint(end),currentPoint(q)),nominal=representative.vector.map((v,i)=>v*[p.sx,1,p.sz][i]);
-  pointNear(unit(ideal),unit(nominal));assert(norm(subtract(unit(current),unit(nominal)))>1e-6,'current intrinsic body error was removed');
+  pointNear(unit(ideal),unit(nominal));if(['double','gantry'].includes(kind)){pointNear(unit(current),unit(nominal));assert(read('levelGeometry.pairs.some(p=>Math.abs(p.deviationMicroradians)>1e-6)'),'guide errors remain while connected skeleton omits them');}else assert(norm(subtract(unit(current),unit(nominal)))>1e-6,'current intrinsic body error was removed');
  });
  for(const axis of p.axes.filter(a=>['X','Y','Z'].includes(a.key))){
   const axes=axis.key==='X'?['X','Y']:axis.key==='Y'?['X','Y']:['X','Y','Z'],beforeState={...states[1],[axis.key]:-100},afterState={...states[1],[axis.key]:100};

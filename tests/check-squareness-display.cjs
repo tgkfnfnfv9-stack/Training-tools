@@ -41,7 +41,7 @@ function verify(g){
    near(Number(gap.getAttribute('x1')),Number(ideal.getAttribute('cx')));near(Number(gap.getAttribute('y1')),Number(ideal.getAttribute('cy')));near(Number(gap.getAttribute('x2')),Number(tip.getAttribute('cx')));near(Number(gap.getAttribute('y2')),Number(tip.getAttribute('cy')));
    const startLabels=drawing.querySelectorAll('.measurement-start'),endLabels=drawing.querySelectorAll('.measurement-end');assert.equal(startLabels.length,1);assert.equal(endLabels.length,1);assert.equal(startLabels[0].textContent,'0');assert.equal(endLabels[0].textContent,'300 mm');assert.equal(drawing.querySelectorAll('.measurement-direction').length,1);
   }
-  assert.equal(svg.parentElement.querySelectorAll('.live-pair-title')[0].textContent.includes(pair.key+' 基準'+key),true);
+  assert.equal(svg.parentElement.querySelectorAll('.live-pair-title')[0].textContent.includes(read('current.kind')==='lathe'?'主軸基準XZ':pair.key+' 基準'+key),true);
   assert.equal(base.querySelectorAll('.pair-current')[0].getAttribute('x2'),line.getAttribute('x2'));
   assert.equal(base.querySelectorAll('.pair-current')[0].getAttribute('y2'),line.getAttribute('y2'));
   const match=/直角より(広い|狭い)|直角/.exec(svg.getAttribute('aria-label'));assert(match);

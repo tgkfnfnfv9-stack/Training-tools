@@ -33,13 +33,13 @@ for(const [index,mode] of variants){
    const factor=exaggerated?pure.read('levelGeometry.visualFactor'):1;
    const rendered=pure.json('supports.map(s=>levelVisualPoint([s.x,.66,s.z]))');
    check(`支持面は仮想寸法でも入力高さ差を保つ ${label} ${width}x${depth} ${exaggerated}`,()=>{
-    rendered.forEach((p,i)=>near(p[1]-rendered[0][1],(heights[i]-heights[0])*factor/1000,1e-8));
+    if(pure.read('!!levelGeometry.portal')){const common=pure.json('displayPortal().common'),unrotate=p=>[common.right,common.up,common.back].map(a=>dot(a,p));const local=rendered.map(unrotate);local.forEach((p,i)=>{const points=pure.json('supports.map(s=>levelCoordinates(s.x,s.z))'),plane=pure.json('levelSolution.plane');near(p[1]-local[0][1],((heights[i]-heights[0])-plane.a*(points[i].x-points[0].x)-plane.b*(points[i].z-points[0].z))*factor/1000,1e-8);});}else rendered.forEach((p,i)=>near(p[1]-rendered[0][1],(heights[i]-heights[0])*factor/1000,1e-8));
    });
    check(`仮想寸法変更後も工具・案内の局所変換は剛体 ${label} ${width}x${depth} ${exaggerated}`,()=>{
     for(const pose of ['tool','work']){
      const points=pure.json(`[[0,.66,0],[1,.66,0],[0,1.66,0],[0,.66,1]].map(p=>levelVisualPoint(p,'${pose}'))`);
      const vectors=points.slice(1).map(p=>difference(p,points[0]));
-     const expectedLengths=[width/pure.read("current.w*.8"),1,depth/pure.read("current.d*.8")];vectors.forEach((v,i)=>near(magnitude(v),expectedLengths[i],1e-12));
+     const expectedLengths=[width/pure.read("current.w*.8"),1,depth/pure.read("current.d*.8")];vectors.forEach((v,i)=>near(magnitude(v),expectedLengths[i]*(i===0&&pose==='tool'&&pure.read('!!levelGeometry.portal')?pure.read('displayPortal().span/(levelCoordinates(levelGeometry.toolPoints[1].x,0).x-levelCoordinates(levelGeometry.toolPoints[0].x,0).x)'):1),1e-12));
      for(let i=0;i<3;i++)for(let j=i+1;j<3;j++)near(dot(vectors[i],vectors[j]),0,1e-12);
     }
    });

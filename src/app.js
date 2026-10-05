@@ -47,6 +47,12 @@ function prepareDisplayMovement(){
 }
 function displayMovement(axes,m,state,pose){
  if(!levelGeometry||pose==='bed'||pose.startsWith('pad:')||pose.startsWith('support:'))return [0,0,0];
+ if(levelGeometry.portal)return axisConfig(m).filter(a=>axes.includes(a.key)&&['X','Y','Z'].includes(a.key)).reduce((sum,a)=>{
+  const nominal=displayCoordinates(a.vector),length=Math.hypot(...nominal)*a.amp*state[a.key]/100;
+  let v=pose==='tool'&&a.key!=='X'?accuracyVisualVector(a.key):a.vector;
+  if(pose==='tool'&&a.key!=='X'){const p=displayPortal(),span=levelCoordinates(levelGeometry.toolPoints[1].x,0).x-levelCoordinates(levelGeometry.toolPoints[0].x,0).x;v=[v[0]*span/p.span,v[1],v[2]];}
+  return sum.map((q,i)=>q+v[i]*length);
+ },[0,0,0]);
  prepareDisplayMovement();
  const groupKey=JSON.stringify([axes,state,pose]);if(displayMovementCache.has(groupKey))return displayMovementCache.get(groupKey);
  const active=axisConfig(m).filter(a=>axes.includes(a.key)&&['X','Y','Z'].includes(a.key)),baseState={...state};active.forEach(a=>baseState[a.key]=0);
@@ -54,10 +60,10 @@ function displayMovement(axes,m,state,pose){
  const anchor=displayCoordinates([info.anchor.x,.66,info.anchor.z]),baseAnchor=displayCoordinates([baseInfo.anchor.x,.66,baseInfo.anchor.z]),dA=anchor.map((v,i)=>v-baseAnchor[i]);
  const s=displaySurfacePoint(anchor[0],anchor[2]),s0=displaySurfacePoint(baseAnchor[0],baseAnchor[2]),dS=s.map((v,i)=>v-s0[i]),desired=[0,0,0],transport=[0,0,0],nonuniform=levelSolution.residual>1e-10||Math.abs(levelSolution.twist)>1e-10;
  for(const a of active){
-  const source=g.axes.find(q=>q.key===a.key).source,axisFrame=displaySupportFrame(g.poses[source].slope),amplitude=Math.hypot(...displayCoordinates(a.vector))*a.amp*state[a.key]/100,direction=axisFrame.rotate(accuracyVisualVector(a.key));direction.forEach((v,i)=>desired[i]+=v*amplitude);
+  const source=g.axes.find(q=>q.key===a.key).source,axisFrame=displayAxisFrame(a.key),amplitude=Math.hypot(...displayCoordinates(a.vector))*a.amp*state[a.key]/100,direction=axisFrame.rotate(accuracyVisualVector(a.key));direction.forEach((v,i)=>desired[i]+=v*amplitude);
   if(nonuniform){
    const axisBase=geometryModel({...state,[a.key]:0}),axisInfo=axisBase.poses[pose]||axisBase.poses.tool,axisAnchor=displayCoordinates([axisInfo.anchor.x,.66,axisInfo.anchor.z]),axisDA=anchor.map((v,i)=>v-axisAnchor[i]),movesAnchor=Math.hypot(...axisDA)>1e-12,nominal=axisFrame.rotate(a.vector);
-   const axisWorld=direction.map((v,i)=>(v-(movesAnchor?nominal[i]:0))*amplitude),parent=inverseDisplayRotation(displaySupportFrame(info.slope),axisWorld),local=machineProfile&&pose!=='work'?inverseDisplayRotation(displayBodyFrame(),parent):parent;
+   const axisWorld=direction.map((v,i)=>(v-(movesAnchor?nominal[i]:0))*amplitude),parent=inverseDisplayRotation(displayPoseFrame(pose),axisWorld),local=machineProfile&&pose!=='work'?inverseDisplayRotation(displayBodyFrame(),parent):parent;
    local.forEach((v,i)=>transport[i]+=v+(movesAnchor?axisDA[i]:0));
   }
  }
@@ -65,7 +71,7 @@ function displayMovement(axes,m,state,pose){
  // Only the intrinsic guide-direction difference is added. Local posture
  // changes naturally add vertex motion beyond a representative guide arrow.
  if(nonuniform){displayMovementCache.set(groupKey,transport);return transport;}
- const parentDelta=inverseDisplayRotation(displaySupportFrame(info.slope),desired.map((v,i)=>v-dS[i])),localDelta=machineProfile&&pose!=='work'?inverseDisplayRotation(displayBodyFrame(),parentDelta):parentDelta;
+ const parentDelta=inverseDisplayRotation(displayPoseFrame(pose),desired.map((v,i)=>v-dS[i])),localDelta=machineProfile&&pose!=='work'?inverseDisplayRotation(displayBodyFrame(),parentDelta):parentDelta;
  const result=dA.map((v,i)=>v+localDelta[i]);displayMovementCache.set(groupKey,result);return result;
 }
 function displayTransformedPoint(p,axes,m,state=positions,pose='bed'){
@@ -197,7 +203,13 @@ function createGeometry(m){
  }
  function cyl(x,y,z,r,len,color,axis='y',text){const n=20,ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8},{v:ring[1],axes:[...group],pose,color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
  const W=m.w,D=m.d;
- if(m.supportLayout==='irregular'){box(0,.42,0,1.78,.45,7.10,c.base,'長手ベッド');box(0,.42,m.columnZ,3.12,.45,.78,c.base,'柱側ベース');}
+ if(m.supportLayout==='irregular'){
+  // Split the connected base at its seating/transition boundaries, so its
+  // visible faces share the same continuous structural surface as the seats.
+  const xs=[-1.56,-1.06,-.89,-.77,0,.77,.89,1.06,1.56],zs=[-3.55,m.columnZ-.39,m.columnZ-.325,m.columnZ,m.columnZ+.325,m.columnZ+.39,3.55];
+  for(let i=0;i<xs.length-1;i++)for(let j=0;j<zs.length-1;j++){const x=(xs[i]+xs[i+1])/2,z=(zs[j]+zs[j+1])/2;if(Math.abs(x)>.89&&Math.abs(z-m.columnZ)>.39)continue;box(x,.42,z,xs[i+1]-xs[i],.45,zs[j+1]-zs[j],c.base);}
+  label([0,.645,-1.4],'長手ベッド');label([1.3,.645,m.columnZ],'柱側ベース');
+ }
  else box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
  function spindle(x,y,z,axes){withGroup(axes,()=>{cyl(x,y,z,.16,.42,c.spindle,'y');cyl(x,y-.3,z,.045,.18,c.spindle);},'tool');}
  function table(width,depth,y,z,axes){withGroup(axes,()=>{box(0,y,z,width,.2,depth,c.table,'テーブル');for(let i=-3;i<=3;i++)box(i*width*.11,y+.105,z,.018,.012,depth*.97,c.rail);box(0,y+.3,z,.42,.38,.36,c.work);},'work');}
@@ -313,7 +325,7 @@ function axisIndicators(m,model){
    const movingFaces=model.faces.filter(f=>f.axes.includes(a.key)),moved=movingFaces.flatMap(f=>f.v.map(p=>displayTransformedPoint(p,f.axes,m,positions,f.pose)));
    const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2);
    const bodyPoints=levelGeometry?movingFaces.flatMap(f=>f.v.map(p=>levelMappedBodyVisualPoint(displayTransformedPoint(p,f.axes,m,positions,f.pose),f.pose))):moved,bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
-   const vector=levelGeometry?accuracyVisualVector(a.key):a.vector,pose=levelGeometry?levelGeometry.axes.find(q=>q.key===a.key).source:'bed';
+   const vector=levelGeometry?accuracyVisualVector(a.key):a.vector,pose=levelGeometry?(current.kind==='lathe'&&a.key==='Z'?'work':levelGeometry.axes.find(q=>q.key===a.key).source):'bed';
    return {key:a.key,pose,bodyOrigin,curved:false,points:[-1,1].map(sign=>origin.map((v,i)=>v+sign*vector[i]*.6))};
   }
   const points=Array.from({length:25},(_,i)=>{
@@ -385,7 +397,7 @@ function render(canvas,m,angle,showLabels,active){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
  for(const a of axisIndicators(m,model)){
-  const origin=a.curved?null:a.points[0].map((v,i)=>(v+a.points[1][i])/2),path=a.points.map(p=>screen(origin?levelAxisVisualPoint(p,origin,a.pose,a.bodyOrigin):surfacePoint(p,a.pose)));
+  const origin=a.curved?null:a.points[0].map((v,i)=>(v+a.points[1][i])/2),path=a.points.map(p=>screen(origin?levelAxisVisualPoint(p,origin,a.pose,a.bodyOrigin,a.key):surfacePoint(p,a.pose)));
   ctx.strokeStyle=axisColors[a.key];ctx.fillStyle=axisColors[a.key];ctx.lineWidth=a.key===selectedAxis?4:2.5;
   if(!a.curved&&Math.hypot(path[1][0]-path[0][0],path[1][1]-path[0][1])<2){ctx.beginPath();ctx.arc(path[0][0],path[0][1],3,0,Math.PI*2);ctx.stroke();}
   else{ctx.beginPath();path.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.stroke();arrow(path[0],path[1]);arrow(path[path.length-1],path[path.length-2]);}

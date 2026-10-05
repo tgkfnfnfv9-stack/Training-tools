@@ -40,12 +40,14 @@ function shortestRotation(from,to){
  const w=Math.sqrt((1+dot(from,to))/2),q=scale(cross(from,to),1/(2*w));
  return vector=>{const turn=cross(q,vector);return add(vector,add(scale(turn,2*w),scale(cross(q,turn),2)));};
 }
+// Portal physical geometry is independently covered by check-structural-invariants;
+// portal branches here verify wiring of body/guide/readout semantics.
 function expected(heights,factor=1){
  const m=json('current'),cfg=json('levelConfig'),g=json('levelGeometry'),axes=json('axisConfig(current).filter(a=>["X","Y","Z"].includes(a.key))'),profile=json('machineProfile');
  const coordinate=p=>({x:p.x/(m.w*.8)*cfg.width,z:p.z/(m.d*.8)*cfg.depth}),points=json('supports').map((p,i)=>({...coordinate(p),h:heights[i]}));
  const slopes=g.toolPoints.map(p=>{const q=coordinate(p);return independentSlope(points,q.x,q.z);}),toolSlope={lr:slopes.reduce((sum,s)=>sum+s.lr/slopes.length,0),fb:slopes.reduce((sum,s)=>sum+s.fb/slopes.length,0)};
  const q=coordinate(g.workPoint),workSlope=independentSlope(points,q.x,q.z),directions=intrinsicDirections(axes,profile,factor),index=axes.findIndex(a=>Math.abs(a.vector[1])===1),representative=index<0?axes.findIndex(a=>a.key==='Z'):index;
- const bodyRotate=shortestRotation(axes[representative].vector,directions[representative]),toolRotate=supportRotation({lr:toolSlope.lr*factor,fb:toolSlope.fb*factor}),up=toolRotate(bodyRotate([0,1,0])),direction=toolRotate(directions[representative]);
+ const bodyRotate=shortestRotation(axes[representative].vector,directions[representative]),toolRotate=g.portal?(v=>{const f=json(`connectedPortal(levelSolution,levelGeometry.toolPoints,${factor}).frame`);return add(add(scale(f.right,v[0]),scale(f.up,v[1])),scale(f.back,v[2]));}):supportRotation({lr:toolSlope.lr*factor,fb:toolSlope.fb*factor}),up=toolRotate(bodyRotate([0,1,0])),direction=toolRotate(directions[representative]);
  const posture=m.kind==='lathe'?{front:Math.atan2(direction[1],Math.hypot(direction[0],direction[2]))*1e6,right:Math.atan2(direction[2],direction[0])*1e6}:{front:Math.atan2(-up[2],up[1])*1e6,right:Math.atan2(up[0],up[1])*1e6};
  return {posture,up,toolSlope,workSlope,axes,directions,toolRotate,bodyRotate,slopes};
 }
@@ -78,12 +80,12 @@ for(const [index,mode] of variants){
   r.exaggerate.checked=exaggerated;r.exaggerate.onchange();
   check('3D実体の縦方向が固有＋支持姿勢の独立回転と一致 '+label+' '+exaggerated,()=>{
    const wanted=expected(json('supportHeights'),exaggerated?read('levelGeometry.visualFactor'):1),g=json('levelGeometry'),offset=json('columnLayoutOffset(current)'),p=[g.poses.tool.anchor.x-offset.x,.66,g.poses.tool.anchor.z-offset.z];
-   const base=json(`levelBodyVisualPoint(${JSON.stringify(p)},'tool')`),top=json(`levelBodyVisualPoint(${JSON.stringify(add(p,[0,1,0]))},'tool')`),up=unit(sub(top,base));up.forEach((v,i)=>near(v,wanted.up[i],1e-11));
+   const base=json(`levelBodyVisualPoint(${JSON.stringify(p)},'tool')`),top=json(`levelBodyVisualPoint(${JSON.stringify(add(p,[0,1,0]))},'tool')`),up=unit(sub(top,base));up.forEach((v,i)=>near(v,g.portal?wanted.toolRotate([0,1,0])[i]:wanted.up[i],1e-11));
   });
   check('矢印は固有方向を1回だけ、中心は実可動部へ追従 '+label+' '+exaggerated,()=>{
    const factor=exaggerated?read('levelGeometry.visualFactor'):1,wanted=expected(json('supportHeights'),factor),arrows=json('axisIndicators(current,createGeometry(current))');
    for(const a of arrows.filter(a=>!a.curved)){
-    const origin=scale(add(...a.points),.5),endpoints=a.points.map(p=>json(`levelAxisVisualPoint(${JSON.stringify(p)},${JSON.stringify(origin)},'${a.pose}',${JSON.stringify(a.bodyOrigin)})`)),actual=unit(sub(endpoints[1],endpoints[0])),slope=a.pose==='tool'?wanted.toolSlope:wanted.workSlope,expectedDirection=supportRotation({lr:slope.lr*factor,fb:slope.fb*factor})(wanted.directions[wanted.axes.findIndex(q=>q.key===a.key)]);
+    const origin=scale(add(...a.points),.5),endpoints=a.points.map(p=>json(`levelAxisVisualPoint(${JSON.stringify(p)},${JSON.stringify(origin)},'${a.pose}',${JSON.stringify(a.bodyOrigin)},'${a.key}')`)),actual=unit(sub(endpoints[1],endpoints[0])),slope=a.pose==='tool'?wanted.toolSlope:wanted.workSlope,expectedDirection=read('!!levelGeometry.portal')?json(`displayAxisFrame('${a.key}').rotate(accuracyVisualVector('${a.key}'))`):supportRotation({lr:(index===2&&a.key==='X'?wanted.toolSlope:slope).lr*factor,fb:(index===2&&a.key==='X'?wanted.toolSlope:slope).fb*factor})(index===6&&a.key==='Z'?wanted.axes.find(q=>q.key==='Z').vector:wanted.directions[wanted.axes.findIndex(q=>q.key===a.key)]);
     actual.forEach((v,i)=>near(v,expectedDirection[i],1e-11));scale(add(...endpoints),.5).forEach((v,i)=>near(v,a.bodyOrigin[i],1e-11));
     const bodyPoints=json(`createGeometry(current).faces.filter(f=>f.axes.includes('${a.key}')).flatMap(f=>f.v.map(p=>levelMappedBodyVisualPoint(displayTransformedPoint(p,f.axes,current,positions,f.pose),f.pose)))`),center=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);center.forEach((v,i)=>near(v,a.bodyOrigin[i],1e-11));
    }

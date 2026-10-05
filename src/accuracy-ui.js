@@ -27,6 +27,23 @@ function columnLayoutOffset(m){
  if(!levelConfig||!singleColumnKinds.includes(m.kind))return {x:0,z:0};
  return {x:m.w*.2*levelConfig.columnX/100,z:m.d*.1*levelConfig.columnZ/100};
 }
+// Connected portal geometry: separate seating planes, then join the actual
+// column tops. This closes the frame kinematically without claiming stiffness.
+function connectedPortal(solution,points,factor=1){
+ const L=window.Leveling,common=L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),height=2.51;
+ const seat=(p,i)=>solution.parts?.[i?'column-right':'column-left']||solution;
+ const physical=points.map(p=>levelCoordinates(p.x,p.z));
+ const columns=physical.map((p,i)=>{
+  const surface=seat(p,i),slope=surface.slopeAt(p.x,p.z),relative=L.orientation({lr:(slope.lr-solution.lr)*factor,fb:(slope.fb-solution.fb)*factor});
+  const residual=surface.heightAt(p.x,p.z)-(solution.plane.a*p.x+solution.plane.b*p.z+solution.plane.c);
+  const foot=[p.x,residual*factor/1000,p.z],top=relative.up.map((v,j)=>foot[j]+height*v);
+  return {foot,top,relative,frame:L.compose(common,relative),slope};
+ });
+ const averageUp=columns[0].relative.up.map((v,i)=>(v+columns[1].relative.up[i])/2),local=L.bridge(columns[0].top,columns[1].top,averageUp),frame=L.compose(common,local);
+ const centre=columns[0].top.map((v,i)=>(v+columns[1].top[i])/2),span=Math.hypot(...columns[1].top.map((v,i)=>v-columns[0].top[i]));
+ const world=p=>common.rotate(p).map((v,i)=>v+(i===1?.66+solution.plane.c*factor/1000:0));
+ return {common,local,frame,columns,centre,span,world,height};
+}
 function geometryModel(state=positions,solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
  const m=current,W=m.w,D=m.d,layout=columnLayoutOffset(m),move=(key)=>{const a=axisConfig(m).find(v=>v.key===key);return a?a.amp*state[key]/100:0;};
  let toolPoints,workPoint,toolAxes;
@@ -47,15 +64,22 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const axes=axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>({key:a.key,vector:a.vector,source:toolAxes.includes(a.key)?'tool':'work'}));
  const intrinsicAxes=window.MachineAccuracy.directions(axes,profile);
  const options={toolPoints:toolPoints.map(p=>levelCoordinates(p.x,p.z)),workPoints:[levelCoordinates(workPoint.x,workPoint.z)],axes:intrinsicAxes,length};
+ const portal=toolPoints.length===2?connectedPortal(solution,toolPoints):null;
+ if(portal){options.toolFrame=portal.frame;options.columnFrames=portal.columns.map(c=>c.frame);if(solution.parts){const q=options.workPoints[0],s=solution.parts.bed.slopeAt(q.x,q.z);options.workFrame=window.Leveling.compose(portal.common,window.Leveling.orientation({lr:s.lr-solution.lr,fb:s.fb-solution.fb}));}}
+ // Feed direction follows the travelling guide, not the fixed workpiece.
+ if(m.kind==='travel'||m.kind==='gantry'){
+  const q=toolPoints.map(p=>levelCoordinates(p.x,p.z)),slopes=q.map(p=>solution.slopeAt(p.x,p.z)),s={lr:slopes.reduce((v,p)=>v+p.lr/slopes.length,0),fb:slopes.reduce((v,p)=>v+p.fb/slopes.length,0)};
+  options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:window.Leveling.orientation(s)}:a);
+ }
  const metric=window.Leveling.geometry(solution,options);
- const levelPairs=profile?window.Leveling.geometry(solution,{...options,axes}).pairs:metric.pairs;
+ const levelPairs=profile?window.Leveling.geometry(solution,{...options,axes:axes.map(a=>({...a,frame:options.axes.find(q=>q.key===a.key).frame}))}).pairs:metric.pairs;
  const average=points=>({x:points.reduce((s,p)=>s+p.x/points.length,0),z:points.reduce((s,p)=>s+p.z/points.length,0)});
- const poses={tool:{anchor:average(toolPoints),slope:metric.toolSlope},work:{anchor:workPoint,slope:metric.workSlope}};
- if(toolPoints.length===2)toolPoints.forEach((p,i)=>{const q=levelCoordinates(p.x,p.z);poses[i?'rightColumn':'leftColumn']={anchor:p,slope:solution.slopeAt(q.x,q.z)};});
+ const poses={tool:{anchor:average(toolPoints),slope:metric.toolSlope,frame:metric.toolFrame},work:{anchor:workPoint,slope:metric.workSlope,frame:metric.workFrame}};
+ if(toolPoints.length===2)toolPoints.forEach((p,i)=>{const q=levelCoordinates(p.x,p.z);poses[i?'rightColumn':'leftColumn']={anchor:p,slope:portal?portal.columns[i].slope:solution.slopeAt(q.x,q.z),frame:portal?.columns[i].frame};});
  const bodyFrame=intrinsicBodyFrame(axes,profile),intrinsicUp=bodyFrame.rotate([0,1,0]),combinedUp=metric.toolFrame.rotate(intrinsicUp),combinedDirection=metric.toolFrame.rotate(bodyFrame.direction);
- const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean(window.Leveling.orientation(solution.slopeAt(q.x,q.z)).rotate(intrinsicUp));});
+ const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean(window.Leveling.orientation(solution.slopeAt(q.x,q.z)).rotate(intrinsicUp));});
  const lathe=m.kind==='lathe',bodyPosture=lathe?spindleLean(combinedDirection):bodyLean,bodyIntrinsicPosture=lathe?spindleLean(bodyFrame.direction):bodyIntrinsicLean,bodySupportPosture=lathe?spindleLean(metric.toolFrame.rotate(bodyFrame.nominal)):directionLean(metric.toolFrame.rotate([0,1,0]));
- return {...metric,poses,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
+ return {...metric,portal,poses,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
 }
 function geometrySamples(solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
  const keys=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>a.key);
@@ -80,7 +104,7 @@ function fixedVisualFactor(initialSolution){
   allowedMaximum=Math.max(allowedMaximum,Math.hypot(lr,fb));
  }
  const intrinsicAngle=machineProfile?Math.max(...Object.values(machineProfile.squareness).map(q=>Math.abs(q.microns)/300000)):.000001;
- visualReferenceFactor=Math.min(1000,200/Math.max(initialMaximum,allowedMaximum),.15/Math.max(intrinsicAngle,.000001));
+ visualReferenceFactor=Math.min(['double','gantry','portal'].includes(current.kind)?30:1000,200/Math.max(initialMaximum,allowedMaximum),.15/Math.max(intrinsicAngle,.000001));
  return visualReferenceFactor;
 }
 function signed(value,d=1){const text=cleanNumber(value,d);return (value>0&&Number(text)!==0?'+':'')+text;}
@@ -132,7 +156,7 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   // change the engine's evaluation length or simulate an NC travel/guide scan.
   const attributes=Object.entries({pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="110" y="43" text-anchor="end" class="live-pair-limit">範囲外</text>':'<text x="80" y="43" text-anchor="middle" class="right-angle">直角</text>');
-  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${pair.key} 基準${plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" aria-describedby="squarenessMeasurementNote" ${attributes}>${markup}</svg></div>`);
+  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${current.kind==='lathe'?'主軸基準XZ':pair.key+' 基準'+plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" aria-describedby="squarenessMeasurementNote" ${attributes}>${markup}</svg></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,15)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
@@ -162,6 +186,7 @@ function updateAccuracy(){
  accuracyKey=key;
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel();
+ $('modelSemantics').textContent=g.portal?'模型＝支持姿勢／軸・直角図＝固有差込み':'水準器＝平均／模型＝局所＋固有';
  // The comparison is pointwise: both states use the current axis position,
  // dimensions, layout and evaluation length. The reference-search aggregate
  // is deliberately not used for this initial/current comparison.
@@ -181,7 +206,7 @@ function updateAccuracy(){
   const before=initial?.pairs.find(q=>q.key===p.key),change=before?accuracyChange(before.errorMicrons,p.errorMicrons):null;
   box.className='accuracy-metric'+(change?.trend==='worse'?' changed':change?.trend==='better'?' improved':'');
   const label=document.createElement('span'),value=document.createElement('strong'),angle=document.createElement('small'),travel=document.createElement('small');
-  label.textContent=current.kind==='lathe'?'主軸Z基準–X方向':p.key+' 直角度';value.textContent=signed(p.errorMicrons,2)+' µm';
+  label.textContent=current.kind==='lathe'?'主軸基準XZ（送りZとは別）':p.key+' 直角度';value.textContent=signed(p.errorMicrons,2)+' µm';
   value.setAttribute('id','accuracy-current-'+p.key);value.setAttribute('data-value',String(p.errorMicrons));
   angle.textContent=cleanNumber(p.angleDegrees,6)+'° · 90°との差';travel.textContent='端・中央の比較 '+signed(low,2)+' 〜 '+signed(high,2)+' µm';box.append(label,value);
   if(before){
@@ -229,7 +254,10 @@ function updateAccuracy(){
  const postureDifference=Math.hypot(g.relativeLean.front,g.relativeLean.right);
  $('accuracyDiagnosis').textContent=initial?(dual?'支持点を少し動かし、直角図と左右コラムの変化を見比べてください。':'支持点を少し動かし、固定表示の直角図と現在の倒れ・ねじれを見比べてください。')+' 90°からのずれの大小は絶対値で判断し、倒れの減少だけで全精度の改善とはしません。':columnDifference>.001?'左右コラムが違う姿勢です。平均の直角度だけでは門のねじれを見落とすため、左右の前後倒れ差も確認してください。':maxError<.00001?(rangeMax>.001?'今の位置では直角です。端・中央の比較では直角度が変わります。軸を動かして確認してください。':postureDifference>.001?'表示した軸間の直角差は0ですが、工具側とテーブル側の姿勢差は残っています。前後・左右の姿勢差も確認してください。':'工具側と案内側が同じ姿勢です。全体が傾いても、相対直角度は保たれています。'):'支持面の局所姿勢が違うため、直角度が変化しています。支持点を調整して、端・中央の値を比べてください。';
  const localSource=key=>g.axes.filter(a=>a.source===key).map(a=>a.key).join('・');
- $('geometryAssumption').textContent=current.kind==='lathe'?'主軸台のZ方向と刃物台側のX方向を比べる教材です。Y軸はありません。':localSource('tool')+'はコラム／主軸側、'+localSource('work')+'はテーブル／案内側の参照姿勢を使う教材です。同じ剛体側の軸対は共通の傾きでは関係が変わりません。'+(current.kind==='five'?'A/Cの旋回誤差は含みません。':'');
+ $('geometryAssumption').textContent=current.kind==='lathe'?'直角図は主軸基準XZです（主軸方向と刃物台Xの比較）。NC送りX–Zの案内直角度ではありません。模型のZ矢印は往復台の送り方向です。Y軸はありません。':localSource('tool')+'はコラム／主軸側、'+localSource('work')+'はテーブル／案内側の参照姿勢を使う教材です。同じ剛体側の軸対は共通の傾きでは関係が変わりません。'+(current.kind==='five'?'A/Cの旋回誤差は含みません。':'');
+ if(['travel','gantry'].includes(current.kind))$('geometryAssumption').textContent='Xは移動位置の走行案内、Y/Zはコラム・梁側の参照姿勢です。固定ワークの姿勢をX送りへ代用しません。';
+ if(dual){$('bodyLeanHeading').textContent='梁側の案内代表方向：支持＋固有差';$('bodyLeanNote').textContent='門の骨格は接続した支持姿勢で描き、固有直角差は案内方向（軸矢印と直角図）へ重ねます。梁の弾性ねじれ・主軸移動荷重は再現しません。';}
+ if(dual)$('geometryAssumption').textContent+=' 左右柱の天端を梁で結ぶ幾何モデルです。梁の反力・たわみ分布・接触荷重は計算しません。模型の門骨格は支持姿勢、固有直角差は軸矢印と直角図に示します。';
  $('columnLayout').hidden=!singleColumnKinds.includes(current.kind);
  $('columnXValue').textContent=levelConfig.columnX===0?'標準':levelConfig.columnX<0?'左寄り':'右寄り';$('columnX').setAttribute('aria-valuetext',$('columnXValue').textContent);
  $('columnZValue').textContent=levelConfig.columnZ===0?'標準':levelConfig.columnZ<0?'手前寄り':'奥寄り';$('columnZ').setAttribute('aria-valuetext',$('columnZValue').textContent);
@@ -255,6 +283,7 @@ $('demoColumn').onclick=()=>{
 
 function accuracyVisualVector(key){
  const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key));
+ if(current.kind==='lathe'&&key==='Z')return [...axes.find(a=>a.key==='Z').vector];
  const factor=$('exaggerate').checked?levelGeometry.visualFactor:1;
  const profile=scaledAccuracyProfile(machineProfile,factor);
  return window.MachineAccuracy.directions(axes,profile).find(a=>a.key===key).vector;

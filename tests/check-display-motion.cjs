@@ -27,7 +27,7 @@ function groups(key){
  assert(list.size,'linear axis has no moving assembly');return [...list.values()];
 }
 function centroids(list){return json(`(${literal(list)}).map(group=>{const points=group.points.map(p=>levelMappedBodyVisualPoint(displayTransformedPoint(p,group.axes,current,positions,group.pose),group.pose));return [0,1,2].map(i=>points.reduce((s,p)=>s+p[i]/points.length,0));})`);}
-function arrowDirection(key){return json(`(()=>{const a=axisIndicators(current,createGeometry(current)).find(q=>q.key===${literal(key)}),o=a.points[0].map((v,i)=>(v+a.points[1][i])/2),p=a.points.map(q=>levelAxisVisualPoint(q,o,a.pose,a.bodyOrigin));return p[1].map((v,i)=>v-p[0][i]);})()`);}
+function arrowDirection(key){return json(`(()=>{const a=axisIndicators(current,createGeometry(current)).find(q=>q.key===${literal(key)}),o=a.points[0].map((v,i)=>(v+a.points[1][i])/2),p=a.points.map(q=>levelAxisVisualPoint(q,o,a.pose,a.bodyOrigin,a.key));return p[1].map((v,i)=>v-p[0][i]);})()`);}
 function compareMotion(delta,arrow,expectedLength){
  assert(length(delta)>1e-8,'slide did not move');
  const error=length(sub(unit(delta),unit(arrow)));result.maximumDirectionDifference=Math.max(result.maximumDirectionDifference,error);
@@ -87,7 +87,7 @@ for(const [index,mode] of variants){
     setState({...originState,X});name=`${kind}/${width}x${depth}/${deformation}/exaggerated=${exaggerated}/${pose}/root X=${X}`;
     check('localContact',()=>{
      const actual=json(`levelMappedBodyVisualPoint(displayTransformedPoint(${literal(root)},['X'],current,positions,${literal(pose)}),${literal(pose)})`),a=json(`levelGeometry.poses.${pose}.anchor`),mapped=physical([a.x,.66,a.z]);
-     const surface=[mapped[0],.66+read('displayClearance()')+read('displayFactor()')*read(`levelSolution.heightAt(${mapped[0]},${mapped[2]})`)/1000,mapped[2]];
+     const surface=read('!!levelGeometry.portal')?json(`displaySurfacePoint(${mapped[0]},${mapped[2]})`):[mapped[0],.66+read('displayClearance()')+read('displayFactor()')*read(`levelSolution.heightAt(${mapped[0]},${mapped[2]})`)/1000,mapped[2]];
      result.maximumContactDifference=Math.max(result.maximumContactDifference,length(sub(actual,surface)));pointNear(actual,surface,2e-8);
     });
    }

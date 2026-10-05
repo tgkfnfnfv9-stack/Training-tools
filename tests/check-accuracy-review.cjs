@@ -92,8 +92,12 @@ async function main(){
   assert.match(rangeText.textContent,new RegExp(high.toFixed(2).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
   near(Number.parseFloat(yzBox.children[1].textContent),pair(current(),'YZ').errorMicrons,.0051);
  });
- open(2);preset('twist');axis('X',-100);const travelLeft=pair(current(),'XZ').errorMicrons;axis('X',100);
- check('移動コラムは X 位置で XZ 姿勢が変化',()=>{assert.notEqual(pair(current(),'XZ').errorMicrons,travelLeft);near(current().toolPoints[0].x,.5);});
+ open(2);preset('twist');axis('X',-100);const travelLeft=pair(current(),'XZ').errorMicrons,travelLean=current().toolLean.front;axis('X',100);
+ // For h=k*x*z, the local front/back slope changes with X. The X guide
+ // tangent and the column's Z direction nevertheless belong to the same
+ // orthonormal carriage frame in this rigid-carriage teaching model: a
+ // common rotation changes posture, never their internal right angle.
+ check('移動コラムは X 移動で姿勢が変わっても同一剛体の XZ を保持',()=>{near(travelLeft,0);near(pair(current(),'XZ').errorMicrons,0);assert.notEqual(current().toolLean.front,travelLean);near(current().toolPoints[0].x,.5);});
  open(1);preset('twist');axis('X',-100);const horizontalLeft=pair(current(),'YZ').errorMicrons;axis('X',100);
  check('横形は Y が上下、Z が前後の対応で直角度を表示',()=>{assert.ok(horizontalLeft*pair(current(),'YZ').errorMicrons<0);near(pair(current(),'XY').errorMicrons,0);assert.deepEqual(current().axes.find(a=>a.key==='Y').vector,[0,1,0]);});
  for(const [index,mode] of [[3,'l3-3000'],[4,'']]){
@@ -107,7 +111,7 @@ async function main(){
  read('supportHeights=supports.map(s=>Math.round(.2*(s.x/(current.w*.4))*(s.z/(current.d*.4))*100)/100);levelExercise={solved:false};updateLeveling(false);');
  check('門の調整目標は平均の相殺で左右の倒れ差を見落とさない',()=>{const g=current();assert.ok(Math.abs(g.columns[1].front-g.columns[0].front)>20);assert.equal(read('levelExercise.solved'),false);assert.doesNotMatch(r.diagnosis.textContent,/教材の調整目標内/);});
  open(6);preset('twist');
- check('旋盤は主軸基準 XZ のみで Y 軸を表示しない',()=>{assert.deepEqual(current().pairs.map(p=>p.key),['XZ']);assert.deepEqual(current().axes.map(p=>p.key),['X','Z']);assert.match(r.accuracyMetrics.textContent,/主軸Z基準/);assert.match(r.geometryAssumption.textContent,/Y軸はありません/);assert.equal(r.columnLayout.hidden,true);});
+ check('旋盤は主軸基準 XZ と NC 送り Z を区別し Y 軸を表示しない',()=>{assert.deepEqual(current().pairs.map(p=>p.key),['XZ']);assert.deepEqual(current().axes.map(p=>p.key),['X','Z']);assert.match(r.accuracyMetrics.textContent,/主軸基準XZ.*送りZとは別/);assert.match(r.geometryAssumption.textContent,/NC送りX–Zの案内直角度ではありません/);assert.match(r.geometryAssumption.textContent,/Y軸はありません/);assert.equal(r.columnLayout.hidden,true);});
  open(5);check('三点支持のねじれデモを無効化',()=>assert.equal(r.demoTwist.disabled,true));
  r.demoColumn.click();check('三点支持のコラム倒れデモも相対直角は保持',()=>{assert.ok(Math.abs(current().toolLean.front)>1);for(const p of current().pairs)near(p.errorMicrons,0);});
 

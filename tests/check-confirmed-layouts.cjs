@@ -15,31 +15,23 @@ function record(){return json('levelRecord()');}
 function near(a,b){assert(Math.abs(a-b)<1e-9,`${a} != ${b}`);}
 async function load(data){const text=JSON.stringify(data);r.importLevel.files=[{size:text.length,text:async()=>text}];await r.importLevel.onchange({target:r.importLevel});}
 async function main(){
- // Old saves must never be silently assigned to a newly defined foundation.
- // Unchanged machines retain their full version-2 import contract.
+ // Both the foundation and the calculation contract matter. All fixtures
+ // predate connected-frames-v1: even identical support counts do not authorize
+ // silently interpreting their heights with a different structural model.
  for(const item of legacy){
-  storage.clear();open(item.index);const old=item.values.record,before=record(),migrate=item.index===0&&item.mode==='compact',changed=[0,1,3].includes(item.index)&&!migrate;
+  storage.clear();open(item.index);const old=item.values.record,before=record();
   label=`legacy/${item.index}/${item.mode}/${item.condition}/${item.stage}`;
-  test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(old)})`)),!changed));
+  test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(old)})`)),false));
   await load(old);
-  if(changed){
-   results.legacyRejected++;test(()=>{assert.deepEqual(record(),before);assert.match(r.levelInputMessage.textContent,/配置|旧|対応/);});
-   const v1=structuredClone(old);v1.version=1;delete v1.machineProfile;delete v1.bestState;
-   label+='/v1';test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(v1)})`)),false));await load(v1);test(()=>assert.deepEqual(record(),before));results.legacyV1Rejected++;
-  }
-  else if(migrate){
-   results.legacyCompactMigrated++;test(()=>assert.deepEqual(record(),{...old,version:3,supportLayout:before.supportLayout}));
-   const v1=structuredClone(old);v1.version=1;delete v1.machineProfile;delete v1.bestState;
-   label+='/v1';test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(v1)})`)),true));await load(v1);
-   test(()=>{const actual=record();for(const key of Object.keys(v1))if(key!=='version')assert.deepEqual(actual[key],v1[key],key);assert.equal(actual.version,3);assert.equal(read('validLevelRecord(levelRecord())'),true);});results.legacyV1CompactMigrated++;
-  }
-  else{results.legacyAccepted++;test(()=>assert.deepEqual(record(),old));}
+  results.legacyRejected++;test(()=>{assert.deepEqual(record(),before);assert.match(r.levelInputMessage.textContent,/配置|旧|対応|計算/);});
+  const v1=structuredClone(old);v1.version=1;delete v1.machineProfile;delete v1.bestState;
+  label+='/v1';test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(v1)})`)),false));await load(v1);test(()=>assert.deepEqual(record(),before));results.legacyV1Rejected++;
  }
- for(const index of [0,1,3]){
+ for(const index of [0,1,2,3,4,5,6]){
   storage.clear();const records=legacy.filter(q=>q.index===index&&q.condition==='new'&&q.stage==='initial');
   for(const q of records)storage.set('training-level-v1:'+q.values.record.machine+':'+q.values.record.mode,JSON.stringify(q.values.record));
   const originals=[...storage];open(index);label=`old-local-key/${index}`;
-  test(()=>{for(const [key,value]of originals){assert.equal(storage.get(key),value);assert.notEqual(read('levelKey()'),key);}assert.match(r.levelSaveStatus.textContent,index===0?/復元|移行|引き継/:/旧|配置|対応/);});
+  test(()=>{for(const [key,value]of originals){assert.equal(storage.get(key),value);assert.notEqual(read('levelKey()'),key);}assert.match(r.levelSaveStatus.textContent,/旧|計算|配置|対応/);});
   results.legacyKeysPreserved+=originals.length;
  }
  // The former 24-point v3 layout also needs explicit rejection: matching
@@ -53,7 +45,7 @@ async function main(){
  for(let index=0;index<7;index++){
   storage.clear();let start=performance.now();open(index);results.timings.push({index,operation:'open',milliseconds:performance.now()-start});
   label=`current-layout/${index}`;const initial=record(),profile=json('machineProfile');
-  test(()=>{assert.equal(read('supports.length'),counts[index]);assert.equal(initial.version,[0,1,3].includes(index)?3:2);assert.equal(read('validLevelRecord(levelRecord())'),true);});
+  test(()=>{assert.equal(read('supports.length'),counts[index]);assert.equal(initial.version,[0,1,3].includes(index)?3:2);assert.equal(initial.calculationModel,'connected-frames-v1');assert.equal(read('validLevelRecord(levelRecord())'),true);});
   if(index===3){
    label='L3/requested-nine-bed-points-and-original-column-coordinates';
    const stations=[240,3440,6600],expected=[...[-770,0,770].flatMap(x=>stations.map(z=>[x,z-3420])),...[-1060,1060].flatMap(x=>[3965,4515].map(z=>[x,z-3420])),[-1425,825],[1420,825]].map(([x,z])=>[x/1000,z/1000]);

@@ -99,11 +99,12 @@ check('small RMS difference cannot hide significant remaining adjustment',()=>{
  const now=read('machineEvaluation(supportHeights).objective'),best=read('machineReference.best.metric.objective'),gap=Math.sqrt(Math.max(0,now*now-best*best));
  assert(now-best<.1);assert(gap>.1);near(Number(r.fineStatus.getAttribute('data-gap')),gap);assert.equal(r.fineStatus.getAttribute('data-target'),'false');assert.doesNotMatch(r.fineStatus.textContent,/目安内/);
 });
-for(const [index,mode,condition,heights] of [[2,'','new',[-.097,-.107,-.067,-.077,-.079,-.089]]])check('single-support stagnation is not completed, real reference can help '+index+'/'+condition,()=>{
+for(const [index,mode,condition,heights] of [[2,'','new',[-.097,-.107,-.067,-.077,-.079,-.089]]])check('single-support candidates match exhaustive neighbours; reference can help '+index+'/'+condition,()=>{
  const profile=loadProfile(index,mode,condition,42);r.fineAdjust.click();read(`supportHeights=${JSON.stringify(heights)};updateLeveling();`);
- compactCoach();assert(Number(r.fineStatus.getAttribute('data-gap'))>.1);assert.equal(r.fineStatus.getAttribute('data-target'),'false');assert.equal(r.fineHint.getAttribute('data-support'),'');assert.match(r.fineHint.textContent,/複数の支持点/);assert.doesNotMatch(r.fineStatus.textContent,/目安内/);
+ compactCoach();assert(Number(r.fineStatus.getAttribute('data-gap'))>.1);assert.equal(r.fineStatus.getAttribute('data-target'),'false');assert.doesNotMatch(r.fineStatus.textContent,/目安内/);
  const before=read('machineEvaluation(supportHeights).objective');
- for(let i=0;i<heights.length;i++)for(const direction of [-1,1]){const candidate=[...heights];candidate[i]=Math.round((candidate[i]+direction*.001)*1000)/1000;assert(read(`machineEvaluation(${JSON.stringify(candidate)}).objective`)>=before-1e-10);}
+ let improving=false;for(let i=0;i<heights.length;i++)for(const direction of [-1,1]){const candidate=[...heights];candidate[i]=Math.round((candidate[i]+direction*.001)*1000)/1000;if(read(`machineEvaluation(${JSON.stringify(candidate)}).objective`)<before-Math.max(1e-12,Math.abs(before)*1e-10))improving=true;}
+ if(improving){assert.notEqual(r.fineHint.getAttribute('data-support'),'');hintCandidate('fineHint','fine');}else{assert.equal(r.fineHint.getAttribute('data-support'),'');assert.match(r.fineHint.textContent,/複数の支持点/);assert.equal(r.fineStatus.getAttribute('data-target'),'false');}
  const wanted=json('machineBestHeights()');r.fineExample.click();assert.deepEqual(json('supportHeights'),wanted);assert.notDeepEqual(json('supportHeights'),heights);assert.equal(r.fineStatus.getAttribute('data-target'),'true');assert.deepEqual(json('machineProfile'),profile);nonnumeric();
 });
 for(const step of [.001,.005,.01,.05,.1])check('legacy step retained and stage inferred '+step,()=>{
