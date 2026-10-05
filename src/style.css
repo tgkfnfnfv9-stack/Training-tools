@@ -379,6 +379,8 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
 .main-adjustment .support-map.many-supports .map-point{flex:0 0 44px;max-width:44px;min-height:44px}
 /* Keep both gauges inside their own row on the short, 24-point lesson view. */
 @media(max-width:950px) and (orientation:portrait) and (max-height:640px){
+ /* Unlike hidden, clip never scrolls this fixed ancestor when a child receives focus. */
+ body.in-mechanical-lab #training:has(.many-supports) .training-main-slot{overflow:clip}
  body.in-mechanical-lab #training:has(.many-supports) .training-heading{padding-top:0;padding-bottom:0}
  body.in-mechanical-lab #training:has(.many-supports) .training-workspace{grid-template-rows:minmax(266px,1fr) minmax(0,auto)}
  body.in-mechanical-lab #training:has(.many-supports) .pinned-visual{grid-template-rows:auto minmax(150px,1fr) auto}
