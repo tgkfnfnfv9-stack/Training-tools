@@ -514,4 +514,19 @@ PCの通常タブ1363×936でも、Canvasは757.21875×733.203125px、バーは�
 - [独立構造212条件](qa-structural-20261006/structural-results.json)
 - [支持配置・保存330条件](qa-structural-20261006/confirmed-layout-results.json)
 
-実ブラウザーの公開版確認結果は、main反映後の次の記録に追記する。
+### 公開版の実ブラウザー確認
+
+アプリ修正コミット `7411993a003a3b4375d044fa49db600945f5ff80` の [Pages公開処理](https://github.com/tgkfnfnfv9-stack/Training-tools/actions/runs/37356604562) は成功。取得した公開HTMLと検証済み `index.html` はSHA-256 `f4b1050a2c7ac41117fee5c34fa9f8dca04b4934cf5a1a1671c0b35b9256a825` で一致した。後続の画面・記録追記コミットはアプリコードを変更しない。
+
+ChromeでPC 1363×936、携帯寸法390×844・844×390・320×568の4寸法×7機種＝28組み合わせを確認。全機種で模型Canvasと軸操作を表示し、支持点数4/8/6/15/8/3/6、旋盤XZ、5軸XYZACを維持し、ページ横はみ出しはなかった。携帯寸法は公開 `docs/qa-mobile.html` のiframeで確認した。
+
+公開画面で左柱手前を粗調整1回上げるとXY/XZが変化し、逆操作で丸め前の値が完全に復元した。YZの差は浮動小数点誤差程度。設定メニュー開閉で精度値が不変であること、320pxで設定を開いて旋盤Zを両端・中央へ操作できることも確認した。DOMの計算表示値と寸法記録は [browser-results.json](qa-structural-20261006/browser-results.json) に保存した。
+
+スマートフォン実機の指操作は未確認。ピンチ・ホイール・ダブルタップ抑止の既存自動検証は成功しているが、実機タッチ検証の代わりとは扱わない。実ブラウザー内の画面寸法確認と、物理デバイスの動作確認を区別する。
+
+|記録|画面|
+|---|---|
+|PCの固定門形（左柱手前を1回上げた状態）|[desktop-gate.jpg](qa-structural-20261006/desktop-gate.jpg)|
+|携帯縦390×844|[gate-390x844.jpg](qa-structural-20261006/gate-390x844.jpg)|
+|携帯横844×390|[gate-844x390.jpg](qa-structural-20261006/gate-844x390.jpg)|
+|320px幅|[gate-320x568.jpg](qa-structural-20261006/gate-320x568.jpg)|

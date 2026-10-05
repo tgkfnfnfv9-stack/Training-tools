@@ -1,0 +1,1111 @@
+[
+  {
+    "test": "gate-left-column-raise-reverse",
+    "before": [
+      {
+        "pair": "XY",
+        "value": "117.1541912406135"
+      },
+      {
+        "pair": "XZ",
+        "value": "-10.999351727415188"
+      },
+      {
+        "pair": "YZ",
+        "value": "110.8133333333334"
+      }
+    ],
+    "raised": [
+      {
+        "pair": "XY",
+        "value": "137.90083377244713"
+      },
+      {
+        "pair": "XZ",
+        "value": "-20.09506043105939"
+      },
+      {
+        "pair": "YZ",
+        "value": "110.81333333333336"
+      }
+    ],
+    "restored": [
+      {
+        "pair": "XY",
+        "value": "117.1541912406135"
+      },
+      {
+        "pair": "XZ",
+        "value": "-10.999351727415188"
+      },
+      {
+        "pair": "YZ",
+        "value": "110.8133333333334"
+      }
+    ],
+    "restores": true
+  },
+  {
+    "test": "gate-sidebar-invariant",
+    "same": true
+  },
+  {
+    "test": "desktop-seven-machines",
+    "results": [
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 511,
+          "width": 1275,
+          "x": 0,
+          "y": 172
+        },
+        "meaning": "水準器＝平均／模型＝局所＋固有",
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "-37.033333333333346"
+          },
+          {
+            "pair": "XZ",
+            "value": "-31.29562466023736"
+          },
+          {
+            "pair": "YZ",
+            "value": "-19.898879746561526"
+          }
+        ],
+        "supports": 4,
+        "title": "小型立形・4点支持",
+        "viewport": [
+          1363,
+          936
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 511,
+          "width": 1275,
+          "x": 0,
+          "y": 172
+        },
+        "meaning": "水準器＝平均／模型＝局所＋固有",
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "-66.5"
+          },
+          {
+            "pair": "XZ",
+            "value": "-21.650183145933457"
+          },
+          {
+            "pair": "YZ",
+            "value": "75.1584483251964"
+          }
+        ],
+        "supports": 8,
+        "title": "横形・Haas EC-630",
+        "viewport": [
+          1363,
+          936
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 511,
+          "width": 1275,
+          "x": 0,
+          "y": 172
+        },
+        "meaning": "水準器＝平均／模型＝局所＋固有",
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "28.390000000000008"
+          },
+          {
+            "pair": "XZ",
+            "value": "60.71333333333335"
+          },
+          {
+            "pair": "YZ",
+            "value": "-4.876666666666656"
+          }
+        ],
+        "supports": 6,
+        "title": "立形・移動コラム",
+        "viewport": [
+          1363,
+          936
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 501,
+          "width": 1275,
+          "x": 0,
+          "y": 172
+        },
+        "meaning": "模型＝支持姿勢／軸・直角図＝固有差込み",
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "117.1541912406135"
+          },
+          {
+            "pair": "XZ",
+            "value": "-10.999351727415188"
+          },
+          {
+            "pair": "YZ",
+            "value": "110.8133333333334"
+          }
+        ],
+        "supports": 15,
+        "title": "固定門形・L3 3000",
+        "viewport": [
+          1363,
+          936
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 511,
+          "width": 1275,
+          "x": 0,
+          "y": 172
+        },
+        "meaning": "模型＝支持姿勢／軸・直角図＝固有差込み",
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "7.912442314778244"
+          },
+          {
+            "pair": "XZ",
+            "value": "33.46150398015125"
+          },
+          {
+            "pair": "YZ",
+            "value": "-31.366666666666678"
+          }
+        ],
+        "supports": 8,
+        "title": "移動門形・ガントリー",
+        "viewport": [
+          1363,
+          936
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸",
+          "A軸",
+          "C軸"
+        ],
+        "canvas": {
+          "height": 511,
+          "width": 1275,
+          "x": 0,
+          "y": 172
+        },
+        "meaning": "水準器＝平均／模型＝局所＋固有",
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "7.043333333333335"
+          },
+          {
+            "pair": "XZ",
+            "value": "-44.7866666666667"
+          },
+          {
+            "pair": "YZ",
+            "value": "-4.446666666666668"
+          }
+        ],
+        "supports": 3,
+        "title": "5軸・テーブル旋回形",
+        "viewport": [
+          1363,
+          936
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 511,
+          "width": 1275,
+          "x": 0,
+          "y": 172
+        },
+        "meaning": "水準器＝平均／模型＝局所＋固有",
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XZ",
+            "value": "-64.98887516753776"
+          }
+        ],
+        "supports": 6,
+        "title": "NC旋盤・2軸",
+        "viewport": [
+          1363,
+          936
+        ]
+      }
+    ]
+  },
+  {
+    "test": "mobile-three-sizes-seven-machines",
+    "results": [
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 419,
+          "width": 302,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "-37.033333333333346"
+          },
+          {
+            "pair": "XZ",
+            "value": "-31.29562466023736"
+          },
+          {
+            "pair": "YZ",
+            "value": "-19.898879746561526"
+          }
+        ],
+        "supports": 4,
+        "title": "小型立形・4点支持",
+        "viewport": [
+          390,
+          844
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 371,
+          "width": 302,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "-66.5"
+          },
+          {
+            "pair": "XZ",
+            "value": "-21.650183145933457"
+          },
+          {
+            "pair": "YZ",
+            "value": "75.1584483251964"
+          }
+        ],
+        "supports": 8,
+        "title": "横形・Haas EC-630",
+        "viewport": [
+          390,
+          844
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 419,
+          "width": 302,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "28.390000000000008"
+          },
+          {
+            "pair": "XZ",
+            "value": "60.71333333333335"
+          },
+          {
+            "pair": "YZ",
+            "value": "-4.876666666666656"
+          }
+        ],
+        "supports": 6,
+        "title": "立形・移動コラム",
+        "viewport": [
+          390,
+          844
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 359,
+          "width": 302,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "117.1541912406135"
+          },
+          {
+            "pair": "XZ",
+            "value": "-10.999351727415188"
+          },
+          {
+            "pair": "YZ",
+            "value": "110.8133333333334"
+          }
+        ],
+        "supports": 15,
+        "title": "固定門形・L3 3000",
+        "viewport": [
+          390,
+          844
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 371,
+          "width": 302,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "7.912442314778244"
+          },
+          {
+            "pair": "XZ",
+            "value": "33.46150398015125"
+          },
+          {
+            "pair": "YZ",
+            "value": "-31.366666666666678"
+          }
+        ],
+        "supports": 8,
+        "title": "移動門形・ガントリー",
+        "viewport": [
+          390,
+          844
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸",
+          "A軸",
+          "C軸"
+        ],
+        "canvas": {
+          "height": 419,
+          "width": 302,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "7.043333333333335"
+          },
+          {
+            "pair": "XZ",
+            "value": "-44.7866666666667"
+          },
+          {
+            "pair": "YZ",
+            "value": "-4.446666666666668"
+          }
+        ],
+        "supports": 3,
+        "title": "5軸・テーブル旋回形",
+        "viewport": [
+          390,
+          844
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 419,
+          "width": 302,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XZ",
+            "value": "-64.98887516753776"
+          }
+        ],
+        "supports": 6,
+        "title": "NC旋盤・2軸",
+        "viewport": [
+          390,
+          844
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 170,
+          "width": 404.328125,
+          "x": 0,
+          "y": 163
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "-37.033333333333346"
+          },
+          {
+            "pair": "XZ",
+            "value": "-31.29562466023736"
+          },
+          {
+            "pair": "YZ",
+            "value": "-19.898879746561526"
+          }
+        ],
+        "supports": 4,
+        "title": "小型立形・4点支持",
+        "viewport": [
+          844,
+          390
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 170,
+          "width": 404.328125,
+          "x": 0,
+          "y": 163
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "-66.5"
+          },
+          {
+            "pair": "XZ",
+            "value": "-21.650183145933457"
+          },
+          {
+            "pair": "YZ",
+            "value": "75.1584483251964"
+          }
+        ],
+        "supports": 8,
+        "title": "横形・Haas EC-630",
+        "viewport": [
+          844,
+          390
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 170,
+          "width": 404.328125,
+          "x": 0,
+          "y": 163
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "28.390000000000008"
+          },
+          {
+            "pair": "XZ",
+            "value": "60.71333333333335"
+          },
+          {
+            "pair": "YZ",
+            "value": "-4.876666666666656"
+          }
+        ],
+        "supports": 6,
+        "title": "立形・移動コラム",
+        "viewport": [
+          844,
+          390
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 170,
+          "width": 404.328125,
+          "x": 0,
+          "y": 163
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "117.1541912406135"
+          },
+          {
+            "pair": "XZ",
+            "value": "-10.999351727415188"
+          },
+          {
+            "pair": "YZ",
+            "value": "110.8133333333334"
+          }
+        ],
+        "supports": 15,
+        "title": "固定門形・L3 3000",
+        "viewport": [
+          844,
+          390
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 170,
+          "width": 404.328125,
+          "x": 0,
+          "y": 163
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "7.912442314778244"
+          },
+          {
+            "pair": "XZ",
+            "value": "33.46150398015125"
+          },
+          {
+            "pair": "YZ",
+            "value": "-31.366666666666678"
+          }
+        ],
+        "supports": 8,
+        "title": "移動門形・ガントリー",
+        "viewport": [
+          844,
+          390
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸",
+          "A軸",
+          "C軸"
+        ],
+        "canvas": {
+          "height": 170,
+          "width": 404.328125,
+          "x": 0,
+          "y": 163
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "7.043333333333335"
+          },
+          {
+            "pair": "XZ",
+            "value": "-44.7866666666667"
+          },
+          {
+            "pair": "YZ",
+            "value": "-4.446666666666668"
+          }
+        ],
+        "supports": 3,
+        "title": "5軸・テーブル旋回形",
+        "viewport": [
+          844,
+          390
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 170,
+          "width": 404.328125,
+          "x": 0,
+          "y": 163
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XZ",
+            "value": "-64.98887516753776"
+          }
+        ],
+        "supports": 6,
+        "title": "NC旋盤・2軸",
+        "viewport": [
+          844,
+          390
+        ]
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 143,
+          "width": 232,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "-37.033333333333346"
+          },
+          {
+            "pair": "XZ",
+            "value": "-31.29562466023736"
+          },
+          {
+            "pair": "YZ",
+            "value": "-19.898879746561526"
+          }
+        ],
+        "supports": 4,
+        "title": "小型立形・4点支持",
+        "viewport": [
+          320,
+          568
+        ],
+        "visible": true
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 95,
+          "width": 232,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "-66.5"
+          },
+          {
+            "pair": "XZ",
+            "value": "-21.650183145933457"
+          },
+          {
+            "pair": "YZ",
+            "value": "75.1584483251964"
+          }
+        ],
+        "supports": 8,
+        "title": "横形・Haas EC-630",
+        "viewport": [
+          320,
+          568
+        ],
+        "visible": true
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 143,
+          "width": 232,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "28.390000000000008"
+          },
+          {
+            "pair": "XZ",
+            "value": "60.71333333333335"
+          },
+          {
+            "pair": "YZ",
+            "value": "-4.876666666666656"
+          }
+        ],
+        "supports": 6,
+        "title": "立形・移動コラム",
+        "viewport": [
+          320,
+          568
+        ],
+        "visible": true
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 169,
+          "width": 232,
+          "x": 0,
+          "y": 171
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "117.1541912406135"
+          },
+          {
+            "pair": "XZ",
+            "value": "-10.999351727415188"
+          },
+          {
+            "pair": "YZ",
+            "value": "110.8133333333334"
+          }
+        ],
+        "supports": 15,
+        "title": "固定門形・L3 3000",
+        "viewport": [
+          320,
+          568
+        ],
+        "visible": true
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 95,
+          "width": 232,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "7.912442314778244"
+          },
+          {
+            "pair": "XZ",
+            "value": "33.46150398015125"
+          },
+          {
+            "pair": "YZ",
+            "value": "-31.366666666666678"
+          }
+        ],
+        "supports": 8,
+        "title": "移動門形・ガントリー",
+        "viewport": [
+          320,
+          568
+        ],
+        "visible": true
+      },
+      {
+        "axes": [
+          "X軸",
+          "Y軸",
+          "Z軸",
+          "A軸",
+          "C軸"
+        ],
+        "canvas": {
+          "height": 143,
+          "width": 232,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": "7.043333333333335"
+          },
+          {
+            "pair": "XZ",
+            "value": "-44.7866666666667"
+          },
+          {
+            "pair": "YZ",
+            "value": "-4.446666666666668"
+          }
+        ],
+        "supports": 3,
+        "title": "5軸・テーブル旋回形",
+        "viewport": [
+          320,
+          568
+        ],
+        "visible": true
+      },
+      {
+        "axes": [
+          "X軸",
+          "Z軸"
+        ],
+        "canvas": {
+          "height": 143,
+          "width": 232,
+          "x": 0,
+          "y": 179
+        },
+        "overflow": false,
+        "pairs": [
+          {
+            "pair": "XZ",
+            "value": "-64.98887516753776"
+          }
+        ],
+        "supports": 6,
+        "title": "NC旋盤・2軸",
+        "viewport": [
+          320,
+          568
+        ],
+        "visible": true
+      }
+    ]
+  },
+  {
+    "test": "lathe-Z-end-centre-end",
+    "positions": [
+      {
+        "key": "Home",
+        "view": {
+          "axes": [
+            "X軸",
+            "Z軸"
+          ],
+          "canvas": {
+            "height": 60.77500915527344,
+            "width": 98.60000610351562,
+            "x": 184,
+            "y": 103.6750030517578
+          },
+          "overflow": false,
+          "pairs": [
+            {
+              "pair": "XZ",
+              "value": "-64.98911452721738"
+            }
+          ],
+          "supports": 6,
+          "title": "NC旋盤・2軸",
+          "viewport": [
+            320,
+            568
+          ]
+        }
+      },
+      {
+        "key": "End",
+        "view": {
+          "axes": [
+            "X軸",
+            "Z軸"
+          ],
+          "canvas": {
+            "height": 60.77500915527344,
+            "width": 98.60000610351562,
+            "x": 184,
+            "y": 103.6750030517578
+          },
+          "overflow": false,
+          "pairs": [
+            {
+              "pair": "XZ",
+              "value": "-64.98844105117661"
+            }
+          ],
+          "supports": 6,
+          "title": "NC旋盤・2軸",
+          "viewport": [
+            320,
+            568
+          ]
+        }
+      }
+    ],
+    "centre": {
+      "axes": [
+        "X軸",
+        "Z軸"
+      ],
+      "canvas": {
+        "height": 60.77500915527344,
+        "width": 98.60000610351562,
+        "x": 184,
+        "y": 103.6750030517578
+      },
+      "overflow": false,
+      "pairs": [
+        {
+          "pair": "XZ",
+          "value": "-64.98887516753776"
+        }
+      ],
+      "supports": 6,
+      "title": "NC旋盤・2軸",
+      "viewport": [
+        320,
+        568
+      ]
+    }
+  },
+  {
+    "test": "coverage",
+    "desktop": [
+      1363,
+      936
+    ],
+    "mobile": [
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ],
+      [
+        320,
+        568
+      ]
+    ],
+    "machineCount": 7,
+    "smartphoneHardware": false,
+    "touchInputHardware": false,
+    "notes": "携帯サイズはChromeのiframe。実スマートフォンの指操作は未検証。"
+  }
+]
