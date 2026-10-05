@@ -79,6 +79,28 @@ check('switching machine while settings were open cannot leak old axis options',
  r.openTrainingMenu.click();r.navHome.click();r.electric.click();r.testerEntry.click();
  visiblePage('tester');closedDrawer();
 });
+// A demo notice describes one machine and must not follow a different lesson.
+const demo=createEnvironment(),d=demo.registry;
+demo.context.requestAnimationFrame=()=>1;demo.context.cancelAnimationFrame=()=>{};
+check('finished C-axis demo notice does not follow navigation into the XZ lathe',()=>{
+ d.mechanical.click();d.leveling.click();d.machineGrid.children[5].click();
+ d.openTrainingMenu.click();d.drawerAxisSelect.change('C');d.playAxis.click();
+ assert.match(d.axisDemoStatus.textContent,/C軸.*確認中/);
+ d.openTrainingMenu.click();d.resetAxes.click();
+ assert.match(d.axisDemoStatus.textContent,/C軸.*終了/);
+ d.changeMachine.click();assert.equal(d.axisDemoStatus.textContent,'');
+ d.machineGrid.children[6].click();assert.equal(d.axisDemoStatus.textContent,'');
+ assert.deepEqual(demo.json('axisConfig(current).map(a=>a.key)'),['X','Z']);
+});
+check('leaving a running demo clears its notice after stopping the animation',()=>{
+ d.openTrainingMenu.click();d.playAxis.click();assert.match(d.axisDemoStatus.textContent,/確認中/);
+ d.navHome.click();assert.equal(demo.read('motionFrame'),null);assert.equal(d.axisDemoStatus.textContent,'');
+ d.mechanical.click();d.leveling.click();d.machineGrid.children[6].click();assert.equal(d.axisDemoStatus.textContent,'');
+});
+check('direct machine initialization clears the former machine demo notice',()=>{
+ d.openTrainingMenu.click();d.playAxis.click();
+ demo.read('openMachine(machines[0])');assert.equal(d.axisDemoStatus.textContent,'');
+});
 // History is optional in the older lightweight tests. Here a stack exercises
 // the registered browser callback and detects accidental history loops.
 const listeners={},entries=[];

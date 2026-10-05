@@ -116,7 +116,7 @@ function navigate(next,{fromHistory=false}={}){
  const previous=page;
  clearScenePointers();setAxisMenuOpen(false);
  if(next!==previous){resetTrainingPanels();document.activeElement?.blur?.();if(next==='tester'&&window.resetTesterLesson)window.resetTesterLesson();}
- if(next!=='training')stopMotion();page=next;for(const id of Object.keys(pageTitles))$(id).hidden=id!==next;
+ if(next!=='training')stopMotion();if(next!==previous)$('axisDemoStatus').textContent='';page=next;for(const id of Object.keys(pageTitles))$(id).hidden=id!==next;
  document.body.classList.toggle('in-lab',next==='training'||next==='tester');
  document.body.classList.toggle('in-mechanical-lab',next==='training');
  const controls=$(next+'Controls');if(controls)controls.scrollTop=0;
@@ -159,7 +159,7 @@ function openMachine(m){
  stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
 function populateMachine(){
- machineSessionInitialized=true;resetTrainingPanels();
+ machineSessionInitialized=true;resetTrainingPanels();$('axisDemoStatus').textContent='';
  const m=current;supports=supportList(m);levelSolution=null;levelGeometry=null;
  $('machineTitle').textContent=m.name;$('machineSubtitle').textContent=m.example+' ｜ '+m.tag;
  $('structureText').textContent=m.structure;$('motionText').textContent=axisConfig(m).map(a=>a.key+'：'+a.part+'（'+a.direction+'）').join(' ／ ');$('focusText').textContent=m.focus;
