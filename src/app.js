@@ -104,25 +104,62 @@ function supportList(m){
  for(let j=0;j<nz;j++)for(let i=0;i<nx;i++)list.push({x:(i/(nx-1)-.5)*m.w*.8,z:(j/(nz-1)-.5)*m.d*.8,name:`${nx===2?(i?'右':'左'):(['左','中央','右'][i])}・${j===0?'手前':j===nz-1?'奥':'中間'}`});
  return list;
 }
-function navigate(next){
- clearScenePointers();
- setAxisMenuOpen(false);
- if(next!=='training')stopMotion();page=next; for(const id of ['home','topics','catalog','training','electricTopics','tester'])$(id).hidden=id!==next;
+const pageParents={topics:'home',catalog:'topics',training:'catalog',electricTopics:'home',tester:'electricTopics'};
+const pageTitles={home:'トップ',topics:'機械',catalog:'機種選択',training:'レベル調整',electricTopics:'電気',tester:'テスターの使い方'};
+let machineSessionInitialized=false;
+function resetTrainingPanels(){
+ const walk=node=>{for(const child of node.children||[]){if(child.tagName==='DETAILS')child.open=false;walk(child);}};walk($('trainingControls'));
+ $('trainingControls').scrollTop=0;
+}
+function navigate(next,{fromHistory=false}={}){
+ if(!Object.prototype.hasOwnProperty.call(pageTitles,next))next='home';
+ const previous=page;
+ clearScenePointers();setAxisMenuOpen(false);
+ if(next!==previous){resetTrainingPanels();document.activeElement?.blur?.();if(next==='tester'&&window.resetTesterLesson)window.resetTesterLesson();}
+ if(next!=='training')stopMotion();page=next;for(const id of Object.keys(pageTitles))$(id).hidden=id!==next;
  document.body.classList.toggle('in-lab',next==='training'||next==='tester');
  document.body.classList.toggle('in-mechanical-lab',next==='training');
  const controls=$(next+'Controls');if(controls)controls.scrollTop=0;
- const paths=next==='electricTopics'||next==='tester'?[['home','トップ'],['electricTopics','電気'],['tester','テスターの使い方']]:[['home','トップ'],['topics','機械'],['catalog','レベル出し'],['training',current.name]];
+ $('navHome').hidden=next==='home';$('navBack').hidden=next==='home'||next==='training';$('changeMachine').hidden=next!=='training';
+ $('navBack').onclick=()=>navigate(pageParents[page]||'home');
+ const paths=next==='electricTopics'||next==='tester'?[['home','トップ'],['electricTopics','電気'],['tester','テスターの使い方']]:[['home','トップ'],['topics','機械'],['catalog','機種選択'],['training','レベル調整']];
  const depth=paths.findIndex(([dest])=>dest===next);
- $('crumbs').replaceChildren();paths.slice(0,depth+1).forEach(([dest,label],i)=>{if(i){const s=document.createElement('span');s.textContent='›';$('crumbs').append(s);}const el=document.createElement(i===depth?'span':'button');el.textContent=label;if(i!==depth)el.onclick=()=>navigate(dest);$('crumbs').append(el);});
- window.scrollTo({top:0,behavior:'instant'}); if(next==='catalog')requestAnimationFrame(drawThumbnails);if(next==='training')requestAnimationFrame(()=>{refreshTrainingLayout();drawScene();});
+ $('crumbs').replaceChildren();paths.slice(0,depth+1).forEach(([dest,label],i)=>{
+  if(depth>0&&i===0)return;
+  if(i>1){const separator=document.createElement('span');separator.className='crumb-separator';separator.textContent='›';separator.hidden=next==='training'||next==='tester';$('crumbs').append(separator);}
+  const el=document.createElement(i===depth?'span':'button');el.textContent=label;
+  if(i===depth){el.setAttribute('id','navCurrent');el.setAttribute('aria-current','page');el.setAttribute('tabindex','-1');}else{el.hidden=next==='training'||next==='tester';el.onclick=()=>navigate(dest);}
+  $('crumbs').append(el);
+ });
+ document.title=pageTitles[next]+'｜社内訓練ツール';
+ if(!fromHistory&&window.history?.pushState){
+  const state={trainingTools:true,page:next,machineId:next==='training'?current.id:null};
+  if(!window.history.state?.trainingTools)window.history.replaceState(state,'');else if(next!==previous)window.history.pushState(state,'');
+ }
+ window.scrollTo({top:0,behavior:'instant'});
+ if(next==='catalog')requestAnimationFrame(drawThumbnails);
+ if(next==='training')requestAnimationFrame(()=>{refreshTrainingLayout();drawScene();});
+ if(next!==previous)$('navCurrent')?.focus?.({preventScroll:true});
 }
+$('navHome').onclick=()=>navigate('home');
+window.addEventListener('popstate',event=>{
+ const state=event.state;if(!state?.trainingTools)return;
+ const next=state.page==='training'&&(!machineSessionInitialized||state.machineId!==current.id)?'catalog':state.page;
+ navigate(next,{fromHistory:true});
+});
 $('mechanical').onclick=()=>navigate('topics');$('electric').onclick=()=>navigate('electricTopics');$('leveling').onclick=()=>navigate('catalog');$('changeMachine').onclick=()=>navigate('catalog');
-$('testerEntry').onclick=()=>{if(window.resetTesterLesson)window.resetTesterLesson();navigate('tester');};
+$('testerEntry').onclick=()=>navigate('tester');
 $('testerBack').onclick=()=>navigate('electricTopics');
+// Reopening a catalogue card resumes the active machine; explicit initialization stays separate.
+function resumeOrOpenMachine(m){
+ if(machineSessionInitialized&&current.id===m.id){navigate('training');return;}
+ openMachine(m);
+}
 function openMachine(m){
  stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
 function populateMachine(){
+ machineSessionInitialized=true;resetTrainingPanels();
  const m=current;supports=supportList(m);levelSolution=null;levelGeometry=null;
  $('machineTitle').textContent=m.name;$('machineSubtitle').textContent=m.example+' ｜ '+m.tag;
  $('structureText').textContent=m.structure;$('motionText').textContent=axisConfig(m).map(a=>a.key+'：'+a.part+'（'+a.direction+'）').join(' ／ ');$('focusText').textContent=m.focus;
@@ -138,7 +175,7 @@ function buildSupports(){
  const map=$('supportMap');map.replaceChildren();supports.forEach((s,i)=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',String.fromCharCode(65+i)+'、'+s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.dataset.support=String(i);b.onclick=()=>{if(!trainingMenuOpen)selectSupport(i);};map.append(b);});
  const controls=$('supportControls');controls.replaceChildren();supports.forEach((s,i)=>{const row=document.createElement('div');row.className='support-row'+(i===selected?' selected':'');const id=String.fromCharCode(65+i);row.innerHTML=`<label><span class="point-id">${id}</span>${s.name}</label><button id="down${i}" aria-label="${id}を下げる">下げる</button><span id="supportState${i}" class="support-adjustment-state"></span><input hidden type="number" id="height${i}" aria-label="${id}の抽選時からの調整量" min="${-.5-supportBaseline(i)}" max="${.5-supportBaseline(i)}" step="0.001" value="${supportAdjustment(i)}"><button id="up${i}" aria-label="${id}を上げる">上げる</button>`;controls.append(row);$('down'+i).onclick=()=>changeSupportHeight(i,-Number($('adjustStep').value));$('up'+i).onclick=()=>changeSupportHeight(i,Number($('adjustStep').value));$('height'+i).onchange=()=>setSupportHeight(i,supportHeightFromAdjustment(i,$('height'+i).value.trim()===''?NaN:Number($('height'+i).value)));$('height'+i).oninput=()=>{invalidateLevelImport();const field=$('height'+i),value=supportHeightFromAdjustment(i,field.value.trim()===''?NaN:Number(field.value));if(bounded(value,-.5,.5))setSupportHeight(i,value,true);};});
 }
-const grid=$('machineGrid');machines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>openMachine(m);grid.append(card);});
+const grid=$('machineGrid');machines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>resumeOrOpenMachine(m);grid.append(card);});
 // 部品に軸の親子関係を持たせ、固定部は動かさない。
 function createGeometry(m){
  const faces=[],labels=[],references=[],c={base:'#80949c',fixed:'#799198',table:'#4c9b8b',spindle:'#dfab62',rail:'#c8d6d9',work:'#d1ddd7'};
@@ -306,7 +343,7 @@ function render(canvas,m,angle,showLabels,active){
  const measured=canvas.getBoundingClientRect(),mainCanvas=canvas===$('scene'),rect=mainCanvas?{width:canvas.clientWidth||measured.width/trainingMainScale,height:canvas.clientHeight||measured.height/trainingMainScale}:measured;if(!rect.width||!rect.height)return;
  const ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.height*ratio);
  const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);const width=rect.width,height=rect.height;
- ctx.fillStyle='#eaf0f2';ctx.fillRect(0,0,width,height);
+ ctx.fillStyle='#f1f0ed';ctx.fillRect(0,0,width,height);
  const model=createGeometry(m),training=canvas===$('scene')&&active>=0;
  const project=p=>sceneProject(p,angle,training?sceneView:'oblique',!training);
  const fitPoints=training?displayFramingPoints(m,model):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
@@ -434,7 +471,7 @@ function selectAxis(key){
 }
 function refreshTrainingLayout(){
  const shell=$('trainingShell'),rect=shell.getBoundingClientRect();if(!rect.width||!rect.height)return;
- const drawerWidth=trainingMenuOpen?Math.min(300,Math.max(144,rect.width*.36)):0;
+ const drawerWidth=trainingMenuOpen?Math.min(320,Math.max(184,rect.width*.42),rect.width*.64):0;
  trainingMainScale=(rect.width-drawerWidth)/rect.width;shell.style.setProperty('--drawer-width',drawerWidth+'px');
  const main=$('trainingMain');main.style.width=rect.width+'px';main.style.height=rect.height+'px';main.style.transform='scale('+trainingMainScale+')';
 }
@@ -467,8 +504,8 @@ $('closeAxisControls').onclick=()=>setAxisMenuOpen(false,true);
 function trainingMenuKeydown(e){
  if(!trainingMenuOpen)return;
  if(e.key==='Escape'){e.preventDefault();setTrainingMenuOpen(false,true);return;}
- if(e.key!=='Tab')return;const focusable=trainingMenuFocusables(),index=focusable.indexOf(document.activeElement);if(!focusable.length){e.preventDefault();$('closeTrainingMenu').focus?.({preventScroll:true});return;}
- if(e.shiftKey&&index<=0||!e.shiftKey&&(index<0||index===focusable.length-1)){e.preventDefault();focusable[e.shiftKey?focusable.length-1:0].focus?.({preventScroll:true});}
+ // This is a non-modal settings panel: Tab can reach the shared site navigation.
+
 }
 $('trainingDrawer').addEventListener('keydown',trainingMenuKeydown);
 $('axisMenu').addEventListener('keydown',trainingMenuKeydown);

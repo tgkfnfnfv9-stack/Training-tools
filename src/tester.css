@@ -12,3 +12,20 @@
 .tester-primary:disabled,.tester-primary:disabled:hover{background:#dfe9e6;color:#415a52;opacity:1;border-color:#cfdbd6}
 /* Six modes and five lessons remain within the independently scrolling controls. */
 .tester-case-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.tester-mode-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.tester-progress{font-size:12px;line-height:1.7;background:#edf6f1;border-radius:6px;padding:10px}.tester-case-tabs [data-complete="true"]::after{content:" ✓"}.tester-completion-steps{display:flex;flex-wrap:wrap;gap:7px 14px;padding:0;list-style:none;font-size:12px;color:var(--green)}.tester-controls [id$="CaseBox"],#testerCurrentConnectionBox{margin-bottom:12px}
+
+/* Site identity applies to controls; electrical lead and measurement colours stay. */
+.tester-visual,#testerDiagram{background:#f1f0ed;border-color:var(--line)}
+.tester-readout{border-color:var(--line)}
+.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:white}
+.tester-primary{background:var(--accent);border-color:var(--accent)}
+.tester-primary:hover{background:#913a00;color:#fff}
+.tester-primary:disabled,.tester-primary:disabled:hover{background:#ebe8e3;color:#655f58;border-color:#d4cdc4}
+.tester-connection-hint,.tester-interpretation,.tester-progress{background:var(--surface)}
+.tester-feedback-detail{background:var(--surface);border-color:#aaa096}
+.tester-feedback-detail[data-status="blocked"]{background:#fff3e6;border-color:#b05a27}
+.tester-controls select{font-size:16px}
+.tester-controls .hint,.tester-reference p,.tester-reference li,.tester-controls label{font-size:13px}
+.tester-mode-tabs small{font-size:11px}
+.tester-controls .text-button{min-height:44px}
+@media(max-width:560px){.tester-readout span{font-size:12px}.tester-card{padding:14px}.tester-readout{padding:8px 12px}}
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){body.in-lab #tester .training-heading{padding-top:4px;padding-bottom:4px}}

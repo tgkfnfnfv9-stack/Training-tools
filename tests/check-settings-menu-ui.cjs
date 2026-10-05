@@ -43,12 +43,14 @@ function open(){r.openTrainingMenu.focus({preventScroll:true});r.openTrainingMen
 function closed(){
  assert(r.trainingDrawer.hidden);assert(!read('trainingMenuOpen'));assert(!r.trainingShell.classList.contains('menu-open'));assert(!r.trainingMain.inert);assert.equal(r.trainingMain.getAttribute('aria-hidden'),'false');assert(r.trainingMainShield.hidden);assert.equal(r.openTrainingMenu.getAttribute('aria-expanded'),'false');near(scale(),1);
 }
-check('settings are outside the main viewer and have a labelled modal boundary',()=>{
- assert.equal(r.trainingDrawer.getAttribute('role'),'dialog');assert.equal(r.trainingDrawer.getAttribute('aria-modal'),'true');assert.equal(r.trainingDrawer.getAttribute('aria-labelledby'),'trainingMenuTitle');
+check('settings are outside the main viewer and leave site navigation accessible',()=>{
+ assert.equal(r.trainingDrawer.getAttribute('role'),'dialog');assert.equal(r.trainingDrawer.getAttribute('aria-modal'),'false');assert.equal(r.trainingDrawer.getAttribute('aria-labelledby'),'trainingMenuTitle');
  assert.equal(r.openTrainingMenu.getAttribute('aria-controls'),'trainingDrawer');assert(r.openTrainingMenu.getAttribute('aria-label'));
  assert.equal(r.trainingDrawer.parentElement,r.trainingShell);assert.equal(r.trainingMainSlot.parentElement,r.trainingShell);assert.equal(r.trainingMain.parentElement,r.trainingMainSlot);assert.equal(r.trainingControls.parentElement,r.trainingDrawer);
  for(const id of ['scene','liveSquareness','viewerLevels','axisTabs','mainAdjustment','openTrainingMenu']){assert.equal(r[id].closest('#trainingMain'),r.trainingMain,id);assert.equal(r[id].closest('#trainingControls'),null,id);}
- for(const id of ['showIdealOutline','sceneView','playAxis','axisSliders','drawerAxisSelect','machineMode','supportWidth','supportDepth','coarseExample','fineExample','exportLevel','importLevel','changeMachine']){assert.equal(r[id].closest('#trainingControls'),r.trainingControls,id);assert.equal(r[id].closest('#trainingMain'),null,id);}
+ for(const id of ['showIdealOutline','sceneView','playAxis','axisSliders','drawerAxisSelect','machineMode','supportWidth','supportDepth','coarseExample','fineExample','exportLevel','importLevel']){assert.equal(r[id].closest('#trainingControls'),r.trainingControls,id);assert.equal(r[id].closest('#trainingMain'),null,id);}
+ assert.equal(r.changeMachine.closest('#siteNav'),r.siteNav);
+ assert.equal(r.changeMachine.closest('#trainingDrawer'),null);
  assert(r.axisControlsToggle.hidden&&r.closeAxisControls.hidden,'legacy axis controls cannot occupy the visible axis bar');
  assert.deepEqual(r.sceneToolbar.querySelectorAll('button'),[],'axis tabs are generated later');
 });
@@ -88,7 +90,11 @@ for(const [index,mode] of variants){
  }
  check('hidden/disabled controls and closed details are excluded from focus '+kind,()=>{
   open();r.axisMenuSection.open=false;const focusable=read('trainingMenuFocusables()');assert(focusable.length>2);assert(focusable.includes(r.closeTrainingMenu));assert(!focusable.includes(r.axisControlsToggle));assert(!focusable.includes(r.closeAxisControls));assert(!focusable.includes(r.playAxis));assert(!focusable.some(el=>el.disabled||el.hidden));
-  const first=focusable[0],last=focusable[focusable.length-1];first.focus({preventScroll:true});assert.equal(press('Tab',true),1);assert.equal(context.document.activeElement,last);assert.equal(press('Tab'),1);assert.equal(context.document.activeElement,first);
+  const first=focusable[0],last=focusable[focusable.length-1];
+  // Site navigation remains operable while settings are open. Tab must use
+  // the browser's normal traversal rather than trapping focus in the drawer.
+  first.focus({preventScroll:true});assert.equal(press('Tab',true),0);
+  last.focus({preventScroll:true});assert.equal(press('Tab'),0);
   const middle=focusable[1];middle.focus({preventScroll:true});assert.equal(press('Tab'),0);assert.equal(context.document.activeElement,middle);r.closeTrainingMenu.click();closed();assert.equal(context.document.activeElement,r.openTrainingMenu);
  });
  check('shield closes the drawer instead of activating the background '+kind,()=>{const before=state();open();r.trainingMainShield.click();closed();assert.equal(context.document.activeElement,r.openTrainingMenu);assert.deepEqual(state(),before);});

@@ -18,9 +18,10 @@ check('Canvas is separate from the fixed axis bar and scrolling axis menu',()=>{
  assert.equal(r.axisTabs.closest('#sceneToolbar'),r.sceneToolbar);
  assert.equal(r.axisControlsToggle.closest('#trainingControls'),r.trainingControls);assert(r.axisControlsToggle.hidden);
  assert.equal(r.axisMenu.parentElement,r.axisMenuSection);
- assert.equal(r.trainingControls.children[0],r.modelDisplaySettings);
+ const settingSections=r.trainingControls.children.filter(el=>el.tagName==='DETAILS');
+ assert.equal(settingSections[0],r.modelDisplaySettings);
  assert.equal(r.idealComparison.parentElement,r.modelDisplaySettings);
- assert.equal(r.trainingControls.children[1],r.axisMenuSection);
+ assert.equal(settingSections[1],r.axisMenuSection);
  assert.equal(r.showIdealOutline.closest('#sceneToolbar'),null);
  for(const id of ['axisMenu','playAxis','resetAxes','axisSliders','machineMode']){assert.equal(r[id].closest('#trainingControls'),r.trainingControls,id);assert.equal(r[id].closest('#sceneViewport'),null,id);}
  assert.equal(r.sceneViewport.closest('.pinned-visual').parentElement.closest('#training'),r.training);
