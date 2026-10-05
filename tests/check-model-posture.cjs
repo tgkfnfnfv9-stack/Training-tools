@@ -2,6 +2,7 @@
 // Independent physical checks of the displayed model, including real Canvas
 // vertices. The support solver remains the source of the teaching heights.
 const assert=require('node:assert/strict');
+const irregularHeightOracle=require('./irregular-height-oracle.cjs');
 const {registry:r,read,json,storage}=require('./leveling-dom-env.cjs')({pureLeveling:true});
 let width=302,height=305,path=[],polygons=[],texts=[],arcs=[],lastBox=null;
 const ctx={
@@ -15,7 +16,7 @@ const ctx={
  measureText(text){const px=Number(/(\d+)px/.exec(this.font||'10px')?.[1]||10);return {width:[...text].reduce((n,ch)=>n+(/[\x00-\x7f]/.test(ch)?.56:1)*px,0)};}
 };
 r.scene.getContext=()=>ctx;r.scene.getBoundingClientRect=()=>({width,height});
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 const subtract=(a,b)=>a.map((v,i)=>v-b[i]);
 const unit=v=>v.map(q=>q/Math.hypot(...v));
 const near=(a,b,e=1e-8)=>assert(Math.abs(a-b)<=e,`${a} != ${b}`);
@@ -98,9 +99,11 @@ for(const [index,mode] of variants){
     const config=json('levelConfig'),size=json('[current.w*.8,current.d*.8]');
     const mapping=p=>[p.x/size[0]*config.width,p.z/size[1]*config.depth];
     const samples=json('({tool:levelGeometry.toolPoints,work:[levelGeometry.workPoint]})');
+    const curved=read("current.supportLayout==='irregular'")?irregularHeightOracle(json('supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:supportHeights[i]}))')):null;
     for(const [pose,info] of Object.entries(poses)){
      const points=samples[pose]||[info.anchor],slopes=points.map(p=>{
       const [x,z]=mapping(p),eps=1e-5,h=read(`levelSolution.heightAt(${x},${z})`);
+      if(curved){const gradient=curved.slopeAt(x,z);return [gradient.lr,gradient.fb];}
       return [(read(`levelSolution.heightAt(${x+eps},${z})`)-h)/eps,(read(`levelSolution.heightAt(${x},${z+eps})`)-h)/eps];
      });
      const gradient=[0,1].map(k=>slopes.reduce((sum,s)=>sum+s[k]/slopes.length,0)*factor/1000),expected=unit([-gradient[0],1,-gradient[1]]);
@@ -131,8 +134,12 @@ for(const [index,mode] of variants){
    const screen=screenFunction();
    for(const f of json('createGeometry(current).faces').filter(f=>f.pose.startsWith('pad:')&&f.v.every(p=>Math.abs(p[1])<1e-10)))matchPolygon(f);
    const surface=json('levelSurfaceFaces(current)[0]');assert(surface);matchPolygon(surface);
-   const supportArcs=arcs.filter(a=>a.radius===13),rawSupports=json('supports');assert.equal(supportArcs.length,rawSupports.length);
-   rawSupports.forEach((s,i)=>{const q=screen(json(`levelVisualPoint([${s.x},.29,${s.z}],'support:${i}')`));near(supportArcs[i].x,q[0]);near(supportArcs[i].y,q[1]+10);});
+   const supportArcs=arcs.filter(a=>a.radius===13),rawSupports=json('supports'),dense=rawSupports.length>8;
+   assert.equal(supportArcs.length,dense?1:rawSupports.length);
+   rawSupports.forEach((s,i)=>{const q=screen(json(`levelVisualPoint([${s.x},.29,${s.z}],'support:${i}')`));
+    const radius=dense&&i!==read('selected')?3:13;
+    assert(arcs.some(a=>a.radius===radius&&Math.abs(a.x-q[0])<1e-8&&Math.abs(a.y-q[1]-10)<1e-8),'support '+i+' must retain its true scene anchor');
+   });
   });
  }
 }

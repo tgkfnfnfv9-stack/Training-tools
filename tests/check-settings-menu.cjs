@@ -5,7 +5,7 @@
 // fixed step. Hidden compatibility controls keep their previous contract.
 const assert=require('node:assert/strict');
 const {registry:r,read,json,storage,context,downloads}=require('./leveling-dom-env.cjs')();
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 const result={checks:{drawerState:0,supportSelection:0,stageSteps:0,limits:0,axisControls:0,demo:0,saveImportExport:0,legacyStep:0,settings:0},failures:[]};
 let name='',seed=79120,sequence=0;
 let shellWidth=390,shellHeight=640;r.trainingShell.getBoundingClientRect=()=>({width:shellWidth,height:shellHeight});
@@ -99,8 +99,10 @@ async function main(){
  check('settings',()=>{near(read('levelConfig.width'),4.5);near(read('levelConfig.depth'),3.75);near(read('levelConfig.columnX'),53);near(read('levelConfig.columnZ'),-27);assert.deepEqual(json('machineProfile'),intrinsic);assert.deepEqual(json('positions'),axisBefore);assert(read('validLevelRecord(levelRecord())'));});
  const beforeView=snapshot();r.showIdealOutline.checked=false;r.showIdealOutline.change();r.sceneView.change('front');r.resetSceneZoom.click();name='five/relocated-view-settings';check('settings',()=>{assert.deepEqual(snapshot(),beforeView);assert.equal(read('sceneView'),'front');near(read('sceneZoom'),1);});
  r.machineCondition.change('used');name='five/relocated-individual-draw';check('settings',()=>{assert.equal(read('machineProfile.condition'),'used');assert.notDeepEqual(json('machineProfile'),intrinsic);assert.deepEqual(json('supportHeights'),json('machineProfile.initialHeights'));assert(json('Object.values(positions)').every(v=>v===0));});
- open(0,'standard');r.openTrainingMenu.click();r.machineMode.change('compact');name='mode/compact';check('settings',()=>{assert.equal(read('current.kind'),'compact');assert.equal(r.supportMap.querySelectorAll('.map-point').length,4);assert.equal(read('selected'),0);});
- open(3,'long');r.openTrainingMenu.click();r.machineMode.change('cross');name='mode/cross';check('settings',()=>{assert.equal(read('current.kind'),'portal');assert.equal(r.supportMap.querySelectorAll('.map-point').length,4);assert.equal(read('selected'),0);});
+ for(const [index,mode,kind,count,removed] of [[0,'compact','compact',4,'standard'],[3,'l3-3000','double',24,'cross']]){
+  open(index,mode);r.openTrainingMenu.click();const before=snapshot();r.machineMode.change(removed);name='single-model/'+mode;
+  check('settings',()=>{assert(r.machineModeBox.hidden);assert.equal(read('machineMode'),mode);assert.equal(read('current.kind'),kind);assert.equal(r.supportMap.querySelectorAll('.map-point').length,count);assert.deepEqual(snapshot(),before);});
+ }
  console.log(JSON.stringify(result,null,2));if(result.failures.length)process.exitCode=1;
 }
 main().catch(error=>{result.failures.push({kind:'execution',name,message:error.stack||error.message});console.log(JSON.stringify(result,null,2));process.exitCode=1;});

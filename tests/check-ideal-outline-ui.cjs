@@ -24,7 +24,7 @@ const ctx={strokeStyle:'#000000',fillStyle:'#000000',lineWidth:1,globalAlpha:1,d
 function finite(...values){assert(values.every(Number.isFinite),'non-finite Canvas coordinate');coordinates+=values.length;}
 function paint(op){operations.push({...op,signature:JSON.stringify(op)});}
 r.scene.getContext=()=>ctx;r.scene.getBoundingClientRect=()=>({width,height});
-const variants=[[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']];
+const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 const sizes=[[232,100],[232,151],[302,305],[384,210],[669,720]];
 let checks=0,maximumIdealSegments=0,maximumIdealToCurrentRatio=0;
 function check(name,fn){try{fn();checks++;}catch(error){throw new Error(name+': '+error.message);}}

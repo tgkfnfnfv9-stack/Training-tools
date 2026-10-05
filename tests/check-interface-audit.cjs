@@ -60,15 +60,15 @@ async function main(){
  let prevented=0;
  r.scene.events.keydown({key:'ArrowLeft',preventDefault(){prevented++;}});r.scene.events.keydown({key:'ArrowRight',preventDefault(){prevented++;}});r.scene.events.keydown({key:'ArrowDown',preventDefault(){prevented++;}});
  check('horizontal keys rotate and vertical key keeps its normal action',()=>{near(read('yaw'),yaw+.63);assert.equal(prevented,2);assert.deepEqual(json('levelRecord()'),saved);});
- // Starting an import and then changing the mechanism is a real session change,
- // even if the mechanism is switched back before the original file finishes.
+ // Starting an import and then changing the machine is a real session change,
+ // even if the original machine is selected again before the file finishes.
  for(const index of [0,3]){
-  storage.clear();read(`openMachine(machines[${index}])`);const modes=json('machines.find(m=>m.id===current.id).modes');
+  storage.clear();read(`openMachine(machines[${index}])`);
   const stale=json('levelRecord()');stale.heights[0]=.444;let resolve;
   r.importLevel.files=[{size:100,text:()=>new Promise(done=>resolve=done)}];const loading=r.importLevel.onchange({target:r.importLevel});
-  r.machineMode.change(modes[1][0]);r.machineMode.change(modes[0][0]);const current=json('levelRecord()'),message=r.levelInputMessage.textContent;
+  r.changeMachine.click();r.machineGrid.children[2].click();r.changeMachine.click();r.machineGrid.children[index].click();const current=json('levelRecord()'),message=r.levelInputMessage.textContent;
   resolve(JSON.stringify(stale));await loading;
-  check('late JSON cannot replace a changed-and-returned mechanism '+index,()=>{assert.deepEqual(json('levelRecord()'),current);assert.equal(r.levelInputMessage.textContent,message);});
+  check('late JSON cannot replace a changed-and-returned machine '+index,()=>{assert.deepEqual(json('levelRecord()'),current);assert.equal(r.levelInputMessage.textContent,message);});
  }
  read('openMachine(machines[0])');let rejectRead;
  r.importLevel.files=[{size:100,text:()=>new Promise((resolve,reject)=>rejectRead=reject)}];const failedRead=r.importLevel.onchange({target:r.importLevel});

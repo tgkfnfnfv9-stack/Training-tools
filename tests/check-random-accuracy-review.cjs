@@ -44,7 +44,7 @@ for(const condition of ['new','used']){
   });
  }
 }
-for(const args of [['old',1,keys,4],['new',-1,keys,4],['new',4294967296,keys,4],['new',.5,keys,4],['new',NaN,keys,4],['new',1,['X','X'],4],['new',1,['X','A'],4],['new',1,['X'],4],['new',1,keys,2],['new',1,keys,9]])check('不正な抽選条件を拒否 '+JSON.stringify(args),()=>assert.throws(()=>MachineAccuracy.generate(...args)));
+for(const args of [['old',1,keys,4],['new',-1,keys,4],['new',4294967296,keys,4],['new',.5,keys,4],['new',NaN,keys,4],['new',1,['X','X'],4],['new',1,['X','A'],4],['new',1,['X'],4],['new',1,keys,2],['new',1,keys,25]])check('不正な抽選条件を拒否 '+JSON.stringify(args),()=>assert.throws(()=>MachineAccuracy.generate(...args)));
 const stable=MachineAccuracy.generate('used',42,keys,4);
 for(const mutate of [p=>p.seed++,p=>p.version=2,p=>p.condition='new',p=>p.keys.reverse(),p=>p.squareness.XY.microns++,p=>p.guides.X.band++,p=>p.initialHeights[0]+=.001,p=>p.extra=1]){
  const p=structuredClone(stable);mutate(p);check('改ざんされた個体を受け入れない',()=>assert.equal(MachineAccuracy.valid(p,keys,4),false));
@@ -71,9 +71,9 @@ async function main(){
  const guideValues=()=>json('machineProfile.guides');
  const setHeight=(i,value)=>r['height'+i].change(String(value-read(`machineProfile.initialHeights[${i}]`)));
  async function importRecord(record){r.importLevel.files=[{size:100,text:async()=>JSON.stringify(record)}];await r.importLevel.onchange({target:r.importLevel});}
- for(const [index,mode] of [[0,'standard'],[0,'compact'],[1,''],[2,''],[3,'long'],[3,'cross'],[4,''],[5,''],[6,'']]){
+ for(const [index,mode] of [[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']]){
   storage.clear();open(index,mode);const first=snapshot(),profile=json('machineProfile');
-  check('個体は初期表示時に直ちに保存 '+index+' '+mode,()=>{assert.equal(first.version,2);assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))),first);assert.deepEqual(first.heights,profile.initialHeights);assert.equal(read('validLevelRecord(levelRecord())'),true);});
+  check('個体は初期表示時に直ちに保存 '+index+' '+mode,()=>{assert.equal(first.version,[0,1,3].includes(index)?3:2);assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))),first);assert.deepEqual(first.heights,profile.initialHeights);assert.equal(read('validLevelRecord(levelRecord())'),true);});
   open(index,mode);
   check('操作なしで開き直しても同じ個体 '+index+' '+mode,()=>{assert.deepEqual(snapshot(),first);assert.match(r.levelSaveStatus.textContent,/復元/);});
   check('全直線軸の端中央を漏れなく列挙 '+index+' '+mode,()=>{
@@ -121,18 +121,18 @@ async function main(){
  check('JSON保存は個体の種と初期高さと現在高さを含む',()=>assert.deepEqual(exported,record));
  r.drawMachine.click();await importRecord(exported);
  check('JSON読込で同じ個体と角度を厳密に再現',()=>{assert.deepEqual(snapshot(),record);assert.deepEqual(current().pairs,savedPairs);assert.match(r.levelInputMessage.textContent,/読み込みました/);});
- const mutations=[p=>p.version=3,p=>p.machineProfile.seed++,p=>p.machineProfile.condition='new',p=>p.machineProfile.version=2,p=>p.machineProfile.guides.X.microns=0,p=>delete p.machineProfile.guides.Y,p=>p.machineProfile.squareness.XY.microns=1e300,p=>p.machineProfile.initialHeights[0]+=.001,p=>p.heights[0]=.1234,p=>p.heights[0]=null,p=>p.machineProfile.keys.push('A'),p=>p.machineProfile.extra='x',p=>p.machineProfile=null,p=>p.axisPositions.Z=101,
+ const mutations=[p=>p.version=99,p=>p.machineProfile.seed++,p=>p.machineProfile.condition='new',p=>p.machineProfile.version=2,p=>p.machineProfile.guides.X.microns=0,p=>delete p.machineProfile.guides.Y,p=>p.machineProfile.squareness.XY.microns=1e300,p=>p.machineProfile.initialHeights[0]+=.001,p=>p.heights[0]=.1234,p=>p.heights[0]=null,p=>p.machineProfile.keys.push('A'),p=>p.machineProfile.extra='x',p=>p.machineProfile=null,p=>p.axisPositions.Z=101,
   p=>p.bestState=null,p=>p.bestState=[],p=>p.bestState.width+=1,p=>p.bestState.columnX+=1,p=>p.bestState.heights.pop(),p=>p.bestState.heights[0]=.1234,p=>p.bestState.heights[0]=.501,p=>p.bestState.extra=1];
  for(let i=0;i<mutations.length;i++){
   const invalid=structuredClone(record);mutations[i](invalid);await importRecord(invalid);
   check('不正個体JSONは状態を一切反映しない '+i,()=>{assert.deepEqual(snapshot(),record);assert.match(r.levelInputMessage.textContent,/読込できません/);});
  }
- const legacy=structuredClone(record);legacy.version=1;delete legacy.machineProfile;delete legacy.bestState;legacy.heights=[.1,-.1,.2,-.2];delete legacy.columnX;delete legacy.columnZ;delete legacy.axisPositions;legacy.step=.01;
+ const legacy=structuredClone(record);legacy.version=1;delete legacy.supportLayout;delete legacy.machineProfile;delete legacy.bestState;legacy.heights=[.1,-.1,.2,-.2];delete legacy.columnX;delete legacy.columnZ;delete legacy.axisPositions;legacy.step=.01;
  await importRecord(legacy);
- check('旧JSONは支持高さを保持し個体を生成して新版へ保存',()=>{assert.deepEqual(json('supportHeights'),legacy.heights);assert.equal(snapshot().version,2);assert.equal(read('validLevelRecord(levelRecord())'),true);assert.equal(read('levelConfig.columnX'),0);assert.equal(read('levelConfig.columnZ'),0);assert.deepEqual(snapshot().axisPositions,{X:0,Y:0,Z:0});assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))),snapshot());});
+ check('旧JSONは支持高さを保持し個体を生成して新版へ保存',()=>{assert.deepEqual(json('supportHeights'),legacy.heights);assert.equal(snapshot().version,3);assert.equal(read('validLevelRecord(levelRecord())'),true);assert.equal(read('levelConfig.columnX'),0);assert.equal(read('levelConfig.columnZ'),0);assert.deepEqual(snapshot().axisPositions,{X:0,Y:0,Z:0});assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))),snapshot());});
  const migrated=snapshot();open(1);open(0,'compact');check('旧JSON移行後の個体も二度目の表示で再抽選しない',()=>assert.deepEqual(snapshot(),migrated));
  storage.clear();open(1);
- const highFloor=snapshot();delete highFloor.bestState;highFloor.width=20;highFloor.depth=20;highFloor.machineProfile=MachineAccuracy.generate('used',36,keys,4);highFloor.heights=[...highFloor.machineProfile.initialHeights];
+ const highFloor=snapshot();delete highFloor.bestState;highFloor.width=20;highFloor.depth=20;highFloor.machineProfile=MachineAccuracy.generate('used',36,keys,8);highFloor.heights=[...highFloor.machineProfile.initialHeights];
  await importRecord(highFloor);
  check('固有誤差が大きい中古でも初期据付を誤って達成と判定しない',()=>{
   const m=evalNow(),best=json('machineReference.best.metric'),result=json('updateMachineAccuracy()');

@@ -39,7 +39,7 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  }else if(m.kind==='horizontal'){
   toolPoints=[{x:move('X')+layout.x,z:D*.29+layout.z}];workPoint={x:0,z:-.85+move('Z')};toolAxes=['X','Y'];
  }else if(['double','gantry'].includes(m.kind)){
-  toolPoints=[-1,1].map(k=>({x:k*W*.4,z:m.kind==='gantry'?move('X'):0}));
+  toolPoints=[-1,1].map(k=>({x:k*(m.columnX??W*.4),z:m.kind==='gantry'?move('X'):(m.columnZ??0)}));
   workPoint={x:0,z:m.kind==='double'?move('X'):0};toolAxes=['Y','Z'];
  }else{
   toolPoints=[{x:-W*.35,z:0}];workPoint={x:.08+move('Z'),z:-.58+move('X')};toolAxes=['Z'];
@@ -61,6 +61,9 @@ function geometrySamples(solution=levelSolution,profile=machineProfile,length=le
  const keys=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>a.key);
  let states=[{X:0,Y:0,Z:0,A:0,C:0}];
  for(const key of keys)states=states.flatMap(state=>[-100,0,100].map(value=>({...state,[key]:value})));
+ // On this fixed-bridge model only table X moves a sampled support anchor.
+ // Preserve all 27 assessment states while sharing the identical Y/Z results.
+ if(current.supportLayout==='irregular'&&current.kind==='double'){const cache=new Map();return states.map(state=>{if(!cache.has(state.X))cache.set(state.X,geometryModel(state,solution,profile,length));return {state,geometry:cache.get(state.X)};});}
  return states.map(state=>({state,geometry:geometryModel(state,solution,profile,length)}));
 }
 function fixedVisualFactor(initialSolution){

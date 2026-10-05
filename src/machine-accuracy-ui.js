@@ -16,7 +16,7 @@ function initializeMachineAccuracy(profile,bestState){
  if(!restored)supportHeights=[...machineProfile.initialHeights];
  levelExercise={solved:false};
 }
-function machineSolution(heights){return window.Leveling.solve(supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:heights[i]})));}
+function machineSolution(heights){return window.Leveling.solve(supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:heights[i]})),{layout:current.supportLayout});}
 function machineEvaluation(heights){
  const solution=machineSolution(heights),samples=geometrySamples(solution,machineProfile,window.MachineAccuracy.referenceLength);
  return machineEvaluationFrom(samples,solution);

@@ -373,3 +373,7 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
  body.in-mechanical-lab #training .training-heading{padding-top:0;padding-bottom:0}
  body.in-mechanical-lab #training .scene-toolbar{padding-top:2px;padding-bottom:2px}
 }
+
+/* The 24-point foundation keeps the model and shared raise/lower actions visible. */
+.main-adjustment .support-map.many-supports{max-height:104px;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;padding-right:4px;scroll-padding:4px;border:1px solid var(--line);border-radius:6px;padding:4px}
+.main-adjustment .support-map.many-supports .map-point{flex:0 0 44px;max-width:44px;min-height:44px}

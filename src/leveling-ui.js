@@ -11,16 +11,26 @@ function captureFineStart(){fineStartEvaluation={key:adjustmentContextKey(),obje
 function invalidateLevelImport(){levelRevision++;}
 const cleanNumber=(v,d=3)=>Math.abs(v)<Math.pow(10,-d)/2?(0).toFixed(d):v.toFixed(d);
 const bounded=(v,min,max)=>typeof v==='number'&&Number.isFinite(v)&&v>=min&&v<=max;
-function levelKey(){return levelStoragePrefix+current.id+':'+machineMode;}
-function levelRecord(){return {version:machineProfile?2:1,...(machineProfile?{machineProfile,...(machineReference?{bestState:machineBestRecord()}:{})}:{}),machine:current.id,mode:machineMode,width:levelConfig.width,depth:levelConfig.depth,heights:[...supportHeights],sensitivity:Number($('levelSensitivity').value),measurePos:Number($('measurePos').value),offset:levelConfig.offset,columnX:levelConfig.columnX,columnZ:levelConfig.columnZ,axisPositions:Object.fromEntries(axisConfig(current).map(a=>[a.key,positions[a.key]])),step:Number($('adjustStep').value),exaggerate:$('exaggerate').checked};}
+function levelKey(){return levelStoragePrefix+current.id+':'+machineMode+(current.layoutId?':'+current.layoutId:'');}
+function supportLayoutRecord(){return {id:current.layoutId,points:supports.map(s=>({id:s.id,x:s.x,z:s.z,group:s.group}))};}
+function legacyCompactRecord(r){return current.id==='vertical'&&machineMode==='compact'&&r?.machine==='vertical'&&r.mode==='compact'&&(r.version===1||r.version===2)&&r.supportLayout===undefined;}
+function compatibleSupportLayout(r){
+ if(!current.layoutId)return r?.version===1||r?.version===2;
+ if(legacyCompactRecord(r))return true;
+ const expected=supportLayoutRecord(),actual=r?.supportLayout;
+ return r?.version===3&&actual?.id===expected.id&&Array.isArray(actual.points)&&actual.points.length===expected.points.length&&expected.points.every((p,i)=>['id','x','z','group'].every(k=>actual.points[i]?.[k]===p[k]));
+}
+
+
+function levelRecord(){return {version:current.layoutId?3:machineProfile?2:1,...(current.layoutId?{supportLayout:supportLayoutRecord()}:{}),...(machineProfile?{machineProfile,...(machineReference?{bestState:machineBestRecord()}:{})}:{}),machine:current.id,mode:machineMode,width:levelConfig.width,depth:levelConfig.depth,heights:[...supportHeights],sensitivity:Number($('levelSensitivity').value),measurePos:Number($('measurePos').value),offset:levelConfig.offset,columnX:levelConfig.columnX,columnZ:levelConfig.columnZ,axisPositions:Object.fromEntries(axisConfig(current).map(a=>[a.key,positions[a.key]])),step:Number($('adjustStep').value),exaggerate:$('exaggerate').checked};}
 function validLevelRecord(r){
  const keys=axisConfig(current).map(a=>a.key),axisValid=r?.axisPositions===undefined||r.axisPositions&&typeof r.axisPositions==='object'&&!Array.isArray(r.axisPositions)&&Object.keys(r.axisPositions).length===keys.length&&keys.every(k=>bounded(r.axisPositions[k],-100,100));
- return r&&((r.version===1&&r.machineProfile===undefined)||(r.version===2&&window.MachineAccuracy.valid(r.machineProfile,machineLinearKeys(),supports.length)&&validMachineBest(r)))&&r.machine===current.id&&r.mode===machineMode&&bounded(r.width,.5,20)&&bounded(r.depth,.5,20)&&Array.isArray(r.heights)&&r.heights.length===supports.length&&r.heights.every(h=>bounded(h,-.5,.5)&&Math.abs(h*1000-Math.round(h*1000))<1e-7)&&[.02,.05,.1].includes(r.sensitivity)&&[-1,0,1].includes(r.measurePos)&&bounded(r.offset,.1,2)&&['columnX','columnZ'].every(k=>r[k]===undefined||bounded(r[k],-100,100)&&Number.isInteger(r[k]))&&axisValid&&[.001,.005,.01,.05,.1].includes(r.step)&&typeof r.exaggerate==='boolean';
+ return r&&compatibleSupportLayout(r)&&((r.version===1&&r.machineProfile===undefined)||((r.version===2||r.version===3)&&window.MachineAccuracy.valid(r.machineProfile,machineLinearKeys(),supports.length)&&validMachineBest(r)))&&r.machine===current.id&&r.mode===machineMode&&bounded(r.width,.5,20)&&bounded(r.depth,.5,20)&&Array.isArray(r.heights)&&r.heights.length===supports.length&&r.heights.every(h=>bounded(h,-.5,.5)&&Math.abs(h*1000-Math.round(h*1000))<1e-7)&&[.02,.05,.1].includes(r.sensitivity)&&[-1,0,1].includes(r.measurePos)&&bounded(r.offset,.1,2)&&['columnX','columnZ'].every(k=>r[k]===undefined||bounded(r[k],-100,100)&&Number.isInteger(r[k]))&&axisValid&&[.001,.005,.01,.05,.1].includes(r.step)&&typeof r.exaggerate==='boolean';
 }
 function applyLevelRecord(r){
  resetAdjustmentProgress();
  levelConfig={width:r.width,depth:r.depth,offset:r.offset,columnX:r.columnX??0,columnZ:r.columnZ??0};supportHeights=[...r.heights];
- initializeMachineAccuracy(r.version===2?r.machineProfile:null,r.bestState);supportHeights=[...r.heights];
+ initializeMachineAccuracy(r.version>=2?r.machineProfile:null,r.bestState);supportHeights=[...r.heights];
  positions={X:0,Y:0,Z:0,A:0,C:0,...r.axisPositions};updateAxisValues();
  $('supportWidth').value=r.width;$('supportDepth').value=r.depth;$('levelSensitivity').value=String(r.sensitivity);$('measurePos').value=String(r.measurePos);$('impactOffset').value=r.offset;$('columnX').value=levelConfig.columnX;$('columnZ').value=levelConfig.columnZ;$('adjustStep').value=String(r.step);$('exaggerate').checked=r.exaggerate;adjustmentStage=r.step>=.01?'coarse':'fine';
 }
@@ -30,14 +40,16 @@ function initializeLeveling(){
  $('supportWidth').value=levelConfig.width;$('supportDepth').value=levelConfig.depth; $('levelSensitivity').value='0.05';$('adjustStep').value='0.01';$('impactOffset').value=.5;$('columnX').value='0';$('columnZ').value='0';$('exaggerate').checked=true;
  $('levelInputMessage').textContent='';
  $('twistPreset').disabled=supports.length===3;$('twistPreset').title=supports.length===3?'この支持配置は平面になるため、ねじれパターンはありません。':'';
- const hasMiddle=!!current.grid&&(current.grid[0]>2||current.grid[1]>2);
+ const hasMiddle=!!current.supportLayout||!!current.grid&&(current.grid[0]>2||current.grid[1]>2);
  $('middlePreset').disabled=!hasMiddle;$('middlePreset').title=hasMiddle?'':'この支持配置には中間支持点がありません。';
  initializeMachineAccuracy();
- let restored=false;
- try{const raw=localStorage.getItem(levelKey());if(raw){const data=JSON.parse(raw);if(validLevelRecord(data)){applyLevelRecord(data);restored=true;}}}catch{}
+ let restored=false,previousLayout=false,migratedCompact=false;
+ try{if(current.layoutId){const oldModes=current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''];previousLayout=oldModes.some(mode=>localStorage.getItem(levelStoragePrefix+current.id+':'+mode)!==null);}}catch{}
+ try{let raw=localStorage.getItem(levelKey());if(!raw&&current.id==='vertical'&&machineMode==='compact'){raw=localStorage.getItem(levelStoragePrefix+'vertical:compact');migratedCompact=!!raw;}if(raw){const data=JSON.parse(raw);if(validLevelRecord(data)){applyLevelRecord(data);restored=true;}}}catch{}
  $('levelSaveStatus').textContent=restored?'前回の調整をこのブラウザから復元しました。':'調整はこのブラウザに自動保存します。';
  buildSupports();updateLeveling(false);const saved=saveLeveling();
- if(restored)$('levelSaveStatus').textContent=saved?'前回の個体・調整をこのブラウザから復元しました。':'前回の個体・調整を復元しました。このブラウザでは自動保存できません。JSONで保存できます。';
+ if(previousLayout&&!restored)$('levelSaveStatus').textContent='支持配置を更新したため、旧版の調整は適用していません。旧データはブラウザーに残しています。'+(saved?'新しい配置を自動保存しました。':'新しい配置はJSONで保存してください。');
+ if(restored)$('levelSaveStatus').textContent=(migratedCompact?'同じ4点配置の旧小型データを検証して引き継ぎました。':'前回の個体・調整をこのブラウザから復元しました。')+(saved?'':'このブラウザでは自動保存できません。JSONで保存できます。');
 }
 function levelCoordinates(x,z){return {x:x/(current.w*.8)*levelConfig.width,z:z/(current.d*.8)*levelConfig.depth};}
 // Display coordinates use the same physical support dimensions as the solver.
@@ -168,6 +180,15 @@ function levelSurfaceFaces(m){
   for(let i=0;i<n;i++)for(let j=0;i+j<n;j++){out.push(face([v(i,j),v(i+1,j),v(i,j+1)]));if(i+j<n-1)out.push(face([v(i+1,j),v(i+1,j+1),v(i,j+1)]));}
   return out;
  }
+ if(m.supportLayout==='irregular'){
+  const faces=[],nx=12,nz=32,x0=-1.56,x1=1.56,z0=-3.55,z1=3.55;
+  for(let i=0;i<nx;i++)for(let j=0;j<nz;j++){
+   const a=x0+(x1-x0)*i/nx,b=x0+(x1-x0)*(i+1)/nx,c=z0+(z1-z0)*j/nz,d=z0+(z1-z0)*(j+1)/nz;
+   const x=(a+b)/2,z=(c+d)/2;if(Math.abs(x)>.89&&Math.abs(z-m.columnZ)>.39)continue;
+   faces.push(face([[a,y,c],[b,y,c],[b,y,d],[a,y,d]]));
+  }
+  return faces;
+ }
  const subdivide=values=>{const a=[...new Set(values)].sort((x,z)=>x-z),out=[a[0]];for(let i=1;i<a.length;i++)for(let j=1;j<=4;j++)out.push(a[i-1]+(a[i]-a[i-1])*j/4);return out;};
  const xs=subdivide(points.map(p=>p.x)),zs=subdivide(points.map(p=>p.z)),faces=[];
  for(let i=1;i<xs.length;i++)for(let j=1;j<zs.length;j++)faces.push(face([[xs[i-1],y,zs[j-1]],[xs[i],y,zs[j-1]],[xs[i],y,zs[j]],[xs[i-1],y,zs[j]]]));
@@ -188,7 +209,7 @@ function setSupportHeight(i,value,editing=false){
 function changeSupportHeight(i,delta){setSupportHeight(i,Math.max(-.5,Math.min(.5,Math.round((supportHeights[i]+delta)*1000)/1000)));}
 function updateLeveling(save=true,editingIndex=-1){
  const points=supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:supportHeights[i]}));
- levelSolution=window.Leveling.solve(points);refreshSupportControls(editingIndex);
+ levelSolution=window.Leveling.solve(points,{layout:current.supportLayout});refreshSupportControls(editingIndex);
  updateAccuracy();
  const z=Number($('measurePos').value)*levelConfig.depth/2,local=levelSolution.slopeAt(0,z);
  $('lr').textContent=cleanNumber(levelSolution.lr,4)+' mm/m';$('fb').textContent=cleanNumber(levelSolution.fb,4)+' mm/m';$('twist').textContent=cleanNumber(levelSolution.twist,6)+' mm/m';$('residual').textContent=cleanNumber(levelSolution.residual)+' mm';
@@ -233,9 +254,10 @@ function saveLeveling(){
  try{localStorage.setItem(levelKey(),JSON.stringify(levelRecord()));$('levelSaveStatus').textContent='個体・支持高さ・コラム配置・軸位置をこのブラウザに自動保存しました。';return true;}catch{$('levelSaveStatus').textContent='このブラウザでは自動保存できません。JSONで保存できます。';return false;}
 }
 function applyLevelPreset(type){
- if(type==='twist'&&supports.length===3||type==='middle'&&(!current.grid||(current.grid[0]<3&&current.grid[1]<3)))return;
+ if(type==='twist'&&supports.length===3||type==='middle'&&!current.supportLayout&&(!current.grid||(current.grid[0]<3&&current.grid[1]<3)))return;
  invalidateLevelImport();stopMotion();levelExercise=null;
  supportHeights=supports.map(s=>{
+  if(type==='middle'&&current.supportLayout==='irregular')return s.group==='bed'&&/-(?:left|right)-[2-7]$/.test(s.id)? .15:0;
   const x=s.x/(current.w*.4),z=s.z/(current.d*.4);
   return Math.round((type==='right'?.1*x:type==='front'?-.1*z:type==='twist'?.1*x*z:Math.abs(x)<.99||Math.abs(z)<.99?.15:0)*1000)/1000;
  });$('levelInputMessage').textContent='状態パターンを設定しました。';updateLeveling();
@@ -274,7 +296,7 @@ $('importLevel').onchange=async event=>{
  try{
   if(file.size>250000)throw Error('大きすぎる');
   const text=await file.text();if(!isCurrent())return;
-  const data=JSON.parse(text);if(!validLevelRecord(data))throw Error('不正な調整データ');
-  applyLevelRecord(data);updateLeveling();$('levelInputMessage').textContent='調整データを読み込みました。';
- }catch{if(isCurrent())$('levelInputMessage').textContent='読込できません。同じ機械・方式の調整JSONと、数値範囲を確認してください。';}
+  const data=JSON.parse(text);if(!compatibleSupportLayout(data))throw Error('support-layout');if(!validLevelRecord(data))throw Error('不正な調整データ');
+  applyLevelRecord(data);updateLeveling();$('levelInputMessage').textContent='調整データを読み込みました。';$('levelSaveStatus').textContent='同じ機種・支持配置の調整データを読み込みました。';
+ }catch(error){if(isCurrent()){const message=error.message==='support-layout'?'読込できません。支持配置が異なる旧版データです。同じ機種・支持配置で保存したJSONを選んでください。':'読込できません。同じ機械・方式の調整JSONと、数値範囲を確認してください。';$('levelInputMessage').textContent=message;$('levelSaveStatus').textContent=message;}}
 };

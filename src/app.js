@@ -1,23 +1,18 @@
 'use strict';
 // 編集する場合、機械の名称・説明・モデル種別はこの一覧で変更できます。
 const machines = [
-{id:'vertical',name:'立形・片側コラム',tag:'テーブルXY移動',example:'小型：ロボドリル系 ／ 標準：立形MC',kind:'vertical',w:3.4,d:3.3,grid:[2,2],modes:[['standard','標準サイズ'],['compact','小型（ロボドリル系）']],structure:'片側コラムから主軸頭が張り出す基本構造。ロボドリル系と標準立形はこの一つの項目にまとめ、サイズの例を切り替えます。',focus:'テーブルの移動位置ごとの姿勢と、ベースのねじれ。',impact:'全体の傾きと、案内面の相対関係が変わるねじれを分けて学びます。',source:'https://www.fanuc.co.jp/ja/product/robodrill/alphadibplus.html'},
-{id:'horizontal',name:'横形マシニングセンタ',tag:'横向き主軸・回転パレット',example:'横マシの代表的な移動構成',kind:'horizontal',w:3.4,d:3.6,grid:[2,2],structure:'主軸が横向き。ここではコラムX移動・主軸頭Y移動・テーブルZ移動の構成を示します。',focus:'主軸側とパレット側の相対関係、移動範囲での姿勢。',impact:'直線軸・回転軸の幾何関係を確認する必要があります。',source:'https://www.makino.co.jp/ja-jp/machine-technology/machines/horizontal-4-axis/a51nx'},
+{id:'vertical',name:'小型立形・4点支持',tag:'テーブルXY・主軸頭Z',example:'ロボドリル系を参考にした小型教材',kind:'compact',w:2.6,d:2.7,grid:[2,2],defaultMode:'compact',layoutId:'compact-four-v1',structure:'片側コラムから主軸頭が張り出す小型立形。テーブルがX・Y、主軸頭がZ方向へ移動します。標準サイズは扱いません。',focus:'4点支持の平均傾きと、ベースのねじれ。',impact:'全体の傾きと、案内面の相対関係が変わるねじれを分けて学びます。',supportEvidence:'4点の教材用配置です。特定のロボドリル型式の基礎図や荷重配分の再現ではありません。',source:'https://www.fanuc.co.jp/ja/product/robodrill/alphadibplus.html'},
+{id:'horizontal',name:'横形・Haas EC-630',tag:'NGC・8点支持',example:'Haas EC-630（NGC）の据付手順を参考',kind:'horizontal',w:3.4,d:4.6,grid:[2,4],layoutId:'haas-ec630-ngc-eight-v1',structure:'横向き主軸と回転パレットを備える横形。Haas EC-630（NGC）の据付手順にある四隅4本と中央4本、合計8本を反映します。',focus:'8点の支持関係と、移動位置による姿勢の違い。',impact:'直線軸の幾何関係と支持面の変化を確認します。',supportEvidence:'支持数8本はHaas公式据付手順で確認。間隔・寸法は教材用の概略配置です。主支持・補助支持の荷重配分、パレット交換機構は再現しません。',source:'https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/-ec-630--installation---ngc.html'},
 {id:'travel',name:'立形・移動コラム',tag:'テーブル固定・コラム移動',example:'固定テーブルの長尺加工機',kind:'travel',w:5.4,d:2.6,grid:[3,2],structure:'テーブルとワークは固定。コラムがX方向に走り、主軸頭側がY・Z方向に移動します。',focus:'長いベッドの各位置と、コラムの移動に伴う姿勢。',impact:'端だけでなく、中間位置の案内精度・姿勢も確認します。',source:'https://www.mazak.com/jp-ja/products/vtc/'},
-{id:'gate',name:'固定門形',tag:'門は固定・移動方式を比較',example:'門形構造の立形／大型門形を統合',kind:'double',w:4,d:5.8,grid:[2,3],modes:[['long','長手テーブルX＋主軸側Y'],['cross','テーブルXY移動']],structure:'左右コラムと梁からなる門は固定。似た外観でも、テーブルと主軸側の軸の分担が異なる方式を切り替えて比較します。',focus:'長手方向のベッドの姿勢と、左右コラム側の支持。',impact:'門が固定でも、テーブル・主軸の相対関係を確認します。梁のたわみなどは別の確認項目です。',source:'https://www.shibaura-machine.co.jp/jp/product/machinetool/lineup/m_new/Line_up.html'},
+{id:'gate',name:'固定門形・L3 3000',tag:'HWACHEON・24点支持',example:'L3 3000 基礎図 Rev1.39（2022）を参考',kind:'double',w:3.5625,d:8.55,grid:null,defaultMode:'l3-3000',layoutId:'hwacheon-l3-3000-foundation-r139',supportLayout:'irregular',columnZ:.825,columnX:1.10,structure:'長手ベッドと左右柱側の張り出しを持つ固定門形。テーブルX、主軸サドルY、ラムZの構成です。L3 3000の基礎図から24か所の支持記号と寸法配置を読み取りました。',focus:'長手ベッド16点、両端中央2点、柱側張り出し6点の関係。',impact:'不規則な支持面の幾何補間により姿勢を比較します。実機の剛性・荷重・基礎アンカー・弾性変形を再現する解析ではありません。',supportEvidence:'メーカー作成L-SERIES Rev1.39、Foundation L3 3000（PDF19ページ）の支持記号24か所を採用。数量欄の明記ではなく図面の読取りです。主支持／補助支持の区別は断定しません。',source:'https://hmeholdings.com/wp-content/uploads/2023/03/L-SERIES.pdf'},
 {id:'gantry',name:'移動門形・ガントリー',tag:'テーブル固定・門全体が移動',example:'固定門形とは動く側が逆',kind:'gantry',w:4,d:5.8,grid:[2,4],structure:'テーブルとワークは固定。左右の走行レール上を門全体がX方向に移動します。',focus:'左右走行レールの相対姿勢と、移動範囲の基礎・支持。',impact:'左右レールの関係と門の姿勢を確認します。同期駆動などの機種固有の調整は別途必要です。',source:'https://www.shibaura-machine.co.jp/jp/product/machinetool/lineup/s_new/spec.html'},
 {id:'five',name:'5軸・テーブル旋回形',tag:'XYZ＋A/Cの旋回',example:'テーブルXY・主軸頭Zの学習モデル',kind:'five',w:3.4,d:3.3,grid:null,structure:'XYZの直線移動に、テーブルの傾斜Aと回転Cを加えた構成。ここではテーブル側XY・主軸頭Zを採用しています。',focus:'指定支持点での据付と、直線軸・回転軸の幾何関係。',impact:'回転中心や旋回軸の確認が必要です。軸の分担・名称は実機により異なります。',source:'https://us.dmgmori.com/products/machines/milling/5-axis-milling/monoblock/dmu-75-monoblock-2nd'},
 {id:'lathe',name:'NC旋盤・2軸',tag:'X径方向・Z主軸方向',example:'基本の2軸旋盤（Y軸なし）',kind:'lathe',w:5,d:2.1,grid:[3,2],structure:'主軸台を固定し、刃物台をZ（主軸方向）・X（径方向）に動かします。このモデルにY軸はありません。',focus:'ベッド長手方向の各位置での横断方向の水準器。',impact:'ベッドのねじれと主軸・案内の関係を確認します。テーパの原因は据付以外にもあります。',source:'https://www.haascnc.com/service/online-operator-s-manuals/lathe-operator-s-manual/lathe---introduction.html'}
 ];
 // 内部の描画座標は左右=x、上=y、奥=z。工作機械の軸名は機構ごとに明示して割り当てる。
 const axisColors={X:'#d35455',Y:'#208768',Z:'#397ed1',A:'#8e5caf',C:'#bc6a2f'};
-let positions={X:0,Y:0,Z:0,A:0,C:0}, selectedAxis='X', machineMode='standard';
-function displayMachine(base){
- const m={...base};
- if(base.id==='vertical'&&machineMode==='compact'){m.kind='compact';m.w=2.6;m.d=2.7;}
- if(base.id==='gate'&&machineMode==='cross'){m.kind='portal';m.w=3.6;m.d=3.5;m.grid=[2,2];}
- return m;
-}
+let positions={X:0,Y:0,Z:0,A:0,C:0}, selectedAxis='X', machineMode='compact';
+function displayMachine(base){return {...base};}
 function axisConfig(m){
  const a=(key,part,direction,vector,amp)=>({key,part,direction,vector,amp});
  if(['vertical','compact','portal'].includes(m.kind))return [a('X','テーブル','左右',[1,0,0],.45),a('Y','サドル＋テーブル','前後',[0,0,1],.4),a('Z','主軸頭＋工具','上下',[0,1,0],.3)];
@@ -98,11 +93,26 @@ const SCENE_ZOOM_MIN=.65,SCENE_ZOOM_MAX=1.8;
 let sceneZoom=1;
 let sceneView='oblique';
 let trainingMenuOpen=false,trainingMainScale=1;
+// L3 3000 dimensions are read from the foundation drawing, in metres.
+// The NC long axis X is the display z direction; Y spans the bridge (display x).
+function l3Supports(){
+ const points=[],add=(id,x,z,name,group)=>points.push({id,x,z:z-3.420,name,group});
+ const stations=[.240,1.040,1.840,2.640,3.440,5.000,5.800,6.600];
+ for(const [side,x,label] of [['left',-.770,'左'],['right',.770,'右']])stations.forEach((z,i)=>add('bed-'+side+'-'+(i+1),x,z,'長手ベッド'+label+' '+(i+1),'bed'));
+ add('bed-front-end',0,0,'ベッド手前端・中央','bed');add('bed-back-end',0,6.840,'ベッド奥端・中央','bed');
+ for(const [side,sign,label] of [['left',-1,'左'],['right',1,'右']]){
+  add('column-'+side+'-front',sign*1.060,3.965,label+'柱側・手前','column-'+side);
+  add('column-'+side+'-back',sign*1.060,4.515,label+'柱側・奥','column-'+side);
+  add('column-'+side+'-outer',side==='left'?-1.425:1.420,4.245,label+'柱側・外端','column-'+side);
+ }
+ return points;
+}
 function supportList(m){
+ if(m.layoutId==='hwacheon-l3-3000-foundation-r139')return l3Supports();
  if(!m.grid)return [{x:-m.w*.4,z:-m.d*.4,name:'左・手前'},{x:m.w*.4,z:-m.d*.4,name:'右・手前'},{x:0,z:m.d*.4,name:'奥・中央'}];
  const [nx,nz]=m.grid,list=[];
  for(let j=0;j<nz;j++)for(let i=0;i<nx;i++)list.push({x:(i/(nx-1)-.5)*m.w*.8,z:(j/(nz-1)-.5)*m.d*.8,name:`${nx===2?(i?'右':'左'):(['左','中央','右'][i])}・${j===0?'手前':j===nz-1?'奥':'中間'}`});
- return list;
+ return m.layoutId?list.map((p,i)=>({...p,name:m.id==='horizontal'?p.name.replace('中間','中間'+Math.floor(i/2)):p.name,id:m.layoutId+'-p'+(i+1),group:'bed'})):list;
 }
 const pageParents={topics:'home',catalog:'topics',training:'catalog',electricTopics:'home',tester:'electricTopics'};
 const pageTitles={home:'トップ',topics:'機械',catalog:'機種選択',training:'レベル調整',electricTopics:'電気',tester:'テスターの使い方'};
@@ -156,15 +166,15 @@ function resumeOrOpenMachine(m){
  openMachine(m);
 }
 function openMachine(m){
- stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
+ stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.defaultMode||(m.modes?m.modes[0][0]:'');current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
 function populateMachine(){
  machineSessionInitialized=true;resetTrainingPanels();$('axisDemoStatus').textContent='';
  const m=current;supports=supportList(m);levelSolution=null;levelGeometry=null;
  $('machineTitle').textContent=m.name;$('machineSubtitle').textContent=m.example+' ｜ '+m.tag;
  $('structureText').textContent=m.structure;$('motionText').textContent=axisConfig(m).map(a=>a.key+'：'+a.part+'（'+a.direction+'）').join(' ／ ');$('focusText').textContent=m.focus;
- $('impactText').textContent=m.impact;$('supportNote').textContent='丸い印は学習用の支持点です。実機の支持点位置・個数・荷重配分を再現したものではありません。';
- $('sourceLinks').innerHTML=`<div class="source-links"><a href="${m.source}" target="_blank" rel="noopener noreferrer">メーカー公式資料で代表例を確認 ↗</a></div>`;
+ $('impactText').textContent=m.impact;$('supportNote').textContent=m.supportEvidence||'丸い印は学習用の支持点です。実機の支持点位置・個数・荷重配分を再現したものではありません。';
+ $('sourceLinks').innerHTML=`<div class="source-links"><a href="${m.source}" target="_blank" rel="noopener noreferrer">メーカー資料で代表例を確認 ↗</a></div>`;
  $('measurePos').value='0'; $('labels').checked=true;
  
  
@@ -172,7 +182,7 @@ function populateMachine(){
 }
 function selectSupport(i){if(!Number.isInteger(i)||i<0||i>=supports.length)return;selected=i;refreshSupportControls();drawScene();}
 function buildSupports(){
- const map=$('supportMap');map.replaceChildren();supports.forEach((s,i)=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',String.fromCharCode(65+i)+'、'+s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.dataset.support=String(i);b.onclick=()=>{if(!trainingMenuOpen)selectSupport(i);};map.append(b);});
+ const map=$('supportMap');map.replaceChildren();map.classList.toggle('many-supports',supports.length>8);map.setAttribute('aria-label',supports.length>8?'24か所の支持点。上下にスクロールして選択':'調整する支持点');supports.forEach((s,i)=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',String.fromCharCode(65+i)+'、'+s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.dataset.support=String(i);b.onclick=()=>{if(!trainingMenuOpen)selectSupport(i);};map.append(b);});
  const controls=$('supportControls');controls.replaceChildren();supports.forEach((s,i)=>{const row=document.createElement('div');row.className='support-row'+(i===selected?' selected':'');const id=String.fromCharCode(65+i);row.innerHTML=`<label><span class="point-id">${id}</span>${s.name}</label><button id="down${i}" aria-label="${id}を下げる">下げる</button><span id="supportState${i}" class="support-adjustment-state"></span><input hidden type="number" id="height${i}" aria-label="${id}の抽選時からの調整量" min="${-.5-supportBaseline(i)}" max="${.5-supportBaseline(i)}" step="0.001" value="${supportAdjustment(i)}"><button id="up${i}" aria-label="${id}を上げる">上げる</button>`;controls.append(row);$('down'+i).onclick=()=>changeSupportHeight(i,-Number($('adjustStep').value));$('up'+i).onclick=()=>changeSupportHeight(i,Number($('adjustStep').value));$('height'+i).onchange=()=>setSupportHeight(i,supportHeightFromAdjustment(i,$('height'+i).value.trim()===''?NaN:Number($('height'+i).value)));$('height'+i).oninput=()=>{invalidateLevelImport();const field=$('height'+i),value=supportHeightFromAdjustment(i,field.value.trim()===''?NaN:Number(field.value));if(bounded(value,-.5,.5))setSupportHeight(i,value,true);};});
 }
 const grid=$('machineGrid');machines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>resumeOrOpenMachine(m);grid.append(card);});
@@ -188,7 +198,8 @@ function createGeometry(m){
  }
  function cyl(x,y,z,r,len,color,axis='y',text){const n=20,ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8},{v:ring[1],axes:[...group],pose,color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
  const W=m.w,D=m.d;
- box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
+ if(m.supportLayout==='irregular'){box(0,.42,0,1.78,.45,7.10,c.base,'長手ベッド');box(0,.42,m.columnZ,3.12,.45,.78,c.base,'柱側ベース');}
+ else box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
  function spindle(x,y,z,axes){withGroup(axes,()=>{cyl(x,y,z,.16,.42,c.spindle,'y');cyl(x,y-.3,z,.045,.18,c.spindle);},'tool');}
  function table(width,depth,y,z,axes){withGroup(axes,()=>{box(0,y,z,width,.2,depth,c.table,'テーブル');for(let i=-3;i<=3;i++)box(i*width*.11,y+.105,z,.018,.012,depth*.97,c.rail);box(0,y+.3,z,.42,.38,.36,c.work);},'work');}
  if(['vertical','compact','travel'].includes(m.kind)){
@@ -198,14 +209,14 @@ function createGeometry(m){
  if(travel){withGroup(['X','Y'],()=>box(cx,2.85,.13,.72,.6,1.05,c.fixed,'前後スライド'),'tool');withGroup(['X','Y','Z'],()=>box(cx,2.45,-.25,.67,.55,.65,c.fixed,'主軸頭'),'tool');spindle(cx,2.04,-.3,['X','Y','Z']);table(W*.93,D*.39,1,-D*.18,[]);}
  else {withGroup(['Z'],()=>box(0,2.85,.05,.75,.6,1.1,c.fixed,'主軸頭'),'tool');spindle(0,2.37,-.3,['Z']);withGroup(['Y'],()=>box(0,.81,-D*.1,W*.58,.22,D*.45,c.fixed,'サドル'),'work');table(W*.78,D*.42,1.06,-D*.1,['X','Y']);}
  }else if(['portal','double','gantry'].includes(m.kind)){
- const gate=m.kind==='gantry',cross=m.kind==='portal',gateAxes=gate?['X']:[],gz=cross?D*.24:0;
- [-1,1].forEach(k=>box(k*(gate?W*.4:W*.17),.72,0,.14,.12,D*.91,c.rail,k===1?(gate?'走行レール':'案内レール'):null));
- withGroup(gateAxes,()=>{[-1,1].forEach(k=>withGroup(gateAxes,()=>box(k*W*.4,1.96,gz,.5,2.6,.65,c.fixed,k===-1?'門／コラム':null),k===-1?'leftColumn':'rightColumn'));box(0,3.17,gz,W*.94,.55,.65,c.fixed,'梁');box(0,2.9,gz-.37,W*.83,.1,.1,c.rail);},'tool');
+ const gate=m.kind==='gantry',cross=m.kind==='portal',gateAxes=gate?['X']:[],gz=m.columnZ??(cross?D*.24:0),columnX=m.columnX??W*.4;
+ [-1,1].forEach(k=>box(k*(gate?W*.4:m.supportLayout==='irregular'?.52:W*.17),.72,0,.14,.12,(m.supportLayout==='irregular'?6.8:D*.91),c.rail,k===1?(gate?'走行レール':'案内レール'):null));
+ withGroup(gateAxes,()=>{[-1,1].forEach(k=>withGroup(gateAxes,()=>box(k*columnX,1.96,gz,.5,2.6,.65,c.fixed,k===-1?'門／コラム':null),k===-1?'leftColumn':'rightColumn'));box(0,3.17,gz,m.supportLayout==='irregular'?2.8:W*.94,.55,.65,c.fixed,'梁');box(0,2.9,gz-.37,W*.83,.1,.1,c.rail);},'tool');
  const headAxes=cross?['Z']:gate?['X','Y','Z']:['Y','Z'];
  if(!cross)withGroup(gate?['X','Y']:['Y'],()=>box(.15,2.76,gz-.2,.72,.65,.65,c.fixed,'主軸サドル'),'tool');
  withGroup(headAxes,()=>box(.15,2.67,gz-.23,.42,.9,.45,c.fixed,'ラム／主軸頭'),'tool');spindle(.15,2.3,gz-.23,headAxes);
  if(cross)withGroup(['Y'],()=>box(0,.82,0,W*.6,.23,D*.6,c.fixed,'サドル'),'work');
- table(W*.57,D*(cross?.43:.65),1.02,0,cross?['X','Y']:gate?[]:['X']);
+ table(m.supportLayout==='irregular'?1.45:W*.57,m.supportLayout==='irregular'?3.20:D*(cross?.43:.65),1.02,0,cross?['X','Y']:gate?[]:['X']);
  }else if(m.kind==='horizontal'){
  [-1,1].forEach(k=>box(0,.7,D*.28+k*.13,W*.86,.12,.1,c.rail));
  withGroup(['X'],()=>{box(0,1.95,D*.29,.95,2.5,.7,c.fixed,'コラム');box(0,2,D*.18,.16,2.0,.12,c.rail);},'tool');
@@ -370,7 +381,7 @@ function render(canvas,m,angle,showLabels,active){
   }
   ctx.setLineDash?.([]);
  }
- if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.195,s.z]));labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda794d':'#ffffff26';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
+ if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.195,s.z]));if(supports.length>8&&i!==active){ctx.beginPath();ctx.arc(p[0],p[1]+10,3,0,Math.PI*2);ctx.fillStyle='#6c604b';ctx.fill();return;}labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda794d':'#ffffff26';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  if(active>=0&&$('showAxes').checked){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
@@ -452,7 +463,7 @@ function buildModeUI(){
  const base=machines.find(m=>m.id===current.id),box=$('machineModeBox');box.hidden=!base.modes;
  const select=$('machineMode');select.replaceChildren();(base.modes||[]).forEach(([value,text])=>{const option=document.createElement('option');option.value=value;option.textContent=text;select.append(option);});select.value=machineMode;
 }
-$('machineMode').onchange=()=>{stopMotion();machineMode=$('machineMode').value;current=displayMachine(machines.find(m=>m.id===current.id));positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;populateMachine();setAxisMenuOpen(false,true);drawScene();};
+$('machineMode').onchange=()=>{const base=machines.find(m=>m.id===current.id);if(!base.modes?.some(([value])=>value===$('machineMode').value))return;stopMotion();machineMode=$('machineMode').value;current=displayMachine(machines.find(m=>m.id===current.id));positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;populateMachine();setAxisMenuOpen(false,true);drawScene();};
 function buildAxisUI(){
  const axes=axisConfig(current);$('axisTabs').replaceChildren();$('axisSliders').replaceChildren();$('drawerAxisSelect').replaceChildren();
  axes.forEach(a=>{const option=document.createElement('option');option.value=a.key;option.textContent=a.key+'軸';$('drawerAxisSelect').append(option);const btn=document.createElement('button');btn.textContent=a.key+'軸';btn.className='axis-tab';btn.style.setProperty('--axis',axisColors[a.key]);btn.setAttribute('aria-pressed',a.key===selectedAxis?'true':'false');btn.onclick=()=>{if(!trainingMenuOpen)selectAxis(a.key);};$('axisTabs').append(btn);

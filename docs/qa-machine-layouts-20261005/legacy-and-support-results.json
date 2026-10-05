@@ -1,0 +1,118 @@
+{
+  "checks": 545,
+  "legacyAccepted": 32,
+  "legacyCompactMigrated": 8,
+  "legacyRejected": 32,
+  "legacyV1Rejected": 32,
+  "legacyV1CompactMigrated": 8,
+  "legacyKeysPreserved": 5,
+  "supportsExercised": 59,
+  "failures": [],
+  "timings": [
+    {
+      "index": 0,
+      "operation": "open",
+      "milliseconds": 29.823819000000185
+    },
+    {
+      "index": 0,
+      "operation": "coarseAdjust raise",
+      "milliseconds": 5.609330000000227
+    },
+    {
+      "index": 0,
+      "operation": "fineAdjust raise",
+      "milliseconds": 16.67312800000036
+    },
+    {
+      "index": 1,
+      "operation": "open",
+      "milliseconds": 45.92503899999974
+    },
+    {
+      "index": 1,
+      "operation": "coarseAdjust raise",
+      "milliseconds": 5.000356000000465
+    },
+    {
+      "index": 1,
+      "operation": "fineAdjust raise",
+      "milliseconds": 28.909805999999662
+    },
+    {
+      "index": 2,
+      "operation": "open",
+      "milliseconds": 61.585322000000815
+    },
+    {
+      "index": 2,
+      "operation": "coarseAdjust raise",
+      "milliseconds": 4.5331439999990835
+    },
+    {
+      "index": 2,
+      "operation": "fineAdjust raise",
+      "milliseconds": 20.991471000001184
+    },
+    {
+      "index": 3,
+      "operation": "open",
+      "milliseconds": 107.32921700000043
+    },
+    {
+      "index": 3,
+      "operation": "coarseAdjust raise",
+      "milliseconds": 12.037669999999707
+    },
+    {
+      "index": 3,
+      "operation": "fineAdjust raise",
+      "milliseconds": 30.064189999999144
+    },
+    {
+      "index": 4,
+      "operation": "open",
+      "milliseconds": 49.413635000000795
+    },
+    {
+      "index": 4,
+      "operation": "coarseAdjust raise",
+      "milliseconds": 5.732124000000113
+    },
+    {
+      "index": 4,
+      "operation": "fineAdjust raise",
+      "milliseconds": 35.00633799999923
+    },
+    {
+      "index": 5,
+      "operation": "open",
+      "milliseconds": 21.914426999999705
+    },
+    {
+      "index": 5,
+      "operation": "coarseAdjust raise",
+      "milliseconds": 4.432033000000956
+    },
+    {
+      "index": 5,
+      "operation": "fineAdjust raise",
+      "milliseconds": 12.42972699999882
+    },
+    {
+      "index": 6,
+      "operation": "open",
+      "milliseconds": 11.754394999999931
+    },
+    {
+      "index": 6,
+      "operation": "coarseAdjust raise",
+      "milliseconds": 1.8414239999983693
+    },
+    {
+      "index": 6,
+      "operation": "fineAdjust raise",
+      "milliseconds": 6.145375000000058
+    }
+  ]
+}

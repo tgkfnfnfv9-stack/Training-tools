@@ -7,30 +7,33 @@ function near(a,b,tolerance=1e-9){assert.ok(Math.abs(a-b)<tolerance,`${a} != ${b
 async function main(){
  const env=createEnvironment({pureLeveling:true}),{registry:r,read,json,storage,context}=env;
  const open=i=>read(`openMachine(machines[${i}])`),preset=t=>context.document.querySelectorAll('[data-preset]').find(b=>b.dataset.preset===t).click();
- const counts=[4,4,6,6,8,3,6];
+ const counts=[4,8,6,24,8,3,6];
  for(let i=0;i<7;i++){
   storage.clear();open(i);
   check(`機種${i}:支持点数`,()=>assert.equal(read('supports.length'),counts[i]));
   check(`機種${i}:初期水平`,()=>{near(read('levelSolution.lr'),0);near(read('levelSolution.fb'),0);assert.equal(r.localLevel.textContent,'0.000 mm/m');});
-  check(`機種${i}:支持面は全支持点を表示`,()=>{const mesh=json('levelSurfaceFaces(current)'),points=json('supports');assert.ok(mesh.length>0);for(const p of points)assert.ok(mesh.some(f=>f.v.some(v=>Math.abs(v[0]-p.x)<1e-10&&Math.abs(v[2]-p.z)<1e-10)));});
+  check(`機種${i}:支持面と全支持点を表示`,()=>{const mesh=json('levelSurfaceFaces(current)'),points=json('supports');assert.ok(mesh.length>0);if(i===3){const faces=json('createGeometry(current).faces');points.forEach((p,index)=>assert(faces.some(f=>f.pose==='support:'+index)));for(const f of mesh)for(const v of f.v)assert(v.every(Number.isFinite));}else for(const p of points)assert.ok(mesh.some(f=>f.v.some(v=>Math.abs(v[0]-p.x)<1e-10&&Math.abs(v[2]-p.z)<1e-10)));});
   r.fineAdjust.click();r.up0.click();check(`機種${i}:高さ＋連動`,()=>{near(read('supportHeights[0]'),.001);assert.equal(r.height0.value,'0.001');assert.ok(read('levelSolution.heightAt(...[levelCoordinates(supports[0].x,supports[0].z).x,levelCoordinates(supports[0].x,supports[0].z).z])')>.0009);});
   r.down0.click();check(`機種${i}:高さ−連動`,()=>near(read('supportHeights[0]'),0));
   check(`機種${i}:中間支持の可否`,()=>assert.equal(r.middlePreset.disabled,counts[i]<=4));
   check(`機種${i}:3点ねじれ無効`,()=>assert.equal(r.twistPreset.disabled,counts[i]===3));
-  preset('right');check(`機種${i}:右高符号`,()=>{assert.ok(read('levelSolution.lr')>0);near(read('levelSolution.fb'),0);assert.ok(parseFloat(r.bubble.style.left)>50);assert.match(r.bubbleText.textContent,/右側/);});
-  preset('front');check(`機種${i}:手前高符号`,()=>{assert.ok(read('levelSolution.fb')<0);near(read('levelSolution.lr'),0);assert.ok(parseFloat(r.bubbleFB.style.left)<50);assert.match(r.bubbleTextFB.textContent,/手前/);});
-  if(counts[i]>3){preset('twist');r.measurePos.change('-1');const front=parseFloat(r.localLevel.textContent);r.measurePos.change('1');check(`機種${i}:位置切替ねじれ`,()=>{assert.ok(front<0);assert.ok(parseFloat(r.localLevel.textContent)>0);assert.ok(read('levelSolution.residual')>.09);});}
+  // Irregular stations are rounded to the 0.001 mm adjustment grid. Their
+  // cross-slope is bounded by that quantization, rather than exactly zero.
+  preset('right');check(`機種${i}:右高符号`,()=>{assert.ok(read('levelSolution.lr')>0);near(read('levelSolution.fb'),0,i===3?.001/read('levelConfig.depth'):1e-9);assert.ok(parseFloat(r.bubble.style.left)>50);assert.match(r.bubbleText.textContent,/右側/);});
+  preset('front');check(`機種${i}:手前高符号`,()=>{assert.ok(read('levelSolution.fb')<0);near(read('levelSolution.lr'),0,i===3?.001/read('levelConfig.width'):1e-9);assert.ok(parseFloat(r.bubbleFB.style.left)<50);assert.match(r.bubbleTextFB.textContent,/手前/);});
+  if(counts[i]>3){preset('twist');r.measurePos.change('-1');const front=parseFloat(r.localLevel.textContent);r.measurePos.change('1');check(`機種${i}:位置切替ねじれ`,()=>{assert.ok(front<0);assert.ok(parseFloat(r.localLevel.textContent)>0);assert.ok(read('levelSolution.residual')>(i===3?0:.09));});}
   else{const before=json('supportHeights');preset('twist');check(`機種${i}:無効プリセット無変更`,()=>assert.deepEqual(json('supportHeights'),before));}
-  if(counts[i]>4){preset('middle');check(`機種${i}:全方向の中間支持反映`,()=>{assert.ok(read('supportHeights.some(h=>h===.15)'));assert.ok(read('levelSolution.residual')>.04);assert.ok(!r.diagnosis.textContent.includes('目標内'));assert.ok(read('levelSurfaceFaces(current).some(f=>f.height>.1)'));});}
+  if(counts[i]>4){preset('middle');check(`機種${i}:全方向の中間支持反映`,()=>{assert.ok(read('supportHeights.some(h=>h===.15)'));assert.ok(read('levelSolution.residual')>(i===3?0:.04));assert.ok(!r.diagnosis.textContent.includes('目標内'));assert.ok(read('levelSurfaceFaces(current).some(f=>f.height>.1)'));});}
   r.zero.click();check(`機種${i}:リセット`,()=>{assert.ok(read('supportHeights.every(h=>h===0)'));near(read('levelSolution.residual'),0);near(read('levelSolution.twist'),0);assert.ok(r.diagnosis.textContent.includes('目標内'));});
  }
+ // Pure-support save checks use an unchanged machine: new layouts require a real intrinsic profile.
  // 機械を選び直しても自動保存した高さと寸法が復元する。
- storage.clear();open(0);r.up0.click();r.supportWidth.change('5');const saved=json('levelRecord()');open(1);open(0);
+ storage.clear();open(2);r.up0.click();r.supportWidth.change('5');const saved=json('levelRecord()');open(1);open(2);
  check('機械別自動保存復元',()=>{assert.deepEqual(json('levelRecord()'),saved);assert.match(r.levelSaveStatus.textContent,/復元/);});
- for(const [machine,mode,kind,count] of [[0,'compact','compact',4],[3,'cross','portal',4],[3,'long','double',6]]){
-  open(machine);r.machineMode.change(mode);check(`方式${mode}:機構・支持点更新`,()=>{assert.equal(read('current.kind'),kind);assert.equal(read('supports.length'),count);assert.ok(Number.isFinite(read('levelSolution.lr')));});
+ for(const [machine,mode,kind,count] of [[0,'compact','compact',4],[1,'','horizontal',8],[3,'l3-3000','double',24]]){
+  open(machine);check(`機種${mode}:単一方式と支持点`,()=>{assert.equal(read('machineMode'),mode);assert(r.machineModeBox.hidden);assert.equal(read('current.kind'),kind);assert.equal(read('supports.length'),count);assert.ok(Number.isFinite(read('levelSolution.lr')));});
  }
- storage.clear();open(0);
+ storage.clear();open(2);
  r.adjustStep.change('0.1');r.up0.click();check('調整量切替',()=>near(read('supportHeights[0]'),.1));
  for(let n=0;n<8;n++)r.up0.click();check('＋上限制限',()=>{near(read('supportHeights[0]'),.5);assert.equal(r.up0.disabled,true);});
  for(let n=0;n<12;n++)r.down0.click();check('−下限制限',()=>{near(read('supportHeights[0]'),-.5);assert.equal(r.down0.disabled,true);});
@@ -83,21 +86,21 @@ async function main(){
  check('誇張は数値計算を変えない',()=>{assert.deepEqual(json('[levelSolution.lr,levelSolution.fb,levelSolution.twist,levelSolution.residual]'),metrics);assert.deepEqual(json('levelGeometry.pairs'),accuracy);assert.ok(Math.abs(raised[1]-1)>Math.abs(json('levelVisualPoint([current.w*.4,1,0])')[1]-1));});
  r.showLevelSurface.checked=false;r.showLevelSurface.onchange();check('支持面の表示切替は計算値を変えない',()=>{assert.equal(read('levelSurfaceFaces(current).length'),0);assert.deepEqual(json('[levelSolution.lr,levelSolution.fb,levelSolution.twist,levelSolution.residual]'),metrics);});r.showLevelSurface.checked=true;r.showLevelSurface.onchange();
  r.startLevelExercise.click();check('調整問題は目標外から開始',()=>assert.equal(read('levelExercise.solved'),false));
- for(let i=0;i<counts[0];i++)r['height'+i].change('0');check('手動調整で練習達成',()=>{assert.equal(read('levelExercise.solved'),true);assert.match(r.levelExerciseStatus.textContent,/達成/);});
+ for(let i=0;i<counts[2];i++)r['height'+i].change('0');check('手動調整で練習達成',()=>{assert.equal(read('levelExercise.solved'),true);assert.match(r.levelExerciseStatus.textContent,/達成/);});
  storage.clear();open(5);r.supportWidth.change('20');r.supportDepth.change('20');read('Math.random=()=>.5');r.startLevelExercise.click();
  check('3点・最大寸法でも問題は目標外',()=>assert.equal(read('levelExercise.solved'),false));
- storage.clear();open(0);r.height0.change('0.2');const original=json('levelRecord()');
- const mutations=[r=>r.version=2,r=>r.machine='lathe',r=>r.mode='compact',r=>r.width='2',r=>r.depth=.49,r=>r.width=20.01,r=>r.heights.pop(),r=>r.heights[0]=.51,r=>r.heights[0]=null,r=>r.sensitivity=.03,r=>r.measurePos=.5,r=>r.offset=2.01,r=>r.step=.03,r=>r.exaggerate='false'];
+ storage.clear();open(2);r.height0.change('0.2');const original=json('levelRecord()');
+ const mutations=[r=>r.version=2,r=>r.machine='lathe',r=>r.mode='standard',r=>r.width='2',r=>r.depth=.49,r=>r.width=20.01,r=>r.heights.pop(),r=>r.heights[0]=.51,r=>r.heights[0]=null,r=>r.sensitivity=.03,r=>r.measurePos=.5,r=>r.offset=2.01,r=>r.step=.03,r=>r.exaggerate='false'];
  async function importData(data,size=100){r.importLevel.files=[{size,text:async()=>typeof data==='string'?data:JSON.stringify(data)}];await r.importLevel.onchange({target:r.importLevel});}
  for(let i=0;i<mutations.length;i++){const invalid=structuredClone(original);mutations[i](invalid);await importData(invalid);check('無効JSON拒否 '+i,()=>{assert.deepEqual(json('levelRecord()'),original);assert.match(r.levelInputMessage.textContent,/読込できません/);});}
  await importData('{broken');check('不正JSON拒否',()=>assert.deepEqual(json('levelRecord()'),original));
  await importData(original,250001);check('大きすぎるJSON拒否',()=>assert.deepEqual(json('levelRecord()'),original));
  const precise=structuredClone(original);precise.heights[0]=.123;await importData(precise);
  check('JSON値と表示値の桁が矛盾しない',()=>near(read('supportHeights[0]'),Number(r.height0.value)));
- const valid=structuredClone(original);valid.width=4;valid.depth=5;valid.heights=[.1,-.1,.2,-.2];valid.sensitivity=.1;valid.measurePos=-1;valid.offset=1.5;valid.step=.05;valid.exaggerate=false;
+ const valid=structuredClone(original);valid.width=4;valid.depth=5;valid.heights=[.1,-.1,.2,-.2,.05,-.05];valid.sensitivity=.1;valid.measurePos=-1;valid.offset=1.5;valid.step=.05;valid.exaggerate=false;
  typeHeight(0,'.333');await importData(valid);check('有効JSONのみ反映して編集中の欄も全同期',()=>{assert.deepEqual(json('levelRecord()'),valid);assert.match(r.levelInputMessage.textContent,/読み込みました/);synchronized();assert.equal(r.height0.value,'0.100');});
  const bodyBeforeExport=[...env.body.children];
- r.exportLevel.click();check('JSONダウンロード開始はlive DOMの非表示リンクから行う',()=>{assert.equal(env.downloads.length,1);assert.match(env.downloads[0].download,/leveling-vertical-standard\.json/);assert.equal(env.downloads[0].connected,true);assert.equal(env.downloads[0].hidden,true);assert.deepEqual(env.body.children,bodyBeforeExport);assert.match(r.levelSaveStatus.textContent,/開始しました/);});
+ r.exportLevel.click();check('JSONダウンロード開始はlive DOMの非表示リンクから行う',()=>{assert.equal(env.downloads.length,1);assert.match(env.downloads[0].download,/leveling-travel-standard\.json/);assert.equal(env.downloads[0].connected,true);assert.equal(env.downloads[0].hidden,true);assert.deepEqual(env.body.children,bodyBeforeExport);assert.match(r.levelSaveStatus.textContent,/開始しました/);});
  const exported=JSON.parse(await context.exportedBlob.text());check('エクスポート内容一致',()=>assert.deepEqual(exported,valid));
  check('エクスポートURLは即解放せず30秒保持',()=>{assert.equal(context.revokedUrl,undefined);assert.equal(env.timerDelays.at(-1),30000);});
  env.timers.forEach(fn=>fn());check('エクスポートURL解放',()=>assert.equal(context.revokedUrl,'blob:test'));
@@ -122,7 +125,7 @@ async function main(){
  r.exportLevel.click();check('失敗後にも正常な書出しを再試行できる',()=>{assert.match(r.levelSaveStatus.textContent,/開始しました/);assert.deepEqual(env.body.children,bodyBeforeExport);assert.equal(env.timerDelays.at(-1),30000);});
  const oldSetter=context.localStorage.setItem;context.localStorage.setItem=()=>{throw new Error('Storage denied');};r.up0.click();
  check('保存不可でも操作継続',()=>{assert.match(r.levelSaveStatus.textContent,/自動保存できません/);assert.ok(Number.isFinite(read('levelSolution.lr')));});context.localStorage.setItem=oldSetter;
- storage.set(read('levelKey()'),'{bad JSON');open(0);check('壊れた自動保存を安全に無視',()=>assert.ok(read('supportHeights.every(h=>h===0)')));
- if(failures.length){console.error(`${checks} checks run; ${failures.length} failed:\n`+failures.join('\n'));process.exitCode=1;}else console.log(`Leveling UI: ${checks} checks passed (7 machines, 2 extra modes, controls, exercise, save/import/export).`);
+ storage.set(read('levelKey()'),'{bad JSON');open(2);check('壊れた自動保存を安全に無視',()=>assert.ok(read('supportHeights.every(h=>h===0)')));
+ if(failures.length){console.error(`${checks} checks run; ${failures.length} failed:\n`+failures.join('\n'));process.exitCode=1;}else console.log(`Leveling UI: ${checks} checks passed (7 machines, single-model selections, controls, exercise, save/import/export).`);
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});
