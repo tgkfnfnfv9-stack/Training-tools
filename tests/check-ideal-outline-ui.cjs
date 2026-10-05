@@ -49,7 +49,7 @@ const longest=paints=>Math.max(...segments(paints).map(([a,b])=>Math.hypot(a[0]-
 const near=(a,b)=>assert(Math.abs(a-b)<1e-8,`${a} != ${b}`);
 check('default-on comparison control remains in independently scrollable controls',()=>{
  assert(r.showIdealOutline?.checked);assert.equal(typeof r.showIdealOutline.onchange,'function');
- const row=r.showIdealOutline.closest('#idealComparison');assert(row);assert.equal(row.parentElement,r.trainingControls);assert.equal(row,r.trainingControls.children[0]);
+ const row=r.showIdealOutline.closest('#idealComparison');assert(row);assert.equal(row.parentElement,r.modelDisplaySettings);assert.equal(row.closest('#trainingControls'),r.trainingControls);assert.equal(r.modelDisplaySettings,r.trainingControls.children[0]);
  assert.equal(r.showIdealOutline.closest('.pinned-visual'),null);assert.equal(r.showIdealOutline.closest('#sceneToolbar'),null);
  assert(row.querySelectorAll('label').some(label=>label.getAttribute('for')==='showIdealOutline'||r.showIdealOutline.closest('label')===label),'checkbox needs an associated clickable label');
  assert.match(row.textContent,/理想/);assert.match(row.textContent,/破線/);

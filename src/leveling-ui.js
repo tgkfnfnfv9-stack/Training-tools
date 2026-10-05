@@ -100,8 +100,8 @@ function updateLevelStages(machineResult=null,target=false){
  const averageLevel=Math.max(Math.abs(levelSolution.lr),Math.abs(levelSolution.fb)),coarse=averageLevel<=.020000001;
  adjustmentStage=Number($('adjustStep').value)>=.01?'coarse':'fine';
  $('coarsePanel').hidden=adjustmentStage!=='coarse';$('finePanel').hidden=adjustmentStage!=='fine';
- $('supportPhaseTitle').textContent=adjustmentStage==='coarse'?'粗調整で支持点を動かす':'精調整で支持点を少し動かす';
- $('stageStatus').textContent=coarse?'平均レベルの目安内 · 精調整へ':'まず平均の傾きを整える';
+ $('supportPhaseTitle').textContent=adjustmentStage==='coarse'?'粗調整で支持点を動かす':'微調整で支持点を少し動かす';
+ $('stageStatus').textContent=coarse?'平均レベルの目安内 · 微調整へ':'まず平均の傾きを整える';
  $('stageStatus').className='stage-status'+(coarse?' within':'');
  $('stageAverageLR').textContent=Math.abs(levelSolution.lr)<=.020000001?'目安内':levelSolution.lr>0?'右が高い':'左が高い';
  $('stageAverageFB').textContent=Math.abs(levelSolution.fb)<=.020000001?'目安内':levelSolution.fb>0?'奥が高い':'手前が高い';
@@ -115,21 +115,21 @@ function updateLevelStages(machineResult=null,target=false){
  // Positive front/back slope is high at the back: the vertical bubble moves up.
  $('coarseBubbleFB').style.setProperty('--bubble-position',(50-bubbleOffset(levelSolution.fb))+'%');
  const significant=machineProfile&&Math.max(...accuracyRange.flatMap(s=>s.geometry.pairs.map(p=>Math.abs(p.deviationMicroradians*.3))),...Object.values(machineProfile.guides).map(g=>g.microns))>20.000001;
- $('fineStatus').textContent=target?(significant?'支持姿勢の調整目安内。残る誤差も確認':'精調整の目安内。本体や支持姿勢に残る誤差を確認'):'直角と姿勢を見ながら精調整';
+ $('fineStatus').textContent=target?(significant?'支持姿勢の調整目安内。残る誤差も確認':'微調整の目安内。本体や支持姿勢に残る誤差を確認'):'直角と姿勢を見ながら微調整';
  $('fineStatus').setAttribute('data-target',String(target));$('fineStatus').setAttribute('data-body-significant',String(!!significant));if(machineResult)$('fineStatus').setAttribute('data-gap',String(machineResult.gap));
  $('fineStatus').className='stage-status'+(target&&!significant?' within':'');
- $('fineAverageNotice').textContent=coarse?'平均の傾きは粗調整の目安内です。精調整では直角と姿勢を整えるため、平均の傾きが少し動く場合があります。':'平均の傾きが粗調整の目安から外れています。精調整では直角と姿勢との釣り合いも見ます。必要なら粗調整に戻って比較してください。';
+ $('fineAverageNotice').textContent=coarse?'平均の傾きは粗調整の目安内です。微調整では直角と姿勢を整えるため、平均の傾きが少し動く場合があります。':'平均の傾きが粗調整の目安から外れています。微調整では直角と姿勢との釣り合いも見ます。必要なら粗調整に戻って比較してください。';
  $('fineExample').disabled=$('applyBestLevel').disabled;
  const progress=$('fineOverallProgress');
  if(fineStartEvaluation?.key!==adjustmentContextKey())fineStartEvaluation=null;
  const currentScore=machineEvaluation(supportHeights).objective;
  if(fineStartEvaluation){
   const delta=currentScore-fineStartEvaluation.objective,trend=delta < -1e-8?'better':delta>1e-8?'worse':'similar';
-  progress.textContent='精調整を始めた状態からの総合評価：'+(trend==='better'?'良くなりました':trend==='worse'?'悪くなっています':'ほぼ同じです')+'。初期からの直角図とは別に、代表位置全体の直角と姿勢を比べます。';
+  progress.textContent='微調整を始めた状態からの総合評価：'+(trend==='better'?'良くなりました':trend==='worse'?'悪くなっています':'ほぼ同じです')+'。初期からの直角図とは別に、代表位置全体の直角と姿勢を比べます。';
   progress.setAttribute('data-before',String(fineStartEvaluation.objective));progress.setAttribute('data-current',String(currentScore));progress.setAttribute('data-delta',String(delta));progress.setAttribute('data-trend',trend);
- }else{progress.textContent='精調整開始時の比較基準はまだありません。代表位置全体の直角と姿勢を総合して調整の目安を確認します。';for(const name of ['before','current','delta','trend'])progress.setAttribute('data-'+name,'');}
+ }else{progress.textContent='微調整開始時の比較基準はまだありません。代表位置全体の直角と姿勢を総合して調整の目安を確認します。';for(const name of ['before','current','delta','trend'])progress.setAttribute('data-'+name,'');}
  const supportStatus=$('supportStageStatus');
- supportStatus.textContent=adjustmentStage==='coarse'?'粗調整 · '+(coarse?'平均の目安内':'平均の傾き調整中'):'精調整 · '+(target?(significant?'目安内・残る誤差':'調整の目安内'):'直角と姿勢を調整中');
+ supportStatus.textContent=adjustmentStage==='coarse'?'粗調整 · '+(coarse?'平均の目安内':'平均の傾き調整中'):'微調整 · '+(target?(significant?'目安内・残る誤差':'調整の目安内'):'直角と姿勢を調整中');
  supportStatus.setAttribute('data-stage',adjustmentStage);supportStatus.setAttribute('data-ready',String(adjustmentStage==='coarse'?coarse:target));
  updateAdjustmentHint(coarse,target);
 }
@@ -146,10 +146,10 @@ function updateAdjustmentHint(coarse,target){
  }
  const hint=$(adjustmentStage==='coarse'?'coarseHint':'fineHint'),best=adjustmentHintValue;
  hint.setAttribute('data-support',best?String(best.i):'');hint.setAttribute('data-direction',best?String(best.direction):'');for(const [name,value] of [['before-score',best?.before],['after-score',best?.after],['step',best?.step]])hint.setAttribute('data-'+name,value===undefined?'':String(value));
- hint.textContent=adjustmentStage==='coarse'&&coarse?'平均の傾きが揃いました。精調整へ切り替え、本体や支持姿勢に残る誤差を見ます。':adjustmentStage==='fine'&&target?'この個体の調整目安に近づきました。直角の変化と、本体や支持姿勢に残る誤差を確認します。':best?String.fromCharCode(65+best.i)+'を少し'+(best.direction>0?'上げる':'下げる')+'方向を試せます。'+(adjustmentStage==='fine'?'代表位置全体の総合評価が良くなる候補です。今の位置の各直角がすべて改善するとは限りません。':'平均の傾きが小さくなる候補です。'):'単独の支持点を少し動かすだけでは改善する候補がありません。複数の支持点の関係を見直すか、調整例を試してください。';
+ hint.textContent=adjustmentStage==='coarse'&&coarse?'平均の傾きが揃いました。微調整へ切り替え、本体や支持姿勢に残る誤差を見ます。':adjustmentStage==='fine'&&target?'この個体の調整目安に近づきました。直角の変化と、本体や支持姿勢に残る誤差を確認します。':best?String.fromCharCode(65+best.i)+'を少し'+(best.direction>0?'上げる':'下げる')+'方向を試せます。'+(adjustmentStage==='fine'?'代表位置全体の総合評価が良くなる候補です。今の位置の各直角がすべて改善するとは限りません。':'平均の傾きが小さくなる候補です。'):'単独の支持点を少し動かすだけでは改善する候補がありません。複数の支持点の関係を見直すか、調整例を試してください。';
  // Keep the support-card reminder short while the full lesson stays above.
  const reminder=$('supportStageHint'),ready=adjustmentStage==='coarse'?coarse:target,mode=ready?'goal':best?'candidate':'stalled';
- reminder.textContent=ready?(adjustmentStage==='coarse'?'精調整へ。残る誤差を確認':'初期との差・残る誤差を確認'):best?String.fromCharCode(65+best.i)+'を少し'+(best.direction>0?'上げる':'下げる')+'方向へ':'単独候補なし · 参考例を比較';
+ reminder.textContent=ready?(adjustmentStage==='coarse'?'微調整へ。残る誤差を確認':'初期との差・残る誤差を確認'):best?String.fromCharCode(65+best.i)+'を少し'+(best.direction>0?'上げる':'下げる')+'方向へ':'単独候補なし · 参考例を比較';
  reminder.setAttribute('data-mode',mode);reminder.setAttribute('data-support',mode==='candidate'?String(best.i):'');reminder.setAttribute('data-direction',mode==='candidate'?String(best.direction):'');
 }
 // The input shows what the learner has moved, while the solver and saved
@@ -176,6 +176,9 @@ function levelSurfaceFaces(m){
 function refreshSupportControls(editingIndex=-1){
  supports.forEach((s,i)=>{const input=$('height'+i);if(!input)return;if(i!==editingIndex)input.value=cleanNumber(supportAdjustment(i),3);input.setAttribute('min',String(-.5-supportBaseline(i)));input.setAttribute('max',String(.5-supportBaseline(i)));input.closest('.support-row').classList.toggle('selected',selected===i);$('supportState'+i).textContent=supportAdjustment(i)>0?'上げた':supportAdjustment(i)<0?'下げた':'未調整';$('down'+i).disabled=supportHeights[i]<=-.5+1e-9;$('up'+i).disabled=supportHeights[i]>=.5-1e-9;});
  $('supportMap').querySelectorAll('.map-point').forEach((b,i)=>{const index=Number(b.dataset.support);b.classList.toggle('active',index===selected);b.setAttribute('aria-pressed',String(index===selected));});
+ const support=supports[selected];$('selectedSupportLabel').textContent=support?'支持点 '+String.fromCharCode(65+selected)+'・'+support.name:'';
+ $('lowerSupport').disabled=!support||supportHeights[selected]<=-.5+1e-9;$('raiseSupport').disabled=!support||supportHeights[selected]>=.5-1e-9;
+ $('lowerSupport').setAttribute('aria-label',support?String.fromCharCode(65+selected)+'・'+support.name+'を下げる':'支持点を下げる');$('raiseSupport').setAttribute('aria-label',support?String.fromCharCode(65+selected)+'・'+support.name+'を上げる':'支持点を上げる');
 }
 function setSupportHeight(i,value,editing=false){
  invalidateLevelImport();stopMotion();
@@ -240,9 +243,10 @@ function applyLevelPreset(type){
 $('zero').onclick=()=>{invalidateLevelImport();stopMotion();supportHeights=supports.map(()=>0);levelExercise=null;$('levelInputMessage').textContent='全支持点を同じ高さへ揃えました。各欄は初期からの上げ下げを示します。';updateLeveling();};
 document.querySelectorAll('[data-preset]').forEach(b=>b.onclick=()=>applyLevelPreset(b.dataset.preset));
 $('measurePos').onchange=()=>updateLeveling();$('levelSensitivity').onchange=()=>updateLeveling();$('exaggerate').onchange=()=>updateLeveling();$('showLevelSurface').onchange=()=>drawScene();$('adjustStep').onchange=()=>updateLeveling();
-for(const [id,value] of [['coarseAdjust',.01],['fineAdjust',.001]])$(id).onclick=()=>{stopMotion();if(value===.001&&adjustmentStage==='coarse')captureFineStart();$('adjustStep').value=String(value);$('levelInputMessage').textContent=(value===.01?'粗調整':'精調整')+'へ切り替えました。同じ個体と支持点で続けます。';updateLeveling();$('trainingControls').scrollTop=0;};
+for(const [id,value] of [['coarseAdjust',.01],['fineAdjust',.001]])$(id).onclick=()=>{if(trainingMenuOpen)return;stopMotion();if(value===.001&&adjustmentStage==='coarse')captureFineStart();$('adjustStep').value=String(value);$('levelInputMessage').textContent=(value===.01?'粗調整':'微調整')+'へ切り替えました。同じ個体と支持点で続けます。';updateLeveling();};
+for(const [id,direction] of [['lowerSupport',-1],['raiseSupport',1]])$(id).onclick=()=>{if(trainingMenuOpen||$(id).disabled)return;stopMotion();const step=adjustmentStage==='coarse'?.01:.001;$('adjustStep').value=String(step);changeSupportHeight(selected,direction*step);};
 $('coarseExample').onclick=()=>{$('zero').onclick();$('levelInputMessage').textContent='粗調整の手本を適用しました。支持点を同じ高さへ揃えた例です。次は残る直角と姿勢を見ます。';};
-$('fineExample').onclick=()=>{$('applyBestLevel').onclick();$('levelInputMessage').textContent='精調整の参考例を適用しました。実際の支持高さを変えた手本です。本体や支持姿勢に残る誤差も見比べてください。';};
+$('fineExample').onclick=()=>{$('applyBestLevel').onclick();$('levelInputMessage').textContent='微調整の参考例を適用しました。実際の支持高さを変えた手本です。本体や支持姿勢に残る誤差も見比べてください。';};
 for(const [id,key,min,max] of [['supportWidth','width',.5,20],['supportDepth','depth',.5,20]]){const apply=()=>{invalidateLevelImport();const value=Number($(id).value);if(!bounded(value,min,max))return false;levelConfig[key]=value;$('levelInputMessage').textContent='支持寸法を更新しました。';updateLeveling();return true;};$(id).oninput=apply;$(id).onchange=()=>{if(!apply()){$(id).value=levelConfig[key];$('levelInputMessage').textContent='支持幅は0.50〜20.00 mで入力してください。';}};}
 $('impactOffset').oninput=()=>{invalidateLevelImport();const value=Number($('impactOffset').value);if(bounded(value,.1,2)){levelConfig.offset=value;updateLeveling();}};
 $('impactOffset').onchange=()=>{const value=Number($('impactOffset').value);if(!bounded(value,.1,2)){$('impactOffset').value=levelConfig.offset;$('levelInputMessage').textContent='評価長は0.10〜2.00 mです。直前の有効値へ戻しました。';}else levelConfig.offset=value;updateLeveling();};

@@ -20,7 +20,7 @@ function visibleText(el){
 function visibleElements(el,out=[]){if(el.hidden)return out;out.push(el);for(const child of el.children)visibleElements(child,out);return out;}
 function compactCoach(){
  const coarse=read('adjustmentStage')==='coarse',hint=coarse?r.coarseHint:r.fineHint,ready=(coarse?r.stageStatus.getAttribute('data-coarse-ready'):r.fineStatus.getAttribute('data-target'))==='true';
- assert.equal(r.supportStageStatus.getAttribute('data-stage'),coarse?'coarse':'fine');assert.equal(r.supportStageStatus.getAttribute('data-ready'),String(ready));assert.match(r.supportStageStatus.textContent,coarse?/粗調整/:/精調整/);
+ assert.equal(r.supportStageStatus.getAttribute('data-stage'),coarse?'coarse':'fine');assert.equal(r.supportStageStatus.getAttribute('data-ready'),String(ready));assert.match(r.supportStageStatus.textContent,coarse?/粗調整/:/微調整/);
  const reminder=r.supportStageHint,mode=ready?'goal':hint.getAttribute('data-support')!==''?'candidate':'stalled';assert.equal(reminder.getAttribute('data-mode'),mode);assert.ok(reminder.textContent.length<=20);assert.ok(r.supportStageStatus.textContent.length<=20);
  if(mode==='candidate'){assert.equal(reminder.getAttribute('data-support'),hint.getAttribute('data-support'));assert.equal(reminder.getAttribute('data-direction'),hint.getAttribute('data-direction'));assert.match(reminder.textContent,new RegExp(String.fromCharCode(65+Number(hint.getAttribute('data-support')))+'を少し'+(Number(hint.getAttribute('data-direction'))>0?'上げる':'下げる')));}
  else{assert.equal(reminder.getAttribute('data-support'),'');assert.equal(reminder.getAttribute('data-direction'),'');assert.match(reminder.textContent,mode==='goal'?/残る誤差/:/単独候補なし/);}

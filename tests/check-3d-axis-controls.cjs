@@ -15,10 +15,12 @@ check('Canvas is separate from the fixed axis bar and scrolling axis menu',()=>{
  assert.equal(r.sceneToolbar.parentElement,r.sceneViewport.parentElement);
  const viewerChildren=r.sceneViewport.parentElement.children;
  assert(viewerChildren.indexOf(r.sceneToolbar)>viewerChildren.indexOf(r.sceneViewport));
- for(const id of ['axisTabs','axisControlsToggle'])assert.equal(r[id].closest('#sceneToolbar'),r.sceneToolbar,id);
- assert.equal(r.axisMenu.parentElement,r.trainingControls);
- assert.equal(r.trainingControls.children[0],r.idealComparison);
- assert.equal(r.trainingControls.children[1],r.axisMenu);
+ assert.equal(r.axisTabs.closest('#sceneToolbar'),r.sceneToolbar);
+ assert.equal(r.axisControlsToggle.closest('#trainingControls'),r.trainingControls);assert(r.axisControlsToggle.hidden);
+ assert.equal(r.axisMenu.parentElement,r.axisMenuSection);
+ assert.equal(r.trainingControls.children[0],r.modelDisplaySettings);
+ assert.equal(r.idealComparison.parentElement,r.modelDisplaySettings);
+ assert.equal(r.trainingControls.children[1],r.axisMenuSection);
  assert.equal(r.showIdealOutline.closest('#sceneToolbar'),null);
  for(const id of ['axisMenu','playAxis','resetAxes','axisSliders','machineMode']){assert.equal(r[id].closest('#trainingControls'),r.trainingControls,id);assert.equal(r[id].closest('#sceneViewport'),null,id);}
  assert.equal(r.sceneViewport.closest('.pinned-visual').parentElement.closest('#training'),r.training);
@@ -42,7 +44,7 @@ check('reference directions have their own wrapping area in the scrolling settin
  assert.match(css,/\.orientation-axis\{[^}]*min-width:0;max-width:100%;height:auto/);
 });
 let focused=null;
-for(const el of [r.closeAxisControls,r.axisControlsToggle])el.focus=options=>{assert.equal(options.preventScroll,true);focused=el;};
+for(const el of [r.closeTrainingMenu,r.openTrainingMenu])el.focus=options=>{assert.equal(options.preventScroll,true);focused=el;};
 const pending=new Map();let sequence=0;
 context.requestAnimationFrame=fn=>{pending.set(++sequence,fn);return sequence;};
 context.cancelAnimationFrame=id=>pending.delete(id);
@@ -61,7 +63,7 @@ for(const [index,mode] of layouts){
   assert.deepEqual(r.axisTabs.children.map(b=>b.textContent),keys.map(k=>k+'軸'));
   assert.deepEqual(json('axisIndicators(current,createGeometry(current)).map(a=>a.key)'),keys);
   assert.equal(r.machineModeBox.hidden,!read('machines.find(m=>m.id===current.id).modes'));
-  assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');
+  assert(r.trainingDrawer.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');
  });
  for(const key of keys){
   const before=json('levelRecord()');paths=[];texts=[];read(`selectAxis('${key}')`);
@@ -73,9 +75,9 @@ for(const [index,mode] of layouts){
    assert.equal(r.axisMenuTitle.textContent,key+'軸の操作');assert.deepEqual(json('levelRecord()'),before);
   });
   r.trainingControls.scrollTop=900;r.axisControlsToggle.click();
-  check('menu opens inside its scrolled pane without resetting precision '+index+' '+mode+' '+key,()=>{assert(!r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'true');assert.equal(r.trainingControls.scrollTop,0);assert.equal(focused,r.closeAxisControls);assert.deepEqual(json('levelRecord()'),before);});
+  check('menu opens inside its scrolled pane without resetting precision '+index+' '+mode+' '+key,()=>{assert(!r.trainingDrawer.hidden);assert(r.axisMenuSection.open);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'true');assert.equal(r.trainingControls.scrollTop,0);assert.equal(focused,r.closeTrainingMenu);assert.deepEqual(json('levelRecord()'),before);});
   r.axisMenu.events.keydown({key:'Escape',preventDefault(){}});
-  check('Escape closes the selected-axis menu '+index+' '+mode+' '+key,()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.axisControlsToggle);});
+  check('Escape closes the selected-axis menu '+index+' '+mode+' '+key,()=>{assert(r.trainingDrawer.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.openTrainingMenu);});
  }
  const linearKeys=keys.filter(k=>['X','Y','Z'].includes(k));
  check('reference axes are separate while actual motion arrows stay on the model '+index+' '+mode,()=>{
@@ -127,16 +129,17 @@ for(const angle of [-90,0,75]){
 }
 read('openMachine(machines[0])');pending.clear();
 r.axisControlsToggle.click();r.closeAxisControls.click();
-check('explicit close restores toolbar focus',()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.axisControlsToggle);});
+check('explicit close restores main menu trigger focus',()=>{assert(r.trainingDrawer.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.openTrainingMenu);});
 r.axisControlsToggle.click();r.scene.setPointerCapture=()=>{};
+const yawWithMenu=read('yaw');
 r.scene.events.pointerdown({isPrimary:true,button:0,pointerId:1,clientX:40,clientY:40});
-check('model drag dismisses the controls menu',()=>assert(r.axisMenu.hidden));r.scene.events.pointerup({pointerId:1});
+check('open settings prevent background model gestures',()=>{assert(!r.trainingDrawer.hidden);assert(r.trainingMain.inert);assert.equal(read('scenePointers.size'),0);assert.equal(read('yaw'),yawWithMenu);});r.scene.events.pointerup({pointerId:1});r.closeTrainingMenu.click();
 r.axisControlsToggle.click();r.playAxis.click();
-check('demo starts with visible toolbar focus',()=>{assert(r.axisMenu.hidden);assert.equal(focused,r.axisControlsToggle);assert.equal(r.playAxis.getAttribute('aria-pressed'),'true');assert.match(r.axisDemoStatus.textContent,/X軸/);});
+check('demo starts with visible main trigger focus',()=>{assert(r.trainingDrawer.hidden);assert.equal(focused,r.openTrainingMenu);assert.equal(r.playAxis.getAttribute('aria-pressed'),'true');assert.match(r.axisDemoStatus.textContent,/X軸/);});
 tick(0);tick(875);check('demo changes the selected part position',()=>assert(read('positions.X')>80));tick(3500);
 check('single demo ends, keeps precision comparison live and saves center',()=>{assert.equal(read('motionFrame'),null);assert.equal(read('positions.X'),0);assert.equal(r.playAxis.getAttribute('aria-pressed'),'false');assert.equal(json('levelRecord()').axisPositions.X,0);assert(Number.isFinite(Number(r['accuracy-current-XZ'].getAttribute('data-value'))));});
 r.axisControlsToggle.click();r.machineMode.change('compact');
-check('mode change closes the controls menu and restores toolbar focus',()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.axisControlsToggle);assert.equal(read('machineMode'),'compact');});
+check('mode change closes the controls menu and restores main trigger focus',()=>{assert(r.trainingDrawer.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.openTrainingMenu);assert.equal(read('machineMode'),'compact');});
 r.axisControlsToggle.click();read("navigate('catalog')");
-check('leaving closes the controls menu',()=>{assert(r.axisMenu.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');});
+check('leaving closes the controls menu',()=>{assert(r.trainingDrawer.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');});
 console.log('3D axis controls: '+checks+' checks passed.');

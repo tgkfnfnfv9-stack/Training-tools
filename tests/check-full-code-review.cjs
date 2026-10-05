@@ -87,7 +87,7 @@ async function main(){
  // CSS guards and DOM separation are checked here; actual device layout still
  // requires a browser and is not claimed by these no-browser checks.
  const css=fs.readFileSync('src/style.css','utf8');
- check('mobile lesson uses separate fixed picture and scrolling control areas',()=>{assert.match(css,/body\.in-lab\{height:100vh;height:100dvh;overflow:hidden/);assert.match(css,/body\.in-lab \.scroll-controls\{[^}]*overflow-y:auto/);assert.match(css,/orientation:landscape/);assert.equal(r.scene.closest('.pinned-visual').parentElement,r.trainingControls.parentElement);assert.equal(r.scene.closest('.scroll-controls'),null);});
+ check('mobile lesson uses separate fixed picture and scrolling control areas',()=>{assert.match(css,/body\.in-lab\{height:100vh;height:100dvh;overflow:hidden/);assert.match(css,/body\.in-lab \.scroll-controls\{[^}]*overflow-y:auto/);assert.match(css,/orientation:landscape/);assert.equal(r.scene.closest('#trainingMain'),r.trainingMain);assert.equal(r.mainAdjustment.closest('#trainingMain'),r.trainingMain);assert.equal(r.trainingControls.closest('#trainingDrawer'),r.trainingDrawer);assert.equal(r.scene.closest('.scroll-controls'),null);});
 
  // Seed the user-facing profiles deterministically so this integration suite
  // verifies the same identities and JSON shapes on every run.
