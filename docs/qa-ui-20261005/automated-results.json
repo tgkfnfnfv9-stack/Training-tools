@@ -1,0 +1,184 @@
+[
+  {
+    "test": "tests/check-3d-axis-controls.cjs",
+    "exit": 0,
+    "seconds": 13.51,
+    "stdout": "3D axis controls: 172 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-accuracy-engine.cjs",
+    "exit": 0,
+    "seconds": 0.06,
+    "stdout": "Accuracy engine: 73 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-accuracy-render.cjs",
+    "exit": 0,
+    "seconds": 17.39,
+    "stdout": "Accuracy Canvas: 425 rendered frames, 973928 finite drawing operations passed (3 sizes, 7 machines, 2 extra modes).\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-accuracy-review.cjs",
+    "exit": 0,
+    "seconds": 0.62,
+    "stdout": "Accuracy review: 84 independent checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-adjustment-flow.cjs",
+    "exit": 0,
+    "seconds": 5.88,
+    "stdout": "Adjustment flow: 189 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-canvas-labels.cjs",
+    "exit": 0,
+    "seconds": 22.92,
+    "stdout": "{\n  \"frames\": 672,\n  \"backgroundRectangles\": 6162,\n  \"axisRectangles\": 2208,\n  \"partRectangles\": 3954,\n  \"expectedAxisLabels\": 2208,\n  \"collisionFrames\": 0,\n  \"outsideFrames\": 0,\n  \"missingAxisFrames\": 0,\n  \"supportCollisionFrames\": 0,\n  \"examples\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-display-motion.cjs",
+    "exit": 0,
+    "seconds": 16.55,
+    "stdout": "{\n  \"checks\": {\n    \"planarMotion\": 810,\n    \"localContact\": 240,\n    \"fixedAnchorMotion\": 156,\n    \"averageVersusLocal\": 5\n  },\n  \"maximumDirectionDifference\": 3.5492257604318314e-12,\n  \"maximumContactDifference\": 8.881784197001252e-16,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-electrical-full.cjs",
+    "exit": 0,
+    "seconds": 0.14,
+    "stdout": "{\n  \"passed\": true,\n  \"assertions\": 103,\n  \"combinations\": 720,\n  \"valid\": 13,\n  \"flows\": [\n    \"five full completion workflows\",\n    \"current serial calculation\",\n    \"parallel short circuit blocked\",\n    \"AC reverse direction\",\n    \"DC voltage alternatives\",\n    \"resistance unit alternatives\",\n    \"open continuity\",\n    \"setting lock and reset\",\n    \"all settings exhaustively checked\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-full-code-review.cjs",
+    "exit": 0,
+    "seconds": 9.49,
+    "stdout": "Full code review: 194 integration checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-ideal-display.cjs",
+    "exit": 0,
+    "seconds": 10.24,
+    "stdout": "{\n  \"checks\": {\n    \"nominalGeometry\": 648,\n    \"flatAgreement\": 162,\n    \"supportAdjustment\": 9,\n    \"intrinsicRemoval\": 9,\n    \"linearMotion\": 26,\n    \"rotaryRigidity\": 50,\n    \"viewAndToggle\": 162\n  },\n  \"vertices\": 411264,\n  \"maximumPointDifference\": 2.047902597024e-15,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-ideal-outline-ui.cjs",
+    "exit": 0,
+    "seconds": 32.63,
+    "stdout": "{\n  \"checks\": 953,\n  \"frames\": 1032,\n  \"finiteCanvasCoordinates\": 4428878,\n  \"maximumIdealSegments\": 276,\n  \"maximumIdealToCurrentRatio\": 0.23509369676320271\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-interface-audit.cjs",
+    "exit": 0,
+    "seconds": 0.47,
+    "stdout": "Interface audit: 31 independent interaction and diagram checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-level-stages.cjs",
+    "exit": 0,
+    "seconds": 2.91,
+    "stdout": "Level stages: 102 independent checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-leveling-engine.cjs",
+    "exit": 0,
+    "seconds": 0.06,
+    "stdout": "Leveling engine: 83 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-leveling-learning.cjs",
+    "exit": 0,
+    "seconds": 3.03,
+    "stdout": "Leveling learning: 112 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-leveling-ui.cjs",
+    "exit": 0,
+    "seconds": 1.18,
+    "stdout": "Leveling UI: 189 checks passed (7 machines, 2 extra modes, controls, exercise, save/import/export).\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-mechanical-audit.cjs",
+    "exit": 0,
+    "seconds": 3.18,
+    "stdout": "Mechanical audit: 276 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-mobile-navigation.cjs",
+    "exit": 0,
+    "seconds": 0.35,
+    "stdout": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-model-posture.cjs",
+    "exit": 0,
+    "seconds": 52.62,
+    "stdout": "{\n  \"checks\": {\n    \"projection\": 135,\n    \"surfaceNormals\": 631,\n    \"groundContact\": 720,\n    \"rigidMotion\": 30,\n    \"axisLabels\": 288\n  },\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-random-accuracy-review.cjs",
+    "exit": 0,
+    "seconds": 2.26,
+    "stdout": "Random accuracy independent review: 182 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-scene-zoom.cjs",
+    "exit": 0,
+    "seconds": 9.3,
+    "stdout": "Scene zoom: 98 interaction/rendering checks passed; 280 Canvas frames and 1218199 finite coordinate values inspected.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-settings-menu-ui.cjs",
+    "exit": 0,
+    "seconds": 12.9,
+    "stdout": "{\n  \"checks\": 221,\n  \"frames\": 364,\n  \"finiteCanvasCoordinates\": 1686293,\n  \"variants\": 9,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-settings-menu.cjs",
+    "exit": 0,
+    "seconds": 7.44,
+    "stdout": "{\n  \"checks\": {\n    \"drawerState\": 63,\n    \"supportSelection\": 45,\n    \"stageSteps\": 270,\n    \"limits\": 27,\n    \"axisControls\": 65,\n    \"demo\": 27,\n    \"saveImportExport\": 27,\n    \"legacyStep\": 81,\n    \"settings\": 5\n  },\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-site-navigation.cjs",
+    "exit": 0,
+    "seconds": 1.0,
+    "stdout": "Shared site navigation: 39 journeys/state/history checks passed across six pages and seven machines.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-squareness-display.cjs",
+    "exit": 0,
+    "seconds": 2.57,
+    "stdout": "Squareness display: 95 measured-angle, measurement-position, hidden-initial-value and relative-input checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "tests/check-tester-lesson.cjs",
+    "exit": 0,
+    "seconds": 0.06,
+    "stdout": "{\n  \"passed\": true,\n  \"assertions\": 27,\n  \"flows\": [\n    \"missing leads\",\n    \"A terminal blocked\",\n    \"wrong mode blocked\",\n    \"DC voltage\",\n    \"reverse polarity\",\n    \"disconnect\",\n    \"resistance preparation\",\n    \"1kΩ resistance\",\n    \"continuity connected/broken\",\n    \"reset/lesson reset\"\n  ]\n}\n",
+    "stderr": ""
+  }
+]
