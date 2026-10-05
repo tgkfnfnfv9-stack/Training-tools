@@ -260,3 +260,116 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card,body.in
  .main-adjustment::-webkit-scrollbar{width:6px;background:#edf3f5}
  .main-adjustment::-webkit-scrollbar-thumb{background:#abc1c6;border-radius:3px}
 }
+
+/* Shared training identity: white surfaces, charcoal structure, orange actions.
+   Axis colours, level bubbles and accuracy comparison colours remain semantic. */
+:root{--ink:#242424;--muted:#606060;--line:#dedbd7;--green:#b34800;--accent:#b34800;--accent-bright:#f07822;--accent-soft:#fff1e5;--bg:#fff;--surface:#f6f5f3;--nav-height:48px}
+body{background:var(--bg);color:var(--ink)}
+header{height:84px;background:#242424;color:white;border-bottom:4px solid var(--accent-bright)}
+.brand-mark{background:var(--accent-bright);color:#242424;border-radius:7px}
+.brand small,.version{color:#dedbd7}
+main{padding-top:14px}
+button{border-radius:7px;transition:background-color .12s,border-color .12s}
+button:hover{background:var(--accent-soft);border-color:var(--accent)}
+button:focus-visible,select:focus-visible,input:focus-visible,canvas:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent-bright);outline-offset:2px}
+button:disabled{opacity:.5}
+select,input:not([type=checkbox]):not([type=range]){font-size:16px;border-color:#aaa39a}
+input[type=checkbox]{accent-color:var(--accent);width:18px;height:18px;flex:none}
+input[type=range]{min-height:44px}
+.eyebrow{letter-spacing:.12em;color:var(--accent)}
+.pill,.topic-icon{background:var(--accent-soft);color:var(--accent)}
+.category,.topic,.machine-card{border-color:var(--line);box-shadow:0 3px 12px #24242408}
+.category{border-top:4px solid var(--accent-bright)}
+.category:hover,.topic:hover,.machine-card:hover{background:#fffaf5;box-shadow:0 4px 14px #24242412}
+.category .symbol{display:inline-grid;place-items:center;width:50px;height:50px;background:var(--accent-soft);border-radius:8px}
+.note{color:#555;background:var(--surface);border-left-color:#9e9388}
+.thumbnail,.viewer-panel,.training-shell{background:#f1f0ed}
+.card,.survey,.lesson{border-color:var(--line);border-radius:8px}
+.play-axis,.tester-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.play-axis:hover,.tester-primary:hover{background:#913a00;border-color:#913a00;color:#fff}
+.play-axis[aria-pressed=true]{background:#303030;border-color:#303030}
+.adjustment-tabs button[aria-pressed=true]{background:var(--accent);color:white;border-color:var(--accent)}
+.map-point.active{background:var(--accent-soft);border:2px solid var(--accent);color:#823400;font-weight:750}
+.fine-adjustment,.level-stages{border-color:var(--line);background:#fff}
+.adjustment-hint,.support-coach{background:var(--surface);border-color:#d5cec4;color:#4c4640}
+.support-coach strong{color:var(--ink)}
+.import-level{border-color:#c9c1b8;background:var(--accent-soft);color:var(--accent)}
+/* Navigation has the same position and actions in every lesson. */
+.site-navigation{display:flex;flex-wrap:nowrap;align-items:center;gap:6px;min-width:0;min-height:48px;margin:0 0 20px;padding:0;border-bottom:1px solid var(--line)}
+.site-navigation>button{min-height:44px;flex:none;padding:8px 10px;border:1px solid transparent;font-size:13px;color:var(--ink);font-weight:650;background:transparent;white-space:nowrap}
+.site-navigation>button:hover{border-color:var(--line);background:var(--accent-soft)}
+.site-navigation .nav-home{color:var(--accent)}
+.breadcrumbs{display:flex;align-items:center;gap:3px;min-width:0;flex:1;font-size:13px}
+.breadcrumbs button{min-height:44px;padding:4px 7px;color:var(--muted);white-space:nowrap}
+.breadcrumbs span{padding:3px 4px}
+#navCurrent{font-weight:700;color:var(--ink);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#navCurrent:focus{outline:none}
+body.in-mechanical-lab>main{display:flex;flex-direction:column}
+body.in-mechanical-lab>main>nav{display:flex;flex:none;height:calc(var(--nav-height) + env(safe-area-inset-top));margin:0;padding:env(safe-area-inset-top) max(8px,env(safe-area-inset-right)) 0 max(8px,env(safe-area-inset-left));background:#242424;color:#fff;border:0;border-bottom:3px solid var(--accent-bright)}
+body.in-mechanical-lab #training{height:auto;flex:1;min-height:0}
+body.in-mechanical-lab .site-navigation button,body.in-mechanical-lab #navCurrent{color:white}
+body.in-mechanical-lab .site-navigation button:hover{background:#3c3a37;border-color:#70665d}
+body.in-mechanical-lab .site-navigation .nav-home{color:#ffab6b}
+body.in-mechanical-lab #training .training-heading{padding:4px 12px;gap:10px}
+body.in-mechanical-lab #training .training-heading h1{font-size:17px}
+.training-menu-toggle{width:auto;min-width:76px;min-height:44px;font-size:14px;font-weight:700;white-space:nowrap;background:var(--accent-soft);border-color:#d4a37c;color:#823400}
+.training-menu-toggle span{font-size:21px;vertical-align:-1px;margin-right:3px}
+body.in-mechanical-lab #training .main-adjustment{background:#fff;border-color:var(--line)}
+.common-support-actions button{border-color:#ba8155;background:var(--accent-soft);color:#823400;font-weight:700}
+.common-support-actions button:hover{background:#ffdfc5}
+/* A readable independent drawer; the entire machine workspace still scales. */
+.training-drawer{background:var(--surface);border-color:#c9c1b8}
+.training-drawer-heading{font-size:14px;line-height:1.5;padding:6px 8px;background:#fff;border-bottom:1px solid var(--line)}
+.training-drawer-heading button{width:auto;min-width:70px;font-size:13px;padding:6px;color:var(--accent);font-weight:700}
+body.in-mechanical-lab #training .training-drawer .scroll-controls{padding:0 8px max(16px,env(safe-area-inset-bottom));scrollbar-width:thin;scrollbar-color:#aaa39a #f6f5f3}
+body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{background:#fff;border-color:var(--line);margin-bottom:8px;padding:8px}
+.training-drawer .drawer-group-label{font-size:12px;font-weight:750;color:#68513e;letter-spacing:.05em;margin:12px 2px 6px}
+.training-drawer details>summary{font-size:14px;line-height:1.6;min-height:44px;padding:10px 0;font-weight:650;color:var(--ink)}
+.training-drawer details[open]>summary{color:var(--accent)}
+.training-drawer p,.training-drawer .hint,.training-drawer .viewer-caption,.training-drawer .ideal-comparison p,.training-drawer .structure dd,.training-drawer .lesson li{font-size:13px;line-height:1.75}
+.training-drawer h2,.training-drawer h3,.training-drawer .axis-menu-heading{font-size:14px;line-height:1.6}
+.training-drawer button:not([hidden]),.training-drawer .import-level{min-height:44px;font-size:13px;line-height:1.6;white-space:normal;overflow-wrap:anywhere}
+.training-drawer select,.training-drawer input:not([type=checkbox]){font-size:16px;min-height:44px}
+.training-drawer label,.training-drawer .viewer-options label,.training-drawer .ideal-outline-toggle,.training-drawer .select-label{font-size:13px;line-height:1.7}
+.training-drawer .viewer-options{padding:8px 0;gap:4px}
+.training-drawer .viewer-options label,.training-drawer .ideal-outline-toggle{display:flex;align-items:center;gap:7px;min-height:44px}
+.training-drawer .ideal-outline-legend{font-size:12px;line-height:1.7;display:flex;flex-wrap:wrap}
+.training-drawer .viewer-help summary,.training-drawer .setting-help summary,.training-drawer .orientation-details summary{font-size:13px;font-weight:500}
+.training-drawer .axis-row small,.training-drawer .axis-row output,.training-drawer .range-ends{font-size:12px}
+.training-drawer .orientation-guide{margin:0;padding:8px 0;border:0;background:transparent}
+.training-drawer .fine-posture,.training-drawer .fine-pair-reading{background:var(--surface)}
+@media(max-width:950px){
+ body.in-lab>main{display:flex;flex-direction:column}
+ body.in-lab>main>nav{display:flex;flex:none;height:calc(var(--nav-height) + env(safe-area-inset-top));margin:0;padding:env(safe-area-inset-top) max(8px,env(safe-area-inset-right)) 0 max(8px,env(safe-area-inset-left));background:#242424;color:white;border:0;border-bottom:3px solid var(--accent-bright)}
+ body.in-lab .site-navigation button,body.in-lab #navCurrent{color:white}
+ body.in-lab .site-navigation .nav-home{color:#ffab6b}
+ body.in-lab .site-navigation button:hover{background:#3c3a37;border-color:#70665d}
+ body.in-lab #training,body.in-lab #tester{height:auto;flex:1;min-height:0}
+ body.in-lab .training-heading{padding:6px 12px}
+ body.in-lab .controls-bar{background:var(--accent-soft);color:#823400;border-color:#e7cab4;font-size:11px}
+}
+@media(max-width:560px){
+ header{height:74px;padding:0 16px}.version{display:none}
+ main{padding:10px 16px 32px}
+ .site-navigation{margin-bottom:16px;gap:2px}
+ .site-navigation>button{padding:8px;font-size:12px}
+ .breadcrumbs{font-size:12px;gap:0}
+ .breadcrumbs button,.breadcrumbs .crumb-separator{display:none}
+ .intro{margin:24px 0}
+ .category{min-height:190px;padding:24px}
+ .topic{align-items:flex-start;padding:20px 16px;gap:12px}
+ .topic-icon{flex:none}.topic>div{min-width:0}.topic-arrow{font-size:22px}
+ .topic p{font-size:13px}.note{font-size:13px}
+ body.in-mechanical-lab #training .training-heading{padding:4px 8px;gap:8px}
+ body.in-mechanical-lab #training .training-heading h1{font-size:15px}
+ .training-menu-toggle{min-width:72px}
+ body.in-mechanical-lab #training .main-adjustment{padding-left:8px;padding-right:8px}
+}
+@media(prefers-reduced-motion:reduce){button{transition:none}}
+.scene-toolbar{background:#fff;border-color:var(--line)}
+.scene-readout-note{color:var(--muted)}
+@media(max-width:950px) and (orientation:portrait) and (max-height:540px){
+ body.in-mechanical-lab #training .main-adjustment{max-height:130px;overflow-y:auto;scrollbar-gutter:stable}
+ body.in-mechanical-lab #training .training-heading{padding-top:0;padding-bottom:0}
+ body.in-mechanical-lab #training .scene-toolbar{padding-top:2px;padding-bottom:2px}
+}

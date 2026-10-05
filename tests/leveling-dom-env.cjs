@@ -49,7 +49,7 @@ module.exports=function createEnvironment(options={}){
  const html=fs.readFileSync('src/index.html','utf8').replace('<!-- TESTER_LESSON -->',fs.readFileSync('src/tester.html','utf8')).replace(/<script[\s\S]*?<\/script>/g,'');parse(html,root);
  const body=root.querySelectorAll('body')[0];
  const context={document:{body,hidden:false,getElementById:id=>registry[id]||null,createElement:tag=>new El(tag),querySelectorAll:s=>root.querySelectorAll(s),addEventListener(){}},
-  window:{scrollTo(){},addEventListener(){},resetTesterLesson(){context.resetCalls++;}},resetCalls:0,
+  window:{scrollTo(){},addEventListener(){},resetTesterLesson(){context.resetCalls++;},...(options.window||{})},resetCalls:0,
   localStorage:{getItem:key=>storage.get(key)??null,setItem:(key,value)=>storage.set(key,String(value))},
   requestAnimationFrame:f=>{f(0);return 1;},cancelAnimationFrame(){},setTimeout:(f,delay)=>{timers.push(f);timerDelays.push(delay);return timers.length;},clearTimeout(){},Blob,
   URL:{createObjectURL:blob=>{context.exportedBlob=blob;return 'blob:test';},revokeObjectURL:url=>{context.revokedUrl=url;}}};
