@@ -97,6 +97,7 @@ let current=displayMachine(machines[0]), page='home', yaw=-0.45, selected=0, sup
 const SCENE_ZOOM_MIN=.65,SCENE_ZOOM_MAX=1.8;
 let sceneZoom=1;
 let sceneView='oblique';
+let trainingMenuOpen=false,trainingMainScale=1;
 function supportList(m){
  if(!m.grid)return [{x:-m.w*.4,z:-m.d*.4,name:'左・手前'},{x:m.w*.4,z:-m.d*.4,name:'右・手前'},{x:0,z:m.d*.4,name:'奥・中央'}];
  const [nx,nz]=m.grid,list=[];
@@ -113,7 +114,7 @@ function navigate(next){
  const paths=next==='electricTopics'||next==='tester'?[['home','トップ'],['electricTopics','電気'],['tester','テスターの使い方']]:[['home','トップ'],['topics','機械'],['catalog','レベル出し'],['training',current.name]];
  const depth=paths.findIndex(([dest])=>dest===next);
  $('crumbs').replaceChildren();paths.slice(0,depth+1).forEach(([dest,label],i)=>{if(i){const s=document.createElement('span');s.textContent='›';$('crumbs').append(s);}const el=document.createElement(i===depth?'span':'button');el.textContent=label;if(i!==depth)el.onclick=()=>navigate(dest);$('crumbs').append(el);});
- window.scrollTo({top:0,behavior:'instant'}); if(next==='catalog')requestAnimationFrame(drawThumbnails);if(next==='training')requestAnimationFrame(drawScene);
+ window.scrollTo({top:0,behavior:'instant'}); if(next==='catalog')requestAnimationFrame(drawThumbnails);if(next==='training')requestAnimationFrame(()=>{refreshTrainingLayout();drawScene();});
 }
 $('mechanical').onclick=()=>navigate('topics');$('electric').onclick=()=>navigate('electricTopics');$('leveling').onclick=()=>navigate('catalog');$('changeMachine').onclick=()=>navigate('catalog');
 $('testerEntry').onclick=()=>{if(window.resetTesterLesson)window.resetTesterLesson();navigate('tester');};
@@ -122,7 +123,6 @@ function openMachine(m){
  stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.modes?m.modes[0][0]:'';current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
 function populateMachine(){
- setAxisMenuOpen(false);
  const m=current;supports=supportList(m);levelSolution=null;levelGeometry=null;
  $('machineTitle').textContent=m.name;$('machineSubtitle').textContent=m.example+' ｜ '+m.tag;
  $('structureText').textContent=m.structure;$('motionText').textContent=axisConfig(m).map(a=>a.key+'：'+a.part+'（'+a.direction+'）').join(' ／ ');$('focusText').textContent=m.focus;
@@ -131,13 +131,11 @@ function populateMachine(){
  $('measurePos').value='0'; $('labels').checked=true;
  
  
- buildAxisUI();buildModeUI();initializeLeveling();
+ buildAxisUI();buildModeUI();initializeLeveling();setTrainingMenuOpen(false,trainingMenuOpen);
 }
-function selectSupport(i){selected=i;refreshSupportControls();drawScene();}
+function selectSupport(i){if(!Number.isInteger(i)||i<0||i>=supports.length)return;selected=i;refreshSupportControls();drawScene();}
 function buildSupports(){
- const map=$('supportMap');map.replaceChildren();const caption=document.createElement('div');caption.className='map-caption';caption.textContent='奥 ｜ 上から見た支持点配置';map.append(caption);
- const groups=current.grid?Array.from({length:current.grid[1]},(_,j)=>supports.map((s,i)=>({s,i})).filter(v=>Math.floor(v.i/current.grid[0])===j)).reverse():[[{s:supports[2],i:2}],[{s:supports[0],i:0},{s:supports[1],i:1}]];
- groups.forEach(group=>{const row=document.createElement('div');row.className='map-row';group.forEach(({s,i})=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',String.fromCharCode(65+i)+'、'+s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.dataset.support=String(i);b.onclick=()=>selectSupport(i);row.append(b);});map.append(row);});const front=document.createElement('div');front.className='map-caption';front.textContent='手前';map.append(front);
+ const map=$('supportMap');map.replaceChildren();supports.forEach((s,i)=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',String.fromCharCode(65+i)+'、'+s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.dataset.support=String(i);b.onclick=()=>{if(!trainingMenuOpen)selectSupport(i);};map.append(b);});
  const controls=$('supportControls');controls.replaceChildren();supports.forEach((s,i)=>{const row=document.createElement('div');row.className='support-row'+(i===selected?' selected':'');const id=String.fromCharCode(65+i);row.innerHTML=`<label><span class="point-id">${id}</span>${s.name}</label><button id="down${i}" aria-label="${id}を下げる">下げる</button><span id="supportState${i}" class="support-adjustment-state"></span><input hidden type="number" id="height${i}" aria-label="${id}の抽選時からの調整量" min="${-.5-supportBaseline(i)}" max="${.5-supportBaseline(i)}" step="0.001" value="${supportAdjustment(i)}"><button id="up${i}" aria-label="${id}を上げる">上げる</button>`;controls.append(row);$('down'+i).onclick=()=>changeSupportHeight(i,-Number($('adjustStep').value));$('up'+i).onclick=()=>changeSupportHeight(i,Number($('adjustStep').value));$('height'+i).onchange=()=>setSupportHeight(i,supportHeightFromAdjustment(i,$('height'+i).value.trim()===''?NaN:Number($('height'+i).value)));$('height'+i).oninput=()=>{invalidateLevelImport();const field=$('height'+i),value=supportHeightFromAdjustment(i,field.value.trim()===''?NaN:Number(field.value));if(bounded(value,-.5,.5))setSupportHeight(i,value,true);};});
 }
 const grid=$('machineGrid');machines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>openMachine(m);grid.append(card);});
@@ -305,7 +303,7 @@ function drawOrientationGuide(){
  }).join('');
 }
 function render(canvas,m,angle,showLabels,active){
- const rect=canvas.getBoundingClientRect();if(!rect.width||!rect.height)return;
+ const measured=canvas.getBoundingClientRect(),mainCanvas=canvas===$('scene'),rect=mainCanvas?{width:canvas.clientWidth||measured.width/trainingMainScale,height:canvas.clientHeight||measured.height/trainingMainScale}:measured;if(!rect.width||!rect.height)return;
  const ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.height*ratio);
  const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);const width=rect.width,height=rect.height;
  ctx.fillStyle='#eaf0f2';ctx.fillRect(0,0,width,height);
@@ -377,7 +375,7 @@ function drawThumbnails(){const previous=positions;positions={X:0,Y:0,Z:0,A:0,C:
 function updateSceneViewUI(){
  $('sceneView').value=sceneView;
  $('sceneDirection').textContent=sceneView==='front'?'正面：左 → 右':sceneView==='side'?'側面：手前 → 奥':'斜め：左右回転';
- $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。薄い破線の理想輪郭は'+($('showIdealOutline').checked?'表示中':'非表示')+'。操作欄の先頭で切り替えます。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
+ $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。薄い破線の理想輪郭は'+($('showIdealOutline').checked?'表示中':'非表示')+'。左上の設定メニューで切り替えます。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
 }
 function drawScene(){if(levelSolution)updateAccuracy();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){
@@ -393,7 +391,7 @@ function resetSceneGesture(){scenePinch=scenePointers.size>=2?{distance:scenePoi
 function clearScenePointers(){const ids=[...scenePointers.keys()];scenePointers.clear();scenePinch=null;for(const id of ids)if($('scene').hasPointerCapture?.(id))$('scene').releasePointerCapture(id);}
 function setSceneZoom(value){if(!Number.isFinite(value))return;const next=Math.max(SCENE_ZOOM_MIN,Math.min(SCENE_ZOOM_MAX,value));if(next===sceneZoom)return;sceneZoom=next;if(page==='training')render($('scene'),current,yaw,$('labels').checked,selected);}
 $('scene').addEventListener('pointerdown',e=>{
- if(e.button!==0||e.pointerType!=='touch'&&e.isPrimary===false)return;setAxisMenuOpen(false);scenePointers.set(e.pointerId,{x:e.clientX,y:e.clientY});$('scene').setPointerCapture(e.pointerId);resetSceneGesture();
+ if(trainingMenuOpen||e.button!==0||e.pointerType!=='touch'&&e.isPrimary===false)return;scenePointers.set(e.pointerId,{x:e.clientX,y:e.clientY});$('scene').setPointerCapture(e.pointerId);resetSceneGesture();
 });
 $('scene').addEventListener('pointermove',e=>{
  const point=scenePointers.get(e.pointerId);if(!point)return;const dx=e.clientX-point.x;point.x=e.clientX;point.y=e.clientY;
@@ -404,10 +402,11 @@ function endScenePointer(e){if(scenePointers.delete(e.pointerId))resetSceneGestu
 $('scene').addEventListener('pointerup',endScenePointer);$('scene').addEventListener('pointercancel',endScenePointer);$('scene').addEventListener('lostpointercapture',endScenePointer);
 window.addEventListener('blur',clearScenePointers);
 $('scene').addEventListener('wheel',e=>{
- if(!e.deltaY)return;e.preventDefault();const pixels=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?$('scene').getBoundingClientRect().height:1);
+ if(trainingMenuOpen||!e.deltaY)return;e.preventDefault();const pixels=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?$('scene').getBoundingClientRect().height:1);
  setSceneZoom(sceneZoom*Math.exp(-Math.max(-300,Math.min(300,pixels))*.0015));
 },{passive:false});
 $('scene').addEventListener('keydown',e=>{
+ if(trainingMenuOpen)return;
  if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();rotate(e.key==='ArrowLeft'?-.12:.12);}
  else if(['+','=','-','_','Home'].includes(e.key)){e.preventDefault();setSceneZoom(e.key==='Home'?1:sceneZoom*(e.key==='-'||e.key==='_'?1/1.12:1.12));}
 });
@@ -418,8 +417,8 @@ function buildModeUI(){
 }
 $('machineMode').onchange=()=>{stopMotion();machineMode=$('machineMode').value;current=displayMachine(machines.find(m=>m.id===current.id));positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;populateMachine();setAxisMenuOpen(false,true);drawScene();};
 function buildAxisUI(){
- const axes=axisConfig(current);$('axisTabs').replaceChildren();$('axisSliders').replaceChildren();
- axes.forEach(a=>{const btn=document.createElement('button');btn.textContent=a.key+'軸';btn.className='axis-tab';btn.style.setProperty('--axis',axisColors[a.key]);btn.setAttribute('aria-pressed',a.key===selectedAxis?'true':'false');btn.onclick=()=>selectAxis(a.key);$('axisTabs').append(btn);
+ const axes=axisConfig(current);$('axisTabs').replaceChildren();$('axisSliders').replaceChildren();$('drawerAxisSelect').replaceChildren();
+ axes.forEach(a=>{const option=document.createElement('option');option.value=a.key;option.textContent=a.key+'軸';$('drawerAxisSelect').append(option);const btn=document.createElement('button');btn.textContent=a.key+'軸';btn.className='axis-tab';btn.style.setProperty('--axis',axisColors[a.key]);btn.setAttribute('aria-pressed',a.key===selectedAxis?'true':'false');btn.onclick=()=>{if(!trainingMenuOpen)selectAxis(a.key);};$('axisTabs').append(btn);
  const row=document.createElement('div');row.className='axis-row';row.style.setProperty('--axis',axisColors[a.key]);row.innerHTML=`<label for="axis-${a.key}"><strong>${a.key}軸</strong><span>${a.part}<small>${a.direction}</small></span><output id="value-${a.key}">中央</output></label><input type="range" id="axis-${a.key}" min="-100" max="100" step="1" value="${positions[a.key]}" aria-label="${a.key}軸の部品位置"><div class="range-ends"><span>片側</span><span>反対側</span></div>`;$('axisSliders').append(row);
  $('axis-'+a.key).addEventListener('input',e=>{stopMotion();positions[a.key]=Number(e.target.value);selectAxis(a.key);updateAxisValues();saveLeveling();drawScene();});});
  updateAxisValues();selectAxis(selectedAxis);
@@ -430,28 +429,59 @@ function selectAxis(key){
  Array.from($('axisTabs').children).forEach(b=>b.setAttribute('aria-pressed',b.textContent===key+'軸'?'true':'false'));
  for(const axis of axisConfig(current))$('axis-'+axis.key).parentElement.hidden=axis.key!==key;
  $('axisMenuTitle').textContent=key+'軸の操作';
+ $('drawerAxisSelect').value=key;
  updateSceneViewUI();drawScene();
 }
-function setAxisMenuOpen(open,focusToggle=false){
- $('axisMenu').hidden=!open;$('axisControlsToggle').setAttribute('aria-expanded',String(open));
- if(open){
-  // Reveal the menu inside the independent controls pane without moving the model.
-  $('trainingControls').scrollTop=0;
-  if($('closeAxisControls').focus)$('closeAxisControls').focus({preventScroll:true});
- }else if(focusToggle&&$('axisControlsToggle').focus)$('axisControlsToggle').focus({preventScroll:true});
+function refreshTrainingLayout(){
+ const shell=$('trainingShell'),rect=shell.getBoundingClientRect();if(!rect.width||!rect.height)return;
+ const drawerWidth=trainingMenuOpen?Math.min(300,Math.max(144,rect.width*.36)):0;
+ trainingMainScale=(rect.width-drawerWidth)/rect.width;shell.style.setProperty('--drawer-width',drawerWidth+'px');
+ const main=$('trainingMain');main.style.width=rect.width+'px';main.style.height=rect.height+'px';main.style.transform='scale('+trainingMainScale+')';
 }
-$('axisControlsToggle').onclick=()=>setAxisMenuOpen($('axisMenu').hidden);
+function trainingMenuFocusables(){
+ const found=[],walk=node=>{
+  if(node.hidden||node.disabled)return;
+  const tag=node.tagName,tab=node.getAttribute?.('tabindex');
+  if(['BUTTON','INPUT','SELECT','TEXTAREA','SUMMARY'].includes(tag)||tag==='A'&&node.getAttribute('href')!==null||tab!==null&&Number(tab)>=0)found.push(node);
+  for(const child of node.children||[])if(tag!=='DETAILS'||node.open||child.tagName==='SUMMARY')walk(child);
+ };walk($('trainingDrawer'));return found;
+}
+function setTrainingMenuOpen(open,restoreFocus=false){
+ open=!!open;clearScenePointers();trainingMenuOpen=open;
+ $('trainingDrawer').hidden=!open;$('trainingShell').classList.toggle('menu-open',open);$('openTrainingMenu').setAttribute('aria-expanded',String(open));
+ $('axisControlsToggle').setAttribute('aria-expanded',String(open));$('trainingMain').inert=open;$('trainingMain').setAttribute('aria-hidden',String(open));$('trainingMainShield').hidden=!open;
+ refreshTrainingLayout();
+ if(open){$('trainingControls').scrollTop=0;$('closeTrainingMenu').focus?.({preventScroll:true});}
+ else if(restoreFocus)$('openTrainingMenu').focus?.({preventScroll:true});
+ if(page==='training')drawScene();
+}
+function setAxisMenuOpen(open,focusToggle=false){
+ if(open)$('axisMenuSection').open=true;setTrainingMenuOpen(open,focusToggle);
+}
+$('openTrainingMenu').onclick=()=>setTrainingMenuOpen(!trainingMenuOpen,true);
+$('closeTrainingMenu').onclick=()=>setTrainingMenuOpen(false,true);
+$('trainingMainShield').onclick=()=>setTrainingMenuOpen(false,true);
+$('drawerAxisSelect').onchange=()=>selectAxis($('drawerAxisSelect').value);
+$('axisControlsToggle').onclick=()=>setAxisMenuOpen(!trainingMenuOpen);
 $('closeAxisControls').onclick=()=>setAxisMenuOpen(false,true);
-$('axisMenu').addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();setAxisMenuOpen(false,true);}});
+function trainingMenuKeydown(e){
+ if(!trainingMenuOpen)return;
+ if(e.key==='Escape'){e.preventDefault();setTrainingMenuOpen(false,true);return;}
+ if(e.key!=='Tab')return;const focusable=trainingMenuFocusables(),index=focusable.indexOf(document.activeElement);if(!focusable.length){e.preventDefault();$('closeTrainingMenu').focus?.({preventScroll:true});return;}
+ if(e.shiftKey&&index<=0||!e.shiftKey&&(index<0||index===focusable.length-1)){e.preventDefault();focusable[e.shiftKey?focusable.length-1:0].focus?.({preventScroll:true});}
+}
+$('trainingDrawer').addEventListener('keydown',trainingMenuKeydown);
+$('axisMenu').addEventListener('keydown',trainingMenuKeydown);
+if(typeof ResizeObserver==='function')new ResizeObserver(()=>{if(page==='training'){refreshTrainingLayout();drawScene();}}).observe($('trainingShell'));
 let motionFrame=null,motionStart=null;
 function stopMotion(){const running=motionFrame!==null;if(running)cancelAnimationFrame(motionFrame);motionFrame=null;motionStart=null;if($('playAxis')){$('playAxis').textContent='選んだ軸を動かす';$('playAxis').setAttribute('aria-pressed','false');}if(running){$('axisDemoStatus').textContent=selectedAxis+'軸の動作を終了しました。';if(typeof saveLeveling==='function')saveLeveling();}}
 $('playAxis').onclick=()=>{if(motionFrame!==null){stopMotion();return;}$('playAxis').textContent='動きを止める';$('playAxis').setAttribute('aria-pressed','true');const key=selectedAxis;
- setAxisMenuOpen(false,true);$('axisDemoStatus').textContent=key+'軸の動作を確認中です。軸操作から停止できます。';
+ setAxisMenuOpen(false,true);$('axisDemoStatus').textContent=key+'軸の動作を確認中です。設定メニューの軸位置・デモから停止できます。';
  // A single round trip demonstrates the chosen part; no endless motion.
  function step(t){if(motionStart===null)motionStart=t;const progress=Math.min((t-motionStart)/3500,1);positions[key]=Math.sin(progress*2*Math.PI)*85;updateAxisValues();drawScene();if(progress<1)motionFrame=requestAnimationFrame(step);else{positions[key]=0;updateAxisValues();stopMotion();drawScene();}}
  motionFrame=requestAnimationFrame(step);
 };
 $('resetAxes').onclick=()=>{stopMotion();positions={X:0,Y:0,Z:0,A:0,C:0};updateAxisValues();saveLeveling();drawScene();};
 window.addEventListener('pagehide',stopMotion);document.addEventListener('visibilitychange',()=>{if(document.hidden)stopMotion();});
-let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(page==='catalog')drawThumbnails();drawScene();},80);});
+let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(page==='catalog')drawThumbnails();refreshTrainingLayout();drawScene();},80);});
 navigate('home');

@@ -109,6 +109,15 @@ check('navigation releases every capture and ignores old motion when returning',
  resetView();down(1,100);down(2,200);read("navigate('catalog')");assert.equal(read('scenePointers.size'),0);assert(!captures.size);read("navigate('training')");const yaw=read('yaw');move(1,300);move(2,400);near(read('yaw'),yaw);near(read('sceneZoom'),1);down(1,100);move(1,110);near(read('yaw'),yaw+.09);end('pointerup',1);
 });
 check('all cancellation, limit and navigation paths preserve the teaching model and JSON',()=>assert.deepEqual(physical(),original));
+check('opening settings cancels a pinch and blocks background gestures until closed',()=>{
+ resetView();const before=physical(),saved=[...storage];down(1,100);down(2,200);move(2,220);
+ const view=json('({yaw,sceneZoom,sceneView})');r.openTrainingMenu.click();
+ assert(!r.trainingDrawer.hidden);assert(r.trainingMain.inert);assert.equal(read('scenePointers.size'),0);assert(!captures.size);
+ move(1,900);move(2,1000);down(1,100);assert.equal(wheel(-80),0);assert.equal(key('+'),0);assert.equal(key('ArrowRight'),0);
+ assert.equal(read('scenePointers.size'),0);assert.deepEqual(json('({yaw,sceneZoom,sceneView})'),view);assert.deepEqual(physical(),before);assert.deepEqual([...storage],saved);
+ r.closeTrainingMenu.click();assert(r.trainingDrawer.hidden);assert(!r.trainingMain.inert);move(1,400);near(read('yaw'),view.yaw);near(read('sceneZoom'),view.sceneZoom);
+ down(1,100);move(1,110);near(read('yaw'),view.yaw+.09);end('pointerup',1);assert.equal(wheel(-80),1);assert(read('sceneZoom')>view.sceneZoom);assert.deepEqual(physical(),before);assert.deepEqual([...storage],saved);
+});
 for(const view of ['front','side']){
  read('openMachine(machines[5])');const teaching=physical(),saved=[...storage];
  check(`${view} selection has an exact orthographic direction and preserves zoom/model`,()=>{
