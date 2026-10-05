@@ -1,0 +1,1870 @@
+[
+  {
+    "canvas": {
+      "bottom": 381,
+      "height": 161,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 220
+    },
+    "gaugesFit": true,
+    "height": 568,
+    "levels": {
+      "bottom": 381,
+      "height": 161,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 220
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -10.962,
+        "text": "X基準 0Y直角差 -11"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -11.32068745272708,
+        "text": "X基準 0Z直角差 -11"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": 18.27593376480858,
+        "text": "Y基準 0Z直角差 +18"
+      }
+    ],
+    "title": "小型立形・4点支持",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 381,
+      "height": 161,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 220
+    },
+    "gaugesFit": true,
+    "height": 568,
+    "levels": {
+      "bottom": 381,
+      "height": 161,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 220
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 13.376261029021608,
+        "text": "X基準 0Y直角差 +13"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 12.240997034068338,
+        "text": "X基準 0Z直角差 +12"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -11.34283663276366,
+        "text": "Y基準 0Z直角差 -11"
+      }
+    ],
+    "title": "横形・Haas EC-630",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 381,
+      "height": 161,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 220
+    },
+    "gaugesFit": true,
+    "height": 568,
+    "levels": {
+      "bottom": 381,
+      "height": 161,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 220
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 10.192097723993534,
+        "text": "X基準 0Y直角差 +10"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -4.9812916547113515,
+        "text": "X基準 0Z直角差 -5"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": 15.855000000000002,
+        "text": "Y基準 0Z直角差 +16"
+      }
+    ],
+    "title": "立形・移動コラム",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 381,
+      "height": 161,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 220
+    },
+    "gaugesFit": true,
+    "height": 568,
+    "levels": {
+      "bottom": 381,
+      "height": 161,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 220
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -49.17636091329216,
+        "text": "X基準 0Y直角差 -49"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 19.577239151924747,
+        "text": "X基準 0Z直角差 +20"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -29.4735600989189,
+        "text": "Y基準 0Z直角差 -29"
+      }
+    ],
+    "title": "固定門形・L3 3000",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 381,
+      "height": 161,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 220
+    },
+    "gaugesFit": true,
+    "height": 568,
+    "levels": {
+      "bottom": 381,
+      "height": 161,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 220
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 25.259008900893697,
+        "text": "X基準 0Y直角差 +25"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -14.62766211951195,
+        "text": "X基準 0Z直角差 -15"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -26.19200000001209,
+        "text": "Y基準 0Z直角差 -26"
+      }
+    ],
+    "title": "移動門形・ガントリー",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 381,
+      "height": 161,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 220
+    },
+    "gaugesFit": true,
+    "height": 568,
+    "levels": {
+      "bottom": 381,
+      "height": 161,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 220
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -13.697,
+        "text": "X基準 0Y直角差 -14"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 15.908999999999995,
+        "text": "X基準 0Z直角差 +16"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -14.861999999999997,
+        "text": "Y基準 0Z直角差 -15"
+      }
+    ],
+    "title": "5軸・テーブル旋回形",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 381,
+      "height": 161,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 220
+    },
+    "gaugesFit": true,
+    "height": 568,
+    "levels": {
+      "bottom": 381,
+      "height": 161,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 220
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 250,
+          "width": 180,
+          "x": 70,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 14.528038290846457,
+        "text": "主軸Z基準 0X直角差 +15"
+      }
+    ],
+    "title": "NC旋盤・2軸",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 351,
+      "height": 141,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 210
+    },
+    "gaugesFit": true,
+    "height": 480,
+    "levels": {
+      "bottom": 351,
+      "height": 141,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 210
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -10.962,
+        "text": "X基準 0Y直角差 -11"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -11.32068745272708,
+        "text": "X基準 0Z直角差 -11"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": 18.27593376480858,
+        "text": "Y基準 0Z直角差 +18"
+      }
+    ],
+    "title": "小型立形・4点支持",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 351,
+      "height": 141,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 210
+    },
+    "gaugesFit": true,
+    "height": 480,
+    "levels": {
+      "bottom": 351,
+      "height": 141,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 210
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 13.376261029021608,
+        "text": "X基準 0Y直角差 +13"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 12.240997034068338,
+        "text": "X基準 0Z直角差 +12"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -11.34283663276366,
+        "text": "Y基準 0Z直角差 -11"
+      }
+    ],
+    "title": "横形・Haas EC-630",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 351,
+      "height": 141,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 210
+    },
+    "gaugesFit": true,
+    "height": 480,
+    "levels": {
+      "bottom": 351,
+      "height": 141,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 210
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 10.192097723993534,
+        "text": "X基準 0Y直角差 +10"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -4.9812916547113515,
+        "text": "X基準 0Z直角差 -5"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": 15.855000000000002,
+        "text": "Y基準 0Z直角差 +16"
+      }
+    ],
+    "title": "立形・移動コラム",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 351,
+      "height": 141,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 210
+    },
+    "gaugesFit": true,
+    "height": 480,
+    "levels": {
+      "bottom": 351,
+      "height": 141,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 210
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -49.17636091329216,
+        "text": "X基準 0Y直角差 -49"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 19.577239151924747,
+        "text": "X基準 0Z直角差 +20"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -29.4735600989189,
+        "text": "Y基準 0Z直角差 -29"
+      }
+    ],
+    "title": "固定門形・L3 3000",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 351,
+      "height": 141,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 210
+    },
+    "gaugesFit": true,
+    "height": 480,
+    "levels": {
+      "bottom": 351,
+      "height": 141,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 210
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 25.259008900893697,
+        "text": "X基準 0Y直角差 +25"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -14.62766211951195,
+        "text": "X基準 0Z直角差 -15"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -26.19200000001209,
+        "text": "Y基準 0Z直角差 -26"
+      }
+    ],
+    "title": "移動門形・ガントリー",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 351,
+      "height": 141,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 210
+    },
+    "gaugesFit": true,
+    "height": 480,
+    "levels": {
+      "bottom": 351,
+      "height": 141,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 210
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -13.697,
+        "text": "X基準 0Y直角差 -14"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 15.908999999999995,
+        "text": "X基準 0Z直角差 +16"
+      },
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -14.861999999999997,
+        "text": "Y基準 0Z直角差 -15"
+      }
+    ],
+    "title": "5軸・テーブル旋回形",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 351,
+      "height": 141,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 210
+    },
+    "gaugesFit": true,
+    "height": 480,
+    "levels": {
+      "bottom": 351,
+      "height": 141,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 210
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 182,
+          "height": 35,
+          "right": 250,
+          "width": 180,
+          "x": 70,
+          "y": 147
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 14.528038290846457,
+        "text": "主軸Z基準 0X直角差 +15"
+      }
+    ],
+    "title": "NC旋盤・2軸",
+    "width": 320
+  },
+  {
+    "canvas": {
+      "bottom": 271,
+      "height": 99,
+      "right": 270,
+      "width": 270,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 320,
+    "levels": {
+      "bottom": 271,
+      "height": 99,
+      "right": 358,
+      "width": 88,
+      "x": 270,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 120,
+          "width": 114,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -10.962,
+        "text": "X基準 0Y直角差 -11"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 236,
+          "width": 114,
+          "x": 122,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -11.32068745272708,
+        "text": "X基準 0Z直角差 -11"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 352,
+          "width": 114,
+          "x": 238,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": 18.27593376480858,
+        "text": "Y基準 0Z直角差 +18"
+      }
+    ],
+    "title": "小型立形・4点支持",
+    "width": 568
+  },
+  {
+    "canvas": {
+      "bottom": 271,
+      "height": 99,
+      "right": 270,
+      "width": 270,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 320,
+    "levels": {
+      "bottom": 271,
+      "height": 99,
+      "right": 358,
+      "width": 88,
+      "x": 270,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 120,
+          "width": 114,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 13.376261029021608,
+        "text": "X基準 0Y直角差 +13"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 236,
+          "width": 114,
+          "x": 122,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 12.240997034068338,
+        "text": "X基準 0Z直角差 +12"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 352,
+          "width": 114,
+          "x": 238,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -11.34283663276366,
+        "text": "Y基準 0Z直角差 -11"
+      }
+    ],
+    "title": "横形・Haas EC-630",
+    "width": 568
+  },
+  {
+    "canvas": {
+      "bottom": 271,
+      "height": 99,
+      "right": 270,
+      "width": 270,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 320,
+    "levels": {
+      "bottom": 271,
+      "height": 99,
+      "right": 358,
+      "width": 88,
+      "x": 270,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 120,
+          "width": 114,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 10.192097723993534,
+        "text": "X基準 0Y直角差 +10"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 236,
+          "width": 114,
+          "x": 122,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -4.9812916547113515,
+        "text": "X基準 0Z直角差 -5"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 352,
+          "width": 114,
+          "x": 238,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": 15.855000000000002,
+        "text": "Y基準 0Z直角差 +16"
+      }
+    ],
+    "title": "立形・移動コラム",
+    "width": 568
+  },
+  {
+    "canvas": {
+      "bottom": 271,
+      "height": 99,
+      "right": 270,
+      "width": 270,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 320,
+    "levels": {
+      "bottom": 271,
+      "height": 99,
+      "right": 358,
+      "width": 88,
+      "x": 270,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 120,
+          "width": 114,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -49.17636091329216,
+        "text": "X基準 0Y直角差 -49"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 236,
+          "width": 114,
+          "x": 122,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 19.577239151924747,
+        "text": "X基準 0Z直角差 +20"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 352,
+          "width": 114,
+          "x": 238,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -29.4735600989189,
+        "text": "Y基準 0Z直角差 -29"
+      }
+    ],
+    "title": "固定門形・L3 3000",
+    "width": 568
+  },
+  {
+    "canvas": {
+      "bottom": 271,
+      "height": 99,
+      "right": 270,
+      "width": 270,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 320,
+    "levels": {
+      "bottom": 271,
+      "height": 99,
+      "right": 358,
+      "width": 88,
+      "x": 270,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 120,
+          "width": 114,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 25.259008900893697,
+        "text": "X基準 0Y直角差 +25"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 236,
+          "width": 114,
+          "x": 122,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -14.62766211951195,
+        "text": "X基準 0Z直角差 -15"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 352,
+          "width": 114,
+          "x": 238,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -26.19200000001209,
+        "text": "Y基準 0Z直角差 -26"
+      }
+    ],
+    "title": "移動門形・ガントリー",
+    "width": 568
+  },
+  {
+    "canvas": {
+      "bottom": 271,
+      "height": 99,
+      "right": 270,
+      "width": 270,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 320,
+    "levels": {
+      "bottom": 271,
+      "height": 99,
+      "right": 358,
+      "width": 88,
+      "x": 270,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 120,
+          "width": 114,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -13.697,
+        "text": "X基準 0Y直角差 -14"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 236,
+          "width": 114,
+          "x": 122,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 15.908999999999995,
+        "text": "X基準 0Z直角差 +16"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 352,
+          "width": 114,
+          "x": 238,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -14.861999999999997,
+        "text": "Y基準 0Z直角差 -15"
+      }
+    ],
+    "title": "5軸・テーブル旋回形",
+    "width": 568
+  },
+  {
+    "canvas": {
+      "bottom": 271,
+      "height": 99,
+      "right": 270,
+      "width": 270,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 320,
+    "levels": {
+      "bottom": 271,
+      "height": 99,
+      "right": 358,
+      "width": 88,
+      "x": 270,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 269,
+          "width": 180,
+          "x": 89,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 14.528038290846457,
+        "text": "主軸Z基準 0X直角差 +15"
+      }
+    ],
+    "title": "NC旋盤・2軸",
+    "width": 568
+  },
+  {
+    "canvas": {
+      "bottom": 341,
+      "height": 169,
+      "right": 404.328125,
+      "width": 404.328125,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 390,
+    "levels": {
+      "bottom": 341,
+      "height": 169,
+      "right": 492.328125,
+      "width": 88,
+      "x": 404.328125,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 164.765625,
+          "width": 158.765625,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -10.962,
+        "text": "X基準 0Y直角差 -11"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 325.546875,
+          "width": 158.78125,
+          "x": 166.765625,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -11.32068745272708,
+        "text": "X基準 0Z直角差 -11"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 486.328125,
+          "width": 158.78125,
+          "x": 327.546875,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": 18.27593376480858,
+        "text": "Y基準 0Z直角差 +18"
+      }
+    ],
+    "title": "小型立形・4点支持",
+    "width": 844
+  },
+  {
+    "canvas": {
+      "bottom": 341,
+      "height": 169,
+      "right": 404.328125,
+      "width": 404.328125,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 390,
+    "levels": {
+      "bottom": 341,
+      "height": 169,
+      "right": 492.328125,
+      "width": 88,
+      "x": 404.328125,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 164.765625,
+          "width": 158.765625,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 13.376261029021608,
+        "text": "X基準 0Y直角差 +13"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 325.546875,
+          "width": 158.78125,
+          "x": 166.765625,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 12.240997034068338,
+        "text": "X基準 0Z直角差 +12"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 486.328125,
+          "width": 158.78125,
+          "x": 327.546875,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -11.34283663276366,
+        "text": "Y基準 0Z直角差 -11"
+      }
+    ],
+    "title": "横形・Haas EC-630",
+    "width": 844
+  },
+  {
+    "canvas": {
+      "bottom": 341,
+      "height": 169,
+      "right": 404.328125,
+      "width": 404.328125,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 390,
+    "levels": {
+      "bottom": 341,
+      "height": 169,
+      "right": 492.328125,
+      "width": 88,
+      "x": 404.328125,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 164.765625,
+          "width": 158.765625,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 10.192097723993534,
+        "text": "X基準 0Y直角差 +10"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 325.546875,
+          "width": 158.78125,
+          "x": 166.765625,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -4.9812916547113515,
+        "text": "X基準 0Z直角差 -5"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 486.328125,
+          "width": 158.78125,
+          "x": 327.546875,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": 15.855000000000002,
+        "text": "Y基準 0Z直角差 +16"
+      }
+    ],
+    "title": "立形・移動コラム",
+    "width": 844
+  },
+  {
+    "canvas": {
+      "bottom": 341,
+      "height": 169,
+      "right": 404.328125,
+      "width": 404.328125,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 390,
+    "levels": {
+      "bottom": 341,
+      "height": 169,
+      "right": 492.328125,
+      "width": 88,
+      "x": 404.328125,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 164.765625,
+          "width": 158.765625,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -49.17636091329216,
+        "text": "X基準 0Y直角差 -49"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 325.546875,
+          "width": 158.78125,
+          "x": 166.765625,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 19.577239151924747,
+        "text": "X基準 0Z直角差 +20"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 486.328125,
+          "width": 158.78125,
+          "x": 327.546875,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -29.4735600989189,
+        "text": "Y基準 0Z直角差 -29"
+      }
+    ],
+    "title": "固定門形・L3 3000",
+    "width": 844
+  },
+  {
+    "canvas": {
+      "bottom": 341,
+      "height": 169,
+      "right": 404.328125,
+      "width": 404.328125,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 390,
+    "levels": {
+      "bottom": 341,
+      "height": 169,
+      "right": 492.328125,
+      "width": 88,
+      "x": 404.328125,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 164.765625,
+          "width": 158.765625,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": 25.259008900893697,
+        "text": "X基準 0Y直角差 +25"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 325.546875,
+          "width": 158.78125,
+          "x": 166.765625,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": -14.62766211951195,
+        "text": "X基準 0Z直角差 -15"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 486.328125,
+          "width": 158.78125,
+          "x": 327.546875,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -26.19200000001209,
+        "text": "Y基準 0Z直角差 -26"
+      }
+    ],
+    "title": "移動門形・ガントリー",
+    "width": 844
+  },
+  {
+    "canvas": {
+      "bottom": 341,
+      "height": 169,
+      "right": 404.328125,
+      "width": 404.328125,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 390,
+    "levels": {
+      "bottom": 341,
+      "height": 169,
+      "right": 492.328125,
+      "width": 88,
+      "x": 404.328125,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 164.765625,
+          "width": 158.765625,
+          "x": 6,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -13.697,
+        "text": "X基準 0Y直角差 -14"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 325.546875,
+          "width": 158.78125,
+          "x": 166.765625,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 15.908999999999995,
+        "text": "X基準 0Z直角差 +16"
+      },
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 486.328125,
+          "width": 158.78125,
+          "x": 327.546875,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -14.861999999999997,
+        "text": "Y基準 0Z直角差 -15"
+      }
+    ],
+    "title": "5軸・テーブル旋回形",
+    "width": 844
+  },
+  {
+    "canvas": {
+      "bottom": 341,
+      "height": 169,
+      "right": 404.328125,
+      "width": 404.328125,
+      "x": 0,
+      "y": 172
+    },
+    "gaugesFit": true,
+    "height": 390,
+    "levels": {
+      "bottom": 341,
+      "height": 169,
+      "right": 492.328125,
+      "width": 88,
+      "x": 404.328125,
+      "y": 172
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 148,
+          "height": 15,
+          "right": 336.15625,
+          "width": 180,
+          "x": 156.15625,
+          "y": 133
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 14.528038290846457,
+        "text": "主軸Z基準 0X直角差 +15"
+      }
+    ],
+    "title": "NC旋盤・2軸",
+    "width": 844
+  }
+]

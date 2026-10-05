@@ -1,0 +1,215 @@
+{
+  "before": {
+    "canvas": {
+      "bottom": 381,
+      "height": 161,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 220
+    },
+    "gaugesFit": true,
+    "height": 568,
+    "levels": {
+      "bottom": 381,
+      "height": 161,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 220
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -49.17636091329216,
+        "text": "X基準 0Y直角差 -49"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 19.577239151924747,
+        "text": "X基準 0Z直角差 +20"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -29.4735600989189,
+        "text": "Y基準 0Z直角差 -29"
+      }
+    ],
+    "title": "固定門形・L3 3000",
+    "width": 320
+  },
+  "raised": {
+    "canvas": {
+      "bottom": 381,
+      "height": 161,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 220
+    },
+    "gaugesFit": true,
+    "height": 568,
+    "levels": {
+      "bottom": 381,
+      "height": 161,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 220
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -49.17810049847728,
+        "text": "X基準 0Y直角差 -49"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 19.57723908229426,
+        "text": "X基準 0Z直角差 +20"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -25.46025346217575,
+        "text": "Y基準 0Z直角差 -25"
+      }
+    ],
+    "title": "固定門形・L3 3000",
+    "width": 320
+  },
+  "restored": {
+    "canvas": {
+      "bottom": 381,
+      "height": 161,
+      "right": 232,
+      "width": 232,
+      "x": 0,
+      "y": 220
+    },
+    "gaugesFit": true,
+    "height": 568,
+    "levels": {
+      "bottom": 381,
+      "height": 161,
+      "right": 320,
+      "width": 88,
+      "x": 232,
+      "y": 220
+    },
+    "minButtonHeight": 44,
+    "overflow": false,
+    "pairs": [
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 107.328125,
+          "width": 101.328125,
+          "x": 6,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XY",
+        "raw": -49.17636091329216,
+        "text": "X基準 0Y直角差 -49"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 210.671875,
+          "width": 101.34375,
+          "x": 109.328125,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "XZ",
+        "raw": 19.577239151924747,
+        "text": "X基準 0Z直角差 +20"
+      },
+      {
+        "bounds": {
+          "bottom": 192,
+          "height": 35,
+          "right": 314,
+          "width": 101.328125,
+          "x": 212.671875,
+          "y": 157
+        },
+        "correct": true,
+        "fits": true,
+        "pair": "YZ",
+        "raw": -29.4735600989189,
+        "text": "Y基準 0Z直角差 -29"
+      }
+    ],
+    "title": "固定門形・L3 3000",
+    "width": 320
+  }
+}
