@@ -71,7 +71,7 @@ async function layout(name){
   assert(r.spindleSweepPanel.x>=r.liveSquareness.right-1,'dial is not right of squareness');
   assert(Math.max(r.liveSquareness.bottom,r.spindleSweepPanel.bottom)<=r.sceneViewport.y+1,'readout overlaps model');
   assert(r.sceneToolbar.y>=r.sceneViewport.bottom-1,'axis controls overlay model');
-  assert(r.scene.width>=110&&r.scene.height>=45,'model canvas too small '+r.scene.width+'x'+r.scene.height);
+  assert(r.scene.width>=110&&r.scene.height>=90,'model canvas too small '+r.scene.width+'x'+r.scene.height);
  });
  check(name+' no horizontal overflow or clipped readings',()=>{
   assert(metrics.documentWidth<=metrics.width+1,'horizontal document overflow');assert.equal(metrics.textOverflow.length,0,metrics.textOverflow.join(', '));
@@ -102,9 +102,9 @@ async function layout(name){
   await p.setViewportSize({width,height});await p.waitForTimeout(200);await layout(name);
  }
  await p.setViewportSize({width:390,height:844});await p.waitForTimeout(200);
- check('old replacement-mode toggle removed',()=>{});
+ const oldToggleCount=await p.locator('#toggleSpindleSweep').count();
+ check('old replacement-mode toggle removed',()=>assert.equal(oldToggleCount,0));
  check('browser starts without script errors',()=>assert.deepEqual(summary.browserErrors,[]));
- assert.equal(await p.locator('#toggleSpindleSweep').count(),0);
  const before=await assertReadings('initial');
  await p.locator('#supportMap button').nth(2).click();
  await p.locator('#coarseAdjust').click();
