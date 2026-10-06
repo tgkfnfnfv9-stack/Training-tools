@@ -164,6 +164,32 @@ async function smallViewportControls(name){
    check(kind+' '+key+'='+value+' off-table readings never presented as normal',()=>{for(let i=0;i<4;i++){if(!readable||!s.onTable[i]){assert.equal(s.sweep[i],null);offCount++;}else near(s.sweep[i],s.geometry[i]);}});
   }
   await p.locator('#resetAxes').click();
+  if(kind==='gantry'){
+   // Support dimensions remain a valid saved-data setting; their old input is
+   // intentionally hidden. Exercise this supported range through real JSON import.
+   const original=await snapshot();
+   await p.locator('.level-storage').evaluate(e=>e.open=true);
+   for(const y of [-100,100]){
+    const narrow={...original.record,width:.5,axisPositions:{...original.record.axisPositions,Y:y}};
+    const narrowFile=path.join(output,'gantry-narrow-'+y+'.json');fs.writeFileSync(narrowFile,JSON.stringify(narrow));
+    await p.locator('#importLevel').setInputFiles(narrowFile);
+    await p.waitForFunction(expected=>levelConfig.width===.5&&positions.Y===expected,y);
+    await p.locator('#closeTrainingMenu').click();
+    const narrowState=await snapshot(),labels=await p.locator('.sweep-positions button strong').allTextContents();
+    check('gantry narrow valid dimensions Y='+y+' exercises actual off-table suppression',()=>{
+     assert(narrowState.onTable.some(v=>!v),'test must actually cross a table edge');
+     if(y===-100){assert.equal(narrowState.onTable[0],true);assert.equal(narrowState.onTable[2],false);assert.equal(narrowState.sweep[2],null);assert.equal(labels[2],'面外');}
+     else{assert.equal(narrowState.onTable[0],false);assert(narrowState.sweep.every(v=>v===null));assert.equal(labels[0],'面外');}
+     for(let i=0;i<4;i++){if(!narrowState.onTable[0]||!narrowState.onTable[i])assert.equal(narrowState.sweep[i],null);else near(narrowState.sweep[i],narrowState.geometry[i]);}
+    });
+    await screenshot('gantry--off-table-'+y+'-390x844');
+    await p.locator('#openTrainingMenu').click();
+   }
+   const originalFile=path.join(output,'gantry-original-dimensions.json');fs.writeFileSync(originalFile,JSON.stringify(original.record));
+   await p.locator('#importLevel').setInputFiles(originalFile);
+   await p.waitForFunction(expected=>levelConfig.width===expected.width&&positions.Y===expected.axisPositions.Y,original.record);
+   const recovered=await snapshot();check('gantry restoring original dimensions restores calculation state',()=>{assert.deepEqual(recovered.record,original.record);valuesNear(recovered.sweep,original.sweep);valuesNear(recovered.pairRaw,original.pairRaw);});
+  }
   if(kind==='five'){
    const neutral=await snapshot();
    await p.locator('#drawerAxisSelect').selectOption('A');await p.locator('#axis-A').evaluate(e=>{e.value='50';e.dispatchEvent(new Event('input',{bubbles:true}));});const tilted=await snapshot();
