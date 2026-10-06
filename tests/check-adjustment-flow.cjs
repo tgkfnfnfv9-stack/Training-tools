@@ -39,7 +39,7 @@ function visibleText(el){
  // Model identifiers, support counts and station names are not precision or
  // adjustment measurements. Their exact identities have separate UI checks.
  if(['machineTitle','machineSubtitle','structureText','supportNote','sourceLinks','selectedSupportLabel'].includes(el.id))return '';
- if(el.id==='liveSquarenessUnits'){assert.equal(el.textContent.replace(/\s/g,''),'300mm・µm');assert.equal(el.children.length,0);return '';}
+ if(el.id==='liveSquarenessUnits'){assert.equal(el.textContent.replace(/\s/g,'').replace('直角',''),'300mm・µm');assert.equal(el.children.length,1);assert.equal(el.children[0].id,'liveSquarenessName');assert.equal(el.children[0].textContent,'直角');return '';}
  if(el.classList.contains('live-pair-base-value')||el.classList.contains('live-pair-error-value')){
   const parent=el.closest('.live-pair-values');assert(parent&&parent.closest('#liveSquareness'));assert.equal(el.tagName,'SPAN');
   const key=parent.getAttribute('data-pair'),pair=json('levelGeometry.pairs').find(p=>p.key===key);assert(pair);
@@ -104,7 +104,7 @@ function verifyDiagrams(){
    near(Math.hypot(dx,dy),28,1e-10);near(Math.atan2(-dx,dy),Math.max(-.65,Math.min(.65,dev*Number(svg.getAttribute('data-gain'))/1e6)),1e-12);
   }
   if(Math.abs(p.deviationMicroradians-b.deviationMicroradians)<=1e-6){assert.equal(svg.getAttribute('data-direction'),'unchanged');assert.equal(svg.querySelectorAll('.pair-change-area').length,0);}
-  assert.equal(svg.querySelectorAll('.measurement-start')[0].textContent,'0');assert.equal(svg.querySelectorAll('.measurement-end').length,0);near(Number(svg.dataset.measurementLengthM),.3);assert.equal(r.liveSquarenessUnits.textContent.replace(/\s/g,''),'300mm・µm');
+  assert.equal(svg.querySelectorAll('.measurement-start')[0].textContent,'0');assert.equal(svg.querySelectorAll('.measurement-end').length,0);near(Number(svg.dataset.measurementLengthM),.3);assert.equal(r.liveSquarenessUnits.textContent.replace(/\s/g,'').replace('直角',''),'300mm・µm');
   near(Number(svg.getAttribute('data-current-error-300')),p.deviationMicroradians*.3);near(Number(svg.getAttribute('data-before-error-300')),b.deviationMicroradians*.3);near(Number(svg.getAttribute('data-delta-error-300')),(p.deviationMicroradians-b.deviationMicroradians)*.3);
   assert.doesNotMatch(visibleText(svg)+svg.getAttribute('aria-label').replace('O・0は','Oは').replace('現在位置の局所角度を300 mm換算、実走査ではありません。','現在位置の局所角度の換算、実走査ではありません。'),/[0-9°µμ]/);
  }
@@ -174,7 +174,7 @@ check('position-label exception cannot hide numeric precision or other positions
  loadProfile(0,'compact');nonnumeric();
  const leak=e.context.document.createElement('span');leak.textContent='0 µm';r.training.append(leak);assert.throws(nonnumeric);leak.remove();
  // The conversion marker now lives in the compact shared external note.
- const marker=r.liveSquarenessUnits,original=marker.textContent;marker.textContent='300 mm・µm 0 µm';assert.throws(nonnumeric);marker.textContent='400 mm・µm';assert.throws(nonnumeric);marker.textContent=original;nonnumeric();
+ const marker=r.liveSquarenessUnits,original=marker._text,originalChildren=[...marker.children];marker.textContent='300 mm・µm 0 µm';assert.throws(nonnumeric);marker.textContent='400 mm・µm';assert.throws(nonnumeric);marker.textContent=original;for(const child of originalChildren)marker.append(child);nonnumeric();
  const start=r.liveSquareness.querySelectorAll('.measurement-start')[0];start.textContent='0.001';assert.throws(nonnumeric);start.textContent='0';nonnumeric();
 });
 check('approved dial exceptions cannot hide wrong values or unrelated numeric output',()=>{

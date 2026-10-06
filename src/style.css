@@ -670,3 +670,8 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 /* On the narrow landscape split, reclaim the unused dial slot so all seven
    plates can use the shared height rather than shrink to the card width. */
 @media(max-width:600px) and (orientation:landscape) and (max-height:400px){.training-main:not(.has-spindle-sweep) .precision-readouts{grid-template-columns:minmax(0,1fr) 56px}}
+
+/* Short measurement names reuse the existing unit rows without taking space
+   from the model or enlarging the diagram's labels. */
+.live-measurement-name{font-size:8px;line-height:10px;font-weight:600;color:#775b48}
+.sweep-readout-heading{display:flex;justify-content:space-between;align-items:baseline;font-size:8px;line-height:10px}
