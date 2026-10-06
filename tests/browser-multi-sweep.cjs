@@ -132,7 +132,7 @@ async function smallViewportControls(name){
   await p.setViewportSize({width:390,height:844});await p.waitForTimeout(150);
   const n=await p.locator('#supportMap button').count();check(kind+' support count unchanged',()=>assert.equal(n,count));
   // Scroll the last support fully into the internal selection viewport before tapping.
-  const adjustmentIndex=kind==='gantry'?2:count-1,chosen=p.locator('#supportMap button').nth(adjustmentIndex);await chosen.scrollIntoViewIfNeeded();await chosen.click();
+  const adjustmentIndex=kind==='gantry'?2:kind==='travel'?0:count-1,chosen=p.locator('#supportMap button').nth(adjustmentIndex);await chosen.scrollIntoViewIfNeeded();await chosen.click();
   await p.locator('#coarseAdjust').scrollIntoViewIfNeeded();await p.locator('#coarseAdjust').click();
   const before=await snapshot();await p.locator('#raiseSupport').click();const up=await snapshot();
   check(kind+' support adjustment reaches geometry, level and drawing',()=>{
@@ -149,7 +149,7 @@ async function smallViewportControls(name){
   const stable=await snapshot();await p.locator('#openTrainingMenu').click();await p.locator('#closeTrainingMenu').click();await p.locator('#scene').hover();await p.mouse.wheel(0,-100);
   const box=await p.locator('#scene').boundingBox();await p.mouse.move(box.x+box.width*.3,box.y+box.height*.5);await p.mouse.down();await p.mouse.move(box.x+box.width*.6,box.y+box.height*.5,{steps:4});await p.mouse.up();
   await p.locator('#openTrainingMenu').click();await p.locator('#modelDisplaySettings').evaluate(e=>e.open=true);await p.locator('#exaggerate').uncheck();await p.locator('#closeTrainingMenu').click();
-  const viewed=await snapshot();check(kind+' sidebar, camera, exaggeration preserve measurements',()=>{assert.deepEqual(viewed.record,stable.record);valuesNear(viewed.sweep,stable.sweep);valuesNear(viewed.pairRaw,stable.pairRaw);assert.notEqual(viewed.zoom,stable.zoom);assert.notEqual(viewed.yaw,stable.yaw);});
+  const viewed=await snapshot();check(kind+' sidebar, camera, exaggeration preserve measurements',()=>{assert.equal(stable.record.exaggerate,true);assert.equal(viewed.record.exaggerate,false);const {exaggerate:beforeExaggerate,...beforePhysics}=stable.record,{exaggerate:afterExaggerate,...afterPhysics}=viewed.record;assert.deepEqual(afterPhysics,beforePhysics);valuesNear(viewed.sweep,stable.sweep);valuesNear(viewed.pairRaw,stable.pairRaw);assert.notEqual(viewed.zoom,stable.zoom);assert.notEqual(viewed.yaw,stable.yaw);});
   await p.locator('#openTrainingMenu').click();await p.locator('.level-storage').evaluate(e=>e.open=true);const downloadPromise=p.waitForEvent('download');await p.locator('#exportLevel').click();const download=await downloadPromise;
   const savedFile=path.join(output,kind+'-saved.json');await download.saveAs(savedFile);const saved=JSON.parse(fs.readFileSync(savedFile,'utf8')),savedValues=await snapshot();
   await p.locator('#closeTrainingMenu').click();await p.locator('#raiseSupport').click();await p.locator('#openTrainingMenu').click();await p.locator('#importLevel').setInputFiles(savedFile);await p.waitForFunction(()=>document.getElementById('levelSaveStatus').textContent.includes('読み込みました'));await p.locator('#closeTrainingMenu').click();
