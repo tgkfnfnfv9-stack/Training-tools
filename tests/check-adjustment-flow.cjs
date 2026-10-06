@@ -28,7 +28,7 @@ function prepareSweepExceptions(){
  for(const id of ['sweepCurrentAngle','sweepCurrentValue','sweepDial','runSpindleSweep'])assert.equal(r[id],undefined);
  const diameter=r.spindleSweepPanel.querySelectorAll('.sweep-diameter');assert.equal(diameter.length,0);sweepTextExceptions.set(r.spindleSweepPanel.querySelectorAll('.sweep-readout-unit')[0],'µm');
  sweepTextExceptions.set(r.sweepContactStatus,!g.valid?'測定不可・主軸と上面の姿勢を確認':!zero?'手前が面外・軸を中央へ':!g.point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）');
- sweepTextExceptions.set(r.sweepMeasurementNote,'主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の模型は支持姿勢を簡略表示し、測定は固有差を含む代表主軸方向で計算します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。');
+ sweepTextExceptions.set(r.sweepMeasurementNote,'主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。');
 }
 // Only the dedicated position labels and approved current 300 mm readings
 // may contain numbers. Adjustment amounts and initial/delta values stay hidden.

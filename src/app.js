@@ -78,6 +78,28 @@ function displayMovement(axes,m,state,pose){
 function displayTransformedPoint(p,axes,m,state=positions,pose='bed'){
  const q=displayRotatedPoint(p,axes,state),move=displayMovement(axes,m,state,pose);return q.map((v,i)=>v+move[i]);
 }
+let portalSpindleVisualCache=null;
+function portalSpindleVisualFrame(m=current,state=positions){
+ if(!levelGeometry?.portal||!machineProfile||!['double','gantry'].includes(m.kind))return null;
+ const factor=displayFactor(),keys=['X','Y','Z','A','C'];
+ if(portalSpindleVisualCache?.geometry===levelGeometry&&portalSpindleVisualCache.factor===factor&&portalSpindleVisualCache.kind===m.kind&&keys.every((k,i)=>portalSpindleVisualCache.state[i]===state[k]))return portalSpindleVisualCache;
+ const unit=v=>{const n=Math.hypot(...v);return v.map(q=>q/n);},frame=displayAxisFrame('Z');
+ const from=unit(frame.rotate([0,1,0])),to=unit(frame.rotate(accuracyVisualVector('Z'))),turn=[from[1]*to[2]-from[2]*to[1],from[2]*to[0]-from[0]*to[2],from[0]*to[1]-from[1]*to[0]],squared=turn.reduce((s,v)=>s+v*v,0),cosine=from.reduce((s,v,i)=>s+v*to[i],0);
+ const axes=m.kind==='gantry'?['X','Y','Z']:['Y','Z'],rawNose=[.15,1.91,(m.columnZ??0)-.23];
+ const nose=levelMappedBodyVisualPoint(displayTransformedPoint(rawNose,axes,m,state,'tool'),'tool');
+ const rotate=v=>{if(squared<1e-24)return [...v];const dot=turn.reduce((s,q,i)=>s+q*v[i],0),cross=[turn[1]*v[2]-turn[2]*v[1],turn[2]*v[0]-turn[0]*v[2],turn[0]*v[1]-turn[1]*v[0]];return v.map((q,i)=>q*cosine+cross[i]+turn[i]*dot*(1-cosine)/squared);};
+ portalSpindleVisualCache={geometry:levelGeometry,factor,kind:m.kind,state:keys.map(k=>state[k]),nose,from,to,rotate};return portalSpindleVisualCache;
+}
+function portalZVisualPoint(point,axes,pose,m=current,state=positions){
+ if(pose!=='tool'||!axes.includes('Z'))return point;
+ const frame=portalSpindleVisualFrame(m,state);if(!frame)return point;
+ // Correct the support-only mesh about its existing nose. Translation and
+ // measurement geometry stay untouched; the rotation preserves part shape.
+ return frame.rotate(point.map((v,i)=>v-frame.nose[i])).map((v,i)=>v+frame.nose[i]);
+}
+function displayedModelPoint(p,axes,m=current,state=positions,pose='bed'){
+ return portalZVisualPoint(levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,state,pose),pose),axes,pose,m,state);
+}
 // The ideal comparison is a separate display transform. It never replaces
 // support heights, intrinsic data, the initial comparison or the saved state.
 function idealDisplayContext(m,state=positions){
@@ -345,7 +367,7 @@ function axisIndicators(m,model){
   if(['X','Y','Z'].includes(a.key)){
    const movingFaces=model.faces.filter(f=>f.axes.includes(a.key)),moved=movingFaces.flatMap(f=>f.v.map(p=>displayTransformedPoint(p,f.axes,m,positions,f.pose)));
    const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2);
-   const bodyPoints=levelGeometry?movingFaces.flatMap(f=>f.v.map(p=>levelMappedBodyVisualPoint(displayTransformedPoint(p,f.axes,m,positions,f.pose),f.pose))):moved,bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
+   const bodyPoints=levelGeometry?movingFaces.flatMap(f=>f.v.map(p=>displayedModelPoint(p,f.axes,m,positions,f.pose))):moved,bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
    const vector=levelGeometry?accuracyVisualVector(a.key):a.vector,pose=levelGeometry?(current.kind==='lathe'&&a.key==='Z'?'work':levelGeometry.axes.find(q=>q.key===a.key).source):'bed';
    return {key:a.key,pose,bodyOrigin,curved:false,points:[-1,1].map(sign=>origin.map((v,i)=>v+sign*vector[i]*.6))};
   }
@@ -399,7 +421,7 @@ function render(canvas,m,angle,showLabels,active){
  const margin=showLabels?Math.min(compactView?44:56,width*(compactView?.12:.16)):18,verticalSpace=active>=0?height-(compactShortCanvas?12:48):height-75;
  const fitScale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY));
  const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-(compactShortCanvas?4:20))/2:height*.48)-(minY+maxY)*scale/2;
- const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelMappedVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(active>=0?levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,positions,pose||'bed'),pose):transformedPoint(p,axes,m));
+ const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelMappedVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(active>=0?displayedModelPoint(p,axes,m,positions,pose||'bed'):transformedPoint(p,axes,m));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}

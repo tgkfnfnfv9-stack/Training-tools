@@ -17,7 +17,7 @@ function model(env){return env.json(`(()=>{
  const tableHeight=five?1.56:travel?1.1:portal?1.12:1.16;
  const face=createGeometry(m).faces.find(f=>f.pose==='work'&&f.color==='#4c9b8b'&&f.v.every(p=>Math.abs(p[1]-tableHeight)<1e-12)&&f.v.length===(five?20:4));
  if(!face)throw new Error('independent table face absent '+kind);
- const map=(p,axes,pose)=>levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,positions,pose),pose);
+ const map=(p,axes,pose)=>displayedModelPoint(p,axes,m,positions,pose);
  const vertices=face.v.map(p=>map(p,face.axes,'work'));
  const rawCentre=face.v.reduce((sum,p)=>sum.map((v,i)=>v+p[i]/face.v.length),[0,0,0]),centre=map(rawCentre,face.axes,'work');
  const radius=five?.65:0,basis=five?[[radius,0,0],[0,0,radius]].map(v=>map(rawCentre.map((q,i)=>q+v[i]),face.axes,'work').map((q,i)=>q-centre[i])):null;
@@ -25,9 +25,9 @@ function model(env){return env.json(`(()=>{
  const axes=travel?['X','Y','Z']:kind==='gantry'?['X','Y','Z']:portal?['Y','Z']:['Z'];
  const nose=map(rawNose,axes,'tool');
  const body=intrinsicBodyFrame(axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)),machineProfile);
- // Portal mesh intentionally shows support posture only. Its existing
- // representative spindle direction includes the individual body defect.
- const direction=portal?levelGeometry.toolFrame.rotate(body.direction):substitute();
+ // Infer the physical spindle axis from its actual rendered endpoints for
+ // every supported machine, including the corrected portal Z mesh.
+ const direction=substitute();
  function substitute(){return map(rawNose.map((q,i)=>q+(i===1?.3:0)),axes,'tool').map((q,i)=>q-nose[i]);}
  const right=levelGeometry.toolFrame.rotate(body.rotate([1,0,0]));
  return {vertices,centre,basis,nose,direction,right,five};
@@ -46,7 +46,8 @@ const env=makeEnvironment({pureLeveling:true});
 for(const kind of ['compact','travel','double','gantry','five']){
  env.read(`openMachine(machines.find(m=>m.kind==='${kind}'));`);env.registry.exaggerate.checked=false;
  const count=env.read('supports.length'),profile=MachineAccuracy.generate('used',78612,['X','Y','Z'],count);
- env.read(`initializeMachineAccuracy(${JSON.stringify(profile)});`);
+ env.read(`machineProfile=${JSON.stringify(profile)};machineReference=null;`);
+ check(kind+' used-profile fixture actually includes intrinsic error',()=>assert.deepEqual(env.json('machineProfile'),profile));
  for(const [i,state] of [zero,{...zero,X:100,Y:-100,Z:100,A:71,C:37},{...zero,X:-83,Y:94,Z:-100,A:-62,C:-71}].entries()){
   env.read(`positions=${JSON.stringify(state)};supportHeights=supports.map((s,i)=>[.025,-.012,.018,-.009,.005,-.011][i%6]);updateLeveling();`);
   const actual=env.json('spindleSweepGeometry()'),drawn=model(env),expected=oracle(drawn),tag=kind+'/'+i;

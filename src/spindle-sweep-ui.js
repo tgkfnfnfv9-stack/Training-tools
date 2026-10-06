@@ -100,7 +100,7 @@ function spindleSweepMachineGeometry(state,solution,profile){
  const tableCentre=point(travel?[0,1.1,-m.d*.18]:five?[0,1.56,-.45]:[0,1.12,0],workKeys,'work');
  const tableRight=poseFrame('work').rotate(rotary([1,0,0],workKeys)),tableBack=poseFrame('work').rotate(rotary([0,0,1],workKeys)),tableNormal=unit(cross(tableBack,tableRight));
  // The existing representative spindle includes intrinsic posture. Portal
- // cylinder meshes remain simplified support-only shapes, as before.
+ // Z-part meshes follow this direction about the unchanged spindle nose.
  const axis=g.bodyCombinedDirection,right=poseFrame('tool').rotate(body.rotate([1,0,0]));
  const measurement=window.SpindleSweep.measure({axis,tableNormal,right,radius:.15});
  if(!measurement.valid)return measurement;
