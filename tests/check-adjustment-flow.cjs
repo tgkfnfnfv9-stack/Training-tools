@@ -9,11 +9,37 @@ const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 let checks=0;
 function check(name,fn){try{fn();checks++;}catch(error){throw new Error(name+': '+error.message,{cause:error});}}
 function near(a,b,tolerance=1e-7){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tolerance,`${a} != ${b}`);}
+// Numeric exceptions are restricted to exact, verified measurement elements.
+let sweepTextExceptions=new Map(),sweepAriaExceptions=new Map();
+const sweepSceneDescription='主軸ダイヤル測定も同時に表示します。主軸に取り付けたゲージでテーブル上面を直径300ミリの円で旋回測定しています。0度は右、90度は奥、180度は左、270度は手前。測定子が見えるようワークとT溝模様を省略しています。上の直角図は300ミリ換算、隣の4点は0度基準の相対読みです。';
+function prepareSweepExceptions(){
+ sweepTextExceptions=new Map();sweepAriaExceptions=new Map();
+ if(read("current.kind")!=='compact')return;
+ const g=json('(()=>{const m=spindleSweepGeometry();return {valid:m.valid,cardinal:m.cardinal,point:m.valid?m.pointAt(spindleSweepAngle):null,angle:spindleSweepAngle};})()'),zero=g.valid&&g.cardinal[0].onTable;
+ const number=v=>{const magnitude=Math.round(Math.abs(v));return magnitude===0?'0':(v<0?'-':'+')+magnitude;};
+ const direction=['右','奥','左','手前'],angle=Math.round(g.angle)+'°';
+ for(let i=0;i<4;i++){
+  const point=g.cardinal?.[i],readable=zero&&point?.onTable,text=readable?number(point.readingMicrons):point&&!point.onTable?'面外':'—';
+  const button=r['sweepPosition'+i],value=r['sweepValue'+i];assert.equal(button.children.length,2);
+  sweepTextExceptions.set(button.children[0],i*90+'° '+direction[i]);sweepTextExceptions.set(value,text);
+  sweepAriaExceptions.set(button,i*90+'度・'+direction[i]+'、'+(readable?text+'マイクロメートル':text));
+  assert.equal(value.getAttribute('data-reading-microns'),readable?String(point.readingMicrons):'');
+ }
+ const readable=zero&&g.point?.onTable,value=readable?number(g.point.readingMicrons)+' µm':'測定できません';
+ sweepTextExceptions.set(r.sweepCurrentAngle,angle);sweepTextExceptions.set(r.sweepCurrentValue,value);
+ assert.equal(r.sweepCurrentValue.getAttribute('data-reading-microns'),readable?String(g.point.readingMicrons):'');
+ sweepTextExceptions.set(r.sweepDial,'0');sweepAriaExceptions.set(r.sweepDial,Math.round(g.angle)+'度のダイヤル、'+value+'。一回転100マイクロメートル。');
+ const diameter=r.spindleSweepPanel.querySelectorAll('.sweep-diameter');assert.equal(diameter.length,1);sweepTextExceptions.set(diameter[0],'直径300 mm');
+ sweepTextExceptions.set(r.sweepContactStatus,!zero?'0°が面外・軸を中央へ':!g.point?.onTable?'測定子が面外・軸を中央へ':'0°基準・µm（0.001 mm）');
+ sweepTextExceptions.set(r.sweepMeasurementNote,'主軸と理想平面の相対傾きを直径300 mmで測ります。0°右をゼロ基準とし、90°は奥、180°は左、270°は手前です。プラスは測定子の押込み側です。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。');
+ sweepTextExceptions.set(r.runSpindleSweep,read('spindleSweepTimer')===null?'1周回す':'停止');
+}
 // Only the dedicated position labels and approved current 300 mm readings
 // may contain numbers. Adjustment amounts and initial/delta values stay hidden.
 const positionLabels={'measurement-start':'0','measurement-end':'300 mm','measurement-start-note':'0','measurement-origin-note':'O（0,0）','measurement-length-note':'300 mm'};
 function visibleText(el){
  if(el.hidden)return '';
+ if(sweepTextExceptions.has(el)){assert.equal(el.textContent.trim(),sweepTextExceptions.get(el));return '';}
  // Model identifiers, support counts and station names are not precision or
  // adjustment measurements. Their exact identities have separate UI checks.
  if(['machineTitle','machineSubtitle','structureText','supportNote','sourceLinks','selectedSupportLabel'].includes(el.id))return '';
@@ -36,11 +62,14 @@ function compactCoach(){
  else{assert.equal(reminder.getAttribute('data-support'),'');assert.equal(reminder.getAttribute('data-direction'),'');assert.match(reminder.textContent,mode==='goal'?/残る誤差/:/単独候補なし/);}
 }
 function nonnumeric(){
- compactCoach();
+ compactCoach();prepareSweepExceptions();
  const text=visibleText(r.training).replace(/(?:5|2)軸/g,'');
  assert.doesNotMatch(text,/[0-9０-９%％°µμ]|\bmm\b|\brad\b/);
  for(const el of visibleElements(r.training)){
-  let aria=(el.getAttribute('aria-label')||'').replace(/(?:5|2)軸/g,'').replace(/15か所/g,'');
+  let label=el.getAttribute('aria-label')||'';
+  if(sweepAriaExceptions.has(el)){assert.equal(label,sweepAriaExceptions.get(el));label='';}
+  if(el===r.scene&&read("current.kind")==='compact'){assert.ok(label.endsWith(sweepSceneDescription));label=label.slice(0,-sweepSceneDescription.length);}
+  let aria=label.replace(/(?:5|2)軸/g,'').replace(/15か所/g,'');
   for(const identity of [read('current.name'),...json('supports.map(s=>s.name)')])aria=aria.split(identity).join('');
   assert.doesNotMatch(aria,/[0-9０-９%％°µμ]|\bmm\b|\brad\b/);
   if(el.type==='range')assert(el.getAttribute('aria-valuetext'));
@@ -140,5 +169,12 @@ check('position-label exception cannot hide numeric precision or other positions
  const leak=e.context.document.createElement('span');leak.textContent='0 µm';r.training.append(leak);assert.throws(nonnumeric);leak.remove();
  const marker=r.liveSquareness.querySelectorAll('.measurement-end')[0];marker.textContent='300 mm 0 µm';assert.throws(nonnumeric);marker.textContent='400 mm';assert.throws(nonnumeric);marker.textContent='300 mm';nonnumeric();
  const start=r.liveSquareness.querySelectorAll('.measurement-start')[0];start.textContent='0.001';assert.throws(nonnumeric);start.textContent='0';nonnumeric();
+});
+check('approved dial exceptions cannot hide wrong values or unrelated numeric output',()=>{
+ loadProfile(0,'compact');nonnumeric();
+ const number=r.sweepValue1.textContent;r.sweepValue1.textContent='123456';assert.throws(nonnumeric);r.sweepValue1.textContent=number;
+ const label=r.sweepPosition1.getAttribute('aria-label');r.sweepPosition1.setAttribute('aria-label',label+' 999');assert.throws(nonnumeric);r.sweepPosition1.setAttribute('aria-label',label);
+ const leak=e.context.document.createElement('span');leak.textContent='99 µm';r.spindleSweepPanel.append(leak);assert.throws(nonnumeric);leak.remove();
+ const sceneLabel=r.scene.getAttribute('aria-label');r.scene.setAttribute('aria-label','999 '+sceneLabel);assert.throws(nonnumeric);r.scene.setAttribute('aria-label',sceneLabel);nonnumeric();
 });
 console.log('Adjustment flow: '+checks+' nonnumeric, actual-improvement, invariant-pair and legacy checks passed.');

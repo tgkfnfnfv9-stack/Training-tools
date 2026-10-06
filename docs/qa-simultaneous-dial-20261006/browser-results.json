@@ -1,0 +1,2694 @@
+{
+  "url": "http://127.0.0.1:8765/index.html",
+  "checks": 88,
+  "failures": [],
+  "browserErrors": [],
+  "layouts": [
+    {
+      "name": "pc-1366x900",
+      "width": 1366,
+      "height": 900,
+      "documentWidth": 1366,
+      "documentHeight": 900,
+      "rectangles": {
+        "precisionReadouts": {
+          "x": 123,
+          "y": 103,
+          "width": 1120,
+          "height": 152,
+          "right": 1243,
+          "bottom": 255,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquareness": {
+          "x": 123,
+          "y": 121,
+          "width": 798,
+          "height": 109,
+          "right": 921,
+          "bottom": 230,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquarenessUnits": {
+          "x": 123,
+          "y": 230,
+          "width": 798,
+          "height": 14,
+          "right": 921,
+          "bottom": 244,
+          "visible": true,
+          "overflow": 0
+        },
+        "spindleSweepPanel": {
+          "x": 933,
+          "y": 103,
+          "width": 310,
+          "height": 152,
+          "right": 1243,
+          "bottom": 255,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepCurrentValue": {
+          "x": 1111.8125,
+          "y": 131,
+          "width": 29.90625,
+          "height": 14,
+          "right": 1141.71875,
+          "bottom": 145,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepContactStatus": {
+          "x": 946,
+          "y": 243,
+          "width": 297,
+          "height": 12,
+          "right": 1243,
+          "bottom": 255,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 269,
+          "width": 1278,
+          "height": 385,
+          "right": 1278,
+          "bottom": 654,
+          "visible": true,
+          "overflow": 0
+        },
+        "scene": {
+          "x": 0,
+          "y": 269,
+          "width": 1278,
+          "height": 385,
+          "right": 1278,
+          "bottom": 654,
+          "visible": true,
+          "overflow": 0
+        },
+        "viewerLevels": {
+          "x": 1278,
+          "y": 269,
+          "width": 88,
+          "height": 385,
+          "right": 1366,
+          "bottom": 654,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 654,
+          "width": 1366,
+          "height": 57,
+          "right": 1366,
+          "bottom": 711,
+          "visible": true,
+          "overflow": 0
+        },
+        "axisTabs": {
+          "x": 566,
+          "y": 661,
+          "width": 136,
+          "height": 44,
+          "right": 702,
+          "bottom": 705,
+          "visible": true,
+          "overflow": 0
+        },
+        "runSpindleSweep": {
+          "x": 708,
+          "y": 661,
+          "width": 92,
+          "height": 44,
+          "right": 800,
+          "bottom": 705,
+          "visible": true,
+          "overflow": 0
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 711,
+          "width": 1366,
+          "height": 189,
+          "right": 1366,
+          "bottom": 900,
+          "visible": true,
+          "overflow": 0
+        },
+        "lowerSupport": {
+          "x": 283,
+          "y": 846,
+          "width": 395,
+          "height": 44,
+          "right": 678,
+          "bottom": 890,
+          "visible": true,
+          "overflow": 0
+        },
+        "raiseSupport": {
+          "x": 688,
+          "y": 846,
+          "width": 395,
+          "height": 44,
+          "right": 1083,
+          "bottom": 890,
+          "visible": true,
+          "overflow": 0
+        },
+        "openTrainingMenu": {
+          "x": 12,
+          "y": 52,
+          "width": 76,
+          "height": 44,
+          "right": 88,
+          "bottom": 96,
+          "visible": true,
+          "overflow": 0
+        }
+      },
+      "buttons": [
+        {
+          "id": "sweepPosition0",
+          "width": 146.5,
+          "height": 44,
+          "hit": true,
+          "right": 1092.5,
+          "bottom": 193
+        },
+        {
+          "id": "sweepPosition1",
+          "width": 146.5,
+          "height": 44,
+          "hit": true,
+          "right": 1243,
+          "bottom": 193
+        },
+        {
+          "id": "sweepPosition2",
+          "width": 146.5,
+          "height": 44,
+          "hit": true,
+          "right": 1092.5,
+          "bottom": 241
+        },
+        {
+          "id": "sweepPosition3",
+          "width": 146.5,
+          "height": 44,
+          "hit": true,
+          "right": 1243,
+          "bottom": 241
+        },
+        {
+          "id": "lowerSupport",
+          "width": 395,
+          "height": 44,
+          "hit": true,
+          "right": 678,
+          "bottom": 890
+        },
+        {
+          "id": "raiseSupport",
+          "width": 395,
+          "height": 44,
+          "hit": true,
+          "right": 1083,
+          "bottom": 890
+        },
+        {
+          "id": "runSpindleSweep",
+          "width": 92,
+          "height": 44,
+          "hit": true,
+          "right": 800,
+          "bottom": 705
+        }
+      ],
+      "pairs": [
+        {
+          "x": 250,
+          "y": 121,
+          "right": 430,
+          "bottom": 230,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Y直角差 +3"
+        },
+        {
+          "x": 432,
+          "y": 121,
+          "right": 612,
+          "bottom": 230,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 -29"
+        },
+        {
+          "x": 614,
+          "y": 121,
+          "right": 794,
+          "bottom": 230,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 +6"
+        }
+      ],
+      "textOverflow": [],
+      "gaugeChildren": [
+        {
+          "className": "viewer-gauge viewer-gauge-lr",
+          "text": "",
+          "x": 1285,
+          "y": 371.5,
+          "right": 1360,
+          "bottom": 427.5,
+          "width": 75,
+          "height": 56
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 左右",
+          "x": 1285,
+          "y": 371.5,
+          "right": 1360,
+          "bottom": 385.5,
+          "width": 75,
+          "height": 14
+        },
+        {
+          "className": "level-direction",
+          "text": "左が高い",
+          "x": 1322.5,
+          "y": 385.5,
+          "right": 1323.5,
+          "bottom": 386.5,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vial",
+          "text": "",
+          "x": 1285,
+          "y": 389.5,
+          "right": 1360,
+          "bottom": 413.5,
+          "width": 75,
+          "height": 24
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 1318.109375,
+          "y": 390.5,
+          "right": 1326.859375,
+          "bottom": 412.5,
+          "width": 8.75,
+          "height": 22
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 1306.234375,
+          "y": 394.5,
+          "right": 1328.234375,
+          "bottom": 408.5,
+          "width": 22,
+          "height": 14
+        },
+        {
+          "className": "gauge-ends",
+          "text": "",
+          "x": 1285,
+          "y": 415.5,
+          "right": 1360,
+          "bottom": 427.5,
+          "width": 75,
+          "height": 12
+        },
+        {
+          "className": "",
+          "text": "左",
+          "x": 1285,
+          "y": 415.5,
+          "right": 1295,
+          "bottom": 427.5,
+          "width": 10,
+          "height": 12
+        },
+        {
+          "className": "",
+          "text": "右",
+          "x": 1350,
+          "y": 415.5,
+          "right": 1360,
+          "bottom": 427.5,
+          "width": 10,
+          "height": 12
+        },
+        {
+          "className": "viewer-gauge viewer-gauge-fb",
+          "text": "",
+          "x": 1285,
+          "y": 435.5,
+          "right": 1360,
+          "bottom": 551.5,
+          "width": 75,
+          "height": 116
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 前後",
+          "x": 1285,
+          "y": 435.5,
+          "right": 1360,
+          "bottom": 449.5,
+          "width": 75,
+          "height": 14
+        },
+        {
+          "className": "level-direction",
+          "text": "奥が高い",
+          "x": 1285,
+          "y": 435.5,
+          "right": 1286,
+          "bottom": 436.5,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vertical-gauge",
+          "text": "",
+          "x": 1285,
+          "y": 452.5,
+          "right": 1360,
+          "bottom": 551.5,
+          "width": 75,
+          "height": 99
+        },
+        {
+          "className": "",
+          "text": "奥",
+          "x": 1317.5,
+          "y": 452.5,
+          "right": 1327.5,
+          "bottom": 464.5,
+          "width": 10,
+          "height": 12
+        },
+        {
+          "className": "vial vial-vertical",
+          "text": "",
+          "x": 1310.5,
+          "y": 464.5,
+          "right": 1334.5,
+          "bottom": 539.5,
+          "width": 24,
+          "height": 75
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 1311.5,
+          "y": 497.609375,
+          "right": 1333.5,
+          "bottom": 506.359375,
+          "width": 22,
+          "height": 8.75
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 1315.5,
+          "y": 485.921875,
+          "right": 1329.5,
+          "bottom": 507.921875,
+          "width": 14,
+          "height": 22
+        },
+        {
+          "className": "",
+          "text": "手前",
+          "x": 1312.5,
+          "y": 539.5,
+          "right": 1332.5,
+          "bottom": 551.5,
+          "width": 20,
+          "height": 12
+        }
+      ],
+      "selectionScroll": {
+        "y": 720,
+        "bottom": 842,
+        "height": 122,
+        "clientHeight": 122,
+        "scrollHeight": 122
+      }
+    },
+    {
+      "name": "mobile-320x480",
+      "width": 320,
+      "height": 480,
+      "documentWidth": 320,
+      "documentHeight": 480,
+      "rectangles": {
+        "precisionReadouts": {
+          "x": 6,
+          "y": 95,
+          "width": 308,
+          "height": 132,
+          "right": 314,
+          "bottom": 227,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquareness": {
+          "x": 6,
+          "y": 95,
+          "width": 149.5,
+          "height": 100,
+          "right": 155.5,
+          "bottom": 195,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquarenessUnits": {
+          "x": 6,
+          "y": 195,
+          "width": 149.5,
+          "height": 24,
+          "right": 155.5,
+          "bottom": 219,
+          "visible": true,
+          "overflow": 0
+        },
+        "spindleSweepPanel": {
+          "x": 161.5,
+          "y": 95,
+          "width": 152.5,
+          "height": 132,
+          "right": 314,
+          "bottom": 227,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepCurrentValue": {
+          "x": 235.875,
+          "y": 107,
+          "width": 25.296875,
+          "height": 12,
+          "right": 261.171875,
+          "bottom": 119,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepContactStatus": {
+          "x": 168.5,
+          "y": 215,
+          "width": 145.5,
+          "height": 12,
+          "right": 314,
+          "bottom": 227,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 229,
+          "width": 232,
+          "height": 98,
+          "right": 232,
+          "bottom": 327,
+          "visible": true,
+          "overflow": 0
+        },
+        "scene": {
+          "x": 0,
+          "y": 229,
+          "width": 232,
+          "height": 98,
+          "right": 232,
+          "bottom": 327,
+          "visible": true,
+          "overflow": 0
+        },
+        "viewerLevels": {
+          "x": 232,
+          "y": 229,
+          "width": 88,
+          "height": 98,
+          "right": 320,
+          "bottom": 327,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 327,
+          "width": 320,
+          "height": 49,
+          "right": 320,
+          "bottom": 376,
+          "visible": true,
+          "overflow": 0
+        },
+        "axisTabs": {
+          "x": 43,
+          "y": 330,
+          "width": 136,
+          "height": 44,
+          "right": 179,
+          "bottom": 374,
+          "visible": true,
+          "overflow": 0
+        },
+        "runSpindleSweep": {
+          "x": 185,
+          "y": 330,
+          "width": 92,
+          "height": 44,
+          "right": 277,
+          "bottom": 374,
+          "visible": true,
+          "overflow": 0
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 376,
+          "width": 320,
+          "height": 104,
+          "right": 320,
+          "bottom": 480,
+          "visible": true,
+          "overflow": 0
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 432,
+          "width": 147,
+          "height": 44,
+          "right": 155,
+          "bottom": 476,
+          "visible": true,
+          "overflow": 0
+        },
+        "raiseSupport": {
+          "x": 165,
+          "y": 432,
+          "width": 147,
+          "height": 44,
+          "right": 312,
+          "bottom": 476,
+          "visible": true,
+          "overflow": 0
+        },
+        "openTrainingMenu": {
+          "x": 8,
+          "y": 48,
+          "width": 72,
+          "height": 44,
+          "right": 80,
+          "bottom": 92,
+          "visible": true,
+          "overflow": 0
+        }
+      },
+      "buttons": [
+        {
+          "id": "sweepPosition0",
+          "width": 71.25,
+          "height": 44,
+          "hit": true,
+          "right": 239.75,
+          "bottom": 166
+        },
+        {
+          "id": "sweepPosition1",
+          "width": 71.25,
+          "height": 44,
+          "hit": true,
+          "right": 314,
+          "bottom": 166
+        },
+        {
+          "id": "sweepPosition2",
+          "width": 71.25,
+          "height": 44,
+          "hit": true,
+          "right": 239.75,
+          "bottom": 213
+        },
+        {
+          "id": "sweepPosition3",
+          "width": 71.25,
+          "height": 44,
+          "hit": true,
+          "right": 314,
+          "bottom": 213
+        },
+        {
+          "id": "lowerSupport",
+          "width": 147,
+          "height": 44,
+          "hit": true,
+          "right": 155,
+          "bottom": 476
+        },
+        {
+          "id": "raiseSupport",
+          "width": 147,
+          "height": 44,
+          "hit": true,
+          "right": 312,
+          "bottom": 476
+        },
+        {
+          "id": "runSpindleSweep",
+          "width": 92,
+          "height": 44,
+          "hit": true,
+          "right": 277,
+          "bottom": 374
+        }
+      ],
+      "pairs": [
+        {
+          "x": 6,
+          "y": 95,
+          "right": 155.5,
+          "bottom": 127,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Y直角差 +3"
+        },
+        {
+          "x": 6,
+          "y": 129,
+          "right": 155.5,
+          "bottom": 161,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 -29"
+        },
+        {
+          "x": 6,
+          "y": 163,
+          "right": 155.5,
+          "bottom": 195,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 +6"
+        }
+      ],
+      "textOverflow": [],
+      "gaugeChildren": [
+        {
+          "className": "viewer-gauge viewer-gauge-lr",
+          "text": "",
+          "x": 239,
+          "y": 231,
+          "right": 314,
+          "bottom": 266,
+          "width": 75,
+          "height": 35
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 左右",
+          "x": 239,
+          "y": 231,
+          "right": 314,
+          "bottom": 240,
+          "width": 75,
+          "height": 9
+        },
+        {
+          "className": "level-direction",
+          "text": "左が高い",
+          "x": 276.5,
+          "y": 240,
+          "right": 277.5,
+          "bottom": 241,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vial",
+          "text": "",
+          "x": 239,
+          "y": 241,
+          "right": 314,
+          "bottom": 257,
+          "width": 75,
+          "height": 16
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 272.109375,
+          "y": 242,
+          "right": 280.859375,
+          "bottom": 256,
+          "width": 8.75,
+          "height": 14
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 260.046875,
+          "y": 242,
+          "right": 282.046875,
+          "bottom": 256,
+          "width": 22,
+          "height": 14
+        },
+        {
+          "className": "gauge-ends",
+          "text": "",
+          "x": 239,
+          "y": 258,
+          "right": 314,
+          "bottom": 266,
+          "width": 75,
+          "height": 8
+        },
+        {
+          "className": "",
+          "text": "左",
+          "x": 239,
+          "y": 258,
+          "right": 248,
+          "bottom": 266,
+          "width": 9,
+          "height": 8
+        },
+        {
+          "className": "",
+          "text": "右",
+          "x": 305,
+          "y": 258,
+          "right": 314,
+          "bottom": 266,
+          "width": 9,
+          "height": 8
+        },
+        {
+          "className": "viewer-gauge viewer-gauge-fb",
+          "text": "",
+          "x": 239,
+          "y": 268,
+          "right": 314,
+          "bottom": 325,
+          "width": 75,
+          "height": 57
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 前後",
+          "x": 239,
+          "y": 268,
+          "right": 314,
+          "bottom": 277,
+          "width": 75,
+          "height": 9
+        },
+        {
+          "className": "level-direction",
+          "text": "奥が高い",
+          "x": 239,
+          "y": 268,
+          "right": 240,
+          "bottom": 269,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vertical-gauge",
+          "text": "",
+          "x": 239,
+          "y": 277,
+          "right": 314,
+          "bottom": 325,
+          "width": 75,
+          "height": 48
+        },
+        {
+          "className": "",
+          "text": "奥",
+          "x": 272,
+          "y": 277,
+          "right": 281,
+          "bottom": 285,
+          "width": 9,
+          "height": 8
+        },
+        {
+          "className": "vial vial-vertical",
+          "text": "",
+          "x": 264.5,
+          "y": 285,
+          "right": 288.5,
+          "bottom": 317,
+          "width": 24,
+          "height": 32
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 265.5,
+          "y": 299.1875,
+          "right": 287.5,
+          "bottom": 302.78125,
+          "width": 22,
+          "height": 3.59375
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 269.5,
+          "y": 287.984375,
+          "right": 283.5,
+          "bottom": 309.984375,
+          "width": 14,
+          "height": 22
+        },
+        {
+          "className": "",
+          "text": "手前",
+          "x": 267.5,
+          "y": 317,
+          "right": 285.5,
+          "bottom": 325,
+          "width": 18,
+          "height": 8
+        }
+      ],
+      "selectionScroll": {
+        "y": 381,
+        "bottom": 428,
+        "height": 47,
+        "clientHeight": 47,
+        "scrollHeight": 116
+      }
+    },
+    {
+      "name": "mobile-320x568",
+      "width": 320,
+      "height": 568,
+      "documentWidth": 320,
+      "documentHeight": 568,
+      "rectangles": {
+        "precisionReadouts": {
+          "x": 6,
+          "y": 95,
+          "width": 308,
+          "height": 156,
+          "right": 314,
+          "bottom": 251,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquareness": {
+          "x": 6,
+          "y": 109,
+          "width": 149.5,
+          "height": 118,
+          "right": 155.5,
+          "bottom": 227,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquarenessUnits": {
+          "x": 6,
+          "y": 227,
+          "width": 149.5,
+          "height": 24,
+          "right": 155.5,
+          "bottom": 251,
+          "visible": true,
+          "overflow": 0
+        },
+        "spindleSweepPanel": {
+          "x": 161.5,
+          "y": 95,
+          "width": 152.5,
+          "height": 152,
+          "right": 314,
+          "bottom": 247,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepCurrentValue": {
+          "x": 251.875,
+          "y": 123,
+          "width": 25.296875,
+          "height": 14,
+          "right": 277.171875,
+          "bottom": 137,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepContactStatus": {
+          "x": 168.5,
+          "y": 235,
+          "width": 145.5,
+          "height": 12,
+          "right": 314,
+          "bottom": 247,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 264,
+          "width": 232,
+          "height": 117,
+          "right": 232,
+          "bottom": 381,
+          "visible": true,
+          "overflow": 0
+        },
+        "scene": {
+          "x": 0,
+          "y": 264,
+          "width": 232,
+          "height": 117,
+          "right": 232,
+          "bottom": 381,
+          "visible": true,
+          "overflow": 0
+        },
+        "viewerLevels": {
+          "x": 232,
+          "y": 264,
+          "width": 88,
+          "height": 117,
+          "right": 320,
+          "bottom": 381,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 381,
+          "width": 320,
+          "height": 49,
+          "right": 320,
+          "bottom": 430,
+          "visible": true,
+          "overflow": 0
+        },
+        "axisTabs": {
+          "x": 43,
+          "y": 384,
+          "width": 136,
+          "height": 44,
+          "right": 179,
+          "bottom": 428,
+          "visible": true,
+          "overflow": 0
+        },
+        "runSpindleSweep": {
+          "x": 185,
+          "y": 384,
+          "width": 92,
+          "height": 44,
+          "right": 277,
+          "bottom": 428,
+          "visible": true,
+          "overflow": 0
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 430,
+          "width": 320,
+          "height": 138,
+          "right": 320,
+          "bottom": 568,
+          "visible": true,
+          "overflow": 0
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 520,
+          "width": 147,
+          "height": 44,
+          "right": 155,
+          "bottom": 564,
+          "visible": true,
+          "overflow": 0
+        },
+        "raiseSupport": {
+          "x": 165,
+          "y": 520,
+          "width": 147,
+          "height": 44,
+          "right": 312,
+          "bottom": 564,
+          "visible": true,
+          "overflow": 0
+        },
+        "openTrainingMenu": {
+          "x": 8,
+          "y": 48,
+          "width": 72,
+          "height": 44,
+          "right": 80,
+          "bottom": 92,
+          "visible": true,
+          "overflow": 0
+        }
+      },
+      "buttons": [
+        {
+          "id": "sweepPosition0",
+          "width": 71.25,
+          "height": 44,
+          "hit": true,
+          "right": 239.75,
+          "bottom": 186
+        },
+        {
+          "id": "sweepPosition1",
+          "width": 71.25,
+          "height": 44,
+          "hit": true,
+          "right": 314,
+          "bottom": 186
+        },
+        {
+          "id": "sweepPosition2",
+          "width": 71.25,
+          "height": 44,
+          "hit": true,
+          "right": 239.75,
+          "bottom": 233
+        },
+        {
+          "id": "sweepPosition3",
+          "width": 71.25,
+          "height": 44,
+          "hit": true,
+          "right": 314,
+          "bottom": 233
+        },
+        {
+          "id": "lowerSupport",
+          "width": 147,
+          "height": 44,
+          "hit": true,
+          "right": 155,
+          "bottom": 564
+        },
+        {
+          "id": "raiseSupport",
+          "width": 147,
+          "height": 44,
+          "hit": true,
+          "right": 312,
+          "bottom": 564
+        },
+        {
+          "id": "runSpindleSweep",
+          "width": 92,
+          "height": 44,
+          "hit": true,
+          "right": 277,
+          "bottom": 428
+        }
+      ],
+      "pairs": [
+        {
+          "x": 6,
+          "y": 109,
+          "right": 155.5,
+          "bottom": 147,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Y直角差 +3"
+        },
+        {
+          "x": 6,
+          "y": 149,
+          "right": 155.5,
+          "bottom": 187,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 -29"
+        },
+        {
+          "x": 6,
+          "y": 189,
+          "right": 155.5,
+          "bottom": 227,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 +6"
+        }
+      ],
+      "textOverflow": [],
+      "gaugeChildren": [
+        {
+          "className": "viewer-gauge viewer-gauge-lr",
+          "text": "",
+          "x": 239,
+          "y": 266,
+          "right": 314,
+          "bottom": 311,
+          "width": 75,
+          "height": 45
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 左右",
+          "x": 239,
+          "y": 266,
+          "right": 314,
+          "bottom": 278,
+          "width": 75,
+          "height": 12
+        },
+        {
+          "className": "level-direction",
+          "text": "左が高い",
+          "x": 276.5,
+          "y": 278,
+          "right": 277.5,
+          "bottom": 279,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vial",
+          "text": "",
+          "x": 239,
+          "y": 280,
+          "right": 314,
+          "bottom": 300,
+          "width": 75,
+          "height": 20
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 272.109375,
+          "y": 281,
+          "right": 280.859375,
+          "bottom": 299,
+          "width": 8.75,
+          "height": 18
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 260.234375,
+          "y": 283,
+          "right": 282.234375,
+          "bottom": 297,
+          "width": 22,
+          "height": 14
+        },
+        {
+          "className": "gauge-ends",
+          "text": "",
+          "x": 239,
+          "y": 301,
+          "right": 314,
+          "bottom": 311,
+          "width": 75,
+          "height": 10
+        },
+        {
+          "className": "",
+          "text": "左",
+          "x": 239,
+          "y": 301,
+          "right": 249,
+          "bottom": 311,
+          "width": 10,
+          "height": 10
+        },
+        {
+          "className": "",
+          "text": "右",
+          "x": 304,
+          "y": 301,
+          "right": 314,
+          "bottom": 311,
+          "width": 10,
+          "height": 10
+        },
+        {
+          "className": "viewer-gauge viewer-gauge-fb",
+          "text": "",
+          "x": 239,
+          "y": 313,
+          "right": 314,
+          "bottom": 379,
+          "width": 75,
+          "height": 66
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 前後",
+          "x": 239,
+          "y": 313,
+          "right": 314,
+          "bottom": 325,
+          "width": 75,
+          "height": 12
+        },
+        {
+          "className": "level-direction",
+          "text": "奥が高い",
+          "x": 239,
+          "y": 313,
+          "right": 240,
+          "bottom": 314,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vertical-gauge",
+          "text": "",
+          "x": 239,
+          "y": 325,
+          "right": 314,
+          "bottom": 379,
+          "width": 75,
+          "height": 54
+        },
+        {
+          "className": "",
+          "text": "奥",
+          "x": 271.5,
+          "y": 325,
+          "right": 281.5,
+          "bottom": 335,
+          "width": 10,
+          "height": 10
+        },
+        {
+          "className": "vial vial-vertical",
+          "text": "",
+          "x": 264.5,
+          "y": 335,
+          "right": 288.5,
+          "bottom": 369,
+          "width": 24,
+          "height": 34
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 265.5,
+          "y": 350.078125,
+          "right": 287.5,
+          "bottom": 353.90625,
+          "width": 22,
+          "height": 3.828125
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 269.5,
+          "y": 338.765625,
+          "right": 283.5,
+          "bottom": 360.765625,
+          "width": 14,
+          "height": 22
+        },
+        {
+          "className": "",
+          "text": "手前",
+          "x": 266.5,
+          "y": 369,
+          "right": 286.5,
+          "bottom": 379,
+          "width": 20,
+          "height": 10
+        }
+      ],
+      "selectionScroll": {
+        "y": 435,
+        "bottom": 516,
+        "height": 81,
+        "clientHeight": 81,
+        "scrollHeight": 116
+      }
+    },
+    {
+      "name": "mobile-390x844",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "documentHeight": 844,
+      "rectangles": {
+        "precisionReadouts": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 152,
+          "right": 384,
+          "bottom": 255,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquareness": {
+          "x": 6,
+          "y": 117,
+          "width": 184.15625,
+          "height": 118,
+          "right": 190.15625,
+          "bottom": 235,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquarenessUnits": {
+          "x": 6,
+          "y": 235,
+          "width": 184.15625,
+          "height": 12,
+          "right": 190.15625,
+          "bottom": 247,
+          "visible": true,
+          "overflow": 0
+        },
+        "spindleSweepPanel": {
+          "x": 196.15625,
+          "y": 103,
+          "width": 187.84375,
+          "height": 152,
+          "right": 384,
+          "bottom": 255,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepCurrentValue": {
+          "x": 304.203125,
+          "y": 131,
+          "width": 25.296875,
+          "height": 14,
+          "right": 329.5,
+          "bottom": 145,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepContactStatus": {
+          "x": 203.15625,
+          "y": 243,
+          "width": 180.84375,
+          "height": 12,
+          "right": 384,
+          "bottom": 255,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 268,
+          "width": 302,
+          "height": 330,
+          "right": 302,
+          "bottom": 598,
+          "visible": true,
+          "overflow": 0
+        },
+        "scene": {
+          "x": 0,
+          "y": 268,
+          "width": 302,
+          "height": 330,
+          "right": 302,
+          "bottom": 598,
+          "visible": true,
+          "overflow": 0
+        },
+        "viewerLevels": {
+          "x": 302,
+          "y": 268,
+          "width": 88,
+          "height": 330,
+          "right": 390,
+          "bottom": 598,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 598,
+          "width": 390,
+          "height": 57,
+          "right": 390,
+          "bottom": 655,
+          "visible": true,
+          "overflow": 0
+        },
+        "axisTabs": {
+          "x": 78,
+          "y": 605,
+          "width": 136,
+          "height": 44,
+          "right": 214,
+          "bottom": 649,
+          "visible": true,
+          "overflow": 0
+        },
+        "runSpindleSweep": {
+          "x": 220,
+          "y": 605,
+          "width": 92,
+          "height": 44,
+          "right": 312,
+          "bottom": 649,
+          "visible": true,
+          "overflow": 0
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 655,
+          "width": 390,
+          "height": 189,
+          "right": 390,
+          "bottom": 844,
+          "visible": true,
+          "overflow": 0
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 790,
+          "width": 182,
+          "height": 44,
+          "right": 190,
+          "bottom": 834,
+          "visible": true,
+          "overflow": 0
+        },
+        "raiseSupport": {
+          "x": 200,
+          "y": 790,
+          "width": 182,
+          "height": 44,
+          "right": 382,
+          "bottom": 834,
+          "visible": true,
+          "overflow": 0
+        },
+        "openTrainingMenu": {
+          "x": 8,
+          "y": 52,
+          "width": 72,
+          "height": 44,
+          "right": 80,
+          "bottom": 96,
+          "visible": true,
+          "overflow": 0
+        }
+      },
+      "buttons": [
+        {
+          "id": "sweepPosition0",
+          "width": 88.921875,
+          "height": 44,
+          "hit": true,
+          "right": 292.078125,
+          "bottom": 194
+        },
+        {
+          "id": "sweepPosition1",
+          "width": 88.921875,
+          "height": 44,
+          "hit": true,
+          "right": 384,
+          "bottom": 194
+        },
+        {
+          "id": "sweepPosition2",
+          "width": 88.921875,
+          "height": 44,
+          "hit": true,
+          "right": 292.078125,
+          "bottom": 241
+        },
+        {
+          "id": "sweepPosition3",
+          "width": 88.921875,
+          "height": 44,
+          "hit": true,
+          "right": 384,
+          "bottom": 241
+        },
+        {
+          "id": "lowerSupport",
+          "width": 182,
+          "height": 44,
+          "hit": true,
+          "right": 190,
+          "bottom": 834
+        },
+        {
+          "id": "raiseSupport",
+          "width": 182,
+          "height": 44,
+          "hit": true,
+          "right": 382,
+          "bottom": 834
+        },
+        {
+          "id": "runSpindleSweep",
+          "width": 92,
+          "height": 44,
+          "hit": true,
+          "right": 312,
+          "bottom": 649
+        }
+      ],
+      "pairs": [
+        {
+          "x": 6,
+          "y": 117,
+          "right": 190.15625,
+          "bottom": 155,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Y直角差 +3"
+        },
+        {
+          "x": 6,
+          "y": 157,
+          "right": 190.15625,
+          "bottom": 195,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 -29"
+        },
+        {
+          "x": 6,
+          "y": 197,
+          "right": 190.15625,
+          "bottom": 235,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 +6"
+        }
+      ],
+      "textOverflow": [],
+      "gaugeChildren": [
+        {
+          "className": "viewer-gauge viewer-gauge-lr",
+          "text": "",
+          "x": 309,
+          "y": 343,
+          "right": 384,
+          "bottom": 399,
+          "width": 75,
+          "height": 56
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 左右",
+          "x": 309,
+          "y": 343,
+          "right": 384,
+          "bottom": 357,
+          "width": 75,
+          "height": 14
+        },
+        {
+          "className": "level-direction",
+          "text": "左が高い",
+          "x": 346.5,
+          "y": 357,
+          "right": 347.5,
+          "bottom": 358,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vial",
+          "text": "",
+          "x": 309,
+          "y": 361,
+          "right": 384,
+          "bottom": 385,
+          "width": 75,
+          "height": 24
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 342.109375,
+          "y": 362,
+          "right": 350.859375,
+          "bottom": 384,
+          "width": 8.75,
+          "height": 22
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 330.234375,
+          "y": 366,
+          "right": 352.234375,
+          "bottom": 380,
+          "width": 22,
+          "height": 14
+        },
+        {
+          "className": "gauge-ends",
+          "text": "",
+          "x": 309,
+          "y": 387,
+          "right": 384,
+          "bottom": 399,
+          "width": 75,
+          "height": 12
+        },
+        {
+          "className": "",
+          "text": "左",
+          "x": 309,
+          "y": 387,
+          "right": 319,
+          "bottom": 399,
+          "width": 10,
+          "height": 12
+        },
+        {
+          "className": "",
+          "text": "右",
+          "x": 374,
+          "y": 387,
+          "right": 384,
+          "bottom": 399,
+          "width": 10,
+          "height": 12
+        },
+        {
+          "className": "viewer-gauge viewer-gauge-fb",
+          "text": "",
+          "x": 309,
+          "y": 407,
+          "right": 384,
+          "bottom": 523,
+          "width": 75,
+          "height": 116
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 前後",
+          "x": 309,
+          "y": 407,
+          "right": 384,
+          "bottom": 421,
+          "width": 75,
+          "height": 14
+        },
+        {
+          "className": "level-direction",
+          "text": "奥が高い",
+          "x": 309,
+          "y": 407,
+          "right": 310,
+          "bottom": 408,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vertical-gauge",
+          "text": "",
+          "x": 309,
+          "y": 424,
+          "right": 384,
+          "bottom": 523,
+          "width": 75,
+          "height": 99
+        },
+        {
+          "className": "",
+          "text": "奥",
+          "x": 341.5,
+          "y": 424,
+          "right": 351.5,
+          "bottom": 436,
+          "width": 10,
+          "height": 12
+        },
+        {
+          "className": "vial vial-vertical",
+          "text": "",
+          "x": 334.5,
+          "y": 436,
+          "right": 358.5,
+          "bottom": 511,
+          "width": 24,
+          "height": 75
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 335.5,
+          "y": 469.109375,
+          "right": 357.5,
+          "bottom": 477.859375,
+          "width": 22,
+          "height": 8.75
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 339.5,
+          "y": 457.421875,
+          "right": 353.5,
+          "bottom": 479.421875,
+          "width": 14,
+          "height": 22
+        },
+        {
+          "className": "",
+          "text": "手前",
+          "x": 336.5,
+          "y": 511,
+          "right": 356.5,
+          "bottom": 523,
+          "width": 20,
+          "height": 12
+        }
+      ],
+      "selectionScroll": {
+        "y": 664,
+        "bottom": 786,
+        "height": 122,
+        "clientHeight": 122,
+        "scrollHeight": 122
+      }
+    },
+    {
+      "name": "landscape-568x320",
+      "width": 568,
+      "height": 320,
+      "documentWidth": 568,
+      "documentHeight": 320,
+      "rectangles": {
+        "precisionReadouts": {
+          "x": 6,
+          "y": 95,
+          "width": 556,
+          "height": 75,
+          "right": 562,
+          "bottom": 170,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquareness": {
+          "x": 6,
+          "y": 95,
+          "width": 281.015625,
+          "height": 63,
+          "right": 287.015625,
+          "bottom": 158,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquarenessUnits": {
+          "x": 6,
+          "y": 158,
+          "width": 281.015625,
+          "height": 11,
+          "right": 287.015625,
+          "bottom": 169,
+          "visible": true,
+          "overflow": 0
+        },
+        "spindleSweepPanel": {
+          "x": 295.015625,
+          "y": 95,
+          "width": 266.96875,
+          "height": 75,
+          "right": 561.984375,
+          "bottom": 170,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepCurrentValue": {
+          "x": 489.0625,
+          "y": 96,
+          "width": 23,
+          "height": 14,
+          "right": 512.0625,
+          "bottom": 110,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepContactStatus": {
+          "x": 304.015625,
+          "y": 159,
+          "width": 257.96875,
+          "height": 11,
+          "right": 561.984375,
+          "bottom": 170,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 173,
+          "width": 332,
+          "height": 98,
+          "right": 332,
+          "bottom": 271,
+          "visible": true,
+          "overflow": 0
+        },
+        "scene": {
+          "x": 0,
+          "y": 173,
+          "width": 332,
+          "height": 98,
+          "right": 332,
+          "bottom": 271,
+          "visible": true,
+          "overflow": 0
+        },
+        "viewerLevels": {
+          "x": 332,
+          "y": 173,
+          "width": 66,
+          "height": 98,
+          "right": 398,
+          "bottom": 271,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 271,
+          "width": 398,
+          "height": 49,
+          "right": 398,
+          "bottom": 320,
+          "visible": true,
+          "overflow": 0
+        },
+        "axisTabs": {
+          "x": 82,
+          "y": 274,
+          "width": 136,
+          "height": 44,
+          "right": 218,
+          "bottom": 318,
+          "visible": true,
+          "overflow": 0
+        },
+        "runSpindleSweep": {
+          "x": 224,
+          "y": 274,
+          "width": 92,
+          "height": 44,
+          "right": 316,
+          "bottom": 318,
+          "visible": true,
+          "overflow": 0
+        },
+        "mainAdjustment": {
+          "x": 398,
+          "y": 173,
+          "width": 170,
+          "height": 147,
+          "right": 568,
+          "bottom": 320,
+          "visible": true,
+          "overflow": 0
+        },
+        "lowerSupport": {
+          "x": 405,
+          "y": 272,
+          "width": 76.5,
+          "height": 44,
+          "right": 481.5,
+          "bottom": 316,
+          "visible": true,
+          "overflow": 0
+        },
+        "raiseSupport": {
+          "x": 485.5,
+          "y": 272,
+          "width": 76.5,
+          "height": 44,
+          "right": 562,
+          "bottom": 316,
+          "visible": true,
+          "overflow": 0
+        },
+        "openTrainingMenu": {
+          "x": 12,
+          "y": 48,
+          "width": 76,
+          "height": 44,
+          "right": 88,
+          "bottom": 92,
+          "visible": true,
+          "overflow": 0
+        }
+      },
+      "buttons": [
+        {
+          "id": "sweepPosition0",
+          "width": 62.234375,
+          "height": 44,
+          "hit": true,
+          "right": 366.25,
+          "bottom": 157
+        },
+        {
+          "id": "sweepPosition1",
+          "width": 62.25,
+          "height": 44,
+          "hit": true,
+          "right": 431.5,
+          "bottom": 157
+        },
+        {
+          "id": "sweepPosition2",
+          "width": 62.234375,
+          "height": 44,
+          "hit": true,
+          "right": 496.734375,
+          "bottom": 157
+        },
+        {
+          "id": "sweepPosition3",
+          "width": 62.25,
+          "height": 44,
+          "hit": true,
+          "right": 561.984375,
+          "bottom": 157
+        },
+        {
+          "id": "lowerSupport",
+          "width": 76.5,
+          "height": 44,
+          "hit": true,
+          "right": 481.5,
+          "bottom": 316
+        },
+        {
+          "id": "raiseSupport",
+          "width": 76.5,
+          "height": 44,
+          "hit": true,
+          "right": 562,
+          "bottom": 316
+        },
+        {
+          "id": "runSpindleSweep",
+          "width": 92,
+          "height": 44,
+          "hit": true,
+          "right": 316,
+          "bottom": 318
+        }
+      ],
+      "pairs": [
+        {
+          "x": 6,
+          "y": 95,
+          "right": 98.328125,
+          "bottom": 158,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Y直角差 +3"
+        },
+        {
+          "x": 100.328125,
+          "y": 95,
+          "right": 192.671875,
+          "bottom": 158,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 -29"
+        },
+        {
+          "x": 194.671875,
+          "y": 95,
+          "right": 287.015625,
+          "bottom": 158,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 +6"
+        }
+      ],
+      "textOverflow": [],
+      "gaugeChildren": [
+        {
+          "className": "viewer-gauge viewer-gauge-lr",
+          "text": "",
+          "x": 339,
+          "y": 175,
+          "right": 392,
+          "bottom": 215,
+          "width": 53,
+          "height": 40
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 左右",
+          "x": 339,
+          "y": 175,
+          "right": 392,
+          "bottom": 185,
+          "width": 53,
+          "height": 10
+        },
+        {
+          "className": "level-direction",
+          "text": "左が高い",
+          "x": 365.5,
+          "y": 185,
+          "right": 366.5,
+          "bottom": 186,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vial",
+          "text": "",
+          "x": 339,
+          "y": 186,
+          "right": 392,
+          "bottom": 204,
+          "width": 53,
+          "height": 18
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 362.4375,
+          "y": 187,
+          "right": 368.546875,
+          "bottom": 203,
+          "width": 6.109375,
+          "height": 16
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 350.6875,
+          "y": 188,
+          "right": 372.6875,
+          "bottom": 202,
+          "width": 22,
+          "height": 14
+        },
+        {
+          "className": "gauge-ends",
+          "text": "",
+          "x": 339,
+          "y": 205,
+          "right": 392,
+          "bottom": 215,
+          "width": 53,
+          "height": 10
+        },
+        {
+          "className": "",
+          "text": "左",
+          "x": 339,
+          "y": 205,
+          "right": 349,
+          "bottom": 215,
+          "width": 10,
+          "height": 10
+        },
+        {
+          "className": "",
+          "text": "右",
+          "x": 382,
+          "y": 205,
+          "right": 392,
+          "bottom": 215,
+          "width": 10,
+          "height": 10
+        },
+        {
+          "className": "viewer-gauge viewer-gauge-fb",
+          "text": "",
+          "x": 339,
+          "y": 217,
+          "right": 392,
+          "bottom": 269,
+          "width": 53,
+          "height": 52
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 前後",
+          "x": 339,
+          "y": 217,
+          "right": 392,
+          "bottom": 227,
+          "width": 53,
+          "height": 10
+        },
+        {
+          "className": "level-direction",
+          "text": "奥が高い",
+          "x": 339,
+          "y": 217,
+          "right": 340,
+          "bottom": 218,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vertical-gauge",
+          "text": "",
+          "x": 339,
+          "y": 227,
+          "right": 392,
+          "bottom": 269,
+          "width": 53,
+          "height": 42
+        },
+        {
+          "className": "",
+          "text": "奥",
+          "x": 361,
+          "y": 227,
+          "right": 370,
+          "bottom": 235,
+          "width": 9,
+          "height": 8
+        },
+        {
+          "className": "vial vial-vertical",
+          "text": "",
+          "x": 353.5,
+          "y": 235,
+          "right": 377.5,
+          "bottom": 261,
+          "width": 24,
+          "height": 26
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 354.5,
+          "y": 246.546875,
+          "right": 376.5,
+          "bottom": 249.421875,
+          "width": 22,
+          "height": 2.875
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 358.5,
+          "y": 236,
+          "right": 372.5,
+          "bottom": 258,
+          "width": 14,
+          "height": 22
+        },
+        {
+          "className": "",
+          "text": "手前",
+          "x": 356.5,
+          "y": 261,
+          "right": 374.5,
+          "bottom": 269,
+          "width": 18,
+          "height": 8
+        }
+      ],
+      "selectionScroll": {
+        "y": 177,
+        "bottom": 268,
+        "height": 91,
+        "clientHeight": 91,
+        "scrollHeight": 161
+      }
+    },
+    {
+      "name": "landscape-844x390",
+      "width": 844,
+      "height": 390,
+      "documentWidth": 844,
+      "documentHeight": 390,
+      "rectangles": {
+        "precisionReadouts": {
+          "x": 6,
+          "y": 95,
+          "width": 832,
+          "height": 75,
+          "right": 838,
+          "bottom": 170,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquareness": {
+          "x": 6,
+          "y": 95,
+          "width": 422.5625,
+          "height": 63,
+          "right": 428.5625,
+          "bottom": 158,
+          "visible": true,
+          "overflow": 0
+        },
+        "liveSquarenessUnits": {
+          "x": 6,
+          "y": 158,
+          "width": 422.5625,
+          "height": 11,
+          "right": 428.5625,
+          "bottom": 169,
+          "visible": true,
+          "overflow": 0
+        },
+        "spindleSweepPanel": {
+          "x": 436.5625,
+          "y": 95,
+          "width": 401.421875,
+          "height": 75,
+          "right": 837.984375,
+          "bottom": 170,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepCurrentValue": {
+          "x": 697.828125,
+          "y": 96,
+          "width": 23,
+          "height": 14,
+          "right": 720.828125,
+          "bottom": 110,
+          "visible": true,
+          "overflow": 0
+        },
+        "sweepContactStatus": {
+          "x": 445.5625,
+          "y": 159,
+          "width": 392.421875,
+          "height": 11,
+          "right": 837.984375,
+          "bottom": 170,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 173,
+          "width": 568,
+          "height": 168,
+          "right": 568,
+          "bottom": 341,
+          "visible": true,
+          "overflow": 0
+        },
+        "scene": {
+          "x": 0,
+          "y": 173,
+          "width": 568,
+          "height": 168,
+          "right": 568,
+          "bottom": 341,
+          "visible": true,
+          "overflow": 0
+        },
+        "viewerLevels": {
+          "x": 568,
+          "y": 173,
+          "width": 66,
+          "height": 168,
+          "right": 634,
+          "bottom": 341,
+          "visible": true,
+          "overflow": 0
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 341,
+          "width": 634,
+          "height": 49,
+          "right": 634,
+          "bottom": 390,
+          "visible": true,
+          "overflow": 0
+        },
+        "axisTabs": {
+          "x": 200,
+          "y": 344,
+          "width": 136,
+          "height": 44,
+          "right": 336,
+          "bottom": 388,
+          "visible": true,
+          "overflow": 0
+        },
+        "runSpindleSweep": {
+          "x": 342,
+          "y": 344,
+          "width": 92,
+          "height": 44,
+          "right": 434,
+          "bottom": 388,
+          "visible": true,
+          "overflow": 0
+        },
+        "mainAdjustment": {
+          "x": 634,
+          "y": 173,
+          "width": 210,
+          "height": 217,
+          "right": 844,
+          "bottom": 390,
+          "visible": true,
+          "overflow": 0
+        },
+        "lowerSupport": {
+          "x": 641,
+          "y": 342,
+          "width": 96.5,
+          "height": 44,
+          "right": 737.5,
+          "bottom": 386,
+          "visible": true,
+          "overflow": 0
+        },
+        "raiseSupport": {
+          "x": 741.5,
+          "y": 342,
+          "width": 96.5,
+          "height": 44,
+          "right": 838,
+          "bottom": 386,
+          "visible": true,
+          "overflow": 0
+        },
+        "openTrainingMenu": {
+          "x": 12,
+          "y": 48,
+          "width": 76,
+          "height": 44,
+          "right": 88,
+          "bottom": 92,
+          "visible": true,
+          "overflow": 0
+        }
+      },
+      "buttons": [
+        {
+          "id": "sweepPosition0",
+          "width": 95.84375,
+          "height": 44,
+          "hit": true,
+          "right": 541.40625,
+          "bottom": 157
+        },
+        {
+          "id": "sweepPosition1",
+          "width": 95.859375,
+          "height": 44,
+          "hit": true,
+          "right": 640.265625,
+          "bottom": 157
+        },
+        {
+          "id": "sweepPosition2",
+          "width": 95.859375,
+          "height": 44,
+          "hit": true,
+          "right": 739.125,
+          "bottom": 157
+        },
+        {
+          "id": "sweepPosition3",
+          "width": 95.859375,
+          "height": 44,
+          "hit": true,
+          "right": 837.984375,
+          "bottom": 157
+        },
+        {
+          "id": "lowerSupport",
+          "width": 96.5,
+          "height": 44,
+          "hit": true,
+          "right": 737.5,
+          "bottom": 386
+        },
+        {
+          "id": "raiseSupport",
+          "width": 96.5,
+          "height": 44,
+          "hit": true,
+          "right": 838,
+          "bottom": 386
+        },
+        {
+          "id": "runSpindleSweep",
+          "width": 92,
+          "height": 44,
+          "hit": true,
+          "right": 434,
+          "bottom": 388
+        }
+      ],
+      "pairs": [
+        {
+          "x": 6,
+          "y": 95,
+          "right": 145.515625,
+          "bottom": 158,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Y直角差 +3"
+        },
+        {
+          "x": 147.515625,
+          "y": 95,
+          "right": 287.046875,
+          "bottom": 158,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 -29"
+        },
+        {
+          "x": 289.046875,
+          "y": 95,
+          "right": 428.5625,
+          "bottom": 158,
+          "overflow": 0,
+          "svgVisible": true,
+          "text": "Z直角差 +6"
+        }
+      ],
+      "textOverflow": [],
+      "gaugeChildren": [
+        {
+          "className": "viewer-gauge viewer-gauge-lr",
+          "text": "",
+          "x": 575,
+          "y": 178,
+          "right": 628,
+          "bottom": 218,
+          "width": 53,
+          "height": 40
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 左右",
+          "x": 575,
+          "y": 178,
+          "right": 628,
+          "bottom": 188,
+          "width": 53,
+          "height": 10
+        },
+        {
+          "className": "level-direction",
+          "text": "左が高い",
+          "x": 601.5,
+          "y": 188,
+          "right": 602.5,
+          "bottom": 189,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vial",
+          "text": "",
+          "x": 575,
+          "y": 189,
+          "right": 628,
+          "bottom": 207,
+          "width": 53,
+          "height": 18
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 598.4375,
+          "y": 190,
+          "right": 604.546875,
+          "bottom": 206,
+          "width": 6.109375,
+          "height": 16
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 586.8125,
+          "y": 191,
+          "right": 608.8125,
+          "bottom": 205,
+          "width": 22,
+          "height": 14
+        },
+        {
+          "className": "gauge-ends",
+          "text": "",
+          "x": 575,
+          "y": 208,
+          "right": 628,
+          "bottom": 218,
+          "width": 53,
+          "height": 10
+        },
+        {
+          "className": "",
+          "text": "左",
+          "x": 575,
+          "y": 208,
+          "right": 585,
+          "bottom": 218,
+          "width": 10,
+          "height": 10
+        },
+        {
+          "className": "",
+          "text": "右",
+          "x": 618,
+          "y": 208,
+          "right": 628,
+          "bottom": 218,
+          "width": 10,
+          "height": 10
+        },
+        {
+          "className": "viewer-gauge viewer-gauge-fb",
+          "text": "",
+          "x": 575,
+          "y": 220,
+          "right": 628,
+          "bottom": 336,
+          "width": 53,
+          "height": 116
+        },
+        {
+          "className": "viewer-gauge-title",
+          "text": "平均 · 前後",
+          "x": 575,
+          "y": 220,
+          "right": 628,
+          "bottom": 230,
+          "width": 53,
+          "height": 10
+        },
+        {
+          "className": "level-direction",
+          "text": "奥が高い",
+          "x": 575,
+          "y": 220,
+          "right": 576,
+          "bottom": 221,
+          "width": 1,
+          "height": 1
+        },
+        {
+          "className": "vertical-gauge",
+          "text": "",
+          "x": 575,
+          "y": 230,
+          "right": 628,
+          "bottom": 336,
+          "width": 53,
+          "height": 106
+        },
+        {
+          "className": "",
+          "text": "奥",
+          "x": 597,
+          "y": 230,
+          "right": 606,
+          "bottom": 238,
+          "width": 9,
+          "height": 8
+        },
+        {
+          "className": "vial vial-vertical",
+          "text": "",
+          "x": 589.5,
+          "y": 238,
+          "right": 613.5,
+          "bottom": 328,
+          "width": 24,
+          "height": 90
+        },
+        {
+          "className": "center-lines",
+          "text": "",
+          "x": 590.5,
+          "y": 277.71875,
+          "right": 612.5,
+          "bottom": 288.265625,
+          "width": 22,
+          "height": 10.546875
+        },
+        {
+          "className": "bubble",
+          "text": "",
+          "x": 594.5,
+          "y": 265.875,
+          "right": 608.5,
+          "bottom": 287.875,
+          "width": 14,
+          "height": 22
+        },
+        {
+          "className": "",
+          "text": "手前",
+          "x": 592.5,
+          "y": 328,
+          "right": 610.5,
+          "bottom": 336,
+          "width": 18,
+          "height": 8
+        }
+      ],
+      "selectionScroll": {
+        "y": 177,
+        "bottom": 338,
+        "height": 161,
+        "clientHeight": 161,
+        "scrollHeight": 161
+      }
+    }
+  ],
+  "screenshots": [
+    "pc-1366x900.png",
+    "mobile-320x480.png",
+    "mobile-320x568.png",
+    "mobile-390x844.png",
+    "landscape-568x320.png",
+    "landscape-844x390.png",
+    "off-table-390x844.png"
+  ],
+  "physicalPhoneGestures": "not tested"
+}
