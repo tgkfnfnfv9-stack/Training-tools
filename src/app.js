@@ -132,7 +132,7 @@ function navigate(next,{fromHistory=false}={}){
  const previous=page;
  clearScenePointers();setAxisMenuOpen(false);
  if(next!==previous){resetTrainingPanels();document.activeElement?.blur?.();if(next==='tester'&&window.resetTesterLesson)window.resetTesterLesson();}
- if(next!=='training'){stopMotion();if(typeof stopSpindleSweep==='function')stopSpindleSweep();}if(next!==previous)$('axisDemoStatus').textContent='';page=next;for(const id of Object.keys(pageTitles))$(id).hidden=id!==next;
+ if(next!=='training')stopMotion();if(next!==previous)$('axisDemoStatus').textContent='';page=next;for(const id of Object.keys(pageTitles))$(id).hidden=id!==next;
  document.body.classList.toggle('in-lab',next==='training'||next==='tester');
  document.body.classList.toggle('in-mechanical-lab',next==='training');
  const controls=$(next+'Controls');if(controls)controls.scrollTop=0;
@@ -172,7 +172,7 @@ function resumeOrOpenMachine(m){
  openMachine(m);
 }
 function openMachine(m){
- if(typeof stopSpindleSweep==='function'){stopSpindleSweep();spindleSweepMode=false;spindleSweepAngle=0;}
+ if(typeof spindleSweepMode!=='undefined'){spindleSweepMode=false;spindleSweepAngle=0;}
  stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.defaultMode||(m.modes?m.modes[0][0]:'');current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
 function populateMachine(){
@@ -296,7 +296,7 @@ function idealOutlineSegments(edges,context,angle,view){
 }
 const idealOutlineCache=new Map();
 function drawIdealOutline(ctx,m,model,screen,angle,view){
- const key=m.kind+':'+m.w+':'+m.d+(typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&m.kind==='compact'?':sweep':'');
+ const key=m.kind+':'+m.w+':'+m.d;
  if(!idealOutlineCache.has(key)){if(idealOutlineCache.size>=24)idealOutlineCache.clear();idealOutlineCache.set(key,idealOutlineEdges(model));}
  const segments=idealOutlineSegments(idealOutlineCache.get(key),idealDisplayContext(m),angle,view),points=new Map(),edges=[],dedup=new Set(),pointKey=p=>p.map(v=>Math.round(v*100)).join(',');
  for(const segment of segments){
@@ -387,13 +387,16 @@ function render(canvas,m,angle,showLabels,active){
  const ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.height*ratio);
  const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);const width=rect.width,height=rect.height;
  ctx.fillStyle='#f1f0ed';ctx.fillRect(0,0,width,height);
- const model=createGeometry(m),training=canvas===$('scene')&&active>=0,sweep=training&&typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&m.kind==='compact';
- const compactShortCanvas=sweep&&height<160;
- if(sweep)model.faces=model.faces.filter(f=>!f.tableDetail);
+ const model=createGeometry(m),training=canvas===$('scene')&&active>=0;
+ const compactShortCanvas=training&&m.kind==='compact'&&height<160;
  const project=p=>sceneProject(p,angle,training?sceneView:'oblique',!training);
  const fitPoints=training?displayFramingPoints(m,model):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
  // Fit the machine and its fixed movement envelope, without the empty ground around it.
- const margin=showLabels?Math.min(56,width*.16):18,verticalSpace=active>=0?height-(compactShortCanvas?12:48):height-75;
+ // Compact views use the width freed by the simpler measurement display too.
+ // The framing envelope still contains the complete machine and moving axes;
+ // label placement independently keeps every visible label inside the Canvas.
+ const compactView=training&&m.kind==='compact';
+ const margin=showLabels?Math.min(compactView?44:56,width*(compactView?.12:.16)):18,verticalSpace=active>=0?height-(compactShortCanvas?12:48):height-75;
  const fitScale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY));
  const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-(compactShortCanvas?4:20))/2:height*.48)-(minY+maxY)*scale/2;
  const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelMappedVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(active>=0?levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,positions,pose||'bed'),pose):transformedPoint(p,axes,m));
@@ -420,7 +423,6 @@ function render(canvas,m,angle,showLabels,active){
  // rather than an undeformed saddle triad, defines the compact X/Y readings.
  const measurementPixel=training&&m.kind==='compact'&&levelSolution&&levelGeometry?screen(compactTablePathPoint(positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0))):null;
  if(measurementPixel)labelBoxes.push({x:measurementPixel[0]-5,y:measurementPixel[1]-5,w:10,h:10});
- if(sweep)drawSpindleSweep(ctx,screen,labelBoxes);
  if(active>=0&&$('showAxes').checked){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
@@ -451,7 +453,7 @@ function render(canvas,m,angle,showLabels,active){
   if(box){labelBoxes.push(box);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(box.x+20,box.y+9);ctx.strokeStyle='#b3480080';ctx.lineWidth=.8;ctx.stroke();ctx.fillStyle='#fff8ee';ctx.fillRect(box.x,box.y,box.w,box.h);ctx.font='10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#7d3300';ctx.fillText('測定P',box.x+20,box.y+9);}
  }
  if(showLabels&&!compactShortCanvas){
-  // A short compact view keeps support, axis and dial labels; part names
+  // A short compact view keeps support, axis and measurement labels; part names
   // return when there is more room, without altering zoom or measurements.
   // Prefer the selected moving assembly and the base/column. A short Canvas
   // omits lower-priority part names rather than compressing their 18px boxes.
@@ -474,7 +476,7 @@ function updateSceneViewUI(){
  $('sceneDirection').textContent=sceneView==='front'?'正面：左 → 右':sceneView==='side'?'側面：手前 → 奥':'斜め：左右回転';
  $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。薄い破線の理想輪郭は'+($('showIdealOutline').checked?'表示中':'非表示')+'。左上の設定メニューで切り替えます。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
  if(current.kind==='compact')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'測定Pはテーブル上面中央の固定点です。X・Yの比較はこの点の送り方向を使い、送り中の傾き変化による横ずれを含みます。');
- if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode)$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸ダイヤル測定も同時に表示します。主軸に取り付けたゲージでテーブル上面を直径300ミリの円で旋回測定しています。0度は右、90度は奥、180度は左、270度は手前。測定子が見えるようワークとT溝模様を省略しています。上の直角図は300ミリ換算、隣の4点は0度基準の相対読みです。');
+ if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode)$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。0度は右、90度は奥、180度は左、270度は手前。上の直角図は300ミリ換算、隣の4点は0度基準の相対読みです。');
 }
 function drawScene(){if(levelSolution)updateAccuracy();if(typeof updateSpindleSweep==='function')updateSpindleSweep();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){
@@ -546,7 +548,6 @@ function trainingMenuFocusables(){
  };walk($('trainingDrawer'));return found;
 }
 function setTrainingMenuOpen(open,restoreFocus=false){
- if(open&&typeof stopSpindleSweep==='function')stopSpindleSweep();
  open=!!open;clearScenePointers();trainingMenuOpen=open;
  $('trainingDrawer').hidden=!open;$('trainingShell').classList.toggle('menu-open',open);$('openTrainingMenu').setAttribute('aria-expanded',String(open));
  $('axisControlsToggle').setAttribute('aria-expanded',String(open));$('trainingMain').inert=open;$('trainingMain').setAttribute('aria-hidden',String(open));$('trainingMainShield').hidden=!open;
@@ -575,7 +576,7 @@ $('axisMenu').addEventListener('keydown',trainingMenuKeydown);
 if(typeof ResizeObserver==='function')new ResizeObserver(()=>{if(page==='training'){refreshTrainingLayout();drawScene();}}).observe($('trainingShell'));
 let motionFrame=null,motionStart=null;
 function stopMotion(){const running=motionFrame!==null;if(running)cancelAnimationFrame(motionFrame);motionFrame=null;motionStart=null;if($('playAxis')){$('playAxis').textContent='選んだ軸を動かす';$('playAxis').setAttribute('aria-pressed','false');}if(running){$('axisDemoStatus').textContent=selectedAxis+'軸の動作を終了しました。';if(typeof saveLeveling==='function')saveLeveling();}}
-$('playAxis').onclick=()=>{if(typeof stopSpindleSweep==='function')stopSpindleSweep();if(motionFrame!==null){stopMotion();return;}$('playAxis').textContent='動きを止める';$('playAxis').setAttribute('aria-pressed','true');const key=selectedAxis;
+$('playAxis').onclick=()=>{if(motionFrame!==null){stopMotion();return;}$('playAxis').textContent='動きを止める';$('playAxis').setAttribute('aria-pressed','true');const key=selectedAxis;
  setAxisMenuOpen(false,true);$('axisDemoStatus').textContent=key+'軸の動作を確認中です。設定メニューの軸位置・デモから停止できます。';
  // A single round trip demonstrates the chosen part; no endless motion.
  function step(t){if(motionStart===null)motionStart=t;const progress=Math.min((t-motionStart)/3500,1);positions[key]=Math.sin(progress*2*Math.PI)*85;updateAxisValues();drawScene();if(progress<1)motionFrame=requestAnimationFrame(step);else{positions[key]=0;updateAxisValues();stopMotion();drawScene();}}

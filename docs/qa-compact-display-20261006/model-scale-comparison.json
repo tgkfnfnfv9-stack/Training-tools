@@ -1,0 +1,200 @@
+{
+  "comparisonCommit": "ddf6492bc002592fd2f39991311fd0dc7816025e",
+  "method": "旧mainと変更後の実描画関数を同一の個体・支持・軸・表示状態で実行し、模型本体面のCanvas描画座標から輪郭範囲を採取。Canvas寸法は双方のChromium実ブラウザー検証結果を使用。表示余白の計算式を期待値として再実装していません。文字・支持点記号・地面格子・ダイヤル描画・支持面を除外。",
+  "seed": 78129,
+  "heights": [
+    0,
+    0,
+    0.1,
+    0
+  ],
+  "axes": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0,
+    "A": 0,
+    "C": 0
+  },
+  "results": [
+    {
+      "name": "pc-1366x900",
+      "before": {
+        "canvas": {
+          "width": 1278,
+          "height": 385
+        },
+        "machineFaces": 414,
+        "paintedMachineBounds": {
+          "x": 539.3629384901157,
+          "y": 70.78763347148097,
+          "width": 198.62700769322646,
+          "height": 226.53466895896415
+        }
+      },
+      "after": {
+        "canvas": {
+          "width": 1278,
+          "height": 414
+        },
+        "machineFaces": 462,
+        "paintedMachineBounds": {
+          "x": 530.7888293394135,
+          "y": 75.67440311739476,
+          "width": 215.71953951252476,
+          "height": 246.02875026403814
+        }
+      },
+      "linearIncreasePercent": 8.605341246290777
+    },
+    {
+      "name": "mobile-320x480",
+      "before": {
+        "canvas": {
+          "width": 232,
+          "height": 98
+        },
+        "machineFaces": 414,
+        "paintedMachineBounds": {
+          "x": 90.57333148412448,
+          "y": 18.49179963960642,
+          "width": 50.68819780895393,
+          "height": 57.81003421504722
+        }
+      },
+      "after": {
+        "canvas": {
+          "width": 232,
+          "height": 111
+        },
+        "machineFaces": 462,
+        "paintedMachineBounds": {
+          "x": 86.72976531312004,
+          "y": 20.682420515360874,
+          "width": 58.35036724519112,
+          "height": 66.54876031732181
+        }
+      },
+      "linearIncreasePercent": 15.116279069767469
+    },
+    {
+      "name": "mobile-320x568",
+      "before": {
+        "canvas": {
+          "width": 232,
+          "height": 117
+        },
+        "machineFaces": 414,
+        "paintedMachineBounds": {
+          "x": 84.95581169573337,
+          "y": 21.69347630417063,
+          "width": 61.8867531388391,
+          "height": 70.58201851837161
+        }
+      },
+      "after": {
+        "canvas": {
+          "width": 232,
+          "height": 143
+        },
+        "machineFaces": 462,
+        "paintedMachineBounds": {
+          "x": 77.2686793537245,
+          "y": 26.07471805567954,
+          "width": 77.21109201131354,
+          "height": 88.05947072292078
+        }
+      },
+      "linearIncreasePercent": 24.761904761904763
+    },
+    {
+      "name": "mobile-390x844",
+      "before": {
+        "canvas": {
+          "width": 302,
+          "height": 330
+        },
+        "machineFaces": 414,
+        "paintedMachineBounds": {
+          "x": 67.62417998282676,
+          "y": 61.51962207405825,
+          "width": 166.21013700145357,
+          "height": 189.5631354493409
+        }
+      },
+      "after": {
+        "canvas": {
+          "width": 302,
+          "height": 360
+        },
+        "machineFaces": 462,
+        "paintedMachineBounds": {
+          "x": 58.754411895893455,
+          "y": 66.57490101810701,
+          "width": 183.8920664696933,
+          "height": 209.72942645458994
+        }
+      },
+      "linearIncreasePercent": 10.63829787234043
+    },
+    {
+      "name": "landscape-568x320",
+      "before": {
+        "canvas": {
+          "width": 332,
+          "height": 98
+        },
+        "machineFaces": 414,
+        "paintedMachineBounds": {
+          "x": 140.57333148412448,
+          "y": 18.49179963960642,
+          "width": 50.68819780895393,
+          "height": 57.81003421504722
+        }
+      },
+      "after": {
+        "canvas": {
+          "width": 332,
+          "height": 102
+        },
+        "machineFaces": 462,
+        "paintedMachineBounds": {
+          "x": 139.39069573920003,
+          "y": 19.165836832146255,
+          "width": 53.04578840471922,
+          "height": 60.498873015747094
+        }
+      },
+      "linearIncreasePercent": 4.651162790697683
+    },
+    {
+      "name": "landscape-844x390",
+      "before": {
+        "canvas": {
+          "width": 568,
+          "height": 168
+        },
+        "machineFaces": 414,
+        "paintedMachineBounds": {
+          "x": 248.52092765226672,
+          "y": 34.221115776195,
+          "width": 70.72771787295898,
+          "height": 80.66516402099614
+        }
+      },
+      "after": {
+        "canvas": {
+          "width": 568,
+          "height": 172
+        },
+        "machineFaces": 462,
+        "paintedMachineBounds": {
+          "x": 247.33829190734227,
+          "y": 34.895152968734834,
+          "width": 73.08530846872426,
+          "height": 83.35400282169601
+        }
+      },
+      "linearIncreasePercent": 3.3333333333333215
+    }
+  ]
+}

@@ -167,7 +167,7 @@ for(const X of [-100,0,100])for(const Y of [-100,0,100])for(const Z of [-100,100
 }
 
 surface('i===2?.2:0',zero,live);const modeRecord=live.json('levelRecord()');
-check('compact machine shows squareness and four-position sweep simultaneously',()=>{assert.equal(live.read('spindleSweepMode'),true);assert.equal(live.registry.spindleSweepPanel.hidden,false);assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.liveSquarenessUnits.hidden,false);assert.equal(live.registry.squarenessValuesNote.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.equal(live.registry.runSpindleSweep.hidden,false);assert.equal(live.registry.toggleSpindleSweep,undefined);});
+check('compact machine shows squareness and four-position readings simultaneously',()=>{assert.equal(live.read('spindleSweepMode'),true);assert.equal(live.registry.spindleSweepPanel.hidden,false);assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.liveSquarenessUnits.hidden,false);assert.equal(live.registry.squarenessValuesNote.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.equal(live.registry.toggleSpindleSweep,undefined);});
 check('UI four positions retain degree and direction labels',()=>{for(let i=0;i<4;i++)assert.match(live.registry['sweepPosition'+i].getAttribute('aria-label'),new RegExp(i*90+'度・'+['右','奥','左','手前'][i]));});
 const uiValues=()=>Array.from({length:4},(_,i)=>Number(live.registry['sweepValue'+i].getAttribute('data-reading-microns')));
 const displayed=geometryReading(live);
@@ -175,11 +175,10 @@ check('all four displayed raw values equal independent actual-model geometry',()
 check('mode selection does not rewrite installation or profile data',()=>assert.deepEqual(live.json('levelRecord()'),modeRecord));
 for(let i=0;i<4;i++){
  live.registry['sweepPosition'+i].click();
- check('selecting '+i*90+' degrees updates current dial and pressed state only',()=>{near(live.read('spindleSweepAngle'),i*90,0);assert.equal(live.registry.sweepCurrentAngle.textContent,i*90+'°');near(Number(live.registry.sweepCurrentValue.getAttribute('data-reading-microns')),displayed[i],1e-8);for(let j=0;j<4;j++)assert.equal(live.registry['sweepPosition'+j].getAttribute('aria-pressed'),String(i===j));vectorNear(uiValues(),displayed,1e-8);assert.deepEqual(live.json('levelRecord()'),modeRecord);});
+ check('selecting '+i*90+' degrees updates its pressed state without changing readings',()=>{near(live.read('spindleSweepAngle'),i*90,0);for(let j=0;j<4;j++)assert.equal(live.registry['sweepPosition'+j].getAttribute('aria-pressed'),String(i===j));vectorNear(uiValues(),displayed,1e-8);assert.deepEqual(live.json('levelRecord()'),modeRecord);});
 }
-const timerStart=live.timers.length;live.registry.runSpindleSweep.click();let animationSteps=0;
-for(let i=timerStart;i<live.timers.length&&animationSteps<130;i++)if(live.timerDelays[i]===40){live.timers[i]();animationSteps++;}
-check('one full rotation returns to the start and leaves machine state intact',()=>{assert.equal(animationSteps,120);near(live.read('spindleSweepAngle'),270,0);assert.equal(live.read('spindleSweepTimer'),null);assert.equal(live.registry.runSpindleSweep.textContent,'1周回す');vectorNear(uiValues(),displayed,1e-8);assert.deepEqual(live.json('levelRecord()'),modeRecord);});
+check('round operation, dial pictures and duplicate current readout are removed',()=>{for(const id of ['runSpindleSweep','sweepDial','sweepCurrentAngle','sweepCurrentValue'])assert.equal(live.registry[id],undefined);for(const name of ['runSpindleSweep','stopSpindleSweep','spindleSweepTimer','spindleSweepProgress','sweepDialMarkup','drawSpindleSweep'])assert.equal(live.read('typeof '+name),'undefined');assert.equal(live.registry.spindleSweepPanel.querySelectorAll('svg').length,0);});
+check('selecting the four fixed points never starts an animation timer',()=>{const timers=live.timers.length;for(let i=0;i<4;i++)live.registry['sweepPosition'+i].click();assert.equal(live.timers.length,timers);vectorNear(uiValues(),displayed,1e-8);assert.deepEqual(live.json('levelRecord()'),modeRecord);});
 live.read('selected=2;');live.registry.raiseSupport.click();
 check('a support button immediately changes the dial readings through the common physical geometry',()=>{assert.ok(uiValues().some((v,i)=>Math.abs(v-displayed[i])>.001));vectorNear(uiValues(),drawnIndependentReadings(live).readings,2e-7);});
 live.registry.lowerSupport.click();
@@ -192,13 +191,13 @@ check('sidebar and camera leave live numeric readings unchanged',()=>vectorNear(
 const beforeClose=live.json('levelRecord()');live.read("selectAxis('Y');selectAxis('Z');selectAxis('X');");
 check('axis selection keeps both readouts visible and all saved readings intact',()=>{assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.spindleSweepPanel.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.deepEqual(live.json('levelRecord()'),beforeClose);vectorNear(uiValues(),plainReadings,1e-8);});
 surface('0',{...zero,Y:100},live);live.registry.sweepPosition3.click();
-check('an off-table contact is marked and does not show an invented measurement',()=>{assert.equal(live.json('spindleSweepGeometry().cardinal[3].onTable'),false);assert.equal(live.registry.sweepValue3.textContent,'面外');assert.equal(live.registry.sweepValue3.getAttribute('data-reading-microns'),'');assert.equal(live.registry.sweepCurrentValue.textContent,'測定できません');assert.match(live.registry.sweepContactStatus.textContent,/面外/);});
+check('an off-table contact is marked and does not show an invented measurement',()=>{assert.equal(live.json('spindleSweepGeometry().cardinal[3].onTable'),false);assert.equal(live.registry.sweepValue3.textContent,'面外');assert.equal(live.registry.sweepValue3.getAttribute('data-reading-microns'),'');assert.match(live.registry.sweepContactStatus.textContent,/面外/);assert.equal(live.registry.sweepPosition3.getAttribute('aria-pressed'),'true');});
 const oldWidth=live.read('levelConfig.width');live.read('levelConfig.width=.5;');surface('0',{...zero,X:-100},live);
 check('loss of the zero reference prevents reading any other cardinal as calibrated',()=>{assert.equal(live.json('spindleSweepGeometry().cardinal[0].onTable'),false);for(let i=0;i<4;i++)assert.equal(live.registry['sweepValue'+i].getAttribute('data-reading-microns'),'');assert.match(live.registry.sweepContactStatus.textContent,/0°.*面外/);});
 live.read(`levelConfig.width=${oldWidth};`);surface('0',zero,live);
 for(let i=1;i<7;i++){
  live.read(`openMachine(machines[${i}]);`);
- check('unsupported machine '+i+' does not expose a misleading top-face sweep',()=>{assert.equal(live.registry.toggleSpindleSweep,undefined);assert.equal(live.registry.spindleSweepPanel.hidden,true);assert.equal(live.registry.runSpindleSweep.hidden,true);assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.equal(live.read('spindleSweepMode'),false);assert.equal(live.read('spindleSweepGeometry().valid'),false);});
+ check('unsupported machine '+i+' does not expose a misleading top-face measurement',()=>{assert.equal(live.registry.toggleSpindleSweep,undefined);assert.equal(live.registry.spindleSweepPanel.hidden,true);assert.equal(live.registry.runSpindleSweep,undefined);assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.equal(live.read('spindleSweepMode'),false);assert.equal(live.read('spindleSweepGeometry().valid'),false);});
 }
 
 console.log(JSON.stringify({checks,failures},null,2));if(failures.length)process.exitCode=1;
