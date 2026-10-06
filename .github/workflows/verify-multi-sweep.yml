@@ -1,4 +1,4 @@
-name: Verify five-machine spindle measurements
+name: Verify published five-machine measurements
 on:
   push:
     branches: [codex/multi-machine-sweep-20261006]
@@ -22,7 +22,27 @@ jobs:
         run: |
           python3 build.py
           git diff --exit-code -- index.html
+      - name: Match public page to commit 0093a6690922c1dd91b278a19268cc1f3ccff436
+        env:
+          PUBLIC_PAGE_URL: https://tgkfnfnfv9-stack.github.io/Training-tools/?verify=0093a6690922c1dd91b278a19268cc1f3ccff436
+        run: |
+          python3 - <<'PY'
+          import hashlib, os, time, urllib.request
+          from pathlib import Path
+          expected = Path('index.html').read_bytes()
+          for attempt in range(12):
+              with urllib.request.urlopen(os.environ['PUBLIC_PAGE_URL'], timeout=30) as response:
+                  actual = response.read()
+              if actual == expected:
+                  print('PUBLIC_BUNDLE_MATCH 0093a6690922c1dd91b278a19268cc1f3ccff436 sha256=' + hashlib.sha256(actual).hexdigest())
+                  break
+              if attempt == 11:
+                  raise SystemExit('Published HTML differs from the verified build')
+              time.sleep(5)
+          PY
       - name: Check compact regression and five-machine layouts
+        env:
+          DIAL_BASE_URL: https://tgkfnfnfv9-stack.github.io/Training-tools/?verify=0093a6690922c1dd91b278a19268cc1f3ccff436
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/multi-server.log 2>&1 &
           node tests/browser-simultaneous-dial.cjs
@@ -31,7 +51,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: multi-sweep-browser-evidence
+          name: multi-sweep-published-evidence
           path: |
             tmp/qa-dial/
             tmp/qa-multi-sweep/
