@@ -21,13 +21,19 @@ const diagramState=()=>r.liveSquareness.querySelectorAll('svg').map(s=>({pair:s.
 // Bounds are checked on the rendered projected geometry, including the plate's
 // far corner (which differs from its origin and compared-axis endpoint).
 function projectedBounds(svg){
- const view=svg.getAttribute('viewBox').split(/[ ,]+/).map(Number),plane=svg.querySelectorAll('.pair-plane')[0],m=plane.getAttribute('transform').match(/matrix\(([^)]+)\)/)[1].split(/[ ,]+/).map(Number);
+ const view=svg.getAttribute('viewBox').split(/[ ,]+/).map(Number),plane=svg.querySelectorAll('.pair-plane')[0];
+ const parse=node=>node.getAttribute('transform').match(/matrix\(([^)]+)\)/)[1].split(/[ ,]+/).map(Number);
+ const multiply=(a,b)=>[a[0]*b[0]+a[2]*b[1],a[1]*b[0]+a[3]*b[1],a[0]*b[2]+a[2]*b[3],a[1]*b[2]+a[3]*b[3],a[0]*b[4]+a[2]*b[5]+a[4],a[1]*b[4]+a[3]*b[5]+a[5]];
+ // Include every display-only ancestor projection. The inner plane/data
+ // projection remains independently checked against the physical directions.
+ let m=parse(plane);for(let node=plane.parentElement;node&&node!==svg;node=node.parentElement)if(node.getAttribute('transform'))m=multiply(parse(node),m);
  const inside=(x,y,name)=>{assert.ok(x>=view[0]+1&&x<=view[0]+view[2]-1&&y>=view[1]+1&&y<=view[1]+view[3]-1,`${svg.dataset.pair} ${name} projected (${x},${y}) clips viewBox ${view}`);};
  const project=(x,y)=>[m[0]*x+m[2]*y+m[4],m[1]*x+m[3]*y+m[5]];
+ const projectNode=(node,x,y)=>{if(!node.getAttribute('transform'))return project(x,y);const n=multiply(m,parse(node));return[n[0]*x+n[2]*y+n[4],n[1]*x+n[3]*y+n[5]];};
  const tokens=plane.querySelectorAll('.reference-board')[0].getAttribute('d').match(/[A-Za-z]|-?(?:\d*\.)?\d+/g);let x=0,y=0;
  for(let i=0;i<tokens.length;){const command=tokens[i++];if(command==='M'||command==='L'){x=Number(tokens[i++]);y=Number(tokens[i++]);}else if(command==='H')x=Number(tokens[i++]);else if(command==='V')y=Number(tokens[i++]);else if(command==='Z')continue;else throw Error('Unsupported board command '+command);inside(...project(x,y),'board corner');}
- for(const line of plane.querySelectorAll('line'))for(const suffix of ['1','2'])inside(...project(Number(line.getAttribute('x'+suffix)),Number(line.getAttribute('y'+suffix))),'line endpoint');
- for(const dot of plane.querySelectorAll('circle')){const x=Number(dot.getAttribute('cx')),y=Number(dot.getAttribute('cy')),radius=Number(dot.getAttribute('r'));for(const [dx,dy] of [[radius,0],[-radius,0],[0,radius],[0,-radius]])inside(...project(x+dx,y+dy),'dot edge');}
+ for(const line of plane.querySelectorAll('line'))for(const suffix of ['1','2'])inside(...projectNode(line,Number(line.getAttribute('x'+suffix)),Number(line.getAttribute('y'+suffix))),'line endpoint');
+ for(const dot of plane.querySelectorAll('circle')){const x=Number(dot.getAttribute('cx')),y=Number(dot.getAttribute('cy')),radius=Number(dot.getAttribute('r'));for(const [dx,dy] of [[radius,0],[-radius,0],[0,radius],[0,-radius]])inside(...projectNode(dot,x+dx,y+dy),'dot edge');}
 }
 for(const kind of Object.keys(counts)){
  e.storage.clear();e.read(`openMachine(machines.find(m=>m.kind==='${kind}'));supportHeights=supports.map((s,i)=>[.025,-.012,.018,-.009,.005,-.011][i%6]);updateLeveling();`);

@@ -587,3 +587,33 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
  .live-pair-micro-change{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 }
 @media(max-width:950px) and (orientation:portrait) and (max-height:540px){.live-squareness-diagram{height:56px!important}.has-spindle-sweep .live-squareness-diagram{height:30px!important}}
+
+/* All live plates share one drawing scale, including machines with one plane.
+   Only the display projection changes; text and arrow heads keep their shape. */
+.live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:64px!important}
+.live-squareness-diagram .measurement-direction{fill:none;stroke:#cb5709;stroke-width:1.4}
+.live-squareness-diagram .reference-board,.live-squareness-diagram .reference-board-edge,.live-squareness-diagram .pair-ideal,.live-squareness-diagram .pair-base,.live-squareness-diagram .pair-current,.live-squareness-diagram .pair-before,.live-squareness-diagram .measurement-gap{vector-effect:non-scaling-stroke}
+.live-squareness-diagram .reference-board,.live-squareness-diagram .reference-board-edge{stroke-width:.6px}
+.live-squareness-diagram .pair-ideal{stroke-width:.7px}
+.live-squareness-diagram .pair-base{stroke-width:1.3px}
+.live-squareness-diagram .pair-current{stroke-width:1.5px}
+.live-squareness-diagram .pair-before{stroke-width:2px}
+.live-squareness-diagram .measurement-gap{stroke-width:.8px}
+@media(max-width:700px){.live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:34px!important}}
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){.live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:38px!important}}
+@media(max-width:700px) and (orientation:portrait) and (max-height:540px){.live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:30px!important}}
+
+/* The two fixed vials are the same instrument turned through ninety degrees.
+   Short viewports use a shared size that fits the existing model column. */
+.viewer-levels{--vial-length:74px;--vial-width:24px;--bubble-length:22px;--bubble-width:14px;--gauge-end-line:12px;--gauge-top-gap:3px}
+.viewer-gauge-lr .vial,.has-spindle-sweep .viewer-gauge-lr .vial{width:var(--vial-length);height:var(--vial-width);margin-left:auto;margin-right:auto}
+.viewer-gauge .gauge-ends{width:var(--vial-length);margin:0 auto}
+.viewer-gauge-fb,.has-spindle-sweep .viewer-gauge-fb{flex:none;min-height:0}
+.vertical-gauge,.has-spindle-sweep .vertical-gauge{flex:none;min-height:0;grid-template-rows:var(--gauge-end-line) var(--vial-length) var(--gauge-end-line);height:calc(var(--vial-length) + 2 * var(--gauge-end-line));margin-top:var(--gauge-top-gap)}
+.vertical-gauge .vial{width:var(--vial-width);height:var(--vial-length)}
+.viewer-gauge-lr .bubble,.has-spindle-sweep .viewer-gauge-lr .bubble{width:var(--bubble-length);height:var(--bubble-width);top:calc((var(--vial-width) - var(--bubble-width)) / 2 - 1px)}
+.vial-vertical .bubble{width:var(--bubble-width);height:var(--bubble-length);left:calc((var(--vial-width) - var(--bubble-width)) / 2 - 1px);top:clamp(calc(var(--bubble-length) / 2),var(--bubble-position,50%),calc(100% - var(--bubble-length) / 2))}
+@media(max-width:950px) and (orientation:portrait) and (max-height:640px){.viewer-levels{--vial-length:52px;--vial-width:16px;--bubble-length:16px;--bubble-width:10px;--gauge-end-line:10px;--gauge-top-gap:0px}}
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){.viewer-levels{--vial-length:52px;--vial-width:16px;--bubble-length:16px;--bubble-width:10px;--gauge-end-line:10px;--gauge-top-gap:0px}}
+@media(max-width:950px) and (orientation:portrait) and (max-height:540px){.viewer-levels{--vial-length:30px;--vial-width:14px;--bubble-length:8px;--bubble-width:6px;--gauge-end-line:8px;--gauge-top-gap:0px}}
+@media(max-width:950px) and (orientation:landscape) and (max-height:400px){.viewer-levels{--vial-length:30px;--vial-width:14px;--bubble-length:8px;--bubble-width:6px;--gauge-end-line:8px;--gauge-top-gap:0px}}
