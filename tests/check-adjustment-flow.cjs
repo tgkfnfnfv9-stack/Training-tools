@@ -41,10 +41,14 @@ function visibleText(el){
  if(['machineTitle','machineSubtitle','structureText','supportNote','sourceLinks','selectedSupportLabel'].includes(el.id))return '';
  if(el.id==='liveSquarenessUnits'){assert.equal(el.textContent,'局所300 mm換算・µm');assert.equal(el.children.length,0);return '';}
  if(el.classList.contains('live-pair-base-value')||el.classList.contains('live-pair-error-value')){
-  const parent=el.closest('.live-pair-values');assert(parent&&parent.closest('#liveSquareness'));assert.equal(el.children.length,0);assert.equal(el.tagName,'SPAN');
+  const parent=el.closest('.live-pair-values');assert(parent&&parent.closest('#liveSquareness'));assert.equal(el.tagName,'SPAN');
   const key=parent.getAttribute('data-pair'),pair=json('levelGeometry.pairs').find(p=>p.key===key);assert(pair);
   const lathe=read("current.kind==='lathe'"),base=lathe?'Z':key[0],other=[...key].find(a=>a!==base),value=pair.deviationMicroradians*.3,magnitude=Math.round(Math.abs(value)),number=magnitude===0?'0':(value<0?'-':'+')+magnitude;
-  assert.equal(el.textContent,el.classList.contains('live-pair-base-value')?(lathe?'主軸Z':base)+'基準 0':other+'直角差 '+number);return '';
+  if(el.classList.contains('live-pair-base-value')){assert.equal(el.children.length,0);assert(el.classList.contains('visually-hidden'));assert.equal(el.textContent,(lathe?'主軸Z':base)+'基準 0');}
+  else{assert.equal(el.children.length,0);assert.equal(el.textContent,number);assert.equal(el.getAttribute('aria-label'),key+' '+other+'直角差 '+number+' µm');}
+  return '';
+ }
+ if(el.classList.contains('live-pair-unit')){assert.equal(el.textContent.trim(),'µm');assert.equal(el.getAttribute('aria-hidden'),'true');return '';
  }
  for(const [className,label] of Object.entries(positionLabels))if(el.classList.contains(className)){assert.equal(el.textContent,label);assert.equal(el.children.length,0);assert(['TEXT','SPAN'].includes(el.tagName));return '';}
  let own=el._text;
@@ -68,6 +72,7 @@ function nonnumeric(){
   let label=el.getAttribute('aria-label')||'';
   if(sweepAriaExceptions.has(el)){assert.equal(label,sweepAriaExceptions.get(el));label='';}
   if(el===r.scene&&['compact','travel','double','gantry','five'].includes(read('current.kind'))){assert.ok(label.endsWith(sweepSceneDescription));label=label.slice(0,-sweepSceneDescription.length);}
+  if(el.classList.contains('live-pair-error-value')){const parent=el.closest('.live-pair-values'),pair=json('levelGeometry.pairs').find(p=>p.key===parent.dataset.pair),base=read("current.kind==='lathe'")?'Z':pair.key[0],other=[...pair.key].find(k=>k!==base),raw=pair.deviationMicroradians*.3,magnitude=Math.round(Math.abs(raw)),number=magnitude===0?'0':(raw<0?'-':'+')+magnitude;assert.equal(label,pair.key+' '+other+'直角差 '+number+' µm');label='';}
   if(el.classList.contains('live-squareness-diagram'))label=label.replace('現在位置の局所角度を300 mm換算、実走査ではありません。','現在位置の局所角度の換算、実走査ではありません。');
   let aria=label.replace(/(?:5|2)軸/g,'').replace(/15か所/g,'');
   for(const identity of [read('current.name'),...json('supports.map(s=>s.name)')])aria=aria.split(identity).join('');

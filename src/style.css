@@ -163,12 +163,12 @@ body.in-lab #training #scene{height:0;min-height:0;flex:1;touch-action:none}
 /* Relative-angle diagrams replace the initial/delta-number summary. */
 body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 .live-squareness{display:flex;align-items:center;justify-content:center;min-width:0;gap:2px;width:100%}
-.live-squareness-item{flex:1;min-width:0;max-width:180px}.live-pair-title{display:block;text-align:center;font-size:11px;font-weight:650;line-height:14px;white-space:nowrap}.live-squareness-diagram{display:block;min-width:0;width:100%;height:48px;fill:var(--ink);font-size:12px}
+.live-squareness-item{flex:1;min-width:0;max-width:180px}.live-squareness-diagram{display:block;min-width:0;width:100%;height:70px;fill:var(--ink);font-size:12px}
 .live-pair-values{padding:1px 0 2px;text-align:center;font-size:12px;line-height:16px;font-variant-numeric:tabular-nums}
-.live-pair-base-value,.live-pair-error-value{display:block;white-space:nowrap}
+.live-pair-error-value{display:inline;white-space:nowrap}
 .live-pair-base-value{font-size:10px;color:var(--muted)}
 .live-pair-error-value{font-weight:700}
-.live-pair-micro-change{display:block;flex-basis:100%;min-height:12px;font-size:10px;line-height:12px;white-space:nowrap;color:#865023}
+.live-pair-micro-change{display:block;flex-basis:100%;font-size:9px;line-height:10px;white-space:nowrap;color:#865023}.live-pair-micro-change:empty{display:none}
 .live-squareness-units{margin:0;text-align:center;font-size:10px;line-height:14px;color:var(--muted)}
 .pair-title{font-size:13px;font-weight:650}.pair-axis{font-size:13px;font-weight:650}.right-angle{font-size:13px;fill:#607782}.live-pair-limit{font-size:13px;fill:#80541e}.measurement-start,.measurement-end{font-size:13px;fill:#536776;font-weight:600}.measurement-end{font-variant-numeric:tabular-nums}
 .measurement-summary{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
@@ -388,7 +388,7 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
  /* Unlike hidden, clip never scrolls this fixed ancestor when a child receives focus. */
  body.in-mechanical-lab #training .training-main-slot{overflow:clip}
  body.in-mechanical-lab #training .training-heading{padding-top:0;padding-bottom:0}
- body.in-mechanical-lab #training .training-workspace{grid-template-rows:minmax(0,1fr) clamp(80px,calc(100dvh - 430px - env(safe-area-inset-top)),150px)}
+ body.in-mechanical-lab #training .training-workspace{grid-template-rows:minmax(0,1fr) clamp(104px,calc(100dvh - 430px - env(safe-area-inset-top)),150px)}
  body.in-mechanical-lab #training .scene-toolbar{padding-top:2px;padding-bottom:max(2px,env(safe-area-inset-bottom))}
  body.in-mechanical-lab #training .main-adjustment{min-height:0;max-height:none;padding-top:4px;padding-bottom:max(4px,env(safe-area-inset-bottom));overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable}
  body.in-mechanical-lab #training .selected-support-label{margin:3px 0}
@@ -431,7 +431,7 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
 .spindle-sweep-panel{min-width:0;margin:0}
 .has-spindle-sweep .precision-readouts{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,310px);gap:12px;align-items:start;max-width:1120px;margin:0 auto}
 .has-spindle-sweep .precision-panel-title{display:block;line-height:14px}
-.has-spindle-sweep .live-squareness-diagram{height:34px}
+.has-spindle-sweep .live-squareness-diagram{height:64px}
 .has-spindle-sweep .spindle-sweep-panel{padding-left:12px;border-left:1px solid var(--line)}
 .sweep-heading{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:0 6px;line-height:14px;padding:0 0 2px;min-height:16px}
 .sweep-heading strong{font-size:12px}
@@ -451,14 +451,13 @@ body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{display:fle
 @media(max-width:700px){
  .has-spindle-sweep .precision-readouts{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:6px}
  .has-spindle-sweep .spindle-sweep-panel{padding-left:6px}
- .has-spindle-sweep .precision-panel-title{font-size:11px;line-height:12px}
+ .has-spindle-sweep .precision-panel-title{display:none}
  .has-spindle-sweep .live-squareness{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;align-items:stretch}
- .has-spindle-sweep .live-squareness-item{display:grid;grid-template-columns:52px minmax(0,1fr);grid-template-rows:9px 21px;align-items:center;max-width:none}
- .has-spindle-sweep .live-pair-title{grid-column:1;grid-row:1;font-size:9px;line-height:9px}
- .has-spindle-sweep .live-squareness-diagram{grid-column:1;grid-row:2;height:21px!important}
- .has-spindle-sweep .live-pair-values{grid-column:2;grid-row:1/3;display:block;padding:0;line-height:12px;font-size:10px}
+ .has-spindle-sweep .live-squareness-item{display:grid;grid-template-columns:minmax(0,1fr) 50px;grid-template-rows:34px;align-items:center;max-width:none}
+ .has-spindle-sweep .live-squareness-diagram{grid-column:1;grid-row:1;height:34px!important}
+ .has-spindle-sweep .live-pair-values{grid-column:2;grid-row:1;display:block;padding:0;line-height:12px;font-size:10px}
  .has-spindle-sweep .live-pair-base-value{font-size:9px;line-height:10px}
- .has-spindle-sweep .live-pair-micro-change{font-size:8px;line-height:8px;min-height:8px;white-space:normal}
+ .has-spindle-sweep .live-pair-micro-change{font-size:8px;line-height:8px;white-space:normal}
  .has-spindle-sweep .live-squareness-units{font-size:9px;line-height:12px}
  .has-spindle-sweep .sweep-heading{column-gap:4px}
  .has-spindle-sweep .sweep-heading strong{font-size:11px}
@@ -484,10 +483,10 @@ body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{display:fle
  .has-spindle-sweep .live-squareness{display:flex;gap:2px}
  .has-spindle-sweep .live-squareness-item{display:block;max-width:180px}
  .has-spindle-sweep .live-pair-title{font-size:10px;line-height:12px}
- .has-spindle-sweep .live-squareness-diagram{height:22px!important}
- .has-spindle-sweep .live-pair-values{display:flex;justify-content:center;align-items:baseline;flex-wrap:wrap;column-gap:4px;padding:0;line-height:14px;font-size:10px}
+ .has-spindle-sweep .live-squareness-diagram{height:40px!important}
+ .has-spindle-sweep .live-pair-values{display:block;padding:0;line-height:14px;font-size:10px}
  .has-spindle-sweep .live-pair-base-value{font-size:9px;line-height:14px}
- .has-spindle-sweep .live-pair-micro-change{font-size:9px;line-height:11px;min-height:11px;white-space:nowrap}
+ .has-spindle-sweep .live-pair-micro-change{font-size:8px;line-height:9px;white-space:nowrap}
  .has-spindle-sweep .live-squareness-units{font-size:9px;line-height:11px}
  .has-spindle-sweep .sweep-heading{padding:0 0 2px;min-height:14px;line-height:12px}
  .has-spindle-sweep .sweep-heading strong{font-size:10px}
@@ -510,12 +509,12 @@ body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{display:fle
 }
 @media(max-width:700px) and (orientation:portrait) and (max-height:540px){
  .has-spindle-sweep .precision-panel-title{display:none}
- .has-spindle-sweep .live-squareness-item{grid-template-rows:9px 21px}
+ .has-spindle-sweep .live-squareness-item{grid-template-rows:30px}
  .has-spindle-sweep .live-pair-title{font-size:9px;line-height:9px}
- .has-spindle-sweep .live-squareness-diagram{height:21px!important}
+ .has-spindle-sweep .live-squareness-diagram{height:30px!important}
  .has-spindle-sweep .live-pair-values{line-height:12px}
  .has-spindle-sweep .live-pair-base-value{line-height:10px}
- .has-spindle-sweep .live-pair-micro-change{line-height:8px;min-height:8px}
+ .has-spindle-sweep .live-pair-micro-change{line-height:8px}
  .has-spindle-sweep .sweep-heading{min-height:14px;line-height:12px;padding:0 0 2px}
  .has-spindle-sweep .sweep-heading strong{font-size:10px}
  .has-spindle-sweep .sweep-diameter{font-size:9px}
@@ -572,8 +571,19 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 .measurement-reference-card .reference-range{font-size:10px;color:var(--muted)}
 @media(max-width:950px){.measurement-reference-cards{grid-template-columns:minmax(0,1fr)}.reference-diagram{max-height:170px}.measurement-reference{padding:6px}}
 @media(min-width:561px) and (max-width:950px) and (orientation:portrait){.measurement-reference-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:360px){.squareness-panel{padding-bottom:12px}.measurement-reference-toggle span{font-size:9px;line-height:12px}.has-spindle-sweep .live-squareness-item{grid-template-columns:54px minmax(0,1fr)}}
+@media(max-width:360px){.squareness-panel{padding-bottom:12px}.measurement-reference-toggle span{font-size:9px;line-height:12px}.has-spindle-sweep .live-squareness-item{grid-template-columns:minmax(0,1fr) 48px}}
 @media(max-width:950px) and (orientation:landscape) and (max-height:600px){.measurement-reference-toggle span{font-size:9px;line-height:12px}.squareness-panel{padding-bottom:12px}}
 .reference-side-label{font-size:9px;font-weight:700;fill:#833500}
 .reference-direction-label,.reference-contact-label{font-size:8px;font-weight:650;fill:#333}
 .reference-sign-guide{fill:none;stroke:#9b8777;stroke-width:.6;stroke-dasharray:2 2}
+/* Live labels stay secondary as the plate fills the reclaimed title area. */
+.live-squareness-diagram .measurement-end{font-size:7px}
+.live-squareness-diagram .reference-conversion{font-size:6px}
+.live-squareness-diagram .pair-axis,.live-squareness-diagram .reference-origin-label,.live-squareness-diagram .measurement-start{font-size:8px}
+.live-squareness-diagram .reference-plus{font-size:8px}
+@media(max-width:950px) and (orientation:landscape) and (max-height:400px){
+ .live-squareness-diagram{height:36px!important}.has-spindle-sweep .live-squareness-diagram{height:38px!important}
+ .scene-readout-note{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .live-pair-micro-change{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+}
+@media(max-width:950px) and (orientation:portrait) and (max-height:540px){.live-squareness-diagram{height:56px!important}.has-spindle-sweep .live-squareness-diagram{height:30px!important}}

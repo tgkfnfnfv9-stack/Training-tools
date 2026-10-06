@@ -10,6 +10,13 @@ function check(name,fn){checks++;try{fn();}catch(error){failures.push(name+': '+
 const near=(a,b,t=1e-8)=>assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=t,`${a} != ${b}`);
 const norm=s=>String(s).replace(/−/g,'-').replace(/μ/g,'µ');
 const values=()=>r.liveSquareness.querySelectorAll('.live-pair-values');
+// Check the visible number together with its explicit accessible plane/axis
+// context and the adjacent unit, rather than requiring a repeated heading.
+function reading(node,expectedContext){
+ assert.equal(node.children.length,0);assert.equal(norm(node.getAttribute('aria-label')),expectedContext+norm(node.textContent)+' µm');
+ const unit=node.parentElement.querySelectorAll('.live-pair-unit');assert.equal(unit.length,1);assert.equal(norm(unit[0].textContent).trim(),'µm');assert.equal(unit[0].getAttribute('aria-hidden'),'true');
+ return norm(node.textContent).trim();
+}
 function isVisible(node){for(let n=node;n;n=n.parentElement)assert.equal(n.hidden,false,'value has a hidden ancestor');}
 function observed(){return values().map(v=>({pair:v.dataset.pair,base:norm(v.querySelectorAll('.live-pair-base-value')[0].textContent),error:norm(v.querySelectorAll('.live-pair-error-value')[0].textContent)}));}
 function verify(){
@@ -20,15 +27,16 @@ function verify(){
   const baseKey=lathe?'Z':p.key[0],other=[...p.key].find(k=>k!==baseKey),raw=p.deviationMicroradians*.3;
   const magnitude=Math.floor(Math.abs(raw)+.5),expected=magnitude===0?'0':(raw<0?'-':'+')+magnitude;
   assert.equal(norm(base.textContent),(lathe?'主軸Z':baseKey)+'基準 0');
-  assert.equal(norm(error.textContent),other+'直角差 '+expected);
+  assert.equal(reading(error,p.key+' '+other+'直角差 '),expected);
+  assert(base.classList.contains('visually-hidden'),'repeated external baseline text is visually suppressed');
   near(Number(error.getAttribute('data-current-error-300')),raw);
   isVisible(base);isVisible(error);
-  // Plain text is the accessible value; its referenced descriptions supply
-  // units and meaning without a second inconsistent aria-label reading.
+  // The accessible reading identifies the plane and measurement axis;
+  // its number agrees with the visible reading and shared reference notes.
   const descriptions=(v.getAttribute('aria-describedby')||'').split(/\s+/).map(id=>r[id]?.textContent||'').join(' ');
   assert.match(norm(descriptions),/300\s*mm/);assert.match(norm(descriptions),/µm/);assert.match(descriptions,/0\.001\s*mm/);
   assert.match(descriptions,/現在.*理想/);assert.match(descriptions,/初期.*差分.*ではありません/);
-  assert.doesNotMatch(norm(error.textContent),/[-+]0(?:\s|$)/);
+  assert.doesNotMatch(reading(error,p.key+' '+other+'直角差 '),/[-+]0(?:\s|$)/);
  }
 }
 
@@ -68,16 +76,16 @@ for(const [raw,expected] of [[-900,'-900'],[-20.51,'-21'],[-20.5,'-21'],[-20.49,
  e.read(`accuracyDiagram(${JSON.stringify(g)},${JSON.stringify(initial)});`);
  check(`signed integer reading ${raw}`,()=>{
   const v=values()[0],value=v.querySelectorAll('.live-pair-error-value')[0];
-  assert.equal(norm(value.textContent),'Y直角差 '+expected);near(Number(value.getAttribute('data-current-error-300')),raw);
+  assert.equal(reading(value,'XY Y直角差 '),expected);near(Number(value.getAttribute('data-current-error-300')),raw);
   assert.equal(v.querySelectorAll('.live-pair-base-value')[0].textContent,'X基準 0');
-  if(Math.abs(raw)===900){const svg=r.liveSquareness.querySelectorAll('svg')[0];assert.equal(svg.dataset.limited,'true');assert.equal(norm(value.textContent),'Y直角差 '+expected);}
+  if(Math.abs(raw)===900){const svg=r.liveSquareness.querySelectorAll('svg')[0];assert.equal(svg.dataset.limited,'true');assert.equal(reading(value,'XY Y直角差 '),expected);}
  });
 }
 // A current +10 micron error must not become the -15 micron initial/current
 // difference, even if the initial line or range changes.
 for(const initial of [-1000,0,25,1000]){
  e.read(`accuracyDiagram({pairs:[{key:'XZ',deviationMicroradians:10/.3}]},{pairs:[{key:'XZ',deviationMicroradians:${initial}/.3}]});`);
- check(`current value is not initial delta ${initial}`,()=>assert.equal(norm(values()[0].querySelectorAll('.live-pair-error-value')[0].textContent),'Z直角差 +10'));
+ check(`current value is not initial delta ${initial}`,()=>assert.equal(reading(values()[0].querySelectorAll('.live-pair-error-value')[0],'XZ Z直角差 '),'+10'));
 }
 check('shared unit note defines thousandths of a millimetre',()=>{assert.match(norm(r.liveSquarenessUnits.textContent),/300\s*mm換算/);assert.match(norm(r.squarenessValuesNote.textContent),/1\s*µm[＝=]0\.001\s*mm/);isVisible(r.liveSquarenessUnits);});
 e.read("current=machines[0];");
