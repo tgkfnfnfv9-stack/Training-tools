@@ -1,0 +1,385 @@
+{
+  "codeCommit": "758a9ac97dcecaad4c1a5e3003208c35bb4c9678",
+  "browser": "Chrome cloud browser; phone dimensions via QA iframe, no physical smartphone touch test",
+  "checks": [
+    {
+      "case": "JSON imported: all supports flat, axes centered",
+      "values": [
+        {
+          "raw": "18.104",
+          "text": "Y直角差 +18"
+        },
+        {
+          "raw": "-22.490000000000006",
+          "text": "Z直角差 -22"
+        },
+        {
+          "raw": "9.998000000000003",
+          "text": "Z直角差 +10"
+        }
+      ]
+    },
+    {
+      "case": "C raised one coarse step",
+      "values": [
+        {
+          "raw": "17.77013324303244",
+          "text": "Y直角差 +18"
+        },
+        {
+          "raw": "-23.193124999618032",
+          "text": "Z直角差 -23"
+        },
+        {
+          "raw": "9.974069720062502",
+          "text": "Z直角差 +10"
+        }
+      ],
+      "microNotes": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "action": "C raised total 50 coarse clicks (+0.500 mm), XYZ center",
+      "values": [
+        {
+          "raw": "1.4107638304799786",
+          "text": "Y直角差 +1"
+        },
+        {
+          "raw": "-57.64624992761262",
+          "text": "Z直角差 -58"
+        },
+        {
+          "raw": "8.799568829461753",
+          "text": "Z直角差 +9"
+        }
+      ]
+    },
+    {
+      "action": "C lowered 50 coarse clicks, restores flat support fixture",
+      "values": [
+        {
+          "raw": "18.104",
+          "text": "Y直角差 +18"
+        },
+        {
+          "raw": "-22.490000000000006",
+          "text": "Z直角差 -22"
+        },
+        {
+          "raw": "9.998000000000003",
+          "text": "Z直角差 +10"
+        }
+      ]
+    },
+    {
+      "action": "open sidebar after reversal",
+      "values": [
+        {
+          "raw": "18.104",
+          "text": "Y直角差 +18"
+        },
+        {
+          "raw": "-22.490000000000006",
+          "text": "Z直角差 -22"
+        },
+        {
+          "raw": "9.998000000000003",
+          "text": "Z直角差 +10"
+        }
+      ]
+    },
+    {
+      "action": "restore original initial supports",
+      "values": [
+        {
+          "raw": "8.92269442289394",
+          "text": "Y直角差 +9"
+        },
+        {
+          "raw": "-41.825937483530296",
+          "text": "Z直角差 -42"
+        },
+        {
+          "raw": "9.339347039992916",
+          "text": "Z直角差 +9"
+        }
+      ],
+      "notes": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "action": "C one coarse click from original initial state",
+      "values": [
+        {
+          "raw": "8.588829948380967",
+          "text": "Y直角差 +9"
+        },
+        {
+          "raw": "-42.5290624822256",
+          "text": "Z直角差 -43"
+        },
+        {
+          "raw": "9.315373721452527",
+          "text": "Z直角差 +9"
+        }
+      ],
+      "notes": [
+        "初期から微小変化",
+        "",
+        "初期から微小変化"
+      ]
+    },
+    {
+      "action": "mobile iframe 390x844 restores autosaved numerical state",
+      "values": [
+        {
+          "raw": "8.588829948380967",
+          "text": "Y直角差 +9"
+        },
+        {
+          "raw": "-42.5290624822256",
+          "text": "Z直角差 -43"
+        },
+        {
+          "raw": "9.315373721452527",
+          "text": "Z直角差 +9"
+        }
+      ]
+    },
+    {
+      "action": "layout 568x320",
+      "layout": {
+        "levels": {
+          "bottom": 271,
+          "height": 87,
+          "left": 270,
+          "right": 358,
+          "top": 184,
+          "width": 88,
+          "x": 270,
+          "y": 184
+        },
+        "scene": {
+          "bottom": 271,
+          "height": 87,
+          "left": 0,
+          "right": 270,
+          "top": 184,
+          "width": 270,
+          "x": 0,
+          "y": 184
+        },
+        "scrollWidth": 568,
+        "width": 568
+      }
+    },
+    {
+      "action": "layout 320x480",
+      "layout": {
+        "levels": {
+          "bottom": 351,
+          "height": 129,
+          "left": 232,
+          "right": 320,
+          "top": 222,
+          "width": 88,
+          "x": 232,
+          "y": 222
+        },
+        "scene": {
+          "bottom": 351,
+          "height": 129,
+          "left": 0,
+          "right": 232,
+          "top": 222,
+          "width": 232,
+          "x": 0,
+          "y": 222
+        },
+        "scrollWidth": 320,
+        "width": 320
+      }
+    },
+    {
+      "action": "320x480 scroll adjustment region, C lower/raise restore",
+      "values": [
+        {
+          "raw": "8.588829948380967",
+          "text": "Y直角差 +9"
+        },
+        {
+          "raw": "-42.5290624822256",
+          "text": "Z直角差 -43"
+        },
+        {
+          "raw": "9.315373721452527",
+          "text": "Z直角差 +9"
+        }
+      ]
+    },
+    {
+      "action": "layout 320x568",
+      "layout": {
+        "levels": {
+          "bottom": 381,
+          "height": 149,
+          "left": 232,
+          "right": 320,
+          "top": 232,
+          "width": 88,
+          "x": 232,
+          "y": 232
+        },
+        "scene": {
+          "bottom": 381,
+          "height": 149,
+          "left": 0,
+          "right": 232,
+          "top": 232,
+          "width": 232,
+          "x": 0,
+          "y": 232
+        },
+        "scrollWidth": 320,
+        "width": 320
+      }
+    },
+    {
+      "action": "layout 844x390",
+      "layout": {
+        "levels": {
+          "bottom": 341,
+          "height": 157,
+          "left": 404.328125,
+          "right": 492.328125,
+          "top": 184,
+          "width": 88,
+          "x": 404.328125,
+          "y": 184
+        },
+        "scene": {
+          "bottom": 341,
+          "height": 157,
+          "left": 0,
+          "right": 404.328125,
+          "top": 184,
+          "width": 404.328125,
+          "x": 0,
+          "y": 184
+        },
+        "scrollWidth": 844,
+        "width": 844
+      }
+    },
+    {
+      "action": "scene rotation and zoom leave numerical results unchanged",
+      "values": [
+        {
+          "raw": "8.588829948380967",
+          "text": "Y直角差 +9"
+        },
+        {
+          "raw": "-42.5290624822256",
+          "text": "Z直角差 -43"
+        },
+        {
+          "raw": "9.315373721452527",
+          "text": "Z直角差 +9"
+        }
+      ]
+    },
+    {
+      "action": "Y axis first endpoint",
+      "values": [
+        {
+          "raw": "8.588930600934306",
+          "text": "Y直角差 +9"
+        },
+        {
+          "raw": "-50.14124196032395",
+          "text": "Z直角差 -50"
+        },
+        {
+          "raw": "9.79109769250816",
+          "text": "Z直角差 +10"
+        }
+      ]
+    },
+    {
+      "action": "Y axis opposite endpoint",
+      "values": [
+        {
+          "raw": "8.588750081992996",
+          "text": "Y直角差 +9"
+        },
+        {
+          "raw": "-34.91688299751089",
+          "text": "Z直角差 -35"
+        },
+        {
+          "raw": "9.2439447875171",
+          "text": "Z直角差 +9"
+        }
+      ]
+    },
+    {
+      "action": "XYZ reset center",
+      "values": [
+        {
+          "raw": "8.588829948380967",
+          "text": "Y直角差 +9"
+        },
+        {
+          "raw": "-42.5290624822256",
+          "text": "Z直角差 -43"
+        },
+        {
+          "raw": "9.315373721452527",
+          "text": "Z直角差 +9"
+        }
+      ]
+    },
+    {
+      "action": "Y motion demo finished; UI showed active movement earlier",
+      "status": "Y軸の動作を終了しました。",
+      "values": [
+        {
+          "raw": "8.588829948380967",
+          "text": "Y直角差 +9"
+        },
+        {
+          "raw": "-42.5290624822256",
+          "text": "Z直角差 -43"
+        },
+        {
+          "raw": "9.315373721452527",
+          "text": "Z直角差 +9"
+        }
+      ]
+    },
+    {
+      "action": "return from catalogue retains original individual and adjusted precision",
+      "values": [
+        {
+          "raw": "8.588829948380967",
+          "text": "Y直角差 +9"
+        },
+        {
+          "raw": "-42.5290624822256",
+          "text": "Z直角差 -43"
+        },
+        {
+          "raw": "9.315373721452527",
+          "text": "Z直角差 +9"
+        }
+      ]
+    }
+  ]
+}
