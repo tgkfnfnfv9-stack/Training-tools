@@ -425,25 +425,94 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
  body.in-mechanical-lab #training .training-workspace{grid-template-columns:minmax(0,1fr) 210px}
 }
 
-/* The dial lesson occupies the existing precision panel, preserving the model. */
-.spindle-sweep-panel{max-width:540px;margin:0 auto}
-.sweep-heading{display:flex;align-items:center;justify-content:center;gap:10px;line-height:18px;padding:2px 0}
-.sweep-heading strong{font-size:12px}.sweep-dial{width:44px;height:44px;flex:none}
-.sweep-current{display:flex;align-items:baseline;justify-content:center;gap:14px;font-size:12px;font-variant-numeric:tabular-nums}
-.sweep-current output{font-size:16px;font-weight:750;color:#833500;min-width:70px}
-.sweep-positions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
-.sweep-positions button{min-height:44px;padding:2px 3px;line-height:16px;border-radius:6px;background:#fff}
+/* Compact machines compare squareness and spindle readings in one fixed row.
+   The adjustment scroller is independent of the model and raise/lower buttons. */
+.precision-readouts,.squareness-panel{min-width:0}
+.precision-panel-title{display:none;margin:0;text-align:center;font-size:12px;line-height:18px}
+.spindle-sweep-panel{min-width:0;margin:0}
+.has-spindle-sweep .precision-readouts{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,310px);gap:12px;align-items:start;max-width:1120px;margin:0 auto}
+.has-spindle-sweep .precision-panel-title{display:block}
+.has-spindle-sweep .spindle-sweep-panel{padding-left:12px;border-left:1px solid var(--line)}
+.sweep-heading{display:flex;align-items:center;justify-content:center;gap:8px;line-height:14px;padding:0 0 4px;min-height:44px}
+.sweep-heading-text{min-width:0;text-align:center}
+.sweep-heading strong{display:block;font-size:12px}
+.sweep-diameter{display:block;font-size:10px;font-weight:400;white-space:nowrap}
+.sweep-dial{width:38px;height:38px;flex:none}
+.sweep-current{display:flex;align-items:baseline;justify-content:center;gap:8px;font-size:11px;font-variant-numeric:tabular-nums}
+.sweep-current output{font-size:13px;font-weight:750;color:#833500;white-space:nowrap}
+.sweep-positions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.sweep-positions button{min-width:0;min-height:44px;padding:2px 3px;line-height:16px;border-radius:6px;background:#fff}
 .sweep-positions button span,.sweep-positions button strong{display:block;white-space:nowrap;font-variant-numeric:tabular-nums}
 .sweep-positions button span{font-size:10px}.sweep-positions button strong{font-size:15px}
 .sweep-positions button[aria-pressed="true"]{border:2px solid #b34800;background:#fff2e6;padding:1px 2px;color:#833500}
-.sweep-contact-status{font-size:10px;line-height:14px;text-align:center;margin:2px 0 0;min-height:14px}
+.sweep-contact-status{font-size:10px;line-height:12px;text-align:center;margin:2px 0 0;min-height:12px;font-weight:400;overflow-wrap:anywhere}
 body.in-mechanical-lab #training .scene-toolbar{gap:6px}
-.sweep-toggle,.sweep-run{min-height:44px;padding:5px 10px;white-space:nowrap;font-size:12px;font-weight:650}
-.sweep-toggle[aria-pressed="true"]{background:#fff2e6;border-color:#b34800;color:#833500}
-.sweep-run{background:#b34800;color:#fff;border-color:#b34800;min-width:92px}.sweep-run:hover{background:#893900;color:#fff}
-@media(max-width:950px) and (orientation:landscape) and (max-height:400px){
- .sweep-heading{padding:0;line-height:14px;gap:6px}.sweep-dial{width:30px;height:30px}.sweep-current output{font-size:13px}.sweep-heading strong{font-size:10px}
- .sweep-contact-status{font-size:9px;line-height:11px;min-height:11px}.sweep-positions{gap:2px}.sweep-positions button{line-height:14px}
+.sweep-run{min-height:44px;padding:5px 10px;white-space:nowrap;font-size:12px;font-weight:650;background:#b34800;color:#fff;border-color:#b34800;min-width:92px}
+.sweep-run:hover{background:#893900;color:#fff}
+.has-spindle-sweep .scene-readout-note{white-space:normal;flex-wrap:wrap;column-gap:8px;row-gap:0}
+body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{display:flex;flex-direction:column;min-height:0;overflow:hidden;scrollbar-gutter:auto}
+.has-spindle-sweep .adjustment-selection-scroll{flex:0 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-gutter:stable;scroll-padding-block:4px;width:100%}
+.has-spindle-sweep .common-support-actions{flex:none;width:100%;padding-top:4px}
+.has-spindle-sweep .main-adjustment .support-map{margin-bottom:4px}
+@media(max-width:700px){
+ .has-spindle-sweep .precision-readouts{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:6px}
+ .has-spindle-sweep .spindle-sweep-panel{padding-left:6px}
+ .has-spindle-sweep .precision-panel-title{font-size:11px;line-height:14px}
+ .has-spindle-sweep .live-squareness{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;align-items:stretch}
+ .has-spindle-sweep .live-squareness-item{display:grid;grid-template-columns:52px minmax(0,1fr);grid-template-rows:12px 26px;align-items:center;max-width:none}
+ .has-spindle-sweep .live-pair-title{grid-column:1;grid-row:1;font-size:9px;line-height:12px}
+ .has-spindle-sweep .live-squareness-diagram{grid-column:1;grid-row:2;height:26px!important}
+ .has-spindle-sweep .live-pair-values{grid-column:2;grid-row:1/3;display:block;padding:0;line-height:13px;font-size:10px}
+ .has-spindle-sweep .live-pair-base-value{font-size:9px;line-height:11px}
+ .has-spindle-sweep .live-pair-micro-change{font-size:8px;line-height:11px;min-height:11px;white-space:normal}
+ .has-spindle-sweep .live-squareness-units{font-size:9px;line-height:12px}
+ .has-spindle-sweep .sweep-heading{gap:4px}
+ .has-spindle-sweep .sweep-heading strong{font-size:11px}
+ .has-spindle-sweep .sweep-dial{width:28px;height:28px}
+ .has-spindle-sweep .sweep-current{gap:5px;font-size:10px}
+ .has-spindle-sweep .sweep-current output{font-size:11px}
+ .has-spindle-sweep .sweep-positions{gap:3px}
+ .has-spindle-sweep .sweep-positions button strong{font-size:14px}
+ .has-spindle-sweep .sweep-contact-status{font-size:9px;line-height:12px}
+ .has-spindle-sweep .scene-readout-note{font-size:9px;line-height:11px;column-gap:4px}
+}
+/* A short landscape viewport shares its full width between both measurements.
+   Below, the model/axis bar and support controls have separate columns. */
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){
+ body.in-mechanical-lab #training .has-spindle-sweep .training-workspace{grid-template-columns:minmax(0,1fr) 66px clamp(170px,25vw,210px);grid-template-rows:auto minmax(0,1fr) auto}
+ body.in-mechanical-lab #training .has-spindle-sweep .pinned-visual{display:contents}
+ body.in-mechanical-lab #training .has-spindle-sweep .viewer-top{grid-column:1/-1;grid-row:1;padding:2px 6px;border-bottom:1px solid var(--line)}
+ body.in-mechanical-lab #training .has-spindle-sweep .scene-viewport{grid-column:1;grid-row:2}
+ body.in-mechanical-lab #training .has-spindle-sweep .viewer-levels{grid-column:2;grid-row:2}
+ body.in-mechanical-lab #training .has-spindle-sweep .scene-toolbar{grid-column:1/3;grid-row:3}
+ body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{grid-column:3;grid-row:2/4;padding:4px 6px;border-top:0;border-left:1px solid var(--line)}
+ .has-spindle-sweep .precision-readouts{grid-template-columns:minmax(0,1fr) minmax(224px,.95fr);gap:8px}
+ .has-spindle-sweep .spindle-sweep-panel{padding-left:8px}
+ .has-spindle-sweep .precision-panel-title{display:none}
+ .has-spindle-sweep .live-squareness{display:flex;gap:2px}
+ .has-spindle-sweep .live-squareness-item{display:block;max-width:180px}
+ .has-spindle-sweep .live-pair-title{font-size:10px;line-height:12px}
+ .has-spindle-sweep .live-squareness-diagram{height:26px!important}
+ .has-spindle-sweep .live-pair-values{display:flex;justify-content:center;align-items:baseline;flex-wrap:wrap;column-gap:4px;padding:0;line-height:14px;font-size:10px}
+ .has-spindle-sweep .live-pair-base-value{font-size:9px;line-height:14px}
+ .has-spindle-sweep .live-pair-micro-change{font-size:9px;line-height:11px;min-height:11px;white-space:nowrap}
+ .has-spindle-sweep .live-squareness-units{font-size:9px;line-height:11px}
+ .has-spindle-sweep .sweep-heading{padding:0 0 2px;min-height:18px}
+ .has-spindle-sweep .sweep-dial{display:none}
+ .has-spindle-sweep .sweep-heading-text{display:flex;justify-content:center;align-items:baseline;flex-wrap:wrap;gap:1px 6px;line-height:14px}
+ .has-spindle-sweep .sweep-heading strong{font-size:10px}
+ .has-spindle-sweep .sweep-diameter{font-size:9px}
+ .has-spindle-sweep .sweep-current{gap:4px;font-size:9px}
+ .has-spindle-sweep .sweep-current output{font-size:10px}
+ .has-spindle-sweep .sweep-positions{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
+ .has-spindle-sweep .sweep-positions button{line-height:14px}
+ .has-spindle-sweep .sweep-positions button span{font-size:9px}
+ .has-spindle-sweep .sweep-positions button strong{font-size:13px}
+ .has-spindle-sweep .sweep-contact-status{font-size:9px;line-height:11px;min-height:11px}
+ .has-spindle-sweep .scene-readout-note{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .has-spindle-sweep .selected-support-label{font-size:11px;line-height:15px;min-height:15px;margin:3px 0}
+ .has-spindle-sweep .common-support-actions{gap:4px}
+ .has-spindle-sweep .common-support-actions button{font-size:12px}
 }
 </style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
 .tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
@@ -561,18 +630,21 @@ body.in-mechanical-lab #training .scene-toolbar{gap:6px}
 </div></aside>
 <div id="trainingMainSlot" class="training-main-slot"><div id="trainingMain" class="training-main">
 <div class="training-heading"><button id="openTrainingMenu" class="training-menu-toggle" aria-label="設定メニューを開く" aria-expanded="false" aria-controls="trainingDrawer"><span aria-hidden="true">☰</span> 設定</button><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div></div>
-<div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><section id="spindleSweepPanel" class="spindle-sweep-panel" aria-label="主軸のダイヤル旋回測定" hidden>
-<div class="sweep-heading"><svg id="sweepDial" class="sweep-dial" viewBox="0 0 64 64" role="img" aria-label="現在のダイヤル"></svg><div><strong>主軸スイープ · 直径300 mm</strong><div class="sweep-current"><span id="sweepCurrentAngle">0°</span><output id="sweepCurrentValue">0 µm</output></div></div></div>
+<div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="precisionReadouts" class="precision-readouts">
+<section class="squareness-panel" aria-label="軸の直角度"><h2 class="precision-panel-title">直角度</h2><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><p id="liveSquarenessUnits" class="live-squareness-units">300 mm換算・µm（1 µm＝0.001 mm）</p><p id="squarenessValuesNote" class="visually-hidden">数値は現在と理想の直角との差です。基準はゼロ合わせ、比較軸は千分の一ミリ単位で四捨五入しています。プラスは直角より広い、マイナスは狭い。初期との差分やNC移動座標ではありません。図が範囲外でも換算値を表示します。</p><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output></section>
+<section id="spindleSweepPanel" class="spindle-sweep-panel" aria-label="主軸のダイヤル旋回測定" aria-describedby="sweepMeasurementNote" hidden>
+<div class="sweep-heading"><svg id="sweepDial" class="sweep-dial" viewBox="0 0 64 64" role="img" aria-label="現在のダイヤル"></svg><div class="sweep-heading-text"><strong>ダイヤル測定</strong><span class="sweep-diameter">直径300 mm</span><div class="sweep-current"><span id="sweepCurrentAngle">0°</span><output id="sweepCurrentValue">+0 µm</output></div></div></div>
 <div class="sweep-positions" role="group" aria-label="測定する方向を選択">
-<button id="sweepPosition0" aria-pressed="true"><span>0° 右</span><strong id="sweepValue0">0</strong></button><button id="sweepPosition1" aria-pressed="false"><span>90° 奥</span><strong id="sweepValue1">0</strong></button><button id="sweepPosition2" aria-pressed="false"><span>180° 左</span><strong id="sweepValue2">0</strong></button><button id="sweepPosition3" aria-pressed="false"><span>270° 手前</span><strong id="sweepValue3">0</strong></button>
-</div><p id="sweepContactStatus" class="sweep-contact-status">0°基準・＋は押込み側・µm（0.001 mm）</p></section><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><p id="liveSquarenessUnits" class="live-squareness-units">300 mm換算・µm（1 µm＝0.001 mm）</p><p id="squarenessValuesNote" class="visually-hidden">数値は現在と理想の直角との差です。基準はゼロ合わせ、比較軸は千分の一ミリ単位で四捨五入しています。プラスは直角より広い、マイナスは狭い。初期との差分やNC移動座標ではありません。図が範囲外でも換算値を表示します。</p><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output><div class="scene-readout-note"><span id="scene-readout-sweep-note" hidden>主軸と上面の相対傾き</span><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
+<button id="sweepPosition0" aria-pressed="true"><span>0° 右</span><strong id="sweepValue0">+0</strong></button><button id="sweepPosition1" aria-pressed="false"><span>90° 奥</span><strong id="sweepValue1">+0</strong></button><button id="sweepPosition2" aria-pressed="false"><span>180° 左</span><strong id="sweepValue2">+0</strong></button><button id="sweepPosition3" aria-pressed="false"><span>270° 手前</span><strong id="sweepValue3">+0</strong></button>
+</div><p id="sweepContactStatus" class="sweep-contact-status" role="status">0°基準・µm（0.001 mm）</p><p id="sweepMeasurementNote" class="visually-hidden">主軸と理想平面の相対傾きを直径300 mmで測ります。0°右をゼロ基準とし、90°は奥、180°は左、270°は手前です。プラスは測定子の押込み側です。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。</p></section>
+</div><div class="scene-readout-note"><span id="scene-readout-sweep-note" class="visually-hidden" hidden>主軸と上面の相対傾き</span><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
 <div id="viewerLevels" class="viewer-levels" role="group" aria-label="支持面の平均レベル。気泡は高い側へ動きます">
 <div class="viewer-gauge viewer-gauge-lr"><span class="viewer-gauge-title">平均 · 左右</span><strong id="stageAverageLR" class="level-direction"></strong><div class="vial" role="img" aria-label="平均の左右傾きを示す気泡" aria-describedby="stageAverageLR"><span class="center-lines"></span><span id="coarseBubbleLR" class="bubble"></span></div><div class="gauge-ends"><span>左</span><span>右</span></div></div>
 <div class="viewer-gauge viewer-gauge-fb"><span class="viewer-gauge-title">平均 · 前後</span><strong id="stageAverageFB" class="level-direction"></strong><div class="vertical-gauge"><span>奥</span><div class="vial vial-vertical" role="img" aria-label="平均の前後傾きを示す気泡。上が奥、下が手前" aria-describedby="stageAverageFB"><span class="center-lines"></span><span id="coarseBubbleFB" class="bubble"></span></div><span>手前</span></div></div>
 </div><div id="sceneViewport" class="scene-viewport"><canvas id="scene" tabindex="0" aria-label="工作機械の構造模型。左右ドラッグまたは左右矢印キーで回転。二本指のピンチ、マウスホイール、プラス・マイナスキーで拡大縮小。Homeキーで大きさを戻す"></canvas></div>
-<div id="sceneToolbar" class="scene-toolbar" role="group" aria-label="模型の軸選択と測定"><div id="axisTabs" class="axis-tabs" role="group" aria-label="模型で確認する軸"></div><button id="toggleSpindleSweep" class="sweep-toggle" aria-pressed="false" hidden>ダイヤル測定</button><button id="runSpindleSweep" class="sweep-run" aria-pressed="false" hidden>1周回す</button></div>
+<div id="sceneToolbar" class="scene-toolbar" role="group" aria-label="模型の軸選択と測定"><div id="axisTabs" class="axis-tabs" role="group" aria-label="模型で確認する軸"></div><button id="runSpindleSweep" class="sweep-run" aria-pressed="false" hidden>1周回す</button></div>
 <span id="axisDemoStatus" class="axis-demo-status" role="status"></span></div>
-<div id="mainAdjustment" class="main-adjustment" role="group" aria-label="支持点の調整"><div class="adjustment-tabs" role="group" aria-label="調整の段階"><button id="coarseAdjust" aria-pressed="true" aria-controls="coarsePanel">粗調整</button><button id="fineAdjust" aria-pressed="false" aria-controls="finePanel">微調整</button></div><p id="selectedSupportLabel" class="selected-support-label" role="status"></p><div id="supportMap" class="support-map" role="group" aria-label="調整する支持点"></div><div class="common-support-actions"><button id="lowerSupport" aria-label="選んだ支持点を下げる">↓ 下げる</button><button id="raiseSupport" aria-label="選んだ支持点を上げる">↑ 上げる</button></div><p id="levelInputMessage" class="level-message visually-hidden" role="status"></p></div>
+<div id="mainAdjustment" class="main-adjustment" role="group" aria-label="支持点の調整"><div id="adjustmentSelectionScroll" class="adjustment-selection-scroll"><div class="adjustment-tabs" role="group" aria-label="調整の段階"><button id="coarseAdjust" aria-pressed="true" aria-controls="coarsePanel">粗調整</button><button id="fineAdjust" aria-pressed="false" aria-controls="finePanel">微調整</button></div><p id="selectedSupportLabel" class="selected-support-label" role="status"></p><div id="supportMap" class="support-map" role="group" aria-label="調整する支持点"></div></div><div class="common-support-actions"><button id="lowerSupport" aria-label="選んだ支持点を下げる">↓ 下げる</button><button id="raiseSupport" aria-label="選んだ支持点を上げる">↑ 上げる</button></div><p id="levelInputMessage" class="level-message visually-hidden" role="status"></p></div>
 </div></div><button id="trainingMainShield" class="training-main-shield" hidden tabindex="-1" aria-label="設定メニューを閉じて主画面へ戻る"></button></div></div></section>
 <section id="tester" hidden>
   <div class="training-heading"><div><p class="eyebrow">ELECTRICAL / TESTER BASICS</p><h1>テスターの使い方</h1><p>端子 → モード → 接続 → 読み取りを練習</p></div><button hidden id="testerBack" class="secondary">電気の訓練へ</button></div>
@@ -1371,7 +1443,7 @@ function render(canvas,m,angle,showLabels,active){
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
  if(active>=0)model.faces.push(...levelSurfaceFaces(m));
- model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&!sweep&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
+ model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
  if(training&&$('showIdealOutline').checked)drawIdealOutline(ctx,m,model,screen,angle,sceneView);
  // Reserve support markers before placing any text. Labels use the entire
  // Canvas now that the operation bar has its own row below it.
@@ -1388,9 +1460,10 @@ function render(canvas,m,angle,showLabels,active){
  if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.195,s.z]));if(supports.length>8&&i!==active){ctx.beginPath();ctx.arc(p[0],p[1]+10,3,0,Math.PI*2);ctx.fillStyle='#6c604b';ctx.fill();return;}labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda794d':'#ffffff26';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  // P is a fixed material point on the compact table top. Its moving path,
  // rather than an undeformed saddle triad, defines the compact X/Y readings.
- const measurementPixel=training&&!sweep&&m.kind==='compact'&&levelSolution&&levelGeometry?screen(compactTablePathPoint(positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0))):null;
+ const measurementPixel=training&&m.kind==='compact'&&levelSolution&&levelGeometry?screen(compactTablePathPoint(positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0))):null;
  if(measurementPixel)labelBoxes.push({x:measurementPixel[0]-5,y:measurementPixel[1]-5,w:10,h:10});
- if(active>=0&&!sweep&&$('showAxes').checked){
+ if(sweep)drawSpindleSweep(ctx,screen,labelBoxes);
+ if(active>=0&&$('showAxes').checked){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
  for(const a of axisIndicators(m,model)){
@@ -1419,7 +1492,6 @@ function render(canvas,m,angle,showLabels,active){
   const box=candidates.find(freeLabel);
   if(box){labelBoxes.push(box);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(box.x+20,box.y+9);ctx.strokeStyle='#b3480080';ctx.lineWidth=.8;ctx.stroke();ctx.fillStyle='#fff8ee';ctx.fillRect(box.x,box.y,box.w,box.h);ctx.font='10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#7d3300';ctx.fillText('測定P',box.x+20,box.y+9);}
  }
- if(sweep)drawSpindleSweep(ctx,screen,labelBoxes);
  if(showLabels){
   // Prefer the selected moving assembly and the base/column. A short Canvas
   // omits lower-priority part names rather than compressing their 18px boxes.
@@ -1441,8 +1513,8 @@ function updateSceneViewUI(){
  $('sceneView').value=sceneView;
  $('sceneDirection').textContent=sceneView==='front'?'正面：左 → 右':sceneView==='side'?'側面：手前 → 奥':'斜め：左右回転';
  $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。薄い破線の理想輪郭は'+($('showIdealOutline').checked?'表示中':'非表示')+'。左上の設定メニューで切り替えます。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
- if(current.kind==='compact'&&!(typeof spindleSweepMode!=='undefined'&&spindleSweepMode))$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'測定Pはテーブル上面中央の固定点です。X・Yの比較はこの点の送り方向を使い、送り中の傾き変化による横ずれを含みます。');
- if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode)$('scene').setAttribute('aria-label',current.name+'の主軸ダイヤル測定。主軸に取り付けたゲージでテーブル上面を直径300ミリの円で旋回測定しています。0度は右、90度は奥、180度は左、270度は手前。ワーク、T溝模様、軸矢印は測定中だけ省略しています。左右ドラッグで模型を回転、ピンチまたはホイールで拡大縮小。');
+ if(current.kind==='compact')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'測定Pはテーブル上面中央の固定点です。X・Yの比較はこの点の送り方向を使い、送り中の傾き変化による横ずれを含みます。');
+ if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode)$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸ダイヤル測定も同時に表示します。主軸に取り付けたゲージでテーブル上面を直径300ミリの円で旋回測定しています。0度は右、90度は奥、180度は左、270度は手前。測定子が見えるようワークとT溝模様を省略しています。上の直角図は300ミリ換算、隣の4点は0度基準の相対読みです。');
 }
 function drawScene(){if(levelSolution)updateAccuracy();if(typeof updateSpindleSweep==='function')updateSpindleSweep();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){
@@ -2416,15 +2488,17 @@ function sweepDialMarkup(reading){
  return `<circle cx="32" cy="32" r="31" fill="#fff" stroke="#3a3a3a" stroke-width="2"/><g stroke="#777" stroke-width="1">${ticks}</g><text x="32" y="14" text-anchor="middle" fill="#333" font-size="8">0</text><line x1="32" y1="32" x2="${tip[0]}" y2="${tip[1]}" stroke="#b34800" stroke-width="2"/><circle cx="32" cy="32" r="3" fill="#333"/>`;
 }
 function updateSpindleSweep(){
- const available=current.kind==='compact';$('toggleSpindleSweep').hidden=!available;
- if(!available){spindleSweepMode=false;stopSpindleSweep();}
- $('toggleSpindleSweep').textContent=spindleSweepMode?'直角図へ':'ダイヤル測定';
- $('toggleSpindleSweep').setAttribute('aria-pressed',String(spindleSweepMode));
- $('squarenessValuesNote').hidden=spindleSweepMode;
- $('spindleSweepPanel').hidden=!spindleSweepMode;$('liveSquareness').hidden=spindleSweepMode;$('liveSquarenessUnits').hidden=spindleSweepMode;
- $('runSpindleSweep').hidden=!spindleSweepMode;$('axisTabs').hidden=spindleSweepMode;
- $('scene-readout-sweep-note').hidden=!spindleSweepMode;$('modelSemantics').hidden=spindleSweepMode;
- if(!spindleSweepMode)return;
+ // Compact machines show both measurements together. This is a view state,
+ // not an installation or measurement-model setting.
+ const available=current.kind==='compact';
+ spindleSweepMode=available;
+ if(!available)stopSpindleSweep();
+ $('trainingMain').classList.toggle('has-spindle-sweep',available);
+ $('squarenessValuesNote').hidden=false;
+ $('spindleSweepPanel').hidden=!available;$('liveSquareness').hidden=false;$('liveSquarenessUnits').hidden=false;
+ $('runSpindleSweep').hidden=!available;$('axisTabs').hidden=false;
+ $('scene-readout-sweep-note').hidden=!available;$('modelSemantics').hidden=false;
+ if(!available)return;
  const measured=spindleSweepGeometry(),zeroValid=measured.valid&&measured.cardinal[0].onTable;
  for(let i=0;i<4;i++){
   const p=measured.cardinal?.[i],readable=zeroValid&&p?.onTable,el=$('sweepValue'+i),button=$('sweepPosition'+i);
@@ -2439,7 +2513,7 @@ function updateSpindleSweep(){
  $('sweepCurrentValue').setAttribute('data-reading-microns',readable?String(point.readingMicrons):'');
  $('sweepDial').innerHTML=sweepDialMarkup(readable?point.readingMicrons:NaN);
  $('sweepDial').setAttribute('aria-label',Math.round(spindleSweepAngle)+'度のダイヤル、'+$('sweepCurrentValue').textContent+'。一回転100マイクロメートル。');
- $('sweepContactStatus').textContent=!zeroValid?'0°がテーブル外です。軸位置を中央へ戻してください。':!point?.onTable?'測定子がテーブル外です。軸位置を中央へ戻してください。':'0°基準・＋は押込み側・µm（0.001 mm）';
+ $('sweepContactStatus').textContent=!zeroValid?'0°が面外・軸を中央へ':!point?.onTable?'測定子が面外・軸を中央へ':'0°基準・µm（0.001 mm）';
 }
 function redrawSpindleSweep(){
  updateSpindleSweep();if(page==='training'){updateSceneViewUI();render($('scene'),current,yaw,$('labels').checked,selected);}
@@ -2448,13 +2522,12 @@ function stopSpindleSweep(){
  if(spindleSweepTimer!==null)clearTimeout(spindleSweepTimer);spindleSweepTimer=null;
  if($('runSpindleSweep')){$('runSpindleSweep').textContent='1周回す';$('runSpindleSweep').setAttribute('aria-pressed','false');}
 }
-function setSpindleSweepMode(enabled){
- stopSpindleSweep();stopMotion();spindleSweepMode=!!enabled&&current.kind==='compact';spindleSweepAngle=0;drawScene();
-}
 function selectSpindleSweepAngle(degrees){
+ if(current.kind!=='compact')return;
  stopSpindleSweep();spindleSweepAngle=degrees;redrawSpindleSweep();
 }
 function runSpindleSweep(){
+ if(current.kind!=='compact'||page!=='training')return;
  if(spindleSweepTimer!==null){stopSpindleSweep();return;}
  stopMotion();const start=spindleSweepAngle;spindleSweepProgress=0;
  $('runSpindleSweep').textContent='停止';$('runSpindleSweep').setAttribute('aria-pressed','true');
@@ -2486,7 +2559,6 @@ function drawSpindleSweep(ctx,screen,labelBoxes){
  ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]+r*.75*Math.sin(theta),p[1]-r*.75*Math.cos(theta));ctx.strokeStyle='#b34800';ctx.stroke();
  const tip=screen(lift(at.contact));ctx.beginPath();ctx.arc(tip[0],tip[1],2,0,Math.PI*2);ctx.fillStyle=real.onTable?'#b34800':'#aaa';ctx.fill();
 }
-$('toggleSpindleSweep').onclick=()=>setSpindleSweepMode(!spindleSweepMode);
 $('runSpindleSweep').onclick=runSpindleSweep;
 for(let i=0;i<4;i++)$('sweepPosition'+i).onclick=()=>selectSpindleSweepAngle(i*90);
 window.addEventListener('pagehide',stopSpindleSweep);

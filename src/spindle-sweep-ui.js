@@ -33,15 +33,17 @@ function sweepDialMarkup(reading){
  return `<circle cx="32" cy="32" r="31" fill="#fff" stroke="#3a3a3a" stroke-width="2"/><g stroke="#777" stroke-width="1">${ticks}</g><text x="32" y="14" text-anchor="middle" fill="#333" font-size="8">0</text><line x1="32" y1="32" x2="${tip[0]}" y2="${tip[1]}" stroke="#b34800" stroke-width="2"/><circle cx="32" cy="32" r="3" fill="#333"/>`;
 }
 function updateSpindleSweep(){
- const available=current.kind==='compact';$('toggleSpindleSweep').hidden=!available;
- if(!available){spindleSweepMode=false;stopSpindleSweep();}
- $('toggleSpindleSweep').textContent=spindleSweepMode?'直角図へ':'ダイヤル測定';
- $('toggleSpindleSweep').setAttribute('aria-pressed',String(spindleSweepMode));
- $('squarenessValuesNote').hidden=spindleSweepMode;
- $('spindleSweepPanel').hidden=!spindleSweepMode;$('liveSquareness').hidden=spindleSweepMode;$('liveSquarenessUnits').hidden=spindleSweepMode;
- $('runSpindleSweep').hidden=!spindleSweepMode;$('axisTabs').hidden=spindleSweepMode;
- $('scene-readout-sweep-note').hidden=!spindleSweepMode;$('modelSemantics').hidden=spindleSweepMode;
- if(!spindleSweepMode)return;
+ // Compact machines show both measurements together. This is a view state,
+ // not an installation or measurement-model setting.
+ const available=current.kind==='compact';
+ spindleSweepMode=available;
+ if(!available)stopSpindleSweep();
+ $('trainingMain').classList.toggle('has-spindle-sweep',available);
+ $('squarenessValuesNote').hidden=false;
+ $('spindleSweepPanel').hidden=!available;$('liveSquareness').hidden=false;$('liveSquarenessUnits').hidden=false;
+ $('runSpindleSweep').hidden=!available;$('axisTabs').hidden=false;
+ $('scene-readout-sweep-note').hidden=!available;$('modelSemantics').hidden=false;
+ if(!available)return;
  const measured=spindleSweepGeometry(),zeroValid=measured.valid&&measured.cardinal[0].onTable;
  for(let i=0;i<4;i++){
   const p=measured.cardinal?.[i],readable=zeroValid&&p?.onTable,el=$('sweepValue'+i),button=$('sweepPosition'+i);
@@ -56,7 +58,7 @@ function updateSpindleSweep(){
  $('sweepCurrentValue').setAttribute('data-reading-microns',readable?String(point.readingMicrons):'');
  $('sweepDial').innerHTML=sweepDialMarkup(readable?point.readingMicrons:NaN);
  $('sweepDial').setAttribute('aria-label',Math.round(spindleSweepAngle)+'度のダイヤル、'+$('sweepCurrentValue').textContent+'。一回転100マイクロメートル。');
- $('sweepContactStatus').textContent=!zeroValid?'0°がテーブル外です。軸位置を中央へ戻してください。':!point?.onTable?'測定子がテーブル外です。軸位置を中央へ戻してください。':'0°基準・＋は押込み側・µm（0.001 mm）';
+ $('sweepContactStatus').textContent=!zeroValid?'0°が面外・軸を中央へ':!point?.onTable?'測定子が面外・軸を中央へ':'0°基準・µm（0.001 mm）';
 }
 function redrawSpindleSweep(){
  updateSpindleSweep();if(page==='training'){updateSceneViewUI();render($('scene'),current,yaw,$('labels').checked,selected);}
@@ -65,13 +67,12 @@ function stopSpindleSweep(){
  if(spindleSweepTimer!==null)clearTimeout(spindleSweepTimer);spindleSweepTimer=null;
  if($('runSpindleSweep')){$('runSpindleSweep').textContent='1周回す';$('runSpindleSweep').setAttribute('aria-pressed','false');}
 }
-function setSpindleSweepMode(enabled){
- stopSpindleSweep();stopMotion();spindleSweepMode=!!enabled&&current.kind==='compact';spindleSweepAngle=0;drawScene();
-}
 function selectSpindleSweepAngle(degrees){
+ if(current.kind!=='compact')return;
  stopSpindleSweep();spindleSweepAngle=degrees;redrawSpindleSweep();
 }
 function runSpindleSweep(){
+ if(current.kind!=='compact'||page!=='training')return;
  if(spindleSweepTimer!==null){stopSpindleSweep();return;}
  stopMotion();const start=spindleSweepAngle;spindleSweepProgress=0;
  $('runSpindleSweep').textContent='停止';$('runSpindleSweep').setAttribute('aria-pressed','true');
@@ -103,7 +104,6 @@ function drawSpindleSweep(ctx,screen,labelBoxes){
  ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]+r*.75*Math.sin(theta),p[1]-r*.75*Math.cos(theta));ctx.strokeStyle='#b34800';ctx.stroke();
  const tip=screen(lift(at.contact));ctx.beginPath();ctx.arc(tip[0],tip[1],2,0,Math.PI*2);ctx.fillStyle=real.onTable?'#b34800':'#aaa';ctx.fill();
 }
-$('toggleSpindleSweep').onclick=()=>setSpindleSweepMode(!spindleSweepMode);
 $('runSpindleSweep').onclick=runSpindleSweep;
 for(let i=0;i<4;i++)$('sweepPosition'+i).onclick=()=>selectSpindleSweepAngle(i*90);
 window.addEventListener('pagehide',stopSpindleSweep);

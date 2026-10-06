@@ -5,36 +5,63 @@ on:
 permissions:
   contents: read
 jobs:
-  verify:
+  regression:
+    name: Regression shard ${{ matrix.shard }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify generated bundle
+        run: |
+          python3 build.py
+          git diff --exit-code -- index.html
+      - name: Run regression tests
+        env:
+          TEST_SHARD: ${{ matrix.shard }}
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),{spawnSync}=require('node:child_process');
+          const tests=fs.readdirSync('tests').filter(f=>/^check-.*\.cjs$/.test(f)).sort();
+          const results=[];
+          tests.forEach((file,i)=>{
+            if(i%3!==Number(process.env.TEST_SHARD))return;
+            const start=Date.now();
+            console.log('TEST_START '+file);
+            const r=spawnSync(process.execPath,['tests/'+file],{encoding:'utf8',timeout:360000});
+            results.push({test:file,exit:r.status,seconds:(Date.now()-start)/1000});
+            if(r.stdout)process.stdout.write(r.stdout);
+            if(r.stderr)process.stderr.write(r.stderr);
+            console.log('TEST_END '+JSON.stringify(results.at(-1)));
+          });
+          console.log('REGRESSION_RESULT '+JSON.stringify(results));
+          if(results.some(r=>r.exit!==0))process.exit(1);
+          NODE
+  browser:
+    name: Chromium desktop and mobile verification
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: Verify build and run all existing regression tests
-        run: |
-          python3 build.py
-          git diff --exit-code -- index.html
-          failed=0
-          for test in tests/check-*.cjs; do
-            node "$test" || failed=1
-          done
-          exit "$failed"
       - name: Install browser test runtime
-        if: ${{ hashFiles('tests/browser-simultaneous-dial.cjs') != '' }}
         run: |
           npm install --no-save --no-package-lock playwright
           npx playwright install --with-deps chromium
       - name: Verify browser layouts and interactions
-        if: ${{ hashFiles('tests/browser-simultaneous-dial.cjs') != '' }}
         env:
           EMIT_SCREENSHOTS: '1'
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/dial-server.log 2>&1 &
           node tests/browser-simultaneous-dial.cjs
       - name: Preserve browser evidence
-        if: ${{ always() && hashFiles('tests/browser-simultaneous-dial.cjs') != '' }}
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: simultaneous-dial-browser-evidence

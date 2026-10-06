@@ -424,23 +424,92 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
  body.in-mechanical-lab #training .training-workspace{grid-template-columns:minmax(0,1fr) 210px}
 }
 
-/* The dial lesson occupies the existing precision panel, preserving the model. */
-.spindle-sweep-panel{max-width:540px;margin:0 auto}
-.sweep-heading{display:flex;align-items:center;justify-content:center;gap:10px;line-height:18px;padding:2px 0}
-.sweep-heading strong{font-size:12px}.sweep-dial{width:44px;height:44px;flex:none}
-.sweep-current{display:flex;align-items:baseline;justify-content:center;gap:14px;font-size:12px;font-variant-numeric:tabular-nums}
-.sweep-current output{font-size:16px;font-weight:750;color:#833500;min-width:70px}
-.sweep-positions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
-.sweep-positions button{min-height:44px;padding:2px 3px;line-height:16px;border-radius:6px;background:#fff}
+/* Compact machines compare squareness and spindle readings in one fixed row.
+   The adjustment scroller is independent of the model and raise/lower buttons. */
+.precision-readouts,.squareness-panel{min-width:0}
+.precision-panel-title{display:none;margin:0;text-align:center;font-size:12px;line-height:18px}
+.spindle-sweep-panel{min-width:0;margin:0}
+.has-spindle-sweep .precision-readouts{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,310px);gap:12px;align-items:start;max-width:1120px;margin:0 auto}
+.has-spindle-sweep .precision-panel-title{display:block}
+.has-spindle-sweep .spindle-sweep-panel{padding-left:12px;border-left:1px solid var(--line)}
+.sweep-heading{display:flex;align-items:center;justify-content:center;gap:8px;line-height:14px;padding:0 0 4px;min-height:44px}
+.sweep-heading-text{min-width:0;text-align:center}
+.sweep-heading strong{display:block;font-size:12px}
+.sweep-diameter{display:block;font-size:10px;font-weight:400;white-space:nowrap}
+.sweep-dial{width:38px;height:38px;flex:none}
+.sweep-current{display:flex;align-items:baseline;justify-content:center;gap:8px;font-size:11px;font-variant-numeric:tabular-nums}
+.sweep-current output{font-size:13px;font-weight:750;color:#833500;white-space:nowrap}
+.sweep-positions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.sweep-positions button{min-width:0;min-height:44px;padding:2px 3px;line-height:16px;border-radius:6px;background:#fff}
 .sweep-positions button span,.sweep-positions button strong{display:block;white-space:nowrap;font-variant-numeric:tabular-nums}
 .sweep-positions button span{font-size:10px}.sweep-positions button strong{font-size:15px}
 .sweep-positions button[aria-pressed="true"]{border:2px solid #b34800;background:#fff2e6;padding:1px 2px;color:#833500}
-.sweep-contact-status{font-size:10px;line-height:14px;text-align:center;margin:2px 0 0;min-height:14px}
+.sweep-contact-status{font-size:10px;line-height:12px;text-align:center;margin:2px 0 0;min-height:12px;font-weight:400;overflow-wrap:anywhere}
 body.in-mechanical-lab #training .scene-toolbar{gap:6px}
-.sweep-toggle,.sweep-run{min-height:44px;padding:5px 10px;white-space:nowrap;font-size:12px;font-weight:650}
-.sweep-toggle[aria-pressed="true"]{background:#fff2e6;border-color:#b34800;color:#833500}
-.sweep-run{background:#b34800;color:#fff;border-color:#b34800;min-width:92px}.sweep-run:hover{background:#893900;color:#fff}
-@media(max-width:950px) and (orientation:landscape) and (max-height:400px){
- .sweep-heading{padding:0;line-height:14px;gap:6px}.sweep-dial{width:30px;height:30px}.sweep-current output{font-size:13px}.sweep-heading strong{font-size:10px}
- .sweep-contact-status{font-size:9px;line-height:11px;min-height:11px}.sweep-positions{gap:2px}.sweep-positions button{line-height:14px}
+.sweep-run{min-height:44px;padding:5px 10px;white-space:nowrap;font-size:12px;font-weight:650;background:#b34800;color:#fff;border-color:#b34800;min-width:92px}
+.sweep-run:hover{background:#893900;color:#fff}
+.has-spindle-sweep .scene-readout-note{white-space:normal;flex-wrap:wrap;column-gap:8px;row-gap:0}
+body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{display:flex;flex-direction:column;min-height:0;overflow:hidden;scrollbar-gutter:auto}
+.has-spindle-sweep .adjustment-selection-scroll{flex:0 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-gutter:stable;scroll-padding-block:4px;width:100%}
+.has-spindle-sweep .common-support-actions{flex:none;width:100%;padding-top:4px}
+.has-spindle-sweep .main-adjustment .support-map{margin-bottom:4px}
+@media(max-width:700px){
+ .has-spindle-sweep .precision-readouts{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:6px}
+ .has-spindle-sweep .spindle-sweep-panel{padding-left:6px}
+ .has-spindle-sweep .precision-panel-title{font-size:11px;line-height:14px}
+ .has-spindle-sweep .live-squareness{display:grid;grid-template-columns:minmax(0,1fr);gap:2px;align-items:stretch}
+ .has-spindle-sweep .live-squareness-item{display:grid;grid-template-columns:52px minmax(0,1fr);grid-template-rows:12px 26px;align-items:center;max-width:none}
+ .has-spindle-sweep .live-pair-title{grid-column:1;grid-row:1;font-size:9px;line-height:12px}
+ .has-spindle-sweep .live-squareness-diagram{grid-column:1;grid-row:2;height:26px!important}
+ .has-spindle-sweep .live-pair-values{grid-column:2;grid-row:1/3;display:block;padding:0;line-height:13px;font-size:10px}
+ .has-spindle-sweep .live-pair-base-value{font-size:9px;line-height:11px}
+ .has-spindle-sweep .live-pair-micro-change{font-size:8px;line-height:11px;min-height:11px;white-space:normal}
+ .has-spindle-sweep .live-squareness-units{font-size:9px;line-height:12px}
+ .has-spindle-sweep .sweep-heading{gap:4px}
+ .has-spindle-sweep .sweep-heading strong{font-size:11px}
+ .has-spindle-sweep .sweep-dial{width:28px;height:28px}
+ .has-spindle-sweep .sweep-current{gap:5px;font-size:10px}
+ .has-spindle-sweep .sweep-current output{font-size:11px}
+ .has-spindle-sweep .sweep-positions{gap:3px}
+ .has-spindle-sweep .sweep-positions button strong{font-size:14px}
+ .has-spindle-sweep .sweep-contact-status{font-size:9px;line-height:12px}
+ .has-spindle-sweep .scene-readout-note{font-size:9px;line-height:11px;column-gap:4px}
+}
+/* A short landscape viewport shares its full width between both measurements.
+   Below, the model/axis bar and support controls have separate columns. */
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){
+ body.in-mechanical-lab #training .has-spindle-sweep .training-workspace{grid-template-columns:minmax(0,1fr) 66px clamp(170px,25vw,210px);grid-template-rows:auto minmax(0,1fr) auto}
+ body.in-mechanical-lab #training .has-spindle-sweep .pinned-visual{display:contents}
+ body.in-mechanical-lab #training .has-spindle-sweep .viewer-top{grid-column:1/-1;grid-row:1;padding:2px 6px;border-bottom:1px solid var(--line)}
+ body.in-mechanical-lab #training .has-spindle-sweep .scene-viewport{grid-column:1;grid-row:2}
+ body.in-mechanical-lab #training .has-spindle-sweep .viewer-levels{grid-column:2;grid-row:2}
+ body.in-mechanical-lab #training .has-spindle-sweep .scene-toolbar{grid-column:1/3;grid-row:3}
+ body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{grid-column:3;grid-row:2/4;padding:4px 6px;border-top:0;border-left:1px solid var(--line)}
+ .has-spindle-sweep .precision-readouts{grid-template-columns:minmax(0,1fr) minmax(224px,.95fr);gap:8px}
+ .has-spindle-sweep .spindle-sweep-panel{padding-left:8px}
+ .has-spindle-sweep .precision-panel-title{display:none}
+ .has-spindle-sweep .live-squareness{display:flex;gap:2px}
+ .has-spindle-sweep .live-squareness-item{display:block;max-width:180px}
+ .has-spindle-sweep .live-pair-title{font-size:10px;line-height:12px}
+ .has-spindle-sweep .live-squareness-diagram{height:26px!important}
+ .has-spindle-sweep .live-pair-values{display:flex;justify-content:center;align-items:baseline;flex-wrap:wrap;column-gap:4px;padding:0;line-height:14px;font-size:10px}
+ .has-spindle-sweep .live-pair-base-value{font-size:9px;line-height:14px}
+ .has-spindle-sweep .live-pair-micro-change{font-size:9px;line-height:11px;min-height:11px;white-space:nowrap}
+ .has-spindle-sweep .live-squareness-units{font-size:9px;line-height:11px}
+ .has-spindle-sweep .sweep-heading{padding:0 0 2px;min-height:18px}
+ .has-spindle-sweep .sweep-dial{display:none}
+ .has-spindle-sweep .sweep-heading-text{display:flex;justify-content:center;align-items:baseline;flex-wrap:wrap;gap:1px 6px;line-height:14px}
+ .has-spindle-sweep .sweep-heading strong{font-size:10px}
+ .has-spindle-sweep .sweep-diameter{font-size:9px}
+ .has-spindle-sweep .sweep-current{gap:4px;font-size:9px}
+ .has-spindle-sweep .sweep-current output{font-size:10px}
+ .has-spindle-sweep .sweep-positions{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}
+ .has-spindle-sweep .sweep-positions button{line-height:14px}
+ .has-spindle-sweep .sweep-positions button span{font-size:9px}
+ .has-spindle-sweep .sweep-positions button strong{font-size:13px}
+ .has-spindle-sweep .sweep-contact-status{font-size:9px;line-height:11px;min-height:11px}
+ .has-spindle-sweep .scene-readout-note{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .has-spindle-sweep .selected-support-label{font-size:11px;line-height:15px;min-height:15px;margin:3px 0}
+ .has-spindle-sweep .common-support-actions{gap:4px}
+ .has-spindle-sweep .common-support-actions button{font-size:12px}
 }
