@@ -1,6 +1,6 @@
 'use strict';
 // Independent spindle-sweep oracles. A plane y = px + qz under a vertical
-// spindle has readings r*[0, q-p, -2p, -q-p] after zeroing on the right.
+// spindle has readings r*[p+q, 2q, q-p, 0] after zeroing at the front (270 degrees).
 // A spindle inclined by theta above a horizontal table has opposite-point
 // difference D*tan(theta). These expectations do not call the implementation
 // to manufacture expected indicator values, frames, or surface normals.
@@ -28,14 +28,14 @@ check('horizontal aligned spindle and table read exactly zero at four angles',()
  const s=measured();assert.equal(s.valid,true);assert.deepEqual(readings(s),[0,0,0,0]);near(s.tirMicrons,0);near(s.radius,.15,0);
 });
 for(const [p,q] of [[0,0],[.00004,0],[-.00004,0],[0,.00007],[0,-.00007],[.00004,.00007],[-.00004,.00007],[.04,-.07]]){
- const r=.15,expected=[0,r*(q-p),-2*r*p,-r*(q+p)].map(v=>v*1e6),s=measured({tableNormal:[-p,1,-q]}),tag=`${p}/${q}`;
+ const r=.15,expected=[r*(p+q),2*r*q,r*(q-p),0].map(v=>v*1e6),s=measured({tableNormal:[-p,1,-q]}),tag=`${p}/${q}`;
  check('affine plane gives independently signed four-point readings '+tag,()=>{assert.equal(s.valid,true);vectorNear(readings(s),expected);});
  check('300 mm is the diameter of opposite measurement positions '+tag,()=>{near(s.cardinal[0].readingMicrons-s.cardinal[2].readingMicrons,.3*p*1e6);near(s.cardinal[1].readingMicrons-s.cardinal[3].readingMicrons,.3*q*1e6);near(Math.hypot(...sub(s.cardinal[0].ringPoint,s.cardinal[2].ringPoint)),.3,1e-14);});
- check('four-point midpoint identity and exact zero reference '+tag,()=>{assert.equal(s.cardinal[0].readingMicrons,0);near(expected[0]+expected[2],expected[1]+expected[3]);near(s.cardinal[0].readingMicrons+s.cardinal[2].readingMicrons,s.cardinal[1].readingMicrons+s.cardinal[3].readingMicrons);});
+ check('four-point midpoint identity and exact zero reference '+tag,()=>{assert.equal(s.cardinal[3].readingMicrons,0);near(expected[0]+expected[2],expected[1]+expected[3]);near(s.cardinal[0].readingMicrons+s.cardinal[2].readingMicrons,s.cardinal[1].readingMicrons+s.cardinal[3].readingMicrons);});
  check('full-circle range follows the resultant slope '+tag,()=>near(s.tirMicrons,.3*Math.hypot(p,q)*1e6));
  check('four-point range describes sampled points rather than full-circle range '+tag,()=>{near(s.fourPointRangeMicrons,Math.max(...expected)-Math.min(...expected));assert.ok(s.fourPointRangeMicrons<=s.tirMicrons+1e-7);});
  for(const angle of [17,43,122,231,315]){
-  const theta=angle*Math.PI/180,expected=r*(p*(Math.cos(theta)-1)+q*Math.sin(theta))*1e6,point=s.at(angle);
+  const theta=angle*Math.PI/180,expected=r*(p*Math.cos(theta)+q*(Math.sin(theta)+1))*1e6,point=s.at(angle);
   check(`arbitrary angle ${angle} follows affine-plane height ${tag}`,()=>near(point.readingMicrons,expected));
   check(`contact is on the independently defined plane ${angle}/${tag}`,()=>{near(point.contactPoint[1],p*point.contactPoint[0]+q*point.contactPoint[2],1e-14);near(dot(point.ringPoint,s.axis),0,1e-14);near(Math.hypot(...point.ringPoint),r,1e-14);vectorNear(sub(point.contactPoint,point.ringPoint),s.axis.map(v=>v*point.axialOffsetMetres),1e-14);});
  }
@@ -49,8 +49,8 @@ for(const angle of [-.21,-.001,-.00005,0,.00005,.001,.21]){
  const c=Math.cos(angle),s=Math.sin(angle),opposite=.3*Math.tan(angle)*1e6;
  const rightTilt=measured({axis:[s,c,0],right:[c,-s,0]});
  const backTilt=measured({axis:[0,c,s],right:[1,0,0]});
- check('right spindle lean produces D*tan(theta) with the correct zero-side sign '+angle,()=>vectorNear(readings(rightTilt),[0,-opposite/2,-opposite,-opposite/2]));
- check('back spindle lean changes the back/front readings '+angle,()=>vectorNear(readings(backTilt),[0,opposite/2,0,-opposite/2]));
+ check('right spindle lean produces D*tan(theta) with the correct zero-side sign '+angle,()=>vectorNear(readings(rightTilt),[opposite/2,0,-opposite/2,0]));
+ check('back spindle lean changes the back/front readings '+angle,()=>vectorNear(readings(backTilt),[opposite/2,opposite,opposite/2,0]));
  check('both directions distinguish right/back from left/front '+angle,()=>{near(rightTilt.tirMicrons,Math.abs(opposite));near(backTilt.tirMicrons,Math.abs(opposite));});
 }
 
@@ -71,7 +71,7 @@ check('measurement and full rotation leave caller data unchanged',()=>{for(let a
 check('magnitude of vector inputs is irrelevant',()=>{const scaled=Sweep.measure({...input,axis:input.axis.map(v=>v*7e180),tableNormal:input.tableNormal.map(v=>v*3e-200),right:input.right.map(v=>v*2e32)});vectorNear(readings(scaled),readings(stable),1e-8);});
 check('right-vector component along the spindle cannot alter the zero direction',()=>{const shifted=Sweep.measure({...input,right:input.right.map((v,i)=>v+input.axis[i]*.7)});vectorNear(readings(shifted),readings(stable),1e-8);});
 check('negative and repeated-turn angles are periodic',()=>{for(const angle of [0,37,90,180,270])for(const turns of [-3,-1,1,4]){near(stable.at(angle+360*turns).readingMicrons,stable.at(angle).readingMicrons,1e-8);assert.equal(stable.at(angle+360*turns).degrees,angle);}});
-check('zero has no signed-minus or floating residual',()=>{assert.ok(Object.is(stable.at(0).readingMicrons,0));assert.ok(Object.is(stable.at(360).readingMicrons,0));});
+check('zero has no signed-minus or floating residual',()=>{assert.ok(Object.is(stable.at(270).readingMicrons,0));assert.ok(Object.is(stable.at(630).readingMicrons,0));});
 check('returned geometry cannot be mutated between numeric and model rendering',()=>{assert.ok(Object.isFrozen(stable));assert.ok(Object.isFrozen(stable.axis));assert.ok(Object.isFrozen(stable.cardinal));assert.ok(Object.isFrozen(stable.cardinal[0].contactPoint));});
 for(const [name,overrides]of [['zero axis',{axis:[0,0,0]}],['sparse axis',{axis:Array(3)}],['nonfinite normal',{tableNormal:[0,Infinity,0]}],['zero normal',{tableNormal:[0,0,0]}],['parallel plane',{tableNormal:[1,0,0]}],['reversed plane',{tableNormal:[0,-1,0]}],['zero right',{right:[0,0,0]}],['parallel right',{right:[0,1,0]}],['negative radius',{radius:-.15}],['zero radius',{radius:0}],['nonfinite radius',{radius:NaN}]])check('invalid geometry refuses a fabricated reading: '+name,()=>assert.equal(measured(overrides).valid,false));
 check('invalid angles refuse fabricated readings',()=>{assert.equal(stable.at(NaN).valid,false);assert.equal(stable.at(Infinity).valid,false);});
@@ -106,7 +106,7 @@ function drawnIndependentReadings(env=e){
  // A rotation to the spindle's own orthogonal coordinates turns the drawn
  // table into a simple plane y = px + qz, independently sampled from vertices.
  const inSpindle=p.map(v=>[dot(v,right),dot(v,axis),dot(v,back)]),a=sub(inSpindle[1],inSpindle[0]),b=sub(inSpindle[2],inSpindle[0]),det=a[0]*b[2]-b[0]*a[2],px=(a[1]*b[2]-b[1]*a[2])/det,qz=(a[0]*b[1]-b[0]*a[1])/det;
- return {readings:[0,.15*(qz-px),-.3*px,-.15*(qz+px)].map(v=>v*1e6),axis,normal:n};
+ return {readings:[.15*(px+qz),.3*qz,.15*(qz-px),0].map(v=>v*1e6),axis,normal:n};
 }
 for(const X of [-100,0,100])for(const Y of [-100,0,100])for(const corner of [0,2]){
  surface(`i===${corner}?.15:0`,{...zero,X,Y});
@@ -192,8 +192,9 @@ const beforeClose=live.json('levelRecord()');live.read("selectAxis('Y');selectAx
 check('axis selection keeps both readouts visible and all saved readings intact',()=>{assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.spindleSweepPanel.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.deepEqual(live.json('levelRecord()'),beforeClose);vectorNear(uiValues(),plainReadings,1e-8);});
 surface('0',{...zero,Y:100},live);live.registry.sweepPosition3.click();
 check('an off-table contact is marked and does not show an invented measurement',()=>{assert.equal(live.json('spindleSweepGeometry().cardinal[3].onTable'),false);assert.equal(live.registry.sweepValue3.textContent,'面外');assert.equal(live.registry.sweepValue3.getAttribute('data-reading-microns'),'');assert.match(live.registry.sweepContactStatus.textContent,/面外/);assert.equal(live.registry.sweepPosition3.getAttribute('aria-pressed'),'true');});
+check('front reference outside suppresses every reading, even on-table positions',()=>{assert.equal(live.json('spindleSweepGeometry().cardinal[3].onTable'),false);assert.ok(live.json('spindleSweepGeometry().cardinal.some(p=>p.onTable)'));for(let i=0;i<4;i++)assert.equal(live.registry['sweepValue'+i].getAttribute('data-reading-microns'),'');assert.match(live.registry.sweepContactStatus.textContent,/手前.*面外/);});
 const oldWidth=live.read('levelConfig.width');live.read('levelConfig.width=.5;');surface('0',{...zero,X:-100},live);
-check('loss of the zero reference prevents reading any other cardinal as calibrated',()=>{assert.equal(live.json('spindleSweepGeometry().cardinal[0].onTable'),false);for(let i=0;i<4;i++)assert.equal(live.registry['sweepValue'+i].getAttribute('data-reading-microns'),'');assert.match(live.registry.sweepContactStatus.textContent,/0°.*面外/);});
+check('right alone outside does not invalidate the front reference or other contacts',()=>{const g=live.json('spindleSweepGeometry()');assert.equal(g.cardinal[0].onTable,false);assert.equal(g.cardinal[3].onTable,true);assert.equal(live.registry.sweepValue0.getAttribute('data-reading-microns'),'');for(let i=1;i<4;i++){assert.equal(g.cardinal[i].onTable,true);near(Number(live.registry['sweepValue'+i].getAttribute('data-reading-microns')),g.cardinal[i].readingMicrons);}assert.equal(live.registry.sweepValue3.textContent,'0');});
 live.read(`levelConfig.width=${oldWidth};`);surface('0',zero,live);
 for(const i of [1,6]){
  live.read(`openMachine(machines[${i}]);`);

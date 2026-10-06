@@ -35,7 +35,7 @@
   // The reference ring lies in the plane normal to the spindle axis. A line
   // p + lambda * axis intersects the table plane n.p = 0 at:
   // lambda = -n.p / (n.axis). Plane translations add the same lambda to every
-  // angle and cancel when the dial is zeroed at 0 degrees.
+  // angle and cancel when the dial is zeroed at the front (270 degrees).
   const a=-radius*dot(tableNormal,e0)/alignment,b=-radius*dot(tableNormal,e90)/alignment;
   const tirMicrons=2*Math.hypot(a,b)*1e6;
   if(!Number.isFinite(tirMicrons))return invalid('out-of-range');
@@ -56,14 +56,14 @@
    // Positive is increased plunger compression: a higher table contact point
    // relative to the spindle-normal ring. Metres are converted to micrometres
    // only here; renderer magnification does not enter this calculation.
-   const readingMicrons=angle===0?0:(axialOffsetMetres-a)*1e6;
+   const readingMicrons=angle===270?0:(axialOffsetMetres+b)*1e6;
    if(!Number.isFinite(readingMicrons)||!ringPoint.every(Number.isFinite)||!contactPoint.every(Number.isFinite))return invalid('out-of-range');
    return Object.freeze({valid:true,degrees:angle,readingMicrons:readingMicrons===0?0:readingMicrons,axialOffsetMetres,ringPoint:fixed(ringPoint),contactPoint:fixed(contactPoint)});
   }
   const cardinal=[0,90,180,270].map(at);
   if(cardinal.some(p=>!p.valid))return invalid('out-of-range');
   const readings=cardinal.map(p=>p.readingMicrons),fourPointRangeMicrons=Math.max(...readings)-Math.min(...readings);
-  return Object.freeze({valid:true,radius,axis:fixed(axis),tableNormal:fixed(tableNormal),e0:fixed(e0),e90:fixed(e90),zeroOffsetMetres:a,cardinal:Object.freeze(cardinal),tirMicrons,fourPointRangeMicrons,at});
+  return Object.freeze({valid:true,radius,axis:fixed(axis),tableNormal:fixed(tableNormal),e0:fixed(e0),e90:fixed(e90),zeroOffsetMetres:-b,cardinal:Object.freeze(cardinal),tirMicrons,fourPointRangeMicrons,at});
  }
  return Object.freeze({measure});
 });

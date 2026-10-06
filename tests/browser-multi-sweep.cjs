@@ -32,9 +32,9 @@ async function snapshot(){return p.evaluate(()=>{
  };
 });}
 async function assertReadings(name){
- const state=await snapshot();
+ const state=await snapshot(),status=await p.locator('#sweepContactStatus').innerText();
  check(name+' direct model and both DOM readings agree',()=>{
-  assert(state.onTable[0]);valuesNear(state.sweep,state.geometry);valuesNear(state.pairRaw,state.pairGeometry);
+  assert(state.onTable[3]);assert.equal(state.sweep[3],0);assert.match(status,/手前基準/);valuesNear(state.sweep,state.geometry);valuesNear(state.pairRaw,state.pairGeometry);
  });
  return state;
 }
@@ -79,7 +79,7 @@ async function layout(name){
  });
  check(name+' no horizontal overflow or clipped readings',()=>{
   assert(metrics.documentWidth<=metrics.width+1,'horizontal document overflow');assert.equal(metrics.textOverflow.length,0,metrics.textOverflow.join(', '));
-  assert(metrics.pairs.every(v=>v.overflow<=1),'squareness item overflow');
+  assert(metrics.pairs.every(v=>v.overflow<=1),'squareness item overflow');assert(r.sweepContactStatus.overflow<=1,'front reference status clipped');
  });
  check(name+' level gauge contents remain inside their model row',()=>{
   for(const child of metrics.gaugeChildren){
@@ -160,7 +160,7 @@ async function smallViewportControls(name){
   await p.locator('#openTrainingMenu').click();await p.locator('#axisMenuSection').evaluate(e=>e.open=true);
   for(const key of ['X','Y'])for(const value of [-100,100]){
    await p.locator('#drawerAxisSelect').selectOption(key);await p.locator('#axis-'+key).evaluate((e,v)=>{e.value=String(v);e.dispatchEvent(new Event('input',{bubbles:true}));},value);
-   const s=await snapshot();const readable=s.onTable[0];
+   const s=await snapshot();const readable=s.onTable[3];
    check(kind+' '+key+'='+value+' off-table readings never presented as normal',()=>{for(let i=0;i<4;i++){if(!readable||!s.onTable[i]){assert.equal(s.sweep[i],null);offCount++;}else near(s.sweep[i],s.geometry[i]);}});
   }
   await p.locator('#resetAxes').click();
@@ -181,12 +181,19 @@ async function smallViewportControls(name){
     check('gantry narrow valid dimensions Y='+y+' exercises actual off-table suppression',()=>{
      assert(narrowState.onTable.some(v=>!v),'test must actually cross a table edge');
      if(y===-100){assert.equal(narrowState.onTable[0],true);assert.equal(narrowState.onTable[2],false);assert.equal(narrowState.sweep[2],null);assert.equal(labels[2],'面外');}
-     else{assert.equal(narrowState.onTable[0],false);assert(narrowState.sweep.every(v=>v===null));assert.equal(labels[0],'面外');}
-     for(let i=0;i<4;i++){if(!narrowState.onTable[0]||!narrowState.onTable[i])assert.equal(narrowState.sweep[i],null);else near(narrowState.sweep[i],narrowState.geometry[i]);}
+     else{assert.equal(narrowState.onTable[0],false);assert.equal(narrowState.onTable[3],true);assert.equal(narrowState.sweep[0],null);assert.equal(narrowState.sweep[3],0);assert.equal(labels[0],'面外');}
+     for(let i=0;i<4;i++){if(!narrowState.onTable[3]||!narrowState.onTable[i])assert.equal(narrowState.sweep[i],null);else near(narrowState.sweep[i],narrowState.geometry[i]);}
     });
     await screenshot('gantry--off-table-'+y+'-390x844');
     await p.locator('#openTrainingMenu').click();
    }
+   const frontOutside={...original.record,width:.5,depth:.5,axisPositions:{...original.record.axisPositions,X:-100,Y:-100}};delete frontOutside.bestState;
+   const frontFile=path.join(output,'gantry-front-outside.json');fs.writeFileSync(frontFile,JSON.stringify(frontOutside));
+   await p.locator('#importLevel').setInputFiles(frontFile);await p.waitForFunction(()=>levelConfig.depth===.5&&positions.X===-100&&positions.Y===-100);
+   await p.locator('#closeTrainingMenu').click();
+   const noReference=await snapshot(),frontStatus=await p.locator('#sweepContactStatus').innerText();
+   check('gantry front reference outside suppresses every reading even when right remains inside',()=>{assert.equal(noReference.onTable[3],false);assert.equal(noReference.onTable[0],true);assert(noReference.sweep.every(v=>v===null));assert.match(frontStatus,/手前.*面外/);});
+   await p.locator('#openTrainingMenu').click();
    const originalFile=path.join(output,'gantry-original-dimensions.json');fs.writeFileSync(originalFile,JSON.stringify(original.record));
    await p.locator('#importLevel').setInputFiles(originalFile);
    await p.waitForFunction(expected=>levelConfig.width===expected.width&&positions.Y===expected.axisPositions.Y,original.record);
@@ -195,7 +202,7 @@ async function smallViewportControls(name){
   if(kind==='five'){
    const neutral=await snapshot();
    await p.locator('#drawerAxisSelect').selectOption('A');await p.locator('#axis-A').evaluate(e=>{e.value='50';e.dispatchEvent(new Event('input',{bubbles:true}));});const tilted=await snapshot();
-   check('five A inclination changes actual plane readings',()=>{assert(tilted.geometry.some((v,i)=>Math.abs(v-neutral.geometry[i])>1));for(let i=0;i<4;i++){if(!tilted.onTable[0]||!tilted.onTable[i])assert.equal(tilted.sweep[i],null);else near(tilted.sweep[i],tilted.geometry[i]);}});
+   check('five A inclination changes actual plane readings',()=>{assert(tilted.geometry.some((v,i)=>Math.abs(v-neutral.geometry[i])>1));for(let i=0;i<4;i++){if(!tilted.onTable[3]||!tilted.onTable[i])assert.equal(tilted.sweep[i],null);else near(tilted.sweep[i],tilted.geometry[i]);}});
    await p.locator('#drawerAxisSelect').selectOption('C');await p.locator('#axis-C').evaluate(e=>{e.value='50';e.dispatchEvent(new Event('input',{bubbles:true}));});const spun=await snapshot();
    check('five C rotates within the A-tilted plane',()=>valuesNear(spun.geometry,tilted.geometry,1e-6));
    await p.locator('#resetAxes').click();
@@ -205,7 +212,7 @@ async function smallViewportControls(name){
      for(const [key,value] of [['A',a],['C',c]]){await p.locator('#drawerAxisSelect').selectOption(key);await p.locator('#axis-'+key).evaluate((e,v)=>{e.value=String(v);e.dispatchEvent(new Event('input',{bubbles:true}));},value);}
      await p.locator('#closeTrainingMenu').click();const state=await snapshot();
      const clipped=await p.locator('#spindleSweepPanel button strong').evaluateAll(els=>els.filter(e=>e.scrollWidth>e.clientWidth+1).map(e=>e.textContent));
-     check('five full A/C travel readable at '+width+' '+a+'/'+c,()=>{assert.equal(clipped.length,0,clipped.join(','));for(let i=0;i<4;i++){if(!state.onTable[0]||!state.onTable[i])assert.equal(state.sweep[i],null);else near(state.sweep[i],state.geometry[i]);}});
+     check('five full A/C travel readable at '+width+' '+a+'/'+c,()=>{assert.equal(clipped.length,0,clipped.join(','));for(let i=0;i<4;i++){if(!state.onTable[3]||!state.onTable[i])assert.equal(state.sweep[i],null);else near(state.sweep[i],state.geometry[i]);}});
      await p.locator('#openTrainingMenu').click();
     }
    }
