@@ -171,6 +171,8 @@ async function smallViewportControls(name){
    await p.locator('.level-storage').evaluate(e=>e.open=true);
    for(const y of [-100,100]){
     const narrow={...original.record,width:.5,axisPositions:{...original.record.axisPositions,Y:y}};
+    // Recompute the optional best-state cache for the changed support dimensions.
+    delete narrow.bestState;
     const narrowFile=path.join(output,'gantry-narrow-'+y+'.json');fs.writeFileSync(narrowFile,JSON.stringify(narrow));
     await p.locator('#importLevel').setInputFiles(narrowFile);
     await p.waitForFunction(expected=>levelConfig.width===.5&&positions.Y===expected,y);
