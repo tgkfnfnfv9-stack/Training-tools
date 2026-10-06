@@ -388,13 +388,14 @@ function render(canvas,m,angle,showLabels,active){
  const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);const width=rect.width,height=rect.height;
  ctx.fillStyle='#f1f0ed';ctx.fillRect(0,0,width,height);
  const model=createGeometry(m),training=canvas===$('scene')&&active>=0,sweep=training&&typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&m.kind==='compact';
+ const compactShortCanvas=sweep&&height<160;
  if(sweep)model.faces=model.faces.filter(f=>!f.tableDetail);
  const project=p=>sceneProject(p,angle,training?sceneView:'oblique',!training);
  const fitPoints=training?displayFramingPoints(m,model):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
  // Fit the machine and its fixed movement envelope, without the empty ground around it.
- const margin=showLabels?Math.min(56,width*.16):18,verticalSpace=active>=0?height-48:height-75;
+ const margin=showLabels?Math.min(56,width*.16):18,verticalSpace=active>=0?height-(compactShortCanvas?12:48):height-75;
  const fitScale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY));
- const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-20)/2:height*.48)-(minY+maxY)*scale/2;
+ const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-(compactShortCanvas?4:20))/2:height*.48)-(minY+maxY)*scale/2;
  const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelMappedVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(active>=0?levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,positions,pose||'bed'),pose):transformedPoint(p,axes,m));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
@@ -449,7 +450,9 @@ function render(canvas,m,angle,showLabels,active){
   const box=candidates.find(freeLabel);
   if(box){labelBoxes.push(box);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(box.x+20,box.y+9);ctx.strokeStyle='#b3480080';ctx.lineWidth=.8;ctx.stroke();ctx.fillStyle='#fff8ee';ctx.fillRect(box.x,box.y,box.w,box.h);ctx.font='10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#7d3300';ctx.fillText('測定P',box.x+20,box.y+9);}
  }
- if(showLabels){
+ if(showLabels&&!compactShortCanvas){
+  // A short compact view keeps support, axis and dial labels; part names
+  // return when there is more room, without altering zoom or measurements.
   // Prefer the selected moving assembly and the base/column. A short Canvas
   // omits lower-priority part names rather than compressing their 18px boxes.
   const priority=l=>(active>=0&&l.axes.includes(selectedAxis)?10:0)+(/^(コラム|門|ベース|ベッド|主軸台)/.test(l.text)?2:0),labs=model.labels.map(l=>({...l,screen:movingScreen(l.p,l.axes,l.pose)})).sort((a,b)=>priority(b)-priority(a));

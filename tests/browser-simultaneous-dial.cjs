@@ -56,7 +56,11 @@ async function layout(name){
    return {x:b.x,y:b.y,right:b.right,bottom:b.bottom,overflow:el.scrollWidth-el.clientWidth,svgVisible:svg.checkVisibility({checkVisibilityCSS:true}),text:value.textContent};
   });
   const textOverflow=[...document.querySelectorAll('#liveSquareness .live-pair-error-value,#spindleSweepPanel button span,#spindleSweepPanel button strong')].filter(el=>el.scrollWidth>el.clientWidth+1).map(el=>el.textContent);
-  return {width:innerWidth,height:innerHeight,documentWidth:document.documentElement.scrollWidth,documentHeight:document.documentElement.scrollHeight,rectangles,buttons,pairs,textOverflow};
+  const gaugeChildren=[...document.querySelectorAll('#viewerLevels *')].filter(el=>el.checkVisibility({checkVisibilityCSS:true})).map(el=>{
+   const b=el.getBoundingClientRect();return {className:el.className,text:el.children.length?'':el.textContent,x:b.x,y:b.y,right:b.right,bottom:b.bottom,width:b.width,height:b.height};
+  }).filter(b=>b.width>0&&b.height>0);
+  const scroll=document.getElementById('adjustmentSelectionScroll'),sb=scroll.getBoundingClientRect();
+  return {width:innerWidth,height:innerHeight,documentWidth:document.documentElement.scrollWidth,documentHeight:document.documentElement.scrollHeight,rectangles,buttons,pairs,textOverflow,gaugeChildren,selectionScroll:{y:sb.y,bottom:sb.bottom,height:sb.height,clientHeight:scroll.clientHeight,scrollHeight:scroll.scrollHeight}};
  });
  summary.layouts.push({name,...metrics});
  const r=metrics.rectangles;
@@ -77,10 +81,38 @@ async function layout(name){
   assert(metrics.documentWidth<=metrics.width+1,'horizontal document overflow');assert.equal(metrics.textOverflow.length,0,metrics.textOverflow.join(', '));
   assert(metrics.pairs.every(v=>v.overflow<=1),'squareness item overflow');
  });
+ check(name+' level gauge contents remain inside their model row',()=>{
+  for(const child of metrics.gaugeChildren){
+   assert(child.x>=r.viewerLevels.x-1&&child.right<=r.viewerLevels.right+1,'gauge horizontal overflow '+JSON.stringify(child));
+   assert(child.y>=r.viewerLevels.y-1&&child.bottom<=r.viewerLevels.bottom+1,'gauge overlaps toolbar '+JSON.stringify(child));
+   assert(child.bottom<=metrics.height+1,'gauge outside viewport');
+  }
+ });
+ check(name+' scrolling choice area can contain a complete touch target',()=>{
+  assert(metrics.selectionScroll.clientHeight>=44,'choice area too short: '+metrics.selectionScroll.clientHeight);
+ });
  check(name+' measured point and adjustment buttons remain tappable',()=>{
   for(const b of metrics.buttons){assert(b.width>=43&&b.height>=43,b.id+' smaller than 44px');assert(b.hit,b.id+' occluded');}
  });
  await screenshot(name);
+}
+async function smallViewportControls(name){
+ const before=await snapshot(),sceneBefore=await p.locator('#scene').boundingBox();
+ for(const [selector,index] of [['#coarseAdjust',0],['#fineAdjust',0],['#supportMap button',3],['#supportMap button',0],['#coarseAdjust',0]]){
+  const control=p.locator(selector).nth(index);await control.scrollIntoViewIfNeeded();
+  const box=await control.boundingBox(),scrollBox=await p.locator('#adjustmentSelectionScroll').boundingBox();
+  check(name+' full control visible after internal scroll '+selector+'/'+index,()=>{
+   assert(box.height>=44);assert(box.y>=scrollBox.y-1&&box.y+box.height<=scrollBox.y+scrollBox.height+1,'control remains clipped');
+  });
+  await control.click();
+  const value=await control.getAttribute('aria-pressed');check(name+' scroll control responds '+selector+'/'+index,()=>assert.equal(value,'true'));
+ }
+ await p.locator('#raiseSupport').click();await p.locator('#lowerSupport').click();
+ const after=await snapshot(),sceneAfter=await p.locator('#scene').boundingBox();
+ check(name+' scrolling choices and support operations preserve fixed model and restore measurements',()=>{
+  assert.deepEqual(sceneAfter,sceneBefore);assert.deepEqual(after.record,before.record);valuesNear(after.sweep,before.sweep);valuesNear(after.pairRaw,before.pairRaw);
+ });
+ await p.locator('#adjustmentSelectionScroll').evaluate(el=>{el.scrollTop=0;});
 }
 (async()=>{
  browser=await chromium.launch({headless:true});
@@ -99,7 +131,10 @@ async function layout(name){
   ['pc-1366x900',1366,900],['mobile-320x480',320,480],['mobile-320x568',320,568],
   ['mobile-390x844',390,844],['landscape-568x320',568,320],['landscape-844x390',844,390]
  ]){
-  await p.setViewportSize({width,height});await p.waitForTimeout(200);await layout(name);
+  await p.setViewportSize({width,height});await p.waitForTimeout(200);
+  await p.locator('#adjustmentSelectionScroll').evaluate(el=>{el.scrollTop=0;});
+  if(name==='mobile-320x480'||name==='landscape-568x320')await smallViewportControls(name);
+  await layout(name);
  }
  await p.setViewportSize({width:390,height:844});await p.waitForTimeout(200);
  const oldToggleCount=await p.locator('#toggleSpindleSweep').count();

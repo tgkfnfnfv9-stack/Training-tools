@@ -513,3 +513,32 @@ body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{display:fle
  .has-spindle-sweep .common-support-actions{gap:4px}
  .has-spindle-sweep .common-support-actions button{font-size:12px}
 }
+
+/* Short portrait keeps one complete adjustment choice visible above the fixed
+   raise/lower row. Readout spacing gives the model that height back. */
+@media(max-width:950px) and (orientation:portrait) and (max-height:640px){
+ body.in-mechanical-lab #training .has-spindle-sweep .training-workspace{grid-template-rows:minmax(0,1fr) clamp(104px,calc(100dvh - 430px - env(safe-area-inset-top)),150px)}
+}
+@media(max-width:700px) and (orientation:portrait) and (max-height:540px){
+ .has-spindle-sweep .precision-panel-title{display:none}
+ .has-spindle-sweep .live-squareness-item{grid-template-rows:10px 22px}
+ .has-spindle-sweep .live-pair-title{font-size:9px;line-height:10px}
+ .has-spindle-sweep .live-squareness-diagram{height:22px!important}
+ .has-spindle-sweep .live-pair-values{line-height:12px}
+ .has-spindle-sweep .live-pair-base-value{line-height:10px}
+ .has-spindle-sweep .live-pair-micro-change{line-height:10px;min-height:10px}
+ .has-spindle-sweep .sweep-dial{display:none}
+ .has-spindle-sweep .sweep-heading{min-height:26px;padding:0 0 2px}
+ .has-spindle-sweep .sweep-heading-text{display:grid;grid-template-columns:auto auto;align-items:baseline;column-gap:4px;line-height:12px}
+ .has-spindle-sweep .sweep-heading strong{font-size:10px}
+ .has-spindle-sweep .sweep-diameter{font-size:9px}
+ .has-spindle-sweep .sweep-current{grid-column:1/-1;line-height:12px}
+ .has-spindle-sweep .scene-readout-note{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .has-spindle-sweep .viewer-levels{gap:2px;padding-top:2px;padding-bottom:2px}
+ .has-spindle-sweep .viewer-gauge-title{font-size:9px;line-height:9px}
+ .has-spindle-sweep .viewer-gauge-lr .vial{height:16px;margin:1px 0}
+ .has-spindle-sweep .viewer-gauge-lr .bubble{top:0}
+ .has-spindle-sweep .viewer-gauge .gauge-ends{font-size:9px;line-height:8px}
+ .has-spindle-sweep .viewer-gauge-fb{min-height:51px}
+ .has-spindle-sweep .vertical-gauge{min-height:42px;grid-template-rows:8px minmax(26px,1fr) 8px;font-size:9px;line-height:8px;margin-top:0}
+}

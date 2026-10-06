@@ -54,6 +54,7 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright
           npx playwright install --with-deps chromium
+          sudo apt-get install -y fonts-noto-cjk
       - name: Verify browser layouts and interactions
         env:
           EMIT_SCREENSHOTS: '1'
