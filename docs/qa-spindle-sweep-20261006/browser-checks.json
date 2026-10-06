@@ -1,0 +1,213 @@
+{
+  "commit": "5c38fca2a0875182a60739bf06876834a07ac228",
+  "browser": "Chrome cloud browser; responsive iframe sizes, not physical smartphone touch",
+  "checks": [
+    {
+      "step": "v4 baseline JSON imported through normal UI",
+      "values": [
+        {
+          "raw": "0",
+          "text": "0"
+        },
+        {
+          "raw": "-16.24332145403919",
+          "text": "-16"
+        },
+        {
+          "raw": "-22.490000054617333",
+          "text": "-22"
+        },
+        {
+          "raw": "-6.246678600578145",
+          "text": "-6"
+        }
+      ]
+    },
+    {
+      "step": "select 0 degrees",
+      "angle": "0°",
+      "current": "0 µm"
+    },
+    {
+      "step": "select 90 degrees",
+      "angle": "90°",
+      "current": "-16 µm"
+    },
+    {
+      "step": "select 180 degrees",
+      "angle": "180°",
+      "current": "-22 µm"
+    },
+    {
+      "step": "select 270 degrees",
+      "angle": "270°",
+      "current": "-6 µm"
+    },
+    {
+      "step": "C raised +0.100 mm (10 coarse clicks)",
+      "values": [
+        {
+          "raw": "0",
+          "text": "0"
+        },
+        {
+          "raw": "-19.639211983117967",
+          "text": "-20"
+        },
+        {
+          "raw": "-29.52125011061074",
+          "text": "-30"
+        },
+        {
+          "raw": "-9.88203812749277",
+          "text": "-10"
+        }
+      ]
+    },
+    {
+      "step": "one full rotation returns to selected 270 degrees",
+      "angle": "270°",
+      "current": "-10 µm",
+      "values": [
+        {
+          "raw": "0",
+          "text": "0"
+        },
+        {
+          "raw": "-19.639211983117967",
+          "text": "-20"
+        },
+        {
+          "raw": "-29.52125011061074",
+          "text": "-30"
+        },
+        {
+          "raw": "-9.88203812749277",
+          "text": "-10"
+        }
+      ]
+    },
+    {
+      "step": "C 10 coarse reverse clicks restores original values",
+      "values": [
+        {
+          "raw": "0",
+          "text": "0"
+        },
+        {
+          "raw": "-16.24332145403919",
+          "text": "-16"
+        },
+        {
+          "raw": "-22.490000054617333",
+          "text": "-22"
+        },
+        {
+          "raw": "-6.246678600578145",
+          "text": "-6"
+        }
+      ]
+    },
+    {
+      "step": "mobile 390x844 reload saved data and select 90 degrees",
+      "values": [
+        "0",
+        "-16",
+        "-22",
+        "-6"
+      ],
+      "layout": {
+        "scrollWidth": 390,
+        "width": 390
+      }
+    },
+    {
+      "step": "320x568 layout",
+      "layout": {
+        "scrollWidth": 320,
+        "width": 320
+      }
+    },
+    {
+      "step": "844x390 layout",
+      "layout": {
+        "scrollWidth": 844,
+        "width": 844
+      }
+    },
+    {
+      "step": "568x320 layout",
+      "layout": {
+        "scrollWidth": 568,
+        "width": 568
+      }
+    },
+    {
+      "step": "Y far endpoint causes 270 degree tip to leave finite table",
+      "values": [
+        {
+          "raw": "0",
+          "text": "0"
+        },
+        {
+          "raw": "-16.24332145403919",
+          "text": "-16"
+        },
+        {
+          "raw": "-22.490000054617333",
+          "text": "-22"
+        },
+        {
+          "raw": "",
+          "text": "面外"
+        }
+      ],
+      "status": "測定子がテーブル外です。軸位置を中央へ戻してください。"
+    },
+    {
+      "step": "reset center, old squareness/sweep switch, camera rotation/zoom",
+      "before": [
+        {
+          "raw": "0",
+          "text": "0"
+        },
+        {
+          "raw": "-16.24332145403919",
+          "text": "-16"
+        },
+        {
+          "raw": "-22.490000054617333",
+          "text": "-22"
+        },
+        {
+          "raw": "-6.246678600578145",
+          "text": "-6"
+        }
+      ],
+      "after": [
+        {
+          "raw": "0",
+          "text": "0"
+        },
+        {
+          "raw": "-16.24332145403919",
+          "text": "-16"
+        },
+        {
+          "raw": "-22.490000054617333",
+          "text": "-22"
+        },
+        {
+          "raw": "-6.246678600578145",
+          "text": "-6"
+        }
+      ],
+      "squareness": [
+        "Y直角差 +18",
+        "Z直角差 -22",
+        "Z直角差 +10"
+      ]
+    }
+  ],
+  "applicationErrors": []
+}

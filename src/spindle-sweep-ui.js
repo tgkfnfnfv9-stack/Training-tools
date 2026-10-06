@@ -37,6 +37,7 @@ function updateSpindleSweep(){
  if(!available){spindleSweepMode=false;stopSpindleSweep();}
  $('toggleSpindleSweep').textContent=spindleSweepMode?'直角図へ':'ダイヤル測定';
  $('toggleSpindleSweep').setAttribute('aria-pressed',String(spindleSweepMode));
+ $('squarenessValuesNote').hidden=spindleSweepMode;
  $('spindleSweepPanel').hidden=!spindleSweepMode;$('liveSquareness').hidden=spindleSweepMode;$('liveSquarenessUnits').hidden=spindleSweepMode;
  $('runSpindleSweep').hidden=!spindleSweepMode;$('axisTabs').hidden=spindleSweepMode;
  $('scene-readout-sweep-note').hidden=!spindleSweepMode;$('modelSemantics').hidden=spindleSweepMode;

@@ -168,7 +168,7 @@ for(const X of [-100,0,100])for(const Y of [-100,0,100])for(const Z of [-100,100
 
 surface('i===2?.2:0',zero,live);const modeRecord=live.json('levelRecord()');
 live.registry.toggleSpindleSweep.click();
-check('normal UI action opens the four-position measurement panel',()=>{assert.equal(live.read('spindleSweepMode'),true);assert.equal(live.registry.spindleSweepPanel.hidden,false);assert.equal(live.registry.liveSquareness.hidden,true);assert.equal(live.registry.runSpindleSweep.hidden,false);});
+check('normal UI action opens the four-position measurement panel',()=>{assert.equal(live.read('spindleSweepMode'),true);assert.equal(live.registry.spindleSweepPanel.hidden,false);assert.equal(live.registry.liveSquareness.hidden,true);assert.equal(live.registry.squarenessValuesNote.hidden,true);assert.equal(live.registry.runSpindleSweep.hidden,false);});
 check('UI four positions retain degree and direction labels',()=>{for(let i=0;i<4;i++)assert.match(live.registry['sweepPosition'+i].getAttribute('aria-label'),new RegExp(i*90+'度・'+['右','奥','左','手前'][i]));});
 const uiValues=()=>Array.from({length:4},(_,i)=>Number(live.registry['sweepValue'+i].getAttribute('data-reading-microns')));
 const displayed=geometryReading(live);
@@ -190,7 +190,7 @@ check('exaggeration checkbox cannot magnify UI dial values',()=>vectorNear(uiVal
 live.registry.exaggerate.checked=false;live.registry.exaggerate.onchange();
 live.read('setTrainingMenuOpen(true);yaw=-1.1;sceneZoom=.7;setTrainingMenuOpen(false);drawScene();');
 check('sidebar and camera leave live numeric readings unchanged',()=>vectorNear(uiValues(),plainReadings,1e-8));
-const beforeClose=live.json('levelRecord()');live.registry.toggleSpindleSweep.click();live.registry.toggleSpindleSweep.click();
+const beforeClose=live.json('levelRecord()');live.registry.toggleSpindleSweep.click();assert.equal(live.registry.squarenessValuesNote.hidden,false);live.registry.toggleSpindleSweep.click();
 check('switching between squareness and sweep keeps saved data and four readings intact',()=>{assert.deepEqual(live.json('levelRecord()'),beforeClose);vectorNear(uiValues(),plainReadings,1e-8);});
 surface('0',{...zero,Y:100},live);live.registry.sweepPosition3.click();
 check('an off-table contact is marked and does not show an invented measurement',()=>{assert.equal(live.json('spindleSweepGeometry().cardinal[3].onTable'),false);assert.equal(live.registry.sweepValue3.textContent,'面外');assert.equal(live.registry.sweepValue3.getAttribute('data-reading-microns'),'');assert.equal(live.registry.sweepCurrentValue.textContent,'測定できません');assert.match(live.registry.sweepContactStatus.textContent,/テーブル外/);});
