@@ -6,7 +6,10 @@ const {chromium}=require('playwright');
 const base=process.env.DIAL_BASE_URL||'http://127.0.0.1:8765/index.html';
 const output='tmp/qa-dial';
 fs.mkdirSync(output,{recursive:true});
-const summary={url:base,checks:0,failures:[],browserErrors:[],layouts:[],screenshots:[],physicalPhoneGestures:'not tested'};
+// These canvas heights were verified on the last published main. Shrinking
+// the measurements must give the machine real additional room on every size.
+const previousCanvasHeights={'pc-1366x900':385,'mobile-320x480':98,'mobile-320x568':117,'mobile-390x844':330,'landscape-568x320':98,'landscape-844x390':168};
+const summary={url:base,comparisonCommit:'ddf6492bc002592fd2f39991311fd0dc7816025e',previousCanvasHeights,checks:0,failures:[],browserErrors:[],layouts:[],screenshots:[],physicalPhoneGestures:'not tested'};
 let browser,context,p;
 function check(name,fn){summary.checks++;try{fn();}catch(error){summary.failures.push({name,message:error.message});}}
 function near(a,b,t=1e-8){assert(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=t,a+' != '+b);}
@@ -40,13 +43,13 @@ async function assertReadings(name){
 }
 async function layout(name){
  const metrics=await p.evaluate(()=>{
-  const ids=['precisionReadouts','liveSquareness','liveSquarenessUnits','spindleSweepPanel','sweepCurrentValue','sweepContactStatus','sceneViewport','scene','viewerLevels','sceneToolbar','axisTabs','runSpindleSweep','mainAdjustment','lowerSupport','raiseSupport','openTrainingMenu'];
+  const ids=['precisionReadouts','liveSquareness','liveSquarenessUnits','spindleSweepPanel','sweepContactStatus','sceneViewport','scene','viewerLevels','sceneToolbar','axisTabs','mainAdjustment','lowerSupport','raiseSupport','openTrainingMenu'];
   const rectangles={};
   for(const id of ids){
    const el=document.getElementById(id),b=el?.getBoundingClientRect();
    rectangles[id]=b?{x:b.x,y:b.y,width:b.width,height:b.height,right:b.right,bottom:b.bottom,visible:el.checkVisibility({checkVisibilityCSS:true}),overflow:el.scrollWidth-el.clientWidth}:null;
   }
-  const ids2=['sweepPosition0','sweepPosition1','sweepPosition2','sweepPosition3','lowerSupport','raiseSupport','runSpindleSweep'];
+  const ids2=['sweepPosition0','sweepPosition1','sweepPosition2','sweepPosition3','lowerSupport','raiseSupport'];
   const buttons=ids2.map(id=>{
    const el=document.getElementById(id),b=el.getBoundingClientRect(),hit=document.elementFromPoint(b.x+b.width/2,b.y+b.height/2);
    return {id,width:b.width,height:b.height,hit:!!hit&&(hit===el||el.contains(hit)),right:b.right,bottom:b.bottom};
@@ -65,7 +68,7 @@ async function layout(name){
  summary.layouts.push({name,...metrics});
  const r=metrics.rectangles;
  check(name+' both readout panels and fixed controls visible',()=>{
-  for(const id of ['liveSquareness','liveSquarenessUnits','spindleSweepPanel','scene','viewerLevels','axisTabs','runSpindleSweep','lowerSupport','raiseSupport']){
+  for(const id of ['liveSquareness','liveSquarenessUnits','spindleSweepPanel','scene','viewerLevels','axisTabs','lowerSupport','raiseSupport']){
    assert(r[id]?.visible,id+' hidden');assert(r[id].width>0&&r[id].height>0,id+' empty');
    assert(r[id].x>=-1&&r[id].y>=-1&&r[id].right<=metrics.width+1&&r[id].bottom<=metrics.height+1,id+' outside viewport: '+JSON.stringify(r[id]));
   }
@@ -76,6 +79,9 @@ async function layout(name){
   assert(Math.max(r.liveSquareness.bottom,r.spindleSweepPanel.bottom)<=r.sceneViewport.y+1,'readout overlaps model');
   assert(r.sceneToolbar.y>=r.sceneViewport.bottom-1,'axis controls overlay model');
   assert(r.scene.width>=110&&r.scene.height>=90,'model canvas too small '+r.scene.width+'x'+r.scene.height);
+ });
+ check(name+' compact measurements give the machine more height than previous main',()=>{
+  assert(r.scene.height>previousCanvasHeights[name]+1,'model height '+r.scene.height+' did not improve on '+previousCanvasHeights[name]);
  });
  check(name+' no horizontal overflow or clipped readings',()=>{
   assert(metrics.documentWidth<=metrics.width+1,'horizontal document overflow');assert.equal(metrics.textOverflow.length,0,metrics.textOverflow.join(', '));
@@ -127,6 +133,7 @@ async function smallViewportControls(name){
  });
  await p.locator('#spindleSweepPanel').waitFor({state:'visible'});
  await p.evaluate(()=>document.fonts.ready);
+ const beforeResizing=await snapshot();
  for(const [name,width,height] of [
   ['pc-1366x900',1366,900],['mobile-320x480',320,480],['mobile-320x568',320,568],
   ['mobile-390x844',390,844],['landscape-568x320',568,320],['landscape-844x390',844,390]
@@ -135,10 +142,18 @@ async function smallViewportControls(name){
   await p.locator('#adjustmentSelectionScroll').evaluate(el=>{el.scrollTop=0;});
   if(name==='mobile-320x480'||name==='landscape-568x320')await smallViewportControls(name);
   await layout(name);
+  const afterResizing=await snapshot();
+  check(name+' resizing preserves physical state and both measurements',()=>{assert.deepEqual(afterResizing.record,beforeResizing.record);valuesNear(afterResizing.sweep,beforeResizing.sweep);valuesNear(afterResizing.pairRaw,beforeResizing.pairRaw);});
  }
  await p.setViewportSize({width:390,height:844});await p.waitForTimeout(200);
  const oldToggleCount=await p.locator('#toggleSpindleSweep').count();
  check('old replacement-mode toggle removed',()=>assert.equal(oldToggleCount,0));
+ const removed=await p.evaluate(()=>({
+  elements:['runSpindleSweep','sweepDial','sweepCurrentAngle','sweepCurrentValue'].filter(id=>document.getElementById(id)),
+  draw:typeof drawSpindleSweep,markup:typeof sweepDialMarkup,run:typeof runSpindleSweep,stop:typeof stopSpindleSweep,timer:typeof spindleSweepTimer,
+  pictures:document.querySelectorAll('#spindleSweepPanel svg,#spindleSweepPanel canvas,#spindleSweepPanel img').length
+ }));
+ check('round operation and both dial drawings are completely removed',()=>{assert.deepEqual(removed,{elements:[],draw:'undefined',markup:'undefined',run:'undefined',stop:'undefined',timer:'undefined',pictures:0});});
  check('browser starts without script errors',()=>assert.deepEqual(summary.browserErrors,[]));
  const before=await assertReadings('initial');
  await p.locator('#supportMap button').nth(2).click();
@@ -162,21 +177,13 @@ async function smallViewportControls(name){
  await p.locator('#lowerSupport').click();await p.locator('#coarseAdjust').click();
  for(let i=0;i<4;i++){
   await p.locator('#sweepPosition'+i).click();
-  const current=await p.locator('#sweepCurrentValue').getAttribute('data-reading-microns');
-  const pressed=await p.locator('#sweepPosition'+i).getAttribute('aria-pressed');
-  const angle=await p.locator('#sweepCurrentAngle').textContent();
-  check('select '+(i*90)+' degrees',()=>{assert.equal(angle,i*90+'°');assert.equal(pressed,'true');near(Number(current),restored.geometry[i]);});
+  const state=await snapshot(),pressed=await p.locator('.sweep-positions button').evaluateAll(buttons=>buttons.map(b=>b.getAttribute('aria-pressed')));
+  check('select '+(i*90)+' degrees without changing measurements',()=>{assert.equal(state.angle,i*90);assert.deepEqual(pressed,[0,1,2,3].map(j=>String(j===i)));valuesNear(state.sweep,restored.geometry);assert.deepEqual(state.record,restored.record);});
  }
- const beforeRun=await snapshot();
- await p.locator('#runSpindleSweep').click();
- await p.waitForFunction(()=>spindleSweepTimer===null&&document.getElementById('runSpindleSweep').textContent==='1周回す',{},{timeout:15000});
- const afterRun=await snapshot();
- check('one full rotation returns to start with unchanged machine and readings',()=>{
-  near(afterRun.angle,beforeRun.angle);assert.deepEqual(afterRun.record,beforeRun.record);valuesNear(afterRun.sweep,beforeRun.sweep);valuesNear(afterRun.pairRaw,beforeRun.pairRaw);
- });
+ const afterSelection=await snapshot();
  for(const key of ['Y','Z','X']){
   await p.locator('#axisTabs button').filter({hasText:key+'軸'}).click();
-  const state=await snapshot();check('axis '+key+' remains selectable beside dial',()=>{assert.equal(state.selectedAxis,key);valuesNear(state.sweep,afterRun.sweep);valuesNear(state.pairRaw,afterRun.pairRaw);});
+  const state=await snapshot();check('axis '+key+' remains selectable beside dial',()=>{assert.equal(state.selectedAxis,key);valuesNear(state.sweep,afterSelection.sweep);valuesNear(state.pairRaw,afterSelection.pairRaw);});
  }
  const stable=await snapshot();
  await p.locator('#openTrainingMenu').click();await p.locator('#closeTrainingMenu').click();
@@ -210,18 +217,18 @@ async function smallViewportControls(name){
  await p.locator('#openTrainingMenu').click();await p.locator('#axisMenuSection > summary').click();await p.locator('#drawerAxisSelect').selectOption('Y');
  await p.locator('#axis-Y').evaluate(el=>{el.value='100';el.dispatchEvent(new Event('input',{bubbles:true}));});
  await p.locator('#closeTrainingMenu').click();await p.locator('#sweepPosition3').click();
- const off=await snapshot(),offText=await p.locator('#sweepValue3').textContent(),currentText=await p.locator('#sweepCurrentValue').textContent();
- check('off-table contact has no normal displayed reading',()=>{assert.equal(off.onTable[3],false);assert.equal(off.sweep[3],null);assert.equal(offText,'面外');assert.equal(currentText,'測定できません');});
+ const off=await snapshot(),offText=await p.locator('#sweepValue3').textContent(),status=await p.locator('#sweepContactStatus').textContent();
+ check('off-table contact has no normal displayed reading',()=>{assert.equal(off.onTable[3],false);assert.equal(off.sweep[3],null);assert.equal(offText,'面外');assert.match(status,/面外/);assert.equal(off.angle,270);});
  await screenshot('off-table-390x844');
  await p.locator('#openTrainingMenu').click();await p.locator('#resetAxes').click();await p.locator('#closeTrainingMenu').click();await assertReadings('after recenter');
  const expectedCounts=[4,8,6,15,8,3,6];
  for(let i=0;i<7;i++){
   await p.evaluate(index=>openMachine(machines[index]),i);
-  const machine=await p.evaluate(()=>({count:supports.length,keys:axisConfig(current).map(a=>a.key),mode:spindleSweepMode,panel:!document.getElementById('spindleSweepPanel').hidden,run:!document.getElementById('runSpindleSweep').hidden,square:!document.getElementById('liveSquareness').hidden,groups:supports.reduce((acc,s)=>{acc[s.group]=(acc[s.group]||0)+1;return acc;},{})}));
+  const machine=await p.evaluate(()=>({count:supports.length,keys:axisConfig(current).map(a=>a.key),mode:spindleSweepMode,panel:!document.getElementById('spindleSweepPanel').hidden,run:document.getElementById('runSpindleSweep'),square:!document.getElementById('liveSquareness').hidden,groups:supports.reduce((acc,s)=>{acc[s.group]=(acc[s.group]||0)+1;return acc;},{})}));
   check('machine '+i+' retains support count, axes and applicability',()=>{
-   assert.equal(machine.count,expectedCounts[i]);assert.equal(machine.mode,i===0);assert.equal(machine.panel,i===0);assert.equal(machine.run,i===0);assert.equal(machine.square,true);
+   assert.equal(machine.count,expectedCounts[i]);assert.equal(machine.mode,i===0);assert.equal(machine.panel,i===0);assert.equal(machine.run,null);assert.equal(machine.square,true);
    if(i===5)assert.deepEqual(machine.keys,['X','Y','Z','A','C']);if(i===6)assert.deepEqual(machine.keys,['X','Z']);
-   if(i===3)assert.equal(Object.values(machine.groups).reduce((a,b)=>a+b,0),15);
+   if(i===3)assert.deepEqual(Object.values(machine.groups).sort((a,b)=>a-b),[3,3,9]);
   });
  }
  check('all browser events finish without script errors',()=>assert.deepEqual(summary.browserErrors,[]));

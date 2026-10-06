@@ -1,0 +1,37 @@
+name: Verify compact measurement display
+on:
+  push:
+    branches: [codex/compact-display-20261006]
+permissions:
+  contents: read
+jobs:
+  browser:
+    name: Chromium layout and interaction checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install browser test runtime
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Verify generated page matches source
+        run: |
+          python3 build.py
+          git diff --exit-code -- index.html
+      - name: Verify browser layouts and interactions
+        env:
+          EMIT_SCREENSHOTS: '1'
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/dial-server.log 2>&1 &
+          node tests/browser-simultaneous-dial.cjs
+      - name: Preserve browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compact-display-browser-evidence
+          path: tmp/qa-dial/
+          if-no-files-found: ignore
