@@ -107,6 +107,9 @@ for(const [index,mode] of variants){
      const points=samples[pose]||[info.anchor],slopes=points.map(p=>{
       const [x,z]=mapping(p),eps=1e-5,h=read(`levelSolution.heightAt(${x},${z})`);
       if(curved){const gradient=curved.slopeAt(x,z);return [gradient.lr,gradient.fb];}
+      // Compact has a smooth Ritz polynomial. Other grids intentionally
+      // choose the forward/right cell at an internal bilinear boundary.
+      if(kind==='compact')return [(read(`levelSolution.heightAt(${x+eps},${z})`)-read(`levelSolution.heightAt(${x-eps},${z})`))/(2*eps),(read(`levelSolution.heightAt(${x},${z+eps})`)-read(`levelSolution.heightAt(${x},${z-eps})`))/(2*eps)];
       return [(read(`levelSolution.heightAt(${x+eps},${z})`)-h)/eps,(read(`levelSolution.heightAt(${x},${z+eps})`)-h)/eps];
      });
      const gradient=[0,1].map(k=>slopes.reduce((sum,s)=>sum+s[k]/slopes.length,0)*factor/1000),expected=unit([-gradient[0],1,-gradient[1]]);

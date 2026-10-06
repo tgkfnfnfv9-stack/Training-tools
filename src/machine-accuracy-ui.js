@@ -23,7 +23,7 @@ function machineSolution(heights){
  if(current.kind==='double'&&current.supportLayout==='irregular'){
   solution.parts=Object.fromEntries(['bed','column-left','column-right'].map(group=>[group,window.Leveling.solve(points.filter((p,i)=>supports[i].group===group))]));
  }
- return solution;
+ return current.kind==='compact'?window.Leveling.compactBending(solution,levelConfig.width,levelConfig.depth):solution;
 }
 function machineEvaluation(heights){
  const solution=machineSolution(heights),samples=geometrySamples(solution,machineProfile,window.MachineAccuracy.referenceLength);

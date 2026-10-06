@@ -45,7 +45,7 @@ async function main(){
  for(let index=0;index<7;index++){
   storage.clear();let start=performance.now();open(index);results.timings.push({index,operation:'open',milliseconds:performance.now()-start});
   label=`current-layout/${index}`;const initial=record(),profile=json('machineProfile');
-  test(()=>{assert.equal(read('supports.length'),counts[index]);assert.equal(initial.version,[0,1,3].includes(index)?3:2);assert.equal(initial.calculationModel,[3,4].includes(index)?'portal-shear-v2':index===2?'travel-guide-v2':index===6?'lathe-carriage-v2':index===1?'horizontal-guide-v2':index===0?'compact-table-path-v3':'connected-frames-v1');assert.equal(read('validLevelRecord(levelRecord())'),true);});
+  test(()=>{assert.equal(read('supports.length'),counts[index]);assert.equal(initial.version,[0,1,3].includes(index)?3:2);assert.equal(initial.calculationModel,[3,4].includes(index)?'portal-shear-v2':index===2?'travel-guide-v2':index===6?'lathe-carriage-v2':index===1?'horizontal-guide-v2':index===0?'compact-asymmetric-bending-v4':'connected-frames-v1');assert.equal(read('validLevelRecord(levelRecord())'),true);});
   if(index===3){
    label='L3/requested-nine-bed-points-and-original-column-coordinates';
    const stations=[240,3440,6600],expected=[...[-770,0,770].flatMap(x=>stations.map(z=>[x,z-3420])),...[-1060,1060].flatMap(x=>[3965,4515].map(z=>[x,z-3420])),[-1425,825],[1420,825]].map(([x,z])=>[x/1000,z/1000]);

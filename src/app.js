@@ -203,6 +203,19 @@ function createGeometry(m){
   else if(text==='コラム'||pose==='leftColumn'||pose==='rightColumn')references.push({base:[x+w/2,y-h/2,z-d/2],tip:[x+w/2,y+h/2,z-d/2],direction:[0,1,0],length:h,axes:[...group],pose});
  }
  function cyl(x,y,z,r,len,color,axis='y',text){const n=20,ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8},{v:ring[1],axes:[...group],pose,color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
+ // Exterior faces only: intermediate vertices let the compact bed and guides
+ // follow the same curved surface used by the precision calculation.
+ function curvedBox(x,y,z,w,h,d,color,text,nx=4,nz=8){
+  const xs=Array.from({length:nx+1},(_,i)=>x-w/2+w*i/nx),zs=Array.from({length:nz+1},(_,i)=>z-d/2+d*i/nz),lo=y-h/2,hi=y+h/2;
+  const face=(v,shade)=>faces.push({v,axes:[...group],pose,color,shade});
+  for(let i=0;i<nx;i++)for(let j=0;j<nz;j++){
+   const a=xs[i],b=xs[i+1],c=zs[j],e=zs[j+1];
+   face([[a,hi,c],[b,hi,c],[b,hi,e],[a,hi,e]],1.08);face([[a,lo,c],[a,lo,e],[b,lo,e],[b,lo,c]],.65);
+  }
+  for(let i=0;i<nx;i++){const a=xs[i],b=xs[i+1],f=zs[0],r=zs[nz];face([[a,lo,f],[b,lo,f],[b,hi,f],[a,hi,f]],.83);face([[a,lo,r],[a,hi,r],[b,hi,r],[b,lo,r]],.85);}
+  for(let j=0;j<nz;j++){const a=zs[j],b=zs[j+1],l=xs[0],r=xs[nx];face([[l,lo,a],[l,hi,a],[l,hi,b],[l,lo,b]],.88);face([[r,lo,a],[r,lo,b],[r,hi,b],[r,hi,a]],.94);}
+  if(text)label([x,y+h/2,z],text);
+ }
  const W=m.w,D=m.d;
  if(m.supportLayout==='irregular'){
   // Split the connected base at its seating/transition boundaries, so its
@@ -211,12 +224,18 @@ function createGeometry(m){
   for(let i=0;i<xs.length-1;i++)for(let j=0;j<zs.length-1;j++){const x=(xs[i]+xs[i+1])/2,z=(zs[j]+zs[j+1])/2;if(Math.abs(x)>.89&&Math.abs(z-m.columnZ)>.39)continue;box(x,.42,z,xs[i+1]-xs[i],.45,zs[j+1]-zs[j],c.base);}
   label([0,.645,-1.4],'長手ベッド');label([1.3,.645,m.columnZ],'柱側ベース');
  }
- else box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
+ else if(m.kind==='compact'){
+  curvedBox(0,.42,0,W,.45,D,c.base,'ベース');
+  // Painted legend for the assumed rightward stiffness gradient, not another
+  // support or a dimensioned physical reinforcing member.
+  for(let j=0;j<8;j++){const z=-D*.47+j*D*.94/8,back=z+D*.94/8;faces.push({v:[[W*.46,.648,z],[W*.495,.648,z],[W*.495,.648,back],[W*.46,.648,back]],axes:[],pose:'bed',color:c.spindle,shade:1.08});}
+  label([W*.48,.648,0],'高剛性側（仮定）');
+ }else box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
  function spindle(x,y,z,axes){withGroup(axes,()=>{cyl(x,y,z,.16,.42,c.spindle,'y');cyl(x,y-.3,z,.045,.18,c.spindle);},'tool');}
  function table(width,depth,y,z,axes){withGroup(axes,()=>{box(0,y,z,width,.2,depth,c.table,'テーブル');for(let i=-3;i<=3;i++)box(i*width*.11,y+.105,z,.018,.012,depth*.97,c.rail);box(0,y+.3,z,.42,.38,.36,c.work);},'work');}
  if(['vertical','compact','travel'].includes(m.kind)){
  const travel=m.kind==='travel',cx=travel?-.5:0;
- [-1,1].forEach(k=>box(travel?0:k*.36,.7,travel?D*.22+k*.1:-D*.05,travel?W*.9:.1,.1,travel?.09:D*.7,c.rail));
+ [-1,1].forEach(k=>m.kind==='compact'?curvedBox(k*.36,.7,-D*.05,.1,.1,D*.7,c.rail,null,1,8):box(travel?0:k*.36,.7,travel?D*.22+k*.1:-D*.05,travel?W*.9:.1,.1,travel?.09:D*.7,c.rail));
  withGroup(travel?['X']:[],()=>{box(cx,1.97,D*.29,.85,2.6,.68,c.fixed,'コラム');box(cx,2.2,D*.17,.2,2.0,.1,c.rail);},'tool');
  if(travel){withGroup(['X','Y'],()=>box(cx,2.85,.13,.72,.6,1.05,c.fixed,'前後スライド'),'tool');withGroup(['X','Y','Z'],()=>box(cx,2.45,-.25,.67,.55,.65,c.fixed,'主軸頭'),'tool');spindle(cx,2.04,-.3,['X','Y','Z']);table(W*.93,D*.39,1,-D*.18,[]);}
  else {withGroup(['Z'],()=>box(0,2.85,.05,.75,.6,1.1,c.fixed,'主軸頭'),'tool');spindle(0,2.37,-.3,['Z']);withGroup(['Y'],()=>box(0,.81,-D*.1,W*.58,.22,D*.45,c.fixed,'サドル'),'work');table(W*.78,D*.42,1.06,-D*.1,['X','Y']);}

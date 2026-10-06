@@ -1,6 +1,7 @@
 'use strict';
 // Independent geometry checks for the fixed table-top measuring point P.
-// Analytic expectations describe a bilinear support surface, not engine output.
+// Bilinear analytic expectations exercise the declared alpha=0 limit. The
+// production alpha=.5 energy model is independently tested in compact-bending.
 // The final six-machine fixture is only a pre-change regression comparison.
 const assert=require('node:assert/strict');
 const makeEnvironment=require('./leveling-dom-env.cjs');
@@ -30,6 +31,12 @@ function drawnTangent(key,{height=.5,eps=.003,env=e}={}){
  return unit(sub(points[1],points[0]));
 }
 
+// Limit only the explicitly bilinear tests below to symmetric stiffness.
+// Restore the production model before position/display/profile/save checks.
+e.read(`const pathRegressionOriginalSolution=machineSolution;
+ machineSolution=function(heights){if(current.kind!=='compact')return pathRegressionOriginalSolution(heights);
+ const base=window.Leveling.solve(supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:heights[i]})));
+ return window.Leveling.compactBending(base,levelConfig.width,levelConfig.depth,{asymmetry:0});};`);
 open(e);e.registry.exaggerate.checked=false;
 // h=k*x*z, x=0: a=k*z/1000, the table-top trajectory gives
 // delta=atan(H*(k/1000)/(1+a*a)). The common plane is a rigid rotation.
@@ -64,6 +71,7 @@ e.read('supportHeights=supportHeights.map(h=>h+.27);updateLeveling();');
 check('common height lift cannot alter any angle',()=>vectorNear(values(),adjusted,2e-6));
 surface('i===0?.01:0');check('reversing a common lift restores every angle',()=>vectorNear(values(),adjusted));
 surface('0');check('reversing the corner adjustment restores zero errors',()=>values().forEach(v=>near(v,0)));
+e.read('machineSolution=pathRegressionOriginalSolution;updateLeveling();');
 
 for(const dims of [[2.72,2.16],[1.4,4.2],[5.6,1.1]])for(const gain of [false,true]){
  e.read(`levelConfig.width=${dims[0]};levelConfig.depth=${dims[1]};`);e.registry.exaggerate.checked=gain;
@@ -119,10 +127,10 @@ for(let index=1;index<7;index++){
 (async()=>{
  open(live);surface('.02*q.x*q.z',{...state,X:41,Y:-53},live);
  const saved=live.json('levelRecord()'),before=values(live);
- check('new path semantics have a distinct calculation identity',()=>assert.equal(saved.calculationModel,'compact-table-path-v3'));
+ check('new bending semantics have a distinct calculation identity',()=>assert.equal(saved.calculationModel,'compact-asymmetric-bending-v4'));
  surface('0',state,live);live.read(`applyLevelRecord(${JSON.stringify(saved)});updateLeveling();`);
  check('save restores exact data and trajectory angles',()=>{assert.deepEqual(live.json('levelRecord()'),saved);vectorNear(values(live),before,1e-7);});
- for(const id of ['compact-saddle-v2','connected-frames-v1']){
+ for(const id of ['compact-table-path-v3','compact-saddle-v2','connected-frames-v1']){
   live.read(`applyLevelRecord(${JSON.stringify(saved)});updateLeveling();`);
   const old={...saved,calculationModel:id},bytes=JSON.stringify(old),key=live.read(`'training-level-${id}:'+current.id+':'+machineMode+(current.layoutId?':'+current.layoutId:'')`);
   live.storage.set(key,bytes);

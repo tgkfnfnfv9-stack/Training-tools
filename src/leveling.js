@@ -165,6 +165,35 @@
    columns:options.columnFrames?options.columnFrames.map(frameLean):tool.slopes.map(lean),toolLean,relativeLean:{front:toolLean.front-workLean.front,right:toolLean.right-workLean.right},length};
  }
 
+ // Two-degree-of-freedom Ritz plate used only by the asymmetric compact
+ // teaching model. This is a declared stiffness assumption, not a fitted machine.
+ // X=x/a, Z=z/b; both modes vanish at the four existing corner supports.
+ const compactBendingCache=new Map();
+ function compactBending(solution,width,depth,options={}){
+  const a=finite(width,'width')/2,b=finite(depth,'depth')/2,alpha=finite(options.asymmetry??.5,'asymmetry'),nu=finite(options.poisson??.3,'poisson');
+  if(a<=0||b<=0||Math.abs(alpha)>=1||Math.abs(nu)>=1)throw new RangeError('寸法は正、剛性分布と曲率エネルギーは正定値にしてください。');
+  const key=[a,b,alpha,nu].join(',');let system=compactBendingCache.get(key);
+  const curves=(X,Z)=>[[0,0,1/(a*b)],[-2*Z/(a*a),0,-2*X/(a*b)],[-2*Z*Z*Z/(a*a),6*Z*(1-X*X)/(b*b),-6*X*Z*Z/(a*b)]];
+  if(!system){
+   // Four-point Gauss-Legendre in each direction is exact through degree 7.
+   // With D=1+alpha*X the curvature products have degrees at most (5,6).
+   const nodes=[-.8611363115940526,-.3399810435848563,.3399810435848563,.8611363115940526],weights=[.3478548451374538,.6521451548625461,.6521451548625461,.3478548451374538],K=[[0,0],[0,0]],f=[0,0];
+   const inner=(p,q)=>p[0]*q[0]+p[1]*q[1]+nu*(p[0]*q[1]+p[1]*q[0])+2*(1-nu)*p[2]*q[2];
+   nodes.forEach((X,i)=>nodes.forEach((Z,j)=>{const c=curves(X,Z),w=weights[i]*weights[j]*a*b*(1+alpha*X);for(let m=0;m<2;m++){f[m]+=w*inner(c[m+1],c[0]);for(let n=0;n<2;n++)K[m][n]+=w*inner(c[m+1],c[n+1]);}}));
+   const determinant=K[0][0]*K[1][1]-K[0][1]*K[1][0];if(!(determinant>0))throw new RangeError('曲げエネルギーの最小解が定まりません。');
+   const coefficients=[(-K[1][1]*f[0]+K[0][1]*f[1])/determinant,(K[1][0]*f[0]-K[0][0]*f[1])/determinant];
+   system={K,f,coefficients};if(compactBendingCache.size>=24)compactBendingCache.clear();compactBendingCache.set(key,system);
+  }
+  // The four-corner residual has one twist amplitude. Affine seating changes
+  // do not enter this forcing and remain the outer common rigid rotation.
+  const t=solution.twist*width/4,q=system.coefficients.map(c=>c*t);
+  const query=(x,z)=>[finite(x,'x')/a,finite(z,'z')/b];
+  const heightAt=(x,z)=>{const [X,Z]=query(x,z);return solution.heightAt(x,z)+(1-X*X)*(q[0]*Z+q[1]*Z*Z*Z);};
+  const slopeAt=(x,z)=>{const [X,Z]=query(x,z),base=solution.slopeAt(x,z);return {lr:base.lr-2*X*(q[0]*Z+q[1]*Z*Z*Z)/a,fb:base.fb+(1-X*X)*(q[0]+3*q[1]*Z*Z)/b};};
+  const hessianAt=(x,z)=>{const [X,Z]=query(x,z),c=curves(X,Z);return {xx:q[0]*c[1][0]+q[1]*c[2][0],zz:q[0]*c[1][1]+q[1]*c[2][1],xz:t*c[0][2]+q[0]*c[1][2]+q[1]*c[2][2]};};
+  return {...solution,heightAt,slopeAt,hessianAt,bending:{kind:'two-mode-ritz',asymmetry:alpha,poisson:nu,halfWidth:a,halfDepth:b,twistAmplitude:t,q1:q[0],q3:q[1],K:system.K.map(row=>[...row]),forcing:system.f.map(v=>v*t)}};
+ }
+
  // Frame constructors used by the connected bridge teaching model. A common
  // rotation is composed after local deformation; it cannot change dot products.
  function frame(right,up,back){return {right,up,back,rotate:v=>right.map((q,i)=>q*v[0]+up[i]*v[1]+back[i]*v[2])};}
@@ -174,5 +203,5 @@
   const x=unit(right.map((v,i)=>v-left[i])),dot=x.reduce((s,v,i)=>s+v*up[i],0),y=unit(up.map((v,i)=>v-dot*x[i]));
   return frame(x,y,[x[1]*y[2]-x[2]*y[1],x[2]*y[0]-x[0]*y[2],x[0]*y[1]-x[1]*y[0]]);
  }
- return Object.freeze({solve,impact,orientation,geometry,frame,compose,bridge});
+ return Object.freeze({solve,impact,orientation,geometry,frame,compose,bridge,compactBending});
 });

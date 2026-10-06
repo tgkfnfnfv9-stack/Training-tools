@@ -1,0 +1,241 @@
+{
+  "status": "all passed",
+  "repositoryBase": "39900cac24842b797c8b24b04ef4d75f52667444",
+  "testCount": 35,
+  "passed": 35,
+  "failed": 0,
+  "results": [
+    {
+      "test": "check-3d-axis-controls.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 21.667
+    },
+    {
+      "test": "check-accuracy-engine.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 0.08
+    },
+    {
+      "test": "check-accuracy-render.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 22.344
+    },
+    {
+      "test": "check-accuracy-review.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 1.394
+    },
+    {
+      "test": "check-adjustment-flow.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 7.123
+    },
+    {
+      "test": "check-canvas-labels.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 44.823
+    },
+    {
+      "test": "check-compact-bending.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 1.327
+    },
+    {
+      "test": "check-compact-table-path.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 3.684
+    },
+    {
+      "test": "check-confirmed-layouts.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 6.839
+    },
+    {
+      "test": "check-display-motion.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 25.128
+    },
+    {
+      "test": "check-electrical-full.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 0.227
+    },
+    {
+      "test": "check-full-code-review.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "rerunAfterFinalChange": true
+    },
+    {
+      "test": "check-guide-response-invariants.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 2.396
+    },
+    {
+      "test": "check-ideal-display.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 18.241
+    },
+    {
+      "test": "check-ideal-outline-ui.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 56.081
+    },
+    {
+      "test": "check-interface-audit.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 1.674
+    },
+    {
+      "test": "check-irregular-leveling.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 0.081
+    },
+    {
+      "test": "check-level-stages.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 3.429
+    },
+    {
+      "test": "check-leveling-engine.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 0.074
+    },
+    {
+      "test": "check-leveling-learning.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 4.133
+    },
+    {
+      "test": "check-leveling-ui.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 3.239
+    },
+    {
+      "test": "check-live-squareness-values.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "rerunAfterFinalChange": true
+    },
+    {
+      "test": "check-mechanical-audit.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 6.694
+    },
+    {
+      "test": "check-mobile-navigation.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 0.711
+    },
+    {
+      "test": "check-model-posture.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "rerunAfterFinalChange": true
+    },
+    {
+      "test": "check-portal-shear-invariants.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 4.842
+    },
+    {
+      "test": "check-random-accuracy-review.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 3.63
+    },
+    {
+      "test": "check-scene-zoom.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 12.105
+    },
+    {
+      "test": "check-settings-menu-ui.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 15.465
+    },
+    {
+      "test": "check-settings-menu.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 12.378
+    },
+    {
+      "test": "check-site-navigation.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 1.391
+    },
+    {
+      "test": "check-squareness-display.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 3.916
+    },
+    {
+      "test": "check-structural-connections.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 1.083
+    },
+    {
+      "test": "check-structural-invariants.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 6.315
+    },
+    {
+      "test": "check-tester-lesson.cjs",
+      "exitCode": 0,
+      "status": "passed",
+      "seconds": 0.092
+    }
+  ],
+  "seconds": 107.808,
+  "completedAt": "2026-10-06T00:56:46.229499+00:00",
+  "sourceSha256": {
+    "src/accuracy-ui.js": "257efd07d54ddc9257e261b2bbff372c0694545151710a82dd8056742f92f2e5",
+    "src/app.js": "8ab53a48ad532d6039587d422841349e43f5e4dfa40a92cd869ec5837b0e5932",
+    "src/index.html": "2f440a5cf2e095599c45920028f2d5c12724580935dc1af0b4660b0ab401a753",
+    "src/leveling-ui.js": "4e3ee21ef4626cdf83efa7e6c139a39fbcbb64c196f23c7c63ec5252137beb28",
+    "src/leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+    "src/machine-accuracy-ui.js": "5123e4a167a90d2c9a08c3f5a06a8b2b7f2c41430b32bde9f2b8507545587363",
+    "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "src/style.css": "769f20e9d895981c4297539254536cfe6a491bcf5dab55d852810c2d97437a7f",
+    "src/tester.css": "05818215f96effc3e1b38a7026c23c5ab66bfd84bfb147ef7641630b4f0ce663",
+    "src/tester.html": "c1cfc2b45ee63d13bf0dd38d69382901532d6e6a521050909734a9f133697866",
+    "src/tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409"
+  },
+  "notes": [
+    "DOM/Canvas tests are not actual-browser layout tests.",
+    "Closed-integral plate oracle is independent of production Gauss quadrature.",
+    "check-model-posture uses a central derivative for smooth compact Ritz surfaces; forward/right derivative is preserved for other piecewise bilinear grids.",
+    "UI-value and bundled-page integration checks rerun after the final title-only UI change and build."
+  ],
+  "bundleSha256": "6d7e9bfc3fecce1eefec3388e6121befb28a857018a454a0ea93544ad4960c9f"
+}

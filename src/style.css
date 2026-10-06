@@ -168,6 +168,7 @@ body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 .live-pair-base-value,.live-pair-error-value{display:block;white-space:nowrap}
 .live-pair-base-value{font-size:10px;color:var(--muted)}
 .live-pair-error-value{font-weight:700}
+.live-pair-micro-change{display:block;flex-basis:100%;min-height:12px;font-size:10px;line-height:12px;white-space:nowrap;color:#865023}
 .live-squareness-units{margin:0;text-align:center;font-size:10px;line-height:14px;color:var(--muted)}
 .pair-title{font-size:13px;font-weight:650}.pair-axis{font-size:13px;font-weight:650}.right-angle{font-size:13px;fill:#607782}.live-pair-limit{font-size:13px;fill:#80541e}.measurement-start,.measurement-end{font-size:13px;fill:#536776;font-weight:600}.measurement-end{font-variant-numeric:tabular-nums}
 .measurement-summary{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}

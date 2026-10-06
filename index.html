@@ -169,6 +169,7 @@ body.in-lab #training .viewer-top.squareness-top{display:block;padding:2px 6px}
 .live-pair-base-value,.live-pair-error-value{display:block;white-space:nowrap}
 .live-pair-base-value{font-size:10px;color:var(--muted)}
 .live-pair-error-value{font-weight:700}
+.live-pair-micro-change{display:block;flex-basis:100%;min-height:12px;font-size:10px;line-height:12px;white-space:nowrap;color:#865023}
 .live-squareness-units{margin:0;text-align:center;font-size:10px;line-height:14px;color:var(--muted)}
 .pair-title{font-size:13px;font-weight:650}.pair-axis{font-size:13px;font-weight:650}.right-angle{font-size:13px;fill:#607782}.live-pair-limit{font-size:13px;fill:#80541e}.measurement-start,.measurement-end{font-size:13px;fill:#536776;font-weight:600}.measurement-end{font-variant-numeric:tabular-nums}
 .measurement-summary{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
@@ -736,6 +737,35 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
    columns:options.columnFrames?options.columnFrames.map(frameLean):tool.slopes.map(lean),toolLean,relativeLean:{front:toolLean.front-workLean.front,right:toolLean.right-workLean.right},length};
  }
 
+ // Two-degree-of-freedom Ritz plate used only by the asymmetric compact
+ // teaching model. This is a declared stiffness assumption, not a fitted machine.
+ // X=x/a, Z=z/b; both modes vanish at the four existing corner supports.
+ const compactBendingCache=new Map();
+ function compactBending(solution,width,depth,options={}){
+  const a=finite(width,'width')/2,b=finite(depth,'depth')/2,alpha=finite(options.asymmetry??.5,'asymmetry'),nu=finite(options.poisson??.3,'poisson');
+  if(a<=0||b<=0||Math.abs(alpha)>=1||Math.abs(nu)>=1)throw new RangeError('寸法は正、剛性分布と曲率エネルギーは正定値にしてください。');
+  const key=[a,b,alpha,nu].join(',');let system=compactBendingCache.get(key);
+  const curves=(X,Z)=>[[0,0,1/(a*b)],[-2*Z/(a*a),0,-2*X/(a*b)],[-2*Z*Z*Z/(a*a),6*Z*(1-X*X)/(b*b),-6*X*Z*Z/(a*b)]];
+  if(!system){
+   // Four-point Gauss-Legendre in each direction is exact through degree 7.
+   // With D=1+alpha*X the curvature products have degrees at most (5,6).
+   const nodes=[-.8611363115940526,-.3399810435848563,.3399810435848563,.8611363115940526],weights=[.3478548451374538,.6521451548625461,.6521451548625461,.3478548451374538],K=[[0,0],[0,0]],f=[0,0];
+   const inner=(p,q)=>p[0]*q[0]+p[1]*q[1]+nu*(p[0]*q[1]+p[1]*q[0])+2*(1-nu)*p[2]*q[2];
+   nodes.forEach((X,i)=>nodes.forEach((Z,j)=>{const c=curves(X,Z),w=weights[i]*weights[j]*a*b*(1+alpha*X);for(let m=0;m<2;m++){f[m]+=w*inner(c[m+1],c[0]);for(let n=0;n<2;n++)K[m][n]+=w*inner(c[m+1],c[n+1]);}}));
+   const determinant=K[0][0]*K[1][1]-K[0][1]*K[1][0];if(!(determinant>0))throw new RangeError('曲げエネルギーの最小解が定まりません。');
+   const coefficients=[(-K[1][1]*f[0]+K[0][1]*f[1])/determinant,(K[1][0]*f[0]-K[0][0]*f[1])/determinant];
+   system={K,f,coefficients};if(compactBendingCache.size>=24)compactBendingCache.clear();compactBendingCache.set(key,system);
+  }
+  // The four-corner residual has one twist amplitude. Affine seating changes
+  // do not enter this forcing and remain the outer common rigid rotation.
+  const t=solution.twist*width/4,q=system.coefficients.map(c=>c*t);
+  const query=(x,z)=>[finite(x,'x')/a,finite(z,'z')/b];
+  const heightAt=(x,z)=>{const [X,Z]=query(x,z);return solution.heightAt(x,z)+(1-X*X)*(q[0]*Z+q[1]*Z*Z*Z);};
+  const slopeAt=(x,z)=>{const [X,Z]=query(x,z),base=solution.slopeAt(x,z);return {lr:base.lr-2*X*(q[0]*Z+q[1]*Z*Z*Z)/a,fb:base.fb+(1-X*X)*(q[0]+3*q[1]*Z*Z)/b};};
+  const hessianAt=(x,z)=>{const [X,Z]=query(x,z),c=curves(X,Z);return {xx:q[0]*c[1][0]+q[1]*c[2][0],zz:q[0]*c[1][1]+q[1]*c[2][1],xz:t*c[0][2]+q[0]*c[1][2]+q[1]*c[2][2]};};
+  return {...solution,heightAt,slopeAt,hessianAt,bending:{kind:'two-mode-ritz',asymmetry:alpha,poisson:nu,halfWidth:a,halfDepth:b,twistAmplitude:t,q1:q[0],q3:q[1],K:system.K.map(row=>[...row]),forcing:system.f.map(v=>v*t)}};
+ }
+
  // Frame constructors used by the connected bridge teaching model. A common
  // rotation is composed after local deformation; it cannot change dot products.
  function frame(right,up,back){return {right,up,back,rotate:v=>right.map((q,i)=>q*v[0]+up[i]*v[1]+back[i]*v[2])};}
@@ -745,7 +775,7 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
   const x=unit(right.map((v,i)=>v-left[i])),dot=x.reduce((s,v,i)=>s+v*up[i],0),y=unit(up.map((v,i)=>v-dot*x[i]));
   return frame(x,y,[x[1]*y[2]-x[2]*y[1],x[2]*y[0]-x[0]*y[2],x[0]*y[1]-x[1]*y[0]]);
  }
- return Object.freeze({solve,impact,orientation,geometry,frame,compose,bridge});
+ return Object.freeze({solve,impact,orientation,geometry,frame,compose,bridge,compactBending});
 });
 </script><script>(function(root,factory){
  'use strict';
@@ -1050,6 +1080,19 @@ function createGeometry(m){
   else if(text==='コラム'||pose==='leftColumn'||pose==='rightColumn')references.push({base:[x+w/2,y-h/2,z-d/2],tip:[x+w/2,y+h/2,z-d/2],direction:[0,1,0],length:h,axes:[...group],pose});
  }
  function cyl(x,y,z,r,len,color,axis='y',text){const n=20,ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8},{v:ring[1],axes:[...group],pose,color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
+ // Exterior faces only: intermediate vertices let the compact bed and guides
+ // follow the same curved surface used by the precision calculation.
+ function curvedBox(x,y,z,w,h,d,color,text,nx=4,nz=8){
+  const xs=Array.from({length:nx+1},(_,i)=>x-w/2+w*i/nx),zs=Array.from({length:nz+1},(_,i)=>z-d/2+d*i/nz),lo=y-h/2,hi=y+h/2;
+  const face=(v,shade)=>faces.push({v,axes:[...group],pose,color,shade});
+  for(let i=0;i<nx;i++)for(let j=0;j<nz;j++){
+   const a=xs[i],b=xs[i+1],c=zs[j],e=zs[j+1];
+   face([[a,hi,c],[b,hi,c],[b,hi,e],[a,hi,e]],1.08);face([[a,lo,c],[a,lo,e],[b,lo,e],[b,lo,c]],.65);
+  }
+  for(let i=0;i<nx;i++){const a=xs[i],b=xs[i+1],f=zs[0],r=zs[nz];face([[a,lo,f],[b,lo,f],[b,hi,f],[a,hi,f]],.83);face([[a,lo,r],[a,hi,r],[b,hi,r],[b,lo,r]],.85);}
+  for(let j=0;j<nz;j++){const a=zs[j],b=zs[j+1],l=xs[0],r=xs[nx];face([[l,lo,a],[l,hi,a],[l,hi,b],[l,lo,b]],.88);face([[r,lo,a],[r,lo,b],[r,hi,b],[r,hi,a]],.94);}
+  if(text)label([x,y+h/2,z],text);
+ }
  const W=m.w,D=m.d;
  if(m.supportLayout==='irregular'){
   // Split the connected base at its seating/transition boundaries, so its
@@ -1058,12 +1101,18 @@ function createGeometry(m){
   for(let i=0;i<xs.length-1;i++)for(let j=0;j<zs.length-1;j++){const x=(xs[i]+xs[i+1])/2,z=(zs[j]+zs[j+1])/2;if(Math.abs(x)>.89&&Math.abs(z-m.columnZ)>.39)continue;box(x,.42,z,xs[i+1]-xs[i],.45,zs[j+1]-zs[j],c.base);}
   label([0,.645,-1.4],'長手ベッド');label([1.3,.645,m.columnZ],'柱側ベース');
  }
- else box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
+ else if(m.kind==='compact'){
+  curvedBox(0,.42,0,W,.45,D,c.base,'ベース');
+  // Painted legend for the assumed rightward stiffness gradient, not another
+  // support or a dimensioned physical reinforcing member.
+  for(let j=0;j<8;j++){const z=-D*.47+j*D*.94/8,back=z+D*.94/8;faces.push({v:[[W*.46,.648,z],[W*.495,.648,z],[W*.495,.648,back],[W*.46,.648,back]],axes:[],pose:'bed',color:c.spindle,shade:1.08});}
+  label([W*.48,.648,0],'高剛性側（仮定）');
+ }else box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
  function spindle(x,y,z,axes){withGroup(axes,()=>{cyl(x,y,z,.16,.42,c.spindle,'y');cyl(x,y-.3,z,.045,.18,c.spindle);},'tool');}
  function table(width,depth,y,z,axes){withGroup(axes,()=>{box(0,y,z,width,.2,depth,c.table,'テーブル');for(let i=-3;i<=3;i++)box(i*width*.11,y+.105,z,.018,.012,depth*.97,c.rail);box(0,y+.3,z,.42,.38,.36,c.work);},'work');}
  if(['vertical','compact','travel'].includes(m.kind)){
  const travel=m.kind==='travel',cx=travel?-.5:0;
- [-1,1].forEach(k=>box(travel?0:k*.36,.7,travel?D*.22+k*.1:-D*.05,travel?W*.9:.1,.1,travel?.09:D*.7,c.rail));
+ [-1,1].forEach(k=>m.kind==='compact'?curvedBox(k*.36,.7,-D*.05,.1,.1,D*.7,c.rail,null,1,8):box(travel?0:k*.36,.7,travel?D*.22+k*.1:-D*.05,travel?W*.9:.1,.1,travel?.09:D*.7,c.rail));
  withGroup(travel?['X']:[],()=>{box(cx,1.97,D*.29,.85,2.6,.68,c.fixed,'コラム');box(cx,2.2,D*.17,.2,2.0,.1,c.rail);},'tool');
  if(travel){withGroup(['X','Y'],()=>box(cx,2.85,.13,.72,.6,1.05,c.fixed,'前後スライド'),'tool');withGroup(['X','Y','Z'],()=>box(cx,2.45,-.25,.67,.55,.65,c.fixed,'主軸頭'),'tool');spindle(cx,2.04,-.3,['X','Y','Z']);table(W*.93,D*.39,1,-D*.18,[]);}
  else {withGroup(['Z'],()=>box(0,2.85,.05,.75,.6,1.1,c.fixed,'主軸頭'),'tool');spindle(0,2.37,-.3,['Z']);withGroup(['Y'],()=>box(0,.81,-D*.1,W*.58,.22,D*.45,c.fixed,'サドル'),'work');table(W*.78,D*.42,1.06,-D*.1,['X','Y']);}
@@ -1409,7 +1458,7 @@ navigate('home');
 // All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
 let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,levelGeometry=null;
 const legacyLevelStoragePrefix='training-level-v1:',levelCalculationModel='connected-frames-v1';
-function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':current.kind==='travel'?'travel-guide-v2':current.kind==='horizontal'?'horizontal-guide-v2':current.kind==='compact'?'compact-table-path-v3':current.kind==='lathe'?'lathe-carriage-v2':levelCalculationModel;}
+function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':current.kind==='travel'?'travel-guide-v2':current.kind==='horizontal'?'horizontal-guide-v2':current.kind==='compact'?'compact-asymmetric-bending-v4':current.kind==='lathe'?'lathe-carriage-v2':levelCalculationModel;}
 function levelStoragePrefix(){return 'training-level-'+currentCalculationModel()+':';}
 // An asynchronous file may finish after another import or a newer training state.
 let levelImportRequest=0,levelSessionEpoch=0,levelRevision=0;
@@ -1453,7 +1502,7 @@ function initializeLeveling(){
  $('middlePreset').disabled=!hasMiddle;$('middlePreset').title=hasMiddle?'':'この支持配置には中間支持点がありません。';
  initializeMachineAccuracy();
  let restored=false,previousLayout=false,migratedCompact=false,previousCalculation=false;
- try{previousCalculation=[machineMode,...(current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''])].some(mode=>['',...(current.layoutId?[current.layoutId]:[]),...(current.previousLayouts||[])].some(layout=>[legacyLevelStoragePrefix,...(current.kind==='compact'?['training-level-compact-saddle-v2:']:[]),...(currentCalculationModel()!==levelCalculationModel?['training-level-'+levelCalculationModel+':']:[])].some(prefix=>localStorage.getItem(prefix+current.id+':'+mode+(layout?':'+layout:''))!==null)));}catch{}
+ try{previousCalculation=[machineMode,...(current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''])].some(mode=>['',...(current.layoutId?[current.layoutId]:[]),...(current.previousLayouts||[])].some(layout=>[legacyLevelStoragePrefix,...(current.kind==='compact'?['training-level-compact-table-path-v3:','training-level-compact-saddle-v2:']:[]),...(currentCalculationModel()!==levelCalculationModel?['training-level-'+levelCalculationModel+':']:[])].some(prefix=>localStorage.getItem(prefix+current.id+':'+mode+(layout?':'+layout:''))!==null)));}catch{}
  try{if(current.layoutId){const oldModes=current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''];previousLayout=oldModes.some(mode=>localStorage.getItem(levelStoragePrefix()+current.id+':'+mode)!==null)||(current.previousLayouts||[]).some(layout=>localStorage.getItem(levelStoragePrefix()+current.id+':'+machineMode+':'+layout)!==null);}}catch{}
  try{let raw=localStorage.getItem(levelKey());if(!raw&&current.id==='vertical'&&machineMode==='compact'){raw=localStorage.getItem(levelStoragePrefix()+'vertical:compact');migratedCompact=!!raw;}if(raw){const data=JSON.parse(raw);if(validLevelRecord(data)){applyLevelRecord(data);restored=true;}}}catch{}
  $('levelSaveStatus').textContent=restored?'前回の調整をこのブラウザから復元しました。':'調整はこのブラウザに自動保存します。';
@@ -1834,9 +1883,9 @@ function compactTablePathPoint(state=positions,solution=levelSolution,profile=ma
 function compactPathFrames(state,solution,profile,factor=1){
  const q=levelCoordinates(0,-current.d*.1+.4*state.Y/100),work=compactSupportFrame(solution,q.x,q.z,factor);
  const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),intrinsicAxes=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)),Y=intrinsicAxes.find(a=>a.key==='Y').vector;
- // Differentiate the bilinear support map analytically. Differencing complete
+ // Differentiate the shared support map analytically. Differencing complete
  // world positions would let translation roundoff pollute microradian angles.
- const L=window.Leveling,s=solution.slopeAt(q.x,q.z),lo=solution.slopeAt(q.x,q.z-1),hi=solution.slopeAt(q.x,q.z+1),a=(s.lr-solution.lr)*factor/1000,b=(s.fb-solution.fb)*factor/1000,da=(hi.lr-lo.lr)*factor/2000,db=(hi.fb-lo.fb)*factor/2000;
+ const L=window.Leveling,s=solution.slopeAt(q.x,q.z),H=solution.hessianAt?solution.hessianAt(q.x,q.z):(()=>{const lo=solution.slopeAt(q.x,q.z-1),hi=solution.slopeAt(q.x,q.z+1);return {xz:(hi.lr-lo.lr)/2,zz:(hi.fb-lo.fb)/2};})(),a=(s.lr-solution.lr)*factor/1000,b=(s.fb-solution.fb)*factor/1000,da=H.xz*factor/1000,db=H.zz*factor/1000;
  const local=L.orientation({lr:a*1000,fb:b*1000}),nx=Math.hypot(1,a),nu=Math.hypot(a,1,b),nd=(a*da+b*db)/(nu*nu),rightDerivative=[-a*da/(nx*nx*nx),da/(nx*nx*nx),0],upDerivative=[-da/nu,0,-db/nu].map((v,i)=>v-local.up[i]*nd);
  const cross=(u,v)=>[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]],c1=cross(rightDerivative,local.up),c2=cross(local.right,upDerivative),backDerivative=c1.map((v,i)=>v+c2[i]);
  const x=levelCoordinates(.45*state.X/100,0).x,travel=levelCoordinates(0,.4*state.Y/100).z,delta=Y.map((v,i)=>v-(i===2?1:0)),relative=[x,.50,0].map((v,i)=>v+travel*delta[i]),intrinsic=local.rotate(delta);
@@ -1975,7 +2024,9 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   const attributes=Object.entries({pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="110" y="43" text-anchor="end" class="live-pair-limit">範囲外</text>':'<text x="80" y="43" text-anchor="middle" class="right-angle">直角</text>');
   const microns=pair.deviationMicroradians*squarenessMeasurementLength,reading=squarenessMicronText(microns),baseLabel=current.kind==='lathe'?'主軸Z':plot.base;
-  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${current.kind==='lathe'?'主軸基準XZ':pair.key+' 基準'+plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" aria-describedby="squarenessMeasurementNote" ${attributes}>${markup}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value">${baseLabel}基準 0</span><span class="live-pair-error-value" data-current-error-300="${microns}">${plot.other}直角差 ${reading}</span></div></div>`);
+  const microChange=current.kind==='compact'&&Math.abs(c.delta*squarenessMeasurementLength)>1e-4&&reading===squarenessMicronText(c.before.deviationMicroradians*squarenessMeasurementLength);
+  const microNote=current.kind==='compact'?`<span class="live-pair-micro-change" data-micro-change="${microChange}" title="${microChange?'初期から計算値は変化していますが、1 µm刻みの表示は同じです。':''}">${microChange?'初期から微小変化':''}</span>`:'';
+  live.push(`<div class="live-squareness-item"><span class="live-pair-title">${current.kind==='lathe'?'主軸基準XZ':pair.key+' 基準'+plot.base}</span><svg class="live-squareness-diagram" viewBox="0 8 112 54" role="img" aria-label="${description}" aria-describedby="squarenessMeasurementNote" ${attributes}>${markup}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value">${baseLabel}基準 0</span><span class="live-pair-error-value" data-current-error-300="${microns}">${plot.other}直角差 ${reading}</span>${microNote}</div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,15)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
@@ -2005,7 +2056,7 @@ function updateAccuracy(){
  accuracyKey=key;
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel();
- $('modelSemantics').textContent=current.kind==='compact'?'直角図＝テーブル上面Pの送り':g.portal?'模型＝支持姿勢／軸・直角図＝固有差込み':'水準器＝平均／模型＝局所＋固有';
+ $('modelSemantics').textContent=current.kind==='compact'?'測定Pの送り・左右剛性差を仮定':g.portal?'模型＝支持姿勢／軸・直角図＝固有差込み':'水準器＝平均／模型＝局所＋固有';
  // The comparison is pointwise: both states use the current axis position,
  // dimensions, layout and evaluation length. The reference-search aggregate
  // is deliberately not used for this initial/current comparison.
@@ -2077,7 +2128,7 @@ function updateAccuracy(){
  if(['travel','gantry'].includes(current.kind))$('geometryAssumption').textContent='Xは移動位置の走行案内、Y/Zはコラム・梁側の参照姿勢です。固定ワークの姿勢をX送りへ代用しません。';
  if(['travel','horizontal'].includes(current.kind))$('geometryAssumption').textContent='Xは二本の走行レール、'+(current.kind==='travel'?'Y/Zはコラム取付部':'Yはコラム取付部、Zはパレット側')+'の姿勢を使います。取付ベースの相対変形を幾何的に近似する教材で、剛性・荷重・水平面内の曲がりは計算しません。';
  if(['vertical','compact'].includes(current.kind))$('geometryAssumption').textContent+=' Xテーブル送りではサドルの支持参照は移動せず、Yサドル送りで移動します。';
- if(current.kind==='compact')$('geometryAssumption').textContent='直角図のX/Yはテーブル上面中心の仮想測定点P（支持基準から0.50 m）の実際の送り接線、Zは主軸頭の送り方向です。サドルの倒れが位置で変わることによるアッベ影響と固有誤差を含みます。表示は局所送り角の300 mm換算で、実際に300 mm走査した結果や補正済みの軸固有直角度ではありません。Xではサドル支持参照を動かさず、Yで移動します。剛性・荷重・接触を解く構造解析や実機精度検査の再現ではありません。';
+ if(current.kind==='compact')$('geometryAssumption').textContent='右端：左端の相対曲げ剛性を3：1と仮定した、2モードの板曲げ教材です。支持4点を保持して曲率エネルギーを最小にする変形面を使います。実機の剛性を同定した値ではなく、自由板の厳密解・荷重や接触の構造解析ではありません。直角図のX/Yはテーブル上面中心の仮想測定点P（支持基準から0.50 m）の実際の送り接線、Zは主軸頭の送り方向です。サドルの倒れが位置で変わることによるアッベ影響と固有誤差を含みます。表示は局所送り角の300 mm換算で、実際に300 mm走査した結果や補正済みの軸固有直角度ではありません。Xではサドル支持参照を動かさず、Yで移動します。剛性・荷重・接触を解く構造解析や実機精度検査の再現ではありません。';
  if(current.kind==='lathe')$('geometryAssumption').textContent+=' 径送りXでは往復台のベッド参照は移動せず、長手Zで移動します。ベッドのロールによる刃先高さ差と水平面内の曲がりは、この直角図には含みません。';
  if(dual){$('bodyLeanHeading').textContent='梁側の案内代表方向：支持＋固有差';$('bodyLeanNote').textContent='門の骨格は接続した支持姿勢で描き、固有直角差は案内方向（軸矢印と直角図）へ重ねます。柱の平均倒れをラムZへ伝え、梁案内Yとの直角差を表示します。位置ごとの弾性ねじれ・主軸移動荷重は再現しません。';}
  if(dual)$('geometryAssumption').textContent+=' 左右柱の天端を梁で結び、平均倒れをラム方向へ伝えるせん断の幾何モデルです。柱・梁の接続中心を共有します。梁の反力・たわみ分布・接触荷重は計算しません。模型の門骨格は支持姿勢、固有直角差は軸矢印と直角図に示します。';
@@ -2136,7 +2187,7 @@ function machineSolution(heights){
  if(current.kind==='double'&&current.supportLayout==='irregular'){
   solution.parts=Object.fromEntries(['bed','column-left','column-right'].map(group=>[group,window.Leveling.solve(points.filter((p,i)=>supports[i].group===group))]));
  }
- return solution;
+ return current.kind==='compact'?window.Leveling.compactBending(solution,levelConfig.width,levelConfig.depth):solution;
 }
 function machineEvaluation(heights){
  const solution=machineSolution(heights),samples=geometrySamples(solution,machineProfile,window.MachineAccuracy.referenceLength);

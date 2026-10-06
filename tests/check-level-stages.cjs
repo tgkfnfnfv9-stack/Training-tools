@@ -3,6 +3,7 @@
 // The expected directions use an explicit Gram construction and quaternion;
 // they never call geometryModel, intrinsicBodyFrame, or Leveling.orientation.
 const assert=require('node:assert/strict');
+const compactBendingOracle=require('./compact-bending-oracle.cjs');
 const createEnvironment=require('./leveling-dom-env.cjs');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const irregularHeightOracle=require('./irregular-height-oracle.cjs');
@@ -45,9 +46,10 @@ function shortestRotation(from,to){
 function expected(heights,factor=1){
  const m=json('current'),cfg=json('levelConfig'),g=json('levelGeometry'),axes=json('axisConfig(current).filter(a=>["X","Y","Z"].includes(a.key))'),profile=json('machineProfile');
  const coordinate=p=>({x:p.x/(m.w*.8)*cfg.width,z:p.z/(m.d*.8)*cfg.depth}),points=json('supports').map((p,i)=>({...coordinate(p),h:heights[i]}));
- const slopes=g.toolPoints.map(p=>{const q=coordinate(p);return independentSlope(points,q.x,q.z);}),toolSlope={lr:slopes.reduce((sum,s)=>sum+s.lr/slopes.length,0),fb:slopes.reduce((sum,s)=>sum+s.fb/slopes.length,0)};
- const q=coordinate(g.workPoint),workSlope=independentSlope(points,q.x,q.z),directions=intrinsicDirections(axes,profile,factor),index=axes.findIndex(a=>Math.abs(a.vector[1])===1),representative=index<0?axes.findIndex(a=>a.key==='Z'):index;
- const commonSlope=m.kind==='compact'?independentSlope(points,0,0):null,compactRotate=commonSlope?(v=>supportRotation({lr:commonSlope.lr*factor,fb:commonSlope.fb*factor})(supportRotation({lr:(toolSlope.lr-commonSlope.lr)*factor,fb:(toolSlope.fb-commonSlope.fb)*factor})(v))):null;
+ const curved=m.kind==='compact'?compactBendingOracle(points):null,gradient=(x,z)=>curved?curved.slopeAt(x,z):independentSlope(points,x,z);
+ const slopes=g.toolPoints.map(p=>{const q=coordinate(p);return gradient(q.x,q.z);}),toolSlope={lr:slopes.reduce((sum,s)=>sum+s.lr/slopes.length,0),fb:slopes.reduce((sum,s)=>sum+s.fb/slopes.length,0)};
+ const q=coordinate(g.workPoint),workSlope=gradient(q.x,q.z),directions=intrinsicDirections(axes,profile,factor),index=axes.findIndex(a=>Math.abs(a.vector[1])===1),representative=index<0?axes.findIndex(a=>a.key==='Z'):index;
+ const commonSlope=curved?{lr:curved.plane.a,fb:curved.plane.b}:null,compactRotate=commonSlope?(v=>supportRotation({lr:commonSlope.lr*factor,fb:commonSlope.fb*factor})(supportRotation({lr:(toolSlope.lr-commonSlope.lr)*factor,fb:(toolSlope.fb-commonSlope.fb)*factor})(v))):null;
  const bodyRotate=shortestRotation(axes[representative].vector,directions[representative]),toolRotate=g.portal?(v=>{const f=json(`connectedPortal(levelSolution,levelGeometry.toolPoints,${factor}).frame`);return add(add(scale(f.right,v[0]),scale(f.up,v[1])),scale(f.back,v[2]));}):compactRotate||supportRotation({lr:toolSlope.lr*factor,fb:toolSlope.fb*factor}),up=toolRotate(bodyRotate([0,1,0])),direction=toolRotate(directions[representative]);
  const posture=m.kind==='lathe'?{front:Math.atan2(direction[1],Math.hypot(direction[0],direction[2]))*1e6,right:Math.atan2(direction[2],direction[0])*1e6}:{front:Math.atan2(-up[2],up[1])*1e6,right:Math.atan2(up[0],up[1])*1e6};
  return {posture,up,toolSlope,workSlope,guideSlope:g.guidePoints?g.guidePoints.map(p=>{const q=coordinate(p);return independentSlope(points,q.x,q.z);}).reduce((s,p,i,list)=>({lr:s.lr+p.lr/list.length,fb:s.fb+p.fb/list.length}),{lr:0,fb:0}):null,axes,directions,toolRotate,bodyRotate,slopes};

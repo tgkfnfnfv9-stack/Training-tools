@@ -1,0 +1,111 @@
+{
+  "calculationModel": "compact-asymmetric-bending-v4",
+  "version": 3,
+  "supportLayout": {
+    "id": "compact-four-v1",
+    "points": [
+      {
+        "id": "compact-four-v1-p1",
+        "x": -1.04,
+        "z": -1.08,
+        "group": "bed"
+      },
+      {
+        "id": "compact-four-v1-p2",
+        "x": 1.04,
+        "z": -1.08,
+        "group": "bed"
+      },
+      {
+        "id": "compact-four-v1-p3",
+        "x": -1.04,
+        "z": 1.08,
+        "group": "bed"
+      },
+      {
+        "id": "compact-four-v1-p4",
+        "x": 1.04,
+        "z": 1.08,
+        "group": "bed"
+      }
+    ]
+  },
+  "machineProfile": {
+    "version": 1,
+    "condition": "used",
+    "seed": 55,
+    "keys": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "squareness": {
+      "XY": {
+        "band": 0,
+        "microns": 18.104
+      },
+      "XZ": {
+        "band": 1,
+        "microns": -22.49
+      },
+      "YZ": {
+        "band": 0,
+        "microns": 9.998
+      }
+    },
+    "guides": {
+      "X": {
+        "band": 0,
+        "microns": 13.891
+      },
+      "Y": {
+        "band": 0,
+        "microns": 10.122
+      },
+      "Z": {
+        "band": 0,
+        "microns": 14.664
+      }
+    },
+    "initialHeights": [
+      -0.15,
+      0.15,
+      -0.126,
+      -0.101
+    ]
+  },
+  "bestState": {
+    "width": 2.08,
+    "depth": 2.16,
+    "columnX": 0,
+    "columnZ": 0,
+    "heights": [
+      0.023,
+      -0.041,
+      -0.041,
+      0.023
+    ]
+  },
+  "machine": "vertical",
+  "mode": "compact",
+  "width": 2.08,
+  "depth": 2.16,
+  "heights": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "sensitivity": 0.05,
+  "measurePos": 0,
+  "offset": 0.5,
+  "columnX": 0,
+  "columnZ": 0,
+  "axisPositions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+  },
+  "step": 0.01,
+  "exaggerate": true
+}

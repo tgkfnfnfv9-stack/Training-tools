@@ -144,7 +144,7 @@ check('same travel deformation improves or worsens according to intrinsic sign',
 
 (async()=>{
  const live=makeEnvironment();
- for(const [index,id] of [[0,'compact-table-path-v3'],[1,'horizontal-guide-v2'],[2,'travel-guide-v2'],[6,'lathe-carriage-v2']]){
+ for(const [index,id] of [[0,'compact-asymmetric-bending-v4'],[1,'horizontal-guide-v2'],[2,'travel-guide-v2'],[6,'lathe-carriage-v2']]){
   open(live,index);const keys=live.json('machineLinearKeys()');
   const profile=MachineAccuracy.generate('used',67123+index,keys,live.read('supports.length'));
   live.read(`initializeMachineAccuracy(${JSON.stringify(profile)});supportHeights=supports.map(()=>0);updateLeveling();`);const flat=values(live);

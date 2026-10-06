@@ -6,6 +6,7 @@ const assert=require('node:assert/strict');
 const makeEnvironment=require('./leveling-dom-env.cjs');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const irregularHeightOracle=require('./irregular-height-oracle.cjs');
+const compactBendingOracle=require('./compact-bending-oracle.cjs');
 let checks=0;
 const failures=[];
 function check(name,fn){checks++;try{fn();}catch(error){failures.push(name+': '+error.message);}}
@@ -173,8 +174,18 @@ read('setSupportHeight(0,supportHeights[0]+.001)');
 check('小型の1µm調整は倒れ・ねじれ・XZへ小さく連動する',()=>{
  const {before,after}=assertCurrentLesson();
  near(after.twist-before.twist,.00048076923076923074,1e-12);
- near(after.toolLean.front-before.toolLean.front,-.208333333030708,1e-7);
- near(after.pairs.find(p=>p.key==='XZ').error-before.pairs.find(p=>p.key==='XZ').error,.12380920513457,1e-7);
+ // Independently integrate the declared Ritz energy, then compare the two
+ // composed support frames. Do not retain old bilinear numeric fixtures.
+ const m=json('current'),cfg=json('levelConfig'),g=json('levelGeometry'),coordinate=p=>({x:p.x/(m.w*.8)*cfg.width,z:p.z/(m.d*.8)*cfg.depth});
+ const oracle=heights=>{
+  const surface=compactBendingOracle(json('supports').map((p,i)=>({...coordinate(p),h:heights[i]}))),common=frame({lr:surface.plane.a,fb:surface.plane.b});
+  const at=p=>{const q=coordinate(p),s=surface.slopeAt(q.x,q.z),local=frame({lr:s.lr-surface.plane.a,fb:s.fb-surface.plane.b});return v=>common(local(v));};
+  const tool=at(g.poses.tool.anchor),work=at(g.workPoint),up=tool([0,1,0]),xy=compact.squareness.XY.microns/300000,zx=-Math.sin(compact.squareness.XZ.microns/300000),zy=(-Math.sin(compact.squareness.YZ.microns/300000)+zx*Math.sin(xy))/Math.cos(xy),zz=Math.sqrt(1-zx*zx-zy*zy);
+  return {front:Math.atan2(-up[2],up[1])*1e6,xz:-Math.asin(dot(work([1,0,0]),tool([zx,zz,zy])))*1e6*cfg.offset};
+ };
+ const initial=oracle(compact.initialHeights),adjusted=oracle(json('supportHeights'));
+ near(after.toolLean.front-before.toolLean.front,adjusted.front-initial.front,1e-7);
+ near(after.pairs.find(p=>p.key==='XZ').error-before.pairs.find(p=>p.key==='XZ').error,adjusted.xz-initial.xz,1e-7);
  assert.notEqual(Number(data(r['accuracy-delta-XZ'],'value')),0);assert.equal(r['accuracy-delta-XZ'].hidden,true);
  assert.deepEqual(json('machineProfile'),compact);
 });

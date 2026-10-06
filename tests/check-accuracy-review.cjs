@@ -71,7 +71,7 @@ async function main(){
  }
  open(0,'compact');preset('twist');
  const yzCentre=pair(current(),'YZ').errorMicrons;
- check('小型四点ねじれの中央はXY/XZが変化、YZには高次の結合が残る',()=>{assert.ok(Math.abs(yzCentre)<.01);assert.ok(Math.abs(pair(current(),'XY').errorMicrons)>1);assert.ok(pair(current(),'XZ').errorMicrons>40);assert.equal(read('supports.length'),4);});
+ check('小型四点ねじれは左右剛性差により中央XY/XZ/YZが変化',()=>{assert.ok(Math.abs(yzCentre)>.01);assert.ok(Math.abs(pair(current(),'XY').errorMicrons)>1);assert.ok(pair(current(),'XZ').errorMicrons>40);assert.equal(read('supports.length'),4);});
  axis('X',100);const yzRight=pair(current(),'YZ').errorMicrons;
  axis('X',-100);const yzLeft=pair(current(),'YZ').errorMicrons;
  check('小型のXはサドル支持を動かさず、測定点の腕長でYZ送り角が変化',()=>{assert.ok(yzRight*yzLeft<0);assert.ok(Math.min(Math.abs(yzRight),Math.abs(yzLeft))>1);near(current().workPoint.x,0);});

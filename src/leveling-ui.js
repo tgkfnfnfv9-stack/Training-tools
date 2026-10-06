@@ -2,7 +2,7 @@
 // All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
 let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,levelGeometry=null;
 const legacyLevelStoragePrefix='training-level-v1:',levelCalculationModel='connected-frames-v1';
-function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':current.kind==='travel'?'travel-guide-v2':current.kind==='horizontal'?'horizontal-guide-v2':current.kind==='compact'?'compact-table-path-v3':current.kind==='lathe'?'lathe-carriage-v2':levelCalculationModel;}
+function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':current.kind==='travel'?'travel-guide-v2':current.kind==='horizontal'?'horizontal-guide-v2':current.kind==='compact'?'compact-asymmetric-bending-v4':current.kind==='lathe'?'lathe-carriage-v2':levelCalculationModel;}
 function levelStoragePrefix(){return 'training-level-'+currentCalculationModel()+':';}
 // An asynchronous file may finish after another import or a newer training state.
 let levelImportRequest=0,levelSessionEpoch=0,levelRevision=0;
@@ -46,7 +46,7 @@ function initializeLeveling(){
  $('middlePreset').disabled=!hasMiddle;$('middlePreset').title=hasMiddle?'':'この支持配置には中間支持点がありません。';
  initializeMachineAccuracy();
  let restored=false,previousLayout=false,migratedCompact=false,previousCalculation=false;
- try{previousCalculation=[machineMode,...(current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''])].some(mode=>['',...(current.layoutId?[current.layoutId]:[]),...(current.previousLayouts||[])].some(layout=>[legacyLevelStoragePrefix,...(current.kind==='compact'?['training-level-compact-saddle-v2:']:[]),...(currentCalculationModel()!==levelCalculationModel?['training-level-'+levelCalculationModel+':']:[])].some(prefix=>localStorage.getItem(prefix+current.id+':'+mode+(layout?':'+layout:''))!==null)));}catch{}
+ try{previousCalculation=[machineMode,...(current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''])].some(mode=>['',...(current.layoutId?[current.layoutId]:[]),...(current.previousLayouts||[])].some(layout=>[legacyLevelStoragePrefix,...(current.kind==='compact'?['training-level-compact-table-path-v3:','training-level-compact-saddle-v2:']:[]),...(currentCalculationModel()!==levelCalculationModel?['training-level-'+levelCalculationModel+':']:[])].some(prefix=>localStorage.getItem(prefix+current.id+':'+mode+(layout?':'+layout:''))!==null)));}catch{}
  try{if(current.layoutId){const oldModes=current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''];previousLayout=oldModes.some(mode=>localStorage.getItem(levelStoragePrefix()+current.id+':'+mode)!==null)||(current.previousLayouts||[]).some(layout=>localStorage.getItem(levelStoragePrefix()+current.id+':'+machineMode+':'+layout)!==null);}}catch{}
  try{let raw=localStorage.getItem(levelKey());if(!raw&&current.id==='vertical'&&machineMode==='compact'){raw=localStorage.getItem(levelStoragePrefix()+'vertical:compact');migratedCompact=!!raw;}if(raw){const data=JSON.parse(raw);if(validLevelRecord(data)){applyLevelRecord(data);restored=true;}}}catch{}
  $('levelSaveStatus').textContent=restored?'前回の調整をこのブラウザから復元しました。':'調整はこのブラウザに自動保存します。';
