@@ -514,6 +514,35 @@ body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{display:fle
  .has-spindle-sweep .common-support-actions{gap:4px}
  .has-spindle-sweep .common-support-actions button{font-size:12px}
 }
+
+/* Short portrait keeps one complete adjustment choice visible above the fixed
+   raise/lower row. Readout spacing gives the model that height back. */
+@media(max-width:950px) and (orientation:portrait) and (max-height:640px){
+ body.in-mechanical-lab #training .has-spindle-sweep .training-workspace{grid-template-rows:minmax(0,1fr) clamp(104px,calc(100dvh - 430px - env(safe-area-inset-top)),150px)}
+}
+@media(max-width:700px) and (orientation:portrait) and (max-height:540px){
+ .has-spindle-sweep .precision-panel-title{display:none}
+ .has-spindle-sweep .live-squareness-item{grid-template-rows:10px 22px}
+ .has-spindle-sweep .live-pair-title{font-size:9px;line-height:10px}
+ .has-spindle-sweep .live-squareness-diagram{height:22px!important}
+ .has-spindle-sweep .live-pair-values{line-height:12px}
+ .has-spindle-sweep .live-pair-base-value{line-height:10px}
+ .has-spindle-sweep .live-pair-micro-change{line-height:10px;min-height:10px}
+ .has-spindle-sweep .sweep-dial{display:none}
+ .has-spindle-sweep .sweep-heading{min-height:26px;padding:0 0 2px}
+ .has-spindle-sweep .sweep-heading-text{display:grid;grid-template-columns:auto auto;align-items:baseline;column-gap:4px;line-height:12px}
+ .has-spindle-sweep .sweep-heading strong{font-size:10px}
+ .has-spindle-sweep .sweep-diameter{font-size:9px}
+ .has-spindle-sweep .sweep-current{grid-column:1/-1;line-height:12px}
+ .has-spindle-sweep .scene-readout-note{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .has-spindle-sweep .viewer-levels{gap:2px;padding-top:2px;padding-bottom:2px}
+ .has-spindle-sweep .viewer-gauge-title{font-size:9px;line-height:9px}
+ .has-spindle-sweep .viewer-gauge-lr .vial{height:16px;margin:1px 0}
+ .has-spindle-sweep .viewer-gauge-lr .bubble{top:0}
+ .has-spindle-sweep .viewer-gauge .gauge-ends{font-size:9px;line-height:8px}
+ .has-spindle-sweep .viewer-gauge-fb{min-height:51px}
+ .has-spindle-sweep .vertical-gauge{min-height:42px;grid-template-rows:8px minmax(26px,1fr) 8px;font-size:9px;line-height:8px;margin-top:0}
+}
 </style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
 .tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
 @media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}#testerDiagram{max-height:300px}}
@@ -1431,13 +1460,14 @@ function render(canvas,m,angle,showLabels,active){
  const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);const width=rect.width,height=rect.height;
  ctx.fillStyle='#f1f0ed';ctx.fillRect(0,0,width,height);
  const model=createGeometry(m),training=canvas===$('scene')&&active>=0,sweep=training&&typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&m.kind==='compact';
+ const compactShortCanvas=sweep&&height<160;
  if(sweep)model.faces=model.faces.filter(f=>!f.tableDetail);
  const project=p=>sceneProject(p,angle,training?sceneView:'oblique',!training);
  const fitPoints=training?displayFramingPoints(m,model):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
  // Fit the machine and its fixed movement envelope, without the empty ground around it.
- const margin=showLabels?Math.min(56,width*.16):18,verticalSpace=active>=0?height-48:height-75;
+ const margin=showLabels?Math.min(56,width*.16):18,verticalSpace=active>=0?height-(compactShortCanvas?12:48):height-75;
  const fitScale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY));
- const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-20)/2:height*.48)-(minY+maxY)*scale/2;
+ const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-(compactShortCanvas?4:20))/2:height*.48)-(minY+maxY)*scale/2;
  const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelMappedVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(active>=0?levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,positions,pose||'bed'),pose):transformedPoint(p,axes,m));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
@@ -1492,7 +1522,9 @@ function render(canvas,m,angle,showLabels,active){
   const box=candidates.find(freeLabel);
   if(box){labelBoxes.push(box);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(box.x+20,box.y+9);ctx.strokeStyle='#b3480080';ctx.lineWidth=.8;ctx.stroke();ctx.fillStyle='#fff8ee';ctx.fillRect(box.x,box.y,box.w,box.h);ctx.font='10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#7d3300';ctx.fillText('測定P',box.x+20,box.y+9);}
  }
- if(showLabels){
+ if(showLabels&&!compactShortCanvas){
+  // A short compact view keeps support, axis and dial labels; part names
+  // return when there is more room, without altering zoom or measurements.
   // Prefer the selected moving assembly and the base/column. A short Canvas
   // omits lower-priority part names rather than compressing their 18px boxes.
   const priority=l=>(active>=0&&l.axes.includes(selectedAxis)?10:0)+(/^(コラム|門|ベース|ベッド|主軸台)/.test(l.text)?2:0),labs=model.labels.map(l=>({...l,screen:movingScreen(l.p,l.axes,l.pose)})).sort((a,b)=>priority(b)-priority(a));
