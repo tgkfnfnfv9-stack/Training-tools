@@ -1,0 +1,175 @@
+{
+  "sourceCommit": "dd3e03c0ccbcb0205904ebf4e0fbf77fc59c9fc7",
+  "url": "https://tgkfnfnfv9-stack.github.io/Training-tools/",
+  "checks": [
+    {
+      "case": "PC initial",
+      "values": [
+        {
+          "raw": "1.2005555560760512",
+          "text": "Y直角差 +1"
+        },
+        {
+          "raw": "-0.4929999948147774",
+          "text": "Z直角差 0"
+        },
+        {
+          "raw": "1.6693856573146633",
+          "text": "Z直角差 +2"
+        }
+      ]
+    },
+    {
+      "case": "A coarse +1",
+      "values": [
+        {
+          "raw": "1.5344230774105507",
+          "text": "Y直角差 +2"
+        },
+        {
+          "raw": "0.2101250044929566",
+          "text": "Z直角差 0"
+        },
+        {
+          "raw": "1.6693826096577316",
+          "text": "Z直角差 +2"
+        }
+      ]
+    },
+    {
+      "case": "A coarse +10",
+      "values": [
+        {
+          "raw": "4.539230769708598",
+          "text": "Y直角差 +5"
+        },
+        {
+          "raw": "6.538250000811719",
+          "text": "Z直角差 +7"
+        },
+        {
+          "raw": "1.6692847554720573",
+          "text": "Z直角差 +2"
+        }
+      ]
+    },
+    {
+      "case": "A coarse -10 restored",
+      "values": [
+        {
+          "raw": "1.2005555560760512",
+          "text": "Y直角差 +1"
+        },
+        {
+          "raw": "-0.4929999948147774",
+          "text": "Z直角差 0"
+        },
+        {
+          "raw": "1.6693856573146633",
+          "text": "Z直角差 +2"
+        }
+      ],
+      "identical": true
+    },
+    {
+      "case": "Menu opened",
+      "identical": true
+    },
+    {
+      "case": "Y Home",
+      "position": "-100",
+      "values": [
+        "X基準 0Y直角差 +1",
+        "X基準 0Z直角差 -6",
+        "Y基準 0Z直角差 +2"
+      ]
+    },
+    {
+      "case": "Y End",
+      "position": "100",
+      "values": [
+        "X基準 0Y直角差 +1",
+        "X基準 0Z直角差 +5",
+        "Y基準 0Z直角差 +2"
+      ]
+    },
+    {
+      "case": "Y reset/menu closed",
+      "identical": true
+    },
+    {
+      "case": "Reload/autosave",
+      "identical": true
+    },
+    {
+      "case": "Catalog/reopen",
+      "identical": true
+    },
+    {
+      "case": "390x844 after A+10",
+      "layout": {
+        "canvas": {
+          "h": 370,
+          "w": 302
+        },
+        "scrollWidth": 390,
+        "width": 390
+      },
+      "values": [
+        "X基準 0Y直角差 +5",
+        "X基準 0Z直角差 +7",
+        "Y基準 0Z直角差 +2"
+      ]
+    },
+    {
+      "case": "320x568",
+      "layout": {
+        "canvas": {
+          "h": 161,
+          "w": 232
+        },
+        "scrollWidth": 320,
+        "width": 320
+      },
+      "values": [
+        "X基準 0Y直角差 +5",
+        "X基準 0Z直角差 +7",
+        "Y基準 0Z直角差 +2"
+      ]
+    },
+    {
+      "case": "844x390",
+      "layout": {
+        "canvas": {
+          "h": 169,
+          "w": 404.328125
+        },
+        "scrollWidth": 844,
+        "width": 844
+      },
+      "values": [
+        "X基準 0Y直角差 +5",
+        "X基準 0Z直角差 +7",
+        "Y基準 0Z直角差 +2"
+      ]
+    },
+    {
+      "case": "320px fine down/up",
+      "down": [
+        "4.5058440175713885",
+        "6.467937500832277",
+        "1.669286539168487"
+      ],
+      "restored": [
+        "4.539230769708598",
+        "6.538250000811719",
+        "1.6692847554720573"
+      ]
+    }
+  ],
+  "applicationErrors": {
+    "mobile": [],
+    "pc": []
+  },
+  "physicalPhoneTouchTested": false
+}
