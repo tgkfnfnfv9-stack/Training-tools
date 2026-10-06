@@ -126,7 +126,7 @@ function updateSpindleSweep(){
  $('spindleSweepPanel').hidden=!available;$('liveSquareness').hidden=false;$('liveSquarenessUnits').hidden=false;
  $('axisTabs').hidden=false;
  $('scene-readout-sweep-note').hidden=!available;$('modelSemantics').hidden=false;
- if(!available)return;
+ if(!available){toggleSpindleSweepSelection(false);return;}
  const measured=spindleSweepGeometry(),zeroValid=measured.valid&&measured.cardinal[3].onTable;
  for(let i=0;i<4;i++){
   const p=measured.cardinal?.[i],readable=zeroValid&&p?.onTable,el=$('sweepValue'+i),button=$('sweepPosition'+i);
@@ -134,7 +134,9 @@ function updateSpindleSweep(){
   el.setAttribute('data-reading-microns',readable?String(p.readingMicrons):'');
   button.setAttribute('aria-pressed',String(Math.abs(spindleSweepAngle-i*90)<.001));
   button.setAttribute('aria-label',sweepDirections[i]+(i===3?'・基準':'')+'、'+(readable?el.textContent+'マイクロメートル':el.textContent));
+  $('sweepReadout'+i).setAttribute('data-selected',button.getAttribute('aria-pressed'));
  }
+ $('spindleSweepToggle').setAttribute('aria-label','ダイヤル測定。'+sweepDirections.map((direction,i)=>direction+(i===3?'基準':'')+' '+$('sweepValue'+i).textContent+' マイクロメートル').join('、')+'。選択中 '+sweepDirections[Math.round(spindleSweepAngle/90)%4]+'。方向選択を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
  const point=measured.valid?measured.pointAt(spindleSweepAngle):null;
  $('sweepContactStatus').textContent=!measured.valid?'測定不可・主軸と上面の姿勢を確認':!zeroValid?'手前が面外・軸を中央へ':!point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）';
 }
@@ -145,4 +147,12 @@ function selectSpindleSweepAngle(degrees){
  if(!supportsSpindleSweep())return;
  spindleSweepAngle=degrees;redrawSpindleSweep();
 }
-for(let i=0;i<4;i++)$('sweepPosition'+i).onclick=()=>selectSpindleSweepAngle(i*90);
+function toggleSpindleSweepSelection(force){
+ const panel=$('spindleSweepSelection'),open=force===undefined?panel.hidden:force;
+ panel.hidden=!open;$('spindleSweepToggle').setAttribute('aria-expanded',String(open));
+ if(open){const scroll=$('adjustmentSelectionScroll'),selected=$('sweepPosition'+Math.round(spindleSweepAngle/90)%4);scroll.scrollTop=panel.offsetTop-scroll.offsetTop;selected.focus?.({preventScroll:true});selected.scrollIntoView?.({block:'nearest',inline:'nearest'});if(selected.getBoundingClientRect&&scroll.getBoundingClientRect){const r=selected.getBoundingClientRect(),s=scroll.getBoundingClientRect();if(r.bottom>s.bottom)scroll.scrollTop+=r.bottom-s.bottom;if(r.top<s.top)scroll.scrollTop-=s.top-r.top;}}
+}
+$('spindleSweepToggle').onclick=()=>{toggleSpindleSweepSelection();updateSpindleSweep();};
+$('closeSpindleSweepSelection').onclick=()=>{toggleSpindleSweepSelection(false);updateSpindleSweep();$('spindleSweepToggle').focus?.({preventScroll:true});};
+$('spindleSweepSelection').addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();toggleSpindleSweepSelection(false);updateSpindleSweep();$('spindleSweepToggle').focus?.({preventScroll:true});}});
+for(let i=0;i<4;i++)$('sweepPosition'+i).onclick=()=>{selectSpindleSweepAngle(i*90);toggleSpindleSweepSelection(false);updateSpindleSweep();$('spindleSweepToggle').focus?.({preventScroll:true});};

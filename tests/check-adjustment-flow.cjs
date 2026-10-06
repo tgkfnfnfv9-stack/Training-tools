@@ -20,13 +20,13 @@ function prepareSweepExceptions(){
  const direction=['右','奥','左','手前'];
  for(let i=0;i<4;i++){
   const point=g.cardinal?.[i],readable=zero&&point?.onTable,text=readable?number(point.readingMicrons):point&&!point.onTable?'面外':'—';
-  const button=r['sweepPosition'+i],value=r['sweepValue'+i];assert.equal(button.children.length,2);
-  sweepTextExceptions.set(button.children[0],direction[i]+(i===3?' 基準':''));sweepTextExceptions.set(value,text);
-  sweepAriaExceptions.set(button,direction[i]+(i===3?'・基準':'')+'、'+(readable?text+'マイクロメートル':text));
+  const button=r['sweepPosition'+i],value=r['sweepValue'+i];assert.equal(button.children.length,1);sweepTextExceptions.set(button,direction[i]+(i===3?' 基準':''));
+  sweepTextExceptions.set(r['sweepReadout'+i].children[0],direction[i]+(i===3?' 基準':''));sweepTextExceptions.set(value,text);
+  assert.equal(button.getAttribute('aria-label'),direction[i]+(i===3?'・基準':'')+'、'+(readable?text+'マイクロメートル':text));sweepAriaExceptions.set(button,button.getAttribute('aria-label'));sweepAriaExceptions.set(r.spindleSweepToggle,'ダイヤル測定。'+direction.map((d,j)=>d+(j===3?'基準':'')+' '+r['sweepValue'+j].textContent+' マイクロメートル').join('、')+'。選択中 '+direction[Math.round(g.angle/90)%4]+'。方向選択を'+(r.spindleSweepSelection.hidden?'開く':'閉じる'));
   assert.equal(value.getAttribute('data-reading-microns'),readable?String(point.readingMicrons):'');
  }
  for(const id of ['sweepCurrentAngle','sweepCurrentValue','sweepDial','runSpindleSweep'])assert.equal(r[id],undefined);
- const diameter=r.spindleSweepPanel.querySelectorAll('.sweep-diameter');assert.equal(diameter.length,1);sweepTextExceptions.set(diameter[0],'直径300 mm');
+ const diameter=r.spindleSweepPanel.querySelectorAll('.sweep-diameter');assert.equal(diameter.length,0);sweepTextExceptions.set(r.spindleSweepPanel.querySelectorAll('.sweep-readout-unit')[0],'µm');
  sweepTextExceptions.set(r.sweepContactStatus,!g.valid?'測定不可・主軸と上面の姿勢を確認':!zero?'手前が面外・軸を中央へ':!g.point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）');
  sweepTextExceptions.set(r.sweepMeasurementNote,'主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の模型は支持姿勢を簡略表示し、測定は固有差を含む代表主軸方向で計算します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。');
 }
@@ -100,7 +100,7 @@ function verifyDiagrams(){
  for(const [i,svg] of r.liveSquareness.querySelectorAll('svg').entries()){
   const p=current[i],b=before.find(q=>q.key===p.key);near(Number(svg.getAttribute('data-before')),b.deviationMicroradians);near(Number(svg.getAttribute('data-current')),p.deviationMicroradians);near(Number(svg.getAttribute('data-delta')),p.deviationMicroradians-b.deviationMicroradians);
   for(const [className,dev] of [['pair-current',p.deviationMicroradians],['pair-before',b.deviationMicroradians]]){
-   const line=svg.querySelectorAll('.'+className)[0],dx=Number(line.getAttribute('x2'))-Number(line.getAttribute('x1')),dy=Number(line.getAttribute('y1'))-Number(line.getAttribute('y2'));
+   const line=r.measurementReferenceCards.querySelectorAll('svg')[i].querySelectorAll('.'+className)[0],dx=Number(line.getAttribute('x2'))-Number(line.getAttribute('x1')),dy=Number(line.getAttribute('y1'))-Number(line.getAttribute('y2'));
    near(Math.hypot(dx,dy),28,1e-10);near(Math.atan2(-dx,dy),Math.max(-.65,Math.min(.65,dev*Number(svg.getAttribute('data-gain'))/1e6)),1e-12);
   }
   if(Math.abs(p.deviationMicroradians-b.deviationMicroradians)<=1e-6){assert.equal(svg.getAttribute('data-direction'),'unchanged');assert.equal(svg.querySelectorAll('.pair-change-area').length,0);}

@@ -21,7 +21,7 @@ function verify(g){
  assert.equal(r.accuracyDiagram.style['--diagram-min-width'],g.pairs.length*88+'px');
  const svgs=diagrams();assert.deepEqual(svgs.map(svg=>svg.getAttribute('data-pair')),g.pairs.map(p=>p.key));
  for(const [index,pair] of g.pairs.entries()){
-  const svg=svgs[index],base=r.accuracyDiagram.querySelectorAll('g').filter(g=>g.getAttribute('data-pair'))[index],line=svg.querySelectorAll('.pair-current')[0],datum=svg.querySelectorAll('.pair-base')[0];
+  const svg=svgs[index],base=r.accuracyDiagram.querySelectorAll('g').filter(g=>g.getAttribute('data-pair'))[index],line=base.querySelectorAll('.pair-current')[0],datum=svg.querySelectorAll('.pair-base')[0];
   const x=Number(line.getAttribute('x1')),y=Number(line.getAttribute('y1')),dx=Number(line.getAttribute('x2'))-x,dy=y-Number(line.getAttribute('y2'));
   const visualAngle=Math.atan2(-dx,dy),limited=svg.getAttribute('data-limited')==='true';
   near(Math.hypot(dx,dy),28);near(Number(svg.getAttribute('data-deviation')),pair.deviationMicroradians);
@@ -37,14 +37,14 @@ function verify(g){
   for(const drawing of [svg,base]){
    const start=drawing.querySelectorAll('.measurement-origin')[0],ideal=drawing.querySelectorAll('.measurement-ideal-tip')[0],tip=drawing.querySelectorAll('.measurement-current-tip')[0],gap=drawing.querySelectorAll('.measurement-gap')[0];
    near(Number(start.getAttribute('cx')),x);near(Number(start.getAttribute('cy')),y);near(Number(ideal.getAttribute('cx')),x);near(Number(ideal.getAttribute('cy')),y-28);
-   near(Number(tip.getAttribute('cx')),x+dx);near(Number(tip.getAttribute('cy')),y-dy);
-   near(Number(gap.getAttribute('x1')),Number(ideal.getAttribute('cx')));near(Number(gap.getAttribute('y1')),Number(ideal.getAttribute('cy')));near(Number(gap.getAttribute('x2')),Number(tip.getAttribute('cx')));near(Number(gap.getAttribute('y2')),Number(tip.getAttribute('cy')));
+   const zero=drawing===svg&&Math.round(Math.abs(pair.deviationMicroradians*.3))===0;near(Number(tip.getAttribute('cx')),zero?x:x+dx);near(Number(tip.getAttribute('cy')),zero?26:y-dy);
+   if(drawing===svg)assert.equal(gap,undefined,'live gap removed while detail comparison retained');else near(Number(gap.getAttribute('x1')),Number(ideal.getAttribute('cx')));if(gap)near(Number(gap.getAttribute('y1')),Number(ideal.getAttribute('cy')));if(gap)near(Number(gap.getAttribute('x2')),Number(tip.getAttribute('cx')));if(gap)near(Number(gap.getAttribute('y2')),Number(tip.getAttribute('cy')));
    const startLabels=drawing.querySelectorAll('.measurement-start'),endLabels=drawing.querySelectorAll('.measurement-end');assert.equal(startLabels.length,1);assert.equal(startLabels[0].textContent,'0');if(drawing===svg){assert.equal(endLabels.length,0);near(Number(svg.dataset.measurementLengthM),.3);assert.equal(r.liveSquarenessUnits.textContent.replace(/\s/g,''),'300mm・µm');}else{assert.equal(endLabels.length,1);assert.equal(endLabels[0].textContent,'300 mm');}assert.equal(drawing.querySelectorAll('.measurement-direction').length,1);
   }
   assert.equal(svg.parentElement.querySelectorAll('.live-pair-title').length,0,'large external headings stay removed');
   const endpoint=measured+' '+(pair.key==='YZ'?'前':'左');assert.deepEqual(svg.querySelectorAll('.pair-axis').map(n=>n.textContent).sort(),[key,endpoint].sort(),'approved endpoint labels identify the plane while physical datum is retained');
-  assert.equal(base.querySelectorAll('.pair-current')[0].getAttribute('x2'),line.getAttribute('x2'));
-  assert.equal(base.querySelectorAll('.pair-current')[0].getAttribute('y2'),line.getAttribute('y2'));
+  near(Number(svg.dataset.tipX),Number(line.getAttribute('x2')));near(Number(svg.dataset.displayTipX),Number(svg.querySelectorAll('.pair-current')[0].getAttribute('x2')));
+  near(Number(svg.dataset.tipY),Number(line.getAttribute('y2')));near(Number(svg.dataset.displayTipY),Number(svg.querySelectorAll('.pair-current')[0].getAttribute('y2')));
   const match=/直角より(広い|狭い)|直角/.exec(svg.getAttribute('aria-label'));assert(match);
   assert.equal(match[1]??'直角',pair.deviationMicroradians>0?'広い':pair.deviationMicroradians<0?'狭い':'直角');
   if(limited)assert.match(svg.getAttribute('aria-label'),/図の範囲外/);

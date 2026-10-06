@@ -47,7 +47,7 @@ for(const kind of Object.keys(counts)){
   for(const deviation of [-3000,-100,-1,0,1,100,3000]){
    e.read(`accuracyDiagram({pairs:[{key:'${key}',deviationMicroradians:${deviation}}]},{pairs:[{key:'${key}',deviationMicroradians:0}]});`);
    check(kind+'/'+key+' signed local angle '+deviation,()=>{
-    const svg=r.liveSquareness.querySelectorAll('svg')[0],line=svg.querySelectorAll('.pair-current')[0],base=svg.querySelectorAll('.pair-base')[0];
+    const svg=r.liveSquareness.querySelectorAll('svg')[0],line=r.measurementReferenceCards.querySelectorAll('svg')[0].querySelectorAll('.pair-current')[0],base=svg.querySelectorAll('.pair-base')[0];
     const x=Number(line.getAttribute('x2'))-Number(line.getAttribute('x1')),y=Number(line.getAttribute('y2'))-Number(line.getAttribute('y1'));
     const bx=Number(base.getAttribute('x2'))-Number(base.getAttribute('x1')),by=Number(base.getAttribute('y2'))-Number(base.getAttribute('y1'));
     const dot=(x*bx+y*by)/Math.hypot(x,y)/Math.hypot(bx,by);

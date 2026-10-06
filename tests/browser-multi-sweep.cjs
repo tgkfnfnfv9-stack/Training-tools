@@ -4,9 +4,9 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const base=process.env.DIAL_BASE_URL||'http://127.0.0.1:8765/index.html';
-const output='tmp/qa-multi-sweep';
+const output=process.env.DIAL_OUTPUT||'tmp/qa-multi-sweep';
 fs.mkdirSync(output,{recursive:true});
-const summary={url:base,comparisonCommit:'156a25fecdfd7cb621e47f314aef71fa0c70031d',checks:0,failures:[],browserErrors:[],layouts:[],screenshots:[],physicalPhoneGestures:'not tested'};
+const summary={url:base,checks:0,failures:[],browserErrors:[],layouts:[],screenshots:[],physicalPhoneGestures:'not tested'};
 let browser,context,p;
 function check(name,fn){summary.checks++;try{fn();}catch(error){summary.failures.push({name,message:error.message});}}
 function near(a,b,t=1e-8){assert(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=t,a+' != '+b);}
@@ -46,7 +46,7 @@ async function layout(name){
    const el=document.getElementById(id),b=el?.getBoundingClientRect();
    rectangles[id]=b?{x:b.x,y:b.y,width:b.width,height:b.height,right:b.right,bottom:b.bottom,visible:el.checkVisibility({checkVisibilityCSS:true}),overflow:el.scrollWidth-el.clientWidth}:null;
   }
-  const ids2=['sweepPosition0','sweepPosition1','sweepPosition2','sweepPosition3','lowerSupport','raiseSupport'];
+  const ids2=['spindleSweepToggle','lowerSupport','raiseSupport'];
   const buttons=ids2.map(id=>{
    const el=document.getElementById(id),b=el.getBoundingClientRect(),hit=document.elementFromPoint(b.x+b.width/2,b.y+b.height/2);
    return {id,width:b.width,height:b.height,hit:!!hit&&(hit===el||el.contains(hit)),right:b.right,bottom:b.bottom};
@@ -79,7 +79,7 @@ async function layout(name){
  });
  check(name+' no horizontal overflow or clipped readings',()=>{
   assert(metrics.documentWidth<=metrics.width+1,'horizontal document overflow');assert.equal(metrics.textOverflow.length,0,metrics.textOverflow.join(', '));
-  assert(metrics.pairs.every(v=>v.overflow<=1),'squareness item overflow');assert(r.sweepContactStatus.overflow<=1,'front reference status clipped');
+  assert(metrics.pairs.every(v=>v.overflow<=1),'squareness item overflow');// Contact status lives inside the disclosed direction controls.
  });
  check(name+' level gauge contents remain inside their model row',()=>{
   for(const child of metrics.gaugeChildren){
@@ -115,10 +115,10 @@ async function smallViewportControls(name){
  await p.locator('#adjustmentSelectionScroll').evaluate(el=>{el.scrollTop=0;});
 }
 (async()=>{
- browser=await chromium.launch({headless:true});
+ browser=await chromium.launch({headless:true,executablePath:'/usr/bin/chromium',args:['--no-sandbox']});
  context=await browser.newContext({viewport:{width:1366,height:900},deviceScaleFactor:1,hasTouch:true,acceptDownloads:true});
  p=await context.newPage();p.on('pageerror',e=>summary.browserErrors.push(e.message));
- await p.goto(base,{waitUntil:'networkidle'});
+ if(process.env.DIAL_DOCUMENT_FILE)await p.route(base,r=>r.fulfill({contentType:'text/html',body:fs.readFileSync(process.env.DIAL_DOCUMENT_FILE)}));await p.goto(base,{waitUntil:'networkidle'});
  const sizes=[['pc-1366x900',1366,900],['mobile-320x480',320,480],['mobile-320x568',320,568],['mobile-390x844',390,844],['landscape-568x320',568,320],['landscape-844x390',844,390]];
  for(const [index,kind,count] of [[0,'compact',4],[2,'travel',6],[3,'double',15],[4,'gantry',8],[5,'five',3]]){
   await p.evaluate(index=>{localStorage.clear();openMachine(machines[index]);initializeMachineAccuracy(window.MachineAccuracy.generate('used',78129,['X','Y','Z'],supports.length));positions={X:current.kind==='gantry'?80:0,Y:current.kind==='gantry'?20:0,Z:0,A:0,C:0};supportHeights=supports.map((s,i)=>i===2?.1:0);updateAxisValues();updateLeveling();},index);
@@ -143,7 +143,7 @@ async function smallViewportControls(name){
   });
   await p.locator('#lowerSupport').click();const restored=await snapshot();check(kind+' reverse adjustment restores exact state',()=>{assert.deepEqual(restored.record,before.record);valuesNear(restored.sweep,before.sweep);valuesNear(restored.pairRaw,before.pairRaw);});
   await p.locator('#fineAdjust').scrollIntoViewIfNeeded();await p.locator('#fineAdjust').click();await p.locator('#raiseSupport').click();const fine=await snapshot();check(kind+' fine step 0.001 mm',()=>near(fine.record.heights[adjustmentIndex]-before.record.heights[adjustmentIndex],.001));await p.locator('#lowerSupport').click();
-  for(let i=0;i<4;i++){await p.locator('#sweepPosition'+i).click();const s=await snapshot();check(kind+' fixed point '+i+' selection',()=>{assert.equal(s.angle,i*90);valuesNear(s.sweep,before.sweep);valuesNear(s.pairRaw,before.pairRaw);});}
+  for(let i=0;i<4;i++){await p.locator('#spindleSweepToggle').click();await p.locator('#sweepPosition'+i).scrollIntoViewIfNeeded();await p.locator('#sweepPosition'+i).click();const s=await snapshot();check(kind+' fixed point '+i+' selection',()=>{assert.equal(s.angle,i*90);valuesNear(s.sweep,before.sweep);valuesNear(s.pairRaw,before.pairRaw);});}
   const expectedAxes=kind==='five'?['X','Y','Z','A','C']:['X','Y','Z'];
   for(const key of expectedAxes){await p.locator('#axisTabs button').filter({hasText:key+'軸'}).click();const s=await snapshot();check(kind+' '+key+' selectable',()=>{assert.equal(s.selectedAxis,key);valuesNear(s.sweep,before.sweep);});}
   const stable=await snapshot();await p.locator('#openTrainingMenu').click();await p.locator('#closeTrainingMenu').click();await p.locator('#scene').hover();await p.mouse.wheel(0,-100);
@@ -177,7 +177,7 @@ async function smallViewportControls(name){
     await p.locator('#importLevel').setInputFiles(narrowFile);
     await p.waitForFunction(expected=>levelConfig.width===.5&&positions.Y===expected,y);
     await p.locator('#closeTrainingMenu').click();
-    const narrowState=await snapshot(),labels=await p.locator('.sweep-positions button strong').allTextContents();
+    const narrowState=await snapshot(),labels=await p.locator('#spindleSweepToggle strong').allTextContents();
     check('gantry narrow valid dimensions Y='+y+' exercises actual off-table suppression',()=>{
      assert(narrowState.onTable.some(v=>!v),'test must actually cross a table edge');
      if(y===-100){assert.equal(narrowState.onTable[0],true);assert.equal(narrowState.onTable[2],false);assert.equal(narrowState.sweep[2],null);assert.equal(labels[2],'面外');}

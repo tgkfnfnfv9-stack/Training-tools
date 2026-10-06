@@ -644,3 +644,29 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 }
 @media(max-width:360px){.squareness-panel{padding-bottom:8px}.measurement-reference-toggle span{font-size:8px;line-height:8px}}
 @media(max-width:950px) and (max-height:540px){.viewer-levels{gap:0;padding-top:1px;padding-bottom:1px}}
+
+/* One horizontal row of teaching plates shares space with a compact dial
+   readout. Direction controls stay large in the existing adjustment scroller. */
+.precision-readouts,.has-spindle-sweep .precision-readouts{display:grid;grid-template-columns:minmax(0,1fr) 64px;gap:6px;align-items:center;max-width:690px;margin:0 auto}
+.live-squareness,.has-spindle-sweep .live-squareness{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;align-items:start}
+.live-squareness-item,.has-spindle-sweep .live-squareness-item{display:block;min-width:0;max-width:none}
+.live-pair-values,.has-spindle-sweep .live-pair-values{display:block;padding:0;text-align:center;font-size:10px;line-height:14px;white-space:nowrap}
+.spindle-sweep-panel,.has-spindle-sweep .spindle-sweep-panel{padding:0;border:0;width:64px}
+.sweep-readout-toggle{display:block;width:64px;min-height:44px;padding:1px 3px;border:1px solid #d8b596;border-radius:5px;background:#fffaf6;line-height:15px;text-align:left}
+.sweep-readout-unit{display:block;font-size:8px;line-height:10px;text-align:right;color:#775b48}
+.sweep-readout-row{display:grid;grid-template-columns:minmax(0,1fr) max-content;gap:2px;align-items:baseline;font-size:9px;line-height:15px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.sweep-readout-row strong{font-size:10px}.sweep-readout-row small{font-size:7px}
+.sweep-readout-row[data-selected="true"]{color:#984000;background:#ffe7d1;box-shadow:inset 2px 0 #b34800}
+.sweep-readout-toggle:focus-visible{outline:2px solid #b34800;outline-offset:1px}
+.sweep-selection{margin:8px 0 0;padding:6px;border:1px solid #e4d3c5;border-radius:6px;background:#fffaf5;scroll-margin-top:4px}
+.sweep-selection .sweep-positions,.has-spindle-sweep .sweep-selection .sweep-positions{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;margin-top:6px}
+.sweep-selection .sweep-positions button{min-width:44px;min-height:44px;font-size:12px}
+.sweep-selection .sweep-positions button span{font-size:12px}
+.live-squareness-diagram .pair-ideal{stroke:#a9afb2;stroke-width:.7px}
+.live-squareness-diagram .live-board-side{fill:#d8c4b1;stroke:#a69384;stroke-width:.6px;vector-effect:non-scaling-stroke}
+@media(max-width:700px){.live-pair-values,.has-spindle-sweep .live-pair-values{font-size:9px;line-height:12px}}
+
+.live-squareness-diagram .live-board-side-right{fill:#bd9b7d;stroke-width:.6px}
+/* On the narrow landscape split, reclaim the unused dial slot so all seven
+   plates can use the shared height rather than shrink to the card width. */
+@media(max-width:600px) and (orientation:landscape) and (max-height:400px){.training-main:not(.has-spindle-sweep) .precision-readouts{grid-template-columns:minmax(0,1fr) 56px}}
