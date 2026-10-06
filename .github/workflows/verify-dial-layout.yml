@@ -1,0 +1,42 @@
+name: Verify simultaneous dial layout
+on:
+  push:
+    branches: [codex/verify-dial-layout-20261006]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify build and run all existing regression tests
+        run: |
+          python3 build.py
+          git diff --exit-code -- index.html
+          failed=0
+          for test in tests/check-*.cjs; do
+            node "$test" || failed=1
+          done
+          exit "$failed"
+      - name: Install browser test runtime
+        if: ${{ hashFiles('tests/browser-simultaneous-dial.cjs') != '' }}
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Verify browser layouts and interactions
+        if: ${{ hashFiles('tests/browser-simultaneous-dial.cjs') != '' }}
+        env:
+          EMIT_SCREENSHOTS: '1'
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/dial-server.log 2>&1 &
+          node tests/browser-simultaneous-dial.cjs
+      - name: Preserve browser evidence
+        if: ${{ always() && hashFiles('tests/browser-simultaneous-dial.cjs') != '' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: simultaneous-dial-browser-evidence
+          path: tmp/qa-dial/
+          if-no-files-found: ignore
