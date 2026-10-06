@@ -1,0 +1,284 @@
+{
+  "candidateCommit": "968c47187cb292e8cabfb7ea0607030ed7fb5936",
+  "completedAtUTC": "2026-10-06T06:16:14.003461+00:00",
+  "sourceSha256": {
+    "src/accuracy-ui.js": "020692f1994e3bed9b8a0bec10cc4c5d813f2f6e6ad7301cad6a02775074f3c0",
+    "src/app.js": "de3ae4dacc56b45bb66093169c122d5ba5a7385d1febf0563cc466b482c9892d",
+    "src/index.html": "c403c5b47cedbaf026cc19218cb823b60d6e390826ae04c6d4605cd610eb8c6e",
+    "src/leveling-ui.js": "4e3ee21ef4626cdf83efa7e6c139a39fbcbb64c196f23c7c63ec5252137beb28",
+    "src/leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+    "src/machine-accuracy-ui.js": "5123e4a167a90d2c9a08c3f5a06a8b2b7f2c41430b32bde9f2b8507545587363",
+    "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "src/spindle-sweep-ui.js": "9bd40feca5f990f5d3006dc45ca33037ca61df020bdb3a3d73fcd0b5cc163cef",
+    "src/spindle-sweep.js": "e61b650ca6c99449443573cd8a0e7d6413375b4b913908ac533f3021384635f0",
+    "src/style.css": "b56f2392cb4d8819aab5e8bf2f003fd7f72c04c0c328454fa1e6d23def151b17",
+    "src/tester.css": "05818215f96effc3e1b38a7026c23c5ab66bfd84bfb147ef7641630b4f0ce663",
+    "src/tester.html": "c1cfc2b45ee63d13bf0dd38d69382901532d6e6a521050909734a9f133697866",
+    "src/tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409",
+    "index.html": "7f2af2c41917439fdbfc5b8bc0fdd69b1d07bc917c57349346c90c0c5ff71146"
+  },
+  "sourcesUnchangedDuringRun": true,
+  "suiteCount": 37,
+  "failed": [],
+  "results": [
+    {
+      "file": "tests/check-3d-axis-controls.cjs",
+      "exitCode": 0,
+      "seconds": 19.53,
+      "stdout": "3D axis controls: 138 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-accuracy-engine.cjs",
+      "exitCode": 0,
+      "seconds": 0.06,
+      "stdout": "Accuracy engine: 73 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-accuracy-render.cjs",
+      "exitCode": 0,
+      "seconds": 22.88,
+      "stdout": "Accuracy Canvas: 305 rendered frames, 991776 finite drawing operations passed (3 sizes, 7 machines, 2 extra modes).\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-accuracy-review.cjs",
+      "exitCode": 0,
+      "seconds": 0.92,
+      "stdout": "Accuracy review: 75 independent checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-adjustment-flow.cjs",
+      "exitCode": 0,
+      "seconds": 6.06,
+      "stdout": "Adjustment flow: 153 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-canvas-labels.cjs",
+      "exitCode": 0,
+      "seconds": 34.04,
+      "stdout": "{\n  \"frames\": 528,\n  \"backgroundRectangles\": 4256,\n  \"axisRectangles\": 1776,\n  \"partRectangles\": 2480,\n  \"expectedAxisLabels\": 1776,\n  \"collisionFrames\": 0,\n  \"outsideFrames\": 0,\n  \"missingAxisFrames\": 0,\n  \"supportCollisionFrames\": 0,\n  \"examples\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-compact-bending.cjs",
+      "exitCode": 0,
+      "seconds": 1.27,
+      "stdout": "{\n  \"checks\": 670,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-compact-table-path.cjs",
+      "exitCode": 0,
+      "seconds": 3.36,
+      "stdout": "{\n  \"checks\": 168,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-confirmed-layouts.cjs",
+      "exitCode": 0,
+      "seconds": 7.07,
+      "stdout": "{\n  \"checks\": 330,\n  \"legacyAccepted\": 0,\n  \"legacyCompactMigrated\": 0,\n  \"legacyRejected\": 9,\n  \"legacyV1Rejected\": 9,\n  \"legacyV1CompactMigrated\": 0,\n  \"legacyKeysPreserved\": 9,\n  \"supportsExercised\": 50,\n  \"failures\": [],\n  \"timings\": [\n    {\n      \"index\": 0,\n      \"operation\": \"open\",\n      \"milliseconds\": 59.178580999999895\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 6.495486999999912\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 31.03630000000021\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"open\",\n      \"milliseconds\": 75.81990500000006\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 4.527159000000211\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 29.251890999999887\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"open\",\n      \"milliseconds\": 42.49656700000014\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 5.535467000000153\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 26.415371999999934\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"open\",\n      \"milliseconds\": 49.04686199999969\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 7.552712000000611\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 16.576976000000286\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"open\",\n      \"milliseconds\": 61.201193999999305\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 5.3944289999999455\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 34.375866999999744\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"open\",\n      \"milliseconds\": 22.36081000000013\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 6.355588000000353\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 11.734983000000284\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"open\",\n      \"milliseconds\": 11.41119499999968\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 1.8348269999996774\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 6.174949999999626\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-display-motion.cjs",
+      "exitCode": 0,
+      "seconds": 21.8,
+      "stdout": "{\n  \"checks\": {\n    \"planarMotion\": 666,\n    \"localContact\": 240,\n    \"fixedAnchorMotion\": 156,\n    \"averageVersusLocal\": 5\n  },\n  \"maximumDirectionDifference\": 4.469433677046628e-12,\n  \"maximumContactDifference\": 8.881784197001252e-16,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-electrical-full.cjs",
+      "exitCode": 0,
+      "seconds": 0.15,
+      "stdout": "{\n  \"passed\": true,\n  \"assertions\": 103,\n  \"combinations\": 720,\n  \"valid\": 13,\n  \"flows\": [\n    \"five full completion workflows\",\n    \"current serial calculation\",\n    \"parallel short circuit blocked\",\n    \"AC reverse direction\",\n    \"DC voltage alternatives\",\n    \"resistance unit alternatives\",\n    \"open continuity\",\n    \"setting lock and reset\",\n    \"all settings exhaustively checked\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-full-code-review.cjs",
+      "exitCode": 0,
+      "seconds": 11.43,
+      "stdout": "Full code review: 158 integration checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-guide-response-invariants.cjs",
+      "exitCode": 0,
+      "seconds": 2.25,
+      "stdout": "{\n  \"checks\": 213,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-ideal-display.cjs",
+      "exitCode": 0,
+      "seconds": 12.79,
+      "stdout": "{\n  \"checks\": {\n    \"nominalGeometry\": 504,\n    \"flatAgreement\": 126,\n    \"supportAdjustment\": 7,\n    \"intrinsicRemoval\": 7,\n    \"linearMotion\": 20,\n    \"rotaryRigidity\": 50,\n    \"viewAndToggle\": 126\n  },\n  \"vertices\": 427392,\n  \"maximumPointDifference\": 2.047902597024e-15,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-ideal-outline-ui.cjs",
+      "exitCode": 0,
+      "seconds": 48.17,
+      "stdout": "{\n  \"checks\": 743,\n  \"frames\": 790,\n  \"finiteCanvasCoordinates\": 4751765,\n  \"maximumIdealSegments\": 411,\n  \"maximumIdealToCurrentRatio\": 0.23509369676320271\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-interface-audit.cjs",
+      "exitCode": 0,
+      "seconds": 0.68,
+      "stdout": "Interface audit: 31 independent interaction and diagram checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-irregular-leveling.cjs",
+      "exitCode": 0,
+      "seconds": 0.06,
+      "stdout": "Irregular leveling: 621 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-level-stages.cjs",
+      "exitCode": 0,
+      "seconds": 3.1,
+      "stdout": "Level stages: 80 independent checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-leveling-engine.cjs",
+      "exitCode": 0,
+      "seconds": 0.06,
+      "stdout": "Leveling engine: 83 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-leveling-learning.cjs",
+      "exitCode": 0,
+      "seconds": 3.2,
+      "stdout": "Leveling learning: 91 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-leveling-ui.cjs",
+      "exitCode": 0,
+      "seconds": 1.93,
+      "stdout": "Leveling UI: 190 checks passed (7 machines, single-model selections, controls, exercise, save/import/export).\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-live-squareness-values.cjs",
+      "exitCode": 0,
+      "seconds": 1.76,
+      "stdout": "{\n  \"checks\": 109,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-mechanical-audit.cjs",
+      "exitCode": 0,
+      "seconds": 4.05,
+      "stdout": "Mechanical audit: 220 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-mobile-navigation.cjs",
+      "exitCode": 0,
+      "seconds": 0.5,
+      "stdout": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-model-posture.cjs",
+      "exitCode": 0,
+      "seconds": 70.33,
+      "stdout": "{\n  \"checks\": {\n    \"projection\": 105,\n    \"surfaceNormals\": 491,\n    \"groundContact\": 560,\n    \"rigidMotion\": 30,\n    \"axisLabels\": 224\n  },\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-multi-spindle-sweep.cjs",
+      "exitCode": 0,
+      "seconds": 0.58,
+      "stdout": "PASS multi-machine spindle sweep independent physics: 147 checks\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-portal-shear-invariants.cjs",
+      "exitCode": 0,
+      "seconds": 3.95,
+      "stdout": "{\n  \"checks\": 165,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-random-accuracy-review.cjs",
+      "exitCode": 0,
+      "seconds": 2.47,
+      "stdout": "Random accuracy independent review: 164 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-scene-zoom.cjs",
+      "exitCode": 0,
+      "seconds": 10.9,
+      "stdout": "Scene zoom: 84 interaction/rendering checks passed; 226 Canvas frames and 1193900 finite coordinate values inspected.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-settings-menu-ui.cjs",
+      "exitCode": 0,
+      "seconds": 15.78,
+      "stdout": "{\n  \"checks\": 173,\n  \"frames\": 270,\n  \"finiteCanvasCoordinates\": 1734085,\n  \"variants\": 7,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-settings-menu.cjs",
+      "exitCode": 0,
+      "seconds": 8.83,
+      "stdout": "{\n  \"checks\": {\n    \"drawerState\": 49,\n    \"supportSelection\": 50,\n    \"stageSteps\": 300,\n    \"limits\": 21,\n    \"axisControls\": 51,\n    \"demo\": 21,\n    \"saveImportExport\": 21,\n    \"legacyStep\": 63,\n    \"settings\": 5\n  },\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-site-navigation.cjs",
+      "exitCode": 0,
+      "seconds": 1.33,
+      "stdout": "Shared site navigation: 39 journeys/state/history checks passed across six pages and seven machines.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-spindle-sweep.cjs",
+      "exitCode": 0,
+      "seconds": 1.01,
+      "stdout": "{\n  \"checks\": 322,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-squareness-display.cjs",
+      "exitCode": 0,
+      "seconds": 2.53,
+      "stdout": "Squareness display: 77 measured-angle, measurement-position, hidden-initial-value and relative-input checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-structural-connections.cjs",
+      "exitCode": 0,
+      "seconds": 1.14,
+      "stdout": "Structural connections: 290 checks passed. {\"maxJoin\":4.440892098500626e-16,\"maxFoot\":0,\"maxBoundaryStep\":2.000510035535085e-8}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-structural-invariants.cjs",
+      "exitCode": 0,
+      "seconds": 7.28,
+      "stdout": "{\n  \"checks\": 212,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "file": "tests/check-tester-lesson.cjs",
+      "exitCode": 0,
+      "seconds": 0.06,
+      "stdout": "{\n  \"passed\": true,\n  \"assertions\": 27,\n  \"flows\": [\n    \"missing leads\",\n    \"A terminal blocked\",\n    \"wrong mode blocked\",\n    \"DC voltage\",\n    \"reverse polarity\",\n    \"disconnect\",\n    \"resistance preparation\",\n    \"1kΩ resistance\",\n    \"continuity connected/broken\",\n    \"reset/lesson reset\"\n  ]\n}\n",
+      "stderr": ""
+    }
+  ]
+}

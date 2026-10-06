@@ -226,7 +226,7 @@ async function smallViewportControls(name){
   await p.evaluate(index=>openMachine(machines[index]),i);
   const machine=await p.evaluate(()=>({count:supports.length,keys:axisConfig(current).map(a=>a.key),mode:spindleSweepMode,panel:!document.getElementById('spindleSweepPanel').hidden,run:document.getElementById('runSpindleSweep'),square:!document.getElementById('liveSquareness').hidden,groups:supports.reduce((acc,s)=>{acc[s.group]=(acc[s.group]||0)+1;return acc;},{})}));
   check('machine '+i+' retains support count, axes and applicability',()=>{
-   assert.equal(machine.count,expectedCounts[i]);assert.equal(machine.mode,i===0);assert.equal(machine.panel,i===0);assert.equal(machine.run,null);assert.equal(machine.square,true);
+   assert.equal(machine.count,expectedCounts[i]);assert.equal(machine.mode,![1,6].includes(i));assert.equal(machine.panel,![1,6].includes(i));assert.equal(machine.run,null);assert.equal(machine.square,true);
    if(i===5)assert.deepEqual(machine.keys,['X','Y','Z','A','C']);if(i===6)assert.deepEqual(machine.keys,['X','Z']);
    if(i===3)assert.deepEqual(Object.values(machine.groups).sort((a,b)=>a-b),[3,3,9]);
   });

@@ -35,10 +35,11 @@ function screenFunction(){
  const project=p=>{const [x,y,z]=p,xx=x*Math.cos(yaw)+z*Math.sin(yaw),zz=-x*Math.sin(yaw)+z*Math.cos(yaw);return [xx/11,-((y-1.65)*Math.cos(pitch)+zz*Math.sin(pitch))/11];};
  const fit=json('displayFramingPoints(current,createGeometry(current))').map(project);
  const minX=Math.min(...fit.map(p=>p[0])),maxX=Math.max(...fit.map(p=>p[0])),minY=Math.min(...fit.map(p=>p[1])),maxY=Math.max(...fit.map(p=>p[1]));
- // Compact machines use the approved narrower side margins. The physical
+ // The five approved milling models use narrower side margins. The physical
  // vertices and independent projection oracle remain unchanged.
- const margin=read("current.kind==='compact'")?Math.min(44,width*.12):Math.min(56,width*.16),scale=Math.min((width-2*margin)/(maxX-minX),Math.max(24,height-48)/(maxY-minY))*read('sceneZoom');
- const cx=width/2-(minX+maxX)*scale/2,cy=(height-20)/2-(minY+maxY)*scale/2;
+ const compactView=['compact','travel','double','gantry','five'].includes(read('current.kind')),shortView=compactView&&height<160;
+ const margin=compactView?Math.min(44,width*.12):Math.min(56,width*.16),scale=Math.min((width-2*margin)/(maxX-minX),Math.max(24,height-(shortView?12:48))/(maxY-minY))*read('sceneZoom');
+ const cx=width/2-(minX+maxX)*scale/2,cy=(height-(shortView?4:20))/2-(minY+maxY)*scale/2;
  return p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale];};
 }
 function matchPolygon(f){
