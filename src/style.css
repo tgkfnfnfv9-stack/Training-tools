@@ -423,3 +423,24 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
 @media(max-width:640px) and (orientation:landscape) and (max-height:400px){
  body.in-mechanical-lab #training .training-workspace{grid-template-columns:minmax(0,1fr) 210px}
 }
+
+/* The dial lesson occupies the existing precision panel, preserving the model. */
+.spindle-sweep-panel{max-width:540px;margin:0 auto}
+.sweep-heading{display:flex;align-items:center;justify-content:center;gap:10px;line-height:18px;padding:2px 0}
+.sweep-heading strong{font-size:12px}.sweep-dial{width:44px;height:44px;flex:none}
+.sweep-current{display:flex;align-items:baseline;justify-content:center;gap:14px;font-size:12px;font-variant-numeric:tabular-nums}
+.sweep-current output{font-size:16px;font-weight:750;color:#833500;min-width:70px}
+.sweep-positions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.sweep-positions button{min-height:44px;padding:2px 3px;line-height:16px;border-radius:6px;background:#fff}
+.sweep-positions button span,.sweep-positions button strong{display:block;white-space:nowrap;font-variant-numeric:tabular-nums}
+.sweep-positions button span{font-size:10px}.sweep-positions button strong{font-size:15px}
+.sweep-positions button[aria-pressed="true"]{border:2px solid #b34800;background:#fff2e6;padding:1px 2px;color:#833500}
+.sweep-contact-status{font-size:10px;line-height:14px;text-align:center;margin:2px 0 0;min-height:14px}
+body.in-mechanical-lab #training .scene-toolbar{gap:6px}
+.sweep-toggle,.sweep-run{min-height:44px;padding:5px 10px;white-space:nowrap;font-size:12px;font-weight:650}
+.sweep-toggle[aria-pressed="true"]{background:#fff2e6;border-color:#b34800;color:#833500}
+.sweep-run{background:#b34800;color:#fff;border-color:#b34800;min-width:92px}.sweep-run:hover{background:#893900;color:#fff}
+@media(max-width:950px) and (orientation:landscape) and (max-height:400px){
+ .sweep-heading{padding:0;line-height:14px;gap:6px}.sweep-dial{width:30px;height:30px}.sweep-current output{font-size:13px}.sweep-heading strong{font-size:10px}
+ .sweep-contact-status{font-size:9px;line-height:11px;min-height:11px}.sweep-positions{gap:2px}.sweep-positions button{line-height:14px}
+}

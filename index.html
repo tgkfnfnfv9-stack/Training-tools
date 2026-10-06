@@ -424,6 +424,27 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
 @media(max-width:640px) and (orientation:landscape) and (max-height:400px){
  body.in-mechanical-lab #training .training-workspace{grid-template-columns:minmax(0,1fr) 210px}
 }
+
+/* The dial lesson occupies the existing precision panel, preserving the model. */
+.spindle-sweep-panel{max-width:540px;margin:0 auto}
+.sweep-heading{display:flex;align-items:center;justify-content:center;gap:10px;line-height:18px;padding:2px 0}
+.sweep-heading strong{font-size:12px}.sweep-dial{width:44px;height:44px;flex:none}
+.sweep-current{display:flex;align-items:baseline;justify-content:center;gap:14px;font-size:12px;font-variant-numeric:tabular-nums}
+.sweep-current output{font-size:16px;font-weight:750;color:#833500;min-width:70px}
+.sweep-positions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+.sweep-positions button{min-height:44px;padding:2px 3px;line-height:16px;border-radius:6px;background:#fff}
+.sweep-positions button span,.sweep-positions button strong{display:block;white-space:nowrap;font-variant-numeric:tabular-nums}
+.sweep-positions button span{font-size:10px}.sweep-positions button strong{font-size:15px}
+.sweep-positions button[aria-pressed="true"]{border:2px solid #b34800;background:#fff2e6;padding:1px 2px;color:#833500}
+.sweep-contact-status{font-size:10px;line-height:14px;text-align:center;margin:2px 0 0;min-height:14px}
+body.in-mechanical-lab #training .scene-toolbar{gap:6px}
+.sweep-toggle,.sweep-run{min-height:44px;padding:5px 10px;white-space:nowrap;font-size:12px;font-weight:650}
+.sweep-toggle[aria-pressed="true"]{background:#fff2e6;border-color:#b34800;color:#833500}
+.sweep-run{background:#b34800;color:#fff;border-color:#b34800;min-width:92px}.sweep-run:hover{background:#893900;color:#fff}
+@media(max-width:950px) and (orientation:landscape) and (max-height:400px){
+ .sweep-heading{padding:0;line-height:14px;gap:6px}.sweep-dial{width:30px;height:30px}.sweep-current output{font-size:13px}.sweep-heading strong{font-size:10px}
+ .sweep-contact-status{font-size:9px;line-height:11px;min-height:11px}.sweep-positions{gap:2px}.sweep-positions button{line-height:14px}
+}
 </style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
 .tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
 @media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}#testerDiagram{max-height:300px}}
@@ -536,16 +557,20 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
 <details hidden><summary>調整評価・参考最良の意味</summary><p class="hint">全直線軸の端・中央（3軸27位置、旋盤9位置）で直角差と姿勢差を比較。直角差・左右コラム差、25%重みの相対姿勢差、15%重みの平均傾きの二乗平均を小さくします。支持高さ±0.500 mm、0.001 mm刻みの探索例です。現在が良ければ参考値も更新します。評価長を変えてもこの判定は変わりません（補助の300 mm基準）。残り＝√(現在の調整評価²−参考最良の調整評価²)が0.1 µm以内を補助練習の目安とします。厳密な全球最適を保証しません。</p></details>
 </details>
 <details class="card level-storage"><summary>保存・読込</summary><p id="levelSaveStatus" class="hint" role="status"></p><button id="exportLevel">調整データを保存</button><label class="import-level">調整データを読み込む<input id="importLevel" type="file" accept=".json,application/json"></label><p class="hint">現在の計算仕様・機械・方式・支持配置に対応するJSONを読み込みます。支持高さ・コラム配置・軸位置と、個体・初期支持高さ・参考最良の支持高さを保存します。計算仕様や支持配置が異なる旧データは自動で適用しません。旧ブラウザー保存は残し、新しい仕様は別に保存します。入力チェックを通ったデータだけ反映します。</p></details>
-<details class="card lesson-menu"><summary>説明・図の見方</summary><p class="note ui-notice"><span class="measurement-start-note">0</span>：共通の始点／<span class="measurement-length-note">300 mm</span>：比較終点。直角図の破線・白点：直角の基準／色線・色点：現在／点の間：直角のずれ／薄線：初期／薄面：初期からの変化（拡大表示）。</p><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>訓練の進め方・計算の前提</summary><ol><li>初期はランダムな据付レベルと、本体の固有精度を重ねています。機械の右枠の水準器を見ながら、粗調整で平均の左右・前後の傾きを整え、模型の変化を見ます。</li><li>微調整では同じ支持点を小さく動かします。直角・倒れ・ねじれを見比べ、代表位置全体の総合評価を目安へ近づけます。本体の固有誤差とガイドの曲がりは保持されます。</li><li>上の直角図は、同じ今の軸位置で初期と現在を比べます。薄い面が初期からの累積変化です。最後の操作や粗調整後からの改善とは別に読みます。同じ剛体側の軸対は、支持調整で直角が変わらない場合があります。</li><li>絵の下で軸を選び、左上の☰から「軸位置・デモ」で位置を動かします。場所によって直角の変化や相対姿勢が異なることを確かめます。画面を切り替えても個体・支持高さ・初期の基準は変えません。</li><li>調整例は手本の支持高さを実際に適用します。手動練習と見比べ、本体の残る誤差まで支持点で消せるわけではないことを確認します。</li></ol><p id="squarenessMeasurementNote">直角図の共通始点<span class="measurement-origin-note">O（0,0）</span>は、測定開始時のゼロ合わせです。本体の初期精度がゼロという意味ではありません。終点<span class="measurement-length-note">300 mm</span>は、今の軸位置の局所角度を固定長で比べる仮想の目印です。傾きと終点の差は拡大表示です。実NC座標・実際の移動・ガイドの全域走査を示す図ではありません。</p><p>支持点をつないだ面の姿勢を、工具側と案内側に重ねる学習用の仮定です。平面になる支持配置では、支持面のねじれや軸間の直角が変化しない場合があります。格子配置は隣接する点の間を補間するため、境界で勾配が切り替わる場合があります。L3 3000参考モデルは長手ベッド9点と左右柱側各3点の部位別支持姿勢を使い、柱天端を梁で結びます。支持面の補間は剛性や荷重を解く解析ではありません。</p><p>左右回転とピンチ／ホイールの拡大・縮小は模型の見え方の変更、XYZACは部品移動、支持点は据付姿勢の調整です。支持点の外側も教材用の支持面を延長して表示します。剛性・荷重・接触による弾性変形、加工誤差の予測、実機の合否判定は扱いません。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/leveling---vmc.html" target="_blank" rel="noopener noreferrer">Haas：立形MCのレベル確認（英語）</a> ／ <a href="https://www.wylerag.com/en/support/faq/" target="_blank" rel="noopener noreferrer">WYLER：精密水準器の基礎（英語）</a></p></details></details>
+<details class="card lesson-menu"><summary>説明・図の見方</summary><p>小型立形の「ダイヤル測定」は主軸に取り付けたゲージを直径300 mmで旋回し、テーブル上面への直角度を比較します。0°右、90°奥、180°左、270°手前。支持調整のたびに0°でゼロ合わせし、＋は測定子の押込み側です。表面の平面度や主軸の回転振れを測る機能ではありません。主軸軸線は本教材の主軸側の姿勢に一致すると仮定します。ワークとT溝模様を測定中だけ省き、取付棒の長さを接触位置に合わせた模式図です。実機のゲージ可動量・接触圧は再現しません。面外では数値を表示しません。ダイヤルは1回転100 µmです。</p><p class="note ui-notice"><span class="measurement-start-note">0</span>：共通の始点／<span class="measurement-length-note">300 mm</span>：比較終点。直角図の破線・白点：直角の基準／色線・色点：現在／点の間：直角のずれ／薄線：初期／薄面：初期からの変化（拡大表示）。</p><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>訓練の進め方・計算の前提</summary><ol><li>初期はランダムな据付レベルと、本体の固有精度を重ねています。機械の右枠の水準器を見ながら、粗調整で平均の左右・前後の傾きを整え、模型の変化を見ます。</li><li>微調整では同じ支持点を小さく動かします。直角・倒れ・ねじれを見比べ、代表位置全体の総合評価を目安へ近づけます。本体の固有誤差とガイドの曲がりは保持されます。</li><li>上の直角図は、同じ今の軸位置で初期と現在を比べます。薄い面が初期からの累積変化です。最後の操作や粗調整後からの改善とは別に読みます。同じ剛体側の軸対は、支持調整で直角が変わらない場合があります。</li><li>絵の下で軸を選び、左上の☰から「軸位置・デモ」で位置を動かします。場所によって直角の変化や相対姿勢が異なることを確かめます。画面を切り替えても個体・支持高さ・初期の基準は変えません。</li><li>調整例は手本の支持高さを実際に適用します。手動練習と見比べ、本体の残る誤差まで支持点で消せるわけではないことを確認します。</li></ol><p id="squarenessMeasurementNote">直角図の共通始点<span class="measurement-origin-note">O（0,0）</span>は、測定開始時のゼロ合わせです。本体の初期精度がゼロという意味ではありません。終点<span class="measurement-length-note">300 mm</span>は、今の軸位置の局所角度を固定長で比べる仮想の目印です。傾きと終点の差は拡大表示です。実NC座標・実際の移動・ガイドの全域走査を示す図ではありません。</p><p>支持点をつないだ面の姿勢を、工具側と案内側に重ねる学習用の仮定です。平面になる支持配置では、支持面のねじれや軸間の直角が変化しない場合があります。格子配置は隣接する点の間を補間するため、境界で勾配が切り替わる場合があります。L3 3000参考モデルは長手ベッド9点と左右柱側各3点の部位別支持姿勢を使い、柱天端を梁で結びます。支持面の補間は剛性や荷重を解く解析ではありません。</p><p>左右回転とピンチ／ホイールの拡大・縮小は模型の見え方の変更、XYZACは部品移動、支持点は据付姿勢の調整です。支持点の外側も教材用の支持面を延長して表示します。剛性・荷重・接触による弾性変形、加工誤差の予測、実機の合否判定は扱いません。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/leveling---vmc.html" target="_blank" rel="noopener noreferrer">Haas：立形MCのレベル確認（英語）</a> ／ <a href="https://www.wylerag.com/en/support/faq/" target="_blank" rel="noopener noreferrer">WYLER：精密水準器の基礎（英語）</a></p></details></details>
 </div></aside>
 <div id="trainingMainSlot" class="training-main-slot"><div id="trainingMain" class="training-main">
 <div class="training-heading"><button id="openTrainingMenu" class="training-menu-toggle" aria-label="設定メニューを開く" aria-expanded="false" aria-controls="trainingDrawer"><span aria-hidden="true">☰</span> 設定</button><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div></div>
-<div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><p id="liveSquarenessUnits" class="live-squareness-units">300 mm換算・µm（1 µm＝0.001 mm）</p><p id="squarenessValuesNote" class="visually-hidden">数値は現在と理想の直角との差です。基準はゼロ合わせ、比較軸は千分の一ミリ単位で四捨五入しています。プラスは直角より広い、マイナスは狭い。初期との差分やNC移動座標ではありません。図が範囲外でも換算値を表示します。</p><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output><div class="scene-readout-note"><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
+<div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><section id="spindleSweepPanel" class="spindle-sweep-panel" aria-label="主軸のダイヤル旋回測定" hidden>
+<div class="sweep-heading"><svg id="sweepDial" class="sweep-dial" viewBox="0 0 64 64" role="img" aria-label="現在のダイヤル"></svg><div><strong>主軸スイープ · 直径300 mm</strong><div class="sweep-current"><span id="sweepCurrentAngle">0°</span><output id="sweepCurrentValue">0 µm</output></div></div></div>
+<div class="sweep-positions" role="group" aria-label="測定する方向を選択">
+<button id="sweepPosition0" aria-pressed="true"><span>0° 右</span><strong id="sweepValue0">0</strong></button><button id="sweepPosition1" aria-pressed="false"><span>90° 奥</span><strong id="sweepValue1">0</strong></button><button id="sweepPosition2" aria-pressed="false"><span>180° 左</span><strong id="sweepValue2">0</strong></button><button id="sweepPosition3" aria-pressed="false"><span>270° 手前</span><strong id="sweepValue3">0</strong></button>
+</div><p id="sweepContactStatus" class="sweep-contact-status">0°基準・＋は押込み側・µm（0.001 mm）</p></section><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><p id="liveSquarenessUnits" class="live-squareness-units">300 mm換算・µm（1 µm＝0.001 mm）</p><p id="squarenessValuesNote" class="visually-hidden">数値は現在と理想の直角との差です。基準はゼロ合わせ、比較軸は千分の一ミリ単位で四捨五入しています。プラスは直角より広い、マイナスは狭い。初期との差分やNC移動座標ではありません。図が範囲外でも換算値を表示します。</p><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output><div class="scene-readout-note"><span id="scene-readout-sweep-note" hidden>主軸と上面の相対傾き</span><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
 <div id="viewerLevels" class="viewer-levels" role="group" aria-label="支持面の平均レベル。気泡は高い側へ動きます">
 <div class="viewer-gauge viewer-gauge-lr"><span class="viewer-gauge-title">平均 · 左右</span><strong id="stageAverageLR" class="level-direction"></strong><div class="vial" role="img" aria-label="平均の左右傾きを示す気泡" aria-describedby="stageAverageLR"><span class="center-lines"></span><span id="coarseBubbleLR" class="bubble"></span></div><div class="gauge-ends"><span>左</span><span>右</span></div></div>
 <div class="viewer-gauge viewer-gauge-fb"><span class="viewer-gauge-title">平均 · 前後</span><strong id="stageAverageFB" class="level-direction"></strong><div class="vertical-gauge"><span>奥</span><div class="vial vial-vertical" role="img" aria-label="平均の前後傾きを示す気泡。上が奥、下が手前" aria-describedby="stageAverageFB"><span class="center-lines"></span><span id="coarseBubbleFB" class="bubble"></span></div><span>手前</span></div></div>
 </div><div id="sceneViewport" class="scene-viewport"><canvas id="scene" tabindex="0" aria-label="工作機械の構造模型。左右ドラッグまたは左右矢印キーで回転。二本指のピンチ、マウスホイール、プラス・マイナスキーで拡大縮小。Homeキーで大きさを戻す"></canvas></div>
-<div id="sceneToolbar" class="scene-toolbar" role="group" aria-label="模型で確認する軸の選択"><div id="axisTabs" class="axis-tabs" role="group" aria-label="模型で確認する軸"></div></div>
+<div id="sceneToolbar" class="scene-toolbar" role="group" aria-label="模型の軸選択と測定"><div id="axisTabs" class="axis-tabs" role="group" aria-label="模型で確認する軸"></div><button id="toggleSpindleSweep" class="sweep-toggle" aria-pressed="false" hidden>ダイヤル測定</button><button id="runSpindleSweep" class="sweep-run" aria-pressed="false" hidden>1周回す</button></div>
 <span id="axisDemoStatus" class="axis-demo-status" role="status"></span></div>
 <div id="mainAdjustment" class="main-adjustment" role="group" aria-label="支持点の調整"><div class="adjustment-tabs" role="group" aria-label="調整の段階"><button id="coarseAdjust" aria-pressed="true" aria-controls="coarsePanel">粗調整</button><button id="fineAdjust" aria-pressed="false" aria-controls="finePanel">微調整</button></div><p id="selectedSupportLabel" class="selected-support-label" role="status"></p><div id="supportMap" class="support-map" role="group" aria-label="調整する支持点"></div><div class="common-support-actions"><button id="lowerSupport" aria-label="選んだ支持点を下げる">↓ 下げる</button><button id="raiseSupport" aria-label="選んだ支持点を上げる">↑ 上げる</button></div><p id="levelInputMessage" class="level-message visually-hidden" role="status"></p></div>
 </div></div><button id="trainingMainShield" class="training-main-shield" hidden tabindex="-1" aria-label="設定メニューを閉じて主画面へ戻る"></button></div></div></section>
@@ -875,6 +900,75 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
  }
  return Object.freeze({referenceLength,distributions,random,generate,valid,directions,rms,optimize});
 });
+</script><script>(function(root,factory){
+ 'use strict';
+ const api=factory();
+ if(typeof module==='object'&&module.exports)module.exports=api;
+ if(root)root.SpindleSweep=api;
+})(typeof window!=='undefined'?window:typeof globalThis!=='undefined'?globalThis:null,function(){
+ 'use strict';
+ const dot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
+ const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+ const invalid=reason=>({valid:false,reason});
+ // Rescaling first avoids overflow/underflow while accepting any finite,
+ // nonzero vector magnitude. All caller-owned vectors remain untouched.
+ function unit(v){
+  if(!Array.isArray(v)||v.length!==3||![0,1,2].every(i=>Number.isFinite(v[i])))return null;
+  const scale=Math.max(...v.map(Math.abs));if(scale===0)return null;
+  const scaled=v.map(q=>q/scale),length=Math.hypot(...scaled);
+  return scaled.map(q=>q/length);
+ }
+ const fixed=v=>Object.freeze([...v]);
+ function measure(options){
+  if(!options||typeof options!=='object')return invalid('invalid-options');
+  const axis=unit(options.axis),tableNormal=unit(options.tableNormal),right=unit(options.right),radius=options.radius??.15;
+  if(!axis)return invalid('invalid-axis');
+  if(!tableNormal)return invalid('invalid-table-normal');
+  if(!right)return invalid('invalid-right');
+  if(!Number.isFinite(radius)||radius<=0)return invalid('invalid-radius');
+  const alignment=dot(tableNormal,axis);
+  // The tip follows the positive spindle axis into an upward-facing plane.
+  // A parallel axis has no unique contact; a reversed normal is not that face.
+  if(Math.abs(alignment)<1e-10)return invalid('parallel-contact');
+  if(alignment<0)return invalid('opposed-table-normal');
+  const along=dot(right,axis),projected=right.map((v,i)=>v-along*axis[i]);
+  if(Math.hypot(...projected)<1e-10)return invalid('parallel-right');
+  const first=unit(projected),e90=unit(cross(first,axis)),e0=unit(cross(axis,e90));
+  // The reference ring lies in the plane normal to the spindle axis. A line
+  // p + lambda * axis intersects the table plane n.p = 0 at:
+  // lambda = -n.p / (n.axis). Plane translations add the same lambda to every
+  // angle and cancel when the dial is zeroed at 0 degrees.
+  const a=-radius*dot(tableNormal,e0)/alignment,b=-radius*dot(tableNormal,e90)/alignment;
+  const tirMicrons=2*Math.hypot(a,b)*1e6;
+  if(!Number.isFinite(tirMicrons))return invalid('out-of-range');
+  function at(degrees){
+   if(!Number.isFinite(degrees))return invalid('invalid-angle');
+   const angle=((degrees%360)+360)%360;
+   // Exact cardinal coefficients keep opposite-pair identities free of the
+   // sin(pi) round-off, including the exact zero reading used for calibration.
+   let cosine,sine;
+   if(angle===0){cosine=1;sine=0;}
+   else if(angle===90){cosine=0;sine=1;}
+   else if(angle===180){cosine=-1;sine=0;}
+   else if(angle===270){cosine=0;sine=-1;}
+   else{const radians=angle*Math.PI/180;cosine=Math.cos(radians);sine=Math.sin(radians);}
+   const axialOffsetMetres=a*cosine+b*sine;
+   const ringPoint=e0.map((v,i)=>radius*(v*cosine+e90[i]*sine));
+   const contactPoint=ringPoint.map((v,i)=>v+axialOffsetMetres*axis[i]);
+   // Positive is increased plunger compression: a higher table contact point
+   // relative to the spindle-normal ring. Metres are converted to micrometres
+   // only here; renderer magnification does not enter this calculation.
+   const readingMicrons=angle===0?0:(axialOffsetMetres-a)*1e6;
+   if(!Number.isFinite(readingMicrons)||!ringPoint.every(Number.isFinite)||!contactPoint.every(Number.isFinite))return invalid('out-of-range');
+   return Object.freeze({valid:true,degrees:angle,readingMicrons:readingMicrons===0?0:readingMicrons,axialOffsetMetres,ringPoint:fixed(ringPoint),contactPoint:fixed(contactPoint)});
+  }
+  const cardinal=[0,90,180,270].map(at);
+  if(cardinal.some(p=>!p.valid))return invalid('out-of-range');
+  const readings=cardinal.map(p=>p.readingMicrons),fourPointRangeMicrons=Math.max(...readings)-Math.min(...readings);
+  return Object.freeze({valid:true,radius,axis:fixed(axis),tableNormal:fixed(tableNormal),e0:fixed(e0),e90:fixed(e90),zeroOffsetMetres:a,cardinal:Object.freeze(cardinal),tirMicrons,fourPointRangeMicrons,at});
+ }
+ return Object.freeze({measure});
+});
 </script><script>'use strict';
 // 編集する場合、機械の名称・説明・モデル種別はこの一覧で変更できます。
 const machines = [
@@ -1009,7 +1103,7 @@ function navigate(next,{fromHistory=false}={}){
  const previous=page;
  clearScenePointers();setAxisMenuOpen(false);
  if(next!==previous){resetTrainingPanels();document.activeElement?.blur?.();if(next==='tester'&&window.resetTesterLesson)window.resetTesterLesson();}
- if(next!=='training')stopMotion();if(next!==previous)$('axisDemoStatus').textContent='';page=next;for(const id of Object.keys(pageTitles))$(id).hidden=id!==next;
+ if(next!=='training'){stopMotion();if(typeof stopSpindleSweep==='function')stopSpindleSweep();}if(next!==previous)$('axisDemoStatus').textContent='';page=next;for(const id of Object.keys(pageTitles))$(id).hidden=id!==next;
  document.body.classList.toggle('in-lab',next==='training'||next==='tester');
  document.body.classList.toggle('in-mechanical-lab',next==='training');
  const controls=$(next+'Controls');if(controls)controls.scrollTop=0;
@@ -1049,6 +1143,7 @@ function resumeOrOpenMachine(m){
  openMachine(m);
 }
 function openMachine(m){
+ if(typeof stopSpindleSweep==='function'){stopSpindleSweep();spindleSweepMode=false;spindleSweepAngle=0;}
  stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.defaultMode||(m.modes?m.modes[0][0]:'');current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
 function populateMachine(){
@@ -1109,7 +1204,7 @@ function createGeometry(m){
   label([W*.48,.648,0],'高剛性側（仮定）');
  }else box(0,.42,0,W,.45,D,c.base,m.kind==='lathe'?'ベッド':'ベース');
  function spindle(x,y,z,axes){withGroup(axes,()=>{cyl(x,y,z,.16,.42,c.spindle,'y');cyl(x,y-.3,z,.045,.18,c.spindle);},'tool');}
- function table(width,depth,y,z,axes){withGroup(axes,()=>{box(0,y,z,width,.2,depth,c.table,'テーブル');for(let i=-3;i<=3;i++)box(i*width*.11,y+.105,z,.018,.012,depth*.97,c.rail);box(0,y+.3,z,.42,.38,.36,c.work);},'work');}
+ function table(width,depth,y,z,axes){withGroup(axes,()=>{box(0,y,z,width,.2,depth,c.table,'テーブル');const detailStart=faces.length;for(let i=-3;i<=3;i++)box(i*width*.11,y+.105,z,.018,.012,depth*.97,c.rail);box(0,y+.3,z,.42,.38,.36,c.work);for(let i=detailStart;i<faces.length;i++)faces[i].tableDetail=true;},'work');}
  if(['vertical','compact','travel'].includes(m.kind)){
  const travel=m.kind==='travel',cx=travel?-.5:0;
  [-1,1].forEach(k=>m.kind==='compact'?curvedBox(k*.36,.7,-D*.05,.1,.1,D*.7,c.rail,null,1,8):box(travel?0:k*.36,.7,travel?D*.22+k*.1:-D*.05,travel?W*.9:.1,.1,travel?.09:D*.7,c.rail));
@@ -1172,7 +1267,7 @@ function idealOutlineSegments(edges,context,angle,view){
 }
 const idealOutlineCache=new Map();
 function drawIdealOutline(ctx,m,model,screen,angle,view){
- const key=m.kind+':'+m.w+':'+m.d;
+ const key=m.kind+':'+m.w+':'+m.d+(typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&m.kind==='compact'?':sweep':'');
  if(!idealOutlineCache.has(key)){if(idealOutlineCache.size>=24)idealOutlineCache.clear();idealOutlineCache.set(key,idealOutlineEdges(model));}
  const segments=idealOutlineSegments(idealOutlineCache.get(key),idealDisplayContext(m),angle,view),points=new Map(),edges=[],dedup=new Set(),pointKey=p=>p.map(v=>Math.round(v*100)).join(',');
  for(const segment of segments){
@@ -1263,7 +1358,8 @@ function render(canvas,m,angle,showLabels,active){
  const ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(rect.width*ratio);canvas.height=Math.round(rect.height*ratio);
  const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);const width=rect.width,height=rect.height;
  ctx.fillStyle='#f1f0ed';ctx.fillRect(0,0,width,height);
- const model=createGeometry(m),training=canvas===$('scene')&&active>=0;
+ const model=createGeometry(m),training=canvas===$('scene')&&active>=0,sweep=training&&typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&m.kind==='compact';
+ if(sweep)model.faces=model.faces.filter(f=>!f.tableDetail);
  const project=p=>sceneProject(p,angle,training?sceneView:'oblique',!training);
  const fitPoints=training?displayFramingPoints(m,model):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
  // Fit the machine and its fixed movement envelope, without the empty ground around it.
@@ -1275,7 +1371,7 @@ function render(canvas,m,angle,showLabels,active){
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
  if(active>=0)model.faces.push(...levelSurfaceFaces(m));
- model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
+ model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&!sweep&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
  if(training&&$('showIdealOutline').checked)drawIdealOutline(ctx,m,model,screen,angle,sceneView);
  // Reserve support markers before placing any text. Labels use the entire
  // Canvas now that the operation bar has its own row below it.
@@ -1292,9 +1388,9 @@ function render(canvas,m,angle,showLabels,active){
  if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.195,s.z]));if(supports.length>8&&i!==active){ctx.beginPath();ctx.arc(p[0],p[1]+10,3,0,Math.PI*2);ctx.fillStyle='#6c604b';ctx.fill();return;}labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda794d':'#ffffff26';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  // P is a fixed material point on the compact table top. Its moving path,
  // rather than an undeformed saddle triad, defines the compact X/Y readings.
- const measurementPixel=training&&m.kind==='compact'&&levelSolution&&levelGeometry?screen(compactTablePathPoint(positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0))):null;
+ const measurementPixel=training&&!sweep&&m.kind==='compact'&&levelSolution&&levelGeometry?screen(compactTablePathPoint(positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0))):null;
  if(measurementPixel)labelBoxes.push({x:measurementPixel[0]-5,y:measurementPixel[1]-5,w:10,h:10});
- if(active>=0&&$('showAxes').checked){
+ if(active>=0&&!sweep&&$('showAxes').checked){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
  for(const a of axisIndicators(m,model)){
@@ -1323,6 +1419,7 @@ function render(canvas,m,angle,showLabels,active){
   const box=candidates.find(freeLabel);
   if(box){labelBoxes.push(box);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(box.x+20,box.y+9);ctx.strokeStyle='#b3480080';ctx.lineWidth=.8;ctx.stroke();ctx.fillStyle='#fff8ee';ctx.fillRect(box.x,box.y,box.w,box.h);ctx.font='10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#7d3300';ctx.fillText('測定P',box.x+20,box.y+9);}
  }
+ if(sweep)drawSpindleSweep(ctx,screen,labelBoxes);
  if(showLabels){
   // Prefer the selected moving assembly and the base/column. A short Canvas
   // omits lower-priority part names rather than compressing their 18px boxes.
@@ -1344,9 +1441,10 @@ function updateSceneViewUI(){
  $('sceneView').value=sceneView;
  $('sceneDirection').textContent=sceneView==='front'?'正面：左 → 右':sceneView==='side'?'側面：手前 → 奥':'斜め：左右回転';
  $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。薄い破線の理想輪郭は'+($('showIdealOutline').checked?'表示中':'非表示')+'。左上の設定メニューで切り替えます。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
- if(current.kind==='compact')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'測定Pはテーブル上面中央の固定点です。X・Yの比較はこの点の送り方向を使い、送り中の傾き変化による横ずれを含みます。');
+ if(current.kind==='compact'&&!(typeof spindleSweepMode!=='undefined'&&spindleSweepMode))$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'測定Pはテーブル上面中央の固定点です。X・Yの比較はこの点の送り方向を使い、送り中の傾き変化による横ずれを含みます。');
+ if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode)$('scene').setAttribute('aria-label',current.name+'の主軸ダイヤル測定。主軸に取り付けたゲージでテーブル上面を直径300ミリの円で旋回測定しています。0度は右、90度は奥、180度は左、270度は手前。ワーク、T溝模様、軸矢印は測定中だけ省略しています。左右ドラッグで模型を回転、ピンチまたはホイールで拡大縮小。');
 }
-function drawScene(){if(levelSolution)updateAccuracy();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
+function drawScene(){if(levelSolution)updateAccuracy();if(typeof updateSpindleSweep==='function')updateSpindleSweep();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){
  if(!['oblique','front','side'].includes(view))return;clearScenePointers();sceneView=view;
  yaw=view==='front'?0:view==='side'?Math.PI/2:-.45;updateSceneViewUI();drawScene();
@@ -1416,6 +1514,7 @@ function trainingMenuFocusables(){
  };walk($('trainingDrawer'));return found;
 }
 function setTrainingMenuOpen(open,restoreFocus=false){
+ if(open&&typeof stopSpindleSweep==='function')stopSpindleSweep();
  open=!!open;clearScenePointers();trainingMenuOpen=open;
  $('trainingDrawer').hidden=!open;$('trainingShell').classList.toggle('menu-open',open);$('openTrainingMenu').setAttribute('aria-expanded',String(open));
  $('axisControlsToggle').setAttribute('aria-expanded',String(open));$('trainingMain').inert=open;$('trainingMain').setAttribute('aria-hidden',String(open));$('trainingMainShield').hidden=!open;
@@ -1444,7 +1543,7 @@ $('axisMenu').addEventListener('keydown',trainingMenuKeydown);
 if(typeof ResizeObserver==='function')new ResizeObserver(()=>{if(page==='training'){refreshTrainingLayout();drawScene();}}).observe($('trainingShell'));
 let motionFrame=null,motionStart=null;
 function stopMotion(){const running=motionFrame!==null;if(running)cancelAnimationFrame(motionFrame);motionFrame=null;motionStart=null;if($('playAxis')){$('playAxis').textContent='選んだ軸を動かす';$('playAxis').setAttribute('aria-pressed','false');}if(running){$('axisDemoStatus').textContent=selectedAxis+'軸の動作を終了しました。';if(typeof saveLeveling==='function')saveLeveling();}}
-$('playAxis').onclick=()=>{if(motionFrame!==null){stopMotion();return;}$('playAxis').textContent='動きを止める';$('playAxis').setAttribute('aria-pressed','true');const key=selectedAxis;
+$('playAxis').onclick=()=>{if(typeof stopSpindleSweep==='function')stopSpindleSweep();if(motionFrame!==null){stopMotion();return;}$('playAxis').textContent='動きを止める';$('playAxis').setAttribute('aria-pressed','true');const key=selectedAxis;
  setAxisMenuOpen(false,true);$('axisDemoStatus').textContent=key+'軸の動作を確認中です。設定メニューの軸位置・デモから停止できます。';
  // A single round trip demonstrates the chosen part; no endless motion.
  function step(t){if(motionStart===null)motionStart=t;const progress=Math.min((t-motionStart)/3500,1);positions[key]=Math.sin(progress*2*Math.PI)*85;updateAxisValues();drawScene();if(progress<1)motionFrame=requestAnimationFrame(step);else{positions[key]=0;updateAxisValues();stopMotion();drawScene();}}
@@ -2282,6 +2381,115 @@ $('machineCondition').onchange=()=>drawMachine($('machineCondition').value);
 $('drawMachine').onclick=()=>drawMachine($('machineCondition').value);
 $('restoreInitialLevel').onclick=()=>{stopMotion();invalidateLevelImport();resetAdjustmentProgress();supportHeights=[...machineProfile.initialHeights];levelExercise={solved:false};$('levelInputMessage').textContent='同じ個体の抽選時の支持高さへ戻しました。寸法・コラム配置・軸位置は現在の設定で比較します。';updateLeveling();};
 $('applyBestLevel').onclick=()=>{stopMotion();invalidateLevelImport();updateMachineAccuracy();supportHeights=machineBestHeights();$('levelInputMessage').textContent='探索で得た参考調整を適用しました。本体や支持姿勢に残る誤差も確認してください。';updateLeveling();};
+</script><script>'use strict';
+// Measuring/view state is deliberately separate from the saved installation.
+let spindleSweepMode=false,spindleSweepAngle=0,spindleSweepTimer=null,spindleSweepProgress=0;
+const sweepDirections=['右','奥','左','手前'];
+const sweepDot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
+function spindleSweepGeometry(state=positions,solution=levelSolution,profile=machineProfile,factor=1){
+ if(current.kind!=='compact'||!solution)return {valid:false};
+ const g=geometryModel(state,solution,profile),toolSeat=levelCoordinates(g.toolPoints[0].x,g.toolPoints[0].z),workSeat=levelCoordinates(g.workPoint.x,g.workPoint.z);
+ const tool=compactSupportFrame(solution,toolSeat.x,toolSeat.z,factor),work=compactSupportFrame(solution,workSeat.x,workSeat.z,factor);
+ const body=intrinsicBodyFrame(axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),profile,factor);
+ const axis=tool.rotate(body.rotate([0,1,0])),right=tool.rotate(body.rotate([1,0,0]));
+ const measurement=window.SpindleSweep.measure({axis,tableNormal:work.up,right,radius:.15});
+ if(!measurement.valid)return measurement;
+ // These locations share the compact model's physical transforms. At factor=1
+ // they contain no visual exaggeration, camera rotation, zoom or clearance.
+ const layout=columnLayoutOffset(current),nosePlan=levelCoordinates(layout.x,-.3+layout.z),relative=[nosePlan.x-toolSeat.x,1.98+.3*state.Z/100-.66,nosePlan.z-toolSeat.z];
+ const base=compactSurfacePoint(solution,toolSeat.x,toolSeat.z,factor),nose=tool.rotate(body.rotate(relative)).map((v,i)=>v+base[i]);
+ const tableCentre=compactTablePathPoint(state,solution,profile,factor),along=sweepDot(work.up,tableCentre.map((v,i)=>v-nose[i]))/sweepDot(work.up,measurement.axis);
+ const centre=nose.map((v,i)=>v+along*measurement.axis[i]);
+ const halfWidth=levelCoordinates(current.w*.78/2,0).x,halfDepth=levelCoordinates(0,current.d*.42/2).z;
+ const pointAt=degrees=>{
+  const p=measurement.at(degrees);if(!p.valid)return p;
+  const contact=p.contactPoint.map((v,i)=>v+centre[i]),delta=contact.map((v,i)=>v-tableCentre[i]);
+  const onTable=Math.abs(sweepDot(delta,work.right))<=halfWidth+1e-10&&Math.abs(sweepDot(delta,work.back))<=halfDepth+1e-10;
+  return {...p,contact,onTable};
+ };
+ return {valid:true,measurement,nose,centre,tableCentre,tableNormal:work.up,tableRight:work.right,tableBack:work.back,halfWidth,halfDepth,pointAt,cardinal:[0,90,180,270].map(pointAt)};
+}
+function spindleSweepReading(value){return squarenessMicronText(value);}
+function sweepDialMarkup(reading){
+ const theta=Number.isFinite(reading)?reading*Math.PI*2/100:0,tip=[32+22*Math.sin(theta),32-22*Math.cos(theta)];
+ const ticks=Array.from({length:20},(_,i)=>{const a=i*Math.PI/10,inner=i%5===0?23:26;return `<line x1="${32+inner*Math.sin(a)}" y1="${32-inner*Math.cos(a)}" x2="${32+29*Math.sin(a)}" y2="${32-29*Math.cos(a)}"/>`;}).join('');
+ return `<circle cx="32" cy="32" r="31" fill="#fff" stroke="#3a3a3a" stroke-width="2"/><g stroke="#777" stroke-width="1">${ticks}</g><text x="32" y="14" text-anchor="middle" fill="#333" font-size="8">0</text><line x1="32" y1="32" x2="${tip[0]}" y2="${tip[1]}" stroke="#b34800" stroke-width="2"/><circle cx="32" cy="32" r="3" fill="#333"/>`;
+}
+function updateSpindleSweep(){
+ const available=current.kind==='compact';$('toggleSpindleSweep').hidden=!available;
+ if(!available){spindleSweepMode=false;stopSpindleSweep();}
+ $('toggleSpindleSweep').textContent=spindleSweepMode?'直角図へ':'ダイヤル測定';
+ $('toggleSpindleSweep').setAttribute('aria-pressed',String(spindleSweepMode));
+ $('spindleSweepPanel').hidden=!spindleSweepMode;$('liveSquareness').hidden=spindleSweepMode;$('liveSquarenessUnits').hidden=spindleSweepMode;
+ $('runSpindleSweep').hidden=!spindleSweepMode;$('axisTabs').hidden=spindleSweepMode;
+ $('scene-readout-sweep-note').hidden=!spindleSweepMode;$('modelSemantics').hidden=spindleSweepMode;
+ if(!spindleSweepMode)return;
+ const measured=spindleSweepGeometry(),zeroValid=measured.valid&&measured.cardinal[0].onTable;
+ for(let i=0;i<4;i++){
+  const p=measured.cardinal?.[i],readable=zeroValid&&p?.onTable,el=$('sweepValue'+i),button=$('sweepPosition'+i);
+  el.textContent=readable?spindleSweepReading(p.readingMicrons):p&&!p.onTable?'面外':'—';
+  el.setAttribute('data-reading-microns',readable?String(p.readingMicrons):'');
+  button.setAttribute('aria-pressed',String(Math.abs(spindleSweepAngle-i*90)<.001));
+  button.setAttribute('aria-label',i*90+'度・'+sweepDirections[i]+'、'+(readable?el.textContent+'マイクロメートル':el.textContent));
+ }
+ const point=measured.valid?measured.pointAt(spindleSweepAngle):null,readable=zeroValid&&point?.onTable;
+ $('sweepCurrentAngle').textContent=Math.round(spindleSweepAngle)+'°';
+ $('sweepCurrentValue').textContent=readable?spindleSweepReading(point.readingMicrons)+' µm':'測定できません';
+ $('sweepCurrentValue').setAttribute('data-reading-microns',readable?String(point.readingMicrons):'');
+ $('sweepDial').innerHTML=sweepDialMarkup(readable?point.readingMicrons:NaN);
+ $('sweepDial').setAttribute('aria-label',Math.round(spindleSweepAngle)+'度のダイヤル、'+$('sweepCurrentValue').textContent+'。一回転100マイクロメートル。');
+ $('sweepContactStatus').textContent=!zeroValid?'0°がテーブル外です。軸位置を中央へ戻してください。':!point?.onTable?'測定子がテーブル外です。軸位置を中央へ戻してください。':'0°基準・＋は押込み側・µm（0.001 mm）';
+}
+function redrawSpindleSweep(){
+ updateSpindleSweep();if(page==='training'){updateSceneViewUI();render($('scene'),current,yaw,$('labels').checked,selected);}
+}
+function stopSpindleSweep(){
+ if(spindleSweepTimer!==null)clearTimeout(spindleSweepTimer);spindleSweepTimer=null;
+ if($('runSpindleSweep')){$('runSpindleSweep').textContent='1周回す';$('runSpindleSweep').setAttribute('aria-pressed','false');}
+}
+function setSpindleSweepMode(enabled){
+ stopSpindleSweep();stopMotion();spindleSweepMode=!!enabled&&current.kind==='compact';spindleSweepAngle=0;drawScene();
+}
+function selectSpindleSweepAngle(degrees){
+ stopSpindleSweep();spindleSweepAngle=degrees;redrawSpindleSweep();
+}
+function runSpindleSweep(){
+ if(spindleSweepTimer!==null){stopSpindleSweep();return;}
+ stopMotion();const start=spindleSweepAngle;spindleSweepProgress=0;
+ $('runSpindleSweep').textContent='停止';$('runSpindleSweep').setAttribute('aria-pressed','true');
+ const step=()=>{
+  if(!spindleSweepMode||page!=='training'||document.hidden){stopSpindleSweep();return;}
+  spindleSweepProgress=Math.min(360,spindleSweepProgress+3);spindleSweepAngle=(start+spindleSweepProgress)%360;redrawSpindleSweep();
+  if(spindleSweepProgress<360)spindleSweepTimer=setTimeout(step,40);else stopSpindleSweep();
+ };
+ spindleSweepTimer=setTimeout(step,40);
+}
+function drawSpindleSweep(ctx,screen,labelBoxes){
+ if(!spindleSweepMode||current.kind!=='compact')return;
+ // Drawing uses the same transforms with the established posture exaggeration.
+ // It does not feed those exaggerated directions back into measured numbers.
+ const visual=spindleSweepGeometry(positions,levelSolution,machineProfile,displayFactor()),actual=spindleSweepGeometry();if(!visual.valid||!actual.valid)return;
+ const lift=p=>p.map((v,i)=>v+(i===1?displayClearance():0)),at=visual.pointAt(spindleSweepAngle),real=actual.pointAt(spindleSweepAngle),axis=visual.measurement.axis;
+ const hub=visual.centre.map((v,i)=>v+axis[i]*.28),arm=at.ringPoint.map((v,i)=>v+hub[i]),dial=at.ringPoint.map((v,i)=>v+visual.centre[i]+axis[i]*.15);
+ const line=(a,b,color,width=2,dash=[])=>{const p=screen(lift(a)),q=screen(lift(b));ctx.strokeStyle=color;ctx.lineWidth=width;ctx.setLineDash?.(dash);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(q[0],q[1]);ctx.stroke();ctx.setLineDash?.([]);};
+ // The holder extends from the drawn spindle nose; the plunger meets the table.
+ line(visual.nose,hub,'#333',3);line(hub,arm,'#b34800',3);line(arm,dial,'#333',2);line(dial,at.contact,real.onTable?'#333':'#b34800',2,real.onTable?[]:[3,3]);
+ ctx.strokeStyle='#b3480080';ctx.lineWidth=1;ctx.setLineDash?.([3,3]);ctx.beginPath();
+ for(let d=0;d<=360;d+=6){const p=screen(lift(visual.pointAt(d).contact));if(d)ctx.lineTo(p[0],p[1]);else ctx.moveTo(p[0],p[1]);}ctx.stroke();ctx.setLineDash?.([]);
+ for(let i=0;i<4;i++){
+  const p=screen(lift(visual.cardinal[i].contact));ctx.beginPath();ctx.arc(p[0],p[1],2.5,0,Math.PI*2);ctx.fillStyle=actual.cardinal[i].onTable?'#b34800':'#999';ctx.fill();
+ }
+ const p=screen(lift(dial)),r=9;labelBoxes.push({x:p[0]-r,y:p[1]-r,w:r*2,h:r*2});
+ ctx.beginPath();ctx.arc(p[0],p[1],r,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.strokeStyle='#222';ctx.lineWidth=1.5;ctx.stroke();
+ const theta=actual.cardinal[0].onTable&&real.onTable?real.readingMicrons*Math.PI*2/100:0;
+ ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]+r*.75*Math.sin(theta),p[1]-r*.75*Math.cos(theta));ctx.strokeStyle='#b34800';ctx.stroke();
+ const tip=screen(lift(at.contact));ctx.beginPath();ctx.arc(tip[0],tip[1],2,0,Math.PI*2);ctx.fillStyle=real.onTable?'#b34800':'#aaa';ctx.fill();
+}
+$('toggleSpindleSweep').onclick=()=>setSpindleSweepMode(!spindleSweepMode);
+$('runSpindleSweep').onclick=runSpindleSweep;
+for(let i=0;i<4;i++)$('sweepPosition'+i).onclick=()=>selectSpindleSweepAngle(i*90);
+window.addEventListener('pagehide',stopSpindleSweep);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopSpindleSweep();});
 </script><script>(()=>{
   'use strict';
   const root=document.getElementById('tester');

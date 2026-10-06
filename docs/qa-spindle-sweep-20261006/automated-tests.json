@@ -1,0 +1,244 @@
+{
+  "testCount": 36,
+  "passed": 36,
+  "failed": 0,
+  "results": [
+    {
+      "test": "check-3d-axis-controls.cjs",
+      "exit": 0,
+      "seconds": 23.17,
+      "output": ""
+    },
+    {
+      "test": "check-accuracy-engine.cjs",
+      "exit": 0,
+      "seconds": 0.19,
+      "output": ""
+    },
+    {
+      "test": "check-accuracy-render.cjs",
+      "exit": 0,
+      "seconds": 25.97,
+      "output": ""
+    },
+    {
+      "test": "check-accuracy-review.cjs",
+      "exit": 0,
+      "seconds": 1.16,
+      "output": ""
+    },
+    {
+      "test": "check-adjustment-flow.cjs",
+      "exit": 0,
+      "seconds": 7.1,
+      "output": ""
+    },
+    {
+      "test": "check-canvas-labels.cjs",
+      "exit": 0,
+      "seconds": 35.95,
+      "output": ""
+    },
+    {
+      "test": "check-compact-bending.cjs",
+      "exit": 0,
+      "seconds": 1.33,
+      "output": ""
+    },
+    {
+      "test": "check-compact-table-path.cjs",
+      "exit": 0,
+      "seconds": 3.36,
+      "output": ""
+    },
+    {
+      "test": "check-confirmed-layouts.cjs",
+      "exit": 0,
+      "seconds": 8.52,
+      "output": ""
+    },
+    {
+      "test": "check-display-motion.cjs",
+      "exit": 0,
+      "seconds": 33.3,
+      "output": ""
+    },
+    {
+      "test": "check-electrical-full.cjs",
+      "exit": 0,
+      "seconds": 0.31,
+      "output": ""
+    },
+    {
+      "test": "check-full-code-review.cjs",
+      "exit": 0,
+      "seconds": 10.79,
+      "output": ""
+    },
+    {
+      "test": "check-guide-response-invariants.cjs",
+      "exit": 0,
+      "seconds": 3.58,
+      "output": ""
+    },
+    {
+      "test": "check-ideal-display.cjs",
+      "exit": 0,
+      "seconds": 21.3,
+      "output": ""
+    },
+    {
+      "test": "check-ideal-outline-ui.cjs",
+      "exit": 0,
+      "seconds": 52.6,
+      "output": ""
+    },
+    {
+      "test": "check-interface-audit.cjs",
+      "exit": 0,
+      "seconds": 0.72,
+      "output": ""
+    },
+    {
+      "test": "check-irregular-leveling.cjs",
+      "exit": 0,
+      "seconds": 0.1,
+      "output": ""
+    },
+    {
+      "test": "check-level-stages.cjs",
+      "exit": 0,
+      "seconds": 3.62,
+      "output": ""
+    },
+    {
+      "test": "check-leveling-engine.cjs",
+      "exit": 0,
+      "seconds": 0.07,
+      "output": ""
+    },
+    {
+      "test": "check-leveling-learning.cjs",
+      "exit": 0,
+      "seconds": 3.05,
+      "output": ""
+    },
+    {
+      "test": "check-leveling-ui.cjs",
+      "exit": 0,
+      "seconds": 1.92,
+      "output": ""
+    },
+    {
+      "test": "check-live-squareness-values.cjs",
+      "exit": 0,
+      "seconds": 1.78,
+      "output": ""
+    },
+    {
+      "test": "check-mechanical-audit.cjs",
+      "exit": 0,
+      "seconds": 4.33,
+      "output": ""
+    },
+    {
+      "test": "check-mobile-navigation.cjs",
+      "exit": 0,
+      "seconds": 0.81,
+      "output": ""
+    },
+    {
+      "test": "check-model-posture.cjs",
+      "exit": 0,
+      "seconds": 87.96,
+      "output": ""
+    },
+    {
+      "test": "check-portal-shear-invariants.cjs",
+      "exit": 0,
+      "seconds": 3.84,
+      "output": ""
+    },
+    {
+      "test": "check-random-accuracy-review.cjs",
+      "exit": 0,
+      "seconds": 2.64,
+      "output": ""
+    },
+    {
+      "test": "check-scene-zoom.cjs",
+      "exit": 0,
+      "seconds": 10.59,
+      "output": ""
+    },
+    {
+      "test": "check-settings-menu-ui.cjs",
+      "exit": 0,
+      "seconds": 8.39,
+      "output": "",
+      "verifiedChecks": 173,
+      "verifiedFrames": 270,
+      "finiteCanvasCoordinates": 1735165
+    },
+    {
+      "test": "check-settings-menu.cjs",
+      "exit": 0,
+      "seconds": 15.54,
+      "output": ""
+    },
+    {
+      "test": "check-site-navigation.cjs",
+      "exit": 0,
+      "seconds": 1.45,
+      "output": ""
+    },
+    {
+      "test": "check-spindle-sweep.cjs",
+      "exit": 0,
+      "seconds": 1.42,
+      "output": ""
+    },
+    {
+      "test": "check-squareness-display.cjs",
+      "exit": 0,
+      "seconds": 2.26,
+      "output": ""
+    },
+    {
+      "test": "check-structural-connections.cjs",
+      "exit": 0,
+      "seconds": 1.08,
+      "output": ""
+    },
+    {
+      "test": "check-structural-invariants.cjs",
+      "exit": 0,
+      "seconds": 6.61,
+      "output": ""
+    },
+    {
+      "test": "check-tester-lesson.cjs",
+      "exit": 0,
+      "seconds": 0.07,
+      "output": ""
+    }
+  ],
+  "sourceSha256": {
+    "src/accuracy-ui.js": "257efd07d54ddc9257e261b2bbff372c0694545151710a82dd8056742f92f2e5",
+    "src/app.js": "32267c1d8ef8515333422d8ccdb466ac6d9e64564fcdafab82cb4bac3ac653d1",
+    "src/index.html": "a36bffe9adc26fd63eaf6edc2044c4b8f32979ba3c0e1f2d31fdeb99a38ee65c",
+    "src/leveling-ui.js": "4e3ee21ef4626cdf83efa7e6c139a39fbcbb64c196f23c7c63ec5252137beb28",
+    "src/leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+    "src/machine-accuracy-ui.js": "5123e4a167a90d2c9a08c3f5a06a8b2b7f2c41430b32bde9f2b8507545587363",
+    "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "src/spindle-sweep-ui.js": "b4f89fbf1bf1436cf6e123948571c2462cf9f9d2359206af0c1c018fa603089e",
+    "src/spindle-sweep.js": "e61b650ca6c99449443573cd8a0e7d6413375b4b913908ac533f3021384635f0",
+    "src/style.css": "b8d29e78c71a896cef39266eebaef2cfec6d5736ce538da4f29665f7203f171c",
+    "src/tester.css": "05818215f96effc3e1b38a7026c23c5ab66bfd84bfb147ef7641630b4f0ce663",
+    "src/tester.html": "c1cfc2b45ee63d13bf0dd38d69382901532d6e6a521050909734a9f133697866",
+    "src/tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409"
+  },
+  "bundleSha256": "bbbefd9151b2c487989d8db39ee4758849bc44b1958df9c1372057fdaae6a4a6",
+  "notes": "After adding two modules, update standalone module count from 7 to 9. Scope the old empty axis-tab assertion to axisTabs (measurement buttons now also occupy sceneToolbar). Independently reviewed sweep oracle uses nominal axis frame. Corrected tests rerun successfully. No geometric assertions relaxed.",
+  "status": "all passed"
+}

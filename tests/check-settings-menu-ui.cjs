@@ -52,7 +52,7 @@ check('settings are outside the main viewer and leave site navigation accessible
  assert.equal(r.changeMachine.closest('#siteNav'),r.siteNav);
  assert.equal(r.changeMachine.closest('#trainingDrawer'),null);
  assert(r.axisControlsToggle.hidden&&r.closeAxisControls.hidden,'legacy axis controls cannot occupy the visible axis bar');
- assert.deepEqual(r.sceneToolbar.querySelectorAll('button'),[],'axis tabs are generated later');
+ assert.deepEqual(r.axisTabs.querySelectorAll('button'),[],'axis tabs are generated later');
 });
 const css=fs.readFileSync('src/style.css','utf8');
 check('touch targets and scroll/transform contracts are present',()=>{
