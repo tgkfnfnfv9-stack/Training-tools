@@ -618,6 +618,33 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 @media(max-width:950px) and (orientation:landscape) and (max-height:600px){.viewer-levels{--vial-length:52px;--vial-width:16px;--bubble-length:16px;--bubble-width:10px;--gauge-end-line:10px;--gauge-top-gap:0px}}
 @media(max-width:950px) and (orientation:portrait) and (max-height:540px){.viewer-levels{--vial-length:30px;--vial-width:14px;--bubble-length:8px;--bubble-width:6px;--gauge-end-line:8px;--gauge-top-gap:0px}}
 @media(max-width:950px) and (orientation:landscape) and (max-height:400px){.viewer-levels{--vial-length:30px;--vial-width:14px;--bubble-length:8px;--bubble-width:6px;--gauge-end-line:8px;--gauge-top-gap:0px}}
+
+/* The approved card placement spends the old captions on the drawing itself. */
+.precision-panel-title,.has-spindle-sweep .precision-panel-title,.scene-readout-note{display:none!important}
+.live-squareness-item,.has-spindle-sweep .live-squareness-item{max-width:200px}
+.live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:76px!important}
+.live-squareness-diagram .pair-axis,.live-squareness-diagram .reference-origin-label,.live-squareness-diagram .measurement-start,.live-squareness-diagram .reference-plus,.live-squareness-diagram .live-pair-limit{font-size:7px}
+.live-pair-micro-change{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.live-squareness-units,.has-spindle-sweep .live-squareness-units{font-size:9px;line-height:10px}
+.squareness-panel{padding-bottom:8px}
+.measurement-reference-toggle span{font-size:8px;line-height:8px;text-decoration:none}
+@media(max-width:700px){
+ .live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:42px!important}
+ .has-spindle-sweep .live-squareness-item{max-width:none;grid-template-rows:42px}
+}
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){
+ .live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:46px!important}
+ .has-spindle-sweep .precision-readouts{grid-template-columns:minmax(0,1fr) 196px}
+ .has-spindle-sweep .live-squareness-item{max-width:200px}
+ .squareness-panel{padding-bottom:8px}
+ .measurement-reference-toggle span{font-size:8px;line-height:8px}
+}
+@media(max-width:700px) and (orientation:portrait) and (max-height:540px){
+ .live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:38px!important}
+ .has-spindle-sweep .live-squareness-item{grid-template-rows:38px}
+}
+@media(max-width:360px){.squareness-panel{padding-bottom:8px}.measurement-reference-toggle span{font-size:8px;line-height:8px}}
+@media(max-width:950px) and (max-height:540px){.viewer-levels{gap:0;padding-top:1px;padding-bottom:1px}}
 </style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
 .tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
 @media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}#testerDiagram{max-height:300px}}
@@ -735,7 +762,7 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 <div id="trainingMainSlot" class="training-main-slot"><div id="trainingMain" class="training-main">
 <div class="training-heading"><button id="openTrainingMenu" class="training-menu-toggle" aria-label="設定メニューを開く" aria-expanded="false" aria-controls="trainingDrawer"><span aria-hidden="true">☰</span> 設定</button><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div></div>
 <div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="precisionReadouts" class="precision-readouts">
-<section class="squareness-panel" aria-label="軸の直角度"><button id="measurementReferenceToggle" class="measurement-reference-toggle" aria-controls="measurementReference" aria-expanded="false" aria-label="直角の基準図を下の調整欄に表示"><span>基準図 ▾</span></button><h2 class="precision-panel-title">直角度</h2><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><p id="liveSquarenessUnits" class="live-squareness-units">局所300 mm換算・µm</p><p id="squarenessValuesNote" class="visually-hidden">1 µm＝0.001 mm。数値は現在と理想の直角との差です。基準はゼロ合わせ、比較軸は千分の一ミリ単位で四捨五入しています。プラスは直角より広い、マイナスは狭い。初期との差分やNC移動座標ではありません。図が範囲外でも換算値を表示します。</p><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output></section>
+<section class="squareness-panel" aria-label="軸の直角度"><button id="measurementReferenceToggle" class="measurement-reference-toggle" aria-controls="measurementReference" aria-expanded="false" aria-label="直角の基準図を下の調整欄に表示"><span aria-hidden="true">▽</span></button><h2 class="precision-panel-title">直角度</h2><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準軸と現在の直角度"></div><p id="liveSquarenessUnits" class="live-squareness-units">300 mm・µm</p><p id="squarenessValuesNote" class="visually-hidden">1 µm＝0.001 mm。数値は現在と理想の直角との差です。基準はゼロ合わせ、比較軸は千分の一ミリ単位で四捨五入しています。プラスは直角より広い、マイナスは狭い。初期との差分やNC移動座標ではありません。図が範囲外でも換算値を表示します。</p><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output></section>
 <section id="spindleSweepPanel" class="spindle-sweep-panel" aria-label="主軸のダイヤル旋回測定" aria-describedby="sweepMeasurementNote" hidden>
 <div class="sweep-heading"><strong>ダイヤル測定</strong><span class="sweep-diameter">直径300 mm</span></div>
 <div class="sweep-positions" role="group" aria-label="測定する方向を選択">
@@ -2301,39 +2328,40 @@ function squarenessReference(pair){
 }
 function liveSquarenessFrame(pair){
  const m=squarenessReference(pair).projection;
- const corners=[[32,54],[88,54],[88,26],[32,26]].map(([x,y])=>[m[0]*x+m[2]*y+m[4],m[1]*x+m[3]*y+m[5]]);
- const left=Math.min(...corners.map(p=>p[0])),bottom=Math.max(...corners.map(p=>p[1]));
- const width=Math.max(...corners.map(p=>p[0]))-left,height=bottom-Math.min(...corners.map(p=>p[1]));
- // This second, display-only projection gives every teaching plate the same
- // visible bounds. Its two positive scales preserve axis and sign directions.
- // Measurement vectors, angle gain and saved geometry never use these scales.
- const scaleX=88/width,scaleY=28/height,offsetX=27-left*scaleX,offsetY=67-bottom*scaleY;
- return {top:39,right:115,scaleX,scaleY,offsetX,offsetY,transform:`matrix(${scaleX} 0 0 ${scaleY} ${offsetX} ${offsetY})`,viewBox:'-6 21 146 61'};
+ const up=pair.key==='XY',sx=88/56,sy=up?1:-1,originY=up?67:39;
+ const displayProjection=[sx,0,0,sy,27-32*sx,originY-54*sy];
+ // Approved card placement is separate from the physical teaching reference:
+ // XY starts at bottom-left; XZ/YZ start at top-left. Compose it around the
+ // unchanged inner reference matrix, never into measured or saved geometry.
+ const [a,b,c,d,e,f]=m,det=a*d-b*c,inv=[d/det,-b/det,-c/det,a/det,(c*f-d*e)/det,(b*e-a*f)/det];
+ const outer=[sx*inv[0],sy*inv[1],sx*inv[2],sy*inv[3],sx*inv[4]+displayProjection[4],sy*inv[5]+displayProjection[5]];
+ return {up,displayProjection,transform:`matrix(${outer.join(' ')})`,viewBox:'-12 21 138 60'};
 }
 function squarenessMarkup(pair,plot,beforePlot,detailed=false,live=false){
  const [x,y]=plot.origin,[tx,ty]=plot.tip,[bx,by]=beforePlot.tip,changed=Math.abs(pair.deviationMicroradians-beforePlot.deviation)>1e-6;
  const ux=(tx-x)/28,uy=(ty-y)/28,r=squarenessReference(pair),matrix=r.projection;
  const frame=live?liveSquarenessFrame(pair):null;
- const project=(a,b)=>{const p=[matrix[0]*a+matrix[2]*b+matrix[4],matrix[1]*a+matrix[3]*b+matrix[5]];return live?[p[0]*frame.scaleX+frame.offsetX,p[1]*frame.scaleY+frame.offsetY]:p;},pt=project(tx,ty),o=project(x,y),ideal=project(x,26),base=project(88,y);
+ const displayMatrix=live?frame.displayProjection:matrix;
+ const project=(a,b)=>[displayMatrix[0]*a+displayMatrix[2]*b+displayMatrix[4],displayMatrix[1]*a+displayMatrix[3]*b+displayMatrix[5]],pt=project(tx,ty),o=project(x,y),ideal=project(x,26),base=project(88,y);
  // I and P labels are separated from their close-by dots; numeric readings
  // remain unscaled. The initial trace uses the same projection and gain.
- const projectedBase=live?[matrix[0]*frame.scaleX,matrix[1]*frame.scaleY]:[matrix[0],matrix[1]],baseLength=Math.hypot(...projectedBase);
- const baseVector=live?projectedBase.map(v=>v/baseLength):projectedBase,positive=ideal.map((v,i)=>v-(detailed?25:15)*baseVector[i]),negative=ideal.map((v,i)=>v+(detailed?25:15)*baseVector[i]);
- const signLabel=(point,text,positiveSide)=>`<text x="${point[0]}" y="${point[1]+(baseVector[1]<0?(positiveSide?(live?2:10):-4):-3)}" text-anchor="${baseVector[0]===0?'middle':positiveSide?'end':'start'}" class="${detailed?'reference-side-label':'reference-plus'}">${text}</text>`;
+ const projectedBase=[displayMatrix[0],displayMatrix[1]],baseLength=Math.hypot(...projectedBase);
+ const baseVector=live?projectedBase.map(v=>v/baseLength):projectedBase,positive=ideal.map((v,i)=>v-(live?28:detailed?25:15)*baseVector[i]),negative=ideal.map((v,i)=>v+(live?28:detailed?25:15)*baseVector[i]);
+ const signLabel=(point,text,positiveSide)=>`<text x="${point[0]}" y="${live?(frame.up?29:77):point[1]+(baseVector[1]<0?(positiveSide?10:-4):-3)}" text-anchor="${baseVector[0]===0?'middle':positiveSide?'end':'start'}" class="${detailed?'reference-side-label':'reference-plus'}">${text}</text>`;
  const signs=signLabel(positive,'＋'+(detailed?' '+r.positive:''),true)+signLabel(negative,'−'+(detailed?' '+r.negative:''),false);
  const far=project(88,26);
- const detail=detailed?`${signs}<path d="M${positive.join(',')}L${ideal.join(',')}L${negative.join(',')}" class="reference-sign-guide"/><text x="102" y="29" class="reference-direction-label">${plot.base} → ${r.baseDirection}</text><path d="M100,31L${base.join(',')}" class="reference-sign-guide"/><text x="102" y="48" class="reference-direction-label">${plot.other} → ${r.measureDirection}</text><path d="M100,50L${pt[0]+3},${pt[1]+3}" class="reference-sign-guide"/><text x="0" y="112" class="reference-direction-label">O：${r.zero} 0 ／ 黒い辺＝基準</text><text x="0" y="127" class="reference-contact-label">接触：${r.positive} → ● → ${r.negative}</text>`:live?`${signs}<text x="${far[0]+4}" y="${far[1]+3}" class="pair-axis">${plot.other}</text>`:`${signs}<text x="${pt[0]-8}" y="${pt[1]+8}" text-anchor="end" class="pair-axis">${plot.other}</text>`;
+ const detail=detailed?`${signs}<path d="M${positive.join(',')}L${ideal.join(',')}L${negative.join(',')}" class="reference-sign-guide"/><text x="102" y="29" class="reference-direction-label">${plot.base} → ${r.baseDirection}</text><path d="M100,31L${base.join(',')}" class="reference-sign-guide"/><text x="102" y="48" class="reference-direction-label">${plot.other} → ${r.measureDirection}</text><path d="M100,50L${pt[0]+3},${pt[1]+3}" class="reference-sign-guide"/><text x="0" y="112" class="reference-direction-label">O：${r.zero} 0 ／ 黒い辺＝基準</text><text x="0" y="127" class="reference-contact-label">接触：${r.positive} → ● → ${r.negative}</text>`:live?`${signs}<text x="${frame.up?27:31}" y="${frame.up?32:77}" class="pair-axis">${plot.other} ${pair.key==='YZ'?'前':'左'}</text>`:`${signs}<text x="${pt[0]-8}" y="${pt[1]+8}" text-anchor="end" class="pair-axis">${plot.other}</text>`;
  const arrow=(start,end,css)=>{const dx=end[0]-start[0],dy=end[1]-start[1],length=Math.hypot(dx,dy),u=dx/length,v=dy/length;return `<path d="M${end[0]-5*u-2.5*v},${end[1]-5*v+2.5*u}L${end.join(',')}L${end[0]-5*u+2.5*v},${end[1]-5*v-2.5*u}" class="${css}"/>`;};
  const arrows=live?arrow(o,base,'reference-base-arrow')+arrow(o,pt,'measurement-direction'):'';
  const markerTransform=(cx,cy)=>{
   if(!live)return '';
   // Keep every marker round despite the plate's display projection. The
   // circle centers remain the original measurement coordinates and labels.
-  const a=matrix[0]*frame.scaleX,b=matrix[1]*frame.scaleY,c=matrix[2]*frame.scaleX,d=matrix[3]*frame.scaleY,det=a*d-b*c;
+  const [a,b,c,d]=displayMatrix,det=a*d-b*c;
   const u=d/det,v=-b/det,w=-c/det,z=a/det;
   return `transform="matrix(${u} ${v} ${w} ${z} ${cx-u*cx-w*cy} ${cy-v*cx-z*cy})"`;
  };
- const labels=live?`<text x="${frame.right-31}" y="${frame.top-9}" class="measurement-end">300 mm</text><text x="${frame.right+2}" y="${frame.top-9}" class="reference-conversion">換算点</text>`:`<text x="${pt[0]-3}" y="${pt[1]+12}" text-anchor="end" class="reference-current-label">P</text><text x="${ideal[0]+6}" y="${ideal[1]+2}" class="reference-ideal-label">I</text><text x="66" y="18" class="measurement-end">300 mm</text><text x="69" y="29" class="reference-conversion">換算点</text>`;
+ const labels=live?'':`<text x="${pt[0]-3}" y="${pt[1]+12}" text-anchor="end" class="reference-current-label">P</text><text x="${ideal[0]+6}" y="${ideal[1]+2}" class="reference-ideal-label">I</text><text x="66" y="18" class="measurement-end">300 mm</text><text x="69" y="29" class="reference-conversion">換算点</text>`;
  return `${live?`<g class="live-plate-scale" transform="${frame.transform}">`:''}<g class="pair-plane" transform="matrix(${matrix.join(' ')})"><path d="M32,54H88V26H32Z" class="reference-board"/><path d="M32,54v4h56v-4M88,58V30l0,-4" class="reference-board-edge"/><path d="M${x},26V${y}H88" fill="none" stroke="#81949d" stroke-width="1" stroke-dasharray="3 3" class="pair-ideal"/><line x1="${x}" y1="${y}" x2="88" y2="${y}" stroke="#333" stroke-width="2" class="pair-base"/>${live?'':'<path d="M83,51l5,3l-5,3" class="reference-base-arrow"/>'}${changed?`<path d="M${x},${y}L${bx},${by}L${tx},${ty}Z" fill="#db6a19" class="pair-change-area"/>`:''}<line x1="${x}" y1="${y}" x2="${bx}" y2="${by}" stroke="#a95b26" stroke-width="4" class="pair-before"/><line x1="${x}" y1="${y}" x2="${tx}" y2="${ty}" stroke="#cb5709" stroke-width="2.5" class="pair-current"/><line x1="${x}" y1="26" x2="${tx}" y2="${ty}" stroke="#536776" stroke-width="1.4" class="measurement-gap"/><circle cx="${x}" cy="26" ${markerTransform(x,26)} r="2.8" fill="white" stroke="#81949d" stroke-width="1" class="measurement-ideal-tip"/>${live?'':`<path d="M${tx-4*ux-2*uy},${ty-4*uy+2*ux}L${tx},${ty}L${tx-4*ux+2*uy},${ty-4*uy-2*ux}" fill="none" stroke="#cb5709" stroke-width="1.4" class="measurement-direction"/>`}<circle cx="${tx}" cy="${ty}" ${markerTransform(tx,ty)} r="1.8" fill="#cb5709" class="measurement-current-tip"/><circle cx="${x}" cy="${y}" ${markerTransform(x,y)} r="2.3" fill="#333" class="measurement-origin"/></g>${live?'</g>':''}${arrows}<text x="${o[0]-3}" y="${o[1]+11}" text-anchor="end" class="measurement-start">0</text><text x="${o[0]-4}" y="${o[1]-2}" text-anchor="end" class="reference-origin-label">O</text><text x="${base[0]+4}" y="${base[1]+3}" class="pair-axis">${plot.base}</text>${labels}${detail}`;
 }
 function squarenessReferenceCard(pair,c,attributes){
@@ -2354,16 +2382,17 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   const c=diagramComparison(pair,initial),{plot,beforePlot}=c;
   const reference=squarenessReference(pair);
   const description='Oは説明図の'+reference.zero+'。基準矢印は'+reference.baseDirection+'、比較方向は'+reference.measureDirection+'。＋は'+reference.positive+'、−は'+reference.negative+'。現在位置の局所角度を300 mm換算、実走査ではありません。'+pair.key+'、基準'+plot.base+'。'+(pair.deviationMicroradians>0?'直角より広い':pair.deviationMicroradians<0?'直角より狭い':'直角')+'。測る軸'+plot.other+'を共通の合わせ始点から比較終点へ伸ばし、理想の直角との終点差を見る模式図。'+c.text+(c.direction==='unchanged'?'。軸間の変化はほぼありません':c.direction==='opened'?'。初期から広がる方向へ変化':'。初期から狭まる方向へ変化')+(c.range?'。'+c.range:'');
+  const liveDescription=pair.key+'の表示配置。O・0は'+(pair.key==='XY'?'左下':'左上')+'。基準'+plot.base+'は'+(pair.key==='XY'?'下辺':'上辺')+'を右へ、比較'+plot.other+'は左辺を'+(pair.key==='XY'?'上':'下')+'へ表示。端の「'+plot.other+' '+(pair.key==='YZ'?'前':'左')+'」は図の配置ラベルで、NC指令や測定値の符号を変更しません。実機の説明基準：'+description;
   // This fixed comparison length describes the local angle only. It does not
   // change the engine's evaluation length or simulate an NC travel/guide scan.
   const attributes=Object.entries({'projection':reference.projection.join(','),'zero-location':reference.zero,'base-direction':reference.baseDirection,'measure-direction':reference.measureDirection,'positive-direction':reference.positive,'negative-direction':reference.negative,'reference-plane':reference.plane,pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="104" y="64" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
-  const liveMarkup=squarenessMarkup(pair,plot,beforePlot,false,true)+(c.range?`<text x="80" y="79" text-anchor="end" class="live-pair-limit">範囲外</text>`:'');
+  const liveMarkup=squarenessMarkup(pair,plot,beforePlot,false,true)+(c.range?'<text x="112" y="29" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
   referenceCards.push(squarenessReferenceCard(pair,c,attributes));
   const microns=pair.deviationMicroradians*squarenessMeasurementLength,reading=squarenessMicronText(microns),baseLabel=current.kind==='lathe'?'主軸Z':plot.base;
   const microChange=current.kind==='compact'&&Math.abs(c.delta*squarenessMeasurementLength)>1e-4&&reading===squarenessMicronText(c.before.deviationMicroradians*squarenessMeasurementLength);
   const microNote=current.kind==='compact'?`<span class="live-pair-micro-change" data-micro-change="${microChange}" title="${microChange?'初期から計算値は変化していますが、1 µm刻みの表示は同じです。':''}">${microChange?'初期から微小変化':''}</span>`:'';
-  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="${liveSquarenessFrame(pair).viewBox}" role="img" aria-label="${description}" aria-describedby="squarenessMeasurementNote" ${attributes}>${liveMarkup}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の現在値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">${baseLabel}基準 0</span><span class="live-pair-error-value" data-current-error-300="${microns}" aria-label="${pair.key} ${plot.other}直角差 ${reading} µm">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span>${microNote}</div></div>`);
+  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="${liveSquarenessFrame(pair).viewBox}" role="img" aria-label="${liveDescription}" aria-describedby="squarenessMeasurementNote" ${attributes}>${liveMarkup}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の現在値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">${baseLabel}基準 0</span><span class="live-pair-error-value" data-current-error-300="${microns}" aria-label="${pair.key} ${plot.other}直角差 ${reading} µm">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span>${microNote}</div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,30)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');

@@ -617,3 +617,30 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 @media(max-width:950px) and (orientation:landscape) and (max-height:600px){.viewer-levels{--vial-length:52px;--vial-width:16px;--bubble-length:16px;--bubble-width:10px;--gauge-end-line:10px;--gauge-top-gap:0px}}
 @media(max-width:950px) and (orientation:portrait) and (max-height:540px){.viewer-levels{--vial-length:30px;--vial-width:14px;--bubble-length:8px;--bubble-width:6px;--gauge-end-line:8px;--gauge-top-gap:0px}}
 @media(max-width:950px) and (orientation:landscape) and (max-height:400px){.viewer-levels{--vial-length:30px;--vial-width:14px;--bubble-length:8px;--bubble-width:6px;--gauge-end-line:8px;--gauge-top-gap:0px}}
+
+/* The approved card placement spends the old captions on the drawing itself. */
+.precision-panel-title,.has-spindle-sweep .precision-panel-title,.scene-readout-note{display:none!important}
+.live-squareness-item,.has-spindle-sweep .live-squareness-item{max-width:200px}
+.live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:76px!important}
+.live-squareness-diagram .pair-axis,.live-squareness-diagram .reference-origin-label,.live-squareness-diagram .measurement-start,.live-squareness-diagram .reference-plus,.live-squareness-diagram .live-pair-limit{font-size:7px}
+.live-pair-micro-change{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.live-squareness-units,.has-spindle-sweep .live-squareness-units{font-size:9px;line-height:10px}
+.squareness-panel{padding-bottom:8px}
+.measurement-reference-toggle span{font-size:8px;line-height:8px;text-decoration:none}
+@media(max-width:700px){
+ .live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:42px!important}
+ .has-spindle-sweep .live-squareness-item{max-width:none;grid-template-rows:42px}
+}
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){
+ .live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:46px!important}
+ .has-spindle-sweep .precision-readouts{grid-template-columns:minmax(0,1fr) 196px}
+ .has-spindle-sweep .live-squareness-item{max-width:200px}
+ .squareness-panel{padding-bottom:8px}
+ .measurement-reference-toggle span{font-size:8px;line-height:8px}
+}
+@media(max-width:700px) and (orientation:portrait) and (max-height:540px){
+ .live-squareness-diagram,.has-spindle-sweep .live-squareness-diagram{height:38px!important}
+ .has-spindle-sweep .live-squareness-item{grid-template-rows:38px}
+}
+@media(max-width:360px){.squareness-panel{padding-bottom:8px}.measurement-reference-toggle span{font-size:8px;line-height:8px}}
+@media(max-width:950px) and (max-height:540px){.viewer-levels{gap:0;padding-top:1px;padding-bottom:1px}}

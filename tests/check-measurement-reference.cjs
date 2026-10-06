@@ -62,7 +62,7 @@ for(const kind of Object.keys(counts)){
     assert.deepEqual(svg.dataset.projection.split(',').map(Number),matrix);
     const physicalDirection=(v,label)=>{if(label==='右'){assert.ok(v[0]>0);near(v[1],0);}else if(label==='上'){near(v[0],0);assert.ok(v[1]<0);}else {assert.equal(label,'奥');assert.ok(v[0]>0&&v[1]<0);}};
     physicalDirection([matrix[0],matrix[1]],wanted[3]);physicalDirection([-matrix[2],-matrix[3]],wanted[4]);
-    const detail=r.measurementReferenceCards.querySelectorAll('svg')[0];assert.equal(detail.dataset.projection,svg.dataset.projection);assert.equal(detail.getAttribute('data-current-error-300'),svg.getAttribute('data-current-error-300'));
+    const detail=r.measurementReferenceCards.querySelectorAll('svg')[0];assert.equal(detail.querySelectorAll('.measurement-end')[0].textContent,'300 mm');assert.equal(detail.querySelectorAll('.reference-conversion')[0].textContent,'換算点');assert.equal(detail.dataset.projection,svg.dataset.projection);assert.equal(detail.getAttribute('data-current-error-300'),svg.getAttribute('data-current-error-300'));
     projectedBounds(svg);projectedBounds(detail);
     const card=detail.parentElement;assert.match(card.textContent,new RegExp('仮想の接触：'+wanted[5]+'側から'+wanted[6]+'向きに当てる'));
     const signLabels=detail.querySelectorAll('.reference-side-label');assert.equal(signLabels.length,2);assert.equal(signLabels[0].textContent,'＋ '+wanted[5]);assert.equal(signLabels[1].textContent,'− '+wanted[6]);

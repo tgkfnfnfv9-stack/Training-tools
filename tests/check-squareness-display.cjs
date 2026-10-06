@@ -39,10 +39,10 @@ function verify(g){
    near(Number(start.getAttribute('cx')),x);near(Number(start.getAttribute('cy')),y);near(Number(ideal.getAttribute('cx')),x);near(Number(ideal.getAttribute('cy')),y-28);
    near(Number(tip.getAttribute('cx')),x+dx);near(Number(tip.getAttribute('cy')),y-dy);
    near(Number(gap.getAttribute('x1')),Number(ideal.getAttribute('cx')));near(Number(gap.getAttribute('y1')),Number(ideal.getAttribute('cy')));near(Number(gap.getAttribute('x2')),Number(tip.getAttribute('cx')));near(Number(gap.getAttribute('y2')),Number(tip.getAttribute('cy')));
-   const startLabels=drawing.querySelectorAll('.measurement-start'),endLabels=drawing.querySelectorAll('.measurement-end');assert.equal(startLabels.length,1);assert.equal(endLabels.length,1);assert.equal(startLabels[0].textContent,'0');assert.equal(endLabels[0].textContent,'300 mm');assert.equal(drawing.querySelectorAll('.measurement-direction').length,1);
+   const startLabels=drawing.querySelectorAll('.measurement-start'),endLabels=drawing.querySelectorAll('.measurement-end');assert.equal(startLabels.length,1);assert.equal(startLabels[0].textContent,'0');if(drawing===svg){assert.equal(endLabels.length,0);near(Number(svg.dataset.measurementLengthM),.3);assert.equal(r.liveSquarenessUnits.textContent.replace(/\s/g,''),'300mm・µm');}else{assert.equal(endLabels.length,1);assert.equal(endLabels[0].textContent,'300 mm');}assert.equal(drawing.querySelectorAll('.measurement-direction').length,1);
   }
   assert.equal(svg.parentElement.querySelectorAll('.live-pair-title').length,0,'large external headings stay removed');
-  assert.deepEqual(svg.querySelectorAll('.pair-axis').map(n=>n.textContent).sort(),[key,measured].sort(),'in-diagram axes identify the plane');
+  const endpoint=measured+' '+(pair.key==='YZ'?'前':'左');assert.deepEqual(svg.querySelectorAll('.pair-axis').map(n=>n.textContent).sort(),[key,endpoint].sort(),'approved endpoint labels identify the plane while physical datum is retained');
   assert.equal(base.querySelectorAll('.pair-current')[0].getAttribute('x2'),line.getAttribute('x2'));
   assert.equal(base.querySelectorAll('.pair-current')[0].getAttribute('y2'),line.getAttribute('y2'));
   const match=/直角より(広い|狭い)|直角/.exec(svg.getAttribute('aria-label'));assert(match);

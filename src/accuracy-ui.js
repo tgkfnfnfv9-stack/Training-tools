@@ -207,39 +207,40 @@ function squarenessReference(pair){
 }
 function liveSquarenessFrame(pair){
  const m=squarenessReference(pair).projection;
- const corners=[[32,54],[88,54],[88,26],[32,26]].map(([x,y])=>[m[0]*x+m[2]*y+m[4],m[1]*x+m[3]*y+m[5]]);
- const left=Math.min(...corners.map(p=>p[0])),bottom=Math.max(...corners.map(p=>p[1]));
- const width=Math.max(...corners.map(p=>p[0]))-left,height=bottom-Math.min(...corners.map(p=>p[1]));
- // This second, display-only projection gives every teaching plate the same
- // visible bounds. Its two positive scales preserve axis and sign directions.
- // Measurement vectors, angle gain and saved geometry never use these scales.
- const scaleX=88/width,scaleY=28/height,offsetX=27-left*scaleX,offsetY=67-bottom*scaleY;
- return {top:39,right:115,scaleX,scaleY,offsetX,offsetY,transform:`matrix(${scaleX} 0 0 ${scaleY} ${offsetX} ${offsetY})`,viewBox:'-6 21 146 61'};
+ const up=pair.key==='XY',sx=88/56,sy=up?1:-1,originY=up?67:39;
+ const displayProjection=[sx,0,0,sy,27-32*sx,originY-54*sy];
+ // Approved card placement is separate from the physical teaching reference:
+ // XY starts at bottom-left; XZ/YZ start at top-left. Compose it around the
+ // unchanged inner reference matrix, never into measured or saved geometry.
+ const [a,b,c,d,e,f]=m,det=a*d-b*c,inv=[d/det,-b/det,-c/det,a/det,(c*f-d*e)/det,(b*e-a*f)/det];
+ const outer=[sx*inv[0],sy*inv[1],sx*inv[2],sy*inv[3],sx*inv[4]+displayProjection[4],sy*inv[5]+displayProjection[5]];
+ return {up,displayProjection,transform:`matrix(${outer.join(' ')})`,viewBox:'-12 21 138 60'};
 }
 function squarenessMarkup(pair,plot,beforePlot,detailed=false,live=false){
  const [x,y]=plot.origin,[tx,ty]=plot.tip,[bx,by]=beforePlot.tip,changed=Math.abs(pair.deviationMicroradians-beforePlot.deviation)>1e-6;
  const ux=(tx-x)/28,uy=(ty-y)/28,r=squarenessReference(pair),matrix=r.projection;
  const frame=live?liveSquarenessFrame(pair):null;
- const project=(a,b)=>{const p=[matrix[0]*a+matrix[2]*b+matrix[4],matrix[1]*a+matrix[3]*b+matrix[5]];return live?[p[0]*frame.scaleX+frame.offsetX,p[1]*frame.scaleY+frame.offsetY]:p;},pt=project(tx,ty),o=project(x,y),ideal=project(x,26),base=project(88,y);
+ const displayMatrix=live?frame.displayProjection:matrix;
+ const project=(a,b)=>[displayMatrix[0]*a+displayMatrix[2]*b+displayMatrix[4],displayMatrix[1]*a+displayMatrix[3]*b+displayMatrix[5]],pt=project(tx,ty),o=project(x,y),ideal=project(x,26),base=project(88,y);
  // I and P labels are separated from their close-by dots; numeric readings
  // remain unscaled. The initial trace uses the same projection and gain.
- const projectedBase=live?[matrix[0]*frame.scaleX,matrix[1]*frame.scaleY]:[matrix[0],matrix[1]],baseLength=Math.hypot(...projectedBase);
- const baseVector=live?projectedBase.map(v=>v/baseLength):projectedBase,positive=ideal.map((v,i)=>v-(detailed?25:15)*baseVector[i]),negative=ideal.map((v,i)=>v+(detailed?25:15)*baseVector[i]);
- const signLabel=(point,text,positiveSide)=>`<text x="${point[0]}" y="${point[1]+(baseVector[1]<0?(positiveSide?(live?2:10):-4):-3)}" text-anchor="${baseVector[0]===0?'middle':positiveSide?'end':'start'}" class="${detailed?'reference-side-label':'reference-plus'}">${text}</text>`;
+ const projectedBase=[displayMatrix[0],displayMatrix[1]],baseLength=Math.hypot(...projectedBase);
+ const baseVector=live?projectedBase.map(v=>v/baseLength):projectedBase,positive=ideal.map((v,i)=>v-(live?28:detailed?25:15)*baseVector[i]),negative=ideal.map((v,i)=>v+(live?28:detailed?25:15)*baseVector[i]);
+ const signLabel=(point,text,positiveSide)=>`<text x="${point[0]}" y="${live?(frame.up?29:77):point[1]+(baseVector[1]<0?(positiveSide?10:-4):-3)}" text-anchor="${baseVector[0]===0?'middle':positiveSide?'end':'start'}" class="${detailed?'reference-side-label':'reference-plus'}">${text}</text>`;
  const signs=signLabel(positive,'＋'+(detailed?' '+r.positive:''),true)+signLabel(negative,'−'+(detailed?' '+r.negative:''),false);
  const far=project(88,26);
- const detail=detailed?`${signs}<path d="M${positive.join(',')}L${ideal.join(',')}L${negative.join(',')}" class="reference-sign-guide"/><text x="102" y="29" class="reference-direction-label">${plot.base} → ${r.baseDirection}</text><path d="M100,31L${base.join(',')}" class="reference-sign-guide"/><text x="102" y="48" class="reference-direction-label">${plot.other} → ${r.measureDirection}</text><path d="M100,50L${pt[0]+3},${pt[1]+3}" class="reference-sign-guide"/><text x="0" y="112" class="reference-direction-label">O：${r.zero} 0 ／ 黒い辺＝基準</text><text x="0" y="127" class="reference-contact-label">接触：${r.positive} → ● → ${r.negative}</text>`:live?`${signs}<text x="${far[0]+4}" y="${far[1]+3}" class="pair-axis">${plot.other}</text>`:`${signs}<text x="${pt[0]-8}" y="${pt[1]+8}" text-anchor="end" class="pair-axis">${plot.other}</text>`;
+ const detail=detailed?`${signs}<path d="M${positive.join(',')}L${ideal.join(',')}L${negative.join(',')}" class="reference-sign-guide"/><text x="102" y="29" class="reference-direction-label">${plot.base} → ${r.baseDirection}</text><path d="M100,31L${base.join(',')}" class="reference-sign-guide"/><text x="102" y="48" class="reference-direction-label">${plot.other} → ${r.measureDirection}</text><path d="M100,50L${pt[0]+3},${pt[1]+3}" class="reference-sign-guide"/><text x="0" y="112" class="reference-direction-label">O：${r.zero} 0 ／ 黒い辺＝基準</text><text x="0" y="127" class="reference-contact-label">接触：${r.positive} → ● → ${r.negative}</text>`:live?`${signs}<text x="${frame.up?27:31}" y="${frame.up?32:77}" class="pair-axis">${plot.other} ${pair.key==='YZ'?'前':'左'}</text>`:`${signs}<text x="${pt[0]-8}" y="${pt[1]+8}" text-anchor="end" class="pair-axis">${plot.other}</text>`;
  const arrow=(start,end,css)=>{const dx=end[0]-start[0],dy=end[1]-start[1],length=Math.hypot(dx,dy),u=dx/length,v=dy/length;return `<path d="M${end[0]-5*u-2.5*v},${end[1]-5*v+2.5*u}L${end.join(',')}L${end[0]-5*u+2.5*v},${end[1]-5*v-2.5*u}" class="${css}"/>`;};
  const arrows=live?arrow(o,base,'reference-base-arrow')+arrow(o,pt,'measurement-direction'):'';
  const markerTransform=(cx,cy)=>{
   if(!live)return '';
   // Keep every marker round despite the plate's display projection. The
   // circle centers remain the original measurement coordinates and labels.
-  const a=matrix[0]*frame.scaleX,b=matrix[1]*frame.scaleY,c=matrix[2]*frame.scaleX,d=matrix[3]*frame.scaleY,det=a*d-b*c;
+  const [a,b,c,d]=displayMatrix,det=a*d-b*c;
   const u=d/det,v=-b/det,w=-c/det,z=a/det;
   return `transform="matrix(${u} ${v} ${w} ${z} ${cx-u*cx-w*cy} ${cy-v*cx-z*cy})"`;
  };
- const labels=live?`<text x="${frame.right-31}" y="${frame.top-9}" class="measurement-end">300 mm</text><text x="${frame.right+2}" y="${frame.top-9}" class="reference-conversion">換算点</text>`:`<text x="${pt[0]-3}" y="${pt[1]+12}" text-anchor="end" class="reference-current-label">P</text><text x="${ideal[0]+6}" y="${ideal[1]+2}" class="reference-ideal-label">I</text><text x="66" y="18" class="measurement-end">300 mm</text><text x="69" y="29" class="reference-conversion">換算点</text>`;
+ const labels=live?'':`<text x="${pt[0]-3}" y="${pt[1]+12}" text-anchor="end" class="reference-current-label">P</text><text x="${ideal[0]+6}" y="${ideal[1]+2}" class="reference-ideal-label">I</text><text x="66" y="18" class="measurement-end">300 mm</text><text x="69" y="29" class="reference-conversion">換算点</text>`;
  return `${live?`<g class="live-plate-scale" transform="${frame.transform}">`:''}<g class="pair-plane" transform="matrix(${matrix.join(' ')})"><path d="M32,54H88V26H32Z" class="reference-board"/><path d="M32,54v4h56v-4M88,58V30l0,-4" class="reference-board-edge"/><path d="M${x},26V${y}H88" fill="none" stroke="#81949d" stroke-width="1" stroke-dasharray="3 3" class="pair-ideal"/><line x1="${x}" y1="${y}" x2="88" y2="${y}" stroke="#333" stroke-width="2" class="pair-base"/>${live?'':'<path d="M83,51l5,3l-5,3" class="reference-base-arrow"/>'}${changed?`<path d="M${x},${y}L${bx},${by}L${tx},${ty}Z" fill="#db6a19" class="pair-change-area"/>`:''}<line x1="${x}" y1="${y}" x2="${bx}" y2="${by}" stroke="#a95b26" stroke-width="4" class="pair-before"/><line x1="${x}" y1="${y}" x2="${tx}" y2="${ty}" stroke="#cb5709" stroke-width="2.5" class="pair-current"/><line x1="${x}" y1="26" x2="${tx}" y2="${ty}" stroke="#536776" stroke-width="1.4" class="measurement-gap"/><circle cx="${x}" cy="26" ${markerTransform(x,26)} r="2.8" fill="white" stroke="#81949d" stroke-width="1" class="measurement-ideal-tip"/>${live?'':`<path d="M${tx-4*ux-2*uy},${ty-4*uy+2*ux}L${tx},${ty}L${tx-4*ux+2*uy},${ty-4*uy-2*ux}" fill="none" stroke="#cb5709" stroke-width="1.4" class="measurement-direction"/>`}<circle cx="${tx}" cy="${ty}" ${markerTransform(tx,ty)} r="1.8" fill="#cb5709" class="measurement-current-tip"/><circle cx="${x}" cy="${y}" ${markerTransform(x,y)} r="2.3" fill="#333" class="measurement-origin"/></g>${live?'</g>':''}${arrows}<text x="${o[0]-3}" y="${o[1]+11}" text-anchor="end" class="measurement-start">0</text><text x="${o[0]-4}" y="${o[1]-2}" text-anchor="end" class="reference-origin-label">O</text><text x="${base[0]+4}" y="${base[1]+3}" class="pair-axis">${plot.base}</text>${labels}${detail}`;
 }
 function squarenessReferenceCard(pair,c,attributes){
@@ -260,16 +261,17 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   const c=diagramComparison(pair,initial),{plot,beforePlot}=c;
   const reference=squarenessReference(pair);
   const description='Oは説明図の'+reference.zero+'。基準矢印は'+reference.baseDirection+'、比較方向は'+reference.measureDirection+'。＋は'+reference.positive+'、−は'+reference.negative+'。現在位置の局所角度を300 mm換算、実走査ではありません。'+pair.key+'、基準'+plot.base+'。'+(pair.deviationMicroradians>0?'直角より広い':pair.deviationMicroradians<0?'直角より狭い':'直角')+'。測る軸'+plot.other+'を共通の合わせ始点から比較終点へ伸ばし、理想の直角との終点差を見る模式図。'+c.text+(c.direction==='unchanged'?'。軸間の変化はほぼありません':c.direction==='opened'?'。初期から広がる方向へ変化':'。初期から狭まる方向へ変化')+(c.range?'。'+c.range:'');
+  const liveDescription=pair.key+'の表示配置。O・0は'+(pair.key==='XY'?'左下':'左上')+'。基準'+plot.base+'は'+(pair.key==='XY'?'下辺':'上辺')+'を右へ、比較'+plot.other+'は左辺を'+(pair.key==='XY'?'上':'下')+'へ表示。端の「'+plot.other+' '+(pair.key==='YZ'?'前':'左')+'」は図の配置ラベルで、NC指令や測定値の符号を変更しません。実機の説明基準：'+description;
   // This fixed comparison length describes the local angle only. It does not
   // change the engine's evaluation length or simulate an NC travel/guide scan.
   const attributes=Object.entries({'projection':reference.projection.join(','),'zero-location':reference.zero,'base-direction':reference.baseDirection,'measure-direction':reference.measureDirection,'positive-direction':reference.positive,'negative-direction':reference.negative,'reference-plane':reference.plane,pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="104" y="64" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
-  const liveMarkup=squarenessMarkup(pair,plot,beforePlot,false,true)+(c.range?`<text x="80" y="79" text-anchor="end" class="live-pair-limit">範囲外</text>`:'');
+  const liveMarkup=squarenessMarkup(pair,plot,beforePlot,false,true)+(c.range?'<text x="112" y="29" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
   referenceCards.push(squarenessReferenceCard(pair,c,attributes));
   const microns=pair.deviationMicroradians*squarenessMeasurementLength,reading=squarenessMicronText(microns),baseLabel=current.kind==='lathe'?'主軸Z':plot.base;
   const microChange=current.kind==='compact'&&Math.abs(c.delta*squarenessMeasurementLength)>1e-4&&reading===squarenessMicronText(c.before.deviationMicroradians*squarenessMeasurementLength);
   const microNote=current.kind==='compact'?`<span class="live-pair-micro-change" data-micro-change="${microChange}" title="${microChange?'初期から計算値は変化していますが、1 µm刻みの表示は同じです。':''}">${microChange?'初期から微小変化':''}</span>`:'';
-  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="${liveSquarenessFrame(pair).viewBox}" role="img" aria-label="${description}" aria-describedby="squarenessMeasurementNote" ${attributes}>${liveMarkup}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の現在値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">${baseLabel}基準 0</span><span class="live-pair-error-value" data-current-error-300="${microns}" aria-label="${pair.key} ${plot.other}直角差 ${reading} µm">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span>${microNote}</div></div>`);
+  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="${liveSquarenessFrame(pair).viewBox}" role="img" aria-label="${liveDescription}" aria-describedby="squarenessMeasurementNote" ${attributes}>${liveMarkup}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の現在値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">${baseLabel}基準 0</span><span class="live-pair-error-value" data-current-error-300="${microns}" aria-label="${pair.key} ${plot.other}直角差 ${reading} µm">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span>${microNote}</div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,30)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
