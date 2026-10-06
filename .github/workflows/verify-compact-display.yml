@@ -1,4 +1,4 @@
-name: Verify compact measurement display
+name: Verify published compact measurement display
 on:
   push:
     branches: [codex/compact-display-20261006]
@@ -22,9 +22,28 @@ jobs:
         run: |
           python3 build.py
           git diff --exit-code -- index.html
+      - name: Verify published HTML matches commit 156a25fecdfd7cb621e47f314aef71fa0c70031d
+        env:
+          PUBLIC_PAGE_URL: https://tgkfnfnfv9-stack.github.io/Training-tools/?verify=156a25fecdfd7cb621e47f314aef71fa0c70031d
+        run: |
+          python3 - <<'PY'
+          import hashlib, os, time, urllib.request
+          from pathlib import Path
+          expected = Path('index.html').read_bytes()
+          for attempt in range(12):
+              with urllib.request.urlopen(os.environ['PUBLIC_PAGE_URL'], timeout=30) as response:
+                  actual = response.read()
+              if actual == expected:
+                  print('PUBLIC_BUNDLE_MATCH 156a25fecdfd7cb621e47f314aef71fa0c70031d sha256=' + hashlib.sha256(actual).hexdigest())
+                  break
+              if attempt == 11:
+                  raise SystemExit('Published HTML differs from the verified build')
+              time.sleep(5)
+          PY
       - name: Verify browser layouts and interactions
         env:
           EMIT_SCREENSHOTS: '1'
+          DIAL_BASE_URL: https://tgkfnfnfv9-stack.github.io/Training-tools/?verify=156a25fecdfd7cb621e47f314aef71fa0c70031d
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/dial-server.log 2>&1 &
           node tests/browser-simultaneous-dial.cjs
@@ -32,6 +51,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: compact-display-browser-evidence
+          name: compact-display-published-evidence
           path: tmp/qa-dial/
           if-no-files-found: ignore
