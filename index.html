@@ -216,7 +216,7 @@ body.in-mechanical-lab #training .training-heading>div{flex:1;min-width:0}
 body.in-mechanical-lab #training .training-heading h1{font-size:18px;line-height:1.4;margin:0;overflow-wrap:anywhere}
 body.in-mechanical-lab #training .training-heading .eyebrow,body.in-mechanical-lab #training .training-heading p{display:none}
 .training-menu-toggle{flex:none;width:44px;min-height:44px;padding:5px;font-size:23px;line-height:1}
-body.in-mechanical-lab #training .training-workspace{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;gap:0;overflow:hidden;align-items:stretch}
+body.in-mechanical-lab #training .training-workspace{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) clamp(176px,26dvh,224px);gap:0;overflow:hidden;align-items:stretch}
 body.in-mechanical-lab #training .pinned-visual{grid-column:1;grid-row:1;min-height:0;min-width:0;display:grid;grid-template-columns:minmax(0,1fr) 88px;grid-template-rows:auto minmax(0,1fr) auto;align-self:stretch;border:0;border-radius:0;overflow:hidden}
 body.in-mechanical-lab #training .main-adjustment{grid-column:1;grid-row:2;min-width:0;padding:8px max(12px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));border-top:1px solid #c8d9dc;background:#f7fafb}
 .main-adjustment .adjustment-tabs{margin:0;display:flex;gap:8px}
@@ -446,7 +446,7 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
 body.in-mechanical-lab #training .scene-toolbar{gap:6px}
 .has-spindle-sweep .scene-readout-note{white-space:normal;flex-wrap:wrap;column-gap:8px;row-gap:0}
 body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{display:flex;flex-direction:column;min-height:0;overflow:hidden;scrollbar-gutter:auto}
-.has-spindle-sweep .adjustment-selection-scroll{flex:0 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-gutter:stable;scroll-padding-block:4px;width:100%}
+.has-spindle-sweep .adjustment-selection-scroll{flex:1 1 0;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-gutter:stable;scroll-padding-block:4px;width:100%}
 .has-spindle-sweep .common-support-actions{flex:none;width:100%;padding-top:4px}
 .has-spindle-sweep .main-adjustment .support-map{margin-bottom:4px}
 @media(max-width:700px){
@@ -551,9 +551,11 @@ body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{display:fle
 .measurement-reference-toggle:focus-visible{outline:2px solid #b34800;outline-offset:1px;background:transparent}
 .measurement-reference-toggle[aria-expanded="true"] span{font-weight:700}
 .sweep-positions button small{font-size:8px;font-weight:400}
-/* All seven machines can open the same reference lesson without covering the model. */
+/* The adjustment track has a viewport-based budget, never an intrinsic auto
+   height from the reference lesson. Its inner scroller fills the free space so
+   opening/closing details cannot move the model or the fixed action row. */
 body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:column;min-height:0;overflow:hidden;scrollbar-gutter:auto}
-.adjustment-selection-scroll{flex:0 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-gutter:stable;scroll-padding-block:4px;width:100%}
+.adjustment-selection-scroll{flex:1 1 0;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-gutter:stable;scroll-padding-block:4px;width:100%}
 .common-support-actions{flex:none;width:100%;padding-top:4px}
 .measurement-reference{margin:8px 0 0;padding:8px;border:1px solid #e4d3c5;border-radius:8px;background:#fffaf5;scroll-margin-top:4px}
 .measurement-reference-heading{display:flex;align-items:center;justify-content:space-between;gap:6px}
