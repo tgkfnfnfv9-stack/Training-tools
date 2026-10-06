@@ -168,7 +168,7 @@ for(const X of [-100,0,100])for(const Y of [-100,0,100])for(const Z of [-100,100
 
 surface('i===2?.2:0',zero,live);const modeRecord=live.json('levelRecord()');
 check('compact machine shows squareness and four-position readings simultaneously',()=>{assert.equal(live.read('spindleSweepMode'),true);assert.equal(live.registry.spindleSweepPanel.hidden,false);assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.liveSquarenessUnits.hidden,false);assert.equal(live.registry.squarenessValuesNote.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.equal(live.registry.toggleSpindleSweep,undefined);});
-check('UI four positions retain degree and direction labels',()=>{for(let i=0;i<4;i++)assert.match(live.registry['sweepPosition'+i].getAttribute('aria-label'),new RegExp(i*90+'度・'+['右','奥','左','手前'][i]));});
+check('UI four positions retain directions without angle notation',()=>{for(let i=0;i<4;i++){const button=live.registry['sweepPosition'+i],label=button.getAttribute('aria-label');assert.match(label,new RegExp('^'+['右','奥','左','手前'][i]));assert.doesNotMatch(label+button.textContent,/°|(?:0|90|180|270)度/);}});
 const uiValues=()=>Array.from({length:4},(_,i)=>Number(live.registry['sweepValue'+i].getAttribute('data-reading-microns')));
 const displayed=geometryReading(live);
 check('all four displayed raw values equal independent actual-model geometry',()=>vectorNear(uiValues(),drawnIndependentReadings(live).readings,2e-7));

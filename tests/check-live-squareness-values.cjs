@@ -79,7 +79,7 @@ for(const initial of [-1000,0,25,1000]){
  e.read(`accuracyDiagram({pairs:[{key:'XZ',deviationMicroradians:10/.3}]},{pairs:[{key:'XZ',deviationMicroradians:${initial}/.3}]});`);
  check(`current value is not initial delta ${initial}`,()=>assert.equal(norm(values()[0].querySelectorAll('.live-pair-error-value')[0].textContent),'Z直角差 +10'));
 }
-check('shared unit note defines thousandths of a millimetre',()=>{assert.match(norm(r.liveSquarenessUnits.textContent),/300\s*mm換算/);assert.match(norm(r.liveSquarenessUnits.textContent),/1\s*µm[＝=]0\.001\s*mm/);isVisible(r.liveSquarenessUnits);});
+check('shared unit note defines thousandths of a millimetre',()=>{assert.match(norm(r.liveSquarenessUnits.textContent),/300\s*mm換算/);assert.match(norm(r.squarenessValuesNote.textContent),/1\s*µm[＝=]0\.001\s*mm/);isVisible(r.liveSquarenessUnits);});
 e.read("current=machines[0];");
 for(const [before,now,wanted] of [[10,9.976,true],[10,10,false],[10,10.0000001,false],[10,10.6,false],[-10,-9.976,true]]){
  e.read(`accuracyDiagram({pairs:[{key:'YZ',deviationMicroradians:${now}/.3}]},{pairs:[{key:'YZ',deviationMicroradians:${before}/.3}]});`);

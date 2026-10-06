@@ -11,7 +11,7 @@ function check(name,fn){try{fn();checks++;}catch(error){throw new Error(name+': 
 function near(a,b,tolerance=1e-7){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tolerance,`${a} != ${b}`);}
 // Numeric exceptions are restricted to exact, verified measurement elements.
 let sweepTextExceptions=new Map(),sweepAriaExceptions=new Map();
-const sweepSceneDescription='主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。0度は右、90度は奥、180度は左、270度は手前。上の直角図は300ミリ換算、隣の4点は手前270度基準の相対読みです。';
+const sweepSceneDescription='主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。右・奥・左・手前の4方向です。上の直角図は局所角度の300ミリ換算、隣の4点は手前基準の相対読みです。';
 function prepareSweepExceptions(){
  sweepTextExceptions=new Map();sweepAriaExceptions=new Map();
  if(!['compact','travel','double','gantry','five'].includes(read('current.kind')))return;
@@ -21,14 +21,14 @@ function prepareSweepExceptions(){
  for(let i=0;i<4;i++){
   const point=g.cardinal?.[i],readable=zero&&point?.onTable,text=readable?number(point.readingMicrons):point&&!point.onTable?'面外':'—';
   const button=r['sweepPosition'+i],value=r['sweepValue'+i];assert.equal(button.children.length,2);
-  sweepTextExceptions.set(button.children[0],i*90+'° '+direction[i]);sweepTextExceptions.set(value,text);
-  sweepAriaExceptions.set(button,i*90+'度・'+direction[i]+'、'+(readable?text+'マイクロメートル':text));
+  sweepTextExceptions.set(button.children[0],direction[i]+(i===3?' 基準':''));sweepTextExceptions.set(value,text);
+  sweepAriaExceptions.set(button,direction[i]+(i===3?'・基準':'')+'、'+(readable?text+'マイクロメートル':text));
   assert.equal(value.getAttribute('data-reading-microns'),readable?String(point.readingMicrons):'');
  }
  for(const id of ['sweepCurrentAngle','sweepCurrentValue','sweepDial','runSpindleSweep'])assert.equal(r[id],undefined);
  const diameter=r.spindleSweepPanel.querySelectorAll('.sweep-diameter');assert.equal(diameter.length,1);sweepTextExceptions.set(diameter[0],'直径300 mm');
  sweepTextExceptions.set(r.sweepContactStatus,!g.valid?'測定不可・主軸と上面の姿勢を確認':!zero?'手前が面外・軸を中央へ':!g.point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）');
- sweepTextExceptions.set(r.sweepMeasurementNote,'主軸と理想平面の相対傾きを直径300 mmで測ります。0°は右、90°は奥、180°は左、270°は手前です。手前270°をゼロ基準とします。プラスは測定子の押込み側です。門形の模型は支持姿勢を簡略表示し、測定は固有差を含む代表主軸方向で計算します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。');
+ sweepTextExceptions.set(r.sweepMeasurementNote,'主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の模型は支持姿勢を簡略表示し、測定は固有差を含む代表主軸方向で計算します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。');
 }
 // Only the dedicated position labels and approved current 300 mm readings
 // may contain numbers. Adjustment amounts and initial/delta values stay hidden.
@@ -39,7 +39,7 @@ function visibleText(el){
  // Model identifiers, support counts and station names are not precision or
  // adjustment measurements. Their exact identities have separate UI checks.
  if(['machineTitle','machineSubtitle','structureText','supportNote','sourceLinks','selectedSupportLabel'].includes(el.id))return '';
- if(el.id==='liveSquarenessUnits'){assert.equal(el.textContent,'300 mm換算・µm（1 µm＝0.001 mm）');assert.equal(el.children.length,0);return '';}
+ if(el.id==='liveSquarenessUnits'){assert.equal(el.textContent,'局所300 mm換算・µm');assert.equal(el.children.length,0);return '';}
  if(el.classList.contains('live-pair-base-value')||el.classList.contains('live-pair-error-value')){
   const parent=el.closest('.live-pair-values');assert(parent&&parent.closest('#liveSquareness'));assert.equal(el.children.length,0);assert.equal(el.tagName,'SPAN');
   const key=parent.getAttribute('data-pair'),pair=json('levelGeometry.pairs').find(p=>p.key===key);assert(pair);
@@ -47,7 +47,10 @@ function visibleText(el){
   assert.equal(el.textContent,el.classList.contains('live-pair-base-value')?(lathe?'主軸Z':base)+'基準 0':other+'直角差 '+number);return '';
  }
  for(const [className,label] of Object.entries(positionLabels))if(el.classList.contains(className)){assert.equal(el.textContent,label);assert.equal(el.children.length,0);assert(['TEXT','SPAN'].includes(el.tagName));return '';}
- return el._text+' '+el.children.map(visibleText).join(' ');
+ let own=el._text;
+ if(el.id==='squarenessValuesNote'){assert.ok(own.startsWith('1 µm＝0.001 mm。'));own=own.replace('1 µm＝0.001 mm。','');}
+ if(el.id==='squarenessMeasurementNote')own=own.replace('ダイヤル測定の手前0とは別の基準です。','ダイヤル測定とは別の基準です。');
+ return own+' '+el.children.map(visibleText).join(' ');
 }
 function visibleElements(el,out=[]){if(el.hidden)return out;out.push(el);for(const child of el.children)visibleElements(child,out);return out;}
 function compactCoach(){
@@ -65,6 +68,7 @@ function nonnumeric(){
   let label=el.getAttribute('aria-label')||'';
   if(sweepAriaExceptions.has(el)){assert.equal(label,sweepAriaExceptions.get(el));label='';}
   if(el===r.scene&&['compact','travel','double','gantry','five'].includes(read('current.kind'))){assert.ok(label.endsWith(sweepSceneDescription));label=label.slice(0,-sweepSceneDescription.length);}
+  if(el.classList.contains('live-squareness-diagram'))label=label.replace('現在位置の局所角度を300 mm換算、実走査ではありません。','現在位置の局所角度の換算、実走査ではありません。');
   let aria=label.replace(/(?:5|2)軸/g,'').replace(/15か所/g,'');
   for(const identity of [read('current.name'),...json('supports.map(s=>s.name)')])aria=aria.split(identity).join('');
   assert.doesNotMatch(aria,/[0-9０-９%％°µμ]|\bmm\b|\brad\b/);
@@ -96,7 +100,7 @@ function verifyDiagrams(){
   if(Math.abs(p.deviationMicroradians-b.deviationMicroradians)<=1e-6){assert.equal(svg.getAttribute('data-direction'),'unchanged');assert.equal(svg.querySelectorAll('.pair-change-area').length,0);}
   assert.equal(svg.querySelectorAll('.measurement-start')[0].textContent,'0');assert.equal(svg.querySelectorAll('.measurement-end')[0].textContent,'300 mm');
   near(Number(svg.getAttribute('data-current-error-300')),p.deviationMicroradians*.3);near(Number(svg.getAttribute('data-before-error-300')),b.deviationMicroradians*.3);near(Number(svg.getAttribute('data-delta-error-300')),(p.deviationMicroradians-b.deviationMicroradians)*.3);
-  assert.doesNotMatch(visibleText(svg)+svg.getAttribute('aria-label'),/[0-9°µμ]/);
+  assert.doesNotMatch(visibleText(svg)+svg.getAttribute('aria-label').replace('現在位置の局所角度を300 mm換算、実走査ではありません。','現在位置の局所角度の換算、実走査ではありません。'),/[0-9°µμ]/);
  }
 }
 for(const [index,mode] of variants)for(const condition of ['new','used']){

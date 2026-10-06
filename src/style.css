@@ -528,3 +528,50 @@ body.in-mechanical-lab #training .has-spindle-sweep .main-adjustment{display:fle
  .has-spindle-sweep .viewer-gauge-fb{min-height:51px}
  .has-spindle-sweep .vertical-gauge{min-height:42px;grid-template-rows:8px minmax(26px,1fr) 8px;font-size:9px;line-height:8px;margin-top:0}
 }
+
+/* Fixed teaching projections: orange current line, white ideal point, black datum. */
+.reference-board{fill:#fff7ef;stroke:#a69384;stroke-width:.7}
+.reference-board-edge{fill:#e9ded3;stroke:#a69384;stroke-width:.7}
+.reference-base-arrow{fill:none;stroke:#333;stroke-width:1.5}
+.reference-origin-label,.reference-current-label,.reference-ideal-label{font-size:9px;font-weight:700}
+.reference-current-label,.reference-plus{fill:#ac4905}
+.reference-ideal-label{fill:#536776}
+.reference-plus,.reference-minus{font-size:10px;font-weight:700}
+.reference-conversion{font-size:7px;fill:#66584b}
+.reference-plane-name{font-size:9px;fill:#857364}
+.live-squareness-diagram .measurement-start,.reference-diagram .measurement-start,.accuracy-diagram .measurement-start{font-size:9px}
+.live-squareness-diagram .measurement-end,.reference-diagram .measurement-end,.accuracy-diagram .measurement-end{font-size:9px}
+.live-squareness-diagram .pair-axis,.reference-diagram .pair-axis,.accuracy-diagram .pair-axis{font-size:10px}
+.live-squareness-diagram .live-pair-limit{font-size:8px}
+.squareness-panel{position:relative;padding-bottom:14px}
+.measurement-reference-toggle{position:absolute;inset:0;z-index:1;width:100%;min-height:44px;padding:0;border:0;background:transparent;border-radius:5px;cursor:pointer}
+.measurement-reference-toggle span{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:10px;line-height:14px;color:#94400b;text-decoration:underline;text-underline-offset:2px}
+.measurement-reference-toggle:hover{background:rgba(215,102,26,.035)}
+.measurement-reference-toggle:focus-visible{outline:2px solid #b34800;outline-offset:1px;background:transparent}
+.measurement-reference-toggle[aria-expanded="true"] span{font-weight:700}
+.sweep-positions button small{font-size:8px;font-weight:400}
+/* All seven machines can open the same reference lesson without covering the model. */
+body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:column;min-height:0;overflow:hidden;scrollbar-gutter:auto}
+.adjustment-selection-scroll{flex:0 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-gutter:stable;scroll-padding-block:4px;width:100%}
+.common-support-actions{flex:none;width:100%;padding-top:4px}
+.measurement-reference{margin:8px 0 0;padding:8px;border:1px solid #e4d3c5;border-radius:8px;background:#fffaf5;scroll-margin-top:4px}
+.measurement-reference-heading{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.measurement-reference-heading h2{margin:0;font-size:14px}
+.measurement-reference-heading button{min-height:44px;flex:none;font-size:12px;padding:4px 8px}
+.reference-intro{margin:7px 0;font-size:11px;line-height:1.6;overflow-wrap:anywhere}
+.measurement-reference-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.measurement-reference-card{min-width:0;border:1px solid #e4d3c5;border-radius:6px;padding:8px;background:white}
+.measurement-reference-card h3{display:flex;justify-content:space-between;gap:5px;flex-wrap:wrap;font-size:12px;margin:0 0 4px}
+.measurement-reference-card h3 span{font-variant-numeric:tabular-nums;color:#9a4007}
+.measurement-reference-card p{font-size:11px;line-height:1.6;margin:7px 0 0;overflow-wrap:anywhere}
+.reference-diagram{display:block;width:100%;max-height:160px;fill:var(--ink)}
+.reference-contact{padding:6px;border-radius:4px;background:#fff2e5}
+.reference-contact span{font-weight:700;color:#833500}
+.measurement-reference-card .reference-range{font-size:10px;color:var(--muted)}
+@media(max-width:950px){.measurement-reference-cards{grid-template-columns:minmax(0,1fr)}.reference-diagram{max-height:170px}.measurement-reference{padding:6px}}
+@media(min-width:561px) and (max-width:950px) and (orientation:portrait){.measurement-reference-cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:360px){.squareness-panel{padding-bottom:12px}.measurement-reference-toggle span{font-size:9px;line-height:12px}.has-spindle-sweep .live-squareness-item{grid-template-columns:54px minmax(0,1fr)}}
+@media(max-width:950px) and (orientation:landscape) and (max-height:600px){.measurement-reference-toggle span{font-size:9px;line-height:12px}.squareness-panel{padding-bottom:12px}}
+.reference-side-label{font-size:9px;font-weight:700;fill:#833500}
+.reference-direction-label,.reference-contact-label{font-size:8px;font-weight:650;fill:#333}
+.reference-sign-guide{fill:none;stroke:#9b8777;stroke-width:.6;stroke-dasharray:2 2}

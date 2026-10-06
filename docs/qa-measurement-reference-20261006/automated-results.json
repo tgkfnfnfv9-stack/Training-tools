@@ -1,0 +1,639 @@
+{
+  "timestampUTC": "2026-10-06T10:52:19.267068+00:00",
+  "baseCommit": "656d1f5fa46c828c88ef2be9af5fcaba75da1baa",
+  "suiteCount": 38,
+  "passed": 38,
+  "failed": 0,
+  "scope": "Node engine/DOM/canvas checks only. Does not establish browser layout or physical smartphone gestures. Tests impacted by final projection/markup changes rerun after build; earlier attempts retained.",
+  "results": [
+    {
+      "file": "tests/check-3d-axis-controls.cjs",
+      "exit": 0,
+      "seconds": 22.13,
+      "output": "3D axis controls: 138 checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-3d-axis-controls.cjs",
+          "exit": 0,
+          "seconds": 22.13,
+          "output": "3D axis controls: 138 checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-accuracy-engine.cjs",
+      "exit": 0,
+      "seconds": 0.07,
+      "output": "Accuracy engine: 73 checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-accuracy-engine.cjs",
+          "exit": 0,
+          "seconds": 0.07,
+          "output": "Accuracy engine: 73 checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-accuracy-render.cjs",
+      "exit": 0,
+      "seconds": 25.87,
+      "output": "Accuracy Canvas: 305 rendered frames, 991776 finite drawing operations passed (3 sizes, 7 machines, 2 extra modes).\n",
+      "attempts": [
+        {
+          "file": "tests/check-accuracy-render.cjs",
+          "exit": 0,
+          "seconds": 25.87,
+          "output": "Accuracy Canvas: 305 rendered frames, 991776 finite drawing operations passed (3 sizes, 7 machines, 2 extra modes).\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-accuracy-review.cjs",
+      "exit": 0,
+      "seconds": 1.06,
+      "output": "Accuracy review: 75 independent checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-accuracy-review.cjs",
+          "exit": 0,
+          "seconds": 1.06,
+          "output": "Accuracy review: 75 independent checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-adjustment-flow.cjs",
+      "exit": 0,
+      "seconds": 6.74,
+      "output": "Adjustment flow: 153 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-adjustment-flow.cjs",
+          "exit": 0,
+          "seconds": 7.04,
+          "output": "Adjustment flow: 153 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.\n"
+        },
+        {
+          "file": "tests/check-adjustment-flow.cjs",
+          "exit": 0,
+          "seconds": 6.74,
+          "output": "Adjustment flow: 153 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-canvas-labels.cjs",
+      "exit": 0,
+      "seconds": 36.37,
+      "output": "{\n  \"frames\": 528,\n  \"backgroundRectangles\": 4256,\n  \"axisRectangles\": 1776,\n  \"partRectangles\": 2480,\n  \"expectedAxisLabels\": 1776,\n  \"collisionFrames\": 0,\n  \"outsideFrames\": 0,\n  \"missingAxisFrames\": 0,\n  \"supportCollisionFrames\": 0,\n  \"examples\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-canvas-labels.cjs",
+          "exit": 0,
+          "seconds": 36.37,
+          "output": "{\n  \"frames\": 528,\n  \"backgroundRectangles\": 4256,\n  \"axisRectangles\": 1776,\n  \"partRectangles\": 2480,\n  \"expectedAxisLabels\": 1776,\n  \"collisionFrames\": 0,\n  \"outsideFrames\": 0,\n  \"missingAxisFrames\": 0,\n  \"supportCollisionFrames\": 0,\n  \"examples\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-compact-bending.cjs",
+      "exit": 0,
+      "seconds": 1.52,
+      "output": "{\n  \"checks\": 670,\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-compact-bending.cjs",
+          "exit": 0,
+          "seconds": 1.52,
+          "output": "{\n  \"checks\": 670,\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-compact-table-path.cjs",
+      "exit": 0,
+      "seconds": 3.87,
+      "output": "{\n  \"checks\": 168,\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-compact-table-path.cjs",
+          "exit": 0,
+          "seconds": 3.87,
+          "output": "{\n  \"checks\": 168,\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-confirmed-layouts.cjs",
+      "exit": 0,
+      "seconds": 7.14,
+      "output": "{\n  \"checks\": 330,\n  \"legacyAccepted\": 0,\n  \"legacyCompactMigrated\": 0,\n  \"legacyRejected\": 9,\n  \"legacyV1Rejected\": 9,\n  \"legacyV1CompactMigrated\": 0,\n  \"legacyKeysPreserved\": 9,\n  \"supportsExercised\": 50,\n  \"failures\": [],\n  \"timings\": [\n    {\n      \"index\": 0,\n      \"operation\": \"open\",\n      \"milliseconds\": 60.16849000000002\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 7.861941000000115\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 29.439591999999948\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"open\",\n      \"milliseconds\": 47.70085600000016\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 5.079038999999739\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 28.43688999999995\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"open\",\n      \"milliseconds\": 38.91649400000006\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 8.976664999999684\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 23.243677999999818\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"open\",\n      \"milliseconds\": 51.3674759999999\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 10.232449999999517\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 19.020720999999867\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"open\",\n      \"milliseconds\": 60.04381399999966\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 9.871025000000373\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 40.07960899999944\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"open\",\n      \"milliseconds\": 21.593715999999404\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 4.19807899999978\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 12.47974400000021\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"open\",\n      \"milliseconds\": 14.676295999999638\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 2.0098339999995005\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 6.267853999999716\n    }\n  ]\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-confirmed-layouts.cjs",
+          "exit": 0,
+          "seconds": 7.14,
+          "output": "{\n  \"checks\": 330,\n  \"legacyAccepted\": 0,\n  \"legacyCompactMigrated\": 0,\n  \"legacyRejected\": 9,\n  \"legacyV1Rejected\": 9,\n  \"legacyV1CompactMigrated\": 0,\n  \"legacyKeysPreserved\": 9,\n  \"supportsExercised\": 50,\n  \"failures\": [],\n  \"timings\": [\n    {\n      \"index\": 0,\n      \"operation\": \"open\",\n      \"milliseconds\": 60.16849000000002\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 7.861941000000115\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 29.439591999999948\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"open\",\n      \"milliseconds\": 47.70085600000016\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 5.079038999999739\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 28.43688999999995\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"open\",\n      \"milliseconds\": 38.91649400000006\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 8.976664999999684\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 23.243677999999818\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"open\",\n      \"milliseconds\": 51.3674759999999\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 10.232449999999517\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 19.020720999999867\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"open\",\n      \"milliseconds\": 60.04381399999966\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 9.871025000000373\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 40.07960899999944\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"open\",\n      \"milliseconds\": 21.593715999999404\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 4.19807899999978\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 12.47974400000021\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"open\",\n      \"milliseconds\": 14.676295999999638\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 2.0098339999995005\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 6.267853999999716\n    }\n  ]\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-display-motion.cjs",
+      "exit": 0,
+      "seconds": 25.4,
+      "output": "{\n  \"checks\": {\n    \"planarMotion\": 666,\n    \"localContact\": 240,\n    \"fixedAnchorMotion\": 156,\n    \"averageVersusLocal\": 5\n  },\n  \"maximumDirectionDifference\": 4.469433677046628e-12,\n  \"maximumContactDifference\": 8.881784197001252e-16,\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-display-motion.cjs",
+          "exit": 0,
+          "seconds": 25.4,
+          "output": "{\n  \"checks\": {\n    \"planarMotion\": 666,\n    \"localContact\": 240,\n    \"fixedAnchorMotion\": 156,\n    \"averageVersusLocal\": 5\n  },\n  \"maximumDirectionDifference\": 4.469433677046628e-12,\n  \"maximumContactDifference\": 8.881784197001252e-16,\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-electrical-full.cjs",
+      "exit": 0,
+      "seconds": 0.21,
+      "output": "{\n  \"passed\": true,\n  \"assertions\": 103,\n  \"combinations\": 720,\n  \"valid\": 13,\n  \"flows\": [\n    \"five full completion workflows\",\n    \"current serial calculation\",\n    \"parallel short circuit blocked\",\n    \"AC reverse direction\",\n    \"DC voltage alternatives\",\n    \"resistance unit alternatives\",\n    \"open continuity\",\n    \"setting lock and reset\",\n    \"all settings exhaustively checked\"\n  ]\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-electrical-full.cjs",
+          "exit": 0,
+          "seconds": 0.21,
+          "output": "{\n  \"passed\": true,\n  \"assertions\": 103,\n  \"combinations\": 720,\n  \"valid\": 13,\n  \"flows\": [\n    \"five full completion workflows\",\n    \"current serial calculation\",\n    \"parallel short circuit blocked\",\n    \"AC reverse direction\",\n    \"DC voltage alternatives\",\n    \"resistance unit alternatives\",\n    \"open continuity\",\n    \"setting lock and reset\",\n    \"all settings exhaustively checked\"\n  ]\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-full-code-review.cjs",
+      "exit": 0,
+      "seconds": 12.11,
+      "output": "Full code review: 158 integration checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-full-code-review.cjs",
+          "exit": 1,
+          "seconds": 12.67,
+          "output": "158 full-code checks run; 1 failed:\nstandalone build has all modules and no external local dependency: app.js latest source is missing from bundled page\n"
+        },
+        {
+          "file": "tests/check-full-code-review.cjs",
+          "exit": 0,
+          "seconds": 12.11,
+          "output": "Full code review: 158 integration checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-guide-response-invariants.cjs",
+      "exit": 0,
+      "seconds": 2.24,
+      "output": "{\n  \"checks\": 213,\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-guide-response-invariants.cjs",
+          "exit": 0,
+          "seconds": 2.24,
+          "output": "{\n  \"checks\": 213,\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-ideal-display.cjs",
+      "exit": 0,
+      "seconds": 14.11,
+      "output": "{\n  \"checks\": {\n    \"nominalGeometry\": 504,\n    \"flatAgreement\": 126,\n    \"supportAdjustment\": 7,\n    \"intrinsicRemoval\": 7,\n    \"linearMotion\": 20,\n    \"rotaryRigidity\": 50,\n    \"viewAndToggle\": 126\n  },\n  \"vertices\": 427392,\n  \"maximumPointDifference\": 2.047902597024e-15,\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-ideal-display.cjs",
+          "exit": 0,
+          "seconds": 14.11,
+          "output": "{\n  \"checks\": {\n    \"nominalGeometry\": 504,\n    \"flatAgreement\": 126,\n    \"supportAdjustment\": 7,\n    \"intrinsicRemoval\": 7,\n    \"linearMotion\": 20,\n    \"rotaryRigidity\": 50,\n    \"viewAndToggle\": 126\n  },\n  \"vertices\": 427392,\n  \"maximumPointDifference\": 2.047902597024e-15,\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-ideal-outline-ui.cjs",
+      "exit": 0,
+      "seconds": 51.62,
+      "output": "{\n  \"checks\": 743,\n  \"frames\": 790,\n  \"finiteCanvasCoordinates\": 4751765,\n  \"maximumIdealSegments\": 411,\n  \"maximumIdealToCurrentRatio\": 0.23509369676320271\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-ideal-outline-ui.cjs",
+          "exit": 0,
+          "seconds": 51.62,
+          "output": "{\n  \"checks\": 743,\n  \"frames\": 790,\n  \"finiteCanvasCoordinates\": 4751765,\n  \"maximumIdealSegments\": 411,\n  \"maximumIdealToCurrentRatio\": 0.23509369676320271\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-interface-audit.cjs",
+      "exit": 0,
+      "seconds": 0.93,
+      "output": "Interface audit: 31 independent interaction and diagram checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-interface-audit.cjs",
+          "exit": 0,
+          "seconds": 0.93,
+          "output": "Interface audit: 31 independent interaction and diagram checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-irregular-leveling.cjs",
+      "exit": 0,
+      "seconds": 0.09,
+      "output": "Irregular leveling: 621 checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-irregular-leveling.cjs",
+          "exit": 0,
+          "seconds": 0.09,
+          "output": "Irregular leveling: 621 checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-level-stages.cjs",
+      "exit": 0,
+      "seconds": 3.57,
+      "output": "Level stages: 80 independent checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-level-stages.cjs",
+          "exit": 0,
+          "seconds": 3.57,
+          "output": "Level stages: 80 independent checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-leveling-engine.cjs",
+      "exit": 0,
+      "seconds": 0.07,
+      "output": "Leveling engine: 83 checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-leveling-engine.cjs",
+          "exit": 0,
+          "seconds": 0.07,
+          "output": "Leveling engine: 83 checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-leveling-learning.cjs",
+      "exit": 0,
+      "seconds": 4.19,
+      "output": "Leveling learning: 91 checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-leveling-learning.cjs",
+          "exit": 0,
+          "seconds": 4.19,
+          "output": "Leveling learning: 91 checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-leveling-ui.cjs",
+      "exit": 0,
+      "seconds": 2.14,
+      "output": "Leveling UI: 190 checks passed (7 machines, single-model selections, controls, exercise, save/import/export).\n",
+      "attempts": [
+        {
+          "file": "tests/check-leveling-ui.cjs",
+          "exit": 0,
+          "seconds": 2.14,
+          "output": "Leveling UI: 190 checks passed (7 machines, single-model selections, controls, exercise, save/import/export).\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-live-squareness-values.cjs",
+      "exit": 0,
+      "seconds": 1.63,
+      "output": "{\n  \"checks\": 109,\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-live-squareness-values.cjs",
+          "exit": 0,
+          "seconds": 1.82,
+          "output": "{\n  \"checks\": 109,\n  \"failures\": []\n}\n"
+        },
+        {
+          "file": "tests/check-live-squareness-values.cjs",
+          "exit": 0,
+          "seconds": 1.63,
+          "output": "{\n  \"checks\": 109,\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-measurement-reference.cjs",
+      "exit": 0,
+      "seconds": 0.74,
+      "output": "{\n  \"checks\": 204,\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-measurement-reference.cjs",
+          "exit": 1,
+          "seconds": 0.76,
+          "output": "{\n  \"checks\": 204,\n  \"failures\": [\n    \"compact/XY signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XY signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XY signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XY signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XY signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XY signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XY signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/XZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/YZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/YZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/YZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/YZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/YZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/YZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"compact/YZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XY signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XY signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XY signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XY signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XY signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XY signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XY signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/XZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/YZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/YZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/YZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/YZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/YZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/YZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"horizontal/YZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XY signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XY signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XY signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XY signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XY signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XY signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XY signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/XZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/YZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/YZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/YZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/YZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/YZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/YZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"travel/YZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XY signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XY signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XY signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XY signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XY signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XY signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XY signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/XZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/YZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/YZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/YZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/YZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/YZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/YZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"double/YZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XY signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XY signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XY signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XY signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XY signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XY signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XY signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/XZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/YZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/YZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/YZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/YZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/YZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/YZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"gantry/YZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XY signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XY signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XY signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XY signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XY signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XY signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XY signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/XZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/YZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/YZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/YZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/YZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/YZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/YZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"five/YZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"lathe/XZ signed local angle -3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"lathe/XZ signed local angle -100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"lathe/XZ signed local angle -1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"lathe/XZ signed local angle 0: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"lathe/XZ signed local angle 1: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"lathe/XZ signed local angle 100: Expected values to be strictly equal:\\n\\n4 !== 2\\n\",\n    \"lathe/XZ signed local angle 3000: Expected values to be strictly equal:\\n\\n4 !== 2\\n\"\n  ]\n}\n"
+        },
+        {
+          "file": "tests/check-measurement-reference.cjs",
+          "exit": 0,
+          "seconds": 0.74,
+          "output": "{\n  \"checks\": 204,\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-mechanical-audit.cjs",
+      "exit": 0,
+      "seconds": 4.29,
+      "output": "Mechanical audit: 220 checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-mechanical-audit.cjs",
+          "exit": 0,
+          "seconds": 4.29,
+          "output": "Mechanical audit: 220 checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-mobile-navigation.cjs",
+      "exit": 0,
+      "seconds": 0.74,
+      "output": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed\n",
+      "attempts": [
+        {
+          "file": "tests/check-mobile-navigation.cjs",
+          "exit": 0,
+          "seconds": 0.74,
+          "output": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-model-posture.cjs",
+      "exit": 0,
+      "seconds": 73.89,
+      "output": "{\n  \"checks\": {\n    \"projection\": 105,\n    \"surfaceNormals\": 491,\n    \"groundContact\": 560,\n    \"rigidMotion\": 30,\n    \"axisLabels\": 224\n  },\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-model-posture.cjs",
+          "exit": 0,
+          "seconds": 73.89,
+          "output": "{\n  \"checks\": {\n    \"projection\": 105,\n    \"surfaceNormals\": 491,\n    \"groundContact\": 560,\n    \"rigidMotion\": 30,\n    \"axisLabels\": 224\n  },\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-multi-spindle-sweep.cjs",
+      "exit": 0,
+      "seconds": 0.7,
+      "output": "PASS multi-machine spindle sweep independent physics: 147 checks\n",
+      "attempts": [
+        {
+          "file": "tests/check-multi-spindle-sweep.cjs",
+          "exit": 0,
+          "seconds": 0.7,
+          "output": "PASS multi-machine spindle sweep independent physics: 147 checks\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-portal-shear-invariants.cjs",
+      "exit": 0,
+      "seconds": 4.4,
+      "output": "{\n  \"checks\": 165,\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-portal-shear-invariants.cjs",
+          "exit": 0,
+          "seconds": 4.4,
+          "output": "{\n  \"checks\": 165,\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-random-accuracy-review.cjs",
+      "exit": 0,
+      "seconds": 2.89,
+      "output": "Random accuracy independent review: 164 checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-random-accuracy-review.cjs",
+          "exit": 0,
+          "seconds": 2.89,
+          "output": "Random accuracy independent review: 164 checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-scene-zoom.cjs",
+      "exit": 0,
+      "seconds": 11.52,
+      "output": "Scene zoom: 84 interaction/rendering checks passed; 226 Canvas frames and 1193900 finite coordinate values inspected.\n",
+      "attempts": [
+        {
+          "file": "tests/check-scene-zoom.cjs",
+          "exit": 0,
+          "seconds": 11.52,
+          "output": "Scene zoom: 84 interaction/rendering checks passed; 226 Canvas frames and 1193900 finite coordinate values inspected.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-settings-menu-ui.cjs",
+      "exit": 0,
+      "seconds": 16.67,
+      "output": "{\n  \"checks\": 173,\n  \"frames\": 270,\n  \"finiteCanvasCoordinates\": 1734085,\n  \"variants\": 7,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-settings-menu-ui.cjs",
+          "exit": 0,
+          "seconds": 18.5,
+          "output": "{\n  \"checks\": 173,\n  \"frames\": 270,\n  \"finiteCanvasCoordinates\": 1734085,\n  \"variants\": 7,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}\n"
+        },
+        {
+          "file": "tests/check-settings-menu-ui.cjs",
+          "exit": 0,
+          "seconds": 16.67,
+          "output": "{\n  \"checks\": 173,\n  \"frames\": 270,\n  \"finiteCanvasCoordinates\": 1734085,\n  \"variants\": 7,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-settings-menu.cjs",
+      "exit": 0,
+      "seconds": 8.96,
+      "output": "{\n  \"checks\": {\n    \"drawerState\": 49,\n    \"supportSelection\": 50,\n    \"stageSteps\": 300,\n    \"limits\": 21,\n    \"axisControls\": 51,\n    \"demo\": 21,\n    \"saveImportExport\": 21,\n    \"legacyStep\": 63,\n    \"settings\": 5\n  },\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-settings-menu.cjs",
+          "exit": 0,
+          "seconds": 8.96,
+          "output": "{\n  \"checks\": {\n    \"drawerState\": 49,\n    \"supportSelection\": 50,\n    \"stageSteps\": 300,\n    \"limits\": 21,\n    \"axisControls\": 51,\n    \"demo\": 21,\n    \"saveImportExport\": 21,\n    \"legacyStep\": 63,\n    \"settings\": 5\n  },\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-site-navigation.cjs",
+      "exit": 0,
+      "seconds": 1.42,
+      "output": "Shared site navigation: 39 journeys/state/history checks passed across six pages and seven machines.\n",
+      "attempts": [
+        {
+          "file": "tests/check-site-navigation.cjs",
+          "exit": 0,
+          "seconds": 1.42,
+          "output": "Shared site navigation: 39 journeys/state/history checks passed across six pages and seven machines.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-spindle-sweep.cjs",
+      "exit": 0,
+      "seconds": 0.96,
+      "output": "{\n  \"checks\": 323,\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-spindle-sweep.cjs",
+          "exit": 0,
+          "seconds": 0.96,
+          "output": "{\n  \"checks\": 323,\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-squareness-display.cjs",
+      "exit": 0,
+      "seconds": 2.94,
+      "output": "Squareness display: 77 measured-angle, measurement-position, hidden-initial-value and relative-input checks passed.\n",
+      "attempts": [
+        {
+          "file": "tests/check-squareness-display.cjs",
+          "exit": 0,
+          "seconds": 2.39,
+          "output": "Squareness display: 77 measured-angle, measurement-position, hidden-initial-value and relative-input checks passed.\n"
+        },
+        {
+          "file": "tests/check-squareness-display.cjs",
+          "exit": 0,
+          "seconds": 2.94,
+          "output": "Squareness display: 77 measured-angle, measurement-position, hidden-initial-value and relative-input checks passed.\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-structural-connections.cjs",
+      "exit": 0,
+      "seconds": 1.2,
+      "output": "Structural connections: 290 checks passed. {\"maxJoin\":4.440892098500626e-16,\"maxFoot\":0,\"maxBoundaryStep\":2.000510035535085e-8}\n",
+      "attempts": [
+        {
+          "file": "tests/check-structural-connections.cjs",
+          "exit": 0,
+          "seconds": 1.2,
+          "output": "Structural connections: 290 checks passed. {\"maxJoin\":4.440892098500626e-16,\"maxFoot\":0,\"maxBoundaryStep\":2.000510035535085e-8}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-structural-invariants.cjs",
+      "exit": 0,
+      "seconds": 7.48,
+      "output": "{\n  \"checks\": 212,\n  \"failures\": []\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-structural-invariants.cjs",
+          "exit": 0,
+          "seconds": 7.48,
+          "output": "{\n  \"checks\": 212,\n  \"failures\": []\n}\n"
+        }
+      ]
+    },
+    {
+      "file": "tests/check-tester-lesson.cjs",
+      "exit": 0,
+      "seconds": 0.1,
+      "output": "{\n  \"passed\": true,\n  \"assertions\": 27,\n  \"flows\": [\n    \"missing leads\",\n    \"A terminal blocked\",\n    \"wrong mode blocked\",\n    \"DC voltage\",\n    \"reverse polarity\",\n    \"disconnect\",\n    \"resistance preparation\",\n    \"1kΩ resistance\",\n    \"continuity connected/broken\",\n    \"reset/lesson reset\"\n  ]\n}\n",
+      "attempts": [
+        {
+          "file": "tests/check-tester-lesson.cjs",
+          "exit": 0,
+          "seconds": 0.1,
+          "output": "{\n  \"passed\": true,\n  \"assertions\": 27,\n  \"flows\": [\n    \"missing leads\",\n    \"A terminal blocked\",\n    \"wrong mode blocked\",\n    \"DC voltage\",\n    \"reverse polarity\",\n    \"disconnect\",\n    \"resistance preparation\",\n    \"1kΩ resistance\",\n    \"continuity connected/broken\",\n    \"reset/lesson reset\"\n  ]\n}\n"
+        }
+      ]
+    }
+  ],
+  "verifiedFileSha256": {
+    "index.html": "7c4eac19153f2bb6b8d940f9109cbb570f409d597ef620a31b8dc1164bad4d16",
+    "src/accuracy-ui.js": "e0569e3994af87e934b3d32d84abbd4307e694c424fafbf30b001744fcc642a3",
+    "src/app.js": "9ed1d2468c5d0e7ddf33db20c9aaac81da339883ba7faa7624ef4d89bd2ba384",
+    "src/index.html": "7a093949e36579d6748b41fc393cf82653ecfa9a064ff77d313e60c0fc0005f2",
+    "src/leveling-ui.js": "4e3ee21ef4626cdf83efa7e6c139a39fbcbb64c196f23c7c63ec5252137beb28",
+    "src/leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+    "src/machine-accuracy-ui.js": "5123e4a167a90d2c9a08c3f5a06a8b2b7f2c41430b32bde9f2b8507545587363",
+    "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "src/spindle-sweep-ui.js": "8b98da5a120ab611b16939044dafc23bdb8e29d3f3aed9d6ac75125030db8b4f",
+    "src/spindle-sweep.js": "417ef0f6486fcdbd7b10a42b89f610b2b121660c126ab7b0aa0bb97b0fa85c57",
+    "src/style.css": "95921218284c896da3be9dc94b7e42104c835ece32a9fa862d683d653d22f656",
+    "src/tester.css": "05818215f96effc3e1b38a7026c23c5ab66bfd84bfb147ef7641630b4f0ce663",
+    "src/tester.html": "c1cfc2b45ee63d13bf0dd38d69382901532d6e6a521050909734a9f133697866",
+    "src/tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409",
+    "tests/check-3d-axis-controls.cjs": "ee6d756d36f64d0ad5f4caa651765eb6274affbd78e6c186eef18d2ce51d78df",
+    "tests/check-accuracy-engine.cjs": "d2e88cb7073cc7d144b76a689b04c8a3aadbb41c3a7784719af55339e3ff0b9c",
+    "tests/check-accuracy-render.cjs": "0463ca6e3fa3653891343eed7a7372169477f8bb977075a6ae1a736cd3492a35",
+    "tests/check-accuracy-review.cjs": "5a1275ba2a8459fdc490785d10a86db9fa76b54acb777587e337813d3f3e4c63",
+    "tests/check-adjustment-flow.cjs": "2e700a37f8993235103e18142fc7f9fcefc0267797f4114fc1ad4e7bb26cd2b5",
+    "tests/check-canvas-labels.cjs": "222dfa8a86971db1d28980d889dad36bf82e252e4276adc0a27de561362de31f",
+    "tests/check-compact-bending.cjs": "9fab71ccda67d439278b49252b0c4c372ed1ad5c3bb34c74010a7f51711c0db4",
+    "tests/check-compact-table-path.cjs": "a4a38c8079e588366c93d19d13def8c33484c43e2bc33ae1fd70afd9ffab034f",
+    "tests/check-confirmed-layouts.cjs": "b216d411552a4fbfd55b3d2a2fd61b8662ed44bd56584c5a042cec3c30459482",
+    "tests/check-display-motion.cjs": "64f36b4c2558cf1cdde33801e0d3708a3a8f0f3d669824729e959695bd96d478",
+    "tests/check-electrical-full.cjs": "b9b17a3fddf8e85640b1235f289aff27e569837f319f369947280390258b355b",
+    "tests/check-full-code-review.cjs": "5a124abeb3166a94634d4973b61e50c24c1ca799c06224bda9818cc2ff40455a",
+    "tests/check-guide-response-invariants.cjs": "49924d9180e95e1b62648057aba3425c6bbb0453706048609cdd9b11891b0dec",
+    "tests/check-ideal-display.cjs": "dd2f2a370a0593aed10ad8dde36a0dac494b8273f6cf26562d6dd5433cc89ea0",
+    "tests/check-ideal-outline-ui.cjs": "42e045efed60d9be59cba5e82864c9ce12062c4e80891fe46584eb23f9c8360f",
+    "tests/check-interface-audit.cjs": "e1dbfd37ca8189b07a3109af56a133a6ba71cd7746f7305da2ad72f1c598b0bc",
+    "tests/check-irregular-leveling.cjs": "f91ad016b22f451437af3269e444dd8a90f86f66837e9f301742df2767579670",
+    "tests/check-level-stages.cjs": "605ae165274e3ccfe813edb2eafd4e5b7acfe76bd5b961acd17fae0091c0d42f",
+    "tests/check-leveling-engine.cjs": "2dc5bb58c298150bb68a9747305724b1369cd6757421e53dfebe208353a4ce0b",
+    "tests/check-leveling-learning.cjs": "002800682fcb2904a16129e0b5c7eaac70f08fbce7da12db8a2c0304b2021b7f",
+    "tests/check-leveling-ui.cjs": "f07618ca8247f80bfdf9eace8a52ec39bb302058e5eff63593da095c06e16395",
+    "tests/check-live-squareness-values.cjs": "e39de69cfd6f573a1aceb910ec6dfd12dbeb9abfd15676bfefd484467451c962",
+    "tests/check-measurement-reference.cjs": "66d7d6193e1a171f5ee80d6266d96890500da12be50882faec59b204fd24f697",
+    "tests/check-mechanical-audit.cjs": "85b4011ef0cde4f2f78b2db511cab863a0d2072bc4ecceb9e9210ad34e4a93ce",
+    "tests/check-mobile-navigation.cjs": "a4735c6c5b8414ec56d588c5c29fd4ec79e7742a79d396a982f87ff8e2cd323b",
+    "tests/check-model-posture.cjs": "aafdfd7ea209bef582d4ccf091eb08b9f7cc334c7c76223e10b9ae2f9270c64c",
+    "tests/check-multi-spindle-sweep.cjs": "6a63af8a26f1e6b518eb22dc1ee44570666fc5396b37b21d60e48a3b73dc33d5",
+    "tests/check-portal-shear-invariants.cjs": "e93147e649d08866cb5a67928a1d1ae43acb87bfc75b255b2bbddca2ef7c4bb5",
+    "tests/check-random-accuracy-review.cjs": "4828df495987f290719f923b911d7d95ae72d0f137cc02f08c229df83cb22952",
+    "tests/check-scene-zoom.cjs": "4058d924fd3f38009e8c16da2cb725cdf3e81adb662c322c5100f6ad50e8fbbf",
+    "tests/check-settings-menu-ui.cjs": "ec1446c45ef79f79e17c214f70c53b8b0b01c2bbef732d06112e3ff47fe44149",
+    "tests/check-settings-menu.cjs": "3b3ac2491b9462816e26182eddd9ce9baec9fd120275c0e27781c1475873e5d8",
+    "tests/check-site-navigation.cjs": "0b6be86c9487b0ba0a41649ff7f3f17b9e65ba592861d8ceb94591683bd1da4c",
+    "tests/check-spindle-sweep.cjs": "2ea91fcb32a08cbe4b958727cfbc331fe75cfa8491e96e77ce984612d21abc9a",
+    "tests/check-squareness-display.cjs": "0eff4a7a5ac1d757d17b2d227cac0263f914ec20f0ec9c21bdf73c931ea359c7",
+    "tests/check-structural-connections.cjs": "14e3dc3a65da519a36062b861dda86e388cb26ac09b832ed5a71fc37e781aa71",
+    "tests/check-structural-invariants.cjs": "4bba3c232f3d6848c64a3acd582995e9e3c295c552afac9c9fa87ac336d941bc",
+    "tests/check-tester-lesson.cjs": "64814a94f35aaf318dcfeba6439f4038f4b76451e46aa030de1a1a314082e488"
+  },
+  "unchangedCalculationFiles": [
+    "src/leveling.js",
+    "src/machine-accuracy.js",
+    "src/spindle-sweep.js",
+    "src/leveling-ui.js",
+    "src/machine-accuracy-ui.js"
+  ]
+}

@@ -133,7 +133,7 @@ function updateSpindleSweep(){
   el.textContent=readable?spindleSweepReading(p.readingMicrons):p&&!p.onTable?'面外':'—';
   el.setAttribute('data-reading-microns',readable?String(p.readingMicrons):'');
   button.setAttribute('aria-pressed',String(Math.abs(spindleSweepAngle-i*90)<.001));
-  button.setAttribute('aria-label',i*90+'度・'+sweepDirections[i]+'、'+(readable?el.textContent+'マイクロメートル':el.textContent));
+  button.setAttribute('aria-label',sweepDirections[i]+(i===3?'・基準':'')+'、'+(readable?el.textContent+'マイクロメートル':el.textContent));
  }
  const point=measured.valid?measured.pointAt(spindleSweepAngle):null;
  $('sweepContactStatus').textContent=!measured.valid?'測定不可・主軸と上面の姿勢を確認':!zeroValid?'手前が面外・軸を中央へ':!point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）';
