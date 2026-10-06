@@ -1,6 +1,6 @@
 'use strict';
 // Measuring/view state is deliberately separate from the saved installation.
-let spindleSweepMode=false,spindleSweepAngle=0;
+let spindleSweepMode=false,spindleSweepAngle=270;
 const sweepDirections=['右','奥','左','手前'];
 const sweepDot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
 const spindleSweepKinds=['compact','travel','double','gantry','five'];
@@ -31,7 +31,7 @@ function spindleSweepGeometry(state=positions,solution=levelSolution,profile=mac
 }
 // Factor-one assembly transforms: measurement never reads drawing gain,
 // clearance, camera, zoom, or global axis positions. Compact keeps its original
-// path above so existing lessons reproduce exactly the same readings.
+// physical path above; only the shared zero reference is changed to the front.
 function spindleSweepMachineGeometry(state,solution,profile){
  const m=current,L=window.Leveling,g=geometryModel(state,solution,profile),axes=axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key));
  const coordinate=p=>{const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];};
@@ -127,7 +127,7 @@ function updateSpindleSweep(){
  $('axisTabs').hidden=false;
  $('scene-readout-sweep-note').hidden=!available;$('modelSemantics').hidden=false;
  if(!available)return;
- const measured=spindleSweepGeometry(),zeroValid=measured.valid&&measured.cardinal[0].onTable;
+ const measured=spindleSweepGeometry(),zeroValid=measured.valid&&measured.cardinal[3].onTable;
  for(let i=0;i<4;i++){
   const p=measured.cardinal?.[i],readable=zeroValid&&p?.onTable,el=$('sweepValue'+i),button=$('sweepPosition'+i);
   el.textContent=readable?spindleSweepReading(p.readingMicrons):p&&!p.onTable?'面外':'—';
@@ -136,7 +136,7 @@ function updateSpindleSweep(){
   button.setAttribute('aria-label',i*90+'度・'+sweepDirections[i]+'、'+(readable?el.textContent+'マイクロメートル':el.textContent));
  }
  const point=measured.valid?measured.pointAt(spindleSweepAngle):null;
- $('sweepContactStatus').textContent=!measured.valid?'測定不可・主軸と上面の姿勢を確認':!zeroValid?'0°が面外・軸を中央へ':!point?.onTable?'測定子が面外・軸を中央へ':'0°基準・µm（0.001 mm）';
+ $('sweepContactStatus').textContent=!measured.valid?'測定不可・主軸と上面の姿勢を確認':!zeroValid?'手前が面外・軸を中央へ':!point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）';
 }
 function redrawSpindleSweep(){
  updateSpindleSweep();if(page==='training'){updateSceneViewUI();render($('scene'),current,yaw,$('labels').checked,selected);}

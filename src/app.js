@@ -172,7 +172,7 @@ function resumeOrOpenMachine(m){
  openMachine(m);
 }
 function openMachine(m){
- if(typeof spindleSweepMode!=='undefined'){spindleSweepMode=false;spindleSweepAngle=0;}
+ if(typeof spindleSweepMode!=='undefined'){spindleSweepMode=false;spindleSweepAngle=270;}
  stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.defaultMode||(m.modes?m.modes[0][0]:'');current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
 }
 function populateMachine(){
@@ -481,7 +481,7 @@ function updateSceneViewUI(){
  $('sceneDirection').textContent=sceneView==='front'?'正面：左 → 右':sceneView==='side'?'側面：手前 → 奥':'斜め：左右回転';
  $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。薄い破線の理想輪郭は'+($('showIdealOutline').checked?'表示中':'非表示')+'。左上の設定メニューで切り替えます。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
  if(current.kind==='compact')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'測定Pはテーブル上面中央の固定点です。X・Yの比較はこの点の送り方向を使い、送り中の傾き変化による横ずれを含みます。');
- if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode)$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。0度は右、90度は奥、180度は左、270度は手前。上の直角図は300ミリ換算、隣の4点は0度基準の相対読みです。');
+ if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode)$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。0度は右、90度は奥、180度は左、270度は手前。上の直角図は300ミリ換算、隣の4点は手前270度基準の相対読みです。');
 }
 function drawScene(){if(levelSolution)updateAccuracy();if(typeof updateSpindleSweep==='function')updateSpindleSweep();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){

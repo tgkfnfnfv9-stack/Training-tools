@@ -40,7 +40,7 @@ function oracle(m){
  const heights=offsets.map(p=>-dot(normal,p)/dot(normal,axis));
  const points=offsets.map((p,j)=>p.map((v,i)=>v+centre[i]+heights[j]*axis[i]));
  const uv=p=>{const u=m.five?m.basis[0]:sub(m.vertices[1],m.vertices[0]),v=m.five?m.basis[1]:sub(m.vertices[3],m.vertices[0]),d=sub(p,m.five?m.centre:m.vertices[0]);const uu=dot(u,u),vv=dot(v,v),uv=dot(u,v),du=dot(d,u),dv=dot(d,v),den=uu*vv-uv*uv;return [(du*vv-dv*uv)/den,(dv*uu-du*uv)/den];};
- return {axis,normal,points,readings:heights.map(h=>(h-heights[0])*1e6),inside:points.map(p=>{const q=uv(p);return m.five?dot(q,q)<=1+1e-9:q.every(v=>v>=-1e-9&&v<=1+1e-9);})};
+ return {axis,normal,points,readings:heights.map(h=>(h-heights[3])*1e6),inside:points.map(p=>{const q=uv(p);return m.five?dot(q,q)<=1+1e-9:q.every(v=>v>=-1e-9&&v<=1+1e-9);})};
 }
 const env=makeEnvironment({pureLeveling:true});
 for(const kind of ['compact','travel','double','gantry','five']){
@@ -74,7 +74,7 @@ for(const kind of ['compact','travel','double','gantry','five']){
 env.read("openMachine(machines.find(m=>m.kind==='five'));machineProfile=null;supportHeights=supports.map(()=>0);positions={X:0,Y:0,Z:0,A:50,C:0};updateLeveling();");env.registry.exaggerate.checked=false;
 for(const C of [-100,-31,0,47,100]){
  env.read(`positions.C=${C};updateLeveling();`);
- check('five A/C analytic slope '+C,()=>vn(env.json('spindleSweepGeometry().cardinal.map(p=>p.readingMicrons)'),[0,-.15*Math.tan(.225)*1e6,0,.15*Math.tan(.225)*1e6],2e-7));
+ check('five A/C analytic slope '+C,()=>vn(env.json('spindleSweepGeometry().cardinal.map(p=>p.readingMicrons)'),[-.15*Math.tan(.225)*1e6,-.3*Math.tan(.225)*1e6,-.15*Math.tan(.225)*1e6,0],2e-7));
 }
 // Independent physical ellipse oracle after deliberately unequal support
 // scaling. C rotates the ellipse and can change contact validity, although

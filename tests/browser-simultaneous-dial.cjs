@@ -37,7 +37,7 @@ async function snapshot(){return p.evaluate(()=>{
 async function assertReadings(name){
  const state=await snapshot();
  check(name+' direct model and both DOM readings agree',()=>{
-  assert(state.onTable[0]);valuesNear(state.sweep,state.geometry);valuesNear(state.pairRaw,state.pairGeometry);
+  assert(state.onTable[3]);assert.equal(state.sweep[3],0);valuesNear(state.sweep,state.geometry);valuesNear(state.pairRaw,state.pairGeometry);
  });
  return state;
 }
@@ -218,7 +218,7 @@ async function smallViewportControls(name){
  await p.locator('#axis-Y').evaluate(el=>{el.value='100';el.dispatchEvent(new Event('input',{bubbles:true}));});
  await p.locator('#closeTrainingMenu').click();await p.locator('#sweepPosition3').click();
  const off=await snapshot(),offText=await p.locator('#sweepValue3').textContent(),status=await p.locator('#sweepContactStatus').textContent();
- check('off-table contact has no normal displayed reading',()=>{assert.equal(off.onTable[3],false);assert.equal(off.sweep[3],null);assert.equal(offText,'面外');assert.match(status,/面外/);assert.equal(off.angle,270);});
+ check('off-table contact has no normal displayed reading',()=>{assert.equal(off.onTable[3],false);assert(off.sweep.every(v=>v===null));assert.equal(offText,'面外');assert.match(status,/手前.*面外/);assert.equal(off.angle,270);});
  await screenshot('off-table-390x844');
  await p.locator('#openTrainingMenu').click();await p.locator('#resetAxes').click();await p.locator('#closeTrainingMenu').click();await assertReadings('after recenter');
  const expectedCounts=[4,8,6,15,8,3,6];

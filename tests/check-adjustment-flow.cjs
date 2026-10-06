@@ -11,11 +11,11 @@ function check(name,fn){try{fn();checks++;}catch(error){throw new Error(name+': 
 function near(a,b,tolerance=1e-7){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tolerance,`${a} != ${b}`);}
 // Numeric exceptions are restricted to exact, verified measurement elements.
 let sweepTextExceptions=new Map(),sweepAriaExceptions=new Map();
-const sweepSceneDescription='主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。0度は右、90度は奥、180度は左、270度は手前。上の直角図は300ミリ換算、隣の4点は0度基準の相対読みです。';
+const sweepSceneDescription='主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。0度は右、90度は奥、180度は左、270度は手前。上の直角図は300ミリ換算、隣の4点は手前270度基準の相対読みです。';
 function prepareSweepExceptions(){
  sweepTextExceptions=new Map();sweepAriaExceptions=new Map();
  if(!['compact','travel','double','gantry','five'].includes(read('current.kind')))return;
- const g=json('(()=>{const m=spindleSweepGeometry();return {valid:m.valid,cardinal:m.cardinal,point:m.valid?m.pointAt(spindleSweepAngle):null,angle:spindleSweepAngle};})()'),zero=g.valid&&g.cardinal[0].onTable;
+ const g=json('(()=>{const m=spindleSweepGeometry();return {valid:m.valid,cardinal:m.cardinal,point:m.valid?m.pointAt(spindleSweepAngle):null,angle:spindleSweepAngle};})()'),zero=g.valid&&g.cardinal[3].onTable;
  const number=v=>{const magnitude=Math.round(Math.abs(v));return magnitude===0?'0':(v<0?'-':'+')+magnitude;};
  const direction=['右','奥','左','手前'];
  for(let i=0;i<4;i++){
@@ -27,8 +27,8 @@ function prepareSweepExceptions(){
  }
  for(const id of ['sweepCurrentAngle','sweepCurrentValue','sweepDial','runSpindleSweep'])assert.equal(r[id],undefined);
  const diameter=r.spindleSweepPanel.querySelectorAll('.sweep-diameter');assert.equal(diameter.length,1);sweepTextExceptions.set(diameter[0],'直径300 mm');
- sweepTextExceptions.set(r.sweepContactStatus,!g.valid?'測定不可・主軸と上面の姿勢を確認':!zero?'0°が面外・軸を中央へ':!g.point?.onTable?'測定子が面外・軸を中央へ':'0°基準・µm（0.001 mm）');
- sweepTextExceptions.set(r.sweepMeasurementNote,'主軸と理想平面の相対傾きを直径300 mmで測ります。0°右をゼロ基準とし、90°は奥、180°は左、270°は手前です。プラスは測定子の押込み側です。門形の模型は支持姿勢を簡略表示し、測定は固有差を含む代表主軸方向で計算します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。');
+ sweepTextExceptions.set(r.sweepContactStatus,!g.valid?'測定不可・主軸と上面の姿勢を確認':!zero?'手前が面外・軸を中央へ':!g.point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）');
+ sweepTextExceptions.set(r.sweepMeasurementNote,'主軸と理想平面の相対傾きを直径300 mmで測ります。0°は右、90°は奥、180°は左、270°は手前です。手前270°をゼロ基準とします。プラスは測定子の押込み側です。門形の模型は支持姿勢を簡略表示し、測定は固有差を含む代表主軸方向で計算します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。');
 }
 // Only the dedicated position labels and approved current 300 mm readings
 // may contain numbers. Adjustment amounts and initial/delta values stay hidden.
