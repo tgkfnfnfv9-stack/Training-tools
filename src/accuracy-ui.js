@@ -246,7 +246,7 @@ function updateAccuracy(){
  accuracyKey=key;
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel();
- $('modelSemantics').textContent=current.kind==='compact'?'測定Pの送り・左右剛性差を仮定':g.portal?'模型＝支持姿勢／軸・直角図＝固有差込み':'水準器＝平均／模型＝局所＋固有';
+ $('modelSemantics').textContent=current.kind==='compact'?'測定Pの送り・左右剛性差を仮定':g.portal?'模型＝支持姿勢／軸・測定＝固有差込み':'水準器＝平均／模型＝局所＋固有';
  // The comparison is pointwise: both states use the current axis position,
  // dimensions, layout and evaluation length. The reference-search aggregate
  // is deliberately not used for this initial/current comparison.

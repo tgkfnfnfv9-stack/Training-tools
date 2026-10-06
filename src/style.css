@@ -424,7 +424,7 @@ body.in-mechanical-lab #training .training-drawer .scroll-controls>.card{backgro
  body.in-mechanical-lab #training .training-workspace{grid-template-columns:minmax(0,1fr) 210px}
 }
 
-/* Compact machines compare squareness and spindle readings in one fixed row.
+/* Supported vertical-spindle machines compare both measurements in one fixed row.
    The adjustment scroller is independent of the model and raise/lower buttons. */
 .precision-readouts,.squareness-panel{min-width:0}
 .precision-panel-title{display:none;margin:0;text-align:center;font-size:12px;line-height:18px}

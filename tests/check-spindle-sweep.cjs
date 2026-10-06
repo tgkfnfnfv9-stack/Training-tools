@@ -195,7 +195,7 @@ check('an off-table contact is marked and does not show an invented measurement'
 const oldWidth=live.read('levelConfig.width');live.read('levelConfig.width=.5;');surface('0',{...zero,X:-100},live);
 check('loss of the zero reference prevents reading any other cardinal as calibrated',()=>{assert.equal(live.json('spindleSweepGeometry().cardinal[0].onTable'),false);for(let i=0;i<4;i++)assert.equal(live.registry['sweepValue'+i].getAttribute('data-reading-microns'),'');assert.match(live.registry.sweepContactStatus.textContent,/0°.*面外/);});
 live.read(`levelConfig.width=${oldWidth};`);surface('0',zero,live);
-for(let i=1;i<7;i++){
+for(const i of [1,6]){
  live.read(`openMachine(machines[${i}]);`);
  check('unsupported machine '+i+' does not expose a misleading top-face measurement',()=>{assert.equal(live.registry.toggleSpindleSweep,undefined);assert.equal(live.registry.spindleSweepPanel.hidden,true);assert.equal(live.registry.runSpindleSweep,undefined);assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.equal(live.read('spindleSweepMode'),false);assert.equal(live.read('spindleSweepGeometry().valid'),false);});
 }

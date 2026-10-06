@@ -388,14 +388,14 @@ function render(canvas,m,angle,showLabels,active){
  const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);const width=rect.width,height=rect.height;
  ctx.fillStyle='#f1f0ed';ctx.fillRect(0,0,width,height);
  const model=createGeometry(m),training=canvas===$('scene')&&active>=0;
- const compactShortCanvas=training&&m.kind==='compact'&&height<160;
+ const compactShortCanvas=training&&['compact','travel','double','gantry','five'].includes(m.kind)&&height<160;
  const project=p=>sceneProject(p,angle,training?sceneView:'oblique',!training);
  const fitPoints=training?displayFramingPoints(m,model):model.faces.flatMap(f=>f.v.map(p=>[...p]));if(active<0)fitPoints.push([-m.w*.7,.0,-m.d*.7],[m.w*.7,3.8,m.d*.7]);const points=fitPoints.map(project);const minX=Math.min(...points.map(p=>p[0])),maxX=Math.max(...points.map(p=>p[0])),minY=Math.min(...points.map(p=>p[1])),maxY=Math.max(...points.map(p=>p[1]));
  // Fit the machine and its fixed movement envelope, without the empty ground around it.
  // Compact views use the width freed by the simpler measurement display too.
  // The framing envelope still contains the complete machine and moving axes;
  // label placement independently keeps every visible label inside the Canvas.
- const compactView=training&&m.kind==='compact';
+ const compactView=training&&['compact','travel','double','gantry','five'].includes(m.kind);
  const margin=showLabels?Math.min(compactView?44:56,width*(compactView?.12:.16)):18,verticalSpace=active>=0?height-(compactShortCanvas?12:48):height-75;
  const fitScale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY));
  const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-(compactShortCanvas?4:20))/2:height*.48)-(minY+maxY)*scale/2;
@@ -440,7 +440,12 @@ function render(canvas,m,angle,showLabels,active){
   const columns=Math.max(1,Math.floor((width-48)/44)+1),rows=Math.max(1,Math.floor((height-30)/26)+1);
   for(let y=0;y<rows;y++)for(let x=0;x<columns;x++)candidates.push([columns===1?width/2:24+x*(width-48)/(columns-1),rows===1?height/2:15+y*(height-30)/(rows-1)]);
   candidates.sort((a,b)=>Math.hypot(a[0]-label.p[0],a[1]-label.p[1])-Math.hypot(b[0]-label.p[0],b[1]-label.p[1]));
-  const place=candidates.find(([x,y])=>freeLabel({x:x-20,y:y-11,w:40,h:22}));if(!place)continue;
+  let place=candidates.find(([x,y])=>freeLabel({x:x-20,y:y-11,w:40,h:22}));
+  // At short heights, the coarse rows can miss a usable gap between support
+  // markers and the four earlier axis labels. Search that remaining space
+  // before dropping an axis name; preserve the same readable label size.
+  if(!place){let distance=Infinity;for(let y=15;y<=height-15;y+=2)for(let x=24;x<=width-24;x+=2){const d=Math.hypot(x-label.p[0],y-label.p[1]);if(d<distance&&freeLabel({x:x-20,y:y-11,w:40,h:22})){place=[x,y];distance=d;}}}
+  if(!place)continue;
   const [tx,ty]=place;labelBoxes.push({x:tx-20,y:ty-11,w:40,h:22});ctx.fillStyle='#ffffff26';ctx.fillRect(tx-20,ty-11,40,22);ctx.fillStyle=tone(axisColors[label.key],.55);ctx.fillText(label.key+'軸',tx,ty);
  }
  }

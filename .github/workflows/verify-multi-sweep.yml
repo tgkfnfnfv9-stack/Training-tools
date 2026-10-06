@@ -1,0 +1,38 @@
+name: Verify five-machine spindle measurements
+on:
+  push:
+    branches: [codex/multi-machine-sweep-20261006]
+permissions:
+  contents: read
+jobs:
+  browser:
+    name: Chromium five-machine verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install browser runtime
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Verify generated bundle
+        run: |
+          python3 build.py
+          git diff --exit-code -- index.html
+      - name: Check compact regression and five-machine layouts
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/multi-server.log 2>&1 &
+          node tests/browser-simultaneous-dial.cjs
+          node tests/browser-multi-sweep.cjs
+      - name: Preserve browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: multi-sweep-browser-evidence
+          path: |
+            tmp/qa-dial/
+            tmp/qa-multi-sweep/
+          if-no-files-found: ignore
