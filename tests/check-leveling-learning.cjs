@@ -48,8 +48,9 @@ function frame(slope){
 }
 function expected(heights){
  // Connected portal geometry has separate independent analytic/invariant
- // coverage in check-structural-invariants. Here test its DOM wiring only.
- if(read('!!levelGeometry.portal')){const g=json(`geometryModel(positions,machineSolution(${JSON.stringify(heights)}),machineProfile)`),solution=json(`({twist:machineSolution(${JSON.stringify(heights)}).twist})`);return {...g,pairs:g.pairs.map(p=>({key:p.key,error:p.errorMicrons})),twist:solution.twist};}
+ // coverage in check-structural-invariants; compact path geometry is covered
+ // independently in check-compact-table-path. Here test their DOM wiring only.
+ if(read('!!levelGeometry.portal || current.kind==="compact"')){const g=json(`geometryModel(positions,machineSolution(${JSON.stringify(heights)}),machineProfile)`),solution=json(`({twist:machineSolution(${JSON.stringify(heights)}).twist})`);return {...g,pairs:g.pairs.map(p=>({key:p.key,error:p.errorMicrons})),twist:solution.twist};}
 
  const m=json('current'),cfg=json('levelConfig'),profile=json('machineProfile'),g=json('levelGeometry'),support=json('supports');
  const coordinates=p=>({x:p.x/(m.w*.8)*cfg.width,z:p.z/(m.d*.8)*cfg.depth});

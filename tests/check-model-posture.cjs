@@ -19,6 +19,8 @@ r.scene.getContext=()=>ctx;r.scene.getBoundingClientRect=()=>({width,height});
 const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 const subtract=(a,b)=>a.map((v,i)=>v-b[i]);
 const unit=v=>v.map(q=>q/Math.hypot(...v));
+// Independent orthonormal basis for a height gradient in m/m.
+function rotateGradient(g,v){const right=unit([1,g[0],0]),up=unit([-g[0],1,-g[1]]),back=[right[1]*up[2],-right[0]*up[2],right[0]*up[1]-right[1]*up[0]];return right.map((n,i)=>n*v[0]+up[i]*v[1]+back[i]*v[2]);}
 const near=(a,b,e=1e-8)=>assert(Math.abs(a-b)<=e,`${a} != ${b}`);
 const pointNear=(a,b,e=1e-8)=>assert(Math.hypot(...subtract(a,b))<=e,`${JSON.stringify(a)} != ${JSON.stringify(b)}`);
 const literal=JSON.stringify;
@@ -96,6 +98,7 @@ for(const [index,mode] of variants){
    setHeights(heights);name=kind+'/'+w+'x'+d+'/exaggerated='+exaggerated+'/'+heights;
    check('surfaceNormals',()=>{
     const poses=json('levelGeometry.poses'),factor=read('displayFactor()');
+    const supportData=json('supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:supportHeights[i]}))'),sum=(fn)=>supportData.reduce((n,p)=>n+fn(p),0),plane=kind==='compact'?{a:sum(p=>p.x*p.h)/sum(p=>p.x*p.x),b:sum(p=>p.z*p.h)/sum(p=>p.z*p.z),c:sum(p=>p.h)/supportData.length}:null,common=plane?[plane.a*factor/1000,plane.b*factor/1000]:null;
     const config=json('levelConfig'),size=json('[current.w*.8,current.d*.8]');
     const mapping=p=>[p.x/size[0]*config.width,p.z/size[1]*config.depth];
     const samples=json('({tool:levelGeometry.toolPoints,work:[levelGeometry.workPoint]})');
@@ -111,10 +114,11 @@ for(const [index,mode] of variants){
      const actual=unit(subtract(json(`levelBodyVisualPoint(${literal(b)},${literal(pose)})`),json(`levelBodyVisualPoint(${literal(a)},${literal(pose)})`)));
      // Connected portal frames and seats have independent endpoint/analytic
      // coverage in check-structural-invariants; this suite checks Canvas wiring.
-     pointNear(actual,read('!!levelGeometry.portal')?json(`displayPoseFrame('${pose}').up`):expected,2e-8);
+     const compactExpected=common?rotateGradient(common,unit([-(gradient[0]-common[0]),1,-(gradient[1]-common[1])])):null;
+     pointNear(actual,read('!!levelGeometry.portal')?json(`displayPoseFrame('${pose}').up`):compactExpected||expected,2e-8);
     }
     // Each raw support coordinate lands on the solver's physical coordinate.
-    for(const s of json('supports')){const [x,z]=mapping(s),p=json(`levelVisualPoint([${s.x},.66,${s.z}])`);if(read('!!levelGeometry.portal'))pointNear(p,json(`displaySurfacePoint(${x},${z})`));else {near(p[0],x);near(p[2],z);near(p[1],.66+read('displayClearance()')+factor*read(`levelSolution.heightAt(${x},${z})`)/1000);}}
+    for(const s of json('supports')){const [x,z]=mapping(s),p=json(`levelVisualPoint([${s.x},.66,${s.z}])`);if(common){const h=read(`levelSolution.heightAt(${x},${z})`),expected=rotateGradient(common,[x,(h-plane.a*x-plane.b*z-plane.c)*factor/1000,z]);expected[1]+=.66+read('displayClearance()')+plane.c*factor/1000;pointNear(p,expected);}else if(read('!!levelGeometry.portal'))pointNear(p,json(`displaySurfacePoint(${x},${z})`));else {near(p[0],x);near(p[2],z);near(p[1],.66+read('displayClearance()')+factor*read(`levelSolution.heightAt(${x},${z})`)/1000);}}
    });
    check('groundContact',()=>{
     const clearance=read('displayClearance()');if(fixedClearance===undefined)fixedClearance=clearance;else near(clearance,fixedClearance);

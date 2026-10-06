@@ -49,6 +49,42 @@ function connectedPortal(solution,points,factor=1){
  const world=p=>common.rotate(p).map((v,i)=>v+(i===1?.66+solution.plane.c*factor/1000:0));
  return {common,local,frame,columns,centre,span,world,height};
 }
+// Compact table path: a fixed virtual point on the drawn table top (1.16 m).
+// Its 0.50 m height above the support datum is geometry, not a fitted sensitivity.
+// The common seating plane is a rigid rotation; only residual shape deforms parts.
+function compactSupportFrame(solution,x,z,factor=1){
+ const L=window.Leveling,s=solution.slopeAt(x,z);
+ return L.compose(L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),L.orientation({lr:(s.lr-solution.lr)*factor,fb:(s.fb-solution.fb)*factor}));
+}
+function compactSurfacePoint(solution,x,z,factor=1){
+ const plane=solution.plane,h=solution.heightAt(x,z)-(plane.a*x+plane.b*z+plane.c),R=window.Leveling.orientation({lr:solution.lr*factor,fb:solution.fb*factor});
+ return R.rotate([x,h*factor/1000,z]).map((v,i)=>v+(i===1?.66+plane.c*factor/1000:0));
+}
+function compactWorkVisualPoint(p,state,solution,profile,factor=1){
+ const base=levelCoordinates(0,-current.d*.1),travel=levelCoordinates(0,.4*state.Y/100).z,anchor=[0,.66,base.z+travel],R=compactSupportFrame(solution,anchor[0],anchor[2],factor),origin=compactSurfacePoint(solution,anchor[0],anchor[2],factor);
+ const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),Y=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)).find(a=>a.key==='Y').vector;
+ const relative=p.map((v,i)=>v-anchor[i]+travel*(Y[i]-(i===2?1:0)));
+ return R.rotate(relative).map((v,i)=>v+origin[i]);
+}
+function compactTablePathPoint(state=positions,solution=levelSolution,profile=machineProfile,factor=1){
+ const q=levelCoordinates(.45*state.X/100,-current.d*.1+.4*state.Y/100);
+ return compactWorkVisualPoint([q.x,1.16,q.z],state,solution,profile,factor);
+}
+function compactPathFrames(state,solution,profile,factor=1){
+ const q=levelCoordinates(0,-current.d*.1+.4*state.Y/100),work=compactSupportFrame(solution,q.x,q.z,factor);
+ const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),intrinsicAxes=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)),Y=intrinsicAxes.find(a=>a.key==='Y').vector;
+ // Differentiate the bilinear support map analytically. Differencing complete
+ // world positions would let translation roundoff pollute microradian angles.
+ const L=window.Leveling,s=solution.slopeAt(q.x,q.z),lo=solution.slopeAt(q.x,q.z-1),hi=solution.slopeAt(q.x,q.z+1),a=(s.lr-solution.lr)*factor/1000,b=(s.fb-solution.fb)*factor/1000,da=(hi.lr-lo.lr)*factor/2000,db=(hi.fb-lo.fb)*factor/2000;
+ const local=L.orientation({lr:a*1000,fb:b*1000}),nx=Math.hypot(1,a),nu=Math.hypot(a,1,b),nd=(a*da+b*db)/(nu*nu),rightDerivative=[-a*da/(nx*nx*nx),da/(nx*nx*nx),0],upDerivative=[-da/nu,0,-db/nu].map((v,i)=>v-local.up[i]*nd);
+ const cross=(u,v)=>[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]],c1=cross(rightDerivative,local.up),c2=cross(local.right,upDerivative),backDerivative=c1.map((v,i)=>v+c2[i]);
+ const x=levelCoordinates(.45*state.X/100,0).x,travel=levelCoordinates(0,.4*state.Y/100).z,delta=Y.map((v,i)=>v-(i===2?1:0)),relative=[x,.50,0].map((v,i)=>v+travel*delta[i]),intrinsic=local.rotate(delta);
+ const tangent=[0,b,1].map((v,i)=>v+rightDerivative[i]*relative[0]+upDerivative[i]*relative[1]+backDerivative[i]*relative[2]+intrinsic[i]),world=L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}).rotate(tangent),norm=Math.hypot(...world),direction=world.map(v=>v/norm);
+ // The Y-only adapter applies the intrinsic vector exactly once. It is not a
+ // rigid assembly frame: its resulting vector is the measured path tangent.
+ const back=direction.map((v,i)=>(v-work.right[i]*Y[0]-work.up[i]*Y[1])/Y[2]);
+ return {work,Y:window.Leveling.frame(work.right,work.up,back),direction};
+}
 function geometryModel(state=positions,solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
  const m=current,W=m.w,D=m.d,layout=columnLayoutOffset(m),move=(key)=>{const a=axisConfig(m).find(v=>v.key===key);return a?a.amp*state[key]/100:0;};
  let toolPoints,workPoint,toolAxes;
@@ -74,6 +110,8 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const intrinsicAxes=window.MachineAccuracy.directions(axes,profile);
  const options={toolPoints:toolPoints.map(p=>levelCoordinates(p.x,p.z)),workPoints:[levelCoordinates(workPoint.x,workPoint.z)],axes:intrinsicAxes,length};
  const portal=toolPoints.length===2?connectedPortal(solution,toolPoints):null;
+ const compact=m.kind==='compact'?compactPathFrames(state,solution,profile):null;
+ if(compact){const q=options.toolPoints[0];options.toolFrame=compactSupportFrame(solution,q.x,q.z);options.workFrame=compact.work;options.axes=options.axes.map(a=>a.key==='Y'?{...a,frame:compact.Y}:a);}
  if(portal){options.toolFrame=portal.frame;options.columnFrames=portal.columns.map(c=>c.frame);if(solution.parts){const q=options.workPoints[0],s=solution.parts.bed.slopeAt(q.x,q.z);options.workFrame=window.Leveling.compose(portal.common,window.Leveling.orientation({lr:s.lr-solution.lr,fb:s.fb-solution.fb}));}}
  // A travelling column's guide direction comes from the two drawn rails.
  // The column seat behind them may follow a different local support slope:
@@ -86,14 +124,15 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
   options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:window.Leveling.orientation(guideSlope)}:a);
  }
  const metric=window.Leveling.geometry(solution,options);
- const levelPairs=profile?window.Leveling.geometry(solution,{...options,axes:axes.map(a=>({...a,frame:options.axes.find(q=>q.key===a.key).frame}))}).pairs:metric.pairs;
+ const pureCompact=compact&&profile?compactPathFrames(state,solution,null):null;
+ const levelPairs=profile?window.Leveling.geometry(solution,{...options,axes:axes.map(a=>({...a,frame:pureCompact&&a.key==='Y'?pureCompact.Y:options.axes.find(q=>q.key===a.key).frame}))}).pairs:metric.pairs;
  const average=points=>({x:points.reduce((s,p)=>s+p.x/points.length,0),z:points.reduce((s,p)=>s+p.z/points.length,0)});
  const poses={tool:{anchor:average(toolPoints),slope:metric.toolSlope,frame:metric.toolFrame},work:{anchor:workPoint,slope:metric.workSlope,frame:metric.workFrame}};
  if(toolPoints.length===2)toolPoints.forEach((p,i)=>{const q=levelCoordinates(p.x,p.z);poses[i?'rightColumn':'leftColumn']={anchor:p,slope:portal?portal.columns[i].slope:solution.slopeAt(q.x,q.z),frame:portal?.columns[i].frame};});
  const bodyFrame=intrinsicBodyFrame(axes,profile),intrinsicUp=bodyFrame.rotate([0,1,0]),combinedUp=metric.toolFrame.rotate(intrinsicUp),combinedDirection=metric.toolFrame.rotate(bodyFrame.direction);
- const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean(window.Leveling.orientation(solution.slopeAt(q.x,q.z)).rotate(intrinsicUp));});
+ const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean((compact?compactSupportFrame(solution,q.x,q.z):window.Leveling.orientation(solution.slopeAt(q.x,q.z))).rotate(intrinsicUp));});
  const lathe=m.kind==='lathe',bodyPosture=lathe?spindleLean(combinedDirection):bodyLean,bodyIntrinsicPosture=lathe?spindleLean(bodyFrame.direction):bodyIntrinsicLean,bodySupportPosture=lathe?spindleLean(metric.toolFrame.rotate(bodyFrame.nominal)):directionLean(metric.toolFrame.rotate([0,1,0]));
- return {...metric,portal,poses,guidePoints,guideSlope,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
+ return {...metric,portal,compact,poses,guidePoints,guideSlope,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
 }
 function geometrySamples(solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
  const keys=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>a.key);
@@ -205,7 +244,7 @@ function updateAccuracy(){
  accuracyKey=key;
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel();
- $('modelSemantics').textContent=g.portal?'模型＝支持姿勢／軸・直角図＝固有差込み':'水準器＝平均／模型＝局所＋固有';
+ $('modelSemantics').textContent=current.kind==='compact'?'直角図＝テーブル上面Pの送り':g.portal?'模型＝支持姿勢／軸・直角図＝固有差込み':'水準器＝平均／模型＝局所＋固有';
  // The comparison is pointwise: both states use the current axis position,
  // dimensions, layout and evaluation length. The reference-search aggregate
  // is deliberately not used for this initial/current comparison.
@@ -277,6 +316,7 @@ function updateAccuracy(){
  if(['travel','gantry'].includes(current.kind))$('geometryAssumption').textContent='Xは移動位置の走行案内、Y/Zはコラム・梁側の参照姿勢です。固定ワークの姿勢をX送りへ代用しません。';
  if(['travel','horizontal'].includes(current.kind))$('geometryAssumption').textContent='Xは二本の走行レール、'+(current.kind==='travel'?'Y/Zはコラム取付部':'Yはコラム取付部、Zはパレット側')+'の姿勢を使います。取付ベースの相対変形を幾何的に近似する教材で、剛性・荷重・水平面内の曲がりは計算しません。';
  if(['vertical','compact'].includes(current.kind))$('geometryAssumption').textContent+=' Xテーブル送りではサドルの支持参照は移動せず、Yサドル送りで移動します。';
+ if(current.kind==='compact')$('geometryAssumption').textContent='直角図のX/Yはテーブル上面中心の仮想測定点P（支持基準から0.50 m）の実際の送り接線、Zは主軸頭の送り方向です。サドルの倒れが位置で変わることによるアッベ影響と固有誤差を含みます。表示は局所送り角の300 mm換算で、実際に300 mm走査した結果や補正済みの軸固有直角度ではありません。Xではサドル支持参照を動かさず、Yで移動します。剛性・荷重・接触を解く構造解析や実機精度検査の再現ではありません。';
  if(current.kind==='lathe')$('geometryAssumption').textContent+=' 径送りXでは往復台のベッド参照は移動せず、長手Zで移動します。ベッドのロールによる刃先高さ差と水平面内の曲がりは、この直角図には含みません。';
  if(dual){$('bodyLeanHeading').textContent='梁側の案内代表方向：支持＋固有差';$('bodyLeanNote').textContent='門の骨格は接続した支持姿勢で描き、固有直角差は案内方向（軸矢印と直角図）へ重ねます。柱の平均倒れをラムZへ伝え、梁案内Yとの直角差を表示します。位置ごとの弾性ねじれ・主軸移動荷重は再現しません。';}
  if(dual)$('geometryAssumption').textContent+=' 左右柱の天端を梁で結び、平均倒れをラム方向へ伝えるせん断の幾何モデルです。柱・梁の接続中心を共有します。梁の反力・たわみ分布・接触荷重は計算しません。模型の門骨格は支持姿勢、固有直角差は軸矢印と直角図に示します。';

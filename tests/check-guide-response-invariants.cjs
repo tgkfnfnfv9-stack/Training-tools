@@ -95,8 +95,8 @@ for(const Y of [-100,0,100]){
  for(const X of [-100,0,100]){
   setSurface(pure,'.02*q.x*q.z+.03*q.z',{X,Y,Z:0,A:0,C:0});
   const work=pure.json('levelGeometry.workPoint');
-  if(!baseline){baseline=values(pure);anchor=work;}
-  check(`compact upper-table X preserves saddle datum and angles ${Y}/${X}`,()=>{near(work.x,0);assert.deepEqual(work,anchor);vectorNear(values(pure),baseline,1e-8);});
+  if(!baseline){baseline=pure.json('levelGeometry.poses.work');anchor=work;}
+  check(`compact upper-table X preserves saddle datum and posture ${Y}/${X}`,()=>{near(work.x,0);assert.deepEqual(work,anchor);assert.deepEqual(pure.json('levelGeometry.poses.work'),baseline);});
  }
 }
 setSurface(pure,'.02*q.x*q.z',{X:0,Y:-100,Z:0,A:0,C:0});const compactFront=pure.json('levelGeometry.poses.work');
@@ -144,7 +144,7 @@ check('same travel deformation improves or worsens according to intrinsic sign',
 
 (async()=>{
  const live=makeEnvironment();
- for(const [index,id] of [[0,'compact-saddle-v2'],[1,'horizontal-guide-v2'],[2,'travel-guide-v2'],[6,'lathe-carriage-v2']]){
+ for(const [index,id] of [[0,'compact-table-path-v3'],[1,'horizontal-guide-v2'],[2,'travel-guide-v2'],[6,'lathe-carriage-v2']]){
   open(live,index);const keys=live.json('machineLinearKeys()');
   const profile=MachineAccuracy.generate('used',67123+index,keys,live.read('supports.length'));
   live.read(`initializeMachineAccuracy(${JSON.stringify(profile)});supportHeights=supports.map(()=>0);updateLeveling();`);const flat=values(live);

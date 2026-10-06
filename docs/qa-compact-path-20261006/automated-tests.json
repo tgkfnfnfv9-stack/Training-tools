@@ -1,0 +1,198 @@
+{
+  "status": "all passed",
+  "repositoryBase": "2bce8c259c13aee8edb5d6cd83da09963da3e443",
+  "testCount": 34,
+  "results": [
+    {
+      "test": "check-3d-axis-controls.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-accuracy-engine.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-accuracy-render.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-accuracy-review.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-adjustment-flow.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-canvas-labels.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-compact-table-path.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-confirmed-layouts.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-display-motion.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-electrical-full.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-full-code-review.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-guide-response-invariants.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-ideal-display.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-ideal-outline-ui.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-interface-audit.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-irregular-leveling.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-level-stages.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-leveling-engine.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-leveling-learning.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-leveling-ui.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-live-squareness-values.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-mechanical-audit.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-mobile-navigation.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-model-posture.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-portal-shear-invariants.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-random-accuracy-review.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-scene-zoom.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-settings-menu-ui.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-settings-menu.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-site-navigation.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-squareness-display.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-structural-connections.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-structural-invariants.cjs",
+      "status": "passed",
+      "exitCode": 0
+    },
+    {
+      "test": "check-tester-lesson.cjs",
+      "status": "passed",
+      "exitCode": 0
+    }
+  ],
+  "sourceSha256": {
+    "src/accuracy-ui.js": "dd54006e42b708fe9dfb77a356357dc902c4248fc6eb7421b05f049c2589f826",
+    "src/app.js": "de2ed11d3f8a17f1214e543aa50b580c9ea017961eef226c2c676b9599da3814",
+    "src/index.html": "2f440a5cf2e095599c45920028f2d5c12724580935dc1af0b4660b0ab401a753",
+    "src/leveling-ui.js": "61b8f929079dea5f9c7ea30864ed392ecdb3856ebb189ba0c804928cc94ad2d2",
+    "src/leveling.js": "9520e7990489e2a4b127299d396794864bc7ede09567d716c17d49d628c90ff7",
+    "src/machine-accuracy-ui.js": "dd635610c26e21c6fdf59df66fa101eb3d1d71a0fea7dec38bf76383515fbcfc",
+    "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "src/style.css": "0e4f6113988cd6600e777185c12251422099e83e486dfa0f49ac284626b5ae80",
+    "src/tester.css": "05818215f96effc3e1b38a7026c23c5ab66bfd84bfb147ef7641630b4f0ce663",
+    "src/tester.html": "c1cfc2b45ee63d13bf0dd38d69382901532d6e6a521050909734a9f133697866",
+    "src/tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409"
+  },
+  "notes": [
+    "DOM/Canvas tests are not a substitute for actual browser layout checks.",
+    "All six other machines were compared against the preceding revision in check-compact-table-path.",
+    "Compact model normal/support expectations now independently compose the common seating plane with residual deformation."
+  ],
+  "passed": 34,
+  "failed": 0,
+  "completedAt": "2026-10-06T00:20:31.030009+00:00"
+}

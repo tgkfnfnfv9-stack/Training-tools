@@ -47,6 +47,7 @@ function prepareDisplayMovement(){
 }
 function displayMovement(axes,m,state,pose){
  if(!levelGeometry||pose==='bed'||pose.startsWith('pad:')||pose.startsWith('support:'))return [0,0,0];
+ if(m.kind==='compact')return axisConfig(m).filter(a=>axes.includes(a.key)&&['X','Y','Z'].includes(a.key)).reduce((sum,a)=>{const v=displayCoordinates(a.vector);return sum.map((q,i)=>q+v[i]*a.amp*state[a.key]/100);},[0,0,0]);
  if(levelGeometry.portal)return axisConfig(m).filter(a=>axes.includes(a.key)&&['X','Y','Z'].includes(a.key)).reduce((sum,a)=>{
   const nominal=displayCoordinates(a.vector),length=Math.hypot(...nominal)*a.amp*state[a.key]/100;
   let v=pose==='tool'&&a.key!=='X'?accuracyVisualVector(a.key):a.vector;
@@ -393,6 +394,10 @@ function render(canvas,m,angle,showLabels,active){
   ctx.setLineDash?.([]);
  }
  if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.195,s.z]));if(supports.length>8&&i!==active){ctx.beginPath();ctx.arc(p[0],p[1]+10,3,0,Math.PI*2);ctx.fillStyle='#6c604b';ctx.fill();return;}labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda794d':'#ffffff26';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
+ // P is a fixed material point on the compact table top. Its moving path,
+ // rather than an undeformed saddle triad, defines the compact X/Y readings.
+ const measurementPixel=training&&m.kind==='compact'&&levelSolution&&levelGeometry?screen(compactTablePathPoint(positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0))):null;
+ if(measurementPixel)labelBoxes.push({x:measurementPixel[0]-5,y:measurementPixel[1]-5,w:10,h:10});
  if(active>=0&&$('showAxes').checked){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
@@ -413,6 +418,14 @@ function render(canvas,m,angle,showLabels,active){
   const place=candidates.find(([x,y])=>freeLabel({x:x-20,y:y-11,w:40,h:22}));if(!place)continue;
   const [tx,ty]=place;labelBoxes.push({x:tx-20,y:ty-11,w:40,h:22});ctx.fillStyle='#ffffff26';ctx.fillRect(tx-20,ty-11,40,22);ctx.fillStyle=tone(axisColors[label.key],.55);ctx.fillText(label.key+'軸',tx,ty);
  }
+ }
+ if(measurementPixel){
+  const p=measurementPixel;ctx.beginPath();ctx.arc(p[0],p[1],4,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.strokeStyle='#b34800';ctx.lineWidth=2;ctx.stroke();
+  const candidates=[[28,-18],[-28,-18],[28,18],[-28,18],[0,-36],[0,36]].map(([dx,dy])=>({x:p[0]+dx-20,y:p[1]+dy-9,w:40,h:18}));
+  for(let y=6;y+18<=height-4;y+=20)for(let x=6;x+40<=width-4;x+=44)candidates.push({x,y,w:40,h:18});
+  candidates.sort((a,b)=>Math.hypot(a.x+20-p[0],a.y+9-p[1])-Math.hypot(b.x+20-p[0],b.y+9-p[1]));
+  const box=candidates.find(freeLabel);
+  if(box){labelBoxes.push(box);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(box.x+20,box.y+9);ctx.strokeStyle='#b3480080';ctx.lineWidth=.8;ctx.stroke();ctx.fillStyle='#fff8ee';ctx.fillRect(box.x,box.y,box.w,box.h);ctx.font='10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#7d3300';ctx.fillText('測定P',box.x+20,box.y+9);}
  }
  if(showLabels){
   // Prefer the selected moving assembly and the base/column. A short Canvas
@@ -435,6 +448,7 @@ function updateSceneViewUI(){
  $('sceneView').value=sceneView;
  $('sceneDirection').textContent=sceneView==='front'?'正面：左 → 右':sceneView==='side'?'側面：手前 → 奥':'斜め：左右回転';
  $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。薄い破線の理想輪郭は'+($('showIdealOutline').checked?'表示中':'非表示')+'。左上の設定メニューで切り替えます。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
+ if(current.kind==='compact')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'測定Pはテーブル上面中央の固定点です。X・Yの比較はこの点の送り方向を使い、送り中の傾き変化による横ずれを含みます。');
 }
 function drawScene(){if(levelSolution)updateAccuracy();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){

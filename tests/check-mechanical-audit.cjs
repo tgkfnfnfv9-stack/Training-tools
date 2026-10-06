@@ -33,7 +33,7 @@ for(const [index,mode] of variants){
    const factor=exaggerated?pure.read('levelGeometry.visualFactor'):1;
    const rendered=pure.json('supports.map(s=>levelVisualPoint([s.x,.66,s.z]))');
    check(`支持面は仮想寸法でも入力高さ差を保つ ${label} ${width}x${depth} ${exaggerated}`,()=>{
-    if(pure.read('!!levelGeometry.portal')){const common=pure.json('displayPortal().common'),unrotate=p=>[common.right,common.up,common.back].map(a=>dot(a,p));const local=rendered.map(unrotate);local.forEach((p,i)=>{const points=pure.json('supports.map(s=>levelCoordinates(s.x,s.z))'),plane=pure.json('levelSolution.plane');near(p[1]-local[0][1],((heights[i]-heights[0])-plane.a*(points[i].x-points[0].x)-plane.b*(points[i].z-points[0].z))*factor/1000,1e-8);});}else rendered.forEach((p,i)=>near(p[1]-rendered[0][1],(heights[i]-heights[0])*factor/1000,1e-8));
+    if(pure.read('!!levelGeometry.portal || current.kind==="compact"')){const common=pure.read('!!levelGeometry.portal')?pure.json('displayPortal().common'):Leveling.orientation({lr:pure.read('levelSolution.lr')*factor,fb:pure.read('levelSolution.fb')*factor}),unrotate=p=>[common.right,common.up,common.back].map(a=>dot(a,p));const local=rendered.map(unrotate);local.forEach((p,i)=>{const points=pure.json('supports.map(s=>levelCoordinates(s.x,s.z))'),plane=pure.json('levelSolution.plane');near(p[1]-local[0][1],((heights[i]-heights[0])-plane.a*(points[i].x-points[0].x)-plane.b*(points[i].z-points[0].z))*factor/1000,1e-8);});}else rendered.forEach((p,i)=>near(p[1]-rendered[0][1],(heights[i]-heights[0])*factor/1000,1e-8));
    });
    check(`仮想寸法変更後も工具・案内の局所変換は定義した剛体／門せん断写像と一致 ${label} ${width}x${depth} ${exaggerated}`,()=>{
     for(const pose of ['tool','work']){
@@ -148,7 +148,8 @@ for(const heights of [[-.5,.5,0,.123],[-.499,-.498,-.487,-.5],[.499,.5,.487,.498
 // A reproducible used-machine case actually reaches the -0.500 mm bound in
 // the search. Test real application, invariance and restoration at that bound.
 live.storage.clear();open(live,0,'compact');
-setProfile(live,'used',16);
+// Seed 6 has a constrained optimum at the lower bound in the table-path model.
+setProfile(live,'used',6);
 live.read('levelConfig.width=20;levelConfig.depth=20;updateLeveling();');
 check('大きい中古誤差と長い支持幅で探索は実際に上限に達する',()=>assert.ok(live.json('machineReference.best.heights').some(h=>Math.abs(h)>=.499)));
 live.registry.applyBestLevel.click();

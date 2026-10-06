@@ -2,7 +2,7 @@
 // All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
 let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,levelGeometry=null;
 const legacyLevelStoragePrefix='training-level-v1:',levelCalculationModel='connected-frames-v1';
-function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':current.kind==='travel'?'travel-guide-v2':current.kind==='horizontal'?'horizontal-guide-v2':current.kind==='compact'?'compact-saddle-v2':current.kind==='lathe'?'lathe-carriage-v2':levelCalculationModel;}
+function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':current.kind==='travel'?'travel-guide-v2':current.kind==='horizontal'?'horizontal-guide-v2':current.kind==='compact'?'compact-table-path-v3':current.kind==='lathe'?'lathe-carriage-v2':levelCalculationModel;}
 function levelStoragePrefix(){return 'training-level-'+currentCalculationModel()+':';}
 // An asynchronous file may finish after another import or a newer training state.
 let levelImportRequest=0,levelSessionEpoch=0,levelRevision=0;
@@ -46,7 +46,7 @@ function initializeLeveling(){
  $('middlePreset').disabled=!hasMiddle;$('middlePreset').title=hasMiddle?'':'この支持配置には中間支持点がありません。';
  initializeMachineAccuracy();
  let restored=false,previousLayout=false,migratedCompact=false,previousCalculation=false;
- try{previousCalculation=[machineMode,...(current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''])].some(mode=>['',...(current.layoutId?[current.layoutId]:[]),...(current.previousLayouts||[])].some(layout=>[legacyLevelStoragePrefix,...(currentCalculationModel()!==levelCalculationModel?['training-level-'+levelCalculationModel+':']:[])].some(prefix=>localStorage.getItem(prefix+current.id+':'+mode+(layout?':'+layout:''))!==null)));}catch{}
+ try{previousCalculation=[machineMode,...(current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''])].some(mode=>['',...(current.layoutId?[current.layoutId]:[]),...(current.previousLayouts||[])].some(layout=>[legacyLevelStoragePrefix,...(current.kind==='compact'?['training-level-compact-saddle-v2:']:[]),...(currentCalculationModel()!==levelCalculationModel?['training-level-'+levelCalculationModel+':']:[])].some(prefix=>localStorage.getItem(prefix+current.id+':'+mode+(layout?':'+layout:''))!==null)));}catch{}
  try{if(current.layoutId){const oldModes=current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''];previousLayout=oldModes.some(mode=>localStorage.getItem(levelStoragePrefix()+current.id+':'+mode)!==null)||(current.previousLayouts||[]).some(layout=>localStorage.getItem(levelStoragePrefix()+current.id+':'+machineMode+':'+layout)!==null);}}catch{}
  try{let raw=localStorage.getItem(levelKey());if(!raw&&current.id==='vertical'&&machineMode==='compact'){raw=localStorage.getItem(levelStoragePrefix()+'vertical:compact');migratedCompact=!!raw;}if(raw){const data=JSON.parse(raw);if(validLevelRecord(data)){applyLevelRecord(data);restored=true;}}}catch{}
  $('levelSaveStatus').textContent=restored?'前回の調整をこのブラウザから復元しました。':'調整はこのブラウザに自動保存します。';
@@ -88,6 +88,7 @@ function structuralSurface(x){
  return {heightAt:(qx,qz)=>{const q=blend(qx,qz),h=bed.heightAt(qx,qz);return h+q.w*(q.part.heightAt(qx,qz)-h);},slopeAt:(qx,qz)=>{const q=blend(qx,qz),a=bed.slopeAt(qx,qz),b=q.part.slopeAt(qx,qz),d=q.part.heightAt(qx,qz)-bed.heightAt(qx,qz);return {lr:a.lr+q.w*(b.lr-a.lr)+q.wx*d,fb:a.fb+q.w*(b.fb-a.fb)+q.wz*d};}};
 }
 function displaySurfacePoint(x,z){
+ if(current.kind==='compact')return compactSurfacePoint(levelSolution,x,z,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  if(levelGeometry?.portal){const factor=displayFactor(),plane=levelSolution.plane,h=structuralSurface(x).heightAt(x,z)-(plane.a*x+plane.b*z+plane.c);return displayPortal().world([x,h*factor/1000,z]).map((v,i)=>v+(i===1?displayClearance():0));}
  return [x,.66+displayClearance()+displayFactor()*levelSolution.heightAt(x,z)/1000,z];
 }
@@ -99,11 +100,14 @@ function displayPortal(){
  return portalDisplayCache;
 }
 function displayPoseFrame(pose){
+ if(current.kind==='compact'){const p=(levelGeometry.poses[pose]||levelGeometry.poses.tool).anchor,q=levelCoordinates(p.x,p.z);return compactSupportFrame(levelSolution,q.x,q.z,displayFactor());}
  if(levelGeometry.portal){const p=displayPortal();if(pose==='tool')return p.frame;if(pose==='leftColumn'||pose==='rightColumn')return p.columns[pose==='rightColumn'?1:0].frame;
   if(pose==='work'&&levelSolution.parts){const q=levelCoordinates(levelGeometry.workPoint.x,levelGeometry.workPoint.z),s=levelSolution.parts.bed.slopeAt(q.x,q.z),factor=displayFactor();return window.Leveling.compose(p.common,window.Leveling.orientation({lr:(s.lr-levelSolution.lr)*factor,fb:(s.fb-levelSolution.fb)*factor}));}}
  return displaySupportFrame((levelGeometry.poses[pose]||levelGeometry.poses.tool).slope);
 }
+let compactDisplayFrames=null,compactDisplayGeometry=null,compactDisplayFactor=0;
 function displayAxisFrame(key){
+ if(current.kind==='compact'&&key==='Y'){const factor=displayFactor();if(compactDisplayGeometry!==levelGeometry||compactDisplayFactor!==factor){compactDisplayGeometry=levelGeometry;compactDisplayFactor=factor;compactDisplayFrames=compactPathFrames(positions,levelSolution,machineProfile,factor);}return compactDisplayFrames.Y;}
  if(key==='X'&&levelGeometry.guideSlope)return displaySupportFrame(levelGeometry.guideSlope);
  if(current.kind==='lathe'&&key==='Z')return displayPoseFrame('work');
  return displayPoseFrame(levelGeometry.axes.find(a=>a.key===key).source);
@@ -127,8 +131,9 @@ function levelMappedVisualPoint(p,pose='bed'){
   const top=levelMappedVisualPoint([p[0],.195,p[2]],'bed'),bottom=[p[0],.09,p[2]],t=(p[1]-.07)/.22;
   return bottom.map((v,i)=>v+(top[i]-v)*t);
  }
+ if(current.kind==='compact'&&pose==='work')return compactWorkVisualPoint(p,positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  if(pose==='bed'){
-  const top=displaySurfacePoint(p[0],p[2]),slope=structuralSurface(p[0]).slopeAt(p[0],p[2]),normal=levelGeometry.portal?window.Leveling.compose(displayPortal().common,displaySupportFrame({lr:slope.lr-levelSolution.lr,fb:slope.fb-levelSolution.fb})).up:displaySupportFrame(slope).up,thickness=p[1]-.66;
+  const top=displaySurfacePoint(p[0],p[2]),slope=structuralSurface(p[0]).slopeAt(p[0],p[2]),normal=current.kind==='compact'?compactSupportFrame(levelSolution,p[0],p[2],displayFactor()).up:levelGeometry.portal?window.Leveling.compose(displayPortal().common,displaySupportFrame({lr:slope.lr-levelSolution.lr,fb:slope.fb-levelSolution.fb})).up:displaySupportFrame(slope).up,thickness=p[1]-.66;
   return top.map((v,i)=>v+normal[i]*thickness);
  }
  const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,rawOffset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0},offset=displayCoordinates([rawOffset.x,0,rawOffset.z]);

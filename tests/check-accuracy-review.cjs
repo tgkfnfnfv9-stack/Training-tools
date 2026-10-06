@@ -70,17 +70,18 @@ async function main(){
   });
  }
  open(0,'compact');preset('twist');
- check('小型四点ねじれの中央は YZ=0、XZ は変化',()=>{near(pair(current(),'YZ').errorMicrons,0);assert.ok(pair(current(),'XZ').errorMicrons>40);assert.equal(read('supports.length'),4);});
+ const yzCentre=pair(current(),'YZ').errorMicrons;
+ check('小型四点ねじれの中央はXY/XZが変化、YZには高次の結合が残る',()=>{assert.ok(Math.abs(yzCentre)<.01);assert.ok(Math.abs(pair(current(),'XY').errorMicrons)>1);assert.ok(pair(current(),'XZ').errorMicrons>40);assert.equal(read('supports.length'),4);});
  axis('X',100);const yzRight=pair(current(),'YZ').errorMicrons;
  axis('X',-100);const yzLeft=pair(current(),'YZ').errorMicrons;
- check('小型のXテーブル送りはYサドルのベッド参照を動かさない',()=>{near(yzRight,0);near(yzLeft,0);near(current().workPoint.x,0);});
+ check('小型のXはサドル支持を動かさず、測定点の腕長でYZ送り角が変化',()=>{assert.ok(yzRight*yzLeft<0);assert.ok(Math.min(Math.abs(yzRight),Math.abs(yzLeft))>1);near(current().workPoint.x,0);});
  axis('X',0);layout('columnX',100);const movedColumn=current();
  check('コラム左右配置で YZ と床基準前倒れが変化',()=>{assert.ok(pair(movedColumn,'YZ').errorMicrons>20);assert.ok(movedColumn.toolLean.front>40);assert.match(r.columnLean.textContent,/前倒れ/);});
  layout('columnX',0);const xzBefore=pair(current(),'XZ').errorMicrons;layout('columnZ',100);
  check('コラム前後配置で XZ が変化',()=>assert.ok(pair(current(),'XZ').errorMicrons>xzBefore+10));
- r.resetColumn.click();check('配置リセットで初期の幾何状態へ戻る',()=>{near(read('levelConfig.columnX'),0);near(read('levelConfig.columnZ'),0);near(pair(current(),'YZ').errorMicrons,0);near(pair(current(),'XZ').errorMicrons,xzBefore);});
+ r.resetColumn.click();check('配置リセットで初期の幾何状態へ戻る',()=>{near(read('levelConfig.columnX'),0);near(read('levelConfig.columnZ'),0);near(pair(current(),'YZ').errorMicrons,yzCentre);near(pair(current(),'XZ').errorMicrons,xzBefore);});
  r.demoTwist.click();
- check('ねじれデモはサドルY位置によるXZ差を示して表示が同期',()=>{assert.ok(Math.abs(pair(current(),'XZ').errorMicrons)>10);assert.notEqual(read('positions.Y'),0);assert.equal(Number(r['axis-Y'].value),read('positions.Y'));near(pair(current(),'YZ').errorMicrons,0);});
+ check('ねじれデモはサドルY位置によるXZ差を示して表示が同期',()=>{assert.ok(Math.abs(pair(current(),'XZ').errorMicrons)>10);assert.notEqual(read('positions.Y'),0);assert.equal(Number(r['axis-Y'].value),read('positions.Y'));assert.ok(Number.isFinite(pair(current(),'YZ').errorMicrons));});
  const sampleValues=json("accuracyRange.map(s=>s.geometry.pairs.find(p=>p.key==='YZ').errorMicrons)");
  check('端中央の比較は現在位置とは独立の代表値',()=>{
   const low=Math.min(...sampleValues),high=Math.max(...sampleValues),before=json('accuracyRange.map(s=>s.state)');axis('X',37);
@@ -118,10 +119,16 @@ async function main(){
  check('前倒れの描画符号は床基準角度と一致',()=>{const up=unit(poseDirection([0,1,0],'tool'));assert.ok(up[2]<0);near(Math.atan2(-up[2],up[1])*1e6,current().toolLean.front);});
  check('左右倒れの描画符号は床基準角度と一致',()=>{const up=unit(poseDirection([0,1,0],'tool'));near(Math.atan2(up[0],up[1])*1e6,current().toolLean.right);});
  check('現在位置の直角度と誇張なし 3D の軸間角度が一致',()=>{
-  const directions=current().axes.map(a=>({...a,direction:unit(poseDirection(a.vector,a.source))}));
+  // Use the actually rendered table-top path for X/Y, not the rigid saddle
+  // directions which do not include the measurement point's Abbe term.
+  const saved=json('positions'),directions=current().axes.map(a=>{
+   if(a.key==='Z')return {...a,direction:unit(poseDirection(a.vector,a.source))};
+   const points=[-1,1].map(sign=>{read(`positions=${JSON.stringify(saved)};positions.${a.key}+=${sign*.001};updateLeveling();`);return json("levelMappedBodyVisualPoint(displayTransformedPoint([0,1.16,-current.d*.1],['X','Y'],current,positions,'work'),'work')");});
+   return {...a,direction:unit(sub(points[1],points[0]))};
+  });read(`positions=${JSON.stringify(saved)};updateLeveling();`);
   for(let i=0;i<directions.length;i++)for(let j=i+1;j<directions.length;j++){
    const radians=Math.acos(Math.max(-1,Math.min(1,dot(directions[i].direction,directions[j].direction))))-Math.PI/2;
-   near(radians*1e6,pair(current(),directions[i].key+directions[j].key).deviationMicroradians,1e-7);
+   near(radians*1e6,pair(current(),directions[i].key+directions[j].key).deviationMicroradians,1e-4);
   }
  });
  const savedAngles=current().pairs.map(p=>p.errorMicrons);r.exaggerate.checked=true;r.exaggerate.onchange();
