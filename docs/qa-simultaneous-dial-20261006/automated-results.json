@@ -1,0 +1,195 @@
+{
+  "verifiedCommit": "4a55434449a8e17559ce266dd40b8d978fc4ee08",
+  "baseMain": "a0009dfc0b2e67e2343941c96216958ca182d5da",
+  "run": "https://github.com/tgkfnfnfv9-stack/Training-tools/actions/runs/37408236286",
+  "testCount": 36,
+  "passed": 36,
+  "failed": 0,
+  "results": [
+    {
+      "test": "check-3d-axis-controls.cjs",
+      "exit": 0,
+      "seconds": 16.901
+    },
+    {
+      "test": "check-accuracy-engine.cjs",
+      "exit": 0,
+      "seconds": 0.026
+    },
+    {
+      "test": "check-accuracy-render.cjs",
+      "exit": 0,
+      "seconds": 27.475
+    },
+    {
+      "test": "check-accuracy-review.cjs",
+      "exit": 0,
+      "seconds": 0.899
+    },
+    {
+      "test": "check-adjustment-flow.cjs",
+      "exit": 0,
+      "seconds": 4.182
+    },
+    {
+      "test": "check-canvas-labels.cjs",
+      "exit": 0,
+      "seconds": 38.163
+    },
+    {
+      "test": "check-compact-bending.cjs",
+      "exit": 0,
+      "seconds": 1.358
+    },
+    {
+      "test": "check-compact-table-path.cjs",
+      "exit": 0,
+      "seconds": 2.253
+    },
+    {
+      "test": "check-confirmed-layouts.cjs",
+      "exit": 0,
+      "seconds": 8.275
+    },
+    {
+      "test": "check-display-motion.cjs",
+      "exit": 0,
+      "seconds": 21.244
+    },
+    {
+      "test": "check-electrical-full.cjs",
+      "exit": 0,
+      "seconds": 0.103
+    },
+    {
+      "test": "check-full-code-review.cjs",
+      "exit": 0,
+      "seconds": 14.279
+    },
+    {
+      "test": "check-guide-response-invariants.cjs",
+      "exit": 0,
+      "seconds": 2.357
+    },
+    {
+      "test": "check-ideal-display.cjs",
+      "exit": 0,
+      "seconds": 8.967
+    },
+    {
+      "test": "check-ideal-outline-ui.cjs",
+      "exit": 0,
+      "seconds": 55.97
+    },
+    {
+      "test": "check-interface-audit.cjs",
+      "exit": 0,
+      "seconds": 0.899
+    },
+    {
+      "test": "check-irregular-leveling.cjs",
+      "exit": 0,
+      "seconds": 0.033
+    },
+    {
+      "test": "check-level-stages.cjs",
+      "exit": 0,
+      "seconds": 4.216
+    },
+    {
+      "test": "check-leveling-engine.cjs",
+      "exit": 0,
+      "seconds": 0.035
+    },
+    {
+      "test": "check-leveling-learning.cjs",
+      "exit": 0,
+      "seconds": 2.108
+    },
+    {
+      "test": "check-leveling-ui.cjs",
+      "exit": 0,
+      "seconds": 2.087
+    },
+    {
+      "test": "check-live-squareness-values.cjs",
+      "exit": 0,
+      "seconds": 1.79
+    },
+    {
+      "test": "check-mechanical-audit.cjs",
+      "exit": 0,
+      "seconds": 2.71
+    },
+    {
+      "test": "check-mobile-navigation.cjs",
+      "exit": 0,
+      "seconds": 0.691
+    },
+    {
+      "test": "check-model-posture.cjs",
+      "exit": 0,
+      "seconds": 68.589
+    },
+    {
+      "test": "check-portal-shear-invariants.cjs",
+      "exit": 0,
+      "seconds": 2.502
+    },
+    {
+      "test": "check-random-accuracy-review.cjs",
+      "exit": 0,
+      "seconds": 3.29
+    },
+    {
+      "test": "check-scene-zoom.cjs",
+      "exit": 0,
+      "seconds": 10.383
+    },
+    {
+      "test": "check-settings-menu-ui.cjs",
+      "exit": 0,
+      "seconds": 10.32
+    },
+    {
+      "test": "check-settings-menu.cjs",
+      "exit": 0,
+      "seconds": 10.68
+    },
+    {
+      "test": "check-site-navigation.cjs",
+      "exit": 0,
+      "seconds": 1.524
+    },
+    {
+      "test": "check-spindle-sweep.cjs",
+      "exit": 0,
+      "seconds": 1.081
+    },
+    {
+      "test": "check-squareness-display.cjs",
+      "exit": 0,
+      "seconds": 3.124
+    },
+    {
+      "test": "check-structural-connections.cjs",
+      "exit": 0,
+      "seconds": 1.092
+    },
+    {
+      "test": "check-structural-invariants.cjs",
+      "exit": 0,
+      "seconds": 4.727
+    },
+    {
+      "test": "check-tester-lesson.cjs",
+      "exit": 0,
+      "seconds": 0.036
+    }
+  ],
+  "spindleSweepChecks": 325,
+  "browserChecks": 88,
+  "physicalPhoneGestures": "not tested",
+  "calculationChanges": false,
+  "saveFormatChanges": false
+}

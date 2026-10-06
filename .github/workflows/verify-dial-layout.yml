@@ -1,49 +1,12 @@
-name: Verify simultaneous dial layout
+name: Verify published simultaneous dial layout
 on:
   push:
     branches: [codex/verify-dial-layout-20261006]
 permissions:
   contents: read
 jobs:
-  regression:
-    name: Regression shard ${{ matrix.shard }}
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    strategy:
-      fail-fast: false
-      matrix:
-        shard: [0, 1, 2]
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - name: Verify generated bundle
-        run: |
-          python3 build.py
-          git diff --exit-code -- index.html
-      - name: Run regression tests
-        env:
-          TEST_SHARD: ${{ matrix.shard }}
-        run: |
-          node - <<'NODE'
-          const fs=require('node:fs'),{spawnSync}=require('node:child_process');
-          const tests=fs.readdirSync('tests').filter(f=>/^check-.*\.cjs$/.test(f)).sort();
-          const results=[];
-          tests.forEach((file,i)=>{
-            if(i%3!==Number(process.env.TEST_SHARD))return;
-            const start=Date.now();
-            console.log('TEST_START '+file);
-            const r=spawnSync(process.execPath,['tests/'+file],{encoding:'utf8',timeout:360000});
-            results.push({test:file,exit:r.status,seconds:(Date.now()-start)/1000});
-            if(r.stdout)process.stdout.write(r.stdout);
-            if(r.stderr)process.stderr.write(r.stderr);
-            console.log('TEST_END '+JSON.stringify(results.at(-1)));
-          });
-          console.log('REGRESSION_RESULT '+JSON.stringify(results));
-          if(results.some(r=>r.exit!==0))process.exit(1);
-          NODE
   browser:
-    name: Chromium desktop and mobile verification
+    name: Verify published page in Chromium
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -55,9 +18,24 @@ jobs:
           npm install --no-save --no-package-lock playwright
           npx playwright install --with-deps chromium
           sudo apt-get install -y fonts-noto-cjk
+      - name: Check published HTML matches the approved build
+        env:
+          PUBLIC_PAGE_URL: https://tgkfnfnfv9-stack.github.io/Training-tools/?verify=ddf6492bc002592fd2f39991311fd0dc7816025e
+        run: |
+          python3 - <<'PY'
+          import hashlib, os, urllib.request
+          from pathlib import Path
+          expected = Path('index.html').read_bytes()
+          with urllib.request.urlopen(os.environ['PUBLIC_PAGE_URL'], timeout=45) as response:
+              actual = response.read()
+          if actual != expected:
+              raise SystemExit('Published HTML does not match the verified repository build')
+          print('PUBLIC_BUNDLE_MATCH ddf6492bc002592fd2f39991311fd0dc7816025e sha256=' + hashlib.sha256(actual).hexdigest())
+          PY
       - name: Verify browser layouts and interactions
         env:
           EMIT_SCREENSHOTS: '1'
+          DIAL_BASE_URL: https://tgkfnfnfv9-stack.github.io/Training-tools/
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/dial-server.log 2>&1 &
           node tests/browser-simultaneous-dial.cjs
