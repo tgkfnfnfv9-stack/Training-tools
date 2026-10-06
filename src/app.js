@@ -400,7 +400,7 @@ function render(canvas,m,angle,showLabels,active){
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
  if(active>=0)model.faces.push(...levelSurfaceFaces(m));
- model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&!sweep&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
+ model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
  if(training&&$('showIdealOutline').checked)drawIdealOutline(ctx,m,model,screen,angle,sceneView);
  // Reserve support markers before placing any text. Labels use the entire
  // Canvas now that the operation bar has its own row below it.
@@ -417,9 +417,10 @@ function render(canvas,m,angle,showLabels,active){
  if(active>=0){supportList(m).forEach((s,i)=>{const p=screen(levelVisualPoint([s.x,.195,s.z]));if(supports.length>8&&i!==active){ctx.beginPath();ctx.arc(p[0],p[1]+10,3,0,Math.PI*2);ctx.fillStyle='#6c604b';ctx.fill();return;}labelBoxes.push({x:p[0]-14,y:p[1]-4,w:28,h:28});ctx.beginPath();ctx.arc(p[0],p[1]+10,13,0,Math.PI*2);ctx.fillStyle=active===i?'#ffda794d':'#ffffff26';ctx.fill();ctx.strokeStyle=active===i?'#ba8d20':'#80949f';ctx.lineWidth=active===i?2:1;ctx.stroke();ctx.fillStyle='#23404e';ctx.font='bold 12px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String.fromCharCode(65+i),p[0],p[1]+10);});}
  // P is a fixed material point on the compact table top. Its moving path,
  // rather than an undeformed saddle triad, defines the compact X/Y readings.
- const measurementPixel=training&&!sweep&&m.kind==='compact'&&levelSolution&&levelGeometry?screen(compactTablePathPoint(positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0))):null;
+ const measurementPixel=training&&m.kind==='compact'&&levelSolution&&levelGeometry?screen(compactTablePathPoint(positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0))):null;
  if(measurementPixel)labelBoxes.push({x:measurementPixel[0]-5,y:measurementPixel[1]-5,w:10,h:10});
- if(active>=0&&!sweep&&$('showAxes').checked){
+ if(sweep)drawSpindleSweep(ctx,screen,labelBoxes);
+ if(active>=0&&$('showAxes').checked){
  const labels=[];
  function arrow(p,q){const t=Math.atan2(p[1]-q[1],p[0]-q[0]);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(p[0]-9*Math.cos(t-.45),p[1]-9*Math.sin(t-.45));ctx.lineTo(p[0]-9*Math.cos(t+.45),p[1]-9*Math.sin(t+.45));ctx.closePath();ctx.fill();}
  for(const a of axisIndicators(m,model)){
@@ -448,7 +449,6 @@ function render(canvas,m,angle,showLabels,active){
   const box=candidates.find(freeLabel);
   if(box){labelBoxes.push(box);ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(box.x+20,box.y+9);ctx.strokeStyle='#b3480080';ctx.lineWidth=.8;ctx.stroke();ctx.fillStyle='#fff8ee';ctx.fillRect(box.x,box.y,box.w,box.h);ctx.font='10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#7d3300';ctx.fillText('測定P',box.x+20,box.y+9);}
  }
- if(sweep)drawSpindleSweep(ctx,screen,labelBoxes);
  if(showLabels){
   // Prefer the selected moving assembly and the base/column. A short Canvas
   // omits lower-priority part names rather than compressing their 18px boxes.
@@ -470,8 +470,8 @@ function updateSceneViewUI(){
  $('sceneView').value=sceneView;
  $('sceneDirection').textContent=sceneView==='front'?'正面：左 → 右':sceneView==='side'?'側面：手前 → 奥':'斜め：左右回転';
  $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。薄い破線の理想輪郭は'+($('showIdealOutline').checked?'表示中':'非表示')+'。左上の設定メニューで切り替えます。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
- if(current.kind==='compact'&&!(typeof spindleSweepMode!=='undefined'&&spindleSweepMode))$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'測定Pはテーブル上面中央の固定点です。X・Yの比較はこの点の送り方向を使い、送り中の傾き変化による横ずれを含みます。');
- if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode)$('scene').setAttribute('aria-label',current.name+'の主軸ダイヤル測定。主軸に取り付けたゲージでテーブル上面を直径300ミリの円で旋回測定しています。0度は右、90度は奥、180度は左、270度は手前。ワーク、T溝模様、軸矢印は測定中だけ省略しています。左右ドラッグで模型を回転、ピンチまたはホイールで拡大縮小。');
+ if(current.kind==='compact')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'測定Pはテーブル上面中央の固定点です。X・Yの比較はこの点の送り方向を使い、送り中の傾き変化による横ずれを含みます。');
+ if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode)$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸ダイヤル測定も同時に表示します。主軸に取り付けたゲージでテーブル上面を直径300ミリの円で旋回測定しています。0度は右、90度は奥、180度は左、270度は手前。測定子が見えるようワークとT溝模様を省略しています。上の直角図は300ミリ換算、隣の4点は0度基準の相対読みです。');
 }
 function drawScene(){if(levelSolution)updateAccuracy();if(typeof updateSpindleSweep==='function')updateSpindleSweep();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){
