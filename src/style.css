@@ -715,3 +715,24 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 .spindle-sweep-panel[data-measurement="spindle-sweep"] .spindle-sweep-mini svg{display:block;width:24px;height:25px}
 .spindle-sweep-panel[data-measurement="spindle-sweep"] .sweep-readout-row{height:12px;line-height:12px;align-items:center}
 .spindle-sweep-mini[data-zero-valid="false"] .sweep-mini-front{fill:#fffaf6;stroke:#9b3f00;stroke-width:1px}
+
+/* Two measurement pages share the exact footprint of the original first page.
+   Every new selector is scoped to this readout carousel. */
+.inspection-carousel{position:relative;min-width:0;max-width:690px;margin:0 auto}
+.inspection-carousel.is-enabled .inspection-viewport{display:flex;align-items:flex-start;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;height:var(--inspection-height,auto);overscroll-behavior-x:contain;touch-action:pan-x pan-y pinch-zoom}
+.inspection-carousel.is-enabled .inspection-viewport::-webkit-scrollbar{display:none}
+.inspection-carousel.is-enabled .precision-readouts{flex:0 0 100%;width:100%;margin:0;scroll-snap-align:start;scroll-snap-stop:always}
+.inspection-carousel .intrinsic-inspection-page{flex:0 0 100%;width:100%;height:var(--inspection-height,79px);min-width:0;box-sizing:border-box;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;overflow:hidden}
+.inspection-carousel .intrinsic-inspection-page[hidden]{display:none}
+.inspection-carousel .intrinsic-inspection-columns{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:6px;min-height:0;flex:1}
+.inspection-carousel .intrinsic-inspection-columns section{min-width:0;min-height:0;display:flex;flex-direction:column}
+.inspection-carousel .intrinsic-inspection-columns h2{font-size:10px;line-height:13px;white-space:nowrap;margin:0;font-weight:700;color:#302923}
+.inspection-carousel .intrinsic-inspection-columns h2 small{font-size:8px;font-weight:500;color:#775b48}
+.inspection-carousel #intrinsicRunoutDiagram,.inspection-carousel #intrinsicSurfaceDiagram{flex:1;min-height:0}
+.inspection-carousel .intrinsic-inspection-columns svg{width:100%;height:100%;display:block}
+.inspection-carousel .intrinsic-inspection-note{margin:0;text-align:right;font-size:9px;line-height:12px;white-space:nowrap;color:#984000}
+.inspection-carousel .inspection-page-control{position:absolute;left:0;bottom:0;min-height:12px;height:12px;min-width:34px;padding:0 3px;border:0;border-radius:2px;line-height:12px;font-size:9px;color:#984000;background:#fff3e7;z-index:1;touch-action:manipulation}
+.inspection-carousel .inspection-page-control[hidden]{display:none}
+.inspection-carousel .inspection-page-control:focus-visible{outline:2px solid #b34800;outline-offset:0}
+.inspection-carousel .inspection-viewport.is-dragging{scroll-snap-type:none;user-select:none;cursor:grabbing}
+@media(min-width:701px){.inspection-carousel .intrinsic-inspection-columns h2{font-size:12px;line-height:16px}.inspection-carousel .intrinsic-inspection-columns h2 small{font-size:10px}.inspection-carousel .intrinsic-inspection-note{font-size:10px}}

@@ -716,27 +716,6 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 .spindle-sweep-panel[data-measurement="spindle-sweep"] .spindle-sweep-mini svg{display:block;width:24px;height:25px}
 .spindle-sweep-panel[data-measurement="spindle-sweep"] .sweep-readout-row{height:12px;line-height:12px;align-items:center}
 .spindle-sweep-mini[data-zero-valid="false"] .sweep-mini-front{fill:#fffaf6;stroke:#9b3f00;stroke-width:1px}
-
-/* Two measurement pages share the exact footprint of the original first page.
-   Every new selector is scoped to this readout carousel. */
-.inspection-carousel{position:relative;min-width:0;max-width:690px;margin:0 auto}
-.inspection-carousel.is-enabled .inspection-viewport{display:flex;align-items:flex-start;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;height:var(--inspection-height,auto);overscroll-behavior-x:contain;touch-action:pan-x pan-y pinch-zoom}
-.inspection-carousel.is-enabled .inspection-viewport::-webkit-scrollbar{display:none}
-.inspection-carousel.is-enabled .precision-readouts{flex:0 0 100%;width:100%;margin:0;scroll-snap-align:start;scroll-snap-stop:always}
-.inspection-carousel .intrinsic-inspection-page{flex:0 0 100%;width:100%;height:var(--inspection-height,79px);min-width:0;box-sizing:border-box;scroll-snap-align:start;scroll-snap-stop:always;display:flex;flex-direction:column;overflow:hidden}
-.inspection-carousel .intrinsic-inspection-page[hidden]{display:none}
-.inspection-carousel .intrinsic-inspection-columns{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:6px;min-height:0;flex:1}
-.inspection-carousel .intrinsic-inspection-columns section{min-width:0;min-height:0;display:flex;flex-direction:column}
-.inspection-carousel .intrinsic-inspection-columns h2{font-size:10px;line-height:13px;white-space:nowrap;margin:0;font-weight:700;color:#302923}
-.inspection-carousel .intrinsic-inspection-columns h2 small{font-size:8px;font-weight:500;color:#775b48}
-.inspection-carousel #intrinsicRunoutDiagram,.inspection-carousel #intrinsicSurfaceDiagram{flex:1;min-height:0}
-.inspection-carousel .intrinsic-inspection-columns svg{width:100%;height:100%;display:block}
-.inspection-carousel .intrinsic-inspection-note{margin:0;text-align:right;font-size:9px;line-height:12px;white-space:nowrap;color:#984000}
-.inspection-carousel .inspection-page-control{position:absolute;left:0;bottom:0;min-height:12px;height:12px;min-width:34px;padding:0 3px;border:0;border-radius:2px;line-height:12px;font-size:9px;color:#984000;background:#fff3e7;z-index:1;touch-action:manipulation}
-.inspection-carousel .inspection-page-control[hidden]{display:none}
-.inspection-carousel .inspection-page-control:focus-visible{outline:2px solid #b34800;outline-offset:0}
-.inspection-carousel .inspection-viewport.is-dragging{scroll-snap-type:none;user-select:none;cursor:grabbing}
-@media(min-width:701px){.inspection-carousel .intrinsic-inspection-columns h2{font-size:12px;line-height:16px}.inspection-carousel .intrinsic-inspection-columns h2 small{font-size:10px}.inspection-carousel .intrinsic-inspection-note{font-size:10px}}
 </style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
 .tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
 @media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}#testerDiagram{max-height:300px}}
@@ -853,11 +832,11 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 </div></aside>
 <div id="trainingMainSlot" class="training-main-slot"><div id="trainingMain" class="training-main">
 <div class="training-heading"><button id="openTrainingMenu" class="training-menu-toggle" aria-label="設定メニューを開く" aria-expanded="false" aria-controls="trainingDrawer"><span aria-hidden="true">☰</span> 設定</button><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div></div>
-<div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="inspectionCarousel" class="inspection-carousel"><div id="inspectionViewport" class="inspection-viewport"><div id="precisionReadouts" class="precision-readouts" aria-label="直角度・触れ">
+<div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="precisionReadouts" class="precision-readouts">
 <section class="squareness-panel" aria-label="軸の直角度"><button id="measurementReferenceToggle" class="measurement-reference-toggle" aria-controls="measurementReference" aria-expanded="false" aria-label="直角の基準図を下の調整欄に表示"><span aria-hidden="true">▽</span></button><h2 class="precision-panel-title">直角度</h2><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準器による仮想測定"></div><p id="liveSquarenessUnits" class="live-squareness-units"><span id="liveSquarenessName" class="live-measurement-name">仮想測定</span> 300 mm・µm</p><p id="squarenessValuesNote" class="visually-hidden">1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型のZ送りと触れは共通の仮想主軸姿勢を使う教材値です。前後支持応答は中央で約5倍です。実測値・局所角度換算とは別です。</p><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output></section>
 <section id="spindleSweepPanel" class="spindle-sweep-panel" aria-label="主軸のダイヤル旋回測定" aria-describedby="sweepMeasurementNote" hidden>
 <button id="spindleSweepToggle" class="sweep-readout-toggle" aria-controls="spindleSweepSelection" aria-expanded="false" aria-label="ダイヤル測定の方向選択を開く"><span class="sweep-readout-heading" aria-hidden="true"><span id="spindleSweepName" class="live-measurement-name">触れ</span><span id="spindleSweepMini" class="spindle-sweep-mini"></span><span class="sweep-readout-unit">µm</span></span><span id="sweepReadout0" class="sweep-readout-row"><span id="sweepLabel0">右</span><strong id="sweepValue0">0</strong></span><span id="sweepReadout1" class="sweep-readout-row"><span id="sweepLabel1">奥</span><strong id="sweepValue1">0</strong></span><span id="horizontalParallelMini" class="horizontal-parallel-mini"></span><span id="sweepReadout2" class="sweep-readout-row"><span id="sweepLabel2">左</span><strong id="sweepValue2">0</strong></span><span id="sweepReadout3" class="sweep-readout-row" data-selected="true"><span id="sweepLabel3">手前 <small>基準</small></span><strong id="sweepValue3">0</strong></span></button><p id="sweepMeasurementNote" class="visually-hidden">主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。小型では直角測定と同じ仮想主軸姿勢を使い、前後の支持応答を中央で約5倍にします。右・奥・左はその姿勢から再計算し、手前は0です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。</p></section>
-</div><section id="intrinsicInspectionPage" class="intrinsic-inspection-page" aria-label="個体固有の主軸振れと上面精度" hidden><div class="intrinsic-inspection-columns"><section><h2>主軸振れ <small>回転TIR・µm</small></h2><div id="intrinsicRunoutDiagram"></div></section><section><h2>上面精度 <small>9点高さ差・µm</small></h2><div id="intrinsicSurfaceDiagram"></div></section></div><p class="intrinsic-inspection-note">固有成分・レベル調整では不変</p></section></div><button id="inspectionNext" class="inspection-page-control" type="button" aria-label="主軸振れと上面精度へ左スライド" aria-controls="intrinsicInspectionPage" hidden>次 ›</button><button id="inspectionPrevious" class="inspection-page-control" type="button" aria-label="直角度と触れへ右スライド" aria-controls="precisionReadouts" hidden>‹ 戻る</button><span id="inspectionPageStatus" class="visually-hidden" aria-live="polite"></span></div><div class="scene-readout-note"><span id="scene-readout-sweep-note" class="visually-hidden" hidden>主軸と上面の相対傾き</span><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
+</div><div class="scene-readout-note"><span id="scene-readout-sweep-note" class="visually-hidden" hidden>主軸と上面の相対傾き</span><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
 <div id="viewerLevels" class="viewer-levels" role="group" aria-label="支持面の平均レベル。気泡は高い側へ動きます">
 <div class="viewer-gauge viewer-gauge-lr"><span class="viewer-gauge-title">平均 · 左右</span><strong id="stageAverageLR" class="level-direction"></strong><div class="vial" role="img" aria-label="平均の左右傾きを示す気泡" aria-describedby="stageAverageLR"><span class="center-lines"></span><span id="coarseBubbleLR" class="bubble"></span></div><div class="gauge-ends"><span>左</span><span>右</span></div></div>
 <div class="viewer-gauge viewer-gauge-fb"><span class="viewer-gauge-title">平均 · 前後</span><strong id="stageAverageFB" class="level-direction"></strong><div class="vertical-gauge"><span>奥</span><div class="vial vial-vertical" role="img" aria-label="平均の前後傾きを示す気泡。上が奥、下が手前" aria-describedby="stageAverageFB"><span class="center-lines"></span><span id="coarseBubbleFB" class="bubble"></span></div><span>手前</span></div></div>
@@ -1197,71 +1176,6 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
   return best;
  }
  return Object.freeze({referenceLength,distributions,random,generate,valid,directions,rms,optimize});
-});
-</script><script>(function(root,factory){
- 'use strict';
- const api=factory();
- if(typeof module==='object'&&module.exports)module.exports=api;
- if(root)root.IntrinsicInspection=api;
-})(typeof window!=='undefined'?window:typeof globalThis!=='undefined'?globalThis:null,function(){
- 'use strict';
- const model='intrinsic-inspection-v1',lengthMm=300,referenceIndex=3;
- // This independent stream derives from the existing individual seed. It neither
- // consumes nor changes the version-1 profile's random sequence or saved schema.
- const seedSalt=0x49535031;
- function random(seed){let value=seed>>>0;return ()=>{value=(value+0x6D2B79F5)>>>0;let t=value;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
- const grid=Object.freeze([1,0,-1].flatMap(back=>[-1,0,1].map(x=>Object.freeze({x,back}))));
- function vector(value){return Array.isArray(value)&&value.length===2&&value.every(Number.isFinite);}
- // Ideal rigid cylindrical test bar, rotated through one revolution. e is the
- // radial centre offset (µm); tilt is µrad. At axial distance L (mm), the centre
- // vector is e + tilt*L/1000 in µm. TIR is max-min, hence 2*|centre|, never signed.
- // Both stations belong to the SAME bar. A smaller tip TIR is possible when its
- // eccentricity and angular contributions oppose each other.
- function runoutAt(eccentricityMicrons,tiltMicroradians,axialMm){
-  if(!vector(eccentricityMicrons)||!vector(tiltMicroradians)||!Number.isFinite(axialMm))throw new TypeError('主軸振れの入力が不正です。');
-  const centre=eccentricityMicrons.map((v,i)=>v+tiltMicroradians[i]*axialMm/1000);
-  return 2*Math.hypot(...centre);
- }
- function runout(eccentricityMicrons,tiltMicroradians){
-  const rootMicrons=runoutAt(eccentricityMicrons,tiltMicroradians,0);
-  return {rootMicrons,tipMicrons:runoutAt(eccentricityMicrons,tiltMicroradians,lengthMm),lengthMm,eccentricityMicrons:[...eccentricityMicrons],tiltMicroradians:[...tiltMicroradians]};
- }
- // A 3×3 intrinsic surface map, independently levelled mathematically by its
- // least-squares plane. Symmetry gives sum(x²)=sum(back²)=6 and sum(x*back)=0.
- // Thus adding any rigid plane to every input height leaves the residual map
- // unchanged. The left-middle point is re-zeroed after plane subtraction.
- // The residual peak-to-valley range is NOT minimum-zone flatness and is not a
- // spindle-relative sweep, guide-motion error, load or elastic-deflection model.
- function surface(heightsMicrons){
-  if(!Array.isArray(heightsMicrons)||heightsMicrons.length!==9||!heightsMicrons.every(Number.isFinite))throw new TypeError('上面精度の入力が不正です。');
-  const mean=heightsMicrons.reduce((sum,v)=>sum+v,0)/9;
-  const slopeX=heightsMicrons.reduce((sum,v,i)=>sum+v*grid[i].x,0)/6;
-  const slopeBack=heightsMicrons.reduce((sum,v,i)=>sum+v*grid[i].back,0)/6;
-  const residual=heightsMicrons.map((v,i)=>v-mean-slopeX*grid[i].x-slopeBack*grid[i].back);
-  const zero=residual[referenceIndex];
-  const points=grid.map((point,i)=>({...point,microns:i===referenceIndex?0:residual[i]-zero}));
-  const values=points.map(point=>point.microns);
-  return {points,referenceIndex,rangeMicrons:Math.max(...values)-Math.min(...values),method:'least-squares-plane-residual',plane:{meanMicrons:mean,slopeXMicrons:slopeX,slopeBackMicrons:slopeBack}};
- }
- // Invented teaching ranges, not machine specifications or market statistics:
- // new: eccentricity radius 0.5–2.5 µm, tilt 2–15 µrad, raw heights ±4 µm;
- // used: radius 1–6 µm, tilt 5–40 µrad, raw heights ±12 µm.
- // Independent directions retain cancellation naturally, with no value clamp.
- // No support, axis position, camera or rotary posture enters this model. The
- // five-axis chart represents the same A=C=0 intrinsic reference inspection.
- function fromProfile(profile){
-  if(!profile||profile.version!==1||!Number.isInteger(profile.seed)||profile.seed<0||profile.seed>4294967295||!['new','used'].includes(profile.condition))return null;
-  const rng=random((profile.seed^seedSalt)>>>0),used=profile.condition==='used';
-  const radial=(minimum,maximum)=>{
-   const magnitude=minimum+(maximum-minimum)*rng(),angle=2*Math.PI*rng();
-   return [magnitude*Math.cos(angle),magnitude*Math.sin(angle)];
-  };
-  const eccentricity=used?radial(1,6):radial(.5,2.5);
-  const tilt=used?radial(5,40):radial(2,15);
-  const scale=used?12:4,heights=grid.map(()=>scale*(2*rng()-1));
-  return {model,seed:profile.seed,condition:profile.condition,runout:runout(eccentricity,tilt),surface:surface(heights)};
- }
- return Object.freeze({model,lengthMm,referenceIndex,grid,runoutAt,runout,surface,fromProfile});
 });
 </script><script>'use strict';
 // Independent, unexaggerated plane/probe geometry. All lengths are metres.
@@ -3282,7 +3196,6 @@ function updateHorizontalParallelReadout(){
  $('spindleSweepToggle').setAttribute('aria-label','Z方向の平行度。a 左右 '+$('sweepValue0').textContent+' マイクロメートル、b 上下 '+$('sweepValue1').textContent+' マイクロメートル。'+(someValid?'有効な測定の始点ゼロ、':'測定不可、')+'走査300ミリ。測定配置を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
 }
 function updateSpindleSweep(){
- if(typeof updateIntrinsicInspectionUI==='function')updateIntrinsicInspectionUI();
  // Supported vertical-spindle machines show both measurements together. This is a view state,
  // not an installation or measurement-model setting.
  const horizontal=current.kind==='horizontal',available=supportsSpindleSweep()||horizontal;
@@ -3334,79 +3247,6 @@ $('spindleSweepToggle').onclick=()=>{toggleSpindleSweepSelection();updateSpindle
 $('closeSpindleSweepSelection').onclick=()=>{toggleSpindleSweepSelection(false);updateSpindleSweep();$('spindleSweepToggle').focus?.({preventScroll:true});};
 $('spindleSweepSelection').addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();toggleSpindleSweepSelection(false);updateSpindleSweep();$('spindleSweepToggle').focus?.({preventScroll:true});}});
 for(let i=0;i<4;i++)$('sweepPosition'+i).onclick=()=>{selectSpindleSweepAngle(i*90);toggleSpindleSweepSelection(false);updateSpindleSweep();$('spindleSweepToggle').focus?.({preventScroll:true});};
-</script><script>'use strict';
-// This page shows intrinsic components from the saved individual seed only.
-// It deliberately has no support, axis-position, camera or measurement gain input.
-let intrinsicInspectionKey='',intrinsicInspectionMachine=null,intrinsicInspectionProfile=null,intrinsicInspectionPage=0;
-let intrinsicInspectionReady=false,intrinsicInspectionFrame=0;
-const inspectionSigned=v=>v===0?'0':(v>0?'+':'')+v.toFixed(1);
-function intrinsicRunoutMarkup(value,horizontal){
- const label=`主軸を回転させたときの最大指示と最小指示の差。根元 ${value.rootMicrons.toFixed(1)} µm、300 mm先 ${value.tipMicrons.toFixed(1)} µm。${horizontal?'既存のZ方向平行度':'既存の4方向の触れ'}とは別の固有成分です。`;
- const bar=horizontal?'<path d="M112 10H125V40H112ZM36 20H112V30H36Z"/><path d="M104 17V33M44 17V33" stroke="#b34800"/>':'<path d="M5 3H45V10H5ZM20 10H30V46H20Z"/><path d="M17 16H33M17 40H33" stroke="#b34800"/>';
- const text=horizontal?`<text x="129" y="13" text-anchor="end">根元 ${value.rootMicrons.toFixed(1)}</text><text x="30" y="44">300 mm先 ${value.tipMicrons.toFixed(1)}</text>`:`<text x="40" y="20">根元 ${value.rootMicrons.toFixed(1)}</text><text x="40" y="42">300 mm先 ${value.tipMicrons.toFixed(1)}</text>`;
- return `<svg viewBox="0 0 136 50" role="img" aria-label="${label}"><title>${label}</title><g fill="#fffaf6" stroke="#786452" stroke-width="1.2">${bar}</g><g fill="#302923" font-size="10">${text}</g></svg>`;
-}
-function intrinsicSurfaceMarkup(value,five){
- const label=`テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 ${value.rangeMicrons.toFixed(1)} µm。厳密な最小領域平面度ではありません。${five?'5軸はA=C=0の基準姿勢。':''}支持による変形や測定時の傾きは含めません。`;
- const marks=value.points.map((p,i)=>{const x=19+(p.x+1)*52,y=12+(1-p.back)*15;return `<circle cx="${x}" cy="${y}" r="1.7" fill="${i===3?'#b34800':'#302923'}"/><text x="${x+4}" y="${y+3}" fill="${i===3?'#984000':'#302923'}" font-size="9"${i===3?' font-weight="700"':''}>${inspectionSigned(p.microns)}</text>`;}).join('');
- return `<svg viewBox="0 0 158 58" role="img" aria-label="${label}"><title>${label}</title><rect x="14" y="5" width="140" height="43" fill="#fffaf6" stroke="#b9a28f"/><text x="1" y="13" font-size="7" fill="#775b48">奥</text><text x="0" y="46" font-size="7" fill="#775b48">前</text>${marks}<text x="15" y="55" font-size="7" fill="#775b48">傾き除去・左中0${five?'・A=C=0':''}</text><text x="154" y="55" text-anchor="end" font-size="8" fill="#775b48">差 ${value.rangeMicrons.toFixed(1)}</text></svg>`;
-}
-function inspectionSetPage(page,behavior='smooth'){
- const viewport=$('inspectionViewport');if(!$('inspectionCarousel').classList.contains('is-enabled'))return;
- intrinsicInspectionPage=page?1:0;
- viewport.scrollTo({left:intrinsicInspectionPage*viewport.clientWidth,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':behavior});
- inspectionUpdateNavigation();
-}
-function inspectionUpdateNavigation(){
- const enabled=$('inspectionCarousel').classList.contains('is-enabled'),second=intrinsicInspectionPage===1;
- $('inspectionNext').hidden=!enabled||second;$('inspectionPrevious').hidden=!enabled||!second;
- // Hidden pages remain measurable for stable layout, but are excluded from tab order.
- $('precisionReadouts').inert=enabled&&second;$('intrinsicInspectionPage').inert=!enabled||!second;
- $('inspectionPageStatus').textContent=enabled?(second?'2 / 2 主軸振れ・上面精度':'1 / 2 直角度・触れ'):'';
-}
-function initializeIntrinsicInspection(){
- if(intrinsicInspectionReady)return;intrinsicInspectionReady=true;
- const carousel=$('inspectionCarousel'),viewport=$('inspectionViewport');
- $('inspectionNext').addEventListener('click',()=>{viewport.focus({preventScroll:true});inspectionSetPage(1);});$('inspectionPrevious').addEventListener('click',()=>{viewport.focus({preventScroll:true});inspectionSetPage(0);});
- const resize=()=>{
-  cancelAnimationFrame(intrinsicInspectionFrame);intrinsicInspectionFrame=requestAnimationFrame(()=>{
-   if(!carousel.classList.contains('is-enabled'))return;
-   carousel.style.setProperty('--inspection-height',$('precisionReadouts').getBoundingClientRect().height+'px');
-   viewport.scrollTo({left:intrinsicInspectionPage*viewport.clientWidth,behavior:'instant'});
-  });
- };
- new ResizeObserver(resize).observe($('precisionReadouts'));window.addEventListener('resize',resize);
- viewport.addEventListener('scroll',()=>{const next=viewport.scrollLeft>viewport.clientWidth/2?1:0;if(next!==intrinsicInspectionPage){intrinsicInspectionPage=next;inspectionUpdateNavigation();}},{passive:true});
- let gesture=null,suppressClickUntil=0;
- viewport.addEventListener('pointerdown',e=>{
-  if(!carousel.classList.contains('is-enabled')||e.button>0)return;
-  gesture={id:e.pointerId,x:e.clientX,y:e.clientY,left:viewport.scrollLeft,mouse:e.pointerType==='mouse',drag:false};
- });
- viewport.addEventListener('pointermove',e=>{
-  if(!gesture||e.pointerId!==gesture.id)return;const dx=e.clientX-gesture.x,dy=e.clientY-gesture.y;
-  if(Math.abs(dx)>8&&Math.abs(dx)>Math.abs(dy)){gesture.drag=true;suppressClickUntil=Date.now()+500;}
-  if(gesture.mouse&&gesture.drag){viewport.setPointerCapture(e.pointerId);viewport.classList.add('is-dragging');viewport.scrollLeft=gesture.left-dx;e.preventDefault();}
- });
- const finish=e=>{if(!gesture||e.pointerId!==gesture.id)return;const g=gesture;gesture=null;viewport.classList.remove('is-dragging');if(g.mouse&&g.drag){const dx=e.clientX-g.x;inspectionSetPage(Math.abs(dx)>30?(dx<0?1:0):Math.round(viewport.scrollLeft/viewport.clientWidth));}};
- viewport.addEventListener('pointerup',finish);viewport.addEventListener('pointercancel',e=>{if(gesture&&gesture.id===e.pointerId){gesture=null;viewport.classList.remove('is-dragging');}});
- viewport.addEventListener('click',e=>{if(Date.now()<suppressClickUntil){e.preventDefault();e.stopImmediatePropagation();}},true);
- carousel.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey)return;if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();viewport.focus({preventScroll:true});inspectionSetPage(e.key==='ArrowRight'?1:0);}});
-}
-function updateIntrinsicInspectionUI(){
- if(typeof current==='undefined'||!current||typeof machineProfile==='undefined'||!$('inspectionCarousel')||!window.IntrinsicInspection)return;
- initializeIntrinsicInspection();
- const carousel=$('inspectionCarousel'),data=current.kind==='lathe'?null:window.IntrinsicInspection.fromProfile(machineProfile),enabled=!!data;
- carousel.classList.toggle('is-enabled',enabled);$('intrinsicInspectionPage').hidden=!enabled;$('inspectionViewport').tabIndex=enabled?0:-1;
- if(!enabled){intrinsicInspectionPage=0;$('inspectionViewport').scrollLeft=0;carousel.style.removeProperty('--inspection-height');inspectionUpdateNavigation();return;}
- const key=current.id+'|'+current.kind+'|'+data.seed+'|'+data.condition;
- if(key!==intrinsicInspectionKey||current!==intrinsicInspectionMachine||machineProfile!==intrinsicInspectionProfile){
-  intrinsicInspectionKey=key;intrinsicInspectionMachine=current;intrinsicInspectionProfile=machineProfile;
-  $('intrinsicRunoutDiagram').innerHTML=intrinsicRunoutMarkup(data.runout,current.kind==='horizontal');
-  $('intrinsicSurfaceDiagram').innerHTML=intrinsicSurfaceMarkup(data.surface,current.kind==='five');
-  carousel.dataset.seed=String(data.seed);inspectionSetPage(0,'instant');
- }
- carousel.style.setProperty('--inspection-height',$('precisionReadouts').getBoundingClientRect().height+'px');inspectionUpdateNavigation();
-}
 </script><script>(()=>{
   'use strict';
   const root=document.getElementById('tester');

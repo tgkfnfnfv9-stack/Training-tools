@@ -145,6 +145,7 @@ function updateHorizontalParallelReadout(){
  $('spindleSweepToggle').setAttribute('aria-label','Z方向の平行度。a 左右 '+$('sweepValue0').textContent+' マイクロメートル、b 上下 '+$('sweepValue1').textContent+' マイクロメートル。'+(someValid?'有効な測定の始点ゼロ、':'測定不可、')+'走査300ミリ。測定配置を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
 }
 function updateSpindleSweep(){
+ if(typeof updateIntrinsicInspectionUI==='function')updateIntrinsicInspectionUI();
  // Supported vertical-spindle machines show both measurements together. This is a view state,
  // not an installation or measurement-model setting.
  const horizontal=current.kind==='horizontal',available=supportsSpindleSweep()||horizontal;
