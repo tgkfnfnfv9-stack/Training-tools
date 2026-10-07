@@ -1,0 +1,163 @@
+{
+  "suites": 39,
+  "failures": 0,
+  "indexSha256": "c8b247a9007d8ae09db8e67434563a36223a612a21c074808643af37ec4246ec",
+  "results": [
+    {
+      "test": "check-3d-axis-controls.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-accuracy-engine.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-accuracy-render.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-accuracy-review.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-adjustment-flow.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-canvas-labels.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-compact-bending.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-compact-table-path.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-confirmed-layouts.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-display-motion.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-electrical-full.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-full-code-review.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-full-sign-geometry.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-guide-response-invariants.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-ideal-display.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-ideal-outline-ui.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-interface-audit.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-irregular-leveling.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-level-stages.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-leveling-engine.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-leveling-learning.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-leveling-ui.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-live-squareness-values.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-measurement-reference.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-mechanical-audit.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-mobile-navigation.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-model-posture.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-multi-spindle-sweep.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-portal-shear-invariants.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-random-accuracy-review.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-scene-zoom.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-settings-menu-ui.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-settings-menu.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-site-navigation.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-spindle-sweep.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-squareness-display.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-structural-connections.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-structural-invariants.cjs",
+      "ok": true
+    },
+    {
+      "test": "check-tester-lesson.cjs",
+      "ok": true
+    }
+  ]
+}

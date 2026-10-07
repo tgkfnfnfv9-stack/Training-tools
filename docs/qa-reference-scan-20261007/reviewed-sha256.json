@@ -1,0 +1,14 @@
+{
+  "index.html": "c8b247a9007d8ae09db8e67434563a36223a612a21c074808643af37ec4246ec",
+  "src/reference-measurement.js": "3f935b0bca6a11ac504fb6a987e831a8fcb60002f75acb35a2a8dc2b40a1f201",
+  "src/reference-measurement-ui.js": "538cb7d4b4bbb592cce3cfcbedb23ea949d443eb96149069a5c9767e04bb6fba",
+  "src/accuracy-ui.js": "25f9a42bfba481ec44e3361a800089aa9cbf5ae6ac0c88387a6ca2829152dc38",
+  "src/app.js": "d548f22ba6b651ea61e03d6a1e9484f6cd23ed2afe3dd0b1197cf40b9f0f78b3",
+  "src/index.html": "1b030a5a9f96812bb677c0e7db29d991bc4a40f53109f0f5e9fc7e32a06f700a",
+  "src/style.css": "86f9580e1737d4fbd770ad60f8bff80b8ed06a539dc1e5c2c4f2e8832ca55884",
+  "src/leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+  "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+  "src/spindle-sweep.js": "417ef0f6486fcdbd7b10a42b89f610b2b121660c126ab7b0aa0bb97b0fa85c57",
+  "src/spindle-sweep-ui.js": "6d0021ea3f4eb7ffeba21628053e204c1d50d3051a90778fbaedd61cdeb4eca7",
+  "src/leveling-ui.js": "4e3ee21ef4626cdf83efa7e6c139a39fbcbb64c196f23c7c63ec5252137beb28"
+}

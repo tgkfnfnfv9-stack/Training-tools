@@ -24,7 +24,7 @@ for(const kind of ['compact','horizontal','travel','double','gantry','five','lat
    if(c.name===p.key+'+10um'||c.name===p.key+'-10um')check(kind+'/'+c.name+'/'+key+'/'+value+' isolated intrinsic fixture retains known signed angle',()=>near(p.deviationMicroradians*.3,c.name.includes('+')?10:-10));
    const diff=Math.abs(expected-p.deviationMicroradians*.3);result.maximumPairOracleDifference=Math.max(result.maximumPairOracleDifference,diff);
    const plot=json(`squarenessPlot({key:'${p.key}',deviationMicroradians:${p.deviationMicroradians}})`), live=json(`liveSquarenessTip({key:'${p.key}',deviationMicroradians:${p.deviationMicroradians}},squarenessPlot({key:'${p.key}',deviationMicroradians:${p.deviationMicroradians}}))`);
-   check(kind+'/'+c.name+'/'+key+'/'+value+'/'+p.key+' current display follows physical positive-axis tangent',()=>{const zero=Math.round(Math.abs(p.deviationMicroradians*.3))===0;assert.deepEqual(live,zero?[32,26]:plot.tip);});
+   check(kind+'/'+c.name+'/'+key+'/'+value+'/'+p.key+' legacy local-angle diagram follows positive-axis tangent',()=>{const zero=Math.round(Math.abs(p.deviationMicroradians*.3))===0;assert.deepEqual(live,zero?[32,26]:plot.tip);});
    const rawAngle=Math.acos(dot(unit(sub(plot.tip,plot.origin)),[1,0]))*180/Math.PI;
    const liveInnerAngle=Math.acos(dot(unit(sub(live,plot.origin)),[1,0]))*180/Math.PI;
    return {pair:p.key,reading:p.deviationMicroradians*.3,localConfiguredLengthError:p.errorMicrons,oracle:expected,directions:vectors,rawInnerAngle:rawAngle,liveInnerAngle};});
@@ -66,5 +66,5 @@ for(const kind of ['compact','horizontal','travel','double','gantry','five','lat
 }
 
 result.pathAndRestore=out;}
-const output=process.env.FULLSIGN_GEOMETRY_OUTPUT||'tmp/full-sign-geometry-results.json';fs.writeFileSync(output,JSON.stringify(result));if(result.failures.length)process.exitCode=1;
+const output=process.env.FULLSIGN_GEOMETRY_OUTPUT||'tmp/full-sign-geometry-results.json';fs.mkdirSync(require('node:path').dirname(output),{recursive:true});fs.writeFileSync(output,JSON.stringify(result));if(result.failures.length)process.exitCode=1;
 console.log(JSON.stringify({checks:result.checks,failures:result.failures.length,rows:result.rows.length,motion:result.motion.length,dial:result.dial.length,maximumPairOracleDifference:result.maximumPairOracleDifference}));

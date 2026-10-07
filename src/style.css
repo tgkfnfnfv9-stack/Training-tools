@@ -675,3 +675,14 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
    from the model or enlarging the diagram's labels. */
 .live-measurement-name{font-size:8px;line-height:10px;font-weight:600;color:#775b48}
 .sweep-readout-heading{display:flex;justify-content:space-between;align-items:baseline;font-size:8px;line-height:10px}
+
+/* Only the contents of the existing three measurement cells change. */
+.scan-label{font-size:7px;fill:#302923;font-weight:500}
+.scan-master{fill:#fff5eb;stroke:#ab9480;stroke-width:1}
+.scan-face{fill:none;stroke:#302923;stroke-width:1.8}
+.scan-zero{fill:#302923}.scan-contact{fill:#ca590d}
+.scan-path{fill:none;stroke:#d0793e;stroke-dasharray:2 2;stroke-width:1}
+.scan-move{fill:none;stroke:#ca590d;stroke-width:1.5}
+.scan-probe{fill:none;stroke:#302923;stroke-width:1.6}
+.scan-body{fill:#302923}
+.scan-press{fill:none;stroke:#302923;stroke-width:1.2}

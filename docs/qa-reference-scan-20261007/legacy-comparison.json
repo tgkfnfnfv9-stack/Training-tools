@@ -1,0 +1,30 @@
+[
+  {
+    "kind": "compact",
+    "unchanged": true
+  },
+  {
+    "kind": "horizontal",
+    "unchanged": true
+  },
+  {
+    "kind": "travel",
+    "unchanged": true
+  },
+  {
+    "kind": "double",
+    "unchanged": true
+  },
+  {
+    "kind": "gantry",
+    "unchanged": true
+  },
+  {
+    "kind": "five",
+    "unchanged": true
+  },
+  {
+    "kind": "lathe",
+    "unchanged": true
+  }
+]

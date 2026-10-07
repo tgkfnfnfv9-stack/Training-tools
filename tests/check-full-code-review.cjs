@@ -13,10 +13,10 @@ async function main(){
  const built=fs.readFileSync('index.html','utf8');
  check('standalone build has all modules and no external local dependency',()=>{
   assert.doesNotMatch(built,/<script\s+src=|<link[^>]+rel="stylesheet"/);
-  const scripts=[...built.matchAll(/<script>([\s\S]*?)<\/script>/g)];assert.equal(scripts.length,9);
+  const scripts=[...built.matchAll(/<script>([\s\S]*?)<\/script>/g)];assert.equal(scripts.length,11);
   for(const match of scripts)new vm.Script(match[1]);
   assert.doesNotMatch(built,/<!-- TESTER_LESSON -->/);
-  for(const file of ['leveling.js','machine-accuracy.js','app.js','leveling-ui.js','accuracy-ui.js','machine-accuracy-ui.js','tester.js'])assert.ok(built.includes(fs.readFileSync('src/'+file,'utf8')),file+' latest source is missing from bundled page');
+  for(const file of ['leveling.js','machine-accuracy.js','reference-measurement.js','reference-measurement-ui.js','app.js','leveling-ui.js','accuracy-ui.js','machine-accuracy-ui.js','tester.js'])assert.ok(built.includes(fs.readFileSync('src/'+file,'utf8')),file+' latest source is missing from bundled page');
  });
  check('source and bundled markup have balanced tags and unique static IDs',()=>{
   const source=fs.readFileSync('src/index.html','utf8').replace('<!-- TESTER_LESSON -->',fs.readFileSync('src/tester.html','utf8'));

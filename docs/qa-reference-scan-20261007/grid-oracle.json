@@ -1,0 +1,54 @@
+[
+  {
+    "name": "start-at-knot",
+    "pair": "XZ",
+    "actual": 0,
+    "expected": 0,
+    "difference": 0
+  },
+  {
+    "name": "start-at-knot",
+    "pair": "YZ",
+    "actual": -33.749999881349176,
+    "expected": -33.74999988134744,
+    "difference": -1.7337242752546445e-12
+  },
+  {
+    "name": "end-at-knot",
+    "pair": "XZ",
+    "actual": 0,
+    "expected": 0,
+    "difference": 0
+  },
+  {
+    "name": "end-at-knot",
+    "pair": "YZ",
+    "actual": 33.750000094923124,
+    "expected": 33.75000009492139,
+    "difference": 1.7337242752546445e-12
+  },
+  {
+    "name": "cross-knot",
+    "pair": "XZ",
+    "actual": 0,
+    "expected": 0,
+    "difference": 0
+  },
+  {
+    "name": "cross-knot",
+    "pair": "YZ",
+    "actual": 16.875000047461562,
+    "expected": 16.875000047461562,
+    "difference": 0
+  },
+  {
+    "name": "original-nonconvergent-fixture-now-valid",
+    "pair": "XZ",
+    "actual": 44.430010376317675
+  },
+  {
+    "name": "original-nonconvergent-fixture-now-valid",
+    "pair": "YZ",
+    "actual": 9.045610944532005
+  }
+]

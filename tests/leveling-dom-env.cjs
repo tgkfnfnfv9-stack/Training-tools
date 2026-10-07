@@ -54,7 +54,7 @@ module.exports=function createEnvironment(options={}){
   requestAnimationFrame:f=>{f(0);return 1;},cancelAnimationFrame(){},setTimeout:(f,delay)=>{timers.push(f);timerDelays.push(delay);return timers.length;},clearTimeout(){},Blob,
   URL:{createObjectURL:blob=>{context.exportedBlob=blob;return 'blob:test';},revokeObjectURL:url=>{context.revokedUrl=url;}}};
  vm.createContext(context);
- for(const file of ['leveling.js','machine-accuracy.js','spindle-sweep.js','app.js','leveling-ui.js','accuracy-ui.js','machine-accuracy-ui.js','spindle-sweep-ui.js'])vm.runInContext(fs.readFileSync('src/'+file,'utf8'),context,{filename:file});
+ for(const file of ['leveling.js','machine-accuracy.js','reference-measurement.js','reference-measurement-ui.js','spindle-sweep.js','app.js','leveling-ui.js','accuracy-ui.js','machine-accuracy-ui.js','spindle-sweep-ui.js'])vm.runInContext(fs.readFileSync('src/'+file,'utf8'),context,{filename:file});
  if(options.pureLeveling)vm.runInContext('initializeMachineAccuracy=()=>{machineProfile=null;machineReference=null;};',context);
  return {registry,body,storage,downloads,timers,timerDelays,context,read:code=>vm.runInContext(code,context),json:code=>JSON.parse(vm.runInContext('JSON.stringify('+code+')',context))};
 };

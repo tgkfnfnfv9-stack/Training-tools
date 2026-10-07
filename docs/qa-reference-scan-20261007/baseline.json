@@ -1,0 +1,6 @@
+{
+  "commit": "f63d5d2029bca07f97adc564c0253c41b3676a83",
+  "path": "index.html",
+  "sha256": "e6bf5d4557199dde6be5efc93f5c3470d38f9ace440359e11aac2a19b02588f7",
+  "readCommand": "git show f63d5d2029bca07f97adc564c0253c41b3676a83:index.html"
+}

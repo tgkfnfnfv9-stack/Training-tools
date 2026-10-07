@@ -1,0 +1,51 @@
+[
+  {
+    "kind": "compact",
+    "unit": "milliseconds, DOM mock/node, all machine pairs once",
+    "median": 0.8598309999999856,
+    "p95": 6.212983000000008,
+    "maximum": 42.23307199999999
+  },
+  {
+    "kind": "horizontal",
+    "unit": "milliseconds, DOM mock/node, all machine pairs once",
+    "median": 7.131142999999952,
+    "p95": 43.800163,
+    "maximum": 43.96281700000003
+  },
+  {
+    "kind": "travel",
+    "unit": "milliseconds, DOM mock/node, all machine pairs once",
+    "median": 0.27509600000007595,
+    "p95": 1.0277050000000827,
+    "maximum": 1.1322940000000017
+  },
+  {
+    "kind": "double",
+    "unit": "milliseconds, DOM mock/node, all machine pairs once",
+    "median": 0.47760299999993094,
+    "p95": 2.8391880000000356,
+    "maximum": 38.03690899999992
+  },
+  {
+    "kind": "gantry",
+    "unit": "milliseconds, DOM mock/node, all machine pairs once",
+    "median": 0.34064500000010867,
+    "p95": 1.0901499999999942,
+    "maximum": 1.3531380000000581
+  },
+  {
+    "kind": "five",
+    "unit": "milliseconds, DOM mock/node, all machine pairs once",
+    "median": 0.9323819999999614,
+    "p95": 3.4382140000000163,
+    "maximum": 33.58171800000002
+  },
+  {
+    "kind": "lathe",
+    "unit": "milliseconds, DOM mock/node, all machine pairs once",
+    "median": 0.1052789999999959,
+    "p95": 0.6076400000000604,
+    "maximum": 1.7437290000000303
+  }
+]

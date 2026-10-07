@@ -1,0 +1,97 @@
+[
+  {
+    "kind": "compact",
+    "pair": "XY",
+    "delta": 0
+  },
+  {
+    "kind": "compact",
+    "pair": "XZ",
+    "delta": 0
+  },
+  {
+    "kind": "compact",
+    "pair": "YZ",
+    "delta": 1.7337242752546445e-12
+  },
+  {
+    "kind": "horizontal",
+    "pair": "XY",
+    "delta": 0
+  },
+  {
+    "kind": "horizontal",
+    "pair": "XZ",
+    "delta": 0
+  },
+  {
+    "kind": "horizontal",
+    "pair": "YZ",
+    "delta": 1.7337242752546445e-12
+  },
+  {
+    "kind": "travel",
+    "pair": "XY",
+    "delta": 0
+  },
+  {
+    "kind": "travel",
+    "pair": "XZ",
+    "delta": 0
+  },
+  {
+    "kind": "travel",
+    "pair": "YZ",
+    "delta": 1.7337242752546445e-12
+  },
+  {
+    "kind": "double",
+    "pair": "XY",
+    "delta": 0
+  },
+  {
+    "kind": "double",
+    "pair": "XZ",
+    "delta": 0
+  },
+  {
+    "kind": "double",
+    "pair": "YZ",
+    "delta": 5.202949182603334e-12
+  },
+  {
+    "kind": "gantry",
+    "pair": "XY",
+    "delta": 0
+  },
+  {
+    "kind": "gantry",
+    "pair": "XZ",
+    "delta": 0
+  },
+  {
+    "kind": "gantry",
+    "pair": "YZ",
+    "delta": 5.202949182603334e-12
+  },
+  {
+    "kind": "five",
+    "pair": "XY",
+    "delta": 0
+  },
+  {
+    "kind": "five",
+    "pair": "XZ",
+    "delta": 0
+  },
+  {
+    "kind": "five",
+    "pair": "YZ",
+    "delta": 1.7337242752546445e-12
+  },
+  {
+    "kind": "lathe",
+    "pair": "ZX",
+    "delta": 1.7337242752546445e-12
+  }
+]

@@ -254,10 +254,6 @@ function squarenessMarkup(pair,plot,beforePlot,detailed=false,live=false){
  const labels=live?'':`<text x="${pt[0]-3}" y="${pt[1]+12}" text-anchor="end" class="reference-current-label">P</text><text x="${ideal[0]+6}" y="${ideal[1]+2}" class="reference-ideal-label">I</text><text x="66" y="18" class="measurement-end">300 mm</text><text x="69" y="29" class="reference-conversion">換算点</text>`;
  return `${depth}${live?`<g class="live-plate-scale" transform="${frame.transform}">`:''}<g class="pair-plane" transform="matrix(${matrix.join(' ')})"><path d="M32,54H88V26H32Z" class="reference-board"/>${live?'':'<path d="M32,54v4h56v-4M88,58V30l0,-4" class="reference-board-edge"/>'}<path d="M${x},26V${y}H88" fill="none" stroke="#81949d" stroke-width="1" stroke-dasharray="${live?'':'3 3'}" class="pair-ideal"/><line x1="${x}" y1="${y}" x2="88" y2="${y}" stroke="#333" stroke-width="2" class="pair-base"/>${live?'':'<path d="M83,51l5,3l-5,3" class="reference-base-arrow"/>'}${!live&&changed?`<path d="M${x},${y}L${bx},${by}L${tx},${ty}Z" fill="#db6a19" class="pair-change-area"/>`:''}${live?'':`<line x1="${x}" y1="${y}" x2="${bx}" y2="${by}" stroke="#a95b26" stroke-width="4" class="pair-before"/>`}<line x1="${x}" y1="${y}" x2="${tx}" y2="${ty}" stroke="#cb5709" stroke-width="2.5" class="pair-current"/>${live?'':`<line x1="${x}" y1="26" x2="${tx}" y2="${ty}" stroke="#536776" stroke-width="1.4" class="measurement-gap"/>`}<circle cx="${x}" cy="26" ${markerTransform(x,26)} r="2.8" fill="white" stroke="#81949d" stroke-width="1" class="measurement-ideal-tip"/>${live?'':`<path d="M${tx-4*ux-2*uy},${ty-4*uy+2*ux}L${tx},${ty}L${tx-4*ux+2*uy},${ty-4*uy-2*ux}" fill="none" stroke="#cb5709" stroke-width="1.4" class="measurement-direction"/>`}<circle cx="${tx}" cy="${ty}" ${markerTransform(tx,ty)} r="1.8" fill="#cb5709" class="measurement-current-tip"/><circle cx="${x}" cy="${y}" ${markerTransform(x,y)} r="2.3" fill="#333" class="measurement-origin"/></g>${live?'</g>':''}${arrows}<text x="${o[0]-3}" y="${o[1]+11}" text-anchor="end" class="measurement-start">0</text><text x="${o[0]-4}" y="${o[1]-2}" text-anchor="end" class="reference-origin-label">O</text><text x="${live?base[0]-4:base[0]+4}" y="${live?base[1]+(frame.up?-3:10):base[1]+3}" text-anchor="${live?'end':'start'}" class="pair-axis">${live?(current.kind==='lathe'?'主軸Z':'＋'+plot.base)+' '+r.baseDirection:plot.base}</text>${labels}${detail}`;
 }
-function squarenessReferenceCard(pair,c,attributes){
- const {plot,beforePlot}=c,r=squarenessReference(pair),microns=pair.deviationMicroradians*squarenessMeasurementLength,reading=squarenessMicronText(microns),base=current.kind==='lathe'?'主軸Z':plot.base;
- return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${pair.key}・${r.plane}の板 <span>${reading} µm</span></h3><svg class="reference-diagram" viewBox="-42 -17 205 151" role="img" aria-label="${pair.key}の基準図。Oは${r.zero}、基準${base}は${r.baseDirection}、測る軸${plot.other}は${r.measureDirection}。＋は${r.positive}、−は${r.negative}。" ${attributes}>${squarenessMarkup(pair,plot,beforePlot,true)}</svg><p><b>O：${r.zero}でゼロ合わせ</b><br>基準辺 ${base} → ${r.baseDirection} ／ 比較 ${plot.other} → ${r.measureDirection}</p><p class="reference-signs"><b>＋ ${r.positive}側</b> ／ <b>− ${r.negative}側</b><br>I＝理想・P＝現在。IからPへのずれが数値の符号に対応。</p><p class="reference-contact"><span aria-hidden="true">${r.positive} → ● → ${r.negative}</span><br>仮想の接触：${r.positive}側から${r.negative}向きに当てる。押込み側を＋として説明。</p><p class="reference-range">${c.range||'点のずれは一定倍率で誇張。薄線＝初期。'}</p></section>`;
-}
 function diagramComparison(pair,initial){
  const before=initial?.pairs.find(p=>p.key===pair.key)||pair,plot=squarenessPlot(pair),beforePlot={...squarenessPlot(before),deviation:before.deviationMicroradians};
  const delta=pair.deviationMicroradians-before.deviationMicroradians,absoluteChange=Math.abs(pair.deviationMicroradians)-Math.abs(before.deviationMicroradians),epsilon=.005/(levelConfig?.offset||.5);
@@ -271,18 +267,15 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
  const columns=g.pairs.map((pair,i)=>{
   const c=diagramComparison(pair,initial),{plot,beforePlot}=c;
   const reference=squarenessReference(pair);
-  const description='Oは説明図の'+reference.zero+'。基準矢印は'+reference.baseDirection+'、比較方向は'+reference.measureDirection+'。＋は'+reference.positive+'、−は'+reference.negative+'。現在位置の局所角度を300 mm換算、実走査ではありません。'+pair.key+'、基準'+plot.base+'。'+(pair.deviationMicroradians>0?'直角より広い':pair.deviationMicroradians<0?'直角より狭い':'直角')+'。測る軸'+plot.other+'を共通の合わせ始点から比較終点へ伸ばし、理想の直角との終点差を見る模式図。'+c.text+(c.direction==='unchanged'?'。軸間の変化はほぼありません':c.direction==='opened'?'。初期から広がる方向へ変化':'。初期から狭まる方向へ変化')+(c.range?'。'+c.range:'');
-  const liveDescription=pair.key+'の正方向の比較。O・0は左下で相対方向を重ねる共通始点。基準'+(current.kind==='lathe'?'主軸Z':'＋'+plot.base)+'は図内の下辺を右へ、比較＋'+plot.other+'は図内の左辺を上へ表示。実機の正方向は基準が'+reference.baseDirection+'、比較が'+reference.measureDirection+'です。現在の色線が理想から基準の逆側へ離れると広い＋、基準側へ近づくと狭い−。表示ゼロは理想と一致。軸操作のゼロは中央で、縦向き主軸の機種の下降は−Zです。実機の説明基準：'+description;
   // This fixed comparison length describes the local angle only. It does not
   // change the engine's evaluation length or simulate an NC travel/guide scan.
   const attributes=Object.entries({'projection':reference.projection.join(','),'zero-location':reference.zero,'base-direction':reference.baseDirection,'measure-direction':reference.measureDirection,'positive-direction':reference.positive,'negative-direction':reference.negative,'reference-plane':reference.plane,pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="104" y="64" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
-  const liveMarkup=squarenessMarkup(pair,plot,beforePlot,false,true)+(plot.limited?'<text x="112" y="29" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
-  referenceCards.push(squarenessReferenceCard(pair,c,attributes));
-  const microns=pair.deviationMicroradians*squarenessMeasurementLength,reading=squarenessMicronText(microns),baseLabel=current.kind==='lathe'?'主軸Z':plot.base;
-  const microChange=current.kind==='compact'&&Math.abs(c.delta*squarenessMeasurementLength)>1e-4&&reading===squarenessMicronText(c.before.deviationMicroradians*squarenessMeasurementLength);
-  const microNote=current.kind==='compact'?`<span class="live-pair-micro-change" data-micro-change="${microChange}" title="${microChange?'初期から計算値は変化していますが、1 µm刻みの表示は同じです。':''}">${microChange?'初期から微小変化':''}</span>`:'';
-  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="${liveSquarenessFrame(pair).viewBox}" role="img" aria-label="${liveDescription}" aria-describedby="squarenessMeasurementNote" ${attributes} data-display-tip-x="${liveSquarenessTip(pair,plot)[0]}" data-display-tip-y="${liveSquarenessTip(pair,plot)[1]}" data-display-reflection="none" data-display-reference="positive-axes" data-display-base-sign="1" data-display-comparison-sign="1" data-display-positive-side="left" data-display-negative-side="right" data-display-rounded-zero="${reading==='0'}">${liveMarkup}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の現在値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">${baseLabel}基準 0</span><span class="live-pair-error-value" data-current-error-300="${microns}" aria-label="${pair.key} ${plot.other}直角差 ${reading} µm">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span>${microNote}</div></div>`);
+  const measurement=referenceScan(pair),beforeMeasurement=referenceScan(pair,positions,levelInitialSolution||levelSolution);
+  const reading=measurement.valid?squarenessMicronText(measurement.microns):'—';
+  referenceCards.push(referenceCard(pair,measurement,beforeMeasurement));
+  const descriptionText=pair.key+'・'+(measurement.valid?'開始点0から300 mmの仮想測定 '+reading+' µm':measurement.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。';
+  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" ${attributes} data-measurement-model="${window.ReferenceMeasurement.model}" data-reading-microns="${measurement.valid?measurement.microns:''}">${referenceDiagram(measurement)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${measurement.valid?measurement.microns:''}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,30)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
@@ -308,7 +301,7 @@ function updateFineQualitative(g,initial){
 function updateAccuracy(){
  if(!levelSolution||!levelConfig)return;
  const rangeKey=JSON.stringify([current.id,current.kind,supportHeights,levelConfig,machineProfile]);
- const key=rangeKey+JSON.stringify([positions.X,positions.Y,positions.Z]);
+ const key=rangeKey+JSON.stringify([positions.X,positions.Y,positions.Z,positions.A,positions.C]);
  if(key===accuracyKey&&levelGeometry)return;
  accuracyKey=key;
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
@@ -422,10 +415,13 @@ function accuracyVisualVector(key){
 
 // The reference lesson lives in the existing lower scroll area; the model and
 // support action buttons remain fixed. Opening it never alters a measurement.
+let measurementReferenceScrollTop=0;
 function toggleMeasurementReference(force){
- const panel=$('measurementReference'),open=force===undefined?panel.hidden:force;
+ const panel=$('measurementReference'),open=force===undefined?panel.hidden:force,scroll=$('adjustmentSelectionScroll');
+ if(open&&panel.hidden)measurementReferenceScrollTop=scroll.scrollTop;
  panel.hidden=!open;$('measurementReferenceToggle').setAttribute('aria-expanded',String(open));
- if(open){const scroll=$('adjustmentSelectionScroll');scroll.scrollTop=panel.offsetTop-scroll.offsetTop;panel.focus?.({preventScroll:true});}
+ if(open){scroll.scrollTop=panel.offsetTop-scroll.offsetTop;panel.focus?.({preventScroll:true});}
+ else scroll.scrollTop=measurementReferenceScrollTop;
 }
 $('measurementReferenceToggle').onclick=()=>toggleMeasurementReference();
 $('closeMeasurementReference').onclick=()=>{toggleMeasurementReference(false);$('measurementReferenceToggle').focus?.({preventScroll:true});};
