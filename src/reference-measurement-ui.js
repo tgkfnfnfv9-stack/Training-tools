@@ -18,7 +18,7 @@ function referenceRigidFrame(frame){
  const M=window.ReferenceMeasurement,up=M.unit(frame.up),right=M.unit(M.sub(frame.right,M.scale(up,M.dot(frame.right,up)))),back=[right[1]*up[2]-right[2]*up[1],right[2]*up[0]-right[0]*up[2],right[0]*up[1]-right[1]*up[0]];
  return {right,up,back,rotate:v=>right.map((q,i)=>q*v[0]+up[i]*v[1]+back[i]*v[2])};
 }
-function referenceScan(pair,state=positions,solution=levelSolution,profile=machineProfile){
+function referenceScan(pair,state=positions,solution=levelSolution,profile=machineProfile,geometryProvider=geometryModel){
  const M=window.ReferenceMeasurement,setup=referenceSetup(pair),axis=axisConfig(current).find(a=>a.key===setup.scan),physical=levelCoordinates(axis.vector[0]*axis.amp,axis.vector[2]*axis.amp),half=Math.hypot(physical.x,axis.vector[1]*axis.amp,physical.z),length=.3;
  if(current.kind==='five'&&(Math.abs(state.A)>1e-9||Math.abs(state.C)>1e-9))return {valid:false,reason:'A/Cを0にして測定',setup};
  if(2*half<length)return {valid:false,reason:'300 mmの走査範囲不足',setup};
@@ -27,7 +27,7 @@ function referenceScan(pair,state=positions,solution=levelSolution,profile=machi
  const startPosition=setup.memberSign>0?lowerPosition:upperPosition,endPosition=setup.memberSign>0?upperPosition:lowerPosition,travelLength=endPosition-startPosition;
  const startState={...state,[setup.scan]:startPosition/half*100},cache=new Map();
  const stateAt=t=>({...startState,[setup.scan]:(startPosition+travelLength*t)/half*100});
- const at=t=>{if(!cache.has(t))cache.set(t,geometryModel(stateAt(t),solution,profile,.3));return cache.get(t);};
+ const at=t=>{if(!cache.has(t))cache.set(t,geometryProvider(stateAt(t),solution,profile,.3));return cache.get(t);};
  // Only these scans relocate a sampled support anchor in geometryModel.
  const varies=(current.kind==='compact'&&setup.scan==='Y')||(current.kind==='horizontal'&&setup.scan==='Z')||(current.kind==='five'&&setup.scan==='Y');
  const first=at(0),normal=first.directions.find(a=>a.key===setup.base).direction,probe=M.scale(normal,-1),scanDirection=first.directions.find(a=>a.key===setup.scan).direction;
@@ -55,25 +55,12 @@ function referenceScan(pair,state=positions,solution=levelSolution,profile=machi
  const bad=samples.find(p=>!p.valid),result=bad?{valid:false,reason:bad.reason,failurePosition:startPosition+travelLength*bad.t}:M.compare(start,end);
  return {...result,setup,startPosition,endPosition,length,model:M.model,start,end,samples,alongStart:tangent,alongEnd:samples[samples.length-1].along,fixture:anchor?(current.kind==='horizontal'?'horizontal-pallet-top':'compact-table-P'):'representative-fixed-posture'};
 }
-// A display response, not a replacement for the finite contact calculation.
-// Keep raw poses/contacts and the displayed teaching value separate.
-const compactYZResponseGain=50;
-let referenceBaselineKey='',referenceBaselineValue=null;
-function referenceReading(pair,measurement,state=positions,profile=machineProfile){
- const teaching=current.kind==='compact'&&pair.key==='YZ',gain=teaching?compactYZResponseGain:1;
- const reading={valid:measurement.valid,reason:measurement.reason,microns:measurement.microns,physicalMicrons:measurement.microns,gain,model:teaching?'compact-yz-response-v1':window.ReferenceMeasurement.model};
- if(!teaching||!measurement.valid)return reading;
- // Current and initial-support comparisons share this zero-support baseline.
- // Supports are intentionally absent from the key; axis/config/profile changes
- // must still recompute alignment and contact zero at the same 300 mm interval.
- const key=JSON.stringify([current.id,current.kind,current.w,current.d,supports,levelConfig,state,profile]);
- if(key!==referenceBaselineKey){
-  referenceBaselineKey=key;
-  referenceBaselineValue=referenceScan(pair,state,machineSolution(supports.map(()=>0)),profile);
- }
- const baseline=referenceBaselineValue;
- if(!baseline.valid)return {...reading,valid:false,reason:'教材基準：'+baseline.reason,microns:undefined};
- return {...reading,baselineMicrons:baseline.microns,microns:baseline.microns+gain*(measurement.microns-baseline.microns)};
+// Both finite scanning and spindle sweep use the same fixed teaching posture.
+// No multiplier is applied to the resulting indicator displacement.
+function referenceDisplayScan(pair,state=positions,solution=levelSolution,profile=machineProfile){
+ const teaching=current.kind==='compact';
+ const result=referenceScan(pair,state,solution,profile,teaching?compactMeasurementGeometry:geometryModel);
+ return {...result,model:teaching?'compact-shared-posture-v1':result.model,responseGain:teaching?compactMeasurementResponseGain:1};
 }
 function referenceDiagram(measurement){
  const s=measurement.setup,M=window.ReferenceMeasurement,down=s.relativeSign<0,y0=down?14:31;
@@ -96,7 +83,8 @@ function referenceDiagram(measurement){
  return `<g class="scan-geometry" data-projection-mode="master-frame" data-deviation-emphasized="${emphasized}" data-normal-gain="${normalGain}" data-tilt-gain="${tiltGain}" data-body-normal-m="${bodyNormal}" data-probe-normal="${probeNormal}" data-probe-along="${probeAlong}" data-diagram-limited="${limited}"><text x="2" y="9" class="scan-label">${s.lathe?'XZ':s.base+s.scan}</text><text x="15" y="8" class="scan-view-direction">↑${s.positiveScanDirection}</text><text x="34" y="9" class="scan-label">${s.lathe?'刃物台':s.shortBody+'固定'}</text>${master}<path d="M23,11V34" class="scan-face"/><text x="16" y="24" class="scan-label scan-s-label">S</text><circle cx="23" cy="${y0}" r="1.6" class="scan-zero"/><text x="25" y="${y0+3}" class="scan-label measurement-start">0</text><g opacity="${measurement.valid?1:.3}"><path d="M34,${y0}L${bx},${by}" class="scan-path"/><circle cx="23" cy="${cy}" r="1.6" class="scan-contact"/><path d="M23,${cy}L${bx},${by}" class="scan-probe"/><rect x="${bx}" y="${by-3}" width="11" height="6" rx="1" transform="rotate(${angle} ${bx} ${by})" class="scan-body"/></g>${arrow(61,y0,61,down?31:14,'scan-move')}<text x="51" y="26" text-anchor="middle" class="scan-label">${s.relativeDirection}</text>${arrow(29,40,40,40,'scan-press')}<text x="2" y="42" class="scan-label">押込＋</text><text x="44" y="42" class="scan-label">${s.normalDirection}</text></g>`;
 }
 
-function referenceCard(pair,m,before,display=referenceReading(pair,m),beforeDisplay=referenceReading(pair,before)){
- const s=m.setup,alignment=current.kind==='compact'?'測定Pの'+s.base+'局所送り接線':s.base+'の代表案内方向',reading=display.valid?squarenessMicronText(display.microns)+' µm':display.reason,teaching=display.gain!==1,span=m.startPosition===undefined?'':`${signed(m.startPosition*1000,1)} → ${signed(m.endPosition*1000,1)} mm（${s.scan}部材位置・中央0）`;
- return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${s.lathe?'主軸基準XZ':pair.key} <span>${reading}</span></h3><svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${s.artifact}と${s.body}の測定配置">${referenceDiagram(m)}</svg><p>${s.artifact}：${s.mount}上／計器：${s.body}に固定。${s.normalDirection}側からS面に接触。</p><p>① ${s.lathe?'回転中心線Zに直角な校正済みフランジ面を使用。往復台Z送りとは別。':'R面を開始位置の'+alignment+'に平行に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。'}<br>② ${s.zeroLocation}の●0でゼロ合わせ。<br>③ ${s.member}を部材${s.memberSign>0?'＋':'−'}${s.scan}・${s.scanDirection}へ300 mm（NC指令の符号ではありません）。基準器に対する計器は${s.relativeDirection}へ。測定子が本体へ${s.normalDirection}に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。</p><p>図の右＝${s.normalDirection}、図の上＝${s.positiveScanDirection}。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。${current.kind==='compact'?'「直角図のずれを強調」で本体の法線変位と測定子の傾きの強調を切り替えます。小型の模型姿勢と接触計算は実寸です。器具の寸法は強調を外しても模式図です。':'本体の法線変位と測定子の傾きを別々に誇張します。'}図の変位・傾きは枠内に制限します。${teaching?'図は元の接触配置を示し、数値の支持変化50倍とは別です。':'数値には誇張を掛けません。'}破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。</p><p>${span}。スライダーの現在位置と接触ゼロ位置は同じとは限りません。${m.valid?'':' '+m.reason}</p><p>${s.lathe?'現模型は手前側刃物台です。部材−Xは手前・径外向き。ゼロの絶対半径・実寸フランジは再現しません。':current.kind==='horizontal'?'Z走査のマスタ原点はパレット上面中心（支持基準から0.61 m）。模型と同じ点の移動・姿勢を使います。':current.kind==='compact'?'Y走査は模型の測定Pの移動を使います。':'この走査区間では取付部の姿勢が一定の代表点を使います。代表案内方向を、任意の取付高さの材料点接線や主軸回転中心線と同一視しません。実物の固定具寸法は再現しません。'}</p>${teaching?'<p>YZの数値は支持変化×50の教材値です。同じ個体・軸位置・寸法で全支持を同じ高さにした元の有限測定値を I0、現在の元の有限測定値を I とし、I0＋50×(I−I0) を表示します。固有誤差を含む I0 は増幅しません。元の有限測定値：'+(m.valid?squarenessMicronText(m.microns)+' µm':m.reason)+'。実測値や実機の調整感度ではありません。コラムの前後倒れは床に対する姿勢で、Y送りとZ送りが同じだけ傾く調整ではYZは変わりません。局所角度・調整評価・参考最良は元の計算値です。</p>':''}<p>初期支持状態：${beforeDisplay.valid?squarenessMicronText(beforeDisplay.microns)+' µm':beforeDisplay.reason}／現在：${reading}（同じ区間で各々ゼロ${teaching?'・ともに支持変化×50の教材値':''}）。</p><p>従来の局所角度差：${squarenessMicronText(pair.deviationMicroradians*.3)} µm／300 mm換算。上の表示値とは別です。</p></section>`;
+function referenceCard(pair,m,before,physical=m){
+ const display=m,beforeDisplay=before;
+ const s=m.setup,alignment=current.kind==='compact'?'測定Pの'+s.base+'局所送り接線':s.base+'の代表案内方向',reading=display.valid?squarenessMicronText(display.microns)+' µm':display.reason,teaching=current.kind==='compact',span=m.startPosition===undefined?'':`${signed(m.startPosition*1000,1)} → ${signed(m.endPosition*1000,1)} mm（${s.scan}部材位置・中央0）`;
+ return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${s.lathe?'主軸基準XZ':pair.key} <span>${reading}</span></h3><svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${s.artifact}と${s.body}の測定配置">${referenceDiagram(m)}</svg><p>${s.artifact}：${s.mount}上／計器：${s.body}に固定。${s.normalDirection}側からS面に接触。</p><p>① ${s.lathe?'回転中心線Zに直角な校正済みフランジ面を使用。往復台Z送りとは別。':'R面を開始位置の'+alignment+'に平行に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。'}<br>② ${s.zeroLocation}の●0でゼロ合わせ。<br>③ ${s.member}を部材${s.memberSign>0?'＋':'−'}${s.scan}・${s.scanDirection}へ300 mm（NC指令の符号ではありません）。基準器に対する計器は${s.relativeDirection}へ。測定子が本体へ${s.normalDirection}に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。</p><p>図の右＝${s.normalDirection}、図の上＝${s.positiveScanDirection}。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。${current.kind==='compact'?'「直角図のずれを強調」で本体の法線変位と測定子の傾きの強調を切り替えます。小型の接触計算は、直角測定と触れに共通の仮想主軸姿勢を使います。模型と局所角度は元の姿勢です。器具の寸法は強調を外しても模式図です。':'本体の法線変位と測定子の傾きを別々に誇張します。'}図の変位・傾きは枠内に制限します。${teaching?'図と数値は同じ仮想測定姿勢から求めます。数値に後から倍率を掛けません。':'数値には誇張を掛けません。'}破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。</p><p>${span}。スライダーの現在位置と接触ゼロ位置は同じとは限りません。${m.valid?'':' '+m.reason}</p><p>${s.lathe?'現模型は手前側刃物台です。部材−Xは手前・径外向き。ゼロの絶対半径・実寸フランジは再現しません。':current.kind==='horizontal'?'Z走査のマスタ原点はパレット上面中心（支持基準から0.61 m）。模型と同じ点の移動・姿勢を使います。':current.kind==='compact'?'Y走査は模型の測定Pの移動を使います。':'この走査区間では取付部の姿勢が一定の代表点を使います。代表案内方向を、任意の取付高さの材料点接線や主軸回転中心線と同一視しません。実物の固定具寸法は再現しません。'}</p>${teaching?'<p>小型は前後の支持応答を中央位置で約5倍とする共通の仮想主軸姿勢です。支持のみの中央YZ角差δに対して、主軸とZ送りを基準X軸まわりに追加で4δ回し、300 mmの走査と直径300 mmの触れをそれぞれ接触から計算します。固有誤差は増幅しません。補正姿勢は支持・寸法ごとに固定し、テーブル送りで変えません。全位置の数値が厳密に5倍になる仕様ではありません。中央以外ではXZにも微小な交差影響があります。元の有限測定値：'+(physical.valid?squarenessMicronText(physical.microns)+' µm':physical.reason)+'。実機感度の再現ではありません。共通の剛体傾斜では補正せず、模型・局所角度・調整評価・参考最良は元の計算です。</p>':''}<p>初期支持状態：${beforeDisplay.valid?squarenessMicronText(beforeDisplay.microns)+' µm':beforeDisplay.reason}／現在：${reading}（同じ区間で各々ゼロ${teaching?'・ともに共通の仮想主軸姿勢':''}）。</p><p>従来の局所角度差：${squarenessMicronText(pair.deviationMicroradians*.3)} µm／300 mm換算。上の表示値とは別です。</p></section>`;
 }

@@ -1,0 +1,16 @@
+{
+  "checks": 2755,
+  "cases": 120,
+  "maxContactErrorMicrons": 5.684341886080802e-14,
+  "maxXZCrossChangeMicrons": 0.00003008130727266689,
+  "coarse": {
+    "yz": -0.11957290724576275,
+    "sweep": [
+      -0.4114297735146586,
+      -0.11973450255518614,
+      0.29169527095947956,
+      0
+    ]
+  },
+  "scope": "independent virtual plane/probe coherence, not proof of real-machine elasticity"
+}

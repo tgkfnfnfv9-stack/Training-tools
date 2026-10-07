@@ -1,0 +1,781 @@
+{
+  "input": "/tmp/coupled-yz-before.html",
+  "label": "before",
+  "sha256": "7aa897d8d82b4793d0763e5f31da021431328151aa667517fa34631bbe4a2924",
+  "checks": [
+    {
+      "name": "1280: no additional column panel",
+      "ok": true
+    },
+    {
+      "name": "1280: ten real coarse clicks change A by .1 mm",
+      "ok": true,
+      "detail": [
+        0.1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1280: front zero retained",
+      "ok": true
+    },
+    {
+      "name": "1280: ten-click roundtrip restores values",
+      "ok": true
+    },
+    {
+      "name": "1280/0: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "1280/0: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "1280/0: fine .001",
+      "ok": true
+    },
+    {
+      "name": "1280/0: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "1280/0: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "1280/1: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "1280/1: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "1280/1: fine .001",
+      "ok": true
+    },
+    {
+      "name": "1280/1: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "1280/1: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "1280/2: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "1280/2: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "1280/2: fine .001",
+      "ok": true
+    },
+    {
+      "name": "1280/2: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "1280/2: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "1280/3: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "1280/3: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "1280/3: fine .001",
+      "ok": true
+    },
+    {
+      "name": "1280/3: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "1280/3: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "1280: support buttons minimum 24px",
+      "ok": true,
+      "detail": [
+        {
+          "height": 44,
+          "width": 72,
+          "top": 859,
+          "bottom": 903
+        },
+        {
+          "height": 44,
+          "width": 72,
+          "top": 859,
+          "bottom": 903
+        },
+        {
+          "height": 44,
+          "width": 72,
+          "top": 859,
+          "bottom": 903
+        },
+        {
+          "height": 44,
+          "width": 72,
+          "top": 859,
+          "bottom": 903
+        }
+      ]
+    },
+    {
+      "name": "1280: viewport not horizontally overflowing",
+      "ok": true
+    },
+    {
+      "name": "390: no additional column panel",
+      "ok": true
+    },
+    {
+      "name": "390: ten real coarse clicks change A by .1 mm",
+      "ok": true,
+      "detail": [
+        0.1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "390: front zero retained",
+      "ok": true
+    },
+    {
+      "name": "390: ten-click roundtrip restores values",
+      "ok": true
+    },
+    {
+      "name": "390/0: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "390/0: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "390/0: fine .001",
+      "ok": true
+    },
+    {
+      "name": "390/0: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "390/0: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "390/1: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "390/1: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "390/1: fine .001",
+      "ok": true
+    },
+    {
+      "name": "390/1: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "390/1: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "390/2: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "390/2: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "390/2: fine .001",
+      "ok": true
+    },
+    {
+      "name": "390/2: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "390/2: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "390/3: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "390/3: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "390/3: fine .001",
+      "ok": true
+    },
+    {
+      "name": "390/3: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "390/3: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "390: support buttons minimum 24px",
+      "ok": true,
+      "detail": [
+        {
+          "height": 44,
+          "width": 72,
+          "top": 707.5625,
+          "bottom": 751.5625
+        },
+        {
+          "height": 44,
+          "width": 72,
+          "top": 707.5625,
+          "bottom": 751.5625
+        },
+        {
+          "height": 44,
+          "width": 72,
+          "top": 707.5625,
+          "bottom": 751.5625
+        },
+        {
+          "height": 44,
+          "width": 72,
+          "top": 707.5625,
+          "bottom": 751.5625
+        }
+      ]
+    },
+    {
+      "name": "390: viewport not horizontally overflowing",
+      "ok": true
+    },
+    {
+      "name": "320: no additional column panel",
+      "ok": true
+    },
+    {
+      "name": "320: ten real coarse clicks change A by .1 mm",
+      "ok": true,
+      "detail": [
+        0.1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "320: front zero retained",
+      "ok": true
+    },
+    {
+      "name": "320: ten-click roundtrip restores values",
+      "ok": true
+    },
+    {
+      "name": "320/0: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "320/0: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "320/0: fine .001",
+      "ok": true
+    },
+    {
+      "name": "320/0: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "320/0: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "320/1: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "320/1: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "320/1: fine .001",
+      "ok": true
+    },
+    {
+      "name": "320/1: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "320/1: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "320/2: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "320/2: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "320/2: fine .001",
+      "ok": true
+    },
+    {
+      "name": "320/2: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "320/2: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "320/3: coarse .01",
+      "ok": true
+    },
+    {
+      "name": "320/3: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "320/3: fine .001",
+      "ok": true
+    },
+    {
+      "name": "320/3: fine finite response",
+      "ok": true
+    },
+    {
+      "name": "320/3: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "320: support buttons minimum 24px",
+      "ok": true,
+      "detail": [
+        {
+          "height": 44,
+          "width": 70.5,
+          "top": 473,
+          "bottom": 517
+        },
+        {
+          "height": 44,
+          "width": 70.5,
+          "top": 473,
+          "bottom": 517
+        },
+        {
+          "height": 44,
+          "width": 70.5,
+          "top": 473,
+          "bottom": 517
+        },
+        {
+          "height": 44,
+          "width": 70.5,
+          "top": 473,
+          "bottom": 517
+        }
+      ]
+    },
+    {
+      "name": "320: viewport not horizontally overflowing",
+      "ok": true
+    },
+    {
+      "name": "camera zoom emphasis values invariant",
+      "ok": true
+    },
+    {
+      "name": "front off-table case reached",
+      "ok": true,
+      "detail": {
+        "kind": "compact",
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "step": 0.01,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.99999993344738,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 14.999999993750915,
+            "text": "+15"
+          }
+        ],
+        "sweep": [
+          {
+            "value": null,
+            "text": "—"
+          },
+          {
+            "value": null,
+            "text": "—"
+          },
+          {
+            "value": null,
+            "text": "—"
+          },
+          {
+            "value": null,
+            "text": "面外"
+          }
+        ],
+        "panelHidden": false,
+        "columnInset": false
+      }
+    },
+    {
+      "name": "front off-table suppresses all four values",
+      "ok": true
+    },
+    {
+      "name": "saved record valid",
+      "ok": true
+    },
+    {
+      "name": "save load reproduces measurements",
+      "ok": true
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "states": [
+    {
+      "width": 1280,
+      "before": {
+        "kind": "compact",
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "step": 0.01,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 14.999999993750915,
+            "text": "+15"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -30.004125542191495,
+            "text": "-30"
+          },
+          {
+            "value": 14.991750571763944,
+            "text": "+15"
+          },
+          {
+            "value": 44.99587611395544,
+            "text": "+45"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          }
+        ],
+        "panelHidden": false,
+        "columnInset": false
+      },
+      "after": {
+        "kind": "compact",
+        "heights": [
+          0.1,
+          0,
+          0,
+          0
+        ],
+        "step": 0.01,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 36.338680494301876,
+            "text": "+36"
+          },
+          {
+            "pair": "XZ",
+            "value": -82.03124896974563,
+            "text": "-82"
+          },
+          {
+            "pair": "YZ",
+            "value": 3.1108666500422686,
+            "text": "+3"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -33.63948527178138,
+            "text": "-34"
+          },
+          {
+            "value": 14.752281600945217,
+            "text": "+15"
+          },
+          {
+            "value": 48.391766872726606,
+            "text": "+48"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          }
+        ],
+        "panelHidden": false,
+        "columnInset": false
+      }
+    },
+    {
+      "width": 390,
+      "before": {
+        "kind": "compact",
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "step": 0.01,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 14.999999993750915,
+            "text": "+15"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -30.004125542191495,
+            "text": "-30"
+          },
+          {
+            "value": 14.991750571763944,
+            "text": "+15"
+          },
+          {
+            "value": 44.99587611395544,
+            "text": "+45"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          }
+        ],
+        "panelHidden": false,
+        "columnInset": false
+      },
+      "after": {
+        "kind": "compact",
+        "heights": [
+          0.1,
+          0,
+          0,
+          0
+        ],
+        "step": 0.01,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 36.338680494301876,
+            "text": "+36"
+          },
+          {
+            "pair": "XZ",
+            "value": -82.03124896974563,
+            "text": "-82"
+          },
+          {
+            "pair": "YZ",
+            "value": 3.1108666500422686,
+            "text": "+3"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -33.63948527178138,
+            "text": "-34"
+          },
+          {
+            "value": 14.752281600945217,
+            "text": "+15"
+          },
+          {
+            "value": 48.391766872726606,
+            "text": "+48"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          }
+        ],
+        "panelHidden": false,
+        "columnInset": false
+      }
+    },
+    {
+      "width": 320,
+      "before": {
+        "kind": "compact",
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "step": 0.01,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 14.999999993750915,
+            "text": "+15"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -30.004125542191495,
+            "text": "-30"
+          },
+          {
+            "value": 14.991750571763944,
+            "text": "+15"
+          },
+          {
+            "value": 44.99587611395544,
+            "text": "+45"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          }
+        ],
+        "panelHidden": false,
+        "columnInset": false
+      },
+      "after": {
+        "kind": "compact",
+        "heights": [
+          0.1,
+          0,
+          0,
+          0
+        ],
+        "step": 0.01,
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 36.338680494301876,
+            "text": "+36"
+          },
+          {
+            "pair": "XZ",
+            "value": -82.03124896974563,
+            "text": "-82"
+          },
+          {
+            "pair": "YZ",
+            "value": 3.1108666500422686,
+            "text": "+3"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -33.63948527178138,
+            "text": "-34"
+          },
+          {
+            "value": 14.752281600945217,
+            "text": "+15"
+          },
+          {
+            "value": 48.391766872726606,
+            "text": "+48"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          }
+        ],
+        "panelHidden": false,
+        "columnInset": false
+      }
+    }
+  ],
+  "errors": []
+}

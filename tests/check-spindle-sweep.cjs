@@ -96,12 +96,22 @@ function actualModelVectors(env=e){
   return {table:v,spindle:cylinder};
  })()`);
 }
-function drawnIndependentReadings(env=e){
+function drawnIndependentReadings(env=e,teaching=false){
  const model=actualModelVectors(env),p=model.table;
  let n=unit(cross(sub(p[1],p[0]),sub(p[2],p[0])));if(n[1]<0)n=n.map(v=>-v);
- const axis=unit(sub(model.spindle[1],model.spindle[0]));
+ let axis=unit(sub(model.spindle[1],model.spindle[0]));
  // The exact physical right mark is a point of the same rigid spindle body.
- const rightPoints=env.json(`[[0,2.37,-.3],[1,2.37,-.3]].map(p=>levelMappedBodyVisualPoint(displayTransformedPoint(p,['Z'],current,positions,'tool'),'tool'))`),right=unit(sub(rightPoints[1],rightPoints[0]));
+ const rightPoints=env.json(`[[0,2.37,-.3],[1,2.37,-.3]].map(p=>levelMappedBodyVisualPoint(displayTransformedPoint(p,['Z'],current,positions,'tool'),'tool'))`);let right=unit(sub(rightPoints[1],rightPoints[0]));
+ if(teaching){
+  // Independent central-datum construction: project physical Y/Z into the
+  // plane perpendicular to physical X. asin of their normalized dot gives
+  // the small signed right-angle error. No product teaching helper is read.
+  const directions=env.json('geometryModel({X:0,Y:0,Z:0,A:0,C:0},levelSolution,null,.3).directions');
+  const x=directions.find(a=>a.key==='X').direction,project=key=>{const v=directions.find(a=>a.key===key).direction;return unit(v.map((q,i)=>q-x[i]*dot(v,x)));};
+  const angle=4*Math.asin(dot(project('Y'),project('Z'))),u=unit(cross([0,0,1],x)),v=cross(x,u),c=Math.cos(angle),s=Math.sin(angle);
+  const turn=p=>{const px=dot(p,x),pu=dot(p,u),pv=dot(p,v);return x.map((q,i)=>q*px+u[i]*(pu*c-pv*s)+v[i]*(pu*s+pv*c));};
+  axis=turn(axis);right=turn(right);
+ }
  const back=unit(cross(right,axis));
  // A rotation to the spindle's own orthogonal coordinates turns the drawn
  // table into a simple plane y = px + qz, independently sampled from vertices.
@@ -170,8 +180,8 @@ surface('i===2?.2:0',zero,live);const modeRecord=live.json('levelRecord()');
 check('compact machine shows squareness and four-position readings simultaneously',()=>{assert.equal(live.read('spindleSweepMode'),true);assert.equal(live.registry.spindleSweepPanel.hidden,false);assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.liveSquarenessUnits.hidden,false);assert.equal(live.registry.squarenessValuesNote.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.equal(live.registry.toggleSpindleSweep,undefined);});
 check('UI four positions retain directions without angle notation',()=>{for(let i=0;i<4;i++){const button=live.registry['sweepPosition'+i],label=button.getAttribute('aria-label');assert.match(label,new RegExp('^'+['右','奥','左','手前'][i]));assert.doesNotMatch(label+button.textContent,/°|(?:0|90|180|270)度/);}});
 const uiValues=()=>Array.from({length:4},(_,i)=>Number(live.registry['sweepValue'+i].getAttribute('data-reading-microns')));
-const displayed=geometryReading(live);
-check('all four displayed raw values equal independent actual-model geometry',()=>vectorNear(uiValues(),drawnIndependentReadings(live).readings,2e-7));
+const displayed=drawnIndependentReadings(live,true).readings;
+check('all four displayed values equal independent shared teaching-posture contact geometry',()=>vectorNear(uiValues(),displayed,2e-7));
 check('mode selection does not rewrite installation or profile data',()=>assert.deepEqual(live.json('levelRecord()'),modeRecord));
 for(let i=0;i<4;i++){
  live.registry['sweepPosition'+i].click();
@@ -180,7 +190,7 @@ for(let i=0;i<4;i++){
 check('round operation, dial pictures and duplicate current readout are removed',()=>{for(const id of ['runSpindleSweep','sweepDial','sweepCurrentAngle','sweepCurrentValue'])assert.equal(live.registry[id],undefined);for(const name of ['runSpindleSweep','stopSpindleSweep','spindleSweepTimer','spindleSweepProgress','sweepDialMarkup','drawSpindleSweep'])assert.equal(live.read('typeof '+name),'undefined');assert.equal(live.registry.spindleSweepPanel.querySelectorAll('svg').length,0);});
 check('selecting the four fixed points never starts an animation timer',()=>{const timers=live.timers.length;for(let i=0;i<4;i++)live.registry['sweepPosition'+i].click();assert.equal(live.timers.length,timers);vectorNear(uiValues(),displayed,1e-8);assert.deepEqual(live.json('levelRecord()'),modeRecord);});
 live.read('selected=2;');live.registry.raiseSupport.click();
-check('a support button immediately changes the dial readings through the common physical geometry',()=>{assert.ok(uiValues().some((v,i)=>Math.abs(v-displayed[i])>.001));vectorNear(uiValues(),drawnIndependentReadings(live).readings,2e-7);});
+check('a support button immediately changes the dial readings through the common teaching posture',()=>{assert.ok(uiValues().some((v,i)=>Math.abs(v-displayed[i])>.001));vectorNear(uiValues(),drawnIndependentReadings(live,true).readings,2e-7);});
 live.registry.lowerSupport.click();
 check('reverse support operation restores all visible dial readings',()=>vectorNear(uiValues(),displayed,1e-8));
 const plainReadings=uiValues();live.registry.exaggerate.checked=true;live.registry.exaggerate.onchange();
