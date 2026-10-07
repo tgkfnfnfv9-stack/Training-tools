@@ -1,0 +1,4592 @@
+{
+  "sha256": "ee66ef1994d2cebf59248fc4a0380e03bfcd3652af4e3ce16f16d81b9f058281",
+  "baseline": "2c2fd0e",
+  "checks": [
+    {
+      "name": "0-390: integer-only visible and accessible values",
+      "ok": true,
+      "detail": "根元 11 300 mm先 22 奥 前 -16 +5 -2 0 -3 -7 -3 -1 -10 傾き除去・左中0 差 20 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+    },
+    {
+      "name": "0-390: no horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "0-390: left middle is zero",
+      "ok": true,
+      "detail": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ]
+    },
+    {
+      "name": "0-390: six-machine page enabled",
+      "ok": true
+    },
+    {
+      "name": "0-390: support adjustment cannot change intrinsic model/profile/text",
+      "ok": true
+    },
+    {
+      "name": "symmetric signed integer rounding; no signed zero",
+      "ok": true,
+      "detail": [
+        "-1",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "+1",
+        "+1"
+      ]
+    },
+    {
+      "name": "right mouse drag restores page one",
+      "ok": true
+    },
+    {
+      "name": "left mouse drag opens intrinsic page",
+      "ok": true
+    },
+    {
+      "name": "0-390: model JSON and profile unchanged from published baseline",
+      "ok": true
+    },
+    {
+      "name": "0-390: saved profile/geometry payload unchanged",
+      "ok": true
+    },
+    {
+      "name": "0-390: existing measurement values untouched",
+      "ok": true
+    },
+    {
+      "name": "0-390: element geometry outside diagrams unchanged",
+      "ok": true
+    },
+    {
+      "name": "0-390: pixels outside new readings unchanged",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "1-390: integer-only visible and accessible values",
+      "ok": true,
+      "detail": "根元 11 300 mm先 22 奥 前 -16 +5 -2 0 -3 -7 -3 -1 -10 傾き除去・左中0 差 20 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存のZ方向平行度とは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存のZ方向平行度とは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+    },
+    {
+      "name": "1-390: no horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "1-390: left middle is zero",
+      "ok": true,
+      "detail": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ]
+    },
+    {
+      "name": "1-390: six-machine page enabled",
+      "ok": true
+    },
+    {
+      "name": "1-390: support adjustment cannot change intrinsic model/profile/text",
+      "ok": true
+    },
+    {
+      "name": "1-390: model JSON and profile unchanged from published baseline",
+      "ok": true
+    },
+    {
+      "name": "1-390: saved profile/geometry payload unchanged",
+      "ok": true
+    },
+    {
+      "name": "1-390: existing measurement values untouched",
+      "ok": true
+    },
+    {
+      "name": "1-390: element geometry outside diagrams unchanged",
+      "ok": true
+    },
+    {
+      "name": "1-390: pixels outside new readings unchanged",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "2-390: integer-only visible and accessible values",
+      "ok": true,
+      "detail": "根元 11 300 mm先 22 奥 前 -16 +5 -2 0 -3 -7 -3 -1 -10 傾き除去・左中0 差 20 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+    },
+    {
+      "name": "2-390: no horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "2-390: left middle is zero",
+      "ok": true,
+      "detail": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ]
+    },
+    {
+      "name": "2-390: six-machine page enabled",
+      "ok": true
+    },
+    {
+      "name": "2-390: support adjustment cannot change intrinsic model/profile/text",
+      "ok": true
+    },
+    {
+      "name": "2-390: model JSON and profile unchanged from published baseline",
+      "ok": true
+    },
+    {
+      "name": "2-390: saved profile/geometry payload unchanged",
+      "ok": true
+    },
+    {
+      "name": "2-390: existing measurement values untouched",
+      "ok": true
+    },
+    {
+      "name": "2-390: element geometry outside diagrams unchanged",
+      "ok": true
+    },
+    {
+      "name": "2-390: pixels outside new readings unchanged",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "3-390: integer-only visible and accessible values",
+      "ok": true,
+      "detail": "根元 11 300 mm先 22 奥 前 -16 +5 -2 0 -3 -7 -3 -1 -10 傾き除去・左中0 差 20 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+    },
+    {
+      "name": "3-390: no horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "3-390: left middle is zero",
+      "ok": true,
+      "detail": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ]
+    },
+    {
+      "name": "3-390: six-machine page enabled",
+      "ok": true
+    },
+    {
+      "name": "3-390: support adjustment cannot change intrinsic model/profile/text",
+      "ok": true
+    },
+    {
+      "name": "3-390: model JSON and profile unchanged from published baseline",
+      "ok": true
+    },
+    {
+      "name": "3-390: saved profile/geometry payload unchanged",
+      "ok": true
+    },
+    {
+      "name": "3-390: existing measurement values untouched",
+      "ok": true
+    },
+    {
+      "name": "3-390: element geometry outside diagrams unchanged",
+      "ok": true
+    },
+    {
+      "name": "3-390: pixels outside new readings unchanged",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "4-390: integer-only visible and accessible values",
+      "ok": true,
+      "detail": "根元 11 300 mm先 22 奥 前 -16 +5 -2 0 -3 -7 -3 -1 -10 傾き除去・左中0 差 20 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+    },
+    {
+      "name": "4-390: no horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "4-390: left middle is zero",
+      "ok": true,
+      "detail": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ]
+    },
+    {
+      "name": "4-390: six-machine page enabled",
+      "ok": true
+    },
+    {
+      "name": "4-390: support adjustment cannot change intrinsic model/profile/text",
+      "ok": true
+    },
+    {
+      "name": "4-390: model JSON and profile unchanged from published baseline",
+      "ok": true
+    },
+    {
+      "name": "4-390: saved profile/geometry payload unchanged",
+      "ok": true
+    },
+    {
+      "name": "4-390: existing measurement values untouched",
+      "ok": true
+    },
+    {
+      "name": "4-390: element geometry outside diagrams unchanged",
+      "ok": true
+    },
+    {
+      "name": "4-390: pixels outside new readings unchanged",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "5-390: integer-only visible and accessible values",
+      "ok": true,
+      "detail": "根元 11 300 mm先 22 奥 前 -16 +5 -2 0 -3 -7 -3 -1 -10 傾き除去・左中0・A=C=0 差 20 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。5軸はA=C=0の基準姿勢。支持による変形や測定時の傾きは含めません。 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。5軸はA=C=0の基準姿勢。支持による変形や測定時の傾きは含めません。"
+    },
+    {
+      "name": "5-390: no horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "5-390: left middle is zero",
+      "ok": true,
+      "detail": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0・A=C=0",
+        "差 20"
+      ]
+    },
+    {
+      "name": "5-390: six-machine page enabled",
+      "ok": true
+    },
+    {
+      "name": "5-390: support adjustment cannot change intrinsic model/profile/text",
+      "ok": true
+    },
+    {
+      "name": "5-390: model JSON and profile unchanged from published baseline",
+      "ok": true
+    },
+    {
+      "name": "5-390: saved profile/geometry payload unchanged",
+      "ok": true
+    },
+    {
+      "name": "5-390: existing measurement values untouched",
+      "ok": true
+    },
+    {
+      "name": "5-390: element geometry outside diagrams unchanged",
+      "ok": true
+    },
+    {
+      "name": "5-390: pixels outside new readings unchanged",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "0-320: integer-only visible and accessible values",
+      "ok": true,
+      "detail": "根元 11 300 mm先 22 奥 前 -16 +5 -2 0 -3 -7 -3 -1 -10 傾き除去・左中0 差 20 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+    },
+    {
+      "name": "0-320: no horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "0-320: left middle is zero",
+      "ok": true,
+      "detail": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ]
+    },
+    {
+      "name": "0-320: six-machine page enabled",
+      "ok": true
+    },
+    {
+      "name": "0-320: support adjustment cannot change intrinsic model/profile/text",
+      "ok": true
+    },
+    {
+      "name": "0-320: model JSON and profile unchanged from published baseline",
+      "ok": true
+    },
+    {
+      "name": "0-320: saved profile/geometry payload unchanged",
+      "ok": true
+    },
+    {
+      "name": "0-320: existing measurement values untouched",
+      "ok": true
+    },
+    {
+      "name": "0-320: element geometry outside diagrams unchanged",
+      "ok": true
+    },
+    {
+      "name": "0-320: pixels outside new readings unchanged",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "1-1280: integer-only visible and accessible values",
+      "ok": true,
+      "detail": "根元 11 300 mm先 22 奥 前 -16 +5 -2 0 -3 -7 -3 -1 -10 傾き除去・左中0 差 20 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存のZ方向平行度とは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。 主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存のZ方向平行度とは別の固有成分です。 テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+    },
+    {
+      "name": "1-1280: no horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "1-1280: left middle is zero",
+      "ok": true,
+      "detail": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ]
+    },
+    {
+      "name": "1-1280: six-machine page enabled",
+      "ok": true
+    },
+    {
+      "name": "1-1280: support adjustment cannot change intrinsic model/profile/text",
+      "ok": true
+    },
+    {
+      "name": "1-1280: model JSON and profile unchanged from published baseline",
+      "ok": true
+    },
+    {
+      "name": "1-1280: saved profile/geometry payload unchanged",
+      "ok": true
+    },
+    {
+      "name": "1-1280: existing measurement values untouched",
+      "ok": true
+    },
+    {
+      "name": "1-1280: element geometry outside diagrams unchanged",
+      "ok": true
+    },
+    {
+      "name": "1-1280: pixels outside new readings unchanged",
+      "ok": true,
+      "detail": 0
+    },
+    {
+      "name": "no browser errors",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "states": [
+    {
+      "name": "0-390",
+      "profile": "{\"version\":1,\"condition\":\"used\",\"seed\":234567,\"keys\":[\"X\",\"Y\",\"Z\"],\"squareness\":{\"XY\":{\"band\":0,\"microns\":-14.991},\"XZ\":{\"band\":0,\"microns\":12.34},\"YZ\":{\"band\":2,\"microns\":-120.863}},\"guides\":{\"X\":{\"band\":2,\"microns\":136.764},\"Y\":{\"band\":0,\"microns\":19.072},\"Z\":{\"band\":0,\"microns\":13.882}},\"initialHeights\":[-0.15,0.15,0.099,-0.079]}",
+      "model": "{\"model\":\"intrinsic-inspection-v1\",\"seed\":234567,\"condition\":\"used\",\"runout\":{\"rootMicrons\":10.927929007913917,\"tipMicrons\":22.44098029202759,\"lengthMm\":300,\"eccentricityMicrons\":[5.4249733560649585,-0.6515920399198516],\"tiltMicroradians\":[2.6998201281294585,33.26773581806856]},\"surface\":{\"points\":[{\"x\":-1,\"back\":1,\"microns\":-15.950488310307264},{\"x\":0,\"back\":1,\"microns\":4.529219064861537},{\"x\":1,\"back\":1,\"microns\":-2.2781004849821325},{\"x\":-1,\"back\":0,\"microns\":0},{\"x\":0,\"back\":0,\"microns\":-3.3291032463312145},{\"x\":1,\"back\":0,\"microns\":-7.0486332681030035},{\"x\":-1,\"back\":-1,\"microns\":-3.1587632838636632},{\"x\":0,\"back\":-1,\"microns\":-0.7580886054784055},{\"x\":1,\"back\":-1,\"microns\":-9.782517841085792}],\"referenceIndex\":3,\"rangeMicrons\":20.4797073751688,\"method\":\"least-squares-plane-residual\",\"plane\":{\"meanMicrons\":0.7928235034147898,\"slopeXMicrons\":-1.9648163057863712,\"slopeBackMicrons\":-0.17505037784576416}}}",
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 234567,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": -14.991
+            },
+            "XZ": {
+              "band": 0,
+              "microns": 12.34
+            },
+            "YZ": {
+              "band": 2,
+              "microns": -120.863
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 2,
+              "microns": 136.764
+            },
+            "Y": {
+              "band": 0,
+              "microns": 19.072
+            },
+            "Z": {
+              "band": 0,
+              "microns": 13.882
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.099,
+            -0.079
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.007,
+            0.002,
+            0.002,
+            -0.007
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          -0.02,
+          0.03,
+          -0.02,
+          0.03
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "text": "主軸振れ 回転TIR・µm\n根元 11\n300 mm先 22\n上面精度 9点高さ差・µm\n奥\n前\n-16\n+5\n-2\n0\n-3\n-7\n-3\n-1\n-10\n傾き除去・左中0\n差 20\n\n固有成分・レベル調整では不変",
+      "texts": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ],
+      "aria": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "title": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "region": {
+        "x": 6,
+        "y": 103,
+        "width": 378,
+        "height": 79
+      },
+      "outside": {
+        "siteNav": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 48
+        },
+        "navHome": {
+          "x": 8,
+          "y": 0.5,
+          "width": 54.015625,
+          "height": 44
+        },
+        "changeMachine": {
+          "x": 64.015625,
+          "y": 0.5,
+          "width": 72.625,
+          "height": 44
+        },
+        "crumbs": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 243.359375,
+          "height": 27
+        },
+        "navCurrent": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 68.015625,
+          "height": 27
+        },
+        "training": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingShell": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMainSlot": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMain": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "openTrainingMenu": {
+          "x": 8,
+          "y": 52,
+          "width": 72,
+          "height": 44
+        },
+        "machineTitle": {
+          "x": 88,
+          "y": 63.5,
+          "width": 294,
+          "height": 21
+        },
+        "inspectionCarousel": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "inspectionViewport": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "precisionReadouts": {
+          "x": -372,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "measurementReferenceToggle": {
+          "x": -372,
+          "y": 106.5,
+          "width": 308,
+          "height": 72
+        },
+        "liveSquareness": {
+          "x": -372,
+          "y": 106.5,
+          "width": 308,
+          "height": 54
+        },
+        "liveSquarenessUnits": {
+          "x": -372,
+          "y": 160.5,
+          "width": 308,
+          "height": 10
+        },
+        "liveSquarenessName": {
+          "x": -300.515625,
+          "y": 159.5,
+          "width": 104,
+          "height": 11
+        },
+        "squarenessValuesNote": {
+          "x": -373,
+          "y": 169.5,
+          "width": 1,
+          "height": 1
+        },
+        "spindleSweepPanel": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepToggle": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepName": {
+          "x": -54,
+          "y": 113.5,
+          "width": 16,
+          "height": 10
+        },
+        "spindleSweepMini": {
+          "x": -36.515625,
+          "y": 106,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniSvg": {
+          "x": -36.515625,
+          "y": 106,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniZero": {
+          "x": -32.2890625,
+          "y": 122,
+          "width": 16.000091552734375,
+          "height": 9
+        },
+        "sweepReadout0": {
+          "x": -54,
+          "y": 132,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel0": {
+          "x": -54,
+          "y": 132,
+          "width": 36.296875,
+          "height": 12
+        },
+        "sweepValue0": {
+          "x": -15.703125,
+          "y": 132,
+          "width": 17.703125,
+          "height": 12
+        },
+        "sweepReadout1": {
+          "x": -54,
+          "y": 144,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel1": {
+          "x": -54,
+          "y": 144,
+          "width": 30.390625,
+          "height": 12
+        },
+        "sweepValue1": {
+          "x": -21.609375,
+          "y": 144,
+          "width": 23.609375,
+          "height": 12
+        },
+        "sweepReadout2": {
+          "x": -54,
+          "y": 156,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel2": {
+          "x": -54,
+          "y": 156,
+          "width": 36.296875,
+          "height": 12
+        },
+        "sweepValue2": {
+          "x": -15.703125,
+          "y": 156,
+          "width": 17.703125,
+          "height": 12
+        },
+        "sweepReadout3": {
+          "x": -54,
+          "y": 168,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel3": {
+          "x": -54,
+          "y": 168,
+          "width": 48.09375,
+          "height": 12
+        },
+        "sweepValue3": {
+          "x": -3.90625,
+          "y": 168,
+          "width": 5.90625,
+          "height": 12
+        },
+        "sweepMeasurementNote": {
+          "x": 319,
+          "y": 181,
+          "width": 1,
+          "height": 1
+        },
+        "inspectionPrevious": {
+          "x": 6,
+          "y": 170,
+          "width": 34,
+          "height": 12
+        },
+        "inspectionPageStatus": {
+          "x": 5,
+          "y": 181,
+          "width": 1,
+          "height": 1
+        },
+        "viewerLevels": {
+          "x": 302,
+          "y": 184,
+          "width": 88,
+          "height": 383.5625
+        },
+        "stageAverageLR": {
+          "x": 346.5,
+          "y": 300.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleLR": {
+          "x": 340.6875,
+          "y": 309.28125,
+          "width": 22,
+          "height": 14
+        },
+        "stageAverageFB": {
+          "x": 309,
+          "y": 350.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleFB": {
+          "x": 339.5,
+          "y": 405.28125,
+          "width": 14,
+          "height": 22
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 383.5625
+        },
+        "scene": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 383.5625
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 567.5625,
+          "width": 390,
+          "height": 57
+        },
+        "axisTabs": {
+          "x": 127,
+          "y": 574.5625,
+          "width": 136,
+          "height": 44
+        },
+        "axisDemoStatus": {
+          "x": -1,
+          "y": 100,
+          "width": 1,
+          "height": 1
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 624.5625,
+          "width": 390,
+          "height": 219.4375
+        },
+        "adjustmentSelectionScroll": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 374,
+          "height": 152.4375
+        },
+        "coarseAdjust": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "fineAdjust": {
+          "x": 194,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "selectedSupportLabel": {
+          "x": 8,
+          "y": 683.5625,
+          "width": 364,
+          "height": 18
+        },
+        "supportMap": {
+          "x": 8,
+          "y": 707.5625,
+          "width": 364,
+          "height": 44
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "raiseSupport": {
+          "x": 200,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "levelInputMessage": {
+          "x": 7,
+          "y": 632.5625,
+          "width": 1,
+          "height": 18
+        }
+      },
+      "legacy": [
+        "XY↑奥頭固定RS0奥押込＋右接触開始 0-15 µmXZ↑上頭固定RS0下押込＋右接触開始 0-12 µmYZ↑上頭固定RS0下押込＋奥接触開始 0+121 µm",
+        "\n触れ手前0µm右+54奥+121左+67手前 基準0主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。小型では直角測定と同じ仮想主軸姿勢を使い、前後の支持応答を中央で約5倍にします。右・奥・左はその姿勢から再計算し、手前は0です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。"
+      ],
+      "page": 1,
+      "overflow": false
+    },
+    {
+      "name": "1-390",
+      "profile": "{\"version\":1,\"condition\":\"used\",\"seed\":234567,\"keys\":[\"X\",\"Y\",\"Z\"],\"squareness\":{\"XY\":{\"band\":0,\"microns\":-14.991},\"XZ\":{\"band\":0,\"microns\":12.34},\"YZ\":{\"band\":2,\"microns\":-120.863}},\"guides\":{\"X\":{\"band\":2,\"microns\":136.764},\"Y\":{\"band\":0,\"microns\":19.072},\"Z\":{\"band\":0,\"microns\":13.882}},\"initialHeights\":[-0.15,0.15,0.099,-0.079,0.029,-0.105,0.064,-0.103]}",
+      "model": "{\"model\":\"intrinsic-inspection-v1\",\"seed\":234567,\"condition\":\"used\",\"runout\":{\"rootMicrons\":10.927929007913917,\"tipMicrons\":22.44098029202759,\"lengthMm\":300,\"eccentricityMicrons\":[5.4249733560649585,-0.6515920399198516],\"tiltMicroradians\":[2.6998201281294585,33.26773581806856]},\"surface\":{\"points\":[{\"x\":-1,\"back\":1,\"microns\":-15.950488310307264},{\"x\":0,\"back\":1,\"microns\":4.529219064861537},{\"x\":1,\"back\":1,\"microns\":-2.2781004849821325},{\"x\":-1,\"back\":0,\"microns\":0},{\"x\":0,\"back\":0,\"microns\":-3.3291032463312145},{\"x\":1,\"back\":0,\"microns\":-7.0486332681030035},{\"x\":-1,\"back\":-1,\"microns\":-3.1587632838636632},{\"x\":0,\"back\":-1,\"microns\":-0.7580886054784055},{\"x\":1,\"back\":-1,\"microns\":-9.782517841085792}],\"referenceIndex\":3,\"rangeMicrons\":20.4797073751688,\"method\":\"least-squares-plane-residual\",\"plane\":{\"meanMicrons\":0.7928235034147898,\"slopeXMicrons\":-1.9648163057863712,\"slopeBackMicrons\":-0.17505037784576416}}}",
+      "record": {
+        "calculationModel": "horizontal-guide-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "haas-ec630-ngc-eight-v1",
+          "points": [
+            {
+              "id": "haas-ec630-ngc-eight-v1-p1",
+              "x": -1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p2",
+              "x": 1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p3",
+              "x": -1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p4",
+              "x": 1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p5",
+              "x": -1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p6",
+              "x": 1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p7",
+              "x": -1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p8",
+              "x": 1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 234567,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": -14.991
+            },
+            "XZ": {
+              "band": 0,
+              "microns": 12.34
+            },
+            "YZ": {
+              "band": 2,
+              "microns": -120.863
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 2,
+              "microns": 136.764
+            },
+            "Y": {
+              "band": 0,
+              "microns": 19.072
+            },
+            "Z": {
+              "band": 0,
+              "microns": 13.882
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.099,
+            -0.079,
+            0.029,
+            -0.105,
+            0.064,
+            -0.103
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 3.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.104,
+            0.196,
+            -0.009,
+            -0.027,
+            -0.179,
+            -0.192,
+            0.101,
+            0.123
+          ]
+        },
+        "machine": "horizontal",
+        "mode": "",
+        "width": 2.72,
+        "depth": 3.68,
+        "heights": [
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "text": "主軸振れ 回転TIR・µm\n根元 11\n300 mm先 22\n上面精度 9点高さ差・µm\n奥\n前\n-16\n+5\n-2\n0\n-3\n-7\n-3\n-1\n-10\n傾き除去・左中0\n差 20\n\n固有成分・レベル調整では不変",
+      "texts": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ],
+      "aria": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存のZ方向平行度とは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "title": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存のZ方向平行度とは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "region": {
+        "x": 6,
+        "y": 103,
+        "width": 378,
+        "height": 77
+      },
+      "outside": {
+        "siteNav": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 48
+        },
+        "navHome": {
+          "x": 8,
+          "y": 0.5,
+          "width": 54.015625,
+          "height": 44
+        },
+        "changeMachine": {
+          "x": 64.015625,
+          "y": 0.5,
+          "width": 72.625,
+          "height": 44
+        },
+        "crumbs": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 243.359375,
+          "height": 27
+        },
+        "navCurrent": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 68.015625,
+          "height": 27
+        },
+        "training": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingShell": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMainSlot": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMain": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "openTrainingMenu": {
+          "x": 8,
+          "y": 52,
+          "width": 72,
+          "height": 44
+        },
+        "machineTitle": {
+          "x": 88,
+          "y": 63.5,
+          "width": 294,
+          "height": 21
+        },
+        "inspectionCarousel": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 77
+        },
+        "inspectionViewport": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 77
+        },
+        "precisionReadouts": {
+          "x": -372,
+          "y": 103,
+          "width": 378,
+          "height": 77
+        },
+        "measurementReferenceToggle": {
+          "x": -372,
+          "y": 105.5,
+          "width": 308,
+          "height": 72
+        },
+        "liveSquareness": {
+          "x": -372,
+          "y": 105.5,
+          "width": 308,
+          "height": 54
+        },
+        "liveSquarenessUnits": {
+          "x": -372,
+          "y": 159.5,
+          "width": 308,
+          "height": 10
+        },
+        "liveSquarenessName": {
+          "x": -264.515625,
+          "y": 158.5,
+          "width": 32,
+          "height": 11
+        },
+        "squarenessValuesNote": {
+          "x": -373,
+          "y": 168.5,
+          "width": 1,
+          "height": 1
+        },
+        "spindleSweepPanel": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 77
+        },
+        "spindleSweepToggle": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 77
+        },
+        "spindleSweepName": {
+          "x": -54,
+          "y": 105,
+          "width": 20.90625,
+          "height": 10
+        },
+        "sweepReadout0": {
+          "x": -54,
+          "y": 115,
+          "width": 56,
+          "height": 16
+        },
+        "sweepLabel0": {
+          "x": -54,
+          "y": 116,
+          "width": 38.5,
+          "height": 15
+        },
+        "sweepValue0": {
+          "x": -13.5,
+          "y": 115,
+          "width": 15.5,
+          "height": 15
+        },
+        "sweepReadout1": {
+          "x": -54,
+          "y": 131,
+          "width": 56,
+          "height": 16
+        },
+        "sweepLabel1": {
+          "x": -54,
+          "y": 132,
+          "width": 30.390625,
+          "height": 15
+        },
+        "sweepValue1": {
+          "x": -21.609375,
+          "y": 131,
+          "width": 23.609375,
+          "height": 15
+        },
+        "horizontalParallelMini": {
+          "x": -54,
+          "y": 147,
+          "width": 56,
+          "height": 31
+        },
+        "sweepMeasurementNote": {
+          "x": 319,
+          "y": 179,
+          "width": 1,
+          "height": 1
+        },
+        "inspectionPrevious": {
+          "x": 6,
+          "y": 168,
+          "width": 34,
+          "height": 12
+        },
+        "inspectionPageStatus": {
+          "x": 5,
+          "y": 179,
+          "width": 1,
+          "height": 1
+        },
+        "viewerLevels": {
+          "x": 302,
+          "y": 182,
+          "width": 88,
+          "height": 385.5625
+        },
+        "stageAverageLR": {
+          "x": 346.5,
+          "y": 299.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleLR": {
+          "x": 339.46875,
+          "y": 308.28125,
+          "width": 22,
+          "height": 14
+        },
+        "stageAverageFB": {
+          "x": 309,
+          "y": 349.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleFB": {
+          "x": 339.5,
+          "y": 404.28125,
+          "width": 14,
+          "height": 22
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 182,
+          "width": 302,
+          "height": 385.5625
+        },
+        "scene": {
+          "x": 0,
+          "y": 182,
+          "width": 302,
+          "height": 385.5625
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 567.5625,
+          "width": 390,
+          "height": 57
+        },
+        "axisTabs": {
+          "x": 127,
+          "y": 574.5625,
+          "width": 136,
+          "height": 44
+        },
+        "axisDemoStatus": {
+          "x": -1,
+          "y": 100,
+          "width": 1,
+          "height": 1
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 624.5625,
+          "width": 390,
+          "height": 219.4375
+        },
+        "adjustmentSelectionScroll": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 374,
+          "height": 152.4375
+        },
+        "coarseAdjust": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "fineAdjust": {
+          "x": 194,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "selectedSupportLabel": {
+          "x": 8,
+          "y": 683.5625,
+          "width": 364,
+          "height": 18
+        },
+        "supportMap": {
+          "x": 8,
+          "y": 707.5625,
+          "width": 364,
+          "height": 92
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "raiseSupport": {
+          "x": 200,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "levelInputMessage": {
+          "x": 7,
+          "y": 632.5625,
+          "width": 1,
+          "height": 18
+        }
+      },
+      "legacy": [
+        "XY↑上頭固定RS0上押込＋右接触開始 0-15 µmXZ↑奥頭固定RS0手前押込＋右接触開始 0-12 µmYZ↑奥頭固定RS0手前押込＋上接触開始 0+121 µm",
+        "\nZ平行µma 左右-13b 上下+121a 0b 00300 mm始点0走査300 mm横形のZ方向平行度。主軸固定のテストバーに対し、パレット上の計器を先端側から主軸側へ300 mm移動します。aは左側から右向きに接触、bは下側から上向きに接触します。始点でゼロ、プラスは測定子の押込み増加です。支持・軸位置の変更ごとにゼロを取り直します。主軸は回しません。取付け寸法や干渉を再現しない仮想配置です。"
+      ],
+      "page": 1,
+      "overflow": false
+    },
+    {
+      "name": "2-390",
+      "profile": "{\"version\":1,\"condition\":\"used\",\"seed\":234567,\"keys\":[\"X\",\"Y\",\"Z\"],\"squareness\":{\"XY\":{\"band\":0,\"microns\":-14.991},\"XZ\":{\"band\":0,\"microns\":12.34},\"YZ\":{\"band\":2,\"microns\":-120.863}},\"guides\":{\"X\":{\"band\":2,\"microns\":136.764},\"Y\":{\"band\":0,\"microns\":19.072},\"Z\":{\"band\":0,\"microns\":13.882}},\"initialHeights\":[-0.15,0.15,0.099,-0.079,0.029,-0.105]}",
+      "model": "{\"model\":\"intrinsic-inspection-v1\",\"seed\":234567,\"condition\":\"used\",\"runout\":{\"rootMicrons\":10.927929007913917,\"tipMicrons\":22.44098029202759,\"lengthMm\":300,\"eccentricityMicrons\":[5.4249733560649585,-0.6515920399198516],\"tiltMicroradians\":[2.6998201281294585,33.26773581806856]},\"surface\":{\"points\":[{\"x\":-1,\"back\":1,\"microns\":-15.950488310307264},{\"x\":0,\"back\":1,\"microns\":4.529219064861537},{\"x\":1,\"back\":1,\"microns\":-2.2781004849821325},{\"x\":-1,\"back\":0,\"microns\":0},{\"x\":0,\"back\":0,\"microns\":-3.3291032463312145},{\"x\":1,\"back\":0,\"microns\":-7.0486332681030035},{\"x\":-1,\"back\":-1,\"microns\":-3.1587632838636632},{\"x\":0,\"back\":-1,\"microns\":-0.7580886054784055},{\"x\":1,\"back\":-1,\"microns\":-9.782517841085792}],\"referenceIndex\":3,\"rangeMicrons\":20.4797073751688,\"method\":\"least-squares-plane-residual\",\"plane\":{\"meanMicrons\":0.7928235034147898,\"slopeXMicrons\":-1.9648163057863712,\"slopeBackMicrons\":-0.17505037784576416}}}",
+      "record": {
+        "calculationModel": "travel-guide-v2",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 234567,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": -14.991
+            },
+            "XZ": {
+              "band": 0,
+              "microns": 12.34
+            },
+            "YZ": {
+              "band": 2,
+              "microns": -120.863
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 2,
+              "microns": 136.764
+            },
+            "Y": {
+              "band": 0,
+              "microns": 19.072
+            },
+            "Z": {
+              "band": 0,
+              "microns": 13.882
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.099,
+            -0.079,
+            0.029,
+            -0.105
+          ]
+        },
+        "bestState": {
+          "width": 4.32,
+          "depth": 2.08,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.204,
+            0.029,
+            0.066,
+            0.077,
+            0.007,
+            -0.193
+          ]
+        },
+        "machine": "travel",
+        "mode": "",
+        "width": 4.32,
+        "depth": 2.08,
+        "heights": [
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "text": "主軸振れ 回転TIR・µm\n根元 11\n300 mm先 22\n上面精度 9点高さ差・µm\n奥\n前\n-16\n+5\n-2\n0\n-3\n-7\n-3\n-1\n-10\n傾き除去・左中0\n差 20\n\n固有成分・レベル調整では不変",
+      "texts": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ],
+      "aria": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "title": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "region": {
+        "x": 6,
+        "y": 103,
+        "width": 378,
+        "height": 79
+      },
+      "outside": {
+        "siteNav": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 48
+        },
+        "navHome": {
+          "x": 8,
+          "y": 0.5,
+          "width": 54.015625,
+          "height": 44
+        },
+        "changeMachine": {
+          "x": 64.015625,
+          "y": 0.5,
+          "width": 72.625,
+          "height": 44
+        },
+        "crumbs": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 243.359375,
+          "height": 27
+        },
+        "navCurrent": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 68.015625,
+          "height": 27
+        },
+        "training": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingShell": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMainSlot": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMain": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "openTrainingMenu": {
+          "x": 8,
+          "y": 52,
+          "width": 72,
+          "height": 44
+        },
+        "machineTitle": {
+          "x": 88,
+          "y": 63.5,
+          "width": 294,
+          "height": 21
+        },
+        "inspectionCarousel": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "inspectionViewport": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "precisionReadouts": {
+          "x": -372,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "measurementReferenceToggle": {
+          "x": -372,
+          "y": 106.5,
+          "width": 308,
+          "height": 72
+        },
+        "liveSquareness": {
+          "x": -372,
+          "y": 106.5,
+          "width": 308,
+          "height": 54
+        },
+        "liveSquarenessUnits": {
+          "x": -372,
+          "y": 160.5,
+          "width": 308,
+          "height": 10
+        },
+        "liveSquarenessName": {
+          "x": -264.515625,
+          "y": 159.5,
+          "width": 32,
+          "height": 11
+        },
+        "squarenessValuesNote": {
+          "x": -373,
+          "y": 169.5,
+          "width": 1,
+          "height": 1
+        },
+        "spindleSweepPanel": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepToggle": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepName": {
+          "x": -54,
+          "y": 113.5,
+          "width": 16,
+          "height": 10
+        },
+        "spindleSweepMini": {
+          "x": -36.515625,
+          "y": 106,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniSvg": {
+          "x": -36.515625,
+          "y": 106,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniZero": {
+          "x": -32.2890625,
+          "y": 122,
+          "width": 16.000091552734375,
+          "height": 9
+        },
+        "sweepReadout0": {
+          "x": -54,
+          "y": 132,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel0": {
+          "x": -54,
+          "y": 132,
+          "width": 36.296875,
+          "height": 12
+        },
+        "sweepValue0": {
+          "x": -15.703125,
+          "y": 132,
+          "width": 17.703125,
+          "height": 12
+        },
+        "sweepReadout1": {
+          "x": -54,
+          "y": 144,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel1": {
+          "x": -54,
+          "y": 144,
+          "width": 30.390625,
+          "height": 12
+        },
+        "sweepValue1": {
+          "x": -21.609375,
+          "y": 144,
+          "width": 23.609375,
+          "height": 12
+        },
+        "sweepReadout2": {
+          "x": -54,
+          "y": 156,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel2": {
+          "x": -54,
+          "y": 156,
+          "width": 36.296875,
+          "height": 12
+        },
+        "sweepValue2": {
+          "x": -15.703125,
+          "y": 156,
+          "width": 17.703125,
+          "height": 12
+        },
+        "sweepReadout3": {
+          "x": -54,
+          "y": 168,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel3": {
+          "x": -54,
+          "y": 168,
+          "width": 48.09375,
+          "height": 12
+        },
+        "sweepValue3": {
+          "x": -3.90625,
+          "y": 168,
+          "width": 5.90625,
+          "height": 12
+        },
+        "sweepMeasurementNote": {
+          "x": 319,
+          "y": 181,
+          "width": 1,
+          "height": 1
+        },
+        "inspectionPrevious": {
+          "x": 6,
+          "y": 170,
+          "width": 34,
+          "height": 12
+        },
+        "inspectionPageStatus": {
+          "x": 5,
+          "y": 181,
+          "width": 1,
+          "height": 1
+        },
+        "viewerLevels": {
+          "x": 302,
+          "y": 184,
+          "width": 88,
+          "height": 383.5625
+        },
+        "stageAverageLR": {
+          "x": 346.5,
+          "y": 300.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleLR": {
+          "x": 335.5,
+          "y": 309.28125,
+          "width": 22,
+          "height": 14
+        },
+        "stageAverageFB": {
+          "x": 309,
+          "y": 350.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleFB": {
+          "x": 339.5,
+          "y": 403.546875,
+          "width": 14,
+          "height": 22
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 383.5625
+        },
+        "scene": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 383.5625
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 567.5625,
+          "width": 390,
+          "height": 57
+        },
+        "axisTabs": {
+          "x": 127,
+          "y": 574.5625,
+          "width": 136,
+          "height": 44
+        },
+        "axisDemoStatus": {
+          "x": -1,
+          "y": 100,
+          "width": 1,
+          "height": 1
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 624.5625,
+          "width": 390,
+          "height": 219.4375
+        },
+        "adjustmentSelectionScroll": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 374,
+          "height": 152.4375
+        },
+        "coarseAdjust": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "fineAdjust": {
+          "x": 194,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "selectedSupportLabel": {
+          "x": 8,
+          "y": 683.5625,
+          "width": 364,
+          "height": 18
+        },
+        "supportMap": {
+          "x": 8,
+          "y": 707.5625,
+          "width": 364,
+          "height": 44
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "raiseSupport": {
+          "x": 200,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "levelInputMessage": {
+          "x": 7,
+          "y": 632.5625,
+          "width": 1,
+          "height": 18
+        }
+      },
+      "legacy": [
+        "XY↑奥頭固定RS0奥押込＋右接触開始 0-15 µmXZ↑上頭固定RS0下押込＋右接触開始 0-11 µmYZ↑上頭固定RS0下押込＋奥接触開始 0+121 µm",
+        "\n触れ手前0µm右+54奥+118左+64手前 基準0主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。小型では直角測定と同じ仮想主軸姿勢を使い、前後の支持応答を中央で約5倍にします。右・奥・左はその姿勢から再計算し、手前は0です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。"
+      ],
+      "page": 1,
+      "overflow": false
+    },
+    {
+      "name": "3-390",
+      "profile": "{\"version\":1,\"condition\":\"used\",\"seed\":234567,\"keys\":[\"X\",\"Y\",\"Z\"],\"squareness\":{\"XY\":{\"band\":0,\"microns\":-14.991},\"XZ\":{\"band\":0,\"microns\":12.34},\"YZ\":{\"band\":2,\"microns\":-120.863}},\"guides\":{\"X\":{\"band\":2,\"microns\":136.764},\"Y\":{\"band\":0,\"microns\":19.072},\"Z\":{\"band\":0,\"microns\":13.882}},\"initialHeights\":[-0.15,0.15,0.099,-0.079,0.029,-0.105,0.064,-0.103,-0.025,0.021,0.016,-0.103,-0.128,-0.148,-0.064]}",
+      "model": "{\"model\":\"intrinsic-inspection-v1\",\"seed\":234567,\"condition\":\"used\",\"runout\":{\"rootMicrons\":10.927929007913917,\"tipMicrons\":22.44098029202759,\"lengthMm\":300,\"eccentricityMicrons\":[5.4249733560649585,-0.6515920399198516],\"tiltMicroradians\":[2.6998201281294585,33.26773581806856]},\"surface\":{\"points\":[{\"x\":-1,\"back\":1,\"microns\":-15.950488310307264},{\"x\":0,\"back\":1,\"microns\":4.529219064861537},{\"x\":1,\"back\":1,\"microns\":-2.2781004849821325},{\"x\":-1,\"back\":0,\"microns\":0},{\"x\":0,\"back\":0,\"microns\":-3.3291032463312145},{\"x\":1,\"back\":0,\"microns\":-7.0486332681030035},{\"x\":-1,\"back\":-1,\"microns\":-3.1587632838636632},{\"x\":0,\"back\":-1,\"microns\":-0.7580886054784055},{\"x\":1,\"back\":-1,\"microns\":-9.782517841085792}],\"referenceIndex\":3,\"rangeMicrons\":20.4797073751688,\"method\":\"least-squares-plane-residual\",\"plane\":{\"meanMicrons\":0.7928235034147898,\"slopeXMicrons\":-1.9648163057863712,\"slopeBackMicrons\":-0.17505037784576416}}}",
+      "record": {
+        "calculationModel": "portal-shear-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "hwacheon-l3-3000-teaching-15point-v1",
+          "points": [
+            {
+              "id": "bed-left-1",
+              "x": -0.77,
+              "z": -3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-center-1",
+              "x": 0,
+              "z": -3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-right-1",
+              "x": 0.77,
+              "z": -3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-left-2",
+              "x": -0.77,
+              "z": 0.020000000000000018,
+              "group": "bed"
+            },
+            {
+              "id": "bed-center-2",
+              "x": 0,
+              "z": 0.020000000000000018,
+              "group": "bed"
+            },
+            {
+              "id": "bed-right-2",
+              "x": 0.77,
+              "z": 0.020000000000000018,
+              "group": "bed"
+            },
+            {
+              "id": "bed-left-3",
+              "x": -0.77,
+              "z": 3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-center-3",
+              "x": 0,
+              "z": 3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-right-3",
+              "x": 0.77,
+              "z": 3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "column-left-front",
+              "x": -1.06,
+              "z": 0.5449999999999999,
+              "group": "column-left"
+            },
+            {
+              "id": "column-left-back",
+              "x": -1.06,
+              "z": 1.0949999999999998,
+              "group": "column-left"
+            },
+            {
+              "id": "column-left-outer",
+              "x": -1.425,
+              "z": 0.8250000000000002,
+              "group": "column-left"
+            },
+            {
+              "id": "column-right-front",
+              "x": 1.06,
+              "z": 0.5449999999999999,
+              "group": "column-right"
+            },
+            {
+              "id": "column-right-back",
+              "x": 1.06,
+              "z": 1.0949999999999998,
+              "group": "column-right"
+            },
+            {
+              "id": "column-right-outer",
+              "x": 1.42,
+              "z": 0.8250000000000002,
+              "group": "column-right"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 234567,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": -14.991
+            },
+            "XZ": {
+              "band": 0,
+              "microns": 12.34
+            },
+            "YZ": {
+              "band": 2,
+              "microns": -120.863
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 2,
+              "microns": 136.764
+            },
+            "Y": {
+              "band": 0,
+              "microns": 19.072
+            },
+            "Z": {
+              "band": 0,
+              "microns": 13.882
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.099,
+            -0.079,
+            0.029,
+            -0.105,
+            0.064,
+            -0.103,
+            -0.025,
+            0.021,
+            0.016,
+            -0.103,
+            -0.128,
+            -0.148,
+            -0.064
+          ]
+        },
+        "bestState": {
+          "width": 2.85,
+          "depth": 6.84,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.498,
+            -0.39,
+            -0.096,
+            0.345,
+            -0.173,
+            0.122,
+            -0.307,
+            0.041,
+            0.335,
+            0.061,
+            0.07,
+            -0.245,
+            -0.021,
+            0.002,
+            -0.04
+          ]
+        },
+        "machine": "gate",
+        "mode": "l3-3000",
+        "width": 2.85,
+        "depth": 6.84,
+        "heights": [
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "text": "主軸振れ 回転TIR・µm\n根元 11\n300 mm先 22\n上面精度 9点高さ差・µm\n奥\n前\n-16\n+5\n-2\n0\n-3\n-7\n-3\n-1\n-10\n傾き除去・左中0\n差 20\n\n固有成分・レベル調整では不変",
+      "texts": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ],
+      "aria": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "title": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "region": {
+        "x": 6,
+        "y": 103,
+        "width": 378,
+        "height": 79
+      },
+      "outside": {
+        "siteNav": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 48
+        },
+        "navHome": {
+          "x": 8,
+          "y": 0.5,
+          "width": 54.015625,
+          "height": 44
+        },
+        "changeMachine": {
+          "x": 64.015625,
+          "y": 0.5,
+          "width": 72.625,
+          "height": 44
+        },
+        "crumbs": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 243.359375,
+          "height": 27
+        },
+        "navCurrent": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 68.015625,
+          "height": 27
+        },
+        "training": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingShell": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMainSlot": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMain": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "openTrainingMenu": {
+          "x": 8,
+          "y": 52,
+          "width": 72,
+          "height": 44
+        },
+        "machineTitle": {
+          "x": 88,
+          "y": 63.5,
+          "width": 294,
+          "height": 21
+        },
+        "inspectionCarousel": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "inspectionViewport": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "precisionReadouts": {
+          "x": -372,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "measurementReferenceToggle": {
+          "x": -372,
+          "y": 106.5,
+          "width": 308,
+          "height": 72
+        },
+        "liveSquareness": {
+          "x": -372,
+          "y": 106.5,
+          "width": 308,
+          "height": 54
+        },
+        "liveSquarenessUnits": {
+          "x": -372,
+          "y": 160.5,
+          "width": 308,
+          "height": 10
+        },
+        "liveSquarenessName": {
+          "x": -264.515625,
+          "y": 159.5,
+          "width": 32,
+          "height": 11
+        },
+        "squarenessValuesNote": {
+          "x": -373,
+          "y": 169.5,
+          "width": 1,
+          "height": 1
+        },
+        "spindleSweepPanel": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepToggle": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepName": {
+          "x": -54,
+          "y": 113.5,
+          "width": 16,
+          "height": 10
+        },
+        "spindleSweepMini": {
+          "x": -36.515625,
+          "y": 106,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniSvg": {
+          "x": -36.515625,
+          "y": 106,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniZero": {
+          "x": -32.2890625,
+          "y": 122,
+          "width": 16.000091552734375,
+          "height": 9
+        },
+        "sweepReadout0": {
+          "x": -54,
+          "y": 132,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel0": {
+          "x": -54,
+          "y": 132,
+          "width": 36.296875,
+          "height": 12
+        },
+        "sweepValue0": {
+          "x": -15.703125,
+          "y": 132,
+          "width": 17.703125,
+          "height": 12
+        },
+        "sweepReadout1": {
+          "x": -54,
+          "y": 144,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel1": {
+          "x": -54,
+          "y": 144,
+          "width": 38.5,
+          "height": 12
+        },
+        "sweepValue1": {
+          "x": -13.5,
+          "y": 144,
+          "width": 15.5,
+          "height": 12
+        },
+        "sweepReadout2": {
+          "x": -54,
+          "y": 156,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel2": {
+          "x": -54,
+          "y": 156,
+          "width": 38.5,
+          "height": 12
+        },
+        "sweepValue2": {
+          "x": -13.5,
+          "y": 156,
+          "width": 15.5,
+          "height": 12
+        },
+        "sweepReadout3": {
+          "x": -54,
+          "y": 168,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel3": {
+          "x": -54,
+          "y": 168,
+          "width": 48.09375,
+          "height": 12
+        },
+        "sweepValue3": {
+          "x": -3.90625,
+          "y": 168,
+          "width": 5.90625,
+          "height": 12
+        },
+        "sweepMeasurementNote": {
+          "x": 319,
+          "y": 181,
+          "width": 1,
+          "height": 1
+        },
+        "inspectionPrevious": {
+          "x": 6,
+          "y": 170,
+          "width": 34,
+          "height": 12
+        },
+        "inspectionPageStatus": {
+          "x": 5,
+          "y": 181,
+          "width": 1,
+          "height": 1
+        },
+        "viewerLevels": {
+          "x": 302,
+          "y": 184,
+          "width": 88,
+          "height": 383.5625
+        },
+        "stageAverageLR": {
+          "x": 346.5,
+          "y": 300.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleLR": {
+          "x": 334.21875,
+          "y": 309.28125,
+          "width": 22,
+          "height": 14
+        },
+        "stageAverageFB": {
+          "x": 309,
+          "y": 350.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleFB": {
+          "x": 339.5,
+          "y": 405.25,
+          "width": 14,
+          "height": 22
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 383.5625
+        },
+        "scene": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 383.5625
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 567.5625,
+          "width": 390,
+          "height": 57
+        },
+        "axisTabs": {
+          "x": 127,
+          "y": 574.5625,
+          "width": 136,
+          "height": 44
+        },
+        "axisDemoStatus": {
+          "x": -1,
+          "y": 100,
+          "width": 1,
+          "height": 1
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 624.5625,
+          "width": 390,
+          "height": 219.4375
+        },
+        "adjustmentSelectionScroll": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 374,
+          "height": 152.4375
+        },
+        "coarseAdjust": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "fineAdjust": {
+          "x": 194,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "selectedSupportLabel": {
+          "x": 8,
+          "y": 683.5625,
+          "width": 364,
+          "height": 18
+        },
+        "supportMap": {
+          "x": 8,
+          "y": 707.5625,
+          "width": 364,
+          "height": 104
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "raiseSupport": {
+          "x": 200,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "levelInputMessage": {
+          "x": 7,
+          "y": 632.5625,
+          "width": 1,
+          "height": 18
+        }
+      },
+      "legacy": [
+        "XY↑右ラム固定RS0右押込＋奥接触開始 0+47 µmXZ↑上ラム固定RS0下押込＋奥接触開始 0-17 µmYZ↑上ラム固定RS0下押込＋右接触開始 0+141 µm",
+        "\n触れ手前0µm右+72奥-17左-89手前 基準0主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。小型では直角測定と同じ仮想主軸姿勢を使い、前後の支持応答を中央で約5倍にします。右・奥・左はその姿勢から再計算し、手前は0です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。"
+      ],
+      "page": 1,
+      "overflow": false
+    },
+    {
+      "name": "4-390",
+      "profile": "{\"version\":1,\"condition\":\"used\",\"seed\":234567,\"keys\":[\"X\",\"Y\",\"Z\"],\"squareness\":{\"XY\":{\"band\":0,\"microns\":-14.991},\"XZ\":{\"band\":0,\"microns\":12.34},\"YZ\":{\"band\":2,\"microns\":-120.863}},\"guides\":{\"X\":{\"band\":2,\"microns\":136.764},\"Y\":{\"band\":0,\"microns\":19.072},\"Z\":{\"band\":0,\"microns\":13.882}},\"initialHeights\":[-0.15,0.15,0.099,-0.079,0.029,-0.105,0.064,-0.103]}",
+      "model": "{\"model\":\"intrinsic-inspection-v1\",\"seed\":234567,\"condition\":\"used\",\"runout\":{\"rootMicrons\":10.927929007913917,\"tipMicrons\":22.44098029202759,\"lengthMm\":300,\"eccentricityMicrons\":[5.4249733560649585,-0.6515920399198516],\"tiltMicroradians\":[2.6998201281294585,33.26773581806856]},\"surface\":{\"points\":[{\"x\":-1,\"back\":1,\"microns\":-15.950488310307264},{\"x\":0,\"back\":1,\"microns\":4.529219064861537},{\"x\":1,\"back\":1,\"microns\":-2.2781004849821325},{\"x\":-1,\"back\":0,\"microns\":0},{\"x\":0,\"back\":0,\"microns\":-3.3291032463312145},{\"x\":1,\"back\":0,\"microns\":-7.0486332681030035},{\"x\":-1,\"back\":-1,\"microns\":-3.1587632838636632},{\"x\":0,\"back\":-1,\"microns\":-0.7580886054784055},{\"x\":1,\"back\":-1,\"microns\":-9.782517841085792}],\"referenceIndex\":3,\"rangeMicrons\":20.4797073751688,\"method\":\"least-squares-plane-residual\",\"plane\":{\"meanMicrons\":0.7928235034147898,\"slopeXMicrons\":-1.9648163057863712,\"slopeBackMicrons\":-0.17505037784576416}}}",
+      "record": {
+        "calculationModel": "portal-shear-v2",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 234567,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": -14.991
+            },
+            "XZ": {
+              "band": 0,
+              "microns": 12.34
+            },
+            "YZ": {
+              "band": 2,
+              "microns": -120.863
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 2,
+              "microns": 136.764
+            },
+            "Y": {
+              "band": 0,
+              "microns": 19.072
+            },
+            "Z": {
+              "band": 0,
+              "microns": 13.882
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.099,
+            -0.079,
+            0.029,
+            -0.105,
+            0.064,
+            -0.103
+          ]
+        },
+        "bestState": {
+          "width": 3.2,
+          "depth": 4.64,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0,
+            0.005,
+            0.038,
+            0.001,
+            0,
+            0,
+            -0.007,
+            0.025
+          ]
+        },
+        "machine": "gantry",
+        "mode": "",
+        "width": 3.2,
+        "depth": 4.64,
+        "heights": [
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "text": "主軸振れ 回転TIR・µm\n根元 11\n300 mm先 22\n上面精度 9点高さ差・µm\n奥\n前\n-16\n+5\n-2\n0\n-3\n-7\n-3\n-1\n-10\n傾き除去・左中0\n差 20\n\n固有成分・レベル調整では不変",
+      "texts": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ],
+      "aria": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "title": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "region": {
+        "x": 6,
+        "y": 103,
+        "width": 378,
+        "height": 79
+      },
+      "outside": {
+        "siteNav": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 48
+        },
+        "navHome": {
+          "x": 8,
+          "y": 0.5,
+          "width": 54.015625,
+          "height": 44
+        },
+        "changeMachine": {
+          "x": 64.015625,
+          "y": 0.5,
+          "width": 72.625,
+          "height": 44
+        },
+        "crumbs": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 243.359375,
+          "height": 27
+        },
+        "navCurrent": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 68.015625,
+          "height": 27
+        },
+        "training": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingShell": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMainSlot": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMain": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "openTrainingMenu": {
+          "x": 8,
+          "y": 52,
+          "width": 72,
+          "height": 44
+        },
+        "machineTitle": {
+          "x": 88,
+          "y": 63.5,
+          "width": 294,
+          "height": 21
+        },
+        "inspectionCarousel": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "inspectionViewport": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "precisionReadouts": {
+          "x": -372,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "measurementReferenceToggle": {
+          "x": -372,
+          "y": 106.5,
+          "width": 308,
+          "height": 72
+        },
+        "liveSquareness": {
+          "x": -372,
+          "y": 106.5,
+          "width": 308,
+          "height": 54
+        },
+        "liveSquarenessUnits": {
+          "x": -372,
+          "y": 160.5,
+          "width": 308,
+          "height": 10
+        },
+        "liveSquarenessName": {
+          "x": -264.515625,
+          "y": 159.5,
+          "width": 32,
+          "height": 11
+        },
+        "squarenessValuesNote": {
+          "x": -373,
+          "y": 169.5,
+          "width": 1,
+          "height": 1
+        },
+        "spindleSweepPanel": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepToggle": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepName": {
+          "x": -54,
+          "y": 113.5,
+          "width": 16,
+          "height": 10
+        },
+        "spindleSweepMini": {
+          "x": -36.515625,
+          "y": 106,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniSvg": {
+          "x": -36.515625,
+          "y": 106,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniZero": {
+          "x": -32.2890625,
+          "y": 122,
+          "width": 16.000091552734375,
+          "height": 9
+        },
+        "sweepReadout0": {
+          "x": -54,
+          "y": 132,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel0": {
+          "x": -54,
+          "y": 132,
+          "width": 36.296875,
+          "height": 12
+        },
+        "sweepValue0": {
+          "x": -15.703125,
+          "y": 132,
+          "width": 17.703125,
+          "height": 12
+        },
+        "sweepReadout1": {
+          "x": -54,
+          "y": 144,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel1": {
+          "x": -54,
+          "y": 144,
+          "width": 38.5,
+          "height": 12
+        },
+        "sweepValue1": {
+          "x": -13.5,
+          "y": 144,
+          "width": 15.5,
+          "height": 12
+        },
+        "sweepReadout2": {
+          "x": -54,
+          "y": 156,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel2": {
+          "x": -54,
+          "y": 156,
+          "width": 38.5,
+          "height": 12
+        },
+        "sweepValue2": {
+          "x": -13.5,
+          "y": 156,
+          "width": 15.5,
+          "height": 12
+        },
+        "sweepReadout3": {
+          "x": -54,
+          "y": 168,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel3": {
+          "x": -54,
+          "y": 168,
+          "width": 48.09375,
+          "height": 12
+        },
+        "sweepValue3": {
+          "x": -3.90625,
+          "y": 168,
+          "width": 5.90625,
+          "height": 12
+        },
+        "sweepMeasurementNote": {
+          "x": 319,
+          "y": 181,
+          "width": 1,
+          "height": 1
+        },
+        "inspectionPrevious": {
+          "x": 6,
+          "y": 170,
+          "width": 34,
+          "height": 12
+        },
+        "inspectionPageStatus": {
+          "x": 5,
+          "y": 181,
+          "width": 1,
+          "height": 1
+        },
+        "viewerLevels": {
+          "x": 302,
+          "y": 184,
+          "width": 88,
+          "height": 383.5625
+        },
+        "stageAverageLR": {
+          "x": 346.5,
+          "y": 300.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleLR": {
+          "x": 338.875,
+          "y": 309.28125,
+          "width": 22,
+          "height": 14
+        },
+        "stageAverageFB": {
+          "x": 309,
+          "y": 350.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleFB": {
+          "x": 339.5,
+          "y": 405.28125,
+          "width": 14,
+          "height": 22
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 383.5625
+        },
+        "scene": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 383.5625
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 567.5625,
+          "width": 390,
+          "height": 57
+        },
+        "axisTabs": {
+          "x": 127,
+          "y": 574.5625,
+          "width": 136,
+          "height": 44
+        },
+        "axisDemoStatus": {
+          "x": -1,
+          "y": 100,
+          "width": 1,
+          "height": 1
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 624.5625,
+          "width": 390,
+          "height": 219.4375
+        },
+        "adjustmentSelectionScroll": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 374,
+          "height": 152.4375
+        },
+        "coarseAdjust": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "fineAdjust": {
+          "x": 194,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "selectedSupportLabel": {
+          "x": 8,
+          "y": 683.5625,
+          "width": 364,
+          "height": 18
+        },
+        "supportMap": {
+          "x": 8,
+          "y": 707.5625,
+          "width": 364,
+          "height": 92
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "raiseSupport": {
+          "x": 200,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "levelInputMessage": {
+          "x": 7,
+          "y": 632.5625,
+          "width": 1,
+          "height": 18
+        }
+      },
+      "legacy": [
+        "XY↑右ラム固定RS0右押込＋奥接触開始 0-15 µmXZ↑上ラム固定RS0下押込＋奥接触開始 0-12 µmYZ↑上ラム固定RS0下押込＋右接触開始 0+121 µm",
+        "\n触れ手前0µm右+54奥-12左-67手前 基準0主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。小型では直角測定と同じ仮想主軸姿勢を使い、前後の支持応答を中央で約5倍にします。右・奥・左はその姿勢から再計算し、手前は0です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。"
+      ],
+      "page": 1,
+      "overflow": false
+    },
+    {
+      "name": "5-390",
+      "profile": "{\"version\":1,\"condition\":\"used\",\"seed\":234567,\"keys\":[\"X\",\"Y\",\"Z\"],\"squareness\":{\"XY\":{\"band\":0,\"microns\":-14.991},\"XZ\":{\"band\":0,\"microns\":12.34},\"YZ\":{\"band\":2,\"microns\":-120.863}},\"guides\":{\"X\":{\"band\":2,\"microns\":136.764},\"Y\":{\"band\":0,\"microns\":19.072},\"Z\":{\"band\":0,\"microns\":13.882}},\"initialHeights\":[-0.15,0.15,0.099]}",
+      "model": "{\"model\":\"intrinsic-inspection-v1\",\"seed\":234567,\"condition\":\"used\",\"runout\":{\"rootMicrons\":10.927929007913917,\"tipMicrons\":22.44098029202759,\"lengthMm\":300,\"eccentricityMicrons\":[5.4249733560649585,-0.6515920399198516],\"tiltMicroradians\":[2.6998201281294585,33.26773581806856]},\"surface\":{\"points\":[{\"x\":-1,\"back\":1,\"microns\":-15.950488310307264},{\"x\":0,\"back\":1,\"microns\":4.529219064861537},{\"x\":1,\"back\":1,\"microns\":-2.2781004849821325},{\"x\":-1,\"back\":0,\"microns\":0},{\"x\":0,\"back\":0,\"microns\":-3.3291032463312145},{\"x\":1,\"back\":0,\"microns\":-7.0486332681030035},{\"x\":-1,\"back\":-1,\"microns\":-3.1587632838636632},{\"x\":0,\"back\":-1,\"microns\":-0.7580886054784055},{\"x\":1,\"back\":-1,\"microns\":-9.782517841085792}],\"referenceIndex\":3,\"rangeMicrons\":20.4797073751688,\"method\":\"least-squares-plane-residual\",\"plane\":{\"meanMicrons\":0.7928235034147898,\"slopeXMicrons\":-1.9648163057863712,\"slopeBackMicrons\":-0.17505037784576416}}}",
+      "record": {
+        "calculationModel": "connected-frames-v1",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 234567,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": -14.991
+            },
+            "XZ": {
+              "band": 0,
+              "microns": 12.34
+            },
+            "YZ": {
+              "band": 2,
+              "microns": -120.863
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 2,
+              "microns": 136.764
+            },
+            "Y": {
+              "band": 0,
+              "microns": 19.072
+            },
+            "Z": {
+              "band": 0,
+              "microns": 13.882
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.099
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 2.64,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.121,
+            0.121,
+            0.121
+          ]
+        },
+        "machine": "five",
+        "mode": "",
+        "width": 2.72,
+        "depth": 2.64,
+        "heights": [
+          -0.02,
+          0.03,
+          -0.02
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "text": "主軸振れ 回転TIR・µm\n根元 11\n300 mm先 22\n上面精度 9点高さ差・µm\n奥\n前\n-16\n+5\n-2\n0\n-3\n-7\n-3\n-1\n-10\n傾き除去・左中0・A=C=0\n差 20\n\n固有成分・レベル調整では不変",
+      "texts": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0・A=C=0",
+        "差 20"
+      ],
+      "aria": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。5軸はA=C=0の基準姿勢。支持による変形や測定時の傾きは含めません。"
+      ],
+      "title": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。5軸はA=C=0の基準姿勢。支持による変形や測定時の傾きは含めません。"
+      ],
+      "region": {
+        "x": 6,
+        "y": 103,
+        "width": 378,
+        "height": 79
+      },
+      "outside": {
+        "siteNav": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 48
+        },
+        "navHome": {
+          "x": 8,
+          "y": 0.5,
+          "width": 54.015625,
+          "height": 44
+        },
+        "changeMachine": {
+          "x": 64.015625,
+          "y": 0.5,
+          "width": 72.625,
+          "height": 44
+        },
+        "crumbs": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 243.359375,
+          "height": 27
+        },
+        "navCurrent": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 68.015625,
+          "height": 27
+        },
+        "training": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingShell": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMainSlot": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "trainingMain": {
+          "x": 0,
+          "y": 48,
+          "width": 390,
+          "height": 796
+        },
+        "openTrainingMenu": {
+          "x": 8,
+          "y": 52,
+          "width": 72,
+          "height": 44
+        },
+        "machineTitle": {
+          "x": 88,
+          "y": 63.5,
+          "width": 294,
+          "height": 21
+        },
+        "inspectionCarousel": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "inspectionViewport": {
+          "x": 6,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "precisionReadouts": {
+          "x": -372,
+          "y": 103,
+          "width": 378,
+          "height": 79
+        },
+        "measurementReferenceToggle": {
+          "x": -372,
+          "y": 106.5,
+          "width": 308,
+          "height": 72
+        },
+        "liveSquareness": {
+          "x": -372,
+          "y": 106.5,
+          "width": 308,
+          "height": 54
+        },
+        "liveSquarenessUnits": {
+          "x": -372,
+          "y": 160.5,
+          "width": 308,
+          "height": 10
+        },
+        "liveSquarenessName": {
+          "x": -264.515625,
+          "y": 159.5,
+          "width": 32,
+          "height": 11
+        },
+        "squarenessValuesNote": {
+          "x": -373,
+          "y": 169.5,
+          "width": 1,
+          "height": 1
+        },
+        "spindleSweepPanel": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepToggle": {
+          "x": -58,
+          "y": 103,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepName": {
+          "x": -54,
+          "y": 113.5,
+          "width": 16,
+          "height": 10
+        },
+        "spindleSweepMini": {
+          "x": -36.515625,
+          "y": 106,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniSvg": {
+          "x": -36.515625,
+          "y": 106,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniZero": {
+          "x": -32.2890625,
+          "y": 122,
+          "width": 16.000091552734375,
+          "height": 9
+        },
+        "sweepReadout0": {
+          "x": -54,
+          "y": 132,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel0": {
+          "x": -54,
+          "y": 132,
+          "width": 36.296875,
+          "height": 12
+        },
+        "sweepValue0": {
+          "x": -15.703125,
+          "y": 132,
+          "width": 17.703125,
+          "height": 12
+        },
+        "sweepReadout1": {
+          "x": -54,
+          "y": 144,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel1": {
+          "x": -54,
+          "y": 144,
+          "width": 30.390625,
+          "height": 12
+        },
+        "sweepValue1": {
+          "x": -21.609375,
+          "y": 144,
+          "width": 23.609375,
+          "height": 12
+        },
+        "sweepReadout2": {
+          "x": -54,
+          "y": 156,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel2": {
+          "x": -54,
+          "y": 156,
+          "width": 36.296875,
+          "height": 12
+        },
+        "sweepValue2": {
+          "x": -15.703125,
+          "y": 156,
+          "width": 17.703125,
+          "height": 12
+        },
+        "sweepReadout3": {
+          "x": -54,
+          "y": 168,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel3": {
+          "x": -54,
+          "y": 168,
+          "width": 48.09375,
+          "height": 12
+        },
+        "sweepValue3": {
+          "x": -3.90625,
+          "y": 168,
+          "width": 5.90625,
+          "height": 12
+        },
+        "sweepMeasurementNote": {
+          "x": 319,
+          "y": 181,
+          "width": 1,
+          "height": 1
+        },
+        "inspectionPrevious": {
+          "x": 6,
+          "y": 170,
+          "width": 34,
+          "height": 12
+        },
+        "inspectionPageStatus": {
+          "x": 5,
+          "y": 181,
+          "width": 1,
+          "height": 1
+        },
+        "viewerLevels": {
+          "x": 302,
+          "y": 184,
+          "width": 88,
+          "height": 383.5625
+        },
+        "stageAverageLR": {
+          "x": 346.5,
+          "y": 300.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleLR": {
+          "x": 339.46875,
+          "y": 309.28125,
+          "width": 22,
+          "height": 14
+        },
+        "stageAverageFB": {
+          "x": 309,
+          "y": 350.28125,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleFB": {
+          "x": 339.5,
+          "y": 407.3125,
+          "width": 14,
+          "height": 22
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 383.5625
+        },
+        "scene": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 383.5625
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 567.5625,
+          "width": 390,
+          "height": 57
+        },
+        "axisTabs": {
+          "x": 81,
+          "y": 574.5625,
+          "width": 228,
+          "height": 44
+        },
+        "axisDemoStatus": {
+          "x": -1,
+          "y": 100,
+          "width": 1,
+          "height": 1
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 624.5625,
+          "width": 390,
+          "height": 219.4375
+        },
+        "adjustmentSelectionScroll": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 374,
+          "height": 152.4375
+        },
+        "coarseAdjust": {
+          "x": 8,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "fineAdjust": {
+          "x": 194,
+          "y": 633.5625,
+          "width": 178,
+          "height": 44
+        },
+        "selectedSupportLabel": {
+          "x": 8,
+          "y": 683.5625,
+          "width": 364,
+          "height": 18
+        },
+        "supportMap": {
+          "x": 8,
+          "y": 707.5625,
+          "width": 364,
+          "height": 44
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "raiseSupport": {
+          "x": 200,
+          "y": 790,
+          "width": 182,
+          "height": 44
+        },
+        "levelInputMessage": {
+          "x": 7,
+          "y": 632.5625,
+          "width": 1,
+          "height": 18
+        }
+      },
+      "legacy": [
+        "XY↑奥頭固定RS0奥押込＋右接触開始 0-15 µmXZ↑上頭固定RS0下押込＋右接触開始 0-12 µmYZ↑上頭固定RS0下押込＋奥接触開始 0+121 µm",
+        "\n触れ手前0µm右+54奥+121左+67手前 基準0主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。小型では直角測定と同じ仮想主軸姿勢を使い、前後の支持応答を中央で約5倍にします。右・奥・左はその姿勢から再計算し、手前は0です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。"
+      ],
+      "page": 1,
+      "overflow": false
+    },
+    {
+      "name": "0-320",
+      "profile": "{\"version\":1,\"condition\":\"used\",\"seed\":234567,\"keys\":[\"X\",\"Y\",\"Z\"],\"squareness\":{\"XY\":{\"band\":0,\"microns\":-14.991},\"XZ\":{\"band\":0,\"microns\":12.34},\"YZ\":{\"band\":2,\"microns\":-120.863}},\"guides\":{\"X\":{\"band\":2,\"microns\":136.764},\"Y\":{\"band\":0,\"microns\":19.072},\"Z\":{\"band\":0,\"microns\":13.882}},\"initialHeights\":[-0.15,0.15,0.099,-0.079]}",
+      "model": "{\"model\":\"intrinsic-inspection-v1\",\"seed\":234567,\"condition\":\"used\",\"runout\":{\"rootMicrons\":10.927929007913917,\"tipMicrons\":22.44098029202759,\"lengthMm\":300,\"eccentricityMicrons\":[5.4249733560649585,-0.6515920399198516],\"tiltMicroradians\":[2.6998201281294585,33.26773581806856]},\"surface\":{\"points\":[{\"x\":-1,\"back\":1,\"microns\":-15.950488310307264},{\"x\":0,\"back\":1,\"microns\":4.529219064861537},{\"x\":1,\"back\":1,\"microns\":-2.2781004849821325},{\"x\":-1,\"back\":0,\"microns\":0},{\"x\":0,\"back\":0,\"microns\":-3.3291032463312145},{\"x\":1,\"back\":0,\"microns\":-7.0486332681030035},{\"x\":-1,\"back\":-1,\"microns\":-3.1587632838636632},{\"x\":0,\"back\":-1,\"microns\":-0.7580886054784055},{\"x\":1,\"back\":-1,\"microns\":-9.782517841085792}],\"referenceIndex\":3,\"rangeMicrons\":20.4797073751688,\"method\":\"least-squares-plane-residual\",\"plane\":{\"meanMicrons\":0.7928235034147898,\"slopeXMicrons\":-1.9648163057863712,\"slopeBackMicrons\":-0.17505037784576416}}}",
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 234567,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": -14.991
+            },
+            "XZ": {
+              "band": 0,
+              "microns": 12.34
+            },
+            "YZ": {
+              "band": 2,
+              "microns": -120.863
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 2,
+              "microns": 136.764
+            },
+            "Y": {
+              "band": 0,
+              "microns": 19.072
+            },
+            "Z": {
+              "band": 0,
+              "microns": 13.882
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.099,
+            -0.079
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.007,
+            0.002,
+            0.002,
+            -0.007
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          -0.02,
+          0.03,
+          -0.02,
+          0.03
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "text": "主軸振れ 回転TIR・µm\n根元 11\n300 mm先 22\n上面精度 9点高さ差・µm\n奥\n前\n-16\n+5\n-2\n0\n-3\n-7\n-3\n-1\n-10\n傾き除去・左中0\n差 20\n\n固有成分・レベル調整では不変",
+      "texts": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ],
+      "aria": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "title": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存の4方向の触れとは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "region": {
+        "x": 6,
+        "y": 95,
+        "width": 308,
+        "height": 79
+      },
+      "outside": {
+        "siteNav": {
+          "x": 0,
+          "y": 0,
+          "width": 320,
+          "height": 48
+        },
+        "navHome": {
+          "x": 8,
+          "y": 0.5,
+          "width": 54.015625,
+          "height": 44
+        },
+        "changeMachine": {
+          "x": 64.015625,
+          "y": 0.5,
+          "width": 72.625,
+          "height": 44
+        },
+        "crumbs": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 173.359375,
+          "height": 27
+        },
+        "navCurrent": {
+          "x": 138.640625,
+          "y": 9,
+          "width": 68.015625,
+          "height": 27
+        },
+        "training": {
+          "x": 0,
+          "y": 48,
+          "width": 320,
+          "height": 520
+        },
+        "trainingShell": {
+          "x": 0,
+          "y": 48,
+          "width": 320,
+          "height": 520
+        },
+        "trainingMainSlot": {
+          "x": 0,
+          "y": 48,
+          "width": 320,
+          "height": 520
+        },
+        "trainingMain": {
+          "x": 0,
+          "y": 48,
+          "width": 320,
+          "height": 520
+        },
+        "openTrainingMenu": {
+          "x": 8,
+          "y": 48,
+          "width": 72,
+          "height": 44
+        },
+        "machineTitle": {
+          "x": 88,
+          "y": 59.5,
+          "width": 224,
+          "height": 21
+        },
+        "inspectionCarousel": {
+          "x": 6,
+          "y": 95,
+          "width": 308,
+          "height": 79
+        },
+        "inspectionViewport": {
+          "x": 6,
+          "y": 95,
+          "width": 308,
+          "height": 79
+        },
+        "precisionReadouts": {
+          "x": -302,
+          "y": 95,
+          "width": 308,
+          "height": 79
+        },
+        "measurementReferenceToggle": {
+          "x": -302,
+          "y": 98.5,
+          "width": 238,
+          "height": 72
+        },
+        "liveSquareness": {
+          "x": -302,
+          "y": 98.5,
+          "width": 238,
+          "height": 54
+        },
+        "liveSquarenessUnits": {
+          "x": -302,
+          "y": 152.5,
+          "width": 238,
+          "height": 10
+        },
+        "liveSquarenessName": {
+          "x": -265.515625,
+          "y": 151.5,
+          "width": 104,
+          "height": 11
+        },
+        "squarenessValuesNote": {
+          "x": -303,
+          "y": 161.5,
+          "width": 1,
+          "height": 1
+        },
+        "spindleSweepPanel": {
+          "x": -58,
+          "y": 95,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepToggle": {
+          "x": -58,
+          "y": 95,
+          "width": 64,
+          "height": 79
+        },
+        "spindleSweepName": {
+          "x": -54,
+          "y": 105.5,
+          "width": 16,
+          "height": 10
+        },
+        "spindleSweepMini": {
+          "x": -36.515625,
+          "y": 98,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniSvg": {
+          "x": -36.515625,
+          "y": 98,
+          "width": 24,
+          "height": 25
+        },
+        "spindleSweepMiniZero": {
+          "x": -32.2890625,
+          "y": 114,
+          "width": 16.000091552734375,
+          "height": 9
+        },
+        "sweepReadout0": {
+          "x": -54,
+          "y": 124,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel0": {
+          "x": -54,
+          "y": 124,
+          "width": 36.296875,
+          "height": 12
+        },
+        "sweepValue0": {
+          "x": -15.703125,
+          "y": 124,
+          "width": 17.703125,
+          "height": 12
+        },
+        "sweepReadout1": {
+          "x": -54,
+          "y": 136,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel1": {
+          "x": -54,
+          "y": 136,
+          "width": 30.390625,
+          "height": 12
+        },
+        "sweepValue1": {
+          "x": -21.609375,
+          "y": 136,
+          "width": 23.609375,
+          "height": 12
+        },
+        "sweepReadout2": {
+          "x": -54,
+          "y": 148,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel2": {
+          "x": -54,
+          "y": 148,
+          "width": 36.296875,
+          "height": 12
+        },
+        "sweepValue2": {
+          "x": -15.703125,
+          "y": 148,
+          "width": 17.703125,
+          "height": 12
+        },
+        "sweepReadout3": {
+          "x": -54,
+          "y": 160,
+          "width": 56,
+          "height": 12
+        },
+        "sweepLabel3": {
+          "x": -54,
+          "y": 160,
+          "width": 48.09375,
+          "height": 12
+        },
+        "sweepValue3": {
+          "x": -3.90625,
+          "y": 160,
+          "width": 5.90625,
+          "height": 12
+        },
+        "sweepMeasurementNote": {
+          "x": 249,
+          "y": 173,
+          "width": 1,
+          "height": 1
+        },
+        "inspectionPrevious": {
+          "x": 6,
+          "y": 162,
+          "width": 34,
+          "height": 12
+        },
+        "inspectionPageStatus": {
+          "x": 5,
+          "y": 173,
+          "width": 1,
+          "height": 1
+        },
+        "viewerLevels": {
+          "x": 232,
+          "y": 176,
+          "width": 88,
+          "height": 175
+        },
+        "stageAverageLR": {
+          "x": 276.5,
+          "y": 212,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleLR": {
+          "x": 272.09375,
+          "y": 217,
+          "width": 16,
+          "height": 10
+        },
+        "stageAverageFB": {
+          "x": 239,
+          "y": 243,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleFB": {
+          "x": 271.5,
+          "y": 283,
+          "width": 10,
+          "height": 16
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 176,
+          "width": 232,
+          "height": 175
+        },
+        "scene": {
+          "x": 0,
+          "y": 176,
+          "width": 232,
+          "height": 175
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 351,
+          "width": 320,
+          "height": 49
+        },
+        "axisTabs": {
+          "x": 92,
+          "y": 354,
+          "width": 136,
+          "height": 44
+        },
+        "axisDemoStatus": {
+          "x": -1,
+          "y": 92,
+          "width": 1,
+          "height": 1
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 400,
+          "width": 320,
+          "height": 168
+        },
+        "adjustmentSelectionScroll": {
+          "x": 8,
+          "y": 405,
+          "width": 304,
+          "height": 111
+        },
+        "coarseAdjust": {
+          "x": 8,
+          "y": 405,
+          "width": 143,
+          "height": 44
+        },
+        "fineAdjust": {
+          "x": 159,
+          "y": 405,
+          "width": 143,
+          "height": 44
+        },
+        "selectedSupportLabel": {
+          "x": 8,
+          "y": 452,
+          "width": 294,
+          "height": 18
+        },
+        "supportMap": {
+          "x": 8,
+          "y": 473,
+          "width": 294,
+          "height": 44
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 520,
+          "width": 147,
+          "height": 44
+        },
+        "raiseSupport": {
+          "x": 165,
+          "y": 520,
+          "width": 147,
+          "height": 44
+        },
+        "levelInputMessage": {
+          "x": 7,
+          "y": 404,
+          "width": 1,
+          "height": 18
+        }
+      },
+      "legacy": [
+        "XY↑奥頭固定RS0奥押込＋右接触開始 0-15 µmXZ↑上頭固定RS0下押込＋右接触開始 0-12 µmYZ↑上頭固定RS0下押込＋奥接触開始 0+121 µm",
+        "\n触れ手前0µm右+54奥+121左+67手前 基準0主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。小型では直角測定と同じ仮想主軸姿勢を使い、前後の支持応答を中央で約5倍にします。右・奥・左はその姿勢から再計算し、手前は0です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。"
+      ],
+      "page": 1,
+      "overflow": false
+    },
+    {
+      "name": "1-1280",
+      "profile": "{\"version\":1,\"condition\":\"used\",\"seed\":234567,\"keys\":[\"X\",\"Y\",\"Z\"],\"squareness\":{\"XY\":{\"band\":0,\"microns\":-14.991},\"XZ\":{\"band\":0,\"microns\":12.34},\"YZ\":{\"band\":2,\"microns\":-120.863}},\"guides\":{\"X\":{\"band\":2,\"microns\":136.764},\"Y\":{\"band\":0,\"microns\":19.072},\"Z\":{\"band\":0,\"microns\":13.882}},\"initialHeights\":[-0.15,0.15,0.099,-0.079,0.029,-0.105,0.064,-0.103]}",
+      "model": "{\"model\":\"intrinsic-inspection-v1\",\"seed\":234567,\"condition\":\"used\",\"runout\":{\"rootMicrons\":10.927929007913917,\"tipMicrons\":22.44098029202759,\"lengthMm\":300,\"eccentricityMicrons\":[5.4249733560649585,-0.6515920399198516],\"tiltMicroradians\":[2.6998201281294585,33.26773581806856]},\"surface\":{\"points\":[{\"x\":-1,\"back\":1,\"microns\":-15.950488310307264},{\"x\":0,\"back\":1,\"microns\":4.529219064861537},{\"x\":1,\"back\":1,\"microns\":-2.2781004849821325},{\"x\":-1,\"back\":0,\"microns\":0},{\"x\":0,\"back\":0,\"microns\":-3.3291032463312145},{\"x\":1,\"back\":0,\"microns\":-7.0486332681030035},{\"x\":-1,\"back\":-1,\"microns\":-3.1587632838636632},{\"x\":0,\"back\":-1,\"microns\":-0.7580886054784055},{\"x\":1,\"back\":-1,\"microns\":-9.782517841085792}],\"referenceIndex\":3,\"rangeMicrons\":20.4797073751688,\"method\":\"least-squares-plane-residual\",\"plane\":{\"meanMicrons\":0.7928235034147898,\"slopeXMicrons\":-1.9648163057863712,\"slopeBackMicrons\":-0.17505037784576416}}}",
+      "record": {
+        "calculationModel": "horizontal-guide-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "haas-ec630-ngc-eight-v1",
+          "points": [
+            {
+              "id": "haas-ec630-ngc-eight-v1-p1",
+              "x": -1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p2",
+              "x": 1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p3",
+              "x": -1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p4",
+              "x": 1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p5",
+              "x": -1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p6",
+              "x": 1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p7",
+              "x": -1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p8",
+              "x": 1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 234567,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": -14.991
+            },
+            "XZ": {
+              "band": 0,
+              "microns": 12.34
+            },
+            "YZ": {
+              "band": 2,
+              "microns": -120.863
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 2,
+              "microns": 136.764
+            },
+            "Y": {
+              "band": 0,
+              "microns": 19.072
+            },
+            "Z": {
+              "band": 0,
+              "microns": 13.882
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.099,
+            -0.079,
+            0.029,
+            -0.105,
+            0.064,
+            -0.103
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 3.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.104,
+            0.196,
+            -0.009,
+            -0.027,
+            -0.179,
+            -0.192,
+            0.101,
+            0.123
+          ]
+        },
+        "machine": "horizontal",
+        "mode": "",
+        "width": 2.72,
+        "depth": 3.68,
+        "heights": [
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03,
+          -0.02,
+          0.03
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "text": "主軸振れ 回転TIR・µm\n根元 11\n300 mm先 22\n上面精度 9点高さ差・µm\n奥\n前\n-16\n+5\n-2\n0\n-3\n-7\n-3\n-1\n-10\n傾き除去・左中0\n差 20\n\n固有成分・レベル調整では不変",
+      "texts": [
+        "根元 11",
+        "300 mm先 22",
+        "奥",
+        "前",
+        "-16",
+        "+5",
+        "-2",
+        "0",
+        "-3",
+        "-7",
+        "-3",
+        "-1",
+        "-10",
+        "傾き除去・左中0",
+        "差 20"
+      ],
+      "aria": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存のZ方向平行度とは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "title": [
+        "主軸を回転させたときの最大指示と最小指示の差。根元 11 µm、300 mm先 22 µm。既存のZ方向平行度とは別の固有成分です。",
+        "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 20 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+      ],
+      "region": {
+        "x": 295,
+        "y": 103,
+        "width": 690,
+        "height": 108
+      },
+      "outside": {
+        "siteNav": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 48
+        },
+        "navHome": {
+          "x": 8,
+          "y": 0.5,
+          "width": 61.015625,
+          "height": 44
+        },
+        "changeMachine": {
+          "x": 75.015625,
+          "y": 0.5,
+          "width": 81.171875,
+          "height": 44
+        },
+        "crumbs": {
+          "x": 162.1875,
+          "y": 8.125,
+          "width": 1109.8125,
+          "height": 28.75
+        },
+        "navCurrent": {
+          "x": 162.1875,
+          "y": 8.125,
+          "width": 73.015625,
+          "height": 28.75
+        },
+        "training": {
+          "x": 0,
+          "y": 48,
+          "width": 1280,
+          "height": 952
+        },
+        "trainingShell": {
+          "x": 0,
+          "y": 48,
+          "width": 1280,
+          "height": 952
+        },
+        "trainingMainSlot": {
+          "x": 0,
+          "y": 48,
+          "width": 1280,
+          "height": 952
+        },
+        "trainingMain": {
+          "x": 0,
+          "y": 48,
+          "width": 1280,
+          "height": 952
+        },
+        "openTrainingMenu": {
+          "x": 12,
+          "y": 52,
+          "width": 76,
+          "height": 44
+        },
+        "machineTitle": {
+          "x": 98,
+          "y": 62.09375,
+          "width": 1170,
+          "height": 23.796875
+        },
+        "inspectionCarousel": {
+          "x": 295,
+          "y": 103,
+          "width": 690,
+          "height": 108
+        },
+        "inspectionViewport": {
+          "x": 295,
+          "y": 103,
+          "width": 690,
+          "height": 108
+        },
+        "precisionReadouts": {
+          "x": -395,
+          "y": 103,
+          "width": 690,
+          "height": 108
+        },
+        "measurementReferenceToggle": {
+          "x": -395,
+          "y": 103,
+          "width": 620,
+          "height": 108
+        },
+        "liveSquareness": {
+          "x": -395,
+          "y": 103,
+          "width": 620,
+          "height": 90
+        },
+        "liveSquarenessUnits": {
+          "x": -395,
+          "y": 193,
+          "width": 620,
+          "height": 10
+        },
+        "liveSquarenessName": {
+          "x": -131.515625,
+          "y": 192,
+          "width": 32,
+          "height": 11
+        },
+        "squarenessValuesNote": {
+          "x": -396,
+          "y": 202,
+          "width": 1,
+          "height": 1
+        },
+        "spindleSweepPanel": {
+          "x": 231,
+          "y": 118.5,
+          "width": 64,
+          "height": 77
+        },
+        "spindleSweepToggle": {
+          "x": 231,
+          "y": 118.5,
+          "width": 64,
+          "height": 77
+        },
+        "spindleSweepName": {
+          "x": 235,
+          "y": 120.5,
+          "width": 20.90625,
+          "height": 10
+        },
+        "sweepReadout0": {
+          "x": 235,
+          "y": 130.5,
+          "width": 56,
+          "height": 16
+        },
+        "sweepLabel0": {
+          "x": 235,
+          "y": 131.5,
+          "width": 38.5,
+          "height": 15
+        },
+        "sweepValue0": {
+          "x": 275.5,
+          "y": 130.5,
+          "width": 15.5,
+          "height": 15
+        },
+        "sweepReadout1": {
+          "x": 235,
+          "y": 146.5,
+          "width": 56,
+          "height": 16
+        },
+        "sweepLabel1": {
+          "x": 235,
+          "y": 147.5,
+          "width": 30.390625,
+          "height": 15
+        },
+        "sweepValue1": {
+          "x": 267.390625,
+          "y": 146.5,
+          "width": 23.609375,
+          "height": 15
+        },
+        "horizontalParallelMini": {
+          "x": 235,
+          "y": 162.5,
+          "width": 56,
+          "height": 31
+        },
+        "sweepMeasurementNote": {
+          "x": 920,
+          "y": 194.5,
+          "width": 1,
+          "height": 1
+        },
+        "inspectionPrevious": {
+          "x": 295,
+          "y": 199,
+          "width": 34,
+          "height": 12
+        },
+        "inspectionPageStatus": {
+          "x": 294,
+          "y": 210,
+          "width": 1,
+          "height": 1
+        },
+        "viewerLevels": {
+          "x": 1192,
+          "y": 213,
+          "width": 88,
+          "height": 506
+        },
+        "stageAverageLR": {
+          "x": 1236.5,
+          "y": 390.5,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleLR": {
+          "x": 1229.46875,
+          "y": 399.5,
+          "width": 22,
+          "height": 14
+        },
+        "stageAverageFB": {
+          "x": 1199,
+          "y": 440.5,
+          "width": 1,
+          "height": 1
+        },
+        "coarseBubbleFB": {
+          "x": 1229.5,
+          "y": 495.5,
+          "width": 14,
+          "height": 22
+        },
+        "sceneViewport": {
+          "x": 0,
+          "y": 213,
+          "width": 1192,
+          "height": 506
+        },
+        "scene": {
+          "x": 0,
+          "y": 213,
+          "width": 1192,
+          "height": 506
+        },
+        "sceneToolbar": {
+          "x": 0,
+          "y": 719,
+          "width": 1280,
+          "height": 57
+        },
+        "axisTabs": {
+          "x": 572,
+          "y": 726,
+          "width": 136,
+          "height": 44
+        },
+        "axisDemoStatus": {
+          "x": -1,
+          "y": 100,
+          "width": 1,
+          "height": 1
+        },
+        "mainAdjustment": {
+          "x": 0,
+          "y": 776,
+          "width": 1280,
+          "height": 224
+        },
+        "adjustmentSelectionScroll": {
+          "x": 240,
+          "y": 785,
+          "width": 800,
+          "height": 157
+        },
+        "coarseAdjust": {
+          "x": 240,
+          "y": 785,
+          "width": 391,
+          "height": 44
+        },
+        "fineAdjust": {
+          "x": 639,
+          "y": 785,
+          "width": 391,
+          "height": 44
+        },
+        "selectedSupportLabel": {
+          "x": 240,
+          "y": 835,
+          "width": 790,
+          "height": 18
+        },
+        "supportMap": {
+          "x": 240,
+          "y": 859,
+          "width": 790,
+          "height": 44
+        },
+        "lowerSupport": {
+          "x": 240,
+          "y": 946,
+          "width": 395,
+          "height": 44
+        },
+        "raiseSupport": {
+          "x": 645,
+          "y": 946,
+          "width": 395,
+          "height": 44
+        },
+        "levelInputMessage": {
+          "x": 12,
+          "y": 784,
+          "width": 1,
+          "height": 18
+        }
+      },
+      "legacy": [
+        "XY↑上頭固定RS0上押込＋右接触開始 0-15 µmXZ↑奥頭固定RS0手前押込＋右接触開始 0-12 µmYZ↑奥頭固定RS0手前押込＋上接触開始 0+121 µm",
+        "\nZ平行µma 左右-13b 上下+121a 0b 00300 mm始点0走査300 mm横形のZ方向平行度。主軸固定のテストバーに対し、パレット上の計器を先端側から主軸側へ300 mm移動します。aは左側から右向きに接触、bは下側から上向きに接触します。始点でゼロ、プラスは測定子の押込み増加です。支持・軸位置の変更ごとにゼロを取り直します。主軸は回しません。取付け寸法や干渉を再現しない仮想配置です。"
+      ],
+      "page": 1,
+      "overflow": false
+    }
+  ]
+}
