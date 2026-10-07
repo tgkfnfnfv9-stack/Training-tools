@@ -1,0 +1,68 @@
+## check-reference-zero
+Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.
+
+## check-measurement-reference
+Reference plane geometry: 70 numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.
+Support-grid crossing: piecewise exact example and independent 10,000-midpoint oracle passed.
+
+## check-live-squareness-values
+Live finite readings: 159 assertions, view invariance, support reversal and saved-state restoration passed.
+
+## check-squareness-display
+Measurement drawings: 19 planes, actual fixture/contact/zero/scan/compression labels and retained local comparisons passed.
+
+## check-adjustment-flow
+Adjustment flow: 153 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.
+
+## check-full-code-review
+Full code review: 158 integration checks passed.
+
+## check-leveling-ui
+Leveling UI: 190 checks passed (7 machines, single-model selections, controls, exercise, save/import/export).
+
+## check-spindle-sweep
+{
+  "checks": 323,
+  "failures": []
+}
+
+## check-multi-spindle-sweep
+PASS multi-machine spindle sweep independent physics: 152 checks
+
+## check-settings-menu-ui
+{
+  "checks": 173,
+  "frames": 270,
+  "finiteCanvasCoordinates": 1734085,
+  "variants": 7,
+  "displaySizes": [
+    [
+      320,
+      480
+    ],
+    [
+      320,
+      568
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      568,
+      320
+    ],
+    [
+      844,
+      390
+    ],
+    [
+      1024,
+      768
+    ],
+    [
+      1363,
+      936
+    ]
+  ]
+}

@@ -1,0 +1,549 @@
+{
+  "endpoints": [
+    {
+      "kind": "compact",
+      "pair": "XY",
+      "position": -100,
+      "reversed": true,
+      "start": -0.10000000000000003,
+      "end": -0.4
+    },
+    {
+      "kind": "compact",
+      "pair": "XZ",
+      "position": -100,
+      "reversed": true,
+      "start": 0,
+      "end": -0.3
+    },
+    {
+      "kind": "compact",
+      "pair": "YZ",
+      "position": -100,
+      "reversed": true,
+      "start": 0,
+      "end": -0.3
+    },
+    {
+      "kind": "compact",
+      "pair": "XY",
+      "position": 0,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "compact",
+      "pair": "XZ",
+      "position": 0,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "compact",
+      "pair": "YZ",
+      "position": 0,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "compact",
+      "pair": "XY",
+      "position": 100,
+      "reversed": true,
+      "start": 0.4,
+      "end": 0.10000000000000003
+    },
+    {
+      "kind": "compact",
+      "pair": "XZ",
+      "position": 100,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "compact",
+      "pair": "YZ",
+      "position": 100,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "horizontal",
+      "pair": "XY",
+      "position": -100,
+      "reversed": false,
+      "start": -0.3,
+      "end": 0
+    },
+    {
+      "kind": "horizontal",
+      "pair": "XZ",
+      "position": -100,
+      "reversed": false,
+      "start": -0.45000000000000007,
+      "end": -0.15000000000000008
+    },
+    {
+      "kind": "horizontal",
+      "pair": "YZ",
+      "position": -100,
+      "reversed": false,
+      "start": -0.45000000000000007,
+      "end": -0.15000000000000008
+    },
+    {
+      "kind": "horizontal",
+      "pair": "XY",
+      "position": 0,
+      "reversed": false,
+      "start": 0,
+      "end": 0.3
+    },
+    {
+      "kind": "horizontal",
+      "pair": "XZ",
+      "position": 0,
+      "reversed": false,
+      "start": 0,
+      "end": 0.3
+    },
+    {
+      "kind": "horizontal",
+      "pair": "YZ",
+      "position": 0,
+      "reversed": false,
+      "start": 0,
+      "end": 0.3
+    },
+    {
+      "kind": "horizontal",
+      "pair": "XY",
+      "position": 100,
+      "reversed": false,
+      "start": 0,
+      "end": 0.3
+    },
+    {
+      "kind": "horizontal",
+      "pair": "XZ",
+      "position": 100,
+      "reversed": false,
+      "start": 0.15000000000000008,
+      "end": 0.45000000000000007
+    },
+    {
+      "kind": "horizontal",
+      "pair": "YZ",
+      "position": 100,
+      "reversed": false,
+      "start": 0.15000000000000008,
+      "end": 0.45000000000000007
+    },
+    {
+      "kind": "travel",
+      "pair": "XY",
+      "position": -100,
+      "reversed": false,
+      "start": -0.35,
+      "end": -0.04999999999999999
+    },
+    {
+      "kind": "travel",
+      "pair": "XZ",
+      "position": -100,
+      "reversed": true,
+      "start": 0,
+      "end": -0.3
+    },
+    {
+      "kind": "travel",
+      "pair": "YZ",
+      "position": -100,
+      "reversed": true,
+      "start": 0,
+      "end": -0.3
+    },
+    {
+      "kind": "travel",
+      "pair": "XY",
+      "position": 0,
+      "reversed": false,
+      "start": 0,
+      "end": 0.3
+    },
+    {
+      "kind": "travel",
+      "pair": "XZ",
+      "position": 0,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "travel",
+      "pair": "YZ",
+      "position": 0,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "travel",
+      "pair": "XY",
+      "position": 100,
+      "reversed": false,
+      "start": 0.04999999999999999,
+      "end": 0.35
+    },
+    {
+      "kind": "travel",
+      "pair": "XZ",
+      "position": 100,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "travel",
+      "pair": "YZ",
+      "position": 100,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "double",
+      "pair": "XY",
+      "position": -100,
+      "reversed": false,
+      "start": -0.65,
+      "end": -0.35000000000000003
+    },
+    {
+      "kind": "double",
+      "pair": "XZ",
+      "position": -100,
+      "reversed": true,
+      "start": 0.019999999999999962,
+      "end": -0.28
+    },
+    {
+      "kind": "double",
+      "pair": "YZ",
+      "position": -100,
+      "reversed": true,
+      "start": 0.019999999999999962,
+      "end": -0.28
+    },
+    {
+      "kind": "double",
+      "pair": "XY",
+      "position": 0,
+      "reversed": false,
+      "start": 0,
+      "end": 0.3
+    },
+    {
+      "kind": "double",
+      "pair": "XZ",
+      "position": 0,
+      "reversed": true,
+      "start": 0.28,
+      "end": -0.019999999999999962
+    },
+    {
+      "kind": "double",
+      "pair": "YZ",
+      "position": 0,
+      "reversed": true,
+      "start": 0.28,
+      "end": -0.019999999999999962
+    },
+    {
+      "kind": "double",
+      "pair": "XY",
+      "position": 100,
+      "reversed": false,
+      "start": 0.35000000000000003,
+      "end": 0.65
+    },
+    {
+      "kind": "double",
+      "pair": "XZ",
+      "position": 100,
+      "reversed": true,
+      "start": 0.28,
+      "end": -0.019999999999999962
+    },
+    {
+      "kind": "double",
+      "pair": "YZ",
+      "position": 100,
+      "reversed": true,
+      "start": 0.28,
+      "end": -0.019999999999999962
+    },
+    {
+      "kind": "gantry",
+      "pair": "XY",
+      "position": -100,
+      "reversed": false,
+      "start": -0.65,
+      "end": -0.35000000000000003
+    },
+    {
+      "kind": "gantry",
+      "pair": "XZ",
+      "position": -100,
+      "reversed": true,
+      "start": 0.019999999999999962,
+      "end": -0.28
+    },
+    {
+      "kind": "gantry",
+      "pair": "YZ",
+      "position": -100,
+      "reversed": true,
+      "start": 0.019999999999999962,
+      "end": -0.28
+    },
+    {
+      "kind": "gantry",
+      "pair": "XY",
+      "position": 0,
+      "reversed": false,
+      "start": 0,
+      "end": 0.3
+    },
+    {
+      "kind": "gantry",
+      "pair": "XZ",
+      "position": 0,
+      "reversed": true,
+      "start": 0.28,
+      "end": -0.019999999999999962
+    },
+    {
+      "kind": "gantry",
+      "pair": "YZ",
+      "position": 0,
+      "reversed": true,
+      "start": 0.28,
+      "end": -0.019999999999999962
+    },
+    {
+      "kind": "gantry",
+      "pair": "XY",
+      "position": 100,
+      "reversed": false,
+      "start": 0.35000000000000003,
+      "end": 0.65
+    },
+    {
+      "kind": "gantry",
+      "pair": "XZ",
+      "position": 100,
+      "reversed": true,
+      "start": 0.28,
+      "end": -0.019999999999999962
+    },
+    {
+      "kind": "gantry",
+      "pair": "YZ",
+      "position": 100,
+      "reversed": true,
+      "start": 0.28,
+      "end": -0.019999999999999962
+    },
+    {
+      "kind": "five",
+      "pair": "XY",
+      "position": -100,
+      "reversed": true,
+      "start": -0.04999999999999999,
+      "end": -0.35
+    },
+    {
+      "kind": "five",
+      "pair": "XZ",
+      "position": -100,
+      "reversed": true,
+      "start": 0,
+      "end": -0.3
+    },
+    {
+      "kind": "five",
+      "pair": "YZ",
+      "position": -100,
+      "reversed": true,
+      "start": 0,
+      "end": -0.3
+    },
+    {
+      "kind": "five",
+      "pair": "XY",
+      "position": 0,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "five",
+      "pair": "XZ",
+      "position": 0,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "five",
+      "pair": "YZ",
+      "position": 0,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "five",
+      "pair": "XY",
+      "position": 100,
+      "reversed": true,
+      "start": 0.35,
+      "end": 0.04999999999999999
+    },
+    {
+      "kind": "five",
+      "pair": "XZ",
+      "position": 100,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "five",
+      "pair": "YZ",
+      "position": 100,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "lathe",
+      "pair": "ZX",
+      "position": -100,
+      "reversed": true,
+      "start": -0.04999999999999993,
+      "end": -0.3499999999999999
+    },
+    {
+      "kind": "lathe",
+      "pair": "ZX",
+      "position": 0,
+      "reversed": true,
+      "start": 0.3,
+      "end": 0
+    },
+    {
+      "kind": "lathe",
+      "pair": "ZX",
+      "position": 100,
+      "reversed": true,
+      "start": 0.3499999999999999,
+      "end": 0.04999999999999993
+    }
+  ],
+  "nonuniform": {
+    "actual": 24.550656106526667,
+    "independentExpected": 24.550656106524933,
+    "oldV1": -24.54025353686509,
+    "notMerelyNegativeOld": 0.010402569661575711
+  },
+  "exceptions": [
+    {
+      "kind": "horizontal",
+      "actual": [
+        {
+          "pair": "XY",
+          "zero": "下・右側",
+          "relative": "上",
+          "member": "上"
+        },
+        {
+          "pair": "XZ",
+          "zero": "奥・右側",
+          "relative": "手前",
+          "member": "奥"
+        },
+        {
+          "pair": "YZ",
+          "zero": "奥・上側",
+          "relative": "手前",
+          "member": "奥"
+        }
+      ]
+    },
+    {
+      "kind": "double",
+      "actual": [
+        {
+          "pair": "XY",
+          "zero": "左・奥側",
+          "relative": "右",
+          "member": "右"
+        },
+        {
+          "pair": "XZ",
+          "zero": "上・奥側",
+          "relative": "下",
+          "member": "下"
+        },
+        {
+          "pair": "YZ",
+          "zero": "上・右側",
+          "relative": "下",
+          "member": "下"
+        }
+      ]
+    },
+    {
+      "kind": "gantry",
+      "actual": [
+        {
+          "pair": "XY",
+          "zero": "左・奥側",
+          "relative": "右",
+          "member": "右"
+        },
+        {
+          "pair": "XZ",
+          "zero": "上・奥側",
+          "relative": "下",
+          "member": "下"
+        },
+        {
+          "pair": "YZ",
+          "zero": "上・右側",
+          "relative": "下",
+          "member": "下"
+        }
+      ]
+    },
+    {
+      "kind": "lathe",
+      "actual": [
+        {
+          "pair": "ZX",
+          "zero": "奥・右側",
+          "relative": "手前",
+          "member": "手前"
+        }
+      ]
+    }
+  ],
+  "exceptionChecks": 10
+}

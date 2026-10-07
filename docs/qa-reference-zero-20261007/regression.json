@@ -1,0 +1,47 @@
+{
+  "suites": 10,
+  "failures": 0,
+  "indexSha256": "870555339651834768d73e9e6692a08bda983fedab98cf82235e3560654fce84",
+  "results": [
+    {
+      "test": "check-reference-zero",
+      "ok": true
+    },
+    {
+      "test": "check-measurement-reference",
+      "ok": true
+    },
+    {
+      "test": "check-live-squareness-values",
+      "ok": true
+    },
+    {
+      "test": "check-squareness-display",
+      "ok": true
+    },
+    {
+      "test": "check-adjustment-flow",
+      "ok": true
+    },
+    {
+      "test": "check-full-code-review",
+      "ok": true
+    },
+    {
+      "test": "check-leveling-ui",
+      "ok": true
+    },
+    {
+      "test": "check-spindle-sweep",
+      "ok": true
+    },
+    {
+      "test": "check-multi-spindle-sweep",
+      "ok": true
+    },
+    {
+      "test": "check-settings-menu-ui",
+      "ok": true
+    }
+  ]
+}

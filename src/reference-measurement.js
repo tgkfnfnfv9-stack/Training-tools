@@ -36,7 +36,7 @@
   }
   return {valid:false,reason:'走査計算の収束範囲外'};
  }
- const api={model:'reference-scan-v1',dot,add,sub,scale,unit,contact,compare,transport,integrate};
+ const api={model:'reference-scan-v2',dot,add,sub,scale,unit,contact,compare,transport,integrate};
  if(typeof module!=='undefined')module.exports=api;
  root.ReferenceMeasurement=api;
 })(typeof window!=='undefined'?window:globalThis);

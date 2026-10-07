@@ -26,6 +26,7 @@ assert.equal(M.contact({...zero,body:[.03,0,0]}).valid,false);
 // All 19 actual UI adapters under rigid zero-support conditions. Fixture owners
 // are stated independently as moving table or moving indicator, not renderer data.
 const e=create({pureLeveling:true}),owners={compact:{XY:'table',XZ:'head',YZ:'head'},horizontal:{XY:'head',XZ:'table',YZ:'table'},travel:{XY:'head',XZ:'head',YZ:'head'},double:{XY:'head',XZ:'head',YZ:'head'},gantry:{XY:'head',XZ:'head',YZ:'head'},five:{XY:'table',XZ:'head',YZ:'head'},lathe:{XZ:'head'}};
+const memberTravel={compact:{XY:-1,XZ:-1,YZ:-1},horizontal:{XY:1,XZ:1,YZ:1},travel:{XY:1,XZ:-1,YZ:-1},double:{XY:1,XZ:-1,YZ:-1},gantry:{XY:1,XZ:-1,YZ:-1},five:{XY:-1,XZ:-1,YZ:-1},lathe:{XZ:-1}};
 let pairs=0;
 for(const [kind,entries] of Object.entries(owners)){
  e.storage.clear();e.read(`openMachine(machines.find(m=>m.kind==='${kind}'));supportHeights=supports.map(()=>0);updateLeveling();`);
@@ -35,7 +36,8 @@ for(const [kind,entries] of Object.entries(owners)){
    const profile={squareness:Object.fromEntries(Object.keys(entries).map(k=>[k,{microns:k===key?angle*300000:0}]))};
    const scan=e.json(`referenceScan({key:'${key}'},positions,levelSolution,${JSON.stringify(profile)})`);
    assert.equal(scan.valid,true,kind+key+scan.reason);
-   const crossing=-.3*Math.sin(angle); // normal component of positive member motion
+   assert.equal(Math.sign(scan.endPosition-scan.startPosition),memberTravel[kind][key]);
+   const crossing=-.3*Math.sin(angle)*memberTravel[kind][key]; // normal component of positive member motion
    const gapChange=owner==='head'?crossing:-crossing;
    near(scan.microns,-gapChange*1e6,1e-5);
   }

@@ -1,0 +1,14 @@
+{
+  "index.html": "870555339651834768d73e9e6692a08bda983fedab98cf82235e3560654fce84",
+  "src/reference-measurement.js": "37565d34ed15eb0c3f3af69e363d75b10891e1563be4cb2411d2f9a0d87bb3db",
+  "src/reference-measurement-ui.js": "0a4ca5d9b872ee4bd1314af0463fd84afb0f9faeca389fde0e7c108f60f57a8b",
+  "src/accuracy-ui.js": "62063cf1b0883821cd2622edc2a8ad6ec0e99f0be0420ccbef9a11886536c048",
+  "src/index.html": "07706389aa6a8b73a99cc5daf194d3298a5781bf8e1c4e59b0e5ce4b0295b098",
+  "src/leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+  "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+  "src/spindle-sweep.js": "417ef0f6486fcdbd7b10a42b89f610b2b121660c126ab7b0aa0bb97b0fa85c57",
+  "src/spindle-sweep-ui.js": "6d0021ea3f4eb7ffeba21628053e204c1d50d3051a90778fbaedd61cdeb4eca7",
+  "src/leveling-ui.js": "4e3ee21ef4626cdf83efa7e6c139a39fbcbb64c196f23c7c63ec5252137beb28",
+  "src/style.css": "86f9580e1737d4fbd770ad60f8bff80b8ed06a539dc1e5c2c4f2e8832ca55884",
+  "src/app.js": "d548f22ba6b651ea61e03d6a1e9484f6cd23ed2afe3dd0b1197cf40b9f0f78b3"
+}
