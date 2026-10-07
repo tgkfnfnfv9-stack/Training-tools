@@ -1,0 +1,42 @@
+{
+  "htmlSha256": "4d14eeb584036a8b6ee8f114f5e2452eaa7577eeb3bc0527559dc758dc7806bc",
+  "sourceUnchanged": true,
+  "suites": [
+    {
+      "suite": "check-measurement-reference",
+      "exitCode": 0,
+      "output": "Reference plane geometry: 70 numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.\nSupport-grid crossing: piecewise integral and analytic pallet material-point oracle passed.\n"
+    },
+    {
+      "suite": "check-reference-zero",
+      "exitCode": 0,
+      "output": "Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.\n"
+    },
+    {
+      "suite": "check-page-redraw",
+      "exitCode": 0,
+      "output": "Page-entry redraw: 98 assertions across all 7 machines passed; explicit JSON round trips preserved.\n"
+    },
+    {
+      "suite": "check-compact-display-physical",
+      "exitCode": 0,
+      "output": "{\"cases\":60,\"axisChecks\":180,\"maxDirectionError\":8.064400801413908e-10,\"fixedColumnInvariant\":true,\"measurementsInvariant\":true}\n"
+    },
+    {
+      "suite": "check-settings-menu-ui",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 173,\n  \"frames\": 270,\n  \"finiteCanvasCoordinates\": 2526185,\n  \"variants\": 7,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}\n"
+    },
+    {
+      "suite": "check-accuracy-render",
+      "exitCode": 0,
+      "output": "Accuracy Canvas: 305 rendered frames, 1448150 finite drawing operations passed (3 sizes, 7 machines, 2 extra modes).\n"
+    }
+  ],
+  "finalHtmlSha256": "7aa897d8d82b4793d0763e5f31da021431328151aa667517fa34631bbe4a2924",
+  "finalChange": "カード説明の比較対象を有限走査値から表示値へ修正。機能変更なし。",
+  "finalVerification": [
+    "check-reference-zero:76 checks passed",
+    "check-measurement-reference:70 numeric assertions + independent invariants passed"
+  ]
+}

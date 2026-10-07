@@ -1,0 +1,3315 @@
+{
+  "input": "/workspace/Training-tools/index.html",
+  "phase": "after",
+  "sha256": "7aa897d8d82b4793d0763e5f31da021431328151aa667517fa34631bbe4a2924",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "1280x900: coarse actual button moves support A by 0.01 mm",
+      "ok": true
+    },
+    {
+      "name": "1280x900: XY/XZ shown match raw finite readings",
+      "ok": true,
+      "detail": [
+        {
+          "pair": "XY",
+          "raw": 33.333867508292606,
+          "shown": 33.333867508292606,
+          "text": "+33"
+        },
+        {
+          "pair": "XZ",
+          "raw": -75.70312419570742,
+          "shown": -75.70312419570742,
+          "text": "-76"
+        },
+        {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      ]
+    },
+    {
+      "name": "1280x900: unwanted column inset fully removed",
+      "ok": true
+    },
+    {
+      "name": "1280x900: YZ support response is 50 times independent before/after raw delta",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        },
+        "after": {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      }
+    },
+    {
+      "name": "1280x900: one coarse click changes YZ shown by more than 1 micrometre",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        },
+        "after": {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      }
+    },
+    {
+      "name": "1280x900: YZ baseline intrinsic value preserved",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        }
+      }
+    },
+    {
+      "name": "1280x900: training multiplier visibly explained",
+      "ok": true
+    },
+    {
+      "name": "1280x900: support controls reachable and at least 44px tall",
+      "ok": true,
+      "detail": [
+        {
+          "text": "A",
+          "height": 44,
+          "bottom": 803,
+          "right": 312,
+          "reachable": true
+        },
+        {
+          "text": "B",
+          "height": 44,
+          "bottom": 803,
+          "right": 388,
+          "reachable": true
+        },
+        {
+          "text": "C",
+          "height": 44,
+          "bottom": 803,
+          "right": 464,
+          "reachable": true
+        },
+        {
+          "text": "D",
+          "height": 44,
+          "bottom": 803,
+          "right": 540,
+          "reachable": true
+        },
+        {
+          "text": "↓ 下げる",
+          "height": 44,
+          "bottom": 890,
+          "right": 635,
+          "reachable": true
+        },
+        {
+          "text": "↑ 上げる",
+          "height": 44,
+          "bottom": 890,
+          "right": 1040,
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "1280x900: actual down button restores all readings",
+      "ok": true
+    },
+    {
+      "name": "390x844: coarse actual button moves support A by 0.01 mm",
+      "ok": true
+    },
+    {
+      "name": "390x844: XY/XZ shown match raw finite readings",
+      "ok": true,
+      "detail": [
+        {
+          "pair": "XY",
+          "raw": 33.333867508292606,
+          "shown": 33.333867508292606,
+          "text": "+33"
+        },
+        {
+          "pair": "XZ",
+          "raw": -75.70312419570742,
+          "shown": -75.70312419570742,
+          "text": "-76"
+        },
+        {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      ]
+    },
+    {
+      "name": "390x844: unwanted column inset fully removed",
+      "ok": true
+    },
+    {
+      "name": "390x844: YZ support response is 50 times independent before/after raw delta",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        },
+        "after": {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      }
+    },
+    {
+      "name": "390x844: one coarse click changes YZ shown by more than 1 micrometre",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        },
+        "after": {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      }
+    },
+    {
+      "name": "390x844: YZ baseline intrinsic value preserved",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        }
+      }
+    },
+    {
+      "name": "390x844: training multiplier visibly explained",
+      "ok": true
+    },
+    {
+      "name": "390x844: support controls reachable and at least 44px tall",
+      "ok": true,
+      "detail": [
+        {
+          "text": "A",
+          "height": 44,
+          "bottom": 751.5625,
+          "right": 80,
+          "reachable": true
+        },
+        {
+          "text": "B",
+          "height": 44,
+          "bottom": 751.5625,
+          "right": 156,
+          "reachable": true
+        },
+        {
+          "text": "C",
+          "height": 44,
+          "bottom": 751.5625,
+          "right": 232,
+          "reachable": true
+        },
+        {
+          "text": "D",
+          "height": 44,
+          "bottom": 751.5625,
+          "right": 308,
+          "reachable": true
+        },
+        {
+          "text": "↓ 下げる",
+          "height": 44,
+          "bottom": 834,
+          "right": 190,
+          "reachable": true
+        },
+        {
+          "text": "↑ 上げる",
+          "height": 44,
+          "bottom": 834,
+          "right": 382,
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "390x844: actual down button restores all readings",
+      "ok": true
+    },
+    {
+      "name": "320x568: coarse actual button moves support A by 0.01 mm",
+      "ok": true
+    },
+    {
+      "name": "320x568: XY/XZ shown match raw finite readings",
+      "ok": true,
+      "detail": [
+        {
+          "pair": "XY",
+          "raw": 33.333867508292606,
+          "shown": 33.333867508292606,
+          "text": "+33"
+        },
+        {
+          "pair": "XZ",
+          "raw": -75.70312419570742,
+          "shown": -75.70312419570742,
+          "text": "-76"
+        },
+        {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      ]
+    },
+    {
+      "name": "320x568: unwanted column inset fully removed",
+      "ok": true
+    },
+    {
+      "name": "320x568: YZ support response is 50 times independent before/after raw delta",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        },
+        "after": {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      }
+    },
+    {
+      "name": "320x568: one coarse click changes YZ shown by more than 1 micrometre",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        },
+        "after": {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      }
+    },
+    {
+      "name": "320x568: YZ baseline intrinsic value preserved",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        }
+      }
+    },
+    {
+      "name": "320x568: training multiplier visibly explained",
+      "ok": true
+    },
+    {
+      "name": "320x568: support controls reachable and at least 44px tall",
+      "ok": true,
+      "detail": [
+        {
+          "text": "A",
+          "height": 44,
+          "bottom": 517,
+          "right": 78.5,
+          "reachable": true
+        },
+        {
+          "text": "B",
+          "height": 44,
+          "bottom": 517,
+          "right": 153,
+          "reachable": true
+        },
+        {
+          "text": "C",
+          "height": 44,
+          "bottom": 517,
+          "right": 227.5,
+          "reachable": true
+        },
+        {
+          "text": "D",
+          "height": 44,
+          "bottom": 517,
+          "right": 302,
+          "reachable": true
+        },
+        {
+          "text": "↓ 下げる",
+          "height": 44,
+          "bottom": 564,
+          "right": 155,
+          "reachable": true
+        },
+        {
+          "text": "↑ 上げる",
+          "height": 44,
+          "bottom": 564,
+          "right": 312,
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "320x568: actual down button restores all readings",
+      "ok": true
+    },
+    {
+      "name": "320x480: coarse actual button moves support A by 0.01 mm",
+      "ok": true
+    },
+    {
+      "name": "320x480: XY/XZ shown match raw finite readings",
+      "ok": true,
+      "detail": [
+        {
+          "pair": "XY",
+          "raw": 33.333867508292606,
+          "shown": 33.333867508292606,
+          "text": "+33"
+        },
+        {
+          "pair": "XZ",
+          "raw": -75.70312419570742,
+          "shown": -75.70312419570742,
+          "text": "-76"
+        },
+        {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      ]
+    },
+    {
+      "name": "320x480: unwanted column inset fully removed",
+      "ok": true
+    },
+    {
+      "name": "320x480: YZ support response is 50 times independent before/after raw delta",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        },
+        "after": {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      }
+    },
+    {
+      "name": "320x480: one coarse click changes YZ shown by more than 1 micrometre",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        },
+        "after": {
+          "pair": "YZ",
+          "raw": 14.976214685014435,
+          "shown": 13.81073455692691,
+          "text": "+14"
+        }
+      }
+    },
+    {
+      "name": "320x480: YZ baseline intrinsic value preserved",
+      "ok": true,
+      "detail": {
+        "before": {
+          "pair": "YZ",
+          "raw": 14.999999993750915,
+          "shown": 14.999999993750915,
+          "text": "+15"
+        }
+      }
+    },
+    {
+      "name": "320x480: training multiplier visibly explained",
+      "ok": true
+    },
+    {
+      "name": "320x480: support controls reachable and at least 44px tall",
+      "ok": true,
+      "detail": [
+        {
+          "text": "A",
+          "height": 44,
+          "bottom": 429,
+          "right": 78.5,
+          "reachable": true
+        },
+        {
+          "text": "B",
+          "height": 44,
+          "bottom": 429,
+          "right": 153,
+          "reachable": true
+        },
+        {
+          "text": "C",
+          "height": 44,
+          "bottom": 429,
+          "right": 227.5,
+          "reachable": true
+        },
+        {
+          "text": "D",
+          "height": 44,
+          "bottom": 429,
+          "right": 302,
+          "reachable": true
+        },
+        {
+          "text": "↓ 下げる",
+          "height": 44,
+          "bottom": 476,
+          "right": 155,
+          "reachable": true
+        },
+        {
+          "text": "↑ 上げる",
+          "height": 44,
+          "bottom": 476,
+          "right": 312,
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "320x480: actual down button restores all readings",
+      "ok": true
+    },
+    {
+      "name": "fine actual button retains 0.001 mm",
+      "ok": true
+    },
+    {
+      "name": "fine YZ gain is also 50",
+      "ok": true
+    },
+    {
+      "name": "horizontal: displayed values retain raw finite readings",
+      "ok": true,
+      "detail": [
+        {
+          "pair": "XY",
+          "raw": -14.53803676268635,
+          "shown": -14.53803676268635,
+          "text": "-15"
+        },
+        {
+          "pair": "XZ",
+          "raw": 20.146627669219082,
+          "shown": 20.146627669219082,
+          "text": "+20"
+        },
+        {
+          "pair": "YZ",
+          "raw": -3.5629018888469477,
+          "shown": -3.5629018888469477,
+          "text": "-4"
+        }
+      ]
+    },
+    {
+      "name": "horizontal: no unwanted inset",
+      "ok": true
+    },
+    {
+      "name": "travel: displayed values retain raw finite readings",
+      "ok": true,
+      "detail": [
+        {
+          "pair": "XY",
+          "raw": 4.265005373605899,
+          "shown": 4.265005373605899,
+          "text": "+4"
+        },
+        {
+          "pair": "XZ",
+          "raw": 9.963805546474996,
+          "shown": 9.963805546474996,
+          "text": "+10"
+        },
+        {
+          "pair": "YZ",
+          "raw": 2.5419999999699847,
+          "shown": 2.5419999999699847,
+          "text": "+3"
+        }
+      ]
+    },
+    {
+      "name": "travel: no unwanted inset",
+      "ok": true
+    },
+    {
+      "name": "gate: displayed values retain raw finite readings",
+      "ok": true,
+      "detail": [
+        {
+          "pair": "XY",
+          "raw": -83.76706031254163,
+          "shown": -83.76706031254163,
+          "text": "-84"
+        },
+        {
+          "pair": "XZ",
+          "raw": -65.81734167449525,
+          "shown": -65.81734167449525,
+          "text": "-66"
+        },
+        {
+          "pair": "YZ",
+          "raw": -27.522227594903303,
+          "shown": -27.522227594903303,
+          "text": "-28"
+        }
+      ]
+    },
+    {
+      "name": "gate: no unwanted inset",
+      "ok": true
+    },
+    {
+      "name": "gantry: displayed values retain raw finite readings",
+      "ok": true,
+      "detail": [
+        {
+          "pair": "XY",
+          "raw": -16.30395330343669,
+          "shown": -16.30395330343669,
+          "text": "-16"
+        },
+        {
+          "pair": "XZ",
+          "raw": 6.245261649833952,
+          "shown": 6.245261649833952,
+          "text": "+6"
+        },
+        {
+          "pair": "YZ",
+          "raw": 15.356999993247285,
+          "shown": 15.356999993247285,
+          "text": "+15"
+        }
+      ]
+    },
+    {
+      "name": "gantry: no unwanted inset",
+      "ok": true
+    },
+    {
+      "name": "five: displayed values retain raw finite readings",
+      "ok": true,
+      "detail": [
+        {
+          "pair": "XY",
+          "raw": -4.518999999827966,
+          "shown": -4.518999999827966,
+          "text": "-5"
+        },
+        {
+          "pair": "XZ",
+          "raw": 4.343999999848955,
+          "shown": 4.343999999848955,
+          "text": "+4"
+        },
+        {
+          "pair": "YZ",
+          "raw": 15.477999993131556,
+          "shown": 15.477999993131556,
+          "text": "+15"
+        }
+      ]
+    },
+    {
+      "name": "five: no unwanted inset",
+      "ok": true
+    },
+    {
+      "name": "lathe: displayed values retain raw finite readings",
+      "ok": true,
+      "detail": [
+        {
+          "pair": "XZ",
+          "raw": -17.56998631101056,
+          "shown": -17.56998631101056,
+          "text": "-18"
+        }
+      ]
+    },
+    {
+      "name": "lathe: no unwanted inset",
+      "ok": true
+    },
+    {
+      "name": "real machine page reentry redraws random individual",
+      "ok": true,
+      "detail": {
+        "seedBefore": 184829261,
+        "seed": 2592662127,
+        "heights": [
+          -0.15,
+          0.15,
+          0.071,
+          0.041
+        ],
+        "initial": [
+          -0.15,
+          0.15,
+          0.071,
+          0.041
+        ]
+      }
+    },
+    {
+      "name": "real page reentry resets supports",
+      "ok": true
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "states": [
+    {
+      "width": 1280,
+      "height": 900,
+      "before": {
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "readings": [
+          {
+            "pair": "XY",
+            "raw": 32.999999933450844,
+            "shown": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "raw": -74.99999921875035,
+            "shown": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "raw": 14.999999993750915,
+            "shown": 14.999999993750915,
+            "text": "+15"
+          }
+        ],
+        "profile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "squareness": {
+              "XY": {
+                "microns": 33
+              },
+              "XZ": {
+                "microns": 75
+              },
+              "YZ": {
+                "microns": -15
+              }
+            },
+            "guides": {},
+            "initialHeights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.036,
+              0.388,
+              0.389,
+              -0.036
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": false,
+        "note": "仮想測定（YZ支持変化×50） 300 mm・µm",
+        "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n小型立形・4点支持\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+33 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-75 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+15 µm\n\n仮想測定（YZ支持変化×50） 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-30\n奥\n+15\n左\n+45\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\n↓ 下げる\n↑ 上げる\n\n粗調整へ切り替えました。同じ個体と支持点で続けます。"
+      },
+      "after": {
+        "heights": [
+          0.01,
+          0,
+          0,
+          0
+        ],
+        "readings": [
+          {
+            "pair": "XY",
+            "raw": 33.333867508292606,
+            "shown": 33.333867508292606,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "raw": -75.70312419570742,
+            "shown": -75.70312419570742,
+            "text": "-76"
+          },
+          {
+            "pair": "YZ",
+            "raw": 14.976214685014435,
+            "shown": 13.81073455692691,
+            "text": "+14"
+          }
+        ],
+        "profile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "squareness": {
+              "XY": {
+                "microns": 33
+              },
+              "XZ": {
+                "microns": 75
+              },
+              "YZ": {
+                "microns": -15
+              }
+            },
+            "guides": {},
+            "initialHeights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.036,
+              0.388,
+              0.389,
+              -0.036
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0.01,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": false,
+        "note": "仮想測定（YZ支持変化×50） 300 mm・µm",
+        "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n小型立形・4点支持\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+33 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-76 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+14 µm\n\n仮想測定（YZ支持変化×50） 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-30\n奥\n+15\n左\n+45\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\n↓ 下げる\n↑ 上げる\n\nAを調整しました。模型と直角の変化を確認してください。"
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "before": {
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "readings": [
+          {
+            "pair": "XY",
+            "raw": 32.999999933450844,
+            "shown": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "raw": -74.99999921875035,
+            "shown": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "raw": 14.999999993750915,
+            "shown": 14.999999993750915,
+            "text": "+15"
+          }
+        ],
+        "profile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "squareness": {
+              "XY": {
+                "microns": 33
+              },
+              "XZ": {
+                "microns": 75
+              },
+              "YZ": {
+                "microns": -15
+              }
+            },
+            "guides": {},
+            "initialHeights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.036,
+              0.388,
+              0.389,
+              -0.036
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": false,
+        "note": "仮想測定（YZ支持変化×50） 300 mm・µm",
+        "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n小型立形・4点支持\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+33 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-75 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+15 µm\n\n仮想測定（YZ支持変化×50） 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-30\n奥\n+15\n左\n+45\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\n↓ 下げる\n↑ 上げる\n\n粗調整へ切り替えました。同じ個体と支持点で続けます。"
+      },
+      "after": {
+        "heights": [
+          0.01,
+          0,
+          0,
+          0
+        ],
+        "readings": [
+          {
+            "pair": "XY",
+            "raw": 33.333867508292606,
+            "shown": 33.333867508292606,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "raw": -75.70312419570742,
+            "shown": -75.70312419570742,
+            "text": "-76"
+          },
+          {
+            "pair": "YZ",
+            "raw": 14.976214685014435,
+            "shown": 13.81073455692691,
+            "text": "+14"
+          }
+        ],
+        "profile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "squareness": {
+              "XY": {
+                "microns": 33
+              },
+              "XZ": {
+                "microns": 75
+              },
+              "YZ": {
+                "microns": -15
+              }
+            },
+            "guides": {},
+            "initialHeights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.036,
+              0.388,
+              0.389,
+              -0.036
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0.01,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": false,
+        "note": "仮想測定（YZ支持変化×50） 300 mm・µm",
+        "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n小型立形・4点支持\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+33 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-76 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+14 µm\n\n仮想測定（YZ支持変化×50） 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-30\n奥\n+15\n左\n+45\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\n↓ 下げる\n↑ 上げる\n\nAを調整しました。模型と直角の変化を確認してください。"
+      }
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "before": {
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "readings": [
+          {
+            "pair": "XY",
+            "raw": 32.999999933450844,
+            "shown": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "raw": -74.99999921875035,
+            "shown": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "raw": 14.999999993750915,
+            "shown": 14.999999993750915,
+            "text": "+15"
+          }
+        ],
+        "profile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "squareness": {
+              "XY": {
+                "microns": 33
+              },
+              "XZ": {
+                "microns": 75
+              },
+              "YZ": {
+                "microns": -15
+              }
+            },
+            "guides": {},
+            "initialHeights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.036,
+              0.388,
+              0.389,
+              -0.036
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": false,
+        "note": "仮想測定（YZ支持変化×50） 300 mm・µm",
+        "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n小型立形・4点支持\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+33 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-75 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+15 µm\n\n仮想測定（YZ支持変化×50） 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-30\n奥\n+15\n左\n+45\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\n↓ 下げる\n↑ 上げる\n\n粗調整へ切り替えました。同じ個体と支持点で続けます。"
+      },
+      "after": {
+        "heights": [
+          0.01,
+          0,
+          0,
+          0
+        ],
+        "readings": [
+          {
+            "pair": "XY",
+            "raw": 33.333867508292606,
+            "shown": 33.333867508292606,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "raw": -75.70312419570742,
+            "shown": -75.70312419570742,
+            "text": "-76"
+          },
+          {
+            "pair": "YZ",
+            "raw": 14.976214685014435,
+            "shown": 13.81073455692691,
+            "text": "+14"
+          }
+        ],
+        "profile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "squareness": {
+              "XY": {
+                "microns": 33
+              },
+              "XZ": {
+                "microns": 75
+              },
+              "YZ": {
+                "microns": -15
+              }
+            },
+            "guides": {},
+            "initialHeights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.036,
+              0.388,
+              0.389,
+              -0.036
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0.01,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": false,
+        "note": "仮想測定（YZ支持変化×50） 300 mm・µm",
+        "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n小型立形・4点支持\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+33 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-76 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+14 µm\n\n仮想測定（YZ支持変化×50） 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-30\n奥\n+15\n左\n+45\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\n↓ 下げる\n↑ 上げる\n\nAを調整しました。模型と直角の変化を確認してください。"
+      }
+    },
+    {
+      "width": 320,
+      "height": 480,
+      "before": {
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "readings": [
+          {
+            "pair": "XY",
+            "raw": 32.999999933450844,
+            "shown": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "raw": -74.99999921875035,
+            "shown": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "raw": 14.999999993750915,
+            "shown": 14.999999993750915,
+            "text": "+15"
+          }
+        ],
+        "profile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "squareness": {
+              "XY": {
+                "microns": 33
+              },
+              "XZ": {
+                "microns": 75
+              },
+              "YZ": {
+                "microns": -15
+              }
+            },
+            "guides": {},
+            "initialHeights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.036,
+              0.388,
+              0.389,
+              -0.036
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": false,
+        "note": "仮想測定（YZ支持変化×50） 300 mm・µm",
+        "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n小型立形・4点支持\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+33 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-75 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+15 µm\n\n仮想測定（YZ支持変化×50） 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-30\n奥\n+15\n左\n+45\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\n↓ 下げる\n↑ 上げる\n\n粗調整へ切り替えました。同じ個体と支持点で続けます。"
+      },
+      "after": {
+        "heights": [
+          0.01,
+          0,
+          0,
+          0
+        ],
+        "readings": [
+          {
+            "pair": "XY",
+            "raw": 33.333867508292606,
+            "shown": 33.333867508292606,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "raw": -75.70312419570742,
+            "shown": -75.70312419570742,
+            "text": "-76"
+          },
+          {
+            "pair": "YZ",
+            "raw": 14.976214685014435,
+            "shown": 13.81073455692691,
+            "text": "+14"
+          }
+        ],
+        "profile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "squareness": {
+              "XY": {
+                "microns": 33
+              },
+              "XZ": {
+                "microns": 75
+              },
+              "YZ": {
+                "microns": -15
+              }
+            },
+            "guides": {},
+            "initialHeights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.036,
+              0.388,
+              0.389,
+              -0.036
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0.01,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": false,
+        "note": "仮想測定（YZ支持変化×50） 300 mm・µm",
+        "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n小型立形・4点支持\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+33 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-76 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+14 µm\n\n仮想測定（YZ支持変化×50） 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-30\n奥\n+15\n左\n+45\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\n↓ 下げる\n↑ 上げる\n\nAを調整しました。模型と直角の変化を確認してください。"
+      }
+    },
+    {
+      "fineBefore": {
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "readings": [
+          {
+            "pair": "XY",
+            "raw": 32.999999933450844,
+            "shown": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "raw": -74.99999921875035,
+            "shown": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "raw": 14.999999993750915,
+            "shown": 14.999999993750915,
+            "text": "+15"
+          }
+        ],
+        "profile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "squareness": {
+              "XY": {
+                "microns": 33
+              },
+              "XZ": {
+                "microns": 75
+              },
+              "YZ": {
+                "microns": -15
+              }
+            },
+            "guides": {},
+            "initialHeights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.036,
+              0.388,
+              0.389,
+              -0.036
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.001,
+          "exaggerate": true
+        },
+        "inset": false,
+        "note": "仮想測定（YZ支持変化×50） 300 mm・µm",
+        "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n小型立形・4点支持\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+33 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-75 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+15 µm\n\n仮想測定（YZ支持変化×50） 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-30\n奥\n+15\n左\n+45\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\n↓ 下げる\n↑ 上げる\n\n微調整へ切り替えました。同じ個体と支持点で続けます。"
+      },
+      "fineAfter": {
+        "heights": [
+          0.001,
+          0,
+          0,
+          0
+        ],
+        "readings": [
+          {
+            "pair": "XY",
+            "raw": 33.03338668612411,
+            "shown": 33.03338668612411,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "raw": -75.07031171646688,
+            "shown": -75.07031171646688,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "raw": 14.997621392455821,
+            "shown": 14.881069928996219,
+            "text": "+15"
+          }
+        ],
+        "profile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "squareness": {
+              "XY": {
+                "microns": 33
+              },
+              "XZ": {
+                "microns": 75
+              },
+              "YZ": {
+                "microns": -15
+              }
+            },
+            "guides": {},
+            "initialHeights": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.036,
+              0.388,
+              0.389,
+              -0.036
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0.001,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.001,
+          "exaggerate": true
+        },
+        "inset": false,
+        "note": "仮想測定（YZ支持変化×50） 300 mm・µm",
+        "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n小型立形・4点支持\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+33 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-75 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+15 µm\n\n仮想測定（YZ支持変化×50） 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-30\n奥\n+15\n左\n+45\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\n↓ 下げる\n↑ 上げる\n\nAを調整しました。模型と直角の変化を確認してください。"
+      }
+    },
+    {
+      "id": "horizontal",
+      "heights": [
+        -0.15,
+        0.15,
+        -0.045,
+        0.028,
+        0.006,
+        0.144,
+        -0.138,
+        0.11
+      ],
+      "readings": [
+        {
+          "pair": "XY",
+          "raw": -14.53803676268635,
+          "shown": -14.53803676268635,
+          "text": "-15"
+        },
+        {
+          "pair": "XZ",
+          "raw": 20.146627669219082,
+          "shown": 20.146627669219082,
+          "text": "+20"
+        },
+        {
+          "pair": "YZ",
+          "raw": -3.5629018888469477,
+          "shown": -3.5629018888469477,
+          "text": "-4"
+        }
+      ],
+      "profile": {
+        "version": 1,
+        "condition": "new",
+        "seed": 1354179851,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -14.993
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -11.078
+          },
+          "YZ": {
+            "band": 0,
+            "microns": 5.499
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 5.042
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.054
+          },
+          "Z": {
+            "band": 0,
+            "microns": 10.009
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.045,
+          0.028,
+          0.006,
+          0.144,
+          -0.138,
+          0.11
+        ]
+      },
+      "record": {
+        "calculationModel": "horizontal-guide-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "haas-ec630-ngc-eight-v1",
+          "points": [
+            {
+              "id": "haas-ec630-ngc-eight-v1-p1",
+              "x": -1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p2",
+              "x": 1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p3",
+              "x": -1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p4",
+              "x": 1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p5",
+              "x": -1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p6",
+              "x": 1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p7",
+              "x": -1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p8",
+              "x": 1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "new",
+          "seed": 1354179851,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": -14.993
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -11.078
+            },
+            "YZ": {
+              "band": 0,
+              "microns": 5.499
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 0,
+              "microns": 5.042
+            },
+            "Y": {
+              "band": 0,
+              "microns": 7.054
+            },
+            "Z": {
+              "band": 0,
+              "microns": 10.009
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            -0.045,
+            0.028,
+            0.006,
+            0.144,
+            -0.138,
+            0.11
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 3.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.017,
+            -0.014,
+            -0.007,
+            -0.003,
+            0.014,
+            -0.003,
+            -0.014,
+            0.004
+          ]
+        },
+        "machine": "horizontal",
+        "mode": "",
+        "width": 2.72,
+        "depth": 3.68,
+        "heights": [
+          -0.15,
+          0.15,
+          -0.045,
+          0.028,
+          0.006,
+          0.144,
+          -0.138,
+          0.11
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": false,
+      "note": "仮想測定 300 mm・µm",
+      "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n横形・Haas EC-630\n▽\nXY\n↑上\n頭固定\nR\nS\n0\n上\n押込＋\n右\n接触開始 0\n-15 µm\nXZ\n↑奥\n頭固定\nR\nS\n0\n手前\n押込＋\n右\n接触開始 0\n+20 µm\nYZ\n↑奥\n頭固定\nR\nS\n0\n手前\n押込＋\n上\n接触開始 0\n-4 µm\n\n仮想測定 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n平均 · 左右\n右が高い\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\nE\nF\nG\nH\n↓ 下げる\n↑ 上げる"
+    },
+    {
+      "id": "travel",
+      "heights": [
+        -0.15,
+        0.15,
+        0.051,
+        -0.145,
+        0.117,
+        -0.035
+      ],
+      "readings": [
+        {
+          "pair": "XY",
+          "raw": 4.265005373605899,
+          "shown": 4.265005373605899,
+          "text": "+4"
+        },
+        {
+          "pair": "XZ",
+          "raw": 9.963805546474996,
+          "shown": 9.963805546474996,
+          "text": "+10"
+        },
+        {
+          "pair": "YZ",
+          "raw": 2.5419999999699847,
+          "shown": 2.5419999999699847,
+          "text": "+3"
+        }
+      ],
+      "profile": {
+        "version": 1,
+        "condition": "new",
+        "seed": 3857546828,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 4.265
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -9.502
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -2.542
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 1.618
+          },
+          "Y": {
+            "band": 0,
+            "microns": 5.089
+          },
+          "Z": {
+            "band": 0,
+            "microns": 2.62
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.051,
+          -0.145,
+          0.117,
+          -0.035
+        ]
+      },
+      "record": {
+        "calculationModel": "travel-guide-v2",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "new",
+          "seed": 3857546828,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 4.265
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -9.502
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -2.542
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 0,
+              "microns": 1.618
+            },
+            "Y": {
+              "band": 0,
+              "microns": 5.089
+            },
+            "Z": {
+              "band": 0,
+              "microns": 2.62
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.051,
+            -0.145,
+            0.117,
+            -0.035
+          ]
+        },
+        "bestState": {
+          "width": 4.32,
+          "depth": 2.08,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.23,
+            0.05,
+            0.021,
+            0.014,
+            0.067,
+            0.22
+          ]
+        },
+        "machine": "travel",
+        "mode": "",
+        "width": 4.32,
+        "depth": 2.08,
+        "heights": [
+          -0.15,
+          0.15,
+          0.051,
+          -0.145,
+          0.117,
+          -0.035
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": false,
+      "note": "仮想測定 300 mm・µm",
+      "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n立形・移動コラム\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n+4 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n+10 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+3 µm\n\n仮想測定 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-21\n奥\n+1\n左\n+22\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n右が高い\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\nE\nF\n↓ 下げる\n↑ 上げる"
+    },
+    {
+      "id": "gate",
+      "heights": [
+        -0.15,
+        0.15,
+        -0.097,
+        -0.048,
+        -0.112,
+        -0.087,
+        -0.094,
+        -0.097,
+        0.004,
+        0.002,
+        0.142,
+        -0.091,
+        -0.021,
+        -0.023,
+        -0.118
+      ],
+      "readings": [
+        {
+          "pair": "XY",
+          "raw": -83.76706031254163,
+          "shown": -83.76706031254163,
+          "text": "-84"
+        },
+        {
+          "pair": "XZ",
+          "raw": -65.81734167449525,
+          "shown": -65.81734167449525,
+          "text": "-66"
+        },
+        {
+          "pair": "YZ",
+          "raw": -27.522227594903303,
+          "shown": -27.522227594903303,
+          "text": "-28"
+        }
+      ],
+      "profile": {
+        "version": 1,
+        "condition": "new",
+        "seed": 2428794639,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 4.531
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 3.622
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -11.956
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 38.787
+          },
+          "Y": {
+            "band": 0,
+            "microns": 6.164
+          },
+          "Z": {
+            "band": 0,
+            "microns": 11.526
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.097,
+          -0.048,
+          -0.112,
+          -0.087,
+          -0.094,
+          -0.097,
+          0.004,
+          0.002,
+          0.142,
+          -0.091,
+          -0.021,
+          -0.023,
+          -0.118
+        ]
+      },
+      "record": {
+        "calculationModel": "portal-shear-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "hwacheon-l3-3000-teaching-15point-v1",
+          "points": [
+            {
+              "id": "bed-left-1",
+              "x": -0.77,
+              "z": -3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-center-1",
+              "x": 0,
+              "z": -3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-right-1",
+              "x": 0.77,
+              "z": -3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-left-2",
+              "x": -0.77,
+              "z": 0.020000000000000018,
+              "group": "bed"
+            },
+            {
+              "id": "bed-center-2",
+              "x": 0,
+              "z": 0.020000000000000018,
+              "group": "bed"
+            },
+            {
+              "id": "bed-right-2",
+              "x": 0.77,
+              "z": 0.020000000000000018,
+              "group": "bed"
+            },
+            {
+              "id": "bed-left-3",
+              "x": -0.77,
+              "z": 3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-center-3",
+              "x": 0,
+              "z": 3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-right-3",
+              "x": 0.77,
+              "z": 3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "column-left-front",
+              "x": -1.06,
+              "z": 0.5449999999999999,
+              "group": "column-left"
+            },
+            {
+              "id": "column-left-back",
+              "x": -1.06,
+              "z": 1.0949999999999998,
+              "group": "column-left"
+            },
+            {
+              "id": "column-left-outer",
+              "x": -1.425,
+              "z": 0.8250000000000002,
+              "group": "column-left"
+            },
+            {
+              "id": "column-right-front",
+              "x": 1.06,
+              "z": 0.5449999999999999,
+              "group": "column-right"
+            },
+            {
+              "id": "column-right-back",
+              "x": 1.06,
+              "z": 1.0949999999999998,
+              "group": "column-right"
+            },
+            {
+              "id": "column-right-outer",
+              "x": 1.42,
+              "z": 0.8250000000000002,
+              "group": "column-right"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "new",
+          "seed": 2428794639,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 4.531
+            },
+            "XZ": {
+              "band": 0,
+              "microns": 3.622
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -11.956
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 38.787
+            },
+            "Y": {
+              "band": 0,
+              "microns": 6.164
+            },
+            "Z": {
+              "band": 0,
+              "microns": 11.526
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            -0.097,
+            -0.048,
+            -0.112,
+            -0.087,
+            -0.094,
+            -0.097,
+            0.004,
+            0.002,
+            0.142,
+            -0.091,
+            -0.021,
+            -0.023,
+            -0.118
+          ]
+        },
+        "bestState": {
+          "width": 2.85,
+          "depth": 6.84,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.168,
+            -0.083,
+            -0.051,
+            -0.052,
+            -0.023,
+            0.006,
+            -0.069,
+            0.036,
+            0.068,
+            0.002,
+            0.008,
+            -0.018,
+            -0.002,
+            0,
+            0.004
+          ]
+        },
+        "machine": "gate",
+        "mode": "l3-3000",
+        "width": 2.85,
+        "depth": 6.84,
+        "heights": [
+          -0.15,
+          0.15,
+          -0.097,
+          -0.048,
+          -0.112,
+          -0.087,
+          -0.094,
+          -0.097,
+          0.004,
+          0.002,
+          0.142,
+          -0.091,
+          -0.021,
+          -0.023,
+          -0.118
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": false,
+      "note": "仮想測定 300 mm・µm",
+      "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n固定門形・L3 3000\n▽\nXY\n↑右\nラム固定\nR\nS\n0\n右\n押込＋\n奥\n接触開始 0\n-84 µm\nXZ\n↑上\nラム固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n-66 µm\nYZ\n↑上\nラム固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n-28 µm\n\n仮想測定 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n-36\n奥\n-66\n左\n-30\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・長手ベッド左 1\n\nA\nB\nC\nD\nE\nF\nG\nH\nI\nJ\nK\nL\nM\nN\nO\n↓ 下げる\n↑ 上げる"
+    },
+    {
+      "id": "gantry",
+      "heights": [
+        -0.15,
+        0.15,
+        -0.132,
+        0.003,
+        -0.094,
+        -0.121,
+        0.067,
+        -0.053
+      ],
+      "readings": [
+        {
+          "pair": "XY",
+          "raw": -16.30395330343669,
+          "shown": -16.30395330343669,
+          "text": "-16"
+        },
+        {
+          "pair": "XZ",
+          "raw": 6.245261649833952,
+          "shown": 6.245261649833952,
+          "text": "+6"
+        },
+        {
+          "pair": "YZ",
+          "raw": 15.356999993247285,
+          "shown": 15.356999993247285,
+          "text": "+15"
+        }
+      ],
+      "profile": {
+        "version": 1,
+        "condition": "new",
+        "seed": 3783762209,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 8.343
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -6.244
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -15.357
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 15.118
+          },
+          "Y": {
+            "band": 0,
+            "microns": 14.85
+          },
+          "Z": {
+            "band": 0,
+            "microns": 14.098
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.132,
+          0.003,
+          -0.094,
+          -0.121,
+          0.067,
+          -0.053
+        ]
+      },
+      "record": {
+        "calculationModel": "portal-shear-v2",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "new",
+          "seed": 3783762209,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 8.343
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -6.244
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -15.357
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 0,
+              "microns": 15.118
+            },
+            "Y": {
+              "band": 0,
+              "microns": 14.85
+            },
+            "Z": {
+              "band": 0,
+              "microns": 14.098
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            -0.132,
+            0.003,
+            -0.094,
+            -0.121,
+            0.067,
+            -0.053
+          ]
+        },
+        "bestState": {
+          "width": 3.2,
+          "depth": 4.64,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.046,
+            0.019,
+            0.009,
+            0.003,
+            -0.093,
+            -0.12,
+            0.04,
+            0.008
+          ]
+        },
+        "machine": "gantry",
+        "mode": "",
+        "width": 3.2,
+        "depth": 4.64,
+        "heights": [
+          -0.15,
+          0.15,
+          -0.132,
+          0.003,
+          -0.094,
+          -0.121,
+          0.067,
+          -0.053
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": false,
+      "note": "仮想測定 300 mm・µm",
+      "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n移動門形・ガントリー\n▽\nXY\n↑右\nラム固定\nR\nS\n0\n右\n押込＋\n奥\n接触開始 0\n-16 µm\nXZ\n↑上\nラム固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+6 µm\nYZ\n↑上\nラム固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n+15 µm\n\n仮想測定 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n+11\n奥\n+6\n左\n-5\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n右が高い\n左\n右\n平均 · 前後\n目安内\n奥\n手前\nX軸\nY軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\nE\nF\nG\nH\n↓ 下げる\n↑ 上げる"
+    },
+    {
+      "id": "five",
+      "heights": [
+        -0.15,
+        0.15,
+        0.077
+      ],
+      "readings": [
+        {
+          "pair": "XY",
+          "raw": -4.518999999827966,
+          "shown": -4.518999999827966,
+          "text": "-5"
+        },
+        {
+          "pair": "XZ",
+          "raw": 4.343999999848955,
+          "shown": 4.343999999848955,
+          "text": "+4"
+        },
+        {
+          "pair": "YZ",
+          "raw": 15.477999993131556,
+          "shown": 15.477999993131556,
+          "text": "+15"
+        }
+      ],
+      "profile": {
+        "version": 1,
+        "condition": "new",
+        "seed": 1144100693,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -4.519
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -4.344
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -15.478
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 18.042
+          },
+          "Y": {
+            "band": 0,
+            "microns": 17.47
+          },
+          "Z": {
+            "band": 0,
+            "microns": 15.021
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.077
+        ]
+      },
+      "record": {
+        "calculationModel": "connected-frames-v1",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "new",
+          "seed": 1144100693,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": -4.519
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -4.344
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -15.478
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 0,
+              "microns": 18.042
+            },
+            "Y": {
+              "band": 0,
+              "microns": 17.47
+            },
+            "Z": {
+              "band": 0,
+              "microns": 15.021
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.077
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 2.64,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0,
+            0,
+            0
+          ]
+        },
+        "machine": "five",
+        "mode": "",
+        "width": 2.72,
+        "depth": 2.64,
+        "heights": [
+          -0.15,
+          0.15,
+          0.077
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": false,
+      "note": "仮想測定 300 mm・µm",
+      "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\n5軸・テーブル旋回形\n▽\nXY\n↑奥\n頭固定\nR\nS\n0\n奥\n押込＋\n右\n接触開始 0\n-5 µm\nXZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n右\n接触開始 0\n+4 µm\nYZ\n↑上\n頭固定\nR\nS\n0\n下\n押込＋\n奥\n接触開始 0\n+15 µm\n\n仮想測定 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n触れ\nµm\n右\n+10\n奥\n+15\n左\n+6\n手前 基準\n0\n\n主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。\n\n平均 · 左右\n右が高い\n左\n右\n平均 · 前後\n奥が高い\n奥\n手前\nX軸\nY軸\nZ軸\nA軸\nC軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\n↓ 下げる\n↑ 上げる"
+    },
+    {
+      "id": "lathe",
+      "heights": [
+        -0.15,
+        0.15,
+        -0.095,
+        0.14,
+        -0.003,
+        0.145
+      ],
+      "readings": [
+        {
+          "pair": "XZ",
+          "raw": -17.56998631101056,
+          "shown": -17.56998631101056,
+          "text": "-18"
+        }
+      ],
+      "profile": {
+        "version": 1,
+        "condition": "new",
+        "seed": 1507831822,
+        "keys": [
+          "X",
+          "Z"
+        ],
+        "squareness": {
+          "XZ": {
+            "band": 0,
+            "microns": 17.568
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 4.033
+          },
+          "Z": {
+            "band": 0,
+            "microns": 15.379
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.095,
+          0.14,
+          -0.003,
+          0.145
+        ]
+      },
+      "record": {
+        "calculationModel": "lathe-carriage-v2",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "new",
+          "seed": 1507831822,
+          "keys": [
+            "X",
+            "Z"
+          ],
+          "squareness": {
+            "XZ": {
+              "band": 0,
+              "microns": 17.568
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 0,
+              "microns": 4.033
+            },
+            "Z": {
+              "band": 0,
+              "microns": 15.379
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            -0.095,
+            0.14,
+            -0.003,
+            0.145
+          ]
+        },
+        "bestState": {
+          "width": 4,
+          "depth": 1.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "machine": "lathe",
+        "mode": "",
+        "width": 4,
+        "depth": 1.68,
+        "heights": [
+          -0.15,
+          0.15,
+          -0.095,
+          0.14,
+          -0.003,
+          0.145
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": false,
+      "note": "仮想測定 300 mm・µm",
+      "body": "トップ\n‹ 機種選択\nレベル調整\n☰ 設定\nNC旋盤・2軸\n▽\nXZ\n↑奥\n刃物台\nS\n0\n手前\n押込＋\n右\n接触開始 0\n-18 µm\n\n仮想測定 300 mm・µm\n\n1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型YZだけは支持による変化分を50倍にした教材値です。実測値・局所角度換算とは別です。\n\n平均 · 左右\n目安内\n左\n右\n平均 · 前後\n奥が高い\n奥\n手前\nX軸\nZ軸\n粗調整\n微調整\n\n支持点 A・左・手前\n\nA\nB\nC\nD\nE\nF\n↓ 下げる\n↑ 上げる"
+    }
+  ],
+  "errors": []
+}

@@ -287,13 +287,15 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   const attributes=Object.entries({'projection':reference.projection.join(','),'zero-location':reference.zero,'base-direction':reference.baseDirection,'measure-direction':reference.measureDirection,'positive-direction':reference.positive,'negative-direction':reference.negative,'reference-plane':reference.plane,pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="104" y="64" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
   const measurement=referenceScan(pair),beforeMeasurement=referenceScan(pair,positions,levelInitialSolution||levelSolution);
-  const reading=measurement.valid?squarenessMicronText(measurement.microns):'—';
-  referenceCards.push(referenceCard(pair,measurement,beforeMeasurement));
-  const descriptionText=pair.key+'・'+(measurement.valid?measurement.setup.zeroLocation+'を0とした300 mmの仮想測定 '+reading+' µm':measurement.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。';
-  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${window.ReferenceMeasurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${measurement.valid?measurement.microns:''}">${referenceDiagram(measurement)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${measurement.valid?measurement.microns:''}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
+  const display=referenceReading(pair,measurement),beforeDisplay=referenceReading(pair,beforeMeasurement),reading=display.valid?squarenessMicronText(display.microns):'—';
+  referenceCards.push(referenceCard(pair,measurement,beforeMeasurement,display,beforeDisplay));
+  const descriptionText=pair.key+'・'+(display.valid?measurement.setup.zeroLocation+'を0とした300 mmの仮想測定 '+reading+' µm'+(display.gain!==1?'（支持変化×50の教材値）':''):display.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。';
+  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${window.ReferenceMeasurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${measurement.valid?measurement.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.gain}">${referenceDiagram(measurement)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${measurement.valid?measurement.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.gain}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} · 局所角度</text><g transform="translate(0,30)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
+ $('liveSquarenessName').textContent=current.kind==='compact'?'仮想測定（YZ支持変化×50）':'仮想測定';
+ $('liveSquarenessUnits').setAttribute('aria-label',current.kind==='compact'?'300 mm・マイクロメートル。YZだけ支持変化を50倍にした教材値。XY・XZは元の有限測定値。':'仮想測定300 mm・マイクロメートル');
  $('measurementReferenceCards').innerHTML=referenceCards.join('');
  $('accuracyDiagram').style.setProperty('--diagram-min-width',g.pairs.length*88+'px');
  $('accuracyDiagram').setAttribute('viewBox',`0 0 ${g.pairs.length*112} 123`);$('accuracyDiagram').innerHTML=columns.join('');
@@ -314,24 +316,6 @@ function updateFineQualitative(g,initial){
   row.textContent=pair.key+'：'+c.text+(c.direction==='unchanged'?'（軸間の関係はほぼ不変）':'')+(c.range?' · '+c.range:'');$('finePrecisionSummary').append(row);
  }
 }
-// This isolated side view enlarges the physical column's angle to gravity.
-// It never feeds back into machine geometry, measuring paths or support response.
-// Its fixed gain also does not depend on the current axis position or camera.
-function updateColumnLeanInset(g){
- const inset=$('columnLeanInset');inset.hidden=current.kind!=='compact';
- if(inset.hidden)return;
- const front=g.bodyLean.front,gain=2000,limit=65,raw=front/1e6*gain*180/Math.PI;
- const angle=Math.max(-limit,Math.min(limit,raw)),outside=Math.abs(raw)>limit;
- inset.setAttribute('data-front-microradians',String(front));
- inset.setAttribute('data-display-angle-degrees',String(angle));
- inset.setAttribute('data-range-exceeded',String(outside));
- // Positive front lean moves the top to the left in this fixed side view.
- $('columnLeanInsetColumn').setAttribute('transform',`rotate(${-angle} 70 65)`);
- const magnitude=Math.abs(front),direction=magnitude<.05?'鉛直':front>0?'前倒れ':'後ろ倒れ';
- $('columnLeanInsetValue').textContent=direction+' '+magnitude.toFixed(1)+' µrad';
- $('columnLeanInsetScale').textContent=outside?'角度×2000・図の範囲外':'側面・角度×2000';
- $('columnLeanInsetDiagram').setAttribute('aria-label','側面。手前が左、奥が右。破線は床の鉛直。現在は'+direction+' '+magnitude.toFixed(1)+'マイクロラジアン。角度を2000倍に拡大。'+(outside?'図の範囲外のため輪郭は表示端で止め、実際の角度は数値で示します。':'')+'YZのダイヤル指示とは別です。');
-}
 function updateAccuracy(){
  if(!levelSolution||!levelConfig)return;
  const rangeKey=JSON.stringify([current.id,current.kind,supportHeights,levelConfig,machineProfile]);
@@ -340,9 +324,8 @@ function updateAccuracy(){
  accuracyKey=key;
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel();
- updateColumnLeanInset(g);
  $('exaggerateLabel').textContent=current.kind==='compact'?'直角図のずれを強調':'傾き・姿勢差を強調';
- $('modelSemantics').textContent=current.kind==='compact'?'模型＝実寸／前後倒れ＝側面拡大':g.portal?'柱・梁＝支持姿勢／ラム・主軸＝固有差込み':'水準器＝平均／模型＝局所＋固有';
+ $('modelSemantics').textContent=current.kind==='compact'?'模型の姿勢は実寸／微小差は直角図で確認':g.portal?'柱・梁＝支持姿勢／ラム・主軸＝固有差込み':'水準器＝平均／模型＝局所＋固有';
  // The comparison is pointwise: both states use the current axis position,
  // dimensions, layout and evaluation length. The reference-search aggregate
  // is deliberately not used for this initial/current comparison.
@@ -386,7 +369,7 @@ function updateAccuracy(){
  }
  postureComparison('bodyLeanComparison',initial?['front','right'].map((key,i)=>({key,label:postureLabels[i],before:initial.bodyPosture[key],current:g.bodyPosture[key]})):[],'µrad');
  $('bodyLeanNote').textContent=lathe?'固有XZ差は水平面内の主軸の方向ずれです。主軸方向に支持姿勢を重ねた模式表示で、コラムの鉛直倒れとは区別します。':'本体は抽選した固有直角差から求めたコラムの代表方向、支持はこの位置の据付姿勢です。合成は両方を回転として重ねた実値です。平均レベルが揃っても本体の倒れは残ります。';
- if(current.kind==='compact')$('bodyLeanNote').textContent+=' 前後倒れは床の鉛直に対する姿勢です。YZは測定PのY送りに対するZ送りを測るため、両方が一緒に傾けば、前倒れから後ろ倒れへ変わっても値は改善しません。初期の寸法・コラム配置で測定Pが中央付近にあると、この曲げ仮定によるYZの調整効果は小さくなります。固有誤差の大きさによっては調整しきれません。';
+ if(current.kind==='compact')$('bodyLeanNote').textContent+=' 前後倒れは床の鉛直に対する姿勢です。YZは測定PのY送りに対するZ送りを測るため、両方が一緒に傾けば、前倒れから後ろ倒れへ変わっても値は改善しません。上段YZの数値は、その小さな支持調整による変化を50倍にした教材値です。模型姿勢・局所角度・調整評価には倍率を掛けません。';
  $('columnLean').textContent=lathe?'上下 '+signed(g.bodyPosture.front,2)+' µrad ／ 水平面 '+signed(g.bodyPosture.right,2)+' µrad':leanDescription(g.bodyLean.front,'後ろ倒れ','前倒れ')+' ／ '+leanDescription(g.bodyLean.right,'左倒れ','右倒れ');
  $('relativeLean').textContent='前後 '+signed(g.relativeLean.front,2)+' µrad ／ 左右 '+signed(g.relativeLean.right,2)+' µrad';
  const dual=g.columns.length===2;$('columnDifference').hidden=!dual;
@@ -415,7 +398,7 @@ function updateAccuracy(){
  if(['travel','gantry'].includes(current.kind))$('geometryAssumption').textContent='Xは移動位置の走行案内、Y/Zはコラム・梁側の参照姿勢です。固定ワークの姿勢をX送りへ代用しません。';
  if(['travel','horizontal'].includes(current.kind))$('geometryAssumption').textContent='Xは二本の走行レール、'+(current.kind==='travel'?'Y/Zはコラム取付部':'Yはコラム取付部、Zはパレット側')+'の姿勢を使います。取付ベースの相対変形を幾何的に近似する教材で、剛性・荷重・水平面内の曲がりは計算しません。';
  if(['vertical','compact'].includes(current.kind))$('geometryAssumption').textContent+=' Xテーブル送りではサドルの支持参照は移動せず、Yサドル送りで移動します。';
- if(current.kind==='compact')$('geometryAssumption').textContent='右端：左端の相対曲げ剛性を3：1と仮定した、2モードの板曲げ教材です。支持4点を保持して曲率エネルギーを最小にする変形面を使います。実機の剛性を同定した値ではなく、自由板の厳密解・荷重や接触の構造解析ではありません。直角図のX/Yはテーブル上面中心の仮想測定点P（支持基準から0.50 m）の実際の送り接線、Zは主軸頭の送り方向です。サドルの倒れが位置で変わることによるアッベ影響と固有誤差を含みます。設定内の局所軸角度図は現在位置の送り角の300 mm換算です。常設の仮想測定欄は、方向合わせと接触ゼロを取り直した300 mmの有限走査値で、別の量です。どちらも補正済みの軸固有直角度ではありません。Xではサドル支持参照を動かさず、Yで移動します。剛性・荷重・接触を解く構造解析や実機精度検査の再現ではありません。';
+ if(current.kind==='compact')$('geometryAssumption').textContent='右端：左端の相対曲げ剛性を3：1と仮定した、2モードの板曲げ教材です。支持4点を保持して曲率エネルギーを最小にする変形面を使います。実機の剛性を同定した値ではなく、自由板の厳密解・荷重や接触の構造解析ではありません。直角図のX/Yはテーブル上面中心の仮想測定点P（支持基準から0.50 m）の実際の送り接線、Zは主軸頭の送り方向です。サドルの倒れが位置で変わることによるアッベ影響と固有誤差を含みます。設定内の局所軸角度図は現在位置の送り角の300 mm換算です。常設の仮想測定欄は、方向合わせと接触ゼロを取り直した300 mmの有限走査を元にします。YZ欄だけ支持による変化を50倍にした教材値で、局所角度や実寸の有限走査値とは別の量です。どちらも補正済みの軸固有直角度ではありません。Xではサドル支持参照を動かさず、Yで移動します。剛性・荷重・接触を解く構造解析や実機精度検査の再現ではありません。';
  if(current.kind==='lathe')$('geometryAssumption').textContent+=' 径送りXでは往復台のベッド参照は移動せず、長手Zで移動します。ベッドのロールによる刃先高さ差と水平面内の曲がりは、この直角図には含みません。';
  if(dual){$('bodyLeanHeading').textContent='主軸の代表方向：本体＋支持姿勢';$('bodyLeanNote').textContent='門の骨格は接続した支持姿勢で描き、固有直角差はラム・主軸の向き、軸矢印と直角図へ重ねます。主軸方向の値と左右柱の支持倒れは別です。柱の平均倒れをラムZへ伝え、梁案内Yとの直角差を表示します。位置ごとの弾性ねじれ・主軸移動荷重は再現しません。';}
  if(dual)$('geometryAssumption').textContent+=' 左右柱の天端を梁で結び、平均倒れをラム方向へ伝えるせん断の幾何モデルです。柱・梁の接続中心を共有します。梁の反力・たわみ分布・接触荷重は計算しません。模型の門骨格は支持姿勢、ラム・主軸は固有直角差を含む代表方向に沿って描きます。';

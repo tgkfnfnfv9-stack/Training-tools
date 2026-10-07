@@ -690,25 +690,7 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 .scan-reference-face{fill:none;stroke:#786a60;stroke-width:1.4;stroke-dasharray:2 1}
 .scan-view-direction{font-size:5px;fill:#594b40}
 
-/* A separate fixed side view makes column lean visible without distorting the
-   physical machine or covering its supports, labels, axes or fixed levels. */
-.column-lean-inset{display:flex;flex:none;align-items:center;justify-content:center;gap:5px;height:84px;padding:2px 5px;border-bottom:1px solid #d6c6b7;background:#fffaf3;color:#332820}
-.column-lean-inset svg{display:block;width:140px;height:80px;flex:0 1 140px;min-width:95px;overflow:visible}
-.column-lean-inset svg text{font-size:10px;fill:#5c493b}
-.column-lean-floor{fill:none;stroke:#76685d;stroke-width:1.3}
-.column-lean-plumb{fill:none;stroke:#746b63;stroke-width:1;stroke-dasharray:3 2}
-.column-lean-column{fill:#efb57f;fill-opacity:.65;stroke:#ae4d05;stroke-width:1.8}
-.column-lean-inset-copy{display:flex;flex-direction:column;min-width:0;line-height:1.35}
-.column-lean-inset-copy strong{font-size:11px;white-space:nowrap}
-.column-lean-inset-copy span{font-size:12px;font-weight:700;font-variant-numeric:tabular-nums;color:#a64704;white-space:nowrap}
-.column-lean-inset-copy small{font-size:9px;white-space:nowrap}
-@media(max-width:360px){.column-lean-inset{gap:1px;padding:2px}.column-lean-inset svg{width:108px;flex-basis:108px}.column-lean-inset-copy strong{font-size:10px}.column-lean-inset-copy span{font-size:11px}.column-lean-inset-copy small{font-size:8px}}
-/* On short portrait screens trade inset height for a complete support row.
-   The small-machine inset is isolated; other machines retain their layout. */
+/* Keep the support selection and adjustment controls usable on short screens. */
 @media(max-width:950px) and (orientation:portrait) and (max-height:640px){
- body.in-mechanical-lab #training .training-main:has(#columnLeanInset:not([hidden])) .training-workspace{grid-template-rows:minmax(0,1fr) 168px}
- .column-lean-inset{height:54px}
- .column-lean-inset svg{width:86px;height:50px;flex-basis:86px;min-width:76px}
- .column-lean-inset-copy{line-height:1.12}
- .column-lean-inset svg text{font-size:14px}
+ body.in-mechanical-lab #training .training-main .training-workspace{grid-template-rows:minmax(0,1fr) 168px}
 }

@@ -1,0 +1,9 @@
+{
+  "checks": 112,
+  "coarseDeltaMicrons": 1.1892654368240052,
+  "meaning": "display response verified; finite physics unchanged; no real-machine elasticity claim",
+  "indexSha256": "7aa897d8d82b4793d0763e5f31da021431328151aa667517fa34631bbe4a2924",
+  "pageRedrawAssertions": 98,
+  "pageRedrawAllSevenMachines": true,
+  "explicitJSONRoundTripsPreserved": true
+}
