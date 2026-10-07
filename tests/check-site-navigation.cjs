@@ -62,9 +62,9 @@ for(let index=0;index<7;index++){
   assert.equal(r.trainingControls.scrollTop,0);
   assert(!r.modelDisplaySettings.open&&!r.axisMenuSection.open,'old settings sections must close on page exit');
  });
- check('selecting the same machine resumes its adjusted individual '+index,()=>{
+ check('selecting the same machine resets and draws a new individual '+index,()=>{
   r.machineGrid.children[index].click();visiblePage('training');closedDrawer();
-  assert.deepEqual(json('levelRecord()'),initial.record);
+  assert.notEqual(read('machineProfile.seed'),initial.record.machineProfile.seed);assert.deepEqual(json('supportHeights'),json('machineProfile.initialHeights'));
   r.openTrainingMenu.click();r.navHome.click();visiblePage('home');closedDrawer();
  });
 }
@@ -120,17 +120,17 @@ check('history initializes home and records real page transitions',()=>{
 });
 h.raiseSupport.click();h.fineAdjust.click();h.raiseSupport.click();
 const adjusted=hist.json('levelRecord()');h.openTrainingMenu.click();
-check('browser back closes settings and forward resumes the same individual',()=>{
+check('browser back closes settings and forward draws a new individual',()=>{
  traverse(-1);assert.equal(hist.read('page'),'catalog');assert(h.trainingDrawer.hidden&&!h.trainingMain.inert&&h.trainingMainShield.hidden);
- traverse(1);assert.equal(hist.read('page'),'training');assert(h.trainingDrawer.hidden);assert.deepEqual(hist.json('levelRecord()'),adjusted);
- h.navHome.click();traverse(-1);assert.equal(hist.read('page'),'training');assert.deepEqual(hist.json('levelRecord()'),adjusted);
+ traverse(1);assert.equal(hist.read('page'),'training');assert(h.trainingDrawer.hidden);assert.notEqual(hist.read('machineProfile.seed'),adjusted.machineProfile.seed);assert.deepEqual(hist.json('supportHeights'),hist.json('machineProfile.initialHeights'));
+ h.navHome.click();traverse(-1);assert.equal(hist.read('page'),'training');assert.notEqual(hist.read('machineProfile.seed'),adjusted.machineProfile.seed);assert.deepEqual(hist.json('supportHeights'),hist.json('machineProfile.initialHeights'));
 });
 check('history for a different machine goes to selection without re-drawing an individual',()=>{
  h.changeMachine.click();h.machineGrid.children[5].click();const active=hist.json('levelRecord()');
  traverse(-1);assert.equal(hist.read('page'),'catalog');
  traverse(-1);assert.equal(history.state.page,'training');assert.equal(hist.read('page'),'catalog');
  assert.deepEqual(hist.json('levelRecord()'),active,'an old history entry must not replace the current machine');
- traverse(1);traverse(1);assert.equal(hist.read('page'),'training');assert.deepEqual(hist.json('levelRecord()'),active);
+ traverse(1);traverse(1);assert.equal(hist.read('page'),'training');assert.notEqual(hist.read('machineProfile.seed'),active.machineProfile.seed);
 });
 check('browser history restores electrical lessons through the shared entry lifecycle',()=>{
  h.navHome.click();h.electric.click();h.testerEntry.click();const resets=hist.context.resetCalls;

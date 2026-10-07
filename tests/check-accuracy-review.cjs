@@ -151,7 +151,8 @@ async function main(){
  // Pure support records remain on an unchanged grid; v3 layouts require intrinsic profiles.
  open(2);preset('twist');layout('columnX',-63);layout('columnZ',47);axis('X',37);axis('Y',-29);axis('Z',61);const record=json('levelRecord()'),beforeRestore=current().pairs.map(p=>p.errorMicrons);
  read('openMachine(machines[1]);openMachine(machines[2]);');
- check('配置と支持高さは機械方式ごとに保存・復元',()=>{assert.deepEqual(json('levelRecord()'),record);assert.match(r.levelSaveStatus.textContent,/復元/);assert.equal(Number(r.columnX.value),-63);assert.equal(Number(r.columnZ.value),47);});
+ await importRecord(record);
+ check('配置と支持高さは明示JSON読込で復元',()=>{assert.deepEqual(json('levelRecord()'),record);assert.match(r.levelInputMessage.textContent,/読み込み/);assert.equal(Number(r.columnX.value),-63);assert.equal(Number(r.columnZ.value),47);});
  check('軸位置と現在の直角度も保存復元で再現',()=>{assert.deepEqual(json('levelRecord().axisPositions'),{X:37,Y:-29,Z:61});assert.deepEqual(current().pairs.map(p=>p.errorMicrons),beforeRestore);for(const key of ['X','Y','Z'])assert.equal(Number(r['axis-'+key].value),record.axisPositions[key]);});
  const legacy=structuredClone(record);delete legacy.columnX;delete legacy.columnZ;delete legacy.axisPositions;
  async function importRecord(value){r.importLevel.files=[{size:100,text:async()=>JSON.stringify(value)}];await r.importLevel.onchange({target:r.importLevel});}

@@ -150,8 +150,9 @@ function resetTrainingPanels(){
  const walk=node=>{for(const child of node.children||[]){if(child.tagName==='DETAILS')child.open=false;walk(child);}};walk($('trainingControls'));
  $('trainingControls').scrollTop=0;
 }
-function navigate(next,{fromHistory=false}={}){
+function navigate(next,{fromHistory=false,initializedTraining=false}={}){
  if(!Object.prototype.hasOwnProperty.call(pageTitles,next))next='home';
+ if(next==='training'&&page!==next&&machineSessionInitialized&&!initializedTraining){openMachine(machines.find(m=>m.id===current.id),{fromHistory});return;}
  const previous=page;
  clearScenePointers();setAxisMenuOpen(false);
  if(next!==previous){resetTrainingPanels();document.activeElement?.blur?.();if(next==='tester'&&window.resetTesterLesson)window.resetTesterLesson();}
@@ -189,14 +190,11 @@ window.addEventListener('popstate',event=>{
 $('mechanical').onclick=()=>navigate('topics');$('electric').onclick=()=>navigate('electricTopics');$('leveling').onclick=()=>navigate('catalog');$('changeMachine').onclick=()=>navigate('catalog');
 $('testerEntry').onclick=()=>navigate('tester');
 $('testerBack').onclick=()=>navigate('electricTopics');
-// Reopening a catalogue card resumes the active machine; explicit initialization stays separate.
-function resumeOrOpenMachine(m){
- if(machineSessionInitialized&&current.id===m.id){navigate('training');return;}
- openMachine(m);
-}
-function openMachine(m){
+// Each catalogue entry starts a new individual, including the same machine.
+function resumeOrOpenMachine(m){openMachine(m);}
+function openMachine(m,{fromHistory=false}={}){
  if(typeof spindleSweepMode!=='undefined'){spindleSweepMode=false;spindleSweepAngle=270;}
- stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.defaultMode||(m.modes?m.modes[0][0]:'');current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training');
+ stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.defaultMode||(m.modes?m.modes[0][0]:'');current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training',{fromHistory,initializedTraining:true});
 }
 function populateMachine(){
  machineSessionInitialized=true;resetTrainingPanels();$('axisDemoStatus').textContent='';
@@ -546,7 +544,7 @@ function buildModeUI(){
  const base=machines.find(m=>m.id===current.id),box=$('machineModeBox');box.hidden=!base.modes;
  const select=$('machineMode');select.replaceChildren();(base.modes||[]).forEach(([value,text])=>{const option=document.createElement('option');option.value=value;option.textContent=text;select.append(option);});select.value=machineMode;
 }
-$('machineMode').onchange=()=>{const base=machines.find(m=>m.id===current.id);if(!base.modes?.some(([value])=>value===$('machineMode').value))return;stopMotion();machineMode=$('machineMode').value;current=displayMachine(machines.find(m=>m.id===current.id));positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;populateMachine();setAxisMenuOpen(false,true);drawScene();};
+$('machineMode').onchange=()=>{const base=machines.find(m=>m.id===current.id);if($('machineMode').value===machineMode||!base.modes?.some(([value])=>value===$('machineMode').value))return;stopMotion();machineMode=$('machineMode').value;current=displayMachine(machines.find(m=>m.id===current.id));positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;populateMachine();setAxisMenuOpen(false,true);drawScene();};
 function axisPositionDirections(a){
  if(!['X','Y','Z'].includes(a.key))return ['負側','正側'];
  return a.vector[1]?['下','上']:a.vector[0]?['左','右']:['手前','奥'];
@@ -617,6 +615,7 @@ $('playAxis').onclick=()=>{if(motionFrame!==null){stopMotion();return;}$('playAx
  motionFrame=requestAnimationFrame(step);
 };
 $('resetAxes').onclick=()=>{stopMotion();positions={X:0,Y:0,Z:0,A:0,C:0};updateAxisValues();saveLeveling();drawScene();};
+window.addEventListener('pageshow',event=>{if(event.persisted&&page==='training')openMachine(machines.find(m=>m.id===current.id),{fromHistory:true});});
 window.addEventListener('pagehide',stopMotion);document.addEventListener('visibilitychange',()=>{if(document.hidden)stopMotion();});
 let resizeTimer;window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(page==='catalog')drawThumbnails();refreshTrainingLayout();drawScene();},80);});
 navigate('home');

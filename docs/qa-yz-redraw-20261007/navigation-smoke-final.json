@@ -1,0 +1,85 @@
+{
+  "sha256": "7d697c9dc34b8d13a8eb13f23395950bc66376c62c27f92d06d565a031e01710",
+  "checks": [
+    {
+      "name": "final drawer preserves record",
+      "ok": true
+    },
+    {
+      "name": "final same-card entry draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 25194394,
+        "new": 2234051657
+      }
+    },
+    {
+      "name": "final same-card entry support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "final same-card entry axes reset",
+      "ok": true
+    },
+    {
+      "name": "final same-card entry dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "final same-card entry first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "final same-card entry initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 89.99882947156568,
+            "deviationMicroradians": -20.42957516700422,
+            "errorMicrons": -10.21478758350211
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99494795660938,
+            "deviationMicroradians": -88.1747911200292,
+            "errorMicrons": -44.0873955600146
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99537132299535,
+            "deviationMicroradians": -80.78565374246773,
+            "errorMicrons": -40.392826871233865
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 89.99882947156568,
+            "deviationMicroradians": -20.42957516700422,
+            "errorMicrons": -10.21478758350211
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99494795660938,
+            "deviationMicroradians": -88.1747911200292,
+            "errorMicrons": -44.0873955600146
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99537132299535,
+            "deviationMicroradians": -80.78565374246773,
+            "errorMicrons": -40.392826871233865
+          }
+        ]
+      }
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "errors": []
+}

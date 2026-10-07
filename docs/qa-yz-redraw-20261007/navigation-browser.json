@@ -1,0 +1,1114 @@
+{
+  "sha256": "be6f6ceab33b285f2396e1048eeb940fe98b73dc6801b8448622f09571a49366",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "vertical drawer preserves individual and full record",
+      "ok": true
+    },
+    {
+      "name": "vertical support adjustment preserves seed and changes height",
+      "ok": true
+    },
+    {
+      "name": "vertical axis movement keeps individual",
+      "ok": true
+    },
+    {
+      "name": "vertical live demo preserves individual",
+      "ok": true
+    },
+    {
+      "name": "vertical measurement panel preserves individual",
+      "ok": true
+    },
+    {
+      "name": "vertical explicit JSON restores physical state and individual",
+      "ok": true,
+      "detail": {
+        "changedFields": []
+      }
+    },
+    {
+      "name": "vertical imported state survives drawer",
+      "ok": true
+    },
+    {
+      "name": "vertical same-card reentry draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 3910231700,
+        "new": 616599130
+      }
+    },
+    {
+      "name": "vertical same-card reentry support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "vertical same-card reentry axes reset",
+      "ok": true
+    },
+    {
+      "name": "vertical same-card reentry dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "vertical same-card reentry first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "vertical same-card reentry initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.00179134356264,
+            "deviationMicroradians": 31.264843202584853,
+            "errorMicrons": 15.632421601292426
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99720421662975,
+            "deviationMicroradians": -48.79562498327712,
+            "errorMicrons": -24.39781249163856
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99776945874186,
+            "deviationMicroradians": -38.93028905615613,
+            "errorMicrons": -19.465144528078064
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.00179134356264,
+            "deviationMicroradians": 31.264843202584853,
+            "errorMicrons": 15.632421601292426
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99720421662975,
+            "deviationMicroradians": -48.79562498327712,
+            "errorMicrons": -24.39781249163856
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99776945874186,
+            "deviationMicroradians": -38.93028905615613,
+            "errorMicrons": -19.465144528078064
+          }
+        ]
+      }
+    },
+    {
+      "name": "horizontal drawer preserves individual and full record",
+      "ok": true
+    },
+    {
+      "name": "horizontal support adjustment preserves seed and changes height",
+      "ok": true
+    },
+    {
+      "name": "horizontal axis movement keeps individual",
+      "ok": true
+    },
+    {
+      "name": "horizontal live demo preserves individual",
+      "ok": true
+    },
+    {
+      "name": "horizontal measurement panel preserves individual",
+      "ok": true
+    },
+    {
+      "name": "horizontal explicit JSON restores physical state and individual",
+      "ok": true,
+      "detail": {
+        "changedFields": []
+      }
+    },
+    {
+      "name": "horizontal imported state survives drawer",
+      "ok": true
+    },
+    {
+      "name": "horizontal same-card reentry draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 4241806384,
+        "new": 311308461
+      }
+    },
+    {
+      "name": "horizontal same-card reentry support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "horizontal same-card reentry axes reset",
+      "ok": true
+    },
+    {
+      "name": "horizontal same-card reentry dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "horizontal same-card reentry first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "horizontal same-card reentry initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.00355386481328,
+            "deviationMicroradians": 62.026642162464256,
+            "errorMicrons": 31.013321081232128
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 90.00344938317721,
+            "deviationMicroradians": 60.203093605234066,
+            "errorMicrons": 30.101546802617033
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99830882858362,
+            "deviationMicroradians": -29.51650943139964,
+            "errorMicrons": -14.75825471569982
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.00355386481328,
+            "deviationMicroradians": 62.026642162464256,
+            "errorMicrons": 31.013321081232128
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 90.00344938317721,
+            "deviationMicroradians": 60.203093605234066,
+            "errorMicrons": 30.101546802617033
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99830882858362,
+            "deviationMicroradians": -29.51650943139964,
+            "errorMicrons": -14.75825471569982
+          }
+        ]
+      }
+    },
+    {
+      "name": "travel drawer preserves individual and full record",
+      "ok": true
+    },
+    {
+      "name": "travel support adjustment preserves seed and changes height",
+      "ok": true
+    },
+    {
+      "name": "travel axis movement keeps individual",
+      "ok": true
+    },
+    {
+      "name": "travel live demo preserves individual",
+      "ok": true
+    },
+    {
+      "name": "travel measurement panel preserves individual",
+      "ok": true
+    },
+    {
+      "name": "travel explicit JSON restores physical state and individual",
+      "ok": true,
+      "detail": {
+        "changedFields": []
+      }
+    },
+    {
+      "name": "travel imported state survives drawer",
+      "ok": true
+    },
+    {
+      "name": "travel same-card reentry draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 2237432945,
+        "new": 2599567741
+      }
+    },
+    {
+      "name": "travel same-card reentry support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "travel same-card reentry axes reset",
+      "ok": true
+    },
+    {
+      "name": "travel same-card reentry dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "travel same-card reentry first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "travel same-card reentry initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.0008816080148,
+            "deviationMicroradians": 15.386962570129318,
+            "errorMicrons": 7.693481285064659
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 90.00179858879129,
+            "deviationMicroradians": 31.39129629744111,
+            "errorMicrons": 15.695648148720554
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 90.00052903103084,
+            "deviationMicroradians": 9.233333333333336,
+            "errorMicrons": 4.616666666666668
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.0008816080148,
+            "deviationMicroradians": 15.386962570129318,
+            "errorMicrons": 7.693481285064659
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 90.00179858879129,
+            "deviationMicroradians": 31.39129629744111,
+            "errorMicrons": 15.695648148720554
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 90.00052903103084,
+            "deviationMicroradians": 9.233333333333336,
+            "errorMicrons": 4.616666666666668
+          }
+        ]
+      }
+    },
+    {
+      "name": "gate drawer preserves individual and full record",
+      "ok": true
+    },
+    {
+      "name": "gate support adjustment preserves seed and changes height",
+      "ok": true
+    },
+    {
+      "name": "gate axis movement keeps individual",
+      "ok": true
+    },
+    {
+      "name": "gate live demo preserves individual",
+      "ok": true
+    },
+    {
+      "name": "gate measurement panel preserves individual",
+      "ok": true
+    },
+    {
+      "name": "gate explicit JSON restores physical state and individual",
+      "ok": true,
+      "detail": {
+        "changedFields": []
+      }
+    },
+    {
+      "name": "gate imported state survives drawer",
+      "ok": true
+    },
+    {
+      "name": "gate same-card reentry draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 1499348926,
+        "new": 265543780
+      }
+    },
+    {
+      "name": "gate same-card reentry support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "gate same-card reentry axes reset",
+      "ok": true
+    },
+    {
+      "name": "gate same-card reentry dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "gate same-card reentry first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "gate same-card reentry initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.00182814765999,
+            "deviationMicroradians": 31.90719587937785,
+            "errorMicrons": 15.953597939688924
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.98245957375511,
+            "deviationMicroradians": -306.1381901765282,
+            "errorMicrons": -153.0690950882641
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.98512285318004,
+            "deviationMicroradians": -259.65519531091815,
+            "errorMicrons": -129.82759765545907
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.00182814765999,
+            "deviationMicroradians": 31.90719587937785,
+            "errorMicrons": 15.953597939688924
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.98245957375511,
+            "deviationMicroradians": -306.1381901765282,
+            "errorMicrons": -153.0690950882641
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.98512285318004,
+            "deviationMicroradians": -259.65519531091815,
+            "errorMicrons": -129.82759765545907
+          }
+        ]
+      }
+    },
+    {
+      "name": "gantry drawer preserves individual and full record",
+      "ok": true
+    },
+    {
+      "name": "gantry support adjustment preserves seed and changes height",
+      "ok": true
+    },
+    {
+      "name": "gantry axis movement keeps individual",
+      "ok": true
+    },
+    {
+      "name": "gantry live demo preserves individual",
+      "ok": true
+    },
+    {
+      "name": "gantry measurement panel preserves individual",
+      "ok": true
+    },
+    {
+      "name": "gantry explicit JSON restores physical state and individual",
+      "ok": true,
+      "detail": {
+        "changedFields": []
+      }
+    },
+    {
+      "name": "gantry imported state survives drawer",
+      "ok": true
+    },
+    {
+      "name": "gantry same-card reentry draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 1089037045,
+        "new": 2880982757
+      }
+    },
+    {
+      "name": "gantry same-card reentry support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "gantry same-card reentry axes reset",
+      "ok": true
+    },
+    {
+      "name": "gantry same-card reentry dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "gantry same-card reentry first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "gantry same-card reentry initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.00640938599858,
+            "deviationMicroradians": 111.86488870650696,
+            "errorMicrons": 55.93244435325348
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 90.00214827877002,
+            "deviationMicroradians": 37.49453778755693,
+            "errorMicrons": 18.747268893778465
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99829888830627,
+            "deviationMicroradians": -29.689999999891825,
+            "errorMicrons": -14.844999999945912
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.00640938599858,
+            "deviationMicroradians": 111.86488870650696,
+            "errorMicrons": 55.93244435325348
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 90.00214827877002,
+            "deviationMicroradians": 37.49453778755693,
+            "errorMicrons": 18.747268893778465
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99829888830627,
+            "deviationMicroradians": -29.689999999891825,
+            "errorMicrons": -14.844999999945912
+          }
+        ]
+      }
+    },
+    {
+      "name": "five drawer preserves individual and full record",
+      "ok": true
+    },
+    {
+      "name": "five support adjustment preserves seed and changes height",
+      "ok": true
+    },
+    {
+      "name": "five axis movement keeps individual",
+      "ok": true
+    },
+    {
+      "name": "five live demo preserves individual",
+      "ok": true
+    },
+    {
+      "name": "five measurement panel preserves individual",
+      "ok": true
+    },
+    {
+      "name": "five explicit JSON restores physical state and individual",
+      "ok": true,
+      "detail": {
+        "changedFields": []
+      }
+    },
+    {
+      "name": "five imported state survives drawer",
+      "ok": true
+    },
+    {
+      "name": "five same-card reentry draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 1353167139,
+        "new": 1313207213
+      }
+    },
+    {
+      "name": "five same-card reentry support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "five same-card reentry axes reset",
+      "ok": true
+    },
+    {
+      "name": "five same-card reentry dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "five same-card reentry first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "five same-card reentry initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.0021886987774,
+            "deviationMicroradians": 38.2,
+            "errorMicrons": 19.1
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 90.00248014330919,
+            "deviationMicroradians": 43.28666666666667,
+            "errorMicrons": 21.643333333333334
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 90.00093525810759,
+            "deviationMicroradians": 16.323333333333338,
+            "errorMicrons": 8.161666666666669
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.0021886987774,
+            "deviationMicroradians": 38.2,
+            "errorMicrons": 19.1
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 90.00248014330919,
+            "deviationMicroradians": 43.28666666666667,
+            "errorMicrons": 21.643333333333334
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 90.00093525810759,
+            "deviationMicroradians": 16.323333333333338,
+            "errorMicrons": 8.161666666666669
+          }
+        ]
+      }
+    },
+    {
+      "name": "lathe drawer preserves individual and full record",
+      "ok": true
+    },
+    {
+      "name": "lathe support adjustment preserves seed and changes height",
+      "ok": true
+    },
+    {
+      "name": "lathe axis movement keeps individual",
+      "ok": true
+    },
+    {
+      "name": "lathe live demo preserves individual",
+      "ok": true
+    },
+    {
+      "name": "lathe measurement panel preserves individual",
+      "ok": true
+    },
+    {
+      "name": "lathe explicit JSON restores physical state and individual",
+      "ok": true,
+      "detail": {
+        "changedFields": []
+      }
+    },
+    {
+      "name": "lathe imported state survives drawer",
+      "ok": true
+    },
+    {
+      "name": "lathe same-card reentry draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 3048730642,
+        "new": 3387334407
+      }
+    },
+    {
+      "name": "lathe same-card reentry support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "lathe same-card reentry axes reset",
+      "ok": true
+    },
+    {
+      "name": "lathe same-card reentry dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "lathe same-card reentry first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "lathe same-card reentry initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99745203725185,
+            "deviationMicroradians": -44.47033917353545,
+            "errorMicrons": -22.235169586767725
+          }
+        ],
+        "current": [
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99745203725185,
+            "deviationMicroradians": -44.47033917353545,
+            "errorMicrons": -22.235169586767725
+          }
+        ]
+      }
+    },
+    {
+      "name": "different-card roundtrip draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 385271865,
+        "new": 2924547661
+      }
+    },
+    {
+      "name": "different-card roundtrip support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "different-card roundtrip axes reset",
+      "ok": true
+    },
+    {
+      "name": "different-card roundtrip dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "different-card roundtrip first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "different-card roundtrip initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 89.99920707336787,
+            "deviationMicroradians": -13.839180457368487,
+            "errorMicrons": -6.9195902286842434
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99246706126696,
+            "deviationMicroradians": -131.4745832424771,
+            "errorMicrons": -65.73729162123855
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99859356007381,
+            "deviationMicroradians": -24.547007443346736,
+            "errorMicrons": -12.273503721673368
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 89.99920707336787,
+            "deviationMicroradians": -13.839180457368487,
+            "errorMicrons": -6.9195902286842434
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99246706126696,
+            "deviationMicroradians": -131.4745832424771,
+            "errorMicrons": -65.73729162123855
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99859356007381,
+            "deviationMicroradians": -24.547007443346736,
+            "errorMicrons": -12.273503721673368
+          }
+        ]
+      }
+    },
+    {
+      "name": "browser back draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 2924547661,
+        "new": 3002391782
+      }
+    },
+    {
+      "name": "browser back support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "browser back axes reset",
+      "ok": true
+    },
+    {
+      "name": "browser back dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "browser back first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "browser back initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 89.99993598419574,
+            "deviationMicroradians": -1.1172865576611473,
+            "errorMicrons": -0.5586432788305736
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99530348883223,
+            "deviationMicroradians": -81.96958323418197,
+            "errorMicrons": -40.984791617090984
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99637589483686,
+            "deviationMicroradians": -63.25256753539449,
+            "errorMicrons": -31.626283767697245
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 89.99993598419574,
+            "deviationMicroradians": -1.1172865576611473,
+            "errorMicrons": -0.5586432788305736
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99530348883223,
+            "deviationMicroradians": -81.96958323418197,
+            "errorMicrons": -40.984791617090984
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99637589483686,
+            "deviationMicroradians": -63.25256753539449,
+            "errorMicrons": -31.626283767697245
+          }
+        ]
+      }
+    },
+    {
+      "name": "browser forward draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 3002391782,
+        "new": 4238770888
+      }
+    },
+    {
+      "name": "browser forward support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "browser forward axes reset",
+      "ok": true
+    },
+    {
+      "name": "browser forward dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "browser forward first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "browser forward initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 89.99450507878404,
+            "deviationMicroradians": -95.90446735612464,
+            "errorMicrons": -47.95223367806232
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99418899045234,
+            "deviationMicroradians": -101.42124947131967,
+            "errorMicrons": -50.710624735659835
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99718510228175,
+            "deviationMicroradians": -49.129233290426285,
+            "errorMicrons": -24.564616645213142
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 89.99450507878404,
+            "deviationMicroradians": -95.90446735612464,
+            "errorMicrons": -47.95223367806232
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99418899045234,
+            "deviationMicroradians": -101.42124947131967,
+            "errorMicrons": -50.710624735659835
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99718510228175,
+            "deviationMicroradians": -49.129233290426285,
+            "errorMicrons": -24.564616645213142
+          }
+        ]
+      }
+    },
+    {
+      "name": "reload then entry draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 4238770888,
+        "new": 1982244072
+      }
+    },
+    {
+      "name": "reload then entry support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "reload then entry axes reset",
+      "ok": true
+    },
+    {
+      "name": "reload then entry dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "reload then entry first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "reload then entry initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.00074967039009,
+            "deviationMicroradians": 13.084216611833106,
+            "errorMicrons": 6.542108305916553
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 90.00553254015554,
+            "deviationMicroradians": 96.5610417130207,
+            "errorMicrons": 48.28052085651035
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99653168950803,
+            "deviationMicroradians": -60.533437566188525,
+            "errorMicrons": -30.266718783094262
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 90.00074967039009,
+            "deviationMicroradians": 13.084216611833106,
+            "errorMicrons": 6.542108305916553
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 90.00553254015554,
+            "deviationMicroradians": 96.5610417130207,
+            "errorMicrons": 48.28052085651035
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 89.99653168950803,
+            "deviationMicroradians": -60.533437566188525,
+            "errorMicrons": -30.266718783094262
+          }
+        ]
+      }
+    },
+    {
+      "name": "external document back draws another individual",
+      "ok": true,
+      "detail": {
+        "old": 1982244072,
+        "new": 2461265902
+      }
+    },
+    {
+      "name": "external document back support values reset to new initial values",
+      "ok": true
+    },
+    {
+      "name": "external document back axes reset",
+      "ok": true
+    },
+    {
+      "name": "external document back dimensions reset",
+      "ok": true
+    },
+    {
+      "name": "external document back first support and coarse step reset",
+      "ok": true
+    },
+    {
+      "name": "external document back initial comparison is new current zero-travel state",
+      "ok": true,
+      "detail": {
+        "initial": [
+          {
+            "key": "XY",
+            "angleDegrees": 89.99725517502972,
+            "deviationMicroradians": -47.90623312242263,
+            "errorMicrons": -23.953116561211313
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99649857136126,
+            "deviationMicroradians": -61.11145826964392,
+            "errorMicrons": -30.55572913482196
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 90.00258889240042,
+            "deviationMicroradians": 45.18469636728949,
+            "errorMicrons": 22.592348183644745
+          }
+        ],
+        "current": [
+          {
+            "key": "XY",
+            "angleDegrees": 89.99725517502972,
+            "deviationMicroradians": -47.90623312242263,
+            "errorMicrons": -23.953116561211313
+          },
+          {
+            "key": "XZ",
+            "angleDegrees": 89.99649857136126,
+            "deviationMicroradians": -61.11145826964392,
+            "errorMicrons": -30.55572913482196
+          },
+          {
+            "key": "YZ",
+            "angleDegrees": 90.00258889240042,
+            "deviationMicroradians": 45.18469636728949,
+            "errorMicrons": 22.592348183644745
+          }
+        ]
+      }
+    },
+    {
+      "name": "actual BFCache restore is exercised",
+      "ok": true,
+      "detail": [
+        {
+          "persisted": false,
+          "when": 32.29999999888241
+        },
+        {
+          "persisted": true,
+          "when": 416.69999999925494
+        }
+      ]
+    },
+    {
+      "name": "download preserves complete record",
+      "ok": true
+    },
+    {
+      "name": "downloaded JSON import restores adjusted individual",
+      "ok": true
+    },
+    {
+      "name": "no browser JavaScript exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "events": [
+    {
+      "id": "vertical",
+      "initialSeed": 3910231700,
+      "reentrySeed": 616599130
+    },
+    {
+      "id": "horizontal",
+      "initialSeed": 4241806384,
+      "reentrySeed": 311308461
+    },
+    {
+      "id": "travel",
+      "initialSeed": 2237432945,
+      "reentrySeed": 2599567741
+    },
+    {
+      "id": "gate",
+      "initialSeed": 1499348926,
+      "reentrySeed": 265543780
+    },
+    {
+      "id": "gantry",
+      "initialSeed": 1089037045,
+      "reentrySeed": 2880982757
+    },
+    {
+      "id": "five",
+      "initialSeed": 1353167139,
+      "reentrySeed": 1313207213
+    },
+    {
+      "id": "lathe",
+      "initialSeed": 3048730642,
+      "reentrySeed": 3387334407
+    }
+  ],
+  "bfcache": [
+    {
+      "persisted": false,
+      "when": 32.29999999888241
+    },
+    {
+      "persisted": true,
+      "when": 416.69999999925494
+    }
+  ],
+  "errors": []
+}

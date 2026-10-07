@@ -1,7 +1,7 @@
 'use strict';
 // All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
 let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,levelGeometry=null;
-const legacyLevelStoragePrefix='training-level-v1:',levelCalculationModel='connected-frames-v1';
+const levelCalculationModel='connected-frames-v1';
 function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-shear-v2':current.kind==='travel'?'travel-guide-v2':current.kind==='horizontal'?'horizontal-guide-v2':current.kind==='compact'?'compact-asymmetric-bending-v4':current.kind==='lathe'?'lathe-carriage-v2':levelCalculationModel;}
 function levelStoragePrefix(){return 'training-level-'+currentCalculationModel()+':';}
 // An asynchronous file may finish after another import or a newer training state.
@@ -45,15 +45,10 @@ function initializeLeveling(){
  const hasMiddle=!!current.supportLayout||!!current.grid&&(current.grid[0]>2||current.grid[1]>2);
  $('middlePreset').disabled=!hasMiddle;$('middlePreset').title=hasMiddle?'':'この支持配置には中間支持点がありません。';
  initializeMachineAccuracy();
- let restored=false,previousLayout=false,migratedCompact=false,previousCalculation=false;
- try{previousCalculation=[machineMode,...(current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''])].some(mode=>['',...(current.layoutId?[current.layoutId]:[]),...(current.previousLayouts||[])].some(layout=>[legacyLevelStoragePrefix,...(current.kind==='compact'?['training-level-compact-table-path-v3:','training-level-compact-saddle-v2:']:[]),...(currentCalculationModel()!==levelCalculationModel?['training-level-'+levelCalculationModel+':']:[])].some(prefix=>localStorage.getItem(prefix+current.id+':'+mode+(layout?':'+layout:''))!==null)));}catch{}
- try{if(current.layoutId){const oldModes=current.id==='vertical'?['standard','compact']:current.id==='gate'?['long','cross']:[''];previousLayout=oldModes.some(mode=>localStorage.getItem(levelStoragePrefix()+current.id+':'+mode)!==null)||(current.previousLayouts||[]).some(layout=>localStorage.getItem(levelStoragePrefix()+current.id+':'+machineMode+':'+layout)!==null);}}catch{}
- try{let raw=localStorage.getItem(levelKey());if(!raw&&current.id==='vertical'&&machineMode==='compact'){raw=localStorage.getItem(levelStoragePrefix()+'vertical:compact');migratedCompact=!!raw;}if(raw){const data=JSON.parse(raw);if(validLevelRecord(data)){applyLevelRecord(data);restored=true;}}}catch{}
- $('levelSaveStatus').textContent=restored?'前回の調整をこのブラウザから復元しました。':'調整はこのブラウザに自動保存します。';
+ // A page entry is a new exercise. Browser snapshots are written below but
+ // never applied automatically; only an explicit JSON import restores a state.
  buildSupports();updateLeveling(false);const saved=saveLeveling();
- if(previousLayout&&!restored)$('levelSaveStatus').textContent='支持配置を更新したため、旧版の調整は適用していません。旧データはブラウザーに残しています。'+(saved?'新しい配置を自動保存しました。':'新しい配置はJSONで保存してください。');
- if(previousCalculation&&!restored)$('levelSaveStatus').textContent='計算仕様を更新しました。旧版の保存は残し、新しい教材モデルの別データとして開始しました。旧JSONはそのまま適用できません。';
- if(restored)$('levelSaveStatus').textContent=(migratedCompact?'同じ4点配置の旧小型データを検証して引き継ぎました。':'前回の個体・調整をこのブラウザから復元しました。')+(saved?'':'このブラウザでは自動保存できません。JSONで保存できます。');
+ $('levelSaveStatus').textContent='新しい個体を抽選しました。ページを開き直すと再抽選します。同じ調整を続ける場合はJSONを保存・読込してください。'+(saved?'':'このブラウザでは自動保存できません。');
 }
 function levelCoordinates(x,z){return {x:x/(current.w*.8)*levelConfig.width,z:z/(current.d*.8)*levelConfig.depth};}
 // Display coordinates use the same physical support dimensions as the solver.
@@ -303,7 +298,7 @@ function updateLeveling(save=true,editingIndex=-1){
 function saveLeveling(){
  if(!levelConfig||!levelSolution)return;
  invalidateLevelImport();
- try{localStorage.setItem(levelKey(),JSON.stringify(levelRecord()));$('levelSaveStatus').textContent='個体・支持高さ・コラム配置・軸位置をこのブラウザに自動保存しました。';return true;}catch{$('levelSaveStatus').textContent='このブラウザでは自動保存できません。JSONで保存できます。';return false;}
+ try{localStorage.setItem(levelKey(),JSON.stringify(levelRecord()));$('levelSaveStatus').textContent='現在の状態をブラウザに記録しました。ページを開き直すと再抽選します。同じ調整を続ける場合はJSONを保存・読込してください。';return true;}catch{$('levelSaveStatus').textContent='このブラウザでは自動保存できません。JSONで保存できます。';return false;}
 }
 function applyLevelPreset(type){
  if(type==='twist'&&supports.length===3||type==='middle'&&!current.supportLayout&&(!current.grid||(current.grid[0]<3&&current.grid[1]<3)))return;

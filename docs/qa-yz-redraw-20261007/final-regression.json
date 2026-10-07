@@ -1,0 +1,27 @@
+{
+  "htmlSha256": "be6f6ceab33b285f2396e1048eeb940fe98b73dc6801b8448622f09571a49366",
+  "passed": 4,
+  "total": 4,
+  "suites": [
+    {
+      "suite": "check-full-code-review",
+      "exitCode": 0,
+      "output": "Full code review: 158 integration checks passed.\n"
+    },
+    {
+      "suite": "check-compact-yz-independent",
+      "exitCode": 0,
+      "output": "{\n  \"pureAngle\": [\n    {\n      \"intrinsicMicrons\": -60,\n      \"reading\": 59.99999959999981,\n      \"expected\": 59.99999960000001\n    },\n    {\n      \"intrinsicMicrons\": 60,\n      \"reading\": -59.99999959999981,\n      \"expected\": -59.99999960000001\n    }\n  ],\n  \"cases\": 162,\n  \"maxErrorMicrons\": 4.5013819061079374e-7,\n  \"oppositeSideAndRezeroCases\": 324,\n  \"examples\": [\n    {\n      \"heights\": [\n        0,\n        0,\n        0,\n        0\n      ],\n      \"reading\": 0,\n      \"independent\": 0\n    },\n    {\n      \"heights\": [\n        0.1,\n        0,\n        0,\n        0\n      ],\n      \"reading\": -0.23939075545660604,\n      \"independent\": -0.23939082212549867\n    },\n    {\n      \"heights\": [\n        -0.1,\n        0,\n        0,\n        0\n      ],\n      \"reading\": 0.2395472558560513,\n      \"independent\": 0.2395471433384172\n    },\n    {\n      \"heights\": [\n        0.1,\n        -0.1,\n        -0.1,\n        0.1\n      ],\n      \"reading\": -0.9566240180419738,\n      \"independent\": -0.9566239390895043\n    },\n    {\n      \"heights\": [\n        -0.1,\n        0.1,\n        0.1,\n        -0.1\n      ],\n      \"reading\": 0.9591280244435063,\n      \"independent\": 0.9591280543674863\n    },\n    {\n      \"heights\": [\n        0.12,\n        -0.06,\n        0.03,\n        -0.11\n      ],\n      \"reading\": -0.0957750822365433,\n      \"independent\": -0.09577488647993793\n    }\n  ]\n}\n"
+    },
+    {
+      "suite": "check-compact-yz-sensitivity",
+      "exitCode": 0,
+      "output": "{\n  \"scope\": \"16 support endpoint combinations per position; not a proof of global extrema\",\n  \"sweep\": [\n    {\n      \"frontBackShift\": 0.4,\n      \"heights\": [\n        -0.35000000000000003,\n        -0.45,\n        0.35000000000000003,\n        0.45\n      ],\n      \"columnFrontMicroradians\": 418.049339050724,\n      \"YUpMicroradians\": 376.4531465104954,\n      \"finiteYZ\": -12.478625003800245\n    },\n    {\n      \"frontBackShift\": 0,\n      \"heights\": [\n        0.049999999999999996,\n        -0.049999999999999996,\n        -0.049999999999999996,\n        0.049999999999999996\n      ],\n      \"columnFrontMicroradians\": 47.67898561543991,\n      \"YUpMicroradians\": 6.082793075211491,\n      \"finiteYZ\": -12.478625003795042\n    },\n    {\n      \"frontBackShift\": -0.4,\n      \"heights\": [\n        0.45,\n        0.35000000000000003,\n        -0.45,\n        -0.35000000000000003\n      ],\n      \"columnFrontMicroradians\": -322.69136781984406,\n      \"YUpMicroradians\": -364.28756036007246,\n      \"finiteYZ\": -12.478625003798511\n    }\n  ],\n  \"endpoints\": [\n    {\n      \"positions\": [\n        0,\n        0\n      ],\n      \"min\": {\n        \"value\": -16.758079548474107,\n        \"heights\": [\n          0.5,\n          -0.5,\n          -0.5,\n          0.5\n        ]\n      },\n      \"max\": {\n        \"value\": -7.179319694494354,\n        \"heights\": [\n          -0.5,\n          0.5,\n          0.5,\n          -0.5\n        ]\n      }\n    },\n    {\n      \"positions\": [\n        100,\n        100\n      ],\n      \"min\": {\n        \"value\": -66.79062370225711,\n        \"heights\": [\n          -0.5,\n          0.5,\n          0.5,\n          -0.5\n        ]\n      },\n      \"max\": {\n        \"value\": 42.829906897882616,\n        \"heights\": [\n          0.5,\n          -0.5,\n          -0.5,\n          0.5\n        ]\n      }\n    },\n    {\n      \"positions\": [\n        -100,\n        -100\n      ],\n      \"min\": {\n        \"value\": -73.50747326176182,\n        \"heights\": [\n          0.5,\n          -0.5,\n          -0.5,\n          0.5\n        ]\n      },\n      \"max\": {\n        \"value\": 49.59623417251369,\n        \"heights\": [\n          -0.5,\n          0.5,\n          0.5,\n          -0.5\n        ]\n      }\n    },\n    {\n      \"positions\": [\n        100,\n        -100\n      ],\n      \"min\": {\n        \"value\": -70.59841157578025,\n        \"heights\": [\n          -0.5,\n          0.5,\n          0.5,\n          -0.5\n        ]\n      },\n      \"max\": {\n        \"value\": 46.682412584007906,\n        \"heights\": [\n          0.5,\n          -0.5,\n          -0.5,\n          0.5\n        ]\n      }\n    },\n    {\n      \"positions\": [\n        -100,\n        100\n      ],\n      \"min\": {\n        \"value\": -77.36285108298976,\n        \"heights\": [\n          0.5,\n          -0.5,\n          -0.5,\n          0.5\n        ]\n      },\n      \"max\": {\n        \"value\": 53.401210895032136,\n        \"heights\": [\n          -0.5,\n          0.5,\n          0.5,\n          -0.5\n        ]\n      }\n    }\n  ]\n}\n"
+    },
+    {
+      "suite": "check-reference-zero",
+      "exitCode": 0,
+      "output": "Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.\n"
+    }
+  ]
+}

@@ -88,9 +88,9 @@ async function main(){
    commonLower();name=kind+'/legacy-next-visible='+legacy;check('legacyStep',()=>{assert.deepEqual(json('supportHeights'),before);near(record().step,canonical);});
    r.openTrainingMenu.click();
   }
-  // A restored browser save also refreshes the selected-support and phase UI.
-  r.closeTrainingMenu.click();r.fineAdjust.click();selectedButton(count-1).click();commonRaise();const saved=record();read(`openMachine(machines[${index}]);`);if(mode)r.machineMode.change(mode);frames.clear();shimFocus();name=kind+'/automatic-restore';
-  check('saveImportExport',()=>{assert.deepEqual(record(),saved);assert.equal(read('selected'),0);assert.match(r.selectedSupportLabel.textContent,/A/);near(read("Number($('adjustStep').value)"),.001);});
+  // Re-entry resets the individual, selected support, and adjustment phase.
+  r.closeTrainingMenu.click();r.fineAdjust.click();selectedButton(count-1).click();commonRaise();const saved=record();read(`openMachine(machines[${index}]);`);if(mode)r.machineMode.change(mode);frames.clear();shimFocus();name=kind+'/new-entry';
+  check('saveImportExport',()=>{assert.notEqual(record().machineProfile.seed,saved.machineProfile.seed);assert.deepEqual(record().heights,record().machineProfile.initialHeights);assert.equal(read('selected'),0);assert.match(r.selectedSupportLabel.textContent,/A/);near(read("Number($('adjustStep').value)"),.01);});
  }
  // Relocated detailed inputs continue to change their existing teaching
  // parameters; the drawer itself does not alter any of them.

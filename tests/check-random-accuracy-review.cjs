@@ -72,10 +72,11 @@ async function main(){
  const setHeight=(i,value)=>r['height'+i].change(String(value-read(`machineProfile.initialHeights[${i}]`)));
  async function importRecord(record){r.importLevel.files=[{size:100,text:async()=>JSON.stringify(record)}];await r.importLevel.onchange({target:r.importLevel});}
  for(const [index,mode] of [[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']]){
-  storage.clear();open(index,mode);const first=snapshot(),profile=json('machineProfile');
+  storage.clear();open(index,mode);const first=snapshot();let profile=json('machineProfile');
   check('個体は初期表示時に直ちに保存 '+index+' '+mode,()=>{assert.equal(first.version,[0,1,3].includes(index)?3:2);assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))),first);assert.deepEqual(first.heights,profile.initialHeights);assert.equal(read('validLevelRecord(levelRecord())'),true);});
   open(index,mode);
-  check('操作なしで開き直しても同じ個体 '+index+' '+mode,()=>{assert.deepEqual(snapshot(),first);assert.match(r.levelSaveStatus.textContent,/復元/);});
+  check('操作なしでも再入場は新個体 '+index+' '+mode,()=>{assert.notEqual(read('machineProfile.seed'),first.machineProfile.seed);assert.deepEqual(json('supportHeights'),json('machineProfile.initialHeights'));assert.match(r.levelSaveStatus.textContent,/再抽選/);});
+  profile=json('machineProfile');
   check('全直線軸の端中央を漏れなく列挙 '+index+' '+mode,()=>{
    const states=json('accuracyRange.map(s=>s.state)'),axes=json('machineLinearKeys()');assert.equal(states.length,axes.length===2?9:27);
    for(const key of axes)assert.deepEqual([...new Set(states.map(s=>s[key]))].sort((a,b)=>a-b),[-100,0,100]);assert.equal(new Set(states.map(s=>axes.map(k=>s[k]).join(','))).size,states.length);
@@ -116,7 +117,8 @@ async function main(){
  r.drawMachine.click();check('別個体を抽選で種が必ず変わる',()=>assert.notEqual(read('machineProfile.seed'),used.seed));
  read('positions={X:37,Y:-29,Z:61,A:0,C:0};updateAxisValues();');r.columnX.value='-63';r.columnX.oninput();r.columnZ.value='47';r.columnZ.oninput();r.height0.change('.237');r.impactOffset.change('.7');
  const record=snapshot(),savedPairs=current().pairs;open(1);open(0,'compact');
- check('個体・配置・軸位置・調整精度は再表示で厳密に復元',()=>{assert.deepEqual(snapshot(),record);assert.deepEqual(current().pairs,savedPairs);});
+ await importRecord(record);
+ check('個体・配置・軸位置・調整精度は明示JSON読込で厳密に復元',()=>{assert.deepEqual(snapshot(),record);assert.deepEqual(current().pairs,savedPairs);});
  r.exportLevel.click();const exported=JSON.parse(await context.exportedBlob.text());
  check('JSON保存は個体の種と初期高さと現在高さを含む',()=>assert.deepEqual(exported,record));
  r.drawMachine.click();await importRecord(exported);
@@ -130,7 +132,7 @@ async function main(){
  const legacy=structuredClone(record);legacy.version=1;delete legacy.supportLayout;delete legacy.machineProfile;delete legacy.bestState;legacy.heights=[.1,-.1,.2,-.2];delete legacy.columnX;delete legacy.columnZ;delete legacy.axisPositions;legacy.step=.01;
  await importRecord(legacy);
  check('旧JSONは支持高さを保持し個体を生成して新版へ保存',()=>{assert.deepEqual(json('supportHeights'),legacy.heights);assert.equal(snapshot().version,3);assert.equal(read('validLevelRecord(levelRecord())'),true);assert.equal(read('levelConfig.columnX'),0);assert.equal(read('levelConfig.columnZ'),0);assert.deepEqual(snapshot().axisPositions,{X:0,Y:0,Z:0});assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))),snapshot());});
- const migrated=snapshot();open(1);open(0,'compact');check('旧JSON移行後の個体も二度目の表示で再抽選しない',()=>assert.deepEqual(snapshot(),migrated));
+ const migrated=snapshot();open(1);open(0,'compact');await importRecord(migrated);check('旧JSON移行後の個体も明示読込で再現',()=>assert.deepEqual(snapshot(),migrated));
  storage.clear();open(1);
  const highFloor=snapshot();delete highFloor.bestState;highFloor.width=20;highFloor.depth=20;highFloor.machineProfile=MachineAccuracy.generate('used',36,keys,8);highFloor.heights=[...highFloor.machineProfile.initialHeights];
  await importRecord(highFloor);
@@ -149,8 +151,8 @@ async function main(){
  // Simulate a weaker later search: a genuinely better saved candidate must
  // survive despite the current state being worse than that saved candidate.
  read('window.reviewOriginalAccuracy=window.MachineAccuracy;window.MachineAccuracy={...window.MachineAccuracy,optimize:()=>({heights:supports.map(()=>0),value:0})};');
- open(1);open(0,'compact');
- check('良い支持高さの保存後に悪い現在状態で戻っても最良を保持',()=>{assert.deepEqual(json('supportHeights'),preserved.heights);assert.deepEqual(json('machineReference.best.heights'),preserved.bestState.heights);near(json('machineReference.best.metric.objective'),preservedObjective,1e-8);});
+ open(1);open(0,'compact');await importRecord(preserved);
+ check('良い支持高さのJSON読込では最良を保持',()=>{assert.deepEqual(json('supportHeights'),preserved.heights);assert.deepEqual(json('machineReference.best.heights'),preserved.bestState.heights);near(json('machineReference.best.metric.objective'),preservedObjective,1e-8);});
  r.drawMachine.click();await importRecord(preserved);
  check('エクスポートした最良支持高さも再探索の候補として復元',()=>{assert.deepEqual(json('machineReference.best.heights'),preserved.bestState.heights);near(json('machineReference.best.metric.objective'),preservedObjective,1e-8);});
  read('window.MachineAccuracy=window.reviewOriginalAccuracy;delete window.reviewOriginalAccuracy;');

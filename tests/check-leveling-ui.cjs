@@ -27,9 +27,9 @@ async function main(){
   r.zero.click();check(`機種${i}:リセット`,()=>{assert.ok(read('supportHeights.every(h=>h===0)'));near(read('levelSolution.residual'),0);near(read('levelSolution.twist'),0);assert.ok(r.diagnosis.textContent.includes('目標内'));});
  }
  // Pure-support save checks use an unchanged machine: new layouts require a real intrinsic profile.
- // 機械を選び直しても自動保存した高さと寸法が復元する。
+ // 再入場は自動保存した調整を復元せず初期化する。
  storage.clear();open(2);r.up0.click();r.supportWidth.change('5');const saved=json('levelRecord()');open(1);open(2);
- check('機械別自動保存復元',()=>{assert.deepEqual(json('levelRecord()'),saved);assert.match(r.levelSaveStatus.textContent,/復元/);});
+ check('機械の再入場は調整を初期化',()=>{assert.notDeepEqual(json('levelRecord()'),saved);assert(json('supportHeights').every(h=>h===0));near(read('levelConfig.width'),read('Number((current.w*.8).toFixed(2))'));assert.match(r.levelSaveStatus.textContent,/再抽選/);});
  for(const [machine,mode,kind,count] of [[0,'compact','compact',4],[1,'','horizontal',8],[3,'l3-3000','double',15]]){
   open(machine);check(`機種${mode}:単一方式と支持点`,()=>{assert.equal(read('machineMode'),mode);assert(r.machineModeBox.hidden);assert.equal(read('current.kind'),kind);assert.equal(read('supports.length'),count);assert.ok(Number.isFinite(read('levelSolution.lr')));});
  }

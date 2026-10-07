@@ -69,7 +69,7 @@ async function main(){
  check('leaving training cancels next animated frame and saves last pose',()=>{assert.ok(beforeStop>20);assert.equal(read('motionFrame'),null);assert.equal(pending.size,1); // catalog thumbnail redraw only
   near(JSON.parse(storage.get(read('levelKey()'))).axisPositions.X,beforeStop);});pending.clear();
  r.machineGrid.children[0].click();pending.clear();
- check('returning to a machine restores its stopped axis readout',()=>{near(read('positions.X'),beforeStop);near(Number(r['axis-X'].value),beforeStop);});
+ check('returning to a machine resets its stopped axis readout',()=>{near(read('positions.X'),0);near(Number(r['axis-X'].value),0);});
  r.playAxis.click();tick(6500);tick(7000);trigger('axis-Y','input','24');
  check('manual different-axis movement stops animation and synchronizes selection',()=>{assert.equal(read('motionFrame'),null);assert.equal(pending.size,0);assert.equal(read('selectedAxis'),'Y');near(read('positions.Y'),24);near(Number(r['axis-Y'].value),24);});
  // A late file completion must never overwrite the most recently chosen file
@@ -121,7 +121,8 @@ async function main(){
   r.exportLevel.click();const exported=JSON.parse(await context.exportedBlob.text());
   check('export includes exact used profile '+index+' '+mode,()=>assert.deepEqual(exported,record));
   read(`openMachine(machines[${(index+1)%7}]);openMachine(machines[${index}]);`);if(mode)r.machineMode.change(mode);pending.clear();
-  check('profile and precision reproduce after machine/mode navigation '+index+' '+mode,()=>{assert.deepEqual(json('levelRecord()'),record);assert.deepEqual(json('levelGeometry.pairs'),angles);assert.equal(r.machineCondition.value,'used');assert.match(r.levelSaveStatus.textContent,/復元/);});
+  r.importLevel.files=[{size:100,text:async()=>JSON.stringify(record)}];await r.importLevel.onchange({target:r.importLevel});
+  check('profile and precision reproduce after explicit JSON import '+index+' '+mode,()=>{assert.deepEqual(json('levelRecord()'),record);assert.deepEqual(json('levelGeometry.pairs'),angles);assert.equal(r.machineCondition.value,'used');assert.match(r.levelInputMessage.textContent,/読み込み/);});
   const corrupted=structuredClone(record);corrupted.machineProfile.guides[keys[0]].microns+=.001;
   r.importLevel.files=[{size:100,text:async()=>JSON.stringify(corrupted)}];await r.importLevel.onchange({target:r.importLevel});
   check('tampered intrinsic profile is rejected atomically '+index+' '+mode,()=>{assert.deepEqual(json('levelRecord()'),record);assert.match(r.levelInputMessage.textContent,/読込できません/);});
@@ -187,11 +188,10 @@ async function main(){
   check('late profile import cannot replace newer action '+action,()=>{assert.deepEqual(json('levelRecord()'),before);assert.equal(r.levelInputMessage.textContent,message);});
   read('stopMotion()');pending.clear();
  }
- // Reading a saved profile can work while writes fail (quota or policy).
- // Restored-state messaging must preserve the actionable save failure.
+ // A fresh page entry must still work while browser writes fail (quota or policy).
  const persistedProfile=json('machineProfile'),originalSetter=context.localStorage.setItem;
  context.localStorage.setItem=()=>{throw Error('write denied');};read('openMachine(machines[0])');pending.clear();
- check('restoring a saved profile keeps automatic-save failure visible',()=>{assert.deepEqual(json('machineProfile'),persistedProfile);assert.match(r.levelSaveStatus.textContent,/自動保存できません/);});
+ check('new individual keeps automatic-save failure visible',()=>{assert.notEqual(read('machineProfile.seed'),persistedProfile.seed);assert.match(r.levelSaveStatus.textContent,/自動保存できません/);});
  context.localStorage.setItem=originalSetter;
  if(failures.length){console.error(`${checks} full-code checks run; ${failures.length} failed:\n`+failures.join('\n'));process.exitCode=1;}else console.log(`Full code review: ${checks} integration checks passed.`);
 }

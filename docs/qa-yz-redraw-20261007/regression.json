@@ -1,0 +1,87 @@
+{
+  "htmlSha256": "2559e5d7873677c532143883fcc50d44763b459f5d2982eac95e69e366d4b141",
+  "passed": 16,
+  "total": 16,
+  "suites": [
+    {
+      "suite": "check-page-redraw",
+      "exitCode": 0,
+      "output": "Page-entry redraw: 98 assertions across all 7 machines passed; explicit JSON round trips preserved.\n"
+    },
+    {
+      "suite": "check-site-navigation",
+      "exitCode": 0,
+      "output": "Shared site navigation: 39 journeys/state/history checks passed across six pages and seven machines.\n"
+    },
+    {
+      "suite": "check-leveling-ui",
+      "exitCode": 0,
+      "output": "Leveling UI: 190 checks passed (7 machines, single-model selections, controls, exercise, save/import/export).\n"
+    },
+    {
+      "suite": "check-accuracy-review",
+      "exitCode": 0,
+      "output": "Accuracy review: 75 independent checks passed.\n"
+    },
+    {
+      "suite": "check-random-accuracy-review",
+      "exitCode": 0,
+      "output": "Random accuracy independent review: 164 checks passed.\n"
+    },
+    {
+      "suite": "check-settings-menu",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": {\n    \"drawerState\": 49,\n    \"supportSelection\": 50,\n    \"stageSteps\": 300,\n    \"limits\": 21,\n    \"axisControls\": 51,\n    \"demo\": 21,\n    \"saveImportExport\": 21,\n    \"legacyStep\": 63,\n    \"settings\": 5\n  },\n  \"failures\": []\n}\n"
+    },
+    {
+      "suite": "check-confirmed-layouts",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 330,\n  \"legacyAccepted\": 0,\n  \"legacyCompactMigrated\": 0,\n  \"legacyRejected\": 9,\n  \"legacyV1Rejected\": 9,\n  \"legacyV1CompactMigrated\": 0,\n  \"legacyKeysPreserved\": 9,\n  \"supportsExercised\": 50,\n  \"failures\": [],\n  \"timings\": [\n    {\n      \"index\": 0,\n      \"operation\": \"open\",\n      \"milliseconds\": 93.06175900000017\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 11.133319000000029\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 52.279391999999916\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"open\",\n      \"milliseconds\": 59.08327899999995\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 18.305333000000246\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 77.68341099999998\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"open\",\n      \"milliseconds\": 37.400956999999835\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 5.863335999999435\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 33.92941100000007\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"open\",\n      \"milliseconds\": 70.69038499999988\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 14.436730999999781\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 16.616502000000764\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"open\",\n      \"milliseconds\": 60.63114299999961\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 6.5186720000001515\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 36.341402000000016\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"open\",\n      \"milliseconds\": 28.406928999998854\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 6.968178999999509\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 24.79702399999951\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"open\",\n      \"milliseconds\": 13.637516999999207\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 2.085559999999532\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 7.9101059999993595\n    }\n  ]\n}\n"
+    },
+    {
+      "suite": "check-full-code-review",
+      "exitCode": 0,
+      "output": "Full code review: 158 integration checks passed.\n"
+    },
+    {
+      "suite": "check-reference-zero",
+      "exitCode": 0,
+      "output": "Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.\n"
+    },
+    {
+      "suite": "check-measurement-reference",
+      "exitCode": 0,
+      "output": "Reference plane geometry: 70 numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.\nSupport-grid crossing: piecewise integral and analytic pallet material-point oracle passed.\n"
+    },
+    {
+      "suite": "check-twist-independent",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 3193,\n  \"finiteScans\": 171,\n  \"renderedFiniteMotions\": 171,\n  \"centreTwistReadings\": [\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": -8.99996114370194\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 18.95399997558188\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": 0.6461004287729166\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": 9.000038856258815\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": -18.953999975580142\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": -0.6449631887780333\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": -0.8279999948769545\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 10.97999987850068\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": 0.001537639191320772\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": 0.8279999948734851\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": -10.979999878502413\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": 0.001537639191320772\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": -0.00009827999872258353\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 3.27599999324496\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": 1.734723475976807e-12\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": -0.00009827999872258353\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": -3.2759999932432255\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": 1.734723475976807e-12\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": -43.53709036174907\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": -1.9081958235744878e-11\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": 43.53709034496389\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": -6.591949208711867e-11\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": -45.17999927946062\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": -1.734723475976807e-12\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": 45.17999927946062\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": -1.734723475976807e-12\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": 1.734723475976807e-12\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"lathe\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 0.000012959999393102883\n    },\n    {\n      \"kind\": \"lathe\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"lathe\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": 0.000012959999393102883\n    }\n  ]\n}\n"
+    },
+    {
+      "suite": "check-twist-sweep",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 261,\n  \"failures\": [],\n  \"integration\": [\n    {\n      \"kind\": \"compact\",\n      \"sign\": -1,\n      \"readingMicrons\": [\n        2.544751652037318,\n        0.1676283038324307,\n        -2.3771233482048877,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"compact\",\n      \"sign\": 1,\n      \"readingMicrons\": [\n        -2.544751652037318,\n        -0.1676283038324307,\n        2.3771233482048877,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"travel\",\n      \"sign\": -1,\n      \"readingMicrons\": [\n        -2.2175480755612234,\n        -5.008012817453425,\n        -2.7904647418922015,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"travel\",\n      \"sign\": 1,\n      \"readingMicrons\": [\n        2.2175480755612234,\n        5.008012817453425,\n        2.7904647418922015,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"double\",\n      \"sign\": -1,\n      \"readingMicrons\": [\n        0.9547639642753347,\n        -20.19198707478001,\n        -21.146751039055346,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"double\",\n      \"sign\": 1,\n      \"readingMicrons\": [\n        -0.9416038605225953,\n        20.205737246697385,\n        21.147341107219983,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"gantry\",\n      \"sign\": -1,\n      \"readingMicrons\": [\n        3.4334484290576873e-10,\n        -4.348887379769865e-11,\n        -3.8683371670346737e-10,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"gantry\",\n      \"sign\": 1,\n      \"readingMicrons\": [\n        -3.433412312794717e-10,\n        4.349598887445558e-11,\n        3.8683722015392725e-10,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"five\",\n      \"sign\": -1,\n      \"readingMicrons\": [\n        0,\n        0,\n        0,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"five\",\n      \"sign\": 1,\n      \"readingMicrons\": [\n        0,\n        0,\n        0,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    }\n  ]\n}\n"
+    },
+    {
+      "suite": "check-second-mechanical",
+      "exitCode": 0,
+      "output": "{\"mixedMaterialMotionCases\":76,\"maxMovementMismatchMicrons\":8.387193953587626e-10,\"analyticMixedScans\":42,\"coupledIntrinsicRigidTiltScans\":19}\n"
+    },
+    {
+      "suite": "check-second-contract",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 520,\n  \"finiteScanContracts\": 76,\n  \"savedRoundTrips\": 28,\n  \"maxMovementResidualMetres\": 6.811785228604951e-16,\n  \"scope\": \"integration consistency plus explicit fixed-plane contact; not an elastic-machine proof\"\n}\n"
+    },
+    {
+      "suite": "check-compact-yz-independent",
+      "exitCode": 0,
+      "output": "{\n  \"pureAngle\": [\n    {\n      \"intrinsicMicrons\": -60,\n      \"reading\": 59.99999959999981,\n      \"expected\": 59.99999960000001\n    },\n    {\n      \"intrinsicMicrons\": 60,\n      \"reading\": -59.99999959999981,\n      \"expected\": -59.99999960000001\n    }\n  ],\n  \"cases\": 162,\n  \"maxErrorMicrons\": 4.5013819061079374e-7,\n  \"oppositeSideAndRezeroCases\": 324,\n  \"examples\": [\n    {\n      \"heights\": [\n        0,\n        0,\n        0,\n        0\n      ],\n      \"reading\": 0,\n      \"independent\": 0\n    },\n    {\n      \"heights\": [\n        0.1,\n        0,\n        0,\n        0\n      ],\n      \"reading\": -0.23939075545660604,\n      \"independent\": -0.23939082212549867\n    },\n    {\n      \"heights\": [\n        -0.1,\n        0,\n        0,\n        0\n      ],\n      \"reading\": 0.2395472558560513,\n      \"independent\": 0.2395471433384172\n    },\n    {\n      \"heights\": [\n        0.1,\n        -0.1,\n        -0.1,\n        0.1\n      ],\n      \"reading\": -0.9566240180419738,\n      \"independent\": -0.9566239390895043\n    },\n    {\n      \"heights\": [\n        -0.1,\n        0.1,\n        0.1,\n        -0.1\n      ],\n      \"reading\": 0.9591280244435063,\n      \"independent\": 0.9591280543674863\n    },\n    {\n      \"heights\": [\n        0.12,\n        -0.06,\n        0.03,\n        -0.11\n      ],\n      \"reading\": -0.0957750822365433,\n      \"independent\": -0.09577488647993793\n    }\n  ]\n}\n"
+    },
+    {
+      "suite": "check-mobile-navigation",
+      "exitCode": 0,
+      "output": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed\n"
+    }
+  ]
+}

@@ -31,14 +31,14 @@ async function main(){
   storage.clear();const records=legacy.filter(q=>q.index===index&&q.condition==='new'&&q.stage==='initial');
   for(const q of records)storage.set('training-level-v1:'+q.values.record.machine+':'+q.values.record.mode,JSON.stringify(q.values.record));
   const originals=[...storage];open(index);label=`old-local-key/${index}`;
-  test(()=>{for(const [key,value]of originals){assert.equal(storage.get(key),value);assert.notEqual(read('levelKey()'),key);}assert.match(r.levelSaveStatus.textContent,/旧|計算|配置|対応/);});
+  test(()=>{for(const [key,value]of originals){assert.equal(storage.get(key),value);assert.notEqual(read('levelKey()'),key);}assert.match(r.levelSaveStatus.textContent,/新しい個体|再抽選/);});
   results.legacyKeysPreserved+=originals.length;
  }
  // The former 24-point v3 layout also needs explicit rejection: matching
  // machine/mode/version alone must never reinterpret its height array.
  storage.clear();const previousText=JSON.stringify(previousL3.record);storage.set(previousL3.key,previousText);open(3);
  label='L3/previous-24-point-local-save-is-preserved';const currentL3=record();
- test(()=>{assert.equal(storage.get(previousL3.key),previousText);assert.notEqual(read('levelKey()'),previousL3.key);assert.equal(currentL3.heights.length,15);assert.notEqual(currentL3.supportLayout.id,previousL3.record.supportLayout.id);assert.match(r.levelSaveStatus.textContent,/旧|配置|対応/);});
+ test(()=>{assert.equal(storage.get(previousL3.key),previousText);assert.notEqual(read('levelKey()'),previousL3.key);assert.equal(currentL3.heights.length,15);assert.notEqual(currentL3.supportLayout.id,previousL3.record.supportLayout.id);assert.match(r.levelSaveStatus.textContent,/新しい個体|再抽選/);});
  label='L3/previous-24-point-import-is-rejected';test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(previousL3.record)})`)),false));
  await load(previousL3.record);test(()=>{assert.deepEqual(record(),currentL3);assert.equal(storage.get(previousL3.key),previousText);assert.match(r.levelInputMessage.textContent,/旧|配置|対応/);});
  const counts=[4,8,6,15,8,3,6];
@@ -66,7 +66,7 @@ async function main(){
   }
   label=`roundtrip/${index}`;const saved=record();r.raiseSupport.click();await load(saved);
   test(()=>assert.deepEqual(record(),saved));
-  open(index);test(()=>assert.deepEqual(record(),saved));
+  open(index);test(()=>{assert.notEqual(record().machineProfile.seed,saved.machineProfile.seed);assert.deepEqual(record().heights,record().machineProfile.initialHeights);assert.equal(record().step,.01);});
   if(index===3){
    label='L3/middle-support-example-is-nonplanar';const individual=json('machineProfile'),initialShape=json('levelInitialGeometry');r.middlePreset.click();
    test(()=>{const heights=json('supportHeights');assert.equal(heights.filter(h=>h===.15).length,3);assert.equal(heights.filter(h=>h===0).length,12);assert(read('levelSolution.residual')>1e-4,'middle example must bend the surface rather than lift every support equally');assert.deepEqual(json('machineProfile'),individual);assert.deepEqual(json('levelInitialGeometry'),initialShape);});

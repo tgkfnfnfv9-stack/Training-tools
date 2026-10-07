@@ -365,6 +365,7 @@ function updateAccuracy(){
  }
  postureComparison('bodyLeanComparison',initial?['front','right'].map((key,i)=>({key,label:postureLabels[i],before:initial.bodyPosture[key],current:g.bodyPosture[key]})):[],'µrad');
  $('bodyLeanNote').textContent=lathe?'固有XZ差は水平面内の主軸の方向ずれです。主軸方向に支持姿勢を重ねた模式表示で、コラムの鉛直倒れとは区別します。':'本体は抽選した固有直角差から求めたコラムの代表方向、支持はこの位置の据付姿勢です。合成は両方を回転として重ねた実値です。平均レベルが揃っても本体の倒れは残ります。';
+ if(current.kind==='compact')$('bodyLeanNote').textContent+=' 前後倒れは床の鉛直に対する姿勢です。YZは測定PのY送りに対するZ送りを測るため、両方が一緒に傾けば、前倒れから後ろ倒れへ変わっても値は改善しません。初期の寸法・コラム配置で測定Pが中央付近にあると、この曲げ仮定によるYZの調整効果は小さくなります。固有誤差の大きさによっては調整しきれません。';
  $('columnLean').textContent=lathe?'上下 '+signed(g.bodyPosture.front,2)+' µrad ／ 水平面 '+signed(g.bodyPosture.right,2)+' µrad':leanDescription(g.bodyLean.front,'後ろ倒れ','前倒れ')+' ／ '+leanDescription(g.bodyLean.right,'左倒れ','右倒れ');
  $('relativeLean').textContent='前後 '+signed(g.relativeLean.front,2)+' µrad ／ 左右 '+signed(g.relativeLean.right,2)+' µrad';
  const dual=g.columns.length===2;$('columnDifference').hidden=!dual;

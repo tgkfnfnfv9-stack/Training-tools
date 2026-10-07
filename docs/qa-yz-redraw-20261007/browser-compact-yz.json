@@ -1,0 +1,715 @@
+{
+  "input": "/workspace/Training-tools/index.html",
+  "sha256": "7d697c9dc34b8d13a8eb13f23395950bc66376c62c27f92d06d565a031e01710",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "ideal: all three contacts valid",
+      "ok": true
+    },
+    {
+      "name": "ideal: independent ray-plane compression",
+      "ok": true,
+      "detail": {
+        "expected": 0,
+        "actual": 0
+      }
+    },
+    {
+      "name": "ideal: XY and XZ stay zero",
+      "ok": true
+    },
+    {
+      "name": "ideal: YZ explanation states rear-side upper zero and downward travel",
+      "ok": true
+    },
+    {
+      "name": "ideal/1280: YZ fixed physical projection",
+      "ok": true
+    },
+    {
+      "name": "ideal/1280: viewport does not change values",
+      "ok": true
+    },
+    {
+      "name": "ideal/1280: visible rounded YZ reading",
+      "ok": true
+    },
+    {
+      "name": "ideal/320: YZ fixed physical projection",
+      "ok": true
+    },
+    {
+      "name": "ideal/320: viewport does not change values",
+      "ok": true
+    },
+    {
+      "name": "ideal/320: visible rounded YZ reading",
+      "ok": true
+    },
+    {
+      "name": "ideal: camera zoom exaggeration preserve readings",
+      "ok": true
+    },
+    {
+      "name": "yz-positive-angle: all three contacts valid",
+      "ok": true
+    },
+    {
+      "name": "yz-positive-angle: independent ray-plane compression",
+      "ok": true,
+      "detail": {
+        "expected": -29.999999950000003,
+        "actual": -29.99999995000058
+      }
+    },
+    {
+      "name": "yz-positive-angle: XY and XZ stay zero",
+      "ok": true
+    },
+    {
+      "name": "yz-positive-angle: YZ explanation states rear-side upper zero and downward travel",
+      "ok": true
+    },
+    {
+      "name": "yz-positive-angle/1280: YZ fixed physical projection",
+      "ok": true
+    },
+    {
+      "name": "yz-positive-angle/1280: viewport does not change values",
+      "ok": true
+    },
+    {
+      "name": "yz-positive-angle/1280: visible rounded YZ reading",
+      "ok": true
+    },
+    {
+      "name": "yz-positive-angle/320: YZ fixed physical projection",
+      "ok": true
+    },
+    {
+      "name": "yz-positive-angle/320: viewport does not change values",
+      "ok": true
+    },
+    {
+      "name": "yz-positive-angle/320: visible rounded YZ reading",
+      "ok": true
+    },
+    {
+      "name": "yz-positive-angle: camera zoom exaggeration preserve readings",
+      "ok": true
+    },
+    {
+      "name": "yz-negative-angle: all three contacts valid",
+      "ok": true
+    },
+    {
+      "name": "yz-negative-angle: independent ray-plane compression",
+      "ok": true,
+      "detail": {
+        "expected": 29.999999950000003,
+        "actual": 29.99999995000058
+      }
+    },
+    {
+      "name": "yz-negative-angle: XY and XZ stay zero",
+      "ok": true
+    },
+    {
+      "name": "yz-negative-angle: YZ explanation states rear-side upper zero and downward travel",
+      "ok": true
+    },
+    {
+      "name": "yz-negative-angle/1280: YZ fixed physical projection",
+      "ok": true
+    },
+    {
+      "name": "yz-negative-angle/1280: viewport does not change values",
+      "ok": true
+    },
+    {
+      "name": "yz-negative-angle/1280: visible rounded YZ reading",
+      "ok": true
+    },
+    {
+      "name": "yz-negative-angle/320: YZ fixed physical projection",
+      "ok": true
+    },
+    {
+      "name": "yz-negative-angle/320: viewport does not change values",
+      "ok": true
+    },
+    {
+      "name": "yz-negative-angle/320: visible rounded YZ reading",
+      "ok": true
+    },
+    {
+      "name": "yz-negative-angle: camera zoom exaggeration preserve readings",
+      "ok": true
+    },
+    {
+      "name": "positive-twist: all three contacts valid",
+      "ok": true
+    },
+    {
+      "name": "positive-twist: YZ explanation states rear-side upper zero and downward travel",
+      "ok": true
+    },
+    {
+      "name": "positive-twist/1280: YZ fixed physical projection",
+      "ok": true
+    },
+    {
+      "name": "positive-twist/1280: viewport does not change values",
+      "ok": true
+    },
+    {
+      "name": "positive-twist/1280: visible rounded YZ reading",
+      "ok": true
+    },
+    {
+      "name": "positive-twist/320: YZ fixed physical projection",
+      "ok": true
+    },
+    {
+      "name": "positive-twist/320: viewport does not change values",
+      "ok": true
+    },
+    {
+      "name": "positive-twist/320: visible rounded YZ reading",
+      "ok": true
+    },
+    {
+      "name": "positive-twist: camera zoom exaggeration preserve readings",
+      "ok": true
+    },
+    {
+      "name": "negative-twist: all three contacts valid",
+      "ok": true
+    },
+    {
+      "name": "negative-twist: YZ explanation states rear-side upper zero and downward travel",
+      "ok": true
+    },
+    {
+      "name": "negative-twist/1280: YZ fixed physical projection",
+      "ok": true
+    },
+    {
+      "name": "negative-twist/1280: viewport does not change values",
+      "ok": true
+    },
+    {
+      "name": "negative-twist/1280: visible rounded YZ reading",
+      "ok": true
+    },
+    {
+      "name": "negative-twist/320: YZ fixed physical projection",
+      "ok": true
+    },
+    {
+      "name": "negative-twist/320: viewport does not change values",
+      "ok": true
+    },
+    {
+      "name": "negative-twist/320: visible rounded YZ reading",
+      "ok": true
+    },
+    {
+      "name": "negative-twist: camera zoom exaggeration preserve readings",
+      "ok": true
+    },
+    {
+      "name": "front: rigid front/back leveling cannot remove intrinsic YZ angle",
+      "ok": true,
+      "detail": {
+        "heights": [
+          -0.162,
+          -0.162,
+          0.162,
+          0.162
+        ],
+        "columnFrontMicroradians": 249.99999887499996,
+        "tableFrontMicroradians": 149.999998875,
+        "measuredYDirection": [
+          0,
+          0.0001499999983125,
+          0.9999999887500001
+        ],
+        "zDirection": [
+          0,
+          0.9999999687500004,
+          -0.00024999999627083334
+        ],
+        "yz": -29.99999994999884
+      }
+    },
+    {
+      "name": "upright: rigid front/back leveling cannot remove intrinsic YZ angle",
+      "ok": true,
+      "detail": {
+        "heights": [
+          0.10800000000000001,
+          0.10800000000000001,
+          -0.10800000000000001,
+          -0.10800000000000001
+        ],
+        "columnFrontMicroradians": 3.333333365189081e-7,
+        "tableFrontMicroradians": -99.99999966666667,
+        "measuredYDirection": [
+          0,
+          -0.00009999999950000001,
+          0.999999995
+        ],
+        "zDirection": [
+          0,
+          1,
+          -3.333333365189081e-13
+        ],
+        "yz": -29.99999995000058
+      }
+    },
+    {
+      "name": "back: rigid front/back leveling cannot remove intrinsic YZ angle",
+      "ok": true,
+      "detail": {
+        "heights": [
+          0.378,
+          0.378,
+          -0.378,
+          -0.378
+        ],
+        "columnFrontMicroradians": -249.99998570833438,
+        "tableFrontMicroradians": -349.9999857083344,
+        "measuredYDirection": [
+          0,
+          -0.00034999997856250195,
+          0.9999999387500056
+        ],
+        "zDirection": [
+          0,
+          0.9999999687500037,
+          0.00024999998310416816
+        ],
+        "yz": -29.999999949997108
+      }
+    },
+    {
+      "name": "column actually crosses front/upright/back in three browser states",
+      "ok": true,
+      "detail": [
+        {
+          "id": "front",
+          "slope": 0.15,
+          "heights": [
+            -0.162,
+            -0.162,
+            0.162,
+            0.162
+          ],
+          "columnFrontMicroradians": 249.99999887499996,
+          "tableFrontMicroradians": 149.999998875,
+          "measuredYDirection": [
+            0,
+            0.0001499999983125,
+            0.9999999887500001
+          ],
+          "zDirection": [
+            0,
+            0.9999999687500004,
+            -0.00024999999627083334
+          ],
+          "yz": -29.99999994999884
+        },
+        {
+          "id": "upright",
+          "slope": -0.1,
+          "heights": [
+            0.10800000000000001,
+            0.10800000000000001,
+            -0.10800000000000001,
+            -0.10800000000000001
+          ],
+          "columnFrontMicroradians": 3.333333365189081e-7,
+          "tableFrontMicroradians": -99.99999966666667,
+          "measuredYDirection": [
+            0,
+            -0.00009999999950000001,
+            0.999999995
+          ],
+          "zDirection": [
+            0,
+            1,
+            -3.333333365189081e-13
+          ],
+          "yz": -29.99999995000058
+        },
+        {
+          "id": "back",
+          "slope": -0.35,
+          "heights": [
+            0.378,
+            0.378,
+            -0.378,
+            -0.378
+          ],
+          "columnFrontMicroradians": -249.99998570833438,
+          "tableFrontMicroradians": -349.9999857083344,
+          "measuredYDirection": [
+            0,
+            -0.00034999997856250195,
+            0.9999999387500056
+          ],
+          "zDirection": [
+            0,
+            0.9999999687500037,
+            0.00024999998310416816
+          ],
+          "yz": -29.999999949997108
+        }
+      ]
+    },
+    {
+      "name": "YZ explanation distinguishes common tilt and limited adjustment response",
+      "ok": true
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "states": [
+    {
+      "case": {
+        "id": "ideal",
+        "angle": 0,
+        "twist": 0
+      },
+      "measurements": [
+        {
+          "pair": "XY",
+          "valid": true,
+          "value": 0,
+          "angle": 0
+        },
+        {
+          "pair": "XZ",
+          "valid": true,
+          "value": 0,
+          "angle": 0
+        },
+        {
+          "pair": "YZ",
+          "valid": true,
+          "value": 0,
+          "angle": 0
+        }
+      ],
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 14,
+          "bodyNormal": 0.01,
+          "reading": 0,
+          "display": "0"
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 31,
+          "bodyNormal": 0.01,
+          "reading": 0,
+          "display": "0"
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 31,
+          "bodyNormal": 0.01,
+          "reading": 0,
+          "display": "0"
+        }
+      ],
+      "yzCard": "YZ 0 µmYZ↑上頭固定RS0下押込＋奥直角マスタ：テーブル上／計器：主軸頭に固定。奥側からS面に接触。① R面を開始位置の測定PのY局所送り接線に平行に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 上・奥側の●0でゼロ合わせ。③ 主軸頭＋工具を部材−Z・下へ300 mm（NC指令の符号ではありません）。基準器に対する計器は下へ。測定子が本体へ奥に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝奥、図の上＝上。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張し、図の変位・傾きは枠内に制限し、数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+300.0 → 0.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。Y走査は模型の測定Pの移動を使います。コラムの前後倒れは床に対する姿勢です。YZは測定PのY送りと主軸頭のZ送りの相対関係を測ります。両方が同じだけ傾く調整では、コラムが前倒れから後倒れへ変わってもYZの値は変わりません。初期の寸法・コラム配置で測定Pが中央付近にあると、この曲げ仮定によるYZの調整効果は小さくなります。固有誤差の大きさによっては調整しきれません。初期支持状態：0 µm／現在：0 µm（同じ区間で各々ゼロ）。従来の局所角度差：0 µm／300 mm換算。上の有限走査値とは別です。"
+    },
+    {
+      "case": {
+        "id": "yz-positive-angle",
+        "angle": 30,
+        "twist": 0
+      },
+      "measurements": [
+        {
+          "pair": "XY",
+          "valid": true,
+          "value": 0,
+          "angle": 0
+        },
+        {
+          "pair": "XZ",
+          "valid": true,
+          "value": 0,
+          "angle": 0
+        },
+        {
+          "pair": "YZ",
+          "valid": true,
+          "value": -29.99999995000058,
+          "angle": 100
+        }
+      ],
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 14,
+          "bodyNormal": 0.01,
+          "reading": 0,
+          "display": "0"
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 31,
+          "bodyNormal": 0.01,
+          "reading": 0,
+          "display": "0"
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 30.999999915,
+          "bodyNormal": 0.01002999999995,
+          "reading": -29.99999995000058,
+          "display": "-30"
+        }
+      ],
+      "yzCard": "YZ -30 µmYZ↑上頭固定RS0下押込＋奥直角マスタ：テーブル上／計器：主軸頭に固定。奥側からS面に接触。① R面を開始位置の測定PのY局所送り接線に平行に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 上・奥側の●0でゼロ合わせ。③ 主軸頭＋工具を部材−Z・下へ300 mm（NC指令の符号ではありません）。基準器に対する計器は下へ。測定子が本体へ奥に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝奥、図の上＝上。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張し、図の変位・傾きは枠内に制限し、数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+300.0 → 0.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。Y走査は模型の測定Pの移動を使います。コラムの前後倒れは床に対する姿勢です。YZは測定PのY送りと主軸頭のZ送りの相対関係を測ります。両方が同じだけ傾く調整では、コラムが前倒れから後倒れへ変わってもYZの値は変わりません。初期の寸法・コラム配置で測定Pが中央付近にあると、この曲げ仮定によるYZの調整効果は小さくなります。固有誤差の大きさによっては調整しきれません。初期支持状態：-30 µm／現在：-30 µm（同じ区間で各々ゼロ）。従来の局所角度差：+30 µm／300 mm換算。上の有限走査値とは別です。"
+    },
+    {
+      "case": {
+        "id": "yz-negative-angle",
+        "angle": -30,
+        "twist": 0
+      },
+      "measurements": [
+        {
+          "pair": "XY",
+          "valid": true,
+          "value": 0,
+          "angle": 0
+        },
+        {
+          "pair": "XZ",
+          "valid": true,
+          "value": 0,
+          "angle": 0
+        },
+        {
+          "pair": "YZ",
+          "valid": true,
+          "value": 29.99999995000058,
+          "angle": -100
+        }
+      ],
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 14,
+          "bodyNormal": 0.01,
+          "reading": 0,
+          "display": "0"
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 31,
+          "bodyNormal": 0.01,
+          "reading": 0,
+          "display": "0"
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 30.999999915,
+          "bodyNormal": 0.00997000000005,
+          "reading": 29.99999995000058,
+          "display": "+30"
+        }
+      ],
+      "yzCard": "YZ +30 µmYZ↑上頭固定RS0下押込＋奥直角マスタ：テーブル上／計器：主軸頭に固定。奥側からS面に接触。① R面を開始位置の測定PのY局所送り接線に平行に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 上・奥側の●0でゼロ合わせ。③ 主軸頭＋工具を部材−Z・下へ300 mm（NC指令の符号ではありません）。基準器に対する計器は下へ。測定子が本体へ奥に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝奥、図の上＝上。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張し、図の変位・傾きは枠内に制限し、数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+300.0 → 0.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。Y走査は模型の測定Pの移動を使います。コラムの前後倒れは床に対する姿勢です。YZは測定PのY送りと主軸頭のZ送りの相対関係を測ります。両方が同じだけ傾く調整では、コラムが前倒れから後倒れへ変わってもYZの値は変わりません。初期の寸法・コラム配置で測定Pが中央付近にあると、この曲げ仮定によるYZの調整効果は小さくなります。固有誤差の大きさによっては調整しきれません。初期支持状態：+30 µm／現在：+30 µm（同じ区間で各々ゼロ）。従来の局所角度差：-30 µm／300 mm換算。上の有限走査値とは別です。"
+    },
+    {
+      "case": {
+        "id": "positive-twist",
+        "angle": 0,
+        "twist": 0.12
+      },
+      "measurements": [
+        {
+          "pair": "XY",
+          "valid": true,
+          "value": 16.025764224486885,
+          "angle": 53.419122108094705
+        },
+        {
+          "pair": "XZ",
+          "valid": true,
+          "value": -33.74999986213885,
+          "angle": 112.49999977775819
+        },
+        {
+          "pair": "YZ",
+          "valid": true,
+          "value": -1.1476483401176574,
+          "angle": 3.8254944670682423
+        }
+      ],
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 13.999985528771667,
+          "bodyNormal": 0.009983974230647326,
+          "reading": 16.025764224486885,
+          "display": "+16"
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 30.999999892421876,
+          "bodyNormal": 0.010033749999862137,
+          "reading": -33.74999986213885,
+          "display": "-34"
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 30.99999999987561,
+          "bodyNormal": 0.010001147648340118,
+          "reading": -1.1476483401176574,
+          "display": "-1"
+        }
+      ],
+      "yzCard": "YZ -1 µmYZ↑上頭固定RS0下押込＋奥直角マスタ：テーブル上／計器：主軸頭に固定。奥側からS面に接触。① R面を開始位置の測定PのY局所送り接線に平行に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 上・奥側の●0でゼロ合わせ。③ 主軸頭＋工具を部材−Z・下へ300 mm（NC指令の符号ではありません）。基準器に対する計器は下へ。測定子が本体へ奥に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝奥、図の上＝上。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張し、図の変位・傾きは枠内に制限し、数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+300.0 → 0.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。Y走査は模型の測定Pの移動を使います。コラムの前後倒れは床に対する姿勢です。YZは測定PのY送りと主軸頭のZ送りの相対関係を測ります。両方が同じだけ傾く調整では、コラムが前倒れから後倒れへ変わってもYZの値は変わりません。初期の寸法・コラム配置で測定Pが中央付近にあると、この曲げ仮定によるYZの調整効果は小さくなります。固有誤差の大きさによっては調整しきれません。初期支持状態：-1 µm／現在：-1 µm（同じ区間で各々ゼロ）。従来の局所角度差：+1 µm／300 mm換算。上の有限走査値とは別です。"
+    },
+    {
+      "case": {
+        "id": "negative-twist",
+        "angle": 0,
+        "twist": -0.12
+      },
+      "measurements": [
+        {
+          "pair": "XY",
+          "valid": true,
+          "value": -16.025517826577865,
+          "angle": -53.4184845150012
+        },
+        {
+          "pair": "XZ",
+          "valid": true,
+          "value": 33.74999986213364,
+          "angle": -112.49999977775819
+        },
+        {
+          "pair": "YZ",
+          "valid": true,
+          "value": 1.1512541093321171,
+          "angle": -3.8375136977587476
+        }
+      ],
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 14.00001446778511,
+          "bodyNormal": 0.010016025512681928,
+          "reading": -16.025517826577865,
+          "display": "-16"
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 30.99999989242188,
+          "bodyNormal": 0.009966250000137865,
+          "reading": 33.74999986213364,
+          "display": "+34"
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 30.999999999874827,
+          "bodyNormal": 0.009998848745890675,
+          "reading": 1.1512541093321171,
+          "display": "+1"
+        }
+      ],
+      "yzCard": "YZ +1 µmYZ↑上頭固定RS0下押込＋奥直角マスタ：テーブル上／計器：主軸頭に固定。奥側からS面に接触。① R面を開始位置の測定PのY局所送り接線に平行に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 上・奥側の●0でゼロ合わせ。③ 主軸頭＋工具を部材−Z・下へ300 mm（NC指令の符号ではありません）。基準器に対する計器は下へ。測定子が本体へ奥に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝奥、図の上＝上。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張し、図の変位・傾きは枠内に制限し、数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+300.0 → 0.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。Y走査は模型の測定Pの移動を使います。コラムの前後倒れは床に対する姿勢です。YZは測定PのY送りと主軸頭のZ送りの相対関係を測ります。両方が同じだけ傾く調整では、コラムが前倒れから後倒れへ変わってもYZの値は変わりません。初期の寸法・コラム配置で測定Pが中央付近にあると、この曲げ仮定によるYZの調整効果は小さくなります。固有誤差の大きさによっては調整しきれません。初期支持状態：+1 µm／現在：+1 µm（同じ区間で各々ゼロ）。従来の局所角度差：-1 µm／300 mm換算。上の有限走査値とは別です。"
+    }
+  ],
+  "errors": []
+}

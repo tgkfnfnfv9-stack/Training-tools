@@ -1,0 +1,79 @@
+{
+  "pureAngle": [
+    {
+      "intrinsicMicrons": -60,
+      "reading": 59.99999959999981,
+      "expected": 59.99999960000001
+    },
+    {
+      "intrinsicMicrons": 60,
+      "reading": -59.99999959999981,
+      "expected": -59.99999960000001
+    }
+  ],
+  "cases": 162,
+  "maxErrorMicrons": 4.5013819061079374e-7,
+  "oppositeSideAndRezeroCases": 324,
+  "examples": [
+    {
+      "heights": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "reading": 0,
+      "independent": 0
+    },
+    {
+      "heights": [
+        0.1,
+        0,
+        0,
+        0
+      ],
+      "reading": -0.23939075545660604,
+      "independent": -0.23939082212549867
+    },
+    {
+      "heights": [
+        -0.1,
+        0,
+        0,
+        0
+      ],
+      "reading": 0.2395472558560513,
+      "independent": 0.2395471433384172
+    },
+    {
+      "heights": [
+        0.1,
+        -0.1,
+        -0.1,
+        0.1
+      ],
+      "reading": -0.9566240180419738,
+      "independent": -0.9566239390895043
+    },
+    {
+      "heights": [
+        -0.1,
+        0.1,
+        0.1,
+        -0.1
+      ],
+      "reading": 0.9591280244435063,
+      "independent": 0.9591280543674863
+    },
+    {
+      "heights": [
+        0.12,
+        -0.06,
+        0.03,
+        -0.11
+      ],
+      "reading": -0.0957750822365433,
+      "independent": -0.09577488647993793
+    }
+  ]
+}
