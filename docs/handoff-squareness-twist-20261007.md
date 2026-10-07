@@ -1,0 +1,18 @@
+# 捻れ・直角測定の再点検：引き継ぎ状態
+
+この作業環境では開始時に `/workspace/Training-tools` 自体が存在しなかった。前セッションの未コミット変更（src/app.js、src/leveling-ui.js、src/index.html、公開用index.html）、この名前の旧引き継ぎ文、qa-support-coordinate資料、旧2115件テストは取得できなかった。したがって、このファイルは旧記録の復元ではなく、今回の作業記録である。
+
+2026-10-07 UTC、GitHub branches/main APIとgit ls-remoteの両方で、最新mainが `97297100d21d6292567e664a7ccd1763e116d9de` と確認できた。clone直後のgit statusはclean、差分なし。指定SHAへ巻き戻したものではない。作業ブランチは `audit/twist-squareness-20261007`。
+
+前セッションの指摘は現行ソースで再検証し、今回改めて変更を作成した。公開済みmain、未取得の前回修正、今回の修正を区別する。取得用に一時作成した `/workspace/Training-tools-api-snapshot` は公開済みファイルのAPI取得コピーであり、前回の作業フォルダーではない。実作業はGit cloneした `/workspace/Training-tools` で行っている。
+
+担当を分離した。
+
+- 構造表示修正：模型メッシュ、構造面と高さマップ、座標倍率説明。
+- 測定表示修正：有限走査と局所角度の区別、全19面の対応表。
+- 独立幾何確認：構造と相対運動から期待値を作り、修正担当の符号表を期待値にしない。
+- 実ブラウザー確認：修正前HTMLを保存し、Chromiumで修正前後と最終HTMLを検証。
+- 4方向ダイヤル確認：独立した平面接触式と5機種の配置を確認。
+- 主担当：差分レビュー、最終ソース固定、回帰、報告の統合。
+
+今回の総合報告は [twist-audit-20261007.md](twist-audit-20261007.md)、全機種・全対象面の対応表は [twist-measurement-matrix-20261007.md](twist-measurement-matrix-20261007.md) を参照する。

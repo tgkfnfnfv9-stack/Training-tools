@@ -1,0 +1,13 @@
+{
+  "beforeSha256": "6ac3b47542429ddb4f665f3e33a05d9b0bf1c4525f0afaa317352d4086a48a79",
+  "afterSha256": "0ab0e5953045ae9e78c1a4ded3ed32fa7560368d030c094318827d4a7569d947",
+  "edgeSha256": "0ab0e5953045ae9e78c1a4ded3ed32fa7560368d030c094318827d4a7569d947",
+  "cases": 55,
+  "changedFiniteReadings": [],
+  "beforeChecks": 96,
+  "afterChecks": 96,
+  "edgeChecks": 25,
+  "beforePass": true,
+  "afterPass": true,
+  "edgePass": true
+}

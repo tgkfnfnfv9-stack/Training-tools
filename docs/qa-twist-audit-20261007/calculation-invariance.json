@@ -1,0 +1,6 @@
+{
+  "baseline": "97297100d21d6292567e664a7ccd1763e116d9de",
+  "comparisons": 1539,
+  "result": "All finite scans including poses, samples, and readings are exactly equal before and after the display edits.",
+  "scope": "7 machines, signed diagonal support heights ±0.05*x*z and zero, 27 axis positions; five uses its existing 3-point plane."
+}

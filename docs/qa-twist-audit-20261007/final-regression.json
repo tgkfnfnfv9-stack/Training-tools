@@ -1,0 +1,212 @@
+{
+  "sourceLock": "source-lock.json",
+  "initialFailure": "The pre-existing portal test read a removed local-angle attribute from finite scan SVGs; corrected to the settings local-angle diagram and rechecked.",
+  "suites": [
+    {
+      "test": "check-reference-zero",
+      "exitCode": 0,
+      "seconds": 0.57,
+      "stdout": "Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-measurement-reference",
+      "exitCode": 0,
+      "seconds": 0.65,
+      "stdout": "Reference plane geometry: 70 numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.\nSupport-grid crossing: piecewise integral and analytic pallet material-point oracle passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-reference-fixtures",
+      "exitCode": 0,
+      "seconds": 3.94,
+      "stdout": "Reference fixtures: 317 independent geometry comparisons, 233 v2 regression comparisons, plus fixture validity and 7 saved-state compatibility groups passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-support-coordinate-geometry",
+      "exitCode": 0,
+      "seconds": 1.3,
+      "stdout": "Support coordinate geometry: 32505 independent comparisons passed (mesh stations, planes, signed saddles, portal bed colours, three-point restriction, dimensions).\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-structural-connections",
+      "exitCode": 0,
+      "seconds": 5.13,
+      "stdout": "Structural connections: 290 checks passed. {\"maxJoin\":4.440892098500626e-16,\"maxFoot\":0,\"maxBoundaryStep\":2.000510035535085e-8}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-structural-invariants",
+      "exitCode": 0,
+      "seconds": 43.6,
+      "stdout": "{\n  \"checks\": 212,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-display-motion",
+      "exitCode": 0,
+      "seconds": 64.89,
+      "stdout": "{\n  \"checks\": {\n    \"planarMotion\": 666,\n    \"localContact\": 240,\n    \"fixedAnchorMotion\": 156,\n    \"averageVersusLocal\": 5\n  },\n  \"maximumDirectionDifference\": 4.469433677046628e-12,\n  \"maximumContactDifference\": 8.881784197001252e-16,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-compact-bending",
+      "exitCode": 0,
+      "seconds": 7.47,
+      "stdout": "{\n  \"checks\": 670,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-compact-table-path",
+      "exitCode": 0,
+      "seconds": 15.97,
+      "stdout": "{\n  \"checks\": 168,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-portal-shear-invariants",
+      "exitCode": 0,
+      "seconds": 14.81,
+      "stdout": "{\n  \"checks\": 165,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-guide-response-invariants",
+      "exitCode": 0,
+      "seconds": 6.8,
+      "stdout": "{\n  \"checks\": 213,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-spindle-sweep",
+      "exitCode": 0,
+      "seconds": 2.49,
+      "stdout": "{\n  \"checks\": 323,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-multi-spindle-sweep",
+      "exitCode": 0,
+      "seconds": 2.16,
+      "stdout": "PASS multi-machine spindle sweep independent physics: 152 checks\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-leveling-engine",
+      "exitCode": 0,
+      "seconds": 0.05,
+      "stdout": "Leveling engine: 83 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-irregular-leveling",
+      "exitCode": 0,
+      "seconds": 0.11,
+      "stdout": "Irregular leveling: 621 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-accuracy-engine",
+      "exitCode": 0,
+      "seconds": 0.07,
+      "stdout": "Accuracy engine: 73 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-confirmed-layouts",
+      "exitCode": 0,
+      "seconds": 13.53,
+      "stdout": "{\n  \"checks\": 330,\n  \"legacyAccepted\": 0,\n  \"legacyCompactMigrated\": 0,\n  \"legacyRejected\": 9,\n  \"legacyV1Rejected\": 9,\n  \"legacyV1CompactMigrated\": 0,\n  \"legacyKeysPreserved\": 9,\n  \"supportsExercised\": 50,\n  \"failures\": [],\n  \"timings\": [\n    {\n      \"index\": 0,\n      \"operation\": \"open\",\n      \"milliseconds\": 181.0973039999999\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 14.008534000000054\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 85.62165300000015\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"open\",\n      \"milliseconds\": 90.4061470000006\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 12.774626999999782\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 85.97046299999965\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"open\",\n      \"milliseconds\": 86.30791299999964\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 6.55618400000003\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 71.69342499999948\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"open\",\n      \"milliseconds\": 82.76421800000026\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 8.802044999998543\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 16.092225999998846\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"open\",\n      \"milliseconds\": 150.57440399999905\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 39.58215999999993\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 99.97677900000053\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"open\",\n      \"milliseconds\": 28.31510100000014\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 5.763009000000238\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 47.38986699999987\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"open\",\n      \"milliseconds\": 13.67711699999927\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 2.3780210000004445\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 7.019080000000031\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-3d-axis-controls",
+      "exitCode": 0,
+      "seconds": 45.92,
+      "stdout": "3D axis controls: 138 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-settings-menu",
+      "exitCode": 0,
+      "seconds": 15.64,
+      "stdout": "{\n  \"checks\": {\n    \"drawerState\": 49,\n    \"supportSelection\": 50,\n    \"stageSteps\": 300,\n    \"limits\": 21,\n    \"axisControls\": 51,\n    \"demo\": 21,\n    \"saveImportExport\": 21,\n    \"legacyStep\": 63,\n    \"settings\": 5\n  },\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-settings-menu-ui",
+      "exitCode": 0,
+      "seconds": 37.62,
+      "stdout": "{\n  \"checks\": 173,\n  \"frames\": 270,\n  \"finiteCanvasCoordinates\": 2526025,\n  \"variants\": 7,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-scene-zoom",
+      "exitCode": 0,
+      "seconds": 24.55,
+      "stdout": "Scene zoom: 84 interaction/rendering checks passed; 226 Canvas frames and 1698904 finite coordinate values inspected.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-mobile-navigation",
+      "exitCode": 0,
+      "seconds": 1.01,
+      "stdout": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-ideal-display",
+      "exitCode": 0,
+      "seconds": 29.13,
+      "stdout": "{\n  \"checks\": {\n    \"nominalGeometry\": 504,\n    \"flatAgreement\": 126,\n    \"supportAdjustment\": 7,\n    \"intrinsicRemoval\": 7,\n    \"linearMotion\": 20,\n    \"rotaryRigidity\": 50,\n    \"viewAndToggle\": 126\n  },\n  \"vertices\": 1114560,\n  \"maximumPointDifference\": 2.047902597024e-15,\n  \"failures\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-adjustment-flow",
+      "exitCode": 0,
+      "seconds": 11.14,
+      "stdout": "Adjustment flow: 153 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-live-squareness-values",
+      "exitCode": 0,
+      "seconds": 2.98,
+      "stdout": "Live finite readings: 159 assertions, view invariance, support reversal and saved-state restoration passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-squareness-display",
+      "exitCode": 0,
+      "seconds": 1.28,
+      "stdout": "Measurement drawings: 19 planes, actual fixture/contact/zero/scan/compression labels and retained local comparisons passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-leveling-learning",
+      "exitCode": 0,
+      "seconds": 5.91,
+      "stdout": "Leveling learning: 91 checks passed.\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-twist-independent",
+      "exitCode": 0,
+      "seconds": 4.08,
+      "stdout": "{\n  \"checks\": 3193,\n  \"finiteScans\": 171,\n  \"renderedFiniteMotions\": 171,\n  \"centreTwistReadings\": [\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": -8.99996114370194\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 18.95399997558188\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": 0.6461004287729166\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": 9.000038856258815\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": -18.953999975580142\n    },\n    {\n      \"kind\": \"compact\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": -0.6449631887780333\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": -0.8279999948769545\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 10.97999987850068\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": 0.001537639191320772\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": 0.8279999948734851\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": -10.979999878502413\n    },\n    {\n      \"kind\": \"horizontal\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": 0.001537639191320772\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": -0.00009827999872258353\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 3.27599999324496\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": 1.734723475976807e-12\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": -0.00009827999872258353\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": -3.2759999932432255\n    },\n    {\n      \"kind\": \"travel\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": 1.734723475976807e-12\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": -43.53709036174907\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": -1.9081958235744878e-11\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": 43.53709034496389\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"double\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": -6.591949208711867e-11\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": -45.17999927946062\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": -1.734723475976807e-12\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": 45.17999927946062\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"gantry\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": -1.734723475976807e-12\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XY\",\n      \"k\": -0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"YZ\",\n      \"k\": -0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XY\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"YZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XY\",\n      \"k\": 0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": 1.734723475976807e-12\n    },\n    {\n      \"kind\": \"five\",\n      \"pair\": \"YZ\",\n      \"k\": 0.06,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"lathe\",\n      \"pair\": \"XZ\",\n      \"k\": -0.06,\n      \"microns\": 0.000012959999393102883\n    },\n    {\n      \"kind\": \"lathe\",\n      \"pair\": \"XZ\",\n      \"k\": 0,\n      \"microns\": 0\n    },\n    {\n      \"kind\": \"lathe\",\n      \"pair\": \"XZ\",\n      \"k\": 0.06,\n      \"microns\": 0.000012959999393102883\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "check-twist-sweep",
+      "exitCode": 0,
+      "seconds": 2.0,
+      "stdout": "{\n  \"checks\": 261,\n  \"failures\": [],\n  \"integration\": [\n    {\n      \"kind\": \"compact\",\n      \"sign\": -1,\n      \"readingMicrons\": [\n        2.544751652037318,\n        0.1676283038324307,\n        -2.3771233482048877,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"compact\",\n      \"sign\": 1,\n      \"readingMicrons\": [\n        -2.544751652037318,\n        -0.1676283038324307,\n        2.3771233482048877,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"travel\",\n      \"sign\": -1,\n      \"readingMicrons\": [\n        -2.2175480755612234,\n        -5.008012817453425,\n        -2.7904647418922015,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"travel\",\n      \"sign\": 1,\n      \"readingMicrons\": [\n        2.2175480755612234,\n        5.008012817453425,\n        2.7904647418922015,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"double\",\n      \"sign\": -1,\n      \"readingMicrons\": [\n        0.9547639642753347,\n        -20.19198707478001,\n        -21.146751039055346,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"double\",\n      \"sign\": 1,\n      \"readingMicrons\": [\n        -0.9416038605225953,\n        20.205737246697385,\n        21.147341107219983,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"gantry\",\n      \"sign\": -1,\n      \"readingMicrons\": [\n        3.4334484290576873e-10,\n        -4.348887379769865e-11,\n        -3.8683371670346737e-10,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"gantry\",\n      \"sign\": 1,\n      \"readingMicrons\": [\n        -3.433412312794717e-10,\n        4.349598887445558e-11,\n        3.8683722015392725e-10,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"five\",\n      \"sign\": -1,\n      \"readingMicrons\": [\n        0,\n        0,\n        0,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    },\n    {\n      \"kind\": \"five\",\n      \"sign\": 1,\n      \"readingMicrons\": [\n        0,\n        0,\n        0,\n        0\n      ],\n      \"onTable\": [\n        true,\n        true,\n        true,\n        true\n      ]\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "passed": 29,
+  "total": 29,
+  "testedHtmlSha256": "0ab0e5953045ae9e78c1a4ded3ed32fa7560368d030c094318827d4a7569d947"
+}

@@ -1,0 +1,191 @@
+[
+  {
+    "test": "check-reference-zero",
+    "exitCode": 0,
+    "seconds": 0.78,
+    "stdout": "Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-measurement-reference",
+    "exitCode": 0,
+    "seconds": 0.66,
+    "stdout": "Reference plane geometry: 70 numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.\nSupport-grid crossing: piecewise integral and analytic pallet material-point oracle passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-reference-fixtures",
+    "exitCode": 0,
+    "seconds": 4.61,
+    "stdout": "Reference fixtures: 317 independent geometry comparisons, 233 v2 regression comparisons, plus fixture validity and 7 saved-state compatibility groups passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-support-coordinate-geometry",
+    "exitCode": 0,
+    "seconds": 1.25,
+    "stdout": "Support coordinate geometry: 32505 independent comparisons passed (mesh stations, planes, signed saddles, portal bed colours, three-point restriction, dimensions).\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-structural-connections",
+    "exitCode": 0,
+    "seconds": 6.93,
+    "stdout": "Structural connections: 290 checks passed. {\"maxJoin\":4.440892098500626e-16,\"maxFoot\":0,\"maxBoundaryStep\":2.000510035535085e-8}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-structural-invariants",
+    "exitCode": 0,
+    "seconds": 31.17,
+    "stdout": "{\n  \"checks\": 212,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-display-motion",
+    "exitCode": 0,
+    "seconds": 57.51,
+    "stdout": "{\n  \"checks\": {\n    \"planarMotion\": 666,\n    \"localContact\": 240,\n    \"fixedAnchorMotion\": 156,\n    \"averageVersusLocal\": 5\n  },\n  \"maximumDirectionDifference\": 4.469433677046628e-12,\n  \"maximumContactDifference\": 8.881784197001252e-16,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-compact-bending",
+    "exitCode": 0,
+    "seconds": 4.46,
+    "stdout": "{\n  \"checks\": 670,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-compact-table-path",
+    "exitCode": 0,
+    "seconds": 11.35,
+    "stdout": "{\n  \"checks\": 168,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-portal-shear-invariants",
+    "exitCode": 1,
+    "seconds": 17.79,
+    "stdout": "{\n  \"checks\": 165,\n  \"failures\": [\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group?.startsWith('column-')?.02*(s.x-(s.x<0?-1.1:1.1)):0/-100: NaN != 2.0903827919749263e-10\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group?.startsWith('column-')?.02*(s.x-(s.x<0?-1.1:1.1)):0/0: NaN != -6.851747695858459e-11\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group?.startsWith('column-')?.02*(s.x-(s.x<0?-1.1:1.1)):0/100: NaN != 2.0903827919749206e-10\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group?.startsWith('column-')?(s.x<0?-1:1)*.02*(s.x-(s.x<0?-1.1:1.1)):0/-100: NaN != 4.106764338506814e-11\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group?.startsWith('column-')?(s.x<0?-1:1)*.02*(s.x-(s.x<0?-1.1:1.1)):0/0: NaN != 4.106764338506814e-11\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group?.startsWith('column-')?(s.x<0?-1:1)*.02*(s.x-(s.x<0?-1.1:1.1)):0/100: NaN != 4.106764338506794e-11\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group==='column-left'?.02*(s.z-.825):0/-100: NaN != -22.81818180955142\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group==='column-left'?.02*(s.z-.825):0/0: NaN != -22.818181809828996\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group==='column-left'?.02*(s.z-.825):0/100: NaN != -22.81818180955144\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group==='column-left'?.02*(s.x+1.1):0/-100: NaN != 2.50761905015127e-12\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group==='column-left'?.02*(s.x+1.1):0/0: NaN != 2.5076190501544255e-12\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 3/s.group==='column-left'?.02*(s.x+1.1):0/100: NaN != 2.507619050157581e-12\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 4/.01*s.x*s.z/-100: NaN != 25.0999999915094\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 4/.01*s.x*s.z/0: NaN != 25.099999991509392\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 4/.01*s.x*s.z/100: NaN != 25.099999991509385\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 4/i===0?.01:0/-100: NaN != -7.577272143064384e-7\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 4/i===0?.01:0/0: NaN != -7.577272143064379e-7\",\n    \"XY/XZ/YZ diagrams are actual rendered line angles 4/i===0?.01:0/100: NaN != -7.577272143064377e-7\"\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-guide-response-invariants",
+    "exitCode": 0,
+    "seconds": 6.64,
+    "stdout": "{\n  \"checks\": 213,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-spindle-sweep",
+    "exitCode": 0,
+    "seconds": 4.57,
+    "stdout": "{\n  \"checks\": 323,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-multi-spindle-sweep",
+    "exitCode": 0,
+    "seconds": 3.01,
+    "stdout": "PASS multi-machine spindle sweep independent physics: 152 checks\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-leveling-engine",
+    "exitCode": 0,
+    "seconds": 0.1,
+    "stdout": "Leveling engine: 83 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-irregular-leveling",
+    "exitCode": 0,
+    "seconds": 0.08,
+    "stdout": "Irregular leveling: 621 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-accuracy-engine",
+    "exitCode": 0,
+    "seconds": 0.19,
+    "stdout": "Accuracy engine: 73 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-confirmed-layouts",
+    "exitCode": 0,
+    "seconds": 14.82,
+    "stdout": "{\n  \"checks\": 330,\n  \"legacyAccepted\": 0,\n  \"legacyCompactMigrated\": 0,\n  \"legacyRejected\": 9,\n  \"legacyV1Rejected\": 9,\n  \"legacyV1CompactMigrated\": 0,\n  \"legacyKeysPreserved\": 9,\n  \"supportsExercised\": 50,\n  \"failures\": [],\n  \"timings\": [\n    {\n      \"index\": 0,\n      \"operation\": \"open\",\n      \"milliseconds\": 118.83792099999982\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 50.69387400000005\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 74.3952119999999\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"open\",\n      \"milliseconds\": 98.80566899999985\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 59.995082000000366\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 37.379148999999416\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"open\",\n      \"milliseconds\": 102.26958600000034\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 43.96729200000027\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 28.352412999999615\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"open\",\n      \"milliseconds\": 109.95910700000059\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 18.023065999999744\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 64.88507700000082\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"open\",\n      \"milliseconds\": 105.41517299999941\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 5.950722999999925\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 36.441586999999345\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"open\",\n      \"milliseconds\": 22.451514999998835\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 6.468152000001282\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 63.23056500000166\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"open\",\n      \"milliseconds\": 43.1677380000001\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 1.949265999999625\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 6.30645800000093\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-3d-axis-controls",
+    "exitCode": 0,
+    "seconds": 64.4,
+    "stdout": "3D axis controls: 138 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-settings-menu",
+    "exitCode": 0,
+    "seconds": 16.4,
+    "stdout": "{\n  \"checks\": {\n    \"drawerState\": 49,\n    \"supportSelection\": 50,\n    \"stageSteps\": 300,\n    \"limits\": 21,\n    \"axisControls\": 51,\n    \"demo\": 21,\n    \"saveImportExport\": 21,\n    \"legacyStep\": 63,\n    \"settings\": 5\n  },\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-settings-menu-ui",
+    "exitCode": 0,
+    "seconds": 51.94,
+    "stdout": "{\n  \"checks\": 173,\n  \"frames\": 270,\n  \"finiteCanvasCoordinates\": 2526025,\n  \"variants\": 7,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-scene-zoom",
+    "exitCode": 0,
+    "seconds": 41.96,
+    "stdout": "Scene zoom: 84 interaction/rendering checks passed; 226 Canvas frames and 1698904 finite coordinate values inspected.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-mobile-navigation",
+    "exitCode": 0,
+    "seconds": 1.94,
+    "stdout": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-ideal-display",
+    "exitCode": 0,
+    "seconds": 28.06,
+    "stdout": "{\n  \"checks\": {\n    \"nominalGeometry\": 504,\n    \"flatAgreement\": 126,\n    \"supportAdjustment\": 7,\n    \"intrinsicRemoval\": 7,\n    \"linearMotion\": 20,\n    \"rotaryRigidity\": 50,\n    \"viewAndToggle\": 126\n  },\n  \"vertices\": 1114560,\n  \"maximumPointDifference\": 2.047902597024e-15,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-adjustment-flow",
+    "exitCode": 0,
+    "seconds": 11.64,
+    "stdout": "Adjustment flow: 153 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-live-squareness-values",
+    "exitCode": 0,
+    "seconds": 3.1,
+    "stdout": "Live finite readings: 159 assertions, view invariance, support reversal and saved-state restoration passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-squareness-display",
+    "exitCode": 0,
+    "seconds": 1.19,
+    "stdout": "Measurement drawings: 19 planes, actual fixture/contact/zero/scan/compression labels and retained local comparisons passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-leveling-learning",
+    "exitCode": 0,
+    "seconds": 5.18,
+    "stdout": "Leveling learning: 91 checks passed.\n",
+    "stderr": ""
+  }
+]

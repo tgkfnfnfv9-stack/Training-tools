@@ -1,0 +1,22 @@
+{
+  "baseline": "97297100d21d6292567e664a7ccd1763e116d9de",
+  "files": {
+    "src/accuracy-ui.js": "ba33e433ee8e03172b33a996695ae4d18f0e60cc1f41110b5102c447a445df2b",
+    "src/app.js": "4ece49affc911c554482ea46285248ea0113fea614c1e8595751c55a173ff099",
+    "src/index.html": "fbd4837d39b31e5cbd3a0385f822464b78758f1bc6f3927824492737fbc9a7ec",
+    "src/leveling-ui.js": "2881c7e53753b72b9f9a64e0bc61c48b978da9311f6acde71f1cf318c8ea53ee",
+    "src/leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+    "src/machine-accuracy-ui.js": "5123e4a167a90d2c9a08c3f5a06a8b2b7f2c41430b32bde9f2b8507545587363",
+    "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "src/reference-measurement-ui.js": "6cc188ccc9bb243d47d4bf53691f0861f307fb34175f45a6b4e3b1b1024d0cdc",
+    "src/reference-measurement.js": "b239edae0972f72dbcb6b20c7ae48f115b550f80eadd541db3d54c1acf4d4e62",
+    "src/spindle-sweep-ui.js": "6d0021ea3f4eb7ffeba21628053e204c1d50d3051a90778fbaedd61cdeb4eca7",
+    "src/spindle-sweep.js": "157567be5af80c962d855688f811a1bdb18fdf9aa99336ae375e77602b0decce",
+    "src/style.css": "41b00d3d5e794687f7381dc6277a4f5d2f9864636f808ba228b87fa0cb44d01b",
+    "src/tester.css": "05818215f96effc3e1b38a7026c23c5ab66bfd84bfb147ef7641630b4f0ce663",
+    "src/tester.html": "c1cfc2b45ee63d13bf0dd38d69382901532d6e6a521050909734a9f133697866",
+    "src/tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409",
+    "build.py": "ba24b14e424840ab25defcb6aa298eecd1466758671362e660960ae2a28113ef",
+    "index.html": "0ab0e5953045ae9e78c1a4ded3ed32fa7560368d030c094318827d4a7569d947"
+  }
+}

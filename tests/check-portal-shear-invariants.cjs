@@ -75,12 +75,14 @@ for(const index of [3,4]){
    check(`ram displacement agrees with Z arrow ${index}/${pattern}/${Y}/${exaggerated}`,()=>vectorNear(ramDirection,unit(arrow(pure,'Z')),1e-8));
    if(!exaggerated){
     check(`physical rendered Y/Z directions match precision ${index}/${pattern}/${Y}`,()=>{vectorNear(beamTangent,direction(pure,'Y'),1e-8);vectorNear(ramDirection,direction(pure,'Z'),1e-8);});
-    check(`XY/XZ/YZ diagrams are actual rendered line angles ${index}/${pattern}/${Y}`,()=>{
+    check(`local XY/XZ/YZ diagrams match rendered line angles ${index}/${pattern}/${Y}`,()=>{
      const directions={X:unit(arrow(pure,'X')),Y:beamTangent,Z:ramDirection};
      for(const pair of ['XY','XZ','YZ']){
       const expected=-Math.asin(Math.max(-1,Math.min(1,dot(directions[pair[0]],directions[pair[1]]))))*1e6;
       near(pure.read(`levelGeometry.pairs.find(p=>p.key==='${pair}').deviationMicroradians`),expected,1e-3);
-      const diagram=pure.registry.liveSquareness.querySelectorAll('svg').find(svg=>svg.dataset.pair===pair);
+      // The live cards now show finite contact scans. The local-angle diagram
+      // remains in settings; its deviation is the quantity compared here.
+      const diagram=pure.registry.accuracyDiagram.querySelectorAll('g').find(group=>group.dataset.pair===pair);
       near(Number(diagram.dataset.deviation),expected,1e-3);
      }
     });

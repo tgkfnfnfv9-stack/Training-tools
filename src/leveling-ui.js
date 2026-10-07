@@ -71,19 +71,19 @@ function displayClearance(){
  const bedPoints=createGeometry(current).faces.filter(f=>f.pose==='bed').flatMap(f=>f.v);
  const basis=supports.map((_,i)=>machineSolution(supports.map((s,j)=>i===j?1:0)));
  let heightBound=.5,thickness=0;
- for(const p of bedPoints){const q=levelCoordinates(p[0],p[2]);heightBound=Math.max(heightBound,basis.reduce((sum,solution)=>sum+Math.abs(solution.heightAt(q.x,q.z))*.5,0));thickness=Math.max(thickness,.66-p[1]);}
+ for(const p of bedPoints){const q=levelCoordinates(p[0],p[2]);heightBound=Math.max(heightBound,basis.reduce((sum,solution)=>sum+Math.abs(structuralSurface(q.x,q.z,solution).heightAt(q.x,q.z))*.5,0));thickness=Math.max(thickness,.66-p[1]);}
  // Bound extrapolated perimeter heights as well as actual support heights.
  // This fixed margin never follows the current supports or moving-axis state.
  displayClearanceKey=key;displayClearanceValue=Math.max(0,factor*heightBound/1000+thickness+.09+.025-.66);return displayClearanceValue;
 }
-function structuralSurface(x){
- if(!levelSolution.parts)return levelSolution;
- const bed=levelSolution.parts.bed;
+function structuralSurface(x,z,solution=levelSolution){
+ if(!solution.parts)return solution;
+ const bed=solution.parts.bed;
  const blend=(qx,qz)=>{
   const rawX=qx*(current.w*.8)/levelConfig.width,rawZ=qz*(current.d*.8)/levelConfig.depth,dx=(current.w*.8)/levelConfig.width,dz=(current.d*.8)/levelConfig.depth;
   const smooth=t=>{const u=Math.max(0,Math.min(1,t));return {v:u*u*(3-2*u),d:t>0&&t<1?6*u*(1-u):0};};
   const a=smooth((Math.abs(rawX)-.77)/.29),b=smooth((.39-Math.abs(rawZ-current.columnZ))/.065);
-  return {part:levelSolution.parts[rawX<0?'column-left':'column-right'],w:a.v*b.v,wx:a.d*Math.sign(rawX)*dx/.29*b.v,wz:-b.d*Math.sign(rawZ-current.columnZ)*dz/.065*a.v};
+  return {part:solution.parts[rawX<0?'column-left':'column-right'],w:a.v*b.v,wx:a.d*Math.sign(rawX)*dx/.29*b.v,wz:-b.d*Math.sign(rawZ-current.columnZ)*dz/.065*a.v};
  };
  return {heightAt:(qx,qz)=>{const q=blend(qx,qz),h=bed.heightAt(qx,qz);return h+q.w*(q.part.heightAt(qx,qz)-h);},slopeAt:(qx,qz)=>{const q=blend(qx,qz),a=bed.slopeAt(qx,qz),b=q.part.slopeAt(qx,qz),d=q.part.heightAt(qx,qz)-bed.heightAt(qx,qz);return {lr:a.lr+q.w*(b.lr-a.lr)+q.wx*d,fb:a.fb+q.w*(b.fb-a.fb)+q.wz*d};}};
 }
@@ -225,7 +225,7 @@ function supportHeightFromAdjustment(i,value){return Number.isFinite(value)?supp
 function levelSurfaceFaces(m){
  if(!levelSolution||!$('showLevelSurface').checked)return [];
  const points=supportList(m),y=.66;
- const face=v=>{const heights=v.map(p=>{const q=levelCoordinates(p[0],p[2]);return levelSolution.heightAt(q.x,q.z);});return {v,axes:[],shade:1,surface:true,height:heights.reduce((a,b)=>a+b,0)/heights.length};};
+ const face=v=>{const heights=v.map(p=>{const q=levelCoordinates(p[0],p[2]);return structuralSurface(q.x).heightAt(q.x,q.z);});return {v,axes:[],shade:1,surface:true,height:heights.reduce((a,b)=>a+b,0)/heights.length};};
  if(points.length===3){
   const [a,b,c]=points,n=4,out=[];
   const v=(i,j)=>[a.x+(b.x-a.x)*i/n+(c.x-a.x)*j/n,y,a.z+(b.z-a.z)*i/n+(c.z-a.z)*j/n];

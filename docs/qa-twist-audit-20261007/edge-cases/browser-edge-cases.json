@@ -1,0 +1,3347 @@
+{
+  "sha256": "0ab0e5953045ae9e78c1a4ded3ed32fa7560368d030c094318827d4a7569d947",
+  "checks": [
+    {
+      "name": "horizontal XZ analytic H=.61 finite scan",
+      "ok": true,
+      "data": {
+        "actual": 15.581521465558856,
+        "expected": 15.581521465555289
+      }
+    },
+    {
+      "name": "horizontal XZ support boundary and both sides sampled",
+      "ok": true,
+      "data": {
+        "crossing": 0.7888888888888894,
+        "times": [
+          0,
+          0.0625,
+          0.125,
+          0.1875,
+          0.25,
+          0.3125,
+          0.375,
+          0.4375,
+          0.5,
+          0.5625,
+          0.625,
+          0.6875,
+          0.75,
+          0.7888888788888886,
+          0.7888888888888886,
+          0.7888888988888887,
+          0.8125,
+          0.875,
+          0.9375,
+          1
+        ]
+      }
+    },
+    {
+      "name": "horizontal YZ analytic H=.61 finite scan",
+      "ok": true,
+      "data": {
+        "actual": -0.0017659622462279367,
+        "expected": -0.0017659622237422325
+      }
+    },
+    {
+      "name": "horizontal YZ support boundary and both sides sampled",
+      "ok": true,
+      "data": {
+        "crossing": 0.7888888888888894,
+        "times": [
+          0,
+          0.0625,
+          0.125,
+          0.1875,
+          0.25,
+          0.3125,
+          0.375,
+          0.4375,
+          0.5,
+          0.5625,
+          0.625,
+          0.6875,
+          0.75,
+          0.7888888788888886,
+          0.7888888888888886,
+          0.7888888988888887,
+          0.8125,
+          0.875,
+          0.9375,
+          1
+        ]
+      }
+    },
+    {
+      "name": "curved path forward",
+      "ok": true,
+      "data": {
+        "expected": -9,
+        "actual": -9.000000000000327
+      }
+    },
+    {
+      "name": "curved path fixedReverse",
+      "ok": true,
+      "data": {
+        "expected": 9,
+        "actual": 9.000000000000327
+      }
+    },
+    {
+      "name": "curved path realignedReverse",
+      "ok": true,
+      "data": {
+        "expected": -8.9999999838,
+        "actual": -8.999999983799745
+      }
+    },
+    {
+      "name": "ideal guide master alignment -0.0001",
+      "ok": true,
+      "data": {
+        "actual": 29.99999995000058,
+        "expected": 29.999999950000003
+      }
+    },
+    {
+      "name": "ideal guide master alignment 0.0001",
+      "ok": true,
+      "data": {
+        "actual": -29.99999995000058,
+        "expected": -29.999999950000003
+      }
+    },
+    {
+      "name": "compact actual front-outside state found",
+      "ok": true
+    },
+    {
+      "name": "compact all four values suppressed",
+      "ok": true,
+      "data": {
+        "kind": "compact",
+        "smallDimensions": false,
+        "width": 2.08,
+        "depth": 2.16,
+        "originalWidth": 2.08,
+        "originalDepth": 2.16,
+        "state": {
+          "X": -100,
+          "Y": 100,
+          "Z": -100,
+          "A": 0,
+          "C": 0
+        },
+        "cardinal": [
+          {
+            "valid": true,
+            "degrees": 0,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0.15,
+              0,
+              0
+            ],
+            "contactPoint": [
+              0.15,
+              0,
+              0
+            ],
+            "contact": [
+              0.15,
+              1.16,
+              -0.29999999999999993
+            ],
+            "onTable": true
+          },
+          {
+            "valid": true,
+            "degrees": 90,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0,
+              0,
+              0.15
+            ],
+            "contactPoint": [
+              0,
+              0,
+              0.15
+            ],
+            "contact": [
+              0,
+              1.16,
+              -0.14999999999999994
+            ],
+            "onTable": true
+          },
+          {
+            "valid": true,
+            "degrees": 180,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              -0.15,
+              0,
+              0
+            ],
+            "contactPoint": [
+              -0.15,
+              0,
+              0
+            ],
+            "contact": [
+              -0.15,
+              1.16,
+              -0.29999999999999993
+            ],
+            "onTable": true
+          },
+          {
+            "valid": true,
+            "degrees": 270,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0,
+              0,
+              -0.15
+            ],
+            "contactPoint": [
+              0,
+              0,
+              -0.15
+            ],
+            "contact": [
+              0,
+              1.16,
+              -0.44999999999999996
+            ],
+            "onTable": false
+          }
+        ],
+        "halfWidth": 1.014,
+        "halfDepth": 0.5670000000000001,
+        "text": [
+          "—",
+          "—",
+          "—",
+          "面外"
+        ],
+        "data": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "status": "手前が面外・軸を中央へ"
+      }
+    },
+    {
+      "name": "travel actual front-outside state found",
+      "ok": true
+    },
+    {
+      "name": "travel all four values suppressed",
+      "ok": true,
+      "data": {
+        "kind": "travel",
+        "smallDimensions": true,
+        "width": 0.5,
+        "depth": 0.5,
+        "originalWidth": 4.32,
+        "originalDepth": 2.08,
+        "state": {
+          "X": -100,
+          "Y": -100,
+          "Z": -100,
+          "A": 0,
+          "C": 0
+        },
+        "cardinal": [
+          {
+            "valid": true,
+            "degrees": 0,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0.15,
+              0,
+              0
+            ],
+            "contactPoint": [
+              0.15,
+              0,
+              0
+            ],
+            "contact": [
+              -0.02361111111111111,
+              1.1,
+              -0.15625000000000003
+            ],
+            "onTable": true
+          },
+          {
+            "valid": true,
+            "degrees": 90,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0,
+              0,
+              0.15
+            ],
+            "contactPoint": [
+              0,
+              0,
+              0.15
+            ],
+            "contact": [
+              -0.1736111111111111,
+              1.1,
+              -0.006250000000000033
+            ],
+            "onTable": true
+          },
+          {
+            "valid": true,
+            "degrees": 180,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              -0.15,
+              0,
+              0
+            ],
+            "contactPoint": [
+              -0.15,
+              0,
+              0
+            ],
+            "contact": [
+              -0.32361111111111107,
+              1.1,
+              -0.15625000000000003
+            ],
+            "onTable": false
+          },
+          {
+            "valid": true,
+            "degrees": 270,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0,
+              0,
+              -0.15
+            ],
+            "contactPoint": [
+              0,
+              0,
+              -0.15
+            ],
+            "contact": [
+              -0.1736111111111111,
+              1.1,
+              -0.30625
+            ],
+            "onTable": false
+          }
+        ],
+        "halfWidth": 0.290625,
+        "halfDepth": 0.121875,
+        "text": [
+          "—",
+          "—",
+          "面外",
+          "面外"
+        ],
+        "data": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "status": "手前が面外・軸を中央へ"
+      }
+    },
+    {
+      "name": "double actual front-outside state found",
+      "ok": true
+    },
+    {
+      "name": "double all four values suppressed",
+      "ok": true,
+      "data": {
+        "kind": "double",
+        "smallDimensions": false,
+        "width": 2.85,
+        "depth": 6.84,
+        "originalWidth": 2.85,
+        "originalDepth": 6.84,
+        "state": {
+          "X": -100,
+          "Y": 100,
+          "Z": -100,
+          "A": 0,
+          "C": 0
+        },
+        "cardinal": [
+          {
+            "valid": true,
+            "degrees": 0,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0.15,
+              0,
+              0
+            ],
+            "contactPoint": [
+              0.15,
+              0,
+              0
+            ],
+            "contact": [
+              0.9500000000000001,
+              1.12,
+              0.595
+            ],
+            "onTable": false
+          },
+          {
+            "valid": true,
+            "degrees": 90,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0,
+              0,
+              0.15
+            ],
+            "contactPoint": [
+              0,
+              0,
+              0.15
+            ],
+            "contact": [
+              0.8,
+              1.12,
+              0.745
+            ],
+            "onTable": false
+          },
+          {
+            "valid": true,
+            "degrees": 180,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              -0.15,
+              0,
+              0
+            ],
+            "contactPoint": [
+              -0.15,
+              0,
+              0
+            ],
+            "contact": [
+              0.65,
+              1.12,
+              0.595
+            ],
+            "onTable": true
+          },
+          {
+            "valid": true,
+            "degrees": 270,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0,
+              0,
+              -0.15
+            ],
+            "contactPoint": [
+              0,
+              0,
+              -0.15
+            ],
+            "contact": [
+              0.8,
+              1.12,
+              0.44499999999999995
+            ],
+            "onTable": false
+          }
+        ],
+        "halfWidth": 0.7249999999999999,
+        "halfDepth": 1.5999999999999999,
+        "text": [
+          "面外",
+          "面外",
+          "—",
+          "面外"
+        ],
+        "data": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "status": "手前が面外・軸を中央へ"
+      }
+    },
+    {
+      "name": "gantry actual front-outside state found",
+      "ok": true
+    },
+    {
+      "name": "gantry all four values suppressed",
+      "ok": true,
+      "data": {
+        "kind": "gantry",
+        "smallDimensions": true,
+        "width": 0.5,
+        "depth": 0.5,
+        "originalWidth": 3.2,
+        "originalDepth": 4.64,
+        "state": {
+          "X": -100,
+          "Y": -100,
+          "Z": -100,
+          "A": 0,
+          "C": 0
+        },
+        "cardinal": [
+          {
+            "valid": true,
+            "degrees": 0,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0.15,
+              0,
+              0
+            ],
+            "contactPoint": [
+              0.15,
+              0,
+              0
+            ],
+            "contact": [
+              0.071875,
+              1.12,
+              -0.10021551724137931
+            ],
+            "onTable": true
+          },
+          {
+            "valid": true,
+            "degrees": 90,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0,
+              0,
+              0.15
+            ],
+            "contactPoint": [
+              0,
+              0,
+              0.15
+            ],
+            "contact": [
+              -0.078125,
+              1.12,
+              0.049784482758620685
+            ],
+            "onTable": true
+          },
+          {
+            "valid": true,
+            "degrees": 180,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              -0.15,
+              0,
+              0
+            ],
+            "contactPoint": [
+              -0.15,
+              0,
+              0
+            ],
+            "contact": [
+              -0.228125,
+              1.12,
+              -0.10021551724137931
+            ],
+            "onTable": false
+          },
+          {
+            "valid": true,
+            "degrees": 270,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0,
+              0,
+              -0.15
+            ],
+            "contactPoint": [
+              0,
+              0,
+              -0.15
+            ],
+            "contact": [
+              -0.078125,
+              1.12,
+              -0.2502155172413793
+            ],
+            "onTable": false
+          }
+        ],
+        "halfWidth": 0.17812499999999998,
+        "halfDepth": 0.20312500000000003,
+        "text": [
+          "—",
+          "—",
+          "面外",
+          "面外"
+        ],
+        "data": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "status": "手前が面外・軸を中央へ"
+      }
+    },
+    {
+      "name": "five actual front-outside state found",
+      "ok": true
+    },
+    {
+      "name": "five all four values suppressed",
+      "ok": true,
+      "data": {
+        "kind": "five",
+        "smallDimensions": true,
+        "width": 0.5,
+        "depth": 0.5,
+        "originalWidth": 2.72,
+        "originalDepth": 2.64,
+        "state": {
+          "X": -100,
+          "Y": 0,
+          "Z": -100,
+          "A": 0,
+          "C": 0
+        },
+        "cardinal": [
+          {
+            "valid": true,
+            "degrees": 0,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0.15,
+              0,
+              0
+            ],
+            "contactPoint": [
+              0.15,
+              0,
+              0
+            ],
+            "contact": [
+              0.15,
+              1.56,
+              -0.05681818181818182
+            ],
+            "onTable": false
+          },
+          {
+            "valid": true,
+            "degrees": 90,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0,
+              0,
+              0.15
+            ],
+            "contactPoint": [
+              0,
+              0,
+              0.15
+            ],
+            "contact": [
+              0,
+              1.56,
+              0.09318181818181817
+            ],
+            "onTable": false
+          },
+          {
+            "valid": true,
+            "degrees": 180,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              -0.15,
+              0,
+              0
+            ],
+            "contactPoint": [
+              -0.15,
+              0,
+              0
+            ],
+            "contact": [
+              -0.15,
+              1.56,
+              -0.05681818181818182
+            ],
+            "onTable": true
+          },
+          {
+            "valid": true,
+            "degrees": 270,
+            "readingMicrons": 0,
+            "axialOffsetMetres": 0,
+            "ringPoint": [
+              0,
+              0,
+              -0.15
+            ],
+            "contactPoint": [
+              0,
+              0,
+              -0.15
+            ],
+            "contact": [
+              0,
+              1.56,
+              -0.20681818181818182
+            ],
+            "onTable": false
+          }
+        ],
+        "halfWidth": 0.11948529411764705,
+        "halfDepth": 0.12310606060606061,
+        "text": [
+          "面外",
+          "面外",
+          "—",
+          "面外"
+        ],
+        "data": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "status": "手前が面外・軸を中央へ"
+      }
+    },
+    {
+      "name": "coarse actual button +0.01 mm",
+      "ok": true,
+      "data": {
+        "initial": 0,
+        "coarse": 0.01
+      }
+    },
+    {
+      "name": "fine actual button +0.001 mm",
+      "ok": true,
+      "data": {
+        "coarse": 0.01,
+        "fine": 0.011
+      }
+    },
+    {
+      "name": "fine actual button -0.001 mm",
+      "ok": true,
+      "data": {
+        "fine": 0.011,
+        "lowered": 0.01
+      }
+    },
+    {
+      "name": "local angle SVG has its own accessible explanation",
+      "ok": true,
+      "data": {
+        "localNote": true,
+        "localDescription": "localSquarenessNote",
+        "localModel": "local-angle",
+        "localScanCount": 0,
+        "finite": [
+          {
+            "description": "squarenessMeasurementNote",
+            "model": "reference-scan-v3",
+            "hasScan": true
+          },
+          {
+            "description": "squarenessMeasurementNote",
+            "model": "reference-scan-v3",
+            "hasScan": true
+          },
+          {
+            "description": "squarenessMeasurementNote",
+            "model": "reference-scan-v3",
+            "hasScan": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "finite SVGs retain finite explanation and scan content only",
+      "ok": true,
+      "data": {
+        "localNote": true,
+        "localDescription": "localSquarenessNote",
+        "localModel": "local-angle",
+        "localScanCount": 0,
+        "finite": [
+          {
+            "description": "squarenessMeasurementNote",
+            "model": "reference-scan-v3",
+            "hasScan": true
+          },
+          {
+            "description": "squarenessMeasurementNote",
+            "model": "reference-scan-v3",
+            "hasScan": true
+          },
+          {
+            "description": "squarenessMeasurementNote",
+            "model": "reference-scan-v3",
+            "hasScan": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "browser no JavaScript exceptions",
+      "ok": true,
+      "data": []
+    }
+  ],
+  "boundary": [
+    {
+      "pair": "XZ",
+      "knots": [
+        -1.84,
+        -0.6133333333333334,
+        0.6133333333333332,
+        1.84
+      ],
+      "values": [
+        0.08,
+        -0.13,
+        0.16,
+        -0.05
+      ],
+      "heights": [
+        -0.10880000000000002,
+        0.10880000000000002,
+        0.17680000000000004,
+        -0.17680000000000004,
+        -0.21760000000000004,
+        0.21760000000000004,
+        0.06800000000000003,
+        -0.06800000000000003
+      ],
+      "z0": -0.8500000000000002,
+      "z1": -0.5500000000000003,
+      "H": 0.61,
+      "theta0": -0.00008948369541333203,
+      "theta1": -0.00011502717340572573,
+      "expected": 15.581521465555289,
+      "actual": {
+        "valid": true,
+        "microns": 15.581521465558856,
+        "zero": {
+          "valid": true,
+          "extension": 0.010000000000000002,
+          "point": [
+            -1.734723475976807e-18,
+            -5.293955920339377e-23,
+            0
+          ]
+        },
+        "last": {
+          "valid": true,
+          "extension": 0.009984418478534443,
+          "point": [
+            0.00001558152145012849,
+            6.933777045306746e-10,
+            0
+          ]
+        },
+        "setup": {
+          "base": "X",
+          "scan": "Z",
+          "owner": "master",
+          "member": "パレット台＋ワーク",
+          "normalDirection": "右",
+          "positiveScanDirection": "奥",
+          "scanDirection": "奥",
+          "relativeDirection": "手前",
+          "relativeSign": -1,
+          "memberSign": 1,
+          "zeroLocation": "奥・右側",
+          "body": "主軸頭",
+          "mount": "パレット",
+          "artifact": "直角マスタ",
+          "shortBody": "頭",
+          "lathe": false
+        },
+        "startPosition": 0,
+        "endPosition": 0.3,
+        "length": 0.3,
+        "model": "reference-scan-v3",
+        "start": {
+          "point": [
+            0,
+            0,
+            0
+          ],
+          "normal": [
+            0.9999999990098751,
+            0.00004449999995593941,
+            0
+          ],
+          "body": [
+            0.009999999990098752,
+            4.4499999955939413e-7,
+            0
+          ],
+          "probe": [
+            -0.9999999990098751,
+            -0.00004449999995593941,
+            0
+          ]
+        },
+        "end": {
+          "point": [
+            0.00001558152149347492,
+            -1.5932952734942774e-9,
+            0.30000000000000004
+          ],
+          "normal": [
+            0.9999999998203252,
+            0.000018956521977097328,
+            0
+          ],
+          "body": [
+            0.009999999990098752,
+            4.449999995593941e-7,
+            0
+          ],
+          "probe": [
+            -0.9999999990098752,
+            -0.00004449999995593942,
+            0
+          ]
+        },
+        "samples": [
+          {
+            "valid": true,
+            "extension": 0.009999999999999998,
+            "point": [
+              1.734723475976807e-18,
+              0,
+              0
+            ],
+            "t": 0,
+            "pose": {
+              "point": [
+                0,
+                0,
+                0
+              ],
+              "normal": [
+                0.9999999990098751,
+                0.00004449999995593943,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009998041949761656,
+            "point": [
+              0.0000019580502364051344,
+              8.713323551997145e-11,
+              0
+            ],
+            "t": 0.0625,
+            "pose": {
+              "point": [
+                0.0000019580502473672586,
+                -1.7835621868300677e-10,
+                0.018750000000000044
+              ],
+              "normal": [
+                0.9999999991475645,
+                0.00004129008150726896,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999999
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009996083899523596,
+            "point": [
+              0.000003916100472525774,
+              1.7426647102734328e-10,
+              0
+            ],
+            "t": 0.125,
+            "pose": {
+              "point": [
+                0.000003916100492986756,
+                -3.629976319530215e-10,
+                0.03749999999999998
+              ],
+              "normal": [
+                0.9999999992749505,
+                0.00003808016306008322,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999998
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009994125849285817,
+            "point": [
+              0.0000058741507083671235,
+              2.613997065222743e-10,
+              0
+            ],
+            "t": 0.1875,
+            "pose": {
+              "point": [
+                0.000005874150736797927,
+                -5.539240177654392e-10,
+                0.05625000000000002
+              ],
+              "normal": [
+                0.999999999392033,
+                0.000034870244614481336,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999999
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.00999216779904832,
+            "point": [
+              0.000007832200943923978,
+              3.485329420045528e-10,
+              0
+            ],
+            "t": 0.25,
+            "pose": {
+              "point": [
+                0.000007832200978740244,
+                -7.511355981648649e-10,
+                0.07500000000000007
+              ],
+              "normal": [
+                0.9999999994988119,
+                0.000031660326170562705,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999999
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009990209748811107,
+            "point": [
+              0.000009790251179199808,
+              4.356661774742846e-10,
+              0
+            ],
+            "t": 0.3125,
+            "pose": {
+              "point": [
+                0.000009790251218753251,
+                -9.546325951959034e-10,
+                0.09375
+              ],
+              "normal": [
+                0.9999999995952873,
+                0.00002845040772842642,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009988251698574178,
+            "point": [
+              0.000011748301414189408,
+              5.227994129313638e-10,
+              0
+            ],
+            "t": 0.375,
+            "pose": {
+              "point": [
+                0.0000117483014567763,
+                -1.1644147868139498e-9,
+                0.11249999999999993
+              ],
+              "normal": [
+                0.9999999996814589,
+                0.000025240489288171688,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999999
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009986293648337531,
+            "point": [
+              0.000013706351648896248,
+              6.099326483758435e-10,
+              0
+            ],
+            "t": 0.4375,
+            "pose": {
+              "point": [
+                0.000013706351692748987,
+                -1.3804819509743993e-9,
+                0.13124999999999998
+              ],
+              "normal": [
+                0.999999999757327,
+                0.000022030570849897833,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999998
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009984335598101165,
+            "point": [
+              0.000015664401883325532,
+              6.970658838078823e-10,
+              0
+            ],
+            "t": 0.5,
+            "pose": {
+              "point": [
+                0.000015664401926610718,
+                -1.6028343097218567e-9,
+                0.15000000000000002
+              ],
+              "normal": [
+                0.9999999998228916,
+                0.000018820652413703993,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999998
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009982377547865082,
+            "point": [
+              0.000017622452117468587,
+              7.841991192273215e-10,
+              0
+            ],
+            "t": 0.5625,
+            "pose": {
+              "point": [
+                0.00001762245215830097,
+                -1.831471863056322e-9,
+                0.16874999999999996
+              ],
+              "normal": [
+                0.9999999998781526,
+                0.00001561073397968944,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999998
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009980419497629284,
+            "point": [
+              0.000019580502351328882,
+              8.713323546340553e-10,
+              0
+            ],
+            "t": 0.625,
+            "pose": {
+              "point": [
+                0.000019580502387759295,
+                -2.0663948330224002e-9,
+                0.1875
+              ],
+              "normal": [
+                0.9999999999231101,
+                0.000012400815547953351,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009978461447393765,
+            "point": [
+              0.000021538552584908152,
+              9.584655900283482e-10,
+              0
+            ],
+            "t": 0.6875,
+            "pose": {
+              "point": [
+                0.00002153855261492502,
+                -2.3076027755308814e-9,
+                0.20625000000000004
+              ],
+              "normal": [
+                0.9999999999577639,
+                0.000009190897118595,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009976503397158533,
+            "point": [
+              0.000023496602818202927,
+              1.0455988254099356e-9,
+              0
+            ],
+            "t": 0.75,
+            "pose": {
+              "point": [
+                0.000023496602839737785,
+                -2.5550959126263706e-9,
+                0.22499999999999998
+              ],
+              "normal": [
+                0.9999999999821142,
+                0.000005980978691713467,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1.0000000000000002
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009975285055103374,
+            "point": [
+              0.00002471494487215481,
+              1.0998150468108462e-9,
+              0
+            ],
+            "t": 0.7888888788888886,
+            "pose": {
+              "point": [
+                0.000024714944887341216,
+                -2.712263746929011e-9,
+                0.23666666366666655
+              ],
+              "normal": [
+                0.9999999999920653,
+                0.0000039836966298681495,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1.0000000000000002
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009975285054790083,
+            "point": [
+              0.00002471494518544587,
+              1.0998150607522674e-9,
+              0
+            ],
+            "t": 0.7888888888888886,
+            "pose": {
+              "point": [
+                0.000024714945200629212,
+                -2.712263746929011e-9,
+                0.23666666666666658
+              ],
+              "normal": [
+                0.9999999999920652,
+                0.000003983696116281147,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009975285055222723,
+            "point": [
+              0.000024714944752805834,
+              1.0998150414997908e-9,
+              0
+            ],
+            "t": 0.7888888988888887,
+            "pose": {
+              "point": [
+                0.000024714944767993392,
+                -2.712263746929011e-9,
+                0.2366666696666665
+              ],
+              "normal": [
+                0.9999999999920653,
+                0.000003983696825520238,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1.0000000000000002
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.00997630655612961,
+            "point": [
+              0.000023693443846929674,
+              1.0543582511883144e-9,
+              0
+            ],
+            "t": 0.8125,
+            "pose": {
+              "point": [
+                0.000023693443867496447,
+                -2.580323954504138e-9,
+                0.24375000000000002
+              ],
+              "normal": [
+                0.9999999999839921,
+                0.00000565828847962828,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1.0000000000000002
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009979010530264015,
+            "point": [
+              0.00002098946971520327,
+              9.34031402326416e-10,
+              0
+            ],
+            "t": 0.875,
+            "pose": {
+              "point": [
+                0.000020989469747224434,
+                -2.239328278363928e-9,
+                0.26250000000000007
+              ],
+              "normal": [
+                0.9999999999490857,
+                0.000010091032974201192,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.00998171450439896,
+            "point": [
+              0.00001828549558293563,
+              8.137045534405362e-10,
+              0
+            ],
+            "t": 0.9375,
+            "pose": {
+              "point": [
+                0.000018285495622497475,
+                -1.910318792042176e-9,
+                0.2812499999999999
+              ],
+              "normal": [
+                0.9999999998945299,
+                0.000014523777473444616,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999997
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.009984418478534443,
+            "point": [
+              0.00001558152145012849,
+              6.933777045306746e-10,
+              0
+            ],
+            "t": 1,
+            "pose": {
+              "point": [
+                0.00001558152149347492,
+                -1.5932952734942774e-9,
+                0.30000000000000004
+              ],
+              "normal": [
+                0.9999999998203252,
+                0.000018956521977097328,
+                0
+              ],
+              "body": [
+                0.009999999990098752,
+                4.449999995593941e-7,
+                0
+              ],
+              "probe": [
+                -0.9999999990098752,
+                -0.00004449999995593942,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999998
+            ]
+          }
+        ],
+        "alongStart": [
+          0,
+          0,
+          1
+        ],
+        "alongEnd": [
+          0,
+          0,
+          0.9999999999999998
+        ],
+        "fixture": "horizontal-pallet-top"
+      }
+    },
+    {
+      "pair": "YZ",
+      "knots": [
+        -1.84,
+        -0.6133333333333334,
+        0.6133333333333332,
+        1.84
+      ],
+      "values": [
+        0.08,
+        -0.13,
+        0.16,
+        -0.05
+      ],
+      "heights": [
+        -0.10880000000000002,
+        0.10880000000000002,
+        0.17680000000000004,
+        -0.17680000000000004,
+        -0.21760000000000004,
+        0.21760000000000004,
+        0.06800000000000003,
+        -0.06800000000000003
+      ],
+      "z0": -0.8500000000000002,
+      "z1": -0.5500000000000003,
+      "H": 0.61,
+      "theta0": -0.00008948369541333203,
+      "theta1": -0.00011502717340572573,
+      "expected": -0.0017659622237422325,
+      "actual": {
+        "valid": true,
+        "microns": -0.0017659622462279367,
+        "zero": {
+          "valid": true,
+          "extension": 0.01,
+          "point": [
+            0,
+            0,
+            0
+          ]
+        },
+        "last": {
+          "valid": true,
+          "extension": 0.010000001765962246,
+          "point": [
+            6.467836732027541e-14,
+            -1.7659622444932133e-9,
+            0
+          ]
+        },
+        "setup": {
+          "base": "Y",
+          "scan": "Z",
+          "owner": "master",
+          "member": "パレット台＋ワーク",
+          "normalDirection": "上",
+          "positiveScanDirection": "奥",
+          "scanDirection": "奥",
+          "relativeDirection": "手前",
+          "relativeSign": -1,
+          "memberSign": 1,
+          "zeroLocation": "奥・上側",
+          "body": "主軸頭",
+          "mount": "パレット",
+          "artifact": "直角マスタ",
+          "shortBody": "頭",
+          "lathe": false
+        },
+        "startPosition": 0,
+        "endPosition": 0.3,
+        "length": 0.3,
+        "model": "reference-scan-v3",
+        "start": {
+          "point": [
+            0,
+            0,
+            0
+          ],
+          "normal": [
+            -0.00003662499997543577,
+            0.9999999993293047,
+            0
+          ],
+          "body": [
+            -3.662499997543577e-7,
+            0.009999999993293048,
+            0
+          ],
+          "probe": [
+            0.00003662499997543577,
+            -0.9999999993293047,
+            0
+          ]
+        },
+        "end": {
+          "point": [
+            0.00001558152149347492,
+            -1.5932952734942774e-9,
+            0.30000000000000004
+          ],
+          "normal": [
+            -0.000011081521991003411,
+            0.9999999999385999,
+            0
+          ],
+          "body": [
+            -3.6624999975435763e-7,
+            0.009999999993293048,
+            0
+          ],
+          "probe": [
+            0.00003662499997543577,
+            -0.9999999993293047,
+            0
+          ]
+        },
+        "samples": [
+          {
+            "valid": true,
+            "extension": 0.01,
+            "point": [
+              5.293955920339377e-23,
+              0,
+              0
+            ],
+            "t": 0,
+            "pose": {
+              "point": [
+                0,
+                0,
+                0
+              ],
+              "normal": [
+                -0.000036624999975435756,
+                0.9999999993293048,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000000243784628,
+            "point": [
+              8.928612042913292e-15,
+              -2.4378462790131117e-10,
+              0
+            ],
+            "t": 0.0625,
+            "pose": {
+              "point": [
+                0.0000019580502473672586,
+                -1.7835621868300677e-10,
+                0.018750000000000044
+              ],
+              "normal": [
+                -0.000033415081525780516,
+                0.9999999994417161,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999999
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000000481284086,
+            "point": [
+              1.7627029700459986e-14,
+              -4.812840855017431e-10,
+              0
+            ],
+            "t": 0.125,
+            "pose": {
+              "point": [
+                0.000003916100492986756,
+                -3.629976319530215e-10,
+                0.03749999999999998
+              ],
+              "normal": [
+                -0.000030205163077691148,
+                0.999999999543824,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999998
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000000712498154,
+            "point": [
+              2.6095244978766643e-14,
+              -7.124981542261377e-10,
+              0
+            ],
+            "t": 0.1875,
+            "pose": {
+              "point": [
+                0.000005874150736797927,
+                -5.539240177654392e-10,
+                0.05625000000000002
+              ],
+              "normal": [
+                -0.000026995244631266763,
+                0.9999999996356284,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999999
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000000937427055,
+            "point": [
+              3.433326592464626e-14,
+              -9.374270543843766e-10,
+              0
+            ],
+            "t": 0.25,
+            "pose": {
+              "point": [
+                0.000007832200978740244,
+                -7.511355981648649e-10,
+                0.07500000000000007
+              ],
+              "normal": [
+                -0.00002378532618660678,
+                0.9999999997171292,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999999
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000001156071006,
+            "point": [
+              4.23411006378514e-14,
+              -1.156071006286341e-9,
+              0
+            ],
+            "t": 0.3125,
+            "pose": {
+              "point": [
+                0.000009790251218753251,
+                -9.546325951959034e-10,
+                0.09375
+              ],
+              "normal": [
+                -0.000020575407743810285,
+                0.9999999997883264,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.01000000136842979,
+            "point": [
+              5.0118741071569057e-14,
+              -1.3684297878874263e-9,
+              0
+            ],
+            "t": 0.375,
+            "pose": {
+              "point": [
+                0.0000117483014567763,
+                -1.1644147868139498e-9,
+                0.11249999999999993
+              ],
+              "normal": [
+                -0.000017365489302976494,
+                0.99999999984922,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999999
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000001574503184,
+            "point": [
+              5.766617912604668e-14,
+              -1.5745031823471978e-9,
+              0
+            ],
+            "t": 0.4375,
+            "pose": {
+              "point": [
+                0.000013706351692748987,
+                -1.3804819509743993e-9,
+                0.13124999999999998
+              ],
+              "normal": [
+                -0.00001415557086420472,
+                0.9999999998998099,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999998
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000001774291408,
+            "point": [
+              6.498342284809726e-14,
+              -1.77429140650609e-9,
+              0
+            ],
+            "t": 0.5,
+            "pose": {
+              "point": [
+                0.000015664401926610718,
+                -1.6028343097218567e-9,
+                0.15000000000000002
+              ],
+              "normal": [
+                -0.000010945652427594071,
+                0.9999999999400964,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999998
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000001967794468,
+            "point": [
+              7.207047239653948e-14,
+              -1.9677944655682733e-9,
+              0
+            ],
+            "t": 0.5625,
+            "pose": {
+              "point": [
+                0.00001762245215830097,
+                -1.831471863056322e-9,
+                0.16874999999999996
+              ],
+              "normal": [
+                -0.000007735733993243876,
+                0.9999999999700793,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999998
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000002155012578,
+            "point": [
+              7.892733571230722e-14,
+              -2.1550125763741823e-9,
+              0
+            ],
+            "t": 0.625,
+            "pose": {
+              "point": [
+                0.000019580502387759295,
+                -2.0663948330224002e-9,
+                0.1875
+              ],
+              "normal": [
+                -0.000004525815561253271,
+                0.9999999999897586,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000002335945297,
+            "point": [
+              8.555399649001625e-14,
+              -2.335945294834607e-9,
+              0
+            ],
+            "t": 0.6875,
+            "pose": {
+              "point": [
+                0.00002153855261492502,
+                -2.3076027755308814e-9,
+                0.20625000000000004
+              ],
+              "normal": [
+                -0.0000013158971317215554,
+                0.9999999999991344,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.01000000251059285,
+            "point": [
+              9.195046314705647e-14,
+              -2.510592848198323e-9,
+              0
+            ],
+            "t": 0.75,
+            "pose": {
+              "point": [
+                0.000023496602839737785,
+                -2.5550959126263706e-9,
+                0.22499999999999998
+              ],
+              "normal": [
+                0.0000018940212952521616,
+                0.9999999999982064,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1.0000000000000002
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.0100000026160904,
+            "point": [
+              9.581431092680611e-14,
+              -2.6160903981303774e-9,
+              0
+            ],
+            "t": 0.7888888788888886,
+            "pose": {
+              "point": [
+                0.000024714944887341216,
+                -2.712263746929011e-9,
+                0.23666666366666655
+              ],
+              "normal": [
+                0.000003891303357113959,
+                0.9999999999924292,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1.0000000000000002
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000002616090388,
+            "point": [
+              9.581431045035008e-14,
+              -2.616090385987313e-9,
+              0
+            ],
+            "t": 0.7888888888888886,
+            "pose": {
+              "point": [
+                0.000024714945200629212,
+                -2.712263746929011e-9,
+                0.23666666666666658
+              ],
+              "normal": [
+                0.0000038913038707009615,
+                0.999999999992429,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000002616090407,
+            "point": [
+              9.581431113856435e-14,
+              -2.6160904050692713e-9,
+              0
+            ],
+            "t": 0.7888888988888887,
+            "pose": {
+              "point": [
+                0.000024714944767993392,
+                -2.712263746929011e-9,
+                0.2366666696666665
+              ],
+              "normal": [
+                0.00000389130316146187,
+                0.9999999999924292,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1.0000000000000002
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000002527802428,
+            "point": [
+              9.258076392121224e-14,
+              -2.5278024257113785e-9,
+              0
+            ],
+            "t": 0.8125,
+            "pose": {
+              "point": [
+                0.000023693443867496447,
+                -2.580323954504138e-9,
+                0.24375000000000002
+              ],
+              "normal": [
+                0.000002216711507342173,
+                0.9999999999975433,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1.0000000000000002
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000002285841636,
+            "point": [
+              8.371894990237105e-14,
+              -2.285841634031005e-9,
+              0
+            ],
+            "t": 0.875,
+            "pose": {
+              "point": [
+                0.000020989469747224434,
+                -2.239328278363928e-9,
+                0.26250000000000007
+              ],
+              "normal": [
+                -0.0000022160329873681882,
+                0.9999999999975447,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000002031894984,
+            "point": [
+              7.44181538058957e-14,
+              -2.031894982129634e-9,
+              0
+            ],
+            "t": 0.9375,
+            "pose": {
+              "point": [
+                0.000018285495622497475,
+                -1.910318792042176e-9,
+                0.2812499999999999
+              ],
+              "normal": [
+                -0.000006648777486903764,
+                0.9999999999778969,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999997
+            ]
+          },
+          {
+            "valid": true,
+            "extension": 0.010000001765962246,
+            "point": [
+              6.467836732027541e-14,
+              -1.7659622444932133e-9,
+              0
+            ],
+            "t": 1,
+            "pose": {
+              "point": [
+                0.00001558152149347492,
+                -1.5932952734942774e-9,
+                0.30000000000000004
+              ],
+              "normal": [
+                -0.000011081521991003411,
+                0.9999999999385999,
+                0
+              ],
+              "body": [
+                -3.6624999975435763e-7,
+                0.009999999993293048,
+                0
+              ],
+              "probe": [
+                0.00003662499997543577,
+                -0.9999999993293047,
+                0
+              ]
+            },
+            "along": [
+              0,
+              0,
+              0.9999999999999998
+            ]
+          }
+        ],
+        "alongStart": [
+          0,
+          0,
+          1
+        ],
+        "alongEnd": [
+          0,
+          0,
+          0.9999999999999998
+        ],
+        "fixture": "horizontal-pallet-top"
+      }
+    }
+  ],
+  "outOfFace": [
+    {
+      "kind": "compact",
+      "smallDimensions": false,
+      "width": 2.08,
+      "depth": 2.16,
+      "originalWidth": 2.08,
+      "originalDepth": 2.16,
+      "state": {
+        "X": -100,
+        "Y": 100,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "cardinal": [
+        {
+          "valid": true,
+          "degrees": 0,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0.15,
+            0,
+            0
+          ],
+          "contactPoint": [
+            0.15,
+            0,
+            0
+          ],
+          "contact": [
+            0.15,
+            1.16,
+            -0.29999999999999993
+          ],
+          "onTable": true
+        },
+        {
+          "valid": true,
+          "degrees": 90,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0,
+            0,
+            0.15
+          ],
+          "contactPoint": [
+            0,
+            0,
+            0.15
+          ],
+          "contact": [
+            0,
+            1.16,
+            -0.14999999999999994
+          ],
+          "onTable": true
+        },
+        {
+          "valid": true,
+          "degrees": 180,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            -0.15,
+            0,
+            0
+          ],
+          "contactPoint": [
+            -0.15,
+            0,
+            0
+          ],
+          "contact": [
+            -0.15,
+            1.16,
+            -0.29999999999999993
+          ],
+          "onTable": true
+        },
+        {
+          "valid": true,
+          "degrees": 270,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0,
+            0,
+            -0.15
+          ],
+          "contactPoint": [
+            0,
+            0,
+            -0.15
+          ],
+          "contact": [
+            0,
+            1.16,
+            -0.44999999999999996
+          ],
+          "onTable": false
+        }
+      ],
+      "halfWidth": 1.014,
+      "halfDepth": 0.5670000000000001,
+      "text": [
+        "—",
+        "—",
+        "—",
+        "面外"
+      ],
+      "data": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "status": "手前が面外・軸を中央へ"
+    },
+    {
+      "kind": "travel",
+      "smallDimensions": true,
+      "width": 0.5,
+      "depth": 0.5,
+      "originalWidth": 4.32,
+      "originalDepth": 2.08,
+      "state": {
+        "X": -100,
+        "Y": -100,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "cardinal": [
+        {
+          "valid": true,
+          "degrees": 0,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0.15,
+            0,
+            0
+          ],
+          "contactPoint": [
+            0.15,
+            0,
+            0
+          ],
+          "contact": [
+            -0.02361111111111111,
+            1.1,
+            -0.15625000000000003
+          ],
+          "onTable": true
+        },
+        {
+          "valid": true,
+          "degrees": 90,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0,
+            0,
+            0.15
+          ],
+          "contactPoint": [
+            0,
+            0,
+            0.15
+          ],
+          "contact": [
+            -0.1736111111111111,
+            1.1,
+            -0.006250000000000033
+          ],
+          "onTable": true
+        },
+        {
+          "valid": true,
+          "degrees": 180,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            -0.15,
+            0,
+            0
+          ],
+          "contactPoint": [
+            -0.15,
+            0,
+            0
+          ],
+          "contact": [
+            -0.32361111111111107,
+            1.1,
+            -0.15625000000000003
+          ],
+          "onTable": false
+        },
+        {
+          "valid": true,
+          "degrees": 270,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0,
+            0,
+            -0.15
+          ],
+          "contactPoint": [
+            0,
+            0,
+            -0.15
+          ],
+          "contact": [
+            -0.1736111111111111,
+            1.1,
+            -0.30625
+          ],
+          "onTable": false
+        }
+      ],
+      "halfWidth": 0.290625,
+      "halfDepth": 0.121875,
+      "text": [
+        "—",
+        "—",
+        "面外",
+        "面外"
+      ],
+      "data": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "status": "手前が面外・軸を中央へ"
+    },
+    {
+      "kind": "double",
+      "smallDimensions": false,
+      "width": 2.85,
+      "depth": 6.84,
+      "originalWidth": 2.85,
+      "originalDepth": 6.84,
+      "state": {
+        "X": -100,
+        "Y": 100,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "cardinal": [
+        {
+          "valid": true,
+          "degrees": 0,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0.15,
+            0,
+            0
+          ],
+          "contactPoint": [
+            0.15,
+            0,
+            0
+          ],
+          "contact": [
+            0.9500000000000001,
+            1.12,
+            0.595
+          ],
+          "onTable": false
+        },
+        {
+          "valid": true,
+          "degrees": 90,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0,
+            0,
+            0.15
+          ],
+          "contactPoint": [
+            0,
+            0,
+            0.15
+          ],
+          "contact": [
+            0.8,
+            1.12,
+            0.745
+          ],
+          "onTable": false
+        },
+        {
+          "valid": true,
+          "degrees": 180,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            -0.15,
+            0,
+            0
+          ],
+          "contactPoint": [
+            -0.15,
+            0,
+            0
+          ],
+          "contact": [
+            0.65,
+            1.12,
+            0.595
+          ],
+          "onTable": true
+        },
+        {
+          "valid": true,
+          "degrees": 270,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0,
+            0,
+            -0.15
+          ],
+          "contactPoint": [
+            0,
+            0,
+            -0.15
+          ],
+          "contact": [
+            0.8,
+            1.12,
+            0.44499999999999995
+          ],
+          "onTable": false
+        }
+      ],
+      "halfWidth": 0.7249999999999999,
+      "halfDepth": 1.5999999999999999,
+      "text": [
+        "面外",
+        "面外",
+        "—",
+        "面外"
+      ],
+      "data": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "status": "手前が面外・軸を中央へ"
+    },
+    {
+      "kind": "gantry",
+      "smallDimensions": true,
+      "width": 0.5,
+      "depth": 0.5,
+      "originalWidth": 3.2,
+      "originalDepth": 4.64,
+      "state": {
+        "X": -100,
+        "Y": -100,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "cardinal": [
+        {
+          "valid": true,
+          "degrees": 0,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0.15,
+            0,
+            0
+          ],
+          "contactPoint": [
+            0.15,
+            0,
+            0
+          ],
+          "contact": [
+            0.071875,
+            1.12,
+            -0.10021551724137931
+          ],
+          "onTable": true
+        },
+        {
+          "valid": true,
+          "degrees": 90,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0,
+            0,
+            0.15
+          ],
+          "contactPoint": [
+            0,
+            0,
+            0.15
+          ],
+          "contact": [
+            -0.078125,
+            1.12,
+            0.049784482758620685
+          ],
+          "onTable": true
+        },
+        {
+          "valid": true,
+          "degrees": 180,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            -0.15,
+            0,
+            0
+          ],
+          "contactPoint": [
+            -0.15,
+            0,
+            0
+          ],
+          "contact": [
+            -0.228125,
+            1.12,
+            -0.10021551724137931
+          ],
+          "onTable": false
+        },
+        {
+          "valid": true,
+          "degrees": 270,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0,
+            0,
+            -0.15
+          ],
+          "contactPoint": [
+            0,
+            0,
+            -0.15
+          ],
+          "contact": [
+            -0.078125,
+            1.12,
+            -0.2502155172413793
+          ],
+          "onTable": false
+        }
+      ],
+      "halfWidth": 0.17812499999999998,
+      "halfDepth": 0.20312500000000003,
+      "text": [
+        "—",
+        "—",
+        "面外",
+        "面外"
+      ],
+      "data": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "status": "手前が面外・軸を中央へ"
+    },
+    {
+      "kind": "five",
+      "smallDimensions": true,
+      "width": 0.5,
+      "depth": 0.5,
+      "originalWidth": 2.72,
+      "originalDepth": 2.64,
+      "state": {
+        "X": -100,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "cardinal": [
+        {
+          "valid": true,
+          "degrees": 0,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0.15,
+            0,
+            0
+          ],
+          "contactPoint": [
+            0.15,
+            0,
+            0
+          ],
+          "contact": [
+            0.15,
+            1.56,
+            -0.05681818181818182
+          ],
+          "onTable": false
+        },
+        {
+          "valid": true,
+          "degrees": 90,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0,
+            0,
+            0.15
+          ],
+          "contactPoint": [
+            0,
+            0,
+            0.15
+          ],
+          "contact": [
+            0,
+            1.56,
+            0.09318181818181817
+          ],
+          "onTable": false
+        },
+        {
+          "valid": true,
+          "degrees": 180,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            -0.15,
+            0,
+            0
+          ],
+          "contactPoint": [
+            -0.15,
+            0,
+            0
+          ],
+          "contact": [
+            -0.15,
+            1.56,
+            -0.05681818181818182
+          ],
+          "onTable": true
+        },
+        {
+          "valid": true,
+          "degrees": 270,
+          "readingMicrons": 0,
+          "axialOffsetMetres": 0,
+          "ringPoint": [
+            0,
+            0,
+            -0.15
+          ],
+          "contactPoint": [
+            0,
+            0,
+            -0.15
+          ],
+          "contact": [
+            0,
+            1.56,
+            -0.20681818181818182
+          ],
+          "onTable": false
+        }
+      ],
+      "halfWidth": 0.11948529411764705,
+      "halfDepth": 0.12310606060606061,
+      "text": [
+        "面外",
+        "面外",
+        "—",
+        "面外"
+      ],
+      "data": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "status": "手前が面外・軸を中央へ"
+    }
+  ],
+  "contact": [
+    {
+      "name": "forward",
+      "expected": -9,
+      "result": {
+        "valid": true,
+        "microns": -9.000000000000327,
+        "zero": {
+          "valid": true,
+          "extension": 0.01,
+          "point": [
+            0,
+            0,
+            0
+          ]
+        },
+        "last": {
+          "valid": true,
+          "extension": 0.010009,
+          "point": [
+            0,
+            0.3,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "fixedReverse",
+      "expected": 9,
+      "result": {
+        "valid": true,
+        "microns": 9.000000000000327,
+        "zero": {
+          "valid": true,
+          "extension": 0.010009,
+          "point": [
+            0,
+            0.3,
+            0
+          ]
+        },
+        "last": {
+          "valid": true,
+          "extension": 0.01,
+          "point": [
+            0,
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "realignedReverse",
+      "expected": -8.9999999838,
+      "result": {
+        "valid": true,
+        "microns": -8.999999983799745,
+        "zero": {
+          "valid": true,
+          "extension": 0.01,
+          "point": [
+            0,
+            0,
+            0
+          ]
+        },
+        "last": {
+          "valid": true,
+          "extension": 0.0100089999999838,
+          "point": [
+            -0.000017999999967601224,
+            -0.29999999946,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "angle": -0.0001,
+      "result": {
+        "valid": true,
+        "microns": 29.99999995000058,
+        "zero": {
+          "valid": true,
+          "extension": 0.010000000000000002,
+          "point": [
+            -1.734723475976807e-18,
+            2.117582368135751e-22,
+            0
+          ]
+        },
+        "last": {
+          "valid": true,
+          "extension": 0.009970000000050001,
+          "point": [
+            0.00002999999979999904,
+            0.299999997,
+            0
+          ]
+        }
+      },
+      "expected": 29.999999950000003
+    },
+    {
+      "angle": 0.0001,
+      "result": {
+        "valid": true,
+        "microns": -29.99999995000058,
+        "zero": {
+          "valid": true,
+          "extension": 0.010000000000000002,
+          "point": [
+            -1.734723475976807e-18,
+            -2.117582368135751e-22,
+            0
+          ]
+        },
+        "last": {
+          "valid": true,
+          "extension": 0.010029999999950003,
+          "point": [
+            -0.000029999999800000773,
+            0.29999999699999996,
+            0
+          ]
+        }
+      },
+      "expected": -29.999999950000003
+    }
+  ],
+  "errors": [],
+  "browser": "151.0.7922.173",
+  "aria": {
+    "localNote": true,
+    "localDescription": "localSquarenessNote",
+    "localModel": "local-angle",
+    "localScanCount": 0,
+    "finite": [
+      {
+        "description": "squarenessMeasurementNote",
+        "model": "reference-scan-v3",
+        "hasScan": true
+      },
+      {
+        "description": "squarenessMeasurementNote",
+        "model": "reference-scan-v3",
+        "hasScan": true
+      },
+      {
+        "description": "squarenessMeasurementNote",
+        "model": "reference-scan-v3",
+        "hasScan": true
+      }
+    ]
+  }
+}

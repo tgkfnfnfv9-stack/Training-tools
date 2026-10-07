@@ -290,13 +290,14 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   referenceCards.push(referenceCard(pair,measurement,beforeMeasurement));
   const descriptionText=pair.key+'・'+(measurement.valid?measurement.setup.zeroLocation+'を0とした300 mmの仮想測定 '+reading+' µm':measurement.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。';
   live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${window.ReferenceMeasurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${measurement.valid?measurement.microns:''}">${referenceDiagram(measurement)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${measurement.valid?measurement.microns:''}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
-  return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,30)">${markup}</g></g>`;
+  return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} · 局所角度</text><g transform="translate(0,30)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
  $('measurementReferenceCards').innerHTML=referenceCards.join('');
  $('accuracyDiagram').style.setProperty('--diagram-min-width',g.pairs.length*88+'px');
  $('accuracyDiagram').setAttribute('viewBox',`0 0 ${g.pairs.length*112} 123`);$('accuracyDiagram').innerHTML=columns.join('');
- $('accuracyDiagram').setAttribute('aria-label',g.pairs.map(p=>p.key+'、基準'+squarenessPlot(p).base+'で直角と初期からの変化を比較').join('。'));
+ $('accuracyDiagram').setAttribute('data-diagram-model','local-angle');
+ $('accuracyDiagram').setAttribute('aria-label','現在位置の局所軸角度の300 mm換算。接触ゼロを取る有限走査図とは別。'+g.pairs.map(p=>p.key+'、基準'+squarenessPlot(p).base+'で初期からの変化を比較').join('。'));
 }
 function updateFineQualitative(g,initial){
  const lathe=current.kind==='lathe';
@@ -392,7 +393,7 @@ function updateAccuracy(){
  if(['travel','gantry'].includes(current.kind))$('geometryAssumption').textContent='Xは移動位置の走行案内、Y/Zはコラム・梁側の参照姿勢です。固定ワークの姿勢をX送りへ代用しません。';
  if(['travel','horizontal'].includes(current.kind))$('geometryAssumption').textContent='Xは二本の走行レール、'+(current.kind==='travel'?'Y/Zはコラム取付部':'Yはコラム取付部、Zはパレット側')+'の姿勢を使います。取付ベースの相対変形を幾何的に近似する教材で、剛性・荷重・水平面内の曲がりは計算しません。';
  if(['vertical','compact'].includes(current.kind))$('geometryAssumption').textContent+=' Xテーブル送りではサドルの支持参照は移動せず、Yサドル送りで移動します。';
- if(current.kind==='compact')$('geometryAssumption').textContent='右端：左端の相対曲げ剛性を3：1と仮定した、2モードの板曲げ教材です。支持4点を保持して曲率エネルギーを最小にする変形面を使います。実機の剛性を同定した値ではなく、自由板の厳密解・荷重や接触の構造解析ではありません。直角図のX/Yはテーブル上面中心の仮想測定点P（支持基準から0.50 m）の実際の送り接線、Zは主軸頭の送り方向です。サドルの倒れが位置で変わることによるアッベ影響と固有誤差を含みます。表示は局所送り角の300 mm換算で、実際に300 mm走査した結果や補正済みの軸固有直角度ではありません。Xではサドル支持参照を動かさず、Yで移動します。剛性・荷重・接触を解く構造解析や実機精度検査の再現ではありません。';
+ if(current.kind==='compact')$('geometryAssumption').textContent='右端：左端の相対曲げ剛性を3：1と仮定した、2モードの板曲げ教材です。支持4点を保持して曲率エネルギーを最小にする変形面を使います。実機の剛性を同定した値ではなく、自由板の厳密解・荷重や接触の構造解析ではありません。直角図のX/Yはテーブル上面中心の仮想測定点P（支持基準から0.50 m）の実際の送り接線、Zは主軸頭の送り方向です。サドルの倒れが位置で変わることによるアッベ影響と固有誤差を含みます。設定内の局所軸角度図は現在位置の送り角の300 mm換算です。常設の仮想測定欄は、方向合わせと接触ゼロを取り直した300 mmの有限走査値で、別の量です。どちらも補正済みの軸固有直角度ではありません。Xではサドル支持参照を動かさず、Yで移動します。剛性・荷重・接触を解く構造解析や実機精度検査の再現ではありません。';
  if(current.kind==='lathe')$('geometryAssumption').textContent+=' 径送りXでは往復台のベッド参照は移動せず、長手Zで移動します。ベッドのロールによる刃先高さ差と水平面内の曲がりは、この直角図には含みません。';
  if(dual){$('bodyLeanHeading').textContent='主軸の代表方向：本体＋支持姿勢';$('bodyLeanNote').textContent='門の骨格は接続した支持姿勢で描き、固有直角差はラム・主軸の向き、軸矢印と直角図へ重ねます。主軸方向の値と左右柱の支持倒れは別です。柱の平均倒れをラムZへ伝え、梁案内Yとの直角差を表示します。位置ごとの弾性ねじれ・主軸移動荷重は再現しません。';}
  if(dual)$('geometryAssumption').textContent+=' 左右柱の天端を梁で結び、平均倒れをラム方向へ伝えるせん断の幾何モデルです。柱・梁の接続中心を共有します。梁の反力・たわみ分布・接触荷重は計算しません。模型の門骨格は支持姿勢、ラム・主軸は固有直角差を含む代表方向に沿って描きます。';

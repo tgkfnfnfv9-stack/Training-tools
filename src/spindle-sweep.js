@@ -25,7 +25,8 @@
   if(!right)return invalid('invalid-right');
   if(!Number.isFinite(radius)||radius<=0)return invalid('invalid-radius');
   const alignment=dot(tableNormal,axis);
-  // The tip follows the positive spindle axis into an upward-facing plane.
+  // The spindle axis points from the top face toward the indicator body.
+  // A top-face probe extends along -axis; compression returns it along +axis.
   // A parallel axis has no unique contact; a reversed normal is not that face.
   if(Math.abs(alignment)<1e-10)return invalid('parallel-contact');
   if(alignment<0)return invalid('opposed-table-normal');

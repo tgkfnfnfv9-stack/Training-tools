@@ -1,0 +1,12 @@
+{
+  "url": "https://tgkfnfnfv9-stack.github.io/Training-tools/",
+  "status": 200,
+  "headers": {
+    "etag": "\"6ac5ce12-5da2b\"",
+    "lastModified": "Wed, 07 Oct 2026 04:44:02 GMT"
+  },
+  "sha256": "6ac3b47542429ddb4f665f3e33a05d9b0bf1c4525f0afaa317352d4086a48a79",
+  "mainHtmlSha256": "6ac3b47542429ddb4f665f3e33a05d9b0bf1c4525f0afaa317352d4086a48a79",
+  "matchesStartMain": true,
+  "scope": "Read-only existing public site check; no new deployment has been made."
+}
