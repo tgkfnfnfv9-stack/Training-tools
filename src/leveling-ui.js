@@ -57,7 +57,10 @@ function levelCoordinates(x,z){return {x:x/(current.w*.8)*levelConfig.width,z:z/
 function displayCoordinates(p){
  if(!levelConfig)return [...p];const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];
 }
-function displayFactor(){return $('exaggerate').checked&&levelGeometry?levelGeometry.visualFactor:1;}
+// Compact material-point tangents include changes of saddle posture. Feeding
+// magnified slopes into that nonlinear map can reverse a small relative angle.
+// Keep its model geometry physical; magnify only the separate angle/contact plots.
+function displayFactor(){return current.kind!=='compact'&&$('exaggerate').checked&&levelGeometry?levelGeometry.visualFactor:1;}
 let displayClearanceKey='',displayClearanceValue=0;
 function displayClearance(){
  if(!levelSolution||!levelGeometry)return 0;

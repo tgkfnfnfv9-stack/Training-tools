@@ -1,0 +1,88 @@
+{
+  "htmlSha256": "2443620c9a497f7af5adad10922a1f66bf6b828b67065dbe2fcac1228a5acfbc",
+  "sourceUnchangedDuringRun": true,
+  "passed": 16,
+  "total": 16,
+  "suites": [
+    {
+      "suite": "check-yz-contact-side",
+      "exitCode": 0,
+      "output": "YZ independent contact-side geometry: 18 numerical checks passed\n"
+    },
+    {
+      "suite": "check-compact-yz-exaggeration",
+      "exitCode": 0,
+      "output": "{\"cases\":15,\"measurementsInvariant\":true,\"meshSignsAndAdjustmentDirectionsMatch\":true}\n"
+    },
+    {
+      "suite": "check-compact-fixed-column",
+      "exitCode": 0,
+      "output": "{\"cases\":18,\"fixedColumnInvariant\":true}\n"
+    },
+    {
+      "suite": "check-compact-table-path",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 168,\n  \"failures\": []\n}\n"
+    },
+    {
+      "suite": "check-compact-bending",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 670,\n  \"failures\": []\n}\n"
+    },
+    {
+      "suite": "check-compact-yz-independent",
+      "exitCode": 0,
+      "output": "{\n  \"pureAngle\": [\n    {\n      \"intrinsicMicrons\": -60,\n      \"reading\": 59.99999959999981,\n      \"expected\": 59.99999960000001\n    },\n    {\n      \"intrinsicMicrons\": 60,\n      \"reading\": -59.99999959999981,\n      \"expected\": -59.99999960000001\n    }\n  ],\n  \"cases\": 162,\n  \"maxErrorMicrons\": 4.5013819061079374e-7,\n  \"oppositeSideAndRezeroCases\": 324,\n  \"examples\": [\n    {\n      \"heights\": [\n        0,\n        0,\n        0,\n        0\n      ],\n      \"reading\": 0,\n      \"independent\": 0\n    },\n    {\n      \"heights\": [\n        0.1,\n        0,\n        0,\n        0\n      ],\n      \"reading\": -0.23939075545660604,\n      \"independent\": -0.23939082212549867\n    },\n    {\n      \"heights\": [\n        -0.1,\n        0,\n        0,\n        0\n      ],\n      \"reading\": 0.2395472558560513,\n      \"independent\": 0.2395471433384172\n    },\n    {\n      \"heights\": [\n        0.1,\n        -0.1,\n        -0.1,\n        0.1\n      ],\n      \"reading\": -0.9566240180419738,\n      \"independent\": -0.9566239390895043\n    },\n    {\n      \"heights\": [\n        -0.1,\n        0.1,\n        0.1,\n        -0.1\n      ],\n      \"reading\": 0.9591280244435063,\n      \"independent\": 0.9591280543674863\n    },\n    {\n      \"heights\": [\n        0.12,\n        -0.06,\n        0.03,\n        -0.11\n      ],\n      \"reading\": -0.0957750822365433,\n      \"independent\": -0.09577488647993793\n    }\n  ]\n}\n"
+    },
+    {
+      "suite": "check-second-mechanical",
+      "exitCode": 0,
+      "output": "{\"mixedMaterialMotionCases\":76,\"maxMovementMismatchMicrons\":8.387193953587626e-10,\"analyticMixedScans\":42,\"coupledIntrinsicRigidTiltScans\":19}\n"
+    },
+    {
+      "suite": "check-full-code-review",
+      "exitCode": 0,
+      "output": "Full code review: 158 integration checks passed.\n"
+    },
+    {
+      "suite": "check-accuracy-render",
+      "exitCode": 0,
+      "output": "Accuracy Canvas: 305 rendered frames, 1448150 finite drawing operations passed (3 sizes, 7 machines, 2 extra modes).\n"
+    },
+    {
+      "suite": "check-reference-zero",
+      "exitCode": 0,
+      "output": "Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.\n"
+    },
+    {
+      "suite": "check-measurement-reference",
+      "exitCode": 0,
+      "output": "Reference plane geometry: 70 numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.\nSupport-grid crossing: piecewise integral and analytic pallet material-point oracle passed.\n"
+    },
+    {
+      "suite": "check-page-redraw",
+      "exitCode": 0,
+      "output": "Page-entry redraw: 98 assertions across all 7 machines passed; explicit JSON round trips preserved.\n"
+    },
+    {
+      "suite": "check-spindle-sweep",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 323,\n  \"failures\": []\n}\n"
+    },
+    {
+      "suite": "check-multi-spindle-sweep",
+      "exitCode": 0,
+      "output": "PASS multi-machine spindle sweep independent physics: 152 checks\n"
+    },
+    {
+      "suite": "check-ideal-display",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": {\n    \"nominalGeometry\": 504,\n    \"flatAgreement\": 126,\n    \"supportAdjustment\": 7,\n    \"intrinsicRemoval\": 7,\n    \"linearMotion\": 20,\n    \"rotaryRigidity\": 50,\n    \"viewAndToggle\": 126\n  },\n  \"vertices\": 1114560,\n  \"maximumPointDifference\": 2.047902597024e-15,\n  \"failures\": []\n}\n"
+    },
+    {
+      "suite": "check-mobile-navigation",
+      "exitCode": 0,
+      "output": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed\n"
+    }
+  ]
+}

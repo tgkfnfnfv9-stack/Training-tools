@@ -1,0 +1,1528 @@
+{
+  "input": "/workspace/Training-tools/docs/qa-yz-sign-20261007/browser-before/index.html",
+  "label": "before",
+  "sha256": "7d697c9dc34b8d13a8eb13f23395950bc66376c62c27f92d06d565a031e01710",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "YZ -15 A -0.5: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": 0.0000539708437728359,
+        "visual": 0.014352422036527101
+      }
+    },
+    {
+      "name": "YZ -15 A -0.5: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ -15 A -0.5: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 0.9999999999999999
+    },
+    {
+      "name": "YZ -15 A -0.5: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ -15 A -0.1: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": 0.00005079311495229541,
+        "visual": 0.014764822439909767
+      }
+    },
+    {
+      "name": "YZ -15 A -0.1: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ -15 A -0.1: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "name": "YZ -15 A -0.1: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ -15 A -0.5 to -0.1: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ -15 A 0: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": 0.00004999999997916673,
+        "visual": 0.014982099895341635
+      }
+    },
+    {
+      "name": "YZ -15 A 0: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ -15 A 0: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 0.9999999999999999
+    },
+    {
+      "name": "YZ -15 A 0: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ -15 A -0.1 to 0: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ -15 A 0.1: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": 0.00004920736450098139,
+        "visual": 0.015244918301002889
+      }
+    },
+    {
+      "name": "YZ -15 A 0.1: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ -15 A 0.1: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 0.9999999999999998
+    },
+    {
+      "name": "YZ -15 A 0.1: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ -15 A 0 to 0.1: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ -15 A 0.5: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": 0.00004604219826655873,
+        "visual": 0.016749602397737637
+      }
+    },
+    {
+      "name": "YZ -15 A 0.5: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ -15 A 0.5: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 0.9999999999999999
+    },
+    {
+      "name": "YZ -15 A 0.5: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ -15 A 0.1 to 0.5: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ 0 A -0.5: exaggerated mesh angle sign",
+      "ok": false,
+      "detail": {
+        "physical": 0.00000397084357038949,
+        "visual": -0.0006358104107963072
+      }
+    },
+    {
+      "name": "YZ 0 A -0.5: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ 0 A -0.5: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 0.9999999999999997
+    },
+    {
+      "name": "YZ 0 A -0.5: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ 0 A -0.1: exaggerated mesh angle sign",
+      "ok": false,
+      "detail": {
+        "physical": 7.931149160013269e-7,
+        "visual": -0.0002188394665604415
+      }
+    },
+    {
+      "name": "YZ 0 A -0.1: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ 0 A -0.1: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "name": "YZ 0 A -0.1: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ 0 A -0.5 to -0.1: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ 0 A 0: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": 4.389347893728936e-18,
+        "visual": -1.925456322160457e-14
+      }
+    },
+    {
+      "name": "YZ 0 A 0: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ 0 A 0: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 0.9999999999999998
+    },
+    {
+      "name": "YZ 0 A 0: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ 0 A -0.1 to 0: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ 0 A 0.1: exaggerated mesh angle sign",
+      "ok": false,
+      "detail": {
+        "physical": -7.926354148699737e-7,
+        "visual": 0.0002645437185095447
+      }
+    },
+    {
+      "name": "YZ 0 A 0.1: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ 0 A 0.1: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 0.9999999999999998
+    },
+    {
+      "name": "YZ 0 A 0.1: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ 0 A 0 to 0.1: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ 0 A 0.5: exaggerated mesh angle sign",
+      "ok": false,
+      "detail": {
+        "physical": -0.000003957801333727038,
+        "visual": 0.0017777163456642736
+      }
+    },
+    {
+      "name": "YZ 0 A 0.5: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ 0 A 0.5: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 0.9999999999999999
+    },
+    {
+      "name": "YZ 0 A 0.5: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ 0 A 0.1 to 0.5: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ 15 A -0.5: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": -0.00004602915664198896,
+        "visual": -0.015624183302957482
+      }
+    },
+    {
+      "name": "YZ 15 A -0.5: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ 15 A -0.5: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 1
+    },
+    {
+      "name": "YZ 15 A -0.5: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ 15 A -0.1: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": -0.000049206885122259425,
+        "visual": -0.015202508360812824
+      }
+    },
+    {
+      "name": "YZ 15 A -0.1: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ 15 A -0.1: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 1.0000000000000002
+    },
+    {
+      "name": "YZ 15 A -0.1: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ 15 A -0.5 to -0.1: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ 15 A 0: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": -0.000049999999979157964,
+        "visual": -0.014982099895380144
+      }
+    },
+    {
+      "name": "YZ 15 A 0: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ 15 A 0: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 0.9999999999999998
+    },
+    {
+      "name": "YZ 15 A 0: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ 15 A -0.1 to 0: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ 15 A 0.1: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": -0.00005079263532873454,
+        "visual": -0.014715834419784472
+      }
+    },
+    {
+      "name": "YZ 15 A 0.1: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ 15 A 0.1: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 0.9999999999999997
+    },
+    {
+      "name": "YZ 15 A 0.1: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ 15 A 0 to 0.1: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "YZ 15 A 0.5: exaggerated mesh angle sign",
+      "ok": true,
+      "detail": {
+        "physical": -0.00005395780092407076,
+        "visual": -0.013194292689797292
+      }
+    },
+    {
+      "name": "YZ 15 A 0.5: exaggeration preserves measurement",
+      "ok": true
+    },
+    {
+      "name": "YZ 15 A 0.5: Z arrow parallel to column mesh",
+      "ok": true,
+      "detail": 1.0000000000000004
+    },
+    {
+      "name": "YZ 15 A 0.5: displayed numbers equal finite readings",
+      "ok": true
+    },
+    {
+      "name": "YZ 15 A 0.1 to 0.5: visible adjustment direction",
+      "ok": false
+    },
+    {
+      "name": "1280: support selection retained",
+      "ok": true
+    },
+    {
+      "name": "390: support selection retained",
+      "ok": true
+    },
+    {
+      "name": "camera: finite values invariant",
+      "ok": true
+    },
+    {
+      "name": "zoom: finite values invariant",
+      "ok": true
+    },
+    {
+      "name": "outline: finite values invariant",
+      "ok": true
+    },
+    {
+      "name": "labels: finite values invariant",
+      "ok": true
+    },
+    {
+      "name": "exaggeration: finite values invariant",
+      "ok": true
+    },
+    {
+      "name": "X: live demo changes axis position and updates finite values",
+      "ok": true
+    },
+    {
+      "name": "X: actual moving part moves",
+      "ok": true
+    },
+    {
+      "name": "X: fixed column vertices remain fixed during demo",
+      "ok": true
+    },
+    {
+      "name": "Y: live demo changes axis position and updates finite values",
+      "ok": true
+    },
+    {
+      "name": "Y: actual moving part moves",
+      "ok": true
+    },
+    {
+      "name": "Y: fixed column vertices remain fixed during demo",
+      "ok": true
+    },
+    {
+      "name": "Z: live demo changes axis position and updates finite values",
+      "ok": true
+    },
+    {
+      "name": "Z: actual moving part moves",
+      "ok": true
+    },
+    {
+      "name": "Z: fixed column vertices remain fixed during demo",
+      "ok": true
+    },
+    {
+      "name": "Z demo: actual tool material displacement parallel to column",
+      "ok": true,
+      "detail": 0.9999999999999997
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "rows": [
+    {
+      "yz": -15,
+      "a": -0.5,
+      "physical": {
+        "factor": 1,
+        "yzDot": 0.0000539708437728359,
+        "column": [
+          -0.0002830528805556215,
+          0.9999999588561141,
+          -0.000046570774230442625
+        ],
+        "tableY": [
+          -0.00005436760446750378,
+          0.00010052623292812613,
+          0.9999999934693201
+        ],
+        "zArrowDot": 1.0000000000000002,
+        "readings": [
+          16.306757544619703,
+          -39.84375003584888,
+          16.191260673519697
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 16.306757544619703
+          },
+          {
+            "pair": "XZ",
+            "reading": -39.84375003584888
+          },
+          {
+            "pair": "YZ",
+            "reading": 16.191260673519697
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": 0.014352422036527101,
+        "column": [
+          -0.08470598768819217,
+          0.996271892499417,
+          -0.016346616328690736
+        ],
+        "tableY": [
+          -0.017365799937584685,
+          0.02932789099975183,
+          0.9994189831107044
+        ],
+        "zArrowDot": 0.9999999999999999,
+        "readings": [
+          16.306757544619703,
+          -39.84375003584888,
+          16.191260673519697
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 16.306757544619703
+          },
+          {
+            "pair": "XZ",
+            "reading": -39.84375003584888
+          },
+          {
+            "pair": "YZ",
+            "reading": 16.191260673519697
+          }
+        ]
+      }
+    },
+    {
+      "yz": -15,
+      "a": -0.1,
+      "physical": {
+        "factor": 1,
+        "yzDot": 0.00005079311495229541,
+        "column": [
+          -0.00025661057411786344,
+          0.9999999666053705,
+          0.00003066384546162295
+        ],
+        "tableY": [
+          -0.0000988716052558606,
+          0.00002010389881872136,
+          0.9999999949101196
+        ],
+        "zArrowDot": 1.0000000000000002,
+        "readings": [
+          29.661330066954942,
+          -67.96874942925288,
+          15.237939150496496
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 29.661330066954942
+          },
+          {
+            "pair": "XZ",
+            "reading": -67.96874942925288
+          },
+          {
+            "pair": "YZ",
+            "reading": 15.237939150496496
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": 0.014764822439909767,
+        "column": [
+          -0.07681867726084116,
+          0.9970222262833979,
+          0.006750638546966288
+        ],
+        "tableY": [
+          -0.029669876706468784,
+          0.005755204709056109,
+          0.9995431836769134
+        ],
+        "zArrowDot": 1,
+        "readings": [
+          29.661330066954942,
+          -67.96874942925288,
+          15.237939150496496
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 29.661330066954942
+          },
+          {
+            "pair": "XZ",
+            "reading": -67.96874942925288
+          },
+          {
+            "pair": "YZ",
+            "reading": 15.237939150496496
+          }
+        ]
+      }
+    },
+    {
+      "yz": -15,
+      "a": 0,
+      "physical": {
+        "factor": 1,
+        "yzDot": 0.00004999999997916673,
+        "column": [
+          -0.00024999999739581626,
+          0.9999999675013749,
+          0.00004997250028184228
+        ],
+        "tableY": [
+          -0.00010999999977813536,
+          0,
+          0.99999999395
+        ],
+        "zArrowDot": 1.0000000000000004,
+        "readings": [
+          32.999999933450844,
+          -74.99999921875035,
+          14.999999993750915
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 32.999999933450844
+          },
+          {
+            "pair": "XZ",
+            "reading": -74.99999921875035
+          },
+          {
+            "pair": "YZ",
+            "reading": 14.999999993750915
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": 0.014982099895341635,
+        "column": [
+          -0.07484325291763609,
+          0.9971166820302843,
+          0.0125223763568838
+        ],
+        "tableY": [
+          -0.03295588454040912,
+          0,
+          0.9994568073079292
+        ],
+        "zArrowDot": 0.9999999999999999,
+        "readings": [
+          32.999999933450844,
+          -74.99999921875035,
+          14.999999993750915
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 32.999999933450844
+          },
+          {
+            "pair": "XZ",
+            "reading": -74.99999921875035
+          },
+          {
+            "pair": "YZ",
+            "reading": 14.999999993750915
+          }
+        ]
+      }
+    },
+    {
+      "yz": -15,
+      "a": 0.1,
+      "physical": {
+        "factor": 1,
+        "yzDot": 0.00004920736450098139,
+        "column": [
+          -0.00024338942071591485,
+          0.9999999679808552,
+          0.00006928115488174639
+        ],
+        "tableY": [
+          -0.00012112935195701687,
+          -0.000020103272105001766,
+          0.9999999924617694
+        ],
+        "zArrowDot": 0.9999999999999999,
+        "readings": [
+          36.338680494301876,
+          -82.03124896974563,
+          14.762217326876742
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 36.338680494301876
+          },
+          {
+            "pair": "XZ",
+            "reading": -82.03124896974563
+          },
+          {
+            "pair": "YZ",
+            "reading": 14.762217326876742
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": 0.015244918301002889,
+        "column": [
+          -0.07286872896611027,
+          0.9971738501419958,
+          0.018288273069153246
+        ],
+        "tableY": [
+          -0.036324045270465226,
+          -0.005693968034380147,
+          0.9993238426372165
+        ],
+        "zArrowDot": 0.9999999999999998,
+        "readings": [
+          36.338680494301876,
+          -82.03124896974563,
+          14.762217326876742
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 36.338680494301876
+          },
+          {
+            "pair": "XZ",
+            "reading": -82.03124896974563
+          },
+          {
+            "pair": "YZ",
+            "reading": 14.762217326876742
+          }
+        ]
+      }
+    },
+    {
+      "yz": -15,
+      "a": 0.5,
+      "physical": {
+        "factor": 1,
+        "yzDot": 0.00004604219826655873,
+        "column": [
+          -0.00021694711528982624,
+          0.9999999657335386,
+          0.00014651576928556353
+        ],
+        "tableY": [
+          -0.00016565633648116628,
+          -0.00010050951037703164,
+          0.9999999812279081
+        ],
+        "zArrowDot": 0.9999999999999999,
+        "readings": [
+          49.69350968112886,
+          -110.15624743913877,
+          13.812651560767344
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 49.69350968112886
+          },
+          {
+            "pair": "XZ",
+            "reading": -110.15624743913877
+          },
+          {
+            "pair": "YZ",
+            "reading": 13.812651560767344
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": 0.016749602397737637,
+        "column": [
+          -0.06500290811713316,
+          0.9970323088026686,
+          0.0412455711554045
+        ],
+        "tableY": [
+          -0.05059547315093709,
+          -0.027798533014143513,
+          0.9983322791830856
+        ],
+        "zArrowDot": 0.9999999999999999,
+        "readings": [
+          49.69350968112886,
+          -110.15624743913877,
+          13.812651560767344
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 49.69350968112886
+          },
+          {
+            "pair": "XZ",
+            "reading": -110.15624743913877
+          },
+          {
+            "pair": "YZ",
+            "reading": 13.812651560767344
+          }
+        ]
+      }
+    },
+    {
+      "yz": 0,
+      "a": -0.5,
+      "physical": {
+        "factor": 1,
+        "yzDot": 0.00000397084357038949,
+        "column": [
+          -0.0002830528799330639,
+          0.9999999552775755,
+          -0.00009657077439965218
+        ],
+        "tableY": [
+          -0.00005436760446750378,
+          0.00010052623292812613,
+          0.9999999934693201
+        ],
+        "zArrowDot": 1,
+        "readings": [
+          16.306757544619703,
+          -39.84374995820439,
+          1.1912606127893743
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 16.306757544619703
+          },
+          {
+            "pair": "XZ",
+            "reading": -39.84374995820439
+          },
+          {
+            "pair": "YZ",
+            "reading": 1.1912606127893743
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": -0.0006358104107963072,
+        "column": [
+          -0.08468889676304996,
+          0.9959146788167432,
+          -0.03133278287034479
+        ],
+        "tableY": [
+          -0.017365799937584685,
+          0.02932789099975183,
+          0.9994189831107044
+        ],
+        "zArrowDot": 0.9999999999999997,
+        "readings": [
+          16.306757544619703,
+          -39.84374995820439,
+          1.1912606127893743
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 16.306757544619703
+          },
+          {
+            "pair": "XZ",
+            "reading": -39.84374995820439
+          },
+          {
+            "pair": "YZ",
+            "reading": 1.1912606127893743
+          }
+        ]
+      }
+    },
+    {
+      "yz": 0,
+      "a": -0.1,
+      "physical": {
+        "factor": 1,
+        "yzDot": 7.931149160013269e-7,
+        "column": [
+          -0.00025661057409956606,
+          0.9999999668885626,
+          -0.000019336154834856615
+        ],
+        "tableY": [
+          -0.0000988716052558606,
+          0.00002010389881872136,
+          0.9999999949101196
+        ],
+        "zArrowDot": 1,
+        "readings": [
+          29.661330066954942,
+          -67.96874941912209,
+          0.2379391396169217
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 29.661330066954942
+          },
+          {
+            "pair": "XZ",
+            "reading": -67.96874941912209
+          },
+          {
+            "pair": "YZ",
+            "reading": 0.2379391396169217
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": -0.0002188394665604415,
+        "column": [
+          -0.07681811218794064,
+          0.9970110749113524,
+          -0.00823979028801361
+        ],
+        "tableY": [
+          -0.029669876706468784,
+          0.005755204709056109,
+          0.9995431836769134
+        ],
+        "zArrowDot": 1,
+        "readings": [
+          29.661330066954942,
+          -67.96874941912209,
+          0.2379391396169217
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 29.661330066954942
+          },
+          {
+            "pair": "XZ",
+            "reading": -67.96874941912209
+          },
+          {
+            "pair": "YZ",
+            "reading": 0.2379391396169217
+          }
+        ]
+      }
+    },
+    {
+      "yz": 0,
+      "a": 0,
+      "physical": {
+        "factor": 1,
+        "yzDot": 4.389347893728936e-18,
+        "column": [
+          -0.00024999999739581626,
+          0.9999999687499999,
+          -2.749999982005928e-8
+        ],
+        "tableY": [
+          -0.00010999999977813536,
+          0,
+          0.99999999395
+        ],
+        "zArrowDot": 1,
+        "readings": [
+          32.999999933450844,
+          -74.99999921875035,
+          1.734723475976807e-12
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 32.999999933450844
+          },
+          {
+            "pair": "XZ",
+            "reading": -74.99999921875035
+          },
+          {
+            "pair": "YZ",
+            "reading": 1.734723475976807e-12
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": -1.925456322160457e-14,
+        "column": [
+          -0.07484325291763612,
+          0.9971922568539516,
+          -0.0024678661286475986
+        ],
+        "tableY": [
+          -0.03295588454040912,
+          0,
+          0.9994568073079292
+        ],
+        "zArrowDot": 0.9999999999999998,
+        "readings": [
+          32.999999933450844,
+          -74.99999921875035,
+          1.734723475976807e-12
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 32.999999933450844
+          },
+          {
+            "pair": "XZ",
+            "reading": -74.99999921875035
+          },
+          {
+            "pair": "YZ",
+            "reading": 1.734723475976807e-12
+          }
+        ]
+      }
+    },
+    {
+      "yz": 0,
+      "a": 0.1,
+      "physical": {
+        "factor": 1,
+        "yzDot": -7.926354148699737e-7,
+        "column": [
+          -0.0002433894206810924,
+          0.9999999701949133,
+          0.000019281154633497515
+        ],
+        "tableY": [
+          -0.00012112935195701687,
+          -0.000020103272105001766,
+          0.9999999924617694
+        ],
+        "zArrowDot": 1.0000000000000002,
+        "readings": [
+          36.338680494301876,
+          -82.03124897717719,
+          -0.2377826478754813
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 36.338680494301876
+          },
+          {
+            "pair": "XZ",
+            "reading": -82.03124897717719
+          },
+          {
+            "pair": "YZ",
+            "reading": -0.2377826478754813
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": 0.0002645437185095447,
+        "column": [
+          -0.07286786451335658,
+          0.9973361483352208,
+          0.0032987187102605114
+        ],
+        "tableY": [
+          -0.036324045270465226,
+          -0.005693968034380147,
+          0.9993238426372165
+        ],
+        "zArrowDot": 0.9999999999999998,
+        "readings": [
+          36.338680494301876,
+          -82.03124897717719,
+          -0.2377826478754813
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 36.338680494301876
+          },
+          {
+            "pair": "XZ",
+            "reading": -82.03124897717719
+          },
+          {
+            "pair": "YZ",
+            "reading": -0.2377826478754813
+          }
+        ]
+      }
+    },
+    {
+      "yz": 0,
+      "a": 0.5,
+      "physical": {
+        "factor": 1,
+        "yzDot": -0.000003957801333727038,
+        "column": [
+          -0.00021694711458472788,
+          0.9999999718093274,
+          0.00009651576935746452
+        ],
+        "tableY": [
+          -0.00016565633648116628,
+          -0.00010050951037703164,
+          0.9999999812279081
+        ],
+        "zArrowDot": 0.9999999999999999,
+        "readings": [
+          49.69350968112886,
+          -110.15624744929036,
+          -1.187348319319284
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 49.69350968112886
+          },
+          {
+            "pair": "XZ",
+            "reading": -110.15624744929036
+          },
+          {
+            "pair": "YZ",
+            "reading": -1.187348319319284
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": 0.0017777163456642736,
+        "column": [
+          -0.0649843238293874,
+          0.9975406017083096,
+          0.026263769719151005
+        ],
+        "tableY": [
+          -0.05059547315093709,
+          -0.027798533014143513,
+          0.9983322791830856
+        ],
+        "zArrowDot": 0.9999999999999999,
+        "readings": [
+          49.69350968112886,
+          -110.15624744929036,
+          -1.187348319319284
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 49.69350968112886
+          },
+          {
+            "pair": "XZ",
+            "reading": -110.15624744929036
+          },
+          {
+            "pair": "YZ",
+            "reading": -1.187348319319284
+          }
+        ]
+      }
+    },
+    {
+      "yz": 15,
+      "a": -0.5,
+      "physical": {
+        "factor": 1,
+        "yzDot": -0.00004602915664198896,
+        "column": [
+          -0.00028305287922788017,
+          0.9999999491990366,
+          -0.00014657077432747367
+        ],
+        "tableY": [
+          -0.00005436760446750378,
+          0.00010052623292812613,
+          0.9999999934693201
+        ],
+        "zArrowDot": 1,
+        "readings": [
+          16.306757544619703,
+          -39.84374996845313,
+          -13.808739450929878
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 16.306757544619703
+          },
+          {
+            "pair": "XZ",
+            "reading": -39.84374996845313
+          },
+          {
+            "pair": "YZ",
+            "reading": -13.808739450929878
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": -0.015624183302957482,
+        "column": [
+          -0.08466957933252313,
+          0.9953322159530363,
+          -0.04631244132705316
+        ],
+        "tableY": [
+          -0.017365799937584685,
+          0.02932789099975183,
+          0.9994189831107044
+        ],
+        "zArrowDot": 1,
+        "readings": [
+          16.306757544619703,
+          -39.84374996845313,
+          -13.808739450929878
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 16.306757544619703
+          },
+          {
+            "pair": "XZ",
+            "reading": -39.84374996845313
+          },
+          {
+            "pair": "YZ",
+            "reading": -13.808739450929878
+          }
+        ]
+      }
+    },
+    {
+      "yz": 15,
+      "a": -0.1,
+      "physical": {
+        "factor": 1,
+        "yzDot": -0.000049206885122259425,
+        "column": [
+          -0.00025661057406474344,
+          0.9999999646717547,
+          -0.00006933615508304146
+        ],
+        "tableY": [
+          -0.0000988716052558606,
+          0.00002010389881872136,
+          0.9999999949101196
+        ],
+        "zArrowDot": 0.9999999999999997,
+        "readings": [
+          29.661330066954942,
+          -67.96874942657273,
+          -14.762060871862866
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 29.661330066954942
+          },
+          {
+            "pair": "XZ",
+            "reading": -67.96874942657273
+          },
+          {
+            "pair": "YZ",
+            "reading": -14.762060871862866
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": -0.015202508360812824,
+        "column": [
+          -0.076817100759377,
+          0.996774573573787,
+          -0.023228915336684575
+        ],
+        "tableY": [
+          -0.029669876706468784,
+          0.005755204709056109,
+          0.9995431836769134
+        ],
+        "zArrowDot": 1.0000000000000002,
+        "readings": [
+          29.661330066954942,
+          -67.96874942657273,
+          -14.762060871862866
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 29.661330066954942
+          },
+          {
+            "pair": "XZ",
+            "reading": -67.96874942657273
+          },
+          {
+            "pair": "YZ",
+            "reading": -14.762060871862866
+          }
+        ]
+      }
+    },
+    {
+      "yz": 15,
+      "a": 0,
+      "physical": {
+        "factor": 1,
+        "yzDot": -0.000049999999979157964,
+        "column": [
+          -0.0002499999973958163,
+          0.9999999674986247,
+          -0.00005002750028148241
+        ],
+        "tableY": [
+          -0.00010999999977813536,
+          0,
+          0.99999999395
+        ],
+        "zArrowDot": 1.0000000000000002,
+        "readings": [
+          32.999999933450844,
+          -74.99999921875035,
+          -14.999999993747446
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 32.999999933450844
+          },
+          {
+            "pair": "XZ",
+            "reading": -74.99999921875035
+          },
+          {
+            "pair": "YZ",
+            "reading": -14.999999993747446
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": -0.014982099895380144,
+        "column": [
+          -0.0748432529176361,
+          0.9970424774984875,
+          -0.017458108614178996
+        ],
+        "tableY": [
+          -0.03295588454040912,
+          0,
+          0.9994568073079292
+        ],
+        "zArrowDot": 0.9999999999999998,
+        "readings": [
+          32.999999933450844,
+          -74.99999921875035,
+          -14.999999993747446
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 32.999999933450844
+          },
+          {
+            "pair": "XZ",
+            "reading": -74.99999921875035
+          },
+          {
+            "pair": "YZ",
+            "reading": -14.999999993747446
+          }
+        ]
+      }
+    },
+    {
+      "yz": 15,
+      "a": 0.1,
+      "physical": {
+        "factor": 1,
+        "yzDot": -0.00005079263532873454,
+        "column": [
+          -0.00024338942066283776,
+          0.9999999699089709,
+          -0.00003071884566302475
+        ],
+        "tableY": [
+          -0.00012112935195701687,
+          -0.000020103272105001766,
+          0.9999999924617694
+        ],
+        "zArrowDot": 1,
+        "readings": [
+          36.338680494301876,
+          -82.03124896702732,
+          -15.237782622029226
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 36.338680494301876
+          },
+          {
+            "pair": "XZ",
+            "reading": -82.03124896702732
+          },
+          {
+            "pair": "YZ",
+            "reading": -15.237782622029226
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": -0.014715834419784472,
+        "column": [
+          -0.07286744641626593,
+          0.9972730965629255,
+          -0.011692139434941138
+        ],
+        "tableY": [
+          -0.036324045270465226,
+          -0.005693968034380147,
+          0.9993238426372165
+        ],
+        "zArrowDot": 0.9999999999999997,
+        "readings": [
+          36.338680494301876,
+          -82.03124896702732,
+          -15.237782622029226
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 36.338680494301876
+          },
+          {
+            "pair": "XZ",
+            "reading": -82.03124896702732
+          },
+          {
+            "pair": "YZ",
+            "reading": -15.237782622029226
+          }
+        ]
+      }
+    },
+    {
+      "yz": 15,
+      "a": 0.5,
+      "physical": {
+        "factor": 1,
+        "yzDot": -0.00005395780092407076,
+        "column": [
+          -0.00021694711396225567,
+          0.999999975385116,
+          0.00004651576918802008
+        ],
+        "tableY": [
+          -0.00016565633648116628,
+          -0.00010050951037703164,
+          0.9999999812279081
+        ],
+        "zArrowDot": 0.9999999999999996,
+        "readings": [
+          49.69350968112886,
+          -110.1562473715522,
+          -16.187348196427394
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 49.69350968112886
+          },
+          {
+            "pair": "XZ",
+            "reading": -110.1562473715522
+          },
+          {
+            "pair": "YZ",
+            "reading": -16.187348196427394
+          }
+        ]
+      },
+      "visual": {
+        "factor": 299.6532088124561,
+        "yzDot": -0.013194292689797292,
+        "column": [
+          -0.06496796604702612,
+          0.9978236454329178,
+          0.011275460197951814
+        ],
+        "tableY": [
+          -0.05059547315093709,
+          -0.027798533014143513,
+          0.9983322791830856
+        ],
+        "zArrowDot": 1.0000000000000004,
+        "readings": [
+          49.69350968112886,
+          -110.1562473715522,
+          -16.187348196427394
+        ],
+        "labels": [
+          {
+            "pair": "XY",
+            "reading": 49.69350968112886
+          },
+          {
+            "pair": "XZ",
+            "reading": -110.1562473715522
+          },
+          {
+            "pair": "YZ",
+            "reading": -16.187348196427394
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

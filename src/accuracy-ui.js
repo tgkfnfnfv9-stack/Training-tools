@@ -158,6 +158,7 @@ function geometrySamples(solution=levelSolution,profile=machineProfile,length=le
  return states.map(state=>({state,geometry:geometryModel(state,solution,profile,length)}));
 }
 function fixedVisualFactor(initialSolution){
+ if(current.kind==='compact')return 1;
  const key=JSON.stringify([current.id,current.kind,current.w,current.d,levelConfig.width,levelConfig.depth,levelConfig.columnX,levelConfig.columnZ,machineProfile]);
  if(key===visualReferenceKey)return visualReferenceFactor;
  visualReferenceKey=key;
@@ -201,9 +202,9 @@ function squarenessMicronText(value){
  return magnitude===0?'0':(value<0?'-':'+')+magnitude;
 }
 function squarenessPlot(pair){
- const base=current.kind==='lathe'?'Z':pair.key[0],other=[...pair.key].find(key=>key!==base),raw=pair.deviationMicroradians/1e6*squarenessDiagramGain;
+ const base=current.kind==='lathe'?'Z':pair.key[0],other=[...pair.key].find(key=>key!==base),gain=current.kind==='compact'&&!$('exaggerate').checked?1:squarenessDiagramGain,raw=pair.deviationMicroradians/1e6*gain;
  const angle=Math.max(-squarenessDiagramLimit,Math.min(squarenessDiagramLimit,raw)),x=32,y=54,length=28;
- return {base,other,angle,gain:squarenessDiagramGain,limited:Math.abs(raw)>squarenessDiagramLimit,origin:[x,y],tip:[x-length*Math.sin(angle),y-length*Math.cos(angle)]};
+ return {base,other,angle,gain,limited:Math.abs(raw)>squarenessDiagramLimit,origin:[x,y],tip:[x-length*Math.sin(angle),y-length*Math.cos(angle)]};
 }
 // These directions describe the fixed teaching view, not NC commands or camera axes.
 function squarenessReference(pair){
@@ -316,12 +317,13 @@ function updateFineQualitative(g,initial){
 function updateAccuracy(){
  if(!levelSolution||!levelConfig)return;
  const rangeKey=JSON.stringify([current.id,current.kind,supportHeights,levelConfig,machineProfile]);
- const key=rangeKey+JSON.stringify([positions.X,positions.Y,positions.Z,positions.A,positions.C]);
+ const key=rangeKey+JSON.stringify([positions.X,positions.Y,positions.Z,positions.A,positions.C])+(current.kind==='compact'?String($('exaggerate').checked):'');
  if(key===accuracyKey&&levelGeometry)return;
  accuracyKey=key;
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel();
- $('modelSemantics').textContent=current.kind==='compact'?'測定Pの送り・左右剛性差を仮定':g.portal?'柱・梁＝支持姿勢／ラム・主軸＝固有差込み':'水準器＝平均／模型＝局所＋固有';
+ $('exaggerateLabel').textContent=current.kind==='compact'?'直角図のずれを強調':'傾き・姿勢差を強調';
+ $('modelSemantics').textContent=current.kind==='compact'?'模型の姿勢は実寸／微小差は直角図で確認':g.portal?'柱・梁＝支持姿勢／ラム・主軸＝固有差込み':'水準器＝平均／模型＝局所＋固有';
  // The comparison is pointwise: both states use the current axis position,
  // dimensions, layout and evaluation length. The reference-search aggregate
  // is deliberately not used for this initial/current comparison.
@@ -424,7 +426,7 @@ $('demoColumn').onclick=()=>{
 function accuracyVisualVector(key){
  const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key));
  if(current.kind==='lathe'&&key==='Z')return [...axes.find(a=>a.key==='Z').vector];
- const factor=$('exaggerate').checked?levelGeometry.visualFactor:1;
+ const factor=displayFactor();
  const profile=scaledAccuracyProfile(machineProfile,factor);
  return window.MachineAccuracy.directions(axes,profile).find(a=>a.key===key).vector;
 }
