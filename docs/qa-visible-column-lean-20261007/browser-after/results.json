@@ -1,0 +1,2126 @@
+{
+  "input": "/workspace/Training-tools/index.html",
+  "phase": "after",
+  "sha256": "faa69d002eaa17741c08e9738e85cef14e5d59d90035999183ac778ce181bf9c",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "1280/front: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": 0.0003999999786666797,
+        "expected": 0.00039999997866666876
+      }
+    },
+    {
+      "name": "1280/front: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        1.734723475976807e-12
+      ]
+    },
+    {
+      "name": "1280/front: enlarged diagram derives from actual column angle",
+      "ok": true,
+      "detail": {
+        "frontMicroradians": "399.9999786666687",
+        "displayAngleDegrees": "45.83662116584617",
+        "rangeExceeded": "false"
+      }
+    },
+    {
+      "name": "1280/front: fixed 2000x diagram angle matches actual column",
+      "ok": true,
+      "detail": {
+        "display": 45.83662116584617,
+        "physical": 0.0003999999786666797
+      }
+    },
+    {
+      "name": "1280/front: diagram and physical directions agree",
+      "ok": true
+    },
+    {
+      "name": "1280/front: actual transformed SVG column top goes toward front-left/back-right",
+      "ok": true,
+      "detail": {
+        "x": -38.49227523803711,
+        "y": -37.3842658996582
+      }
+    },
+    {
+      "name": "1280/front: inset visible and within viewport width",
+      "ok": true,
+      "detail": {
+        "x": 0,
+        "y": 213,
+        "width": 1192,
+        "height": 84
+      }
+    },
+    {
+      "name": "1280/upright: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "name": "1280/upright: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1280/upright: enlarged diagram derives from actual column angle",
+      "ok": true,
+      "detail": {
+        "frontMicroradians": "0",
+        "displayAngleDegrees": "0",
+        "rangeExceeded": "false"
+      }
+    },
+    {
+      "name": "1280/upright: fixed 2000x diagram angle matches actual column",
+      "ok": true,
+      "detail": {
+        "display": 0,
+        "physical": 0
+      }
+    },
+    {
+      "name": "1280/upright: diagram and physical directions agree",
+      "ok": true
+    },
+    {
+      "name": "1280/upright: actual transformed SVG column top goes toward front-left/back-right",
+      "ok": true,
+      "detail": {
+        "x": 0,
+        "y": -53.65853691101074
+      }
+    },
+    {
+      "name": "1280/upright: inset visible and within viewport width",
+      "ok": true,
+      "detail": {
+        "x": 0,
+        "y": 213,
+        "width": 1192,
+        "height": 84
+      }
+    },
+    {
+      "name": "1280/back: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": -0.0003999999786666797,
+        "expected": -0.00039999997866666876
+      }
+    },
+    {
+      "name": "1280/back: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        1.734723475976807e-12
+      ]
+    },
+    {
+      "name": "1280/back: enlarged diagram derives from actual column angle",
+      "ok": true,
+      "detail": {
+        "frontMicroradians": "-399.9999786666687",
+        "displayAngleDegrees": "-45.83662116584617",
+        "rangeExceeded": "false"
+      }
+    },
+    {
+      "name": "1280/back: fixed 2000x diagram angle matches actual column",
+      "ok": true,
+      "detail": {
+        "display": -45.83662116584617,
+        "physical": -0.0003999999786666797
+      }
+    },
+    {
+      "name": "1280/back: diagram and physical directions agree",
+      "ok": true
+    },
+    {
+      "name": "1280/back: actual transformed SVG column top goes toward front-left/back-right",
+      "ok": true,
+      "detail": {
+        "x": 38.492279052734375,
+        "y": -37.3842658996582
+      }
+    },
+    {
+      "name": "1280/back: inset visible and within viewport width",
+      "ok": true,
+      "detail": {
+        "x": 0,
+        "y": 213,
+        "width": 1192,
+        "height": 84
+      }
+    },
+    {
+      "name": "1280: forward/upright/back mesh signs",
+      "ok": true
+    },
+    {
+      "name": "390/front: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": 0.0003999999786666797,
+        "expected": 0.00039999997866666876
+      }
+    },
+    {
+      "name": "390/front: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        1.734723475976807e-12
+      ]
+    },
+    {
+      "name": "390/front: enlarged diagram derives from actual column angle",
+      "ok": true,
+      "detail": {
+        "frontMicroradians": "399.9999786666687",
+        "displayAngleDegrees": "45.83662116584617",
+        "rangeExceeded": "false"
+      }
+    },
+    {
+      "name": "390/front: fixed 2000x diagram angle matches actual column",
+      "ok": true,
+      "detail": {
+        "display": 45.83662116584617,
+        "physical": 0.0003999999786666797
+      }
+    },
+    {
+      "name": "390/front: diagram and physical directions agree",
+      "ok": true
+    },
+    {
+      "name": "390/front: actual transformed SVG column top goes toward front-left/back-right",
+      "ok": true,
+      "detail": {
+        "x": -38.49227523803711,
+        "y": -37.3842658996582
+      }
+    },
+    {
+      "name": "390/front: inset visible and within viewport width",
+      "ok": true,
+      "detail": {
+        "x": 0,
+        "y": 184,
+        "width": 302,
+        "height": 84
+      }
+    },
+    {
+      "name": "390/upright: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "name": "390/upright: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "390/upright: enlarged diagram derives from actual column angle",
+      "ok": true,
+      "detail": {
+        "frontMicroradians": "0",
+        "displayAngleDegrees": "0",
+        "rangeExceeded": "false"
+      }
+    },
+    {
+      "name": "390/upright: fixed 2000x diagram angle matches actual column",
+      "ok": true,
+      "detail": {
+        "display": 0,
+        "physical": 0
+      }
+    },
+    {
+      "name": "390/upright: diagram and physical directions agree",
+      "ok": true
+    },
+    {
+      "name": "390/upright: actual transformed SVG column top goes toward front-left/back-right",
+      "ok": true,
+      "detail": {
+        "x": 0,
+        "y": -53.65853691101074
+      }
+    },
+    {
+      "name": "390/upright: inset visible and within viewport width",
+      "ok": true,
+      "detail": {
+        "x": 0,
+        "y": 184,
+        "width": 302,
+        "height": 84
+      }
+    },
+    {
+      "name": "390/back: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": -0.0003999999786666797,
+        "expected": -0.00039999997866666876
+      }
+    },
+    {
+      "name": "390/back: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        1.734723475976807e-12
+      ]
+    },
+    {
+      "name": "390/back: enlarged diagram derives from actual column angle",
+      "ok": true,
+      "detail": {
+        "frontMicroradians": "-399.9999786666687",
+        "displayAngleDegrees": "-45.83662116584617",
+        "rangeExceeded": "false"
+      }
+    },
+    {
+      "name": "390/back: fixed 2000x diagram angle matches actual column",
+      "ok": true,
+      "detail": {
+        "display": -45.83662116584617,
+        "physical": -0.0003999999786666797
+      }
+    },
+    {
+      "name": "390/back: diagram and physical directions agree",
+      "ok": true
+    },
+    {
+      "name": "390/back: actual transformed SVG column top goes toward front-left/back-right",
+      "ok": true,
+      "detail": {
+        "x": 38.492279052734375,
+        "y": -37.3842658996582
+      }
+    },
+    {
+      "name": "390/back: inset visible and within viewport width",
+      "ok": true,
+      "detail": {
+        "x": 0,
+        "y": 184,
+        "width": 302,
+        "height": 84
+      }
+    },
+    {
+      "name": "390: forward/upright/back mesh signs",
+      "ok": true
+    },
+    {
+      "name": "coarse: real support button changes A by requested amount",
+      "ok": true
+    },
+    {
+      "name": "coarse: actual column moves",
+      "ok": true
+    },
+    {
+      "name": "coarse: enlarged diagram updates immediately",
+      "ok": true
+    },
+    {
+      "name": "fine: real support button changes A by requested amount",
+      "ok": true
+    },
+    {
+      "name": "fine: actual column moves",
+      "ok": true
+    },
+    {
+      "name": "fine: enlarged diagram updates immediately",
+      "ok": true
+    },
+    {
+      "name": "X: fixed physical column unchanged by linear feed",
+      "ok": true
+    },
+    {
+      "name": "X: enlarged fixed-column diagram unchanged by linear feed",
+      "ok": true
+    },
+    {
+      "name": "Y: fixed physical column unchanged by linear feed",
+      "ok": true
+    },
+    {
+      "name": "Y: enlarged fixed-column diagram unchanged by linear feed",
+      "ok": true
+    },
+    {
+      "name": "Z: fixed physical column unchanged by linear feed",
+      "ok": true
+    },
+    {
+      "name": "Z: enlarged fixed-column diagram unchanged by linear feed",
+      "ok": true
+    },
+    {
+      "name": "camera: display action preserves finite measurements",
+      "ok": true
+    },
+    {
+      "name": "zoom: display action preserves finite measurements",
+      "ok": true
+    },
+    {
+      "name": "labels: display action preserves finite measurements",
+      "ok": true
+    },
+    {
+      "name": "emphasis: display action preserves finite measurements",
+      "ok": true
+    },
+    {
+      "name": "saved record remains accepted",
+      "ok": true
+    },
+    {
+      "name": "save/restore preserves public record",
+      "ok": true
+    },
+    {
+      "name": "save/restore preserves readings and column",
+      "ok": true
+    },
+    {
+      "name": "save/restore reproduces enlarged column diagram",
+      "ok": true
+    },
+    {
+      "name": "320x568: enlarged diagram and physical canvas do not overlap",
+      "ok": true,
+      "detail": {
+        "scene": {
+          "x": 0,
+          "y": 230,
+          "width": 232,
+          "height": 121,
+          "bottom": 351,
+          "right": 232
+        },
+        "columnLeanInset": {
+          "x": 0,
+          "y": 176,
+          "width": 232,
+          "height": 54,
+          "bottom": 230,
+          "right": 232
+        },
+        "raiseSupport": {
+          "x": 165,
+          "y": 520,
+          "width": 147,
+          "height": 44,
+          "bottom": 564,
+          "right": 312
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 520,
+          "width": 147,
+          "height": 44,
+          "bottom": 564,
+          "right": 155
+        }
+      }
+    },
+    {
+      "name": "320x568: physical canvas retains usable height",
+      "ok": true,
+      "detail": {
+        "x": 0,
+        "y": 230,
+        "width": 232,
+        "height": 121,
+        "bottom": 351,
+        "right": 232
+      }
+    },
+    {
+      "name": "320x568: both support buttons stay onscreen",
+      "ok": true,
+      "detail": {
+        "scene": {
+          "x": 0,
+          "y": 230,
+          "width": 232,
+          "height": 121,
+          "bottom": 351,
+          "right": 232
+        },
+        "columnLeanInset": {
+          "x": 0,
+          "y": 176,
+          "width": 232,
+          "height": 54,
+          "bottom": 230,
+          "right": 232
+        },
+        "raiseSupport": {
+          "x": 165,
+          "y": 520,
+          "width": 147,
+          "height": 44,
+          "bottom": 564,
+          "right": 312
+        },
+        "lowerSupport": {
+          "x": 8,
+          "y": 520,
+          "width": 147,
+          "height": 44,
+          "bottom": 564,
+          "right": 155
+        }
+      }
+    },
+    {
+      "name": "320x568: entire support selection button remains reachable",
+      "ok": true,
+      "detail": [
+        {
+          "text": "A",
+          "height": 44,
+          "bottom": 517,
+          "reachable": true
+        },
+        {
+          "text": "B",
+          "height": 44,
+          "bottom": 517,
+          "reachable": true
+        },
+        {
+          "text": "C",
+          "height": 44,
+          "bottom": 517,
+          "reachable": true
+        },
+        {
+          "text": "D",
+          "height": 44,
+          "bottom": 517,
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "320x480: entire support selection button remains reachable",
+      "ok": true,
+      "detail": [
+        {
+          "text": "A",
+          "height": 44,
+          "bottom": 429,
+          "reachable": true
+        },
+        {
+          "text": "B",
+          "height": 44,
+          "bottom": 429,
+          "reachable": true
+        },
+        {
+          "text": "C",
+          "height": 44,
+          "bottom": 429,
+          "reachable": true
+        },
+        {
+          "text": "D",
+          "height": 44,
+          "bottom": 429,
+          "reachable": true
+        }
+      ]
+    },
+    {
+      "name": "extreme dimension: clipped enlarged diagram is explicitly labelled",
+      "ok": true,
+      "detail": {
+        "frontMicroradians": "1999.9973333397334",
+        "displayAngleDegrees": "65",
+        "rangeExceeded": "true"
+      }
+    },
+    {
+      "name": "horizontal: compact-only diagram takes no space",
+      "ok": true
+    },
+    {
+      "name": "travel: compact-only diagram takes no space",
+      "ok": true
+    },
+    {
+      "name": "gate: compact-only diagram takes no space",
+      "ok": true
+    },
+    {
+      "name": "gantry: compact-only diagram takes no space",
+      "ok": true
+    },
+    {
+      "name": "five: compact-only diagram takes no space",
+      "ok": true
+    },
+    {
+      "name": "lathe: compact-only diagram takes no space",
+      "ok": true
+    },
+    {
+      "name": "before/after 0: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "before/after 1: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "before/after 2: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "before/after 3: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "before/after 4: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "before/after 5: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "before/after 6: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "before/after 7: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "before/after 8: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "before/after 9: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "before/after 10: support state, mesh, measurements and saved record unchanged",
+      "ok": true
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "states": [
+    {
+      "name": "front",
+      "width": 1280,
+      "heights": [
+        -0.43200000000000005,
+        -0.43200000000000005,
+        0.43200000000000005,
+        0.43200000000000005
+      ],
+      "column": [
+        [
+          0.425,
+          0.6701771991858241,
+          0.44299596456032425
+        ],
+        [
+          0.425,
+          3.2701769911858487,
+          0.4419559646435242
+        ]
+      ],
+      "columnFront": 0.0003999999786666797,
+      "readings": [
+        0,
+        0,
+        1.734723475976807e-12
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          -0.43200000000000005,
+          -0.43200000000000005,
+          0.43200000000000005,
+          0.43200000000000005
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": {
+        "hidden": false,
+        "transform": "rotate(-45.83662116584617 70 65)",
+        "shapeTop": {
+          "x": -38.49227523803711,
+          "y": -37.3842658996582
+        },
+        "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は前倒れ 400.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(-45.83662116584617 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+        "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は前倒れ 400.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(-45.83662116584617 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">前倒れ 400.0 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+        "text": "手前奥コラムの前後倒れ前倒れ 400.0 µrad側面・角度×2000床基準／YZ指示とは別",
+        "data": {
+          "frontMicroradians": "399.9999786666687",
+          "displayAngleDegrees": "45.83662116584617",
+          "rangeExceeded": "false"
+        },
+        "bounds": {
+          "x": 0,
+          "y": 213,
+          "width": 1192,
+          "height": 84
+        }
+      }
+    },
+    {
+      "name": "upright",
+      "width": 1280,
+      "heights": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "column": [
+        [
+          0.425,
+          0.6699999999999999,
+          0.443
+        ],
+        [
+          0.425,
+          3.27,
+          0.443
+        ]
+      ],
+      "columnFront": 0,
+      "readings": [
+        0,
+        0,
+        0
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": {
+        "hidden": false,
+        "transform": "rotate(0 70 65)",
+        "shapeTop": {
+          "x": 0,
+          "y": -53.65853691101074
+        },
+        "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は鉛直 0.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+        "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は鉛直 0.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">鉛直 0.0 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+        "text": "手前奥コラムの前後倒れ鉛直 0.0 µrad側面・角度×2000床基準／YZ指示とは別",
+        "data": {
+          "frontMicroradians": "0",
+          "displayAngleDegrees": "0",
+          "rangeExceeded": "false"
+        },
+        "bounds": {
+          "x": 0,
+          "y": 213,
+          "width": 1192,
+          "height": 84
+        }
+      }
+    },
+    {
+      "name": "back",
+      "width": 1280,
+      "heights": [
+        0.43200000000000005,
+        0.43200000000000005,
+        -0.43200000000000005,
+        -0.43200000000000005
+      ],
+      "column": [
+        [
+          0.425,
+          0.669822799214176,
+          0.4430039645596842
+        ],
+        [
+          0.425,
+          3.2698225912142007,
+          0.44404396447648425
+        ]
+      ],
+      "columnFront": -0.0003999999786666797,
+      "readings": [
+        0,
+        0,
+        1.734723475976807e-12
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0.43200000000000005,
+          0.43200000000000005,
+          -0.43200000000000005,
+          -0.43200000000000005
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": {
+        "hidden": false,
+        "transform": "rotate(45.83662116584617 70 65)",
+        "shapeTop": {
+          "x": 38.492279052734375,
+          "y": -37.3842658996582
+        },
+        "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 400.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(45.83662116584617 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+        "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 400.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(45.83662116584617 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">後ろ倒れ 400.0 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+        "text": "手前奥コラムの前後倒れ後ろ倒れ 400.0 µrad側面・角度×2000床基準／YZ指示とは別",
+        "data": {
+          "frontMicroradians": "-399.9999786666687",
+          "displayAngleDegrees": "-45.83662116584617",
+          "rangeExceeded": "false"
+        },
+        "bounds": {
+          "x": 0,
+          "y": 213,
+          "width": 1192,
+          "height": 84
+        }
+      }
+    },
+    {
+      "name": "front",
+      "width": 390,
+      "heights": [
+        -0.43200000000000005,
+        -0.43200000000000005,
+        0.43200000000000005,
+        0.43200000000000005
+      ],
+      "column": [
+        [
+          0.425,
+          0.6701771991858241,
+          0.44299596456032425
+        ],
+        [
+          0.425,
+          3.2701769911858487,
+          0.4419559646435242
+        ]
+      ],
+      "columnFront": 0.0003999999786666797,
+      "readings": [
+        0,
+        0,
+        1.734723475976807e-12
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          -0.43200000000000005,
+          -0.43200000000000005,
+          0.43200000000000005,
+          0.43200000000000005
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": {
+        "hidden": false,
+        "transform": "rotate(-45.83662116584617 70 65)",
+        "shapeTop": {
+          "x": -38.49227523803711,
+          "y": -37.3842658996582
+        },
+        "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は前倒れ 400.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(-45.83662116584617 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+        "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は前倒れ 400.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(-45.83662116584617 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">前倒れ 400.0 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+        "text": "手前奥コラムの前後倒れ前倒れ 400.0 µrad側面・角度×2000床基準／YZ指示とは別",
+        "data": {
+          "frontMicroradians": "399.9999786666687",
+          "displayAngleDegrees": "45.83662116584617",
+          "rangeExceeded": "false"
+        },
+        "bounds": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 84
+        }
+      }
+    },
+    {
+      "name": "upright",
+      "width": 390,
+      "heights": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "column": [
+        [
+          0.425,
+          0.6699999999999999,
+          0.443
+        ],
+        [
+          0.425,
+          3.27,
+          0.443
+        ]
+      ],
+      "columnFront": 0,
+      "readings": [
+        0,
+        0,
+        0
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": {
+        "hidden": false,
+        "transform": "rotate(0 70 65)",
+        "shapeTop": {
+          "x": 0,
+          "y": -53.65853691101074
+        },
+        "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は鉛直 0.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+        "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は鉛直 0.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">鉛直 0.0 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+        "text": "手前奥コラムの前後倒れ鉛直 0.0 µrad側面・角度×2000床基準／YZ指示とは別",
+        "data": {
+          "frontMicroradians": "0",
+          "displayAngleDegrees": "0",
+          "rangeExceeded": "false"
+        },
+        "bounds": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 84
+        }
+      }
+    },
+    {
+      "name": "back",
+      "width": 390,
+      "heights": [
+        0.43200000000000005,
+        0.43200000000000005,
+        -0.43200000000000005,
+        -0.43200000000000005
+      ],
+      "column": [
+        [
+          0.425,
+          0.669822799214176,
+          0.4430039645596842
+        ],
+        [
+          0.425,
+          3.2698225912142007,
+          0.44404396447648425
+        ]
+      ],
+      "columnFront": -0.0003999999786666797,
+      "readings": [
+        0,
+        0,
+        1.734723475976807e-12
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0.43200000000000005,
+          0.43200000000000005,
+          -0.43200000000000005,
+          -0.43200000000000005
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": {
+        "hidden": false,
+        "transform": "rotate(45.83662116584617 70 65)",
+        "shapeTop": {
+          "x": 38.492279052734375,
+          "y": -37.3842658996582
+        },
+        "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 400.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(45.83662116584617 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+        "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 400.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(45.83662116584617 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">後ろ倒れ 400.0 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+        "text": "手前奥コラムの前後倒れ後ろ倒れ 400.0 µrad側面・角度×2000床基準／YZ指示とは別",
+        "data": {
+          "frontMicroradians": "-399.9999786666687",
+          "displayAngleDegrees": "-45.83662116584617",
+          "rangeExceeded": "false"
+        },
+        "bounds": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 84
+        }
+      }
+    },
+    {
+      "name": "support-A",
+      "a": -0.5,
+      "heights": [
+        -0.5,
+        0,
+        0,
+        0
+      ],
+      "column": [
+        [
+          0.42499714490460594,
+          0.6700574209216746,
+          0.44299952756599253
+        ],
+        [
+          0.4242612074151613,
+          3.2700573139475715,
+          0.4428784435529934
+        ]
+      ],
+      "columnFront": 0.00004657077611287718,
+      "readings": [
+        16.306757544619703,
+        -39.84375003584888,
+        16.191260673519697
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.036,
+            0.388,
+            0.389,
+            -0.036
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          -0.5,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": {
+        "hidden": false,
+        "transform": "rotate(-5.336617839833522 70 65)",
+        "shapeTop": {
+          "x": -4.9906158447265625,
+          "y": -53.42595195770264
+        },
+        "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は前倒れ 46.6マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(-5.336617839833522 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+        "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は前倒れ 46.6マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(-5.336617839833522 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">前倒れ 46.6 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+        "text": "手前奥コラムの前後倒れ前倒れ 46.6 µrad側面・角度×2000床基準／YZ指示とは別",
+        "data": {
+          "frontMicroradians": "46.570776112881184",
+          "displayAngleDegrees": "5.336617839833522",
+          "rangeExceeded": "false"
+        },
+        "bounds": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 84
+        }
+      }
+    },
+    {
+      "name": "support-A",
+      "a": 0,
+      "heights": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "column": [
+        [
+          0.4249974845949448,
+          0.6701232403240027,
+          0.44300050280432457
+        ],
+        [
+          0.4243474846017157,
+          3.2701231558275774,
+          0.44313043130505736
+        ]
+      ],
+      "columnFront": -0.00004997250186428193,
+      "readings": [
+        32.999999933450844,
+        -74.99999921875035,
+        14.999999993750915
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.036,
+            0.388,
+            0.389,
+            -0.036
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": {
+        "hidden": false,
+        "transform": "rotate(5.726426897065978 70 65)",
+        "shapeTop": {
+          "x": 5.353981018066406,
+          "y": -53.39076232910156
+        },
+        "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 50.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(5.726426897065978 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+        "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 50.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(5.726426897065978 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">後ろ倒れ 50.0 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+        "text": "手前奥コラムの前後倒れ後ろ倒れ 50.0 µrad側面・角度×2000床基準／YZ指示とは別",
+        "data": {
+          "frontMicroradians": "-49.97250186428187",
+          "displayAngleDegrees": "-5.726426897065978",
+          "rangeExceeded": "false"
+        },
+        "bounds": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 84
+        }
+      }
+    },
+    {
+      "name": "support-A",
+      "a": 0.5,
+      "heights": [
+        0.5,
+        0,
+        0,
+        0
+      ],
+      "column": [
+        [
+          0.42499781410917625,
+          0.6701890596209166,
+          0.44300148222753943
+        ],
+        [
+          0.4244337516094227,
+          3.2701889705281166,
+          0.4433824232276819
+        ]
+      ],
+      "columnFront": -0.00014651577325772887,
+      "readings": [
+        49.69350968112886,
+        -110.15624743913877,
+        13.812651560767344
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.036,
+            0.388,
+            0.389,
+            -0.036
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0.5,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": {
+        "hidden": false,
+        "transform": "rotate(16.78947087952755 70 65)",
+        "shapeTop": {
+          "x": 15.499580383300781,
+          "y": -51.37121295928955
+        },
+        "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 146.5マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(16.78947087952755 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+        "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 146.5マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(16.78947087952755 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">後ろ倒れ 146.5 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+        "text": "手前奥コラムの前後倒れ後ろ倒れ 146.5 µrad側面・角度×2000床基準／YZ指示とは別",
+        "data": {
+          "frontMicroradians": "-146.51577325773195",
+          "displayAngleDegrees": "-16.78947087952755",
+          "rangeExceeded": "false"
+        },
+        "bounds": {
+          "x": 0,
+          "y": 184,
+          "width": 302,
+          "height": 84
+        }
+      }
+    },
+    {
+      "name": "coarse",
+      "step": 0.01,
+      "before": {
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "column": [
+          [
+            0.425,
+            0.6699999999999999,
+            0.443
+          ],
+          [
+            0.425,
+            3.27,
+            0.443
+          ]
+        ],
+        "columnFront": 0,
+        "readings": [
+          0,
+          0,
+          0
+        ],
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": {
+          "hidden": false,
+          "transform": "rotate(0 70 65)",
+          "shapeTop": {
+            "x": 0,
+            "y": -53.65853691101074
+          },
+          "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は鉛直 0.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+          "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は鉛直 0.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">鉛直 0.0 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+          "text": "手前奥コラムの前後倒れ鉛直 0.0 µrad側面・角度×2000床基準／YZ指示とは別",
+          "data": {
+            "frontMicroradians": "0",
+            "displayAngleDegrees": "0",
+            "rangeExceeded": "false"
+          },
+          "bounds": {
+            "x": 0,
+            "y": 184,
+            "width": 302,
+            "height": 84
+          }
+        }
+      },
+      "after": {
+        "heights": [
+          0.01,
+          0,
+          0,
+          0
+        ],
+        "column": [
+          [
+            0.4250000066085417,
+            0.670001316386262,
+            0.44300001930949234
+          ],
+          [
+            0.4250017253585417,
+            3.2700013163808475,
+            0.44300503955988396
+          ]
+        ],
+        "columnFront": -0.000001930865535239535,
+        "readings": [
+          0.3338675748417591,
+          -0.7031249999994021,
+          -0.023946118065873434
+        ],
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0.01,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": {
+          "hidden": false,
+          "transform": "rotate(0.22126089195268428 70 65)",
+          "shapeTop": {
+            "x": 0.20721435546875,
+            "y": -53.65813732147217
+          },
+          "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 1.9マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0.22126089195268428 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+          "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 1.9マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0.22126089195268428 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">後ろ倒れ 1.9 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+          "text": "手前奥コラムの前後倒れ後ろ倒れ 1.9 µrad側面・角度×2000床基準／YZ指示とは別",
+          "data": {
+            "frontMicroradians": "-1.9308655352368829",
+            "displayAngleDegrees": "-0.22126089195268428",
+            "rangeExceeded": "false"
+          },
+          "bounds": {
+            "x": 0,
+            "y": 184,
+            "width": 302,
+            "height": 84
+          }
+        }
+      }
+    },
+    {
+      "name": "fine",
+      "step": 0.001,
+      "before": {
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "column": [
+          [
+            0.425,
+            0.6699999999999999,
+            0.443
+          ],
+          [
+            0.425,
+            3.27,
+            0.443
+          ]
+        ],
+        "columnFront": 0,
+        "readings": [
+          0,
+          0,
+          0
+        ],
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.001,
+          "exaggerate": true
+        },
+        "inset": {
+          "hidden": false,
+          "transform": "rotate(0 70 65)",
+          "shapeTop": {
+            "x": 0,
+            "y": -53.65853691101074
+          },
+          "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は鉛直 0.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+          "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は鉛直 0.0マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">鉛直 0.0 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+          "text": "手前奥コラムの前後倒れ鉛直 0.0 µrad側面・角度×2000床基準／YZ指示とは別",
+          "data": {
+            "frontMicroradians": "0",
+            "displayAngleDegrees": "0",
+            "rangeExceeded": "false"
+          },
+          "bounds": {
+            "x": 0,
+            "y": 184,
+            "width": 302,
+            "height": 84
+          }
+        }
+      },
+      "after": {
+        "heights": [
+          0.001,
+          0,
+          0,
+          0
+        ],
+        "column": [
+          [
+            0.4250000006610374,
+            0.670000131638628,
+            0.44300000193087397
+          ],
+          [
+            0.4250001725360374,
+            3.270000131638574,
+            0.4430005039559131
+          ]
+        ],
+        "columnFront": -1.9308655351952287e-7,
+        "readings": [
+          0.033386752673267295,
+          -0.07031250000288924,
+          -0.0023946822320236594
+        ],
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0.001,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.001,
+          "exaggerate": true
+        },
+        "inset": {
+          "hidden": false,
+          "transform": "rotate(0.02212608919541947 70 65)",
+          "shapeTop": {
+            "x": 0.020721435546875,
+            "y": -53.65853309631348
+          },
+          "svg": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 0.2マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0.02212608919541947 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg>",
+          "html": "<svg id=\"columnLeanInsetDiagram\" viewBox=\"0 0 140 82\" role=\"img\" aria-label=\"側面。手前が左、奥が右。破線は床の鉛直。現在は後ろ倒れ 0.2マイクロラジアン。角度を2000倍に拡大。YZのダイヤル指示とは別です。\"><path class=\"column-lean-floor\" d=\"M12 65H128\"></path><path class=\"column-lean-plumb\" d=\"M70 6V65\"></path><rect id=\"columnLeanInsetColumn\" class=\"column-lean-column\" x=\"65\" y=\"10\" width=\"10\" height=\"55\" transform=\"rotate(0.02212608919541947 70 65)\"></rect><text x=\"12\" y=\"79\">手前</text><text x=\"128\" y=\"79\" text-anchor=\"end\">奥</text></svg><div class=\"column-lean-inset-copy\"><strong>コラムの前後倒れ</strong><span id=\"columnLeanInsetValue\">後ろ倒れ 0.2 µrad</span><small id=\"columnLeanInsetScale\">側面・角度×2000</small><small>床基準／YZ指示とは別</small></div>",
+          "text": "手前奥コラムの前後倒れ後ろ倒れ 0.2 µrad側面・角度×2000床基準／YZ指示とは別",
+          "data": {
+            "frontMicroradians": "-0.1930865535250064",
+            "displayAngleDegrees": "-0.02212608919541947",
+            "rangeExceeded": "false"
+          },
+          "bounds": {
+            "x": 0,
+            "y": 184,
+            "width": 302,
+            "height": 84
+          }
+        }
+      }
+    }
+  ],
+  "errors": []
+}

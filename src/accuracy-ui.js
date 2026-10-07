@@ -314,6 +314,24 @@ function updateFineQualitative(g,initial){
   row.textContent=pair.key+'：'+c.text+(c.direction==='unchanged'?'（軸間の関係はほぼ不変）':'')+(c.range?' · '+c.range:'');$('finePrecisionSummary').append(row);
  }
 }
+// This isolated side view enlarges the physical column's angle to gravity.
+// It never feeds back into machine geometry, measuring paths or support response.
+// Its fixed gain also does not depend on the current axis position or camera.
+function updateColumnLeanInset(g){
+ const inset=$('columnLeanInset');inset.hidden=current.kind!=='compact';
+ if(inset.hidden)return;
+ const front=g.bodyLean.front,gain=2000,limit=65,raw=front/1e6*gain*180/Math.PI;
+ const angle=Math.max(-limit,Math.min(limit,raw)),outside=Math.abs(raw)>limit;
+ inset.setAttribute('data-front-microradians',String(front));
+ inset.setAttribute('data-display-angle-degrees',String(angle));
+ inset.setAttribute('data-range-exceeded',String(outside));
+ // Positive front lean moves the top to the left in this fixed side view.
+ $('columnLeanInsetColumn').setAttribute('transform',`rotate(${-angle} 70 65)`);
+ const magnitude=Math.abs(front),direction=magnitude<.05?'鉛直':front>0?'前倒れ':'後ろ倒れ';
+ $('columnLeanInsetValue').textContent=direction+' '+magnitude.toFixed(1)+' µrad';
+ $('columnLeanInsetScale').textContent=outside?'角度×2000・図の範囲外':'側面・角度×2000';
+ $('columnLeanInsetDiagram').setAttribute('aria-label','側面。手前が左、奥が右。破線は床の鉛直。現在は'+direction+' '+magnitude.toFixed(1)+'マイクロラジアン。角度を2000倍に拡大。'+(outside?'図の範囲外のため輪郭は表示端で止め、実際の角度は数値で示します。':'')+'YZのダイヤル指示とは別です。');
+}
 function updateAccuracy(){
  if(!levelSolution||!levelConfig)return;
  const rangeKey=JSON.stringify([current.id,current.kind,supportHeights,levelConfig,machineProfile]);
@@ -322,8 +340,9 @@ function updateAccuracy(){
  accuracyKey=key;
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel();
+ updateColumnLeanInset(g);
  $('exaggerateLabel').textContent=current.kind==='compact'?'直角図のずれを強調':'傾き・姿勢差を強調';
- $('modelSemantics').textContent=current.kind==='compact'?'模型の姿勢は実寸／微小差は直角図で確認':g.portal?'柱・梁＝支持姿勢／ラム・主軸＝固有差込み':'水準器＝平均／模型＝局所＋固有';
+ $('modelSemantics').textContent=current.kind==='compact'?'模型＝実寸／前後倒れ＝側面拡大':g.portal?'柱・梁＝支持姿勢／ラム・主軸＝固有差込み':'水準器＝平均／模型＝局所＋固有';
  // The comparison is pointwise: both states use the current axis position,
  // dimensions, layout and evaluation length. The reference-search aggregate
  // is deliberately not used for this initial/current comparison.

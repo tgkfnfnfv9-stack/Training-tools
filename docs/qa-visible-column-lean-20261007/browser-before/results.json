@@ -1,0 +1,1370 @@
+{
+  "input": "/workspace/Training-tools/docs/qa-visible-column-lean-20261007/browser-before/index.html",
+  "phase": "before",
+  "sha256": "2443620c9a497f7af5adad10922a1f66bf6b828b67065dbe2fcac1228a5acfbc",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "1280/front: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": 0.0003999999786666797,
+        "expected": 0.00039999997866666876
+      }
+    },
+    {
+      "name": "1280/front: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        1.734723475976807e-12
+      ]
+    },
+    {
+      "name": "1280/upright: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "name": "1280/upright: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "1280/back: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": -0.0003999999786666797,
+        "expected": -0.00039999997866666876
+      }
+    },
+    {
+      "name": "1280/back: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        1.734723475976807e-12
+      ]
+    },
+    {
+      "name": "1280: forward/upright/back mesh signs",
+      "ok": true
+    },
+    {
+      "name": "390/front: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": 0.0003999999786666797,
+        "expected": 0.00039999997866666876
+      }
+    },
+    {
+      "name": "390/front: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        1.734723475976807e-12
+      ]
+    },
+    {
+      "name": "390/upright: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": 0,
+        "expected": 0
+      }
+    },
+    {
+      "name": "390/upright: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "390/back: actual column agrees with independent plane normal",
+      "ok": true,
+      "detail": {
+        "actual": -0.0003999999786666797,
+        "expected": -0.00039999997866666876
+      }
+    },
+    {
+      "name": "390/back: common rigid tilt keeps all squareness readings zero",
+      "ok": true,
+      "detail": [
+        0,
+        0,
+        1.734723475976807e-12
+      ]
+    },
+    {
+      "name": "390: forward/upright/back mesh signs",
+      "ok": true
+    },
+    {
+      "name": "coarse: real support button changes A by requested amount",
+      "ok": true
+    },
+    {
+      "name": "coarse: actual column moves",
+      "ok": true
+    },
+    {
+      "name": "fine: real support button changes A by requested amount",
+      "ok": true
+    },
+    {
+      "name": "fine: actual column moves",
+      "ok": true
+    },
+    {
+      "name": "X: fixed physical column unchanged by linear feed",
+      "ok": true
+    },
+    {
+      "name": "Y: fixed physical column unchanged by linear feed",
+      "ok": true
+    },
+    {
+      "name": "Z: fixed physical column unchanged by linear feed",
+      "ok": true
+    },
+    {
+      "name": "camera: display action preserves finite measurements",
+      "ok": true
+    },
+    {
+      "name": "zoom: display action preserves finite measurements",
+      "ok": true
+    },
+    {
+      "name": "labels: display action preserves finite measurements",
+      "ok": true
+    },
+    {
+      "name": "emphasis: display action preserves finite measurements",
+      "ok": true
+    },
+    {
+      "name": "saved record remains accepted",
+      "ok": true
+    },
+    {
+      "name": "save/restore preserves public record",
+      "ok": true
+    },
+    {
+      "name": "save/restore preserves readings and column",
+      "ok": true
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "states": [
+    {
+      "name": "front",
+      "width": 1280,
+      "heights": [
+        -0.43200000000000005,
+        -0.43200000000000005,
+        0.43200000000000005,
+        0.43200000000000005
+      ],
+      "column": [
+        [
+          0.425,
+          0.6701771991858241,
+          0.44299596456032425
+        ],
+        [
+          0.425,
+          3.2701769911858487,
+          0.4419559646435242
+        ]
+      ],
+      "columnFront": 0.0003999999786666797,
+      "readings": [
+        0,
+        0,
+        1.734723475976807e-12
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          -0.43200000000000005,
+          -0.43200000000000005,
+          0.43200000000000005,
+          0.43200000000000005
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": null
+    },
+    {
+      "name": "upright",
+      "width": 1280,
+      "heights": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "column": [
+        [
+          0.425,
+          0.6699999999999999,
+          0.443
+        ],
+        [
+          0.425,
+          3.27,
+          0.443
+        ]
+      ],
+      "columnFront": 0,
+      "readings": [
+        0,
+        0,
+        0
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": null
+    },
+    {
+      "name": "back",
+      "width": 1280,
+      "heights": [
+        0.43200000000000005,
+        0.43200000000000005,
+        -0.43200000000000005,
+        -0.43200000000000005
+      ],
+      "column": [
+        [
+          0.425,
+          0.669822799214176,
+          0.4430039645596842
+        ],
+        [
+          0.425,
+          3.2698225912142007,
+          0.44404396447648425
+        ]
+      ],
+      "columnFront": -0.0003999999786666797,
+      "readings": [
+        0,
+        0,
+        1.734723475976807e-12
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0.43200000000000005,
+          0.43200000000000005,
+          -0.43200000000000005,
+          -0.43200000000000005
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": null
+    },
+    {
+      "name": "front",
+      "width": 390,
+      "heights": [
+        -0.43200000000000005,
+        -0.43200000000000005,
+        0.43200000000000005,
+        0.43200000000000005
+      ],
+      "column": [
+        [
+          0.425,
+          0.6701771991858241,
+          0.44299596456032425
+        ],
+        [
+          0.425,
+          3.2701769911858487,
+          0.4419559646435242
+        ]
+      ],
+      "columnFront": 0.0003999999786666797,
+      "readings": [
+        0,
+        0,
+        1.734723475976807e-12
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          -0.43200000000000005,
+          -0.43200000000000005,
+          0.43200000000000005,
+          0.43200000000000005
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": null
+    },
+    {
+      "name": "upright",
+      "width": 390,
+      "heights": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "column": [
+        [
+          0.425,
+          0.6699999999999999,
+          0.443
+        ],
+        [
+          0.425,
+          3.27,
+          0.443
+        ]
+      ],
+      "columnFront": 0,
+      "readings": [
+        0,
+        0,
+        0
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": null
+    },
+    {
+      "name": "back",
+      "width": 390,
+      "heights": [
+        0.43200000000000005,
+        0.43200000000000005,
+        -0.43200000000000005,
+        -0.43200000000000005
+      ],
+      "column": [
+        [
+          0.425,
+          0.669822799214176,
+          0.4430039645596842
+        ],
+        [
+          0.425,
+          3.2698225912142007,
+          0.44404396447648425
+        ]
+      ],
+      "columnFront": -0.0003999999786666797,
+      "readings": [
+        0,
+        0,
+        1.734723475976807e-12
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0.43200000000000005,
+          0.43200000000000005,
+          -0.43200000000000005,
+          -0.43200000000000005
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": null
+    },
+    {
+      "name": "support-A",
+      "a": -0.5,
+      "heights": [
+        -0.5,
+        0,
+        0,
+        0
+      ],
+      "column": [
+        [
+          0.42499714490460594,
+          0.6700574209216746,
+          0.44299952756599253
+        ],
+        [
+          0.4242612074151613,
+          3.2700573139475715,
+          0.4428784435529934
+        ]
+      ],
+      "columnFront": 0.00004657077611287718,
+      "readings": [
+        16.306757544619703,
+        -39.84375003584888,
+        16.191260673519697
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.036,
+            0.388,
+            0.389,
+            -0.036
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          -0.5,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": null
+    },
+    {
+      "name": "support-A",
+      "a": 0,
+      "heights": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "column": [
+        [
+          0.4249974845949448,
+          0.6701232403240027,
+          0.44300050280432457
+        ],
+        [
+          0.4243474846017157,
+          3.2701231558275774,
+          0.44313043130505736
+        ]
+      ],
+      "columnFront": -0.00004997250186428193,
+      "readings": [
+        32.999999933450844,
+        -74.99999921875035,
+        14.999999993750915
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.036,
+            0.388,
+            0.389,
+            -0.036
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": null
+    },
+    {
+      "name": "support-A",
+      "a": 0.5,
+      "heights": [
+        0.5,
+        0,
+        0,
+        0
+      ],
+      "column": [
+        [
+          0.42499781410917625,
+          0.6701890596209166,
+          0.44300148222753943
+        ],
+        [
+          0.4244337516094227,
+          3.2701889705281166,
+          0.4433824232276819
+        ]
+      ],
+      "columnFront": -0.00014651577325772887,
+      "readings": [
+        49.69350968112886,
+        -110.15624743913877,
+        13.812651560767344
+      ],
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "squareness": {
+            "XY": {
+              "microns": 33
+            },
+            "XZ": {
+              "microns": 75
+            },
+            "YZ": {
+              "microns": -15
+            }
+          },
+          "guides": {},
+          "initialHeights": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.036,
+            0.388,
+            0.389,
+            -0.036
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0.5,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "inset": null
+    },
+    {
+      "name": "coarse",
+      "step": 0.01,
+      "before": {
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "column": [
+          [
+            0.425,
+            0.6699999999999999,
+            0.443
+          ],
+          [
+            0.425,
+            3.27,
+            0.443
+          ]
+        ],
+        "columnFront": 0,
+        "readings": [
+          0,
+          0,
+          0
+        ],
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": null
+      },
+      "after": {
+        "heights": [
+          0.01,
+          0,
+          0,
+          0
+        ],
+        "column": [
+          [
+            0.4250000066085417,
+            0.670001316386262,
+            0.44300001930949234
+          ],
+          [
+            0.4250017253585417,
+            3.2700013163808475,
+            0.44300503955988396
+          ]
+        ],
+        "columnFront": -0.000001930865535239535,
+        "readings": [
+          0.3338675748417591,
+          -0.7031249999994021,
+          -0.023946118065873434
+        ],
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0.01,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.01,
+          "exaggerate": true
+        },
+        "inset": null
+      }
+    },
+    {
+      "name": "fine",
+      "step": 0.001,
+      "before": {
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "column": [
+          [
+            0.425,
+            0.6699999999999999,
+            0.443
+          ],
+          [
+            0.425,
+            3.27,
+            0.443
+          ]
+        ],
+        "columnFront": 0,
+        "readings": [
+          0,
+          0,
+          0
+        ],
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.001,
+          "exaggerate": true
+        },
+        "inset": null
+      },
+      "after": {
+        "heights": [
+          0.001,
+          0,
+          0,
+          0
+        ],
+        "column": [
+          [
+            0.4250000006610374,
+            0.670000131638628,
+            0.44300000193087397
+          ],
+          [
+            0.4250001725360374,
+            3.270000131638574,
+            0.4430005039559131
+          ]
+        ],
+        "columnFront": -1.9308655351952287e-7,
+        "readings": [
+          0.033386752673267295,
+          -0.07031250000288924,
+          -0.0023946822320236594
+        ],
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0.001,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "step": 0.001,
+          "exaggerate": true
+        },
+        "inset": null
+      }
+    }
+  ],
+  "errors": []
+}
