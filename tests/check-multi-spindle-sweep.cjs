@@ -89,5 +89,5 @@ for(const [width,depth] of [[.9,3],[3,.8]])for(const A of [0,65])for(const C of 
  check(`five unequal scaling retains plane-based values ${width}/${depth}/${A}/${C}`,()=>vn(actual.cardinal.map(p=>p.readingMicrons),expected.readings,3e-7));
 }
 check('ellipse tests include both inside and outside contacts on one table',()=>assert.ok(partialFootprints>0));
-for(const kind of ['horizontal','lathe']){env.read(`openMachine(machines.find(m=>m.kind==='${kind}'));`);check(kind+' remains unsupported',()=>{assert.equal(env.json('spindleSweepGeometry()').valid,false);assert.equal(env.registry.spindleSweepPanel.hidden,true);});}
+for(const kind of ['horizontal','lathe']){env.read(`openMachine(machines.find(m=>m.kind==='${kind}'));`);check(kind+' remains unsupported for top-face sweep',()=>{assert.equal(env.json('spindleSweepGeometry()').valid,false);assert.equal(env.registry.spindleSweepPanel.hidden,kind==='lathe');if(kind==='horizontal'){assert.equal(env.registry.spindleSweepPanel.getAttribute('data-measurement'),'z-parallel');assert.equal(env.registry.sweepPositions.hidden,true);}});}
 if(failures.length){console.error(failures.join('\n'));process.exitCode=1;}else console.log(`PASS multi-machine spindle sweep independent physics: ${checks} checks`);

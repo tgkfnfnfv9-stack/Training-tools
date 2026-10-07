@@ -1,0 +1,65 @@
+{
+  "htmlSha256": "5f602fd71182c73ce8825d0e58d7251a5b41535c9c6f0877cda6a54c890b6bd0",
+  "sourceUnchanged": true,
+  "earlierSource": "8669804993184c79c6470c62756d158a90fa09219b791b6c5910bb81fdc982f8",
+  "earlierPassedSuites": [
+    {
+      "suite": "check-measurement-reference",
+      "exitCode": 0,
+      "output": "Reference plane geometry: 70 numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.\nSupport-grid crossing: piecewise integral and analytic pallet material-point oracle passed.\n"
+    },
+    {
+      "suite": "check-reference-zero",
+      "exitCode": 0,
+      "output": "Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.\n"
+    },
+    {
+      "suite": "check-coupled-yz-sweep-independent",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 2755,\n  \"cases\": 120,\n  \"maxContactErrorMicrons\": 5.684341886080802e-14,\n  \"maxXZCrossChangeMicrons\": 0.00003008130727266689,\n  \"coarse\": {\n    \"yz\": -0.11957290724576275,\n    \"sweep\": [\n      -0.4114297735146586,\n      -0.11973450255518614,\n      0.29169527095947956,\n      0\n    ]\n  },\n  \"scope\": \"independent virtual plane/probe coherence, not proof of real-machine elasticity\"\n}\n"
+    },
+    {
+      "suite": "check-page-redraw",
+      "exitCode": 0,
+      "output": "Page-entry redraw: 98 assertions across all 7 machines passed; explicit JSON round trips preserved.\n"
+    },
+    {
+      "suite": "check-settings-menu-ui",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 173,\n  \"frames\": 270,\n  \"finiteCanvasCoordinates\": 2526185,\n  \"variants\": 7,\n  \"displaySizes\": [\n    [\n      320,\n      480\n    ],\n    [\n      320,\n      568\n    ],\n    [\n      390,\n      844\n    ],\n    [\n      568,\n      320\n    ],\n    [\n      844,\n      390\n    ],\n    [\n      1024,\n      768\n    ],\n    [\n      1363,\n      936\n    ]\n  ]\n}\n"
+    },
+    {
+      "suite": "check-accuracy-render",
+      "exitCode": 0,
+      "output": "Accuracy Canvas: 305 rendered frames, 1448150 finite drawing operations passed (3 sizes, 7 machines, 2 extra modes).\n"
+    }
+  ],
+  "finalSuites": [
+    {
+      "suite": "check-spindle-sweep",
+      "exitCode": 0,
+      "output": "{\n  \"checks\": 323,\n  \"failures\": []\n}\n"
+    },
+    {
+      "suite": "check-multi-spindle-sweep",
+      "exitCode": 0,
+      "output": "PASS multi-machine spindle sweep independent physics: 152 checks\n"
+    },
+    {
+      "suite": "check-full-code-review",
+      "exitCode": 0,
+      "output": "Full code review: 158 integration checks passed.\n"
+    },
+    {
+      "suite": "check-horizontal-parallel-independent",
+      "exitCode": 0,
+      "output": "{\"passed\":true,\"assertions\":478,\"independent\":\"cross-product distance bisection, signed radial gap, rigid translation\"}\n"
+    },
+    {
+      "suite": "check-horizontal-parallel-machine",
+      "exitCode": 0,
+      "output": "{\"passed\":true,\"assertions\":553,\"scope\":\"ideal, known signed angles, rigid plane, saddle lever arm, physical rendered spindle, travel limits, display invariance\"}\n"
+    }
+  ],
+  "note": "最後の製品変更は移動端の開始位置を説明する1文。旧非対応期待とscript数期待を仕様に合わせ更新。"
+}

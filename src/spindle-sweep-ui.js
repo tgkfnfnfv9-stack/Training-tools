@@ -2,6 +2,8 @@
 // Measuring/view state is deliberately separate from the saved installation.
 let spindleSweepMode=false,spindleSweepAngle=270;
 const sweepDirections=['右','奥','左','手前'];
+const defaultSweepMeasurementNote=$('sweepMeasurementNote').textContent;
+const horizontalParallelMeasurementNote='横形のZ方向平行度。主軸固定のテストバーに対し、パレット上の計器を先端側から主軸側へ300 mm移動します。aは左側から右向きに接触、bは下側から上向きに接触します。始点でゼロ、プラスは測定子の押込み増加です。支持・軸位置の変更ごとにゼロを取り直します。主軸は回しません。取付け寸法や干渉を再現しない仮想配置です。';
 const sweepDot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
 const spindleSweepKinds=['compact','travel','double','gantry','five'];
 function supportsSpindleSweep(machine=current){return spindleSweepKinds.includes(machine.kind);}
@@ -118,18 +120,41 @@ function spindleSweepMachineGeometry(state,solution,profile){
  return {valid:true,measurement,nose,centre,tableCentre,tableNormal,tableRight,tableBack,halfWidth,halfDepth,tableShape:five?'ellipse':'rectangle',pointAt,cardinal:[0,90,180,270].map(pointAt)};
 }
 function spindleSweepReading(value){return squarenessMicronText(value);}
+function updateHorizontalParallelReadout(){
+ const measured=horizontalParallelism(),someValid=!!(measured.a?.valid||measured.b?.valid);
+ const labels=['a 左右','b 上下','始点','走査'];
+ for(let i=0;i<4;i++){
+  const el=$('sweepValue'+i),value=i<2?measured[i===0?'a':'b']:null;
+  const readable=!!value?.valid&&Number.isFinite(value.microns);
+  $('sweepLabel'+i).textContent=labels[i];
+  el.textContent=i<2?(readable?spindleSweepReading(value.microns):'—'):i===2?(someValid?'0':'—'):'300 mm';
+  el.setAttribute('data-reading-microns',i<2&&readable?String(value.microns):i===2&&someValid?'0':'');
+  $('sweepReadout'+i).setAttribute('data-selected',String(i===2));
+ }
+ $('sweepContactStatus').textContent=measured.valid?'始点0・＋は押込み増加・µm（0.001 mm）':someValid?(measured.a?.valid?'b 上下':'a 左右')+'は測定不可・走査範囲と接触姿勢を確認':'測定不可・300 mmのZ走査範囲と接触姿勢を確認';
+ $('spindleSweepToggle').setAttribute('aria-label','Z方向の平行度。a 左右 '+$('sweepValue0').textContent+' マイクロメートル、b 上下 '+$('sweepValue1').textContent+' マイクロメートル。'+(someValid?'有効な測定の始点ゼロ、':'測定不可、')+'走査300ミリ。測定配置を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
+}
 function updateSpindleSweep(){
  // Supported vertical-spindle machines show both measurements together. This is a view state,
  // not an installation or measurement-model setting.
- const available=supportsSpindleSweep();
+ const horizontal=current.kind==='horizontal',available=supportsSpindleSweep()||horizontal;
  spindleSweepMode=available;
  $('trainingMain').classList.toggle('has-spindle-sweep',available);
  $('squarenessValuesNote').hidden=false;
- $('spindleSweepName').textContent='触れ';
+ $('spindleSweepName').textContent=horizontal?'Z平行':'触れ';
+ $('spindleSweepPanel').setAttribute('data-measurement',horizontal?'z-parallel':'spindle-sweep');
+ $('spindleSweepPanel').setAttribute('aria-label',horizontal?'横形のZ方向平行度':'主軸のダイヤル旋回測定');
+ $('sweepSelectionTitle').textContent=horizontal?'Z方向の平行度':'ダイヤルの方向';
+ $('horizontalParallelFixture').hidden=!horizontal;$('sweepPositions').hidden=horizontal;
+ $('sweepMeasurementNote').textContent=horizontal?horizontalParallelMeasurementNote:defaultSweepMeasurementNote;
  $('spindleSweepPanel').hidden=!available;$('liveSquareness').hidden=false;$('liveSquarenessUnits').hidden=false;
  $('axisTabs').hidden=false;
- $('scene-readout-sweep-note').hidden=!available;$('modelSemantics').hidden=false;
+ $('scene-readout-sweep-note').hidden=!available;
+ $('scene-readout-sweep-note').textContent=horizontal?'主軸中心線に対するZ送りの平行度':'主軸と上面の相対傾き';
+ $('modelSemantics').hidden=false;
  if(!available){toggleSpindleSweepSelection(false);return;}
+ if(horizontal){updateHorizontalParallelReadout();return;}
+ for(let i=0;i<4;i++){const label=$('sweepLabel'+i);label.textContent='';label.innerHTML=sweepDirections[i]+(i===3?' <small>基準</small>':'');}
  const measured=spindleSweepGeometry(positions,levelSolution,machineProfile,1,current.kind==='compact'),zeroValid=measured.valid&&measured.cardinal[3].onTable;
  for(let i=0;i<4;i++){
   const p=measured.cardinal?.[i],readable=zeroValid&&p?.onTable,el=$('sweepValue'+i),button=$('sweepPosition'+i);
@@ -153,7 +178,7 @@ function selectSpindleSweepAngle(degrees){
 function toggleSpindleSweepSelection(force){
  const panel=$('spindleSweepSelection'),open=force===undefined?panel.hidden:force;
  panel.hidden=!open;$('spindleSweepToggle').setAttribute('aria-expanded',String(open));
- if(open){const scroll=$('adjustmentSelectionScroll'),selected=$('sweepPosition'+Math.round(spindleSweepAngle/90)%4);scroll.scrollTop=panel.offsetTop-scroll.offsetTop;selected.focus?.({preventScroll:true});selected.scrollIntoView?.({block:'nearest',inline:'nearest'});if(selected.getBoundingClientRect&&scroll.getBoundingClientRect){const r=selected.getBoundingClientRect(),s=scroll.getBoundingClientRect();if(r.bottom>s.bottom)scroll.scrollTop+=r.bottom-s.bottom;if(r.top<s.top)scroll.scrollTop-=s.top-r.top;}}
+ if(open){const scroll=$('adjustmentSelectionScroll'),selected=current.kind==='horizontal'?$('closeSpindleSweepSelection'):$('sweepPosition'+Math.round(spindleSweepAngle/90)%4);scroll.scrollTop=panel.offsetTop-scroll.offsetTop;selected.focus?.({preventScroll:true});selected.scrollIntoView?.({block:'nearest',inline:'nearest'});if(selected.getBoundingClientRect&&scroll.getBoundingClientRect){const r=selected.getBoundingClientRect(),s=scroll.getBoundingClientRect();if(r.bottom>s.bottom)scroll.scrollTop+=r.bottom-s.bottom;if(r.top<s.top)scroll.scrollTop-=s.top-r.top;}}
 }
 $('spindleSweepToggle').onclick=()=>{toggleSpindleSweepSelection();updateSpindleSweep();};
 $('closeSpindleSweepSelection').onclick=()=>{toggleSpindleSweepSelection(false);updateSpindleSweep();$('spindleSweepToggle').focus?.({preventScroll:true});};

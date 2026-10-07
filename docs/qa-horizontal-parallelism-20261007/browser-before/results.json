@@ -1,0 +1,26 @@
+{
+  "input": "/workspace/Training-tools/docs/qa-horizontal-parallelism-20261007/browser-before/index.html",
+  "label": "browser-before",
+  "sha256": "393f69e4d227764de5355f794d9eaf9019458447934a3172201491f542c507d7",
+  "checks": [
+    {
+      "name": "1280: old horizontal missing readout",
+      "ok": true
+    },
+    {
+      "name": "390: old horizontal missing readout",
+      "ok": true
+    },
+    {
+      "name": "320: old horizontal missing readout",
+      "ok": true
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "states": [],
+  "errors": []
+}

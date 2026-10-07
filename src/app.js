@@ -504,7 +504,8 @@ function updateSceneViewUI(){
  $('sceneDirection').textContent=sceneView==='front'?'正面：左 → 右':sceneView==='side'?'側面：手前 → 奥':'斜め：左右回転';
  $('scene').setAttribute('aria-label',current.name+'の構造模型。'+$('sceneDirection').textContent+'。正投影で表示し、部材のそばの破線は床に対する鉛直・水平の基準。薄い破線の理想輪郭は'+($('showIdealOutline').checked?'表示中':'非表示')+'。左上の設定メニューで切り替えます。一本指またはマウスの左右ドラッグ、左右矢印キーで回転。二本指のピンチまたはマウスホイール、＋・−キーで拡大縮小。Homeキーで表示倍率を戻す。'+axisConfig(current).map(a=>a.key).join('・')+'軸の色付き矢印。選択中の'+selectedAxis+'軸で動く部品を同色で強調。');
  if(current.kind==='compact')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'測定Pはテーブル上面中央の固定点です。X・Yの比較はこの点の送り方向を使い、送り中の傾き変化による横ずれを含みます。');
- if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode)$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。右・奥・左・手前の4方向です。上の3枠は基準器を使う300ミリの仮想走査、隣の4点は手前基準の相対読みです。');
+ if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&current.kind==='horizontal')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸に固定したテストバーに対するZ方向300ミリの平行度も表示します。パレット上の計器を主軸側へ動かし、aは左右、bは上下の押込み差を始点ゼロで測ります。主軸は回しません。');
+ if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&current.kind!=='horizontal')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。右・奥・左・手前の4方向です。上の3枠は基準器を使う300ミリの仮想走査、隣の4点は手前基準の相対読みです。');
 }
 function drawScene(){if(levelSolution)updateAccuracy();if(typeof updateSpindleSweep==='function')updateSpindleSweep();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){

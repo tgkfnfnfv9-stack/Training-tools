@@ -694,3 +694,8 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 @media(max-width:950px) and (orientation:portrait) and (max-height:640px){
  body.in-mechanical-lab #training .training-main .training-workspace{grid-template-rows:minmax(0,1fr) 168px}
 }
+
+/* Horizontal Z parallelism shares the existing readout and its disclosure. */
+.horizontal-parallel-fixture svg{display:block;width:100%;max-width:340px;height:auto;margin:4px auto;color:#302820}
+.horizontal-parallel-fixture p{margin:5px 0;font-size:11px;line-height:1.45}
+.spindle-sweep-panel[data-measurement="z-parallel"] #sweepValue3{font-size:8px}

@@ -1,0 +1,1354 @@
+{
+  "input": "/workspace/Training-tools/index.html",
+  "label": "browser-after",
+  "sha256": "5f602fd71182c73ce8825d0e58d7251a5b41535c9c6f0877cda6a54c890b6bd0",
+  "checks": [
+    {
+      "name": "other six machines numerical display unchanged",
+      "ok": true
+    },
+    {
+      "name": "1280: horizontal reuses visible sweep panel",
+      "ok": true
+    },
+    {
+      "name": "1280: title Z parallel",
+      "ok": true
+    },
+    {
+      "name": "1280: real coarse click .01",
+      "ok": true
+    },
+    {
+      "name": "1280: a or b responds to support",
+      "ok": true,
+      "detail": {
+        "before": [
+          {
+            "value": -75.0028496728887,
+            "text": "-75"
+          },
+          {
+            "value": 14.88750469148467,
+            "text": "+15"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "after": [
+          {
+            "value": -76.34233205603205,
+            "text": "-76"
+          },
+          {
+            "value": 12.329136518128559,
+            "text": "+12"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ]
+      }
+    },
+    {
+      "name": "1280: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "1280: real fine click .001",
+      "ok": true
+    },
+    {
+      "name": "1280: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "1280: a/b text does not overflow readout panel",
+      "ok": true,
+      "detail": {
+        "boxes": {
+          "sweepLabel0": {
+            "x": 925,
+            "y": 131.5,
+            "width": 38.5,
+            "height": 15,
+            "font": 9,
+            "scroll": 39,
+            "client": 39
+          },
+          "sweepLabel1": {
+            "x": 925,
+            "y": 147.5,
+            "width": 36.296875,
+            "height": 15,
+            "font": 9,
+            "scroll": 36,
+            "client": 36
+          },
+          "sweepValue0": {
+            "x": 965.5,
+            "y": 130.5,
+            "width": 15.5,
+            "height": 15,
+            "font": 10,
+            "scroll": 16,
+            "client": 16
+          },
+          "sweepValue1": {
+            "x": 963.296875,
+            "y": 146.5,
+            "width": 17.703125,
+            "height": 15,
+            "font": 10,
+            "scroll": 18,
+            "client": 18
+          },
+          "spindleSweepPanel": {
+            "x": 921,
+            "y": 118.5,
+            "width": 64,
+            "height": 77,
+            "font": 13,
+            "scroll": 64,
+            "client": 64
+          }
+        }
+      }
+    },
+    {
+      "name": "1280: no page horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "1280: support controls remain 24px",
+      "ok": true,
+      "detail": [
+        {
+          "w": 72,
+          "h": 44
+        },
+        {
+          "w": 72,
+          "h": 44
+        },
+        {
+          "w": 72,
+          "h": 44
+        },
+        {
+          "w": 72,
+          "h": 44
+        },
+        {
+          "w": 72,
+          "h": 44
+        },
+        {
+          "w": 72,
+          "h": 44
+        },
+        {
+          "w": 72,
+          "h": 44
+        },
+        {
+          "w": 72,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "name": "1280: fixture opens with no cardinal buttons",
+      "ok": true
+    },
+    {
+      "name": "1280: fixture explanation scroll accessible",
+      "ok": true
+    },
+    {
+      "name": "1280: fixture SVG text inside viewBox",
+      "ok": true,
+      "detail": {
+        "view": 340,
+        "text": [
+          {
+            "text": "a",
+            "x": 10,
+            "right": 16.203125
+          },
+          {
+            "text": "b",
+            "x": 53,
+            "right": 60
+          },
+          {
+            "text": "接触方向",
+            "x": 6,
+            "right": 50
+          },
+          {
+            "text": "テストバー（固定）",
+            "x": 147,
+            "right": 246
+          },
+          {
+            "text": "主軸",
+            "x": 310,
+            "right": 332
+          },
+          {
+            "text": "0",
+            "x": 169,
+            "right": 175.109375
+          },
+          {
+            "text": "b",
+            "x": 273,
+            "right": 280
+          },
+          {
+            "text": "部材＋Z 300 mm",
+            "x": 185,
+            "right": 268.25
+          },
+          {
+            "text": "パレット＋計器 → 主軸側へ",
+            "x": 153,
+            "right": 289.9375
+          }
+        ]
+      }
+    },
+    {
+      "name": "390: horizontal reuses visible sweep panel",
+      "ok": true
+    },
+    {
+      "name": "390: title Z parallel",
+      "ok": true
+    },
+    {
+      "name": "390: real coarse click .01",
+      "ok": true
+    },
+    {
+      "name": "390: a or b responds to support",
+      "ok": true,
+      "detail": {
+        "before": [
+          {
+            "value": -75.0028496728887,
+            "text": "-75"
+          },
+          {
+            "value": 14.88750469148467,
+            "text": "+15"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "after": [
+          {
+            "value": -76.34233205603205,
+            "text": "-76"
+          },
+          {
+            "value": 12.329136518128559,
+            "text": "+12"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ]
+      }
+    },
+    {
+      "name": "390: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "390: real fine click .001",
+      "ok": true
+    },
+    {
+      "name": "390: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "390: a/b text does not overflow readout panel",
+      "ok": true,
+      "detail": {
+        "boxes": {
+          "sweepLabel0": {
+            "x": 324,
+            "y": 116,
+            "width": 38.5,
+            "height": 15,
+            "font": 9,
+            "scroll": 39,
+            "client": 39
+          },
+          "sweepLabel1": {
+            "x": 324,
+            "y": 132,
+            "width": 36.296875,
+            "height": 15,
+            "font": 9,
+            "scroll": 36,
+            "client": 36
+          },
+          "sweepValue0": {
+            "x": 364.5,
+            "y": 115,
+            "width": 15.5,
+            "height": 15,
+            "font": 10,
+            "scroll": 16,
+            "client": 16
+          },
+          "sweepValue1": {
+            "x": 362.296875,
+            "y": 131,
+            "width": 17.703125,
+            "height": 15,
+            "font": 10,
+            "scroll": 18,
+            "client": 18
+          },
+          "spindleSweepPanel": {
+            "x": 320,
+            "y": 103,
+            "width": 64,
+            "height": 77,
+            "font": 11,
+            "scroll": 64,
+            "client": 64
+          }
+        }
+      }
+    },
+    {
+      "name": "390: no page horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "390: support controls remain 24px",
+      "ok": true,
+      "detail": [
+        {
+          "w": 48.5625,
+          "h": 44
+        },
+        {
+          "w": 48.578125,
+          "h": 44
+        },
+        {
+          "w": 48.5625,
+          "h": 44
+        },
+        {
+          "w": 48.578125,
+          "h": 44
+        },
+        {
+          "w": 48.5625,
+          "h": 44
+        },
+        {
+          "w": 48.578125,
+          "h": 44
+        },
+        {
+          "w": 48.578125,
+          "h": 44
+        },
+        {
+          "w": 72,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "name": "390: fixture opens with no cardinal buttons",
+      "ok": true
+    },
+    {
+      "name": "390: fixture explanation scroll accessible",
+      "ok": true
+    },
+    {
+      "name": "390: fixture SVG text inside viewBox",
+      "ok": true,
+      "detail": {
+        "view": 340,
+        "text": [
+          {
+            "text": "a",
+            "x": 10,
+            "right": 16.203125
+          },
+          {
+            "text": "b",
+            "x": 53,
+            "right": 60
+          },
+          {
+            "text": "接触方向",
+            "x": 6,
+            "right": 50
+          },
+          {
+            "text": "テストバー（固定）",
+            "x": 147,
+            "right": 246
+          },
+          {
+            "text": "主軸",
+            "x": 310,
+            "right": 332
+          },
+          {
+            "text": "0",
+            "x": 169,
+            "right": 175.109375
+          },
+          {
+            "text": "b",
+            "x": 273,
+            "right": 280
+          },
+          {
+            "text": "部材＋Z 300 mm",
+            "x": 185,
+            "right": 268.25
+          },
+          {
+            "text": "パレット＋計器 → 主軸側へ",
+            "x": 153,
+            "right": 289.9375
+          }
+        ]
+      }
+    },
+    {
+      "name": "320: horizontal reuses visible sweep panel",
+      "ok": true
+    },
+    {
+      "name": "320: title Z parallel",
+      "ok": true
+    },
+    {
+      "name": "320: real coarse click .01",
+      "ok": true
+    },
+    {
+      "name": "320: a or b responds to support",
+      "ok": true,
+      "detail": {
+        "before": [
+          {
+            "value": -75.0028496728887,
+            "text": "-75"
+          },
+          {
+            "value": 14.88750469148467,
+            "text": "+15"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "after": [
+          {
+            "value": -76.34233205603205,
+            "text": "-76"
+          },
+          {
+            "value": 12.329136518128559,
+            "text": "+12"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ]
+      }
+    },
+    {
+      "name": "320: coarse roundtrip",
+      "ok": true
+    },
+    {
+      "name": "320: real fine click .001",
+      "ok": true
+    },
+    {
+      "name": "320: fine roundtrip",
+      "ok": true
+    },
+    {
+      "name": "320: a/b text does not overflow readout panel",
+      "ok": true,
+      "detail": {
+        "boxes": {
+          "sweepLabel0": {
+            "x": 254,
+            "y": 108,
+            "width": 38.5,
+            "height": 15,
+            "font": 9,
+            "scroll": 39,
+            "client": 39
+          },
+          "sweepLabel1": {
+            "x": 254,
+            "y": 124,
+            "width": 36.296875,
+            "height": 15,
+            "font": 9,
+            "scroll": 36,
+            "client": 36
+          },
+          "sweepValue0": {
+            "x": 294.5,
+            "y": 107,
+            "width": 15.5,
+            "height": 15,
+            "font": 10,
+            "scroll": 16,
+            "client": 16
+          },
+          "sweepValue1": {
+            "x": 292.296875,
+            "y": 123,
+            "width": 17.703125,
+            "height": 15,
+            "font": 10,
+            "scroll": 18,
+            "client": 18
+          },
+          "spindleSweepPanel": {
+            "x": 250,
+            "y": 95,
+            "width": 64,
+            "height": 77,
+            "font": 11,
+            "scroll": 64,
+            "client": 64
+          }
+        }
+      }
+    },
+    {
+      "name": "320: no page horizontal overflow",
+      "ok": true
+    },
+    {
+      "name": "320: support controls remain 24px",
+      "ok": true,
+      "detail": [
+        {
+          "w": 45.65625,
+          "h": 44
+        },
+        {
+          "w": 45.671875,
+          "h": 44
+        },
+        {
+          "w": 45.65625,
+          "h": 44
+        },
+        {
+          "w": 45.671875,
+          "h": 44
+        },
+        {
+          "w": 45.671875,
+          "h": 44
+        },
+        {
+          "w": 45.671875,
+          "h": 44
+        },
+        {
+          "w": 72,
+          "h": 44
+        },
+        {
+          "w": 72,
+          "h": 44
+        }
+      ]
+    },
+    {
+      "name": "320: fixture opens with no cardinal buttons",
+      "ok": true
+    },
+    {
+      "name": "320: fixture explanation scroll accessible",
+      "ok": true
+    },
+    {
+      "name": "320: fixture SVG text inside viewBox",
+      "ok": true,
+      "detail": {
+        "view": 340,
+        "text": [
+          {
+            "text": "a",
+            "x": 10,
+            "right": 16.185462474822998
+          },
+          {
+            "text": "b",
+            "x": 52.999996185302734,
+            "right": 60.28593921661377
+          },
+          {
+            "text": "接触方向",
+            "x": 5.999999523162842,
+            "right": 49.94334363937378
+          },
+          {
+            "text": "テストバー（固定）",
+            "x": 147,
+            "right": 245.8725357055664
+          },
+          {
+            "text": "主軸",
+            "x": 310,
+            "right": 331.9716548919678
+          },
+          {
+            "text": "0",
+            "x": 168.99998474121094,
+            "right": 175.1095519065857
+          },
+          {
+            "text": "b",
+            "x": 273,
+            "right": 280.28594303131104
+          },
+          {
+            "text": "部材＋Z 300 mm",
+            "x": 184.99998474121094,
+            "right": 268.1432189941406
+          },
+          {
+            "text": "パレット＋計器 → 主軸側へ",
+            "x": 152.99998474121094,
+            "right": 289.7632141113281
+          }
+        ]
+      }
+    },
+    {
+      "name": "camera zoom drawing emphasis invariant",
+      "ok": true
+    },
+    {
+      "name": "real Z slider updates machine position",
+      "ok": true
+    },
+    {
+      "name": "Z travel endpoints and intermediate positions valid",
+      "ok": true,
+      "detail": [
+        {
+          "z": -100,
+          "valid": true,
+          "a": -97.68381599751207,
+          "b": -14.622788090222146,
+          "start": -0.45000000000000007,
+          "end": -0.15000000000000008
+        },
+        {
+          "z": -50,
+          "valid": true,
+          "a": -97.68408395218094,
+          "b": -14.623464079913454,
+          "start": -0.22500000000000003,
+          "end": 0.07499999999999996
+        },
+        {
+          "z": 0,
+          "valid": true,
+          "a": -97.70197916950627,
+          "b": -30.65484226104191,
+          "start": 0,
+          "end": 0.3
+        },
+        {
+          "z": 50,
+          "valid": true,
+          "a": -97.70216098562052,
+          "b": -30.655292929150647,
+          "start": 0.15000000000000008,
+          "end": 0.45000000000000007
+        },
+        {
+          "z": 100,
+          "valid": true,
+          "a": -97.70216098562052,
+          "b": -30.655292929150647,
+          "start": 0.15000000000000008,
+          "end": 0.45000000000000007
+        }
+      ]
+    },
+    {
+      "name": "twisted Z path changes readings",
+      "ok": true,
+      "detail": [
+        {
+          "z": -100,
+          "valid": true,
+          "a": -97.68381599751207,
+          "b": -14.622788090222146,
+          "start": -0.45000000000000007,
+          "end": -0.15000000000000008
+        },
+        {
+          "z": -50,
+          "valid": true,
+          "a": -97.68408395218094,
+          "b": -14.623464079913454,
+          "start": -0.22500000000000003,
+          "end": 0.07499999999999996
+        },
+        {
+          "z": 0,
+          "valid": true,
+          "a": -97.70197916950627,
+          "b": -30.65484226104191,
+          "start": 0,
+          "end": 0.3
+        },
+        {
+          "z": 50,
+          "valid": true,
+          "a": -97.70216098562052,
+          "b": -30.655292929150647,
+          "start": 0.15000000000000008,
+          "end": 0.45000000000000007
+        },
+        {
+          "z": 100,
+          "valid": true,
+          "a": -97.70216098562052,
+          "b": -30.655292929150647,
+          "start": 0.15000000000000008,
+          "end": 0.45000000000000007
+        }
+      ]
+    },
+    {
+      "name": "save load reproduces both parallel channels",
+      "ok": true
+    },
+    {
+      "name": "ideal horizontal zero a/b",
+      "ok": true,
+      "detail": {
+        "a": 0,
+        "b": 0
+      }
+    },
+    {
+      "name": "0: existing four sweep labels restored",
+      "ok": true
+    },
+    {
+      "name": "0: front zero retained",
+      "ok": true
+    },
+    {
+      "name": "2: existing four sweep labels restored",
+      "ok": true
+    },
+    {
+      "name": "2: front zero retained",
+      "ok": true
+    },
+    {
+      "name": "3: existing four sweep labels restored",
+      "ok": true
+    },
+    {
+      "name": "3: front zero retained",
+      "ok": true
+    },
+    {
+      "name": "4: existing four sweep labels restored",
+      "ok": true
+    },
+    {
+      "name": "4: front zero retained",
+      "ok": true
+    },
+    {
+      "name": "5: existing four sweep labels restored",
+      "ok": true
+    },
+    {
+      "name": "5: front zero retained",
+      "ok": true
+    },
+    {
+      "name": "lathe has no extra measurement panel",
+      "ok": true
+    },
+    {
+      "name": "return horizontal restores a/b labels",
+      "ok": true
+    },
+    {
+      "name": "front outside suppresses every sweep value",
+      "ok": true
+    },
+    {
+      "name": "front outside suppresses every sweep value",
+      "ok": true
+    },
+    {
+      "name": "existing front outside fixture reached",
+      "ok": true
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "states": [
+    {
+      "width": 1280,
+      "start": {
+        "kind": "horizontal",
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 14.999999993657239,
+            "text": "+15"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -75.0028496728887,
+            "text": "-75"
+          },
+          {
+            "value": 14.88750469148467,
+            "text": "+15"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "panelHidden": false
+      },
+      "raised": {
+        "kind": "horizontal",
+        "heights": [
+          0.01,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -75.43267475919845,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 12.812616502398678,
+            "text": "+13"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -76.34233205603205,
+            "text": "-76"
+          },
+          {
+            "value": 12.329136518128559,
+            "text": "+12"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "panelHidden": false
+      },
+      "fine": {
+        "kind": "horizontal",
+        "heights": [
+          0.001,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -75.04326663314991,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 14.781260234979568,
+            "text": "+15"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -75.13678606627106,
+            "text": "-75"
+          },
+          {
+            "value": 14.631672462050647,
+            "text": "+15"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "panelHidden": false
+      }
+    },
+    {
+      "width": 390,
+      "start": {
+        "kind": "horizontal",
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 14.999999993657239,
+            "text": "+15"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -75.0028496728887,
+            "text": "-75"
+          },
+          {
+            "value": 14.88750469148467,
+            "text": "+15"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "panelHidden": false
+      },
+      "raised": {
+        "kind": "horizontal",
+        "heights": [
+          0.01,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -75.43267475919845,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 12.812616502398678,
+            "text": "+13"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -76.34233205603205,
+            "text": "-76"
+          },
+          {
+            "value": 12.329136518128559,
+            "text": "+12"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "panelHidden": false
+      },
+      "fine": {
+        "kind": "horizontal",
+        "heights": [
+          0.001,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -75.04326663314991,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 14.781260234979568,
+            "text": "+15"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -75.13678606627106,
+            "text": "-75"
+          },
+          {
+            "value": 14.631672462050647,
+            "text": "+15"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "panelHidden": false
+      }
+    },
+    {
+      "width": 320,
+      "start": {
+        "kind": "horizontal",
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -74.99999921875035,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 14.999999993657239,
+            "text": "+15"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -75.0028496728887,
+            "text": "-75"
+          },
+          {
+            "value": 14.88750469148467,
+            "text": "+15"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "panelHidden": false
+      },
+      "raised": {
+        "kind": "horizontal",
+        "heights": [
+          0.01,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -75.43267475919845,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 12.812616502398678,
+            "text": "+13"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -76.34233205603205,
+            "text": "-76"
+          },
+          {
+            "value": 12.329136518128559,
+            "text": "+12"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "panelHidden": false
+      },
+      "fine": {
+        "kind": "horizontal",
+        "heights": [
+          0.001,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "pairs": [
+          {
+            "pair": "XY",
+            "value": 32.999999933450844,
+            "text": "+33"
+          },
+          {
+            "pair": "XZ",
+            "value": -75.04326663314991,
+            "text": "-75"
+          },
+          {
+            "pair": "YZ",
+            "value": 14.781260234979568,
+            "text": "+15"
+          }
+        ],
+        "sweep": [
+          {
+            "value": -75.13678606627106,
+            "text": "-75"
+          },
+          {
+            "value": 14.631672462050647,
+            "text": "+15"
+          },
+          {
+            "value": 0,
+            "text": "0"
+          },
+          {
+            "value": null,
+            "text": "300 mm"
+          }
+        ],
+        "panelHidden": false
+      }
+    },
+    {
+      "zStates": [
+        {
+          "z": -100,
+          "valid": true,
+          "a": -97.68381599751207,
+          "b": -14.622788090222146,
+          "start": -0.45000000000000007,
+          "end": -0.15000000000000008
+        },
+        {
+          "z": -50,
+          "valid": true,
+          "a": -97.68408395218094,
+          "b": -14.623464079913454,
+          "start": -0.22500000000000003,
+          "end": 0.07499999999999996
+        },
+        {
+          "z": 0,
+          "valid": true,
+          "a": -97.70197916950627,
+          "b": -30.65484226104191,
+          "start": 0,
+          "end": 0.3
+        },
+        {
+          "z": 50,
+          "valid": true,
+          "a": -97.70216098562052,
+          "b": -30.655292929150647,
+          "start": 0.15000000000000008,
+          "end": 0.45000000000000007
+        },
+        {
+          "z": 100,
+          "valid": true,
+          "a": -97.70216098562052,
+          "b": -30.655292929150647,
+          "start": 0.15000000000000008,
+          "end": 0.45000000000000007
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -208,7 +208,7 @@ check('right alone outside does not invalidate the front reference or other cont
 live.read(`levelConfig.width=${oldWidth};`);surface('0',zero,live);
 for(const i of [1,6]){
  live.read(`openMachine(machines[${i}]);`);
- check('unsupported machine '+i+' does not expose a misleading top-face measurement',()=>{assert.equal(live.registry.toggleSpindleSweep,undefined);assert.equal(live.registry.spindleSweepPanel.hidden,true);assert.equal(live.registry.runSpindleSweep,undefined);assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.equal(live.read('spindleSweepMode'),false);assert.equal(live.read('spindleSweepGeometry().valid'),false);});
+ check('machine '+i+' does not expose a misleading top-face measurement',()=>{assert.equal(live.registry.toggleSpindleSweep,undefined);assert.equal(live.registry.spindleSweepPanel.hidden,i===6);if(i===1){assert.equal(live.registry.spindleSweepPanel.getAttribute('data-measurement'),'z-parallel');assert.equal(live.registry.sweepPositions.hidden,true);}assert.equal(live.registry.runSpindleSweep,undefined);assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.equal(live.read('spindleSweepMode'),i===1);assert.equal(live.read('spindleSweepGeometry().valid'),false);});
 }
 
 console.log(JSON.stringify({checks,failures},null,2));if(failures.length)process.exitCode=1;
