@@ -1,0 +1,4397 @@
+{
+  "input": "/workspace/Training-tools/docs/qa-twist-second-review-20261007/before/index.html",
+  "sha256": "0ab0e5953045ae9e78c1a4ded3ed32fa7560368d030c094318827d4a7569d947",
+  "label": "before",
+  "browser": "151.0.7922.173",
+  "checks": [
+    {
+      "name": "vertical/1280/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "vertical/1280/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "vertical/1280/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "vertical/1280/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "vertical/1280/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "vertical/1280/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "vertical/1280/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "vertical/1280/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "vertical/1280/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "vertical/1280 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 320,
+        "y": 171.75,
+        "right": 1214,
+        "bottom": 476.25,
+        "width": 894,
+        "height": 304.5,
+        "w": 1280,
+        "h": 900,
+        "inert": true
+      }
+    },
+    {
+      "name": "vertical/1280 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "vertical/1280 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "vertical/320/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "vertical/320/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "vertical/320/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "vertical/320/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "vertical/320/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "vertical/320/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "vertical/320/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "vertical/320/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "vertical/320/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "vertical/320 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 184,
+        "y": 102.4000015258789,
+        "right": 282.6000061035156,
+        "bottom": 189.52500915527344,
+        "width": 98.60000610351562,
+        "height": 87.12500762939453,
+        "w": 320,
+        "h": 568,
+        "inert": true
+      }
+    },
+    {
+      "name": "vertical/320 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "vertical/320 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "vertical running demo refreshes contact readings",
+      "ok": true,
+      "detail": {
+        "running": true,
+        "position": 57.808120077976156,
+        "rendered": [
+          "16.025595553019468",
+          "-26.33870245724937",
+          "-8.944196469474683"
+        ],
+        "computed": [
+          "16.025595553019468",
+          "-26.33870245724937",
+          "-8.944196469474683"
+        ]
+      }
+    },
+    {
+      "name": "horizontal/1280/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "horizontal/1280/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "horizontal/1280/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "horizontal/1280/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "horizontal/1280/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "horizontal/1280/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "horizontal/1280/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "horizontal/1280/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "horizontal/1280/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "horizontal/1280 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 320,
+        "y": 171.75,
+        "right": 1214,
+        "bottom": 476.25,
+        "width": 894,
+        "height": 304.5,
+        "w": 1280,
+        "h": 900,
+        "inert": true
+      }
+    },
+    {
+      "name": "horizontal/1280 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "horizontal/1280 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "horizontal/320/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "horizontal/320/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "horizontal/320/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "horizontal/320/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "horizontal/320/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "horizontal/320/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "horizontal/320/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "horizontal/320/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "horizontal/320/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "horizontal/320 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 184,
+        "y": 99.42500305175781,
+        "right": 282.6000061035156,
+        "bottom": 189.52500915527344,
+        "width": 98.60000610351562,
+        "height": 90.10000610351562,
+        "w": 320,
+        "h": 568,
+        "inert": true
+      }
+    },
+    {
+      "name": "horizontal/320 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "horizontal/320 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "horizontal running demo refreshes contact readings",
+      "ok": true,
+      "detail": {
+        "running": true,
+        "position": 59.63876126274662,
+        "rendered": [
+          "0.6617647032025609",
+          "-8.775575396025026",
+          "4.194493239132596"
+        ],
+        "computed": [
+          "0.6617647032025609",
+          "-8.775575396025026",
+          "4.194493239132596"
+        ]
+      }
+    },
+    {
+      "name": "travel/1280/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "travel/1280/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "travel/1280/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "travel/1280/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "travel/1280/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "travel/1280/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "travel/1280/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "travel/1280/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "travel/1280/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "travel/1280 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 320,
+        "y": 171.75,
+        "right": 1214,
+        "bottom": 476.25,
+        "width": 894,
+        "height": 304.5,
+        "w": 1280,
+        "h": 900,
+        "inert": true
+      }
+    },
+    {
+      "name": "travel/1280 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "travel/1280 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "travel/320/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "travel/320/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "travel/320/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "travel/320/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "travel/320/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "travel/320/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "travel/320/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "travel/320/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "travel/320/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "travel/320 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 184,
+        "y": 102.4000015258789,
+        "right": 282.6000061035156,
+        "bottom": 189.52500915527344,
+        "width": 98.60000610351562,
+        "height": 87.12500762939453,
+        "w": 320,
+        "h": 568,
+        "inert": true
+      }
+    },
+    {
+      "name": "travel/320 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "travel/320 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "travel running demo refreshes contact readings",
+      "ok": true,
+      "detail": {
+        "running": true,
+        "position": 57.81483185381536,
+        "rendered": [
+          "-0.00016047898600268784",
+          "-2.916666658522166",
+          "0"
+        ],
+        "computed": [
+          "-0.00016047898600268784",
+          "-2.916666658522166",
+          "0"
+        ]
+      }
+    },
+    {
+      "name": "gate/1280/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gate/1280/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 61.87795448303223,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "gate/1280/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gate/1280/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gate/1280/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 61.87795448303223,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "gate/1280/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gate/1280/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gate/1280/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 61.87795448303223,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "gate/1280/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gate/1280 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 320,
+        "y": 171.75,
+        "right": 1214,
+        "bottom": 476.25,
+        "width": 894,
+        "height": 304.5,
+        "w": 1280,
+        "h": 900,
+        "inert": true
+      }
+    },
+    {
+      "name": "gate/1280 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "gate/1280 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "gate/320/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gate/320/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 62.23357009887695,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "gate/320/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gate/320/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gate/320/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 62.23357009887695,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "gate/320/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gate/320/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gate/320/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 62.23357009887695,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "gate/320/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gate/320 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 184,
+        "y": 102.4000015258789,
+        "right": 282.6000061035156,
+        "bottom": 189.52500915527344,
+        "width": 98.60000610351562,
+        "height": 87.12500762939453,
+        "w": 320,
+        "h": 568,
+        "inert": true
+      }
+    },
+    {
+      "name": "gate/320 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "gate/320 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "gate running demo refreshes contact readings",
+      "ok": true,
+      "detail": {
+        "running": true,
+        "position": 57.815055568125224,
+        "rendered": [
+          "17.866868086805628",
+          "0",
+          "-3.989863994746656e-11"
+        ],
+        "computed": [
+          "17.866868086805628",
+          "0",
+          "-3.989863994746656e-11"
+        ]
+      }
+    },
+    {
+      "name": "gantry/1280/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gantry/1280/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 61.87795448303223,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "gantry/1280/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gantry/1280/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gantry/1280/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 61.87795448303223,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "gantry/1280/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gantry/1280/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gantry/1280/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 61.87795448303223,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "gantry/1280/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gantry/1280 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 320,
+        "y": 171.75,
+        "right": 1214,
+        "bottom": 476.25,
+        "width": 894,
+        "height": 304.5,
+        "w": 1280,
+        "h": 900,
+        "inert": true
+      }
+    },
+    {
+      "name": "gantry/1280 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "gantry/1280 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "gantry/320/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gantry/320/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 62.23357009887695,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "gantry/320/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gantry/320/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gantry/320/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 62.23357009887695,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "gantry/320/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gantry/320/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "gantry/320/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "ラム固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 62.23357009887695,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "gantry/320/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "gantry/320 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 184,
+        "y": 102.4000015258789,
+        "right": 282.6000061035156,
+        "bottom": 189.52500915527344,
+        "width": 98.60000610351562,
+        "height": 87.12500762939453,
+        "w": 320,
+        "h": 568,
+        "inert": true
+      }
+    },
+    {
+      "name": "gantry/320 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "gantry/320 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "gantry running demo refreshes contact readings",
+      "ok": true,
+      "detail": {
+        "running": true,
+        "position": 59.65680737934228,
+        "rendered": [
+          "24.34267229758577",
+          "-1.734723475976807e-12",
+          "-8.673617379884035e-12"
+        ],
+        "computed": [
+          "24.34267229758577",
+          "-1.734723475976807e-12",
+          "-8.673617379884035e-12"
+        ]
+      }
+    },
+    {
+      "name": "five/1280/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "five/1280/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "five/1280/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "five/1280/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "five/1280/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "five/1280/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "five/1280/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "five/1280/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "five/1280/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "five/1280 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 320,
+        "y": 171.75,
+        "right": 1214,
+        "bottom": 476.25,
+        "width": 894,
+        "height": 304.5,
+        "w": 1280,
+        "h": 900,
+        "inert": true
+      }
+    },
+    {
+      "name": "five/1280 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "five/1280 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "five/320/XY physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "five/320/XY diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "five/320/XY no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "five/320/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "five/320/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "five/320/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "five/320/YZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "five/320/YZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "頭固定",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "five/320/YZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "five/320 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 184,
+        "y": 102.4000015258789,
+        "right": 282.6000061035156,
+        "bottom": 189.52500915527344,
+        "width": 98.60000610351562,
+        "height": 87.12500762939453,
+        "w": 320,
+        "h": 568,
+        "inert": true
+      }
+    },
+    {
+      "name": "five/320 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "five/320 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "five running demo refreshes contact readings",
+      "ok": true,
+      "detail": {
+        "running": true,
+        "position": 59.65658998777776,
+        "rendered": [
+          "1.734723475976807e-12",
+          "3.469446951953614e-12",
+          "0"
+        ],
+        "computed": [
+          "1.734723475976807e-12",
+          "3.469446951953614e-12",
+          "0"
+        ]
+      }
+    },
+    {
+      "name": "lathe/1280/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "lathe/1280/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "刃物台",
+          "x": 34,
+          "y": -0.28947359323501587,
+          "right": 55.093698501586914,
+          "bottom": 9.77631562948227
+        }
+      ]
+    },
+    {
+      "name": "lathe/1280/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "lathe/1280 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 320,
+        "y": 171.75,
+        "right": 1214,
+        "bottom": 476.25,
+        "width": 894,
+        "height": 304.5,
+        "w": 1280,
+        "h": 900,
+        "inert": true
+      }
+    },
+    {
+      "name": "lathe/1280 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "lathe/1280 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "lathe/320/XZ physical face projection and zero direction",
+      "ok": true
+    },
+    {
+      "name": "lathe/320/XZ diagram labels inside viewBox",
+      "ok": false,
+      "detail": [
+        {
+          "text": "刃物台",
+          "x": 34,
+          "y": -0.5714285373687744,
+          "right": 55.46231460571289,
+          "bottom": 10.142856359481812
+        }
+      ]
+    },
+    {
+      "name": "lathe/320/XZ no old local angle paths in finite diagram",
+      "ok": true
+    },
+    {
+      "name": "lathe/320 settings retains model within viewport and blocks background",
+      "ok": true,
+      "detail": {
+        "x": 184,
+        "y": 99.42500305175781,
+        "right": 282.6000061035156,
+        "bottom": 189.52500915527344,
+        "width": 98.60000610351562,
+        "height": 90.10000610351562,
+        "w": 320,
+        "h": 568,
+        "inert": true
+      }
+    },
+    {
+      "name": "lathe/320 settings scaling preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "lathe/320 closing settings preserves physical measurements",
+      "ok": true
+    },
+    {
+      "name": "lathe running demo refreshes contact readings",
+      "ok": true,
+      "detail": {
+        "running": true,
+        "position": 61.42026689975658,
+        "rendered": [
+          "0.00011707848926456599"
+        ],
+        "computed": [
+          "0.00011707848926456599"
+        ]
+      }
+    },
+    {
+      "name": "path legend distinguishes endpoint connector from a continuous trajectory",
+      "ok": false,
+      "detail": "0：共通の始点／300 mm：比較終点。測定図の黒い辺：基準面／●0：接触ゼロ／点線：計器本体の相対経路／オレンジ矢印：相対移動／押込＋：測定子が縮む向き（ずれは拡大表示）。"
+    },
+    {
+      "name": "common finite introduction accounts for lathe flange",
+      "ok": false,
+      "detail": "直角マスタとスピンドル式計器の教材配置。●0から300 mmの仮想測定。＋＝押込み増加／−＝減少（ID-F通常カウント）。黒い基準面、オレンジの相対移動、押込＋を区別します。"
+    },
+    {
+      "name": "gate spindle intrinsic posture is included in viewer explanation",
+      "ok": false,
+      "detail": "模型は遠近による見かけの倒れを避ける正投影です。「観察方向」で正面・側面・斜めを切り替えます。正面／側面からドラッグすると斜めの自由回転に戻ります。部材のそばの破線は床に対する鉛直・水平基準です。水準器は支持全体の平均、模型は局所支持と本体固有の姿勢を重ねます。ただし門形の骨格は接続した支持姿勢、固有直角差は軸矢印と直角図に示します。一様な支持の傾きでは、気泡は高い側へ動き、支持によるコラムの倒れは低い側へ向きます。本体固有差や、ねじれによる場所ごとの傾きも重なります。水準器の目安内は厳密な水平と同じではありません。\n一本指／マウスの左右ドラッグで回転、二本指のピンチ／マウスホイールで模型を拡大・縮小できます。水準器は右枠に固定し、前後は上が奥・下が手前です。設定メニューは模型と別にスクロールします。開いている間は主画面全体が右へ縮小し、背景の操作を止めます。模型にフォーカスすると左右矢印キーで回転、＋／−キーで拡大・縮小、Homeキーで大きさを戻せます。拡大・縮小は表示だけを変え、支持高さ・軸位置・精度・保存内容は変えません。絵の下で軸を選び、左上の☰から「軸位置・デモ」を開きます。丸いアルファベットは学習用の支持点です。軸名・部品名・支持点の背景は薄い半透明で、模型が透けて見えます。\n灰：固定　淡色：他軸の部品　赤X／緑Y／青Z／紫A／橙C：選択軸で動く部品　黄：支持点\n傾きと姿勢差を強調した模式図です。黄〜緑の分割面は支持高さをつないだ面（黄＝相対的に高い、緑＝低い）です。コラム／主軸は本体の固有方向と支持姿勢を重ねた代表姿勢、テーブルは支持姿勢で描きます。非直交のXYZ全てを一つの剛体で再現する図ではありません。ねじれでは矢印は代表案内方向で、実体の動きには場所ごとの姿勢変化も重なります。軸の矢印には固有直角差を一度だけ重ねます。強調倍率は個体・寸法・配置から決め、支持調整や軸操作中に変えないため、レベル出しに合わせて絵も変化します。抽選したガイドの曲がり成分はモデル内部で固定して保持します。狭い絵では支持点と全軸名を確保し、部品名は選択軸の部品・ベース／コラムを優先して一部省略します。構造と軸構成は下の説明でも確認できます。弾性変形や荷重の移動は計算しません。"
+    },
+    {
+      "name": "no browser exceptions",
+      "ok": true,
+      "detail": []
+    }
+  ],
+  "snapshots": [
+    {
+      "id": "vertical",
+      "width": 1280,
+      "height": 900,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 13.999997587322145,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.00998397439931879,
+          "probeNormal": -0.9999999994863578,
+          "probeAlong": 3.5880829457782633e-10,
+          "reading": "16.025595553019468",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.152423858642578,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑奥",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.710527420043945,
+              "right": 28.885690927505493,
+              "bottom": 35.77631664276123
+            },
+            {
+              "text": "奥",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 30.999999923322004,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010028493589637227,
+          "probeNormal": -1.0000000000000002,
+          "probeAlong": -2.3716922526931554e-20,
+          "reading": "-28.49358963722716",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.233963012695312,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "下",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 30.999999992479726,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010008923366993301,
+          "probeNormal": -1.0000000000000002,
+          "probeAlong": -1.0164395367051604e-20,
+          "reading": "-8.92336699329782",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 1.4078947305679321,
+              "y": 0.7105262279510498,
+              "right": 9.734374642372131,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "下",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "奥",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vertical",
+      "width": 320,
+      "height": 568,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 13.999997587322145,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.00998397439931879,
+          "probeNormal": -0.9999999994863578,
+          "probeAlong": 3.5880829457782633e-10,
+          "reading": "16.025595553019468",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑奥",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 10.142857551574707
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 36.14285659790039
+            },
+            {
+              "text": "奥",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 30.999999923322004,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010028493589637227,
+          "probeNormal": -1.0000000000000002,
+          "probeAlong": -2.3716922526931554e-20,
+          "reading": "-28.49358963722716",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "下",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 30.999999992479726,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010008923366993301,
+          "probeNormal": -1.0000000000000002,
+          "probeAlong": -1.0164395367051604e-20,
+          "reading": "-8.92336699329782",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 0.9285714030265808,
+              "y": 0.42857101559638977,
+              "right": 9.789796531200409,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "下",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "奥",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "horizontal",
+      "width": 1280,
+      "height": 900,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "上",
+          "relative": "上",
+          "zeroLocation": "下・右側",
+          "zero": 31,
+          "contact": 14.000000000041354,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.009999338235296805,
+          "probeNormal": -1.0000000000000007,
+          "probeAlong": -1.3552527159682184e-20,
+          "reading": "0.6617647032025609",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.152423858642578,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.710527420043945,
+              "right": 28.885690927505493,
+              "bottom": 35.77631664276123
+            },
+            {
+              "text": "上",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "奥",
+          "relative": "手前",
+          "zeroLocation": "奥・右側",
+          "zero": 14,
+          "contact": 31,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010008775574358423,
+          "probeNormal": -0.9999999998965193,
+          "probeAlong": -2.5849394142282115e-25,
+          "reading": "-8.775575394137647",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.233963012695312,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑奥",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "手前",
+              "x": 44.00575637817383,
+              "y": 17.710525512695312,
+              "right": 58.1052360534668,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "上",
+          "up": "奥",
+          "relative": "手前",
+          "zeroLocation": "奥・上側",
+          "zero": 14,
+          "contact": 30.99999999833836,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.009995805493732971,
+          "probeNormal": -0.9999999998965187,
+          "probeAlong": -1.4465188216076369e-15,
+          "reading": "4.194505232649886",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 1.4078947305679321,
+              "y": 0.7105262279510498,
+              "right": 9.734374642372131,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑奥",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "手前",
+              "x": 44.00575637817383,
+              "y": 17.710525512695312,
+              "right": 58.1052360534668,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "上",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "horizontal",
+      "width": 320,
+      "height": 568,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "上",
+          "relative": "上",
+          "zeroLocation": "下・右側",
+          "zero": 31,
+          "contact": 14.000000000041354,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.009999338235296805,
+          "probeNormal": -1.0000000000000007,
+          "probeAlong": -1.3552527159682184e-20,
+          "reading": "0.6617647032025609",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 36.14285659790039
+            },
+            {
+              "text": "上",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "奥",
+          "relative": "手前",
+          "zeroLocation": "奥・右側",
+          "zero": 14,
+          "contact": 31,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010008775574358423,
+          "probeNormal": -0.9999999998965193,
+          "probeAlong": -2.5849394142282115e-25,
+          "reading": "-8.775575394137647",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑奥",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 10.142857551574707
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "手前",
+              "x": 44.01060104370117,
+              "y": 17.428569793701172,
+              "right": 58.49175834655762,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "上",
+          "up": "奥",
+          "relative": "手前",
+          "zeroLocation": "奥・上側",
+          "zero": 14,
+          "contact": 30.99999999833836,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.009995805493732971,
+          "probeNormal": -0.9999999998965187,
+          "probeAlong": -1.4465188216076369e-15,
+          "reading": "4.194505232649886",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 0.9285714030265808,
+              "y": 0.42857101559638977,
+              "right": 9.789796531200409,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑奥",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 10.142857551574707
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "手前",
+              "x": 44.01060104370117,
+              "y": 17.428569793701172,
+              "right": 58.49175834655762,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "上",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "width": 1280,
+      "height": 900,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 14.000000000000004,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.01000000016047899,
+          "probeNormal": -1.0000000000000002,
+          "probeAlong": 6.260414752830722e-34,
+          "reading": "-0.00016047898600268784",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.152423858642578,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑奥",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.710527420043945,
+              "right": 28.885690927505493,
+              "bottom": 35.77631664276123
+            },
+            {
+              "text": "奥",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 30.999999999196568,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010002916666658526,
+          "probeNormal": -1.0000000000000002,
+          "probeAlong": 6.776263555278098e-21,
+          "reading": "-2.916666658522166",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.233963012695312,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "下",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 31.000000000000004,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000005,
+          "probeNormal": -1.0000000000000004,
+          "probeAlong": 0,
+          "reading": "0",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 1.4078947305679321,
+              "y": 0.7105262279510498,
+              "right": 9.734374642372131,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "下",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "奥",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "width": 320,
+      "height": 568,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 14.000000000000004,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.01000000016047899,
+          "probeNormal": -1.0000000000000002,
+          "probeAlong": 6.260414752830722e-34,
+          "reading": "-0.00016047898600268784",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑奥",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 10.142857551574707
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 36.14285659790039
+            },
+            {
+              "text": "奥",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 30.999999999196568,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010002916666658526,
+          "probeNormal": -1.0000000000000002,
+          "probeAlong": 6.776263555278098e-21,
+          "reading": "-2.916666658522166",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "下",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 31.000000000000004,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000005,
+          "probeNormal": -1.0000000000000004,
+          "probeAlong": 0,
+          "reading": "0",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 0.9285714030265808,
+              "y": 0.42857101559638977,
+              "right": 9.789796531200409,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "下",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "奥",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "width": 1280,
+      "height": 900,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "奥",
+          "up": "右",
+          "relative": "右",
+          "zeroLocation": "左・奥側",
+          "zero": 31,
+          "contact": 14.000000030149014,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.009982133131913208,
+          "probeNormal": -1.0000000000000013,
+          "probeAlong": -2.0317484155620605e-20,
+          "reading": "17.866868086805628",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.152423858642578,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑右",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 24.99177837371826,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 61.87795448303223,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.710527420043945,
+              "right": 28.885690927505493,
+              "bottom": 35.77631664276123
+            },
+            {
+              "text": "右",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "奥",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 31.000000000000018,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000014,
+          "probeNormal": -1.0000000000000013,
+          "probeAlong": 2.6767494865310724e-25,
+          "reading": "0",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.233963012695312,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 61.87795448303223,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "下",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "奥",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 31.000000000000018,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000047,
+          "probeNormal": -1.0000000000000009,
+          "probeAlong": -3.3807450191023396e-21,
+          "reading": "-3.989863994746656e-11",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 1.4078947305679321,
+              "y": 0.7105262279510498,
+              "right": 9.734374642372131,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 61.87795448303223,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "下",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "width": 320,
+      "height": 568,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "奥",
+          "up": "右",
+          "relative": "右",
+          "zeroLocation": "左・奥側",
+          "zero": 31,
+          "contact": 14.000000030149014,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.009982133131913208,
+          "probeNormal": -1.0000000000000013,
+          "probeAlong": -2.0317484155620605e-20,
+          "reading": "17.866868086805628",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑右",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 10.142857551574707
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 62.23357009887695,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 36.14285659790039
+            },
+            {
+              "text": "右",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "奥",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 31.000000000000018,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000014,
+          "probeNormal": -1.0000000000000013,
+          "probeAlong": 2.6767494865310724e-25,
+          "reading": "0",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 62.23357009887695,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "下",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "奥",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 31.000000000000018,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000047,
+          "probeNormal": -1.0000000000000009,
+          "probeAlong": -3.3807450191023396e-21,
+          "reading": "-3.989863994746656e-11",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 0.9285714030265808,
+              "y": 0.42857101559638977,
+              "right": 9.789796531200409,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 62.23357009887695,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "下",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gantry",
+      "width": 1280,
+      "height": 900,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "奥",
+          "up": "右",
+          "relative": "右",
+          "zeroLocation": "左・奥側",
+          "zero": 31,
+          "contact": 14.000000055964534,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.009975657327702414,
+          "probeNormal": -1,
+          "probeAlong": 1.3552527155094074e-20,
+          "reading": "24.34267229758577",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.152423858642578,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑右",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 24.99177837371826,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 61.87795448303223,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.710527420043945,
+              "right": 28.885690927505493,
+              "bottom": 35.77631664276123
+            },
+            {
+              "text": "右",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "奥",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 31,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000002,
+          "probeNormal": -1,
+          "probeAlong": 1.625427017631433e-25,
+          "reading": "-1.734723475976807e-12",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.233963012695312,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 61.87795448303223,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "下",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "奥",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 31,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.01000000000000001,
+          "probeNormal": -1,
+          "probeAlong": -1.3611027337971445e-25,
+          "reading": "-8.673617379884035e-12",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 1.4078947305679321,
+              "y": 0.7105262279510498,
+              "right": 9.734374642372131,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 61.87795448303223,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "下",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gantry",
+      "width": 320,
+      "height": 568,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "奥",
+          "up": "右",
+          "relative": "右",
+          "zeroLocation": "左・奥側",
+          "zero": 31,
+          "contact": 14.000000055964534,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.009975657327702414,
+          "probeNormal": -1,
+          "probeAlong": 1.3552527155094074e-20,
+          "reading": "24.34267229758577",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑右",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 10.142857551574707
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 62.23357009887695,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 36.14285659790039
+            },
+            {
+              "text": "右",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "奥",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 31,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000002,
+          "probeNormal": -1,
+          "probeAlong": 1.625427017631433e-25,
+          "reading": "-1.734723475976807e-12",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 62.23357009887695,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "下",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "奥",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 31,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.01000000000000001,
+          "probeNormal": -1,
+          "probeAlong": -1.3611027337971445e-25,
+          "reading": "-8.673617379884035e-12",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 0.9285714030265808,
+              "y": 0.42857101559638977,
+              "right": 9.789796531200409,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "ラム固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 62.23357009887695,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "下",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "five",
+      "width": 1280,
+      "height": 900,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 13.999999999999993,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.010000000000000004,
+          "probeNormal": -1.0000000000000007,
+          "probeAlong": 0,
+          "reading": "1.734723475976807e-12",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.152423858642578,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑奥",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.710527420043945,
+              "right": 28.885690927505493,
+              "bottom": 35.77631664276123
+            },
+            {
+              "text": "奥",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 31.000000000000007,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000002,
+          "probeNormal": -1.0000000000000007,
+          "probeAlong": 0,
+          "reading": "3.469446951953614e-12",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.233963012695312,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "下",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 31.000000000000007,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000009,
+          "probeNormal": -1.0000000000000009,
+          "probeAlong": 0,
+          "reading": "0",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 1.4078947305679321,
+              "y": 0.7105262279510498,
+              "right": 9.734374642372131,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑上",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "R",
+              "x": 6,
+              "y": 23.710527420043945,
+              "right": 10.736842155456543,
+              "bottom": 33.77631664276123
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "下",
+              "x": 47.50287628173828,
+              "y": 17.710525512695312,
+              "right": 54.608139514923096,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "奥",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "five",
+      "width": 320,
+      "height": 568,
+      "diagrams": [
+        {
+          "pair": "XY",
+          "right": "右",
+          "up": "奥",
+          "relative": "奥",
+          "zeroLocation": "手前・右側",
+          "zero": 31,
+          "contact": 13.999999999999993,
+          "move": "M61,31L61,14m1.5,2l-1.5,-2l-1.5,2",
+          "normal": 0.010000000000000004,
+          "probeNormal": -1.0000000000000007,
+          "probeAlong": 0,
+          "reading": "1.734723475976807e-12",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XY",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑奥",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 10.142857551574707
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 25.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 36.14285659790039
+            },
+            {
+              "text": "奥",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・右側",
+          "zero": 14,
+          "contact": 31.000000000000007,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000002,
+          "probeNormal": -1.0000000000000007,
+          "probeAlong": 0,
+          "reading": "3.469446951953614e-12",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "下",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        },
+        {
+          "pair": "YZ",
+          "right": "奥",
+          "up": "上",
+          "relative": "下",
+          "zeroLocation": "上・奥側",
+          "zero": 14,
+          "contact": 31.000000000000007,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.010000000000000009,
+          "probeNormal": -1.0000000000000009,
+          "probeAlong": 0,
+          "reading": "0",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "YZ",
+              "x": 0.9285714030265808,
+              "y": 0.42857101559638977,
+              "right": 9.789796531200409,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑上",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 9.071428775787354
+            },
+            {
+              "text": "頭固定",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "R",
+              "x": 5.999999523162842,
+              "y": 23.428571701049805,
+              "right": 10.436383724212646,
+              "bottom": 34.14285659790039
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "下",
+              "x": 47.50111389160156,
+              "y": 17.428569793701172,
+              "right": 55.00111389160156,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "奥",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lathe",
+      "width": 1280,
+      "height": 900,
+      "diagrams": [
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "奥",
+          "relative": "手前",
+          "zeroLocation": "奥・右側",
+          "zero": 14,
+          "contact": 31.000000000000004,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.009999999938239797,
+          "probeNormal": -1.0000000000000002,
+          "probeAlong": -7.051446090149266e-26,
+          "reading": "0.00006176020458936726",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.7105262279510498,
+              "right": 10.233963012695312,
+              "bottom": 10.776315450668335
+            },
+            {
+              "text": "↑奥",
+              "x": 15.000000953674316,
+              "y": 2.0789475440979004,
+              "right": 25.324774742126465,
+              "bottom": 9.184210777282715
+            },
+            {
+              "text": "刃物台",
+              "x": 34,
+              "y": -0.28947359323501587,
+              "right": 55.093698501586914,
+              "bottom": 9.77631562948227
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.710526466369629,
+              "right": 20.17249298095703,
+              "bottom": 25.776315689086914
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.710526466369629,
+              "right": 28.885690927505493,
+              "bottom": 18.776315689086914
+            },
+            {
+              "text": "手前",
+              "x": 44.00575637817383,
+              "y": 17.710525512695312,
+              "right": 58.1052360534668,
+              "bottom": 27.776314735412598
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.71052551269531,
+              "right": 22.982730865478516,
+              "bottom": 43.7763147354126
+            },
+            {
+              "text": "右",
+              "x": 44,
+              "y": 33.71052551269531,
+              "right": 51.105263233184814,
+              "bottom": 43.7763147354126
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lathe",
+      "width": 320,
+      "height": 568,
+      "diagrams": [
+        {
+          "pair": "XZ",
+          "right": "右",
+          "up": "奥",
+          "relative": "手前",
+          "zeroLocation": "奥・右側",
+          "zero": 14,
+          "contact": 31.000000000000004,
+          "move": "M61,14L61,31m-1.5,-2l1.5,2l1.5,-2",
+          "normal": 0.009999999938239797,
+          "probeNormal": -1.0000000000000002,
+          "probeAlong": -7.051446090149266e-26,
+          "reading": "0.00006176020458936726",
+          "oldLocalShapes": 0,
+          "text": [
+            {
+              "text": "XZ",
+              "x": 2,
+              "y": 0.42857101559638977,
+              "right": 10.285914421081543,
+              "bottom": 11.142855912446976
+            },
+            {
+              "text": "↑奥",
+              "x": 15,
+              "y": 2.642857074737549,
+              "right": 25.346047401428223,
+              "bottom": 10.142857551574707
+            },
+            {
+              "text": "刃物台",
+              "x": 34,
+              "y": -0.5714285373687744,
+              "right": 55.46231460571289,
+              "bottom": 10.142856359481812
+            },
+            {
+              "text": "S",
+              "x": 16,
+              "y": 15.428570747375488,
+              "right": 20.285715103149414,
+              "bottom": 26.142855644226074
+            },
+            {
+              "text": "0",
+              "x": 25,
+              "y": 8.428571701049805,
+              "right": 29.285714149475098,
+              "bottom": 19.14285659790039
+            },
+            {
+              "text": "手前",
+              "x": 44.01060104370117,
+              "y": 17.428569793701172,
+              "right": 58.49175834655762,
+              "bottom": 28.142854690551758
+            },
+            {
+              "text": "押込＋",
+              "x": 2,
+              "y": 33.42856979370117,
+              "right": 22.959821701049805,
+              "bottom": 44.14285469055176
+            },
+            {
+              "text": "右",
+              "x": 43.999996185302734,
+              "y": 33.42856979370117,
+              "right": 51.499996185302734,
+              "bottom": 44.14285469055176
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
