@@ -121,6 +121,14 @@ function spindleSweepMachineGeometry(state,solution,profile){
 }
 function spindleSweepReading(value){return squarenessMicronText(value);}
 const horizontalParallelMiniMarkup=`<svg viewBox="0 0 56 31" role="img" aria-label="Z平行度の接触位置とゼロ。左の正面図ではaは円の左側、9時位置から右向きに接触して0。bは円の下側、6時位置から上向きに接触して0。右の長手方向図では、どちらもオレンジの点が示す先端寄りの位置でゼロを取り、右の主軸側へ300 mm走査します。"><circle cx="18" cy="10" r="6" fill="none" stroke="#66584c" stroke-width="1"/><path d="M2 10H11m-2-1.2 2 1.2-2 1.2M18 22V17m-2 3 2-3 2 3" fill="none" stroke="#66584c" stroke-width="1"/><circle class="parallel-mini-zero-a" cx="12" cy="10" r="1.3" fill="#b34800"/><circle class="parallel-mini-zero-b" cx="18" cy="16" r="1.3" fill="#b34800"/><text x="0" y="8" fill="#9b3f00" font-size="7" font-weight="700">a 0</text><text x="12" y="29" fill="#9b3f00" font-size="7" font-weight="700">b 0</text><path d="M30 5H49V12H30Z" fill="none" stroke="#66584c" stroke-width="1"/><rect x="49" y="2" width="6" height="13" fill="#66584c"/><circle class="parallel-mini-zero" cx="33" cy="12" r="1.5" fill="#b34800"/><path d="M33 14V17H45m-3-2 3 2-3 2" fill="none" stroke="#b34800" stroke-width="1"/><circle cx="45" cy="12" r="1.2" fill="#fffaf6" stroke="#b34800" stroke-width="1"/><text x="30" y="24" fill="#9b3f00" font-size="7" font-weight="700">0</text><text x="45" y="29" fill="#66584c" font-size="5.5" text-anchor="middle">300 mm</text></svg>`;
+// A plan-view location key only: four readings below retain their existing values.
+function updateSpindleSweepMini(zeroValid){
+ const holder=$('spindleSweepMini');
+ if(!holder.innerHTML)holder.innerHTML=`<svg id="spindleSweepMiniSvg" viewBox="0 0 24 25" role="img"><circle cx="12" cy="8" r="6" fill="none" stroke="#66584c" stroke-width=".8"/><circle cx="18" cy="8" r="1" fill="#66584c"/><circle cx="12" cy="2" r="1" fill="#66584c"/><circle cx="6" cy="8" r="1" fill="#66584c"/><circle class="sweep-mini-front" cx="12" cy="14" r="1.6" fill="#b34800"/><text id="spindleSweepMiniZero" class="sweep-mini-zero-label" x="12" y="23" text-anchor="middle" font-size="6" font-weight="700" fill="#9b3f00"></text></svg>`;
+ $('spindleSweepMiniZero').textContent=zeroValid?'手前0':'手前—';
+ $('spindleSweepMiniSvg').setAttribute('aria-label','触れの測定位置の模式図。上が奥、右が右、左が左、下が手前。'+(zeroValid?'下の手前の点がゼロ基準。':'手前で接触できないためゼロ基準と全数値は無効。'));
+ holder.setAttribute('data-zero-valid',String(!!zeroValid));
+}
 function updateHorizontalParallelReadout(){
  if(!$('horizontalParallelMini').innerHTML)$('horizontalParallelMini').innerHTML=horizontalParallelMiniMarkup;
  const measured=horizontalParallelism(),someValid=!!(measured.a?.valid||measured.b?.valid);
@@ -159,6 +167,7 @@ function updateSpindleSweep(){
  $('horizontalParallelMini').replaceChildren();
  for(let i=0;i<4;i++){const label=$('sweepLabel'+i);label.textContent='';label.innerHTML=sweepDirections[i]+(i===3?' <small>基準</small>':'');}
  const measured=spindleSweepGeometry(positions,levelSolution,machineProfile,1,current.kind==='compact'),zeroValid=measured.valid&&measured.cardinal[3].onTable;
+ updateSpindleSweepMini(zeroValid);
  for(let i=0;i<4;i++){
   const p=measured.cardinal?.[i],readable=zeroValid&&p?.onTable,el=$('sweepValue'+i),button=$('sweepPosition'+i);
   el.textContent=readable?spindleSweepReading(p.readingMicrons):p&&!p.onTable?'面外':'—';
@@ -167,7 +176,7 @@ function updateSpindleSweep(){
   button.setAttribute('aria-label',sweepDirections[i]+(i===3?'・基準':'')+'、'+(readable?el.textContent+'マイクロメートル':el.textContent));
   $('sweepReadout'+i).setAttribute('data-selected',button.getAttribute('aria-pressed'));
  }
- $('spindleSweepToggle').setAttribute('aria-label','ダイヤル測定。'+(current.kind==='compact'?'直角測定と共通の仮想主軸姿勢。':'')+sweepDirections.map((direction,i)=>direction+(i===3?'基準':'')+' '+$('sweepValue'+i).textContent+' マイクロメートル').join('、')+'。選択中 '+sweepDirections[Math.round(spindleSweepAngle/90)%4]+'。方向選択を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
+ $('spindleSweepToggle').setAttribute('aria-label','ダイヤル測定。小図は測定位置の模式図で、上が奥、下が手前。'+(zeroValid?'手前がゼロ基準。':'手前で接触できないためゼロ基準と全数値は無効。')+(current.kind==='compact'?'直角測定と共通の仮想主軸姿勢。':'')+sweepDirections.map((direction,i)=>direction+(i===3?'基準':'')+' '+$('sweepValue'+i).textContent+' マイクロメートル').join('、')+'。選択中 '+sweepDirections[Math.round(spindleSweepAngle/90)%4]+'。方向選択を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
  const point=measured.valid?measured.pointAt(spindleSweepAngle):null;
  $('sweepContactStatus').textContent=!measured.valid?'測定不可・主軸と上面の姿勢を確認':!zeroValid?'手前が面外・軸を中央へ':!point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）';
 }

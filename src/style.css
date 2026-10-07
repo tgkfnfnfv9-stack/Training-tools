@@ -706,3 +706,12 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 .spindle-sweep-panel[data-measurement="z-parallel"] .horizontal-parallel-mini svg{display:block;width:56px;height:31px}
 .spindle-sweep-panel[data-measurement="z-parallel"] #sweepReadout2,
 .spindle-sweep-panel[data-measurement="z-parallel"] #sweepReadout3{display:none}
+
+/* A small plan-view key stays inside the existing 64 × 79 px sweep readout.
+   Only the five original sweep machines use this internal allocation. */
+.spindle-sweep-mini{display:none}
+.spindle-sweep-panel[data-measurement="spindle-sweep"] .sweep-readout-heading{height:27px;align-items:center}
+.spindle-sweep-panel[data-measurement="spindle-sweep"] .spindle-sweep-mini{display:block;width:24px;height:25px;flex:none}
+.spindle-sweep-panel[data-measurement="spindle-sweep"] .spindle-sweep-mini svg{display:block;width:24px;height:25px}
+.spindle-sweep-panel[data-measurement="spindle-sweep"] .sweep-readout-row{height:12px;line-height:12px;align-items:center}
+.spindle-sweep-mini[data-zero-valid="false"] .sweep-mini-front{fill:#fffaf6;stroke:#9b3f00;stroke-width:1px}
