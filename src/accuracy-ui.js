@@ -70,6 +70,20 @@ function compactTablePathPoint(state=positions,solution=levelSolution,profile=ma
  const q=levelCoordinates(.45*state.X/100,-current.d*.1+.4*state.Y/100);
  return compactWorkVisualPoint([q.x,1.16,q.z],state,solution,profile,factor);
 }
+// A material point on the horizontal pallet, shared by the model and reference
+// fixture. factor=1 is physical geometry; camera/clearance never enter here.
+function horizontalPalletPoint(raw,state=positions,solution=levelSolution,profile=machineProfile,factor=1){
+ const L=window.Leveling,base=levelCoordinates(0,-.85),travel=levelCoordinates(0,.45*state.Z/100).z,z=base.z+travel;
+ const slope=solution.slopeAt(base.x,z),frame=L.orientation({lr:slope.lr*factor,fb:slope.fb*factor});
+ const q=levelCoordinates(raw[0],raw[2]),relative=[q.x-base.x,raw[1]-.66,q.z-base.z];
+ const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),direction=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)).find(a=>a.key==='Z').vector;
+ if(solution.residual>1e-10||Math.abs(solution.twist)>1e-10){
+  const local=relative.map((v,i)=>v+travel*(direction[i]-(i===2?1:0)));
+  return frame.rotate(local).map((v,i)=>v+[base.x,.66+solution.heightAt(base.x,z)*factor/1000,z][i]);
+ }
+ const moved=frame.rotate(direction);
+ return frame.rotate(relative).map((v,i)=>v+travel*moved[i]+[base.x,.66+solution.heightAt(base.x,base.z)*factor/1000,base.z][i]);
+}
 function compactPathFrames(state,solution,profile,factor=1){
  const q=levelCoordinates(0,-current.d*.1+.4*state.Y/100),work=compactSupportFrame(solution,q.x,q.z,factor);
  const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),intrinsicAxes=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)),Y=intrinsicAxes.find(a=>a.key==='Y').vector;
@@ -275,7 +289,7 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   const reading=measurement.valid?squarenessMicronText(measurement.microns):'—';
   referenceCards.push(referenceCard(pair,measurement,beforeMeasurement));
   const descriptionText=pair.key+'・'+(measurement.valid?measurement.setup.zeroLocation+'を0とした300 mmの仮想測定 '+reading+' µm':measurement.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。';
-  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" ${attributes} data-measurement-model="${window.ReferenceMeasurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${measurement.valid?measurement.microns:''}">${referenceDiagram(measurement)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${measurement.valid?measurement.microns:''}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
+  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${window.ReferenceMeasurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${measurement.valid?measurement.microns:''}">${referenceDiagram(measurement)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${measurement.valid?measurement.microns:''}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} 基準${plot.base}</text><g transform="translate(0,30)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');

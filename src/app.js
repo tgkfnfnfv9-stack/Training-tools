@@ -98,6 +98,7 @@ function portalZVisualPoint(point,axes,pose,m=current,state=positions){
  return frame.rotate(point.map((v,i)=>v-frame.nose[i])).map((v,i)=>v+frame.nose[i]);
 }
 function displayedModelPoint(p,axes,m=current,state=positions,pose='bed'){
+ if(m.kind==='horizontal'&&pose==='work'&&levelGeometry)return horizontalPalletPoint(p,state,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  return portalZVisualPoint(levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,state,pose),pose),axes,pose,m,state);
 }
 // The ideal comparison is a separate display transform. It never replaces
@@ -544,14 +545,18 @@ function buildModeUI(){
  const select=$('machineMode');select.replaceChildren();(base.modes||[]).forEach(([value,text])=>{const option=document.createElement('option');option.value=value;option.textContent=text;select.append(option);});select.value=machineMode;
 }
 $('machineMode').onchange=()=>{const base=machines.find(m=>m.id===current.id);if(!base.modes?.some(([value])=>value===$('machineMode').value))return;stopMotion();machineMode=$('machineMode').value;current=displayMachine(machines.find(m=>m.id===current.id));positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;populateMachine();setAxisMenuOpen(false,true);drawScene();};
+function axisPositionDirections(a){
+ if(!['X','Y','Z'].includes(a.key))return ['負側','正側'];
+ return a.vector[1]?['下','上']:a.vector[0]?['左','右']:['手前','奥'];
+}
 function buildAxisUI(){
  const axes=axisConfig(current);$('axisTabs').replaceChildren();$('axisSliders').replaceChildren();$('drawerAxisSelect').replaceChildren();
  axes.forEach(a=>{const option=document.createElement('option');option.value=a.key;option.textContent=a.key+'軸';$('drawerAxisSelect').append(option);const btn=document.createElement('button');btn.textContent=a.key+'軸';btn.className='axis-tab';btn.style.setProperty('--axis',axisColors[a.key]);btn.setAttribute('aria-pressed',a.key===selectedAxis?'true':'false');btn.onclick=()=>{if(!trainingMenuOpen)selectAxis(a.key);};$('axisTabs').append(btn);
- const row=document.createElement('div');row.className='axis-row';row.style.setProperty('--axis',axisColors[a.key]);row.innerHTML=`<label for="axis-${a.key}"><strong>${a.key}軸</strong><span>${a.part}<small>${a.direction}</small></span><output id="value-${a.key}">中央</output></label><input type="range" id="axis-${a.key}" min="-100" max="100" step="1" value="${positions[a.key]}" aria-label="${a.key}軸の部品位置"><div class="range-ends"><span>片側</span><span>反対側</span></div>`;$('axisSliders').append(row);
+ const [negative,positive]=axisPositionDirections(a),row=document.createElement('div');row.className='axis-row';row.style.setProperty('--axis',axisColors[a.key]);row.innerHTML=`<label for="axis-${a.key}"><strong>${a.key}軸</strong><span>${a.part}<small>${a.direction}</small></span><output id="value-${a.key}">中央</output></label><input type="range" id="axis-${a.key}" min="-100" max="100" step="1" value="${positions[a.key]}" aria-label="${a.key}軸の部品位置"><div class="range-ends"><span>部材− ${negative}</span><span>部材＋ ${positive}</span></div>`;$('axisSliders').append(row);
  $('axis-'+a.key).addEventListener('input',e=>{stopMotion();positions[a.key]=Number(e.target.value);selectAxis(a.key);updateAxisValues();saveLeveling();drawScene();});});
  updateAxisValues();selectAxis(selectedAxis);
 }
-function updateAxisValues(){for(const a of axisConfig(current)){const label=positions[a.key]===0?'中央':positions[a.key]>0?'反対側':'片側';$('axis-'+a.key).value=positions[a.key];$('axis-'+a.key).setAttribute('aria-valuetext',label);$('value-'+a.key).textContent=label;}}
+function updateAxisValues(){for(const a of axisConfig(current)){const sides=axisPositionDirections(a),label=positions[a.key]===0?'中央':sides[positions[a.key]>0?1:0];$('axis-'+a.key).value=positions[a.key];$('axis-'+a.key).setAttribute('aria-valuetext','部材位置・'+label);$('value-'+a.key).textContent=label;}}
 function selectAxis(key){
  const a=axisConfig(current).find(a=>a.key===key);if(!a)return;stopMotion();selectedAxis=key;
  Array.from($('axisTabs').children).forEach(b=>b.setAttribute('aria-pressed',b.textContent===key+'軸'?'true':'false'));

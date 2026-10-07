@@ -1,0 +1,74 @@
+{
+  "calculationModel": "lathe-carriage-v2",
+  "version": 2,
+  "machineProfile": {
+    "version": 1,
+    "condition": "used",
+    "seed": 78129,
+    "keys": [
+      "X",
+      "Z"
+    ],
+    "squareness": {
+      "XZ": {
+        "band": 0,
+        "microns": 6.4
+      }
+    },
+    "guides": {
+      "X": {
+        "band": 1,
+        "microns": 21.839
+      },
+      "Z": {
+        "band": 0,
+        "microns": 13.878
+      }
+    },
+    "initialHeights": [
+      -0.15,
+      0.15,
+      -0.065,
+      -0.134,
+      0.071,
+      0.043
+    ]
+  },
+  "bestState": {
+    "width": 4,
+    "depth": 1.68,
+    "columnX": 0,
+    "columnZ": 0,
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "machine": "lathe",
+  "mode": "",
+  "width": 4,
+  "depth": 1.68,
+  "heights": [
+    0.025,
+    -0.012,
+    0.018,
+    -0.009,
+    0.005,
+    -0.011
+  ],
+  "sensitivity": 0.05,
+  "measurePos": 0,
+  "offset": 0.5,
+  "columnX": 0,
+  "columnZ": 0,
+  "axisPositions": {
+    "X": 0,
+    "Z": 0
+  },
+  "step": 0.01,
+  "exaggerate": true
+}

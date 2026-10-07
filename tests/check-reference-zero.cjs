@@ -16,7 +16,7 @@ for(const [kind,pairs] of Object.entries(expected)){
  for(const [pair,[zero,direction,memberSign]] of Object.entries(pairs)){
   const svg=r.liveSquareness.querySelectorAll('svg').find(s=>s.dataset.pair===pair),start=svg.querySelectorAll('.scan-zero')[0],finish=svg.querySelectorAll('.scan-contact')[0];
   assert.equal(svg.dataset.zeroLocationMeasurement,zero);assert.equal(svg.dataset.relativeDirection,direction);
-  assert.equal(Number(start.getAttribute('cy')),pair==='XY'?31:14);assert.equal(Number(finish.getAttribute('cy')),pair==='XY'?14:31);
+  assert.equal(Number(start.getAttribute('cy')),pair==='XY'?31:14);assert(Math.abs(Number(finish.getAttribute('cy'))-(pair==='XY'?14:31))<1e-9);
   assert.match(svg.getAttribute('aria-label'),new RegExp(zero));checks++;
   for(const position of [-100,0,100]){
    const m=e.json(`referenceScan({key:'${pair}'},{X:${position},Y:${position},Z:${position},A:0,C:0})`);assert(m.valid);

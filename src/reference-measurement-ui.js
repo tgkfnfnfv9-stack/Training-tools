@@ -25,37 +25,57 @@ function referenceScan(pair,state=positions,solution=levelSolution,profile=machi
  // Keep the same 300 mm interval as v1, then select its requested zero end.
  const lowerPosition=Math.max(-half,Math.min(half-length,state[setup.scan]*half/100)),upperPosition=lowerPosition+length;
  const startPosition=setup.memberSign>0?lowerPosition:upperPosition,endPosition=setup.memberSign>0?upperPosition:lowerPosition,travelLength=endPosition-startPosition;
- const startState={...state,[setup.scan]:startPosition/half*100},endState={...state,[setup.scan]:endPosition/half*100},cache=new Map();
- const at=t=>{if(!cache.has(t))cache.set(t,geometryModel({...startState,[setup.scan]:(startPosition+travelLength*t)/half*100},solution,profile,.3));return cache.get(t);};
+ const startState={...state,[setup.scan]:startPosition/half*100},cache=new Map();
+ const stateAt=t=>({...startState,[setup.scan]:(startPosition+travelLength*t)/half*100});
+ const at=t=>{if(!cache.has(t))cache.set(t,geometryModel(stateAt(t),solution,profile,.3));return cache.get(t);};
  // Only these scans relocate a sampled support anchor in geometryModel.
  const varies=(current.kind==='compact'&&setup.scan==='Y')||(current.kind==='horizontal'&&setup.scan==='Z')||(current.kind==='five'&&setup.scan==='Y');
- const first=at(0),last=varies?at(1):first,normal=first.directions.find(a=>a.key===setup.base).direction,probe=M.scale(normal,-1),scanDirection=first.directions.find(a=>a.key===setup.scan).direction;
+ const first=at(0),normal=first.directions.find(a=>a.key===setup.base).direction,probe=M.scale(normal,-1),scanDirection=first.directions.find(a=>a.key===setup.scan).direction;
  const tangent=M.unit(M.sub(scanDirection,M.scale(normal,M.dot(normal,scanDirection))));
- const frames=g=>({body:referenceRigidFrame(setup.lathe?g.workFrame:g.toolFrame),master:referenceRigidFrame(setup.lathe?g.toolFrame:g.workFrame)}),f0=frames(first),f1=frames(last);
- // Each direction is the velocity of the specified contact anchor. In compact
- // Y it already includes the height of P, so use the exact P trajectory once.
+ const frames=g=>({body:referenceRigidFrame(setup.lathe?g.workFrame:g.toolFrame),master:referenceRigidFrame(setup.lathe?g.toolFrame:g.workFrame)}),f0=frames(first);
+ // Moving masters follow a specified material point. Do not integrate a guide
+ // tangent and silently drop the fixture height's rotational displacement.
  const breaks=current.kind==='horizontal'&&setup.scan==='Z'?supports.map(p=>(levelCoordinates(p.x,p.z).z-levelCoordinates(0,-.85).z-startPosition)/travelLength):[];
- const travel=current.kind==='compact'&&setup.scan==='Y'?{valid:true,value:M.sub(compactTablePathPoint(endState,solution,profile),compactTablePathPoint(startState,solution,profile))}:!varies?{valid:true,value:M.scale(scanDirection,travelLength)}:M.integrate(t=>at(t).directions.find(a=>a.key===setup.scan).direction,travelLength,breaks);
- if(!travel.valid)return {...travel,setup,startPosition,endPosition};
+ const anchor=current.kind==='compact'&&setup.scan==='Y'?s=>compactTablePathPoint(s,solution,profile):current.kind==='horizontal'&&setup.scan==='Z'?s=>horizontalPalletPoint([0,1.27,-.85],s,solution,profile):null,origin=anchor?anchor(startState):null;
  const start={point:[0,0,0],normal,body:M.scale(normal,.01),probe};
- const point=setup.owner==='master'?travel.value:[0,0,0],bodyAnchor=setup.owner==='body'?travel.value:[0,0,0];
- const end={point,normal:M.transport(normal,f0.master,f1.master),body:M.add(bodyAnchor,M.transport(start.body,f0.body,f1.body)),probe:M.transport(probe,f0.body,f1.body)};
- let result=M.compare(start,end);
- if(result.valid){
-  const along=M.transport(tangent,f0.master,f1.master),cross=[end.normal[1]*along[2]-end.normal[2]*along[1],end.normal[2]*along[0]-end.normal[0]*along[2],end.normal[0]*along[1]-end.normal[1]*along[0]],relative=M.sub(result.last.point,end.point),distance=M.dot(relative,along)*setup.relativeSign;
-  if(distance<-.01||distance>.31||Math.abs(M.dot(relative,cross))>.025)result={valid:false,reason:'基準面の範囲外'};
- }
- return {...result,setup,startPosition,endPosition,length,model:M.model,start,end};
+ const sample=t=>{
+  const f=frames(varies?at(t):first),travel=anchor?M.sub(anchor(stateAt(t)),origin):M.scale(scanDirection,travelLength*t);
+  const point=setup.owner==='master'?travel:[0,0,0],bodyAnchor=setup.owner==='body'?travel:[0,0,0];
+  const pose={point,normal:M.transport(normal,f0.master,f.master),body:M.add(bodyAnchor,M.transport(start.body,f0.body,f.body)),probe:M.transport(probe,f0.body,f.body)};
+  const along=M.transport(tangent,f0.master,f.master),contact=M.contact(pose);
+  if(contact.valid){
+   const cross=[pose.normal[1]*along[2]-pose.normal[2]*along[1],pose.normal[2]*along[0]-pose.normal[0]*along[2],pose.normal[0]*along[1]-pose.normal[1]*along[0]],relative=M.sub(contact.point,pose.point),distance=M.dot(relative,along)*setup.relativeSign;
+   if(distance<-.01||distance>.31||Math.abs(M.dot(relative,cross))>.025)return {valid:false,reason:'基準面の範囲外',t};
+  }
+  return {...contact,t,pose,along};
+ };
+ // Check interior contacts too, including both sides of support-gradient jumps.
+ // This is finite sampling, not a claim of continuous-path collision checking.
+ const times=[...new Set([0,1,...(varies?Array.from({length:15},(_,i)=>(i+1)/16):[]),...breaks.filter(t=>t>0&&t<1).flatMap(t=>[Math.max(0,t-1e-8),t,Math.min(1,t+1e-8)])])].sort((a,b)=>a-b),samples=times.map(sample),end=samples[samples.length-1].pose;
+ const bad=samples.find(p=>!p.valid),result=bad?{valid:false,reason:bad.reason,failurePosition:startPosition+travelLength*bad.t}:M.compare(start,end);
+ return {...result,setup,startPosition,endPosition,length,model:M.model,start,end,samples,alongStart:tangent,alongEnd:samples[samples.length-1].along,fixture:anchor?(current.kind==='horizontal'?'horizontal-pallet-top':'compact-table-P'):'representative-fixed-posture'};
 }
 function referenceDiagram(measurement){
- const s=measurement.setup,down=s.relativeSign<0,y0=down?14:31,y1=down?31:14,reading=measurement.valid?measurement.microns:0;
- // Fixed S face; exaggerated body displacement shows compression, not an axis.
- const shift=Math.max(-4,Math.min(4,reading/6)),bx=34-shift;
+ const s=measurement.setup,M=window.ReferenceMeasurement,down=s.relativeSign<0,y0=down?14:31;
+ let bx=34,cy=down?31:14,tilt=0,bodyNormal=.01,probeNormal=-1,probeAlong=0,limited=false;
+ const clip=(v,limit)=>{if(Math.abs(v)>limit)limited=true;return Math.max(-limit,Math.min(limit,v));};
+ if(measurement.valid){
+  const end=measurement.end,relative=M.sub(end.body,end.point),contact=M.sub(measurement.last.point,end.point),along=measurement.alongEnd;
+  bodyNormal=M.dot(relative,end.normal);probeNormal=M.dot(end.probe,end.normal);probeAlong=M.dot(end.probe,along);
+  // Draw the body displacement and probe attitude independently. A change in
+  // extension alone does not imply lateral body motion (e.g. cosine error).
+  bx+=clip((bodyNormal-.01)*1e6/6,4);
+  cy=y0-17*M.dot(contact,along)/.3;
+  cy=Math.max(12,Math.min(33,cy));
+  tilt=clip(-11*probeAlong/probeNormal*1000,1);
+ }
+ const by=cy+tilt,angle=Math.atan2(tilt,bx-23)*180/Math.PI;
  const arrow=(x,y,ex,ey,css)=>{const dx=ex-x,dy=ey-y,l=Math.hypot(dx,dy),u=dx/l,v=dy/l;return `<path d="M${x},${y}L${ex},${ey}m${-2*u-1.5*v},${-2*v+1.5*u}l${2*u+1.5*v},${2*v-1.5*u}l${-2*u+1.5*v},${-2*v-1.5*u}" class="${css}"/>`;};
- return `<text x="2" y="9" class="scan-label">${s.lathe?'XZ':s.base+s.scan}</text><text x="34" y="9" class="scan-label">${s.lathe?'刃物台':s.shortBody+'固定'}</text>${s.lathe?'<path d="M3,18H17V11H23V34H17V27H3Z" class="scan-master"/><path d="M23,11V34" class="scan-face"/>':'<path d="M3,11H23V34H3Z" class="scan-master"/><path d="M3,34H23V11" class="scan-face"/>'}<text x="${s.lathe?17:5}" y="26" class="scan-label">${s.lathe?'S':'直角'}</text><circle cx="23" cy="${y0}" r="1.6" class="scan-zero"/><text x="25" y="${y0+3}" class="scan-label measurement-start">0</text><path d="M34,${y0}L${bx},${y1}" class="scan-path"/>${arrow(61,y0,61,y1,'scan-move')}<text x="51" y="25" text-anchor="middle" class="scan-label">${s.relativeDirection}</text><circle cx="23" cy="${y1}" r="1.6" class="scan-contact"/><path d="M23,${y1}H${bx}" class="scan-probe"/><rect x="${bx}" y="${y1-3}" width="11" height="6" rx="1" class="scan-body"/>${arrow(29,40,40,40,'scan-press')}<text x="2" y="42" class="scan-label">押込＋</text><text x="44" y="42" class="scan-label">${s.normalDirection}</text>`;
+ const master=s.lathe?'<path d="M3,18H17V11H23V34H17V27H3Z" class="scan-master"/>':'<path d="M3,11H23V34H3Z" class="scan-master"/><path d="M3,34H23" class="scan-reference-face"/><text x="6" y="32" class="scan-label scan-r-label">R</text>';
+ return `<g class="scan-geometry" data-projection-mode="master-frame" data-body-normal-m="${bodyNormal}" data-probe-normal="${probeNormal}" data-probe-along="${probeAlong}" data-diagram-limited="${limited}"><text x="2" y="9" class="scan-label">${s.lathe?'XZ':s.base+s.scan}</text><text x="15" y="8" class="scan-view-direction">↑${s.positiveScanDirection}</text><text x="34" y="8" class="scan-label">${s.lathe?'刃物台':s.shortBody+'固定'}</text>${master}<path d="M23,11V34" class="scan-face"/><text x="16" y="24" class="scan-label scan-s-label">S</text><circle cx="23" cy="${y0}" r="1.6" class="scan-zero"/><text x="25" y="${y0+3}" class="scan-label measurement-start">0</text><g opacity="${measurement.valid?1:.3}"><path d="M34,${y0}L${bx},${by}" class="scan-path"/><circle cx="23" cy="${cy}" r="1.6" class="scan-contact"/><path d="M23,${cy}L${bx},${by}" class="scan-probe"/><rect x="${bx}" y="${by-3}" width="11" height="6" rx="1" transform="rotate(${angle} ${bx} ${by})" class="scan-body"/></g>${arrow(61,y0,61,down?31:14,'scan-move')}<text x="51" y="26" text-anchor="middle" class="scan-label">${s.relativeDirection}</text>${arrow(29,40,40,40,'scan-press')}<text x="2" y="42" class="scan-label">押込＋</text><text x="44" y="42" class="scan-label">${s.normalDirection}</text></g>`;
 }
 
 function referenceCard(pair,m,before){
  const s=m.setup,reading=m.valid?squarenessMicronText(m.microns)+' µm':m.reason,span=m.startPosition===undefined?'':`${signed(m.startPosition*1000,1)} → ${signed(m.endPosition*1000,1)} mm（${s.scan}部材位置・中央0）`;
- return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${s.lathe?'主軸基準XZ':pair.key} <span>${reading}</span></h3><svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${s.artifact}と${s.body}の測定配置">${referenceDiagram(m)}</svg><p>${s.artifact}：${s.mount}上／計器：${s.body}に固定。${s.normalDirection}側からS面に接触。</p><p>① ${s.lathe?'回転中心線Zに直角な校正済みフランジ面を使用。往復台Z送りとは別。':'R面を開始位置の'+s.base+'移動の接線に平行に方向合わせ（局所合わせ）。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。'}<br>② ${s.zeroLocation}の●0でゼロ合わせ。<br>③ ${s.member}を${s.memberSign>0?'＋':'−'}${s.scan}・${s.scanDirection}へ300 mm。基準器に対する計器は${s.relativeDirection}へ。押込み${s.normalDirection}が増えると＋、減ると−。</p><p>図の右＝${s.normalDirection}、図の上＝${s.positiveScanDirection}。図は基準面に沿う展開図です。</p><p>${span}${m.valid?'':' '+m.reason}</p><p>初期支持状態：${before.valid?squarenessMicronText(before.microns)+' µm':before.reason}／現在：${reading}（同じ区間で各々ゼロ）。</p><p>従来の局所角度差：${squarenessMicronText(pair.deviationMicroradians*.3)} µm／300 mm換算。上の有限走査値とは別です。</p></section>`;
+ return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${s.lathe?'主軸基準XZ':pair.key} <span>${reading}</span></h3><svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${s.artifact}と${s.body}の測定配置">${referenceDiagram(m)}</svg><p>${s.artifact}：${s.mount}上／計器：${s.body}に固定。${s.normalDirection}側からS面に接触。</p><p>① ${s.lathe?'回転中心線Zに直角な校正済みフランジ面を使用。往復台Z送りとは別。':'R面を開始位置の'+s.base+'移動の接線に平行に方向合わせ（局所合わせ）。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。'}<br>② ${s.zeroLocation}の●0でゼロ合わせ。<br>③ ${s.member}を部材${s.memberSign>0?'＋':'−'}${s.scan}・${s.scanDirection}へ300 mm（NC指令の符号ではありません）。基準器に対する計器は${s.relativeDirection}へ。測定子が本体へ${s.normalDirection}に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。</p><p>図の右＝${s.normalDirection}、図の上＝${s.positiveScanDirection}。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張し、図の変位・傾きは枠内に制限し、数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。</p><p>${span}。スライダーの現在位置と接触ゼロ位置は同じとは限りません。${m.valid?'':' '+m.reason}</p><p>${s.lathe?'現模型は手前側刃物台です。部材−Xは手前・径外向き。ゼロの絶対半径・実寸フランジは再現しません。':current.kind==='horizontal'?'Z走査のマスタ原点はパレット上面中心（支持基準から0.61 m）。模型と同じ点の移動・姿勢を使います。':current.kind==='compact'?'Y走査は模型の測定Pの移動を使います。':'この走査区間では取付部の姿勢が一定の代表点を使います。実物の固定具寸法は再現しません。'}</p><p>初期支持状態：${before.valid?squarenessMicronText(before.microns)+' µm':before.reason}／現在：${reading}（同じ区間で各々ゼロ）。</p><p>従来の局所角度差：${squarenessMicronText(pair.deviationMicroradians*.3)} µm／300 mm換算。上の有限走査値とは別です。</p></section>`;
 }

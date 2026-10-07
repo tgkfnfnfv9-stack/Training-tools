@@ -1,0 +1,792 @@
+{
+  "numericChecks": 130,
+  "status": "PASS",
+  "results": [
+    {
+      "name": "ideal",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "body approaches fixed S by 10 um",
+      "actual": 9.999999999999593,
+      "expected": 10,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "body recedes from fixed S by 10 um",
+      "actual": -9.999999999999593,
+      "expected": -10,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "signed path angle -0.000033333333333333335",
+      "actual": 9.999999998148642,
+      "expected": 9.99999999814815,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "signed path angle 0.000033333333333333335",
+      "actual": -9.999999998148642,
+      "expected": -9.99999999814815,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "opposite side; same +x displacement",
+      "actual": 9.999999999999593,
+      "expected": 10,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "same fixed setup reversed and re-zeroed",
+      "actual": -9.999999999999593,
+      "expected": -10,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "probe attitude changes with no normal translation",
+      "actual": -8.005336805809101,
+      "expected": -8.005336805807506,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "reverse with attitude changes, fixture held",
+      "actual": 8.005336805809101,
+      "expected": 8.005336805809101,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "shared rigid transform",
+      "actual": 9.99999999995449,
+      "expected": 10,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "machine path error alone",
+      "actual": -6.000000000000797,
+      "expected": -6,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "alignment error alone",
+      "actual": 14.999999999999389,
+      "expected": 15,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "both errors; one reading cannot identify both",
+      "actual": 8.999999999998593,
+      "expected": 9,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "curved path finite reading",
+      "actual": -9.000000000000327,
+      "expected": -9,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "curved path fixed-fixture reverse",
+      "actual": 9.000000000000327,
+      "expected": 9,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "support-cell boundary integration",
+      "actual": -0.000026699999999999995,
+      "expected": -0.0000267,
+      "tolerance": 1e-12
+    },
+    {
+      "name": "compact XY ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact XY ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact XY ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact XZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact XZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact XZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact YZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact YZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact YZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact exaggeration/zoom/camera invariant 0",
+      "actual": 1.2019237699174845,
+      "expected": 1.2019237699174845,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact exaggeration/zoom/camera invariant 1",
+      "actual": -2.531249999946153,
+      "expected": -2.531249999946153,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact exaggeration/zoom/camera invariant 2",
+      "actual": -0.08619870081605363,
+      "expected": -0.08619870081605363,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact support round trip 0",
+      "actual": 1.2019237699174845,
+      "expected": 1.2019237699174845,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact support round trip 1",
+      "actual": -2.531249999946153,
+      "expected": -2.531249999946153,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact support round trip 2",
+      "actual": -0.08619870081605363,
+      "expected": -0.08619870081605363,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact save/load round trip 0",
+      "actual": 1.2019237699174845,
+      "expected": 1.2019237699174845,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact save/load round trip 1",
+      "actual": -2.531249999946153,
+      "expected": -2.531249999946153,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "compact save/load round trip 2",
+      "actual": -0.08619870081605363,
+      "expected": -0.08619870081605363,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal XY ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal XY ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal XY ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal XZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal XZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal XZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal YZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal YZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal YZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal exaggeration/zoom/camera invariant 0",
+      "actual": 0.14889705880413717,
+      "expected": 0.14889705880413717,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal exaggeration/zoom/camera invariant 1",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal exaggeration/zoom/camera invariant 2",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal support round trip 0",
+      "actual": 0.14889705880413717,
+      "expected": 0.14889705880413717,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal support round trip 1",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal support round trip 2",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal save/load round trip 0",
+      "actual": 0.14889705880413717,
+      "expected": 0.14889705880413717,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal save/load round trip 1",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "horizontal save/load round trip 2",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel XY ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel XY ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel XY ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel XZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel XZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel XZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel YZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel YZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel YZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel exaggeration/zoom/camera invariant 0",
+      "actual": 0.000016776720637712295,
+      "expected": 0.000016776720637712295,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel exaggeration/zoom/camera invariant 1",
+      "actual": -1.0694444442273243,
+      "expected": -1.0694444442273243,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel exaggeration/zoom/camera invariant 2",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel support round trip 0",
+      "actual": 0.000016776720637712295,
+      "expected": 0.000016776720637712295,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel support round trip 1",
+      "actual": -1.0694444442273243,
+      "expected": -1.0694444442273243,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel support round trip 2",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel save/load round trip 0",
+      "actual": 0.000016776720637712295,
+      "expected": 0.000016776720637712295,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel save/load round trip 1",
+      "actual": -1.0694444442273243,
+      "expected": -1.0694444442273243,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "travel save/load round trip 2",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double XY ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double XY ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double XY ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double XZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double XZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double XZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double YZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double YZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double YZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double exaggeration/zoom/camera invariant 0",
+      "actual": -54.765572607745966,
+      "expected": -54.765572607745966,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double exaggeration/zoom/camera invariant 1",
+      "actual": 9.877840843245874,
+      "expected": 9.877840843245874,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double exaggeration/zoom/camera invariant 2",
+      "actual": -2.4162216578135083,
+      "expected": -2.4162216578135083,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double support round trip 0",
+      "actual": -54.765572607745966,
+      "expected": -54.765572607745966,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double support round trip 1",
+      "actual": 9.877840843245874,
+      "expected": 9.877840843245874,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double support round trip 2",
+      "actual": -2.4162216578135083,
+      "expected": -2.4162216578135083,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double save/load round trip 0",
+      "actual": -54.765572607745966,
+      "expected": -54.765572607745966,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double save/load round trip 1",
+      "actual": 9.877840843245874,
+      "expected": 9.877840843245874,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "double save/load round trip 2",
+      "actual": -2.4162216578135083,
+      "expected": -2.4162216578135083,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry XY ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry XY ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry XY ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry XZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry XZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry XZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry YZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry YZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry YZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry exaggeration/zoom/camera invariant 0",
+      "actual": -5.477101291818942,
+      "expected": -5.477101291818942,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry exaggeration/zoom/camera invariant 1",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry exaggeration/zoom/camera invariant 2",
+      "actual": -1.734723475976807e-12,
+      "expected": -1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry support round trip 0",
+      "actual": -5.477101291818942,
+      "expected": -5.477101291818942,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry support round trip 1",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry support round trip 2",
+      "actual": -1.734723475976807e-12,
+      "expected": -1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry save/load round trip 0",
+      "actual": -5.477101291818942,
+      "expected": -5.477101291818942,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry save/load round trip 1",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "gantry save/load round trip 2",
+      "actual": -1.734723475976807e-12,
+      "expected": -1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five XY ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five XY ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five XY ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five XZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five XZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five XZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five YZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five YZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five YZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five exaggeration/zoom/camera invariant 0",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five exaggeration/zoom/camera invariant 1",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five exaggeration/zoom/camera invariant 2",
+      "actual": -1.734723475976807e-12,
+      "expected": -1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five support round trip 0",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five support round trip 1",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five support round trip 2",
+      "actual": -1.734723475976807e-12,
+      "expected": -1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five save/load round trip 0",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five save/load round trip 1",
+      "actual": 1.734723475976807e-12,
+      "expected": 1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "five save/load round trip 2",
+      "actual": -1.734723475976807e-12,
+      "expected": -1.734723475976807e-12,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "lathe XZ ideal at slider -100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "lathe XZ ideal at slider 0",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "lathe XZ ideal at slider 100",
+      "actual": 0,
+      "expected": 0,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "lathe exaggeration/zoom/camera invariant 0",
+      "actual": -0.00003471173522229254,
+      "expected": -0.00003471173522229254,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "lathe support round trip 0",
+      "actual": -0.00003471173522229254,
+      "expected": -0.00003471173522229254,
+      "tolerance": 1e-7
+    },
+    {
+      "name": "lathe save/load round trip 0",
+      "actual": -0.00003471173522229254,
+      "expected": -0.00003471173522229254,
+      "tolerance": 1e-7
+    }
+  ],
+  "limitations": [
+    "No physical fixture fit/collision verification",
+    "Endpoint contact does not prove continuous-path contact",
+    "Browser pixels and NC command semantics are outside this independent geometry script",
+    "Current adapter assumes zero direction-alignment error; cannot estimate it independently"
+  ]
+}

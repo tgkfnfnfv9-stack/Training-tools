@@ -686,3 +686,6 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 .scan-probe{fill:none;stroke:#302923;stroke-width:1.6}
 .scan-body{fill:#302923}
 .scan-press{fill:none;stroke:#302923;stroke-width:1.2}
+
+.scan-reference-face{fill:none;stroke:#786a60;stroke-width:1.4;stroke-dasharray:2 1}
+.scan-view-direction{font-size:5px;fill:#594b40}

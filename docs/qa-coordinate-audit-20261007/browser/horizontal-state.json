@@ -1,0 +1,147 @@
+{
+  "calculationModel": "horizontal-guide-v2",
+  "version": 3,
+  "supportLayout": {
+    "id": "haas-ec630-ngc-eight-v1",
+    "points": [
+      {
+        "id": "haas-ec630-ngc-eight-v1-p1",
+        "x": -1.36,
+        "z": -1.8399999999999999,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p2",
+        "x": 1.36,
+        "z": -1.8399999999999999,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p3",
+        "x": -1.36,
+        "z": -0.6133333333333334,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p4",
+        "x": 1.36,
+        "z": -0.6133333333333334,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p5",
+        "x": -1.36,
+        "z": 0.6133333333333332,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p6",
+        "x": 1.36,
+        "z": 0.6133333333333332,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p7",
+        "x": -1.36,
+        "z": 1.8399999999999999,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p8",
+        "x": 1.36,
+        "z": 1.8399999999999999,
+        "group": "bed"
+      }
+    ]
+  },
+  "machineProfile": {
+    "version": 1,
+    "condition": "used",
+    "seed": 78129,
+    "keys": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "squareness": {
+      "XY": {
+        "band": 0,
+        "microns": 6.4
+      },
+      "XZ": {
+        "band": 1,
+        "microns": -21.839
+      },
+      "YZ": {
+        "band": 0,
+        "microns": 6.374
+      }
+    },
+    "guides": {
+      "X": {
+        "band": 0,
+        "microns": 5.825
+      },
+      "Y": {
+        "band": 1,
+        "microns": 45.697
+      },
+      "Z": {
+        "band": 1,
+        "microns": 27.503
+      }
+    },
+    "initialHeights": [
+      -0.15,
+      0.15,
+      0.067,
+      -0.076,
+      -0.148,
+      0.055,
+      -0.092,
+      -0.049
+    ]
+  },
+  "bestState": {
+    "width": 2.72,
+    "depth": 3.68,
+    "columnX": 0,
+    "columnZ": 0,
+    "heights": [
+      -0.02,
+      -0.019,
+      -0.004,
+      -0.007,
+      0.005,
+      0.012,
+      0.002,
+      -0.006
+    ]
+  },
+  "machine": "horizontal",
+  "mode": "",
+  "width": 2.72,
+  "depth": 3.68,
+  "heights": [
+    0.025,
+    -0.012,
+    0.018,
+    -0.009,
+    0.005,
+    -0.011,
+    0.025,
+    -0.012
+  ],
+  "sensitivity": 0.05,
+  "measurePos": 0,
+  "offset": 0.5,
+  "columnX": 0,
+  "columnZ": 0,
+  "axisPositions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+  },
+  "step": 0.01,
+  "exaggerate": false
+}

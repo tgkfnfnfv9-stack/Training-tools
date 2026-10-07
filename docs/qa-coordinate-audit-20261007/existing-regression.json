@@ -1,0 +1,32 @@
+[
+  {
+    "test": "check-reference-zero.cjs",
+    "exit": 0,
+    "stdout": "Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-measurement-reference.cjs",
+    "exit": 0,
+    "stdout": "Reference plane geometry: 70 numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.\nSupport-grid crossing: piecewise exact example and independent 10,000-midpoint oracle passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-full-sign-geometry.cjs",
+    "exit": 0,
+    "stdout": "compact done rows=99\nhorizontal done rows=198\ntravel done rows=297\ndouble done rows=396\ngantry done rows=495\nfive done rows=594\nlathe done rows=636\n{\"checks\":6803,\"failures\":0,\"rows\":636,\"motion\":636,\"dial\":495,\"maximumPairOracleDifference\":6.661338147750939e-11}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-multi-spindle-sweep.cjs",
+    "exit": 0,
+    "stdout": "PASS multi-machine spindle sweep independent physics: 152 checks\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-adjustment-flow.cjs",
+    "exit": 0,
+    "stdout": "Adjustment flow: 153 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.\n",
+    "stderr": ""
+  }
+]

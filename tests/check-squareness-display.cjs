@@ -6,7 +6,7 @@ for(let i=0;i<7;i++){
  const pairs=e.json('levelGeometry.pairs'),svgs=r.liveSquareness.querySelectorAll('svg');
  assert.deepEqual(svgs.map(s=>s.dataset.pair),pairs.map(p=>p.key));
  for(const [index,svg] of svgs.entries()){
-  assert.equal(svg.dataset.measurementModel,'reference-scan-v2');
+  assert.equal(svg.dataset.measurementModel,'reference-scan-v3');
   for(const c of ['scan-master','scan-face','scan-zero','scan-contact','scan-probe','scan-body','scan-path','scan-move','scan-press'])assert.equal(svg.querySelectorAll('.'+c).length,1);
   assert.equal(svg.querySelectorAll('.measurement-start')[0].textContent,'0');
   assert.equal(svg.parentElement.querySelectorAll('.live-pair-title').length,0);

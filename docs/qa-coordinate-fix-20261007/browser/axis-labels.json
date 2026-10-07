@@ -1,0 +1,642 @@
+[
+  {
+    "kind": "compact",
+    "key": "X",
+    "value": -100,
+    "expected": "左",
+    "actual": {
+      "position": -100,
+      "value": "左",
+      "aria": "部材位置・左",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "compact",
+    "key": "X",
+    "value": 100,
+    "expected": "右",
+    "actual": {
+      "position": 100,
+      "value": "右",
+      "aria": "部材位置・右",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "compact",
+    "key": "Y",
+    "value": -100,
+    "expected": "手前",
+    "actual": {
+      "position": -100,
+      "value": "手前",
+      "aria": "部材位置・手前",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "compact",
+    "key": "Y",
+    "value": 100,
+    "expected": "奥",
+    "actual": {
+      "position": 100,
+      "value": "奥",
+      "aria": "部材位置・奥",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "compact",
+    "key": "Z",
+    "value": -100,
+    "expected": "下",
+    "actual": {
+      "position": -100,
+      "value": "下",
+      "aria": "部材位置・下",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "compact",
+    "key": "Z",
+    "value": 100,
+    "expected": "上",
+    "actual": {
+      "position": 100,
+      "value": "上",
+      "aria": "部材位置・上",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "travel",
+    "key": "X",
+    "value": -100,
+    "expected": "左",
+    "actual": {
+      "position": -100,
+      "value": "左",
+      "aria": "部材位置・左",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "travel",
+    "key": "X",
+    "value": 100,
+    "expected": "右",
+    "actual": {
+      "position": 100,
+      "value": "右",
+      "aria": "部材位置・右",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "travel",
+    "key": "Y",
+    "value": -100,
+    "expected": "手前",
+    "actual": {
+      "position": -100,
+      "value": "手前",
+      "aria": "部材位置・手前",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "travel",
+    "key": "Y",
+    "value": 100,
+    "expected": "奥",
+    "actual": {
+      "position": 100,
+      "value": "奥",
+      "aria": "部材位置・奥",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "travel",
+    "key": "Z",
+    "value": -100,
+    "expected": "下",
+    "actual": {
+      "position": -100,
+      "value": "下",
+      "aria": "部材位置・下",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "travel",
+    "key": "Z",
+    "value": 100,
+    "expected": "上",
+    "actual": {
+      "position": 100,
+      "value": "上",
+      "aria": "部材位置・上",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "five",
+    "key": "X",
+    "value": -100,
+    "expected": "左",
+    "actual": {
+      "position": -100,
+      "value": "左",
+      "aria": "部材位置・左",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "five",
+    "key": "X",
+    "value": 100,
+    "expected": "右",
+    "actual": {
+      "position": 100,
+      "value": "右",
+      "aria": "部材位置・右",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "five",
+    "key": "Y",
+    "value": -100,
+    "expected": "手前",
+    "actual": {
+      "position": -100,
+      "value": "手前",
+      "aria": "部材位置・手前",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "five",
+    "key": "Y",
+    "value": 100,
+    "expected": "奥",
+    "actual": {
+      "position": 100,
+      "value": "奥",
+      "aria": "部材位置・奥",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "five",
+    "key": "Z",
+    "value": -100,
+    "expected": "下",
+    "actual": {
+      "position": -100,
+      "value": "下",
+      "aria": "部材位置・下",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "five",
+    "key": "Z",
+    "value": 100,
+    "expected": "上",
+    "actual": {
+      "position": 100,
+      "value": "上",
+      "aria": "部材位置・上",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "horizontal",
+    "key": "X",
+    "value": -100,
+    "expected": "左",
+    "actual": {
+      "position": -100,
+      "value": "左",
+      "aria": "部材位置・左",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "horizontal",
+    "key": "X",
+    "value": 100,
+    "expected": "右",
+    "actual": {
+      "position": 100,
+      "value": "右",
+      "aria": "部材位置・右",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "horizontal",
+    "key": "Y",
+    "value": -100,
+    "expected": "下",
+    "actual": {
+      "position": -100,
+      "value": "下",
+      "aria": "部材位置・下",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "horizontal",
+    "key": "Y",
+    "value": 100,
+    "expected": "上",
+    "actual": {
+      "position": 100,
+      "value": "上",
+      "aria": "部材位置・上",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "horizontal",
+    "key": "Z",
+    "value": -100,
+    "expected": "手前",
+    "actual": {
+      "position": -100,
+      "value": "手前",
+      "aria": "部材位置・手前",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "horizontal",
+    "key": "Z",
+    "value": 100,
+    "expected": "奥",
+    "actual": {
+      "position": 100,
+      "value": "奥",
+      "aria": "部材位置・奥",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "double",
+    "key": "X",
+    "value": -100,
+    "expected": "手前",
+    "actual": {
+      "position": -100,
+      "value": "手前",
+      "aria": "部材位置・手前",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "double",
+    "key": "X",
+    "value": 100,
+    "expected": "奥",
+    "actual": {
+      "position": 100,
+      "value": "奥",
+      "aria": "部材位置・奥",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "double",
+    "key": "Y",
+    "value": -100,
+    "expected": "左",
+    "actual": {
+      "position": -100,
+      "value": "左",
+      "aria": "部材位置・左",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "double",
+    "key": "Y",
+    "value": 100,
+    "expected": "右",
+    "actual": {
+      "position": 100,
+      "value": "右",
+      "aria": "部材位置・右",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "double",
+    "key": "Z",
+    "value": -100,
+    "expected": "下",
+    "actual": {
+      "position": -100,
+      "value": "下",
+      "aria": "部材位置・下",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "double",
+    "key": "Z",
+    "value": 100,
+    "expected": "上",
+    "actual": {
+      "position": 100,
+      "value": "上",
+      "aria": "部材位置・上",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "gantry",
+    "key": "X",
+    "value": -100,
+    "expected": "手前",
+    "actual": {
+      "position": -100,
+      "value": "手前",
+      "aria": "部材位置・手前",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "gantry",
+    "key": "X",
+    "value": 100,
+    "expected": "奥",
+    "actual": {
+      "position": 100,
+      "value": "奥",
+      "aria": "部材位置・奥",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "gantry",
+    "key": "Y",
+    "value": -100,
+    "expected": "左",
+    "actual": {
+      "position": -100,
+      "value": "左",
+      "aria": "部材位置・左",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "gantry",
+    "key": "Y",
+    "value": 100,
+    "expected": "右",
+    "actual": {
+      "position": 100,
+      "value": "右",
+      "aria": "部材位置・右",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "gantry",
+    "key": "Z",
+    "value": -100,
+    "expected": "下",
+    "actual": {
+      "position": -100,
+      "value": "下",
+      "aria": "部材位置・下",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "gantry",
+    "key": "Z",
+    "value": 100,
+    "expected": "上",
+    "actual": {
+      "position": 100,
+      "value": "上",
+      "aria": "部材位置・上",
+      "ends": [
+        "部材− 下",
+        "部材＋ 上"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "lathe",
+    "key": "X",
+    "value": -100,
+    "expected": "手前",
+    "actual": {
+      "position": -100,
+      "value": "手前",
+      "aria": "部材位置・手前",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "lathe",
+    "key": "X",
+    "value": 100,
+    "expected": "奥",
+    "actual": {
+      "position": 100,
+      "value": "奥",
+      "aria": "部材位置・奥",
+      "ends": [
+        "部材− 手前",
+        "部材＋ 奥"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "lathe",
+    "key": "Z",
+    "value": -100,
+    "expected": "左",
+    "actual": {
+      "position": -100,
+      "value": "左",
+      "aria": "部材位置・左",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  },
+  {
+    "kind": "lathe",
+    "key": "Z",
+    "value": 100,
+    "expected": "右",
+    "actual": {
+      "position": 100,
+      "value": "右",
+      "aria": "部材位置・右",
+      "ends": [
+        "部材− 左",
+        "部材＋ 右"
+      ]
+    },
+    "pass": true
+  }
+]

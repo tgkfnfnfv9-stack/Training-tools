@@ -1,0 +1,57 @@
+{
+  "baselineCommit": "127b3ece7da64cab5d1fb9bbb998313d739fd905",
+  "verticesPerCase": 192,
+  "cases": 450,
+  "comparisons": 86400,
+  "maxDifference": 3.58036839697957e-15,
+  "worst": {
+    "heightCase": 2,
+    "profileCase": 2,
+    "exaggerated": true,
+    "dims": [
+      0.5,
+      20
+    ],
+    "state": {
+      "X": -100,
+      "Y": -100,
+      "Z": -100,
+      "A": 0,
+      "C": 0
+    },
+    "vertex": {
+      "p": [
+        -0.2255824058937117,
+        1.1300000000000001,
+        -1.544271256895462
+      ],
+      "axes": [
+        "Z"
+      ],
+      "pose": "work"
+    },
+    "old": [
+      -0.003708695064365365,
+      1.2064889549202582,
+      -10.83797541229406
+    ],
+    "new": [
+      -0.0037086950643653582,
+      1.2064889549202586,
+      -10.837975412294064
+    ],
+    "delta": 3.58036839697957e-15
+  },
+  "tolerance": 1e-10,
+  "failures": [],
+  "unchangedSpindleSweepFiles": {
+    "src/spindle-sweep.js": {
+      "old": "417ef0f6486fcdbd7b10a42b89f610b2b121660c126ab7b0aa0bb97b0fa85c57",
+      "new": "417ef0f6486fcdbd7b10a42b89f610b2b121660c126ab7b0aa0bb97b0fa85c57"
+    },
+    "src/spindle-sweep-ui.js": {
+      "old": "6d0021ea3f4eb7ffeba21628053e204c1d50d3051a90778fbaedd61cdeb4eca7",
+      "new": "6d0021ea3f4eb7ffeba21628053e204c1d50d3051a90778fbaedd61cdeb4eca7"
+    }
+  }
+}

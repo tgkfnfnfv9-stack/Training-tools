@@ -1,0 +1,86 @@
+[
+  {
+    "test": "check-measurement-reference.cjs",
+    "exit": 0,
+    "stdout": "Reference plane geometry: 70 numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.\nSupport-grid crossing: piecewise integral and analytic pallet material-point oracle passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-full-sign-geometry.cjs",
+    "exit": 0,
+    "stdout": "compact done rows=99\nhorizontal done rows=198\ntravel done rows=297\ndouble done rows=396\ngantry done rows=495\nfive done rows=594\nlathe done rows=636\n{\"checks\":6803,\"failures\":0,\"rows\":636,\"motion\":636,\"dial\":495,\"maximumPairOracleDifference\":6.661338147750939e-11}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-multi-spindle-sweep.cjs",
+    "exit": 0,
+    "stdout": "PASS multi-machine spindle sweep independent physics: 152 checks\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-accuracy-render.cjs",
+    "exit": 0,
+    "stdout": "Accuracy Canvas: 305 rendered frames, 991776 finite drawing operations passed (3 sizes, 7 machines, 2 extra modes).\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-live-squareness-values.cjs",
+    "exit": 0,
+    "stdout": "Live finite readings: 159 assertions, view invariance, support reversal and saved-state restoration passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-model-posture.cjs",
+    "exit": 0,
+    "stdout": "{\n  \"checks\": {\n    \"projection\": 105,\n    \"surfaceNormals\": 491,\n    \"groundContact\": 560,\n    \"rigidMotion\": 30,\n    \"axisLabels\": 224\n  },\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-3d-axis-controls.cjs",
+    "exit": 0,
+    "stdout": "3D axis controls: 138 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-mobile-navigation.cjs",
+    "exit": 0,
+    "stdout": "電気／機械ナビ、両訓練画面のロック・解除、スクロール初期化、7カテゴリ：passed\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-reference-zero.cjs",
+    "exit": 0,
+    "stdout": "Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-squareness-display.cjs",
+    "exit": 0,
+    "stdout": "Measurement drawings: 19 planes, actual fixture/contact/zero/scan/compression labels and retained local comparisons passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-reference-fixtures.cjs",
+    "exit": 0,
+    "stdout": "Reference fixtures: 317 independent geometry comparisons, 233 v2 regression comparisons, plus fixture validity and 7 saved-state compatibility groups passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-settings-menu.cjs",
+    "exit": 0,
+    "stdout": "{\n  \"checks\": {\n    \"drawerState\": 49,\n    \"supportSelection\": 50,\n    \"stageSteps\": 300,\n    \"limits\": 21,\n    \"axisControls\": 51,\n    \"demo\": 21,\n    \"saveImportExport\": 21,\n    \"legacyStep\": 63,\n    \"settings\": 5\n  },\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-ideal-outline-ui.cjs",
+    "exit": 0,
+    "stdout": "{\n  \"checks\": 743,\n  \"frames\": 790,\n  \"finiteCanvasCoordinates\": 4751765,\n  \"maximumIdealSegments\": 411,\n  \"maximumIdealToCurrentRatio\": 0.23509369676320271\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-adjustment-flow.cjs",
+    "exit": 0,
+    "stdout": "Adjustment flow: 153 nonnumeric, actual-improvement, invariant-pair and legacy checks passed.\n",
+    "stderr": ""
+  }
+]

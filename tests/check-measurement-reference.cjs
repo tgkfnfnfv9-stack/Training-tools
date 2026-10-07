@@ -47,14 +47,16 @@ assert.equal(pairs,19);
 console.log(`Reference plane geometry: ${checks} numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.`);
 // A grid-gradient jump is integrated on its two open cells, with known area.
 near(M.integrate(t=>[t<.37?1e-4:-2e-4,1,0],.3,[.37]).value[0],.3*(.37*1e-4-.63*2e-4),1e-12);
-e.read("openMachine(machines[1]);supportHeights=supports.map((s,i)=>[.025,-.012,.018,-.009,.005,-.011][i%6]);updateLeveling();");
+// The horizontal master now follows the pallet top material point, H=.61 m
+// above its support datum. For h=k*x*z at x=0, its x/y coordinates are
+// [-H*sin(atan(k*z)), H*cos(atan(k*z))]; this is an analytic rigid lever arm.
+const k=.00008,H=.61,z0=-.85,z1=-.55,t0=Math.atan(k*z0),t1=Math.atan(k*z1),delta=t1-t0;
+e.read(`openMachine(machines[1]);supportHeights=supports.map(s=>{const q=levelCoordinates(s.x,s.z);return 1000*${k}*q.x*q.z;});positions={X:0,Y:0,Z:0,A:0,C:0};updateLeveling();`);
 for(const key of ['XZ','YZ']){
  const scan=e.json(`referenceScan({key:'${key}'})`);assert.equal(scan.valid,true,scan.reason);
- // Dense midpoint integration is an independent numerical check on crossing
- // the actual support grid (does not use production quadrature or breakpoints).
- const expected=e.read(`(()=>{const M=window.ReferenceMeasurement,m=referenceScan({key:'${key}'}),sum=[0,0,0],N=10000,axis=axisConfig(current).find(a=>a.key==='Z'),half=levelCoordinates(0,axis.amp).z;
- for(let i=0;i<N;i++){const g=geometryModel({...positions,Z:(m.startPosition+.3*(i+.5)/N)/half*100}),v=g.directions.find(a=>a.key==='Z').direction;for(let j=0;j<3;j++)sum[j]+=.3*v[j]/N;}
- const n=m.end.normal,b=m.end.body,u=m.end.probe,lambda=n.reduce((s,v,j)=>s+v*(sum[j]-b[j]),0)/n.reduce((s,v,j)=>s+v*u[j],0);return (.01-lambda)*1e6;})()`);
- near(scan.microns,expected,.002);
+ const align=key==='XZ'?Math.atan(k*4.6*.28):Math.PI/2+Math.atan(k*4.6*.29);
+ const dx=-H*(Math.sin(t1)-Math.sin(t0)),dy=H*(Math.cos(t1)-Math.cos(t0));
+ const expected=(Math.cos(align+delta)*dx+Math.sin(align+delta)*dy)/Math.cos(delta)*1e6;
+ near(scan.microns,expected,2e-7);
 }
-console.log('Support-grid crossing: piecewise exact example and independent 10,000-midpoint oracle passed.');
+console.log('Support-grid crossing: piecewise integral and analytic pallet material-point oracle passed.');

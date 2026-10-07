@@ -1,0 +1,184 @@
+{
+  "note": "Diagnostic material-point fixture with support heights quantized to 0.001 mm. Profile is null; this remains a diagnostic state record, not an assertion of compatibility with every save version.",
+  "kind": "horizontal",
+  "profile": null,
+  "heights": [
+    0.2,
+    -0.2,
+    0.067,
+    -0.067,
+    -0.067,
+    0.067,
+    -0.2,
+    0.2
+  ],
+  "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0,
+    "A": 0,
+    "C": 0
+  },
+  "exaggerate": false,
+  "readings": [
+    {
+      "pair": "XY",
+      "valid": true,
+      "microns": 1.100183811423086,
+      "startPosition": 0,
+      "endPosition": 0.3,
+      "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "normalDirection": "右",
+        "positiveScanDirection": "上",
+        "scanDirection": "上",
+        "relativeDirection": "上",
+        "relativeSign": 1,
+        "memberSign": 1,
+        "zeroLocation": "下・右側",
+        "body": "主軸頭",
+        "mount": "パレット",
+        "artifact": "直角マスタ",
+        "shortBody": "頭",
+        "lathe": false
+      }
+    },
+    {
+      "pair": "XZ",
+      "valid": true,
+      "microns": -1.734723475976807e-12,
+      "startPosition": 0,
+      "endPosition": 0.3,
+      "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "master",
+        "member": "パレット台＋ワーク",
+        "normalDirection": "右",
+        "positiveScanDirection": "奥",
+        "scanDirection": "奥",
+        "relativeDirection": "手前",
+        "relativeSign": -1,
+        "memberSign": 1,
+        "zeroLocation": "奥・右側",
+        "body": "主軸頭",
+        "mount": "パレット",
+        "artifact": "直角マスタ",
+        "shortBody": "頭",
+        "lathe": false
+      }
+    },
+    {
+      "pair": "YZ",
+      "valid": true,
+      "microns": 0,
+      "startPosition": 0,
+      "endPosition": 0.3,
+      "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "master",
+        "member": "パレット台＋ワーク",
+        "normalDirection": "上",
+        "positiveScanDirection": "奥",
+        "scanDirection": "奥",
+        "relativeDirection": "手前",
+        "relativeSign": -1,
+        "memberSign": 1,
+        "zeroLocation": "奥・上側",
+        "body": "主軸頭",
+        "mount": "パレット",
+        "artifact": "直角マスタ",
+        "shortBody": "頭",
+        "lathe": false
+      }
+    }
+  ],
+  "record": {
+    "calculationModel": "horizontal-guide-v2",
+    "version": 3,
+    "supportLayout": {
+      "id": "haas-ec630-ngc-eight-v1",
+      "points": [
+        {
+          "id": "haas-ec630-ngc-eight-v1-p1",
+          "x": -1.36,
+          "z": -1.8399999999999999,
+          "group": "bed"
+        },
+        {
+          "id": "haas-ec630-ngc-eight-v1-p2",
+          "x": 1.36,
+          "z": -1.8399999999999999,
+          "group": "bed"
+        },
+        {
+          "id": "haas-ec630-ngc-eight-v1-p3",
+          "x": -1.36,
+          "z": -0.6133333333333334,
+          "group": "bed"
+        },
+        {
+          "id": "haas-ec630-ngc-eight-v1-p4",
+          "x": 1.36,
+          "z": -0.6133333333333334,
+          "group": "bed"
+        },
+        {
+          "id": "haas-ec630-ngc-eight-v1-p5",
+          "x": -1.36,
+          "z": 0.6133333333333332,
+          "group": "bed"
+        },
+        {
+          "id": "haas-ec630-ngc-eight-v1-p6",
+          "x": 1.36,
+          "z": 0.6133333333333332,
+          "group": "bed"
+        },
+        {
+          "id": "haas-ec630-ngc-eight-v1-p7",
+          "x": -1.36,
+          "z": 1.8399999999999999,
+          "group": "bed"
+        },
+        {
+          "id": "haas-ec630-ngc-eight-v1-p8",
+          "x": 1.36,
+          "z": 1.8399999999999999,
+          "group": "bed"
+        }
+      ]
+    },
+    "machine": "horizontal",
+    "mode": "",
+    "width": 2.72,
+    "depth": 3.68,
+    "heights": [
+      0.2,
+      -0.2,
+      0.067,
+      -0.067,
+      -0.067,
+      0.067,
+      -0.2,
+      0.2
+    ],
+    "sensitivity": 0.05,
+    "measurePos": 0,
+    "offset": 0.5,
+    "columnX": 0,
+    "columnZ": 0,
+    "axisPositions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "step": 0.01,
+    "exaggerate": false
+  },
+  "pageErrors": []
+}

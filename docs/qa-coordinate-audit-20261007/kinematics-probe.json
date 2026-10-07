@@ -1,0 +1,578 @@
+{
+  "idealMovingGroupChecks": 37,
+  "results": [
+    {
+      "machine": "vertical",
+      "axis": "X",
+      "pose": "work",
+      "group": [
+        "X",
+        "Y"
+      ],
+      "delta": [
+        0.004500000000000004,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "vertical",
+      "axis": "Y",
+      "pose": "work",
+      "group": [
+        "Y"
+      ],
+      "delta": [
+        0,
+        0,
+        0.0040000000000000036
+      ]
+    },
+    {
+      "machine": "vertical",
+      "axis": "Y",
+      "pose": "work",
+      "group": [
+        "X",
+        "Y"
+      ],
+      "delta": [
+        0,
+        0,
+        0.0040000000000000036
+      ]
+    },
+    {
+      "machine": "vertical",
+      "axis": "Z",
+      "pose": "tool",
+      "group": [
+        "Z"
+      ],
+      "delta": [
+        0,
+        0.0029999999999996696,
+        0
+      ]
+    },
+    {
+      "machine": "horizontal",
+      "axis": "X",
+      "pose": "tool",
+      "group": [
+        "X"
+      ],
+      "delta": [
+        0.005500000000000005,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "horizontal",
+      "axis": "X",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y"
+      ],
+      "delta": [
+        0.005499999999999998,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "horizontal",
+      "axis": "Y",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y"
+      ],
+      "delta": [
+        0,
+        0.0030000000000001137,
+        0
+      ]
+    },
+    {
+      "machine": "horizontal",
+      "axis": "Z",
+      "pose": "work",
+      "group": [
+        "Z"
+      ],
+      "delta": [
+        0,
+        0,
+        0.0044999999999999485
+      ]
+    },
+    {
+      "machine": "travel",
+      "axis": "X",
+      "pose": "tool",
+      "group": [
+        "X"
+      ],
+      "delta": [
+        0.010000000000000009,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "travel",
+      "axis": "X",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y"
+      ],
+      "delta": [
+        0.010000000000000009,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "travel",
+      "axis": "X",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "delta": [
+        0.010000000000000009,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "travel",
+      "axis": "Y",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y"
+      ],
+      "delta": [
+        0,
+        0,
+        0.0035000000000000586
+      ]
+    },
+    {
+      "machine": "travel",
+      "axis": "Y",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "delta": [
+        0,
+        0,
+        0.0034999999999998366
+      ]
+    },
+    {
+      "machine": "travel",
+      "axis": "Z",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "delta": [
+        0,
+        0.0029999999999998916,
+        0
+      ]
+    },
+    {
+      "machine": "gate",
+      "axis": "X",
+      "pose": "work",
+      "group": [
+        "X"
+      ],
+      "delta": [
+        0,
+        0,
+        0.007000000000000006
+      ]
+    },
+    {
+      "machine": "gate",
+      "axis": "Y",
+      "pose": "tool",
+      "group": [
+        "Y"
+      ],
+      "delta": [
+        0.00649999999999995,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "gate",
+      "axis": "Y",
+      "pose": "tool",
+      "group": [
+        "Y",
+        "Z"
+      ],
+      "delta": [
+        0.006500000000000006,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "gate",
+      "axis": "Z",
+      "pose": "tool",
+      "group": [
+        "Y",
+        "Z"
+      ],
+      "delta": [
+        0,
+        0.0027999999999996916,
+        0
+      ]
+    },
+    {
+      "machine": "gantry",
+      "axis": "X",
+      "pose": "leftColumn",
+      "group": [
+        "X"
+      ],
+      "delta": [
+        0,
+        0,
+        0.007000000000000006
+      ]
+    },
+    {
+      "machine": "gantry",
+      "axis": "X",
+      "pose": "rightColumn",
+      "group": [
+        "X"
+      ],
+      "delta": [
+        0,
+        0,
+        0.007000000000000006
+      ]
+    },
+    {
+      "machine": "gantry",
+      "axis": "X",
+      "pose": "tool",
+      "group": [
+        "X"
+      ],
+      "delta": [
+        0,
+        0,
+        0.007000000000000006
+      ]
+    },
+    {
+      "machine": "gantry",
+      "axis": "X",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y"
+      ],
+      "delta": [
+        0,
+        0,
+        0.007000000000000006
+      ]
+    },
+    {
+      "machine": "gantry",
+      "axis": "X",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "delta": [
+        0,
+        0,
+        0.007000000000000006
+      ]
+    },
+    {
+      "machine": "gantry",
+      "axis": "Y",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y"
+      ],
+      "delta": [
+        0.00649999999999995,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "gantry",
+      "axis": "Y",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "delta": [
+        0.006499999999999978,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "gantry",
+      "axis": "Z",
+      "pose": "tool",
+      "group": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "delta": [
+        0,
+        0.0027999999999996916,
+        0
+      ]
+    },
+    {
+      "machine": "five",
+      "axis": "X",
+      "pose": "work",
+      "group": [
+        "X",
+        "Y"
+      ],
+      "delta": [
+        0.0035000000000000586,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "five",
+      "axis": "X",
+      "pose": "work",
+      "group": [
+        "X",
+        "Y",
+        "A"
+      ],
+      "delta": [
+        0.0034999999999999476,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "five",
+      "axis": "X",
+      "pose": "work",
+      "group": [
+        "X",
+        "Y",
+        "A",
+        "C"
+      ],
+      "delta": [
+        0.003500000000000003,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "five",
+      "axis": "Y",
+      "pose": "work",
+      "group": [
+        "Y"
+      ],
+      "delta": [
+        0,
+        0,
+        0.0035000000000000586
+      ]
+    },
+    {
+      "machine": "five",
+      "axis": "Y",
+      "pose": "work",
+      "group": [
+        "X",
+        "Y"
+      ],
+      "delta": [
+        0,
+        0,
+        0.0034999999999999476
+      ]
+    },
+    {
+      "machine": "five",
+      "axis": "Y",
+      "pose": "work",
+      "group": [
+        "X",
+        "Y",
+        "A"
+      ],
+      "delta": [
+        0,
+        0,
+        0.0035000000000000586
+      ]
+    },
+    {
+      "machine": "five",
+      "axis": "Y",
+      "pose": "work",
+      "group": [
+        "X",
+        "Y",
+        "A",
+        "C"
+      ],
+      "delta": [
+        0,
+        0,
+        0.0034999999999999476
+      ]
+    },
+    {
+      "machine": "five",
+      "axis": "Z",
+      "pose": "tool",
+      "group": [
+        "Z"
+      ],
+      "delta": [
+        0,
+        0.0030000000000001137,
+        0
+      ]
+    },
+    {
+      "machine": "lathe",
+      "axis": "X",
+      "pose": "work",
+      "group": [
+        "X",
+        "Z"
+      ],
+      "delta": [
+        0,
+        0,
+        0.0034999999999999476
+      ]
+    },
+    {
+      "machine": "lathe",
+      "axis": "Z",
+      "pose": "work",
+      "group": [
+        "Z"
+      ],
+      "delta": [
+        0.006999999999999951,
+        0,
+        0
+      ]
+    },
+    {
+      "machine": "lathe",
+      "axis": "Z",
+      "pose": "work",
+      "group": [
+        "X",
+        "Z"
+      ],
+      "delta": [
+        0.007000000000000006,
+        0,
+        0
+      ]
+    }
+  ],
+  "independentSweepPlaneChecks": [
+    {
+      "slope": [
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "actual": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "slope": [
+        0.0001,
+        0.0002
+      ],
+      "expected": [
+        45,
+        60,
+        15,
+        0
+      ],
+      "actual": [
+        45,
+        60,
+        15,
+        0
+      ]
+    },
+    {
+      "slope": [
+        -0.0001,
+        -0.0002
+      ],
+      "expected": [
+        -45,
+        -60,
+        -15,
+        0
+      ],
+      "actual": [
+        -45,
+        -60,
+        -15,
+        0
+      ]
+    }
+  ]
+}

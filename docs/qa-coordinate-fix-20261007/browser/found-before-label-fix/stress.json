@@ -1,0 +1,739 @@
+[
+  {
+    "kind": "compact",
+    "sign": 1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "33.10974392773357",
+        "body": {
+          "x": 474.2862854003906,
+          "y": 121.57767486572266,
+          "right": 492.86407470703125,
+          "bottom": 131.71104431152344
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・手前・右側を0とした300 mmの仮想測定 +33 µm。計器は主軸頭に固定。基準器に対して奥へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"110.36548912683037\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"手前・右側\" data-relative-direction=\"奥\" data-reading-microns=\"33.10974392773357\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.00996689024185167\" data-probe-normal=\"-0.9999999985732162\" data-probe-along=\"-1.29962406777754e-9\" data-diagram-limited=\"true\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L30,13.999961587376767\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"13.999975883241532\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,13.999975883241532L30,13.999961587376767\" class=\"scan-probe\"></path><rect x=\"30\" y=\"10.999961587376767\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-0.00011701324508251105 30 13.999961587376767)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">奥</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "頭固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 516.666748046875,
+              "bottom": 122.19999694824219
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "-34.4109995664716",
+        "body": {
+          "x": 695.12548828125,
+          "y": 150.28887939453125,
+          "right": 713.7033081054688,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・上・右側を0とした300 mmの仮想測定 -34 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"114.70333213976578\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・右側\" data-relative-direction=\"下\" data-reading-microns=\"-34.4109995664716\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010034410999566472\" data-probe-normal=\"-1\" data-probe-along=\"-2.710505431213761e-20\" data-diagram-limited=\"true\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L38,30.99999988816674\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.99999988816674\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.99999988816674L38,30.99999988816674\" class=\"scan-probe\"></path><rect x=\"38\" y=\"27.99999988816674\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-1.1388704914094623e-15 38 30.99999988816674)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "下",
+            "box": {
+              "x": 711.1748046875,
+              "y": 133.91110229492188,
+              "right": 723.1748046875,
+              "bottom": 150.91110229492188
+            }
+          }
+        ]
+      },
+      {
+        "pair": "YZ",
+        "reading": "-8.285488250880935",
+        "body": {
+          "x": 898.0302734375,
+          "y": 150.28887939453125,
+          "right": 916.6080932617188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・上・奥側を0とした300 mmの仮想測定 -8 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"上\" data-local-angle-microradians=\"27.61829417312313\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・奥側\" data-relative-direction=\"下\" data-reading-microns=\"-8.285488250880935\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010008285488250885\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"-3.3881317890172014e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.38091470848073,30.999999993516465\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999993516465\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999993516465L35.38091470848073,30.999999993516465\" class=\"scan-probe\"></path><rect x=\"35.38091470848073\" y=\"27.999999993516465\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-1.7247370018065296e-16 35.38091470848073 30.999999993516465)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": []
+      }
+    ]
+  },
+  {
+    "kind": "compact",
+    "sign": -1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "-20.309059490066993",
+        "body": {
+          "x": 486.7584533691406,
+          "y": 121.57777404785156,
+          "right": 505.33624267578125,
+          "bottom": 131.71112060546875
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・手前・右側を0とした300 mmの仮想測定 -20 µm。計器は主軸頭に固定。基準器に対して奥へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"-67.69705171862915\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"手前・右側\" data-relative-direction=\"奥\" data-reading-microns=\"-20.309059490066993\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010020309045193252\" data-probe-normal=\"-0.9999999985732162\" data-probe-along=\"-1.2996240677864515e-9\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L37.38484086554192,14.000009819066072\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.000024114930838\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.000024114930838L37.38484086554192,14.000009819066072\" class=\"scan-probe\"></path><rect x=\"37.38484086554192\" y=\"11.000009819066072\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-0.000056941381781021553 37.38484086554192 14.000009819066072)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">奥</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "頭固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 516.666748046875,
+              "bottom": 122.19999694824219
+            }
+          },
+          {
+            "text": "相対",
+            "box": {
+              "x": 501.3154602050781,
+              "y": 124.4000015258789,
+              "right": 518.7528076171875,
+              "bottom": 136.39999389648438
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "78.08899883353197",
+        "body": {
+          "x": 681.6143798828125,
+          "y": 150.28887939453125,
+          "right": 700.1921997070312,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・上・右側を0とした300 mmの仮想測定 +78 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"-260.2966657178104\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・右側\" data-relative-direction=\"下\" data-reading-microns=\"78.08899883353197\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009921911001166468\" data-probe-normal=\"-1\" data-probe-along=\"-2.0328790734103208e-20\" data-diagram-limited=\"true\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L30,30.999999424087996\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999424087996\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999424087996L30,30.999999424087996\" class=\"scan-probe\"></path><rect x=\"30\" y=\"27.999999424087996\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-1.8303275754794933e-15 30 30.999999424087996)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-4.452495511730881",
+        "body": {
+          "x": 896.951416015625,
+          "y": 150.28887939453125,
+          "right": 915.5291748046875,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・上・奥側を0とした300 mmの仮想測定 -4 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"上\" data-local-angle-microradians=\"14.841651706321464\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・奥側\" data-relative-direction=\"下\" data-reading-microns=\"-4.452495511730881\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010004452495511736\" data-probe-normal=\"-1.0000000000000004\" data-probe-along=\"3.3881317890172014e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L34.742082585289346,30.999999998127667\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999998127667\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999998127667L34.742082585289346,30.999999998127667\" class=\"scan-probe\"></path><rect x=\"34.742082585289346\" y=\"27.999999998127667\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(1.8185719235768104e-16 34.742082585289346 30.999999998127667)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": []
+      }
+    ]
+  },
+  {
+    "kind": "horizontal",
+    "sign": 1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "7.502941163578872",
+        "body": {
+          "x": 478.9299011230469,
+          "y": 121.57777404785156,
+          "right": 497.5076904296875,
+          "bottom": 131.7111053466797
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・下・右側を0とした300 mmの仮想測定 +8 µm。計器は主軸頭に固定。基準器に対して上へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"25.009803881201556\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"下・右側\" data-relative-direction=\"上\" data-reading-microns=\"7.502941163578872\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009992497058836423\" data-probe-normal=\"-1\" data-probe-along=\"1.3552527156068805e-20\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L32.74950980607048,14.000000005316664\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.000000005316664\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.000000005316664L32.74950980607048,14.000000005316664\" class=\"scan-probe\"></path><rect x=\"32.74950980607048\" y=\"11.000000005316664\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(8.760982711410407e-16 32.74950980607048 14.000000005316664)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">上</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "頭固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 516.666748046875,
+              "bottom": 122.19999694824219
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "7.211951792296042",
+        "body": {
+          "x": 686.3399658203125,
+          "y": 150.2888641357422,
+          "right": 704.917724609375,
+          "bottom": 160.42221069335938
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・奥・右側を0とした300 mmの仮想測定 +7 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"-72.79303532472967\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"奥・右側\" data-relative-direction=\"手前\" data-reading-microns=\"7.211951792296042\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009992788045335302\" data-probe-normal=\"-0.9999999997125523\" data-probe-along=\"-5.096919569428399e-10\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L32.798007555883665,30.999994348345037\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999954956564\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999954956564L32.798007555883665,30.999994348345037\" class=\"scan-probe\"></path><rect x=\"32.798007555883665\" y=\"27.999994348345037\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-0.00003278576548248069 32.798007555883665 30.999994348345037)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-6.374771570772514",
+        "body": {
+          "x": 897.492431640625,
+          "y": 150.288818359375,
+          "right": 916.0702514648438,
+          "bottom": 160.4221954345703
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・奥・上側を0とした300 mmの仮想測定 -6 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"21.259373098802442\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"-6.374771570772514\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006374768694462\" data-probe-normal=\"-0.9999999997125522\" data-probe-along=\"-1.7453445500767192e-9\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.062461449077034,30.99998073703818\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999935828235\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999935828235L35.062461449077034,30.99998073703818\" class=\"scan-probe\"></path><rect x=\"35.062461449077034\" y=\"27.99998073703818\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-0.00009119280062615626 35.062461449077034 30.99998073703818)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>",
+        "intersections": [
+          {
+            "text": "手前",
+            "box": {
+              "x": 912.5966796875,
+              "y": 133.91110229492188,
+              "right": 936.4091796875,
+              "bottom": 150.91110229492188
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "kind": "horizontal",
+    "sign": -1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "5.297058835366728",
+        "body": {
+          "x": 479.5508117675781,
+          "y": 121.57777404785156,
+          "right": 498.12860107421875,
+          "bottom": 131.7111053466797
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・下・右側を0とした300 mmの仮想測定 +5 µm。計器は主軸頭に固定。基準器に対して上へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"17.656862785465112\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"下・右側\" data-relative-direction=\"上\" data-reading-microns=\"5.297058835366728\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009994702941164635\" data-probe-normal=\"-1\" data-probe-along=\"1.3552527156068805e-20\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L33.1171568607725,14.000000002649994\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.000000002649994\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.000000002649994L33.1171568607725,14.000000002649994\" class=\"scan-probe\"></path><rect x=\"33.1171568607725\" y=\"11.000000002649994\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(8.44261762777371e-16 33.1171568607725 14.000000002649994)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">上</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "頭固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 516.666748046875,
+              "bottom": 122.19999694824219
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "36.46604754401622",
+        "body": {
+          "x": 681.6143798828125,
+          "y": 150.2888946533203,
+          "right": 700.1921997070312,
+          "bottom": 160.4222412109375
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・奥・右側を0とした300 mmの仮想測定 +36 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"-72.8002958830434\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"奥・右側\" data-relative-direction=\"手前\" data-reading-microns=\"36.46604754401622\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.00996353394959199\" data-probe-normal=\"-0.9999999997125523\" data-probe-along=\"5.090954480039111e-10\" data-diagram-limited=\"true\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L30,31.000005554998776\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999954948844\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999954948844L30,31.000005554998776\" class=\"scan-probe\"></path><rect x=\"30\" y=\"28.000005554998776\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0.0000458370322902239 30 31.000005554998776)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-6.367771557940979",
+        "body": {
+          "x": 897.490478515625,
+          "y": 150.28892517089844,
+          "right": 916.0682983398438,
+          "bottom": 160.4222869873047
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・奥・上側を0とした300 mmの仮想測定 -6 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"21.23395958717577\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"-6.367771557940979\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006367768681636\" data-probe-normal=\"-0.9999999997125524\" data-probe-along=\"1.7455223948890283e-9\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.06129478027265,31.00001925725013\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"31.000000056503783\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,31.000000056503783L35.06129478027265,31.00001925725013\" class=\"scan-probe\"></path><rect x=\"35.06129478027265\" y=\"28.00001925725013\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0.00009121091469503333 35.06129478027265 31.00001925725013)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>",
+        "intersections": [
+          {
+            "text": "手前",
+            "box": {
+              "x": 912.5966796875,
+              "y": 133.91110229492188,
+              "right": 936.4091796875,
+              "bottom": 150.91110229492188
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "kind": "travel",
+    "sign": 1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "6.399783603059858",
+        "body": {
+          "x": 479.24041748046875,
+          "y": 121.57777404785156,
+          "right": 497.8182067871094,
+          "bottom": 131.7111053466797
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・手前・右側を0とした300 mmの仮想測定 +6 µm。計器は主軸頭に固定。基準器に対して奥へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"21.332612011818597\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"手前・右側\" data-relative-direction=\"奥\" data-reading-microns=\"6.399783603059858\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009993600216396944\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"-1.3197666673287655e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L32.9333693994906,14.000000003868177\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.000000003868177\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.000000003868177L32.9333693994906,14.000000003868177\" class=\"scan-probe\"></path><rect x=\"32.9333693994906\" y=\"11.000000003868177\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-8.373670869649565e-17 32.9333693994906 14.000000003868177)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">奥</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "頭固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 516.666748046875,
+              "bottom": 122.19999694824219
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "16.977888898187313",
+        "body": {
+          "x": 683.5910034179688,
+          "y": 150.28887939453125,
+          "right": 702.1687622070312,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・上・右側を0とした300 mmの仮想測定 +17 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"-56.592963024163005\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・右側\" data-relative-direction=\"下\" data-reading-microns=\"16.977888898187313\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009983022111101816\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"4.743384505586529e-20\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L31.170351850302694,30.999999972776514\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999972776514\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999972776514L31.170351850302694,30.999999972776514\" class=\"scan-probe\"></path><rect x=\"31.170351850302694\" y=\"27.999999972776514\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(3.659004037195374e-15 31.170351850302694 30.999999972776514)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-6.373999999521179",
+        "body": {
+          "x": 897.4922485351562,
+          "y": 150.28887939453125,
+          "right": 916.0700073242188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・上・奥側を0とした300 mmの仮想測定 -6 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"上\" data-local-angle-microradians=\"21.24666666666667\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・奥側\" data-relative-direction=\"下\" data-reading-microns=\"-6.373999999521179\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006373999999525\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"-1.3552527156068805e-20\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.06233333325411,30.99999999616293\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.99999999616293\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.99999999616293L35.06233333325411,30.99999999616293\" class=\"scan-probe\"></path><rect x=\"35.06233333325411\" y=\"27.99999999616293\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-7.081157890093458e-16 35.06233333325411 30.99999999616293)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": []
+      }
+    ]
+  },
+  {
+    "kind": "travel",
+    "sign": -1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "6.399783603059858",
+        "body": {
+          "x": 479.24041748046875,
+          "y": 121.57777404785156,
+          "right": 497.8182067871094,
+          "bottom": 131.7111053466797
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・手前・右側を0とした300 mmの仮想測定 +6 µm。計器は主軸頭に固定。基準器に対して奥へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"21.332612011818597\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"手前・右側\" data-relative-direction=\"奥\" data-reading-microns=\"6.399783603059858\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009993600216396944\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"-1.3197666673287655e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L32.9333693994906,14.000000003868177\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.000000003868177\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.000000003868177L32.9333693994906,14.000000003868177\" class=\"scan-probe\"></path><rect x=\"32.9333693994906\" y=\"11.000000003868177\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-8.373670869649565e-17 32.9333693994906 14.000000003868177)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">奥</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "頭固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 516.666748046875,
+              "bottom": 122.19999694824219
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "26.70011104830873",
+        "body": {
+          "x": 681.6143798828125,
+          "y": 150.28887939453125,
+          "right": 700.1921997070312,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・上・右側を0とした300 mmの仮想測定 +27 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"-89.00037027852132\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・右側\" data-relative-direction=\"下\" data-reading-microns=\"26.70011104830873\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009973299888951695\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"-4.065758149540444e-20\" data-diagram-limited=\"true\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L30,30.999999932670942\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999932670942\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999932670942L30,30.999999932670942\" class=\"scan-probe\"></path><rect x=\"30\" y=\"27.999999932670942\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-3.660655153407793e-15 30 30.999999932670942)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-6.373999999521179",
+        "body": {
+          "x": 897.4922485351562,
+          "y": 150.28887939453125,
+          "right": 916.0700073242188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・上・奥側を0とした300 mmの仮想測定 -6 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"上\" data-local-angle-microradians=\"21.24666666666667\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・奥側\" data-relative-direction=\"下\" data-reading-microns=\"-6.373999999521179\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006373999999525\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"1.3552527156068805e-20\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.06233333325411,30.99999999616292\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.99999999616292\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.99999999616292L35.06233333325411,30.99999999616292\" class=\"scan-probe\"></path><rect x=\"35.06233333325411\" y=\"27.99999999616292\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(7.081157890093458e-16 35.06233333325411 30.99999999616292)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": []
+      }
+    ]
+  },
+  {
+    "kind": "double",
+    "sign": 1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "36.1781133248959",
+        "body": {
+          "x": 474.2862854003906,
+          "y": 121.57777404785156,
+          "right": 492.86407470703125,
+          "bottom": 131.7111053466797
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・左・奥側を0とした300 mmの仮想測定 +36 µm。計器はラムに固定。基準器に対して右へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"右\" data-local-angle-microradians=\"120.59371137528424\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"左・奥側\" data-relative-direction=\"右\" data-reading-microns=\"36.1781133248959\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009963821886675103\" data-probe-normal=\"-0.9999999999999999\" data-probe-along=\"-1.3483777098297122e-20\" data-diagram-limited=\"true\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑右</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L30,14.000000123614171\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.000000123614171\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.000000123614171L30,14.000000123614171\" class=\"scan-probe\"></path><rect x=\"30\" y=\"11.000000123614171\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-1.2140283879861987e-15 30 14.000000123614171)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">右</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": [
+          {
+            "text": "ラム固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 528.1246337890625,
+              "bottom": 122.19999694824219
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "21.83963251252939",
+        "body": {
+          "x": 682.2225341796875,
+          "y": 150.28887939453125,
+          "right": 700.80029296875,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・上・奥側を0とした300 mmの仮想測定 +22 µm。計器はラムに固定。基準器に対して下へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"上\" data-local-angle-microradians=\"-72.79877510606502\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・奥側\" data-relative-direction=\"下\" data-reading-microns=\"21.83963251252939\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009978160367487469\" data-probe-normal=\"-0.9999999999999999\" data-probe-along=\"5.637244705200327e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L30.360061247911478,30.999999954952877\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999954952877\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999954952877L30.360061247911478,30.999999954952877\" class=\"scan-probe\"></path><rect x=\"30.360061247911478\" y=\"27.999999954952877\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(4.827260951942651e-16 30.360061247911478 30.999999954952877)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-6.373999999420565",
+        "body": {
+          "x": 897.4922485351562,
+          "y": 150.28887939453125,
+          "right": 916.0700073242188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・上・右側を0とした300 mmの仮想測定 -6 µm。計器はラムに固定。基準器に対して下へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"21.246666666333525\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・右側\" data-relative-direction=\"下\" data-reading-microns=\"-6.373999999420565\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006373999999419\" data-probe-normal=\"-0.9999999999999998\" data-probe-along=\"3.3831687053418832e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.062333333236474,30.999999996162927\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999996162927\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999996162927L35.062333333236474,30.999999996162927\" class=\"scan-probe\"></path><rect x=\"35.062333333236474\" y=\"27.999999996162927\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(1.7676962750564332e-16 35.062333333236474 30.999999996162927)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      }
+    ]
+  },
+  {
+    "kind": "double",
+    "sign": -1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "-23.37811339677559",
+        "body": {
+          "x": 487.6223449707031,
+          "y": 121.57777404785156,
+          "right": 506.20013427734375,
+          "bottom": 131.7111053466797
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・左・奥側を0とした300 mmの仮想測定 -23 µm。計器はラムに固定。基準器に対して右へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"右\" data-local-angle-microradians=\"-77.92704473479182\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"左・奥側\" data-relative-direction=\"右\" data-reading-microns=\"-23.37811339677559\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010023378113396774\" data-probe-normal=\"-0.9999999999999999\" data-probe-along=\"1.3582141592407368e-20\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑右</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L37.89635223279564,14.000000051617302\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.000000051617302\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.000000051617302L37.89635223279564,14.000000051617302\" class=\"scan-probe\"></path><rect x=\"37.89635223279564\" y=\"11.000000051617302\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(5.746503007016972e-16 37.89635223279564 14.000000051617302)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">右</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": [
+          {
+            "text": "ラム固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 528.1246337890625,
+              "bottom": 122.19999694824219
+            }
+          },
+          {
+            "text": "相対",
+            "box": {
+              "x": 501.3154602050781,
+              "y": 124.4000015258789,
+              "right": 518.7528076171875,
+              "bottom": 136.39999389648438
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "21.838367233722316",
+        "body": {
+          "x": 682.222900390625,
+          "y": 150.28887939453125,
+          "right": 700.8006591796875,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・上・奥側を0とした300 mmの仮想測定 +22 µm。計器はラムに固定。基準器に対して下へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"上\" data-local-angle-microradians=\"-72.79455751002968\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・奥側\" data-relative-direction=\"下\" data-reading-microns=\"21.838367233722316\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009978161632766276\" data-probe-normal=\"-0.9999999999999999\" data-probe-along=\"-6.018713981762582e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L30.36027212771266,30.9999999549581\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.9999999549581\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.9999999549581L30.36027212771266,30.9999999549581\" class=\"scan-probe\"></path><rect x=\"30.36027212771266\" y=\"27.9999999549581\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-5.153771404025473e-16 30.36027212771266 30.9999999549581)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-6.373999999489954",
+        "body": {
+          "x": 897.4922485351562,
+          "y": 150.28887939453125,
+          "right": 916.0700073242188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・上・右側を0とした300 mmの仮想測定 -6 µm。計器はラムに固定。基準器に対して下へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"21.246666666565016\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・右側\" data-relative-direction=\"下\" data-reading-microns=\"-6.373999999489954\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006373999999492\" data-probe-normal=\"-1\" data-probe-along=\"-5.046628917186022e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.06233333324862,30.99999999616293\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.99999999616293\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.99999999616293L35.06233333324862,30.99999999616293\" class=\"scan-probe\"></path><rect x=\"35.06233333324862\" y=\"27.99999999616293\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-2.636849626921379e-16 35.06233333324862 30.99999999616293)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      }
+    ]
+  },
+  {
+    "kind": "gantry",
+    "sign": 1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "46.971120099654",
+        "body": {
+          "x": 474.2862854003906,
+          "y": 121.57777404785156,
+          "right": 492.86407470703125,
+          "bottom": 131.7111053466797
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・左・奥側を0とした300 mmの仮想測定 +47 µm。計器はラムに固定。基準器に対して右へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"右\" data-local-angle-microradians=\"156.5704009718816\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"左・奥側\" data-relative-direction=\"右\" data-reading-microns=\"46.971120099654\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009953028879900348\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"1.1490404299322564e-69\" data-diagram-limited=\"true\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑右</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L30,14.000000208371464\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.000000208371464\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.000000208371464L30,14.000000208371464\" class=\"scan-probe\"></path><rect x=\"30\" y=\"11.000000208371464\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(1.0345526262502493e-64 30 14.000000208371464)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">右</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": [
+          {
+            "text": "ラム固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 528.1246337890625,
+              "bottom": 122.19999694824219
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "21.839861719063354",
+        "body": {
+          "x": 682.2224731445312,
+          "y": 150.28887939453125,
+          "right": 700.8002319335938,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・上・奥側を0とした300 mmの仮想測定 +22 µm。計器はラムに固定。基準器に対して下へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"上\" data-local-angle-microradians=\"-72.79953912784903\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・奥側\" data-relative-direction=\"下\" data-reading-microns=\"21.839861719063354\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009978160138280939\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"-9.183549613728522e-41\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L30.360023046823063,30.999999954951935\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999954951935\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999954951935L30.360023046823063,30.999999954951935\" class=\"scan-probe\"></path><rect x=\"30.360023046823063\" y=\"27.999999954951935\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-7.864058217141616e-36 30.360023046823063 30.999999954951935)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-6.3739999995194445",
+        "body": {
+          "x": 897.4922485351562,
+          "y": 150.28887939453125,
+          "right": 916.0700073242188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・上・右側を0とした300 mmの仮想測定 -6 µm。計器はラムに固定。基準器に対して下へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"21.24666666666668\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・右側\" data-relative-direction=\"下\" data-reading-microns=\"-6.3739999995194445\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006373999999525\" data-probe-normal=\"-1.0000000000000004\" data-probe-along=\"-7.123679435306674e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.06233333325411,30.99999999616293\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.99999999616293\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.99999999616293L35.06233333325411,30.99999999616293\" class=\"scan-probe\"></path><rect x=\"35.06233333325411\" y=\"27.99999999616293\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-3.7221027679128937e-16 35.06233333325411 30.99999999616293)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      }
+    ]
+  },
+  {
+    "kind": "gantry",
+    "sign": -1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "-34.1711202176756",
+        "body": {
+          "x": 487.7973937988281,
+          "y": 121.57777404785156,
+          "right": 506.37518310546875,
+          "bottom": 131.7111053466797
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・左・奥側を0とした300 mmの仮想測定 -34 µm。計器はラムに固定。基準器に対して右へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"右\" data-local-angle-microradians=\"-113.90373430521494\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"左・奥側\" data-relative-direction=\"右\" data-reading-microns=\"-34.1711202176756\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010034171120217678\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"1.1490404299322564e-69\" data-diagram-limited=\"true\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑右</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L38,14.000000110279512\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.000000110279512\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.000000110279512L38,14.000000110279512\" class=\"scan-probe\"></path><rect x=\"38\" y=\"11.000000110279512\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(4.827912255834498e-65 38 14.000000110279512)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">右</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": [
+          {
+            "text": "ラム固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 528.1246337890625,
+              "bottom": 122.19999694824219
+            }
+          },
+          {
+            "text": "相対",
+            "box": {
+              "x": 501.3154602050781,
+              "y": 124.4000015258789,
+              "right": 518.7528076171875,
+              "bottom": 136.39999389648438
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "21.838137842943375",
+        "body": {
+          "x": 682.222900390625,
+          "y": 150.28887939453125,
+          "right": 700.8007202148438,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・上・奥側を0とした300 mmの仮想測定 +22 µm。計器はラムに固定。基準器に対して下へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"上\" data-local-angle-microradians=\"-72.79379287410138\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・奥側\" data-relative-direction=\"下\" data-reading-microns=\"21.838137842943375\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009978161862157059\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"-9.183549613724681e-41\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L30.360310359509725,30.99999995495904\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.99999995495904\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.99999995495904L30.360310359509725,30.99999995495904\" class=\"scan-probe\"></path><rect x=\"30.360310359509725\" y=\"27.99999995495904\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-7.86375124045065e-36 30.360310359509725 30.99999995495904)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-6.37399999951771",
+        "body": {
+          "x": 897.4922485351562,
+          "y": 150.28887939453125,
+          "right": 916.0700073242188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・上・右側を0とした300 mmの仮想測定 -6 µm。計器はラムに固定。基準器に対して下へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"21.246666666666666\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・右側\" data-relative-direction=\"下\" data-reading-microns=\"-6.37399999951771\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006373999999525\" data-probe-normal=\"-1.0000000000000004\" data-probe-along=\"-4.145829230115775e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">ラム固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.06233333325411,30.999999996162924\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999996162924\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999996162924L35.06233333325411,30.999999996162924\" class=\"scan-probe\"></path><rect x=\"35.06233333325411\" y=\"27.999999996162924\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-2.1661842862029058e-16 35.06233333325411 30.999999996162924)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      }
+    ]
+  },
+  {
+    "kind": "five",
+    "sign": 1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "6.399999999514433",
+        "body": {
+          "x": 479.2403564453125,
+          "y": 121.57777404785156,
+          "right": 497.8181457519531,
+          "bottom": 131.7111053466797
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・手前・右側を0とした300 mmの仮想測定 +6 µm。計器は主軸頭に固定。基準器に対して奥へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"21.333333333333336\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"手前・右側\" data-relative-direction=\"奥\" data-reading-microns=\"6.399999999514433\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009993600000000479\" data-probe-normal=\"-0.9999999999999993\" data-probe-along=\"3.388131874796021e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L32.9333333334131,14.00000000386845\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.00000000386845\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.00000000386845L32.9333333334131,14.00000000386845\" class=\"scan-probe\"></path><rect x=\"32.9333333334131\" y=\"11.00000000386845\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(2.1497136497698017e-16 32.9333333334131 14.00000000386845)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">奥</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "頭固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 516.666748046875,
+              "bottom": 122.19999694824219
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "21.83899998070907",
+        "body": {
+          "x": 682.2227172851562,
+          "y": 150.28887939453125,
+          "right": 700.8004760742188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・上・右側を0とした300 mmの仮想測定 +22 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"-72.7966666666667\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・右側\" data-relative-direction=\"下\" data-reading-microns=\"21.83899998070907\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009978161000019284\" data-probe-normal=\"-0.9999999999999993\" data-probe-along=\"2.710505431213761e-20\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L30.360166669880666,30.99999995495548\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.99999995495548\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.99999995495548L30.360166669880666,30.99999995495548\" class=\"scan-probe\"></path><rect x=\"30.360166669880666\" y=\"27.99999995495548\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(2.3210150173703776e-15 30.360166669880666 30.99999995495548)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-6.373999999521179",
+        "body": {
+          "x": 897.4922485351562,
+          "y": 150.28887939453125,
+          "right": 916.0700073242188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・上・奥側を0とした300 mmの仮想測定 -6 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"上\" data-local-angle-microradians=\"21.246666666666663\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・奥側\" data-relative-direction=\"下\" data-reading-microns=\"-6.373999999521179\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006373999999514\" data-probe-normal=\"-0.9999999999999991\" data-probe-along=\"1.1193821639373847e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.062333333252376,30.999999996162916\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999996162916\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999996162916L35.062333333252376,30.999999996162916\" class=\"scan-probe\"></path><rect x=\"35.062333333252376\" y=\"27.999999996162916\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(5.848740792706519e-17 35.062333333252376 30.999999996162916)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": []
+      }
+    ]
+  },
+  {
+    "kind": "five",
+    "sign": -1,
+    "observations": [
+      {
+        "pair": "XY",
+        "reading": "6.399999999514433",
+        "body": {
+          "x": 479.2403564453125,
+          "y": 121.57777404785156,
+          "right": 497.8181457519531,
+          "bottom": 131.7111053466797
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・手前・右側を0とした300 mmの仮想測定 +6 µm。計器は主軸頭に固定。基準器に対して奥へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"21.333333333333336\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"手前・右側\" data-relative-direction=\"奥\" data-reading-microns=\"6.399999999514433\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009993600000000479\" data-probe-normal=\"-0.9999999999999993\" data-probe-along=\"3.388131874796021e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,31L32.9333333334131,14.00000000386845\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14.00000000386845\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14.00000000386845L32.9333333334131,14.00000000386845\" class=\"scan-probe\"></path><rect x=\"32.9333333334131\" y=\"11.00000000386845\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(2.1497136497698017e-16 32.9333333334131 14.00000000386845)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">奥</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "頭固定",
+            "box": {
+              "x": 481.0418395996094,
+              "y": 105.19999694824219,
+              "right": 516.666748046875,
+              "bottom": 122.19999694824219
+            }
+          }
+        ]
+      },
+      {
+        "pair": "XZ",
+        "reading": "21.838999980710803",
+        "body": {
+          "x": 682.2227172851562,
+          "y": 150.28887939453125,
+          "right": 700.8004760742188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・上・右側を0とした300 mmの仮想測定 +22 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"-72.79666666666665\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・右側\" data-relative-direction=\"下\" data-reading-microns=\"21.838999980710803\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.009978161000019282\" data-probe-normal=\"-0.9999999999999993\" data-probe-along=\"-2.710505431213761e-20\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L30.36016666988038,30.99999995495548\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.99999995495548\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.99999995495548L30.36016666988038,30.99999995495548\" class=\"scan-probe\"></path><rect x=\"30.36016666988038\" y=\"27.99999995495548\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-2.321015017370468e-15 30.36016666988038 30.99999995495548)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": []
+      },
+      {
+        "pair": "YZ",
+        "reading": "-6.373999999521179",
+        "body": {
+          "x": 897.4922485351562,
+          "y": 150.28887939453125,
+          "right": 916.0700073242188,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・上・奥側を0とした300 mmの仮想測定 -6 µm。計器は主軸頭に固定。基準器に対して下へ移動。押込み奥が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"奥\" data-view-up=\"上\" data-local-angle-microradians=\"21.246666666666666\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"上・奥側\" data-relative-direction=\"下\" data-reading-microns=\"-6.373999999521179\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006373999999514\" data-probe-normal=\"-0.9999999999999991\" data-probe-along=\"1.1177278027122786e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">頭固定</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.062333333252376,30.99999999616292\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.99999999616292\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.99999999616292L35.062333333252376,30.99999999616292\" class=\"scan-probe\"></path><rect x=\"35.062333333252376\" y=\"27.99999999616292\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(5.840096801141461e-17 35.062333333252376 30.99999999616292)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">下</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">奥</text></g></svg>",
+        "intersections": []
+      }
+    ]
+  },
+  {
+    "kind": "lathe",
+    "sign": 1,
+    "observations": [
+      {
+        "pair": "XZ",
+        "reading": "-6.399948827229274",
+        "body": {
+          "x": 482.84332275390625,
+          "y": 150.28887939453125,
+          "right": 501.42108154296875,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・奥・右側を0とした300 mmの仮想測定 -6 µm。計器は刃物台に固定。基準器に対して手前へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"Z\" data-other=\"X\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"21.3331627590477\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"奥・右側\" data-relative-direction=\"手前\" data-reading-microns=\"-6.399948827229274\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006399948827233\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"-3.3881317890172014e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">刃物台</text><path d=\"M3,18H17V11H23V34H17V27H3Z\" class=\"scan-master\"></path><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.066658137872125,30.999999996131617\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999996131617\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999996131617L35.066658137872125,30.999999996131617\" class=\"scan-probe\"></path><rect x=\"35.066658137872125\" y=\"27.999999996131617\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-1.7696549840014795e-16 35.066658137872125 30.999999996131617)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "手前",
+            "box": {
+              "x": 497.9404602050781,
+              "y": 133.91110229492188,
+              "right": 521.7529296875,
+              "bottom": 150.91110229492188
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "kind": "lathe",
+    "sign": -1,
+    "observations": [
+      {
+        "pair": "XZ",
+        "reading": "-6.399948827229274",
+        "body": {
+          "x": 482.84332275390625,
+          "y": 150.28887939453125,
+          "right": 501.42108154296875,
+          "bottom": 160.42222595214844
+        },
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・奥・右側を0とした300 mmの仮想測定 -6 µm。計器は刃物台に固定。基準器に対して手前へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"Z\" data-other=\"X\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"21.3331627590477\" data-measurement-model=\"reference-scan-v3\" data-zero-location-measurement=\"奥・右側\" data-relative-direction=\"手前\" data-reading-microns=\"-6.399948827229274\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-body-normal-m=\"0.010006399948827233\" data-probe-normal=\"-1.0000000000000002\" data-probe-along=\"-3.3881317890172014e-21\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">刃物台</text><path d=\"M3,18H17V11H23V34H17V27H3Z\" class=\"scan-master\"></path><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.066658137872125,30.999999996131617\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999996131617\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999996131617L35.066658137872125,30.999999996131617\" class=\"scan-probe\"></path><rect x=\"35.066658137872125\" y=\"27.999999996131617\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-1.7696549840014795e-16 35.066658137872125 30.999999996131617)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"51\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>",
+        "intersections": [
+          {
+            "text": "手前",
+            "box": {
+              "x": 497.9404602050781,
+              "y": 133.91110229492188,
+              "right": 521.7529296875,
+              "bottom": 150.91110229492188
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

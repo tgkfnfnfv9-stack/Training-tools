@@ -97,14 +97,15 @@ function hintCandidate(id,stage){
 function verifyDiagrams(){
  const current=json('levelGeometry.pairs'),before=json('levelInitialGeometry.pairs');
  for(const [i,svg] of r.liveSquareness.querySelectorAll('svg').entries()){
-  const p=current[i],b=before.find(q=>q.key===p.key);near(Number(svg.getAttribute('data-before')),b.deviationMicroradians);near(Number(svg.getAttribute('data-current')),p.deviationMicroradians);near(Number(svg.getAttribute('data-delta')),p.deviationMicroradians-b.deviationMicroradians);
+  const p=current[i],b=before.find(q=>q.key===p.key),local=r.accuracyDiagram.querySelectorAll('g').find(g=>g.dataset.pair===p.key);
+  assert.equal(svg.getAttribute('data-current-error-300'),null);near(Number(svg.dataset.localAngleMicroradians),p.deviationMicroradians);near(Number(local.getAttribute('data-before')),b.deviationMicroradians);near(Number(local.getAttribute('data-current')),p.deviationMicroradians);near(Number(local.getAttribute('data-delta')),p.deviationMicroradians-b.deviationMicroradians);
   for(const [className,dev] of [['pair-current',p.deviationMicroradians],['pair-before',b.deviationMicroradians]]){
    const line=r.accuracyDiagram.querySelectorAll('.'+className)[i],dx=Number(line.getAttribute('x2'))-Number(line.getAttribute('x1')),dy=Number(line.getAttribute('y1'))-Number(line.getAttribute('y2'));
-   near(Math.hypot(dx,dy),28,1e-10);near(Math.atan2(-dx,dy),Math.max(-.65,Math.min(.65,dev*Number(svg.getAttribute('data-gain'))/1e6)),1e-12);
+   near(Math.hypot(dx,dy),28,1e-10);near(Math.atan2(-dx,dy),Math.max(-.65,Math.min(.65,dev*Number(local.getAttribute('data-gain'))/1e6)),1e-12);
   }
-  if(Math.abs(p.deviationMicroradians-b.deviationMicroradians)<=1e-6){assert.equal(svg.getAttribute('data-direction'),'unchanged');assert.equal(svg.querySelectorAll('.pair-change-area').length,0);}
+  if(Math.abs(p.deviationMicroradians-b.deviationMicroradians)<=1e-6){assert.equal(local.getAttribute('data-direction'),'unchanged');assert.equal(svg.querySelectorAll('.pair-change-area').length,0);}
   assert.equal(svg.querySelectorAll('.measurement-start')[0].textContent,'0');assert.equal(svg.querySelectorAll('.measurement-end').length,0);near(Number(svg.dataset.measurementLengthM),.3);assert.equal(r.liveSquarenessUnits.textContent.replace(/\s/g,'').replace('仮想測定',''),'300mm・µm');
-  near(Number(svg.getAttribute('data-current-error-300')),p.deviationMicroradians*.3);near(Number(svg.getAttribute('data-before-error-300')),b.deviationMicroradians*.3);near(Number(svg.getAttribute('data-delta-error-300')),(p.deviationMicroradians-b.deviationMicroradians)*.3);
+  near(Number(local.getAttribute('data-current-error-300')),p.deviationMicroradians*.3);near(Number(local.getAttribute('data-before-error-300')),b.deviationMicroradians*.3);near(Number(local.getAttribute('data-delta-error-300')),(p.deviationMicroradians-b.deviationMicroradians)*.3);
   assert.doesNotMatch(visibleText(svg),/[0-9°µμ]/);
  }
 }
@@ -122,7 +123,7 @@ for(const [index,mode] of variants)for(const condition of ['new','used']){
  check('fine entry has its own aggregate comparison, not a new initial angle '+label,()=>{near(Number(r.fineOverallProgress.getAttribute('data-before')),coarseScore);assert.equal(r.fineOverallProgress.getAttribute('data-trend'),'similar');assert.equal(r.coarsePanel.hidden,true);assert.equal(r.finePanel.hidden,false);assert.equal(read('levelRecord().step'),.001);hintCandidate('fineHint','fine');});
  const actualBest=json('machineBestHeights()');if(!r.fineExample.disabled)r.fineExample.click();
  check('reference example applies real heights and real target '+label,()=>{assert.deepEqual(json('supportHeights'),actualBest);assert(read('machineEvaluation(supportHeights).objective')<=coarseScore+1e-8);assert.equal(r.fineStatus.getAttribute('data-target'),'true');near(Number(r.fineStatus.getAttribute('data-gap')),read('updateMachineAccuracy().gap'));assert.match(r.fineStatus.textContent,/目安内/);assert.doesNotMatch(r.fineStatus.textContent,/完全|合格|すべて改善/);assert.deepEqual(json('machineProfile'),profile);verifyDiagrams();nonnumeric();});
- if(index===5)check('planar supports cannot fabricate pair changes '+label,()=>{for(const svg of r.liveSquareness.querySelectorAll('svg')){near(Number(svg.getAttribute('data-delta')),0,1e-7);assert.equal(svg.getAttribute('data-direction'),'unchanged');assert.equal(svg.querySelectorAll('.pair-change-area').length,0);}assert.match(r.fineTwist.textContent,/平面/);});
+ if(index===5)check('planar supports cannot fabricate pair changes '+label,()=>{for(const local of r.accuracyDiagram.querySelectorAll('g').filter(g=>g.dataset.pair)){near(Number(local.getAttribute('data-delta')),0,1e-7);assert.equal(local.getAttribute('data-direction'),'unchanged');assert.equal(local.querySelectorAll('.pair-change-area').length,0);}assert.match(r.fineTwist.textContent,/平面/);});
  const saved=json('levelRecord()');read(`applyLevelRecord(${JSON.stringify(saved)});buildSupports();updateLeveling();`);
  check('JSON restores real data and discards unsaved fine-entry history '+label,()=>{assert.deepEqual(json('levelRecord()'),saved);assert.equal(read('fineStartEvaluation'),null);assert.match(r.fineOverallProgress.textContent,/まだありません/);assert.equal(r.finePanel.hidden,false);verifyDiagrams();});
  r.coarseAdjust.click();r.fineAdjust.click();r.startLevelExercise.click();
@@ -139,7 +140,7 @@ r.coarseExample.click();const beforeFinishing=read('machineEvaluation(supportHei
 check('overall finishing can improve while a current pair is farther than initial',()=>{
  assert(read('machineEvaluation(supportHeights).objective')<beforeFinishing-.1);
  assert(Math.abs(read("levelGeometry.pairs.find(p=>p.key==='XY').errorMicrons"))>initialXY+.1);
- assert.equal(r.fineOverallProgress.getAttribute('data-trend'),'better');const xy=r.liveSquareness.querySelectorAll('svg').find(s=>s.getAttribute('data-pair')==='XY');assert.equal(xy.getAttribute('data-trend'),'worse');assert.match(r.finePrecisionSummary.textContent,/初期より直角から離れた/);assert.equal(r.fineStatus.getAttribute('data-target'),'true');
+ assert.equal(r.fineOverallProgress.getAttribute('data-trend'),'better');const xy=r.accuracyDiagram.querySelectorAll('g').find(s=>s.getAttribute('data-pair')==='XY');assert.equal(xy.getAttribute('data-trend'),'worse');assert.match(r.finePrecisionSummary.textContent,/初期より直角から離れた/);assert.equal(r.fineStatus.getAttribute('data-target'),'true');
 });
 // A used individual retains a deliberately substantial intrinsic/guide floor.
 loadProfile(0,'compact','used',4);r.fineAdjust.click();r.fineExample.click();
@@ -165,7 +166,7 @@ for(const step of [.001,.005,.01,.05,.1])check('legacy step retained and stage i
 for(const [name,mutation] of [['width','levelConfig.width=.5'],['depth','levelConfig.depth=.5'],['layout','levelConfig.columnX=37'],['evaluation','levelConfig.offset=1']])check('context change discards finishing history '+name,()=>{r.coarseAdjust.click();r.fineAdjust.click();assert(read('fineStartEvaluation'));read(mutation+';updateLeveling();');assert.equal(read('fineStartEvaluation'),null);});
 for(const [before,current,trend,direction] of [[-20,-10,'better','opened'],[10,-20,'worse','closed'],[-20,20,'similar','opened'],[20,-20,'similar','closed'],[0,0,'similar','unchanged'],[-200,-150,'better','opened'],[200,150,'better','closed'],[200,0,'better','closed'],[0,-200,'worse','closed'],[0,200,'worse','opened']])check('signed change, absolute improvement and both range limits '+before+'/'+current,()=>{
  const now={pairs:[{key:'XZ',deviationMicroradians:current}]},initial={pairs:[{key:'XZ',deviationMicroradians:before}]};read(`accuracyDiagram(${JSON.stringify(now)},${JSON.stringify(initial)})`);
- const svg=r.liveSquareness.querySelectorAll('svg')[0];assert.equal(svg.getAttribute('data-trend'),trend);assert.equal(svg.getAttribute('data-direction'),direction);near(Number(svg.getAttribute('data-delta')),current-before);
+ const svg=r.accuracyDiagram.querySelectorAll('g').find(g=>g.dataset.pair);assert.equal(svg.getAttribute('data-trend'),trend);assert.equal(svg.getAttribute('data-direction'),direction);near(Number(svg.getAttribute('data-delta')),current-before);
  assert.equal(svg.getAttribute('data-before-limited'),String(Math.abs(before*5000/1e6)>.65));assert.equal(svg.getAttribute('data-limited'),String(Math.abs(current*5000/1e6)>.65));assert.equal(svg.getAttribute('data-any-limited'),String(Math.max(Math.abs(before),Math.abs(current))*5000/1e6>.65));
  if(Math.max(Math.abs(before),Math.abs(current))*5000/1e6>.65)assert.match(r.accuracyDiagram.textContent,/範囲外/);
 });

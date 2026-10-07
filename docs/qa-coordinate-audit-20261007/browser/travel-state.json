@@ -1,0 +1,88 @@
+{
+  "calculationModel": "travel-guide-v2",
+  "version": 2,
+  "machineProfile": {
+    "version": 1,
+    "condition": "used",
+    "seed": 78129,
+    "keys": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "squareness": {
+      "XY": {
+        "band": 0,
+        "microns": 6.4
+      },
+      "XZ": {
+        "band": 1,
+        "microns": -21.839
+      },
+      "YZ": {
+        "band": 0,
+        "microns": 6.374
+      }
+    },
+    "guides": {
+      "X": {
+        "band": 0,
+        "microns": 5.825
+      },
+      "Y": {
+        "band": 1,
+        "microns": 45.697
+      },
+      "Z": {
+        "band": 1,
+        "microns": 27.503
+      }
+    },
+    "initialHeights": [
+      -0.15,
+      0.15,
+      0.067,
+      -0.076,
+      -0.148,
+      0.055
+    ]
+  },
+  "bestState": {
+    "width": 4.32,
+    "depth": 2.08,
+    "columnX": 0,
+    "columnZ": 0,
+    "heights": [
+      0.355,
+      -0.057,
+      -0.123,
+      -0.141,
+      -0.018,
+      0.335
+    ]
+  },
+  "machine": "travel",
+  "mode": "",
+  "width": 4.32,
+  "depth": 2.08,
+  "heights": [
+    0.025,
+    -0.012,
+    0.018,
+    -0.009,
+    0.005,
+    -0.011
+  ],
+  "sensitivity": 0.05,
+  "measurePos": 0,
+  "offset": 0.5,
+  "columnX": 0,
+  "columnZ": 0,
+  "axisPositions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+  },
+  "step": 0.01,
+  "exaggerate": false
+}
