@@ -699,3 +699,10 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 .horizontal-parallel-fixture svg{display:block;width:100%;max-width:340px;height:auto;margin:4px auto;color:#302820}
 .horizontal-parallel-fixture p{margin:5px 0;font-size:11px;line-height:1.45}
 .spindle-sweep-panel[data-measurement="z-parallel"] #sweepValue3{font-size:8px}
+
+/* Replace only the horizontal readout's two footer rows, preserving their combined 31px height. */
+.horizontal-parallel-mini{display:none}
+.spindle-sweep-panel[data-measurement="z-parallel"] .horizontal-parallel-mini{display:block;height:31px}
+.spindle-sweep-panel[data-measurement="z-parallel"] .horizontal-parallel-mini svg{display:block;width:56px;height:31px}
+.spindle-sweep-panel[data-measurement="z-parallel"] #sweepReadout2,
+.spindle-sweep-panel[data-measurement="z-parallel"] #sweepReadout3{display:none}

@@ -120,7 +120,9 @@ function spindleSweepMachineGeometry(state,solution,profile){
  return {valid:true,measurement,nose,centre,tableCentre,tableNormal,tableRight,tableBack,halfWidth,halfDepth,tableShape:five?'ellipse':'rectangle',pointAt,cardinal:[0,90,180,270].map(pointAt)};
 }
 function spindleSweepReading(value){return squarenessMicronText(value);}
+const horizontalParallelMiniMarkup=`<svg viewBox="0 0 56 31" role="img" aria-label="Z平行度の長手方向の略図。a左右とb上下は接触方向が異なりますが、どちらもオレンジの点が示す先端寄りの位置でゼロ。そこから右の主軸側へ300 mm走査します。"><path d="M3 3H43V11H3Z" fill="none" stroke="#66584c" stroke-width="1"/><rect x="43" y="1" width="12" height="13" fill="#66584c"/><text x="49" y="9" fill="#fff" font-size="5" text-anchor="middle">主軸</text><circle class="parallel-mini-zero" cx="9" cy="11" r="1.7" fill="#b34800"/><path d="M9 13V17" stroke="#b34800" stroke-width="1"/><text x="6" y="27" fill="#9b3f00" font-size="9" font-weight="700">0</text><text x="16" y="27" fill="#66584c" font-size="6">a/b</text><circle cx="35" cy="11" r="1.3" fill="#fffaf6" stroke="#b34800" stroke-width="1"/><path d="M9 17H35m-3-2 3 2-3 2" fill="none" stroke="#b34800" stroke-width="1.2"/><text x="43" y="28" fill="#66584c" font-size="6" text-anchor="middle">300 mm</text></svg>`;
 function updateHorizontalParallelReadout(){
+ if(!$('horizontalParallelMini').innerHTML)$('horizontalParallelMini').innerHTML=horizontalParallelMiniMarkup;
  const measured=horizontalParallelism(),someValid=!!(measured.a?.valid||measured.b?.valid);
  const labels=['a 左右','b 上下','始点','走査'];
  for(let i=0;i<4;i++){
@@ -154,6 +156,7 @@ function updateSpindleSweep(){
  $('modelSemantics').hidden=false;
  if(!available){toggleSpindleSweepSelection(false);return;}
  if(horizontal){updateHorizontalParallelReadout();return;}
+ $('horizontalParallelMini').replaceChildren();
  for(let i=0;i<4;i++){const label=$('sweepLabel'+i);label.textContent='';label.innerHTML=sweepDirections[i]+(i===3?' <small>基準</small>':'');}
  const measured=spindleSweepGeometry(positions,levelSolution,machineProfile,1,current.kind==='compact'),zeroValid=measured.valid&&measured.cardinal[3].onTable;
  for(let i=0;i<4;i++){
