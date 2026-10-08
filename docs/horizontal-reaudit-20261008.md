@@ -111,4 +111,10 @@ X操作でbが同じ整数なのは、バー上下勾配とパレット上の横
 
 最終製品HTML SHA256: `da86f2a79085d098fe7fb075f275550830a71d2d31aab04876c532d311353c29`。
 
-コミット/公開後取得の実績は、公開確認記録へ追記する。
+修正・監査コミットは `0b8e3f4bf409fca2b6f97d424cb1dac59900144a`。作業ブランチとmainへ通常のfast-forwardでpushした。元作業場所 `/workspace/Training-tools` も同コミットへfast-forwardした。強制push・巻き戻しはしていない。
+
+[GitHub Pagesデプロイ](https://github.com/tgkfnfnfv9-stack/Training-tools/actions/runs/37735475693) は成功。公開URLをTLS検証付きcurlで取得し、上記最終HTMLハッシュと完全一致。環境内Chromiumの直接HTTPS接続は `ERR_CERT_AUTHORITY_INVALID` で失敗したため、TLS検証を無効化せず、取得した公開応答をそのままChromiumへ渡して再操作した。
+
+公開取得内容で390/1280 pxを確認し、全XYZ実スライダー、B粗調整往復、固定seedの表示値、ページ例外なしを再確認。直接オンラインのブラウザー表示と同じ検証を済ませたとは言わない。[公開取得内容の再操作結果](qa-horizontal-reaudit-20261008/public-check/result.json)、[390 px](qa-horizontal-reaudit-20261008/public-check/public-390.png)、[1280 px](qa-horizontal-reaudit-20261008/public-check/public-1280.png)。作業場所は `/workspace/Training-tools-public-check-horizontal-20261008/`。
+
+R実送り合わせと有限厚マスタ/腕の仕様は未解決のまま。今回公開したのは模型の接続・干渉表示の修正と、検証済み/未定義の区別であり、横形全体の実機再現を認証する公開ではない。
