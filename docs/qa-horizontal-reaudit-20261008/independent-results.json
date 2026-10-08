@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "assertions": 10868,
+  "machineCases": 720,
+  "maximumOracleError": 1.1501213315057157e-9,
+  "candidateComparisons": 66,
+  "maximumCandidateError": 7.788898415128642e-10,
+  "fixedRailStates": 32,
+  "rows": [
+    {
+      "case": "twist+",
+      "X": 0,
+      "Y": -100,
+      "Z": -100,
+      "XY": 0.6899999970342902,
+      "XZ": -9.149999884775633,
+      "YZ": 0.001273680105828845,
+      "a": -23.849999919813015,
+      "b": -0.011197577204011266
+    },
+    {
+      "case": "twist+",
+      "X": 0,
+      "Y": 100,
+      "Z": -100,
+      "XY": 0.6899999970342902,
+      "XZ": -9.149999884775633,
+      "YZ": 0.001273680105828845,
+      "a": -32.84999988956497,
+      "b": -0.02133608390138264
+    },
+    {
+      "case": "twist-",
+      "X": 0,
+      "Y": -100,
+      "Z": -100,
+      "XY": -0.6899999970342902,
+      "XZ": 9.149999884775633,
+      "YZ": 0.001273680105828845,
+      "a": 23.849999919806073,
+      "b": -0.011197577204011266
+    },
+    {
+      "case": "twist-",
+      "X": 0,
+      "Y": 100,
+      "Z": -100,
+      "XY": -0.6899999970342902,
+      "XZ": 9.149999884775633,
+      "YZ": 0.001273680105828845,
+      "a": 32.84999988954068,
+      "b": -0.02133608390138264
+    }
+  ],
+  "diagnostic": [
+    {
+      "heightAboveSupportM": 0.61,
+      "finiteXTraceMicroradians": [
+        -8.499999993234574,
+        -6.099999996677355
+      ],
+      "representativeXMicroradians": [
+        12.88,
+        0
+      ]
+    },
+    {
+      "heightAboveSupportM": 1.89,
+      "finiteXTraceMicroradians": [
+        -8.499999994714871,
+        -18.899999992131963
+      ],
+      "representativeXMicroradians": [
+        12.88,
+        0
+      ]
+    }
+  ],
+  "reverse": {
+    "forward": 570.0008000012798,
+    "reverseFixed": -570.0008000012798,
+    "reverseRealigned": 630.0008000012808
+  },
+  "scope": "Input-height independent bilinear interpolation, plane/cylinder contact, both sides, fixed reversal, rigid transforms, all axis ends and support seam; R mount diagnosis is not a new production fixture."
+}

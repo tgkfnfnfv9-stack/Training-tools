@@ -1,0 +1,12 @@
+{
+  "cases": 540,
+  "convexPairs": 1620,
+  "intersections": [],
+  "otherSixMeshesUnchanged": true,
+  "railContacts": {
+    "samples": 180,
+    "minOverlapM": 0.031240314882415996,
+    "maxOverlapM": 0.038754631973195695,
+    "gaps": []
+  }
+}

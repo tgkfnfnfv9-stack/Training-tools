@@ -1,0 +1,5010 @@
+{
+  "scope": "Diagnostic only: old virtual co-located R/S point and 50 mm higher sensitivity. Not a validated finite-thickness L-master configuration.",
+  "rows": [
+    {
+      "name": "ideal",
+      "original": [
+        0,
+        0,
+        0
+      ],
+      "parallel": [
+        0,
+        0
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01,
+              -1.2799999999999998,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01,
+              -1.2299999999999998,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01,
+              -1.2799999999999998,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01,
+              -1.2299999999999998,
+              0.08000000000000018
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01,
+              -1.2799999999999998,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01,
+              -1.2299999999999998,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01,
+              -1.2799999999999998,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01,
+              -1.2299999999999998,
+              0.08000000000000018
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              0,
+              1,
+              0
+            ],
+            "chord": [
+              0,
+              1,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0,
+              -1.2699999999999998,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              0,
+              1,
+              0
+            ],
+            "chord": [
+              0,
+              1,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0,
+              -1.2199999999999998,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              0,
+              1,
+              0
+            ],
+            "chord": [
+              0,
+              1,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0,
+              -1.2699999999999998,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              0,
+              1,
+              0
+            ],
+            "chord": [
+              0,
+              1,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0,
+              -1.2199999999999998,
+              0.08000000000000018
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "common_rigid_tilt",
+      "original": [
+        1.734723475976807e-12,
+        1.734723475976807e-12,
+        9.71445146547012e-11
+      ],
+      "parallel": [
+        0,
+        0
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 1.734723475976807e-12,
+            "valid": true,
+            "representative": [
+              0.99999999955,
+              0.000029999999986499996,
+              0
+            ],
+            "chord": [
+              0.99999999955,
+              0.00002999999998642977,
+              0
+            ],
+            "oldRDriftMicrons": 2.463307335887066e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000018299999977125002,
+              1.2699659992375,
+              -0.8500243999999695
+            ],
+            "headBracketAtS": [
+              0.010038397278652003,
+              -1.279996498400154,
+              0.08005119818873618
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 1.734723475976807e-12,
+            "valid": true,
+            "representative": [
+              0.99999999955,
+              0.000029999999986499996,
+              0
+            ],
+            "chord": [
+              0.99999999955,
+              0.00002999999998642977,
+              0
+            ],
+            "oldRDriftMicrons": 2.463307335887066e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000019799999975250002,
+              1.3199659991750001,
+              -0.850026399999967
+            ],
+            "headBracketAtS": [
+              0.010036897278653879,
+              -1.229996498462654,
+              0.08004919818873868
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 2.2551405187698492e-11,
+            "valid": true,
+            "representative": [
+              0.99999999955,
+              0.000029999999986499996,
+              0
+            ],
+            "chord": [
+              0.99999999955,
+              0.00002999999998642977,
+              0
+            ],
+            "oldRDriftMicrons": 2.463307335887066e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000018299999977125002,
+              1.2699659992375,
+              -0.8500243999999695
+            ],
+            "headBracketAtS": [
+              0.010038397278652003,
+              -1.279996498400154,
+              0.08005119818873618
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 2.2551405187698492e-11,
+            "valid": true,
+            "representative": [
+              0.99999999955,
+              0.000029999999986499996,
+              0
+            ],
+            "chord": [
+              0.99999999955,
+              0.00002999999998642977,
+              0
+            ],
+            "oldRDriftMicrons": 2.463307335887066e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000019799999975250002,
+              1.3199659991750001,
+              -0.850026399999967
+            ],
+            "headBracketAtS": [
+              0.010036897278653879,
+              -1.229996498462654,
+              0.08004919818873868
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              0.99999999955,
+              0.000029999999986499996,
+              0
+            ],
+            "chord": [
+              0.99999999955,
+              0.00002999999998642977,
+              0
+            ],
+            "oldRDriftMicrons": 6.938893903907228e-12,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000018299999977125002,
+              1.2699659992375,
+              -0.8500243999999695
+            ],
+            "headBracketAtS": [
+              0.010038397278652003,
+              -1.279996498400154,
+              0.08005119818873618
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              0.99999999955,
+              0.000029999999986499996,
+              0
+            ],
+            "chord": [
+              0.99999999955,
+              0.00002999999998642977,
+              0
+            ],
+            "oldRDriftMicrons": -1.0408340855860843e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000019799999975250002,
+              1.3199659991750001,
+              -0.850026399999967
+            ],
+            "headBracketAtS": [
+              0.010036897278653879,
+              -1.229996498462654,
+              0.08004919818873868
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              0.99999999955,
+              0.000029999999986499996,
+              0
+            ],
+            "chord": [
+              0.99999999955,
+              0.00002999999998642977,
+              0
+            ],
+            "oldRDriftMicrons": 6.938893903907228e-12,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000018299999977125002,
+              1.2699659992375,
+              -0.8500243999999695
+            ],
+            "headBracketAtS": [
+              0.010038397278652003,
+              -1.279996498400154,
+              0.08005119818873618
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 0,
+            "valid": true,
+            "representative": [
+              0.99999999955,
+              0.000029999999986499996,
+              0
+            ],
+            "chord": [
+              0.99999999955,
+              0.00002999999998642977,
+              0
+            ],
+            "oldRDriftMicrons": -1.0408340855860843e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000019799999975250002,
+              1.3199659991750001,
+              -0.850026399999967
+            ],
+            "headBracketAtS": [
+              0.010036897278653879,
+              -1.229996498462654,
+              0.08004919818873868
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 3.209238430557093e-10,
+            "valid": true,
+            "representative": [
+              -0.000029999999962500002,
+              0.9999999987500001,
+              -0.00003999999995
+            ],
+            "chord": [
+              -0.00002999999996250001,
+              0.9999999987500001,
+              -0.00003999999994933985
+            ],
+            "oldRDriftMicrons": -1.9081958235744878e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000018299999977125002,
+              1.2699659992375,
+              -0.8500243999999695
+            ],
+            "headBracketAtS": [
+              0.00003809728315237961,
+              -1.269996798412654,
+              0.08005079818873673
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 3.209238430557093e-10,
+            "valid": true,
+            "representative": [
+              -0.000029999999962500002,
+              0.9999999987500001,
+              -0.00003999999995
+            ],
+            "chord": [
+              -0.00002999999996250001,
+              0.9999999987500001,
+              -0.00003999999994933985
+            ],
+            "oldRDriftMicrons": -3.0184188481996443e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000019799999975250002,
+              1.3199659991750001,
+              -0.850026399999967
+            ],
+            "headBracketAtS": [
+              0.000036597283154254616,
+              -1.2199967984751539,
+              0.08004879818873922
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 5.186823193170653e-10,
+            "valid": true,
+            "representative": [
+              -0.000029999999962500002,
+              0.9999999987500001,
+              -0.00003999999995
+            ],
+            "chord": [
+              -0.00002999999996250001,
+              0.9999999987500001,
+              -0.00003999999994933985
+            ],
+            "oldRDriftMicrons": -1.9081958235744878e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000018299999977125002,
+              1.2699659992375,
+              -0.8500243999999695
+            ],
+            "headBracketAtS": [
+              0.00003809728315237961,
+              -1.269996798412654,
+              0.08005079818873673
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 5.186823193170653e-10,
+            "valid": true,
+            "representative": [
+              -0.000029999999962500002,
+              0.9999999987500001,
+              -0.00003999999995
+            ],
+            "chord": [
+              -0.00002999999996250001,
+              0.9999999987500001,
+              -0.00003999999994933985
+            ],
+            "oldRDriftMicrons": -3.0184188481996443e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000019799999975250002,
+              1.3199659991750001,
+              -0.850026399999967
+            ],
+            "headBracketAtS": [
+              0.000036597283154254616,
+              -1.2199967984751539,
+              0.08004879818873922
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "twist_001",
+      "original": [
+        0.13799999997766987,
+        -1.8299999994357552,
+        0.000042711955500207566
+      ],
+      "parallel": [
+        -5.669999999700915,
+        -0.0006344730140578347
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 0.13799999997766987,
+            "valid": true,
+            "representative": [
+              0.9999999999170528,
+              0.000012879999998931641,
+              0
+            ],
+            "chord": [
+              0.9999999999452702,
+              -0.000008500009143967686,
+              -0.000006099967235882504
+            ],
+            "oldRDriftMicrons": 6.414002744994929,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000005184999999812692,
+              1.2699999999779639,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010030397599168097,
+              -1.2799998710538678,
+              0.08000000000000063
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 0.13799999997593515,
+            "valid": true,
+            "representative": [
+              0.9999999999170528,
+              0.000012879999998931641,
+              0
+            ],
+            "chord": [
+              0.9999999999420952,
+              -0.000008500009893711313,
+              -0.000006599967235240297
+            ],
+            "oldRDriftMicrons": 6.414002969926114,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.0000056099999997973385,
+              1.3199999999761576,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010030822599168081,
+              -1.229999871055674,
+              0.08000000000000063
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 6.552002742389595,
+            "valid": true,
+            "representative": [
+              0.9999999999170528,
+              0.000012879999998931641,
+              0
+            ],
+            "chord": [
+              0.9999999999452702,
+              -0.000008500009143967686,
+              -0.000006099967235882504
+            ],
+            "oldRDriftMicrons": 6.414002744994929,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000005184999999812692,
+              1.2699999999779639,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01003039759945027,
+              -1.2800000848539592,
+              0.07999993900032831
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 6.552002967299964,
+            "valid": true,
+            "representative": [
+              0.9999999999170528,
+              0.000012879999998931641,
+              0
+            ],
+            "chord": [
+              0.9999999999420952,
+              -0.000008500009893711313,
+              -0.000006599967235240297
+            ],
+            "oldRDriftMicrons": 6.414002969926114,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.0000056099999997973385,
+              1.3199999999761576,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010030822599418506,
+              -1.230000084855773,
+              0.07999993400032823
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": -1.8299999994340204,
+            "valid": true,
+            "representative": [
+              0.9999999999170528,
+              0.000012879999998931641,
+              0
+            ],
+            "chord": [
+              0.9999999999452702,
+              -0.000008500009143967686,
+              -0.000006099967235882504
+            ],
+            "oldRDriftMicrons": 1.8299901713703104,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000005184999999812692,
+              1.2699999999779639,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010030397599168097,
+              -1.2799998710538678,
+              0.08000000000000063
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": -1.9799999993914963,
+            "valid": true,
+            "representative": [
+              0.9999999999170528,
+              0.000012879999998931641,
+              0
+            ],
+            "chord": [
+              0.9999999999420952,
+              -0.000008500009893711313,
+              -0.000006599967235240297
+            ],
+            "oldRDriftMicrons": 1.9799901713486028,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.0000056099999997973385,
+              1.3199999999761576,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010030822599168081,
+              -1.229999871055674,
+              0.08000000000000063
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": -3.65999017065341,
+            "valid": true,
+            "representative": [
+              0.9999999999170528,
+              0.000012879999998931641,
+              0
+            ],
+            "chord": [
+              0.9999999999452702,
+              -0.000008500009143967686,
+              -0.000006099967235882504
+            ],
+            "oldRDriftMicrons": 1.8299901713703104,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000005184999999812692,
+              1.2699999999779639,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01003039759945027,
+              -1.2800000848539592,
+              0.07999993900032831
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": -3.959990170441727,
+            "valid": true,
+            "representative": [
+              0.9999999999170528,
+              0.000012879999998931641,
+              0
+            ],
+            "chord": [
+              0.9999999999420952,
+              -0.000008500009893711313,
+              -0.000006599967235240297
+            ],
+            "oldRDriftMicrons": 1.9799901713486028,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.0000056099999997973385,
+              1.3199999999761576,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010030822599418506,
+              -1.230000084855773,
+              0.07999993400032823
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 0.000042712399589417416,
+            "valid": true,
+            "representative": [
+              -0.000013339999998813039,
+              0.9999999999110223,
+              0
+            ],
+            "chord": [
+              -0.000013339999998813013,
+              0.9999999999110223,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000005184999999812692,
+              1.2699999999779639,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.0000302641999975812,
+              -1.2699999998547575,
+              0.08000000000000063
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 0.0000462134479989329,
+            "valid": true,
+            "representative": [
+              -0.000013339999998813039,
+              0.9999999999110223,
+              0
+            ],
+            "chord": [
+              -0.000013339999998813013,
+              0.9999999999110223,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.0000056099999997973385,
+              1.3199999999761576,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00003068919999756585,
+              -1.2199999998565638,
+              0.08000000000000063
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 0.000042712399589417416,
+            "valid": true,
+            "representative": [
+              -0.000013339999998813039,
+              0.9999999999110223,
+              0
+            ],
+            "chord": [
+              -0.000013339999998813013,
+              0.9999999999110223,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000005184999999812692,
+              1.2699999999779639,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.0000302641999975812,
+              -1.2699999998547575,
+              0.08000000000000063
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 0.0000462134479989329,
+            "valid": true,
+            "representative": [
+              -0.000013339999998813039,
+              0.9999999999110223,
+              0
+            ],
+            "chord": [
+              -0.000013339999998813013,
+              0.9999999999110223,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.0000056099999997973385,
+              1.3199999999761576,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00003068919999756585,
+              -1.2199999998565638,
+              0.08000000000000063
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "twist_005",
+      "original": [
+        0.689999997036464,
+        -9.149999929687624,
+        0.0010678050440388054
+      ],
+      "parallel": [
+        -28.349999963681732,
+        -0.015861830279795264
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 0.6899999970347293,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022788380387,
+              -0.00003049918048557554
+            ],
+            "oldRDriftMicrons": 32.07006855293452,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010151987978959366,
+              -1.279999352346706,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 0.689999997036464,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523915,
+              -0.00004250024662987668,
+              -0.000032999180440211635
+            ],
+            "oldRDriftMicrons": 32.0700741779905,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010154112978957448,
+              -1.2299993523918622,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 32.76006826489,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022788380387,
+              -0.00003049918048557554
+            ],
+            "oldRDriftMicrons": 32.07006855293452,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010151987986013819,
+              -1.2800004213489835,
+              0.07999969500819537
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 32.76007388712358,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523915,
+              -0.00004250024662987668,
+              -0.000032999180440211635
+            ],
+            "oldRDriftMicrons": 32.0700741779905,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010154112985218162,
+              -1.2300004213943272,
+              0.07999967000819574
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": -9.14999992968936,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022788380387,
+              -0.00003049918048557554
+            ],
+            "oldRDriftMicrons": 9.149754225744323,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010151987978959366,
+              -1.279999352346706,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": -9.899999923925623,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523915,
+              -0.00004250024662987668,
+              -0.000032999180440211635
+            ],
+            "oldRDriftMicrons": 9.899754219715174,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010154112978957448,
+              -1.2299993523918622,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": -18.29975413175297,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022788380387,
+              -0.00003049918048557554
+            ],
+            "oldRDriftMicrons": 9.149754225744323,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010151987986013819,
+              -1.2800004213489835,
+              0.07999969500819537
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": -19.799754116216555,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523915,
+              -0.00004250024662987668,
+              -0.000032999180440211635
+            ],
+            "oldRDriftMicrons": 9.899754219715174,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010154112985218162,
+              -1.2300004213943272,
+              0.07999967000819574
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 0.001067804598214872,
+            "valid": true,
+            "representative": [
+              -0.0000666999998516295,
+              0.9999999977755549,
+              0
+            ],
+            "chord": [
+              -0.00006669999985162943,
+              0.999999997775555,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00015132099969764992,
+              -1.269999996368949,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 0.0011553299341521273,
+            "valid": true,
+            "representative": [
+              -0.0000666999998516295,
+              0.9999999977755549,
+              0
+            ],
+            "chord": [
+              -0.00006669999985162943,
+              0.999999997775555,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00015344599969573078,
+              -1.2199999964141053,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 0.0010678045999495955,
+            "valid": true,
+            "representative": [
+              -0.0000666999998516295,
+              0.9999999977755549,
+              0
+            ],
+            "chord": [
+              -0.00006669999985162943,
+              0.999999997775555,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00015132099969764992,
+              -1.269999996368949,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 0.0011553299341521273,
+            "valid": true,
+            "representative": [
+              -0.0000666999998516295,
+              0.9999999977755549,
+              0
+            ],
+            "chord": [
+              -0.00006669999985162943,
+              0.999999997775555,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00015344599969573078,
+              -1.2199999964141053,
+              0.08000000000000018
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "twist_minus_005",
+      "original": [
+        -0.6899999970347293,
+        9.14999992968936,
+        0.0010678050440388054
+      ],
+      "parallel": [
+        28.349999963678265,
+        -0.015861830279795264
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": -0.6899999970347293,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              -0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317348,
+              0.00004249977038458413,
+              0.000030500818481226397
+            ],
+            "oldRDriftMicrons": -32.06993130385437,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.009848011979567035,
+              -1.2800006403467032,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": -0.6899999970347293,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              -0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523587,
+              0.00004249975163176444,
+              0.000033000818436232444
+            ],
+            "oldRDriftMicrons": -32.06992567879839,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.009845886979568954,
+              -1.2300006403918595,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": -32.75993101512463,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              -0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317348,
+              0.00004249977038458413,
+              0.000030500818481226397
+            ],
+            "oldRDriftMicrons": -32.06993130385437,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.009848011986621183,
+              -1.2799995713490007,
+              0.080000305008185
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": -32.75992538768861,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              -0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523587,
+              0.00004249975163176444,
+              0.000033000818436232444
+            ],
+            "oldRDriftMicrons": -32.06992567879839,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00984588698582934,
+              -1.2299995713943446,
+              0.08000033000818452
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 9.14999992968936,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              -0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317348,
+              0.00004249977038458413,
+              0.000030500818481226397
+            ],
+            "oldRDriftMicrons": -9.150245624573936,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.009848011979567035,
+              -1.2800006403467032,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 9.899999923925623,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              -0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523587,
+              0.00004249975163176444,
+              0.000033000818436232444
+            ],
+            "oldRDriftMicrons": -9.900245618435498,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.009845886979568954,
+              -1.2300006403918595,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 18.300245530447278,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              -0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317348,
+              0.00004249977038458413,
+              0.000030500818481226397
+            ],
+            "oldRDriftMicrons": -9.150245624573936,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.009848011986621183,
+              -1.2799995713490007,
+              0.080000305008185
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 19.80024551502535,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              -0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523587,
+              0.00004249975163176444,
+              0.000033000818436232444
+            ],
+            "oldRDriftMicrons": -9.900245618435498,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00984588698582934,
+              -1.2299995713943446,
+              0.08000033000818452
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 0.001067804598214872,
+            "valid": true,
+            "representative": [
+              0.0000666999998516295,
+              0.9999999977755549,
+              0
+            ],
+            "chord": [
+              0.00006669999985162943,
+              0.999999997775555,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.00015132099969764992,
+              -1.269999996368949,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 0.0011553299341521273,
+            "valid": true,
+            "representative": [
+              0.0000666999998516295,
+              0.9999999977755549,
+              0
+            ],
+            "chord": [
+              0.00006669999985162943,
+              0.999999997775555,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.00015344599969573078,
+              -1.2199999964141053,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 0.0010678045999495955,
+            "valid": true,
+            "representative": [
+              0.0000666999998516295,
+              0.9999999977755549,
+              0
+            ],
+            "chord": [
+              0.00006669999985162943,
+              0.999999997775555,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.00015132099969764992,
+              -1.269999996368949,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 0.0011553299341521273,
+            "valid": true,
+            "representative": [
+              0.0000666999998516295,
+              0.9999999977755549,
+              0
+            ],
+            "chord": [
+              0.00006669999985162943,
+              0.999999997775555,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.00015344599969573078,
+              -1.2199999964141053,
+              0.08000000000000018
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "used_flat",
+      "original": [
+        16.958999990967712,
+        8.128999999005085,
+        14.11999999469636
+      ],
+      "parallel": [
+        8.125810727274697,
+        14.118678122277545
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 16.958999990965978,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 6.713379852030243e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010106841699943095,
+              -1.279999996980119,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 16.958999990967712,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 6.713379852030243e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010106841699943095,
+              -1.229999996980119,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 16.958999990965978,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 6.713379852030243e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010106841699943095,
+              -1.279999996980119,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 16.958999990967712,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 6.713379852030243e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010106841699943095,
+              -1.229999996980119,
+              0.08000000000000018
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 8.12899999900335,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010106841699943095,
+              -1.279999996980119,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 8.128999999005085,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010106841699943095,
+              -1.229999996980119,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 8.12899999900335,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010106841699943095,
+              -1.279999996980119,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 8.128999999005085,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010106841699943095,
+              -1.229999996980119,
+              0.08000000000000018
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 14.119999995369433,
+            "valid": true,
+            "representative": [
+              -0.00005652999996989175,
+              0.9999999984021797,
+              0
+            ],
+            "chord": [
+              -0.000056529999969891695,
+              0.9999999984021797,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00010627639994339646,
+              -1.2699999969960971,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 14.119999995369433,
+            "valid": true,
+            "representative": [
+              -0.00005652999996989175,
+              0.9999999984021797,
+              0
+            ],
+            "chord": [
+              -0.000056529999969891695,
+              0.9999999984021797,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00010627639994339646,
+              -1.219999996996097,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 14.119999995369433,
+            "valid": true,
+            "representative": [
+              -0.00005652999996989175,
+              0.9999999984021797,
+              0
+            ],
+            "chord": [
+              -0.000056529999969891695,
+              0.9999999984021797,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.27,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00010627639994339646,
+              -1.2699999969960971,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 14.119999995369433,
+            "valid": true,
+            "representative": [
+              -0.00005652999996989175,
+              0.9999999984021797,
+              0
+            ],
+            "chord": [
+              -0.000056529999969891695,
+              0.9999999984021797,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0,
+              1.32,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00010627639994339646,
+              -1.219999996996097,
+              0.08000000000000018
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "used_B_plus_001",
+      "original": [
+        16.958999990967712,
+        8.56167615747791,
+        11.932496969398882
+      ],
+      "parallel": [
+        9.467582658960124,
+        11.56384920587665
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 16.95899999096945,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 6.713379852030243e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.326846227584446e-7,
+              1.2700009646686923,
+              -0.8499975135869565
+            ],
+            "headBracketAtS": [
+              0.010106409015320337,
+              -1.2799990323114268,
+              0.08000248641304364
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 16.95899999096945,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 4.4929338027799304e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.6815057544356303e-7,
+              1.3200009646682644,
+              -0.8499973097826087
+            ],
+            "headBracketAtS": [
+              0.010106373549367652,
+              -1.2299990323118546,
+              0.08000269021739148
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 16.95899999096945,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 6.713379852030243e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.326846227584446e-7,
+              1.2700009646686923,
+              -0.8499975135869565
+            ],
+            "headBracketAtS": [
+              0.010106409015320337,
+              -1.2799990323114268,
+              0.08000248641304364
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 16.95899999096945,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 4.4929338027799304e-10,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.6815057544356303e-7,
+              1.3200009646682644,
+              -0.8499973097826087
+            ],
+            "headBracketAtS": [
+              0.010106373549367652,
+              -1.2299990323118546,
+              0.08000269021739148
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 8.56167615747791,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.326846227584446e-7,
+              1.2700009646686923,
+              -0.8499975135869565
+            ],
+            "headBracketAtS": [
+              0.010106409015320337,
+              -1.2799990323114268,
+              0.08000248641304364
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 8.597142110161258,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.6815057544356303e-7,
+              1.3200009646682644,
+              -0.8499973097826087
+            ],
+            "headBracketAtS": [
+              0.010106373549367652,
+              -1.2299990323118546,
+              0.08000269021739148
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 8.56167615747791,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.326846227584446e-7,
+              1.2700009646686923,
+              -0.8499975135869565
+            ],
+            "headBracketAtS": [
+              0.010106409015320337,
+              -1.2799990323114268,
+              0.08000248641304364
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 8.597142110161258,
+            "valid": true,
+            "representative": [
+              1,
+              0,
+              0
+            ],
+            "chord": [
+              1,
+              0,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.6815057544356303e-7,
+              1.3200009646682644,
+              -0.8499973097826087
+            ],
+            "headBracketAtS": [
+              0.010106373549367652,
+              -1.2299990323118546,
+              0.08000269021739148
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 11.932496969848176,
+            "valid": true,
+            "representative": [
+              -0.00005652999996989175,
+              0.9999999984021797,
+              0
+            ],
+            "chord": [
+              -0.000056529999969891695,
+              0.9999999984021797,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.326846227584446e-7,
+              1.2700009646686923,
+              -0.8499975135869565
+            ],
+            "headBracketAtS": [
+              0.00010584371532063802,
+              -1.2699990323274049,
+              0.08000248641304364
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 11.932496248940467,
+            "valid": true,
+            "representative": [
+              -0.00005652999996989175,
+              0.9999999984021797,
+              0
+            ],
+            "chord": [
+              -0.000056529999969891695,
+              0.9999999984021797,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.6815057544356303e-7,
+              1.3200009646682644,
+              -0.8499973097826087
+            ],
+            "headBracketAtS": [
+              0.0001058082493679529,
+              -1.2199990323278327,
+              0.08000269021739148
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 11.932496969848176,
+            "valid": true,
+            "representative": [
+              -0.00005652999996989175,
+              0.9999999984021797,
+              0
+            ],
+            "chord": [
+              -0.000056529999969891695,
+              0.9999999984021797,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.326846227584446e-7,
+              1.2700009646686923,
+              -0.8499975135869565
+            ],
+            "headBracketAtS": [
+              0.00010584371532063802,
+              -1.2699990323274049,
+              0.08000248641304364
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 11.932496248940467,
+            "valid": true,
+            "representative": [
+              -0.00005652999996989175,
+              0.9999999984021797,
+              0
+            ],
+            "chord": [
+              -0.000056529999969891695,
+              0.9999999984021797,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              -4.6815057544356303e-7,
+              1.3200009646682644,
+              -0.8499973097826087
+            ],
+            "headBracketAtS": [
+              0.0001058082493679529,
+              -1.2199990323278327,
+              0.08000269021739148
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "used_twist_005_Xminus",
+      "original": [
+        17.648999986593847,
+        -1.0194904990958737,
+        22.370697141548337
+      ],
+      "parallel": [
+        -20.22364688864138,
+        14.111148087476987
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 17.648999986527926,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022784679643,
+              -0.000030499180473363088
+            ],
+            "oldRDriftMicrons": 32.07032014824855,
+            "baseInterval": [
+              -0.55,
+              -0.25000000000000006
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5602588338311577,
+              -1.2800249164855277,
+              0.07994802414414359
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 17.648999986311086,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523914,
+              -0.00004250024659286927,
+              -0.00003299918042762912
+            ],
+            "oldRDriftMicrons": 32.0703463983045,
+            "baseInterval": [
+              -0.55,
+              -0.25000000000000006
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5602609588311558,
+              -1.230024916530684,
+              0.07994802414414359
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 49.71931968929081,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022784679643,
+              -0.000030499180473363088
+            ],
+            "oldRDriftMicrons": 32.07032014824855,
+            "baseInterval": [
+              -0.55,
+              -0.25000000000000006
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5602588338382122,
+              -1.2800259854878049,
+              0.07994771915233889
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 49.71934593491975,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523914,
+              -0.00004250024659286927,
+              -0.00003299918042762912
+            ],
+            "oldRDriftMicrons": 32.0703463983045,
+            "baseInterval": [
+              -0.55,
+              -0.25000000000000006
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5602609588374164,
+              -1.2300259855331486,
+              0.07994769415233927
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": -1.0194904992346516,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022784679643,
+              -0.000030499180473363088
+            ],
+            "oldRDriftMicrons": 9.15126359951092,
+            "baseInterval": [
+              -0.55,
+              -0.25000000000000006
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5602588338311577,
+              -1.2800249164855277,
+              0.07994802414414359
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": -1.7694904936894906,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523914,
+              -0.00004250024659286927,
+              -0.00003299918042762912
+            ],
+            "oldRDriftMicrons": 9.901263592584918,
+            "baseInterval": [
+              -0.55,
+              -0.25000000000000006
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5602609588311558,
+              -1.230024916530684,
+              0.07994802414414359
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": -10.170754121718515,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022784679643,
+              -0.000030499180473363088
+            ],
+            "oldRDriftMicrons": 9.15126359951092,
+            "baseInterval": [
+              -0.55,
+              -0.25000000000000006
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5602588338382122,
+              -1.2800259854878049,
+              0.07994771915233889
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": -11.670754106130055,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523914,
+              -0.00004250024659286927,
+              -0.00003299918042762912
+            ],
+            "oldRDriftMicrons": 9.901263592584918,
+            "baseInterval": [
+              -0.55,
+              -0.25000000000000006
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5602609588374164,
+              -1.2300259855331486,
+              0.07994769415233927
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 22.37069714155007,
+            "valid": true,
+            "representative": [
+              -0.00012322999956397782,
+              0.9999999920290586,
+              0.000027499999884489264
+            ],
+            "chord": [
+              -0.00012322999956423017,
+              0.9999999920290586,
+              0.000027499999884679962
+            ],
+            "oldRDriftMicrons": -5.204170427930421e-11,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5502576015518988,
+              -1.2700255605652357,
+              0.07994829914414248
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 22.37082706438298,
+            "valid": true,
+            "representative": [
+              -0.00012322999956397782,
+              0.9999999920290586,
+              0.000027499999884489264
+            ],
+            "chord": [
+              -0.00012322999956423017,
+              0.9999999920290586,
+              0.000027499999884679962
+            ],
+            "oldRDriftMicrons": -5.204170427930421e-11,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5502597265518969,
+              -1.220025560610392,
+              0.07994829914414248
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 22.37069714160732,
+            "valid": true,
+            "representative": [
+              -0.00012322999956397782,
+              0.9999999920290586,
+              0.000027499999884489264
+            ],
+            "chord": [
+              -0.00012322999956423017,
+              0.9999999920290586,
+              0.000027499999884679962
+            ],
+            "oldRDriftMicrons": -5.204170427930421e-11,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5502576015518988,
+              -1.2700255605652357,
+              0.07994829914414248
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 22.370827064440228,
+            "valid": true,
+            "representative": [
+              -0.00012322999956397782,
+              0.9999999920290586,
+              0.000027499999884489264
+            ],
+            "chord": [
+              -0.00012322999956423017,
+              0.9999999920290586,
+              0.000027499999884679962
+            ],
+            "oldRDriftMicrons": -5.204170427930421e-11,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.5502597265518969,
+              -1.220025560610392,
+              0.07994829914414248
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "used_twist_005_Xplus",
+      "original": [
+        17.648999986593847,
+        -1.0194904990958737,
+        5.870697233333402
+      ],
+      "parallel": [
+        -20.221647088708092,
+        14.11114965410229
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 17.64899998674997,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317348,
+              -0.0000424997703460964,
+              -0.00003050081847197454
+            ],
+            "oldRDriftMicrons": 32.06967964833329,
+            "baseInterval": [
+              0.25000000000000006,
+              0.55
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.5397411744743262,
+              -1.2799737664861286,
+              0.08005197414370724
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 17.648999986644153,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523587,
+              -0.000042499751593276725,
+              -0.00003300081842624045
+            ],
+            "oldRDriftMicrons": 32.069653398277346,
+            "baseInterval": [
+              0.25000000000000006,
+              0.55
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.5397390494743282,
+              -1.2299737665312849,
+              0.08005197414370724
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 49.71867918911708,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317348,
+              -0.0000424997703460964,
+              -0.00003050081847197454
+            ],
+            "oldRDriftMicrons": 32.06967964833329,
+            "baseInterval": [
+              0.25000000000000006,
+              0.55
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.5397411744672721,
+              -1.2799748354838307,
+              0.08005166913552253
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 49.71865293550322,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523587,
+              -0.000042499751593276725,
+              -0.00003300081842624045
+            ],
+            "oldRDriftMicrons": 32.069653398277346,
+            "baseInterval": [
+              0.25000000000000006,
+              0.55
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.5397390494680678,
+              -1.2299748355287994,
+              0.08005164413552301
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": -1.0194904989015847,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317348,
+              -0.0000424997703460964,
+              -0.00003050081847197454
+            ],
+            "oldRDriftMicrons": 9.15175499252921,
+            "baseInterval": [
+              0.25000000000000006,
+              0.55
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.5397411744743262,
+              -1.2799737664861286,
+              0.08005197414370724
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": -1.7694904932454014,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523587,
+              -0.000042499751593276725,
+              -0.00003300081842624045
+            ],
+            "oldRDriftMicrons": 9.901754985072383,
+            "baseInterval": [
+              0.25000000000000006,
+              0.55
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.5397390494743282,
+              -1.2299737665312849,
+              0.08005197414370724
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": -10.171245514700376,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317348,
+              -0.0000424997703460964,
+              -0.00003050081847197454
+            ],
+            "oldRDriftMicrons": 9.15175499252921,
+            "baseInterval": [
+              0.25000000000000006,
+              0.55
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.5397411744672721,
+              -1.2799748354838307,
+              0.08005166913552253
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": -11.671245498163021,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523587,
+              -0.000042499751593276725,
+              -0.00003300081842624045
+            ],
+            "oldRDriftMicrons": 9.901754985072383,
+            "baseInterval": [
+              0.25000000000000006,
+              0.55
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.5397390494680678,
+              -1.2299748355287994,
+              0.08005164413552301
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 5.870697233557181,
+            "valid": true,
+            "representative": [
+              -0.00012322999956397782,
+              0.9999999920290586,
+              -0.000027499999884489264
+            ],
+            "chord": [
+              -0.00012322999956385991,
+              0.9999999920290586,
+              -0.00002749999988467992
+            ],
+            "oldRDriftMicrons": 5.898059818321144e-11,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.5497424067535851,
+              -1.2699744105658366,
+              0.08005169914370835
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 5.870827155946001,
+            "valid": true,
+            "representative": [
+              -0.00012322999956397782,
+              0.9999999920290586,
+              -0.000027499999884489264
+            ],
+            "chord": [
+              -0.00012322999956385991,
+              0.9999999920290586,
+              -0.00002749999988467992
+            ],
+            "oldRDriftMicrons": 5.898059818321144e-11,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.549740281753587,
+              -1.2199744106109929,
+              0.08005169914370835
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 5.870697233499936,
+            "valid": true,
+            "representative": [
+              -0.00012322999956397782,
+              0.9999999920290586,
+              -0.000027499999884489264
+            ],
+            "chord": [
+              -0.00012322999956385991,
+              0.9999999920290586,
+              -0.00002749999988467992
+            ],
+            "oldRDriftMicrons": 5.898059818321144e-11,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.5497424067535851,
+              -1.2699744105658366,
+              0.08005169914370835
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 5.8708271558887555,
+            "valid": true,
+            "representative": [
+              -0.00012322999956397782,
+              0.9999999920290586,
+              -0.000027499999884489264
+            ],
+            "chord": [
+              -0.00012322999956385991,
+              0.9999999920290586,
+              -0.00002749999988467992
+            ],
+            "oldRDriftMicrons": 5.898059818321144e-11,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              -0.549740281753587,
+              -1.2199744106109929,
+              0.08005169914370835
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "used_twist_005_Yminus",
+      "original": [
+        17.64899998685579,
+        -1.0194904990958737,
+        14.120697192780348
+      ],
+      "parallel": [
+        -15.722646986219072,
+        14.114349485746732
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 17.648999986854054,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317655,
+              -0.000042500227886024324,
+              -0.0000304991804848354
+            ],
+            "oldRDriftMicrons": 32.070068553600656,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              -0.3,
+              0
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010221860678586613,
+              -0.979999344478329,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 17.64899998685579,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523914,
+              -0.00004250024663209713,
+              -0.00003299918043984156
+            ],
+            "oldRDriftMicrons": 32.07007417865663,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              -0.3,
+              0
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010223985678584695,
+              -0.9299993445234853,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 49.71906809517722,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317655,
+              -0.000042500227886024324,
+              -0.0000304991804848354
+            ],
+            "oldRDriftMicrons": 32.070068553600656,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              -0.3,
+              0
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010221860685641068,
+              -0.9800004134806066,
+              0.07999969500819537
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 49.71907371606292,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523914,
+              -0.00004250024663209713,
+              -0.00003299918043984156
+            ],
+            "oldRDriftMicrons": 32.07007417865663,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              -0.3,
+              0
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01022398568484541,
+              -0.9300004135259503,
+              0.07999967000819574
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": -1.019490499094139,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317655,
+              -0.000042500227886024324,
+              -0.0000304991804848354
+            ],
+            "oldRDriftMicrons": 9.151263602950877,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010221860678586613,
+              -0.979999344478329,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": -1.769490493330403,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523914,
+              -0.00004250024663209713,
+              -0.00003299918043984156
+            ],
+            "oldRDriftMicrons": 9.90126359624692,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010223985678584695,
+              -0.9299993445234853,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": -10.170754125111634,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317655,
+              -0.000042500227886024324,
+              -0.0000304991804848354
+            ],
+            "oldRDriftMicrons": 9.151263602950877,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010221860685641068,
+              -0.9800004134806066,
+              0.07999969500819537
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": -11.670754109493684,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523914,
+              -0.00004250024663209713,
+              -0.00003299918043984156
+            ],
+            "oldRDriftMicrons": 9.90126359624692,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.01022398568484541,
+              -0.9300004135259503,
+              0.07999967000819574
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 14.120697192778614,
+            "valid": true,
+            "representative": [
+              -0.00012322999958919875,
+              0.9999999924071835,
+              0
+            ],
+            "chord": [
+              -0.0001232299995891986,
+              0.9999999924071834,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              -0.3,
+              0
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.0002206283993275205,
+              -0.9699999885542558,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 14.120827115391213,
+            "valid": true,
+            "representative": [
+              -0.00012322999958919875,
+              0.9999999924071835,
+              0
+            ],
+            "chord": [
+              -0.0001232299995891986,
+              0.9999999924071834,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              -0.3,
+              0
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00022275339932560135,
+              -0.9199999885994121,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 14.120697192780348,
+            "valid": true,
+            "representative": [
+              -0.00012322999958919875,
+              0.9999999924071835,
+              0
+            ],
+            "chord": [
+              -0.0001232299995891986,
+              0.9999999924071834,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              -0.3,
+              0
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.0002206283993275205,
+              -0.9699999885542558,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 14.120827115392947,
+            "valid": true,
+            "representative": [
+              -0.00012322999958919875,
+              0.9999999924071835,
+              0
+            ],
+            "chord": [
+              -0.0001232299995891986,
+              0.9999999924071834,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              -0.3,
+              0
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.00022275339932560135,
+              -0.9199999885994121,
+              0.08000000000000018
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "used_twist_005_Yplus",
+      "original": [
+        17.64899998685579,
+        -1.0194904990958737,
+        14.120697192780348
+      ],
+      "parallel": [
+        -24.722647012810974,
+        14.107138266180804
+      ],
+      "alternatives": [
+        {
+          "key": "XY",
+          "oldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 17.648999986854054,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022788380387,
+              -0.00003049918048557554
+            ],
+            "oldRDriftMicrons": 32.07006855293452,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010258829678463373,
+              -1.2799993422004843,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 17.648999986854054,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523915,
+              -0.00004250024663061683,
+              -0.000032999180440211635
+            ],
+            "oldRDriftMicrons": 32.0700741779905,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010260954678461455,
+              -1.2299993422456406,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XY",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 49.71906809451109,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022788380387,
+              -0.00003049918048557554
+            ],
+            "oldRDriftMicrons": 32.07006855293452,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010258829685517825,
+              -1.2800004112027619,
+              0.07999969500819537
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XY",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 49.71907371561883,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523915,
+              -0.00004250024663061683,
+              -0.000032999180440211635
+            ],
+            "oldRDriftMicrons": 32.0700741779905,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010260954684722169,
+              -1.2300004112481056,
+              0.07999967000819574
+            ]
+          }
+        },
+        {
+          "key": "XZ",
+          "oldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": -1.019490499094139,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022788232357,
+              -0.00003049918048446532
+            ],
+            "oldRDriftMicrons": 9.151263602839855,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010295798678340132,
+              -1.579999339922639,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": -1.769490493330403,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523915,
+              -0.000042500246629136536,
+              -0.000032999180439471484
+            ],
+            "oldRDriftMicrons": 9.901263596135898,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010297923678338214,
+              -1.5299993399677954,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "XZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": -10.17075412500408,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999986317654,
+              -0.00004250022788232357,
+              -0.00003049918048446532
+            ],
+            "oldRDriftMicrons": 9.151263602839855,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010295798685394585,
+              -1.5800004089249167,
+              0.07999969500819537
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "XZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": -11.670754109382662,
+            "valid": true,
+            "representative": [
+              0.9999999979263201,
+              0.00006439999986645502,
+              0
+            ],
+            "chord": [
+              0.9999999985523915,
+              -0.000042500246629136536,
+              -0.000032999180439471484
+            ],
+            "oldRDriftMicrons": 9.901263596135898,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.010297923684598928,
+              -1.5300004089702604,
+              0.07999967000819574
+            ]
+          }
+        },
+        {
+          "key": "YZ",
+          "oldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": false,
+            "microns": 14.12069719255657,
+            "valid": true,
+            "representative": [
+              -0.00012322999958919875,
+              0.9999999924071835,
+              0
+            ],
+            "chord": [
+              -0.0001232299995891988,
+              0.9999999924071835,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.0002945663990810397,
+              -1.5699999839985659,
+              0.08000000000000018
+            ]
+          },
+          "raisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": false,
+            "microns": 14.120827114947124,
+            "valid": true,
+            "representative": [
+              -0.00012322999958919875,
+              0.9999999924071835,
+              0
+            ],
+            "chord": [
+              -0.0001232299995891988,
+              0.9999999924071835,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.0002966913990791206,
+              -1.5199999840437222,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordOldPoint": {
+            "key": "YZ",
+            "lift": 0,
+            "finiteChord": true,
+            "microns": 14.12069719255657,
+            "valid": true,
+            "representative": [
+              -0.00012322999958919875,
+              0.9999999924071835,
+              0
+            ],
+            "chord": [
+              -0.0001232299995891988,
+              0.9999999924071835,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.000025924999976586478,
+              1.2699999994490938,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.0002945663990810397,
+              -1.5699999839985659,
+              0.08000000000000018
+            ]
+          },
+          "finiteChordRaisedPoint": {
+            "key": "YZ",
+            "lift": 0.05,
+            "finiteChord": true,
+            "microns": 14.120827114947124,
+            "valid": true,
+            "representative": [
+              -0.00012322999958919875,
+              0.9999999924071835,
+              0
+            ],
+            "chord": [
+              -0.0001232299995891988,
+              0.9999999924071835,
+              0
+            ],
+            "oldRDriftMicrons": 0,
+            "baseInterval": [
+              0,
+              0.3
+            ],
+            "scanInterval": [
+              0,
+              0.3
+            ],
+            "contactPoint": [
+              0.00002804999997466734,
+              1.3199999994039375,
+              -0.85
+            ],
+            "headBracketAtS": [
+              0.0002966913990791206,
+              -1.5199999840437222,
+              0.08000000000000018
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

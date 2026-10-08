@@ -1,0 +1,111 @@
+[
+  {
+    "command": [
+      "node",
+      "tests/check-horizontal-audit-independent-20261008.cjs"
+    ],
+    "exit": 0,
+    "stdout": "{\"passed\":true,\"assertions\":531,\"cases\":21,\"scope\":\"Independent scalar-support→rigid-fixture→plane/cylinder contact; all 8 supports ±; ±twist; rigid plane; Z bounds; signed isolated angles\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-horizontal-mesh-independent-20261008.cjs",
+      "/tmp/horizontal-reaudit-baseline-app-edda2f88.js"
+    ],
+    "exit": 0,
+    "stdout": "{\"passed\":true,\"assertions\":537,\"scope\":\"Actual mesh overlap; all axis extremes; ±twist; flat/tilted; display exaggeration normal signs; other6 raw meshes exact baseline equality\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-horizontal-twist-cancellation-20261008.cjs"
+    ],
+    "exit": 0,
+    "stdout": "{\"passed\":true,\"assertions\":7,\"rows\":[{\"X\":-100,\"YZ\":22.370697141548337,\"a\":-20.22364688864138,\"b\":14.111148087476987},{\"X\":0,\"YZ\":14.120697192780348,\"a\":-20.222646999511554,\"b\":14.111148876136056},{\"X\":100,\"YZ\":5.870697233333402,\"a\":-20.221647088708092,\"b\":14.11114965410229}],\"scope\":\"X-dependent spindle slope cancels pallet-mounted bracket roll in b; exact second-order circular contact under ±pure twist\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-horizontal-parallel-independent.cjs"
+    ],
+    "exit": 0,
+    "stdout": "{\"passed\":true,\"assertions\":478,\"independent\":\"cross-product distance bisection, signed radial gap, rigid translation\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-horizontal-parallel-machine.cjs"
+    ],
+    "exit": 0,
+    "stdout": "{\"passed\":true,\"assertions\":553,\"scope\":\"ideal, known signed angles, rigid plane, saddle lever arm, physical rendered spindle, travel limits, display invariance\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-measurement-reference.cjs"
+    ],
+    "exit": 0,
+    "stdout": "Reference plane geometry: 70 numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.\nSupport-grid crossing: piecewise integral and analytic pallet material-point oracle passed.\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-reference-zero.cjs"
+    ],
+    "exit": 0,
+    "stdout": "Reference zero locations: 76 checks, all19 physical directions, SVG zero ends and both travel limits passed.\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-reference-fixtures.cjs"
+    ],
+    "exit": 0,
+    "stdout": "Reference fixtures: 317 independent geometry comparisons, 233 v2 regression comparisons, plus fixture validity and 7 saved-state compatibility groups passed.\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-3d-axis-controls.cjs"
+    ],
+    "exit": 0,
+    "stdout": "3D axis controls: 138 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-full-code-review.cjs"
+    ],
+    "exit": 0,
+    "stdout": "Full code review: 158 integration checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-intrinsic-inspection.cjs"
+    ],
+    "exit": 0,
+    "stdout": "{\"passed\":true,\"checks\":1845,\"independent\":\"circle contact extrema; Gram-Schmidt least-squares plane; frozen legacy profile SHA256\",\"limits\":\"browser support/save/gesture integration verified separately; this is intrinsic teaching geometry, not actual machine metrology\"}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "tests/check-structural-invariants.cjs"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"checks\": 212,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  }
+]

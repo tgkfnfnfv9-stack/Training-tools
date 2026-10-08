@@ -274,6 +274,9 @@ function createGeometry(m){
  table(m.supportLayout==='irregular'?1.45:W*.57,m.supportLayout==='irregular'?3.20:D*(cross?.43:.65),1.02,0,cross?['X','Y']:gate?[]:['X']);
  }else if(m.kind==='horizontal'){
  [-1,1].forEach(k=>curvedBox(0,.7,D*.28+k*.13,W*.86,.12,.1,c.rail));
+ // Fixed Z guides connect the pallet carriage to the bed throughout its travel.
+ // They follow the same support surface as the fixed X guides.
+ [-1,1].forEach(k=>curvedBox(k*.56,.67,-.85,.14,.10,2.7,c.rail));
  withGroup(['X'],()=>{
   box(0,1.95,D*.29,.95,2.5,.7,c.fixed,'コラム');
   // Keep the head-side guide face fixed; extend its backing into the column.
@@ -282,7 +285,14 @@ function createGeometry(m){
   box(0,2,(guideFront+guideBack)/2,.16,2.0,guideBack-guideFront,c.rail);
  },'tool');
  withGroup(['X','Y'],()=>{box(0,2.55,.25,.75,.62,1.1,c.fixed,'主軸頭');cyl(0,2.55,-.45,.2,.6,c.spindle,'z');cyl(0,2.55,-.83,.045,.2,c.spindle,'z');},'tool');
- withGroup(['Z'],()=>{box(0,.8,-.85,1.6,.23,1.6,c.fixed,'パレット台');cyl(0,1.03,-.85,.73,.2,c.table);box(0,1.2,-.85,1.45,.14,1.45,c.table,'パレット');box(0,1.75,-.85,.72,.95,.72,c.work);},'work');
+ withGroup(['Z'],()=>{
+  box(0,.8,-.85,1.6,.23,1.6,c.fixed,'パレット台');
+  // Preserve the pallet top datum; extend only the rotary seat into its carriage.
+  cyl(0,1.015,-.85,.73,.23,c.table);box(0,1.2,-.85,1.45,.14,1.45,c.table,'パレット');
+  // The example workpiece sits on the pallet and clears the head at lowest Y.
+  // Its display dimensions are independent of all measurement datums.
+  box(0,1.545,-.85,.72,.55,.72,c.work);
+ },'work');
  }else if(m.kind==='five'){
  withGroup([],()=>box(0,1.95,D*.3,1.0,2.6,.6,c.fixed,'コラム'),'tool');withGroup(['Z'],()=>box(0,2.95,0,.72,.65,1.1,c.fixed,'主軸頭'),'tool');spindle(0,2.54,-.3,['Z']);
  withGroup(['Y'],()=>box(0,.77,-.45,2.6,.18,1.5,c.fixed,'サドル'),'work');

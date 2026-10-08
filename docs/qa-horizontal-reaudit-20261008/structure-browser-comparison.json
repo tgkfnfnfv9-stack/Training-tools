@@ -1,0 +1,146 @@
+[
+  {
+    "name": "central",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "X-100-front",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "X-100-side",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "X-100-oblique",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "X100-front",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "X100-side",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "X100-oblique",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Y-100-front",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Y-100-side",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Y-100-oblique",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Y100-front",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Y100-side",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Y100-oblique",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Z-100-front",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Z-100-side",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Z-100-oblique",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Z100-front",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Z100-side",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "Z100-oblique",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "xyz-100",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "xyz100",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "twist-0.05-xyz100",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "twist0.05-xyz100",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  },
+  {
+    "name": "mobile-twist-positive-xyz100",
+    "sameValues": true,
+    "sameLabels": true,
+    "samePositions": true
+  }
+]
