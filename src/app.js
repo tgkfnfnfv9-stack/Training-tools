@@ -274,7 +274,13 @@ function createGeometry(m){
  table(m.supportLayout==='irregular'?1.45:W*.57,m.supportLayout==='irregular'?3.20:D*(cross?.43:.65),1.02,0,cross?['X','Y']:gate?[]:['X']);
  }else if(m.kind==='horizontal'){
  [-1,1].forEach(k=>curvedBox(0,.7,D*.28+k*.13,W*.86,.12,.1,c.rail));
- withGroup(['X'],()=>{box(0,1.95,D*.29,.95,2.5,.7,c.fixed,'コラム');box(0,2,D*.18,.16,2.0,.12,c.rail);},'tool');
+ withGroup(['X'],()=>{
+  box(0,1.95,D*.29,.95,2.5,.7,c.fixed,'コラム');
+  // Keep the head-side guide face fixed; extend its backing into the column.
+  // This only closes the drawing gap, without moving any measurement datum.
+  const guideFront=D*.18-.06,guideBack=D*.29-.35+.01;
+  box(0,2,(guideFront+guideBack)/2,.16,2.0,guideBack-guideFront,c.rail);
+ },'tool');
  withGroup(['X','Y'],()=>{box(0,2.55,.25,.75,.62,1.1,c.fixed,'主軸頭');cyl(0,2.55,-.45,.2,.6,c.spindle,'z');cyl(0,2.55,-.83,.045,.2,c.spindle,'z');},'tool');
  withGroup(['Z'],()=>{box(0,.8,-.85,1.6,.23,1.6,c.fixed,'パレット台');cyl(0,1.03,-.85,.73,.2,c.table);box(0,1.2,-.85,1.45,.14,1.45,c.table,'パレット');box(0,1.75,-.85,.72,.95,.72,c.work);},'work');
  }else if(m.kind==='five'){

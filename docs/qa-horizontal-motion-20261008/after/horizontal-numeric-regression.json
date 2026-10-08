@@ -1,0 +1,169 @@
+{
+  "sha256": "bf84a0a326fb66dc309e2e7d5e02d174a35ecee3b7c4e8c4987fc2ff409237e7",
+  "checks": [
+    {
+      "name": "machine-1-390",
+      "ok": true
+    },
+    {
+      "name": "intrinsic-1-390",
+      "ok": true
+    },
+    {
+      "name": "machine-1-1280",
+      "ok": true
+    },
+    {
+      "name": "intrinsic-1-1280",
+      "ok": true
+    },
+    {
+      "name": "horizontal-flat",
+      "ok": true
+    },
+    {
+      "name": "motion-X--100",
+      "ok": true
+    },
+    {
+      "name": "motion-X-100",
+      "ok": true
+    },
+    {
+      "name": "motion-Y--100",
+      "ok": true
+    },
+    {
+      "name": "motion-Y-100",
+      "ok": true
+    },
+    {
+      "name": "motion-Z--100",
+      "ok": true
+    },
+    {
+      "name": "motion-Z-100",
+      "ok": true
+    },
+    {
+      "name": "twist-motion-X--100",
+      "ok": true
+    },
+    {
+      "name": "twist-motion-X-100",
+      "ok": true
+    },
+    {
+      "name": "twist-motion-Y--100",
+      "ok": true
+    },
+    {
+      "name": "twist-motion-Y-100",
+      "ok": true
+    },
+    {
+      "name": "twist-motion-Z--100",
+      "ok": true
+    },
+    {
+      "name": "twist-motion-Z-100",
+      "ok": true
+    },
+    {
+      "name": "flat-Z-100",
+      "ok": true
+    },
+    {
+      "name": "flat-Z0",
+      "ok": true
+    },
+    {
+      "name": "flat-Z100",
+      "ok": true
+    },
+    {
+      "name": "plane-Z-100",
+      "ok": true
+    },
+    {
+      "name": "plane-Z0",
+      "ok": true
+    },
+    {
+      "name": "plane-Z100",
+      "ok": true
+    },
+    {
+      "name": "twist-positive-Z-100",
+      "ok": true
+    },
+    {
+      "name": "twist-positive-Z0",
+      "ok": true
+    },
+    {
+      "name": "twist-positive-Z100",
+      "ok": true
+    },
+    {
+      "name": "twist-negative-Z-100",
+      "ok": true
+    },
+    {
+      "name": "twist-negative-Z0",
+      "ok": true
+    },
+    {
+      "name": "twist-negative-Z100",
+      "ok": true
+    },
+    {
+      "name": "support-B-start",
+      "ok": true
+    },
+    {
+      "name": "support-B-plus001",
+      "ok": true
+    },
+    {
+      "name": "support-B-restored",
+      "ok": true
+    },
+    {
+      "name": "twist--1-front",
+      "ok": true
+    },
+    {
+      "name": "twist--1-side",
+      "ok": true
+    },
+    {
+      "name": "twist-1-front",
+      "ok": true
+    },
+    {
+      "name": "twist-1-side",
+      "ok": true
+    },
+    {
+      "name": "view-front",
+      "ok": true
+    },
+    {
+      "name": "view-side",
+      "ok": true
+    },
+    {
+      "name": "view-oblique",
+      "ok": true
+    },
+    {
+      "name": "parallel-detail",
+      "ok": true
+    },
+    {
+      "name": "parallel-detail-contact",
+      "ok": true
+    }
+  ]
+}
