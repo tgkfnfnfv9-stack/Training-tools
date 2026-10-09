@@ -1,0 +1,142 @@
+{
+  "url": "https://tgkfnfnfv9-stack.github.io/Training-tools/",
+  "sourceCommit": "1270aa0f43a995aced55faf727ab7e1d6d29d179",
+  "expected": "c0375aa2db3d1ec4268055e79cf1c79fae3d5cb48a821e1c36f3017ab1ef0007",
+  "access": "Direct public HTTPS in Chromium, proxy CA error bypassed; separately curl verifies TLS and identical HTML hash.",
+  "states": [
+    {
+      "width": 390,
+      "initial": {
+        "face": 3.7579390983043943,
+        "flat": 7.826992527158391,
+        "dx": 123.79637200456563,
+        "dy": -2.65720293390892,
+        "supported": 10.406659078497638,
+        "unsupported": -33.91799998209849,
+        "runout": {
+          "rootMicrons": 11.98505076393485,
+          "tipMicrons": 14.39028429697391,
+          "lengthMm": 300,
+          "eccentricityMicrons": [
+            2.16720185711206,
+            5.5869129726579665
+          ],
+          "tiltMicroradians": [
+            -2.2177268761710467,
+            4.832450216570674
+          ]
+        }
+      },
+      "raised": {
+        "face": 3.7579390983078635,
+        "flat": 8.5769930370308,
+        "dx": 127.97161702340017,
+        "dy": -2.1314818020884445,
+        "supported": 11.974840845238589,
+        "unsupported": -32.41790221912566,
+        "runout": {
+          "rootMicrons": 11.98505076393485,
+          "tipMicrons": 14.39028429697391,
+          "lengthMm": 300,
+          "eccentricityMicrons": [
+            2.16720185711206,
+            5.5869129726579665
+          ],
+          "tiltMicroradians": [
+            -2.2177268761710467,
+            4.832450216570674
+          ]
+        }
+      },
+      "Z100": {
+        "face": 3.7579390983043943,
+        "flat": 7.826992527158391,
+        "dx": 163.36737198348985,
+        "dy": -2.65720293390892,
+        "supported": 10.406659078476821,
+        "unsupported": -33.917999981716854,
+        "runout": {
+          "rootMicrons": 11.98505076393485,
+          "tipMicrons": 14.39028429697391,
+          "lengthMm": 300,
+          "eccentricityMicrons": [
+            2.16720185711206,
+            5.5869129726579665
+          ],
+          "tiltMicroradians": [
+            -2.2177268761710467,
+            4.832450216570674
+          ]
+        }
+      }
+    },
+    {
+      "width": 1280,
+      "initial": {
+        "face": 3.7579390983043943,
+        "flat": 7.826992527158391,
+        "dx": 123.79637200456563,
+        "dy": -2.65720293390892,
+        "supported": 10.406659078497638,
+        "unsupported": -33.91799998209849,
+        "runout": {
+          "rootMicrons": 11.98505076393485,
+          "tipMicrons": 14.39028429697391,
+          "lengthMm": 300,
+          "eccentricityMicrons": [
+            2.16720185711206,
+            5.5869129726579665
+          ],
+          "tiltMicroradians": [
+            -2.2177268761710467,
+            4.832450216570674
+          ]
+        }
+      },
+      "raised": {
+        "face": 3.7579390983078635,
+        "flat": 8.5769930370308,
+        "dx": 127.97161702340017,
+        "dy": -2.1314818020884445,
+        "supported": 11.974840845238589,
+        "unsupported": -32.41790221912566,
+        "runout": {
+          "rootMicrons": 11.98505076393485,
+          "tipMicrons": 14.39028429697391,
+          "lengthMm": 300,
+          "eccentricityMicrons": [
+            2.16720185711206,
+            5.5869129726579665
+          ],
+          "tiltMicroradians": [
+            -2.2177268761710467,
+            4.832450216570674
+          ]
+        }
+      },
+      "Z100": {
+        "face": 3.7579390983043943,
+        "flat": 7.826992527158391,
+        "dx": 163.36737198348985,
+        "dy": -2.65720293390892,
+        "supported": 10.406659078476821,
+        "unsupported": -33.917999981716854,
+        "runout": {
+          "rootMicrons": 11.98505076393485,
+          "tipMicrons": 14.39028429697391,
+          "lengthMm": 300,
+          "eccentricityMicrons": [
+            2.16720185711206,
+            5.5869129726579665
+          ],
+          "tiltMicroradians": [
+            -2.2177268761710467,
+            4.832450216570674
+          ]
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "passed": true
+}
