@@ -72,7 +72,7 @@ const diff=(a,b)=>{a=PNG.sync.read(a);b=PNG.sync.read(b);if(a.width!==b.width||a
   for(const state of states.filter(s=>s.kind==='lathe')){
    const turret=state.labels.find(l=>l.name==='タレット');
    check(state.name+' rear turret stays behind spindle plane',!!turret&&turret.rawPoint[2]>0&&turret.point[2]>0,turret?.point);
-   check(state.name+' no tailstock model label',state.labels.every(l=>!l.name.includes('心押')));
+   check(state.name+' visual-only fixed tailstock',state.labels.some(l=>l.name==='心押台'&&l.axes.length===0));
    check(state.name+' no machining or tailstock inspection',!/(テスト加工|心押|片持ち)/.test(state.second));
    check(state.name+' finite side and top readings',Number.isFinite(state.numeric.barSide)&&Number.isFinite(state.numeric.barTop));
    check(state.name+' old machining numeric outputs removed',!('supported' in state.numeric)&&!('unsupported' in state.numeric));

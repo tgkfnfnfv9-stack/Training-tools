@@ -1583,6 +1583,11 @@ function portalZVisualPoint(point,axes,pose,m=current,state=positions){
  return frame.rotate(point.map((v,i)=>v-frame.nose[i])).map((v,i)=>v+frame.nose[i]);
 }
 function displayedModelPoint(p,axes,m=current,state=positions,pose='bed'){
+ // Decorative tailstock: a fixed visual assembly, never a measurement input.
+ if(m.kind==='lathe'&&pose==='latheTailstockVisual'&&levelGeometry){
+  const q=displayCoordinates(p),a=displayCoordinates([m.w*.36,.66,0]),factor=displayFactor(),frame=compactSupportFrame(levelSolution,a[0],a[2],factor),origin=compactSurfacePoint(levelSolution,a[0],a[2],factor);
+  return frame.rotate(q.map((v,i)=>v-a[i])).map((v,i)=>v+origin[i]+(i===1?displayClearance():0));
+ }
  if(m.kind==='lathe'&&levelGeometry&&typeof latheAssembly==='function'&&['tool','work','latheTestBar'].includes(pose))return latheAssembly(p,pose,{...state,X:axes.includes('X')?state.X:0,Z:axes.includes('Z')?state.Z:0},levelSolution,machineProfile,displayFactor()).point.map((v,i)=>v+(i===1?displayClearance():0));
  if(m.kind==='horizontal'&&pose==='work'&&levelGeometry)return horizontalPalletPoint(p,state,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  return portalZVisualPoint(levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,state,pose),pose),axes,pose,m,state);
@@ -1790,6 +1795,12 @@ function createGeometry(m){
  [-1,1].forEach(k=>curvedBox(0,.72,k*.4,W*.93,.11,.13,c.rail));
  withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24,1.5,0,.4,.25,c.spindle,'x');},'tool');
  withGroup([],()=>{const nose=-W*.24+.125,tip=W*.225;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
+ // Display only. Leave the centre retracted clear of the test bar.
+ withGroup([],()=>{
+  const x=W*.36;box(x,.805,0,.8,.08,1.1,c.fixed);box(x,1.225,0,.52,.76,.65,c.fixed,'心押台');
+  cyl(x-.28,1.5,0,.08,.32,c.spindle,'x');
+  for(let i=0;i<16;i++){const a=i*Math.PI/8,b=(i+1)*Math.PI/8;faces.push({v:[[x-.56,1.5,0],[x-.44,1.5+.08*Math.cos(a),.08*Math.sin(a)],[x-.44,1.5+.08*Math.cos(b),.08*Math.sin(b)]],axes:[],pose:'latheTailstockVisual',color:c.spindle,shade:.9});}
+ },'latheTailstockVisual');
  withGroup(['Z'],()=>box(.08,.87,.4,.8,.22,1.85,c.fixed,'往復台'),'work');
  withGroup(['X','Z'],()=>{
   box(.19,1.18,1,.52,.44,.55,c.fixed,'Xスライド');
@@ -1811,7 +1822,7 @@ function idealOutlineEdges(model){
  for(const f of model.faces){
   // Floor pads, adjustable rods, height maps and small rail details remain
   // solely on the current model, keeping the posture comparison uncluttered.
-  if(f.surface||!['bed','tool','work','leftColumn','rightColumn','latheTestBar'].includes(f.pose)||f.color==='#c8d6d9')continue;
+  if(f.surface||!['bed','tool','work','leftColumn','rightColumn','latheTestBar','latheTailstockVisual'].includes(f.pose)||f.color==='#c8d6d9')continue;
   for(let i=0;i<f.v.length;i++){
    const a=f.v[i],b=f.v[(i+1)%f.v.length],pa=pointKey(a),pb=pointKey(b),key=f.pose+':'+f.axes.join('/')+':'+[pa,pb].sort().join('|');
    if(edges.has(key))edges.get(key).faces.push(f);else edges.set(key,{a,b,axes:f.axes,pose:f.pose,faces:[f],smooth:false});
