@@ -118,7 +118,7 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  }else{
   toolPoints=[{x:-W*.35,z:0}];// Cross-slide X moves on the carriage; it does not move the carriage's
   // mounting reference across the bed. Only longitudinal feed Z relocates it.
-  workPoint={x:.08+move('Z'),z:-.15};toolAxes=['Z'];
+  workPoint={x:.08+move('Z'),z:.15};toolAxes=['Z'];
  }
  const axes=axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>({key:a.key,vector:a.vector,source:toolAxes.includes(a.key)?'tool':'work'}));
  const intrinsicAxes=window.MachineAccuracy.directions(axes,profile);

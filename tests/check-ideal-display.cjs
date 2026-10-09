@@ -6,6 +6,7 @@
 const assert=require('node:assert/strict');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const {registry:r,read,json,storage}=require('./leveling-dom-env.cjs')({pureLeveling:true});
+for(const file of ['lathe-inspection.js','lathe-inspection-ui.js'])read(require('node:fs').readFileSync('src/'+file,'utf8'));
 const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
 const states=[{X:0,Y:0,Z:0,A:0,C:0},{X:73,Y:-42,Z:55,A:-67,C:82},{X:-100,Y:100,Z:-100,A:100,C:-100}];
 const literal=JSON.stringify,subtract=(a,b)=>a.map((v,i)=>v-b[i]),norm=v=>Math.hypot(...v),unit=v=>v.map(n=>n/norm(v));
@@ -20,7 +21,7 @@ function setState(state){read(`positions=${literal(state)};updateLeveling(false)
 function setHeights(fn){read(`supportHeights=${literal(json('supports').map((s,i)=>Math.round(fn(s,i)*1000)/1000))};updateLeveling(false);`);}
 function bodyFaces(){return json("createGeometry(current).faces.filter(f=>!f.pose.startsWith('pad:')&&!f.pose.startsWith('support:'))");}
 function idealFaces(faces){return json(`(()=>{const model=${literal(faces)},before=JSON.stringify(model),context=idealDisplayContext(current),contextBefore=JSON.stringify(context),points=model.map(f=>f.v.map(p=>idealDisplayPoint(p,f.axes,f.pose,context)));return {points,inputUnchanged:before===JSON.stringify(model),contextUnchanged:contextBefore===JSON.stringify(context)};})()`);}
-function currentFaces(faces){return json(`(${literal(faces)}).map(f=>f.v.map(p=>levelMappedBodyVisualPoint(displayTransformedPoint(p,f.axes,current,positions,f.pose),f.pose)))`);}
+function currentFaces(faces){return json(`(${literal(faces)}).map(f=>f.v.map(p=>current.kind==='lathe'?displayedModelPoint(p,f.axes,current,positions,f.pose):levelMappedBodyVisualPoint(displayTransformedPoint(p,f.axes,current,positions,f.pose),f.pose)))`);}
 function rotate(vector,axis,theta){
  const c=Math.cos(theta),s=Math.sin(theta),dot=vector.reduce((sum,v,i)=>sum+v*axis[i],0),cross=[axis[1]*vector[2]-axis[2]*vector[1],axis[2]*vector[0]-axis[0]*vector[2],axis[0]*vector[1]-axis[1]*vector[0]];
  return vector.map((v,i)=>v*c+cross[i]*s+axis[i]*dot*(1-c));
@@ -31,6 +32,8 @@ function parameters(){
 }
 function expectedPoint(raw,axes,pose,p){
  let q=[raw[0]*p.sx,raw[1],raw[2]*p.sz],pivot=[0,1.25,-.45*p.sz];
+ // The calibrated bar keeps its 50 mm circular section when the bed changes size.
+ if(pose==='latheTestBar')q[2]=raw[2];
  if(axes.includes('C'))q=rotate(subtract(q,pivot),[0,1,0],p.state.C*Math.PI/100).map((v,i)=>v+pivot[i]);
  if(axes.includes('A'))q=rotate(subtract(q,pivot),[1,0,0],p.state.A*.45/100).map((v,i)=>v+pivot[i]);
  for(const a of p.axes)if(['X','Y','Z'].includes(a.key)&&axes.includes(a.key))q=q.map((v,i)=>v+a.vector[i]*[p.sx,1,p.sz][i]*a.amp*p.state[a.key]/100);

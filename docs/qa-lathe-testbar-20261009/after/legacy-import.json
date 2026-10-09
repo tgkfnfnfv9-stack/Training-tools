@@ -1,0 +1,39 @@
+{
+  "source": "before/saved-state.json",
+  "sourceModel": "lathe-carriage-v2",
+  "seedBeforeImport": 654321,
+  "expectedAxes": {
+    "X": 35,
+    "Z": -62
+  },
+  "expectedHeights": [
+    0,
+    0.01,
+    0,
+    0,
+    0,
+    0
+  ],
+  "expectedSeed": 123456,
+  "actualAxes": {
+    "X": 35,
+    "Y": 0,
+    "Z": -62,
+    "A": 0,
+    "C": 0
+  },
+  "actualHeights": [
+    0,
+    0.01,
+    0,
+    0,
+    0,
+    0
+  ],
+  "actualSeed": 123456,
+  "newReadings": {
+    "barSide": -17.709000439984287,
+    "barTop": -0.006358111386342569
+  },
+  "message": "調整データを読み込みました。"
+}

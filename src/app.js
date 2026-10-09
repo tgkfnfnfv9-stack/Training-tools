@@ -7,7 +7,7 @@ const machines = [
 {id:'gate',name:'固定門形・L3 3000',tag:'L3構造参考・教材用15点',example:'長手ベッド9点＋左右柱側各3点',kind:'double',w:3.5625,d:8.55,grid:null,defaultMode:'l3-3000',layoutId:'hwacheon-l3-3000-teaching-15point-v1',previousLayouts:['hwacheon-l3-3000-foundation-r139'],supportLayout:'irregular',columnZ:.825,columnX:1.10,structure:'長手ベッドと左右柱側の張り出しを持つ固定門形。テーブルX、主軸サドルY、ラムZの構成です。L3 3000の構造を参考に、長手ベッドを3×3の9点、左右柱側を各3点とした合計15点の教材用配置です。',focus:'長手ベッド9点と、左右柱側各3点の支持関係。',impact:'不規則な支持面の幾何補間により姿勢を比較します。実機の剛性・荷重・基礎アンカー・弾性変形を再現する解析ではありません。',supportEvidence:'メーカー作成L-SERIES Rev1.39の基礎図は24か所ですが、この教材は長手ベッドを9点に簡略化しています。柱側6点は同図の座標を参考にしています。実機の15点支持を示すものではなく、主支持／補助支持や荷重配分は再現しません。',source:'https://hmeholdings.com/wp-content/uploads/2023/03/L-SERIES.pdf'},
 {id:'gantry',name:'移動門形・ガントリー',tag:'テーブル固定・門全体が移動',example:'固定門形とは動く側が逆',kind:'gantry',w:4,d:5.8,grid:[2,4],structure:'テーブルとワークは固定。左右の走行レール上を門全体がX方向に移動します。',focus:'左右走行レールの相対姿勢と、移動範囲の基礎・支持。',impact:'左右レールの関係と門の姿勢を確認します。同期駆動などの機種固有の調整は別途必要です。',source:'https://www.shibaura-machine.co.jp/jp/product/machinetool/lineup/s_new/spec.html'},
 {id:'five',name:'5軸・テーブル旋回形',tag:'XYZ＋A/Cの旋回',example:'テーブルXY・主軸頭Zの学習モデル',kind:'five',w:3.4,d:3.3,grid:null,structure:'XYZの直線移動に、テーブルの傾斜Aと回転Cを加えた構成。ここではテーブル側XY・主軸頭Zを採用しています。',focus:'指定支持点での据付と、直線軸・回転軸の幾何関係。',impact:'回転中心や旋回軸の確認が必要です。軸の分担・名称は実機により異なります。',source:'https://us.dmgmori.com/products/machines/milling/5-axis-milling/monoblock/dmu-75-monoblock-2nd'},
-{id:'lathe',name:'NC旋盤・タレット2軸',tag:'X径方向・Z主軸方向',example:'Haas STシリーズのタレット構造・検査配置を参考',kind:'lathe',w:5,d:2.1,grid:[3,2],structure:'主軸台を固定し、12角タレットをX（径方向）、往復台ごとZ（主軸方向）へ動かします。工具1番で固定し、タレット割出しとY軸は実装していません。',focus:'ベッド長手方向の各位置での横断方向の水準器。',impact:'ベッドのねじれと主軸・刃物台の関係を確認します。回転振れは固有値、Z面・穴芯・加工径差は支持姿勢も反映します。',supportEvidence:'6点支持と寸法は教材用の概略配置です。特定のST型式の基礎図や剛性を再現した模型ではありません。',source:'https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html'}
+{id:'lathe',name:'NC旋盤・タレット2軸',tag:'X径方向・Z主軸方向',example:'Haas STシリーズのタレット構造・検査配置を参考',kind:'lathe',w:5,d:2.1,grid:[3,2],structure:'主軸台を固定し、奥側の12角タレットをX（径方向）、往復台ごとZ（主軸方向）へ動かします。工具1番で固定し、タレット割出しとY軸は実装していません。',focus:'ベッド長手方向の各位置での横断方向の水準器。',impact:'ベッドのねじれと主軸・刃物台の関係を確認します。回転振れは固有値、Z面・穴芯・テストバーのダイヤル測定は支持姿勢も反映します。',supportEvidence:'6点支持と寸法は教材用の概略配置です。特定のST型式の基礎図や剛性を再現した模型ではありません。',source:'https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html'}
 ];
 // 内部の描画座標は左右=x、上=y、奥=z。工作機械の軸名は機構ごとに明示して割り当てる。
 const axisColors={X:'#d35455',Y:'#208768',Z:'#397ed1',A:'#8e5caf',C:'#bc6a2f'};
@@ -98,7 +98,7 @@ function portalZVisualPoint(point,axes,pose,m=current,state=positions){
  return frame.rotate(point.map((v,i)=>v-frame.nose[i])).map((v,i)=>v+frame.nose[i]);
 }
 function displayedModelPoint(p,axes,m=current,state=positions,pose='bed'){
- if(m.kind==='lathe'&&levelGeometry&&typeof latheAssembly==='function'&&['tool','work','tailstock'].includes(pose))return latheAssembly(p,pose,{...state,X:axes.includes('X')?state.X:0,Z:axes.includes('Z')?state.Z:0},levelSolution,machineProfile,displayFactor()).point.map((v,i)=>v+(i===1?displayClearance():0));
+ if(m.kind==='lathe'&&levelGeometry&&typeof latheAssembly==='function'&&['tool','work','latheTestBar'].includes(pose))return latheAssembly(p,pose,{...state,X:axes.includes('X')?state.X:0,Z:axes.includes('Z')?state.Z:0},levelSolution,machineProfile,displayFactor()).point.map((v,i)=>v+(i===1?displayClearance():0));
  if(m.kind==='horizontal'&&pose==='work'&&levelGeometry)return horizontalPalletPoint(p,state,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  return portalZVisualPoint(levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,state,pose),pose),axes,pose,m,state);
 }
@@ -110,6 +110,7 @@ function idealDisplayContext(m,state=positions){
 }
 function idealDisplayPoint(p,axes,pose,context){
  const {scaleX,scaleZ,state,offset,lift}=context,q=[p[0]*scaleX,p[1],p[2]*scaleZ],pivot=[0,1.25,-.45*scaleZ];
+ if(pose==='latheTestBar')q[2]=p[2];
  if(axes.includes('C')){const t=state.C*Math.PI/100,dx=q[0]-pivot[0],dz=q[2]-pivot[2];q[0]=pivot[0]+dx*Math.cos(t)+dz*Math.sin(t);q[2]=pivot[2]-dx*Math.sin(t)+dz*Math.cos(t);}
  if(axes.includes('A')){const t=state.A*.45/100,dy=q[1]-pivot[1],dz=q[2]-pivot[2];q[1]=pivot[1]+dy*Math.cos(t)-dz*Math.sin(t);q[2]=pivot[2]+dy*Math.sin(t)+dz*Math.cos(t);}
  for(const a of context.axes)if(['X','Y','Z'].includes(a.key)&&axes.includes(a.key)){
@@ -302,16 +303,16 @@ function createGeometry(m){
  withGroup(['X','Y','A','C'],()=>{cyl(0,1.47,-.45,.65,.18,c.table,'y','回転テーブル');box(.18,1.68,-.45,.45,.25,.32,c.work);},'work');
  }else {
  [-1,1].forEach(k=>curvedBox(0,.72,k*.4,W*.93,.11,.13,c.rail));
- withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24,1.5,0,.4,.25,c.spindle,'x');cyl(0,1.5,0,.14,W*.45,c.work,'x');},'tool');
- withGroup([],()=>{box(W*.33,1.13,0,.55,.9,.65,c.fixed,'心押台');cyl(W*.225+.24,1.5,0,.1,.48,c.spindle,'x');},'tailstock');
- withGroup(['Z'],()=>box(.08,.87,-.4,.8,.22,1.85,c.fixed,'往復台'),'work');
+ withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24,1.5,0,.4,.25,c.spindle,'x');},'tool');
+ withGroup([],()=>{const nose=-W*.24+.125,tip=W*.225;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
+ withGroup(['Z'],()=>box(.08,.87,.4,.8,.22,1.85,c.fixed,'往復台'),'work');
  withGroup(['X','Z'],()=>{
-  box(.19,1.18,-1,.52,.44,.55,c.fixed,'Xスライド');
-  cyl(.08,1.5,-1,.43/Math.cos(Math.PI/12),.34,c.table,'x','タレット',12,Math.PI/12);
-  cyl(-.105,1.5,-1,.18,.04,c.spindle,'x');
-  for(let i=0;i<12;i++){const t=i*Math.PI/6;cyl(-.105,1.5+.33*Math.cos(t),-1+.33*Math.sin(t),.045,.055,'#53616a','x',null,8);}
-  box(-.09,1.5,-.52,.16,.16,.30,c.fixed,'工具ホルダ');
-  box(-.13,1.5,-.25,.075,.075,.27,c.spindle,'工具');
+  box(.19,1.18,1,.52,.44,.55,c.fixed,'Xスライド');
+  cyl(.08,1.5,1,.43/Math.cos(Math.PI/12),.34,c.table,'x','タレット',12,Math.PI/12);
+  cyl(-.105,1.5,1,.18,.04,c.spindle,'x');
+  for(let i=0;i<12;i++){const t=i*Math.PI/6;cyl(-.105,1.5+.33*Math.cos(t),1-.33*Math.sin(t),.045,.055,'#53616a','x',null,8);}
+  box(-.09,1.5,.52,.16,.16,.30,c.fixed,'工具ホルダ');
+  box(-.13,1.5,.25,.075,.075,.27,c.spindle,'工具');
  },'work');
  }
  supportList(m).forEach((t,i)=>{withGroup([],()=>cyl(t.x,.18,t.z,.14,.22,'#7d8991'),'support:'+i);withGroup([],()=>cyl(t.x,.045,t.z,.23,.09,'#52616d'),'pad:'+i);});
@@ -325,7 +326,7 @@ function idealOutlineEdges(model){
  for(const f of model.faces){
   // Floor pads, adjustable rods, height maps and small rail details remain
   // solely on the current model, keeping the posture comparison uncluttered.
-  if(f.surface||!['bed','tool','work','leftColumn','rightColumn','tailstock'].includes(f.pose)||f.color==='#c8d6d9')continue;
+  if(f.surface||!['bed','tool','work','leftColumn','rightColumn','latheTestBar'].includes(f.pose)||f.color==='#c8d6d9')continue;
   for(let i=0;i<f.v.length;i++){
    const a=f.v[i],b=f.v[(i+1)%f.v.length],pa=pointKey(a),pb=pointKey(b),key=f.pose+':'+f.axes.join('/')+':'+[pa,pb].sort().join('|');
    if(edges.has(key))edges.get(key).faces.push(f);else edges.set(key,{a,b,axes:f.axes,pose:f.pose,faces:[f],smooth:false});
