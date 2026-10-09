@@ -98,7 +98,7 @@ function displayPortal(){
  return portalDisplayCache;
 }
 function displayPoseFrame(pose){
- if(current.kind==='compact'){const p=(levelGeometry.poses[pose]||levelGeometry.poses.tool).anchor,q=levelCoordinates(p.x,p.z);return compactSupportFrame(levelSolution,q.x,q.z,displayFactor());}
+ if(current.kind==='compact'||current.kind==='lathe'){const p=(levelGeometry.poses[pose]||levelGeometry.poses.tool).anchor,q=levelCoordinates(p.x,p.z);return compactSupportFrame(levelSolution,q.x,q.z,displayFactor());}
  if(levelGeometry.portal){const p=displayPortal();if(pose==='tool')return p.frame;if(pose==='leftColumn'||pose==='rightColumn')return p.columns[pose==='rightColumn'?1:0].frame;
   if(pose==='work'&&levelSolution.parts){const q=levelCoordinates(levelGeometry.workPoint.x,levelGeometry.workPoint.z),s=levelSolution.parts.bed.slopeAt(q.x,q.z),factor=displayFactor();return window.Leveling.compose(p.common,window.Leveling.orientation({lr:(s.lr-levelSolution.lr)*factor,fb:(s.fb-levelSolution.fb)*factor}));}}
  return displaySupportFrame((levelGeometry.poses[pose]||levelGeometry.poses.tool).slope);

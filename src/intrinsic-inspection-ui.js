@@ -24,10 +24,13 @@ function inspectionSetPage(page,behavior='smooth'){
 }
 function inspectionUpdateNavigation(){
  const enabled=$('inspectionCarousel').classList.contains('is-enabled'),second=intrinsicInspectionPage===1;
+ const lathe=current?.kind==='lathe';
+ $('inspectionNext').setAttribute('aria-label',lathe?'穴芯とテスト加工へ左スライド':'主軸振れと上面精度へ左スライド');
+ $('inspectionPrevious').setAttribute('aria-label',lathe?'主軸振れと刃物台精度へ右スライド':'直角度と触れへ右スライド');
  $('inspectionNext').hidden=!enabled||second;$('inspectionPrevious').hidden=!enabled||!second;
  // Hidden pages remain measurable for stable layout, but are excluded from tab order.
  $('precisionReadouts').inert=enabled&&second;$('intrinsicInspectionPage').inert=!enabled||!second;
- $('inspectionPageStatus').textContent=enabled?(second?'2 / 2 主軸振れ・上面精度':'1 / 2 直角度・触れ'):'';
+ $('inspectionPageStatus').textContent=enabled?(lathe?(second?'2 / 2 穴芯・テスト加工':'1 / 2 主軸振れ・刃物台精度'):(second?'2 / 2 主軸振れ・上面精度':'1 / 2 直角度・触れ')):'';
 }
 function initializeIntrinsicInspection(){
  if(intrinsicInspectionReady)return;intrinsicInspectionReady=true;
@@ -60,8 +63,21 @@ function initializeIntrinsicInspection(){
 function updateIntrinsicInspectionUI(){
  if(typeof current==='undefined'||!current||typeof machineProfile==='undefined'||!$('inspectionCarousel')||!window.IntrinsicInspection)return;
  initializeIntrinsicInspection();
- const carousel=$('inspectionCarousel'),data=current.kind==='lathe'?null:window.IntrinsicInspection.fromProfile(machineProfile),enabled=!!data;
+ const carousel=$('inspectionCarousel'),lathe=current.kind==='lathe',data=window.IntrinsicInspection.fromProfile(machineProfile),enabled=lathe||!!data;
+ const changed=carousel.classList.contains('is-lathe')!==lathe;
+ carousel.classList.toggle('is-lathe',lathe);$('latheInspectionSecond').hidden=!lathe;
+ $('measurementReference').classList.toggle('is-lathe-reference',lathe);
+ $('measurementReferenceTitle').textContent=lathe?'旋盤の検査図':'直角の基準図';
+ $('measurementReferenceToggle').setAttribute('aria-label',lathe?'旋盤の検査配置を下の調整欄に表示':'直角の基準図を下の調整欄に表示');
+ $('liveSquareness').setAttribute('aria-label',lathe?'旋盤の主軸振れと刃物台精度':'基準器による仮想測定');
+ $('precisionReadouts').setAttribute('aria-label',lathe?'主軸振れ・刃物台精度':'直角度・触れ');
+ $('liveSquareness').closest('section').setAttribute('aria-label',lathe?'タレット旋盤の精度検査':'軸の直角度');
+ $('liveSquareness').closest('section').querySelector('.precision-panel-title').textContent=lathe?'旋盤検査':'直角度';
+ $('squarenessValuesNote').hidden=lathe;
+ $('intrinsicInspectionPage').setAttribute('aria-label',lathe?'穴芯とテスト加工':'個体固有の主軸振れと上面精度');
  carousel.classList.toggle('is-enabled',enabled);$('intrinsicInspectionPage').hidden=!enabled;$('inspectionViewport').tabIndex=enabled?0:-1;
+ if(changed)inspectionSetPage(0,'instant');
+ if(lathe){if(levelConfig&&levelSolution)updateLatheInspectionUI();inspectionUpdateNavigation();return;}
  if(!enabled){intrinsicInspectionPage=0;$('inspectionViewport').scrollLeft=0;carousel.style.removeProperty('--inspection-height');inspectionUpdateNavigation();return;}
  const key=current.id+'|'+current.kind+'|'+data.seed+'|'+data.condition;
  if(key!==intrinsicInspectionKey||current!==intrinsicInspectionMachine||machineProfile!==intrinsicInspectionProfile){
