@@ -1,0 +1,76 @@
+{
+  "checkedAt": "2026-10-10T03:12:06.646Z",
+  "testedHtmlSha256": "9d5cd394c191c51f346f272a098841b46fbde64fdc5fe69ae4753f292b05d819",
+  "finalHtmlSha256": "831edb95f7dbf1095563c1c8c289f52219bcf764937618c6079d4c4d32f7fa65",
+  "singleReplacementCount": 1,
+  "checkedExpression": "horizontal&&!mini",
+  "finalExpression": "horizontal&&(!mini||s.scan==='Z')",
+  "reconstructedTestedHtmlSha256": "9d5cd394c191c51f346f272a098841b46fbde64fdc5fe69ae4753f292b05d819",
+  "exactWholeHtmlMatchToTestedSha": true,
+  "changedContext": "referenceDiagram SVG label guard for scan-view-direction text at x53 y18",
+  "onlyDifferentCase": {
+    "horizontal": true,
+    "mini": true,
+    "scan": "Z",
+    "text": "相対"
+  },
+  "truthTable": [
+    {
+      "horizontal": false,
+      "mini": false,
+      "scan": "Y",
+      "checked": false,
+      "final": false
+    },
+    {
+      "horizontal": false,
+      "mini": false,
+      "scan": "Z",
+      "checked": false,
+      "final": false
+    },
+    {
+      "horizontal": false,
+      "mini": true,
+      "scan": "Y",
+      "checked": false,
+      "final": false
+    },
+    {
+      "horizontal": false,
+      "mini": true,
+      "scan": "Z",
+      "checked": false,
+      "final": false
+    },
+    {
+      "horizontal": true,
+      "mini": false,
+      "scan": "Y",
+      "checked": true,
+      "final": true
+    },
+    {
+      "horizontal": true,
+      "mini": false,
+      "scan": "Z",
+      "checked": true,
+      "final": true
+    },
+    {
+      "horizontal": true,
+      "mini": true,
+      "scan": "Y",
+      "checked": false,
+      "final": false
+    },
+    {
+      "horizontal": true,
+      "mini": true,
+      "scan": "Z",
+      "checked": false,
+      "final": true
+    }
+  ],
+  "scope": "The entire HTML differs only by this SVG text guard. Numerical code, serialization, and all nonhorizontal execution branches are unchanged. The 140-case run was performed on testedHtmlSha256, not repeated on finalHtmlSha256."
+}
