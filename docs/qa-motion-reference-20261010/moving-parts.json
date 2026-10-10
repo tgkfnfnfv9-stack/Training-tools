@@ -1,0 +1,2658 @@
+{
+  "commit": "af8d0791d9c24c631e8fec9de78bdec3e4f64d32",
+  "sources": {
+    "accuracy-ui.js": "3ceaeeb87ea49d5922ae5e0cc41710233ef9bb7f52e5a8411396a01d8b5a63c4",
+    "app.js": "6ba8beb045b76356f8b0ca604f4bd657309c2ceb7d8b32e97144ba962479941b",
+    "horizontal-parallelism-ui.js": "5abdd25753ce457a8029dd22136afce56050f651a444b5bf3c7d440c7968ae80",
+    "horizontal-parallelism.js": "0b43abf9a2974dc1cfda1379cb81771e9255fe3ff3014401b6b77030a1b7267a",
+    "intrinsic-inspection-ui.js": "811942679cc852f7a4e1b701a3b30035f3fe94f275ccd503c6f5d9a226af9c10",
+    "intrinsic-inspection.js": "dd6addc468bac25759b5018dfbecdd48fe5d65135fc3c1d299eda05daab0d9e3",
+    "lathe-inspection-ui.js": "1a5ca02dc1928d7b7d30c1876ae649954610afc6d0fd5617384c752c4efb8431",
+    "lathe-inspection.js": "c8df25e25ce6ff6d8bc7962caea991277d488c4e12ab19632a59425793150787",
+    "leveling-ui.js": "2aaa7693c934294bfddc774e60e516e7d9cb201808d4f90b1a6ed7cb39f06025",
+    "leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+    "machine-accuracy-ui.js": "9c33d5bab3bd1c508225879581cbe7ef8e6c60ecf5b0d8b3d15a206bc6f0d145",
+    "machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "reference-measurement-ui.js": "4f61d895955d73d8fc084780d28dd9fe49c6426398d890fe8b842e5f8e73db39",
+    "reference-measurement.js": "b239edae0972f72dbcb6b20c7ae48f115b550f80eadd541db3d54c1acf4d4e62",
+    "spindle-sweep-ui.js": "797d0da271a440784245c262bef38f52a48ac7506a9763038e8ae977103e3ead",
+    "spindle-sweep.js": "157567be5af80c962d855688f811a1bdb18fdf9aa99336ae375e77602b0decce",
+    "tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409"
+  },
+  "states": 800,
+  "pointComparisons": 10000,
+  "maxErrorM": 1.4046076445151095e-15,
+  "failures": [],
+  "examples": [
+    {
+      "kind": "horizontal",
+      "sx": 1,
+      "sz": 1,
+      "used": false,
+      "pattern": "twist",
+      "state": {
+        "X": 53,
+        "Y": 27,
+        "Z": -61
+      },
+      "exaggerate": false,
+      "layout": [
+        0,
+        0
+      ],
+      "factor": 1,
+      "heights": [
+        0.025024000000000005,
+        -0.025024000000000005,
+        0.008341333333333334,
+        -0.008341333333333334,
+        -0.008341333333333334,
+        0.008341333333333334,
+        -0.025024000000000005,
+        0.025024000000000005
+      ],
+      "coordinates": [
+        {
+          "part": "column-foot",
+          "actual": [
+            0.29150000000000004,
+            0.66000388861,
+            1.334
+          ],
+          "expected": [
+            0.29150000000000004,
+            0.66000388861,
+            1.334
+          ]
+        },
+        {
+          "part": "column-top",
+          "actual": [
+            0.7664661163441286,
+            3.200011245123204,
+            1.6839925958985136
+          ],
+          "expected": [
+            0.7664661163441286,
+            3.200011245123204,
+            1.6839925958985136
+          ]
+        },
+        {
+          "part": "Y-guide",
+          "actual": [
+            0.2914821244176171,
+            2.000002567990077,
+            0.8809960939019249
+          ],
+          "expected": [
+            0.2914821244176171,
+            2.000002567990077,
+            0.8809960939019249
+          ]
+        },
+        {
+          "part": "head-centre",
+          "actual": [
+            0.291473706902155,
+            2.631000728566251,
+            0.24999425453960566
+          ],
+          "expected": [
+            0.291473706902155,
+            2.631000728566251,
+            0.24999425453960566
+          ]
+        },
+        {
+          "part": "head-corner",
+          "actual": [
+            0.6664695714474014,
+            2.9410073342873506,
+            0.7999933508872693
+          ],
+          "expected": [
+            0.6664695714474014,
+            2.9410073342873506,
+            0.7999933508872693
+          ]
+        },
+        {
+          "part": "nose",
+          "actual": [
+            0.29147370694804065,
+            2.630997288866252,
+            -0.9300057454553807
+          ],
+          "expected": [
+            0.29147370694804065,
+            2.630997288866252,
+            -0.930005745455381
+          ]
+        },
+        {
+          "part": "pallet-seat",
+          "actual": [
+            0,
+            0.66,
+            -1.1244999999999998
+          ],
+          "expected": [
+            0,
+            0.66,
+            -1.1244999999999998
+          ]
+        },
+        {
+          "part": "pallet-top",
+          "actual": [
+            0.000006859449999566311,
+            1.2699999999614326,
+            -1.1244999999999998
+          ],
+          "expected": [
+            0.00000685944999956631,
+            1.2699999999614326,
+            -1.1244999999999998
+          ]
+        },
+        {
+          "part": "workpiece-top",
+          "actual": [
+            0.3600130441772381,
+            1.8199959517266597,
+            -0.7644999999999998
+          ],
+          "expected": [
+            0.3600130441772382,
+            1.8199959517266597,
+            -0.7644999999999998
+          ]
+        },
+        {
+          "part": "fixed-guide",
+          "actual": [
+            1.4619987120000002,
+            0.760018830541018,
+            1.2879985380000003
+          ],
+          "expected": [
+            1.4619987120000002,
+            0.760018830541018,
+            1.2879985380000003
+          ]
+        },
+        {
+          "part": "base-corner",
+          "actual": [
+            1.7000003449999996,
+            0.645039100006135,
+            2.3000002549999996
+          ],
+          "expected": [
+            1.7000003449999999,
+            0.645039100006135,
+            2.3000002549999996
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "horizontal",
+      "sx": 1,
+      "sz": 1,
+      "used": true,
+      "pattern": "twist",
+      "state": {
+        "X": 53,
+        "Y": 27,
+        "Z": -61
+      },
+      "exaggerate": false,
+      "layout": [
+        0,
+        0
+      ],
+      "factor": 1,
+      "heights": [
+        0.025024000000000005,
+        -0.025024000000000005,
+        0.008341333333333334,
+        -0.008341333333333334,
+        -0.008341333333333334,
+        0.008341333333333334,
+        -0.025024000000000005,
+        0.025024000000000005
+      ],
+      "coordinates": [
+        {
+          "part": "column-foot",
+          "actual": [
+            0.29150000000000004,
+            0.66000388861,
+            1.334
+          ],
+          "expected": [
+            0.29150000000000004,
+            0.66000388861,
+            1.334
+          ]
+        },
+        {
+          "part": "column-top",
+          "actual": [
+            0.766322529027105,
+            3.2000380908992736,
+            1.6839925958202526
+          ],
+          "expected": [
+            0.766322529027105,
+            3.2000380908992736,
+            1.6839925958202526
+          ]
+        },
+        {
+          "part": "Y-guide",
+          "actual": [
+            0.2914063742176928,
+            2.00000256483849,
+            0.8809960939019311
+          ],
+          "expected": [
+            0.2914063742176928,
+            2.00000256483849,
+            0.8809960939019311
+          ]
+        },
+        {
+          "part": "head-centre",
+          "actual": [
+            0.2913622862722663,
+            2.6310007239305957,
+            0.249994254539615
+          ],
+          "expected": [
+            0.2913622862722663,
+            2.631000723930596,
+            0.249994254539615
+          ]
+        },
+        {
+          "part": "head-corner",
+          "actual": [
+            0.6663406256355562,
+            2.941028527672575,
+            0.7999933508254856
+          ],
+          "expected": [
+            0.6663406256355562,
+            2.941028527672575,
+            0.7999933508254856
+          ]
+        },
+        {
+          "part": "nose",
+          "actual": [
+            0.29136228631815186,
+            2.6309972842305966,
+            -0.9300057454553718
+          ],
+          "expected": [
+            0.29136228631815186,
+            2.6309972842305966,
+            -0.9300057454553721
+          ]
+        },
+        {
+          "part": "pallet-seat",
+          "actual": [
+            -0.000007438180286498904,
+            0.6599870798631535,
+            -1.124499999595161
+          ],
+          "expected": [
+            -0.000007438180286498904,
+            0.6599870798631535,
+            -1.124499999595161
+          ]
+        },
+        {
+          "part": "pallet-top",
+          "actual": [
+            -5.787302869325935e-7,
+            1.2699870798245863,
+            -1.124499999595161
+          ],
+          "expected": [
+            -5.787302869325952e-7,
+            1.2699870798245863,
+            -1.124499999595161
+          ]
+        },
+        {
+          "part": "workpiece-top",
+          "actual": [
+            0.36000560599695164,
+            1.8199830315898131,
+            -0.7644999995951611
+          ],
+          "expected": [
+            0.3600056059969517,
+            1.8199830315898131,
+            -0.7644999995951611
+          ]
+        },
+        {
+          "part": "fixed-guide",
+          "actual": [
+            1.4619987120000002,
+            0.760018830541018,
+            1.2879985380000003
+          ],
+          "expected": [
+            1.4619987120000002,
+            0.760018830541018,
+            1.2879985380000003
+          ]
+        },
+        {
+          "part": "base-corner",
+          "actual": [
+            1.7000003449999996,
+            0.645039100006135,
+            2.3000002549999996
+          ],
+          "expected": [
+            1.7000003449999999,
+            0.645039100006135,
+            2.3000002549999996
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "lathe",
+      "sx": 1,
+      "sz": 1,
+      "used": false,
+      "pattern": "twist",
+      "state": {
+        "X": 53,
+        "Y": 27,
+        "Z": -61
+      },
+      "exaggerate": false,
+      "layout": [
+        0,
+        0
+      ],
+      "factor": 1,
+      "heights": [
+        0.0168,
+        0,
+        -0.0168,
+        -0.0168,
+        0,
+        0.0168
+      ],
+      "coordinates": [
+        {
+          "part": "head-seat",
+          "actual": [
+            -1.75,
+            0.66,
+            0
+          ],
+          "expected": [
+            -1.75,
+            0.66,
+            0
+          ]
+        },
+        {
+          "part": "head-top",
+          "actual": [
+            -1.35,
+            1.8449886248185492,
+            0.6500207374004657
+          ],
+          "expected": [
+            -1.35,
+            1.8449886248185492,
+            0.6500207374004657
+          ]
+        },
+        {
+          "part": "spindle-nose",
+          "actual": [
+            -1.075,
+            1.4999999998713751,
+            0.000014699999997749064
+          ],
+          "expected": [
+            -1.075,
+            1.4999999998713751,
+            0.000014699999997749064
+          ]
+        },
+        {
+          "part": "bar-tip",
+          "actual": [
+            1.125,
+            1.4999999998713751,
+            0.000014699999997749064
+          ],
+          "expected": [
+            1.125,
+            1.4999999998713751,
+            0.000014699999997749064
+          ]
+        },
+        {
+          "part": "bar-rim",
+          "actual": [
+            1.125,
+            1.499999562371375,
+            0.025014699996169627
+          ],
+          "expected": [
+            1.125,
+            1.499999562371375,
+            0.025014699996169627
+          ]
+        },
+        {
+          "part": "carriage-seat",
+          "actual": [
+            -0.3469999999999999,
+            0.6599994795,
+            0.15
+          ],
+          "expected": [
+            -0.3469999999999999,
+            0.6599994795,
+            0.15
+          ]
+        },
+        {
+          "part": "carriage-top",
+          "actual": [
+            0.05299952000566599,
+            0.9799960022477135,
+            1.325001110392926
+          ],
+          "expected": [
+            0.05299952000566599,
+            0.9799960022477135,
+            1.325001110392926
+          ]
+        },
+        {
+          "part": "cross-slide",
+          "actual": [
+            -0.23700077999473387,
+            1.1799960513112844,
+            1.1855018043937657
+          ],
+          "expected": [
+            -0.23700077999473387,
+            1.1799960513112844,
+            1.1855018043937657
+          ]
+        },
+        {
+          "part": "turret-centre",
+          "actual": [
+            -0.3470012599946101,
+            1.499995886308998,
+            1.1855029147937657
+          ],
+          "expected": [
+            -0.3470012599946101,
+            1.499995886308998,
+            1.1855029147937657
+          ]
+        },
+        {
+          "part": "holder",
+          "actual": [
+            -0.5170012599969173,
+            1.4999972969089979,
+            0.7055029147966557
+          ],
+          "expected": [
+            -0.5170012599969173,
+            1.4999972969089979,
+            0.7055029147966557
+          ]
+        },
+        {
+          "part": "tool",
+          "actual": [
+            -0.5570012599982777,
+            1.499998173808998,
+            0.4355029147982812
+          ],
+          "expected": [
+            -0.5570012599982777,
+            1.499998173808998,
+            0.4355029147982812
+          ]
+        },
+        {
+          "part": "tailstock-seat",
+          "actual": [
+            1.8,
+            0.66,
+            0
+          ],
+          "expected": [
+            1.8,
+            0.66,
+            0
+          ]
+        },
+        {
+          "part": "tailstock-centre",
+          "actual": [
+            1.24,
+            1.49999999986392,
+            -0.000015119999997550554
+          ],
+          "expected": [
+            1.24,
+            1.49999999986392,
+            -0.000015119999997550561
+          ]
+        },
+        {
+          "part": "fixed-guide",
+          "actual": [
+            -4.5999999999631995e-7,
+            0.77499999999908,
+            0.4
+          ],
+          "expected": [
+            -4.5999999999632006e-7,
+            0.77499999999908,
+            0.4
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "lathe",
+      "sx": 1,
+      "sz": 1,
+      "used": true,
+      "pattern": "twist",
+      "state": {
+        "X": 53,
+        "Y": 27,
+        "Z": -61
+      },
+      "exaggerate": false,
+      "layout": [
+        0,
+        0
+      ],
+      "factor": 1,
+      "heights": [
+        0.0168,
+        0,
+        -0.0168,
+        -0.0168,
+        0,
+        0.0168
+      ],
+      "coordinates": [
+        {
+          "part": "head-seat",
+          "actual": [
+            -1.75,
+            0.66,
+            0
+          ],
+          "expected": [
+            -1.75,
+            0.66,
+            0
+          ]
+        },
+        {
+          "part": "head-top",
+          "actual": [
+            -1.349963256139148,
+            1.844988625214277,
+            0.6499981243618979
+          ],
+          "expected": [
+            -1.349963256139148,
+            1.844988625214277,
+            0.6499981243618979
+          ]
+        },
+        {
+          "part": "spindle-nose",
+          "actual": [
+            -1.0750000010785288,
+            1.5000000005391358,
+            -0.00002345774997608496
+          ],
+          "expected": [
+            -1.0750000010785288,
+            1.5000000005391358,
+            -0.00002345774997608496
+          ]
+        },
+        {
+          "part": "bar-tip",
+          "actual": [
+            1.1249999954062662,
+            1.5000000027155407,
+            -0.00014782374989080326
+          ],
+          "expected": [
+            1.1249999954062662,
+            1.5000000027155407,
+            -0.00014782374989080326
+          ]
+        },
+        {
+          "part": "bar-rim",
+          "actual": [
+            1.1250014086562654,
+            1.4999995652155413,
+            0.024852176206335563
+          ],
+          "expected": [
+            1.1250014086562654,
+            1.4999995652155413,
+            0.024852176206335563
+          ]
+        },
+        {
+          "part": "carriage-seat",
+          "actual": [
+            -0.3469999999999999,
+            0.6599994795,
+            0.15
+          ],
+          "expected": [
+            -0.3469999999999999,
+            0.6599994795,
+            0.15
+          ]
+        },
+        {
+          "part": "carriage-top",
+          "actual": [
+            0.05299952000566599,
+            0.9799960022477135,
+            1.325001110392926
+          ],
+          "expected": [
+            0.05299952000566599,
+            0.9799960022477135,
+            1.325001110392926
+          ]
+        },
+        {
+          "part": "cross-slide",
+          "actual": [
+            -0.23700077999473387,
+            1.1799960513112844,
+            1.1855018043937657
+          ],
+          "expected": [
+            -0.23700077999473387,
+            1.1799960513112844,
+            1.1855018043937657
+          ]
+        },
+        {
+          "part": "turret-centre",
+          "actual": [
+            -0.3470012599946101,
+            1.499995886308998,
+            1.1855029147937657
+          ],
+          "expected": [
+            -0.3470012599946101,
+            1.499995886308998,
+            1.1855029147937657
+          ]
+        },
+        {
+          "part": "holder",
+          "actual": [
+            -0.5170012599969173,
+            1.4999972969089979,
+            0.7055029147966557
+          ],
+          "expected": [
+            -0.5170012599969173,
+            1.4999972969089979,
+            0.7055029147966557
+          ]
+        },
+        {
+          "part": "tool",
+          "actual": [
+            -0.5570012599982777,
+            1.499998173808998,
+            0.4355029147982812
+          ],
+          "expected": [
+            -0.5570012599982777,
+            1.499998173808998,
+            0.4355029147982812
+          ]
+        },
+        {
+          "part": "tailstock-seat",
+          "actual": [
+            1.8,
+            0.66,
+            0
+          ],
+          "expected": [
+            1.8,
+            0.66,
+            0
+          ]
+        },
+        {
+          "part": "tailstock-centre",
+          "actual": [
+            1.24,
+            1.49999999986392,
+            -0.000015119999997550554
+          ],
+          "expected": [
+            1.24,
+            1.49999999986392,
+            -0.000015119999997550561
+          ]
+        },
+        {
+          "part": "fixed-guide",
+          "actual": [
+            -4.5999999999631995e-7,
+            0.77499999999908,
+            0.4
+          ],
+          "expected": [
+            -4.5999999999632006e-7,
+            0.77499999999908,
+            0.4
+          ]
+        }
+      ]
+    }
+  ],
+  "ownershipChecks": [
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "column-foot",
+      "actual": [
+        0.55,
+        0,
+        0
+      ],
+      "expected": [
+        0.55,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "column-top",
+      "actual": [
+        0.55,
+        0,
+        0
+      ],
+      "expected": [
+        0.55,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "Y-guide",
+      "actual": [
+        0.55,
+        0,
+        0
+      ],
+      "expected": [
+        0.55,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "head-centre",
+      "actual": [
+        0.55,
+        0,
+        0
+      ],
+      "expected": [
+        0.55,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "head-corner",
+      "actual": [
+        0.55,
+        0,
+        0
+      ],
+      "expected": [
+        0.55,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "nose",
+      "actual": [
+        0.55,
+        0,
+        0
+      ],
+      "expected": [
+        0.55,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "pallet-seat",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "pallet-top",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "workpiece-top",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "fixed-guide",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "part": "base-corner",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "column-foot",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "column-top",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "Y-guide",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "head-centre",
+      "actual": [
+        0,
+        0.2999999999999998,
+        0
+      ],
+      "expected": [
+        0,
+        0.3,
+        0
+      ],
+      "error": 1.6653345369377348e-16
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "head-corner",
+      "actual": [
+        0,
+        0.2999999999999998,
+        0
+      ],
+      "expected": [
+        0,
+        0.3,
+        0
+      ],
+      "error": 1.6653345369377348e-16
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "nose",
+      "actual": [
+        0,
+        0.2999999999999998,
+        0
+      ],
+      "expected": [
+        0,
+        0.3,
+        0
+      ],
+      "error": 1.6653345369377348e-16
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "pallet-seat",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "pallet-top",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "workpiece-top",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "fixed-guide",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "part": "base-corner",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "column-foot",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "column-top",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "Y-guide",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "head-centre",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "head-corner",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "nose",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "pallet-seat",
+      "actual": [
+        0,
+        0,
+        0.45000000000000007
+      ],
+      "expected": [
+        0,
+        0,
+        0.45
+      ],
+      "error": 5.551115123125783e-17
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "pallet-top",
+      "actual": [
+        0,
+        0,
+        0.45000000000000007
+      ],
+      "expected": [
+        0,
+        0,
+        0.45
+      ],
+      "error": 5.551115123125783e-17
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "workpiece-top",
+      "actual": [
+        0,
+        0,
+        0.45000000000000007
+      ],
+      "expected": [
+        0,
+        0,
+        0.45
+      ],
+      "error": 5.551115123125783e-17
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "fixed-guide",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "part": "base-corner",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "head-seat",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "head-top",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "spindle-nose",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "bar-tip",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "bar-rim",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "carriage-seat",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "carriage-top",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "cross-slide",
+      "actual": [
+        0,
+        0,
+        0.34999999999999987
+      ],
+      "expected": [
+        0,
+        0,
+        0.35
+      ],
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "turret-centre",
+      "actual": [
+        0,
+        0,
+        0.34999999999999987
+      ],
+      "expected": [
+        0,
+        0,
+        0.35
+      ],
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "holder",
+      "actual": [
+        0,
+        0,
+        0.35
+      ],
+      "expected": [
+        0,
+        0,
+        0.35
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "tool",
+      "actual": [
+        0,
+        0,
+        0.34999999999999987
+      ],
+      "expected": [
+        0,
+        0,
+        0.35
+      ],
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "tailstock-seat",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "tailstock-centre",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "part": "fixed-guide",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "head-seat",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "head-top",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "spindle-nose",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "bar-tip",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "bar-rim",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "carriage-seat",
+      "actual": [
+        0.7,
+        0,
+        0
+      ],
+      "expected": [
+        0.7,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "carriage-top",
+      "actual": [
+        0.7,
+        0,
+        0
+      ],
+      "expected": [
+        0.7,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "cross-slide",
+      "actual": [
+        0.7,
+        0,
+        0
+      ],
+      "expected": [
+        0.7,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "turret-centre",
+      "actual": [
+        0.7,
+        0,
+        0
+      ],
+      "expected": [
+        0.7,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "holder",
+      "actual": [
+        0.6999999999999998,
+        0,
+        0
+      ],
+      "expected": [
+        0.7,
+        0,
+        0
+      ],
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "tool",
+      "actual": [
+        0.6999999999999998,
+        0,
+        0
+      ],
+      "expected": [
+        0.7,
+        0,
+        0
+      ],
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "tailstock-seat",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "tailstock-centre",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "part": "fixed-guide",
+      "actual": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "error": 0
+    }
+  ],
+  "collisions": [
+    {
+      "X": 0,
+      "Z": -100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.8674999999999999,
+          -0.7925
+        ],
+        "z": [
+          0.11499999999999999,
+          0.385
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": 0,
+      "Z": -100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.8699999999999999,
+          -0.71
+        ],
+        "z": [
+          0.37,
+          0.67
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": 0,
+      "Z": 0,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.1675,
+          -0.0925
+        ],
+        "z": [
+          0.11499999999999999,
+          0.385
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": 0,
+      "Z": 0,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.16999999999999998,
+          -0.009999999999999995
+        ],
+        "z": [
+          0.37,
+          0.67
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": 0,
+      "Z": 100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          0.5325,
+          0.6074999999999999
+        ],
+        "z": [
+          0.11499999999999999,
+          0.385
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": 0,
+      "Z": 100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          0.53,
+          0.69
+        ],
+        "z": [
+          0.37,
+          0.67
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -25,
+      "Z": -100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.8674999999999999,
+          -0.7925
+        ],
+        "z": [
+          0.027499999999999997,
+          0.2975
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -25,
+      "Z": -100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.8699999999999999,
+          -0.71
+        ],
+        "z": [
+          0.2825,
+          0.5825
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -25,
+      "Z": 0,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.1675,
+          -0.0925
+        ],
+        "z": [
+          0.027499999999999997,
+          0.2975
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -25,
+      "Z": 0,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.16999999999999998,
+          -0.009999999999999995
+        ],
+        "z": [
+          0.2825,
+          0.5825
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -25,
+      "Z": 100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          0.5325,
+          0.6074999999999999
+        ],
+        "z": [
+          0.027499999999999997,
+          0.2975
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -25,
+      "Z": 100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          0.53,
+          0.69
+        ],
+        "z": [
+          0.2825,
+          0.5825
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -26,
+      "Z": -100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.8674999999999999,
+          -0.7925
+        ],
+        "z": [
+          0.023999999999999994,
+          0.29400000000000004
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.0010000000000000078
+    },
+    {
+      "X": -26,
+      "Z": -100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.8699999999999999,
+          -0.71
+        ],
+        "z": [
+          0.279,
+          0.5790000000000001
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -26,
+      "Z": 0,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.1675,
+          -0.0925
+        ],
+        "z": [
+          0.023999999999999994,
+          0.29400000000000004
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.0010000000000000078
+    },
+    {
+      "X": -26,
+      "Z": 0,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.16999999999999998,
+          -0.009999999999999995
+        ],
+        "z": [
+          0.279,
+          0.5790000000000001
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -26,
+      "Z": 100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          0.5325,
+          0.6074999999999999
+        ],
+        "z": [
+          0.023999999999999994,
+          0.29400000000000004
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.0010000000000000078
+    },
+    {
+      "X": -26,
+      "Z": 100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          0.53,
+          0.69
+        ],
+        "z": [
+          0.279,
+          0.5790000000000001
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -98,
+      "Z": -100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.8674999999999999,
+          -0.7925
+        ],
+        "z": [
+          -0.22799999999999998,
+          0.04200000000000004
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.025
+    },
+    {
+      "X": -98,
+      "Z": -100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.8699999999999999,
+          -0.71
+        ],
+        "z": [
+          0.027000000000000052,
+          0.32700000000000007
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -98,
+      "Z": 0,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.1675,
+          -0.0925
+        ],
+        "z": [
+          -0.22799999999999998,
+          0.04200000000000004
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.025
+    },
+    {
+      "X": -98,
+      "Z": 0,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.16999999999999998,
+          -0.009999999999999995
+        ],
+        "z": [
+          0.027000000000000052,
+          0.32700000000000007
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -98,
+      "Z": 100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          0.5325,
+          0.6074999999999999
+        ],
+        "z": [
+          -0.22799999999999998,
+          0.04200000000000004
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.025
+    },
+    {
+      "X": -98,
+      "Z": 100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          0.53,
+          0.69
+        ],
+        "z": [
+          0.027000000000000052,
+          0.32700000000000007
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": false,
+      "radialPenetrationM": 0
+    },
+    {
+      "X": -99,
+      "Z": -100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.8674999999999999,
+          -0.7925
+        ],
+        "z": [
+          -0.23149999999999998,
+          0.038500000000000034
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.025
+    },
+    {
+      "X": -99,
+      "Z": -100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.8699999999999999,
+          -0.71
+        ],
+        "z": [
+          0.02350000000000005,
+          0.3235
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.0014999999999999528
+    },
+    {
+      "X": -99,
+      "Z": 0,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.1675,
+          -0.0925
+        ],
+        "z": [
+          -0.23149999999999998,
+          0.038500000000000034
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.025
+    },
+    {
+      "X": -99,
+      "Z": 0,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.16999999999999998,
+          -0.009999999999999995
+        ],
+        "z": [
+          0.02350000000000005,
+          0.3235
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.0014999999999999528
+    },
+    {
+      "X": -99,
+      "Z": 100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          0.5325,
+          0.6074999999999999
+        ],
+        "z": [
+          -0.23149999999999998,
+          0.038500000000000034
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.025
+    },
+    {
+      "X": -99,
+      "Z": 100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          0.53,
+          0.69
+        ],
+        "z": [
+          0.02350000000000005,
+          0.3235
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.0014999999999999528
+    },
+    {
+      "X": -100,
+      "Z": -100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.8674999999999999,
+          -0.7925
+        ],
+        "z": [
+          -0.235,
+          0.03500000000000003
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.025
+    },
+    {
+      "X": -100,
+      "Z": -100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.8699999999999999,
+          -0.71
+        ],
+        "z": [
+          0.020000000000000046,
+          0.32000000000000006
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.004999999999999956
+    },
+    {
+      "X": -100,
+      "Z": 0,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          -0.1675,
+          -0.0925
+        ],
+        "z": [
+          -0.235,
+          0.03500000000000003
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.025
+    },
+    {
+      "X": -100,
+      "Z": 0,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          -0.16999999999999998,
+          -0.009999999999999995
+        ],
+        "z": [
+          0.020000000000000046,
+          0.32000000000000006
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.004999999999999956
+    },
+    {
+      "X": -100,
+      "Z": 100,
+      "part": "tool",
+      "bounds": {
+        "x": [
+          0.5325,
+          0.6074999999999999
+        ],
+        "z": [
+          -0.235,
+          0.03500000000000003
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.025
+    },
+    {
+      "X": -100,
+      "Z": 100,
+      "part": "holder",
+      "bounds": {
+        "x": [
+          0.53,
+          0.69
+        ],
+        "z": [
+          0.020000000000000046,
+          0.32000000000000006
+        ]
+      },
+      "bar": {
+        "x": [
+          -1.075,
+          1.125
+        ],
+        "radius": 0.025
+      },
+      "intersects": true,
+      "radialPenetrationM": 0.004999999999999956
+    }
+  ],
+  "finishedSources": {
+    "accuracy-ui.js": "3ceaeeb87ea49d5922ae5e0cc41710233ef9bb7f52e5a8411396a01d8b5a63c4",
+    "app.js": "6ba8beb045b76356f8b0ca604f4bd657309c2ceb7d8b32e97144ba962479941b",
+    "horizontal-parallelism-ui.js": "5abdd25753ce457a8029dd22136afce56050f651a444b5bf3c7d440c7968ae80",
+    "horizontal-parallelism.js": "0b43abf9a2974dc1cfda1379cb81771e9255fe3ff3014401b6b77030a1b7267a",
+    "intrinsic-inspection-ui.js": "811942679cc852f7a4e1b701a3b30035f3fe94f275ccd503c6f5d9a226af9c10",
+    "intrinsic-inspection.js": "dd6addc468bac25759b5018dfbecdd48fe5d65135fc3c1d299eda05daab0d9e3",
+    "lathe-inspection-ui.js": "1a5ca02dc1928d7b7d30c1876ae649954610afc6d0fd5617384c752c4efb8431",
+    "lathe-inspection.js": "c8df25e25ce6ff6d8bc7962caea991277d488c4e12ab19632a59425793150787",
+    "leveling-ui.js": "2aaa7693c934294bfddc774e60e516e7d9cb201808d4f90b1a6ed7cb39f06025",
+    "leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+    "machine-accuracy-ui.js": "9c33d5bab3bd1c508225879581cbe7ef8e6c60ecf5b0d8b3d15a206bc6f0d145",
+    "machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "reference-measurement-ui.js": "4f61d895955d73d8fc084780d28dd9fe49c6426398d890fe8b842e5f8e73db39",
+    "reference-measurement.js": "b239edae0972f72dbcb6b20c7ae48f115b550f80eadd541db3d54c1acf4d4e62",
+    "spindle-sweep-ui.js": "797d0da271a440784245c262bef38f52a48ac7506a9763038e8ae977103e3ead",
+    "spindle-sweep.js": "157567be5af80c962d855688f811a1bdb18fdf9aa99336ae375e77602b0decce",
+    "tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409"
+  },
+  "passed": true
+}

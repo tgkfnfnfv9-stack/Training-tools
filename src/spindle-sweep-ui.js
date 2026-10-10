@@ -151,7 +151,7 @@ function updateSpindleSweep(){
  const horizontal=current.kind==='horizontal',available=supportsSpindleSweep()||horizontal;
  spindleSweepMode=available;
  $('trainingMain').classList.toggle('has-spindle-sweep',available);
- $('squarenessValuesNote').hidden=false;
+ $('squarenessValuesNote').hidden=current.kind==='lathe';
  $('spindleSweepName').textContent=horizontal?'Z平行':'触れ';
  $('spindleSweepPanel').setAttribute('data-measurement',horizontal?'z-parallel':'spindle-sweep');
  $('spindleSweepPanel').setAttribute('aria-label',horizontal?'横形のZ方向平行度':'主軸のダイヤル旋回測定');

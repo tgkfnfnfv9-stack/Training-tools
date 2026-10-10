@@ -1,4 +1,16 @@
 'use strict';
+let referenceMeasurementCopyDefaults;
+function updateReferenceMeasurementCopy(){
+ const intros=[...$('measurementReference').querySelectorAll(':scope > .reference-intro')],note=$('squarenessValuesNote');
+ if(!referenceMeasurementCopyDefaults)referenceMeasurementCopyDefaults={intros:intros.map(el=>el.textContent),note:note.textContent};
+ const horizontal=current.kind==='horizontal',texts=horizontal?[
+  'パレット上の直角マスタに主軸頭固定の計器を当てます。XYは頭をY＋（上）へ、XZ/YZはパレットとマスタをZ＋（奥・主軸側）へ300 mm動かします。後者の計器の相対移動はマスタから見て手前です。●0でゼロ、＋は押込み増加、−は減少。黒は基準面、オレンジは計器の相対移動です。',
+  '320×320 mm・厚み50 mmの教材用直角マスタです。支持・軸位置の変更ごとに、R用の頭固定計器をXY/XZはX、YZはYへ300 mm送り、両端等指示に方向合わせします。S用の腕へ付け替えて始点ゼロを取り、走査途中は再ゼロしません。初期伸び10 mm、計算範囲0〜20 mm。有限面の接触を16分割と支持境界の両側で確認します。全治具の干渉や弾性は再現しません。保存した機械状態から毎回再計算します。Z平行度a/bは主軸固定バーとパレット側計器の別配置です。'
+ ]:referenceMeasurementCopyDefaults.intros;
+ intros.forEach((el,i)=>{if(el.textContent!==texts[i])el.textContent=texts[i];});
+ const noteText=horizontal?'1 µm＝0.001 mm。パレット上の直角マスタと主軸頭固定の計器による300 mmの指示差です。XYは頭をY＋へ、XZ/YZはパレットをZ＋へ動かします。支持・軸位置の変更ごとにR方向合わせとSの始点ゼロを取り直し、走査途中は再ゼロしません。＋は押込み増加、−は減少。1 µm刻みで四捨五入。Z平行度a/bは主軸固定バーとパレット側計器の別配置です。':referenceMeasurementCopyDefaults.note;
+ if(note.textContent!==noteText)note.textContent=noteText;
+}
 // Fixed teaching fixtures. Member ownership describes mechanics, never a sign table.
 function referenceSetup(pair){
  const lathe=current.kind==='lathe',gate=['double','gantry','portal'].includes(current.kind),base=lathe?'Z':pair.key[0],scan=lathe?'X':pair.key[1];
