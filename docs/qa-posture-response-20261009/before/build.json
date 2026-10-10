@@ -1,0 +1,5 @@
+{
+  "base": "http://127.0.0.1:8771/",
+  "sha256": "7c63eaa1c49ab749e7e898f228a6c88151185c0a5ca68566fda46e8c731c03d9",
+  "transport": "HTTP fetched once, exact response frozen for the run"
+}

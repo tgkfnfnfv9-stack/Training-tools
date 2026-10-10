@@ -97,13 +97,22 @@ function portalZVisualPoint(point,axes,pose,m=current,state=positions){
  // measurement geometry stay untouched; the rotation preserves part shape.
  return frame.rotate(point.map((v,i)=>v-frame.nose[i])).map((v,i)=>v+frame.nose[i]);
 }
-function displayedModelPoint(p,axes,m=current,state=positions,pose='bed'){
+// Layout dimensions move a cylinder's centre/axis; they never stretch its
+// cross-section. Convert the radial part back to nominal units before the
+// existing physical layout mapping. Only explicitly tagged model parts use it.
+function circularModelPoint(p,circular,scaleX,scaleZ){
+ if(!circular)return p;const scale=[scaleX,1,scaleZ],axis={x:0,y:1,z:2}[circular.axis];
+ return p.map((v,i)=>i===axis?v:circular.center[i]+(v-circular.center[i])/scale[i]);
+}
+function displayedModelPoint(p,axes,m=current,state=positions,pose='bed',circular=null){
+ if(circular&&levelConfig)p=circularModelPoint(p,circular,levelConfig.width/(m.w*.8),levelConfig.depth/(m.d*.8));
  // Decorative tailstock: a fixed visual assembly, never a measurement input.
  if(m.kind==='lathe'&&pose==='latheTailstockVisual'&&levelGeometry){
   const q=displayCoordinates(p),a=displayCoordinates([m.w*.36,.66,0]),factor=displayFactor(),frame=compactSupportFrame(levelSolution,a[0],a[2],factor),origin=compactSurfacePoint(levelSolution,a[0],a[2],factor);
   return frame.rotate(q.map((v,i)=>v-a[i])).map((v,i)=>v+origin[i]+(i===1?displayClearance():0));
  }
  if(m.kind==='lathe'&&levelGeometry&&typeof latheAssembly==='function'&&['tool','work','latheTestBar'].includes(pose))return latheAssembly(p,pose,{...state,X:axes.includes('X')?state.X:0,Z:axes.includes('Z')?state.Z:0},levelSolution,machineProfile,displayFactor()).point.map((v,i)=>v+(i===1?displayClearance():0));
+ if(m.kind==='horizontal'&&pose==='tool'&&levelGeometry)return horizontalToolPoint(p,state,levelSolution,machineProfile,displayFactor(),axes).map((v,i)=>v+(i===1?displayClearance():0));
  if(m.kind==='horizontal'&&pose==='work'&&levelGeometry)return horizontalPalletPoint(p,state,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  return portalZVisualPoint(levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,state,pose),pose),axes,pose,m,state);
 }
@@ -113,8 +122,8 @@ function idealDisplayContext(m,state=positions){
  const scaleX=levelConfig.width/(m.w*.8),scaleZ=levelConfig.depth/(m.d*.8),offset=columnLayoutOffset(m);
  return {scaleX,scaleZ,state:{...state},axes:axisConfig(m),offset:[offset.x*scaleX,0,offset.z*scaleZ],lift:displayClearance()+displayFactor()*supportHeights.reduce((sum,h)=>sum+h,0)/(1000*Math.max(1,supportHeights.length))};
 }
-function idealDisplayPoint(p,axes,pose,context){
- const {scaleX,scaleZ,state,offset,lift}=context,q=[p[0]*scaleX,p[1],p[2]*scaleZ],pivot=[0,1.25,-.45*scaleZ];
+function idealDisplayPoint(p,axes,pose,context,circular=null){
+ const {scaleX,scaleZ,state,offset,lift}=context;p=circularModelPoint(p,circular,scaleX,scaleZ);const q=[p[0]*scaleX,p[1],p[2]*scaleZ],pivot=[0,1.25,-.45*scaleZ];
  if(pose==='latheTestBar')q[2]=p[2];
  if(axes.includes('C')){const t=state.C*Math.PI/100,dx=q[0]-pivot[0],dz=q[2]-pivot[2];q[0]=pivot[0]+dx*Math.cos(t)+dz*Math.sin(t);q[2]=pivot[2]-dx*Math.sin(t)+dz*Math.cos(t);}
  if(axes.includes('A')){const t=state.A*.45/100,dy=q[1]-pivot[1],dz=q[2]-pivot[2];q[1]=pivot[1]+dy*Math.cos(t)-dz*Math.sin(t);q[2]=pivot[2]+dy*Math.sin(t)+dz*Math.cos(t);}
@@ -231,7 +240,7 @@ function createGeometry(m){
   if(text==='主軸台')references.push({base:[x-w/2,y,z-d/2],tip:[x+w/2,y,z-d/2],direction:[1,0,0],length:w,axes:[...group],pose});
   else if(text==='コラム'||pose==='leftColumn'||pose==='rightColumn')references.push({base:[x+w/2,y-h/2,z-d/2],tip:[x+w/2,y+h/2,z-d/2],direction:[0,1,0],length:h,axes:[...group],pose});
  }
- function cyl(x,y,z,r,len,color,axis='y',text,n=20,phase=0){const ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n+phase,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8},{v:ring[1],axes:[...group],pose,color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
+ function cyl(x,y,z,r,len,color,axis='y',text,n=20,phase=0){const ring=[[],[]],circular=(m.kind==='horizontal'&&pose==='tool'||m.kind==='lathe'&&['tool','latheTailstockVisual'].includes(pose))?{circular:{center:[x,y,z],axis}}:{};for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n+phase,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8,...circular},{v:ring[1],axes:[...group],pose,color,shade:1.08,...circular});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2,...circular});if(text)label([x,y+r+.1,z],text);}
  // Exterior faces only. Include every support station inside the part so
  // middle deformation and bilinear-cell boundaries remain in the bed/guide mesh.
  function curvedBox(x,y,z,w,h,d,color,text,nx=4,nz=8){
@@ -308,13 +317,15 @@ function createGeometry(m){
  withGroup(['X','Y','A','C'],()=>{cyl(0,1.47,-.45,.65,.18,c.table,'y','回転テーブル');box(.18,1.68,-.45,.45,.25,.32,c.work);},'work');
  }else {
  [-1,1].forEach(k=>curvedBox(0,.72,k*.4,W*.93,.11,.13,c.rail));
- withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24,1.5,0,.4,.25,c.spindle,'x');},'tool');
+ // Keep the measured nose at -W*.24+.125; extend the chuck rear into the
+ // headstock instead of leaving the previous 25 mm unsupported gap.
+ withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24-.015,1.5,0,.4,.28,c.spindle,'x');},'tool');
  withGroup([],()=>{const nose=-W*.24+.125,tip=W*.225;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
  // Display only. Leave the centre retracted clear of the test bar.
  withGroup([],()=>{
   const x=W*.36;box(x,.805,0,.8,.08,1.1,c.fixed);box(x,1.225,0,.52,.76,.65,c.fixed,'心押台');
   cyl(x-.28,1.5,0,.08,.32,c.spindle,'x');
-  for(let i=0;i<16;i++){const a=i*Math.PI/8,b=(i+1)*Math.PI/8;faces.push({v:[[x-.56,1.5,0],[x-.44,1.5+.08*Math.cos(a),.08*Math.sin(a)],[x-.44,1.5+.08*Math.cos(b),.08*Math.sin(b)]],axes:[],pose:'latheTailstockVisual',color:c.spindle,shade:.9});}
+  for(let i=0;i<16;i++){const a=i*Math.PI/8,b=(i+1)*Math.PI/8;faces.push({v:[[x-.56,1.5,0],[x-.44,1.5+.08*Math.cos(a),.08*Math.sin(a)],[x-.44,1.5+.08*Math.cos(b),.08*Math.sin(b)]],axes:[],pose:'latheTailstockVisual',color:c.spindle,shade:.9,circular:{center:[x,1.5,0],axis:'x'}});}
  },'latheTailstockVisual');
  withGroup(['Z'],()=>box(.08,.87,.4,.8,.22,1.85,c.fixed,'往復台'),'work');
  withGroup(['X','Z'],()=>{
@@ -340,7 +351,7 @@ function idealOutlineEdges(model){
   if(f.surface||!['bed','tool','work','leftColumn','rightColumn','latheTestBar','latheTailstockVisual'].includes(f.pose)||f.color==='#c8d6d9')continue;
   for(let i=0;i<f.v.length;i++){
    const a=f.v[i],b=f.v[(i+1)%f.v.length],pa=pointKey(a),pb=pointKey(b),key=f.pose+':'+f.axes.join('/')+':'+[pa,pb].sort().join('|');
-   if(edges.has(key))edges.get(key).faces.push(f);else edges.set(key,{a,b,axes:f.axes,pose:f.pose,faces:[f],smooth:false});
+   if(edges.has(key))edges.get(key).faces.push(f);else edges.set(key,{a,b,axes:f.axes,pose:f.pose,circular:f.circular,faces:[f],smooth:false});
   }
  }
  return [...edges.values()].filter(edge=>{
@@ -352,9 +363,9 @@ function idealOutlineEdges(model){
 function idealOutlineSegments(edges,context,angle,view){
  const pitch=scenePitch(view),sight=[-Math.sin(angle)*Math.cos(pitch),-Math.sin(pitch),Math.cos(angle)*Math.cos(pitch)],normals=new Map();
  const facing=f=>{
-  if(!normals.has(f)){const n=idealFaceNormal(f.v.slice(0,3).map(p=>idealDisplayPoint(p,f.axes,f.pose,context)));normals.set(f,n.reduce((sum,v,i)=>sum+v*sight[i],0));}return normals.get(f);
+  if(!normals.has(f)){const n=idealFaceNormal(f.v.slice(0,3).map(p=>idealDisplayPoint(p,f.axes,f.pose,context,f.circular)));normals.set(f,n.reduce((sum,v,i)=>sum+v*sight[i],0));}return normals.get(f);
  };
- return edges.filter(edge=>!edge.smooth||facing(edge.faces[0])*facing(edge.faces[1])<0).map(edge=>({a:idealDisplayPoint(edge.a,edge.axes,edge.pose,context),b:idealDisplayPoint(edge.b,edge.axes,edge.pose,context)}));
+ return edges.filter(edge=>!edge.smooth||facing(edge.faces[0])*facing(edge.faces[1])<0).map(edge=>({a:idealDisplayPoint(edge.a,edge.axes,edge.pose,context,edge.circular),b:idealDisplayPoint(edge.b,edge.axes,edge.pose,context,edge.circular)}));
 }
 const idealOutlineCache=new Map();
 function drawIdealOutline(ctx,m,model,screen,angle,view){
@@ -407,7 +418,7 @@ function axisIndicators(m,model){
   if(['X','Y','Z'].includes(a.key)){
    const movingFaces=model.faces.filter(f=>f.axes.includes(a.key)),moved=movingFaces.flatMap(f=>f.v.map(p=>displayTransformedPoint(p,f.axes,m,positions,f.pose)));
    const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2);
-   const bodyPoints=levelGeometry?movingFaces.flatMap(f=>f.v.map(p=>displayedModelPoint(p,f.axes,m,positions,f.pose))):moved,bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
+   const bodyPoints=levelGeometry?movingFaces.flatMap(f=>f.v.map(p=>displayedModelPoint(p,f.axes,m,positions,f.pose,f.circular))):moved,bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
    const vector=levelGeometry?accuracyVisualVector(a.key):a.vector,pose=levelGeometry?(current.kind==='lathe'&&a.key==='Z'?'work':levelGeometry.axes.find(q=>q.key===a.key).source):'bed';
    return {key:a.key,pose,bodyOrigin,curved:false,points:[-1,1].map(sign=>origin.map((v,i)=>v+sign*vector[i]*.6))};
   }
@@ -461,12 +472,12 @@ function render(canvas,m,angle,showLabels,active){
  const margin=showLabels?Math.min(compactView?44:56,width*(compactView?.12:.16)):18,verticalSpace=active>=0?height-(compactShortCanvas?12:48):height-75;
  const fitScale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY));
  const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-(compactShortCanvas?4:20))/2:height*.48)-(minY+maxY)*scale/2;
- const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelMappedVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(active>=0?displayedModelPoint(p,axes,m,positions,pose||'bed'):transformedPoint(p,axes,m));
+ const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelMappedVisualPoint(p,pose):p;const movingScreen=(p,axes,pose,circular)=>screen(active>=0?displayedModelPoint(p,axes,m,positions,pose||'bed',circular):transformedPoint(p,axes,m));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
  if(active>=0)model.faces.push(...levelSurfaceFaces(m));
- model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
+ model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose,f.circular))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
  if(training&&$('showIdealOutline').checked)drawIdealOutline(ctx,m,model,screen,angle,sceneView);
  // Reserve support markers before placing any text. Labels use the entire
  // Canvas now that the operation bar has its own row below it.
@@ -474,7 +485,7 @@ function render(canvas,m,angle,showLabels,active){
  if(training){
   ctx.strokeStyle='#536d786e';ctx.lineWidth=.8;ctx.setLineDash?.([3,3]);
   for(const ref of model.references){
-   const from=levelMappedBodyVisualPoint(displayTransformedPoint(ref.base,ref.axes,m,positions,ref.pose),ref.pose),physicalLength=Math.hypot(...displayCoordinates(ref.direction.map(v=>v*ref.length))),to=from.map((v,i)=>v+ref.direction[i]*physicalLength),a=screen(from),b=screen(to),dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy);
+   const from=['horizontal','lathe'].includes(m.kind)?displayedModelPoint(ref.base,ref.axes,m,positions,ref.pose):levelMappedBodyVisualPoint(displayTransformedPoint(ref.base,ref.axes,m,positions,ref.pose),ref.pose),physicalLength=Math.hypot(...displayCoordinates(ref.direction.map(v=>v*ref.length))),to=from.map((v,i)=>v+ref.direction[i]*physicalLength),a=screen(from),b=screen(to),dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy);
    if(length<4)continue;const offset=[-dy/length*5,dx/length*5];
    ctx.beginPath();ctx.moveTo(a[0]+offset[0],a[1]+offset[1]);ctx.lineTo(b[0]+offset[0],b[1]+offset[1]);ctx.stroke();
   }

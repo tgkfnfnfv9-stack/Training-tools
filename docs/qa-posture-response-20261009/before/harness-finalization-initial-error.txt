@@ -1,0 +1,11 @@
+TypeError: v.at is not a function
+    at prune (/workspace/Training-tools/tests/finalize-posture-browser-20261009.cjs:23:176)
+    at /workspace/Training-tools/tests/finalize-posture-browser-20261009.cjs:23:291
+    at Array.map (<anonymous>)
+    at prune (/workspace/Training-tools/tests/finalize-posture-browser-20261009.cjs:23:275)
+    at /workspace/Training-tools/tests/finalize-posture-browser-20261009.cjs:23:291
+    at Array.map (<anonymous>)
+    at prune (/workspace/Training-tools/tests/finalize-posture-browser-20261009.cjs:23:275)
+    at /workspace/Training-tools/tests/finalize-posture-browser-20261009.cjs:24:336
+    at Array.map (<anonymous>)
+    at finalize (/workspace/Training-tools/tests/finalize-posture-browser-20261009.cjs:24:100)

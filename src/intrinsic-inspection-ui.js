@@ -74,6 +74,7 @@ function updateIntrinsicInspectionUI(){
  $('liveSquareness').closest('section').setAttribute('aria-label',lathe?'タレット旋盤の精度検査':'軸の直角度');
  $('liveSquareness').closest('section').querySelector('.precision-panel-title').textContent=lathe?'旋盤検査':'直角度';
  $('squarenessValuesNote').hidden=lathe;
+ updateReferenceMeasurementCopy();
  $('intrinsicInspectionPage').setAttribute('aria-label',lathe?'穴芯とテストバー測定':'個体固有の主軸振れと上面精度');
  carousel.classList.toggle('is-enabled',enabled);$('intrinsicInspectionPage').hidden=!enabled;$('inspectionViewport').tabIndex=enabled?0:-1;
  if(changed)inspectionSetPage(0,'instant');

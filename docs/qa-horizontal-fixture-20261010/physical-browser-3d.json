@@ -1,0 +1,4836 @@
+{
+  "scope": "Full 3D expectation from input support heights, stored intrinsic pair angles and axis state. Independent tangent-based seat frames; yaw/pitch solved by two plane residual roots. No production pose/scan/contact functions supplied expectations.",
+  "browserHtmlSha256": "5231b54fb384a9a4d3e531114687566ff97d3c4c14ac007bab35141630b1ce18",
+  "states": 61,
+  "maxErrorUm": 3.10941938863607e-10,
+  "failureCount": 0,
+  "rows": [
+    {
+      "name": "ideal-central-flat",
+      "method": "known ideal/used flat fixture via evaluate",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-central-B-raise",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": -1.576067356935662,
+      "beforeDisplay": "-2",
+      "afterRawUm": 1.5760827796040129,
+      "afterDisplay": "+2",
+      "independent": {
+        "valid": true,
+        "microns": 1.5760827794930814,
+        "headY": [
+          -6.872044837984683e-19,
+          1.0000000000000002,
+          -5.164783395883096e-19
+        ],
+        "Snormal": [
+          0.0000023171445646627377,
+          -0.00000525360926497642,
+          0.9999999999835154
+        ],
+        "yaw": 0.000002317140581633489,
+        "pitch": -0.0000011775239520922154,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -5.293955920339377e-23,
+        "thicknessResidualM": 1.0587911840678754e-22
+      },
+      "independentDisplay": "+2",
+      "errorUm": 1.1093148621910132e-10
+    },
+    {
+      "name": "ideal-central-B-raise-restored",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-central-B-lower",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        -0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 1.5761065561004095,
+      "beforeDisplay": "+2",
+      "afterRawUm": -1.5760911330590932,
+      "afterDisplay": "-2",
+      "independent": {
+        "valid": true,
+        "microns": -1.5760911331700498,
+        "headY": [
+          6.872044837984683e-19,
+          1.0000000000000002,
+          5.164783395883096e-19
+        ],
+        "Snormal": [
+          -0.0000023170732536828636,
+          0.000005253637110566315,
+          0.9999999999835154
+        ],
+        "yaw": -0.0000023170772367380573,
+        "pitch": 0.000001177548510543113,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": 0,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-2",
+      "errorUm": 1.1095657725945784e-10
+    },
+    {
+      "name": "ideal-central-B-lower-restored",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-central-E-raise",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0.86956251820966,
+      "beforeDisplay": "+1",
+      "afterRawUm": -0.869568954829994,
+      "afterDisplay": "-1",
+      "independent": {
+        "valid": true,
+        "microns": -0.869568954718837,
+        "headY": [
+          0.0000015165441176325073,
+          0.9999999999905428,
+          0.000004076086956479874
+        ],
+        "Snormal": [
+          6.200803208768027e-7,
+          -0.0000011775247144704404,
+          0.9999999999991146
+        ],
+        "yaw": 6.200799462369271e-7,
+        "pitch": -0.0000011775247144705402,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": 0,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-1",
+      "errorUm": -1.1115697251540269e-10
+    },
+    {
+      "name": "ideal-central-E-raise-restored",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-central-E-lower",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": -0.8695679167974868,
+      "beforeDisplay": "-1",
+      "afterRawUm": 0.8695614802725626,
+      "afterDisplay": "+1",
+      "independent": {
+        "valid": true,
+        "microns": 0.8695614801491401,
+        "headY": [
+          -0.0000015165441176325073,
+          0.9999999999905428,
+          -0.000004076086956479874
+        ],
+        "Snormal": [
+          -6.200624755988468e-7,
+          0.0000011775477489715006,
+          0.9999999999991146
+        ],
+        "yaw": -6.200628502396615e-7,
+        "pitch": 0.0000011775477489716003,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.0587911840678754e-22,
+        "thicknessResidualM": 2.6469779601696886e-23
+      },
+      "independentDisplay": "+1",
+      "errorUm": 1.234224944468565e-10
+    },
+    {
+      "name": "ideal-central-E-lower-restored",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-central-G-raise",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": -1.2228260869457523,
+      "beforeDisplay": "-1",
+      "afterRawUm": 1.222826087167797,
+      "afterDisplay": "+1",
+      "independent": {
+        "valid": true,
+        "microns": 1.222826086949534,
+        "headY": [
+          0.0000021599264705729745,
+          0.9999999999893603,
+          -0.000004076086956498446
+        ],
+        "Snormal": [
+          7.249947263343187e-25,
+          -1.3234882074787878e-24,
+          1.0000000000000002
+        ],
+        "yaw": -1.1239210358031122e-12,
+        "pitch": 5.164770160993298e-19,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669393330535e-25,
+        "thicknessResidualM": -3.5981144955722536e-25
+      },
+      "independentDisplay": "+1",
+      "errorUm": 2.182629632585531e-10
+    },
+    {
+      "name": "ideal-central-G-raise-restored",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-central-G-lower",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 1.222826087167797,
+      "beforeDisplay": "+1",
+      "afterRawUm": -1.2228260870533054,
+      "afterDisplay": "-1",
+      "independent": {
+        "valid": true,
+        "microns": -1.222826086949534,
+        "headY": [
+          -0.0000021599264705729745,
+          0.9999999999893603,
+          0.000004076086956498446
+        ],
+        "Snormal": [
+          7.249947263343187e-25,
+          1.3234882074787878e-24,
+          1.0000000000000002
+        ],
+        "yaw": -1.1239210358031122e-12,
+        "pitch": -5.164770160993298e-19,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": 3.9704669393330535e-25,
+        "thicknessResidualM": -3.5981144955722536e-25
+      },
+      "independentDisplay": "-1",
+      "errorUm": -1.0377143588868876e-10
+    },
+    {
+      "name": "ideal-central-G-lower-restored",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-central-H-raise",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": -1.2228260869457523,
+      "beforeDisplay": "-1",
+      "afterRawUm": 1.222826087167797,
+      "afterDisplay": "+1",
+      "independent": {
+        "valid": true,
+        "microns": 1.222826086949534,
+        "headY": [
+          -0.0000021599264705729745,
+          0.9999999999893603,
+          -0.000004076086956498446
+        ],
+        "Snormal": [
+          -7.249947263343187e-25,
+          -1.3234882074787878e-24,
+          1.0000000000000002
+        ],
+        "yaw": 1.1239210358031122e-12,
+        "pitch": 5.164770160993298e-19,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669393330535e-25,
+        "thicknessResidualM": 3.5981144955722536e-25
+      },
+      "independentDisplay": "+1",
+      "errorUm": 2.182629632585531e-10
+    },
+    {
+      "name": "ideal-central-H-raise-restored",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-central-H-lower",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 1.222826087167797,
+      "beforeDisplay": "+1",
+      "afterRawUm": -1.2228260870533054,
+      "afterDisplay": "-1",
+      "independent": {
+        "valid": true,
+        "microns": -1.222826086949534,
+        "headY": [
+          0.0000021599264705729745,
+          0.9999999999893603,
+          0.000004076086956498446
+        ],
+        "Snormal": [
+          -7.249947263343187e-25,
+          1.3234882074787878e-24,
+          1.0000000000000002
+        ],
+        "yaw": 1.1239210358031122e-12,
+        "pitch": -5.164770160993298e-19,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": 3.9704669393330535e-25,
+        "thicknessResidualM": 3.5981144955722536e-25
+      },
+      "independentDisplay": "-1",
+      "errorUm": -1.0377143588868876e-10
+    },
+    {
+      "name": "ideal-central-H-lower-restored",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-Zminus100-flat",
+      "method": "actual Z slider",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -3.970466940254535e-25,
+        "thicknessResidualM": 3.970466940254535e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-Zminus100-G-raise",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": -1.2228260870585095,
+      "beforeDisplay": "-1",
+      "afterRawUm": 1.2228260871712666,
+      "afterDisplay": "+1",
+      "independent": {
+        "valid": true,
+        "microns": 1.222826086949534,
+        "headY": [
+          0.0000021599264705729745,
+          0.9999999999893603,
+          -0.000004076086956498446
+        ],
+        "Snormal": [
+          7.249947263343187e-25,
+          -1.3234882074787878e-24,
+          1.0000000000000002
+        ],
+        "yaw": -1.1239210358031122e-12,
+        "pitch": 5.164770160993298e-19,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -3.9704669393330595e-25,
+        "thicknessResidualM": -3.5981144955722572e-25
+      },
+      "independentDisplay": "+1",
+      "errorUm": 2.2173263225511164e-10
+    },
+    {
+      "name": "ideal-Zminus100-GH-raise",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0.01
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": -2.4456521736746644,
+      "beforeDisplay": "-2",
+      "afterRawUm": 2.445652173777013,
+      "afterDisplay": "+2",
+      "independent": {
+        "valid": true,
+        "microns": 2.4456521738659105,
+        "headY": [
+          0,
+          0.9999999999667712,
+          -0.000008152173912886366
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848447e-24,
+          1.0000000000000002
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -3.970466940266407e-25,
+        "thicknessResidualM": 3.970466940266407e-25
+      },
+      "independentDisplay": "+2",
+      "errorUm": -8.889733393857568e-11
+    },
+    {
+      "name": "ideal-Zminus100-GH-raise-mobile",
+      "method": "same inputs; actual mobile viewport",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0.01
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": -2.4456521736746644,
+      "beforeDisplay": "-2",
+      "afterRawUm": 2.445652173777013,
+      "afterDisplay": "+2",
+      "independent": {
+        "valid": true,
+        "microns": 2.4456521738659105,
+        "headY": [
+          0,
+          0.9999999999667712,
+          -0.000008152173912886366
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848447e-24,
+          1.0000000000000002
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -3.970466940266407e-25,
+        "thicknessResidualM": 3.970466940266407e-25
+      },
+      "independentDisplay": "+2",
+      "errorUm": -8.889733393857568e-11
+    },
+    {
+      "name": "ideal-Zminus100-GH-raise-restored",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -3.970466940254535e-25,
+        "thicknessResidualM": 3.970466940254535e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-Zminus100-G-lower",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 1.2228260866126854,
+      "beforeDisplay": "+1",
+      "afterRawUm": -1.2228260869388135,
+      "afterDisplay": "-1",
+      "independent": {
+        "valid": true,
+        "microns": -1.222826086949534,
+        "headY": [
+          -0.0000021599264705729745,
+          0.9999999999893603,
+          0.000004076086956498446
+        ],
+        "Snormal": [
+          7.249947263343187e-25,
+          1.3234882074787878e-24,
+          1.0000000000000002
+        ],
+        "yaw": -1.1239210358031122e-12,
+        "pitch": -5.164770160993298e-19,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": 3.9704669393330595e-25,
+        "thicknessResidualM": -3.5981144955722572e-25
+      },
+      "independentDisplay": "-1",
+      "errorUm": 1.0720535570385437e-11
+    },
+    {
+      "name": "ideal-Zminus100-GH-lower",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        -0.01
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 2.4456521736729298,
+      "beforeDisplay": "+2",
+      "afterRawUm": -2.4456521735549686,
+      "afterDisplay": "-2",
+      "independent": {
+        "valid": true,
+        "microns": -2.4456521738659105,
+        "headY": [
+          0,
+          0.9999999999667712,
+          0.000008152173912886366
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848447e-24,
+          1.0000000000000002
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -3.970466940266407e-25,
+        "thicknessResidualM": 3.970466940266407e-25
+      },
+      "independentDisplay": "-2",
+      "errorUm": 3.10941938863607e-10
+    },
+    {
+      "name": "ideal-Zminus100-GH-lower-restored",
+      "method": "actual support buttons",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -3.970466940254535e-25,
+        "thicknessResidualM": 3.970466940254535e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-X-100",
+      "method": "actual axis slider",
+      "profile": null,
+      "positions": {
+        "X": -100,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-X100",
+      "method": "actual axis slider",
+      "profile": null,
+      "positions": {
+        "X": 100,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-Y-100",
+      "method": "actual axis slider",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": -100,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-Y100",
+      "method": "actual axis slider",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 100,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-Z-100",
+      "method": "actual axis slider",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -3.970466940254535e-25,
+        "thicknessResidualM": 3.970466940254535e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 1.1102230206546896e-10
+    },
+    {
+      "name": "ideal-Z100",
+      "method": "actual axis slider",
+      "profile": null,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 8.326672684688674e-11,
+      "afterDisplay": "0",
+      "independent": {
+        "valid": true,
+        "microns": 3.970466940254533e-19,
+        "headY": [
+          0,
+          1,
+          0
+        ],
+        "Snormal": [
+          -1.3234889800848444e-24,
+          -1.3234889800848444e-24,
+          1
+        ],
+        "yaw": -1.3234889800848444e-24,
+        "pitch": -1.3234889800848444e-24,
+        "RstartMm": 150.00000000000003,
+        "RendMm": 450,
+        "returnedZ": 100,
+        "RendPlaneResidualM": -3.9704669402545322e-25,
+        "thicknessResidualM": 3.9704669402545322e-25
+      },
+      "independentDisplay": "0",
+      "errorUm": 8.326672644984005e-11
+    },
+    {
+      "name": "used-central-flat",
+      "method": "known ideal/used flat fixture via evaluate",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-central-B-raise",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 12.543911944698852,
+      "beforeDisplay": "+13",
+      "afterRawUm": -12.54407170297664,
+      "afterDisplay": "-13",
+      "independent": {
+        "valid": true,
+        "microns": -12.54407170310607,
+        "headY": [
+          -0.00005652999996989243,
+          0.9999999984021798,
+          6.301877778138853e-17
+        ],
+        "Snormal": [
+          0.000029414138643668587,
+          0.000041815235191693756,
+          0.9999999986931475
+        ],
+        "yaw": 0.000029414168082671825,
+        "pitch": 0.00004589130129460946,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-13",
+      "errorUm": 1.2943068838922045e-10
+    },
+    {
+      "name": "used-central-B-raise-restored",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-central-B-lower",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        -0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 15.6961272450417,
+      "beforeDisplay": "+16",
+      "afterRawUm": -15.695936643923478,
+      "afterDisplay": "-16",
+      "independent": {
+        "valid": true,
+        "microns": -15.695936644053463,
+        "headY": [
+          -0.000056529999969891064,
+          0.9999999984021798,
+          6.405173445891468e-17
+        ],
+        "Snormal": [
+          0.00002477926600244852,
+          0.00005232118966895372,
+          0.9999999983242407
+        ],
+        "yaw": 0.00002477922866485209,
+        "pitch": 0.00004824512031395629,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": 0,
+        "thicknessResidualM": 8.470329472543003e-22
+      },
+      "independentDisplay": "-16",
+      "errorUm": 1.2998491172311333e-10
+    },
+    {
+      "name": "used-central-B-lower-restored",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-central-E-raise",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.989567756289873,
+      "beforeDisplay": "+15",
+      "afterRawUm": -14.98975877332713,
+      "afterDisplay": "-15",
+      "independent": {
+        "valid": true,
+        "microns": -14.98975877338825,
+        "headY": [
+          -0.0000550134558546174,
+          0.9999999984784526,
+          0.000004076086949953253
+        ],
+        "Snormal": [
+          0.000027717107788109705,
+          0.000045891300517576933,
+          0.9999999985628755
+        ],
+        "yaw": 0.000027717107446204514,
+        "pitch": 0.00004589130053368503,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-15",
+      "errorUm": 6.111910977324442e-11
+    },
+    {
+      "name": "used-central-E-raise-restored",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-central-E-lower",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 13.25042683397032,
+      "beforeDisplay": "+13",
+      "afterRawUm": -13.250248694945954,
+      "afterDisplay": "-13",
+      "independent": {
+        "valid": true,
+        "microns": -13.250248695127492,
+        "headY": [
+          -0.00005804654408503608,
+          0.9999999983069922,
+          -0.000004076086949980785
+        ],
+        "Snormal": [
+          0.000026476243393527506,
+          0.00004824511953034209,
+          0.9999999984857088
+        ],
+        "yaw": 0.00002647624305279336,
+        "pitch": 0.00004824511954905773,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-13",
+      "errorUm": 1.815383399161874e-10
+    },
+    {
+      "name": "used-central-E-lower-restored",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-central-G-raise",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 12.897191471614168,
+      "beforeDisplay": "+13",
+      "afterRawUm": -12.897191471485797,
+      "afterDisplay": "-13",
+      "independent": {
+        "valid": true,
+        "microns": -12.897191471304938,
+        "headY": [
+          -0.000054370073502638075,
+          0.9999999985136405,
+          -0.0000040760869500713635
+        ],
+        "Snormal": [
+          0.000027096666663330567,
+          0.00004706819849946141,
+          0.9999999985251778
+        ],
+        "yaw": 0.00002709666557274057,
+        "pitch": 0.00004706819851684118,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": 0,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-13",
+      "errorUm": -1.808597716035365e-10
+    },
+    {
+      "name": "used-central-G-raise-restored",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-central-G-lower",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 15.342808518146317,
+      "beforeDisplay": "+15",
+      "afterRawUm": -15.342808518016213,
+      "afterDisplay": "-15",
+      "independent": {
+        "valid": true,
+        "microns": -15.342808518156657,
+        "headY": [
+          -0.00005868992643688168,
+          0.9999999982694392,
+          0.000004076086949899819
+        ],
+        "Snormal": [
+          0.000027096666663330574,
+          0.00004706819849946141,
+          0.9999999985251778
+        ],
+        "yaw": 0.000027096665572740577,
+        "pitch": 0.00004706819851684015,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": 0,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-15",
+      "errorUm": 1.40444100793502e-10
+    },
+    {
+      "name": "used-central-G-lower-restored",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-central-H-raise",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 12.897156352081884,
+      "beforeDisplay": "+13",
+      "afterRawUm": -12.897156351953514,
+      "afterDisplay": "-13",
+      "independent": {
+        "valid": true,
+        "microns": -12.89715635182367,
+        "headY": [
+          -0.00005868992643688168,
+          0.9999999982694392,
+          -0.000004076086949899819
+        ],
+        "Snormal": [
+          0.00002709666666333056,
+          0.00004706819849946141,
+          0.9999999985251778
+        ],
+        "yaw": 0.00002709666782058264,
+        "pitch": 0.00004706819851684118,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": 0,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-13",
+      "errorUm": -1.298445795328007e-10
+    },
+    {
+      "name": "used-central-H-raise-restored",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-central-H-lower",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 15.342843637900645,
+      "beforeDisplay": "+15",
+      "afterRawUm": -15.34284363755023,
+      "afterDisplay": "-15",
+      "independent": {
+        "valid": true,
+        "microns": -15.342843637740852,
+        "headY": [
+          -0.000054370073502638075,
+          0.9999999985136405,
+          0.0000040760869500713635
+        ],
+        "Snormal": [
+          0.000027096666663330554,
+          0.00004706819849946141,
+          0.9999999985251778
+        ],
+        "yaw": 0.000027096667820582633,
+        "pitch": 0.00004706819851684015,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": 0,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-15",
+      "errorUm": 1.9062262879288028e-10
+    },
+    {
+      "name": "used-central-H-lower-restored",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-Zminus100-flat",
+      "method": "actual Z slider",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995369433,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.11999999480565,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695256,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.00002709666666335078,
+          0.00004706819849875638,
+          0.9999999985251776
+        ],
+        "yaw": 0.00002709666669668183,
+        "pitch": 0.00004706819851613565,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-14",
+      "errorUm": -1.1039347214136797e-10
+    },
+    {
+      "name": "used-Zminus100-G-raise",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 12.897191471503145,
+      "beforeDisplay": "+13",
+      "afterRawUm": -12.89719147159682,
+      "afterDisplay": "-13",
+      "independent": {
+        "valid": true,
+        "microns": -12.897191471304911,
+        "headY": [
+          -0.000054370073502638075,
+          0.9999999985136405,
+          -0.0000040760869500713635
+        ],
+        "Snormal": [
+          0.000027096666663330513,
+          0.00004706819849946133,
+          0.9999999985251778
+        ],
+        "yaw": 0.000027096665572740516,
+        "pitch": 0.0000470681985168411,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": 1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-13",
+      "errorUm": -2.9190871941864316e-10
+    },
+    {
+      "name": "used-Zminus100-GH-raise",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0.01
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 11.674347828382128,
+      "beforeDisplay": "+12",
+      "afterRawUm": -11.674347828009163,
+      "afterDisplay": "-12",
+      "independent": {
+        "valid": true,
+        "microns": -11.674347828054591,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999983689508,
+          -0.000008152173899860657
+        ],
+        "Snormal": [
+          0.000027096666663269757,
+          0.000047068198499355825,
+          0.9999999985251778
+        ],
+        "yaw": 0.000027096666696600805,
+        "pitch": 0.00004706819851673508,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": 0,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-12",
+      "errorUm": 4.5428549810822005e-11
+    },
+    {
+      "name": "used-Zminus100-GH-raise-restored",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995369433,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.11999999480565,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695256,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.00002709666666335078,
+          0.00004706819849875638,
+          0.9999999985251776
+        ],
+        "yaw": 0.00002709666669668183,
+        "pitch": 0.00004706819851613565,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-14",
+      "errorUm": -1.1039347214136797e-10
+    },
+    {
+      "name": "used-Zminus100-G-lower",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 15.342808518035294,
+      "beforeDisplay": "+15",
+      "afterRawUm": -15.342808518127235,
+      "afterDisplay": "-15",
+      "independent": {
+        "valid": true,
+        "microns": -15.342808518156634,
+        "headY": [
+          -0.00005868992643688168,
+          0.9999999982694392,
+          0.000004076086949899819
+        ],
+        "Snormal": [
+          0.000027096666663330513,
+          0.00004706819849946133,
+          0.9999999985251778
+        ],
+        "yaw": 0.000027096665572740516,
+        "pitch": 0.00004706819851684007,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": 1.6940658945086007e-21,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-15",
+      "errorUm": 2.9398705692074145e-11
+    },
+    {
+      "name": "used-Zminus100-GH-lower",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        -0.01
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 16.56565216140958,
+      "beforeDisplay": "+17",
+      "afterRawUm": -16.565652161022737,
+      "afterDisplay": "-17",
+      "independent": {
+        "valid": true,
+        "microns": -16.56565216075718,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999983689508,
+          0.000008152173899860657
+        ],
+        "Snormal": [
+          0.000027096666663269757,
+          0.000047068198499355825,
+          0.9999999985251778
+        ],
+        "yaw": 0.000027096666696600805,
+        "pitch": 0.00004706819851673508,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": 0,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-17",
+      "errorUm": -2.6555824206297984e-10
+    },
+    {
+      "name": "used-Zminus100-GH-lower-restored",
+      "method": "actual support buttons",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995369433,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.11999999480565,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695256,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.00002709666666335078,
+          0.00004706819849875638,
+          0.9999999985251776
+        ],
+        "yaw": 0.00002709666669668183,
+        "pitch": 0.00004706819851613565,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-14",
+      "errorUm": -1.1039347214136797e-10
+    },
+    {
+      "name": "used-X-100",
+      "method": "actual axis slider",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": -100,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-X100",
+      "method": "actual axis slider",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 100,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995145655,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-Y-100",
+      "method": "actual axis slider",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": -100,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999994925344,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-Y100",
+      "method": "actual axis slider",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 100,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.1199999953677,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.119999994583605,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695274,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.000027096666663350808,
+          0.00004706819849875644,
+          0.9999999985251776
+        ],
+        "yaw": 0.000027096666696681856,
+        "pitch": 0.000047068198516135704,
+        "RstartMm": 0,
+        "RendMm": 300,
+        "returnedZ": 0,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 1.6940658945086007e-21
+      },
+      "independentDisplay": "-14",
+      "errorUm": 1.1166889635205735e-10
+    },
+    {
+      "name": "used-Z-100",
+      "method": "actual axis slider",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995369433,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.11999999480565,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999994695256,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.00002709666666335078,
+          0.00004706819849875638,
+          0.9999999985251776
+        ],
+        "yaw": 0.00002709666669668183,
+        "pitch": 0.00004706819851613565,
+        "RstartMm": -450,
+        "RendMm": -150.00000000000003,
+        "returnedZ": -100,
+        "RendPlaneResidualM": -1.6940658945086007e-21,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-14",
+      "errorUm": -1.1039347214136797e-10
+    },
+    {
+      "name": "used-Z100",
+      "method": "actual axis slider",
+      "profile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 100,
+        "A": 0,
+        "C": 0
+      },
+      "supportHeightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 14.119999995369433,
+      "beforeDisplay": "+14",
+      "afterRawUm": -14.11999999505545,
+      "afterDisplay": "-14",
+      "independent": {
+        "valid": true,
+        "microns": -14.119999995139356,
+        "headY": [
+          -0.000056529999969891735,
+          0.9999999984021796,
+          0
+        ],
+        "Snormal": [
+          0.0000270966666633508,
+          0.00004706819850023671,
+          0.9999999985251776
+        ],
+        "yaw": 0.00002709666669668185,
+        "pitch": 0.00004706819851761598,
+        "RstartMm": 150.00000000000003,
+        "RendMm": 450,
+        "returnedZ": 100,
+        "RendPlaneResidualM": -3.3881317890172014e-21,
+        "thicknessResidualM": 0
+      },
+      "independentDisplay": "-14",
+      "errorUm": 8.390621530907083e-11
+    }
+  ],
+  "failures": []
+}

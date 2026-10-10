@@ -1,0 +1,1893 @@
+{
+  "method": "Actual play/stop buttons; Playwright clock runs 650 ms of real requestAnimationFrame callbacks before pausing for stop, avoiding wall-clock race",
+  "states": [
+    {
+      "kind": "horizontal",
+      "axis": "X",
+      "start": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0,
+              2.86,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.85
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.85
+            ]
+          }
+        ]
+      },
+      "moved": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 77.54757546467361,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0.4265116650557049,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0.4265116650557049,
+              2.86,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.85
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.85
+            ]
+          }
+        ]
+      },
+      "stopped": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 77.54757546467361,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0.4265116650557049,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0.4265116650557049,
+              2.86,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.85
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.85
+            ]
+          }
+        ]
+      },
+      "replay": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 78,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0.42900000000000005,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0.42900000000000005,
+              2.86,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.85
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.85
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Y",
+      "start": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0,
+              2.86,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.85
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.85
+            ]
+          }
+        ]
+      },
+      "moved": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 0,
+          "Y": 77.54757546467361,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0,
+              3.0926427263940206,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.85
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.85
+            ]
+          }
+        ]
+      },
+      "stopped": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 0,
+          "Y": 77.54757546467361,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0,
+              3.0926427263940206,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.85
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.85
+            ]
+          }
+        ]
+      },
+      "replay": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 0,
+          "Y": 78,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0,
+              3.094,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.85
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.85
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "horizontal",
+      "axis": "Z",
+      "start": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0,
+              2.86,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.85
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.85
+            ]
+          }
+        ]
+      },
+      "moved": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 77.54757546467361,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0,
+              2.86,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.5010359104089687
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.5010359104089687
+            ]
+          }
+        ]
+      },
+      "stopped": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 77.54757546467361,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0,
+              2.86,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.5010359104089687
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.5010359104089687
+            ]
+          }
+        ]
+      },
+      "replay": {
+        "kind": "horizontal",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 78,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 2.72,
+          "depth": 3.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 3.4,
+          "d": 4.6
+        },
+        "labels": [
+          {
+            "name": "ベース",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "コラム",
+            "point": [
+              0,
+              3.2,
+              1.334
+            ]
+          },
+          {
+            "name": "主軸頭",
+            "point": [
+              0,
+              2.86,
+              0.25
+            ]
+          },
+          {
+            "name": "パレット台",
+            "point": [
+              0,
+              0.915,
+              -0.4989999999999999
+            ]
+          },
+          {
+            "name": "パレット",
+            "point": [
+              0,
+              1.27,
+              -0.4989999999999999
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "lathe",
+      "axis": "X",
+      "start": {
+        "kind": "lathe",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 4,
+          "depth": 1.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 5,
+          "d": 2.1
+        },
+        "labels": [
+          {
+            "name": "ベッド",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "主軸台",
+            "point": [
+              -1.75,
+              1.8450000000000002,
+              0
+            ]
+          },
+          {
+            "name": "テストバー",
+            "point": [
+              0.02499999999999991,
+              1.625,
+              0
+            ]
+          },
+          {
+            "name": "心押台",
+            "point": [
+              1.7999999999999998,
+              1.605,
+              0
+            ]
+          },
+          {
+            "name": "往復台",
+            "point": [
+              0.08,
+              0.98,
+              0.39999999999999997
+            ]
+          },
+          {
+            "name": "Xスライド",
+            "point": [
+              0.19,
+              1.4,
+              1
+            ]
+          },
+          {
+            "name": "タレット",
+            "point": [
+              0.08,
+              2.0451687575763358,
+              1
+            ]
+          },
+          {
+            "name": "工具ホルダ",
+            "point": [
+              -0.08999999999999998,
+              1.58,
+              0.5199999999999999
+            ]
+          },
+          {
+            "name": "工具",
+            "point": [
+              -0.13,
+              1.5375,
+              0.25
+            ]
+          }
+        ]
+      },
+      "moved": {
+        "kind": "lathe",
+        "positions": {
+          "X": 77.54757546467361,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 4,
+          "depth": 1.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 5,
+          "d": 2.1
+        },
+        "labels": [
+          {
+            "name": "ベッド",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "主軸台",
+            "point": [
+              -1.75,
+              1.8450000000000002,
+              0
+            ]
+          },
+          {
+            "name": "テストバー",
+            "point": [
+              0.02499999999999991,
+              1.625,
+              0
+            ]
+          },
+          {
+            "name": "心押台",
+            "point": [
+              1.7999999999999998,
+              1.605,
+              0
+            ]
+          },
+          {
+            "name": "往復台",
+            "point": [
+              0.08,
+              0.98,
+              0.39999999999999997
+            ]
+          },
+          {
+            "name": "Xスライド",
+            "point": [
+              0.19,
+              1.4,
+              1.2714165141263576
+            ]
+          },
+          {
+            "name": "タレット",
+            "point": [
+              0.08,
+              2.0451687575763358,
+              1.2714165141263576
+            ]
+          },
+          {
+            "name": "工具ホルダ",
+            "point": [
+              -0.08999999999999998,
+              1.58,
+              0.7914165141263574
+            ]
+          },
+          {
+            "name": "工具",
+            "point": [
+              -0.13,
+              1.5375,
+              0.5214165141263576
+            ]
+          }
+        ]
+      },
+      "stopped": {
+        "kind": "lathe",
+        "positions": {
+          "X": 77.54757546467361,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 4,
+          "depth": 1.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 5,
+          "d": 2.1
+        },
+        "labels": [
+          {
+            "name": "ベッド",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "主軸台",
+            "point": [
+              -1.75,
+              1.8450000000000002,
+              0
+            ]
+          },
+          {
+            "name": "テストバー",
+            "point": [
+              0.02499999999999991,
+              1.625,
+              0
+            ]
+          },
+          {
+            "name": "心押台",
+            "point": [
+              1.7999999999999998,
+              1.605,
+              0
+            ]
+          },
+          {
+            "name": "往復台",
+            "point": [
+              0.08,
+              0.98,
+              0.39999999999999997
+            ]
+          },
+          {
+            "name": "Xスライド",
+            "point": [
+              0.19,
+              1.4,
+              1.2714165141263576
+            ]
+          },
+          {
+            "name": "タレット",
+            "point": [
+              0.08,
+              2.0451687575763358,
+              1.2714165141263576
+            ]
+          },
+          {
+            "name": "工具ホルダ",
+            "point": [
+              -0.08999999999999998,
+              1.58,
+              0.7914165141263574
+            ]
+          },
+          {
+            "name": "工具",
+            "point": [
+              -0.13,
+              1.5375,
+              0.5214165141263576
+            ]
+          }
+        ]
+      },
+      "replay": {
+        "kind": "lathe",
+        "positions": {
+          "X": 78,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 4,
+          "depth": 1.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 5,
+          "d": 2.1
+        },
+        "labels": [
+          {
+            "name": "ベッド",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "主軸台",
+            "point": [
+              -1.75,
+              1.8450000000000002,
+              0
+            ]
+          },
+          {
+            "name": "テストバー",
+            "point": [
+              0.02499999999999991,
+              1.625,
+              0
+            ]
+          },
+          {
+            "name": "心押台",
+            "point": [
+              1.7999999999999998,
+              1.605,
+              0
+            ]
+          },
+          {
+            "name": "往復台",
+            "point": [
+              0.08,
+              0.98,
+              0.39999999999999997
+            ]
+          },
+          {
+            "name": "Xスライド",
+            "point": [
+              0.19,
+              1.4,
+              1.273
+            ]
+          },
+          {
+            "name": "タレット",
+            "point": [
+              0.08,
+              2.0451687575763358,
+              1.273
+            ]
+          },
+          {
+            "name": "工具ホルダ",
+            "point": [
+              -0.08999999999999998,
+              1.58,
+              0.7929999999999997
+            ]
+          },
+          {
+            "name": "工具",
+            "point": [
+              -0.13,
+              1.5375,
+              0.5229999999999999
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "lathe",
+      "axis": "Z",
+      "start": {
+        "kind": "lathe",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 4,
+          "depth": 1.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 5,
+          "d": 2.1
+        },
+        "labels": [
+          {
+            "name": "ベッド",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "主軸台",
+            "point": [
+              -1.75,
+              1.8450000000000002,
+              0
+            ]
+          },
+          {
+            "name": "テストバー",
+            "point": [
+              0.02499999999999991,
+              1.625,
+              0
+            ]
+          },
+          {
+            "name": "心押台",
+            "point": [
+              1.7999999999999998,
+              1.605,
+              0
+            ]
+          },
+          {
+            "name": "往復台",
+            "point": [
+              0.08,
+              0.98,
+              0.39999999999999997
+            ]
+          },
+          {
+            "name": "Xスライド",
+            "point": [
+              0.19,
+              1.4,
+              1
+            ]
+          },
+          {
+            "name": "タレット",
+            "point": [
+              0.08,
+              2.0451687575763358,
+              1
+            ]
+          },
+          {
+            "name": "工具ホルダ",
+            "point": [
+              -0.08999999999999998,
+              1.58,
+              0.5199999999999999
+            ]
+          },
+          {
+            "name": "工具",
+            "point": [
+              -0.13,
+              1.5375,
+              0.25
+            ]
+          }
+        ]
+      },
+      "moved": {
+        "kind": "lathe",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 77.54757546467361,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 4,
+          "depth": 1.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 5,
+          "d": 2.1
+        },
+        "labels": [
+          {
+            "name": "ベッド",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "主軸台",
+            "point": [
+              -1.75,
+              1.8450000000000002,
+              0
+            ]
+          },
+          {
+            "name": "テストバー",
+            "point": [
+              0.02499999999999991,
+              1.625,
+              0
+            ]
+          },
+          {
+            "name": "心押台",
+            "point": [
+              1.7999999999999998,
+              1.605,
+              0
+            ]
+          },
+          {
+            "name": "往復台",
+            "point": [
+              0.6228330282527152,
+              0.98,
+              0.39999999999999997
+            ]
+          },
+          {
+            "name": "Xスライド",
+            "point": [
+              0.7328330282527152,
+              1.4,
+              1
+            ]
+          },
+          {
+            "name": "タレット",
+            "point": [
+              0.6228330282527152,
+              2.0451687575763358,
+              1
+            ]
+          },
+          {
+            "name": "工具ホルダ",
+            "point": [
+              0.45283302825271526,
+              1.58,
+              0.5199999999999999
+            ]
+          },
+          {
+            "name": "工具",
+            "point": [
+              0.41283302825271523,
+              1.5375,
+              0.25
+            ]
+          }
+        ]
+      },
+      "stopped": {
+        "kind": "lathe",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 77.54757546467361,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 4,
+          "depth": 1.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 5,
+          "d": 2.1
+        },
+        "labels": [
+          {
+            "name": "ベッド",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "主軸台",
+            "point": [
+              -1.75,
+              1.8450000000000002,
+              0
+            ]
+          },
+          {
+            "name": "テストバー",
+            "point": [
+              0.02499999999999991,
+              1.625,
+              0
+            ]
+          },
+          {
+            "name": "心押台",
+            "point": [
+              1.7999999999999998,
+              1.605,
+              0
+            ]
+          },
+          {
+            "name": "往復台",
+            "point": [
+              0.6228330282527152,
+              0.98,
+              0.39999999999999997
+            ]
+          },
+          {
+            "name": "Xスライド",
+            "point": [
+              0.7328330282527152,
+              1.4,
+              1
+            ]
+          },
+          {
+            "name": "タレット",
+            "point": [
+              0.6228330282527152,
+              2.0451687575763358,
+              1
+            ]
+          },
+          {
+            "name": "工具ホルダ",
+            "point": [
+              0.45283302825271526,
+              1.58,
+              0.5199999999999999
+            ]
+          },
+          {
+            "name": "工具",
+            "point": [
+              0.41283302825271523,
+              1.5375,
+              0.25
+            ]
+          }
+        ]
+      },
+      "replay": {
+        "kind": "lathe",
+        "positions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 78,
+          "A": 0,
+          "C": 0
+        },
+        "config": {
+          "width": 4,
+          "depth": 1.68,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0
+        },
+        "size": {
+          "w": 5,
+          "d": 2.1
+        },
+        "labels": [
+          {
+            "name": "ベッド",
+            "point": [
+              0,
+              0.645,
+              0
+            ]
+          },
+          {
+            "name": "主軸台",
+            "point": [
+              -1.75,
+              1.8450000000000002,
+              0
+            ]
+          },
+          {
+            "name": "テストバー",
+            "point": [
+              0.02499999999999991,
+              1.625,
+              0
+            ]
+          },
+          {
+            "name": "心押台",
+            "point": [
+              1.7999999999999998,
+              1.605,
+              0
+            ]
+          },
+          {
+            "name": "往復台",
+            "point": [
+              0.6259999999999999,
+              0.98,
+              0.39999999999999997
+            ]
+          },
+          {
+            "name": "Xスライド",
+            "point": [
+              0.7359999999999999,
+              1.4,
+              1
+            ]
+          },
+          {
+            "name": "タレット",
+            "point": [
+              0.6259999999999999,
+              2.0451687575763358,
+              1
+            ]
+          },
+          {
+            "name": "工具ホルダ",
+            "point": [
+              0.4559999999999999,
+              1.58,
+              0.5199999999999999
+            ]
+          },
+          {
+            "name": "工具",
+            "point": [
+              0.41599999999999987,
+              1.5375,
+              0.25
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "horizontal X demo changed selected axis only",
+      "ok": true
+    },
+    {
+      "name": "horizontal X ベース mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal X ベース demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal X コラム mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal X コラム demo/slider same transform",
+      "ok": true,
+      "error": 3.0357660829594124e-18
+    },
+    {
+      "name": "horizontal X 主軸頭 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal X 主軸頭 demo/slider same transform",
+      "ok": true,
+      "error": 3.0357660829594124e-18
+    },
+    {
+      "name": "horizontal X パレット台 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal X パレット台 demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal X パレット mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal X パレット demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Y demo changed selected axis only",
+      "ok": true
+    },
+    {
+      "name": "horizontal Y ベース mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Y ベース demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Y コラム mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Y コラム demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Y 主軸頭 mechanical motion",
+      "ok": true,
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "name": "horizontal Y 主軸頭 demo/slider same transform",
+      "ok": true,
+      "error": 9.952975943416931e-17
+    },
+    {
+      "name": "horizontal Y パレット台 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Y パレット台 demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Y パレット mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Y パレット demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Z demo changed selected axis only",
+      "ok": true
+    },
+    {
+      "name": "horizontal Z ベース mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Z ベース demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Z コラム mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Z コラム demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Z 主軸頭 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Z 主軸頭 demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Z パレット台 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Z パレット台 demo/slider same transform",
+      "ok": true,
+      "error": 3.7730235602495554e-17
+    },
+    {
+      "name": "horizontal Z パレット mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "horizontal Z パレット demo/slider same transform",
+      "ok": true,
+      "error": 3.7730235602495554e-17
+    },
+    {
+      "name": "lathe X demo changed selected axis only",
+      "ok": true
+    },
+    {
+      "name": "lathe X ベッド mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X ベッド demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X 主軸台 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X 主軸台 demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X テストバー mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X テストバー demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X 心押台 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X 心押台 demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X 往復台 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X 往復台 demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X Xスライド mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X Xスライド demo/slider same transform",
+      "ok": true,
+      "error": 3.165870343657673e-17
+    },
+    {
+      "name": "lathe X タレット mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X タレット demo/slider same transform",
+      "ok": true,
+      "error": 3.165870343657673e-17
+    },
+    {
+      "name": "lathe X 工具ホルダ mechanical motion",
+      "ok": true,
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "name": "lathe X 工具ホルダ demo/slider same transform",
+      "ok": true,
+      "error": 3.165870343657673e-17
+    },
+    {
+      "name": "lathe X 工具 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe X 工具 demo/slider same transform",
+      "ok": true,
+      "error": 3.165870343657673e-17
+    },
+    {
+      "name": "lathe Z demo changed selected axis only",
+      "ok": true
+    },
+    {
+      "name": "lathe Z ベッド mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z ベッド demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z 主軸台 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z 主軸台 demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z テストバー mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z テストバー demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z 心押台 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z 心押台 demo/slider same transform",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z 往復台 mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z 往復台 demo/slider same transform",
+      "ok": true,
+      "error": 6.375108774214766e-17
+    },
+    {
+      "name": "lathe Z Xスライド mechanical motion",
+      "ok": true,
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "name": "lathe Z Xスライド demo/slider same transform",
+      "ok": true,
+      "error": 6.375108774214766e-17
+    },
+    {
+      "name": "lathe Z タレット mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z タレット demo/slider same transform",
+      "ok": true,
+      "error": 6.375108774214766e-17
+    },
+    {
+      "name": "lathe Z 工具ホルダ mechanical motion",
+      "ok": true,
+      "error": 0
+    },
+    {
+      "name": "lathe Z 工具ホルダ demo/slider same transform",
+      "ok": true,
+      "error": 6.375108774214766e-17
+    },
+    {
+      "name": "lathe Z 工具 mechanical motion",
+      "ok": true,
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "name": "lathe Z 工具 demo/slider same transform",
+      "ok": true,
+      "error": 6.375108774214766e-17
+    }
+  ]
+}

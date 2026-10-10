@@ -1,0 +1,1773 @@
+{
+  "passed": true,
+  "scope": "Independent support/assembly/finite-solid/contact/reversal audit. No actual-machine dimensional validation; no browser execution in this script.",
+  "sourceSha256": {
+    "src/accuracy-ui.js": "3ceaeeb87ea49d5922ae5e0cc41710233ef9bb7f52e5a8411396a01d8b5a63c4",
+    "src/reference-measurement-ui.js": "4f61d895955d73d8fc084780d28dd9fe49c6426398d890fe8b842e5f8e73db39",
+    "src/horizontal-parallelism-ui.js": "5abdd25753ce457a8029dd22136afce56050f651a444b5bf3c7d440c7968ae80",
+    "src/lathe-inspection-ui.js": "1a5ca02dc1928d7b7d30c1876ae649954610afc6d0fd5617384c752c4efb8431",
+    "src/lathe-inspection.js": "c8df25e25ce6ff6d8bc7962caea991277d488c4e12ab19632a59425793150787",
+    "src/machine-accuracy-ui.js": "9c33d5bab3bd1c508225879581cbe7ef8e6c60ecf5b0d8b3d15a206bc6f0d145",
+    "index.html": "de228d28fac23cc55b9ff914a29116500e53a1324b90cfd324ec00548132e7dd"
+  },
+  "testSha256": "54462c729488903b5335262372d7f958a1693ee79fadae146a313711c68826dd",
+  "summary": {
+    "states": 480,
+    "checks": 437569,
+    "fixtureContacts": 33792,
+    "barContacts": 17568,
+    "reverseScans": 2240,
+    "maxReadingErrorUm": 1.3515091268345714e-9,
+    "maxPointErrorM": 4.478363482004147e-15,
+    "maxArmDriftM": 1.7659178253678207e-15,
+    "maxRemainderUm": 0.00006958255499567301
+  },
+  "failureCount": 0,
+  "failures": [],
+  "retainedMountComparison": [
+    {
+      "key": "XY",
+      "input": "flat to E +0.010 mm / used seed 123456 / axes centre",
+      "beforeUm": 16.958999991184555,
+      "afterAppReinstalledAndRezeroedUm": 18.92271750635055,
+      "retainedMountStartUsingOldZeroUm": -1.0161003028523463,
+      "retainedMountEndUsingOldZeroUm": 15.487936453794509,
+      "retainedMountScanAfterStartRezeroUm": 16.504036756646855,
+      "interpretation": "The app repeats mounting and R alignment before start zero. Retaining the old mounting is a different, unsupported procedure; these values are explanatory counterfactuals, not failures."
+    },
+    {
+      "key": "XZ",
+      "input": "flat to E +0.010 mm / used seed 123456 / axes centre",
+      "beforeUm": 8.128999998996411,
+      "afterAppReinstalledAndRezeroedUm": 7.660753289992495,
+      "retainedMountStartUsingOldZeroUm": -1.000933841706353,
+      "retainedMountEndUsingOldZeroUm": 7.253347898278362,
+      "retainedMountScanAfterStartRezeroUm": 8.254281739984714,
+      "interpretation": "The app repeats mounting and R alignment before start zero. Retaining the old mounting is a different, unsupported procedure; these values are explanatory counterfactuals, not failures."
+    },
+    {
+      "key": "YZ",
+      "input": "flat to E +0.010 mm / used seed 123456 / axes centre",
+      "beforeUm": 14.119999994479521,
+      "afterAppReinstalledAndRezeroedUm": 14.989567756078237,
+      "retainedMountStartUsingOldZeroUm": -10.353195096547696,
+      "retainedMountEndUsingOldZeroUm": 3.413560859848869,
+      "retainedMountScanAfterStartRezeroUm": 13.766755956396565,
+      "interpretation": "The app repeats mounting and R alignment before start zero. Retaining the old mounting is a different, unsupported procedure; these values are explanatory counterfactuals, not failures."
+    }
+  ],
+  "examples": [
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "flat",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "XY": {
+          "actual": 0,
+          "expected": 0,
+          "display": "0"
+        },
+        "XZ": {
+          "actual": 0,
+          "expected": 0,
+          "display": "0"
+        },
+        "YZ": {
+          "actual": 0,
+          "expected": 0,
+          "display": "0"
+        },
+        "a": {
+          "actual": 0,
+          "expected": 0,
+          "display": "0"
+        },
+        "b": {
+          "actual": 0,
+          "expected": 0,
+          "display": "0"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "twist+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0.12512,
+        -0.12512,
+        0.04170666666666668,
+        -0.04170666666666668,
+        -0.04170666666666668,
+        0.04170666666666668,
+        -0.12512,
+        0.12512
+      ],
+      "readings": {
+        "XY": {
+          "actual": 32.76007388910117,
+          "expected": 32.760073889102905,
+          "display": "+33"
+        },
+        "XZ": {
+          "actual": -19.800017823147844,
+          "expected": -19.800017823062845,
+          "display": "-20"
+        },
+        "YZ": {
+          "actual": 0.0011902051497147959,
+          "expected": 0.0011902050525702812,
+          "display": "0"
+        },
+        "a": {
+          "actual": -28.349999963681732,
+          "expected": -28.349999963681732,
+          "display": "-28"
+        },
+        "b": {
+          "actual": -0.015861830279795264,
+          "expected": -0.015861830359592544,
+          "display": "0"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "twist-",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.12512,
+        0.12512,
+        -0.04170666666666668,
+        0.04170666666666668,
+        0.04170666666666668,
+        -0.04170666666666668,
+        0.12512,
+        -0.12512
+      ],
+      "readings": {
+        "XY": {
+          "actual": -32.759925389745995,
+          "expected": -32.75992538969222,
+          "display": "-33"
+        },
+        "XZ": {
+          "actual": 19.7999818219146,
+          "expected": 19.79998182194062,
+          "display": "+20"
+        },
+        "YZ": {
+          "actual": 0.0011902051497147959,
+          "expected": 0.0011902050525702812,
+          "display": "0"
+        },
+        "a": {
+          "actual": 28.349999963678265,
+          "expected": 28.349999963681732,
+          "display": "+28"
+        },
+        "b": {
+          "actual": -0.015861830279795264,
+          "expected": -0.015861830359592544,
+          "display": "0"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "plane",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.007199999999999984,
+        0.26480000000000004,
+        -0.09306666666666666,
+        0.17893333333333336,
+        -0.17893333333333336,
+        0.09306666666666666,
+        -0.26480000000000004,
+        0.007199999999999984
+      ],
+      "readings": {
+        "XY": {
+          "actual": -3.0357660829594124e-10,
+          "expected": -3.3306690738754696e-10,
+          "display": "0"
+        },
+        "XZ": {
+          "actual": 8.847089727481716e-11,
+          "expected": 0,
+          "display": "0"
+        },
+        "YZ": {
+          "actual": -3.0704605524789486e-10,
+          "expected": -2.220446049250313e-10,
+          "display": "0"
+        },
+        "a": {
+          "actual": 0,
+          "expected": 0,
+          "display": "0"
+        },
+        "b": {
+          "actual": 0,
+          "expected": 0,
+          "display": "0"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "A+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "XY": {
+          "actual": 0,
+          "expected": 4.440892098500626e-10,
+          "display": "0"
+        },
+        "XZ": {
+          "actual": -0.4681517143823727,
+          "expected": -0.4681517142279823,
+          "display": "0"
+        },
+        "YZ": {
+          "actual": -1.576067356935662,
+          "expected": -1.5760673566234118,
+          "display": "-2"
+        },
+        "a": {
+          "actual": -1.3407448456997235,
+          "expected": -1.340744845708397,
+          "display": "-1"
+        },
+        "b": {
+          "actual": -2.5543987886879336,
+          "expected": -2.554398788833651,
+          "display": "-3"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "B-",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        -0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "XY": {
+          "actual": 0,
+          "expected": 4.440892098500626e-10,
+          "display": "0"
+        },
+        "XZ": {
+          "actual": -0.4681495071375691,
+          "expected": -0.46814950702481206,
+          "display": "0"
+        },
+        "YZ": {
+          "actual": 1.5761065561004095,
+          "expected": 1.5761065561524512,
+          "display": "+2"
+        },
+        "a": {
+          "actual": -1.3407421650280664,
+          "expected": -1.3407421650402096,
+          "display": "-1"
+        },
+        "b": {
+          "actual": 2.554296863339564,
+          "expected": 2.5542968634974237,
+          "display": "+3"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "E+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "XY": {
+          "actual": 1.9637175195479084,
+          "expected": 1.9637175193536194,
+          "display": "+2"
+        },
+        "XZ": {
+          "actual": -0.46813963864265895,
+          "expected": -0.46813963856806584,
+          "display": "0"
+        },
+        "YZ": {
+          "actual": 0.86956251820966,
+          "expected": 0.8695625173318899,
+          "display": "+1"
+        },
+        "a": {
+          "actual": 0.35875981997841866,
+          "expected": 0.35875981998362283,
+          "display": "0"
+        },
+        "b": {
+          "actual": -0.10871368519120572,
+          "expected": -0.10871368508885704,
+          "display": "0"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "checker",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.05,
+        0,
+        0.05,
+        -0.05,
+        0,
+        0.05,
+        -0.05,
+        0
+      ],
+      "readings": {
+        "XY": {
+          "actual": 6.817463260588852e-10,
+          "expected": 1.3877787807814457e-10,
+          "display": "0"
+        },
+        "XZ": {
+          "actual": 5.143173954974545,
+          "expected": 5.143173955036994,
+          "display": "+5"
+        },
+        "YZ": {
+          "actual": 18.34219183440705,
+          "expected": 18.34219183396296,
+          "display": "+18"
+        },
+        "a": {
+          "actual": 14.721892510666592,
+          "expected": 14.72189251065792,
+          "display": "+15"
+        },
+        "b": {
+          "actual": 18.338110028855507,
+          "expected": 18.338110028943976,
+          "display": "+18"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "flat",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "XY": {
+          "actual": 16.958999991522823,
+          "expected": 16.958999991184555,
+          "display": "+17"
+        },
+        "XZ": {
+          "actual": 8.12899999891835,
+          "expected": 8.128999998996411,
+          "display": "+8"
+        },
+        "YZ": {
+          "actual": 14.119999995145655,
+          "expected": 14.119999994479521,
+          "display": "+14"
+        },
+        "a": {
+          "actual": 8.125810727274697,
+          "expected": 8.125810727274697,
+          "display": "+8"
+        },
+        "b": {
+          "actual": 14.118678122277545,
+          "expected": 14.118678122534284,
+          "display": "+14"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "twist+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0.12512,
+        -0.12512,
+        0.04170666666666668,
+        -0.04170666666666668,
+        -0.04170666666666668,
+        0.04170666666666668,
+        -0.12512,
+        0.12512
+      ],
+      "readings": {
+        "XY": {
+          "actual": 49.7190737171211,
+          "expected": 49.71907371715406,
+          "display": "+50"
+        },
+        "XZ": {
+          "actual": -11.67090485314215,
+          "expected": -11.670904853051944,
+          "display": "-12"
+        },
+        "YZ": {
+          "actual": 14.120861990042991,
+          "expected": 14.120861990121053,
+          "display": "+14"
+        },
+        "a": {
+          "actual": -20.222646999511554,
+          "expected": -20.22264699950982,
+          "display": "-20"
+        },
+        "b": {
+          "actual": 14.111148876136056,
+          "expected": 14.11114887601983,
+          "display": "+14"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "twist-",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.12512,
+        0.12512,
+        -0.04170666666666668,
+        0.04170666666666668,
+        0.04170666666666668,
+        -0.04170666666666668,
+        0.12512,
+        -0.12512
+      ],
+      "readings": {
+        "XY": {
+          "actual": -15.800925456338142,
+          "expected": -15.80092545650294,
+          "display": "-16"
+        },
+        "XZ": {
+          "actual": 27.92886883543934,
+          "expected": 27.92886883539597,
+          "display": "+28"
+        },
+        "YZ": {
+          "actual": 14.121518244694306,
+          "expected": 14.121518244376851,
+          "display": "+14"
+        },
+        "a": {
+          "actual": 36.47426811699724,
+          "expected": 36.4742681169955,
+          "display": "+36"
+        },
+        "b": {
+          "actual": 14.094487031818606,
+          "expected": 14.094487032007692,
+          "display": "+14"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "plane",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.007199999999999984,
+        0.26480000000000004,
+        -0.09306666666666666,
+        0.17893333333333336,
+        -0.17893333333333336,
+        0.09306666666666666,
+        -0.26480000000000004,
+        0.007199999999999984
+      ],
+      "readings": {
+        "XY": {
+          "actual": 16.9589999909122,
+          "expected": 16.958999990882713,
+          "display": "+17"
+        },
+        "XZ": {
+          "actual": 8.128999999090086,
+          "expected": 8.128999999034574,
+          "display": "+8"
+        },
+        "YZ": {
+          "actual": 14.119999994897588,
+          "expected": 14.119999994975652,
+          "display": "+14"
+        },
+        "a": {
+          "actual": 8.125810727278166,
+          "expected": 8.125810727267757,
+          "display": "+8"
+        },
+        "b": {
+          "actual": 14.118678122166523,
+          "expected": 14.118678122343464,
+          "display": "+14"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "A+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "XY": {
+          "actual": 16.95899999130078,
+          "expected": 16.9589999914066,
+          "display": "+17"
+        },
+        "XZ": {
+          "actual": 7.660858300444218,
+          "expected": 7.660858300673201,
+          "display": "+8"
+        },
+        "YZ": {
+          "actual": 12.543953340580366,
+          "expected": 12.543953340108521,
+          "display": "+13"
+        },
+        "a": {
+          "actual": 6.786374206074059,
+          "expected": 6.7863742060705885,
+          "display": "+7"
+        },
+        "b": {
+          "actual": 11.564709564752807,
+          "expected": 11.564709565193427,
+          "display": "+12"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "B-",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        -0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "XY": {
+          "actual": 16.958999991744868,
+          "expected": 16.95899999185069,
+          "display": "+17"
+        },
+        "XZ": {
+          "actual": 7.660860507716777,
+          "expected": 7.660860507931883,
+          "display": "+8"
+        },
+        "YZ": {
+          "actual": 15.6961272450417,
+          "expected": 15.696127244422403,
+          "display": "+16"
+        },
+        "a": {
+          "actual": 6.783780290717245,
+          "expected": 6.7837802907068365,
+          "display": "+7"
+        },
+        "b": {
+          "actual": 16.67340512916983,
+          "expected": 16.673405129969538,
+          "display": "+17"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "E+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "XY": {
+          "actual": 18.922717506572596,
+          "expected": 18.92271750635055,
+          "display": "+19"
+        },
+        "XZ": {
+          "actual": 7.660753289978617,
+          "expected": 7.660753289992495,
+          "display": "+8"
+        },
+        "YZ": {
+          "actual": 14.989567756289873,
+          "expected": 14.989567756078237,
+          "display": "+15"
+        },
+        "a": {
+          "actual": 8.484604381438569,
+          "expected": 8.484604381443772,
+          "display": "+8"
+        },
+        "b": {
+          "actual": 14.009860105749366,
+          "expected": 14.009860105895083,
+          "display": "+14"
+        }
+      }
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "checker",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.05,
+        0,
+        0.05,
+        -0.05,
+        0,
+        0.05,
+        -0.05,
+        0
+      ],
+      "readings": {
+        "XY": {
+          "actual": 16.95899999096945,
+          "expected": 16.958999990636382,
+          "display": "+17"
+        },
+        "XZ": {
+          "actual": 13.272802409336828,
+          "expected": 13.272802409394075,
+          "display": "+13"
+        },
+        "YZ": {
+          "actual": 32.461539157200775,
+          "expected": 32.461539156626586,
+          "display": "+32"
+        },
+        "a": {
+          "actual": 22.839009215316203,
+          "expected": 22.839009215316203,
+          "display": "+23"
+        },
+        "b": {
+          "actual": 32.451635022932855,
+          "expected": 32.45163502302653,
+          "display": "+32"
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "flat",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "face": {
+          "actual": 0,
+          "expected": 0
+        },
+        "flat": {
+          "actual": 0,
+          "expected": 0
+        },
+        "dx": {
+          "actual": -2.7755575615628914e-11,
+          "expected": -2.7755575615628914e-11
+        },
+        "dy": {
+          "actual": 0,
+          "expected": 0
+        },
+        "side": {
+          "actual": 0,
+          "expected": 0
+        },
+        "top": {
+          "actual": 0,
+          "expected": 0
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "twist+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0.084,
+        0,
+        -0.084,
+        -0.084,
+        0,
+        0.084
+      ],
+      "readings": {
+        "face": {
+          "actual": -5.204170427930421e-12,
+          "expected": -1.0408340855860843e-11
+        },
+        "flat": {
+          "actual": -12.599855998862362,
+          "expected": -12.599855998871035
+        },
+        "dx": {
+          "actual": -76.85988694055558,
+          "expected": -76.85988694055558
+        },
+        "dy": {
+          "actual": -1.2785399647369753,
+          "expected": -1.2785399647369753
+        },
+        "side": {
+          "actual": 12.599974122628337,
+          "expected": 12.599974122628337
+        },
+        "top": {
+          "actual": -0.00326968979322273,
+          "expected": -0.0032696898175088585
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "twist-",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.084,
+        0,
+        0.084,
+        0.084,
+        0,
+        -0.084
+      ],
+      "readings": {
+        "face": {
+          "actual": -5.204170427930421e-12,
+          "expected": -1.0408340855860843e-11
+        },
+        "flat": {
+          "actual": 12.600143998771005,
+          "expected": 12.600143998724167
+        },
+        "dx": {
+          "actual": 76.86011246541277,
+          "expected": 76.86011246541277
+        },
+        "dy": {
+          "actual": 1.271460024892801,
+          "expected": 1.271460024892801
+        },
+        "side": {
+          "actual": -12.600025872628457,
+          "expected": -12.600025872624986
+        },
+        "top": {
+          "actual": -0.003269711012360288,
+          "expected": -0.0032697109117463263
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "plane",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.1412,
+        0.058800000000000005,
+        0.25880000000000003,
+        -0.25880000000000003,
+        -0.058800000000000005,
+        0.1412
+      ],
+      "readings": {
+        "face": {
+          "actual": 2.2551405187698492e-11,
+          "expected": 1.734723475976807e-11
+        },
+        "flat": {
+          "actual": 0,
+          "expected": -2.2551405187698492e-10
+        },
+        "dx": {
+          "actual": -3.628056592134376e-11,
+          "expected": -3.630089305766682e-11
+        },
+        "dy": {
+          "actual": 6.421358263931758e-12,
+          "expected": 6.421356840916417e-12
+        },
+        "side": {
+          "actual": 0,
+          "expected": 0
+        },
+        "top": {
+          "actual": -9.8879238130678e-11,
+          "expected": 0
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "A+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "face": {
+          "actual": 2.42861286636753e-11,
+          "expected": -1.0408340855860843e-11
+        },
+        "flat": {
+          "actual": 2.42861286636753e-11,
+          "expected": 0
+        },
+        "dx": {
+          "actual": -4.374998979301028,
+          "expected": -4.374998979328785
+        },
+        "dy": {
+          "actual": -0.2250140182138905,
+          "expected": -0.22501401799184562
+        },
+        "side": {
+          "actual": -0.000008831818956722692,
+          "expected": -0.000008831851916468736
+        },
+        "top": {
+          "actual": -0.7500000000059542,
+          "expected": -0.7500000001152418
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "B-",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        -0.01,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "face": {
+          "actual": 6.938893903907228e-12,
+          "expected": 0
+        },
+        "flat": {
+          "actual": 0.7500005099955742,
+          "expected": 0.7500005101551688
+        },
+        "dx": {
+          "actual": -4.174998492487208,
+          "expected": -4.174998492487208
+        },
+        "dy": {
+          "actual": -0.37412622717090743,
+          "expected": -0.37412622694886283
+        },
+        "side": {
+          "actual": -0.7500410036404698,
+          "expected": -0.7500410036734295
+        },
+        "top": {
+          "actual": -1.500011584991412,
+          "expected": -1.500011585178762
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "E+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0
+      ],
+      "readings": {
+        "face": {
+          "actual": -1.734723475976807e-12,
+          "expected": -1.0408340855860843e-11
+        },
+        "flat": {
+          "actual": 0.750000510090984,
+          "expected": 0.7500005101516993
+        },
+        "dx": {
+          "actual": -4.1749996085866306,
+          "expected": -4.174999608558875
+        },
+        "dy": {
+          "actual": 0.5258700230062393,
+          "expected": 0.5258700232282839
+        },
+        "side": {
+          "actual": -0.7500481167977552,
+          "expected": -0.7500481167752038
+        },
+        "top": {
+          "actual": 1.4999884152162857,
+          "expected": 1.4999884152509801
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "ideal",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "checker",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.05,
+        0,
+        0.05,
+        -0.05,
+        0,
+        0.05
+      ],
+      "readings": {
+        "face": {
+          "actual": 0,
+          "expected": 0
+        },
+        "flat": {
+          "actual": 0,
+          "expected": 0
+        },
+        "dx": {
+          "actual": -2.7755575615628914e-11,
+          "expected": -2.7755575615628914e-11
+        },
+        "dy": {
+          "actual": -7.590770460114138e-11,
+          "expected": -7.590770460114138e-11
+        },
+        "side": {
+          "actual": 0,
+          "expected": 0
+        },
+        "top": {
+          "actual": -6.245004513516506e-11,
+          "expected": 0
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "flat",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "face": {
+          "actual": -3.7579390983043943,
+          "expected": -3.757939098309598
+        },
+        "flat": {
+          "actual": 7.826992527158391,
+          "expected": 7.826992526990123
+        },
+        "dx": {
+          "actual": 123.79637200451012,
+          "expected": 123.79637200451009
+        },
+        "dy": {
+          "actual": -2.65720293390892,
+          "expected": -2.65720293390892
+        },
+        "side": {
+          "actual": -16.958999990972917,
+          "expected": -16.95899999096251
+        },
+        "top": {
+          "actual": -0.00575215427546516,
+          "expected": -0.005752154308424906
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "twist+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0.084,
+        0,
+        -0.084,
+        -0.084,
+        0,
+        0.084
+      ],
+      "readings": {
+        "face": {
+          "actual": -3.7579390983078635,
+          "expected": -3.7579390983165375
+        },
+        "flat": {
+          "actual": -4.772863466314184,
+          "expected": -4.7728634663367355
+        },
+        "dx": {
+          "actual": 46.93637205810718,
+          "expected": 46.936372058107175
+        },
+        "dy": {
+          "actual": -3.9330018612477233,
+          "expected": -3.9330018612477233
+        },
+        "side": {
+          "actual": -4.3590258746815245,
+          "expected": -4.359025874683259
+        },
+        "top": {
+          "actual": 0.0013315938664215654,
+          "expected": 0.0013315937692770508
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "twist-",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.084,
+        0,
+        0.084,
+        0.084,
+        0,
+        -0.084
+      ],
+      "readings": {
+        "face": {
+          "actual": -3.7579390983078635,
+          "expected": -3.7579390983165375
+        },
+        "flat": {
+          "actual": 20.427136522744444,
+          "expected": 20.427136522737506
+        },
+        "dx": {
+          "actual": 200.65659722607074,
+          "expected": 200.65659722607072
+        },
+        "dy": {
+          "actual": -1.3884839242100382,
+          "expected": -1.3884839242100382
+        },
+        "side": {
+          "actual": -29.559025829697937,
+          "expected": -29.559025829711814
+        },
+        "top": {
+          "actual": -0.019375353115316796,
+          "expected": -0.01937535310664318
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "plane",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.1412,
+        0.058800000000000005,
+        0.25880000000000003,
+        -0.25880000000000003,
+        -0.058800000000000005,
+        0.1412
+      ],
+      "readings": {
+        "face": {
+          "actual": -3.757939098280108,
+          "expected": -3.757939098292251
+        },
+        "flat": {
+          "actual": 7.826992527160126,
+          "expected": 7.82699252707339
+        },
+        "dx": {
+          "actual": 123.7963720045016,
+          "expected": 123.79637200450155
+        },
+        "dy": {
+          "actual": -2.6572029338268557,
+          "expected": -2.6572029338268557
+        },
+        "side": {
+          "actual": -16.958999990971183,
+          "expected": -16.95899999096251
+        },
+        "top": {
+          "actual": -0.005752154365670781,
+          "expected": -0.005752154353527716
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "A+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "face": {
+          "actual": -3.757939098280108,
+          "expected": -3.757939098309598
+        },
+        "flat": {
+          "actual": 7.826992527189616,
+          "expected": 7.8269925269935925
+        },
+        "dx": {
+          "actual": 119.42126815891294,
+          "expected": 119.42126815888518
+        },
+        "dy": {
+          "actual": -2.8820609283116085,
+          "expected": -2.882060928089564
+        },
+        "side": {
+          "actual": -16.959008822741566,
+          "expected": -16.959008822769324
+        },
+        "top": {
+          "actual": -0.7557521526316974,
+          "expected": -0.7557521526473099
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "B-",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        -0.01,
+        0,
+        0,
+        0,
+        0
+      ],
+      "readings": {
+        "face": {
+          "actual": -3.75793909829919,
+          "expected": -3.7579390983026597
+        },
+        "flat": {
+          "actual": 8.576993036918044,
+          "expected": 8.57699303708631
+        },
+        "dx": {
+          "actual": 119.62117049914818,
+          "expected": 119.62117049914819
+        },
+        "dy": {
+          "actual": -3.0311802696433214,
+          "expected": -3.031180269421277
+        },
+        "side": {
+          "actual": -17.70904099972215,
+          "expected": -17.7090409997048
+        },
+        "top": {
+          "actual": -1.5063800138607335,
+          "expected": -1.5063800138485905
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "E+",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0
+      ],
+      "readings": {
+        "face": {
+          "actual": -3.7579390983043943,
+          "expected": -3.757939098309598
+        },
+        "flat": {
+          "actual": 8.5769930370308,
+          "expected": 8.57699303708631
+        },
+        "dx": {
+          "actual": 119.62164423343124,
+          "expected": 119.62164423345898
+        },
+        "dy": {
+          "actual": -2.131184019523817,
+          "expected": -2.1311840193017724
+        },
+        "side": {
+          "actual": -17.709048099900233,
+          "expected": -17.70904809984125
+        },
+        "top": {
+          "actual": 1.4936199810682005,
+          "expected": 1.4936199810265671
+        }
+      }
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "profile": "used/123456",
+      "layout": {
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "input": "checker",
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "heightsMm": [
+        -0.05,
+        0,
+        0.05,
+        -0.05,
+        0,
+        0.05
+      ],
+      "readings": {
+        "face": {
+          "actual": -3.7579390983043943,
+          "expected": -3.7579390983165375
+        },
+        "flat": {
+          "actual": 7.826992527158391,
+          "expected": 7.826992526990123
+        },
+        "dx": {
+          "actual": 123.79637200451012,
+          "expected": 123.79637200451009
+        },
+        "dy": {
+          "actual": -2.657202934022849,
+          "expected": -2.657202934022849
+        },
+        "side": {
+          "actual": -16.958999990972917,
+          "expected": -16.95899999096945
+        },
+        "top": {
+          "actual": -0.005752154336180482,
+          "expected": -0.005752154311894353
+        }
+      }
+    }
+  ]
+}

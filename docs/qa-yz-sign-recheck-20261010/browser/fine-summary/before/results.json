@@ -1,0 +1,1570 @@
+[
+  {
+    "label": "seed2-initial",
+    "seed": 2,
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 75,
+      "A": 0,
+      "C": 0
+    },
+    "supportHeights": [
+      -0.15,
+      0.15,
+      -0.04,
+      0.141,
+      -0.138,
+      0.125,
+      -0.131,
+      -0.112
+    ],
+    "initialHeights": [
+      -0.15,
+      0.15,
+      -0.04,
+      0.141,
+      -0.138,
+      0.125,
+      -0.131,
+      -0.112
+    ],
+    "local": -12.751095616388707,
+    "initialLocal": -12.751095616388707,
+    "dial": 24.577125133814352,
+    "initialDial": 24.577125133814352,
+    "display": "+25",
+    "fine": "<p class=\"fine-pair-reading similar\" data-pair=\"YZ\" data-before=\"-12.751095616388707\" data-current=\"-12.751095616388707\" data-delta=\"0\" data-trend=\"similar\" data-direction=\"unchanged\">YZ：初期からほぼ同じ（軸間の関係はほぼ不変）</p>",
+    "hiddenMetric": "<strong id=\"accuracy-current-YZ\" data-value=\"-6.375547808194353\">-6.38 µm</strong>",
+    "hiddenMetricContainer": "<div hidden=\"\" class=\"card accuracy-card\">\n<div class=\"section-title\"><h2>支持調整で何が変わる？</h2><span id=\"accuracyLength\" class=\"pill\">500 mmで確認</span></div",
+    "localDiagramTitle": "YZ · 局所角度",
+    "localDiagramNote": "現在位置の局所的な軸間角度差を300 mm換算した補助図です。常設の基準器による有限走査の測定図・指示値とは別です。基準軸を固定し、共通原点（接触ゼロ位置ではありません）から測る軸へ伸ばします。白い点は理想の直角、色の点は現在の終点。点を結ぶ細線は直角との差、薄い面は初期からの変化です。XYはX基準でY、XZはX基準でZ、YZはY基準でZを測り、旋盤はZ基準でXを測ります。拡大の割合は一定で、範囲外では線の変化を省略する場合があります。始点合わせは本体の精度をゼロにしません。模型の回転方向とは別の図です。狭い欄では図を左右へ動かせます。",
+    "localDiagramReference": {
+      "zero": "手前下",
+      "baseDirection": "上",
+      "measureDirection": "奥",
+      "positive": "下",
+      "negative": "上",
+      "plane": "垂直",
+      "projection": [
+        0,
+        -1,
+        -0.85,
+        0.45,
+        72.9,
+        74.7
+      ]
+    },
+    "localTip": [
+      50.75164572664943,
+      52.64165505943119
+    ],
+    "localIdeal": [
+      50.80000000000001,
+      54.400000000000006
+    ],
+    "bodyUp": [
+      0.0000660110297349213,
+      0.9999999934267407,
+      0.00009374999899681264
+    ],
+    "bodyPosture": {
+      "front": -93.7499993383975,
+      "right": 66.01103007294887
+    },
+    "physicalY": [
+      0.0000660110297349213,
+      0.9999999934267407,
+      0.00009374999899681264
+    ],
+    "physicalZ": [
+      -0.00006042437163806444,
+      -0.00008099491475952337,
+      0.9999999948943598
+    ],
+    "actualHeadY": [
+      0.00006601102973493094,
+      0.9999999934267407,
+      0.00009374999902316576
+    ],
+    "sceneAxisPaths": [
+      {
+        "key": "X",
+        "world": [
+          [
+            -0.5807258165931383,
+            2.091271452991584,
+            0.4232567662012076
+          ],
+          [
+            0.619206906400435,
+            2.103978068734681,
+            0.4232098025406426
+          ]
+        ]
+      },
+      {
+        "key": "Y",
+        "world": [
+          [
+            0.018968345354318936,
+            2.1203467760304044,
+            -0.03483317967606828
+          ],
+          [
+            0.0366881354749711,
+            3.3199524074873437,
+            -0.009686847639814953
+          ]
+        ]
+      },
+      {
+        "key": "Z",
+        "world": [
+          [
+            0.001030462127010105,
+            1.4297969018069814,
+            -1.1108647110320553
+          ],
+          [
+            -0.014853167304231389,
+            1.4082116414807795,
+            0.08883599616651094
+          ]
+        ]
+      }
+    ],
+    "finite": {
+      "start": {
+        "point": [
+          -0.00003456490760419902,
+          1.630049273190099,
+          -0.5499981070724926
+        ],
+        "normal": [
+          0.00006601102973492131,
+          0.9999999934267408,
+          0.00009374999899688023
+        ],
+        "body": [
+          -0.00003390479730684981,
+          1.6400492731243665,
+          -0.5499971695725027
+        ],
+        "probe": [
+          -0.00006601102973492131,
+          -0.9999999934267408,
+          -0.00009374999899688023
+        ]
+      },
+      "end": {
+        "point": [
+          -0.000054779167377375786,
+          1.6300194204266847,
+          -0.24991310189883192
+        ],
+        "normal": [
+          0.00006385909646049557,
+          0.9999999815105914,
+          0.00018138586676430044
+        ],
+        "body": [
+          -0.00003390479730684982,
+          1.6400492731243668,
+          -0.5499971695725026
+        ],
+        "probe": [
+          -0.00006601102973492133,
+          -0.9999999934267407,
+          -0.00009374999899688023
+        ]
+      },
+      "normal": [
+        0.00006385909646049557,
+        0.9999999815105914,
+        0.00018138586676430044
+      ],
+      "bodyNormal": 0.009975422836537308,
+      "scanMarkup": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・奥・上側を0とした300 mmの仮想測定 +25 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"-12.751095616388707\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"24.577125133814352\" data-physical-reading-microns=\"24.577125133814352\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.009975422836537308\" data-probe-normal=\"-0.9999999961576618\" data-probe-along=\"0.00008763586849867952\" data-diagram-limited=\"true\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,11H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L30,31.968811666193435\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"31.004817109003966\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,31.004817109003966L30,31.968811666193435\" class=\"scan-probe\"></path><rect x=\"30\" y=\"28.968811666193435\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(7.841082290170383 30 31.968811666193435)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>"
+    },
+    "detail": "YZ +25 µmYZ↑奥計器:頭RS0相対手前押込＋上直角マスタ：パレット上／計器：主軸頭に固定。上側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をYへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をYへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 奥・上側の●0でゼロ合わせ。③ パレット台＋ワークを部材＋Z・奥へ300 mm（NC指令の符号ではありません）。基準器に対する計器は手前へ。測定子が本体へ上に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝上、図の上＝奥。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張します。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+150.0 → +450.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から360 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：+25 µm／現在：+25 µm（同じ区間で各々ゼロ）。従来の局所角度差：-4 µm／300 mm換算。上の表示値とは別です。",
+    "visibility": {
+      "fine": false,
+      "hiddenMetrics": false,
+      "localDiagram": false,
+      "upper": true
+    }
+  },
+  {
+    "label": "seed2-flat-fine",
+    "seed": 2,
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 75,
+      "A": 0,
+      "C": 0
+    },
+    "supportHeights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "initialHeights": [
+      -0.15,
+      0.15,
+      -0.04,
+      0.141,
+      -0.138,
+      0.125,
+      -0.131,
+      -0.112
+    ],
+    "local": 34.53,
+    "initialLocal": -12.751095616388707,
+    "dial": -10.358999998042947,
+    "initialDial": 24.577125133814352,
+    "display": "-10",
+    "fine": "<p class=\"fine-pair-reading worse\" data-pair=\"YZ\" data-before=\"-12.751095616388707\" data-current=\"34.53\" data-delta=\"47.28109561638871\" data-trend=\"worse\" data-direction=\"opened\">YZ：初期より直角から離れた</p>",
+    "hiddenMetric": "<strong id=\"accuracy-current-YZ\" data-value=\"17.265\">+17.27 µm</strong>",
+    "hiddenMetricContainer": "<div hidden=\"\" class=\"card accuracy-card\">\n<div class=\"section-title\"><h2>支持調整で何が変わる？</h2><span id=\"accuracyLength\" class=\"pill\">500 mmで確認</span></div",
+    "localDiagramTitle": "YZ · 局所角度",
+    "localDiagramNote": "現在位置の局所的な軸間角度差を300 mm換算した補助図です。常設の基準器による有限走査の測定図・指示値とは別です。基準軸を固定し、共通原点（接触ゼロ位置ではありません）から測る軸へ伸ばします。白い点は理想の直角、色の点は現在の終点。点を結ぶ細線は直角との差、薄い面は初期からの変化です。XYはX基準でY、XZはX基準でZ、YZはY基準でZを測り、旋盤はZ基準でXを測ります。拡大の割合は一定で、範囲外では線の変化を省略する場合があります。始点合わせは本体の精度をゼロにしません。模型の回転方向とは別の図です。狭い欄では図を左右へ動かせます。",
+    "localDiagramReference": {
+      "zero": "手前下",
+      "baseDirection": "上",
+      "measureDirection": "奥",
+      "positive": "下",
+      "negative": "上",
+      "plane": "垂直",
+      "projection": [
+        0,
+        -1,
+        -0.85,
+        0.45,
+        72.9,
+        74.7
+      ]
+    },
+    "localTip": [
+      50.44616477112742,
+      59.397543977767214
+    ],
+    "localIdeal": [
+      50.80000000000001,
+      54.400000000000006
+    ],
+    "bodyUp": [
+      0.00010999999977816667,
+      0.99999999395,
+      0
+    ],
+    "bodyPosture": {
+      "front": 0,
+      "right": 110
+    },
+    "physicalY": [
+      0.00010999999977816667,
+      0.99999999395,
+      0
+    ],
+    "physicalZ": [
+      -0.00006042999996322045,
+      -0.00003452335290202193,
+      0.9999999975781766
+    ],
+    "actualHeadY": [
+      0.00010999999977816985,
+      0.9999999939499999,
+      0
+    ],
+    "sceneAxisPaths": [
+      {
+        "key": "X",
+        "world": [
+          [
+            -0.568268313412687,
+            2.1142187827530323,
+            0.3769999999999999
+          ],
+          [
+            0.6317316865873129,
+            2.1142187827530323,
+            0.3769999999999999
+          ]
+        ]
+      },
+      {
+        "key": "Y",
+        "world": [
+          [
+            0.031731686587312936,
+            2.114218782753032,
+            -0.065
+          ],
+          [
+            0.06124953457551104,
+            3.3138556847571947,
+            -0.065
+          ]
+        ]
+      },
+      {
+        "key": "Z",
+        "world": [
+          [
+            0.0035475068960987514,
+            1.4190495424232936,
+            -1.1124688551597273
+          ],
+          [
+            -0.012669667486066816,
+            1.4101790083673538,
+            0.08738876842759702
+          ]
+        ]
+      }
+    ],
+    "finite": {
+      "start": {
+        "point": [
+          0.000025035499936748554,
+          1.6299948196215648,
+          -0.5500000003632735
+        ],
+        "normal": [
+          0.00010999999977816653,
+          0.99999999395,
+          0
+        ],
+        "body": [
+          0.00002613549993453022,
+          1.6399948195610647,
+          -0.5500000003632735
+        ],
+        "probe": [
+          -0.00010999999977816653,
+          -0.99999999395,
+          0
+        ]
+      },
+      "end": {
+        "point": [
+          0.00000690649994778242,
+          1.629984462615694,
+          -0.2500000010898204
+        ],
+        "normal": [
+          0.00010999999977816653,
+          0.99999999395,
+          0
+        ],
+        "body": [
+          0.00002613549993453018,
+          1.6399948195610647,
+          -0.5500000003632735
+        ],
+        "probe": [
+          -0.00010999999977816653,
+          -0.99999999395,
+          0
+        ]
+      },
+      "normal": [
+        0.00010999999977816653,
+        0.99999999395,
+        0
+      ],
+      "bodyNormal": 0.010010358999998003,
+      "scanMarkup": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・奥・上側を0とした300 mmの仮想測定 -10 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"34.53\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"-10.358999998042947\" data-physical-reading-microns=\"-10.358999998042947\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.010010358999998003\" data-probe-normal=\"-1\" data-probe-along=\"0\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,11H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.726499999667176,30.999999958829008\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999958829008\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999958829008L35.726499999667176,30.999999958829008\" class=\"scan-probe\"></path><rect x=\"35.726499999667176\" y=\"27.999999958829008\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0 35.726499999667176 30.999999958829008)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>"
+    },
+    "detail": "YZ -10 µmYZ↑奥計器:頭RS0相対手前押込＋上直角マスタ：パレット上／計器：主軸頭に固定。上側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をYへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をYへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 奥・上側の●0でゼロ合わせ。③ パレット台＋ワークを部材＋Z・奥へ300 mm（NC指令の符号ではありません）。基準器に対する計器は手前へ。測定子が本体へ上に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝上、図の上＝奥。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張します。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+150.0 → +450.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から360 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：+25 µm／現在：-10 µm（同じ区間で各々ゼロ）。従来の局所角度差：+10 µm／300 mm換算。上の表示値とは別です。",
+    "visibility": {
+      "fine": true,
+      "hiddenMetrics": false,
+      "localDiagram": false,
+      "upper": true
+    }
+  },
+  {
+    "label": "seed2-flat-local",
+    "seed": 2,
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 75,
+      "A": 0,
+      "C": 0
+    },
+    "supportHeights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "initialHeights": [
+      -0.15,
+      0.15,
+      -0.04,
+      0.141,
+      -0.138,
+      0.125,
+      -0.131,
+      -0.112
+    ],
+    "local": 34.53,
+    "initialLocal": -12.751095616388707,
+    "dial": -10.358999998042947,
+    "initialDial": 24.577125133814352,
+    "display": "-10",
+    "fine": "<p class=\"fine-pair-reading worse\" data-pair=\"YZ\" data-before=\"-12.751095616388707\" data-current=\"34.53\" data-delta=\"47.28109561638871\" data-trend=\"worse\" data-direction=\"opened\">YZ：初期より直角から離れた</p>",
+    "hiddenMetric": "<strong id=\"accuracy-current-YZ\" data-value=\"17.265\">+17.27 µm</strong>",
+    "hiddenMetricContainer": "<div hidden=\"\" class=\"card accuracy-card\">\n<div class=\"section-title\"><h2>支持調整で何が変わる？</h2><span id=\"accuracyLength\" class=\"pill\">500 mmで確認</span></div",
+    "localDiagramTitle": "YZ · 局所角度",
+    "localDiagramNote": "現在位置の局所的な軸間角度差を300 mm換算した補助図です。常設の基準器による有限走査の測定図・指示値とは別です。基準軸を固定し、共通原点（接触ゼロ位置ではありません）から測る軸へ伸ばします。白い点は理想の直角、色の点は現在の終点。点を結ぶ細線は直角との差、薄い面は初期からの変化です。XYはX基準でY、XZはX基準でZ、YZはY基準でZを測り、旋盤はZ基準でXを測ります。拡大の割合は一定で、範囲外では線の変化を省略する場合があります。始点合わせは本体の精度をゼロにしません。模型の回転方向とは別の図です。狭い欄では図を左右へ動かせます。",
+    "localDiagramReference": {
+      "zero": "手前下",
+      "baseDirection": "上",
+      "measureDirection": "奥",
+      "positive": "下",
+      "negative": "上",
+      "plane": "垂直",
+      "projection": [
+        0,
+        -1,
+        -0.85,
+        0.45,
+        72.9,
+        74.7
+      ]
+    },
+    "localTip": [
+      50.44616477112742,
+      59.397543977767214
+    ],
+    "localIdeal": [
+      50.80000000000001,
+      54.400000000000006
+    ],
+    "bodyUp": [
+      0.00010999999977816667,
+      0.99999999395,
+      0
+    ],
+    "bodyPosture": {
+      "front": 0,
+      "right": 110
+    },
+    "physicalY": [
+      0.00010999999977816667,
+      0.99999999395,
+      0
+    ],
+    "physicalZ": [
+      -0.00006042999996322045,
+      -0.00003452335290202193,
+      0.9999999975781766
+    ],
+    "actualHeadY": [
+      0.00010999999977816985,
+      0.9999999939499999,
+      0
+    ],
+    "sceneAxisPaths": [
+      {
+        "key": "X",
+        "world": [
+          [
+            -0.568268313412687,
+            2.1142187827530323,
+            0.3769999999999999
+          ],
+          [
+            0.6317316865873129,
+            2.1142187827530323,
+            0.3769999999999999
+          ]
+        ]
+      },
+      {
+        "key": "Y",
+        "world": [
+          [
+            0.031731686587312936,
+            2.114218782753032,
+            -0.065
+          ],
+          [
+            0.06124953457551104,
+            3.3138556847571947,
+            -0.065
+          ]
+        ]
+      },
+      {
+        "key": "Z",
+        "world": [
+          [
+            0.0035475068960987514,
+            1.4190495424232936,
+            -1.1124688551597273
+          ],
+          [
+            -0.012669667486066816,
+            1.4101790083673538,
+            0.08738876842759702
+          ]
+        ]
+      }
+    ],
+    "finite": {
+      "start": {
+        "point": [
+          0.000025035499936748554,
+          1.6299948196215648,
+          -0.5500000003632735
+        ],
+        "normal": [
+          0.00010999999977816653,
+          0.99999999395,
+          0
+        ],
+        "body": [
+          0.00002613549993453022,
+          1.6399948195610647,
+          -0.5500000003632735
+        ],
+        "probe": [
+          -0.00010999999977816653,
+          -0.99999999395,
+          0
+        ]
+      },
+      "end": {
+        "point": [
+          0.00000690649994778242,
+          1.629984462615694,
+          -0.2500000010898204
+        ],
+        "normal": [
+          0.00010999999977816653,
+          0.99999999395,
+          0
+        ],
+        "body": [
+          0.00002613549993453018,
+          1.6399948195610647,
+          -0.5500000003632735
+        ],
+        "probe": [
+          -0.00010999999977816653,
+          -0.99999999395,
+          0
+        ]
+      },
+      "normal": [
+        0.00010999999977816653,
+        0.99999999395,
+        0
+      ],
+      "bodyNormal": 0.010010358999998003,
+      "scanMarkup": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・奥・上側を0とした300 mmの仮想測定 -10 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"34.53\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"-10.358999998042947\" data-physical-reading-microns=\"-10.358999998042947\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.010010358999998003\" data-probe-normal=\"-1\" data-probe-along=\"0\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,11H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.726499999667176,30.999999958829008\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999958829008\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999958829008L35.726499999667176,30.999999958829008\" class=\"scan-probe\"></path><rect x=\"35.726499999667176\" y=\"27.999999958829008\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0 35.726499999667176 30.999999958829008)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>"
+    },
+    "detail": "YZ -10 µmYZ↑奥計器:頭RS0相対手前押込＋上直角マスタ：パレット上／計器：主軸頭に固定。上側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をYへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をYへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 奥・上側の●0でゼロ合わせ。③ パレット台＋ワークを部材＋Z・奥へ300 mm（NC指令の符号ではありません）。基準器に対する計器は手前へ。測定子が本体へ上に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝上、図の上＝奥。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張します。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+150.0 → +450.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から360 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：+25 µm／現在：-10 µm（同じ区間で各々ゼロ）。従来の局所角度差：+10 µm／300 mm換算。上の表示値とは別です。",
+    "visibility": {
+      "fine": true,
+      "hiddenMetrics": false,
+      "localDiagram": true,
+      "upper": true
+    }
+  },
+  {
+    "label": "seed2-flat-main",
+    "seed": 2,
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 75,
+      "A": 0,
+      "C": 0
+    },
+    "supportHeights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "initialHeights": [
+      -0.15,
+      0.15,
+      -0.04,
+      0.141,
+      -0.138,
+      0.125,
+      -0.131,
+      -0.112
+    ],
+    "local": 34.53,
+    "initialLocal": -12.751095616388707,
+    "dial": -10.358999998042947,
+    "initialDial": 24.577125133814352,
+    "display": "-10",
+    "fine": "<p class=\"fine-pair-reading worse\" data-pair=\"YZ\" data-before=\"-12.751095616388707\" data-current=\"34.53\" data-delta=\"47.28109561638871\" data-trend=\"worse\" data-direction=\"opened\">YZ：初期より直角から離れた</p>",
+    "hiddenMetric": "<strong id=\"accuracy-current-YZ\" data-value=\"17.265\">+17.27 µm</strong>",
+    "hiddenMetricContainer": "<div hidden=\"\" class=\"card accuracy-card\">\n<div class=\"section-title\"><h2>支持調整で何が変わる？</h2><span id=\"accuracyLength\" class=\"pill\">500 mmで確認</span></div",
+    "localDiagramTitle": "YZ · 局所角度",
+    "localDiagramNote": "現在位置の局所的な軸間角度差を300 mm換算した補助図です。常設の基準器による有限走査の測定図・指示値とは別です。基準軸を固定し、共通原点（接触ゼロ位置ではありません）から測る軸へ伸ばします。白い点は理想の直角、色の点は現在の終点。点を結ぶ細線は直角との差、薄い面は初期からの変化です。XYはX基準でY、XZはX基準でZ、YZはY基準でZを測り、旋盤はZ基準でXを測ります。拡大の割合は一定で、範囲外では線の変化を省略する場合があります。始点合わせは本体の精度をゼロにしません。模型の回転方向とは別の図です。狭い欄では図を左右へ動かせます。",
+    "localDiagramReference": {
+      "zero": "手前下",
+      "baseDirection": "上",
+      "measureDirection": "奥",
+      "positive": "下",
+      "negative": "上",
+      "plane": "垂直",
+      "projection": [
+        0,
+        -1,
+        -0.85,
+        0.45,
+        72.9,
+        74.7
+      ]
+    },
+    "localTip": [
+      50.44616477112742,
+      59.397543977767214
+    ],
+    "localIdeal": [
+      50.80000000000001,
+      54.400000000000006
+    ],
+    "bodyUp": [
+      0.00010999999977816667,
+      0.99999999395,
+      0
+    ],
+    "bodyPosture": {
+      "front": 0,
+      "right": 110
+    },
+    "physicalY": [
+      0.00010999999977816667,
+      0.99999999395,
+      0
+    ],
+    "physicalZ": [
+      -0.00006042999996322045,
+      -0.00003452335290202193,
+      0.9999999975781766
+    ],
+    "actualHeadY": [
+      0.00010999999977816985,
+      0.9999999939499999,
+      0
+    ],
+    "sceneAxisPaths": [
+      {
+        "key": "X",
+        "world": [
+          [
+            -0.568268313412687,
+            2.1142187827530323,
+            0.3769999999999999
+          ],
+          [
+            0.6317316865873129,
+            2.1142187827530323,
+            0.3769999999999999
+          ]
+        ]
+      },
+      {
+        "key": "Y",
+        "world": [
+          [
+            0.031731686587312936,
+            2.114218782753032,
+            -0.065
+          ],
+          [
+            0.06124953457551104,
+            3.3138556847571947,
+            -0.065
+          ]
+        ]
+      },
+      {
+        "key": "Z",
+        "world": [
+          [
+            0.0035475068960987514,
+            1.4190495424232936,
+            -1.1124688551597273
+          ],
+          [
+            -0.012669667486066816,
+            1.4101790083673538,
+            0.08738876842759702
+          ]
+        ]
+      }
+    ],
+    "finite": {
+      "start": {
+        "point": [
+          0.000025035499936748554,
+          1.6299948196215648,
+          -0.5500000003632735
+        ],
+        "normal": [
+          0.00010999999977816653,
+          0.99999999395,
+          0
+        ],
+        "body": [
+          0.00002613549993453022,
+          1.6399948195610647,
+          -0.5500000003632735
+        ],
+        "probe": [
+          -0.00010999999977816653,
+          -0.99999999395,
+          0
+        ]
+      },
+      "end": {
+        "point": [
+          0.00000690649994778242,
+          1.629984462615694,
+          -0.2500000010898204
+        ],
+        "normal": [
+          0.00010999999977816653,
+          0.99999999395,
+          0
+        ],
+        "body": [
+          0.00002613549993453018,
+          1.6399948195610647,
+          -0.5500000003632735
+        ],
+        "probe": [
+          -0.00010999999977816653,
+          -0.99999999395,
+          0
+        ]
+      },
+      "normal": [
+        0.00010999999977816653,
+        0.99999999395,
+        0
+      ],
+      "bodyNormal": 0.010010358999998003,
+      "scanMarkup": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・奥・上側を0とした300 mmの仮想測定 -10 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"34.53\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"-10.358999998042947\" data-physical-reading-microns=\"-10.358999998042947\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.010010358999998003\" data-probe-normal=\"-1\" data-probe-along=\"0\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,11H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L35.726499999667176,30.999999958829008\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999958829008\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999958829008L35.726499999667176,30.999999958829008\" class=\"scan-probe\"></path><rect x=\"35.726499999667176\" y=\"27.999999958829008\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0 35.726499999667176 30.999999958829008)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>"
+    },
+    "detail": "YZ -10 µmYZ↑奥計器:頭RS0相対手前押込＋上直角マスタ：パレット上／計器：主軸頭に固定。上側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をYへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をYへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 奥・上側の●0でゼロ合わせ。③ パレット台＋ワークを部材＋Z・奥へ300 mm（NC指令の符号ではありません）。基準器に対する計器は手前へ。測定子が本体へ上に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝上、図の上＝奥。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張します。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+150.0 → +450.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から360 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：+25 µm／現在：-10 µm（同じ区間で各々ゼロ）。従来の局所角度差：+10 µm／300 mm換算。上の表示値とは別です。",
+    "visibility": {
+      "fine": false,
+      "hiddenMetrics": false,
+      "localDiagram": false,
+      "upper": true
+    }
+  },
+  {
+    "label": "seed3-initial",
+    "seed": 3,
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 75,
+      "A": 0,
+      "C": 0
+    },
+    "supportHeights": [
+      -0.15,
+      0.15,
+      0.057,
+      -0.064,
+      0.052,
+      0.008,
+      0.1,
+      0.012
+    ],
+    "initialHeights": [
+      -0.15,
+      0.15,
+      0.057,
+      -0.064,
+      0.052,
+      0.008,
+      0.1,
+      0.012
+    ],
+    "local": -30.86989382761749,
+    "initialLocal": -30.86989382761749,
+    "dial": 2.1236646508653036,
+    "initialDial": 2.1236646508653036,
+    "display": "+2",
+    "fine": "<p class=\"fine-pair-reading similar\" data-pair=\"YZ\" data-before=\"-30.86989382761749\" data-current=\"-30.86989382761749\" data-delta=\"0\" data-trend=\"similar\" data-direction=\"unchanged\">YZ：初期からほぼ同じ（軸間の関係はほぼ不変）</p>",
+    "hiddenMetric": "<strong id=\"accuracy-current-YZ\" data-value=\"-15.434946913808744\">-15.43 µm</strong>",
+    "hiddenMetricContainer": "<div hidden=\"\" class=\"card accuracy-card\">\n<div class=\"section-title\"><h2>支持調整で何が変わる？</h2><span id=\"accuracyLength\" class=\"pill\">500 mmで確認</span></div",
+    "localDiagramTitle": "YZ · 局所角度",
+    "localDiagramNote": "現在位置の局所的な軸間角度差を300 mm換算した補助図です。常設の基準器による有限走査の測定図・指示値とは別です。基準軸を固定し、共通原点（接触ゼロ位置ではありません）から測る軸へ伸ばします。白い点は理想の直角、色の点は現在の終点。点を結ぶ細線は直角との差、薄い面は初期からの変化です。XYはX基準でY、XZはX基準でZ、YZはY基準でZを測り、旋盤はZ基準でXを測ります。拡大の割合は一定で、範囲外では線の変化を省略する場合があります。始点合わせは本体の精度をゼロにしません。模型の回転方向とは別の図です。狭い欄では図を左右へ動かせます。",
+    "localDiagramReference": {
+      "zero": "手前下",
+      "baseDirection": "上",
+      "measureDirection": "奥",
+      "positive": "下",
+      "negative": "上",
+      "plane": "垂直",
+      "projection": [
+        0,
+        -1,
+        -0.85,
+        0.45,
+        72.9,
+        74.7
+      ]
+    },
+    "localTip": [
+      50.51705966731973,
+      50.24514656985528
+    ],
+    "localIdeal": [
+      50.80000000000001,
+      54.400000000000006
+    ],
+    "bodyUp": [
+      0.00009750014689600236,
+      0.9999999950222327,
+      -0.000021195652071063438
+    ],
+    "bodyPosture": {
+      "front": 21.195652173396375,
+      "right": 97.50014707238088
+    },
+    "physicalY": [
+      0.00009750014689600239,
+      0.9999999950222329,
+      -0.00002119565207106344
+    ],
+    "physicalZ": [
+      0.00005481809797729054,
+      0.0000520602013197466,
+      0.9999999971423559
+    ],
+    "actualHeadY": [
+      0.00009750014689599377,
+      0.9999999950222329,
+      -0.00002119565204831493
+    ],
+    "sceneAxisPaths": [
+      {
+        "key": "X",
+        "world": [
+          [
+            -0.5718695496393713,
+            2.1277777449585136,
+            0.3723290843808309
+          ],
+          [
+            0.6281115844943703,
+            2.121048935008342,
+            0.3723580628816605
+          ]
+        ]
+      },
+      {
+        "key": "Y",
+        "world": [
+          [
+            0.028118225035964516,
+            2.119274994151789,
+            -0.07046214658553661
+          ],
+          [
+            0.05428226532577178,
+            3.318976249434254,
+            -0.0761490674915223
+          ]
+        ]
+      },
+      {
+        "key": "Z",
+        "world": [
+          [
+            -0.0019181897374727233,
+            1.4084514555033019,
+            -1.1132978163122593
+          ],
+          [
+            0.012875691364152578,
+            1.4220489916630903,
+            0.0865339419323431
+          ]
+        ]
+      }
+    ],
+    "finite": {
+      "start": {
+        "point": [
+          0.00006059050495825699,
+          1.629999789520723,
+          -0.5500046874613044
+        ],
+        "normal": [
+          0.00009750014689600199,
+          0.9999999950222329,
+          -0.000021195652070149537
+        ],
+        "body": [
+          0.00006156550642721701,
+          1.6399997894709453,
+          -0.550004899417825
+        ],
+        "probe": [
+          -0.00009750014689600199,
+          -0.9999999950222329,
+          0.000021195652070149537
+        ]
+      },
+      "end": {
+        "point": [
+          0.00008286781849097793,
+          1.6300173169854308,
+          -0.2500339465700685
+        ],
+        "normal": [
+          0.00010351237509481684,
+          0.9999999933237366,
+          -0.0000513586954282667
+        ],
+        "body": [
+          0.00006156550642721695,
+          1.639999789470945,
+          -0.550004899417825
+        ],
+        "probe": [
+          -0.00009750014689600206,
+          -0.9999999950222331,
+          0.000021195652070149537
+        ]
+      },
+      "normal": [
+        0.00010351237509481684,
+        0.9999999933237366,
+        -0.0000513586954282667
+      ],
+      "bodyNormal": 0.009997876330620306,
+      "scanMarkup": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・奥・上側を0とした300 mmの仮想測定 +2 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"-30.86989382761749\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"2.1236646508653036\" data-physical-reading-microns=\"2.1236646508653036\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.009997876330620306\" data-probe-normal=\"-0.9999999995270225\" data-probe-along=\"-0.000030163043388440375\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,11H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L33.64605510338438,30.66654853137292\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.998342008802695\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.998342008802695L33.64605510338438,30.66654853137292\" class=\"scan-probe\"></path><rect x=\"33.64605510338438\" y=\"27.66654853137292\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-1.7850945101009228 33.64605510338438 30.66654853137292)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>"
+    },
+    "detail": "YZ +2 µmYZ↑奥計器:頭RS0相対手前押込＋上直角マスタ：パレット上／計器：主軸頭に固定。上側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をYへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をYへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 奥・上側の●0でゼロ合わせ。③ パレット台＋ワークを部材＋Z・奥へ300 mm（NC指令の符号ではありません）。基準器に対する計器は手前へ。測定子が本体へ上に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝上、図の上＝奥。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張します。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+150.0 → +450.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から360 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：+2 µm／現在：+2 µm（同じ区間で各々ゼロ）。従来の局所角度差：-9 µm／300 mm換算。上の表示値とは別です。",
+    "visibility": {
+      "fine": false,
+      "hiddenMetrics": false,
+      "localDiagram": false,
+      "upper": true
+    }
+  },
+  {
+    "label": "seed3-flat-fine",
+    "seed": 3,
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 75,
+      "A": 0,
+      "C": 0
+    },
+    "supportHeights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "initialHeights": [
+      -0.15,
+      0.15,
+      0.057,
+      -0.064,
+      0.052,
+      0.008,
+      0.1,
+      0.012
+    ],
+    "local": -24.75666666666667,
+    "initialLocal": -30.86989382761749,
+    "dial": 7.426999999615713,
+    "initialDial": 2.1236646508653036,
+    "display": "+7",
+    "fine": "<p class=\"fine-pair-reading better\" data-pair=\"YZ\" data-before=\"-30.86989382761749\" data-current=\"-24.75666666666667\" data-delta=\"6.113227160950817\" data-trend=\"better\" data-direction=\"opened\">YZ：初期より直角に近づいた</p>",
+    "hiddenMetric": "<strong id=\"accuracy-current-YZ\" data-value=\"-12.378333333333336\">-12.38 µm</strong>",
+    "hiddenMetricContainer": "<div hidden=\"\" class=\"card accuracy-card\">\n<div class=\"section-title\"><h2>支持調整で何が変わる？</h2><span id=\"accuracyLength\" class=\"pill\">500 mmで確認</span></div",
+    "localDiagramTitle": "YZ · 局所角度",
+    "localDiagramNote": "現在位置の局所的な軸間角度差を300 mm換算した補助図です。常設の基準器による有限走査の測定図・指示値とは別です。基準軸を固定し、共通原点（接触ゼロ位置ではありません）から測る軸へ伸ばします。白い点は理想の直角、色の点は現在の終点。点を結ぶ細線は直角との差、薄い面は初期からの変化です。XYはX基準でY、XZはX基準でZ、YZはY基準でZを測り、旋盤はZ基準でXを測ります。拡大の割合は一定で、範囲外では線の変化を省略する場合があります。始点合わせは本体の精度をゼロにしません。模型の回転方向とは別の図です。狭い欄では図を左右へ動かせます。",
+    "localDiagramReference": {
+      "zero": "手前下",
+      "baseDirection": "上",
+      "measureDirection": "奥",
+      "positive": "下",
+      "negative": "上",
+      "plane": "垂直",
+      "projection": [
+        0,
+        -1,
+        -0.85,
+        0.45,
+        72.9,
+        74.7
+      ]
+    },
+    "localTip": [
+      50.61789716600083,
+      51.03931829052191
+    ],
+    "localIdeal": [
+      50.80000000000001,
+      54.400000000000006
+    ],
+    "bodyUp": [
+      0.00007181999993825741,
+      0.9999999974209438,
+      0
+    ],
+    "bodyPosture": {
+      "front": 0,
+      "right": 71.82000000000001
+    },
+    "physicalY": [
+      0.00007181999993825742,
+      0.9999999974209439,
+      0
+    ],
+    "physicalZ": [
+      0.00005481666663921388,
+      0.00002475272979498184,
+      0.9999999981912178
+    ],
+    "actualHeadY": [
+      0.00007181999993825744,
+      0.9999999974209439,
+      0
+    ],
+    "sceneAxisPaths": [
+      {
+        "key": "X",
+        "world": [
+          [
+            -0.5792808943925697,
+            2.1144427142513678,
+            0.3769999999999999
+          ],
+          [
+            0.6207191056074303,
+            2.1144427142513678,
+            0.3769999999999999
+          ]
+        ]
+      },
+      {
+        "key": "Y",
+        "world": [
+          [
+            0.02071910560743028,
+            2.1144427142513673,
+            -0.065
+          ],
+          [
+            0.03999269221899333,
+            3.314287924626075,
+            -0.065
+          ]
+        ]
+      },
+      {
+        "key": "Z",
+        "world": [
+          [
+            -0.003217996884255327,
+            1.415707255474739,
+            -1.1124765309342064
+          ],
+          [
+            0.011492846015197667,
+            1.422115747469336,
+            0.08741618190788025
+          ]
+        ]
+      }
+    ],
+    "finite": {
+      "start": {
+        "point": [
+          0.000030486699976741807,
+          1.630003712109962,
+          -0.5500000002713172
+        ],
+        "normal": [
+          0.00007181999993825717,
+          0.999999997420944,
+          0
+        ],
+        "body": [
+          0.00003120489997612438,
+          1.6400037120841715,
+          -0.5500000002713172
+        ],
+        "probe": [
+          -0.00007181999993825717,
+          -0.999999997420944,
+          0
+        ]
+      },
+      "end": {
+        "point": [
+          0.00004693169996850597,
+          1.6300111379289004,
+          -0.25000000081395196
+        ],
+        "normal": [
+          0.00007181999993825717,
+          0.999999997420944,
+          0
+        ],
+        "body": [
+          0.00003120489997612434,
+          1.640003712084171,
+          -0.5500000002713172
+        ],
+        "probe": [
+          -0.0000718199999382572,
+          -0.9999999974209445,
+          0
+        ]
+      },
+      "normal": [
+        0.00007181999993825717,
+        0.999999997420944,
+        0
+      ],
+      "bodyNormal": 0.00999257300000048,
+      "scanMarkup": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・奥・上側を0とした300 mmの仮想測定 +7 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"-24.75666666666667\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"7.426999999615713\" data-physical-reading-microns=\"7.426999999615713\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.00999257300000048\" data-probe-normal=\"-1.0000000000000009\" data-probe-along=\"0\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,11H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L32.762166666746616,30.999999969250702\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999969250702\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999969250702L32.762166666746616,30.999999969250702\" class=\"scan-probe\"></path><rect x=\"32.762166666746616\" y=\"27.999999969250702\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0 32.762166666746616 30.999999969250702)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>"
+    },
+    "detail": "YZ +7 µmYZ↑奥計器:頭RS0相対手前押込＋上直角マスタ：パレット上／計器：主軸頭に固定。上側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をYへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をYへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 奥・上側の●0でゼロ合わせ。③ パレット台＋ワークを部材＋Z・奥へ300 mm（NC指令の符号ではありません）。基準器に対する計器は手前へ。測定子が本体へ上に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝上、図の上＝奥。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張します。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+150.0 → +450.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から360 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：+2 µm／現在：+7 µm（同じ区間で各々ゼロ）。従来の局所角度差：-7 µm／300 mm換算。上の表示値とは別です。",
+    "visibility": {
+      "fine": true,
+      "hiddenMetrics": false,
+      "localDiagram": false,
+      "upper": true
+    }
+  },
+  {
+    "label": "seed3-flat-local",
+    "seed": 3,
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 75,
+      "A": 0,
+      "C": 0
+    },
+    "supportHeights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "initialHeights": [
+      -0.15,
+      0.15,
+      0.057,
+      -0.064,
+      0.052,
+      0.008,
+      0.1,
+      0.012
+    ],
+    "local": -24.75666666666667,
+    "initialLocal": -30.86989382761749,
+    "dial": 7.426999999615713,
+    "initialDial": 2.1236646508653036,
+    "display": "+7",
+    "fine": "<p class=\"fine-pair-reading better\" data-pair=\"YZ\" data-before=\"-30.86989382761749\" data-current=\"-24.75666666666667\" data-delta=\"6.113227160950817\" data-trend=\"better\" data-direction=\"opened\">YZ：初期より直角に近づいた</p>",
+    "hiddenMetric": "<strong id=\"accuracy-current-YZ\" data-value=\"-12.378333333333336\">-12.38 µm</strong>",
+    "hiddenMetricContainer": "<div hidden=\"\" class=\"card accuracy-card\">\n<div class=\"section-title\"><h2>支持調整で何が変わる？</h2><span id=\"accuracyLength\" class=\"pill\">500 mmで確認</span></div",
+    "localDiagramTitle": "YZ · 局所角度",
+    "localDiagramNote": "現在位置の局所的な軸間角度差を300 mm換算した補助図です。常設の基準器による有限走査の測定図・指示値とは別です。基準軸を固定し、共通原点（接触ゼロ位置ではありません）から測る軸へ伸ばします。白い点は理想の直角、色の点は現在の終点。点を結ぶ細線は直角との差、薄い面は初期からの変化です。XYはX基準でY、XZはX基準でZ、YZはY基準でZを測り、旋盤はZ基準でXを測ります。拡大の割合は一定で、範囲外では線の変化を省略する場合があります。始点合わせは本体の精度をゼロにしません。模型の回転方向とは別の図です。狭い欄では図を左右へ動かせます。",
+    "localDiagramReference": {
+      "zero": "手前下",
+      "baseDirection": "上",
+      "measureDirection": "奥",
+      "positive": "下",
+      "negative": "上",
+      "plane": "垂直",
+      "projection": [
+        0,
+        -1,
+        -0.85,
+        0.45,
+        72.9,
+        74.7
+      ]
+    },
+    "localTip": [
+      50.61789716600083,
+      51.03931829052191
+    ],
+    "localIdeal": [
+      50.80000000000001,
+      54.400000000000006
+    ],
+    "bodyUp": [
+      0.00007181999993825741,
+      0.9999999974209438,
+      0
+    ],
+    "bodyPosture": {
+      "front": 0,
+      "right": 71.82000000000001
+    },
+    "physicalY": [
+      0.00007181999993825742,
+      0.9999999974209439,
+      0
+    ],
+    "physicalZ": [
+      0.00005481666663921388,
+      0.00002475272979498184,
+      0.9999999981912178
+    ],
+    "actualHeadY": [
+      0.00007181999993825744,
+      0.9999999974209439,
+      0
+    ],
+    "sceneAxisPaths": [
+      {
+        "key": "X",
+        "world": [
+          [
+            -0.5792808943925697,
+            2.1144427142513678,
+            0.3769999999999999
+          ],
+          [
+            0.6207191056074303,
+            2.1144427142513678,
+            0.3769999999999999
+          ]
+        ]
+      },
+      {
+        "key": "Y",
+        "world": [
+          [
+            0.02071910560743028,
+            2.1144427142513673,
+            -0.065
+          ],
+          [
+            0.03999269221899333,
+            3.314287924626075,
+            -0.065
+          ]
+        ]
+      },
+      {
+        "key": "Z",
+        "world": [
+          [
+            -0.003217996884255327,
+            1.415707255474739,
+            -1.1124765309342064
+          ],
+          [
+            0.011492846015197667,
+            1.422115747469336,
+            0.08741618190788025
+          ]
+        ]
+      }
+    ],
+    "finite": {
+      "start": {
+        "point": [
+          0.000030486699976741807,
+          1.630003712109962,
+          -0.5500000002713172
+        ],
+        "normal": [
+          0.00007181999993825717,
+          0.999999997420944,
+          0
+        ],
+        "body": [
+          0.00003120489997612438,
+          1.6400037120841715,
+          -0.5500000002713172
+        ],
+        "probe": [
+          -0.00007181999993825717,
+          -0.999999997420944,
+          0
+        ]
+      },
+      "end": {
+        "point": [
+          0.00004693169996850597,
+          1.6300111379289004,
+          -0.25000000081395196
+        ],
+        "normal": [
+          0.00007181999993825717,
+          0.999999997420944,
+          0
+        ],
+        "body": [
+          0.00003120489997612434,
+          1.640003712084171,
+          -0.5500000002713172
+        ],
+        "probe": [
+          -0.0000718199999382572,
+          -0.9999999974209445,
+          0
+        ]
+      },
+      "normal": [
+        0.00007181999993825717,
+        0.999999997420944,
+        0
+      ],
+      "bodyNormal": 0.00999257300000048,
+      "scanMarkup": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・奥・上側を0とした300 mmの仮想測定 +7 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"-24.75666666666667\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"7.426999999615713\" data-physical-reading-microns=\"7.426999999615713\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.00999257300000048\" data-probe-normal=\"-1.0000000000000009\" data-probe-along=\"0\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,11H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L32.762166666746616,30.999999969250702\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999969250702\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999969250702L32.762166666746616,30.999999969250702\" class=\"scan-probe\"></path><rect x=\"32.762166666746616\" y=\"27.999999969250702\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0 32.762166666746616 30.999999969250702)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>"
+    },
+    "detail": "YZ +7 µmYZ↑奥計器:頭RS0相対手前押込＋上直角マスタ：パレット上／計器：主軸頭に固定。上側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をYへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をYへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 奥・上側の●0でゼロ合わせ。③ パレット台＋ワークを部材＋Z・奥へ300 mm（NC指令の符号ではありません）。基準器に対する計器は手前へ。測定子が本体へ上に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝上、図の上＝奥。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張します。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+150.0 → +450.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から360 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：+2 µm／現在：+7 µm（同じ区間で各々ゼロ）。従来の局所角度差：-7 µm／300 mm換算。上の表示値とは別です。",
+    "visibility": {
+      "fine": true,
+      "hiddenMetrics": false,
+      "localDiagram": true,
+      "upper": true
+    }
+  },
+  {
+    "label": "seed3-flat-main",
+    "seed": 3,
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 75,
+      "A": 0,
+      "C": 0
+    },
+    "supportHeights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "initialHeights": [
+      -0.15,
+      0.15,
+      0.057,
+      -0.064,
+      0.052,
+      0.008,
+      0.1,
+      0.012
+    ],
+    "local": -24.75666666666667,
+    "initialLocal": -30.86989382761749,
+    "dial": 7.426999999615713,
+    "initialDial": 2.1236646508653036,
+    "display": "+7",
+    "fine": "<p class=\"fine-pair-reading better\" data-pair=\"YZ\" data-before=\"-30.86989382761749\" data-current=\"-24.75666666666667\" data-delta=\"6.113227160950817\" data-trend=\"better\" data-direction=\"opened\">YZ：初期より直角に近づいた</p>",
+    "hiddenMetric": "<strong id=\"accuracy-current-YZ\" data-value=\"-12.378333333333336\">-12.38 µm</strong>",
+    "hiddenMetricContainer": "<div hidden=\"\" class=\"card accuracy-card\">\n<div class=\"section-title\"><h2>支持調整で何が変わる？</h2><span id=\"accuracyLength\" class=\"pill\">500 mmで確認</span></div",
+    "localDiagramTitle": "YZ · 局所角度",
+    "localDiagramNote": "現在位置の局所的な軸間角度差を300 mm換算した補助図です。常設の基準器による有限走査の測定図・指示値とは別です。基準軸を固定し、共通原点（接触ゼロ位置ではありません）から測る軸へ伸ばします。白い点は理想の直角、色の点は現在の終点。点を結ぶ細線は直角との差、薄い面は初期からの変化です。XYはX基準でY、XZはX基準でZ、YZはY基準でZを測り、旋盤はZ基準でXを測ります。拡大の割合は一定で、範囲外では線の変化を省略する場合があります。始点合わせは本体の精度をゼロにしません。模型の回転方向とは別の図です。狭い欄では図を左右へ動かせます。",
+    "localDiagramReference": {
+      "zero": "手前下",
+      "baseDirection": "上",
+      "measureDirection": "奥",
+      "positive": "下",
+      "negative": "上",
+      "plane": "垂直",
+      "projection": [
+        0,
+        -1,
+        -0.85,
+        0.45,
+        72.9,
+        74.7
+      ]
+    },
+    "localTip": [
+      50.61789716600083,
+      51.03931829052191
+    ],
+    "localIdeal": [
+      50.80000000000001,
+      54.400000000000006
+    ],
+    "bodyUp": [
+      0.00007181999993825741,
+      0.9999999974209438,
+      0
+    ],
+    "bodyPosture": {
+      "front": 0,
+      "right": 71.82000000000001
+    },
+    "physicalY": [
+      0.00007181999993825742,
+      0.9999999974209439,
+      0
+    ],
+    "physicalZ": [
+      0.00005481666663921388,
+      0.00002475272979498184,
+      0.9999999981912178
+    ],
+    "actualHeadY": [
+      0.00007181999993825744,
+      0.9999999974209439,
+      0
+    ],
+    "sceneAxisPaths": [
+      {
+        "key": "X",
+        "world": [
+          [
+            -0.5792808943925697,
+            2.1144427142513678,
+            0.3769999999999999
+          ],
+          [
+            0.6207191056074303,
+            2.1144427142513678,
+            0.3769999999999999
+          ]
+        ]
+      },
+      {
+        "key": "Y",
+        "world": [
+          [
+            0.02071910560743028,
+            2.1144427142513673,
+            -0.065
+          ],
+          [
+            0.03999269221899333,
+            3.314287924626075,
+            -0.065
+          ]
+        ]
+      },
+      {
+        "key": "Z",
+        "world": [
+          [
+            -0.003217996884255327,
+            1.415707255474739,
+            -1.1124765309342064
+          ],
+          [
+            0.011492846015197667,
+            1.422115747469336,
+            0.08741618190788025
+          ]
+        ]
+      }
+    ],
+    "finite": {
+      "start": {
+        "point": [
+          0.000030486699976741807,
+          1.630003712109962,
+          -0.5500000002713172
+        ],
+        "normal": [
+          0.00007181999993825717,
+          0.999999997420944,
+          0
+        ],
+        "body": [
+          0.00003120489997612438,
+          1.6400037120841715,
+          -0.5500000002713172
+        ],
+        "probe": [
+          -0.00007181999993825717,
+          -0.999999997420944,
+          0
+        ]
+      },
+      "end": {
+        "point": [
+          0.00004693169996850597,
+          1.6300111379289004,
+          -0.25000000081395196
+        ],
+        "normal": [
+          0.00007181999993825717,
+          0.999999997420944,
+          0
+        ],
+        "body": [
+          0.00003120489997612434,
+          1.640003712084171,
+          -0.5500000002713172
+        ],
+        "probe": [
+          -0.0000718199999382572,
+          -0.9999999974209445,
+          0
+        ]
+      },
+      "normal": [
+        0.00007181999993825717,
+        0.999999997420944,
+        0
+      ],
+      "bodyNormal": 0.00999257300000048,
+      "scanMarkup": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・奥・上側を0とした300 mmの仮想測定 +7 µm。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"-24.75666666666667\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"7.426999999615713\" data-physical-reading-microns=\"7.426999999615713\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.00999257300000048\" data-probe-normal=\"-1.0000000000000009\" data-probe-along=\"0\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,11H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L32.762166666746616,30.999999969250702\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"30.999999969250702\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,30.999999969250702L32.762166666746616,30.999999969250702\" class=\"scan-probe\"></path><rect x=\"32.762166666746616\" y=\"27.999999969250702\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0 32.762166666746616 30.999999969250702)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>"
+    },
+    "detail": "YZ +7 µmYZ↑奥計器:頭RS0相対手前押込＋上直角マスタ：パレット上／計器：主軸頭に固定。上側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をYへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をYへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 奥・上側の●0でゼロ合わせ。③ パレット台＋ワークを部材＋Z・奥へ300 mm（NC指令の符号ではありません）。基準器に対する計器は手前へ。測定子が本体へ上に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝上、図の上＝奥。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。本体の法線変位と測定子の傾きを別々に誇張します。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。+150.0 → +450.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から360 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：+2 µm／現在：+7 µm（同じ区間で各々ゼロ）。従来の局所角度差：-7 µm／300 mm換算。上の表示値とは別です。",
+    "visibility": {
+      "fine": false,
+      "hiddenMetrics": false,
+      "localDiagram": false,
+      "upper": true
+    }
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "matrixStartedUTC": "2026-10-09T23:58:20Z",
+  "integrity": "All source mtimes predate the matrix start; this digest checkpoint will be compared again at completion. The completion checkpoint matched exactly.",
+  "sourceHashes": {
+    "accuracy-ui.js": "3ceaeeb87ea49d5922ae5e0cc41710233ef9bb7f52e5a8411396a01d8b5a63c4",
+    "app.js": "6ba8beb045b76356f8b0ca604f4bd657309c2ceb7d8b32e97144ba962479941b",
+    "horizontal-parallelism-ui.js": "5abdd25753ce457a8029dd22136afce56050f651a444b5bf3c7d440c7968ae80",
+    "horizontal-parallelism.js": "0b43abf9a2974dc1cfda1379cb81771e9255fe3ff3014401b6b77030a1b7267a",
+    "index.html": "69e7a49246ab1ce011d321bbed31ba7e7b82a1651c0746b0c11017167ef2e6fc",
+    "intrinsic-inspection-ui.js": "1d2d0964a0cbe4e417d2128221ee997cc1cfa073ee7b8e7b08a5fb6566f10ce6",
+    "intrinsic-inspection.js": "dd6addc468bac25759b5018dfbecdd48fe5d65135fc3c1d299eda05daab0d9e3",
+    "lathe-inspection-ui.js": "1a5ca02dc1928d7b7d30c1876ae649954610afc6d0fd5617384c752c4efb8431",
+    "lathe-inspection.js": "c8df25e25ce6ff6d8bc7962caea991277d488c4e12ab19632a59425793150787",
+    "leveling-ui.js": "2aaa7693c934294bfddc774e60e516e7d9cb201808d4f90b1a6ed7cb39f06025",
+    "leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+    "machine-accuracy-ui.js": "9c33d5bab3bd1c508225879581cbe7ef8e6c60ecf5b0d8b3d15a206bc6f0d145",
+    "machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "reference-measurement-ui.js": "7c0cd7e80477aea45e2dfa54a5d759ce3c3faf35d8fbb32f5aae9abb7ad77e2c",
+    "reference-measurement.js": "b239edae0972f72dbcb6b20c7ae48f115b550f80eadd541db3d54c1acf4d4e62",
+    "spindle-sweep-ui.js": "eb417b01166b732e999f4643f65963133f93e61c721e02a49c13545c26fa9263",
+    "spindle-sweep.js": "157567be5af80c962d855688f811a1bdb18fdf9aa99336ae375e77602b0decce",
+    "style.css": "13b119d7112a9d28d8250b757a64deef33c8994d8b0f307ffedec8aba2df8f1b",
+    "tester.css": "05818215f96effc3e1b38a7026c23c5ab66bfd84bfb147ef7641630b4f0ce663",
+    "tester.html": "c1cfc2b45ee63d13bf0dd38d69382901532d6e6a521050909734a9f133697866",
+    "tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409"
+  },
+  "combinedSHA256": "b234c24da5c1585a547fa1c590dfd5be383b40b987048e1fefb922114271ce37"
+}

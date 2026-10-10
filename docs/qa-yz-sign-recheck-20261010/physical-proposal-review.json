@@ -1,0 +1,105 @@
+{
+  "summary": {
+    "states": 380,
+    "contacts": 13832,
+    "maxRayErrorM": 1.1622647289044608e-16,
+    "maxRendpointDistanceM": 2.2204466448202742e-16,
+    "maxArmLocalDeltaM": 1.0842021724855044e-19,
+    "maxSZeroErrorM": 2.983724378680108e-16,
+    "minMasterBottomPalletM": 0.049884862358693716,
+    "minFootprintMarginM": 0.08217228256097428,
+    "maxRArmM": 1.1214984059471198,
+    "maxSArmM": 1.5104902582484796,
+    "maxBottomHeightDifferenceM": 0.00011887455096026844
+  },
+  "GH": [
+    {
+      "w": 2.72,
+      "d": 3.68,
+      "name": "GH+",
+      "used": false,
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100
+      },
+      "raw": 2.445652173777013,
+      "RendpointUm": 1.1102230246251565e-10,
+      "zero": 0.010000000000000009,
+      "firstPoint": [
+        0,
+        1.33,
+        -1.139999999997774
+      ],
+      "lastPoint": [
+        0,
+        1.6299999999900314,
+        -1.139999999997774
+      ]
+    },
+    {
+      "w": 2.72,
+      "d": 3.68,
+      "name": "GH-",
+      "used": false,
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100
+      },
+      "raw": -2.4456521735549686,
+      "RendpointUm": 1.1102230246251565e-10,
+      "zero": 0.010000000000000009,
+      "firstPoint": [
+        0,
+        1.33,
+        -1.139999999997774
+      ],
+      "lastPoint": [
+        0,
+        1.6299999999900319,
+        -1.139999999997774
+      ]
+    }
+  ],
+  "failures": [],
+  "straightRod": {
+    "state": {
+      "X": 0,
+      "Y": 100,
+      "Z": 100
+    },
+    "noseLocal": [
+      0,
+      1.2799999999999998,
+      -0.5300000000000002
+    ],
+    "bodyLocal": [
+      0,
+      0.06000000000000005,
+      0.1699999999999999
+    ],
+    "firstIntersection": {
+      "t": 0.746,
+      "local": [
+        0,
+        0.36988,
+        -0.00780000000000014
+      ]
+    },
+    "lastIntersection": {
+      "t": 0.985,
+      "local": [
+        0,
+        0.07830000000000004,
+        0.15949999999999986
+      ]
+    },
+    "intersectionSamples": 240
+  },
+  "limitations": "Candidate machine poses are observations. Plane intersections use independent bisection; known-GH expected values come from separate physical.json ramp derivation. This does not validate all possible bracket shapes or elastic stiffness.",
+  "candidateSha256": "fa8f5c6c9e212eb81b9f88d8bf1a871b8512dcf2a3e5288a024e3e2d86cb1e47",
+  "sourceSha256": "4f61d895955d73d8fc084780d28dd9fe49c6426398d890fe8b842e5f8e73db39",
+  "sourceRevision": "874d659",
+  "sourceHashNote": "Review ran against the existing top-contact/Y-aligned measurement. A concurrent product patch subsequently changed only diagram composition and copy, not any candidate machine-pose inputs or measurement formulas; diff reviewed separately."
+}

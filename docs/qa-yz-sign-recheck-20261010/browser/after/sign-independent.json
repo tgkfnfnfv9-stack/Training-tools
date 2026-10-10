@@ -1,0 +1,430 @@
+{
+  "candidate": "after",
+  "sha256": "435d329b4ce713cee461f2306c94c129505ed51d426e2aacd9a7bc1e1339cb1c",
+  "method": "Independent plane-line extensions and actual SVG endpoint Euclidean distance; sign relation only, no drawing magnitude formula copied. Fixed old inputs confirm values unchanged. Final counterexample repeats actual buttons. Short travel invalid setup uses input boundary dimensions via evaluate.",
+  "baseline": {
+    "XY": 11,
+    "XZ": 11,
+    "YZ": 11
+  },
+  "counts": {
+    "states": 899,
+    "measurements": 2697,
+    "valid": 2697,
+    "invalid": 0,
+    "positive": 1474,
+    "negative": 1204,
+    "zero": 19,
+    "limited": 1880
+  },
+  "failures": [],
+  "illustrations": [
+    {
+      "name": "counterexample-0",
+      "supports": [
+        0.05,
+        0,
+        0,
+        0,
+        0.091,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.03356608570259656,
+      "integer": "0",
+      "extensionStart": 0.009999999999999997,
+      "extensionEnd": 0.0099999664339143,
+      "length": 10.994405652382898,
+      "baseline": 11,
+      "limited": "false"
+    },
+    {
+      "name": "counterexample-1",
+      "supports": [
+        0.099,
+        0,
+        0,
+        0,
+        0.18,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.05266543791349054,
+      "integer": "0",
+      "extensionStart": 0.010000000000000056,
+      "extensionEnd": 0.00999994733456214,
+      "length": 10.991222427014417,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-2",
+      "supports": [
+        0.099,
+        0,
+        0,
+        0,
+        0.181,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.13962724744291666,
+      "integer": "0",
+      "extensionStart": 0.009999999999999955,
+      "extensionEnd": 0.009999860372752512,
+      "length": 10.97672879209285,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-3",
+      "supports": [
+        0.099,
+        0,
+        0,
+        0,
+        0.182,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.22658900288193007,
+      "integer": "0",
+      "extensionStart": 0.009999999999999967,
+      "extensionEnd": 0.00999977341099709,
+      "length": 10.962235166186344,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-4",
+      "supports": [
+        0.1,
+        0,
+        0,
+        0,
+        0.182,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.06904694948087209,
+      "integer": "0",
+      "extensionStart": 0.009999999999999967,
+      "extensionEnd": 0.00999993095305049,
+      "length": 10.988492175086524,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-5",
+      "supports": [
+        0.1,
+        0,
+        0,
+        0,
+        0.183,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.1560088024894074,
+      "integer": "0",
+      "extensionStart": 0.010000000000000096,
+      "extensionEnd": 0.009999843991197611,
+      "length": 10.973998532918433,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-6",
+      "supports": [
+        0.1,
+        0,
+        0,
+        0,
+        0.184,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.24297060207366383,
+      "integer": "0",
+      "extensionStart": 0.009999999999999901,
+      "extensionEnd": 0.009999757029397826,
+      "length": 10.95950489965439,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-7",
+      "supports": [
+        0.15,
+        0,
+        0,
+        0,
+        0.272,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.019478002457468113,
+      "integer": "0",
+      "extensionStart": 0.010000000000000094,
+      "extensionEnd": 0.009999980521997636,
+      "length": 10.996753666257094,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-8",
+      "supports": [
+        0.15,
+        0,
+        0,
+        0,
+        0.273,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.10644258967122677,
+      "integer": "0",
+      "extensionStart": 0.009999999999999922,
+      "extensionEnd": 0.009999893557410253,
+      "length": 10.982259568388132,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-9",
+      "supports": [
+        0.15,
+        0,
+        0,
+        0,
+        0.274,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.19340712258814063,
+      "integer": "0",
+      "extensionStart": 0.010000000000000089,
+      "extensionEnd": 0.0099998065928775,
+      "length": 10.967765479568646,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-10",
+      "supports": [
+        0.2,
+        0,
+        0,
+        0,
+        0.363,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.05878573776374463,
+      "integer": "0",
+      "extensionStart": 0.009999999999999988,
+      "extensionEnd": 0.009999941214262223,
+      "length": 10.990202377039374,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-11",
+      "supports": [
+        0.2,
+        0,
+        0,
+        0,
+        0.364,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.14575300371147404,
+      "integer": "0",
+      "extensionStart": 0.010000000000000077,
+      "extensionEnd": 0.009999854246996363,
+      "length": 10.975707832714752,
+      "baseline": 11,
+      "limited": "true"
+    },
+    {
+      "name": "counterexample-12",
+      "supports": [
+        0.2,
+        0,
+        0,
+        0,
+        0.365,
+        0,
+        0,
+        0
+      ],
+      "raw": 0.23272021681258748,
+      "integer": "0",
+      "extensionStart": 0.010000000000000056,
+      "extensionEnd": 0.009999767279783241,
+      "length": 10.9612132971979,
+      "baseline": 11,
+      "limited": "true"
+    }
+  ],
+  "maxRawDifference": 8.697043085703626e-12,
+  "maxPriorDifference": 0,
+  "realOperation": {
+    "supports": [
+      0.05,
+      0,
+      0,
+      0,
+      0.091,
+      0,
+      0,
+      0
+    ],
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "raw": 0.03356608570259656,
+    "integer": "0",
+    "svgLength": 10.994405652382898,
+    "startExtension": 0.009999999999999997,
+    "endExtension": 0.009999966433914294,
+    "description": "XY +18 µmXY↑上計器:頭RS0相対上押込＋右直角マスタ：パレット上／計器：主軸頭に固定。右側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XYでは主軸頭そのものを上へ動かし、パレットとマスタは静止します。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をXへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をXへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 下・右側の●0でゼロ合わせ。③ 主軸頭＋工具を部材＋Y・上へ300 mm（NC指令の符号ではありません）。基準器に対する計器は上へ。測定子が本体へ右に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝右、図の上＝上。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。測定子の伸縮は接触計算と同じ正負で、変化を拡大します。接触点から描いた測定子と本体の位置を連動させ、測定子の傾きも強調します。器具全体を同じ縮尺で描いた図ではありません。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。0.0 → +300.0 mm（Y部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から60→360 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：+18 µm／現在：+18 µm（同じ区間で各々ゼロ）。従来の局所角度差：0 µm／300 mm換算。上の表示値とは別です。XZ -7 µmXZ↑奥計器:頭RS0相対手前押込＋右直角マスタ：パレット上／計器：主軸頭に固定。右側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をXへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をXへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 奥・右側の●0でゼロ合わせ。③ パレット台＋ワークを部材＋Z・奥へ300 mm（NC指令の符号ではありません）。基準器に対する計器は手前へ。測定子が本体へ右に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝右、図の上＝奥。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。測定子の伸縮は接触計算と同じ正負で、変化を拡大します。接触点から描いた測定子と本体の位置を連動させ、測定子の傾きも強調します。器具全体を同じ縮尺で描いた図ではありません。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。0.0 → +300.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から50 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：-7 µm／現在：-7 µm（同じ区間で各々ゼロ）。従来の局所角度差：0 µm／300 mm換算。上の表示値とは別です。YZ 0 µmYZ↑奥計器:頭RS0相対手前押込＋上直角マスタ：パレット上／計器：主軸頭に固定。上側からS面に接触。小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器をYへ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。① R用の頭固定腕をYへ300 mm送り、両端で等指示に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。② 奥・上側の●0でゼロ合わせ。③ パレット台＋ワークを部材＋Z・奥へ300 mm（NC指令の符号ではありません）。基準器に対する計器は手前へ。測定子が本体へ上に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。図の右＝上、図の上＝奥。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。測定子の伸縮は接触計算と同じ正負で、変化を拡大します。接触点から描いた測定子と本体の位置を連動させ、測定子の傾きも強調します。器具全体を同じ縮尺で描いた図ではありません。図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。0.0 → +300.0 mm（Z部材位置・中央0）。スライダーの現在位置と接触ゼロ位置は同じとは限りません。R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から360 mm。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。初期支持状態：0 µm／現在：0 µm（同じ区間で各々ゼロ）。従来の局所角度差：-5 µm／300 mm換算。上の表示値とは別です。"
+  },
+  "invalid": {
+    "config": {
+      "width": 0.5,
+      "depth": 0.5,
+      "offset": 0.5,
+      "columnX": 0,
+      "columnZ": 0
+    },
+    "measurements": [
+      {
+        "pair": "XY",
+        "data": {
+          "valid": false,
+          "reason": "300 mmの走査範囲不足",
+          "setup": {
+            "base": "X",
+            "scan": "Y",
+            "owner": "body",
+            "member": "主軸頭＋工具",
+            "normalDirection": "右",
+            "positiveScanDirection": "上",
+            "scanDirection": "上",
+            "relativeDirection": "上",
+            "relativeSign": 1,
+            "memberSign": 1,
+            "zeroLocation": "下・右側",
+            "body": "主軸頭",
+            "mount": "パレット",
+            "artifact": "直角マスタ",
+            "shortBody": "頭",
+            "lathe": false
+          },
+          "model": "horizontal-finite-square-v1",
+          "responseGain": 1
+        },
+        "integer": "—",
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XY・300 mmの走査範囲不足。計器は主軸頭に固定。基準器に対して上へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XY\" data-base=\"X\" data-other=\"Y\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"上\" data-local-angle-microradians=\"0\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"下・右側\" data-relative-direction=\"上\" data-reading-microns=\"\" data-physical-reading-microns=\"\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.01\" data-probe-normal=\"-1\" data-probe-along=\"0\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XY</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑上</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,34H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"32\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"34\" class=\"scan-label measurement-start\">0</text><g opacity=\"0.3\"><path d=\"M34,31L34,14\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,14L34,14\" class=\"scan-probe\"></path><rect x=\"34\" y=\"11\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0 34 14)\" class=\"scan-body\"></rect></g><path d=\"M61,31L61,14m1.5,2l-1.5,-2l-1.5,2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">上</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>"
+      },
+      {
+        "pair": "XZ",
+        "data": {
+          "valid": false,
+          "reason": "300 mmの走査範囲不足",
+          "setup": {
+            "base": "X",
+            "scan": "Z",
+            "owner": "master",
+            "member": "パレット台＋ワーク",
+            "normalDirection": "右",
+            "positiveScanDirection": "奥",
+            "scanDirection": "奥",
+            "relativeDirection": "手前",
+            "relativeSign": -1,
+            "memberSign": 1,
+            "zeroLocation": "奥・右側",
+            "body": "主軸頭",
+            "mount": "パレット",
+            "artifact": "直角マスタ",
+            "shortBody": "頭",
+            "lathe": false
+          },
+          "model": "horizontal-finite-square-v1",
+          "responseGain": 1
+        },
+        "integer": "—",
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"XZ・300 mmの走査範囲不足。計器は主軸頭に固定。基準器に対して手前へ移動。押込み右が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"XZ\" data-base=\"X\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"右\" data-view-up=\"奥\" data-local-angle-microradians=\"0\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"奥・右側\" data-relative-direction=\"手前\" data-reading-microns=\"\" data-physical-reading-microns=\"\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.01\" data-probe-normal=\"-1\" data-probe-along=\"0\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">XZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,11H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"0.3\"><path d=\"M34,14L34,31\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,31L34,31\" class=\"scan-probe\"></path><rect x=\"34\" y=\"28\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0 34 31)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">右</text></g></svg>"
+      },
+      {
+        "pair": "YZ",
+        "data": {
+          "valid": false,
+          "reason": "300 mmの走査範囲不足",
+          "setup": {
+            "base": "Y",
+            "scan": "Z",
+            "owner": "master",
+            "member": "パレット台＋ワーク",
+            "normalDirection": "上",
+            "positiveScanDirection": "奥",
+            "scanDirection": "奥",
+            "relativeDirection": "手前",
+            "relativeSign": -1,
+            "memberSign": 1,
+            "zeroLocation": "奥・上側",
+            "body": "主軸頭",
+            "mount": "パレット",
+            "artifact": "直角マスタ",
+            "shortBody": "頭",
+            "lathe": false
+          },
+          "model": "horizontal-finite-square-v1",
+          "responseGain": 1
+        },
+        "integer": "—",
+        "svg": "<svg class=\"live-squareness-diagram\" viewBox=\"0 0 64 45\" role=\"img\" aria-label=\"YZ・300 mmの走査範囲不足。計器は主軸頭に固定。基準器に対して手前へ移動。押込み上が増えると＋。\" aria-describedby=\"squarenessMeasurementNote\" data-pair=\"YZ\" data-base=\"Y\" data-other=\"Z\" data-measurement-length-m=\"0.3\" data-view-right=\"上\" data-view-up=\"奥\" data-local-angle-microradians=\"0\" data-measurement-model=\"horizontal-finite-square-v1\" data-zero-location-measurement=\"奥・上側\" data-relative-direction=\"手前\" data-reading-microns=\"\" data-physical-reading-microns=\"\" data-reading-model=\"horizontal-finite-square-v1\" data-support-response-gain=\"1\"><g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.01\" data-probe-normal=\"-1\" data-probe-along=\"0\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"></path><path d=\"M3,11H23\" class=\"scan-reference-face\"></path><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"></path><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"></circle><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"0.3\"><path d=\"M34,14L34,31\" class=\"scan-path\"></path><circle cx=\"23\" cy=\"31\" r=\"1.6\" class=\"scan-contact\"></circle><path d=\"M23,31L34,31\" class=\"scan-probe\"></path><rect x=\"34\" y=\"28\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(0 34 31)\" class=\"scan-body\"></rect></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"></path><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"></path><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g></svg>"
+      }
+    ],
+    "old": {
+      "width": 2.72,
+      "depth": 3.68,
+      "offset": 0.5,
+      "columnX": 0,
+      "columnZ": 0
+    }
+  },
+  "errors": [],
+  "invalidChecks": [
+    {
+      "pair": "XY",
+      "ok": true
+    },
+    {
+      "pair": "XZ",
+      "ok": true
+    },
+    {
+      "pair": "YZ",
+      "ok": true
+    }
+  ]
+}

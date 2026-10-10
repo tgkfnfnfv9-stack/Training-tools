@@ -1,0 +1,10758 @@
+[
+  {
+    "state": "horizontal-ideal-boundary-central",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "known dimension/support fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 5.551115123125783e-11,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary-central",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "known dimension/support fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.3350965674300127,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary-central",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "known dimension/support fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 1.7980428810623201,
+    "display": 2
+  },
+  {
+    "state": "horizontal-ideal-boundary-central",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "known dimension/support fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.9594140904008869,
+    "display": 1
+  },
+  {
+    "state": "horizontal-ideal-boundary-central",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "known dimension/support fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 3.012936137617231,
+    "display": 3
+  },
+  {
+    "state": "horizontal-ideal-boundary--0.000001",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.592591592592605,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary--0.000001",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.592591592592605,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.27688743458459397,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary--0.000001",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.592591592592605,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 1.6304703236210556,
+    "display": 2
+  },
+  {
+    "state": "horizontal-ideal-boundary--0.000001",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.592591592592605,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.7927237744616983,
+    "display": 1
+  },
+  {
+    "state": "horizontal-ideal-boundary--0.000001",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.592591592592605,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 3.012941902476307,
+    "display": 3
+  },
+  {
+    "state": "horizontal-ideal-boundary-0",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925925925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary-0",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925925925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.27688743458459397,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary-0",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925925925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 1.6304703236210556,
+    "display": 2
+  },
+  {
+    "state": "horizontal-ideal-boundary-0",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925925925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.7927237744616983,
+    "display": 1
+  },
+  {
+    "state": "horizontal-ideal-boundary-0",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925925925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 3.012941902476307,
+    "display": 3
+  },
+  {
+    "state": "horizontal-ideal-boundary-0.000001",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925935925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary-0.000001",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925935925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.27688743458459397,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary-0.000001",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925935925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 1.6304703236210556,
+    "display": 2
+  },
+  {
+    "state": "horizontal-ideal-boundary-0.000001",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925935925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.7927237744616983,
+    "display": 1
+  },
+  {
+    "state": "horizontal-ideal-boundary-0.000001",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925935925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 3.012941902476307,
+    "display": 3
+  },
+  {
+    "state": "horizontal-ideal-boundary-slider52",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary-slider52",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.27688743458459397,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary-slider52",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 1.6304703236210556,
+    "display": 2
+  },
+  {
+    "state": "horizontal-ideal-boundary-slider52",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.7927237744616983,
+    "display": 1
+  },
+  {
+    "state": "horizontal-ideal-boundary-slider52",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 3.012941902476307,
+    "display": 3
+  },
+  {
+    "state": "horizontal-ideal-boundary-slider53",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 53,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary-slider53",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 53,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.27688743458459397,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-boundary-slider53",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 53,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 1.6304703236210556,
+    "display": 2
+  },
+  {
+    "state": "horizontal-ideal-boundary-slider53",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 53,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.7927237744616983,
+    "display": 1
+  },
+  {
+    "state": "horizontal-ideal-boundary-slider53",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 53,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 3.012941902476307,
+    "display": 3
+  },
+  {
+    "state": "horizontal-used-boundary-central",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "known dimension/support fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991606092,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary-central",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "known dimension/support fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.464089397065832,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-boundary-central",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "known dimension/support fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 15.918028055627447,
+    "display": 16
+  },
+  {
+    "state": "horizontal-used-boundary-central",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "known dimension/support fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 9.083686251191297,
+    "display": 9
+  },
+  {
+    "state": "horizontal-used-boundary-central",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "known dimension/support fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 17.131306271350386,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary--0.000001",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.592591592592605,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991772625,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary--0.000001",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.592591592592605,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.405882105223458,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-boundary--0.000001",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.592591592592605,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 15.750457729316395,
+    "display": 16
+  },
+  {
+    "state": "horizontal-used-boundary--0.000001",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.592591592592605,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.916997181118367,
+    "display": 9
+  },
+  {
+    "state": "horizontal-used-boundary--0.000001",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.592591592592605,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 17.131365526532743,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary-0",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925925925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991744868,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary-0",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925925925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.405882105223458,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-boundary-0",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925925925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 15.750457729316395,
+    "display": 16
+  },
+  {
+    "state": "horizontal-used-boundary-0",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925925925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.916997181118367,
+    "display": 9
+  },
+  {
+    "state": "horizontal-used-boundary-0",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925925925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 17.131365526532743,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary-0.000001",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925935925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991772625,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary-0.000001",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925935925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.405882105223458,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-boundary-0.000001",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925935925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 15.750457729316395,
+    "display": 16
+  },
+  {
+    "state": "horizontal-used-boundary-0.000001",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925935925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.916997181118367,
+    "display": 9
+  },
+  {
+    "state": "horizontal-used-boundary-0.000001",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "exact analytic boundary plus/minus 1e-6 percent via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52.5925935925926,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 17.131365526532743,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary-slider52",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991578334,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary-slider52",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.405882105223458,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-boundary-slider52",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 15.750457729316395,
+    "display": 16
+  },
+  {
+    "state": "horizontal-used-boundary-slider52",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.916997181118367,
+    "display": 9
+  },
+  {
+    "state": "horizontal-used-boundary-slider52",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 52,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 17.131365526532743,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary-slider53",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 53,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.95899999155058,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-boundary-slider53",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 53,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.405882105223458,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-boundary-slider53",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 53,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 15.750457729316395,
+    "display": 16
+  },
+  {
+    "state": "horizontal-used-boundary-slider53",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 53,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.916997181118367,
+    "display": 9
+  },
+  {
+    "state": "horizontal-used-boundary-slider53",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "real Z slider",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 53,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 17.131365526532743,
+    "display": 17
+  },
+  {
+    "state": "horizontal-ideal-posture-flat",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture-flat",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture-flat",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture-flat",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture-flat",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture-.01",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.025024,
+      -0.025024,
+      0.008341333333333334,
+      -0.008341333333333334,
+      -0.008341333333333333,
+      0.008341333333333333,
+      -0.025024,
+      0.025024
+    ],
+    "raw": 6.552002967714563,
+    "display": 7
+  },
+  {
+    "state": "horizontal-ideal-posture-.01",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.025024,
+      -0.025024,
+      0.008341333333333334,
+      -0.008341333333333334,
+      -0.008341333333333333,
+      0.008341333333333333,
+      -0.025024,
+      0.025024
+    ],
+    "raw": -3.960000718531906,
+    "display": -4
+  },
+  {
+    "state": "horizontal-ideal-posture-.01",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.025024,
+      -0.025024,
+      0.008341333333333334,
+      -0.008341333333333334,
+      -0.008341333333333333,
+      0.008341333333333333,
+      -0.025024,
+      0.025024
+    ],
+    "raw": 0.00004760824373617467,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture-.01",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.025024,
+      -0.025024,
+      0.008341333333333334,
+      -0.008341333333333334,
+      -0.008341333333333333,
+      0.008341333333333333,
+      -0.025024,
+      0.025024
+    ],
+    "raw": -5.669999999700915,
+    "display": -6
+  },
+  {
+    "state": "horizontal-ideal-posture-.01",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.025024,
+      -0.025024,
+      0.008341333333333334,
+      -0.008341333333333334,
+      -0.008341333333333333,
+      0.008341333333333333,
+      -0.025024,
+      0.025024
+    ],
+    "raw": -0.0006344730140578347,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture--.01",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.025024,
+      0.025024,
+      -0.008341333333333334,
+      0.008341333333333334,
+      0.008341333333333333,
+      -0.008341333333333333,
+      0.025024,
+      -0.025024
+    ],
+    "raw": -6.551997027377798,
+    "display": -7
+  },
+  {
+    "state": "horizontal-ideal-posture--.01",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.025024,
+      0.025024,
+      -0.008341333333333334,
+      0.008341333333333334,
+      0.008341333333333333,
+      -0.008341333333333333,
+      0.025024,
+      -0.025024
+    ],
+    "raw": 3.959999278220494,
+    "display": 4
+  },
+  {
+    "state": "horizontal-ideal-posture--.01",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.025024,
+      0.025024,
+      -0.008341333333333334,
+      0.008341333333333334,
+      0.008341333333333333,
+      -0.008341333333333333,
+      0.025024,
+      -0.025024
+    ],
+    "raw": 0.00004760824373617467,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture--.01",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.025024,
+      0.025024,
+      -0.008341333333333334,
+      0.008341333333333334,
+      0.008341333333333333,
+      -0.008341333333333333,
+      0.025024,
+      -0.025024
+    ],
+    "raw": 5.669999999721731,
+    "display": 6
+  },
+  {
+    "state": "horizontal-ideal-posture--.01",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.025024,
+      0.025024,
+      -0.008341333333333334,
+      0.008341333333333334,
+      0.008341333333333333,
+      -0.008341333333333333,
+      0.025024,
+      -0.025024
+    ],
+    "raw": -0.0006344730140578347,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture-.05",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.12512,
+      -0.12512,
+      0.04170666666666668,
+      -0.04170666666666668,
+      -0.041706666666666656,
+      0.041706666666666656,
+      -0.12512,
+      0.12512
+    ],
+    "raw": 32.76007388910117,
+    "display": 33
+  },
+  {
+    "state": "horizontal-ideal-posture-.05",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.12512,
+      -0.12512,
+      0.04170666666666668,
+      -0.04170666666666668,
+      -0.041706666666666656,
+      0.041706666666666656,
+      -0.12512,
+      0.12512
+    ],
+    "raw": -19.800017823147844,
+    "display": -20
+  },
+  {
+    "state": "horizontal-ideal-posture-.05",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.12512,
+      -0.12512,
+      0.04170666666666668,
+      -0.04170666666666668,
+      -0.041706666666666656,
+      0.041706666666666656,
+      -0.12512,
+      0.12512
+    ],
+    "raw": 0.0011902051497147959,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture-.05",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.12512,
+      -0.12512,
+      0.04170666666666668,
+      -0.04170666666666668,
+      -0.041706666666666656,
+      0.041706666666666656,
+      -0.12512,
+      0.12512
+    ],
+    "raw": -28.349999963681732,
+    "display": -28
+  },
+  {
+    "state": "horizontal-ideal-posture-.05",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.12512,
+      -0.12512,
+      0.04170666666666668,
+      -0.04170666666666668,
+      -0.041706666666666656,
+      0.041706666666666656,
+      -0.12512,
+      0.12512
+    ],
+    "raw": -0.015861830279795264,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture--.05",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.12512,
+      0.12512,
+      -0.04170666666666668,
+      0.04170666666666668,
+      0.041706666666666656,
+      -0.041706666666666656,
+      0.12512,
+      -0.12512
+    ],
+    "raw": -32.759925389745995,
+    "display": -33
+  },
+  {
+    "state": "horizontal-ideal-posture--.05",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.12512,
+      0.12512,
+      -0.04170666666666668,
+      0.04170666666666668,
+      0.041706666666666656,
+      -0.041706666666666656,
+      0.12512,
+      -0.12512
+    ],
+    "raw": 19.7999818219146,
+    "display": 20
+  },
+  {
+    "state": "horizontal-ideal-posture--.05",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.12512,
+      0.12512,
+      -0.04170666666666668,
+      0.04170666666666668,
+      0.041706666666666656,
+      -0.041706666666666656,
+      0.12512,
+      -0.12512
+    ],
+    "raw": 0.0011902051497147959,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-posture--.05",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.12512,
+      0.12512,
+      -0.04170666666666668,
+      0.04170666666666668,
+      0.041706666666666656,
+      -0.041706666666666656,
+      0.12512,
+      -0.12512
+    ],
+    "raw": 28.349999963678265,
+    "display": 28
+  },
+  {
+    "state": "horizontal-ideal-posture--.05",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.12512,
+      0.12512,
+      -0.04170666666666668,
+      0.04170666666666668,
+      0.041706666666666656,
+      -0.041706666666666656,
+      0.12512,
+      -0.12512
+    ],
+    "raw": -0.015861830279795264,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-original",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-original",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-original",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-original",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-original",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B--1",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B--1",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -0.4681495071375691,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B--1",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 1.5761065561004095,
+    "display": 2
+  },
+  {
+    "state": "horizontal-ideal-B--1",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -1.3407421650280664,
+    "display": -1
+  },
+  {
+    "state": "horizontal-ideal-B--1",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 2.554296863339564,
+    "display": 3
+  },
+  {
+    "state": "horizontal-ideal-B--1-restored",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B--1-restored",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B--1-restored",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B--1-restored",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B--1-restored",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-1",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-1",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.46815164373749385,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-1",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -1.576067356935662,
+    "display": -2
+  },
+  {
+    "state": "horizontal-ideal-B-1",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 1.3404838548978364,
+    "display": 1
+  },
+  {
+    "state": "horizontal-ideal-B-1",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.5543987886879336,
+    "display": -3
+  },
+  {
+    "state": "horizontal-ideal-B-1-restored",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-1-restored",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-1-restored",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-1-restored",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-ideal-B-1-restored",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "horizontal-used-posture-flat",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991522823,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-posture-flat",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.12899999891835,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-posture-flat",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.119999995145655,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-posture-flat",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.125810727274697,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-posture-flat",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.118678122277545,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-posture-.01",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.025024,
+      -0.025024,
+      0.008341333333333334,
+      -0.008341333333333334,
+      -0.008341333333333333,
+      0.008341333333333333,
+      -0.025024,
+      0.025024
+    ],
+    "raw": 23.51100294384345,
+    "display": 24
+  },
+  {
+    "state": "horizontal-used-posture-.01",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.025024,
+      -0.025024,
+      0.008341333333333334,
+      -0.008341333333333334,
+      -0.008341333333333333,
+      0.008341333333333333,
+      -0.025024,
+      0.025024
+    ],
+    "raw": 4.169021875605542,
+    "display": 4
+  },
+  {
+    "state": "horizontal-used-posture-.01",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.025024,
+      -0.025024,
+      0.008341333333333334,
+      -0.008341333333333334,
+      -0.008341333333333333,
+      0.008341333333333333,
+      -0.025024,
+      0.025024
+    ],
+    "raw": 14.119981974231033,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-posture-.01",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.025024,
+      -0.025024,
+      0.008341333333333334,
+      -0.008341333333333334,
+      -0.008341333333333333,
+      0.008341333333333333,
+      -0.025024,
+      0.025024
+    ],
+    "raw": 2.4561192019205427,
+    "display": 2
+  },
+  {
+    "state": "horizontal-used-posture-.01",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.025024,
+      -0.025024,
+      0.008341333333333334,
+      -0.008341333333333334,
+      -0.008341333333333333,
+      0.008341333333333333,
+      -0.025024,
+      0.025024
+    ],
+    "raw": 14.11970989895206,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-posture--.01",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.025024,
+      0.025024,
+      -0.008341333333333334,
+      0.008341333333333334,
+      0.008341333333333333,
+      -0.008341333333333333,
+      0.025024,
+      -0.025024
+    ],
+    "raw": 10.407002970082985,
+    "display": 10
+  },
+  {
+    "state": "horizontal-used-posture--.01",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.025024,
+      0.025024,
+      -0.008341333333333334,
+      0.008341333333333334,
+      0.008341333333333333,
+      -0.008341333333333333,
+      0.025024,
+      -0.025024
+    ],
+    "raw": 12.088976681545043,
+    "display": 12
+  },
+  {
+    "state": "horizontal-used-posture--.01",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.025024,
+      0.025024,
+      -0.008341333333333334,
+      0.008341333333333334,
+      0.008341333333333333,
+      -0.008341333333333333,
+      0.025024,
+      -0.025024
+    ],
+    "raw": 14.120113225248032,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-posture--.01",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.025024,
+      0.025024,
+      -0.008341333333333334,
+      0.008341333333333334,
+      0.008341333333333333,
+      -0.008341333333333333,
+      0.025024,
+      -0.025024
+    ],
+    "raw": 13.795502239174334,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-posture--.01",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.025024,
+      0.025024,
+      -0.008341333333333334,
+      0.008341333333333334,
+      0.008341333333333333,
+      -0.008341333333333333,
+      0.025024,
+      -0.025024
+    ],
+    "raw": 14.116377532517182,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-posture-.05",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.12512,
+      -0.12512,
+      0.04170666666666668,
+      -0.04170666666666668,
+      -0.041706666666666656,
+      0.041706666666666656,
+      -0.12512,
+      0.12512
+    ],
+    "raw": 49.7190737171211,
+    "display": 50
+  },
+  {
+    "state": "horizontal-used-posture-.05",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.12512,
+      -0.12512,
+      0.04170666666666668,
+      -0.04170666666666668,
+      -0.041706666666666656,
+      0.041706666666666656,
+      -0.12512,
+      0.12512
+    ],
+    "raw": -11.67090485314215,
+    "display": -12
+  },
+  {
+    "state": "horizontal-used-posture-.05",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.12512,
+      -0.12512,
+      0.04170666666666668,
+      -0.04170666666666668,
+      -0.041706666666666656,
+      0.041706666666666656,
+      -0.12512,
+      0.12512
+    ],
+    "raw": 14.120861990042991,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-posture-.05",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.12512,
+      -0.12512,
+      0.04170666666666668,
+      -0.04170666666666668,
+      -0.041706666666666656,
+      0.041706666666666656,
+      -0.12512,
+      0.12512
+    ],
+    "raw": -20.222646999511554,
+    "display": -20
+  },
+  {
+    "state": "horizontal-used-posture-.05",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.12512,
+      -0.12512,
+      0.04170666666666668,
+      -0.04170666666666668,
+      -0.041706666666666656,
+      0.041706666666666656,
+      -0.12512,
+      0.12512
+    ],
+    "raw": 14.111148876136056,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-posture--.05",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.12512,
+      0.12512,
+      -0.04170666666666668,
+      0.04170666666666668,
+      0.041706666666666656,
+      -0.041706666666666656,
+      0.12512,
+      -0.12512
+    ],
+    "raw": -15.800925456338142,
+    "display": -16
+  },
+  {
+    "state": "horizontal-used-posture--.05",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.12512,
+      0.12512,
+      -0.04170666666666668,
+      0.04170666666666668,
+      0.041706666666666656,
+      -0.041706666666666656,
+      0.12512,
+      -0.12512
+    ],
+    "raw": 27.92886883543934,
+    "display": 28
+  },
+  {
+    "state": "horizontal-used-posture--.05",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.12512,
+      0.12512,
+      -0.04170666666666668,
+      0.04170666666666668,
+      0.041706666666666656,
+      -0.041706666666666656,
+      0.12512,
+      -0.12512
+    ],
+    "raw": 14.121518244694306,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-posture--.05",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.12512,
+      0.12512,
+      -0.04170666666666668,
+      0.04170666666666668,
+      0.041706666666666656,
+      -0.041706666666666656,
+      0.12512,
+      -0.12512
+    ],
+    "raw": 36.47426811699724,
+    "display": 36
+  },
+  {
+    "state": "horizontal-used-posture--.05",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.12512,
+      0.12512,
+      -0.04170666666666668,
+      0.04170666666666668,
+      0.041706666666666656,
+      -0.041706666666666656,
+      0.12512,
+      -0.12512
+    ],
+    "raw": 14.094487031818606,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-B-original",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991522823,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-B-original",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.12899999891835,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-B-original",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.119999995145655,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-B-original",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.125810727274697,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-B-original",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.118678122277545,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-B--1",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991744868,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-B--1",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 7.660860507716777,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-B--1",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 15.6961272450417,
+    "display": 16
+  },
+  {
+    "state": "horizontal-used-B--1",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 6.783780290717245,
+    "display": 7
+  },
+  {
+    "state": "horizontal-used-B--1",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.67340512916983,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-B--1-restored",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991522823,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-B--1-restored",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.12899999891835,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-B--1-restored",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.119999995145655,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-B--1-restored",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.125810727274697,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-B--1-restored",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.118678122277545,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-B-1",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.95899999130078,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-B-1",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.597141626770153,
+    "display": 9
+  },
+  {
+    "state": "horizontal-used-B-1",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 12.543911944698852,
+    "display": 13
+  },
+  {
+    "state": "horizontal-used-B-1",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 9.467582870171382,
+    "display": 9
+  },
+  {
+    "state": "horizontal-used-B-1",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 11.56384920578471,
+    "display": 12
+  },
+  {
+    "state": "horizontal-used-B-1-restored",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991522823,
+    "display": 17
+  },
+  {
+    "state": "horizontal-used-B-1-restored",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.12899999891835,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-B-1-restored",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.119999995145655,
+    "display": 14
+  },
+  {
+    "state": "horizontal-used-B-1-restored",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.125810727274697,
+    "display": 8
+  },
+  {
+    "state": "horizontal-used-B-1-restored",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.118678122277545,
+    "display": 14
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -5.551115123125783e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-flat",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 1.734723475976807e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -2.5199942398444057,
+    "display": -3
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -15.371995487198156,
+    "display": -15
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -0.2551415987719031,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 2.519998964937986,
+    "display": 3
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -0.00013078809389666102,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -15.112129225020727,
+    "display": -15
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -30.743990974399505,
+    "display": -31
+  },
+  {
+    "state": "lathe-ideal-posture-.01",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -15.622412422564707,
+    "display": -16
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 1.734723475976807e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 2.5200057597544316,
+    "display": 3
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 15.372004508065915,
+    "display": 15
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 0.25485840115743985,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": -2.5200010349557544,
+    "display": -3
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": -0.00013078782674924572,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 15.121870778754543,
+    "display": 15
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 30.744009016134278,
+    "display": 31
+  },
+  {
+    "state": "lathe-ideal-posture--.01",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 15.631587581069194,
+    "display": 16
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -5.204170427930421e-12,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -12.599855998862362,
+    "display": -13
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -76.85988694055558,
+    "display": -77
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -1.2785399647369753,
+    "display": -1
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 12.599974122628337,
+    "display": 13
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -0.00326968979322273,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -75.46323054551107,
+    "display": -75
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -153.71977388110858,
+    "display": -154
+  },
+  {
+    "state": "lathe-ideal-posture-.05",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -78.02031047498409,
+    "display": -78
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": -5.204170427930421e-12,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 12.600143998771005,
+    "display": 13
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 76.86011246541277,
+    "display": 77
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 1.271460024892801,
+    "display": 1
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": -12.600025872628457,
+    "display": -13
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": -0.003269711012360288,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 75.70676992526073,
+    "display": 76
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 153.720224930827,
+    "display": 154
+  },
+  {
+    "state": "lathe-ideal-posture--.05",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "ideal",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 78.2496899750483,
+    "display": 78
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -5.551115123125783e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-original",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "ideal",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 6.938893903907228e-12,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.7500005099955742,
+    "display": 1
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -4.174998492487208,
+    "display": -4
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -0.37412622717090743,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -0.7500410036404698,
+    "display": -1
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -1.500011584991412,
+    "display": -2
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -3.800526452470143,
+    "display": -4
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -8.349996984971519,
+    "display": -8
+  },
+  {
+    "state": "lathe-ideal-B--1",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -4.5487789068141,
+    "display": -5
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -5.551115123125783e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B--1-restored",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 6.938893903907228e-12,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -0.7499994897925549,
+    "display": -1
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 4.175001507400363,
+    "display": 4
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.37408805872698436,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0.7499589964130721,
+    "display": 1
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 1.4999884149734244,
+    "display": 1
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 3.8012592625882857,
+    "display": 4
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.350003014800933,
+    "display": 8
+  },
+  {
+    "state": "lathe-ideal-B-1",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "ideal",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 4.549435380044042,
+    "display": 5
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -5.551115123125783e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-ideal-B-1-restored",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "ideal",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.7755575615628914e-11,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -3.7579390983043943,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 7.826992527158391,
+    "display": 8
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 123.79637200451012,
+    "display": 124
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.65720293390892,
+    "display": -3
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -16.958999990972917,
+    "display": -17
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -0.00575215427546516,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 126.75994643730066,
+    "display": 127
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 247.59274400901893,
+    "display": 248
+  },
+  {
+    "state": "lathe-used-posture-flat",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 121.44554056948282,
+    "display": 121
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -3.7579390982853123,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 5.306998288217776,
+    "display": 5
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 108.42435393614527,
+    "display": 108
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -2.9117963270618743,
+    "display": -3
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -14.43900102951305,
+    "display": -14
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": -0.0038122510322147196,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 111.5710986081854,
+    "display": 112
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 216.8487078722872,
+    "display": 217
+  },
+  {
+    "state": "lathe-used-posture-.01",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.016800000000000002,
+      0,
+      -0.016800000000000002,
+      -0.016800000000000002,
+      0,
+      0.016800000000000002
+    ],
+    "raw": 105.74750595406316,
+    "display": 106
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": -3.757939098287047,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 10.346998286100973,
+    "display": 10
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 139.16839908380803,
+    "display": 139
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": -2.4028927374822593,
+    "display": -2
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": -19.47900102136288,
+    "display": -19
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": -0.007953635685828409,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 141.95853621044515,
+    "display": 142
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 278.33679816761935,
+    "display": 278
+  },
+  {
+    "state": "lathe-used-posture--.01",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.016800000000000002,
+      0,
+      0.016800000000000002,
+      0.016800000000000002,
+      0,
+      -0.016800000000000002
+    ],
+    "raw": 137.15275073547875,
+    "display": 137
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -3.7579390983078635,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -4.772863466314184,
+    "display": -5
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 46.93637205810718,
+    "display": 47
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -3.9330018612477233,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": -4.3590258746815245,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 0.0013315938664215654,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 50.91312504854409,
+    "display": 51
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 93.87274411621488,
+    "display": 94
+  },
+  {
+    "state": "lathe-used-posture-.05",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0.08400000000000002,
+      0,
+      -0.08400000000000002,
+      -0.08400000000000002,
+      0,
+      0.08400000000000002
+    ],
+    "raw": 43.047121326047346,
+    "display": 43
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": -3.7579390983078635,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 20.427136522744444,
+    "display": 20
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 200.65659722607074,
+    "display": 201
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": -1.3884839242100382,
+    "display": -1
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": -29.559025829697937,
+    "display": -30
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": -0.019375353115316796,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 202.85031696207213,
+    "display": 203
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 401.3131944521422,
+    "display": 401
+  },
+  {
+    "state": "lathe-used-posture--.05",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "known fixture via evaluate",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      -0.08400000000000002,
+      0,
+      0.08400000000000002,
+      0.08400000000000002,
+      0,
+      -0.08400000000000002
+    ],
+    "raw": 200.07334911364973,
+    "display": 200
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -3.7579390983043943,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 7.826992527158391,
+    "display": 8
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 123.79637200451012,
+    "display": 124
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.65720293390892,
+    "display": -3
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -16.958999990972917,
+    "display": -17
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -0.00575215427546516,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 126.75994643730066,
+    "display": 127
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 247.59274400901893,
+    "display": 248
+  },
+  {
+    "state": "lathe-used-B-original",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "flat fixture",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 121.44554056948282,
+    "display": 121
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -3.75793909829919,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.576993036918044,
+    "display": 9
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 119.62117049914818,
+    "display": 120
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -3.0311802696433214,
+    "display": -3
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -17.70904099972215,
+    "display": -18
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -1.5063800138607335,
+    "display": -2
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 122.93835313439624,
+    "display": 123
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 239.24234099829965,
+    "display": 239
+  },
+  {
+    "state": "lathe-used-B--1",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      -0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 116.8759925951092,
+    "display": 117
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -3.7579390983043943,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 7.826992527158391,
+    "display": 8
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 123.79637200451012,
+    "display": 124
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.65720293390892,
+    "display": -3
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -16.958999990972917,
+    "display": -17
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -0.00575215427546516,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 126.75994643730066,
+    "display": 127
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 247.59274400901893,
+    "display": 248
+  },
+  {
+    "state": "lathe-used-B--1-restored",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 121.44554056948282,
+    "display": 121
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -3.75793909829919,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 7.076993037639923,
+    "display": 7
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 127.97157652496327,
+    "display": 128
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.2832637663736306,
+    "display": -2
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -16.20904100203477,
+    "display": -16
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 1.4948525411465075,
+    "display": 1
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 130.58227265903832,
+    "display": 131
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 255.94315304992844,
+    "display": 256
+  },
+  {
+    "state": "lathe-used-B-1",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "real coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 126.01574512629415,
+    "display": 126
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -3.7579390983043943,
+    "display": -4
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 7.826992527158391,
+    "display": 8
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 123.79637200451012,
+    "display": 124
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.65720293390892,
+    "display": -3
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -16.958999990972917,
+    "display": -17
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -0.00575215427546516,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 126.75994643730066,
+    "display": 127
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 247.59274400901893,
+    "display": 248
+  },
+  {
+    "state": "lathe-used-B-1-restored",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "real inverse coarse support button",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 121.44554056948282,
+    "display": 121
+  },
+  {
+    "state": "horizontal-legacy-import",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": -21,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991661603,
+    "display": 17
+  },
+  {
+    "state": "horizontal-legacy-import",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": -21,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.722397702769225,
+    "display": 9
+  },
+  {
+    "state": "horizontal-legacy-import",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": -21,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 12.897161037542237,
+    "display": 13
+  },
+  {
+    "state": "horizontal-legacy-import",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": -21,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 9.769186841066674,
+    "display": 10
+  },
+  {
+    "state": "horizontal-legacy-import",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": -21,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 12.712302866004638,
+    "display": 13
+  },
+  {
+    "state": "horizontal-mobile-swipe",
+    "kind": "horizontal",
+    "item": "XY",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 16.958999991522823,
+    "display": 17
+  },
+  {
+    "state": "horizontal-mobile-swipe",
+    "kind": "horizontal",
+    "item": "XZ",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.12899999891835,
+    "display": 8
+  },
+  {
+    "state": "horizontal-mobile-swipe",
+    "kind": "horizontal",
+    "item": "YZ",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.119999995145655,
+    "display": 14
+  },
+  {
+    "state": "horizontal-mobile-swipe",
+    "kind": "horizontal",
+    "item": "a",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.125810727274697,
+    "display": 8
+  },
+  {
+    "state": "horizontal-mobile-swipe",
+    "kind": "horizontal",
+    "item": "b",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.118678122277545,
+    "display": 14
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -3.7579390983269456,
+    "display": -4
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 8.576993088897297,
+    "display": 9
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 102.75236290180737,
+    "display": 103
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.5814418730723987,
+    "display": -3
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -17.709000439927042,
+    "display": -18
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -0.006358111167767411,
+    "display": 0
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 105.54483335145984,
+    "display": 106
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 205.50472580361384,
+    "display": 206
+  },
+  {
+    "state": "lathe-legacy-import",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "actual before file imported in final",
+    "positions": {
+      "X": 37,
+      "Y": 0,
+      "Z": -62,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0.01,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 100.38194960531807,
+    "display": 100
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "face",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -3.7579390983043943,
+    "display": -4
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "flat",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 7.826992527158391,
+    "display": 8
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "dx",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 123.79637200451012,
+    "display": 124
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "dy",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -2.65720293390892,
+    "display": -3
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "barSide",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -16.958999990972917,
+    "display": -17
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "barTop",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": -0.00575215427546516,
+    "display": 0
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "runoutRoot",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 11.98505076393485,
+    "display": 12
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "runoutTip",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 14.39028429697391,
+    "display": 14
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "borea",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 0,
+    "display": 0
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "boreb",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 126.75994643730066,
+    "display": 127
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "borec",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 247.59274400901893,
+    "display": 248
+  },
+  {
+    "state": "lathe-mobile-swipe",
+    "kind": "lathe",
+    "item": "bored",
+    "profile": "used123456",
+    "method": "actual Chromium touch swipe",
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "heights": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "raw": 121.44554056948282,
+    "display": 121
+  }
+]

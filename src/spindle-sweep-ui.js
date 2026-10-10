@@ -3,7 +3,7 @@
 let spindleSweepMode=false,spindleSweepAngle=270;
 const sweepDirections=['右','奥','左','手前'];
 const defaultSweepMeasurementNote=$('sweepMeasurementNote').textContent;
-const horizontalParallelMeasurementNote='横形のZ方向平行度。主軸固定のテストバーに対し、パレット上の計器を先端側から主軸側へ300 mm移動します。直角XZ/YZとは計器と基準器の搭載先が逆です。aは左側から右向きに接触、bは下側から上向きに接触します。始点でゼロ、プラスは測定子の押込み増加です。支持・軸位置の変更ごとにゼロを取り直します。主軸は回しません。取付け寸法や干渉を再現しない仮想配置です。';
+const horizontalParallelMeasurementNote='横形のZ方向平行度。テストバーは主軸に固定、計器はテーブル（パレット）に固定します。Z走査中はバーを固定したまま、テーブルと計器を先端側から主軸側へ300 mm移動します。直角測定はテーブル上の直角マスタを主軸側の計器で測る別の配置です。aは左側から右向きに接触、bは下側から上向きに接触します。始点でゼロ、プラスは測定子の押込み増加です。Yで主軸頭を動かすとバーの高さも変わり、支持・軸位置の変更ごとに計器の取付けと始点ゼロを取り直します。走査途中では再ゼロしません。主軸は回しません。取付け寸法や干渉を再現しない仮想配置です。';
 const sweepDot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
 const spindleSweepKinds=['compact','travel','double','gantry','five'];
 function supportsSpindleSweep(machine=current){return spindleSweepKinds.includes(machine.kind);}
@@ -120,7 +120,7 @@ function spindleSweepMachineGeometry(state,solution,profile){
  return {valid:true,measurement,nose,centre,tableCentre,tableNormal,tableRight,tableBack,halfWidth,halfDepth,tableShape:five?'ellipse':'rectangle',pointAt,cardinal:[0,90,180,270].map(pointAt)};
 }
 function spindleSweepReading(value){return squarenessMicronText(value);}
-const horizontalParallelMiniMarkup=`<svg viewBox="0 0 56 31" role="img" aria-label="Z平行度の接触位置とゼロ。左の正面図ではaは円の左側、9時位置から右向きに接触して0。bは円の下側、6時位置から上向きに接触して0。右の長手方向図では、どちらもオレンジの点が示す先端寄りの位置でゼロを取り、右の主軸側へ300 mm走査します。"><circle cx="18" cy="10" r="6" fill="none" stroke="#66584c" stroke-width="1"/><path d="M2 10H11m-2-1.2 2 1.2-2 1.2M18 22V17m-2 3 2-3 2 3" fill="none" stroke="#66584c" stroke-width="1"/><circle class="parallel-mini-zero-a" cx="12" cy="10" r="1.3" fill="#b34800"/><circle class="parallel-mini-zero-b" cx="18" cy="16" r="1.3" fill="#b34800"/><text x="0" y="8" fill="#9b3f00" font-size="7" font-weight="700">a 0</text><text x="12" y="29" fill="#9b3f00" font-size="7" font-weight="700">b 0</text><path d="M30 5H49V12H30Z" fill="none" stroke="#66584c" stroke-width="1"/><rect x="49" y="2" width="6" height="13" fill="#66584c"/><circle class="parallel-mini-zero" cx="33" cy="12" r="1.5" fill="#b34800"/><path d="M33 14V17H45m-3-2 3 2-3 2" fill="none" stroke="#b34800" stroke-width="1"/><circle cx="45" cy="12" r="1.2" fill="#fffaf6" stroke="#b34800" stroke-width="1"/><text x="30" y="24" fill="#9b3f00" font-size="7" font-weight="700">0</text><text x="45" y="29" fill="#66584c" font-size="5.5" text-anchor="middle">300 mm</text></svg>`;
+const horizontalParallelMiniMarkup=`<svg viewBox="0 0 56 31" role="img" aria-label="Z平行度。バーは主軸に固定、計器はテーブルに固定。左はバー先端側から主軸を見る図。aは左9時から右向き、bは下6時から上向きに接触。右の長手図はテーブルに固定した計器を示し、オレンジの先端寄りでゼロ、固定バーに沿って右の主軸側へ300 mm移動します。"><circle cx="10" cy="6" r="4" fill="none" stroke="#66584c" stroke-width=".8"/><path d="M0 6H5m-1.5-1 1.5 1-1.5 1M10 16V11m-1.3 2 1.3-2 1.3 2" fill="none" stroke="#66584c" stroke-width=".8"/><circle class="parallel-mini-zero-a" cx="6" cy="6" r="1" fill="#b34800"/><circle class="parallel-mini-zero-b" cx="10" cy="10" r="1" fill="#b34800"/><text x="0" y="14" fill="#9b3f00" font-size="5.5" font-weight="700">a</text><text x="13" y="15" fill="#9b3f00" font-size="5.5" font-weight="700">b</text><path d="M28 3H48V8H28ZM28 17H54M32 17V14m-2 0h4v-3h-4ZM32 11V8" fill="none" stroke="#66584c" stroke-width=".8"/><rect x="48" y="0" width="6" height="10" fill="#66584c"/><circle class="parallel-mini-zero" cx="32" cy="8" r="1.2" fill="#b34800"/><path d="M35 12H46m-2-1.5 2 1.5-2 1.5" fill="none" stroke="#b34800" stroke-width=".8"/><circle cx="46" cy="8" r="1" fill="#fffaf6" stroke="#b34800" stroke-width=".8"/><text x="0" y="23" fill="#66584c" font-size="6.2">バー:主軸</text><text x="0" y="29" fill="#66584c" font-size="6.2">計器:テーブル</text><text x="44" y="23" fill="#9b3f00" font-size="5.5" text-anchor="middle">300 mm</text></svg>`;
 // A plan-view location key only: four readings below retain their existing values.
 function updateSpindleSweepMini(zeroValid){
  const holder=$('spindleSweepMini');
@@ -142,7 +142,7 @@ function updateHorizontalParallelReadout(){
   $('sweepReadout'+i).setAttribute('data-selected',String(i===2));
  }
  $('sweepContactStatus').textContent=measured.valid?'始点0・＋は押込み増加・µm（0.001 mm）':someValid?(measured.a?.valid?'b 上下':'a 左右')+'は測定不可・走査範囲と接触姿勢を確認':'測定不可・300 mmのZ走査範囲と接触姿勢を確認';
- $('spindleSweepToggle').setAttribute('aria-label','Z方向の平行度。a 左右 '+$('sweepValue0').textContent+' マイクロメートル、b 上下 '+$('sweepValue1').textContent+' マイクロメートル。'+(someValid?'有効な測定の始点ゼロ、':'測定不可、')+'走査300ミリ。測定配置を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
+ $('spindleSweepToggle').setAttribute('aria-label','Z方向の平行度。バーは主軸に固定、計器はテーブルに固定。a 左右 '+$('sweepValue0').textContent+' マイクロメートル、b 上下 '+$('sweepValue1').textContent+' マイクロメートル。'+(someValid?'有効な測定の始点ゼロ、':'測定不可、')+'テーブルを主軸側へ走査300ミリ。測定配置を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
 }
 function updateSpindleSweep(){
  if(typeof updateIntrinsicInspectionUI==='function')updateIntrinsicInspectionUI();
@@ -151,7 +151,7 @@ function updateSpindleSweep(){
  const horizontal=current.kind==='horizontal',available=supportsSpindleSweep()||horizontal;
  spindleSweepMode=available;
  $('trainingMain').classList.toggle('has-spindle-sweep',available);
- $('squarenessValuesNote').hidden=false;
+ $('squarenessValuesNote').hidden=current.kind==='lathe';
  $('spindleSweepName').textContent=horizontal?'Z平行':'触れ';
  $('spindleSweepPanel').setAttribute('data-measurement',horizontal?'z-parallel':'spindle-sweep');
  $('spindleSweepPanel').setAttribute('aria-label',horizontal?'横形のZ方向平行度':'主軸のダイヤル旋回測定');

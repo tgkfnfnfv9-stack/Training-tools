@@ -73,16 +73,34 @@ function compactTablePathPoint(state=positions,solution=levelSolution,profile=ma
 // A material point on the horizontal pallet, shared by the model and reference
 // fixture. factor=1 is physical geometry; camera/clearance never enter here.
 function horizontalPalletPoint(raw,state=positions,solution=levelSolution,profile=machineProfile,factor=1){
- const L=window.Leveling,base=levelCoordinates(0,-.85),travel=levelCoordinates(0,.45*state.Z/100).z,z=base.z+travel;
- const slope=solution.slopeAt(base.x,z),frame=L.orientation({lr:slope.lr*factor,fb:slope.fb*factor});
+ const base=levelCoordinates(0,-.85),travel=levelCoordinates(0,.45*state.Z/100).z,z=base.z+travel;
+ const frame=compactSupportFrame(solution,base.x,z,factor),origin=compactSurfacePoint(solution,base.x,z,factor);
  const q=levelCoordinates(raw[0],raw[2]),relative=[q.x-base.x,raw[1]-.66,q.z-base.z];
  const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),direction=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)).find(a=>a.key==='Z').vector;
- if(solution.residual>1e-10||Math.abs(solution.twist)>1e-10){
-  const local=relative.map((v,i)=>v+travel*(direction[i]-(i===2?1:0)));
-  return frame.rotate(local).map((v,i)=>v+[base.x,.66+solution.heightAt(base.x,z)*factor/1000,z][i]);
+ const local=relative.map((v,i)=>v+travel*(direction[i]-(i===2?1:0)));
+ return frame.rotate(local).map((v,i)=>v+origin[i]);
+}
+// One rigid material-point map for the horizontal column, head and spindle.
+// Common bed tilt is a rigid transform of the entire residual support shape;
+// it must not be reapplied as a world-y height while the body rotates locally.
+function horizontalToolPoint(raw,state=positions,solution=levelSolution,profile=machineProfile,factor=1,keys=['X','Y']){
+ const M=window.ReferenceMeasurement,L=window.Leveling,active={...state,Y:keys.includes('Y')?state.Y:0},layout=columnLayoutOffset(current);
+ const physical=p=>{const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];};
+ const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),intrinsic=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)),body=intrinsicBodyFrame(axes,profile,factor);
+ const base=physical([layout.x,.66,current.d*.29+layout.z]),travel=physical([.55*active.X/100,0,0]),anchor=M.add(base,travel);
+ const frame=compactSupportFrame(solution,anchor[0],anchor[2],factor),origin=compactSurfacePoint(solution,anchor[0],anchor[2],factor);
+ const inverse=(f,v)=>[[1,0,0],[0,1,0],[0,0,1]].map(e=>M.dot(f.rotate(e),v));
+ const railSlopes=[-1,1].map(k=>{const q=levelCoordinates(.55*active.X/100+layout.x,current.d*.28+k*.13);return solution.slopeAt(q.x,q.z);});
+ const guide={lr:railSlopes.reduce((s,q)=>s+q.lr/2,0),fb:railSlopes.reduce((s,q)=>s+q.fb/2,0)};
+ const guideFrame=L.compose(L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),L.orientation({lr:(guide.lr-solution.lr)*factor,fb:(guide.fb-solution.fb)*factor}));
+ let correction=[0,0,0];
+ for(const a of axes.filter(a=>keys.includes(a.key))){
+  const f=a.key==='X'?guideFrame:frame,direction=f.rotate(intrinsic.find(q=>q.key===a.key).vector),distance=Math.hypot(...physical(a.vector))*a.amp*active[a.key]/100;
+  const delta=M.scale(M.sub(direction,a.key==='X'?f.rotate(a.vector):[0,0,0]),distance);
+  correction=M.add(correction,inverse(body,inverse(frame,delta)));
  }
- const moved=frame.rotate(direction);
- return frame.rotate(relative).map((v,i)=>v+travel*moved[i]+[base.x,.66+solution.heightAt(base.x,base.z)*factor/1000,base.z][i]);
+ const material=M.add(physical(raw),physical([layout.x,0,layout.z])),relative=M.add(M.sub(material,base),correction);
+ return M.add(origin,frame.rotate(body.rotate(relative)));
 }
 function compactPathFrames(state,solution,profile,factor=1){
  const q=levelCoordinates(0,-current.d*.1+.4*state.Y/100),work=compactSupportFrame(solution,q.x,q.z,factor);
@@ -125,7 +143,7 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const options={toolPoints:toolPoints.map(p=>levelCoordinates(p.x,p.z)),workPoints:[levelCoordinates(workPoint.x,workPoint.z)],axes:intrinsicAxes,length};
  const portal=toolPoints.length===2?connectedPortal(solution,toolPoints):null;
  const compact=m.kind==='compact'?compactPathFrames(state,solution,profile):null;
- if(m.kind==='lathe'){
+ if(m.kind==='lathe'||m.kind==='horizontal'){
   const t=options.toolPoints[0],w=options.workPoints[0];
   options.toolFrame=compactSupportFrame(solution,t.x,t.z);options.workFrame=compactSupportFrame(solution,w.x,w.z);
  }
@@ -139,7 +157,8 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  if(guidePoints){
   const slopes=guidePoints.map(p=>{const q=levelCoordinates(p.x,p.z);return solution.slopeAt(q.x,q.z);});
   guideSlope={lr:slopes.reduce((v,p)=>v+p.lr/slopes.length,0),fb:slopes.reduce((v,p)=>v+p.fb/slopes.length,0)};
-  options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:window.Leveling.orientation(guideSlope)}:a);
+  const guideFrame=m.kind==='horizontal'?window.Leveling.compose(window.Leveling.orientation({lr:solution.lr,fb:solution.fb}),window.Leveling.orientation({lr:guideSlope.lr-solution.lr,fb:guideSlope.fb-solution.fb})):window.Leveling.orientation(guideSlope);
+  options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:guideFrame}:a);
  }
  const metric=window.Leveling.geometry(solution,options);
  const pureCompact=compact&&profile?compactPathFrames(state,solution,null):null;
@@ -148,7 +167,7 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const poses={tool:{anchor:average(toolPoints),slope:metric.toolSlope,frame:metric.toolFrame},work:{anchor:workPoint,slope:metric.workSlope,frame:metric.workFrame}};
  if(toolPoints.length===2)toolPoints.forEach((p,i)=>{const q=levelCoordinates(p.x,p.z);poses[i?'rightColumn':'leftColumn']={anchor:p,slope:portal?portal.columns[i].slope:solution.slopeAt(q.x,q.z),frame:portal?.columns[i].frame};});
  const bodyFrame=intrinsicBodyFrame(axes,profile),intrinsicUp=bodyFrame.rotate([0,1,0]),combinedUp=metric.toolFrame.rotate(intrinsicUp),combinedDirection=metric.toolFrame.rotate(bodyFrame.direction);
- const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean((compact?compactSupportFrame(solution,q.x,q.z):window.Leveling.orientation(solution.slopeAt(q.x,q.z))).rotate(intrinsicUp));});
+ const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean((compact||['horizontal','lathe'].includes(m.kind)?compactSupportFrame(solution,q.x,q.z):window.Leveling.orientation(solution.slopeAt(q.x,q.z))).rotate(intrinsicUp));});
  const lathe=m.kind==='lathe',bodyPosture=lathe?spindleLean(combinedDirection):bodyLean,bodyIntrinsicPosture=lathe?spindleLean(bodyFrame.direction):bodyIntrinsicLean,bodySupportPosture=lathe?spindleLean(metric.toolFrame.rotate(bodyFrame.nominal)):directionLean(metric.toolFrame.rotate([0,1,0]));
  return {...metric,portal,compact,poses,guidePoints,guideSlope,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
 }
@@ -332,7 +351,7 @@ function diagramComparison(pair,initial){
  return {before,plot,beforePlot,delta,absoluteChange,trend,direction,text,range};
 }
 function accuracyDiagram(g,initial=levelInitialGeometry){
- const live=[],referenceCards=[];
+ const live=[],referenceCards=[],measurements=[];
  const columns=g.pairs.map((pair,i)=>{
   const c=diagramComparison(pair,initial),{plot,beforePlot}=c;
   const reference=squarenessReference(pair);
@@ -341,22 +360,24 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   const attributes=Object.entries({'projection':reference.projection.join(','),'zero-location':reference.zero,'base-direction':reference.baseDirection,'measure-direction':reference.measureDirection,'positive-direction':reference.positive,'negative-direction':reference.negative,'reference-plane':reference.plane,pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="104" y="64" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
   const physical=referenceScan(pair),measurement=referenceDisplayScan(pair),beforeMeasurement=referenceDisplayScan(pair,positions,levelInitialSolution||levelSolution);
+  measurements.push({key:pair.key,current:measurement,before:levelInitialSolution?beforeMeasurement:null});
   const display=measurement,reading=display.valid?squarenessMicronText(display.microns):'—';
   referenceCards.push(referenceCard(pair,measurement,beforeMeasurement,physical));
-  const descriptionText=pair.key+'・'+(display.valid?measurement.setup.zeroLocation+'を0とした300 mmの仮想測定 '+reading+' µm'+(current.kind==='compact'?'（触れと共通の仮想主軸姿勢）':''):display.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。';
-  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${measurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}">${referenceDiagram(measurement)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
+  const descriptionText=pair.key+'・'+(display.valid?measurement.setup.zeroLocation+'を0とした300 mmの'+(current.kind==='horizontal'?'測定の終点値 ':'仮想測定 ')+reading+' µm'+(current.kind==='compact'?'（触れと共通の仮想主軸姿勢）':''):display.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。'+(current.kind==='horizontal'?'模型の現在位置の針の指示ではありません。':'');
+  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${measurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}">${referenceDiagram(measurement,true)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} · 局所角度</text><g transform="translate(0,30)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
- $('liveSquarenessName').textContent=current.kind==='compact'?'仮想測定（触れと共通姿勢）':'仮想測定';
- $('liveSquarenessUnits').setAttribute('aria-label',current.kind==='compact'?'300 mm・マイクロメートル。小型のZ送りと触れに共通の仮想主軸姿勢。前後の支持応答は中央で約5倍。数値への後掛け倍率はありません。':'仮想測定300 mm・マイクロメートル');
+ $('liveSquarenessName').textContent=current.kind==='horizontal'?'測定の終点値':current.kind==='compact'?'仮想測定（触れと共通姿勢）':'仮想測定';
+ $('liveSquarenessUnits').setAttribute('aria-label',current.kind==='horizontal'?'始点でゼロを取り直した300 mm測定の終点値・マイクロメートル。模型の現在位置の針の指示ではありません。':current.kind==='compact'?'300 mm・マイクロメートル。小型のZ送りと触れに共通の仮想主軸姿勢。前後の支持応答は中央で約5倍。数値への後掛け倍率はありません。':'仮想測定300 mm・マイクロメートル');
  $('measurementReferenceCards').innerHTML=referenceCards.join('');
  $('accuracyDiagram').style.setProperty('--diagram-min-width',g.pairs.length*88+'px');
  $('accuracyDiagram').setAttribute('viewBox',`0 0 ${g.pairs.length*112} 123`);$('accuracyDiagram').innerHTML=columns.join('');
  $('accuracyDiagram').setAttribute('data-diagram-model','local-angle');
  $('accuracyDiagram').setAttribute('aria-label','現在位置の局所軸角度の300 mm換算。接触ゼロを取る有限走査図とは別。'+g.pairs.map(p=>p.key+'、基準'+squarenessPlot(p).base+'で初期からの変化を比較').join('。'));
+ return measurements;
 }
-function updateFineQualitative(g,initial){
+function updateFineQualitative(g,initial,measurements=[]){
  const lathe=current.kind==='lathe';
  for(const [key,id,negative,positive,label] of [['front','fineLeanFront',lathe?'下向き':'後ろ倒れ',lathe?'上向き':'前倒れ',lathe?'主軸の上下方向':'本体＋支持の前後倒れ'],['right','fineLeanRight',lathe?'左向き':'左倒れ',lathe?'右向き':'右倒れ',lathe?'主軸の水平面方向':'本体＋支持の左右倒れ']]){
   const value=g.bodyPosture[key];$(id).textContent=label+'：'+(Math.abs(value)<=20.000001?'小さめ':value>0?positive:negative);$(id).setAttribute('data-current',String(value));
@@ -365,6 +386,19 @@ function updateFineQualitative(g,initial){
  $('fineFixedBody').textContent='本体の固有直角差・'+(lathe||g.portal?'主軸の方向':'コラムの倒れ')+'・ガイドの曲がりは、この個体の固定成分です。支持姿勢を重ねた変化を見ます。';
  $('finePrecisionSummary').replaceChildren();
  for(const pair of g.pairs){
+  if(current.kind==='horizontal'){
+   // Compare the same finite, independently aligned and zeroed scans as the
+   // live reading. The local axis angle can improve while this reading worsens.
+   const measurement=measurements.find(m=>m.key===pair.key),before=measurement?.before,now=measurement?.current;
+   const currentValid=now?.valid&&Number.isFinite(now.microns),beforeValid=before?.valid&&Number.isFinite(before.microns),valid=currentValid&&beforeValid;
+   const delta=valid?now.microns-before.microns:null,absoluteChange=valid?Math.abs(now.microns)-Math.abs(before.microns):null;
+   const trend=valid?(absoluteChange<-.005?'better':absoluteChange>.005?'worse':'similar'):'unavailable';
+   const text=!currentValid||(before&&!beforeValid)?'測定が成立しないため比較できない':!before?'初期との比較基準なし':trend==='better'?'初期よりゼロに近づいた':trend==='worse'?'初期よりゼロから離れた':'初期からほぼ同じ';
+   const row=document.createElement('p');row.className='fine-pair-reading '+trend;
+   for(const [name,value] of Object.entries({pair:pair.key,model:'finite-scan',unit:'µm',before:beforeValid?before.microns:'',current:currentValid?now.microns:'',delta:delta??'',trend,valid:Boolean(valid)}))row.setAttribute('data-'+name,String(value));
+   row.textContent=pair.key+'測定：'+text;$('finePrecisionSummary').append(row);
+   continue;
+  }
   const c=diagramComparison(pair,initial),row=document.createElement('p');row.className='fine-pair-reading '+c.trend;
   for(const [name,value] of Object.entries({pair:pair.key,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction}))row.setAttribute('data-'+name,String(value));
   row.textContent=pair.key+'：'+c.text+(c.direction==='unchanged'?'（軸間の関係はほぼ不変）':'')+(c.range?' · '+c.range:'');$('finePrecisionSummary').append(row);
@@ -460,7 +494,7 @@ function updateAccuracy(){
  $('columnXValue').textContent=levelConfig.columnX===0?'標準':levelConfig.columnX<0?'左寄り':'右寄り';$('columnX').setAttribute('aria-valuetext',$('columnXValue').textContent);
  $('columnZValue').textContent=levelConfig.columnZ===0?'標準':levelConfig.columnZ<0?'手前寄り':'奥寄り';$('columnZ').setAttribute('aria-valuetext',$('columnZValue').textContent);
  $('demoTwist').disabled=supports.length===3;
- accuracyDiagram(g,initial);updateFineQualitative(g,initial);
+ const measurements=accuracyDiagram(g,initial);updateFineQualitative(g,initial,measurements);
 }
 for(const id of ['columnX','columnZ'])$(id).oninput=()=>{const value=Number($(id).value);if(!bounded(value,-100,100)||!Number.isInteger(value))return;stopMotion();levelConfig[id]=value;updateLeveling();};
 $('resetColumn').onclick=()=>{stopMotion();levelConfig.columnX=0;levelConfig.columnZ=0;$('columnX').value='0';$('columnZ').value='0';updateLeveling();};

@@ -1,0 +1,1109 @@
+{
+  "mode": "after",
+  "smoke": true,
+  "htmlSha256": "81af91d648ef304d5a7d411dd1d479e75f83fd851efcadc3676dcd7689e867a2",
+  "snapshots": [
+    {
+      "name": "vertical-390-first",
+      "state": {
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.002,
+              0,
+              0,
+              0.002
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "17.092547022888592"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "7.781510683266616"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.120062574941167"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "10.928770884082843"
+            },
+            {
+              "text": "+14",
+              "raw": "14.076031074066101"
+            },
+            {
+              "text": "+3",
+              "raw": "3.1472601899832577"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "vertical-390-second",
+      "state": {
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.002,
+              0,
+              0,
+              0.002
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "17.092547022888592"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "7.781510683266616"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.120062574941167"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "10.928770884082843"
+            },
+            {
+              "text": "+14",
+              "raw": "14.076031074066101"
+            },
+            {
+              "text": "+3",
+              "raw": "3.1472601899832577"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "lathe-390-first",
+      "state": {
+        "record": {
+          "calculationModel": "lathe-carriage-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Z"
+            ],
+            "squareness": {
+              "XZ": {
+                "band": 0,
+                "microns": 16.959
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 8.129
+              },
+              "Z": {
+                "band": 0,
+                "microns": 12.125
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.047,
+              -0.057,
+              -0.096,
+              -0.04
+            ]
+          },
+          "bestState": {
+            "width": 4,
+            "depth": 1.68,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "lathe",
+          "mode": "",
+          "width": 4,
+          "depth": 1.68,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [],
+          "lathe": {
+            "face": -3.7579390982783734,
+            "flat": 5.57699758417865,
+            "dx": 156.6843362130248,
+            "dy": -8.012698894289878,
+            "barSide": -14.709190106414887,
+            "barTop": 3.2210529932515803,
+            "runout": {
+              "rootMicrons": 11.98505076393485,
+              "tipMicrons": 14.39028429697391,
+              "lengthMm": 300,
+              "eccentricityMicrons": [
+                2.16720185711206,
+                5.5869129726579665
+              ],
+              "tiltMicroradians": [
+                -2.2177268761710467,
+                4.832450216570674
+              ]
+            }
+          },
+          "sweep": [
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "lathe-390-second",
+      "state": {
+        "record": {
+          "calculationModel": "lathe-carriage-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Z"
+            ],
+            "squareness": {
+              "XZ": {
+                "band": 0,
+                "microns": 16.959
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 8.129
+              },
+              "Z": {
+                "band": 0,
+                "microns": 12.125
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.047,
+              -0.057,
+              -0.096,
+              -0.04
+            ]
+          },
+          "bestState": {
+            "width": 4,
+            "depth": 1.68,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "lathe",
+          "mode": "",
+          "width": 4,
+          "depth": 1.68,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [],
+          "lathe": {
+            "face": -3.7579390982783734,
+            "flat": 5.57699758417865,
+            "dx": 156.6843362130248,
+            "dy": -8.012698894289878,
+            "barSide": -14.709190106414887,
+            "barTop": 3.2210529932515803,
+            "runout": {
+              "rootMicrons": 11.98505076393485,
+              "tipMicrons": 14.39028429697391,
+              "lengthMm": 300,
+              "eccentricityMicrons": [
+                2.16720185711206,
+                5.5869129726579665
+              ],
+              "tiltMicroradians": [
+                -2.2177268761710467,
+                4.832450216570674
+              ]
+            }
+          },
+          "sweep": [
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "saves": [
+    {
+      "id": "vertical",
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.002,
+            0,
+            0,
+            0.002
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0,
+          0.013,
+          -0.017,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 37,
+          "Y": -62,
+          "Z": 81
+        },
+        "step": 0.001,
+        "exaggerate": false
+      },
+      "readings": {
+        "squares": [
+          {
+            "pair": "XY",
+            "text": "+17",
+            "raw": "17.092547022888592"
+          },
+          {
+            "pair": "XZ",
+            "text": "+8",
+            "raw": "7.781510683266616"
+          },
+          {
+            "pair": "YZ",
+            "text": "+14",
+            "raw": "14.120062574941167"
+          }
+        ],
+        "lathe": null,
+        "sweep": [
+          {
+            "text": "+11",
+            "raw": "10.928770884082843"
+          },
+          {
+            "text": "+14",
+            "raw": "14.076031074066101"
+          },
+          {
+            "text": "+3",
+            "raw": "3.1472601899832577"
+          },
+          {
+            "text": "0",
+            "raw": "0"
+          }
+        ]
+      },
+      "download": "leveling-vertical-compact.json"
+    },
+    {
+      "id": "lathe",
+      "record": {
+        "calculationModel": "lathe-carriage-v2",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Z"
+          ],
+          "squareness": {
+            "XZ": {
+              "band": 0,
+              "microns": 16.959
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 0,
+              "microns": 8.129
+            },
+            "Z": {
+              "band": 0,
+              "microns": 12.125
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.047,
+            -0.057,
+            -0.096,
+            -0.04
+          ]
+        },
+        "bestState": {
+          "width": 4,
+          "depth": 1.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "machine": "lathe",
+        "mode": "",
+        "width": 4,
+        "depth": 1.68,
+        "heights": [
+          0,
+          0.013,
+          -0.017,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 37,
+          "Z": 81
+        },
+        "step": 0.001,
+        "exaggerate": false
+      },
+      "readings": {
+        "squares": [],
+        "lathe": {
+          "face": -3.7579390982783734,
+          "flat": 5.57699758417865,
+          "dx": 156.6843362130248,
+          "dy": -8.012698894289878,
+          "barSide": -14.709190106414887,
+          "barTop": 3.2210529932515803,
+          "runout": {
+            "rootMicrons": 11.98505076393485,
+            "tipMicrons": 14.39028429697391,
+            "lengthMm": 300,
+            "eccentricityMicrons": [
+              2.16720185711206,
+              5.5869129726579665
+            ],
+            "tiltMicroradians": [
+              -2.2177268761710467,
+              4.832450216570674
+            ]
+          }
+        },
+        "sweep": [
+          {
+            "text": "0"
+          },
+          {
+            "text": "0"
+          },
+          {
+            "text": "0"
+          },
+          {
+            "text": "0"
+          }
+        ]
+      },
+      "download": "leveling-lathe-standard.json"
+    },
+    {
+      "id": "horizontal",
+      "record": {
+        "calculationModel": "horizontal-guide-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "haas-ec630-ngc-eight-v1",
+          "points": [
+            {
+              "id": "haas-ec630-ngc-eight-v1-p1",
+              "x": -1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p2",
+              "x": 1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p3",
+              "x": -1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p4",
+              "x": 1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p5",
+              "x": -1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p6",
+              "x": 1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p7",
+              "x": -1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p8",
+              "x": 1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073,
+            -0.11,
+            0.149,
+            -0.035,
+            0.099
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 3.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.025,
+            0.027,
+            0.009,
+            0.004,
+            -0.024,
+            -0.002,
+            0.031,
+            0.013
+          ]
+        },
+        "machine": "horizontal",
+        "mode": "",
+        "width": 2.72,
+        "depth": 3.68,
+        "heights": [
+          0,
+          0.013,
+          -0.017,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 37,
+          "Y": -62,
+          "Z": 81
+        },
+        "step": 0.001,
+        "exaggerate": false
+      },
+      "readings": {
+        "squares": [
+          {
+            "pair": "XY",
+            "text": "+17",
+            "raw": "16.958999991467312"
+          },
+          {
+            "pair": "XZ",
+            "text": "+9",
+            "raw": "8.777749878121147"
+          },
+          {
+            "pair": "YZ",
+            "text": "-17",
+            "raw": "-17.413251965896908"
+          }
+        ],
+        "lathe": null,
+        "sweep": [
+          {
+            "text": "+10",
+            "raw": "9.804016154316141"
+          },
+          {
+            "text": "+4",
+            "raw": "3.991137801261785"
+          },
+          {
+            "text": "0",
+            "raw": "0"
+          },
+          {
+            "text": "300 mm",
+            "raw": ""
+          }
+        ]
+      },
+      "download": "leveling-horizontal-standard.json"
+    }
+  ],
+  "errors": [],
+  "checks": [
+    {
+      "name": "vertical actual old JSON upload accepted",
+      "ok": true
+    },
+    {
+      "name": "vertical native download contains current record",
+      "ok": true
+    },
+    {
+      "name": "lathe actual old JSON upload accepted",
+      "ok": true
+    },
+    {
+      "name": "lathe native download contains current record",
+      "ok": true
+    },
+    {
+      "name": "horizontal actual old JSON upload accepted",
+      "ok": true
+    },
+    {
+      "name": "horizontal native download contains current record",
+      "ok": true
+    },
+    {
+      "name": "vertical-390-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "vertical-390-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "vertical-390-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "vertical-390-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "lathe-390-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "lathe-390-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "lathe-390-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "lathe-390-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "vertical legacy inputs fully restored",
+      "ok": true
+    },
+    {
+      "name": "vertical protected legacy readings unchanged",
+      "ok": true
+    },
+    {
+      "name": "lathe legacy inputs fully restored",
+      "ok": true
+    },
+    {
+      "name": "lathe protected legacy readings unchanged",
+      "ok": true
+    },
+    {
+      "name": "horizontal legacy inputs fully restored",
+      "ok": true
+    },
+    {
+      "name": "horizontal protected legacy readings unchanged",
+      "ok": true
+    },
+    {
+      "name": "no browser errors",
+      "ok": true,
+      "details": []
+    }
+  ]
+}

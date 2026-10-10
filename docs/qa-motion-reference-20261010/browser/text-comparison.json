@@ -1,0 +1,162 @@
+{
+  "before": "0cca74408ba5099f77751161d2f1fb0aede39f6e68e4301f1072e9401f692929",
+  "after": "de228d28fac23cc55b9ff914a29116500e53a1324b90cfd324ec00548132e7dd",
+  "checks": [
+    {
+      "machine": "horizontal",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "finite fixture copy, no old flange/model intro",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "current note exposed and no old flange",
+      "ok": true
+    },
+    {
+      "machine": "lathe",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "lathe",
+      "check": "old general note hidden",
+      "ok": true
+    },
+    {
+      "machine": "lathe",
+      "check": "dedicated rear turret text visible; no old front/flange card",
+      "ok": true
+    },
+    {
+      "machine": "vertical",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "vertical",
+      "check": "all captured text/display attributes unchanged after target switch",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "finite fixture copy, no old flange/model intro",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "current note exposed and no old flange",
+      "ok": true
+    },
+    {
+      "machine": "travel",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "travel",
+      "check": "all captured text/display attributes unchanged after target switch",
+      "ok": true
+    },
+    {
+      "machine": "lathe",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "lathe",
+      "check": "old general note hidden",
+      "ok": true
+    },
+    {
+      "machine": "lathe",
+      "check": "dedicated rear turret text visible; no old front/flange card",
+      "ok": true
+    },
+    {
+      "machine": "gate",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "gate",
+      "check": "all captured text/display attributes unchanged after target switch",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "finite fixture copy, no old flange/model intro",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "current note exposed and no old flange",
+      "ok": true
+    },
+    {
+      "machine": "gantry",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "gantry",
+      "check": "all captured text/display attributes unchanged after target switch",
+      "ok": true
+    },
+    {
+      "machine": "lathe",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "lathe",
+      "check": "old general note hidden",
+      "ok": true
+    },
+    {
+      "machine": "lathe",
+      "check": "dedicated rear turret text visible; no old front/flange card",
+      "ok": true
+    },
+    {
+      "machine": "five",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "five",
+      "check": "all captured text/display attributes unchanged after target switch",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "same readout after excluding explicitly edited screenreader note",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "finite fixture copy, no old flange/model intro",
+      "ok": true
+    },
+    {
+      "machine": "horizontal",
+      "check": "current note exposed and no old flange",
+      "ok": true
+    }
+  ],
+  "failed": []
+}

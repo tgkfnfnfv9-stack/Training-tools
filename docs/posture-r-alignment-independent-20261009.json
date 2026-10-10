@@ -1,0 +1,58 @@
+[
+  {
+    "twistCoefficientMmPerM2": -0.05,
+    "key": "XY",
+    "legacyRepresentativeAlignedRDriftUm": 32.06992568048107,
+    "newFiniteFixtureSUm": -32.75992538969222,
+    "newRDriftUm": -5.655198531684391e-10
+  },
+  {
+    "twistCoefficientMmPerM2": -0.05,
+    "key": "XZ",
+    "legacyRepresentativeAlignedRDriftUm": -9.899981918434428,
+    "newFiniteFixtureSUm": 19.79998182194062,
+    "newRDriftUm": 1.5959455978986625e-10
+  },
+  {
+    "twistCoefficientMmPerM2": -0.01,
+    "key": "XY",
+    "legacyRepresentativeAlignedRDriftUm": 6.413997029880783,
+    "newFiniteFixtureSUm": -6.5519970273916766,
+    "newRDriftUm": 2.983724378680108e-10
+  },
+  {
+    "twistCoefficientMmPerM2": -0.01,
+    "key": "XZ",
+    "legacyRepresentativeAlignedRDriftUm": -1.9799992790805327,
+    "newFiniteFixtureSUm": 3.959999278282944,
+    "newRDriftUm": 1.8388068845354155e-10
+  },
+  {
+    "twistCoefficientMmPerM2": 0.01,
+    "key": "XY",
+    "legacyRepresentativeAlignedRDriftUm": -6.414002969927848,
+    "newFiniteFixtureSUm": 6.552002967750992,
+    "newRDriftUm": 7.424616477180734e-10
+  },
+  {
+    "twistCoefficientMmPerM2": 0.01,
+    "key": "XZ",
+    "legacyRepresentativeAlignedRDriftUm": 1.9800007192965348,
+    "newFiniteFixtureSUm": -3.9600007184087405,
+    "newRDriftUm": 1.9081958235744878e-10
+  },
+  {
+    "twistCoefficientMmPerM2": 0.05,
+    "key": "XY",
+    "legacyRepresentativeAlignedRDriftUm": -32.070074180065234,
+    "newFiniteFixtureSUm": 32.760073889102905,
+    "newRDriftUm": 1.0061396160665481e-10
+  },
+  {
+    "twistCoefficientMmPerM2": 0.05,
+    "key": "XZ",
+    "legacyRepresentativeAlignedRDriftUm": 9.900017919605222,
+    "newFiniteFixtureSUm": -19.800017823062845,
+    "newRDriftUm": 4.85722573273506e-11
+  }
+]

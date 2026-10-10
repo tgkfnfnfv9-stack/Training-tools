@@ -880,13 +880,13 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 <div id="sceneToolbar" class="scene-toolbar" role="group" aria-label="模型の軸選択"><div id="axisTabs" class="axis-tabs" role="group" aria-label="模型で確認する軸"></div></div>
 <span id="axisDemoStatus" class="axis-demo-status" role="status"></span></div>
 <div id="mainAdjustment" class="main-adjustment" role="group" aria-label="支持点の調整"><div id="adjustmentSelectionScroll" class="adjustment-selection-scroll"><div class="adjustment-tabs" role="group" aria-label="調整の段階"><button id="coarseAdjust" aria-pressed="true" aria-controls="coarsePanel">粗調整</button><button id="fineAdjust" aria-pressed="false" aria-controls="finePanel">微調整</button></div><p id="selectedSupportLabel" class="selected-support-label" role="status"></p><div id="supportMap" class="support-map" role="group" aria-label="調整する支持点"></div><section id="spindleSweepSelection" class="sweep-selection" hidden tabindex="-1" aria-labelledby="sweepSelectionTitle"><div class="measurement-reference-heading"><h2 id="sweepSelectionTitle">ダイヤルの方向</h2><button id="closeSpindleSweepSelection">閉じる ×</button></div><div id="sweepPositions" class="sweep-positions" role="group" aria-label="測定する方向を選択"><button id="sweepPosition0" aria-pressed="false"><span>右</span></button><button id="sweepPosition1" aria-pressed="false"><span>奥</span></button><button id="sweepPosition2" aria-pressed="false"><span>左</span></button><button id="sweepPosition3" aria-pressed="true"><span>手前 <small>基準</small></span></button></div><div id="horizontalParallelFixture" class="horizontal-parallel-fixture" hidden>
-<svg viewBox="0 0 340 142" role="img" aria-label="横形のZ方向平行度。主軸に固定したテストバーの側面aと下面bへパレット上の計器を当て、先端側でゼロ、主軸側へ300ミリ移動します。">
+<svg viewBox="0 0 340 146" role="img" aria-label="横形のZ方向平行度。バーは主軸に固定、計器はテーブルに固定。固定バーの側面aと下面bへ計器を当て、先端側でゼロ。Z走査ではテーブルと計器を主軸側へ300ミリ移動し、バーは動きません。">
 <g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="45" cy="57" r="18"/><path d="M8 57H26m-7-4 7 4-7 4M45 101V77m-4 7 4-7 4 7"/><path d="M166 35H292V57H166ZM292 22H306V72H292Z"/><path d="M145 112H293V131H145ZM180 112V94m-9 0h18V82h-18ZM180 82V58m-4 7 4-7 4 7"/><g stroke-dasharray="3 3" opacity=".55"><path d="M255 112V94m-9 0h18V82h-18ZM255 82V58"/></g><path d="M185 122H253m-7-4 7 4-7 4" stroke="#b34800"/></g>
-<circle cx="180" cy="58" r="2.8" fill="#b34800"/><circle cx="255" cy="58" r="2.8" fill="#fffaf5" stroke="#b34800" stroke-width="1.2"/><g fill="currentColor" font-size="11"><text x="10" y="48">a</text><text x="53" y="94">b</text><text x="6" y="20">接触方向</text><text x="147" y="20">テストバー（固定）</text><text x="310" y="48">主軸</text><text x="169" y="73" fill="#b34800">0</text><text x="273" y="92">b</text><text x="185" y="107" fill="#b34800">部材＋Z 300 mm</text><text x="153" y="141">パレット＋計器 → 主軸側へ</text></g></svg>
-<p>a＝左側から右向き、b＝下側から上向きに接触。テストバー先端寄りでゼロを取り、パレット上の計器を主軸側へ300 mm移動します。パレットの部材＋Z（NC指令の符号とは区別）です。＋の読みは測定子の押込み増加です。</p>
-<p>長手図の右は主軸側で、模型の画面右とは限りません。円はバー先端側から主軸側を見る接触位置の模式図です。aは左9時、bは下6時でそれぞれ始点0を取ります。直角XZ/YZは計器が主軸頭・マスタがパレットの逆配置なので、同じパレット送りでも計器の相対走査は逆向きになります。</p>
+<circle cx="180" cy="58" r="2.8" fill="#b34800"/><circle cx="255" cy="58" r="2.8" fill="#fffaf5" stroke="#b34800" stroke-width="1.2"/><g fill="currentColor" font-size="11"><text x="10" y="48">a</text><text x="53" y="94">b</text><text x="6" y="20">接触方向</text><text x="147" y="20">バー:主軸に固定</text><text x="310" y="48">主軸</text><text x="169" y="73" fill="#b34800">0</text><text x="273" y="92">b</text><text x="185" y="107" fill="#b34800">部材＋Z 300 mm</text><text x="147" y="141">計器:テーブルに固定 → 主軸側へ</text></g></svg>
+<p>バーは主軸に固定、計器はテーブル（パレット）に固定します。a＝左側から右向き、b＝下側から上向きに接触。テストバー先端寄りでゼロを取り、バーを固定したままテーブルと計器を主軸側へ300 mm移動します。テーブルの部材＋Z（NC指令の符号とは区別）です。＋の読みは測定子の押込み増加です。</p>
+<p>長手図の右は主軸側で、模型の画面右とは限りません。円はバー先端側から主軸側を見る接触位置の模式図です。aは左9時、bは下6時でそれぞれ始点0を取ります。直角測定では、テーブル上の直角マスタに主軸側の計器を当てます。ここでは主軸固定バーにテーブル側の計器を当てます。</p>
 <p>計器本体はパレットからバーへ届く取付け腕の先にあり、パレット上面の支持基準から0.61 mという高さとは別です。中央Y・理想支持ではバー高さは支持基準から約1.89 mで、Y位置や姿勢により変わります。捻れでパレットの姿勢が変わると、この取付け腕の移動も読みへ反映します。</p>
-<p>軸位置・支持調整ごとに器具配置とゼロを取り直します。移動端では、300 mmを確保できる始点へ戻して仮想測定します。主軸は回しません。基準バーは仮想の直径50 mm、校正区間300 mm＋両端10 mm。パレット上面から立てた計器の姿勢もZ移動に追従します。バーの実長、取付けや干渉は再現しません。</p>
+<p>Yで主軸頭を動かすと、固定したバーの高さも変わります。軸位置・支持調整ごとに計器の取付け腕と始点ゼロを取り直し、300 mmのZ走査中は再取付け・再ゼロしません。移動端では、300 mmを確保できる始点へ戻して仮想測定します。主軸は回しません。基準バーは仮想の直径50 mm、校正区間300 mm＋両端10 mm。テーブル上面から立てた計器の位置・姿勢がZ移動に追従します。バーの実長、取付けや干渉は再現しません。</p>
 </div><p id="sweepContactStatus" class="sweep-contact-status" role="status">手前基準・µm（0.001 mm）</p></section><section id="measurementReference" class="measurement-reference" hidden tabindex="-1" aria-labelledby="measurementReferenceTitle"><div class="measurement-reference-heading"><h2 id="measurementReferenceTitle">直角の基準図</h2><button id="closeMeasurementReference">閉じる ×</button></div><p class="reference-intro">基準器（旋盤は精密フランジ、ほかは直角マスタ）とスピンドル式計器の教材配置。●0から300 mmの仮想測定。＋＝押込み増加／−＝減少（ID-F通常カウント）。黒い基準面、オレンジの相対移動、押込＋を区別します。小型のZ送りと触れは共通の仮想主軸姿勢で接触計算します。前後の支持応答は中央で約5倍、固有誤差はそのままです。模型・局所角度とは姿勢を区別します。</p><div id="measurementReferenceCards" class="measurement-reference-cards"></div><p class="reference-intro">支持・軸位置の変更ごとに方向合わせとゼロを自動で取り直します。5軸はA=C=0。旋盤は主軸基準の精密フランジでX走査。基準面は走査300 mm＋両端10 mm、幅50 mmの仮想校正面、計器の初期伸び10 mm・計算範囲0〜20 mmです。取付けや干渉、測定力、基準器の実寸は再現しません。姿勢変化を含む教材モデル reference-scan-v3。小型Yは模型の測定P、横形Zはパレット上面中心（支持基準から0.61 m）の移動を使います。他の走査は姿勢一定の代表点です。取付姿勢を始点から輸送し、変姿勢の区間は16分割の内部点、横形では支持境界の両側でも接触を確認します。連続経路の衝突判定ではありません。未知のガイド曲線は追加していません。保存した機械状態から毎回再計算します。旧データの局所角度・参考調整・軸位置は維持し、横形の有限測定値は今回の取付位置で再計算されます。同じ固定配置で指示だけ再ゼロする逆走と、方向合わせから取り直す本測定は別です。</p></section></div><div class="common-support-actions"><button id="lowerSupport" aria-label="選んだ支持点を下げる">↓ 下げる</button><button id="raiseSupport" aria-label="選んだ支持点を上げる">↑ 上げる</button></div><p id="levelInputMessage" class="level-message visually-hidden" role="status"></p></div>
 </div></div><button id="trainingMainShield" class="training-main-shield" hidden tabindex="-1" aria-label="設定メニューを閉じて主画面へ戻る"></button></div></div></section>
 <section id="tester" hidden>
@@ -1323,17 +1323,31 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
  root.ReferenceMeasurement=api;
 })(typeof window!=='undefined'?window:globalThis);
 </script><script>'use strict';
+let referenceMeasurementCopyDefaults;
+function updateReferenceMeasurementCopy(){
+ const intros=[...$('measurementReference').querySelectorAll(':scope > .reference-intro')],note=$('squarenessValuesNote'),scanNote=$('squarenessMeasurementNote');
+ if(!referenceMeasurementCopyDefaults)referenceMeasurementCopyDefaults={intros:intros.map(el=>el.textContent),note:note.textContent,scanNote:scanNote.textContent};
+ const horizontal=current.kind==='horizontal',texts=horizontal?[
+  '表示は、始点でゼロを取り直して300 mm送った終点値です。模型の現在位置の針を表示する機能ではありません。下の「下げる／上げる」は選んだ支持点の操作です。テーブル（パレット）上の直角マスタに、主軸側へ固定した計器を当てます。XY/YZは主軸頭をY＋（上）へ300 mm送り、YZは主軸側の縦面を下から上へ測ります。XZはパレットとマスタをZ＋（奥・主軸側）へ300 mm送り、計器はマスタから見て手前へ進みます。●0でゼロ、＋は押込み増加、−は減少。黒は基準面、オレンジは計器の相対移動です。',
+  '320×320 mm・厚み50 mmの教材用直角マスタです。R合わせはXY/XZが主軸側計器のX送り、YZが計器を止めたパレットのZ送りで、300 mmの両端を等指示にします。YZはR走査の両端で測定子が厚み50 mmの中央線を通るよう横方向も合わせます。YZは選択Z位置へ戻し、S用の腕へ付け替えてY区間始点でゼロ。走査途中は再ゼロしません。測定時はワークを外し、調整台で方向を合わせてマスタを固定し、腕は器具の横を回り込みます。初期伸び10 mm、計算範囲0〜20 mm。有限面を16分割と支持境界の両側で確認します。全機械との干渉や弾性は再現しません。保存した機械状態から毎回再計算します。Z平行度a/bは主軸固定バーとテーブル側計器の別配置です。'
+ ]:referenceMeasurementCopyDefaults.intros;
+ intros.forEach((el,i)=>{if(el.textContent!==texts[i])el.textContent=texts[i];});
+ const noteText=horizontal?'1 µm＝0.001 mm。表示は始点でゼロを取り直した300 mm測定の終点値です。スライダーで下降しても測定方向は反転しません。テーブル上の直角マスタと主軸側固定の計器による300 mmの指示差です。XY/YZは主軸頭をY＋へ、XZはパレットをZ＋へ送ります。YZは主軸側の縦面へ接触し、下から上へ測ります。支持・軸位置の変更ごとにR方向合わせとSの始点ゼロを取り直し、走査途中は再ゼロしません。＋は押込み増加、−は減少。1 µm刻みで四捨五入。Z平行度a/bは主軸固定バーとテーブル側計器の別配置です。':referenceMeasurementCopyDefaults.note;
+ if(note.textContent!==noteText)note.textContent=noteText;
+ const scanText=horizontal?'表示は始点ゼロから300 mm送った終点値です。模型の現在位置から300 mmを確保できない場合は、計算上の始点を戻します。現在位置・ゼロ位置・終点は直角の基準図で確認できます。スライダー下降中の連続した針の指示ではありません。直角マスタはテーブル（パレット）上、計器は主軸側に固定します。XYは右側の縦面、YZは主軸側の縦面に当て、主軸頭のY＋送りで下の●0から上へ300 mm測ります。XZはパレットのZ＋送りでマスタを奥へ動かし、計器は基準器から見て奥の●0から手前へ進みます。YZのR合わせでは上面へ計器を当てて主軸頭を止め、パレットをZ＋へ300 mm送り、両端を等指示にするとともに、両端の測定子が厚み50 mmの中央線を通るよう横方向も合わせます。その後、選択したZ位置へ戻します。S用の腕へ付け替え、Y区間始点でゼロにします。支持・軸位置・寸法・個体が変われば方向合わせと始点ゼロを取り直します。S走査中の再方向合わせ・再ゼロはしません。矢印は基準器に対する計器の動き、押込＋は測定子が縮む向きです。数値に図の誇張倍率を掛けません。Z平行度a/bは主軸固定バーをテーブル側計器で測る別配置です。':referenceMeasurementCopyDefaults.scanNote;
+ if(scanNote.textContent!==scanText)scanNote.textContent=scanText;
+}
 // Fixed teaching fixtures. Member ownership describes mechanics, never a sign table.
 function referenceSetup(pair){
- const lathe=current.kind==='lathe',gate=['double','gantry','portal'].includes(current.kind),base=lathe?'Z':pair.key[0],scan=lathe?'X':pair.key[1];
+ const lathe=current.kind==='lathe',horizontalYZ=current.kind==='horizontal'&&pair.key==='YZ',gate=['double','gantry','portal'].includes(current.kind),base=lathe||horizontalYZ?'Z':pair.key[0],scan=lathe?'X':horizontalYZ?'Y':pair.key[1];
  const owner=key=>lathe?'body':current.kind==='horizontal'?(key==='Z'?'master':'body'):['compact','vertical','five'].includes(current.kind)?(key==='Z'?'body':'master'):current.kind==='double'?(key==='X'?'master':'body'):'body';
  const member=axisConfig(current).find(a=>a.key===scan),direction=v=>v[1]?'上':v[0]?'右':'奥',normalDirection=direction(axisConfig(current).find(a=>a.key===base).vector),positiveScanDirection=direction(member.vector),opposite={上:'下',右:'左',奥:'手前'};
- // Desired contact traversal in the developed face: XY low->high, XZ/YZ
- // high->low. Derive member movement from fixture ownership, not dial signs.
- const relativeSign=pair.key==='XY'?1:-1,memberSign=relativeSign*(owner(scan)==='master'?-1:1),relativeDirection=relativeSign>0?positiveScanDirection:opposite[positiveScanDirection];
+ // Desired contact traversal follows the chosen face: XY and horizontal YZ
+ // low->high, the remaining XZ/YZ scans high->low. Use member ownership.
+ const relativeSign=pair.key==='XY'||horizontalYZ?1:-1,memberSign=relativeSign*(owner(scan)==='master'?-1:1),relativeDirection=relativeSign>0?positiveScanDirection:opposite[positiveScanDirection];
  const zeroLocation=(relativeSign>0?opposite[positiveScanDirection]:positiveScanDirection)+'・'+normalDirection+'側';
- return {base,scan,owner:owner(scan),member:member.part,normalDirection,positiveScanDirection,scanDirection:memberSign>0?positiveScanDirection:opposite[positiveScanDirection],relativeDirection,relativeSign,memberSign,zeroLocation,
-  body:lathe?'刃物台':gate?'ラム':'主軸頭',mount:lathe?'主軸':current.kind==='horizontal'?'パレット':['travel','gantry'].includes(current.kind)?'固定テーブル':'テーブル',
+ return {base,scan,...(horizontalYZ?{pairKey:'YZ',referenceFace:'top'}:{}),owner:owner(scan),member:member.part,normalDirection,positiveScanDirection,scanDirection:memberSign>0?positiveScanDirection:opposite[positiveScanDirection],relativeDirection,relativeSign,memberSign,zeroLocation,
+  body:lathe?'刃物台':gate?'ラム':current.kind==='horizontal'?'主軸側':'主軸頭',mount:lathe?'主軸':current.kind==='horizontal'?'パレット':['travel','gantry'].includes(current.kind)?'固定テーブル':'テーブル',
   artifact:lathe?'精密フランジ':'直角マスタ',shortBody:lathe?'刃物台':gate?'ラム':'頭',lathe};
 }
 function referenceRigidFrame(frame){
@@ -1342,7 +1356,100 @@ function referenceRigidFrame(frame){
  const M=window.ReferenceMeasurement,up=M.unit(frame.up),right=M.unit(M.sub(frame.right,M.scale(up,M.dot(frame.right,up)))),back=[right[1]*up[2]-right[2]*up[1],right[2]*up[0]-right[0]*up[2],right[0]*up[1]-right[1]*up[0]];
  return {right,up,back,rotate:v=>right.map((q,i)=>q*v[0]+up[i]*v[1]+back[i]*v[2])};
 }
+// Horizontal YZ: the square rides the pallet, the indicator is fixed at the
+// spindle nose. Align its top R by moving Z, return to selected Z, then scan
+// the spindle-side vertical S with the head's +Y motion. Lengths are metres.
+function horizontalYZReferenceScan(pair,state,solution,profile){
+ const M=window.ReferenceMeasurement,setup=referenceSetup(pair),length=.3,model='horizontal-finite-square-yz-v2';
+ const half=key=>{const a=axisConfig(current).find(a=>a.key===key),p=levelCoordinates(a.vector[0]*a.amp,a.vector[2]*a.amp);return Math.hypot(p.x,a.vector[1]*a.amp,p.z);};
+ const yHalf=half('Y'),zHalf=half('Z'),invalid=reason=>({valid:false,reason,setup,model});
+ if(2*yHalf<length-1e-12||2*zHalf<length-1e-12)return invalid('300 mmの走査範囲不足');
+ const startPosition=Math.max(-yHalf,Math.min(yHalf-length,state.Y*yHalf/100)),endPosition=startPosition+length,baseStart=Math.max(-zHalf,Math.min(zHalf-length,state.Z*zHalf/100)),baseEnd=baseStart+length;
+ const startState={...state,Y:startPosition/yHalf*100},stateAt=t=>({...startState,Y:(startPosition+length*t)/yHalf*100}),baseAt=t=>({...startState,Z:(baseStart+length*t)/zHalf*100});
+ const tool=s=>{const a=horizontalSpindleFixture(s,solution,profile);return {...a,frame:{right:a.right,up:a.up,back:a.axis,rotate:v=>a.right.map((q,i)=>q*v[0]+a.up[i]*v[1]+a.axis[i]*v[2])}};};
+ const pallet=s=>({point:horizontalPalletPoint([0,1.27,-.85],s,solution,profile),frame:referenceRigidFrame(geometryModel(s,solution,profile).workFrame)}),local=(v,f)=>[M.dot(v,f.right),M.dot(v,f.up),M.dot(v,f.back)];
+ const pR0=pallet(baseAt(0)),pR1=pallet(baseAt(1)),tR0=tool(baseAt(0)),cornerLocal=[0,.37,.15],contact0=M.add(pR0.point,pR0.frame.rotate(cornerLocal));
+ // The same world contact C must lie on R at both Z endpoints. Compute C in
+ // each pallet frame, not from a head-Z tangent (the head does not move in Z).
+ const contact1Local=local(M.sub(contact0,pR1.point),pR1.frame),sLocal=M.unit(M.sub(cornerLocal,contact1Local)),rLocal=M.unit(M.sub([0,1,0],M.scale(sLocal,sLocal[1]))),cross=[sLocal[1]*rLocal[2]-sLocal[2]*rLocal[1],sLocal[2]*rLocal[0]-sLocal[0]*rLocal[2],sLocal[0]*rLocal[1]-sLocal[1]*rLocal[0]];
+ const bodyR=M.add(contact0,M.scale(pR0.frame.rotate(rLocal),.01)),probeR=M.scale(pR0.frame.rotate(rLocal),-1);
+ // An explicit rigid dog-leg reaches around the 50 mm thickness: first above
+ // the square, then 100 mm outside its side, then to the contact-side body.
+ // This is a fixture route, not a claim of clearance from all machine parts.
+ const arm=(a,p,corner,body)=>{
+  const nS=p.frame.rotate(sLocal),nR=p.frame.rotate(rLocal),nT=p.frame.rotate(cross),coord=v=>{const d=M.sub(v,corner);return [M.dot(d,nT),M.dot(d,nR),M.dot(d,nS)];},point=v=>M.add(corner,M.add(M.add(M.scale(nT,v[0]),M.scale(nR,v[1])),M.scale(nS,v[2]))),n=coord(a.nose),b=coord(body),top=Math.max(.1,n[1]+.1);
+  return [a.nose,point([n[0],top,n[2]]),point([.125,top,n[2]]),point([.125,top,b[2]]),point([.125,b[1],b[2]]),body];
+ };
+ const armR=arm(tR0,pR0,contact0,bodyR),times=new Set(Array.from({length:17},(_,i)=>i/16));
+ for(const p of supports){const t=(levelCoordinates(p.x,p.z).z-levelCoordinates(0,-.85).z-baseStart)/length;if(t>0&&t<1)for(const d of [-1e-8,0,1e-8])times.add(Math.max(0,Math.min(1,t+d)));}
+ const alignmentSamples=[...times].sort((a,b)=>a-b).map(t=>{
+  const s=baseAt(t),p=pallet(s),a=tool(s),corner=M.add(p.point,p.frame.rotate(cornerLocal)),pose={point:corner,normal:p.frame.rotate(rLocal),body:M.add(a.nose,M.transport(M.sub(bodyR,tR0.nose),tR0.frame,a.frame)),probe:M.transport(probeR,tR0.frame,a.frame)},hit=M.contact(pose),armPoints=armR.map(v=>M.add(a.nose,M.transport(M.sub(v,tR0.nose),tR0.frame,a.frame)));
+  if(hit.valid){const d=local(M.sub(hit.point,corner),p.frame),along=M.dot(d,sLocal),across=M.dot(d,cross);if(along<-.310000001||along>.010000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'R面の範囲外',t,state:s,pose,arm:armPoints};}
+  return {...hit,t,state:s,pose,arm:armPoints};
+ });
+ const alignment={...M.compare(alignmentSamples[0].pose,alignmentSamples.at(-1).pose),startPosition:baseStart,endPosition:baseEnd,startState:baseAt(0),endState:baseAt(1),samples:alignmentSamples},rBad=alignmentSamples.find(s=>!s.valid);
+ if(rBad)return {...invalid(rBad.reason),alignment};
+ // Keep this aligned square attached while returning to the selected Z. Its
+ // orientation is transported with the pallet; R is not realigned on return.
+ const p0=pallet(startState),t0=tool(startState),corner=M.add(p0.point,p0.frame.rotate(cornerLocal)),normal=p0.frame.rotate(sLocal),alongStart=p0.frame.rotate(rLocal),point=M.add(M.add(corner,M.scale(normal,.01)),M.scale(alongStart,-.31)),body=M.add(point,M.scale(normal,.01)),probe=M.scale(normal,-1),start={point,normal,body,probe},armS=arm(t0,p0,corner,body);
+ const samples=Array.from({length:17},(_,i)=>i/16).map(t=>{
+  const s=stateAt(t),a=tool(s),pose={point,normal,body:M.add(a.nose,M.transport(M.sub(body,t0.nose),t0.frame,a.frame)),probe:M.transport(probe,t0.frame,a.frame)},hit=M.contact(pose),armPoints=armS.map(v=>M.add(a.nose,M.transport(M.sub(v,t0.nose),t0.frame,a.frame)));
+  if(hit.valid){const d=M.sub(hit.point,point),distance=M.dot(d,alongStart),across=M.dot(d,p0.frame.rotate(cross));if(distance<-.010000001||distance>.310000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'S面の範囲外',t,state:s,pose,along:alongStart,arm:armPoints};}
+  return {...hit,t,state:s,pose,along:alongStart,arm:armPoints};
+ });
+ const bad=samples.find(s=>!s.valid),end=samples.at(-1).pose,result=bad?{valid:false,reason:bad.reason,failurePosition:startPosition+length*bad.t}:M.compare(start,end);
+ return {...result,setup,startPosition,endPosition,length,model,startState,endState:stateAt(1),returnState:startState,start,end,samples,alongStart,alongEnd:alongStart,fixture:'horizontal-finite-square',alignment,master:{corner,Rnormal:alongStart,Snormal:normal,width:.32,height:.32,thickness:.05,contactOffset:.01,palletOrigin:p0.point,localCorner:cornerLocal,localRnormal:rLocal,localSnormal:sLocal,boundsS:[-.31,.01],boundsR:[-.32,0],boundsThickness:[-.025,.025]},bracket:{mount:'spindle',R:armR,S:armS,sectionRadius:.004},autoZero:true};
+}
+// Finite horizontal square fixture. R is actually swept by a head-fixed arm;
+// S is read with a separate arm after R alignment. Dimensions are metres.
+// The square is 320 x 320 x 50 mm. Its mounting feet leave its R datum
+// 50 mm above the pallet for XY; XZ's thickness centre is 50 mm high.
+function horizontalReferenceScan(pair,state,solution,profile){
+ if(pair.key==='YZ')return horizontalYZReferenceScan(pair,state,solution,profile);
+ const M=window.ReferenceMeasurement,setup=referenceSetup(pair),length=.3,axes=axisConfig(current),axis=key=>axes.find(a=>a.key===key);
+ const half=key=>{const a=axis(key),p=levelCoordinates(a.vector[0]*a.amp,a.vector[2]*a.amp);return Math.hypot(p.x,a.vector[1]*a.amp,p.z);};
+ const scanHalf=half(setup.scan),baseHalf=half(setup.base),invalid=reason=>({valid:false,reason,setup,model:'horizontal-finite-square-v1'});
+ if(2*scanHalf<length-1e-12||2*baseHalf<length-1e-12)return invalid('300 mmの走査範囲不足');
+ const startPosition=Math.max(-scanHalf,Math.min(scanHalf-length,state[setup.scan]*scanHalf/100)),endPosition=startPosition+length;
+ const startState={...state,[setup.scan]:startPosition/scanHalf*100},stateAt=t=>({...startState,[setup.scan]:(startPosition+length*t)/scanHalf*100});
+ const tool=s=>{const t=horizontalSpindleFixture(s,solution,profile);return {...t,frame:{right:t.right,up:t.up,back:t.axis,rotate:v=>t.right.map((q,i)=>q*v[0]+t.up[i]*v[1]+t.axis[i]*v[2])}};};
+ const pallet=s=>({point:horizontalPalletPoint([0,1.27,-.85],s,solution,profile),frame:referenceRigidFrame(geometryModel(s,solution,profile).workFrame)}),p0=pallet(startState);
+ const offset=pair.key==='XY'?[-.15,.05,0]:pair.key==='XZ'?[-.15,.05,.16]:[0,.05,.16],q0=M.add(p0.point,p0.frame.rotate(offset));
+ const baseStart=Math.max(-baseHalf,Math.min(baseHalf-length,state[setup.base]*baseHalf/100)),baseEnd=baseStart+length;
+ const baseAt=t=>({...startState,[setup.base]:(baseStart+length*t)/baseHalf*100}),rTool0=tool(baseAt(0)),rBracket=M.sub(q0,rTool0.nose);
+ const contactMaterial=t=>{const a=tool(baseAt(t));return M.add(a.nose,M.transport(rBracket,rTool0.frame,a.frame));};
+ const q1=contactMaterial(1),normal=M.unit(M.sub(q1,q0)),nominalAlong=pair.key==='XY'?p0.frame.up:M.scale(p0.frame.back,-1);
+ const rNormal=M.unit(M.sub(nominalAlong,M.scale(normal,M.dot(nominalAlong,normal)))),cross=[normal[1]*rNormal[2]-normal[2]*rNormal[1],normal[2]*rNormal[0]-normal[0]*rNormal[2],normal[0]*rNormal[1]-normal[1]*rNormal[0]];
+ const timesFor=(key,start,span)=>{
+  const fractions=new Set(Array.from({length:17},(_,i)=>i/16));
+  // Include both sides of support slope jumps in the two moving seats.
+  if(key==='X'||key==='Z')for(const p of supports){
+   const q=levelCoordinates(p.x,p.z),origin=key==='X'?levelCoordinates(columnLayoutOffset(current).x,0).x:levelCoordinates(0,-.85).z;
+   const t=((key==='X'?q.x:q.z)-origin-start)/span;if(t>0&&t<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,t+d)));
+  }
+  return [...fractions].sort((a,b)=>a-b);
+ };
+ const rBody0=M.sub(q0,M.scale(rNormal,.01)),rProbe0=rNormal;
+ const alignmentSamples=timesFor(setup.base,baseStart,length).map(t=>{
+  const a=tool(baseAt(t)),pose={point:q0,normal:rNormal,body:M.add(a.nose,M.transport(M.sub(rBody0,rTool0.nose),rTool0.frame,a.frame)),probe:M.transport(rProbe0,rTool0.frame,a.frame)},hit=M.contact(pose);
+  if(hit.valid){const d=M.sub(hit.point,q0),along=M.dot(d,normal),across=M.dot(d,cross);if(along<-.010000001||along>.310000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'R面の範囲外',t,pose};}
+  return {...hit,t,pose};
+ });
+ const rBad=alignmentSamples.find(s=>!s.valid);if(rBad)return {...invalid(rBad.reason),alignmentSamples};
+ const alignment=M.compare(alignmentSamples[0].pose,alignmentSamples.at(-1).pose);
+ const point=M.add(M.add(q0,M.scale(normal,.31)),M.scale(rNormal,.01)),t0=tool(startState),body=M.add(point,M.scale(normal,.01)),probe=M.scale(normal,-1);
+ const start={point,normal,body,probe},alongStart=M.scale(rNormal,setup.relativeSign);
+ const samples=timesFor(setup.scan,startPosition,length).map(t=>{
+  const s=stateAt(t),p=pallet(s),a=tool(s),pose={point:M.add(p.point,M.transport(M.sub(point,p0.point),p0.frame,p.frame)),normal:M.transport(normal,p0.frame,p.frame),body:M.add(a.nose,M.transport(M.sub(body,t0.nose),t0.frame,a.frame)),probe:M.transport(probe,t0.frame,a.frame)};
+  const along=M.transport(alongStart,p0.frame,p.frame),hit=M.contact(pose);
+  if(hit.valid){const d=M.sub(hit.point,pose.point),distance=M.dot(d,along)*setup.relativeSign,across=M.dot(d,M.transport(cross,p0.frame,p.frame));if(distance<-.010000001||distance>.310000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'S面の範囲外',t,pose,along};}
+  return {...hit,t,pose,along};
+ });
+ const bad=samples.find(s=>!s.valid),end=samples.at(-1).pose,result=bad?{valid:false,reason:bad.reason,failurePosition:startPosition+length*bad.t}:M.compare(start,end);
+ return {...result,setup,startPosition,endPosition,length,model:'horizontal-finite-square-v1',start,end,samples,alongStart,alongEnd:samples.at(-1).along,fixture:'horizontal-finite-square',alignment:{...alignment,startPosition:baseStart,endPosition:baseEnd,samples:alignmentSamples},master:{corner:q0,Rnormal:rNormal,Snormal:normal,width:.32,height:.32,thickness:.05,contactOffset:.01,palletOrigin:p0.point},autoZero:true};
+}
 function referenceScan(pair,state=positions,solution=levelSolution,profile=machineProfile,geometryProvider=geometryModel){
+ if(current.kind==='horizontal')return horizontalReferenceScan(pair,state,solution,profile);
  const M=window.ReferenceMeasurement,setup=referenceSetup(pair),axis=axisConfig(current).find(a=>a.key===setup.scan),physical=levelCoordinates(axis.vector[0]*axis.amp,axis.vector[2]*axis.amp),half=Math.hypot(physical.x,axis.vector[1]*axis.amp,physical.z),length=.3;
  if(current.kind==='five'&&(Math.abs(state.A)>1e-9||Math.abs(state.C)>1e-9))return {valid:false,reason:'A/Cを0にして測定',setup};
  if(2*half<length)return {valid:false,reason:'300 mmの走査範囲不足',setup};
@@ -1386,32 +1493,51 @@ function referenceDisplayScan(pair,state=positions,solution=levelSolution,profil
  const result=referenceScan(pair,state,solution,profile,teaching?compactMeasurementGeometry:geometryModel);
  return {...result,model:teaching?'compact-shared-posture-v1':result.model,responseGain:teaching?compactMeasurementResponseGain:1};
 }
-function referenceDiagram(measurement){
- const s=measurement.setup,M=window.ReferenceMeasurement,down=s.relativeSign<0,y0=down?14:31,horizontal=current.kind==='horizontal';
+function referenceDiagram(measurement,mini=false){
+ const s=measurement.setup,M=window.ReferenceMeasurement,down=s.relativeSign<0,y0=down?14:31,horizontal=current.kind==='horizontal',rTop=horizontal&&(down||s.referenceFace==='top');
  const emphasized=current.kind!=='compact'||$('exaggerate').checked,normalGain=emphasized?1e6/6:17/.3,tiltGain=emphasized?1000:1;
  let bx=34,cy=down?31:14,tilt=0,bodyNormal=.01,probeNormal=-1,probeAlong=0,limited=false;
  const clip=(v,limit)=>{if(Math.abs(v)>limit)limited=true;return Math.max(-limit,Math.min(limit,v));};
  if(measurement.valid){
   const end=measurement.end,relative=M.sub(end.body,end.point),contact=M.sub(measurement.last.point,end.point),along=measurement.alongEnd;
   bodyNormal=M.dot(relative,end.normal);probeNormal=M.dot(end.probe,end.normal);probeAlong=M.dot(end.probe,along);
-  // Draw the body displacement and probe attitude independently. A change in
-  // extension alone does not imply lateral body motion (e.g. cosine error).
-  bx+=clip((bodyNormal-.01)*normalGain,4);
+  // Other machines retain their existing independent displacement/angle view.
+  if(!horizontal)bx+=clip((bodyNormal-.01)*normalGain,4);
   cy=y0-17*M.dot(contact,along)/.3;
   cy=Math.max(12,Math.min(33,cy));
   tilt=clip(-11*probeAlong/probeNormal*tiltGain,1);
+  if(horizontal){
+   // A plunger's visible length must shorten when the measured extension
+   // shortens, including when its attitude changes. Compose the body and the
+   // probe from one endpoint instead of magnifying their coordinates separately.
+   const length=11+clip((measurement.last.extension-measurement.zero.extension)*normalGain,4),angle=Math.atan2(tilt,11);
+   bx=23+length*Math.cos(angle);tilt=length*Math.sin(angle);
+  }
  }
  const by=cy+tilt,angle=Math.atan2(tilt,bx-23)*180/Math.PI;
  const arrow=(x,y,ex,ey,css)=>{const dx=ex-x,dy=ey-y,l=Math.hypot(dx,dy),u=dx/l,v=dy/l;return `<path d="M${x},${y}L${ex},${ey}m${-2*u-1.5*v},${-2*v+1.5*u}l${2*u+1.5*v},${2*v-1.5*u}l${-2*u+1.5*v},${-2*v-1.5*u}" class="${css}"/>`;};
- const master=s.lathe?'<path d="M3,18H17V11H23V34H17V27H3Z" class="scan-master"/>':'<path d="M3,11H23V34H3Z" class="scan-master"/><path d="M3,34H23" class="scan-reference-face"/><text x="6" y="32" class="scan-label scan-r-label">R</text>';
- return `<g class="scan-geometry" data-projection-mode="master-frame" data-deviation-emphasized="${emphasized}" data-normal-gain="${normalGain}" data-tilt-gain="${tiltGain}" data-body-normal-m="${bodyNormal}" data-probe-normal="${probeNormal}" data-probe-along="${probeAlong}" data-diagram-limited="${limited}"><text x="2" y="9" class="scan-label">${s.lathe?'XZ':s.base+s.scan}</text><text x="15" y="8" class="scan-view-direction">↑${s.positiveScanDirection}</text><text x="34" y="9" class="scan-label">${s.lathe?'刃物台':horizontal?'計器:頭':s.shortBody+'固定'}</text>${master}<path d="M23,11V34" class="scan-face"/><text x="16" y="24" class="scan-label scan-s-label">S</text><circle cx="23" cy="${y0}" r="1.6" class="scan-zero"/><text x="25" y="${y0+3}" class="scan-label measurement-start">0</text><g opacity="${measurement.valid?1:.3}"><path d="M34,${y0}L${bx},${by}" class="scan-path"/><circle cx="23" cy="${cy}" r="1.6" class="scan-contact"/><path d="M23,${cy}L${bx},${by}" class="scan-probe"/><rect x="${bx}" y="${by-3}" width="11" height="6" rx="1" transform="rotate(${angle} ${bx} ${by})" class="scan-body"/></g>${arrow(61,y0,61,down?31:14,'scan-move')}${horizontal?'<text x="55" y="18" text-anchor="middle" class="scan-view-direction">相対</text>':''}<text x="51" y="26" text-anchor="middle" class="scan-label">${s.relativeDirection}</text>${arrow(29,40,40,40,'scan-press')}<text x="2" y="42" class="scan-label">押込＋</text><text x="44" y="42" class="scan-label">${s.normalDirection}</text></g>`;
+ const miniHorizontal=horizontal&&mini,scanHeading=miniHorizontal?`<text x="21" y="9" class="scan-label">${s.scan==='Y'?'下0→上':'奥0→手前'}</text>`:`<text x="15" y="8" class="scan-view-direction">↑${s.positiveScanDirection}</text><text x="34" y="9" class="scan-label"${horizontal?' style="font-size:5px"':''}>${s.lathe?'刃物台':horizontal?'計器:主軸':s.shortBody+'固定'}</text>`;
+ const master=s.lathe?'<path d="M3,18H17V11H23V34H17V27H3Z" class="scan-master"/>':'<path d="M3,11H23V34H3Z" class="scan-master"/><path d="M3,'+(rTop?11:34)+'H23" class="scan-reference-face"/><text x="6" y="'+(rTop?16:32)+'" class="scan-label scan-r-label">R</text>';
+ return `<g class="scan-geometry" data-projection-mode="master-frame" data-deviation-emphasized="${emphasized}" data-normal-gain="${normalGain}" data-tilt-gain="${tiltGain}" data-body-normal-m="${bodyNormal}" data-probe-normal="${probeNormal}" data-probe-along="${probeAlong}" data-diagram-limited="${limited}"><text x="2" y="9" class="scan-label">${s.lathe?'XZ':s.pairKey||s.base+s.scan}</text>${scanHeading}${master}${horizontal&&!mini?'<text x="13" y="20" text-anchor="middle" class="scan-view-direction" style="font-size:3.2px">テーブル上</text>':''}<path d="M23,11V34" class="scan-face"/><text x="16" y="${horizontal?28:24}" class="scan-label scan-s-label">S</text><circle cx="23" cy="${y0}" r="1.6" class="scan-zero"/><text x="25" y="${y0+3}" class="scan-label measurement-start"${horizontal&&!mini?' style="font-size:5.5px"':''}>${horizontal&&!mini?'始0':'0'}</text>${horizontal&&!mini?`<text x="25" y="${cy+(down?-5:7)}" class="scan-label" style="font-size:5.5px">終点</text>`:''}<g opacity="${measurement.valid?1:.3}"><path d="M34,${y0}L${bx},${by}" class="scan-path"/><circle cx="23" cy="${cy}" r="1.6" class="scan-contact"/><path d="M23,${cy}L${bx},${by}" class="scan-probe"/><rect x="${bx}" y="${by-3}" width="11" height="6" rx="1" transform="rotate(${angle} ${bx} ${by})" class="scan-body"/></g>${arrow(61,y0,61,down?31:14,'scan-move')}${horizontal&&(!mini||s.scan==='Z')?`<text x="53" y="18" text-anchor="middle" class="scan-view-direction">${s.scan==='Y'?'主軸頭':'相対'}</text>`:''}<text x="51" y="26" text-anchor="middle" class="scan-label"${horizontal&&!mini?' style="font-size:5px"':''}>${horizontal&&!mini&&s.scan==='Y'?'Y上へ':s.relativeDirection}</text>${arrow(29,40,40,40,'scan-press')}<text x="2" y="42" class="scan-label">押込＋</text><text x="44" y="42" class="scan-label">${s.normalDirection}</text></g>`;
 }
 
+// Explain the sampled interval in the same physical member coordinates as the
+// slider, without changing the selected 300 mm scan or the machine state.
+function horizontalReferenceInterval(measurement,state=positions){
+ const key=measurement.setup.scan,axis=axisConfig(current).find(a=>a.key===key),p=levelCoordinates(axis.vector[0]*axis.amp,axis.vector[2]*axis.amp);
+ const half=Math.hypot(p.x,axis.vector[1]*axis.amp,p.z),currentPosition=state[key]*half/100,{startPosition,endPosition}=measurement;
+ if(!Number.isFinite(startPosition)||!Number.isFinite(endPosition))return null;
+ return {key,currentPosition,startPosition,endPosition,returnTravel:startPosition-currentPosition};
+}
 function referenceCard(pair,m,before,physical=m){
- const display=m,beforeDisplay=before,horizontal=current.kind==='horizontal';
- const s=m.setup,alignment=current.kind==='compact'?'測定Pの'+s.base+'局所送り接線':s.base+'の代表案内方向',reading=display.valid?squarenessMicronText(display.microns)+' µm':display.reason,teaching=current.kind==='compact',span=m.startPosition===undefined?'':`${signed(m.startPosition*1000,1)} → ${signed(m.endPosition*1000,1)} mm（${s.scan}部材位置・中央0）`;
- const horizontalNote=horizontal?`<p>小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。${s.scan==='Y'?'XYでは主軸頭そのものを上へ動かし、パレットとマスタは静止します。':'XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。'}オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。</p><p>R面は${s.base}の代表案内方向に合わせる仮想配置です。特にX移動でコラム姿勢が変わると、主軸鼻や取り付けた計器の材料点の移動接線は、取付高さ・前後位置により代表X案内と異なります。実際の計器をX送りして方向合わせする測定とは区別します。R/S面を持つ器具の厚み、方向合わせ時の接触点と取付け腕は未定義です。</p>`:'';
- return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${s.lathe?'主軸基準XZ':pair.key} <span>${reading}</span></h3><svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${s.artifact}と${s.body}の測定配置">${referenceDiagram(m)}</svg><p>${s.artifact}：${s.mount}上／計器：${s.body}に固定。${s.normalDirection}側からS面に接触。</p>${horizontalNote}<p>① ${s.lathe?'回転中心線Zに直角な校正済みフランジ面を使用。往復台Z送りとは別。':'R面を開始位置の'+alignment+'に平行に方向合わせ。RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。'}<br>② ${s.zeroLocation}の●0でゼロ合わせ。<br>③ ${s.member}を部材${s.memberSign>0?'＋':'−'}${s.scan}・${s.scanDirection}へ300 mm（NC指令の符号ではありません）。基準器に対する計器は${s.relativeDirection}へ。測定子が本体へ${s.normalDirection}に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。</p><p>図の右＝${s.normalDirection}、図の上＝${s.positiveScanDirection}。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。${current.kind==='compact'?'「直角図のずれを強調」で本体の法線変位と測定子の傾きの強調を切り替えます。小型の接触計算は、直角測定と触れに共通の仮想主軸姿勢を使います。模型と局所角度は元の姿勢です。器具の寸法は強調を外しても模式図です。':'本体の法線変位と測定子の傾きを別々に誇張します。'}図の変位・傾きは枠内に制限します。${teaching?'図と数値は同じ仮想測定姿勢から求めます。数値に後から倍率を掛けません。':'数値には誇張を掛けません。'}破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。</p><p>${span}。スライダーの現在位置と接触ゼロ位置は同じとは限りません。${m.valid?'':' '+m.reason}</p><p>${s.lathe?'現模型は手前側刃物台です。部材−Xは手前・径外向き。ゼロの絶対半径・実寸フランジは再現しません。':horizontal?(s.scan==='Z'?'Z走査のマスタ原点はパレット上面中心（支持基準から0.61 m）。模型と同じ点の移動・姿勢を使います。'+(pair.key==='YZ'?'YZのS面はパレット上面と同じ高さの仮想面です。厚みのある実マスタを載せた配置とは異なります。':'')+'Z平行度は逆の配置で、バーを主軸に固定し、計器をパレットに取り付けます。その計器はバー高さへ届くブラケットを持ちます。バー中心は中央Y・理想支持で支持基準から約1.89 m（Y位置・姿勢で変化）で、aとbでは接触側と計器本体の位置も異なります。取付高さ・前後位置が異なるため、捻れに対するXZ/YZとZ平行度の応答は同じとは限りません。':'Y走査は主軸頭を上へ動かし、主軸頭の取付姿勢は一定です。Xの代表案内との直角を仮想マスタで比較します。'):current.kind==='compact'?'Y走査は模型の測定Pの移動を使います。':'この走査区間では取付部の姿勢が一定の代表点を使います。代表案内方向を、任意の取付高さの材料点接線や主軸回転中心線と同一視しません。実物の固定具寸法は再現しません。'}</p>${teaching?'<p>小型は前後の支持応答を中央位置で約5倍とする共通の仮想主軸姿勢です。支持のみの中央YZ角差δに対して、主軸とZ送りを基準X軸まわりに追加で4δ回し、300 mmの走査と直径300 mmの触れをそれぞれ接触から計算します。固有誤差は増幅しません。補正姿勢は支持・寸法ごとに固定し、テーブル送りで変えません。全位置の数値が厳密に5倍になる仕様ではありません。中央以外ではXZにも微小な交差影響があります。元の有限測定値：'+(physical.valid?squarenessMicronText(physical.microns)+' µm':physical.reason)+'。実機感度の再現ではありません。共通の剛体傾斜では補正せず、模型・局所角度・調整評価・参考最良は元の計算です。</p>':''}<p>初期支持状態：${beforeDisplay.valid?squarenessMicronText(beforeDisplay.microns)+' µm':beforeDisplay.reason}／現在：${reading}（同じ区間で各々ゼロ${teaching?'・ともに共通の仮想主軸姿勢':''}）。</p><p>従来の局所角度差：${squarenessMicronText(pair.deviationMicroradians*.3)} µm／300 mm換算。上の表示値とは別です。</p></section>`;
+ const display=m,beforeDisplay=before,horizontal=current.kind==='horizontal',horizontalYZ=horizontal&&pair.key==='YZ';
+ const s=m.setup,alignment=horizontal?(horizontalYZ?'主軸側計器を止めてパレットをZへ300 mm送った始終点':'主軸側のR用計器をXへ300 mm送った始終点'):current.kind==='compact'?'測定Pの'+s.base+'局所送り接線':s.base+'の代表案内方向',reading=display.valid?squarenessMicronText(display.microns)+' µm':display.reason,teaching=current.kind==='compact',span=m.startPosition===undefined?'':`${signed(m.startPosition*1000,1)} → ${signed(m.endPosition*1000,1)} mm（${s.scan}部材位置・中央0）`;
+ const interval=horizontal?horizontalReferenceInterval(m):null;
+ const intervalNote=horizontal?`<p class="measurement-interval"${interval?` data-current-position-mm="${interval.currentPosition*1000}" data-zero-position-mm="${interval.startPosition*1000}" data-end-position-mm="${interval.endPosition*1000}" data-return-travel-mm="${interval.returnTravel*1000}"`:''}><strong>300 mm測定の終点値（始点で再ゼロ）</strong>${interval?`<br>模型の現在${interval.key}：${signed(interval.currentPosition*1000,1)} mm（部材位置・中央0）。<br>測定${interval.key}：${signed(interval.startPosition*1000,1)} mmでゼロ → ${signed(interval.endPosition*1000,1)} mmの終点・${s.scanDirection}送り。${Math.abs(interval.returnTravel)>1e-9?`300 mmを確保するため、計算上は現在位置から${interval.key}を${signed(interval.returnTravel*1000,1)} mm戻して再取付け・再ゼロします。模型は現在位置です。`:'現在位置が始点です。'}`:' '+m.reason}<br>軸位置を変えるたびに取り付け・ゼロを取り直す測定結果です。下降中の針の指示ではありません。</p>`:'';
+ const xyDirectionNote=horizontal&&pair.key==='XY'?'<p>同じマスタ・取付けを保持し、上ほどマスタに対して計器本体が右へ10 µm離れる例では、下でゼロ→上の指示は−10 µm。上でゼロを取り直して下へ測れば＋10 µmです。下のゼロを保持して戻る場合は−10から0へ戻り、途中は負のままです。コラムの床に対する倒れだけでは符号は決まりません。</p>':'';
+ const horizontalAlignment=horizontalYZ?'主軸側のR用計器を上面へ当てて固定し、パレットをZ＋へ300 mm送り、両端を等指示にし、測定子がR走査両端で厚み50 mmの中央線を通るよう横方向も合わせる。マスタを固定したまま選択Z位置へ戻す。':'主軸側のR用計器をXへ300 mm送り、両端を等指示に方向合わせ。';
+ const horizontalNote=horizontal?`<p>小図の「計器:主軸」は計器を主軸側へ固定する意味です。${s.scan==='Y'?pair.key+'では主軸頭を上へ動かし、テーブル（パレット）とマスタは静止します。':'XZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。'}オレンジの矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。</p><p>320×320 mm・厚み50 mmの直角マスタを、XY/YZは立て、XZは寝かせてテーブルに載せます。${horizontalAlignment}途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて${horizontalYZ?'Y区間の下側で':'区間始点で'}ゼロにし、本体と測定子を主軸側の同じ剛体姿勢で運びます。測定時はサンプルワークを外し、調整台でRを合わせて固定します。器具の厚み側を回り込む腕を仮定し、全機械との干渉・たわみは再現しません。</p>`:'';
+ return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${s.lathe?'主軸基準XZ':pair.key} <span>${reading}</span></h3>${intervalNote}<svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${s.artifact}と${s.body}の測定配置">${referenceDiagram(m)}</svg><p>${s.artifact}：${s.mount}上／計器：${horizontal?'主軸側':s.body}に固定。${s.normalDirection}側からS面に接触。</p>${horizontalNote}${xyDirectionNote}<p>① ${s.lathe?'回転中心線Zに直角な校正済みフランジ面を使用。往復台Z送りとは別。':(horizontal?horizontalAlignment:'R面を開始位置の'+alignment+'に平行に方向合わせ。')+'RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。'}<br>② ${s.zeroLocation}の●0でゼロ合わせ。<br>③ ${s.member}を部材${s.memberSign>0?'＋':'−'}${s.scan}・${s.scanDirection}へ300 mm（NC指令の符号ではありません）。基準器に対する計器は${s.relativeDirection}へ。測定子が本体へ${s.normalDirection}に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。</p><p>図の右＝${s.normalDirection}、図の上＝${s.positiveScanDirection}。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。${current.kind==='compact'?'「直角図のずれを強調」で本体の法線変位と測定子の傾きの強調を切り替えます。小型の接触計算は、直角測定と触れに共通の仮想主軸姿勢を使います。模型と局所角度は元の姿勢です。器具の寸法は強調を外しても模式図です。':horizontal?'測定子の伸縮は接触計算と同じ正負で、変化を拡大します。接触点から描いた測定子と本体の位置を連動させ、測定子の傾きも強調します。器具全体を同じ縮尺で描いた図ではありません。':'本体の法線変位と測定子の傾きを別々に誇張します。'}図の変位・傾きは枠内に制限します。${teaching?'図と数値は同じ仮想測定姿勢から求めます。数値に後から倍率を掛けません。':'数値には誇張を掛けません。'}破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。</p>${horizontal?'':`<p>${span}。スライダーの現在位置と接触ゼロ位置は同じとは限りません。${m.valid?'':' '+m.reason}</p>`}<p>${s.lathe?'現模型は手前側刃物台です。部材−Xは手前・径外向き。ゼロの絶対半径・実寸フランジは再現しません。':horizontal?('R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から'+(pair.key==='XZ'?'50 mm':'60→360 mm')+'。理想時の器具下面のすき間はXY 50／XZ 25／YZ 50 mmで、厚み50 mmとは別です。調整台で傾きを合わせた後に固定する仮定です。支持・軸位置・寸法・個体の変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。'):current.kind==='compact'?'Y走査は模型の測定Pの移動を使います。':'この走査区間では取付部の姿勢が一定の代表点を使います。代表案内方向を、任意の取付高さの材料点接線や主軸回転中心線と同一視しません。実物の固定具寸法は再現しません。'}</p>${teaching?'<p>小型は前後の支持応答を中央位置で約5倍とする共通の仮想主軸姿勢です。支持のみの中央YZ角差δに対して、主軸とZ送りを基準X軸まわりに追加で4δ回し、300 mmの走査と直径300 mmの触れをそれぞれ接触から計算します。固有誤差は増幅しません。補正姿勢は支持・寸法ごとに固定し、テーブル送りで変えません。全位置の数値が厳密に5倍になる仕様ではありません。中央以外ではXZにも微小な交差影響があります。元の有限測定値：'+(physical.valid?squarenessMicronText(physical.microns)+' µm':physical.reason)+'。実機感度の再現ではありません。共通の剛体傾斜では補正せず、模型・局所角度・調整評価・参考最良は元の計算です。</p>':''}<p>初期支持状態：${beforeDisplay.valid?squarenessMicronText(beforeDisplay.microns)+' µm':beforeDisplay.reason}／現在：${reading}（同じ区間で各々ゼロ${teaching?'・ともに共通の仮想主軸姿勢':''}）。</p>${horizontal?'':`<p>従来の局所角度差：${squarenessMicronText(pair.deviationMicroradians*.3)} µm／300 mm換算。上の表示値とは別です。</p>`}</section>`;
 }
 </script><script>(function(root,factory){
  'use strict';
@@ -1582,13 +1708,22 @@ function portalZVisualPoint(point,axes,pose,m=current,state=positions){
  // measurement geometry stay untouched; the rotation preserves part shape.
  return frame.rotate(point.map((v,i)=>v-frame.nose[i])).map((v,i)=>v+frame.nose[i]);
 }
-function displayedModelPoint(p,axes,m=current,state=positions,pose='bed'){
+// Layout dimensions move a cylinder's centre/axis; they never stretch its
+// cross-section. Convert the radial part back to nominal units before the
+// existing physical layout mapping. Only explicitly tagged model parts use it.
+function circularModelPoint(p,circular,scaleX,scaleZ){
+ if(!circular)return p;const scale=[scaleX,1,scaleZ],axis={x:0,y:1,z:2}[circular.axis];
+ return p.map((v,i)=>i===axis?v:circular.center[i]+(v-circular.center[i])/scale[i]);
+}
+function displayedModelPoint(p,axes,m=current,state=positions,pose='bed',circular=null){
+ if(circular&&levelConfig)p=circularModelPoint(p,circular,levelConfig.width/(m.w*.8),levelConfig.depth/(m.d*.8));
  // Decorative tailstock: a fixed visual assembly, never a measurement input.
  if(m.kind==='lathe'&&pose==='latheTailstockVisual'&&levelGeometry){
   const q=displayCoordinates(p),a=displayCoordinates([m.w*.36,.66,0]),factor=displayFactor(),frame=compactSupportFrame(levelSolution,a[0],a[2],factor),origin=compactSurfacePoint(levelSolution,a[0],a[2],factor);
   return frame.rotate(q.map((v,i)=>v-a[i])).map((v,i)=>v+origin[i]+(i===1?displayClearance():0));
  }
  if(m.kind==='lathe'&&levelGeometry&&typeof latheAssembly==='function'&&['tool','work','latheTestBar'].includes(pose))return latheAssembly(p,pose,{...state,X:axes.includes('X')?state.X:0,Z:axes.includes('Z')?state.Z:0},levelSolution,machineProfile,displayFactor()).point.map((v,i)=>v+(i===1?displayClearance():0));
+ if(m.kind==='horizontal'&&pose==='tool'&&levelGeometry)return horizontalToolPoint(p,state,levelSolution,machineProfile,displayFactor(),axes).map((v,i)=>v+(i===1?displayClearance():0));
  if(m.kind==='horizontal'&&pose==='work'&&levelGeometry)return horizontalPalletPoint(p,state,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  return portalZVisualPoint(levelMappedBodyVisualPoint(displayTransformedPoint(p,axes,m,state,pose),pose),axes,pose,m,state);
 }
@@ -1598,8 +1733,8 @@ function idealDisplayContext(m,state=positions){
  const scaleX=levelConfig.width/(m.w*.8),scaleZ=levelConfig.depth/(m.d*.8),offset=columnLayoutOffset(m);
  return {scaleX,scaleZ,state:{...state},axes:axisConfig(m),offset:[offset.x*scaleX,0,offset.z*scaleZ],lift:displayClearance()+displayFactor()*supportHeights.reduce((sum,h)=>sum+h,0)/(1000*Math.max(1,supportHeights.length))};
 }
-function idealDisplayPoint(p,axes,pose,context){
- const {scaleX,scaleZ,state,offset,lift}=context,q=[p[0]*scaleX,p[1],p[2]*scaleZ],pivot=[0,1.25,-.45*scaleZ];
+function idealDisplayPoint(p,axes,pose,context,circular=null){
+ const {scaleX,scaleZ,state,offset,lift}=context;p=circularModelPoint(p,circular,scaleX,scaleZ);const q=[p[0]*scaleX,p[1],p[2]*scaleZ],pivot=[0,1.25,-.45*scaleZ];
  if(pose==='latheTestBar')q[2]=p[2];
  if(axes.includes('C')){const t=state.C*Math.PI/100,dx=q[0]-pivot[0],dz=q[2]-pivot[2];q[0]=pivot[0]+dx*Math.cos(t)+dz*Math.sin(t);q[2]=pivot[2]-dx*Math.sin(t)+dz*Math.cos(t);}
  if(axes.includes('A')){const t=state.A*.45/100,dy=q[1]-pivot[1],dz=q[2]-pivot[2];q[1]=pivot[1]+dy*Math.cos(t)-dz*Math.sin(t);q[2]=pivot[2]+dy*Math.sin(t)+dz*Math.cos(t);}
@@ -1716,7 +1851,7 @@ function createGeometry(m){
   if(text==='主軸台')references.push({base:[x-w/2,y,z-d/2],tip:[x+w/2,y,z-d/2],direction:[1,0,0],length:w,axes:[...group],pose});
   else if(text==='コラム'||pose==='leftColumn'||pose==='rightColumn')references.push({base:[x+w/2,y-h/2,z-d/2],tip:[x+w/2,y+h/2,z-d/2],direction:[0,1,0],length:h,axes:[...group],pose});
  }
- function cyl(x,y,z,r,len,color,axis='y',text,n=20,phase=0){const ring=[[],[]];for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n+phase,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8},{v:ring[1],axes:[...group],pose,color,shade:1.08});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2});if(text)label([x,y+r+.1,z],text);}
+ function cyl(x,y,z,r,len,color,axis='y',text,n=20,phase=0){const ring=[[],[]],circular=(m.kind==='horizontal'&&pose==='tool'||m.kind==='lathe'&&['tool','latheTailstockVisual'].includes(pose))?{circular:{center:[x,y,z],axis}}:{};for(let k=0;k<2;k++)for(let i=0;i<n;i++){const a=i*2*Math.PI/n+phase,cs=Math.cos(a)*r,sn=Math.sin(a)*r,t=(k-.5)*len;ring[k].push(axis==='x'?[x+t,y+cs,z+sn]:axis==='z'?[x+cs,y+sn,z+t]:[x+cs,y+t,z+sn]);}faces.push({v:ring[0],axes:[...group],pose,color,shade:.8,...circular},{v:ring[1],axes:[...group],pose,color,shade:1.08,...circular});for(let i=0;i<n;i++)faces.push({v:[ring[0][i],ring[0][(i+1)%n],ring[1][(i+1)%n],ring[1][i]],axes:[...group],pose,color,shade:.8+.2*(Math.cos(i*2*Math.PI/n)+1)/2,...circular});if(text)label([x,y+r+.1,z],text);}
  // Exterior faces only. Include every support station inside the part so
  // middle deformation and bilinear-cell boundaries remain in the bed/guide mesh.
  function curvedBox(x,y,z,w,h,d,color,text,nx=4,nz=8){
@@ -1793,13 +1928,15 @@ function createGeometry(m){
  withGroup(['X','Y','A','C'],()=>{cyl(0,1.47,-.45,.65,.18,c.table,'y','回転テーブル');box(.18,1.68,-.45,.45,.25,.32,c.work);},'work');
  }else {
  [-1,1].forEach(k=>curvedBox(0,.72,k*.4,W*.93,.11,.13,c.rail));
- withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24,1.5,0,.4,.25,c.spindle,'x');},'tool');
+ // Keep the measured nose at -W*.24+.125; extend the chuck rear into the
+ // headstock instead of leaving the previous 25 mm unsupported gap.
+ withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24-.015,1.5,0,.4,.28,c.spindle,'x');},'tool');
  withGroup([],()=>{const nose=-W*.24+.125,tip=W*.225;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
  // Display only. Leave the centre retracted clear of the test bar.
  withGroup([],()=>{
   const x=W*.36;box(x,.805,0,.8,.08,1.1,c.fixed);box(x,1.225,0,.52,.76,.65,c.fixed,'心押台');
   cyl(x-.28,1.5,0,.08,.32,c.spindle,'x');
-  for(let i=0;i<16;i++){const a=i*Math.PI/8,b=(i+1)*Math.PI/8;faces.push({v:[[x-.56,1.5,0],[x-.44,1.5+.08*Math.cos(a),.08*Math.sin(a)],[x-.44,1.5+.08*Math.cos(b),.08*Math.sin(b)]],axes:[],pose:'latheTailstockVisual',color:c.spindle,shade:.9});}
+  for(let i=0;i<16;i++){const a=i*Math.PI/8,b=(i+1)*Math.PI/8;faces.push({v:[[x-.56,1.5,0],[x-.44,1.5+.08*Math.cos(a),.08*Math.sin(a)],[x-.44,1.5+.08*Math.cos(b),.08*Math.sin(b)]],axes:[],pose:'latheTailstockVisual',color:c.spindle,shade:.9,circular:{center:[x,1.5,0],axis:'x'}});}
  },'latheTailstockVisual');
  withGroup(['Z'],()=>box(.08,.87,.4,.8,.22,1.85,c.fixed,'往復台'),'work');
  withGroup(['X','Z'],()=>{
@@ -1825,7 +1962,7 @@ function idealOutlineEdges(model){
   if(f.surface||!['bed','tool','work','leftColumn','rightColumn','latheTestBar','latheTailstockVisual'].includes(f.pose)||f.color==='#c8d6d9')continue;
   for(let i=0;i<f.v.length;i++){
    const a=f.v[i],b=f.v[(i+1)%f.v.length],pa=pointKey(a),pb=pointKey(b),key=f.pose+':'+f.axes.join('/')+':'+[pa,pb].sort().join('|');
-   if(edges.has(key))edges.get(key).faces.push(f);else edges.set(key,{a,b,axes:f.axes,pose:f.pose,faces:[f],smooth:false});
+   if(edges.has(key))edges.get(key).faces.push(f);else edges.set(key,{a,b,axes:f.axes,pose:f.pose,circular:f.circular,faces:[f],smooth:false});
   }
  }
  return [...edges.values()].filter(edge=>{
@@ -1837,9 +1974,9 @@ function idealOutlineEdges(model){
 function idealOutlineSegments(edges,context,angle,view){
  const pitch=scenePitch(view),sight=[-Math.sin(angle)*Math.cos(pitch),-Math.sin(pitch),Math.cos(angle)*Math.cos(pitch)],normals=new Map();
  const facing=f=>{
-  if(!normals.has(f)){const n=idealFaceNormal(f.v.slice(0,3).map(p=>idealDisplayPoint(p,f.axes,f.pose,context)));normals.set(f,n.reduce((sum,v,i)=>sum+v*sight[i],0));}return normals.get(f);
+  if(!normals.has(f)){const n=idealFaceNormal(f.v.slice(0,3).map(p=>idealDisplayPoint(p,f.axes,f.pose,context,f.circular)));normals.set(f,n.reduce((sum,v,i)=>sum+v*sight[i],0));}return normals.get(f);
  };
- return edges.filter(edge=>!edge.smooth||facing(edge.faces[0])*facing(edge.faces[1])<0).map(edge=>({a:idealDisplayPoint(edge.a,edge.axes,edge.pose,context),b:idealDisplayPoint(edge.b,edge.axes,edge.pose,context)}));
+ return edges.filter(edge=>!edge.smooth||facing(edge.faces[0])*facing(edge.faces[1])<0).map(edge=>({a:idealDisplayPoint(edge.a,edge.axes,edge.pose,context,edge.circular),b:idealDisplayPoint(edge.b,edge.axes,edge.pose,context,edge.circular)}));
 }
 const idealOutlineCache=new Map();
 function drawIdealOutline(ctx,m,model,screen,angle,view){
@@ -1892,7 +2029,7 @@ function axisIndicators(m,model){
   if(['X','Y','Z'].includes(a.key)){
    const movingFaces=model.faces.filter(f=>f.axes.includes(a.key)),moved=movingFaces.flatMap(f=>f.v.map(p=>displayTransformedPoint(p,f.axes,m,positions,f.pose)));
    const origin=[0,1,2].map(i=>(Math.min(...moved.map(p=>p[i]))+Math.max(...moved.map(p=>p[i])))/2);
-   const bodyPoints=levelGeometry?movingFaces.flatMap(f=>f.v.map(p=>displayedModelPoint(p,f.axes,m,positions,f.pose))):moved,bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
+   const bodyPoints=levelGeometry?movingFaces.flatMap(f=>f.v.map(p=>displayedModelPoint(p,f.axes,m,positions,f.pose,f.circular))):moved,bodyOrigin=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);
    const vector=levelGeometry?accuracyVisualVector(a.key):a.vector,pose=levelGeometry?(current.kind==='lathe'&&a.key==='Z'?'work':levelGeometry.axes.find(q=>q.key===a.key).source):'bed';
    return {key:a.key,pose,bodyOrigin,curved:false,points:[-1,1].map(sign=>origin.map((v,i)=>v+sign*vector[i]*.6))};
   }
@@ -1946,12 +2083,12 @@ function render(canvas,m,angle,showLabels,active){
  const margin=showLabels?Math.min(compactView?44:56,width*(compactView?.12:.16)):18,verticalSpace=active>=0?height-(compactShortCanvas?12:48):height-75;
  const fitScale=Math.min((width-margin*2)/(maxX-minX),Math.max(24,verticalSpace)/(maxY-minY));
  const scale=fitScale*(canvas===$('scene')?sceneZoom:1);const cx=width/2-(minX+maxX)*scale/2,cy=(active>=0?(height-(compactShortCanvas?4:20))/2:height*.48)-(minY+maxY)*scale/2;
- const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelMappedVisualPoint(p,pose):p;const movingScreen=(p,axes,pose)=>screen(active>=0?displayedModelPoint(p,axes,m,positions,pose||'bed'):transformedPoint(p,axes,m));
+ const screen=p=>{const q=project(p);return [cx+q[0]*scale,cy+q[1]*scale,q[2]]};const surfacePoint=(p,pose='bed')=>active>=0?levelMappedVisualPoint(p,pose):p;const movingScreen=(p,axes,pose,circular)=>screen(active>=0?displayedModelPoint(p,axes,m,positions,pose||'bed',circular):transformedPoint(p,axes,m));
  // 地面は回転に追従する格子。モデルを動かさず視点だけを左右に回す。
  ctx.strokeStyle='#d7e1e5';ctx.lineWidth=.7;
  for(let i=-4;i<=4;i++){for(const pair of [[[i,0,-4],[i,0,4]],[[-4,0,i],[4,0,i]]]){const a=screen(pair[0]),b=screen(pair[1]);ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b[0],b[1]);ctx.stroke();}}
  if(active>=0)model.faces.push(...levelSurfaceFaces(m));
- model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
+ model.faces.map(f=>({...f,p:f.v.map(p=>movingScreen(p,f.axes,f.pose,f.circular))})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();const highlight=active>=0&&f.axes.includes(selectedAxis);const color=highlight?axisColors[selectedAxis]:f.axes.length?'#bfd0d6':'#8b9da3';if(f.surface){const low=Math.min(...supportHeights),high=Math.max(...supportHeights),t=high-low<1e-9?.5:Math.max(0,Math.min(1,(f.height-low)/(high-low)));ctx.fillStyle=`rgba(${Math.round(42+199*t)},${Math.round(129+86*t)},${Math.round(113+17*t)},.8)`;}else ctx.fillStyle=tone(color,f.shade);ctx.fill();ctx.strokeStyle=f.surface?'#17685c66':'#35546933';ctx.lineWidth=.6;ctx.stroke();});
  if(training&&$('showIdealOutline').checked)drawIdealOutline(ctx,m,model,screen,angle,sceneView);
  // Reserve support markers before placing any text. Labels use the entire
  // Canvas now that the operation bar has its own row below it.
@@ -1959,7 +2096,7 @@ function render(canvas,m,angle,showLabels,active){
  if(training){
   ctx.strokeStyle='#536d786e';ctx.lineWidth=.8;ctx.setLineDash?.([3,3]);
   for(const ref of model.references){
-   const from=levelMappedBodyVisualPoint(displayTransformedPoint(ref.base,ref.axes,m,positions,ref.pose),ref.pose),physicalLength=Math.hypot(...displayCoordinates(ref.direction.map(v=>v*ref.length))),to=from.map((v,i)=>v+ref.direction[i]*physicalLength),a=screen(from),b=screen(to),dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy);
+   const from=['horizontal','lathe'].includes(m.kind)?displayedModelPoint(ref.base,ref.axes,m,positions,ref.pose):levelMappedBodyVisualPoint(displayTransformedPoint(ref.base,ref.axes,m,positions,ref.pose),ref.pose),physicalLength=Math.hypot(...displayCoordinates(ref.direction.map(v=>v*ref.length))),to=from.map((v,i)=>v+ref.direction[i]*physicalLength),a=screen(from),b=screen(to),dx=b[0]-a[0],dy=b[1]-a[1],length=Math.hypot(dx,dy);
    if(length<4)continue;const offset=[-dy/length*5,dx/length*5];
    ctx.beginPath();ctx.moveTo(a[0]+offset[0],a[1]+offset[1]);ctx.lineTo(b[0]+offset[0],b[1]+offset[1]);ctx.stroke();
   }
@@ -2232,7 +2369,7 @@ function structuralSurface(x,z,solution=levelSolution){
  return {heightAt:(qx,qz)=>{const q=blend(qx,qz),h=bed.heightAt(qx,qz);return h+q.w*(q.part.heightAt(qx,qz)-h);},slopeAt:(qx,qz)=>{const q=blend(qx,qz),a=bed.slopeAt(qx,qz),b=q.part.slopeAt(qx,qz),d=q.part.heightAt(qx,qz)-bed.heightAt(qx,qz);return {lr:a.lr+q.w*(b.lr-a.lr)+q.wx*d,fb:a.fb+q.w*(b.fb-a.fb)+q.wz*d};}};
 }
 function displaySurfacePoint(x,z){
- if(current.kind==='compact')return compactSurfacePoint(levelSolution,x,z,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
+ if(['compact','horizontal','lathe'].includes(current.kind))return compactSurfacePoint(levelSolution,x,z,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  if(levelGeometry?.portal){const factor=displayFactor(),plane=levelSolution.plane,h=structuralSurface(x).heightAt(x,z)-(plane.a*x+plane.b*z+plane.c);return displayPortal().world([x,h*factor/1000,z]).map((v,i)=>v+(i===1?displayClearance():0));}
  return [x,.66+displayClearance()+displayFactor()*levelSolution.heightAt(x,z)/1000,z];
 }
@@ -2244,7 +2381,7 @@ function displayPortal(){
  return portalDisplayCache;
 }
 function displayPoseFrame(pose){
- if(current.kind==='compact'||current.kind==='lathe'){const p=(levelGeometry.poses[pose]||levelGeometry.poses.tool).anchor,q=levelCoordinates(p.x,p.z);return compactSupportFrame(levelSolution,q.x,q.z,displayFactor());}
+ if(['compact','horizontal','lathe'].includes(current.kind)){const p=(levelGeometry.poses[pose]||levelGeometry.poses.tool).anchor,q=levelCoordinates(p.x,p.z);return compactSupportFrame(levelSolution,q.x,q.z,displayFactor());}
  if(levelGeometry.portal){const p=displayPortal();if(pose==='tool')return p.frame;if(pose==='leftColumn'||pose==='rightColumn')return p.columns[pose==='rightColumn'?1:0].frame;
   if(pose==='work'&&levelSolution.parts){const q=levelCoordinates(levelGeometry.workPoint.x,levelGeometry.workPoint.z),s=levelSolution.parts.bed.slopeAt(q.x,q.z),factor=displayFactor();return window.Leveling.compose(p.common,window.Leveling.orientation({lr:(s.lr-levelSolution.lr)*factor,fb:(s.fb-levelSolution.fb)*factor}));}}
  return displaySupportFrame((levelGeometry.poses[pose]||levelGeometry.poses.tool).slope);
@@ -2252,7 +2389,7 @@ function displayPoseFrame(pose){
 let compactDisplayFrames=null,compactDisplayGeometry=null,compactDisplayFactor=0;
 function displayAxisFrame(key){
  if(current.kind==='compact'&&key==='Y'){const factor=displayFactor();if(compactDisplayGeometry!==levelGeometry||compactDisplayFactor!==factor){compactDisplayGeometry=levelGeometry;compactDisplayFactor=factor;compactDisplayFrames=compactPathFrames(positions,levelSolution,machineProfile,factor);}return compactDisplayFrames.Y;}
- if(key==='X'&&levelGeometry.guideSlope)return displaySupportFrame(levelGeometry.guideSlope);
+ if(key==='X'&&levelGeometry.guideSlope){const s=levelGeometry.guideSlope;return current.kind==='horizontal'?window.Leveling.compose(displaySupportFrame(levelSolution),displaySupportFrame({lr:s.lr-levelSolution.lr,fb:s.fb-levelSolution.fb})):displaySupportFrame(s);}
  if(current.kind==='lathe'&&key==='Z')return displayPoseFrame('work');
  return displayPoseFrame(levelGeometry.axes.find(a=>a.key===key).source);
 }
@@ -2277,7 +2414,7 @@ function levelMappedVisualPoint(p,pose='bed'){
  }
  if(current.kind==='compact'&&pose==='work')return compactWorkVisualPoint(p,positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  if(pose==='bed'){
-  const top=displaySurfacePoint(p[0],p[2]),slope=structuralSurface(p[0]).slopeAt(p[0],p[2]),normal=current.kind==='compact'?compactSupportFrame(levelSolution,p[0],p[2],displayFactor()).up:levelGeometry.portal?window.Leveling.compose(displayPortal().common,displaySupportFrame({lr:slope.lr-levelSolution.lr,fb:slope.fb-levelSolution.fb})).up:displaySupportFrame(slope).up,thickness=p[1]-.66;
+  const top=displaySurfacePoint(p[0],p[2]),slope=structuralSurface(p[0]).slopeAt(p[0],p[2]),normal=['compact','horizontal','lathe'].includes(current.kind)?compactSupportFrame(levelSolution,p[0],p[2],displayFactor()).up:levelGeometry.portal?window.Leveling.compose(displayPortal().common,displaySupportFrame({lr:slope.lr-levelSolution.lr,fb:slope.fb-levelSolution.fb})).up:displaySupportFrame(slope).up,thickness=p[1]-.66;
   return top.map((v,i)=>v+normal[i]*thickness);
  }
  const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,rawOffset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0},offset=displayCoordinates([rawOffset.x,0,rawOffset.z]);
@@ -2571,16 +2708,34 @@ function compactTablePathPoint(state=positions,solution=levelSolution,profile=ma
 // A material point on the horizontal pallet, shared by the model and reference
 // fixture. factor=1 is physical geometry; camera/clearance never enter here.
 function horizontalPalletPoint(raw,state=positions,solution=levelSolution,profile=machineProfile,factor=1){
- const L=window.Leveling,base=levelCoordinates(0,-.85),travel=levelCoordinates(0,.45*state.Z/100).z,z=base.z+travel;
- const slope=solution.slopeAt(base.x,z),frame=L.orientation({lr:slope.lr*factor,fb:slope.fb*factor});
+ const base=levelCoordinates(0,-.85),travel=levelCoordinates(0,.45*state.Z/100).z,z=base.z+travel;
+ const frame=compactSupportFrame(solution,base.x,z,factor),origin=compactSurfacePoint(solution,base.x,z,factor);
  const q=levelCoordinates(raw[0],raw[2]),relative=[q.x-base.x,raw[1]-.66,q.z-base.z];
  const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),direction=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)).find(a=>a.key==='Z').vector;
- if(solution.residual>1e-10||Math.abs(solution.twist)>1e-10){
-  const local=relative.map((v,i)=>v+travel*(direction[i]-(i===2?1:0)));
-  return frame.rotate(local).map((v,i)=>v+[base.x,.66+solution.heightAt(base.x,z)*factor/1000,z][i]);
+ const local=relative.map((v,i)=>v+travel*(direction[i]-(i===2?1:0)));
+ return frame.rotate(local).map((v,i)=>v+origin[i]);
+}
+// One rigid material-point map for the horizontal column, head and spindle.
+// Common bed tilt is a rigid transform of the entire residual support shape;
+// it must not be reapplied as a world-y height while the body rotates locally.
+function horizontalToolPoint(raw,state=positions,solution=levelSolution,profile=machineProfile,factor=1,keys=['X','Y']){
+ const M=window.ReferenceMeasurement,L=window.Leveling,active={...state,Y:keys.includes('Y')?state.Y:0},layout=columnLayoutOffset(current);
+ const physical=p=>{const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];};
+ const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),intrinsic=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)),body=intrinsicBodyFrame(axes,profile,factor);
+ const base=physical([layout.x,.66,current.d*.29+layout.z]),travel=physical([.55*active.X/100,0,0]),anchor=M.add(base,travel);
+ const frame=compactSupportFrame(solution,anchor[0],anchor[2],factor),origin=compactSurfacePoint(solution,anchor[0],anchor[2],factor);
+ const inverse=(f,v)=>[[1,0,0],[0,1,0],[0,0,1]].map(e=>M.dot(f.rotate(e),v));
+ const railSlopes=[-1,1].map(k=>{const q=levelCoordinates(.55*active.X/100+layout.x,current.d*.28+k*.13);return solution.slopeAt(q.x,q.z);});
+ const guide={lr:railSlopes.reduce((s,q)=>s+q.lr/2,0),fb:railSlopes.reduce((s,q)=>s+q.fb/2,0)};
+ const guideFrame=L.compose(L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),L.orientation({lr:(guide.lr-solution.lr)*factor,fb:(guide.fb-solution.fb)*factor}));
+ let correction=[0,0,0];
+ for(const a of axes.filter(a=>keys.includes(a.key))){
+  const f=a.key==='X'?guideFrame:frame,direction=f.rotate(intrinsic.find(q=>q.key===a.key).vector),distance=Math.hypot(...physical(a.vector))*a.amp*active[a.key]/100;
+  const delta=M.scale(M.sub(direction,a.key==='X'?f.rotate(a.vector):[0,0,0]),distance);
+  correction=M.add(correction,inverse(body,inverse(frame,delta)));
  }
- const moved=frame.rotate(direction);
- return frame.rotate(relative).map((v,i)=>v+travel*moved[i]+[base.x,.66+solution.heightAt(base.x,base.z)*factor/1000,base.z][i]);
+ const material=M.add(physical(raw),physical([layout.x,0,layout.z])),relative=M.add(M.sub(material,base),correction);
+ return M.add(origin,frame.rotate(body.rotate(relative)));
 }
 function compactPathFrames(state,solution,profile,factor=1){
  const q=levelCoordinates(0,-current.d*.1+.4*state.Y/100),work=compactSupportFrame(solution,q.x,q.z,factor);
@@ -2623,7 +2778,7 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const options={toolPoints:toolPoints.map(p=>levelCoordinates(p.x,p.z)),workPoints:[levelCoordinates(workPoint.x,workPoint.z)],axes:intrinsicAxes,length};
  const portal=toolPoints.length===2?connectedPortal(solution,toolPoints):null;
  const compact=m.kind==='compact'?compactPathFrames(state,solution,profile):null;
- if(m.kind==='lathe'){
+ if(m.kind==='lathe'||m.kind==='horizontal'){
   const t=options.toolPoints[0],w=options.workPoints[0];
   options.toolFrame=compactSupportFrame(solution,t.x,t.z);options.workFrame=compactSupportFrame(solution,w.x,w.z);
  }
@@ -2637,7 +2792,8 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  if(guidePoints){
   const slopes=guidePoints.map(p=>{const q=levelCoordinates(p.x,p.z);return solution.slopeAt(q.x,q.z);});
   guideSlope={lr:slopes.reduce((v,p)=>v+p.lr/slopes.length,0),fb:slopes.reduce((v,p)=>v+p.fb/slopes.length,0)};
-  options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:window.Leveling.orientation(guideSlope)}:a);
+  const guideFrame=m.kind==='horizontal'?window.Leveling.compose(window.Leveling.orientation({lr:solution.lr,fb:solution.fb}),window.Leveling.orientation({lr:guideSlope.lr-solution.lr,fb:guideSlope.fb-solution.fb})):window.Leveling.orientation(guideSlope);
+  options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:guideFrame}:a);
  }
  const metric=window.Leveling.geometry(solution,options);
  const pureCompact=compact&&profile?compactPathFrames(state,solution,null):null;
@@ -2646,7 +2802,7 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const poses={tool:{anchor:average(toolPoints),slope:metric.toolSlope,frame:metric.toolFrame},work:{anchor:workPoint,slope:metric.workSlope,frame:metric.workFrame}};
  if(toolPoints.length===2)toolPoints.forEach((p,i)=>{const q=levelCoordinates(p.x,p.z);poses[i?'rightColumn':'leftColumn']={anchor:p,slope:portal?portal.columns[i].slope:solution.slopeAt(q.x,q.z),frame:portal?.columns[i].frame};});
  const bodyFrame=intrinsicBodyFrame(axes,profile),intrinsicUp=bodyFrame.rotate([0,1,0]),combinedUp=metric.toolFrame.rotate(intrinsicUp),combinedDirection=metric.toolFrame.rotate(bodyFrame.direction);
- const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean((compact?compactSupportFrame(solution,q.x,q.z):window.Leveling.orientation(solution.slopeAt(q.x,q.z))).rotate(intrinsicUp));});
+ const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean((compact||['horizontal','lathe'].includes(m.kind)?compactSupportFrame(solution,q.x,q.z):window.Leveling.orientation(solution.slopeAt(q.x,q.z))).rotate(intrinsicUp));});
  const lathe=m.kind==='lathe',bodyPosture=lathe?spindleLean(combinedDirection):bodyLean,bodyIntrinsicPosture=lathe?spindleLean(bodyFrame.direction):bodyIntrinsicLean,bodySupportPosture=lathe?spindleLean(metric.toolFrame.rotate(bodyFrame.nominal)):directionLean(metric.toolFrame.rotate([0,1,0]));
  return {...metric,portal,compact,poses,guidePoints,guideSlope,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
 }
@@ -2830,7 +2986,7 @@ function diagramComparison(pair,initial){
  return {before,plot,beforePlot,delta,absoluteChange,trend,direction,text,range};
 }
 function accuracyDiagram(g,initial=levelInitialGeometry){
- const live=[],referenceCards=[];
+ const live=[],referenceCards=[],measurements=[];
  const columns=g.pairs.map((pair,i)=>{
   const c=diagramComparison(pair,initial),{plot,beforePlot}=c;
   const reference=squarenessReference(pair);
@@ -2839,22 +2995,24 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   const attributes=Object.entries({'projection':reference.projection.join(','),'zero-location':reference.zero,'base-direction':reference.baseDirection,'measure-direction':reference.measureDirection,'positive-direction':reference.positive,'negative-direction':reference.negative,'reference-plane':reference.plane,pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="104" y="64" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
   const physical=referenceScan(pair),measurement=referenceDisplayScan(pair),beforeMeasurement=referenceDisplayScan(pair,positions,levelInitialSolution||levelSolution);
+  measurements.push({key:pair.key,current:measurement,before:levelInitialSolution?beforeMeasurement:null});
   const display=measurement,reading=display.valid?squarenessMicronText(display.microns):'—';
   referenceCards.push(referenceCard(pair,measurement,beforeMeasurement,physical));
-  const descriptionText=pair.key+'・'+(display.valid?measurement.setup.zeroLocation+'を0とした300 mmの仮想測定 '+reading+' µm'+(current.kind==='compact'?'（触れと共通の仮想主軸姿勢）':''):display.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。';
-  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${measurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}">${referenceDiagram(measurement)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
+  const descriptionText=pair.key+'・'+(display.valid?measurement.setup.zeroLocation+'を0とした300 mmの'+(current.kind==='horizontal'?'測定の終点値 ':'仮想測定 ')+reading+' µm'+(current.kind==='compact'?'（触れと共通の仮想主軸姿勢）':''):display.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。'+(current.kind==='horizontal'?'模型の現在位置の針の指示ではありません。':'');
+  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${measurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}">${referenceDiagram(measurement,true)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} · 局所角度</text><g transform="translate(0,30)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
- $('liveSquarenessName').textContent=current.kind==='compact'?'仮想測定（触れと共通姿勢）':'仮想測定';
- $('liveSquarenessUnits').setAttribute('aria-label',current.kind==='compact'?'300 mm・マイクロメートル。小型のZ送りと触れに共通の仮想主軸姿勢。前後の支持応答は中央で約5倍。数値への後掛け倍率はありません。':'仮想測定300 mm・マイクロメートル');
+ $('liveSquarenessName').textContent=current.kind==='horizontal'?'測定の終点値':current.kind==='compact'?'仮想測定（触れと共通姿勢）':'仮想測定';
+ $('liveSquarenessUnits').setAttribute('aria-label',current.kind==='horizontal'?'始点でゼロを取り直した300 mm測定の終点値・マイクロメートル。模型の現在位置の針の指示ではありません。':current.kind==='compact'?'300 mm・マイクロメートル。小型のZ送りと触れに共通の仮想主軸姿勢。前後の支持応答は中央で約5倍。数値への後掛け倍率はありません。':'仮想測定300 mm・マイクロメートル');
  $('measurementReferenceCards').innerHTML=referenceCards.join('');
  $('accuracyDiagram').style.setProperty('--diagram-min-width',g.pairs.length*88+'px');
  $('accuracyDiagram').setAttribute('viewBox',`0 0 ${g.pairs.length*112} 123`);$('accuracyDiagram').innerHTML=columns.join('');
  $('accuracyDiagram').setAttribute('data-diagram-model','local-angle');
  $('accuracyDiagram').setAttribute('aria-label','現在位置の局所軸角度の300 mm換算。接触ゼロを取る有限走査図とは別。'+g.pairs.map(p=>p.key+'、基準'+squarenessPlot(p).base+'で初期からの変化を比較').join('。'));
+ return measurements;
 }
-function updateFineQualitative(g,initial){
+function updateFineQualitative(g,initial,measurements=[]){
  const lathe=current.kind==='lathe';
  for(const [key,id,negative,positive,label] of [['front','fineLeanFront',lathe?'下向き':'後ろ倒れ',lathe?'上向き':'前倒れ',lathe?'主軸の上下方向':'本体＋支持の前後倒れ'],['right','fineLeanRight',lathe?'左向き':'左倒れ',lathe?'右向き':'右倒れ',lathe?'主軸の水平面方向':'本体＋支持の左右倒れ']]){
   const value=g.bodyPosture[key];$(id).textContent=label+'：'+(Math.abs(value)<=20.000001?'小さめ':value>0?positive:negative);$(id).setAttribute('data-current',String(value));
@@ -2863,6 +3021,19 @@ function updateFineQualitative(g,initial){
  $('fineFixedBody').textContent='本体の固有直角差・'+(lathe||g.portal?'主軸の方向':'コラムの倒れ')+'・ガイドの曲がりは、この個体の固定成分です。支持姿勢を重ねた変化を見ます。';
  $('finePrecisionSummary').replaceChildren();
  for(const pair of g.pairs){
+  if(current.kind==='horizontal'){
+   // Compare the same finite, independently aligned and zeroed scans as the
+   // live reading. The local axis angle can improve while this reading worsens.
+   const measurement=measurements.find(m=>m.key===pair.key),before=measurement?.before,now=measurement?.current;
+   const currentValid=now?.valid&&Number.isFinite(now.microns),beforeValid=before?.valid&&Number.isFinite(before.microns),valid=currentValid&&beforeValid;
+   const delta=valid?now.microns-before.microns:null,absoluteChange=valid?Math.abs(now.microns)-Math.abs(before.microns):null;
+   const trend=valid?(absoluteChange<-.005?'better':absoluteChange>.005?'worse':'similar'):'unavailable';
+   const text=!currentValid||(before&&!beforeValid)?'測定が成立しないため比較できない':!before?'初期との比較基準なし':trend==='better'?'初期よりゼロに近づいた':trend==='worse'?'初期よりゼロから離れた':'初期からほぼ同じ';
+   const row=document.createElement('p');row.className='fine-pair-reading '+trend;
+   for(const [name,value] of Object.entries({pair:pair.key,model:'finite-scan',unit:'µm',before:beforeValid?before.microns:'',current:currentValid?now.microns:'',delta:delta??'',trend,valid:Boolean(valid)}))row.setAttribute('data-'+name,String(value));
+   row.textContent=pair.key+'測定：'+text;$('finePrecisionSummary').append(row);
+   continue;
+  }
   const c=diagramComparison(pair,initial),row=document.createElement('p');row.className='fine-pair-reading '+c.trend;
   for(const [name,value] of Object.entries({pair:pair.key,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction}))row.setAttribute('data-'+name,String(value));
   row.textContent=pair.key+'：'+c.text+(c.direction==='unchanged'?'（軸間の関係はほぼ不変）':'')+(c.range?' · '+c.range:'');$('finePrecisionSummary').append(row);
@@ -2958,7 +3129,7 @@ function updateAccuracy(){
  $('columnXValue').textContent=levelConfig.columnX===0?'標準':levelConfig.columnX<0?'左寄り':'右寄り';$('columnX').setAttribute('aria-valuetext',$('columnXValue').textContent);
  $('columnZValue').textContent=levelConfig.columnZ===0?'標準':levelConfig.columnZ<0?'手前寄り':'奥寄り';$('columnZ').setAttribute('aria-valuetext',$('columnZValue').textContent);
  $('demoTwist').disabled=supports.length===3;
- accuracyDiagram(g,initial);updateFineQualitative(g,initial);
+ const measurements=accuracyDiagram(g,initial);updateFineQualitative(g,initial,measurements);
 }
 for(const id of ['columnX','columnZ'])$(id).oninput=()=>{const value=Number($(id).value);if(!bounded(value,-100,100)||!Number.isInteger(value))return;stopMotion();levelConfig[id]=value;updateLeveling();};
 $('resetColumn').onclick=()=>{stopMotion();levelConfig.columnX=0;levelConfig.columnZ=0;$('columnX').value='0';$('columnZ').value='0';updateLeveling();};
@@ -3017,6 +3188,15 @@ function initializeMachineAccuracy(profile,bestState){
 }
 function machineSolution(heights){
  const points=supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:heights[i]})),solution=window.Leveling.solve(points,{layout:current.supportLayout});
+ // A finite scan can reach the same support boundary through different sums.
+ // Canonicalize only roundoff-sized (one picometre) differences so its local
+ // posture always uses the solver's existing right/back cell convention.
+ // Heights remain continuous and real samples on either side remain distinct.
+ if(['horizontal','lathe'].includes(current.kind)){
+  const xs=[...new Set(points.map(p=>p.x))],zs=[...new Set(points.map(p=>p.z))],slopeAt=solution.slopeAt;
+  const snap=(value,knots)=>knots.find(k=>Math.abs(value-k)<=1e-12)??value;
+  solution.slopeAt=(x,z)=>slopeAt(snap(x,xs),snap(z,zs));
+ }
  // The interpolating sheet is an input diagram, not an elastic casting. The
  // L3 teaching foundation has a bed and two distinct three-point column seats.
  if(current.kind==='double'&&current.supportLayout==='irregular'){
@@ -3156,22 +3336,7 @@ $('applyBestLevel').onclick=()=>{stopMotion();invalidateLevelImport();updateMach
 // frame rotates the nominal horizontal spindle, which is NOT the pallet Z axis.
 function horizontalSpindleFixture(state,solution,profile,g=geometryModel(state,solution,profile)){
  const M=window.ReferenceMeasurement,axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),body=intrinsicBodyFrame(axes,profile),frame=g.toolFrame;
- const physical=p=>{const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];},inverse=(f,v)=>[[1,0,0],[0,1,0],[0,0,1]].map(b=>M.dot(f.rotate(b),v));
- const layout=columnLayoutOffset(current),offset=physical([layout.x,0,layout.z]),anchor=physical([g.poses.tool.anchor.x,.66,g.poses.tool.anchor.z]),surface=p=>[p[0],.66+solution.heightAt(p[0],p[2])/1000,p[2]],origin=surface(anchor);
- const baseState={...state,X:0,Y:0},baseG=geometryModel(baseState,solution,profile),baseAnchor=physical([baseG.poses.tool.anchor.x,.66,baseG.poses.tool.anchor.z]),dA=M.sub(anchor,baseAnchor),dS=M.sub(origin,surface(baseAnchor));
- const nonuniform=solution.residual>1e-10||Math.abs(solution.twist)>1e-10;
- let move=[0,0,0],desired=[0,0,0];
- for(const a of axes.filter(a=>a.key==='X'||a.key==='Y')){
-  const axisFrame=a.key==='X'?window.Leveling.orientation(g.guideSlope):frame,direction=axisFrame.rotate(g.axes.find(q=>q.key===a.key).vector),distance=Math.hypot(...physical(a.vector))*a.amp*state[a.key]/100;
-  desired=M.add(desired,M.scale(direction,distance));
-  if(nonuniform){
-   const axisState={...state,[a.key]:0},axisG=geometryModel(axisState,solution,profile),axisAnchor=physical([axisG.poses.tool.anchor.x,.66,axisG.poses.tool.anchor.z]),axisDA=M.sub(anchor,axisAnchor),movesAnchor=Math.hypot(...axisDA)>1e-12;
-   const world=M.scale(M.sub(direction,movesAnchor?axisFrame.rotate(a.vector):[0,0,0]),distance);
-   move=M.add(move,M.add(inverse(body,inverse(frame,world)),axisDA));
-  }
- }
- if(!nonuniform)move=M.add(dA,inverse(body,inverse(frame,M.sub(desired,dS))));
- const raw=physical([0,2.55,-.93]),relative=M.sub(M.add(M.add(raw,move),offset),anchor),nose=M.add(origin,frame.rotate(body.rotate(relative)));
+ const nose=horizontalToolPoint([0,2.55,-.93],state,solution,profile);
  return {nose,axis:M.unit(frame.rotate(body.rotate([0,0,1]))),right:M.unit(frame.rotate(body.rotate([1,0,0]))),up:M.unit(frame.rotate(body.rotate([0,1,0])))};
 }
 function horizontalParallelism(state=positions,solution=levelSolution,profile=machineProfile){
@@ -3201,7 +3366,7 @@ function horizontalParallelism(state=positions,solution=levelSolution,profile=ma
 let spindleSweepMode=false,spindleSweepAngle=270;
 const sweepDirections=['右','奥','左','手前'];
 const defaultSweepMeasurementNote=$('sweepMeasurementNote').textContent;
-const horizontalParallelMeasurementNote='横形のZ方向平行度。主軸固定のテストバーに対し、パレット上の計器を先端側から主軸側へ300 mm移動します。直角XZ/YZとは計器と基準器の搭載先が逆です。aは左側から右向きに接触、bは下側から上向きに接触します。始点でゼロ、プラスは測定子の押込み増加です。支持・軸位置の変更ごとにゼロを取り直します。主軸は回しません。取付け寸法や干渉を再現しない仮想配置です。';
+const horizontalParallelMeasurementNote='横形のZ方向平行度。テストバーは主軸に固定、計器はテーブル（パレット）に固定します。Z走査中はバーを固定したまま、テーブルと計器を先端側から主軸側へ300 mm移動します。直角測定はテーブル上の直角マスタを主軸側の計器で測る別の配置です。aは左側から右向きに接触、bは下側から上向きに接触します。始点でゼロ、プラスは測定子の押込み増加です。Yで主軸頭を動かすとバーの高さも変わり、支持・軸位置の変更ごとに計器の取付けと始点ゼロを取り直します。走査途中では再ゼロしません。主軸は回しません。取付け寸法や干渉を再現しない仮想配置です。';
 const sweepDot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
 const spindleSweepKinds=['compact','travel','double','gantry','five'];
 function supportsSpindleSweep(machine=current){return spindleSweepKinds.includes(machine.kind);}
@@ -3318,7 +3483,7 @@ function spindleSweepMachineGeometry(state,solution,profile){
  return {valid:true,measurement,nose,centre,tableCentre,tableNormal,tableRight,tableBack,halfWidth,halfDepth,tableShape:five?'ellipse':'rectangle',pointAt,cardinal:[0,90,180,270].map(pointAt)};
 }
 function spindleSweepReading(value){return squarenessMicronText(value);}
-const horizontalParallelMiniMarkup=`<svg viewBox="0 0 56 31" role="img" aria-label="Z平行度の接触位置とゼロ。左の正面図ではaは円の左側、9時位置から右向きに接触して0。bは円の下側、6時位置から上向きに接触して0。右の長手方向図では、どちらもオレンジの点が示す先端寄りの位置でゼロを取り、右の主軸側へ300 mm走査します。"><circle cx="18" cy="10" r="6" fill="none" stroke="#66584c" stroke-width="1"/><path d="M2 10H11m-2-1.2 2 1.2-2 1.2M18 22V17m-2 3 2-3 2 3" fill="none" stroke="#66584c" stroke-width="1"/><circle class="parallel-mini-zero-a" cx="12" cy="10" r="1.3" fill="#b34800"/><circle class="parallel-mini-zero-b" cx="18" cy="16" r="1.3" fill="#b34800"/><text x="0" y="8" fill="#9b3f00" font-size="7" font-weight="700">a 0</text><text x="12" y="29" fill="#9b3f00" font-size="7" font-weight="700">b 0</text><path d="M30 5H49V12H30Z" fill="none" stroke="#66584c" stroke-width="1"/><rect x="49" y="2" width="6" height="13" fill="#66584c"/><circle class="parallel-mini-zero" cx="33" cy="12" r="1.5" fill="#b34800"/><path d="M33 14V17H45m-3-2 3 2-3 2" fill="none" stroke="#b34800" stroke-width="1"/><circle cx="45" cy="12" r="1.2" fill="#fffaf6" stroke="#b34800" stroke-width="1"/><text x="30" y="24" fill="#9b3f00" font-size="7" font-weight="700">0</text><text x="45" y="29" fill="#66584c" font-size="5.5" text-anchor="middle">300 mm</text></svg>`;
+const horizontalParallelMiniMarkup=`<svg viewBox="0 0 56 31" role="img" aria-label="Z平行度。バーは主軸に固定、計器はテーブルに固定。左はバー先端側から主軸を見る図。aは左9時から右向き、bは下6時から上向きに接触。右の長手図はテーブルに固定した計器を示し、オレンジの先端寄りでゼロ、固定バーに沿って右の主軸側へ300 mm移動します。"><circle cx="10" cy="6" r="4" fill="none" stroke="#66584c" stroke-width=".8"/><path d="M0 6H5m-1.5-1 1.5 1-1.5 1M10 16V11m-1.3 2 1.3-2 1.3 2" fill="none" stroke="#66584c" stroke-width=".8"/><circle class="parallel-mini-zero-a" cx="6" cy="6" r="1" fill="#b34800"/><circle class="parallel-mini-zero-b" cx="10" cy="10" r="1" fill="#b34800"/><text x="0" y="14" fill="#9b3f00" font-size="5.5" font-weight="700">a</text><text x="13" y="15" fill="#9b3f00" font-size="5.5" font-weight="700">b</text><path d="M28 3H48V8H28ZM28 17H54M32 17V14m-2 0h4v-3h-4ZM32 11V8" fill="none" stroke="#66584c" stroke-width=".8"/><rect x="48" y="0" width="6" height="10" fill="#66584c"/><circle class="parallel-mini-zero" cx="32" cy="8" r="1.2" fill="#b34800"/><path d="M35 12H46m-2-1.5 2 1.5-2 1.5" fill="none" stroke="#b34800" stroke-width=".8"/><circle cx="46" cy="8" r="1" fill="#fffaf6" stroke="#b34800" stroke-width=".8"/><text x="0" y="23" fill="#66584c" font-size="6.2">バー:主軸</text><text x="0" y="29" fill="#66584c" font-size="6.2">計器:テーブル</text><text x="44" y="23" fill="#9b3f00" font-size="5.5" text-anchor="middle">300 mm</text></svg>`;
 // A plan-view location key only: four readings below retain their existing values.
 function updateSpindleSweepMini(zeroValid){
  const holder=$('spindleSweepMini');
@@ -3340,7 +3505,7 @@ function updateHorizontalParallelReadout(){
   $('sweepReadout'+i).setAttribute('data-selected',String(i===2));
  }
  $('sweepContactStatus').textContent=measured.valid?'始点0・＋は押込み増加・µm（0.001 mm）':someValid?(measured.a?.valid?'b 上下':'a 左右')+'は測定不可・走査範囲と接触姿勢を確認':'測定不可・300 mmのZ走査範囲と接触姿勢を確認';
- $('spindleSweepToggle').setAttribute('aria-label','Z方向の平行度。a 左右 '+$('sweepValue0').textContent+' マイクロメートル、b 上下 '+$('sweepValue1').textContent+' マイクロメートル。'+(someValid?'有効な測定の始点ゼロ、':'測定不可、')+'走査300ミリ。測定配置を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
+ $('spindleSweepToggle').setAttribute('aria-label','Z方向の平行度。バーは主軸に固定、計器はテーブルに固定。a 左右 '+$('sweepValue0').textContent+' マイクロメートル、b 上下 '+$('sweepValue1').textContent+' マイクロメートル。'+(someValid?'有効な測定の始点ゼロ、':'測定不可、')+'テーブルを主軸側へ走査300ミリ。測定配置を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
 }
 function updateSpindleSweep(){
  if(typeof updateIntrinsicInspectionUI==='function')updateIntrinsicInspectionUI();
@@ -3349,7 +3514,7 @@ function updateSpindleSweep(){
  const horizontal=current.kind==='horizontal',available=supportsSpindleSweep()||horizontal;
  spindleSweepMode=available;
  $('trainingMain').classList.toggle('has-spindle-sweep',available);
- $('squarenessValuesNote').hidden=false;
+ $('squarenessValuesNote').hidden=current.kind==='lathe';
  $('spindleSweepName').textContent=horizontal?'Z平行':'触れ';
  $('spindleSweepPanel').setAttribute('data-measurement',horizontal?'z-parallel':'spindle-sweep');
  $('spindleSweepPanel').setAttribute('aria-label',horizontal?'横形のZ方向平行度':'主軸のダイヤル旋回測定');
@@ -3586,6 +3751,7 @@ function updateIntrinsicInspectionUI(){
  $('liveSquareness').closest('section').setAttribute('aria-label',lathe?'タレット旋盤の精度検査':'軸の直角度');
  $('liveSquareness').closest('section').querySelector('.precision-panel-title').textContent=lathe?'旋盤検査':'直角度';
  $('squarenessValuesNote').hidden=lathe;
+ updateReferenceMeasurementCopy();
  $('intrinsicInspectionPage').setAttribute('aria-label',lathe?'穴芯とテストバー測定':'個体固有の主軸振れと上面精度');
  carousel.classList.toggle('is-enabled',enabled);$('intrinsicInspectionPage').hidden=!enabled;$('inspectionViewport').tabIndex=enabled?0:-1;
  if(changed)inspectionSetPage(0,'instant');

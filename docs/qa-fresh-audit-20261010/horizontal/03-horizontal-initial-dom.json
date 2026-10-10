@@ -1,0 +1,1342 @@
+[
+  {
+    "tag": "BUTTON",
+    "id": "navHome",
+    "text": "トップ",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "navBack",
+    "text": "‹ 戻る",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "changeMachine",
+    "text": "‹ 機種選択",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "機械",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "機種選択",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "electric",
+    "text": "⚡電気回路・制御・点検の基礎テスターの使い方 →",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "mechanical",
+    "text": "⚙機械工作機械の構造と調整訓練項目を見る →",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "testerEntry",
+    "text": "01テスターの使い方DC・AC電圧、抵抗、導通、低電圧の電流を模擬測定初めてのテスター→",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "leveling",
+    "text": "01工作機械のレベル出し支持点の調整で、ねじれ・コラムの倒れ・直角度の変化を3Dで学ぶ7つの構造カテゴリ→",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "テーブルXY・主軸頭Z小型立形・4点支持ロボドリル系を参考にした小型教材この構造を見てみる →",
+    "type": "submit",
+    "value": "",
+    "aria": "小型立形・4点支持の訓練画面へ"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "NGC・8点支持横形・Haas EC-630Haas EC-630（NGC）の据付手順を参考この構造を見てみる →",
+    "type": "submit",
+    "value": "",
+    "aria": "横形・Haas EC-630の訓練画面へ"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "テーブル固定・コラム移動立形・移動コラム固定テーブルの長尺加工機この構造を見てみる →",
+    "type": "submit",
+    "value": "",
+    "aria": "立形・移動コラムの訓練画面へ"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "L3構造参考・教材用15点固定門形・L3 3000長手ベッド9点＋左右柱側各3点この構造を見てみる →",
+    "type": "submit",
+    "value": "",
+    "aria": "固定門形・L3 3000の訓練画面へ"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "テーブル固定・門全体が移動移動門形・ガントリー固定門形とは動く側が逆この構造を見てみる →",
+    "type": "submit",
+    "value": "",
+    "aria": "移動門形・ガントリーの訓練画面へ"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "XYZ＋A/Cの旋回5軸・テーブル旋回形テーブルXY・主軸頭Zの学習モデルこの構造を見てみる →",
+    "type": "submit",
+    "value": "",
+    "aria": "5軸・テーブル旋回形の訓練画面へ"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "X径方向・Z主軸方向NC旋盤・タレット2軸Haas STシリーズのタレット構造・検査配置を参考この構造を見てみる →",
+    "type": "submit",
+    "value": "",
+    "aria": "NC旋盤・タレット2軸の訓練画面へ"
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "分類の考え方・調査資料立形は小型4点のみ。横形はHaas EC-630（NGC）、固定門形はHWACHEON L3 3000を参考にしています。「立形／横形」は主軸の向き、「門形／片持ち」は構造、「5",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "closeTrainingMenu",
+    "text": "閉じる ×",
+    "type": "submit",
+    "value": "",
+    "aria": "設定メニューを閉じる"
+  },
+  {
+    "tag": "DETAILS",
+    "id": "modelDisplaySettings",
+    "text": "模型の表示・理想輪郭 理想輪郭を重ねる現在の模型理想（薄い破線）理想輪郭とは理想は支持の傾き・ねじれと本体の固有誤差を除いた輪郭です。寸法・軸位置は現在と同じで、上下位置だけ平均支持高さに揃えます。測",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "showIdealOutline",
+    "text": "",
+    "type": "checkbox",
+    "value": "on",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "理想輪郭とは理想は支持の傾き・ねじれと本体の固有誤差を除いた輪郭です。寸法・軸位置は現在と同じで、上下位置だけ平均支持高さに揃えます。測定欄の展開図は接触配置を示します。初期との数値比較は▽の説明で確",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "sceneView",
+    "text": "斜め・自由回転正面 · 左 → 右側面 · 手前 → 奥",
+    "type": "select-one",
+    "value": "oblique",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "resetSceneZoom",
+    "text": "模型の大きさを戻す",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "exaggerate",
+    "text": "",
+    "type": "checkbox",
+    "value": "on",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "showLevelSurface",
+    "text": "",
+    "type": "checkbox",
+    "value": "on",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "showAxes",
+    "text": "",
+    "type": "checkbox",
+    "value": "on",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "labels",
+    "text": "",
+    "type": "checkbox",
+    "value": "on",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "軸の向きを確認模型の向き（座標の目安）X軸Y軸Z軸各軸の向きを別々に表示します。模型の左右回転に追従する目安で、NCの＋／−指令や支持姿勢・精度を示しません。A/Cは模型上の曲線矢印で確認します。",
+    "aria": null
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "X軸",
+    "aria": "X軸の向きの目安"
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "Y軸",
+    "aria": "Y軸の向きの目安"
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "Z軸",
+    "aria": "Z軸の向きの目安"
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "色・表示の説明模型は遠近による見かけの倒れを避ける正投影です。「観察方向」で正面・側面・斜めを切り替えます。正面／側面からドラッグすると斜めの自由回転に戻ります。部材のそばの破線は床に対する鉛直・水平",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "axisMenuSection",
+    "text": "軸位置・デモX軸の操作閉じる軸操作 ▾主画面の軸ボタン、または下の選択欄で軸を選び、位置や動きを確認します。操作する軸X軸Y軸Z軸選んだ軸を動かす中央へ戻すX軸コラム＋主軸頭左右中央部材− 左部材＋ ",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "closeAxisControls",
+    "text": "閉じる",
+    "type": "submit",
+    "value": "",
+    "aria": "軸操作を閉じる"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "axisControlsToggle",
+    "text": "軸操作 ▾",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "drawerAxisSelect",
+    "text": "X軸Y軸Z軸",
+    "type": "select-one",
+    "value": "X",
+    "aria": "操作する軸"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "playAxis",
+    "text": "選んだ軸を動かす",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "resetAxes",
+    "text": "中央へ戻す",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "axis-X",
+    "text": "",
+    "type": "range",
+    "value": "0",
+    "aria": "X軸の部品位置"
+  },
+  {
+    "tag": "INPUT",
+    "id": "axis-Y",
+    "text": "",
+    "type": "range",
+    "value": "0",
+    "aria": "Y軸の部品位置"
+  },
+  {
+    "tag": "INPUT",
+    "id": "axis-Z",
+    "text": "",
+    "type": "range",
+    "value": "0",
+    "aria": "Z軸の部品位置"
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "方式・サイズ機種を選び直すときは、上の「機種選択」へ。この構造の方式／サイズ",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "machineMode",
+    "text": "",
+    "type": "select-one",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "調整の状態・手本\n粗調整 · 平均の傾きを整えるまず平均の傾きを整える\n機械の右枠に平均レベルの水準器を固定表示しています。左右は横向き、前後は上が奥・下が手前です。左右・前後は支持配置での方向です。",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "coarseExample",
+    "text": "粗調整の手本を試す",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "fineExample",
+    "text": "微調整の参考例を試す",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "局所軸角度を確認XY · 局所角度0OXPI300 mm換算点＋−YXZ · 局所角度0OXPI300 mm換算点＋−ZYZ · 局所角度0OYPI300 mm換算点＋−Z範囲外現在位置の局所的な軸間",
+    "aria": null
+  },
+  {
+    "tag": "svg",
+    "id": "accuracyDiagram",
+    "text": "XY · 局所角度0OXPI300 mm換算点＋−YXZ · 局所角度0OXPI300 mm換算点＋−ZYZ · 局所角度0OYPI300 mm換算点＋−Z範囲外",
+    "aria": "現在位置の局所軸角度の300 mm換算。接触ゼロを取る有限走査図とは別。XY、基準Xで初期からの変化を比較。XZ、基準Xで初期からの変化を比較。YZ、基準Yで初期からの変化を比較"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "restoreInitialLevel",
+    "text": "抽選時の支持高さへ戻す",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "adjustStep",
+    "text": "0.001 mm0.005 mm0.01 mm0.05 mm0.10 mm",
+    "type": "select-one",
+    "value": "0.01",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "down0",
+    "text": "下げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Aを下げる"
+  },
+  {
+    "tag": "INPUT",
+    "id": "height0",
+    "text": "",
+    "type": "number",
+    "value": "0.000",
+    "aria": "Aの抽選時からの調整量"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "up0",
+    "text": "上げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Aを上げる"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "down1",
+    "text": "下げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Bを下げる"
+  },
+  {
+    "tag": "INPUT",
+    "id": "height1",
+    "text": "",
+    "type": "number",
+    "value": "0.000",
+    "aria": "Bの抽選時からの調整量"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "up1",
+    "text": "上げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Bを上げる"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "down2",
+    "text": "下げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Cを下げる"
+  },
+  {
+    "tag": "INPUT",
+    "id": "height2",
+    "text": "",
+    "type": "number",
+    "value": "0.000",
+    "aria": "Cの抽選時からの調整量"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "up2",
+    "text": "上げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Cを上げる"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "down3",
+    "text": "下げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Dを下げる"
+  },
+  {
+    "tag": "INPUT",
+    "id": "height3",
+    "text": "",
+    "type": "number",
+    "value": "0.000",
+    "aria": "Dの抽選時からの調整量"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "up3",
+    "text": "上げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Dを上げる"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "down4",
+    "text": "下げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Eを下げる"
+  },
+  {
+    "tag": "INPUT",
+    "id": "height4",
+    "text": "",
+    "type": "number",
+    "value": "0.000",
+    "aria": "Eの抽選時からの調整量"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "up4",
+    "text": "上げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Eを上げる"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "down5",
+    "text": "下げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Fを下げる"
+  },
+  {
+    "tag": "INPUT",
+    "id": "height5",
+    "text": "",
+    "type": "number",
+    "value": "0.000",
+    "aria": "Fの抽選時からの調整量"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "up5",
+    "text": "上げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Fを上げる"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "down6",
+    "text": "下げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Gを下げる"
+  },
+  {
+    "tag": "INPUT",
+    "id": "height6",
+    "text": "",
+    "type": "number",
+    "value": "0.000",
+    "aria": "Gの抽選時からの調整量"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "up6",
+    "text": "上げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Gを上げる"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "down7",
+    "text": "下げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Hを下げる"
+  },
+  {
+    "tag": "INPUT",
+    "id": "height7",
+    "text": "",
+    "type": "number",
+    "value": "0.000",
+    "aria": "Hの抽選時からの調整量"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "up7",
+    "text": "上げる",
+    "type": "submit",
+    "value": "",
+    "aria": "Hを上げる"
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "角度・端/中央89.998538° · 90°との差端・中央の比較 -12.75 〜 -12.75 µm本体の固有成分と支持姿勢を重ねた現在の測定値です。",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "角度・端/中央90.000991° · 90°との差端・中央の比較 +8.64 〜 +8.65 µm本体の固有成分と支持姿勢を重ねた現在の測定値です。",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "角度・端/中央90.007739° · 90°との差端・中央の比較 -14.13 〜 +77.26 µm本体の固有成分と支持姿勢を重ねた現在の測定値です。",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "現在の方向と測定位置を詳しく見る\n本体＋支持の合成姿勢前倒れ 54.62 µrad ／ 右倒れ 24.08 µrad\n支持によるテーブル／案内との姿勢差前後 +138.59 µrad ／ 左右 +11",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "直角図の見方・評価長\n\n破線：90°。色線：現在。XY・XZはX、YZはYを基準に固定し、もう一方の軸との角度を比べます。旋盤はZ基準のXZだけです。支持点を調整すると色線が変わります。同じ姿勢の軸対",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "impactOffset",
+    "text": "",
+    "type": "number",
+    "value": "0.5",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "変化の読み方・計算の前提Xは二本の走行レール、Yはコラム取付部、Zはパレット側の姿勢を使います。取付ベースの相対変形を幾何的に近似する教材で、剛性・荷重・水平面内の曲がりは計算しません。\n同じ平面の共",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "姿勢・据付位置の例ねじれ・倒れの例を試すねじれと直角度を見るコラムの倒れを見る\n支持状態を例の高さへ変更します。比較の基準は抽選時の支持高さのままです。\nコラムの据付位置を変えて比較同じ支持高さでも、",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "ねじれ・倒れの例を試すねじれと直角度を見るコラムの倒れを見る\n支持状態を例の高さへ変更します。比較の基準は抽選時の支持高さのままです。",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "demoTwist",
+    "text": "ねじれと直角度を見る",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "demoColumn",
+    "text": "コラムの倒れを見る",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "columnLayout",
+    "text": "コラムの据付位置を変えて比較同じ支持高さでも、コラムを置く位置によって局所的な姿勢が変わります。初期・現在を同じ新しい配置で比較します。左右の配置 標準前後の配置 標準コラムの配置を戻す",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "columnX",
+    "text": "",
+    "type": "range",
+    "value": "0",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "columnZ",
+    "text": "",
+    "type": "range",
+    "value": "0",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "resetColumn",
+    "text": "コラムの配置を戻す",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "支持面の例同じ個体で別の支持状態を試す状態パターン全支持点を同じ高さへ揃える右側が高い手前が高い対角にねじれる中間支持が高い左右の座標倍率基準幅（m）前後の座標倍率基準幅（m）計算と模型に同じ座標倍率",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "startLevelExercise",
+    "text": "同じ個体で別の支持状態を試す",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "zero",
+    "text": "全支持点を同じ高さへ揃える",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "右側が高い",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "手前が高い",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "twistPreset",
+    "text": "対角にねじれる",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "middlePreset",
+    "text": "中間支持が高い",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "supportWidth",
+    "text": "",
+    "type": "number",
+    "value": "2.72",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "supportDepth",
+    "text": "",
+    "type": "number",
+    "value": "3.68",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "水準器で補助確認水準器の感度（1目盛の傾き）0.02 mm/m0.05 mm/m0.10 mm/m水準器を置く位置（前後）手前中央奥左右方向-0.016 mm/m機械の左側機械の右側左側が高い · 0",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "levelSensitivity",
+    "text": "0.02 mm/m0.05 mm/m0.10 mm/m",
+    "type": "select-one",
+    "value": "0.05",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "measurePos",
+    "text": "手前中央奥",
+    "type": "select-one",
+    "value": "0",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "支持面の状態・練習・参考探索（補助）支持点の高さから面を補間した学習用の計算です。全体の傾きと、平面からのずれを分けて確認します。平均の左右傾き0.0250 mm/m平均の前後傾き0.0152 mm/",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "参考探索の調整例（補助）Aを 0.130 mm上げる、Bを 0.171 mm下げる、Cを 0.066 mm上げる、Dを 0.094 mm上げる、Eを 0.022 mm下げる、Fを 0.030 mm上げ",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "支持面の幾何換算も見る直線軸の幾何関係と支持面の変化を確認します。腕に換算した全体傾きのずれ例14.6 µm支持幅に換算した前後の左右高低差変化243.0 µm支持点の平面偏差の換算167.7 µmµ",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "machineScenario",
+    "text": "個体データ・参考調整\n学習の主役は、少し調整して精度の変化を読むことです。ページを開き直すと調整をリセットして新しい個体を抽選します。画面内でも別個体の抽選や参考探索を使えます。\n機械の状態新品中古別",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "machineCondition",
+    "text": "新品中古",
+    "type": "select-one",
+    "value": "new",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "drawMachine",
+    "text": "別の個体を抽選",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "抽選率・固有成分を見る各誤差項目ごとの教材用抽選率です。市場の実測統計ではありません。初期の測定値には支持姿勢と評価長も反映するため、この抽選帯と同じ値になるとは限りません。抽選する固有成分（直角差は",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "applyBestLevel",
+    "text": "参考探索の調整例を適用（補助）",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "調整評価・参考最良の意味全直線軸の端・中央（3軸27位置、旋盤9位置）で直角差と姿勢差を比較。直角差・左右コラム差、25%重みの相対姿勢差、15%重みの平均傾きの二乗平均を小さくします。支持高さ±0.",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "保存・読込新しい個体を抽選しました。ページを開き直すと再抽選します。同じ調整を続ける場合はJSONを保存・読込してください。調整データを保存調整データを読み込む現在の計算仕様・機械・方式・支持配置に対",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "exportLevel",
+    "text": "調整データを保存",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "importLevel",
+    "text": "",
+    "type": "file",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "説明・図の見方対応5機種の「ダイヤル測定」は主軸に取り付けたゲージを直径300 mmで旋回し、テーブル上面への直角度を比較します。右・奥・左・手前の4方向です。支持調整のたびに手前でゼロ合わせし、＋は",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "訓練の進め方・計算の前提初期はランダムな据付レベルと、本体の固有精度を重ねています。機械の右枠の水準器を見ながら、粗調整で平均の左右・前後の傾きを整え、模型の変化を見ます。微調整では同じ支持点を小さく",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "openTrainingMenu",
+    "text": "☰ 設定",
+    "type": "submit",
+    "value": "",
+    "aria": "設定メニューを開く"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "measurementReferenceToggle",
+    "text": "▽",
+    "type": "submit",
+    "value": "",
+    "aria": "直角の基準図を下の調整欄に表示"
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "XY↑上計器:主軸Rテーブル上S0相対上押込＋右",
+    "aria": "XY・下・右側を0とした300 mmの仮想測定 +15 µm。計器は主軸側に固定。基準器に対して上へ移動。押込み右が増えると＋。"
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "XZ↑奥計器:主軸Rテーブル上S0相対手前押込＋右",
+    "aria": "XZ・奥・右側を0とした300 mmの仮想測定 +3 µm。計器は主軸側に固定。基準器に対して手前へ移動。押込み右が増えると＋。"
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "YZ↑上計器:主軸Rテーブル上S0相対上押込＋奥",
+    "aria": "YZ・下・奥側を0とした300 mmの仮想測定 +53 µm。計器は主軸側に固定。基準器に対して上へ移動。押込み奥が増えると＋。"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "spindleSweepToggle",
+    "text": "Z平行µma 左右+39b 上下-88abバー:主軸計器:テーブル300 mm始点0走査300 mm",
+    "type": "submit",
+    "value": "",
+    "aria": "Z方向の平行度。バーは主軸に固定、計器はテーブルに固定。a 左右 +39 マイクロメートル、b 上下 -88 マイクロメートル。有効な測定の始点ゼロ、テーブルを主軸側へ走査300ミリ。測定配置を開く"
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "abバー:主軸計器:テーブル300 mm",
+    "aria": "Z平行度。バーは主軸に固定、計器はテーブルに固定。左はバー先端側から主軸を見る図。aは左9時から右向き、bは下6時から上向きに接触。右の長手図はテーブルに固定した計器を示し、オレンジの先端寄りでゼロ、固定バーに沿って右の主軸側へ300 mm移動します。"
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "主軸を回転させたときの最大指示と最小指示の差。根元 2 µm、300 mm先 2 µm。既存のZ方向平行度とは別の固有成分です。根元 2300 mm先 2",
+    "aria": "主軸を回転させたときの最大指示と最小指示の差。根元 2 µm、300 mm先 2 µm。既存のZ方向平行度とは別の固有成分です。"
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 5 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。奥前0-100+3+1-2+3-",
+    "aria": "テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 5 µm。厳密な最小領域平面度ではありません。支持による変形や測定時の傾きは含めません。"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "inspectionNext",
+    "text": "次 ›",
+    "type": "button",
+    "value": "",
+    "aria": "主軸振れと上面精度へ左スライド"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "inspectionPrevious",
+    "text": "‹ 戻る",
+    "type": "button",
+    "value": "",
+    "aria": "直角度と触れへ右スライド"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "X軸",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "Y軸",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "Z軸",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "coarseAdjust",
+    "text": "粗調整",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "fineAdjust",
+    "text": "微調整",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "A",
+    "type": "submit",
+    "value": "",
+    "aria": "A、左・手前の支持点を選択"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "B",
+    "type": "submit",
+    "value": "",
+    "aria": "B、右・手前の支持点を選択"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "C",
+    "type": "submit",
+    "value": "",
+    "aria": "C、左・中間1の支持点を選択"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "D",
+    "type": "submit",
+    "value": "",
+    "aria": "D、右・中間1の支持点を選択"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "E",
+    "type": "submit",
+    "value": "",
+    "aria": "E、左・中間2の支持点を選択"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "F",
+    "type": "submit",
+    "value": "",
+    "aria": "F、右・中間2の支持点を選択"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "G",
+    "type": "submit",
+    "value": "",
+    "aria": "G、左・奥の支持点を選択"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "H",
+    "type": "submit",
+    "value": "",
+    "aria": "H、右・奥の支持点を選択"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "closeSpindleSweepSelection",
+    "text": "閉じる ×",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "sweepPosition0",
+    "text": "右",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "sweepPosition1",
+    "text": "奥",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "sweepPosition2",
+    "text": "左",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "sweepPosition3",
+    "text": "手前 基準",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "\n\nab接触方向バー:主軸に固定主軸0b部材＋Z 300 mm計器:テーブルに固定 → 主軸側へ",
+    "aria": "横形のZ方向平行度。バーは主軸に固定、計器はテーブルに固定。固定バーの側面aと下面bへ計器を当て、先端側でゼロ。Z走査ではテーブルと計器を主軸側へ300ミリ移動し、バーは動きません。"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "closeMeasurementReference",
+    "text": "閉じる ×",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "XY↑上計器:主軸Rテーブル上S0相対上押込＋右",
+    "aria": "直角マスタと主軸側の測定配置"
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "XZ↑奥計器:主軸Rテーブル上S0相対手前押込＋右",
+    "aria": "直角マスタと主軸側の測定配置"
+  },
+  {
+    "tag": "svg",
+    "id": "",
+    "text": "YZ↑上計器:主軸Rテーブル上S0相対上押込＋奥",
+    "aria": "直角マスタと主軸側の測定配置"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "lowerSupport",
+    "text": "↓ 下げる",
+    "type": "submit",
+    "value": "",
+    "aria": "A・左・手前を下げる"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "raiseSupport",
+    "text": "↑ 上げる",
+    "type": "submit",
+    "value": "",
+    "aria": "A・左・手前を上げる"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "trainingMainShield",
+    "text": "",
+    "type": "submit",
+    "value": "",
+    "aria": "設定メニューを閉じて主画面へ戻る"
+  },
+  {
+    "tag": "BUTTON",
+    "id": "testerBack",
+    "text": "電気の訓練へ",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "svg",
+    "id": "testerDiagram",
+    "text": "テスターと測定対象の接続図乾電池のDC電圧。黒リードは未接続、赤リードは未接続。モードOFF。プローブを対象から離した状態。OFFOFFV⎓V〜A⎓Ω導通ACOMVΩ1.5 V乾電池＋−測定対象の両端",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "testerReset",
+    "text": "最初から",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "DC電圧",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "AC電圧",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "DC電流",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "抵抗",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "導通",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "testerResetAll",
+    "text": "全練習の記録を消して最初から",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "testerBlackLead",
+    "text": "まだ差していないCOM",
+    "type": "select-one",
+    "value": "none",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "testerRedLead",
+    "text": "まだ差していないVΩA（電流用）",
+    "type": "select-one",
+    "value": "none",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "OFF",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "V⎓DC電圧",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "V〜AC電圧",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "A⎓DC電流",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "Ω抵抗",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "",
+    "text": "導通ブザー",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "INPUT",
+    "id": "testerPrepared",
+    "text": "",
+    "type": "checkbox",
+    "value": "on",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "testerVoltageCase",
+    "text": "1.5 V1.0 V（比較用）",
+    "type": "select-one",
+    "value": "1.5",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "testerResistanceCase",
+    "text": "1 kΩ100 Ω10 kΩ",
+    "type": "select-one",
+    "value": "1000",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "testerCurrentConnection",
+    "text": "回路を開き、切れ目へ直列電源の両端へ並列（誤操作の確認）",
+    "type": "select-one",
+    "value": "series",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "testerPolarity",
+    "text": "赤を＋、黒を−赤を−、黒を＋（比較）",
+    "type": "select-one",
+    "value": "normal",
+    "aria": null
+  },
+  {
+    "tag": "SELECT",
+    "id": "testerWire",
+    "text": "つながっている途中で切れている",
+    "type": "select-one",
+    "value": "connected",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "testerMeasure",
+    "text": "プローブを両端に当てて測る",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "BUTTON",
+    "id": "testerDisconnect",
+    "text": "プローブを離す",
+    "type": "submit",
+    "value": "",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "実機を使う前に・電流測定との違い測定前に本体とリードの破損を確認し、プローブのつばより先へ指を出さないようにします。商用電源・制御盤・通電設備の実習はこの教材に含めません。電流は別の接続です。対応する",
+    "aria": null
+  },
+  {
+    "tag": "DETAILS",
+    "id": "",
+    "text": "参照したメーカー公式資料HIOKI：DC電流の直列接続・AC電圧の実効値（英語）HIOKI：デジタルマルチメーターの使い方HIOKI：電圧の測定方法HIOKI：抵抗の測定方法Fluke：導通の確認方法",
+    "aria": null
+  }
+]

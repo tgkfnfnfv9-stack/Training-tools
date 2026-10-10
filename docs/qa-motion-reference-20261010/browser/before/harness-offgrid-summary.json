@@ -1,0 +1,25 @@
+{
+  "tag": "before",
+  "sha256": "0cca74408ba5099f77751161d2f1fb0aede39f6e68e4301f1072e9401f692929",
+  "states": 82,
+  "checks": 321,
+  "failed": [
+    {
+      "name": "horizontal-ideal: selected B+0.010",
+      "ok": false
+    },
+    {
+      "name": "horizontal-ideal: support round trip",
+      "ok": false
+    },
+    {
+      "name": "horizontal-used: selected B+0.010",
+      "ok": false
+    },
+    {
+      "name": "horizontal-used: support round trip",
+      "ok": false
+    }
+  ],
+  "errors": []
+}

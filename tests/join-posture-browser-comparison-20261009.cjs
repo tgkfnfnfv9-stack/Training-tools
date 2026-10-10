@@ -1,0 +1,23 @@
+'use strict';
+const fs=require('fs'),path=require('path'),root=path.resolve('docs/qa-posture-response-20261009');
+const modes=['before','after','final'],reports=Object.fromEntries(modes.map(mode=>[mode,JSON.parse(fs.readFileSync(path.join(root,mode,'results.json')))])),oracles=Object.fromEntries(modes.map(mode=>[mode,JSON.parse(fs.readFileSync(path.join(root,mode,'independent-oracle.json'))).results]));
+const byMode=Object.fromEntries(modes.map(mode=>[mode,Object.fromEntries(reports[mode].states.map(s=>[s.name,s]))]));
+const keys=s=>s.kind==='horizontal'?['XY','XZ','YZ','a','b']:['face','flat','dx','dy','barSide','barTop','borea','boreb','borec','bored','runoutRoot','runoutTip'];
+const value=(s,key)=>s?.measurements?.[key];
+const expected=(name,key,mode)=>{const e=oracles[mode][name];if(!e)return null;if(key.startsWith('bore'))return e.expectedUm.bore?.['abcd'.indexOf(key.at(-1))];if(key==='runoutRoot'||key==='runoutTip')return e.profile==='ideal'?0:key==='runoutRoot'?11.98505076393485:14.39028429697391;return e.expectedUm[key];};
+const rows=[];for(const s of reports.after.states.filter(s=>['horizontal','lathe'].includes(s.kind))){const old=byMode.before[s.name];if(!old)continue;const startName=/-(plus|minus)$/.test(s.name)?s.name.replace(/-(plus|minus)$/,'-start'):s.name.includes('-posture-')?s.name.replace(/-posture-.*/, '-flat'):null,start=startName&&byMode.after[startName],oldStart=startName&&byMode.before[startName];for(const key of keys(s)){const v=value(s,key),prior=value(old,key);if(!v||!prior)continue;rows.push({state:s.name,kind:s.kind,item:key,profile:s.profile?'used / seed 123456':'ideal',method:s.method,positions:s.positions,supportHeightsMm:s.supports.map(p=>p.height),oldStartRaw:oldStart?value(oldStart,key)?.raw:null,oldRaw:prior.raw,oldDisplay:prior.display,newStartRaw:start?value(start,key)?.raw:null,newRaw:v.raw,newDisplay:v.display,expectedNewStart:start?expected(startName,key,'after'):null,expectedNew:expected(s.name,key,'after'),finalRaw:value(byMode.final[s.name],key)?.raw,finalExpected:expected(s.name,key,'final')});}}
+const headers=Object.keys(rows[0]),quote=v=>'"'+String(v===undefined||v===null?'':typeof v==='object'?JSON.stringify(v):v).replaceAll('"','""')+'"';fs.writeFileSync(path.join(root,'support-response-comparison.csv'),[headers.join(','),...rows.map(r=>headers.map(k=>quote(r[k])).join(','))].join('\n')+'\n');
+const names=['horizontal-ideal-posture-.01','horizontal-used-1-0.01-plus','lathe-used-1-0.01-plus','lathe-used-1-0.01-minus'],selected=rows.filter(r=>names.includes(r.state));
+let md='# 実操作・独立計算の数値対応\n\n旧式値は旧配置の観測、新式期待値は独立した支持・剛体・接触幾何から求めた値。期待値に旧実装値を使用していない。単位 µm。全入力・全項目は [CSV](support-response-comparison.csv)。支持操作はmap選択＋粗微＋上下ボタン、既知ねじれ入力だけevaluate。\n\n## 同じ版で支持を操作する前 → 後\n\n全行とも used / seed 123456、標準寸法、軸中央、操作前は全支持0 mm。括弧内はstate名。各セルは **生値 / 整数DOM / 独立期待値**（µm）。旧版の独立期待値も、新版と同じ明示した有限R/S器具配置から求めた値であり、旧代表案内式の再計算ではない。そのため旧版の差は、意図した測定配置との不整合として示す。\n\n|版・機種・実支持操作|項目|操作前 生値 / DOM / 期待値|→ 操作後 生値 / DOM / 期待値|整数不変／変化の判定|\n|---|---|---:|---:|---|\n';
+const operationSpecs=[
+ ...['before','after'].flatMap(mode=>['XY','XZ','YZ'].map(key=>({mode,key,name:'horizontal-used-4-0.01-plus',label:(mode==='before'?'旧版':'新版')+' 横形 E +0.010 mm'}))),
+ ...['0.001','0.01'].flatMap(step=>['barTop','face'].map(key=>({mode:'after',key,name:`lathe-used-1-${step}-plus`,label:'新版 旋盤 B +'+(step==='0.001'?'0.001':'0.010')+' mm'})))
+];
+for(const spec of operationSpecs){const {mode,key,name,label}=spec,startName=name.replace(/-plus$/,'-start'),before=value(byMode[mode][startName],key),after=value(byMode[mode][name],key),triple=(n,v)=>`${v.raw.toFixed(6)} / ${v.display} / ${expected(n,key,mode).toFixed(6)}`;let reason;
+ if(mode==='before')reason={XY:'旧生値も変化するが丸めで17のまま。有限方向合わせの期待変化を取りこぼし、期待DOM19に届かない。',XZ:'旧生値は増加するが独立期待は減少。配置・取付腕の不整合と丸めによる8の維持を区別。',YZ:'旧生値の変化量が独立期待と違う。測定面高さの不整合により14のまま、期待DOMは15。'}[key];
+ else if(key==='face')reason=`幾何上不変：X送りと面法線が同じ剛体で回転。生値差 ${Math.abs(after.raw-before.raw).toExponential(2)} µm、独立期待も不変。`;
+ else if(before.display===after.display)reason='整数丸め：生値と独立期待は変化して一致。表示値だけ同じ。';
+ else reason='支持応答：生値・独立期待・整数DOMが共に変化。';
+ md+=`|${label} (${name})|${key}|${triple(startName,before)}|→ ${triple(name,after)}|${reason}|\n`;
+}
+md+='\n旧版のE操作ではXY/XZ/YZの整数が全て同じでも、生値は更新されている。新版でもXZは8のままだが、独立期待と一致して減少しており固定値ではない。旋盤barTopの微調整は0のまま、粗調整は1へ変わる。一方faceは同じ剛体内の相対配置に基づき不変である。これらを一括して「丸め」「固有値」と分類していない。\n\n## 同じ入力で旧版 → 新版\n\n|状態|項目|旧 生値 → 整数DOM|新 生値 → 整数DOM|新 独立期待値|\n|---|---|---:|---:|---:|\n';for(const r of selected)md+=`|${r.state}|${r.item}|${r.oldRaw?.toFixed(6)} → ${r.oldDisplay}|${r.newRaw?.toFixed(6)} → ${r.newDisplay}|${r.expectedNew?.toFixed(6)}|\n`;fs.writeFileSync(path.join(root,'support-response-comparison.md'),md);console.log(rows.length+' comparison rows');

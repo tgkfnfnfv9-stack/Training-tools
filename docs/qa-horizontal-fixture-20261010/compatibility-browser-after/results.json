@@ -1,0 +1,5155 @@
+{
+  "mode": "after",
+  "htmlSha256": "5231b54fb384a9a4d3e531114687566ff97d3c4c14ac007bab35141630b1ce18",
+  "snapshots": [
+    {
+      "name": "vertical-1280-first",
+      "state": {
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.002,
+              0,
+              0,
+              0.002
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "17.092547022888592"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "7.781510683266616"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.120062574941167"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "10.928770884082843"
+            },
+            {
+              "text": "+14",
+              "raw": "14.076031074066101"
+            },
+            {
+              "text": "+3",
+              "raw": "3.1472601899832577"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "vertical-1280-second",
+      "state": {
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.002,
+              0,
+              0,
+              0.002
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "17.092547022888592"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "7.781510683266616"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.120062574941167"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "10.928770884082843"
+            },
+            {
+              "text": "+14",
+              "raw": "14.076031074066101"
+            },
+            {
+              "text": "+3",
+              "raw": "3.1472601899832577"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "travel-1280-first",
+      "state": {
+        "record": {
+          "calculationModel": "travel-guide-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149
+            ]
+          },
+          "bestState": {
+            "width": 4.32,
+            "depth": 2.08,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.139,
+              -0.014,
+              -0.038,
+              -0.046,
+              0,
+              0.132
+            ]
+          },
+          "machine": "travel",
+          "mode": "",
+          "width": 4.32,
+          "depth": 2.08,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "16.959000918954565"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.286986109837594"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994786566"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+9",
+              "raw": "9.433757564852876"
+            },
+            {
+              "text": "+14",
+              "raw": "14.007612345967805"
+            },
+            {
+              "text": "+5",
+              "raw": "4.573854781114929"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "travel-1280-second",
+      "state": {
+        "record": {
+          "calculationModel": "travel-guide-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149
+            ]
+          },
+          "bestState": {
+            "width": 4.32,
+            "depth": 2.08,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.139,
+              -0.014,
+              -0.038,
+              -0.046,
+              0,
+              0.132
+            ]
+          },
+          "machine": "travel",
+          "mode": "",
+          "width": 4.32,
+          "depth": 2.08,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "16.959000918954565"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.286986109837594"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994786566"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+9",
+              "raw": "9.433757564852876"
+            },
+            {
+              "text": "+14",
+              "raw": "14.007612345967805"
+            },
+            {
+              "text": "+5",
+              "raw": "4.573854781114929"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "gate-1280-first",
+      "state": {
+        "record": {
+          "calculationModel": "portal-shear-v2",
+          "version": 3,
+          "supportLayout": {
+            "id": "hwacheon-l3-3000-teaching-15point-v1",
+            "points": [
+              {
+                "id": "bed-left-1",
+                "x": -0.77,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-1",
+                "x": 0,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-1",
+                "x": 0.77,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-left-2",
+                "x": -0.77,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-2",
+                "x": 0,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-2",
+                "x": 0.77,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-left-3",
+                "x": -0.77,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-3",
+                "x": 0,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-3",
+                "x": 0.77,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "column-left-front",
+                "x": -1.06,
+                "z": 0.5449999999999999,
+                "group": "column-left"
+              },
+              {
+                "id": "column-left-back",
+                "x": -1.06,
+                "z": 1.0949999999999998,
+                "group": "column-left"
+              },
+              {
+                "id": "column-left-outer",
+                "x": -1.425,
+                "z": 0.8250000000000002,
+                "group": "column-left"
+              },
+              {
+                "id": "column-right-front",
+                "x": 1.06,
+                "z": 0.5449999999999999,
+                "group": "column-right"
+              },
+              {
+                "id": "column-right-back",
+                "x": 1.06,
+                "z": 1.0949999999999998,
+                "group": "column-right"
+              },
+              {
+                "id": "column-right-outer",
+                "x": 1.42,
+                "z": 0.8250000000000002,
+                "group": "column-right"
+              }
+            ]
+          },
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149,
+              -0.035,
+              0.099,
+              0.007,
+              0.149,
+              -0.072,
+              0.117,
+              -0.013,
+              -0.056,
+              -0.046
+            ]
+          },
+          "bestState": {
+            "width": 2.85,
+            "depth": 6.84,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.059,
+              0.023,
+              0.061,
+              0.108,
+              -0.009,
+              0.028,
+              0.093,
+              -0.041,
+              -0.004,
+              -0.007,
+              0.009,
+              -0.005,
+              -0.001,
+              0,
+              0.028
+            ]
+          },
+          "machine": "gate",
+          "mode": "l3-3000",
+          "width": 2.85,
+          "depth": 6.84,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "16.958999990967712"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.128999999005085"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994753607"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "11.124729790768814"
+            },
+            {
+              "text": "+8",
+              "raw": "8.129000010994076"
+            },
+            {
+              "text": "-3",
+              "raw": "-2.9957297797747384"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "gate-1280-second",
+      "state": {
+        "record": {
+          "calculationModel": "portal-shear-v2",
+          "version": 3,
+          "supportLayout": {
+            "id": "hwacheon-l3-3000-teaching-15point-v1",
+            "points": [
+              {
+                "id": "bed-left-1",
+                "x": -0.77,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-1",
+                "x": 0,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-1",
+                "x": 0.77,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-left-2",
+                "x": -0.77,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-2",
+                "x": 0,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-2",
+                "x": 0.77,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-left-3",
+                "x": -0.77,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-3",
+                "x": 0,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-3",
+                "x": 0.77,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "column-left-front",
+                "x": -1.06,
+                "z": 0.5449999999999999,
+                "group": "column-left"
+              },
+              {
+                "id": "column-left-back",
+                "x": -1.06,
+                "z": 1.0949999999999998,
+                "group": "column-left"
+              },
+              {
+                "id": "column-left-outer",
+                "x": -1.425,
+                "z": 0.8250000000000002,
+                "group": "column-left"
+              },
+              {
+                "id": "column-right-front",
+                "x": 1.06,
+                "z": 0.5449999999999999,
+                "group": "column-right"
+              },
+              {
+                "id": "column-right-back",
+                "x": 1.06,
+                "z": 1.0949999999999998,
+                "group": "column-right"
+              },
+              {
+                "id": "column-right-outer",
+                "x": 1.42,
+                "z": 0.8250000000000002,
+                "group": "column-right"
+              }
+            ]
+          },
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149,
+              -0.035,
+              0.099,
+              0.007,
+              0.149,
+              -0.072,
+              0.117,
+              -0.013,
+              -0.056,
+              -0.046
+            ]
+          },
+          "bestState": {
+            "width": 2.85,
+            "depth": 6.84,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.059,
+              0.023,
+              0.061,
+              0.108,
+              -0.009,
+              0.028,
+              0.093,
+              -0.041,
+              -0.004,
+              -0.007,
+              0.009,
+              -0.005,
+              -0.001,
+              0,
+              0.028
+            ]
+          },
+          "machine": "gate",
+          "mode": "l3-3000",
+          "width": 2.85,
+          "depth": 6.84,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "16.958999990967712"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.128999999005085"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994753607"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "11.124729790768814"
+            },
+            {
+              "text": "+8",
+              "raw": "8.129000010994076"
+            },
+            {
+              "text": "-3",
+              "raw": "-2.9957297797747384"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "gantry-1280-first",
+      "state": {
+        "record": {
+          "calculationModel": "portal-shear-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149,
+              -0.035,
+              0.099
+            ]
+          },
+          "bestState": {
+            "width": 3.2,
+            "depth": 4.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              -0.006,
+              -0.042,
+              0,
+              0,
+              0,
+              0.008,
+              -0.028
+            ]
+          },
+          "machine": "gantry",
+          "mode": "",
+          "width": 3.2,
+          "depth": 4.64,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+14",
+              "raw": "14.37259117387582"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.129121736368331"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994748403"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "11.258170855211452"
+            },
+            {
+              "text": "+8",
+              "raw": "8.128997710314833"
+            },
+            {
+              "text": "-3",
+              "raw": "-3.129173144896618"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "gantry-1280-second",
+      "state": {
+        "record": {
+          "calculationModel": "portal-shear-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149,
+              -0.035,
+              0.099
+            ]
+          },
+          "bestState": {
+            "width": 3.2,
+            "depth": 4.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              -0.006,
+              -0.042,
+              0,
+              0,
+              0,
+              0.008,
+              -0.028
+            ]
+          },
+          "machine": "gantry",
+          "mode": "",
+          "width": 3.2,
+          "depth": 4.64,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+14",
+              "raw": "14.37259117387582"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.129121736368331"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994748403"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "11.258170855211452"
+            },
+            {
+              "text": "+8",
+              "raw": "8.128997710314833"
+            },
+            {
+              "text": "-3",
+              "raw": "-3.129173144896618"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "five-1280-first",
+      "state": {
+        "record": {
+          "calculationModel": "connected-frames-v1",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097
+            ]
+          },
+          "bestState": {
+            "width": 2.72,
+            "depth": 2.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "five",
+          "mode": "",
+          "width": 2.72,
+          "depth": 2.64,
+          "heights": [
+            0,
+            0.013,
+            -0.017
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81,
+            "A": 45,
+            "C": -33
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "—",
+              "raw": ""
+            },
+            {
+              "pair": "XZ",
+              "text": "—",
+              "raw": ""
+            },
+            {
+              "pair": "YZ",
+              "text": "—",
+              "raw": ""
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "-30786",
+              "raw": "-30785.691106132897"
+            },
+            {
+              "text": "-61580",
+              "raw": "-61579.5111729988"
+            },
+            {
+              "text": "-30794",
+              "raw": "-30793.8200668659"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "five-1280-second",
+      "state": {
+        "record": {
+          "calculationModel": "connected-frames-v1",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097
+            ]
+          },
+          "bestState": {
+            "width": 2.72,
+            "depth": 2.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "five",
+          "mode": "",
+          "width": 2.72,
+          "depth": 2.64,
+          "heights": [
+            0,
+            0.013,
+            -0.017
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81,
+            "A": 45,
+            "C": -33
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "—",
+              "raw": ""
+            },
+            {
+              "pair": "XZ",
+              "text": "—",
+              "raw": ""
+            },
+            {
+              "pair": "YZ",
+              "text": "—",
+              "raw": ""
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "-30786",
+              "raw": "-30785.691106132897"
+            },
+            {
+              "text": "-61580",
+              "raw": "-61579.5111729988"
+            },
+            {
+              "text": "-30794",
+              "raw": "-30793.8200668659"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "lathe-1280-first",
+      "state": {
+        "record": {
+          "calculationModel": "lathe-carriage-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Z"
+            ],
+            "squareness": {
+              "XZ": {
+                "band": 0,
+                "microns": 16.959
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 8.129
+              },
+              "Z": {
+                "band": 0,
+                "microns": 12.125
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.047,
+              -0.057,
+              -0.096,
+              -0.04
+            ]
+          },
+          "bestState": {
+            "width": 4,
+            "depth": 1.68,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "lathe",
+          "mode": "",
+          "width": 4,
+          "depth": 1.68,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [],
+          "lathe": {
+            "face": -3.7579390982783734,
+            "flat": 5.57699758417865,
+            "dx": 156.6843362130248,
+            "dy": -8.012698894289878,
+            "barSide": -14.709190106414887,
+            "barTop": 3.2210529932515803,
+            "runout": {
+              "rootMicrons": 11.98505076393485,
+              "tipMicrons": 14.39028429697391,
+              "lengthMm": 300,
+              "eccentricityMicrons": [
+                2.16720185711206,
+                5.5869129726579665
+              ],
+              "tiltMicroradians": [
+                -2.2177268761710467,
+                4.832450216570674
+              ]
+            }
+          },
+          "sweep": [
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "lathe-1280-second",
+      "state": {
+        "record": {
+          "calculationModel": "lathe-carriage-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Z"
+            ],
+            "squareness": {
+              "XZ": {
+                "band": 0,
+                "microns": 16.959
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 8.129
+              },
+              "Z": {
+                "band": 0,
+                "microns": 12.125
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.047,
+              -0.057,
+              -0.096,
+              -0.04
+            ]
+          },
+          "bestState": {
+            "width": 4,
+            "depth": 1.68,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "lathe",
+          "mode": "",
+          "width": 4,
+          "depth": 1.68,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [],
+          "lathe": {
+            "face": -3.7579390982783734,
+            "flat": 5.57699758417865,
+            "dx": 156.6843362130248,
+            "dy": -8.012698894289878,
+            "barSide": -14.709190106414887,
+            "barTop": 3.2210529932515803,
+            "runout": {
+              "rootMicrons": 11.98505076393485,
+              "tipMicrons": 14.39028429697391,
+              "lengthMm": 300,
+              "eccentricityMicrons": [
+                2.16720185711206,
+                5.5869129726579665
+              ],
+              "tiltMicroradians": [
+                -2.2177268761710467,
+                4.832450216570674
+              ]
+            }
+          },
+          "sweep": [
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "vertical-390-first",
+      "state": {
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.002,
+              0,
+              0,
+              0.002
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "17.092547022888592"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "7.781510683266616"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.120062574941167"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "10.928770884082843"
+            },
+            {
+              "text": "+14",
+              "raw": "14.076031074066101"
+            },
+            {
+              "text": "+3",
+              "raw": "3.1472601899832577"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "vertical-390-second",
+      "state": {
+        "record": {
+          "calculationModel": "compact-asymmetric-bending-v4",
+          "version": 3,
+          "supportLayout": {
+            "id": "compact-four-v1",
+            "points": [
+              {
+                "id": "compact-four-v1-p1",
+                "x": -1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p2",
+                "x": 1.04,
+                "z": -1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p3",
+                "x": -1.04,
+                "z": 1.08,
+                "group": "bed"
+              },
+              {
+                "id": "compact-four-v1-p4",
+                "x": 1.04,
+                "z": 1.08,
+                "group": "bed"
+              }
+            ]
+          },
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073
+            ]
+          },
+          "bestState": {
+            "width": 2.08,
+            "depth": 2.16,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.002,
+              0,
+              0,
+              0.002
+            ]
+          },
+          "machine": "vertical",
+          "mode": "compact",
+          "width": 2.08,
+          "depth": 2.16,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "17.092547022888592"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "7.781510683266616"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.120062574941167"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "10.928770884082843"
+            },
+            {
+              "text": "+14",
+              "raw": "14.076031074066101"
+            },
+            {
+              "text": "+3",
+              "raw": "3.1472601899832577"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "travel-390-first",
+      "state": {
+        "record": {
+          "calculationModel": "travel-guide-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149
+            ]
+          },
+          "bestState": {
+            "width": 4.32,
+            "depth": 2.08,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.139,
+              -0.014,
+              -0.038,
+              -0.046,
+              0,
+              0.132
+            ]
+          },
+          "machine": "travel",
+          "mode": "",
+          "width": 4.32,
+          "depth": 2.08,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "16.959000918954565"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.286986109837594"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994786566"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+9",
+              "raw": "9.433757564852876"
+            },
+            {
+              "text": "+14",
+              "raw": "14.007612345967805"
+            },
+            {
+              "text": "+5",
+              "raw": "4.573854781114929"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "travel-390-second",
+      "state": {
+        "record": {
+          "calculationModel": "travel-guide-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149
+            ]
+          },
+          "bestState": {
+            "width": 4.32,
+            "depth": 2.08,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0.139,
+              -0.014,
+              -0.038,
+              -0.046,
+              0,
+              0.132
+            ]
+          },
+          "machine": "travel",
+          "mode": "",
+          "width": 4.32,
+          "depth": 2.08,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "16.959000918954565"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.286986109837594"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994786566"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+9",
+              "raw": "9.433757564852876"
+            },
+            {
+              "text": "+14",
+              "raw": "14.007612345967805"
+            },
+            {
+              "text": "+5",
+              "raw": "4.573854781114929"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "gate-390-first",
+      "state": {
+        "record": {
+          "calculationModel": "portal-shear-v2",
+          "version": 3,
+          "supportLayout": {
+            "id": "hwacheon-l3-3000-teaching-15point-v1",
+            "points": [
+              {
+                "id": "bed-left-1",
+                "x": -0.77,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-1",
+                "x": 0,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-1",
+                "x": 0.77,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-left-2",
+                "x": -0.77,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-2",
+                "x": 0,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-2",
+                "x": 0.77,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-left-3",
+                "x": -0.77,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-3",
+                "x": 0,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-3",
+                "x": 0.77,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "column-left-front",
+                "x": -1.06,
+                "z": 0.5449999999999999,
+                "group": "column-left"
+              },
+              {
+                "id": "column-left-back",
+                "x": -1.06,
+                "z": 1.0949999999999998,
+                "group": "column-left"
+              },
+              {
+                "id": "column-left-outer",
+                "x": -1.425,
+                "z": 0.8250000000000002,
+                "group": "column-left"
+              },
+              {
+                "id": "column-right-front",
+                "x": 1.06,
+                "z": 0.5449999999999999,
+                "group": "column-right"
+              },
+              {
+                "id": "column-right-back",
+                "x": 1.06,
+                "z": 1.0949999999999998,
+                "group": "column-right"
+              },
+              {
+                "id": "column-right-outer",
+                "x": 1.42,
+                "z": 0.8250000000000002,
+                "group": "column-right"
+              }
+            ]
+          },
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149,
+              -0.035,
+              0.099,
+              0.007,
+              0.149,
+              -0.072,
+              0.117,
+              -0.013,
+              -0.056,
+              -0.046
+            ]
+          },
+          "bestState": {
+            "width": 2.85,
+            "depth": 6.84,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.059,
+              0.023,
+              0.061,
+              0.108,
+              -0.009,
+              0.028,
+              0.093,
+              -0.041,
+              -0.004,
+              -0.007,
+              0.009,
+              -0.005,
+              -0.001,
+              0,
+              0.028
+            ]
+          },
+          "machine": "gate",
+          "mode": "l3-3000",
+          "width": 2.85,
+          "depth": 6.84,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "16.958999990967712"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.128999999005085"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994753607"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "11.124729790768814"
+            },
+            {
+              "text": "+8",
+              "raw": "8.129000010994076"
+            },
+            {
+              "text": "-3",
+              "raw": "-2.9957297797747384"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "gate-390-second",
+      "state": {
+        "record": {
+          "calculationModel": "portal-shear-v2",
+          "version": 3,
+          "supportLayout": {
+            "id": "hwacheon-l3-3000-teaching-15point-v1",
+            "points": [
+              {
+                "id": "bed-left-1",
+                "x": -0.77,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-1",
+                "x": 0,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-1",
+                "x": 0.77,
+                "z": -3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-left-2",
+                "x": -0.77,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-2",
+                "x": 0,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-2",
+                "x": 0.77,
+                "z": 0.020000000000000018,
+                "group": "bed"
+              },
+              {
+                "id": "bed-left-3",
+                "x": -0.77,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-center-3",
+                "x": 0,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "bed-right-3",
+                "x": 0.77,
+                "z": 3.1799999999999997,
+                "group": "bed"
+              },
+              {
+                "id": "column-left-front",
+                "x": -1.06,
+                "z": 0.5449999999999999,
+                "group": "column-left"
+              },
+              {
+                "id": "column-left-back",
+                "x": -1.06,
+                "z": 1.0949999999999998,
+                "group": "column-left"
+              },
+              {
+                "id": "column-left-outer",
+                "x": -1.425,
+                "z": 0.8250000000000002,
+                "group": "column-left"
+              },
+              {
+                "id": "column-right-front",
+                "x": 1.06,
+                "z": 0.5449999999999999,
+                "group": "column-right"
+              },
+              {
+                "id": "column-right-back",
+                "x": 1.06,
+                "z": 1.0949999999999998,
+                "group": "column-right"
+              },
+              {
+                "id": "column-right-outer",
+                "x": 1.42,
+                "z": 0.8250000000000002,
+                "group": "column-right"
+              }
+            ]
+          },
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149,
+              -0.035,
+              0.099,
+              0.007,
+              0.149,
+              -0.072,
+              0.117,
+              -0.013,
+              -0.056,
+              -0.046
+            ]
+          },
+          "bestState": {
+            "width": 2.85,
+            "depth": 6.84,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              -0.059,
+              0.023,
+              0.061,
+              0.108,
+              -0.009,
+              0.028,
+              0.093,
+              -0.041,
+              -0.004,
+              -0.007,
+              0.009,
+              -0.005,
+              -0.001,
+              0,
+              0.028
+            ]
+          },
+          "machine": "gate",
+          "mode": "l3-3000",
+          "width": 2.85,
+          "depth": 6.84,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+17",
+              "raw": "16.958999990967712"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.128999999005085"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994753607"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "11.124729790768814"
+            },
+            {
+              "text": "+8",
+              "raw": "8.129000010994076"
+            },
+            {
+              "text": "-3",
+              "raw": "-2.9957297797747384"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "gantry-390-first",
+      "state": {
+        "record": {
+          "calculationModel": "portal-shear-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149,
+              -0.035,
+              0.099
+            ]
+          },
+          "bestState": {
+            "width": 3.2,
+            "depth": 4.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              -0.006,
+              -0.042,
+              0,
+              0,
+              0,
+              0.008,
+              -0.028
+            ]
+          },
+          "machine": "gantry",
+          "mode": "",
+          "width": 3.2,
+          "depth": 4.64,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+14",
+              "raw": "14.37259117387582"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.129121736368331"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994748403"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "11.258170855211452"
+            },
+            {
+              "text": "+8",
+              "raw": "8.128997710314833"
+            },
+            {
+              "text": "-3",
+              "raw": "-3.129173144896618"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "gantry-390-second",
+      "state": {
+        "record": {
+          "calculationModel": "portal-shear-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097,
+              -0.073,
+              -0.11,
+              0.149,
+              -0.035,
+              0.099
+            ]
+          },
+          "bestState": {
+            "width": 3.2,
+            "depth": 4.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              -0.006,
+              -0.042,
+              0,
+              0,
+              0,
+              0.008,
+              -0.028
+            ]
+          },
+          "machine": "gantry",
+          "mode": "",
+          "width": 3.2,
+          "depth": 4.64,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "+14",
+              "raw": "14.37259117387582"
+            },
+            {
+              "pair": "XZ",
+              "text": "+8",
+              "raw": "8.129121736368331"
+            },
+            {
+              "pair": "YZ",
+              "text": "+14",
+              "raw": "14.119999994748403"
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "+11",
+              "raw": "11.258170855211452"
+            },
+            {
+              "text": "+8",
+              "raw": "8.128997710314833"
+            },
+            {
+              "text": "-3",
+              "raw": "-3.129173144896618"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "five-390-first",
+      "state": {
+        "record": {
+          "calculationModel": "connected-frames-v1",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097
+            ]
+          },
+          "bestState": {
+            "width": 2.72,
+            "depth": 2.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "five",
+          "mode": "",
+          "width": 2.72,
+          "depth": 2.64,
+          "heights": [
+            0,
+            0.013,
+            -0.017
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81,
+            "A": 45,
+            "C": -33
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "—",
+              "raw": ""
+            },
+            {
+              "pair": "XZ",
+              "text": "—",
+              "raw": ""
+            },
+            {
+              "pair": "YZ",
+              "text": "—",
+              "raw": ""
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "-30786",
+              "raw": "-30785.691106132897"
+            },
+            {
+              "text": "-61580",
+              "raw": "-61579.5111729988"
+            },
+            {
+              "text": "-30794",
+              "raw": "-30793.8200668659"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "five-390-second",
+      "state": {
+        "record": {
+          "calculationModel": "connected-frames-v1",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Y",
+              "Z"
+            ],
+            "squareness": {
+              "XY": {
+                "band": 0,
+                "microns": 16.959
+              },
+              "XZ": {
+                "band": 0,
+                "microns": -8.129
+              },
+              "YZ": {
+                "band": 0,
+                "microns": -14.12
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 1,
+                "microns": 32.376
+              },
+              "Y": {
+                "band": 0,
+                "microns": 10.523
+              },
+              "Z": {
+                "band": 1,
+                "microns": 52.271
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.097
+            ]
+          },
+          "bestState": {
+            "width": 2.72,
+            "depth": 2.64,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "five",
+          "mode": "",
+          "width": 2.72,
+          "depth": 2.64,
+          "heights": [
+            0,
+            0.013,
+            -0.017
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Y": -62,
+            "Z": 81,
+            "A": 45,
+            "C": -33
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [
+            {
+              "pair": "XY",
+              "text": "—",
+              "raw": ""
+            },
+            {
+              "pair": "XZ",
+              "text": "—",
+              "raw": ""
+            },
+            {
+              "pair": "YZ",
+              "text": "—",
+              "raw": ""
+            }
+          ],
+          "lathe": null,
+          "sweep": [
+            {
+              "text": "-30786",
+              "raw": "-30785.691106132897"
+            },
+            {
+              "text": "-61580",
+              "raw": "-61579.5111729988"
+            },
+            {
+              "text": "-30794",
+              "raw": "-30793.8200668659"
+            },
+            {
+              "text": "0",
+              "raw": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "lathe-390-first",
+      "state": {
+        "record": {
+          "calculationModel": "lathe-carriage-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Z"
+            ],
+            "squareness": {
+              "XZ": {
+                "band": 0,
+                "microns": 16.959
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 8.129
+              },
+              "Z": {
+                "band": 0,
+                "microns": 12.125
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.047,
+              -0.057,
+              -0.096,
+              -0.04
+            ]
+          },
+          "bestState": {
+            "width": 4,
+            "depth": 1.68,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "lathe",
+          "mode": "",
+          "width": 4,
+          "depth": 1.68,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [],
+          "lathe": {
+            "face": -3.7579390982783734,
+            "flat": 5.57699758417865,
+            "dx": 156.6843362130248,
+            "dy": -8.012698894289878,
+            "barSide": -14.709190106414887,
+            "barTop": 3.2210529932515803,
+            "runout": {
+              "rootMicrons": 11.98505076393485,
+              "tipMicrons": 14.39028429697391,
+              "lengthMm": 300,
+              "eccentricityMicrons": [
+                2.16720185711206,
+                5.5869129726579665
+              ],
+              "tiltMicroradians": [
+                -2.2177268761710467,
+                4.832450216570674
+              ]
+            }
+          },
+          "sweep": [
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "lathe-390-second",
+      "state": {
+        "record": {
+          "calculationModel": "lathe-carriage-v2",
+          "version": 2,
+          "machineProfile": {
+            "version": 1,
+            "condition": "used",
+            "seed": 123456,
+            "keys": [
+              "X",
+              "Z"
+            ],
+            "squareness": {
+              "XZ": {
+                "band": 0,
+                "microns": 16.959
+              }
+            },
+            "guides": {
+              "X": {
+                "band": 0,
+                "microns": 8.129
+              },
+              "Z": {
+                "band": 0,
+                "microns": 12.125
+              }
+            },
+            "initialHeights": [
+              -0.15,
+              0.15,
+              0.047,
+              -0.057,
+              -0.096,
+              -0.04
+            ]
+          },
+          "bestState": {
+            "width": 4,
+            "depth": 1.68,
+            "columnX": 0,
+            "columnZ": 0,
+            "heights": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          "machine": "lathe",
+          "mode": "",
+          "width": 4,
+          "depth": 1.68,
+          "heights": [
+            0,
+            0.013,
+            -0.017,
+            0,
+            0,
+            0
+          ],
+          "sensitivity": 0.05,
+          "measurePos": 0,
+          "offset": 0.5,
+          "columnX": 0,
+          "columnZ": 0,
+          "axisPositions": {
+            "X": 37,
+            "Z": 81
+          },
+          "step": 0.001,
+          "exaggerate": false
+        },
+        "readings": {
+          "squares": [],
+          "lathe": {
+            "face": -3.7579390982783734,
+            "flat": 5.57699758417865,
+            "dx": 156.6843362130248,
+            "dy": -8.012698894289878,
+            "barSide": -14.709190106414887,
+            "barTop": 3.2210529932515803,
+            "runout": {
+              "rootMicrons": 11.98505076393485,
+              "tipMicrons": 14.39028429697391,
+              "lengthMm": 300,
+              "eccentricityMicrons": [
+                2.16720185711206,
+                5.5869129726579665
+              ],
+              "tiltMicroradians": [
+                -2.2177268761710467,
+                4.832450216570674
+              ]
+            }
+          },
+          "sweep": [
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            },
+            {
+              "text": "0"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "saves": [
+    {
+      "id": "vertical",
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.002,
+            0,
+            0,
+            0.002
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0,
+          0.013,
+          -0.017,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 37,
+          "Y": -62,
+          "Z": 81
+        },
+        "step": 0.001,
+        "exaggerate": false
+      },
+      "readings": {
+        "squares": [
+          {
+            "pair": "XY",
+            "text": "+17",
+            "raw": "17.092547022888592"
+          },
+          {
+            "pair": "XZ",
+            "text": "+8",
+            "raw": "7.781510683266616"
+          },
+          {
+            "pair": "YZ",
+            "text": "+14",
+            "raw": "14.120062574941167"
+          }
+        ],
+        "lathe": null,
+        "sweep": [
+          {
+            "text": "+11",
+            "raw": "10.928770884082843"
+          },
+          {
+            "text": "+14",
+            "raw": "14.076031074066101"
+          },
+          {
+            "text": "+3",
+            "raw": "3.1472601899832577"
+          },
+          {
+            "text": "0",
+            "raw": "0"
+          }
+        ]
+      },
+      "download": "leveling-vertical-compact.json"
+    },
+    {
+      "id": "travel",
+      "record": {
+        "calculationModel": "travel-guide-v2",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073,
+            -0.11,
+            0.149
+          ]
+        },
+        "bestState": {
+          "width": 4.32,
+          "depth": 2.08,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.139,
+            -0.014,
+            -0.038,
+            -0.046,
+            0,
+            0.132
+          ]
+        },
+        "machine": "travel",
+        "mode": "",
+        "width": 4.32,
+        "depth": 2.08,
+        "heights": [
+          0,
+          0.013,
+          -0.017,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 37,
+          "Y": -62,
+          "Z": 81
+        },
+        "step": 0.001,
+        "exaggerate": false
+      },
+      "readings": {
+        "squares": [
+          {
+            "pair": "XY",
+            "text": "+17",
+            "raw": "16.959000918954565"
+          },
+          {
+            "pair": "XZ",
+            "text": "+8",
+            "raw": "8.286986109837594"
+          },
+          {
+            "pair": "YZ",
+            "text": "+14",
+            "raw": "14.119999994786566"
+          }
+        ],
+        "lathe": null,
+        "sweep": [
+          {
+            "text": "+9",
+            "raw": "9.433757564852876"
+          },
+          {
+            "text": "+14",
+            "raw": "14.007612345967805"
+          },
+          {
+            "text": "+5",
+            "raw": "4.573854781114929"
+          },
+          {
+            "text": "0",
+            "raw": "0"
+          }
+        ]
+      },
+      "download": "leveling-travel-standard.json"
+    },
+    {
+      "id": "gate",
+      "record": {
+        "calculationModel": "portal-shear-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "hwacheon-l3-3000-teaching-15point-v1",
+          "points": [
+            {
+              "id": "bed-left-1",
+              "x": -0.77,
+              "z": -3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-center-1",
+              "x": 0,
+              "z": -3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-right-1",
+              "x": 0.77,
+              "z": -3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-left-2",
+              "x": -0.77,
+              "z": 0.020000000000000018,
+              "group": "bed"
+            },
+            {
+              "id": "bed-center-2",
+              "x": 0,
+              "z": 0.020000000000000018,
+              "group": "bed"
+            },
+            {
+              "id": "bed-right-2",
+              "x": 0.77,
+              "z": 0.020000000000000018,
+              "group": "bed"
+            },
+            {
+              "id": "bed-left-3",
+              "x": -0.77,
+              "z": 3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-center-3",
+              "x": 0,
+              "z": 3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "bed-right-3",
+              "x": 0.77,
+              "z": 3.1799999999999997,
+              "group": "bed"
+            },
+            {
+              "id": "column-left-front",
+              "x": -1.06,
+              "z": 0.5449999999999999,
+              "group": "column-left"
+            },
+            {
+              "id": "column-left-back",
+              "x": -1.06,
+              "z": 1.0949999999999998,
+              "group": "column-left"
+            },
+            {
+              "id": "column-left-outer",
+              "x": -1.425,
+              "z": 0.8250000000000002,
+              "group": "column-left"
+            },
+            {
+              "id": "column-right-front",
+              "x": 1.06,
+              "z": 0.5449999999999999,
+              "group": "column-right"
+            },
+            {
+              "id": "column-right-back",
+              "x": 1.06,
+              "z": 1.0949999999999998,
+              "group": "column-right"
+            },
+            {
+              "id": "column-right-outer",
+              "x": 1.42,
+              "z": 0.8250000000000002,
+              "group": "column-right"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073,
+            -0.11,
+            0.149,
+            -0.035,
+            0.099,
+            0.007,
+            0.149,
+            -0.072,
+            0.117,
+            -0.013,
+            -0.056,
+            -0.046
+          ]
+        },
+        "bestState": {
+          "width": 2.85,
+          "depth": 6.84,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            -0.059,
+            0.023,
+            0.061,
+            0.108,
+            -0.009,
+            0.028,
+            0.093,
+            -0.041,
+            -0.004,
+            -0.007,
+            0.009,
+            -0.005,
+            -0.001,
+            0,
+            0.028
+          ]
+        },
+        "machine": "gate",
+        "mode": "l3-3000",
+        "width": 2.85,
+        "depth": 6.84,
+        "heights": [
+          0,
+          0.013,
+          -0.017,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 37,
+          "Y": -62,
+          "Z": 81
+        },
+        "step": 0.001,
+        "exaggerate": false
+      },
+      "readings": {
+        "squares": [
+          {
+            "pair": "XY",
+            "text": "+17",
+            "raw": "16.958999990967712"
+          },
+          {
+            "pair": "XZ",
+            "text": "+8",
+            "raw": "8.128999999005085"
+          },
+          {
+            "pair": "YZ",
+            "text": "+14",
+            "raw": "14.119999994753607"
+          }
+        ],
+        "lathe": null,
+        "sweep": [
+          {
+            "text": "+11",
+            "raw": "11.124729790768814"
+          },
+          {
+            "text": "+8",
+            "raw": "8.129000010994076"
+          },
+          {
+            "text": "-3",
+            "raw": "-2.9957297797747384"
+          },
+          {
+            "text": "0",
+            "raw": "0"
+          }
+        ]
+      },
+      "download": "leveling-gate-l3-3000.json"
+    },
+    {
+      "id": "gantry",
+      "record": {
+        "calculationModel": "portal-shear-v2",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073,
+            -0.11,
+            0.149,
+            -0.035,
+            0.099
+          ]
+        },
+        "bestState": {
+          "width": 3.2,
+          "depth": 4.64,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0,
+            -0.006,
+            -0.042,
+            0,
+            0,
+            0,
+            0.008,
+            -0.028
+          ]
+        },
+        "machine": "gantry",
+        "mode": "",
+        "width": 3.2,
+        "depth": 4.64,
+        "heights": [
+          0,
+          0.013,
+          -0.017,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 37,
+          "Y": -62,
+          "Z": 81
+        },
+        "step": 0.001,
+        "exaggerate": false
+      },
+      "readings": {
+        "squares": [
+          {
+            "pair": "XY",
+            "text": "+14",
+            "raw": "14.37259117387582"
+          },
+          {
+            "pair": "XZ",
+            "text": "+8",
+            "raw": "8.129121736368331"
+          },
+          {
+            "pair": "YZ",
+            "text": "+14",
+            "raw": "14.119999994748403"
+          }
+        ],
+        "lathe": null,
+        "sweep": [
+          {
+            "text": "+11",
+            "raw": "11.258170855211452"
+          },
+          {
+            "text": "+8",
+            "raw": "8.128997710314833"
+          },
+          {
+            "text": "-3",
+            "raw": "-3.129173144896618"
+          },
+          {
+            "text": "0",
+            "raw": "0"
+          }
+        ]
+      },
+      "download": "leveling-gantry-standard.json"
+    },
+    {
+      "id": "five",
+      "record": {
+        "calculationModel": "connected-frames-v1",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 2.64,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0,
+            0,
+            0
+          ]
+        },
+        "machine": "five",
+        "mode": "",
+        "width": 2.72,
+        "depth": 2.64,
+        "heights": [
+          0,
+          0.013,
+          -0.017
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 37,
+          "Y": -62,
+          "Z": 81,
+          "A": 45,
+          "C": -33
+        },
+        "step": 0.001,
+        "exaggerate": false
+      },
+      "readings": {
+        "squares": [
+          {
+            "pair": "XY",
+            "text": "—",
+            "raw": ""
+          },
+          {
+            "pair": "XZ",
+            "text": "—",
+            "raw": ""
+          },
+          {
+            "pair": "YZ",
+            "text": "—",
+            "raw": ""
+          }
+        ],
+        "lathe": null,
+        "sweep": [
+          {
+            "text": "-30786",
+            "raw": "-30785.691106132897"
+          },
+          {
+            "text": "-61580",
+            "raw": "-61579.5111729988"
+          },
+          {
+            "text": "-30794",
+            "raw": "-30793.8200668659"
+          },
+          {
+            "text": "0",
+            "raw": "0"
+          }
+        ]
+      },
+      "download": "leveling-five-standard.json"
+    },
+    {
+      "id": "lathe",
+      "record": {
+        "calculationModel": "lathe-carriage-v2",
+        "version": 2,
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Z"
+          ],
+          "squareness": {
+            "XZ": {
+              "band": 0,
+              "microns": 16.959
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 0,
+              "microns": 8.129
+            },
+            "Z": {
+              "band": 0,
+              "microns": 12.125
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.047,
+            -0.057,
+            -0.096,
+            -0.04
+          ]
+        },
+        "bestState": {
+          "width": 4,
+          "depth": 1.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "machine": "lathe",
+        "mode": "",
+        "width": 4,
+        "depth": 1.68,
+        "heights": [
+          0,
+          0.013,
+          -0.017,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 37,
+          "Z": 81
+        },
+        "step": 0.001,
+        "exaggerate": false
+      },
+      "readings": {
+        "squares": [],
+        "lathe": {
+          "face": -3.7579390982783734,
+          "flat": 5.57699758417865,
+          "dx": 156.6843362130248,
+          "dy": -8.012698894289878,
+          "barSide": -14.709190106414887,
+          "barTop": 3.2210529932515803,
+          "runout": {
+            "rootMicrons": 11.98505076393485,
+            "tipMicrons": 14.39028429697391,
+            "lengthMm": 300,
+            "eccentricityMicrons": [
+              2.16720185711206,
+              5.5869129726579665
+            ],
+            "tiltMicroradians": [
+              -2.2177268761710467,
+              4.832450216570674
+            ]
+          }
+        },
+        "sweep": [
+          {
+            "text": "0"
+          },
+          {
+            "text": "0"
+          },
+          {
+            "text": "0"
+          },
+          {
+            "text": "0"
+          }
+        ]
+      },
+      "download": "leveling-lathe-standard.json"
+    },
+    {
+      "id": "horizontal",
+      "record": {
+        "calculationModel": "horizontal-guide-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "haas-ec630-ngc-eight-v1",
+          "points": [
+            {
+              "id": "haas-ec630-ngc-eight-v1-p1",
+              "x": -1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p2",
+              "x": 1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p3",
+              "x": -1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p4",
+              "x": 1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p5",
+              "x": -1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p6",
+              "x": 1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p7",
+              "x": -1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p8",
+              "x": 1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073,
+            -0.11,
+            0.149,
+            -0.035,
+            0.099
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 3.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.025,
+            0.027,
+            0.009,
+            0.004,
+            -0.024,
+            -0.002,
+            0.031,
+            0.013
+          ]
+        },
+        "machine": "horizontal",
+        "mode": "",
+        "width": 2.72,
+        "depth": 3.68,
+        "heights": [
+          0,
+          0.013,
+          -0.017,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 37,
+          "Y": -62,
+          "Z": 81
+        },
+        "step": 0.001,
+        "exaggerate": false
+      },
+      "readings": {
+        "squares": [
+          {
+            "pair": "XY",
+            "text": "+17",
+            "raw": "16.958999991467312"
+          },
+          {
+            "pair": "XZ",
+            "text": "+9",
+            "raw": "8.777749878121147"
+          },
+          {
+            "pair": "YZ",
+            "text": "-17",
+            "raw": "-17.413251965896908"
+          }
+        ],
+        "lathe": null,
+        "sweep": [
+          {
+            "text": "+10",
+            "raw": "9.804016154316141"
+          },
+          {
+            "text": "+4",
+            "raw": "3.991137801261785"
+          },
+          {
+            "text": "0",
+            "raw": "0"
+          },
+          {
+            "text": "300 mm",
+            "raw": ""
+          }
+        ]
+      },
+      "download": "leveling-horizontal-standard.json"
+    }
+  ],
+  "errors": [],
+  "checks": [
+    {
+      "name": "vertical actual old JSON upload accepted",
+      "ok": true
+    },
+    {
+      "name": "vertical native download contains current record",
+      "ok": true
+    },
+    {
+      "name": "travel actual old JSON upload accepted",
+      "ok": true
+    },
+    {
+      "name": "travel native download contains current record",
+      "ok": true
+    },
+    {
+      "name": "gate actual old JSON upload accepted",
+      "ok": true
+    },
+    {
+      "name": "gate native download contains current record",
+      "ok": true
+    },
+    {
+      "name": "gantry actual old JSON upload accepted",
+      "ok": true
+    },
+    {
+      "name": "gantry native download contains current record",
+      "ok": true
+    },
+    {
+      "name": "five actual old JSON upload accepted",
+      "ok": true
+    },
+    {
+      "name": "five native download contains current record",
+      "ok": true
+    },
+    {
+      "name": "lathe actual old JSON upload accepted",
+      "ok": true
+    },
+    {
+      "name": "lathe native download contains current record",
+      "ok": true
+    },
+    {
+      "name": "horizontal actual old JSON upload accepted",
+      "ok": true
+    },
+    {
+      "name": "horizontal native download contains current record",
+      "ok": true
+    },
+    {
+      "name": "vertical-1280-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "vertical-1280-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "vertical-1280-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "vertical-1280-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "travel-1280-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "travel-1280-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "travel-1280-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "travel-1280-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "gate-1280-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "gate-1280-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "gate-1280-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "gate-1280-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "gantry-1280-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "gantry-1280-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "gantry-1280-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "gantry-1280-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "five-1280-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "five-1280-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "five-1280-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "five-1280-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "lathe-1280-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "lathe-1280-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "lathe-1280-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "lathe-1280-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "vertical-390-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "vertical-390-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "vertical-390-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "vertical-390-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "travel-390-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "travel-390-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "travel-390-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "travel-390-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "gate-390-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "gate-390-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "gate-390-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "gate-390-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "gantry-390-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "gantry-390-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "gantry-390-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "gantry-390-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "five-390-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "five-390-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "five-390-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "five-390-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "lathe-390-first browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "lathe-390-first pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "lathe-390-second browser state unchanged",
+      "ok": true
+    },
+    {
+      "name": "lathe-390-second pixels identical",
+      "ok": true,
+      "details": {
+        "differingPixels": 0
+      }
+    },
+    {
+      "name": "vertical legacy inputs fully restored",
+      "ok": true
+    },
+    {
+      "name": "vertical protected legacy readings unchanged",
+      "ok": true
+    },
+    {
+      "name": "travel legacy inputs fully restored",
+      "ok": true
+    },
+    {
+      "name": "travel protected legacy readings unchanged",
+      "ok": true
+    },
+    {
+      "name": "gate legacy inputs fully restored",
+      "ok": true
+    },
+    {
+      "name": "gate protected legacy readings unchanged",
+      "ok": true
+    },
+    {
+      "name": "gantry legacy inputs fully restored",
+      "ok": true
+    },
+    {
+      "name": "gantry protected legacy readings unchanged",
+      "ok": true
+    },
+    {
+      "name": "five legacy inputs fully restored",
+      "ok": true
+    },
+    {
+      "name": "five protected legacy readings unchanged",
+      "ok": true
+    },
+    {
+      "name": "lathe legacy inputs fully restored",
+      "ok": true
+    },
+    {
+      "name": "lathe protected legacy readings unchanged",
+      "ok": true
+    },
+    {
+      "name": "horizontal legacy inputs fully restored",
+      "ok": true
+    },
+    {
+      "name": "horizontal protected legacy readings unchanged",
+      "ok": true
+    },
+    {
+      "name": "no browser errors",
+      "ok": true,
+      "details": []
+    }
+  ]
+}
