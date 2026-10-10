@@ -1,0 +1,1276 @@
+{
+  "url": "https://tgkfnfnfv9-stack.github.io/Training-tools/?v=baede5b",
+  "expectedSha256": "831edb95f7dbf1095563c1c8c289f52219bcf764937618c6079d4c4d32f7fa65",
+  "checkedAt": "2026-10-10T04:12:27.108Z",
+  "environment": "Actual Linux Chromium, 390x844; not actual iPhone Safari.",
+  "tlsBypass": true,
+  "states": [
+    {
+      "name": "flat",
+      "record": {
+        "calculationModel": "horizontal-guide-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "haas-ec630-ngc-eight-v1",
+          "points": [
+            {
+              "id": "haas-ec630-ngc-eight-v1-p1",
+              "x": -1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p2",
+              "x": 1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p3",
+              "x": -1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p4",
+              "x": 1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p5",
+              "x": -1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p6",
+              "x": 1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p7",
+              "x": -1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p8",
+              "x": 1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073,
+            -0.11,
+            0.149,
+            -0.035,
+            0.099
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 3.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.025,
+            0.027,
+            0.009,
+            0.004,
+            -0.024,
+            -0.002,
+            0.031,
+            0.013
+          ]
+        },
+        "machine": "horizontal",
+        "mode": "",
+        "width": 2.72,
+        "depth": 3.68,
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "supports": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "label": "測定の終点値",
+      "note": "表示は始点ゼロから300 mm送った終点値です。模型の現在位置から300 mmを確保できない場合は、計算上の始点を戻します。現在位置・ゼロ位置・終点は直角の基準図で確認できます。スライダー下降中の連続した針の指示ではありません。直角マスタはテーブル（パレット）上、計器は主軸側に固定します。XYは右側の縦面、YZは主軸側の縦面に当て、主軸頭のY＋送りで下の●0から上へ300 mm測ります。XZはパレットのZ＋送りでマスタを奥へ動かし、計器は基準器から見て奥の●0から手前へ進みます。YZのR合わせでは上面へ計器を当てて主軸頭を止め、パレットをZ＋へ300 mm送り、両端を等指示にするとともに、両端の測定子が厚み50 mmの中央線を通るよう横方向も合わせます。その後、選択したZ位置へ戻します。S用の腕へ付け替え、Y区間始点でゼロにします。支持・軸位置・寸法・個体が変われば方向合わせと始点ゼロを取り直します。S走査中の再方向合わせ・再ゼロはしません。矢印は基準器に対する計器の動き、押込＋は測定子が縮む向きです。数値に図の誇張倍率を掛けません。Z平行度a/bは主軸固定バーをテーブル側計器で測る別配置です。",
+      "readings": [
+        {
+          "key": "XY",
+          "raw": 16.958999991522823,
+          "display": "+17",
+          "domRaw": 16.958999991522823,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "0",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "0"
+          }
+        },
+        {
+          "key": "XZ",
+          "raw": 8.12899999891835,
+          "display": "+8",
+          "domRaw": 8.12899999891835,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "0",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "0"
+          }
+        },
+        {
+          "key": "YZ",
+          "raw": -14.119999994583605,
+          "display": "-14",
+          "domRaw": -14.119999994583605,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "0",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "G-lower",
+      "record": {
+        "calculationModel": "horizontal-guide-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "haas-ec630-ngc-eight-v1",
+          "points": [
+            {
+              "id": "haas-ec630-ngc-eight-v1-p1",
+              "x": -1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p2",
+              "x": 1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p3",
+              "x": -1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p4",
+              "x": 1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p5",
+              "x": -1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p6",
+              "x": 1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p7",
+              "x": -1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p8",
+              "x": 1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073,
+            -0.11,
+            0.149,
+            -0.035,
+            0.099
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 3.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.025,
+            0.027,
+            0.009,
+            0.004,
+            -0.024,
+            -0.002,
+            0.031,
+            0.013
+          ]
+        },
+        "machine": "horizontal",
+        "mode": "",
+        "width": 2.72,
+        "depth": 3.68,
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -0.01,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "supports": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "label": "測定の終点値",
+      "note": "表示は始点ゼロから300 mm送った終点値です。模型の現在位置から300 mmを確保できない場合は、計算上の始点を戻します。現在位置・ゼロ位置・終点は直角の基準図で確認できます。スライダー下降中の連続した針の指示ではありません。直角マスタはテーブル（パレット）上、計器は主軸側に固定します。XYは右側の縦面、YZは主軸側の縦面に当て、主軸頭のY＋送りで下の●0から上へ300 mm測ります。XZはパレットのZ＋送りでマスタを奥へ動かし、計器は基準器から見て奥の●0から手前へ進みます。YZのR合わせでは上面へ計器を当てて主軸頭を止め、パレットをZ＋へ300 mm送り、両端を等指示にするとともに、両端の測定子が厚み50 mmの中央線を通るよう横方向も合わせます。その後、選択したZ位置へ戻します。S用の腕へ付け替え、Y区間始点でゼロにします。支持・軸位置・寸法・個体が変われば方向合わせと始点ゼロを取り直します。S走査中の再方向合わせ・再ゼロはしません。矢印は基準器に対する計器の動き、押込＋は測定子が縮む向きです。数値に図の誇張倍率を掛けません。Z平行度a/bは主軸固定バーをテーブル側計器で測る別配置です。",
+      "readings": [
+        {
+          "key": "XY",
+          "raw": 18.922717506583002,
+          "display": "+19",
+          "domRaw": 18.922717506583002,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "0",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "0"
+          }
+        },
+        {
+          "key": "XZ",
+          "raw": 7.535512875236558,
+          "display": "+8",
+          "domRaw": 7.535512875236558,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "0",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "0"
+          }
+        },
+        {
+          "key": "YZ",
+          "raw": -15.342808518016213,
+          "display": "-15",
+          "domRaw": -15.342808518016213,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "0",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Y-minus100",
+      "record": {
+        "calculationModel": "horizontal-guide-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "haas-ec630-ngc-eight-v1",
+          "points": [
+            {
+              "id": "haas-ec630-ngc-eight-v1-p1",
+              "x": -1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p2",
+              "x": 1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p3",
+              "x": -1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p4",
+              "x": 1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p5",
+              "x": -1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p6",
+              "x": 1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p7",
+              "x": -1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p8",
+              "x": 1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073,
+            -0.11,
+            0.149,
+            -0.035,
+            0.099
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 3.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.025,
+            0.027,
+            0.009,
+            0.004,
+            -0.024,
+            -0.002,
+            0.031,
+            0.013
+          ]
+        },
+        "machine": "horizontal",
+        "mode": "",
+        "width": 2.72,
+        "depth": 3.68,
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -0.01,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": -100,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "supports": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      "positions": {
+        "X": 0,
+        "Y": -100,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "label": "測定の終点値",
+      "note": "表示は始点ゼロから300 mm送った終点値です。模型の現在位置から300 mmを確保できない場合は、計算上の始点を戻します。現在位置・ゼロ位置・終点は直角の基準図で確認できます。スライダー下降中の連続した針の指示ではありません。直角マスタはテーブル（パレット）上、計器は主軸側に固定します。XYは右側の縦面、YZは主軸側の縦面に当て、主軸頭のY＋送りで下の●0から上へ300 mm測ります。XZはパレットのZ＋送りでマスタを奥へ動かし、計器は基準器から見て奥の●0から手前へ進みます。YZのR合わせでは上面へ計器を当てて主軸頭を止め、パレットをZ＋へ300 mm送り、両端を等指示にするとともに、両端の測定子が厚み50 mmの中央線を通るよう横方向も合わせます。その後、選択したZ位置へ戻します。S用の腕へ付け替え、Y区間始点でゼロにします。支持・軸位置・寸法・個体が変われば方向合わせと始点ゼロを取り直します。S走査中の再方向合わせ・再ゼロはしません。矢印は基準器に対する計器の動き、押込＋は測定子が縮む向きです。数値に図の誇張倍率を掛けません。Z平行度a/bは主軸固定バーをテーブル側計器で測る別配置です。",
+      "readings": [
+        {
+          "key": "XY",
+          "raw": 18.92271750661076,
+          "display": "+19",
+          "domRaw": 18.92271750661076,
+          "startPosition": -0.3,
+          "endPosition": 0,
+          "interval": {
+            "currentPositionMm": "-300",
+            "zeroPositionMm": "-300",
+            "endPositionMm": "0",
+            "returnTravelMm": "0"
+          }
+        },
+        {
+          "key": "XZ",
+          "raw": 7.535512875266049,
+          "display": "+8",
+          "domRaw": 7.535512875266049,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "0",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "0"
+          }
+        },
+        {
+          "key": "YZ",
+          "raw": -15.342808518016213,
+          "display": "-15",
+          "domRaw": -15.342808518016213,
+          "startPosition": -0.3,
+          "endPosition": 0,
+          "interval": {
+            "currentPositionMm": "-300",
+            "zeroPositionMm": "-300",
+            "endPositionMm": "0",
+            "returnTravelMm": "0"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Y-plus100",
+      "record": {
+        "calculationModel": "horizontal-guide-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "haas-ec630-ngc-eight-v1",
+          "points": [
+            {
+              "id": "haas-ec630-ngc-eight-v1-p1",
+              "x": -1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p2",
+              "x": 1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p3",
+              "x": -1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p4",
+              "x": 1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p5",
+              "x": -1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p6",
+              "x": 1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p7",
+              "x": -1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p8",
+              "x": 1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073,
+            -0.11,
+            0.149,
+            -0.035,
+            0.099
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 3.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.025,
+            0.027,
+            0.009,
+            0.004,
+            -0.024,
+            -0.002,
+            0.031,
+            0.013
+          ]
+        },
+        "machine": "horizontal",
+        "mode": "",
+        "width": 2.72,
+        "depth": 3.68,
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -0.01,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 100,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "supports": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      "positions": {
+        "X": 0,
+        "Y": 100,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "label": "測定の終点値",
+      "note": "表示は始点ゼロから300 mm送った終点値です。模型の現在位置から300 mmを確保できない場合は、計算上の始点を戻します。現在位置・ゼロ位置・終点は直角の基準図で確認できます。スライダー下降中の連続した針の指示ではありません。直角マスタはテーブル（パレット）上、計器は主軸側に固定します。XYは右側の縦面、YZは主軸側の縦面に当て、主軸頭のY＋送りで下の●0から上へ300 mm測ります。XZはパレットのZ＋送りでマスタを奥へ動かし、計器は基準器から見て奥の●0から手前へ進みます。YZのR合わせでは上面へ計器を当てて主軸頭を止め、パレットをZ＋へ300 mm送り、両端を等指示にするとともに、両端の測定子が厚み50 mmの中央線を通るよう横方向も合わせます。その後、選択したZ位置へ戻します。S用の腕へ付け替え、Y区間始点でゼロにします。支持・軸位置・寸法・個体が変われば方向合わせと始点ゼロを取り直します。S走査中の再方向合わせ・再ゼロはしません。矢印は基準器に対する計器の動き、押込＋は測定子が縮む向きです。数値に図の誇張倍率を掛けません。Z平行度a/bは主軸固定バーをテーブル側計器で測る別配置です。",
+      "readings": [
+        {
+          "key": "XY",
+          "raw": 18.922717506583002,
+          "display": "+19",
+          "domRaw": 18.922717506583002,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "300",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "-300"
+          }
+        },
+        {
+          "key": "XZ",
+          "raw": 7.5355128757084024,
+          "display": "+8",
+          "domRaw": 7.5355128757084024,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "0",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "0"
+          }
+        },
+        {
+          "key": "YZ",
+          "raw": -15.342808518016213,
+          "display": "-15",
+          "domRaw": -15.342808518016213,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "300",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "-300"
+          }
+        }
+      ]
+    },
+    {
+      "name": "restored",
+      "record": {
+        "calculationModel": "horizontal-guide-v2",
+        "version": 3,
+        "supportLayout": {
+          "id": "haas-ec630-ngc-eight-v1",
+          "points": [
+            {
+              "id": "haas-ec630-ngc-eight-v1-p1",
+              "x": -1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p2",
+              "x": 1.36,
+              "z": -1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p3",
+              "x": -1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p4",
+              "x": 1.36,
+              "z": -0.6133333333333334,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p5",
+              "x": -1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p6",
+              "x": 1.36,
+              "z": 0.6133333333333332,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p7",
+              "x": -1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            },
+            {
+              "id": "haas-ec630-ngc-eight-v1-p8",
+              "x": 1.36,
+              "z": 1.8399999999999999,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "used",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.959
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -8.129
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -14.12
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 1,
+              "microns": 32.376
+            },
+            "Y": {
+              "band": 0,
+              "microns": 10.523
+            },
+            "Z": {
+              "band": 1,
+              "microns": 52.271
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073,
+            -0.11,
+            0.149,
+            -0.035,
+            0.099
+          ]
+        },
+        "bestState": {
+          "width": 2.72,
+          "depth": 3.68,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.025,
+            0.027,
+            0.009,
+            0.004,
+            -0.024,
+            -0.002,
+            0.031,
+            0.013
+          ]
+        },
+        "machine": "horizontal",
+        "mode": "",
+        "width": 2.72,
+        "depth": 3.68,
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -0.01,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 100,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "supports": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        0
+      ],
+      "positions": {
+        "X": 0,
+        "Y": 100,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "label": "測定の終点値",
+      "note": "表示は始点ゼロから300 mm送った終点値です。模型の現在位置から300 mmを確保できない場合は、計算上の始点を戻します。現在位置・ゼロ位置・終点は直角の基準図で確認できます。スライダー下降中の連続した針の指示ではありません。直角マスタはテーブル（パレット）上、計器は主軸側に固定します。XYは右側の縦面、YZは主軸側の縦面に当て、主軸頭のY＋送りで下の●0から上へ300 mm測ります。XZはパレットのZ＋送りでマスタを奥へ動かし、計器は基準器から見て奥の●0から手前へ進みます。YZのR合わせでは上面へ計器を当てて主軸頭を止め、パレットをZ＋へ300 mm送り、両端を等指示にするとともに、両端の測定子が厚み50 mmの中央線を通るよう横方向も合わせます。その後、選択したZ位置へ戻します。S用の腕へ付け替え、Y区間始点でゼロにします。支持・軸位置・寸法・個体が変われば方向合わせと始点ゼロを取り直します。S走査中の再方向合わせ・再ゼロはしません。矢印は基準器に対する計器の動き、押込＋は測定子が縮む向きです。数値に図の誇張倍率を掛けません。Z平行度a/bは主軸固定バーをテーブル側計器で測る別配置です。",
+      "readings": [
+        {
+          "key": "XY",
+          "raw": 18.922717506583002,
+          "display": "+19",
+          "domRaw": 18.922717506583002,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "300",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "-300"
+          }
+        },
+        {
+          "key": "XZ",
+          "raw": 7.5355128757084024,
+          "display": "+8",
+          "domRaw": 7.5355128757084024,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "0",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "0"
+          }
+        },
+        {
+          "key": "YZ",
+          "raw": -15.342808518016213,
+          "display": "-15",
+          "domRaw": -15.342808518016213,
+          "startPosition": 0,
+          "endPosition": 0.3,
+          "interval": {
+            "currentPositionMm": "300",
+            "zeroPositionMm": "0",
+            "endPositionMm": "300",
+            "returnTravelMm": "-300"
+          }
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "real production URL",
+      "ok": true
+    },
+    {
+      "name": "HTTP 200",
+      "ok": true
+    },
+    {
+      "name": "delivered exact approved HTML",
+      "ok": true
+    },
+    {
+      "name": "flat endpoint label",
+      "ok": true
+    },
+    {
+      "name": "flat XY DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "flat XZ DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "flat YZ DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "G-lower endpoint label",
+      "ok": true
+    },
+    {
+      "name": "G-lower XY DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "G-lower XZ DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "G-lower YZ DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "actual G down button lowers 0.010mm",
+      "ok": true
+    },
+    {
+      "name": "flat XY verified expected raw and integer",
+      "ok": true,
+      "details": {
+        "key": "XY",
+        "raw": 16.958999991522823,
+        "display": "+17",
+        "domRaw": 16.958999991522823,
+        "startPosition": 0,
+        "endPosition": 0.3,
+        "interval": {
+          "currentPositionMm": "0",
+          "zeroPositionMm": "0",
+          "endPositionMm": "300",
+          "returnTravelMm": "0"
+        }
+      }
+    },
+    {
+      "name": "G down XY verified expected raw and integer",
+      "ok": true,
+      "details": {
+        "key": "XY",
+        "raw": 18.922717506583002,
+        "display": "+19",
+        "domRaw": 18.922717506583002,
+        "startPosition": 0,
+        "endPosition": 0.3,
+        "interval": {
+          "currentPositionMm": "0",
+          "zeroPositionMm": "0",
+          "endPositionMm": "300",
+          "returnTravelMm": "0"
+        }
+      }
+    },
+    {
+      "name": "Y-minus100 endpoint label",
+      "ok": true
+    },
+    {
+      "name": "Y-minus100 XY DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "Y-minus100 XZ DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "Y-minus100 YZ DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "Y -100 XY interval matches current/zero/end/return",
+      "ok": true,
+      "details": {
+        "currentPositionMm": "-300",
+        "zeroPositionMm": "-300",
+        "endPositionMm": "0",
+        "returnTravelMm": "0"
+      }
+    },
+    {
+      "name": "Y -100 YZ interval matches current/zero/end/return",
+      "ok": true,
+      "details": {
+        "currentPositionMm": "-300",
+        "zeroPositionMm": "-300",
+        "endPositionMm": "0",
+        "returnTravelMm": "0"
+      }
+    },
+    {
+      "name": "Y-plus100 endpoint label",
+      "ok": true
+    },
+    {
+      "name": "Y-plus100 XY DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "Y-plus100 XZ DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "Y-plus100 YZ DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "Y 100 XY interval matches current/zero/end/return",
+      "ok": true,
+      "details": {
+        "currentPositionMm": "300",
+        "zeroPositionMm": "0",
+        "endPositionMm": "300",
+        "returnTravelMm": "-300"
+      }
+    },
+    {
+      "name": "Y 100 YZ interval matches current/zero/end/return",
+      "ok": true,
+      "details": {
+        "currentPositionMm": "300",
+        "zeroPositionMm": "0",
+        "endPositionMm": "300",
+        "returnTravelMm": "-300"
+      }
+    },
+    {
+      "name": "native JSON download matches current record",
+      "ok": true
+    },
+    {
+      "name": "restored endpoint label",
+      "ok": true
+    },
+    {
+      "name": "restored XY DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "restored XZ DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "restored YZ DOM raw matches calculated reading",
+      "ok": true
+    },
+    {
+      "name": "JSON read accepted",
+      "ok": true
+    },
+    {
+      "name": "JSON load restores complete record",
+      "ok": true
+    },
+    {
+      "name": "no browser page exceptions",
+      "ok": true
+    },
+    {
+      "name": "no browser console errors",
+      "ok": true
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "tlsNote": "Managed-environment Chromium rejected the certificate authority. Only this diagnostic context ignores HTTPS errors; exact delivered application SHA256 is required.",
+  "finalUrl": "https://tgkfnfnfv9-stack.github.io/Training-tools/?v=baede5b",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "sha256": "831edb95f7dbf1095563c1c8c289f52219bcf764937618c6079d4c4d32f7fa65",
+  "downloadName": "leveling-horizontal-standard.json"
+}
