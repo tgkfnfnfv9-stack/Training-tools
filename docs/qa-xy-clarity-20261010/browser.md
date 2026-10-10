@@ -74,3 +74,11 @@
 - [再現スクリプト](../../tests/browser-xy-clarity-20261010.cjs)
 
 修正前はPR作業版であり、github.io公開旧版ではない。ユーザー画像の−19の入力を再現したとは扱わない。これは表示意味・操作・値と保存の回帰確認であり、長い取付け腕、3Dに未描画の測定器具、YZ方式の妥当性、実機の測定成立性を解決済みとする証明ではない。
+
+## push後の確認版リンク
+
+[コミット7495ed0の確認版](https://raw.githack.com/tgkfnfnfv9-stack/Training-tools/7495ed0f29d5c6843d396991642b4d818305aab6/index.html)を実Chromiumで開いた。GitHackの通常の外部ページ案内が出たため、表示先が同じ公開リポジトリHTMLであることを確認し「Open the page」をクリックした。ログイン・登録・拡張導入は不要だった。
+
+遷移後はHTTP 200、HTML SHA256が最終製品の `831edb95f7dbf1095563c1c8c289f52219bcf764937618c6079d4c4d32f7fa65` と完全一致。横形を開き、実支持G下げボタンで0から−0.010 mmへ変化し、XYは＋16.958999992（＋17）から＋18.922717507（＋19）へ変わった。「測定の終点値」を確認し、ブラウザー例外0。6 checksすべて合格。github.ioのmain公開とは別のコミット確認用リンクである。
+
+[確認版の実画面](browser/preview.png) / [HTTP・HTMLハッシュ・操作記録](browser/preview.json) / [最初の通常案内画面](browser/preview-notice.png)。初期curl取得では403が返った一方、Chromiumは200で案内画面を返し、通常リンク操作後にアプリを表示できた。実行環境のChromiumが最初のHTTPS証明書を信頼しなかったため、検証用contextのみ証明書エラーを無視し、その後取得HTMLのSHA256厳密一致を必須にした。製品や利用者のブラウザー設定は変更していない。

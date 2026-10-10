@@ -1,0 +1,93 @@
+{
+  "externalNotice": true,
+  "browserTlsNote": "Managed-environment Chromium did not trust the HTTPS certificate on the first attempt. This test context ignores certificate errors, then requires exact HTML SHA256 equality with the inspected local product.",
+  "url": "https://raw.githack.com/tgkfnfnfv9-stack/Training-tools/7495ed0f29d5c6843d396991642b4d818305aab6/index.html",
+  "finalUrl": "https://raw.githack.com/tgkfnfnfv9-stack/Training-tools/7495ed0f29d5c6843d396991642b4d818305aab6/index.html",
+  "status": 200,
+  "contentType": "text/html; charset=utf-8",
+  "sha256": "831edb95f7dbf1095563c1c8c289f52219bcf764937618c6079d4c4d32f7fa65",
+  "expectedSha256": "831edb95f7dbf1095563c1c8c289f52219bcf764937618c6079d4c4d32f7fa65",
+  "before": {
+    "supports": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "label": "測定の終点値",
+    "readings": [
+      {
+        "key": "XY",
+        "raw": 16.958999991522823,
+        "text": "+17"
+      },
+      {
+        "key": "XZ",
+        "raw": 8.12899999891835,
+        "text": "+8"
+      },
+      {
+        "key": "YZ",
+        "raw": -14.119999994583605,
+        "text": "-14"
+      }
+    ]
+  },
+  "after": {
+    "supports": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -0.01,
+      0
+    ],
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "label": "測定の終点値",
+    "readings": [
+      {
+        "key": "XY",
+        "raw": 18.922717506583002,
+        "text": "+19"
+      },
+      {
+        "key": "XZ",
+        "raw": 7.535512875236558,
+        "text": "+8"
+      },
+      {
+        "key": "YZ",
+        "raw": -15.342808518016213,
+        "text": "-15"
+      }
+    ]
+  },
+  "errors": [],
+  "checks": {
+    "http200": true,
+    "exactHtml": true,
+    "newLabel": true,
+    "supportGActualButton": true,
+    "XYChanged": true,
+    "noBrowserErrors": true
+  }
+}

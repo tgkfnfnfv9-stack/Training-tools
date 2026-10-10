@@ -43,6 +43,8 @@ Gを上げた例では、300 mm上送りで計器が右へ0.647978 µm、マス�
 
 3DにR合わせ済みマスタ・計器腕・ゼロ点がない問題と、長い腕を仮定する取付寸法は未解消。今回の表示修正をもって横形の測定配置全体を修正完了とはしない。[前段の再監査](../qa-fresh-audit-20261010/README.md)にあるYZ方式選択や取付け成立の課題も残る。
 
-[PR #32](https://github.com/tgkfnfnfv9-stack/Training-tools/pull/32)はドラフト。github.io公開サイトは旧版のまま。確認用リンクはPRのコミットを固定したものを使い、公開済みと取り違えない。実ブラウザー確認はLinux Chromiumで、実iPhone Safariではない。
+[PR #32](https://github.com/tgkfnfnfv9-stack/Training-tools/pull/32)はドラフト。github.io公開サイトは旧版のまま。[修正版コミット7495ed0の確認用アプリ](https://raw.githack.com/tgkfnfnfv9-stack/Training-tools/7495ed0f29d5c6843d396991642b4d818305aab6/index.html)は、案内画面が出たら **Open the page** を選択する。
+
+外部プレビューは途中のcurlでは403だったが、実Chromiumでは外部コンテンツ案内を表示した。通常のOpen the pageリンクを選択した後、200でアプリが開き、HTMLが最終版SHAと完全一致した。横形起動と実支持G操作も確認した。[実画面](browser/preview.png)／[応答・値の記録](browser/preview.json)。検証環境のChromiumでは証明書信頼の問題に対してcontextの `ignoreHTTPSErrors` を使用した。ログイン・登録・拡張導入はない。確認はLinux Chromiumで、実iPhone Safariではない。
 
 最終HTML SHA256：`831edb95f7dbf1095563c1c8c289f52219bcf764937618c6079d4c4d32f7fa65`。
