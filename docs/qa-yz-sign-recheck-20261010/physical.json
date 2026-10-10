@@ -1,0 +1,310 @@
+{
+  "scope": "Physical sign counterexamples: ideal straight axes and symmetric rear support pairs. Does not certify every support state or choose user intent.",
+  "sourceSha256": "4f61d895955d73d8fc084780d28dd9fe49c6426398d890fe8b842e5f8e73db39",
+  "conclusion": "Current YZ is internally consistent for its top-contact/table-Z arrangement, but it reports the opposite sign to a spindle-side vertical-contact/head-Y measurement of the same nonorthogonality. Treating these two arrangements as interchangeable is incorrect.",
+  "rows": [
+    {
+      "test": "stationary head, top face rises",
+      "topRiseMm": -1,
+      "expectedUm": -1000,
+      "observedUm": -999.9999999999992
+    },
+    {
+      "test": "stationary head, top face rises",
+      "topRiseMm": 1,
+      "expectedUm": 1000,
+      "observedUm": 999.9999999999992
+    },
+    {
+      "test": "two physically distinct YZ methods",
+      "yLeanRad": -0.001,
+      "zRiseRad": -0.002,
+      "currentArrangement": "Y-aligned R, top S, table +Z, downward plunger",
+      "currentValid": true,
+      "currentObservedUm": -899.9986500006114,
+      "currentIndependentUm": -899.9986500006075,
+      "alternativeArrangement": "Z-aligned R, spindle-side vertical S, head +Y, plunger toward -Z",
+      "alternativeIndependentUm": 899.9986500006075,
+      "frontSideAlternativeUm": -899.9986500006075
+    },
+    {
+      "test": "two physically distinct YZ methods",
+      "yLeanRad": -0.001,
+      "zRiseRad": 0,
+      "currentArrangement": "Y-aligned R, top S, table +Z, downward plunger",
+      "currentValid": true,
+      "currentObservedUm": -299.99994999996454,
+      "currentIndependentUm": -299.9999500000025,
+      "alternativeArrangement": "Z-aligned R, spindle-side vertical S, head +Y, plunger toward -Z",
+      "alternativeIndependentUm": 299.9999500000025,
+      "frontSideAlternativeUm": -299.9999500000025
+    },
+    {
+      "test": "two physically distinct YZ methods",
+      "yLeanRad": -0.001,
+      "zRiseRad": 0.002,
+      "currentArrangement": "Y-aligned R, top S, table +Z, downward plunger",
+      "currentValid": true,
+      "currentObservedUm": 299.99995000008425,
+      "currentIndependentUm": 299.9999500000025,
+      "alternativeArrangement": "Z-aligned R, spindle-side vertical S, head +Y, plunger toward -Z",
+      "alternativeIndependentUm": -299.9999500000025,
+      "frontSideAlternativeUm": 299.9999500000025
+    },
+    {
+      "test": "two physically distinct YZ methods",
+      "yLeanRad": 0,
+      "zRiseRad": -0.002,
+      "currentArrangement": "Y-aligned R, top S, table +Z, downward plunger",
+      "currentValid": true,
+      "currentObservedUm": -599.9996000001229,
+      "currentIndependentUm": -599.9996000000799,
+      "alternativeArrangement": "Z-aligned R, spindle-side vertical S, head +Y, plunger toward -Z",
+      "alternativeIndependentUm": 599.9996000000799,
+      "frontSideAlternativeUm": -599.9996000000799
+    },
+    {
+      "test": "two physically distinct YZ methods",
+      "yLeanRad": 0,
+      "zRiseRad": 0,
+      "currentArrangement": "Y-aligned R, top S, table +Z, downward plunger",
+      "currentValid": true,
+      "currentObservedUm": 0,
+      "currentIndependentUm": 0,
+      "alternativeArrangement": "Z-aligned R, spindle-side vertical S, head +Y, plunger toward -Z",
+      "alternativeIndependentUm": 0,
+      "frontSideAlternativeUm": 0
+    },
+    {
+      "test": "two physically distinct YZ methods",
+      "yLeanRad": 0,
+      "zRiseRad": 0.002,
+      "currentArrangement": "Y-aligned R, top S, table +Z, downward plunger",
+      "currentValid": true,
+      "currentObservedUm": 599.9996000001229,
+      "currentIndependentUm": 599.9996000000799,
+      "alternativeArrangement": "Z-aligned R, spindle-side vertical S, head +Y, plunger toward -Z",
+      "alternativeIndependentUm": -599.9996000000799,
+      "frontSideAlternativeUm": 599.9996000000799
+    },
+    {
+      "test": "two physically distinct YZ methods",
+      "yLeanRad": 0.001,
+      "zRiseRad": -0.002,
+      "currentArrangement": "Y-aligned R, top S, table +Z, downward plunger",
+      "currentValid": true,
+      "currentObservedUm": -299.9999500000825,
+      "currentIndependentUm": -299.9999500000025,
+      "alternativeArrangement": "Z-aligned R, spindle-side vertical S, head +Y, plunger toward -Z",
+      "alternativeIndependentUm": 299.9999500000025,
+      "frontSideAlternativeUm": -299.9999500000025
+    },
+    {
+      "test": "two physically distinct YZ methods",
+      "yLeanRad": 0.001,
+      "zRiseRad": 0,
+      "currentArrangement": "Y-aligned R, top S, table +Z, downward plunger",
+      "currentValid": true,
+      "currentObservedUm": 299.99994999996454,
+      "currentIndependentUm": 299.9999500000025,
+      "alternativeArrangement": "Z-aligned R, spindle-side vertical S, head +Y, plunger toward -Z",
+      "alternativeIndependentUm": -299.9999500000025,
+      "frontSideAlternativeUm": 299.9999500000025
+    },
+    {
+      "test": "two physically distinct YZ methods",
+      "yLeanRad": 0.001,
+      "zRiseRad": 0.002,
+      "currentArrangement": "Y-aligned R, top S, table +Z, downward plunger",
+      "currentValid": true,
+      "currentObservedUm": 899.9986500006132,
+      "currentIndependentUm": 899.9986500006075,
+      "alternativeArrangement": "Z-aligned R, spindle-side vertical S, head +Y, plunger toward -Z",
+      "alternativeIndependentUm": -899.9986500006075,
+      "frontSideAlternativeUm": 899.9986500006075
+    },
+    {
+      "test": "actual supports, rear pair only, no left/right twist",
+      "rearMm": -0.01,
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        -0.01
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100
+      },
+      "independentCommonSlope": -0.0000024456521739130437,
+      "independentColumnSlope": -0.00000815217391304348,
+      "independentHeadYLeanRad": 0.00000815217391297666,
+      "currentObservedUm": 2.4456521736729298,
+      "currentIndependentUm": 2.445652173873223,
+      "alternativeIndependentUm": -2.445652173865909,
+      "currentContact": {
+        "valid": true,
+        "microns": 2.4456521736729298,
+        "start": {
+          "point": [
+            0,
+            1.6300000815114382,
+            -1.1499974728235287
+          ],
+          "normal": [
+            0,
+            0.9999999999667709,
+            0.000008152173912219957
+          ],
+          "body": [
+            0,
+            1.6400000815111058,
+            -1.1499973913017896
+          ],
+          "probe": [
+            0,
+            -0.9999999999667709,
+            -0.000008152173912219957
+          ]
+        },
+        "end": {
+          "point": [
+            0,
+            1.6300000815114382,
+            -0.8499974728226315
+          ],
+          "normal": [
+            0,
+            0.9999999999667709,
+            0.000008152173912219957
+          ],
+          "body": [
+            0,
+            1.6400000815111058,
+            -1.1499973913017896
+          ],
+          "probe": [
+            0,
+            -0.9999999999667709,
+            -0.000008152173912219957
+          ]
+        },
+        "zero": {
+          "valid": true,
+          "extension": 0.009999999999999898,
+          "point": [
+            0,
+            1.6300000815114382,
+            -1.1499974728235287
+          ]
+        },
+        "last": {
+          "valid": true,
+          "extension": 0.009997554347826225,
+          "point": [
+            0,
+            1.6300025271636118,
+            -1.1499974728035913
+          ]
+        }
+      }
+    },
+    {
+      "test": "actual supports, rear pair only, no left/right twist",
+      "rearMm": 0.01,
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0.01
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100
+      },
+      "independentCommonSlope": 0.0000024456521739130437,
+      "independentColumnSlope": 0.00000815217391304348,
+      "independentHeadYLeanRad": -0.00000815217391297666,
+      "currentObservedUm": -2.4456521736746644,
+      "currentIndependentUm": -2.445652173873223,
+      "alternativeIndependentUm": 2.445652173865909,
+      "currentContact": {
+        "valid": true,
+        "microns": -2.4456521736746644,
+        "start": {
+          "point": [
+            0,
+            1.62999991846796,
+            -1.1500025271713543
+          ],
+          "normal": [
+            0,
+            0.9999999999667711,
+            -0.000008152173912219968
+          ],
+          "body": [
+            0,
+            1.6399999184676277,
+            -1.1500026086930935
+          ],
+          "probe": [
+            0,
+            -0.9999999999667711,
+            0.000008152173912219968
+          ]
+        },
+        "end": {
+          "point": [
+            0,
+            1.62999991846796,
+            -0.8500025271704571
+          ],
+          "normal": [
+            0,
+            0.9999999999667711,
+            -0.000008152173912219968
+          ],
+          "body": [
+            0,
+            1.6399999184676277,
+            -1.1500026086930935
+          ],
+          "probe": [
+            0,
+            -0.999999999966771,
+            0.000008152173912219968
+          ]
+        },
+        "zero": {
+          "valid": true,
+          "extension": 0.009999999999999898,
+          "point": [
+            0,
+            1.62999991846796,
+            -1.1500025271713543
+          ]
+        },
+        "last": {
+          "valid": true,
+          "extension": 0.010002445652173573,
+          "point": [
+            0,
+            1.6299974728157864,
+            -1.150002527151417
+          ]
+        }
+      }
+    }
+  ],
+  "failures": []
+}

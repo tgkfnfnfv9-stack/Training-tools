@@ -1454,12 +1454,18 @@ function referenceDiagram(measurement){
  if(measurement.valid){
   const end=measurement.end,relative=M.sub(end.body,end.point),contact=M.sub(measurement.last.point,end.point),along=measurement.alongEnd;
   bodyNormal=M.dot(relative,end.normal);probeNormal=M.dot(end.probe,end.normal);probeAlong=M.dot(end.probe,along);
-  // Draw the body displacement and probe attitude independently. A change in
-  // extension alone does not imply lateral body motion (e.g. cosine error).
-  bx+=clip((bodyNormal-.01)*normalGain,4);
+  // Other machines retain their existing independent displacement/angle view.
+  if(!horizontal)bx+=clip((bodyNormal-.01)*normalGain,4);
   cy=y0-17*M.dot(contact,along)/.3;
   cy=Math.max(12,Math.min(33,cy));
   tilt=clip(-11*probeAlong/probeNormal*tiltGain,1);
+  if(horizontal){
+   // A plunger's visible length must shorten when the measured extension
+   // shortens, including when its attitude changes. Compose the body and the
+   // probe from one endpoint instead of magnifying their coordinates separately.
+   const length=11+clip((measurement.last.extension-measurement.zero.extension)*normalGain,4),angle=Math.atan2(tilt,11);
+   bx=23+length*Math.cos(angle);tilt=length*Math.sin(angle);
+  }
  }
  const by=cy+tilt,angle=Math.atan2(tilt,bx-23)*180/Math.PI;
  const arrow=(x,y,ex,ey,css)=>{const dx=ex-x,dy=ey-y,l=Math.hypot(dx,dy),u=dx/l,v=dy/l;return `<path d="M${x},${y}L${ex},${ey}m${-2*u-1.5*v},${-2*v+1.5*u}l${2*u+1.5*v},${2*v-1.5*u}l${-2*u+1.5*v},${-2*v-1.5*u}" class="${css}"/>`;};
@@ -1471,7 +1477,7 @@ function referenceCard(pair,m,before,physical=m){
  const display=m,beforeDisplay=before,horizontal=current.kind==='horizontal';
  const s=m.setup,alignment=horizontal?'頭固定のR用計器を'+s.base+'へ300 mm送った始終点':current.kind==='compact'?'測定Pの'+s.base+'局所送り接線':s.base+'の代表案内方向',reading=display.valid?squarenessMicronText(display.microns)+' µm':display.reason,teaching=current.kind==='compact',span=m.startPosition===undefined?'':`${signed(m.startPosition*1000,1)} → ${signed(m.endPosition*1000,1)} mm（${s.scan}部材位置・中央0）`;
  const horizontalNote=horizontal?`<p>小図の「計器:頭」は計器を主軸頭へ取り付ける意味です。${s.scan==='Y'?'XYでは主軸頭そのものを上へ動かし、パレットとマスタは静止します。':'XZ/YZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。'}オレンジの「相対」矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。</p><p>320×320 mm・厚み50 mmの教材用直角マスタを、XYは立て、XZは寝かせ、YZは立ててパレットに載せます。頭に固定したR用計器を${s.base}へ300 mm送り、始終点が等指示になる向きへ合わせます。途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて始点をゼロにし、本体と測定子を同じ頭の剛体姿勢で運びます。代表案内や鼻端の接線への置換ではありません。</p>`:'';
- return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${s.lathe?'主軸基準XZ':pair.key} <span>${reading}</span></h3><svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${s.artifact}と${s.body}の測定配置">${referenceDiagram(m)}</svg><p>${s.artifact}：${s.mount}上／計器：${s.body}に固定。${s.normalDirection}側からS面に接触。</p>${horizontalNote}<p>① ${s.lathe?'回転中心線Zに直角な校正済みフランジ面を使用。往復台Z送りとは別。':(horizontal?'R用の頭固定腕を'+s.base+'へ300 mm送り、両端で等指示に方向合わせ。':'R面を開始位置の'+alignment+'に平行に方向合わせ。')+'RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。'}<br>② ${s.zeroLocation}の●0でゼロ合わせ。<br>③ ${s.member}を部材${s.memberSign>0?'＋':'−'}${s.scan}・${s.scanDirection}へ300 mm（NC指令の符号ではありません）。基準器に対する計器は${s.relativeDirection}へ。測定子が本体へ${s.normalDirection}に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。</p><p>図の右＝${s.normalDirection}、図の上＝${s.positiveScanDirection}。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。${current.kind==='compact'?'「直角図のずれを強調」で本体の法線変位と測定子の傾きの強調を切り替えます。小型の接触計算は、直角測定と触れに共通の仮想主軸姿勢を使います。模型と局所角度は元の姿勢です。器具の寸法は強調を外しても模式図です。':'本体の法線変位と測定子の傾きを別々に誇張します。'}図の変位・傾きは枠内に制限します。${teaching?'図と数値は同じ仮想測定姿勢から求めます。数値に後から倍率を掛けません。':'数値には誇張を掛けません。'}破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。</p><p>${span}。スライダーの現在位置と接触ゼロ位置は同じとは限りません。${m.valid?'':' '+m.reason}</p><p>${s.lathe?'現模型は手前側刃物台です。部材−Xは手前・径外向き。ゼロの絶対半径・実寸フランジは再現しません。':horizontal?('R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から'+(pair.key==='XY'?'60→360 mm':pair.key==='XZ'?'50 mm':'360 mm')+'。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。'):current.kind==='compact'?'Y走査は模型の測定Pの移動を使います。':'この走査区間では取付部の姿勢が一定の代表点を使います。代表案内方向を、任意の取付高さの材料点接線や主軸回転中心線と同一視しません。実物の固定具寸法は再現しません。'}</p>${teaching?'<p>小型は前後の支持応答を中央位置で約5倍とする共通の仮想主軸姿勢です。支持のみの中央YZ角差δに対して、主軸とZ送りを基準X軸まわりに追加で4δ回し、300 mmの走査と直径300 mmの触れをそれぞれ接触から計算します。固有誤差は増幅しません。補正姿勢は支持・寸法ごとに固定し、テーブル送りで変えません。全位置の数値が厳密に5倍になる仕様ではありません。中央以外ではXZにも微小な交差影響があります。元の有限測定値：'+(physical.valid?squarenessMicronText(physical.microns)+' µm':physical.reason)+'。実機感度の再現ではありません。共通の剛体傾斜では補正せず、模型・局所角度・調整評価・参考最良は元の計算です。</p>':''}<p>初期支持状態：${beforeDisplay.valid?squarenessMicronText(beforeDisplay.microns)+' µm':beforeDisplay.reason}／現在：${reading}（同じ区間で各々ゼロ${teaching?'・ともに共通の仮想主軸姿勢':''}）。</p><p>従来の局所角度差：${squarenessMicronText(pair.deviationMicroradians*.3)} µm／300 mm換算。上の表示値とは別です。</p></section>`;
+ return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${s.lathe?'主軸基準XZ':pair.key} <span>${reading}</span></h3><svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${s.artifact}と${s.body}の測定配置">${referenceDiagram(m)}</svg><p>${s.artifact}：${s.mount}上／計器：${s.body}に固定。${s.normalDirection}側からS面に接触。</p>${horizontalNote}<p>① ${s.lathe?'回転中心線Zに直角な校正済みフランジ面を使用。往復台Z送りとは別。':(horizontal?'R用の頭固定腕を'+s.base+'へ300 mm送り、両端で等指示に方向合わせ。':'R面を開始位置の'+alignment+'に平行に方向合わせ。')+'RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。'}<br>② ${s.zeroLocation}の●0でゼロ合わせ。<br>③ ${s.member}を部材${s.memberSign>0?'＋':'−'}${s.scan}・${s.scanDirection}へ300 mm（NC指令の符号ではありません）。基準器に対する計器は${s.relativeDirection}へ。測定子が本体へ${s.normalDirection}に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。</p><p>図の右＝${s.normalDirection}、図の上＝${s.positiveScanDirection}。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。${current.kind==='compact'?'「直角図のずれを強調」で本体の法線変位と測定子の傾きの強調を切り替えます。小型の接触計算は、直角測定と触れに共通の仮想主軸姿勢を使います。模型と局所角度は元の姿勢です。器具の寸法は強調を外しても模式図です。':horizontal?'測定子の伸縮は接触計算と同じ正負で、変化を拡大します。接触点から描いた測定子と本体の位置を連動させ、測定子の傾きも強調します。器具全体を同じ縮尺で描いた図ではありません。':'本体の法線変位と測定子の傾きを別々に誇張します。'}図の変位・傾きは枠内に制限します。${teaching?'図と数値は同じ仮想測定姿勢から求めます。数値に後から倍率を掛けません。':'数値には誇張を掛けません。'}破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。</p><p>${span}。スライダーの現在位置と接触ゼロ位置は同じとは限りません。${m.valid?'':' '+m.reason}</p><p>${s.lathe?'現模型は手前側刃物台です。部材−Xは手前・径外向き。ゼロの絶対半径・実寸フランジは再現しません。':horizontal?('R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から'+(pair.key==='XY'?'60→360 mm':pair.key==='XZ'?'50 mm':'360 mm')+'。器具下面の支持脚によるすき間はXY 50／XZ 25／YZ 40 mmで、厚み50 mmとは別です。支持・軸位置変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。'):current.kind==='compact'?'Y走査は模型の測定Pの移動を使います。':'この走査区間では取付部の姿勢が一定の代表点を使います。代表案内方向を、任意の取付高さの材料点接線や主軸回転中心線と同一視しません。実物の固定具寸法は再現しません。'}</p>${teaching?'<p>小型は前後の支持応答を中央位置で約5倍とする共通の仮想主軸姿勢です。支持のみの中央YZ角差δに対して、主軸とZ送りを基準X軸まわりに追加で4δ回し、300 mmの走査と直径300 mmの触れをそれぞれ接触から計算します。固有誤差は増幅しません。補正姿勢は支持・寸法ごとに固定し、テーブル送りで変えません。全位置の数値が厳密に5倍になる仕様ではありません。中央以外ではXZにも微小な交差影響があります。元の有限測定値：'+(physical.valid?squarenessMicronText(physical.microns)+' µm':physical.reason)+'。実機感度の再現ではありません。共通の剛体傾斜では補正せず、模型・局所角度・調整評価・参考最良は元の計算です。</p>':''}<p>初期支持状態：${beforeDisplay.valid?squarenessMicronText(beforeDisplay.microns)+' µm':beforeDisplay.reason}／現在：${reading}（同じ区間で各々ゼロ${teaching?'・ともに共通の仮想主軸姿勢':''}）。</p><p>従来の局所角度差：${squarenessMicronText(pair.deviationMicroradians*.3)} µm／300 mm換算。上の表示値とは別です。</p></section>`;
 }
 </script><script>(function(root,factory){
  'use strict';
@@ -2920,7 +2926,7 @@ function diagramComparison(pair,initial){
  return {before,plot,beforePlot,delta,absoluteChange,trend,direction,text,range};
 }
 function accuracyDiagram(g,initial=levelInitialGeometry){
- const live=[],referenceCards=[];
+ const live=[],referenceCards=[],measurements=[];
  const columns=g.pairs.map((pair,i)=>{
   const c=diagramComparison(pair,initial),{plot,beforePlot}=c;
   const reference=squarenessReference(pair);
@@ -2929,6 +2935,7 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   const attributes=Object.entries({'projection':reference.projection.join(','),'zero-location':reference.zero,'base-direction':reference.baseDirection,'measure-direction':reference.measureDirection,'positive-direction':reference.positive,'negative-direction':reference.negative,'reference-plane':reference.plane,pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="104" y="64" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
   const physical=referenceScan(pair),measurement=referenceDisplayScan(pair),beforeMeasurement=referenceDisplayScan(pair,positions,levelInitialSolution||levelSolution);
+  measurements.push({key:pair.key,current:measurement,before:levelInitialSolution?beforeMeasurement:null});
   const display=measurement,reading=display.valid?squarenessMicronText(display.microns):'—';
   referenceCards.push(referenceCard(pair,measurement,beforeMeasurement,physical));
   const descriptionText=pair.key+'・'+(display.valid?measurement.setup.zeroLocation+'を0とした300 mmの仮想測定 '+reading+' µm'+(current.kind==='compact'?'（触れと共通の仮想主軸姿勢）':''):display.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。';
@@ -2943,8 +2950,9 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
  $('accuracyDiagram').setAttribute('viewBox',`0 0 ${g.pairs.length*112} 123`);$('accuracyDiagram').innerHTML=columns.join('');
  $('accuracyDiagram').setAttribute('data-diagram-model','local-angle');
  $('accuracyDiagram').setAttribute('aria-label','現在位置の局所軸角度の300 mm換算。接触ゼロを取る有限走査図とは別。'+g.pairs.map(p=>p.key+'、基準'+squarenessPlot(p).base+'で初期からの変化を比較').join('。'));
+ return measurements;
 }
-function updateFineQualitative(g,initial){
+function updateFineQualitative(g,initial,measurements=[]){
  const lathe=current.kind==='lathe';
  for(const [key,id,negative,positive,label] of [['front','fineLeanFront',lathe?'下向き':'後ろ倒れ',lathe?'上向き':'前倒れ',lathe?'主軸の上下方向':'本体＋支持の前後倒れ'],['right','fineLeanRight',lathe?'左向き':'左倒れ',lathe?'右向き':'右倒れ',lathe?'主軸の水平面方向':'本体＋支持の左右倒れ']]){
   const value=g.bodyPosture[key];$(id).textContent=label+'：'+(Math.abs(value)<=20.000001?'小さめ':value>0?positive:negative);$(id).setAttribute('data-current',String(value));
@@ -2953,6 +2961,19 @@ function updateFineQualitative(g,initial){
  $('fineFixedBody').textContent='本体の固有直角差・'+(lathe||g.portal?'主軸の方向':'コラムの倒れ')+'・ガイドの曲がりは、この個体の固定成分です。支持姿勢を重ねた変化を見ます。';
  $('finePrecisionSummary').replaceChildren();
  for(const pair of g.pairs){
+  if(current.kind==='horizontal'){
+   // Compare the same finite, independently aligned and zeroed scans as the
+   // live reading. The local axis angle can improve while this reading worsens.
+   const measurement=measurements.find(m=>m.key===pair.key),before=measurement?.before,now=measurement?.current;
+   const currentValid=now?.valid&&Number.isFinite(now.microns),beforeValid=before?.valid&&Number.isFinite(before.microns),valid=currentValid&&beforeValid;
+   const delta=valid?now.microns-before.microns:null,absoluteChange=valid?Math.abs(now.microns)-Math.abs(before.microns):null;
+   const trend=valid?(absoluteChange<-.005?'better':absoluteChange>.005?'worse':'similar'):'unavailable';
+   const text=!currentValid||(before&&!beforeValid)?'測定が成立しないため比較できない':!before?'初期との比較基準なし':trend==='better'?'初期よりゼロに近づいた':trend==='worse'?'初期よりゼロから離れた':'初期からほぼ同じ';
+   const row=document.createElement('p');row.className='fine-pair-reading '+trend;
+   for(const [name,value] of Object.entries({pair:pair.key,model:'finite-scan',unit:'µm',before:beforeValid?before.microns:'',current:currentValid?now.microns:'',delta:delta??'',trend,valid:Boolean(valid)}))row.setAttribute('data-'+name,String(value));
+   row.textContent=pair.key+'測定：'+text;$('finePrecisionSummary').append(row);
+   continue;
+  }
   const c=diagramComparison(pair,initial),row=document.createElement('p');row.className='fine-pair-reading '+c.trend;
   for(const [name,value] of Object.entries({pair:pair.key,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction}))row.setAttribute('data-'+name,String(value));
   row.textContent=pair.key+'：'+c.text+(c.direction==='unchanged'?'（軸間の関係はほぼ不変）':'')+(c.range?' · '+c.range:'');$('finePrecisionSummary').append(row);
@@ -3048,7 +3069,7 @@ function updateAccuracy(){
  $('columnXValue').textContent=levelConfig.columnX===0?'標準':levelConfig.columnX<0?'左寄り':'右寄り';$('columnX').setAttribute('aria-valuetext',$('columnXValue').textContent);
  $('columnZValue').textContent=levelConfig.columnZ===0?'標準':levelConfig.columnZ<0?'手前寄り':'奥寄り';$('columnZ').setAttribute('aria-valuetext',$('columnZValue').textContent);
  $('demoTwist').disabled=supports.length===3;
- accuracyDiagram(g,initial);updateFineQualitative(g,initial);
+ const measurements=accuracyDiagram(g,initial);updateFineQualitative(g,initial,measurements);
 }
 for(const id of ['columnX','columnZ'])$(id).oninput=()=>{const value=Number($(id).value);if(!bounded(value,-100,100)||!Number.isInteger(value))return;stopMotion();levelConfig[id]=value;updateLeveling();};
 $('resetColumn').onclick=()=>{stopMotion();levelConfig.columnX=0;levelConfig.columnZ=0;$('columnX').value='0';$('columnZ').value='0';updateLeveling();};

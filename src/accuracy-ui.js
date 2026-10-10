@@ -351,7 +351,7 @@ function diagramComparison(pair,initial){
  return {before,plot,beforePlot,delta,absoluteChange,trend,direction,text,range};
 }
 function accuracyDiagram(g,initial=levelInitialGeometry){
- const live=[],referenceCards=[];
+ const live=[],referenceCards=[],measurements=[];
  const columns=g.pairs.map((pair,i)=>{
   const c=diagramComparison(pair,initial),{plot,beforePlot}=c;
   const reference=squarenessReference(pair);
@@ -360,6 +360,7 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   const attributes=Object.entries({'projection':reference.projection.join(','),'zero-location':reference.zero,'base-direction':reference.baseDirection,'measure-direction':reference.measureDirection,'positive-direction':reference.positive,'negative-direction':reference.negative,'reference-plane':reference.plane,pair:pair.key,base:plot.base,other:plot.other,'measure-axis':plot.other,'measure-start':'0,0','measurement-length-m':squarenessMeasurementLength,'ideal-tip-x':plot.origin[0],'ideal-tip-y':26,'before-error-300':c.before.deviationMicroradians*squarenessMeasurementLength,'current-error-300':pair.deviationMicroradians*squarenessMeasurementLength,'delta-error-300':c.delta*squarenessMeasurementLength,gain:plot.gain,deviation:pair.deviationMicroradians,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction,limited:plot.limited,'before-limited':beforePlot.limited,'any-limited':plot.limited||beforePlot.limited,'origin-x':plot.origin[0],'origin-y':plot.origin[1],'tip-x':plot.tip[0],'tip-y':plot.tip[1],'before-tip-x':beforePlot.tip[0],'before-tip-y':beforePlot.tip[1]}).map(([name,value])=>`data-${name}="${value}"`).join(' ');
   const markup=squarenessMarkup(pair,plot,beforePlot)+(c.range?'<text x="104" y="64" text-anchor="end" class="live-pair-limit">範囲外</text>':'');
   const physical=referenceScan(pair),measurement=referenceDisplayScan(pair),beforeMeasurement=referenceDisplayScan(pair,positions,levelInitialSolution||levelSolution);
+  measurements.push({key:pair.key,current:measurement,before:levelInitialSolution?beforeMeasurement:null});
   const display=measurement,reading=display.valid?squarenessMicronText(display.microns):'—';
   referenceCards.push(referenceCard(pair,measurement,beforeMeasurement,physical));
   const descriptionText=pair.key+'・'+(display.valid?measurement.setup.zeroLocation+'を0とした300 mmの仮想測定 '+reading+' µm'+(current.kind==='compact'?'（触れと共通の仮想主軸姿勢）':''):display.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。';
@@ -374,8 +375,9 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
  $('accuracyDiagram').setAttribute('viewBox',`0 0 ${g.pairs.length*112} 123`);$('accuracyDiagram').innerHTML=columns.join('');
  $('accuracyDiagram').setAttribute('data-diagram-model','local-angle');
  $('accuracyDiagram').setAttribute('aria-label','現在位置の局所軸角度の300 mm換算。接触ゼロを取る有限走査図とは別。'+g.pairs.map(p=>p.key+'、基準'+squarenessPlot(p).base+'で初期からの変化を比較').join('。'));
+ return measurements;
 }
-function updateFineQualitative(g,initial){
+function updateFineQualitative(g,initial,measurements=[]){
  const lathe=current.kind==='lathe';
  for(const [key,id,negative,positive,label] of [['front','fineLeanFront',lathe?'下向き':'後ろ倒れ',lathe?'上向き':'前倒れ',lathe?'主軸の上下方向':'本体＋支持の前後倒れ'],['right','fineLeanRight',lathe?'左向き':'左倒れ',lathe?'右向き':'右倒れ',lathe?'主軸の水平面方向':'本体＋支持の左右倒れ']]){
   const value=g.bodyPosture[key];$(id).textContent=label+'：'+(Math.abs(value)<=20.000001?'小さめ':value>0?positive:negative);$(id).setAttribute('data-current',String(value));
@@ -384,6 +386,19 @@ function updateFineQualitative(g,initial){
  $('fineFixedBody').textContent='本体の固有直角差・'+(lathe||g.portal?'主軸の方向':'コラムの倒れ')+'・ガイドの曲がりは、この個体の固定成分です。支持姿勢を重ねた変化を見ます。';
  $('finePrecisionSummary').replaceChildren();
  for(const pair of g.pairs){
+  if(current.kind==='horizontal'){
+   // Compare the same finite, independently aligned and zeroed scans as the
+   // live reading. The local axis angle can improve while this reading worsens.
+   const measurement=measurements.find(m=>m.key===pair.key),before=measurement?.before,now=measurement?.current;
+   const currentValid=now?.valid&&Number.isFinite(now.microns),beforeValid=before?.valid&&Number.isFinite(before.microns),valid=currentValid&&beforeValid;
+   const delta=valid?now.microns-before.microns:null,absoluteChange=valid?Math.abs(now.microns)-Math.abs(before.microns):null;
+   const trend=valid?(absoluteChange<-.005?'better':absoluteChange>.005?'worse':'similar'):'unavailable';
+   const text=!currentValid||(before&&!beforeValid)?'測定が成立しないため比較できない':!before?'初期との比較基準なし':trend==='better'?'初期よりゼロに近づいた':trend==='worse'?'初期よりゼロから離れた':'初期からほぼ同じ';
+   const row=document.createElement('p');row.className='fine-pair-reading '+trend;
+   for(const [name,value] of Object.entries({pair:pair.key,model:'finite-scan',unit:'µm',before:beforeValid?before.microns:'',current:currentValid?now.microns:'',delta:delta??'',trend,valid:Boolean(valid)}))row.setAttribute('data-'+name,String(value));
+   row.textContent=pair.key+'測定：'+text;$('finePrecisionSummary').append(row);
+   continue;
+  }
   const c=diagramComparison(pair,initial),row=document.createElement('p');row.className='fine-pair-reading '+c.trend;
   for(const [name,value] of Object.entries({pair:pair.key,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction}))row.setAttribute('data-'+name,String(value));
   row.textContent=pair.key+'：'+c.text+(c.direction==='unchanged'?'（軸間の関係はほぼ不変）':'')+(c.range?' · '+c.range:'');$('finePrecisionSummary').append(row);
@@ -479,7 +494,7 @@ function updateAccuracy(){
  $('columnXValue').textContent=levelConfig.columnX===0?'標準':levelConfig.columnX<0?'左寄り':'右寄り';$('columnX').setAttribute('aria-valuetext',$('columnXValue').textContent);
  $('columnZValue').textContent=levelConfig.columnZ===0?'標準':levelConfig.columnZ<0?'手前寄り':'奥寄り';$('columnZ').setAttribute('aria-valuetext',$('columnZValue').textContent);
  $('demoTwist').disabled=supports.length===3;
- accuracyDiagram(g,initial);updateFineQualitative(g,initial);
+ const measurements=accuracyDiagram(g,initial);updateFineQualitative(g,initial,measurements);
 }
 for(const id of ['columnX','columnZ'])$(id).oninput=()=>{const value=Number($(id).value);if(!bounded(value,-100,100)||!Number.isInteger(value))return;stopMotion();levelConfig[id]=value;updateLeveling();};
 $('resetColumn').onclick=()=>{stopMotion();levelConfig.columnX=0;levelConfig.columnZ=0;$('columnX').value='0';$('columnZ').value='0';updateLeveling();};

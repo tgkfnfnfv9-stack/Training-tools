@@ -1,0 +1,389 @@
+{
+  "passed": false,
+  "sourceFile": "docs/qa-yz-sign-recheck-20261010/browser/pr/index.html.gz",
+  "sourceSha256": "de228d28fac23cc55b9ff914a29116500e53a1324b90cfd324ec00548132e7dd",
+  "scope": "Horizontal probe visible extension sign, common probe/body endpoint, clipping, invalid contact; independent ray/plane extension from supplied poses. Other machine SVG exact preservation.",
+  "cases": 34,
+  "otherMachineDiagrams": 18,
+  "failures": [
+    {
+      "label": "A+.050 E+.091/YZ/extension-direction",
+      "raw": 0.03356608570259656,
+      "delta": -3.356608570259656e-8,
+      "length": 11.012564337022752
+    },
+    {
+      "label": "B+.200 G/H-.129/YZ/extension-direction",
+      "raw": 0.029355550200740876,
+      "delta": -2.9355550200740876e-8,
+      "length": 11.031609244215211
+    },
+    {
+      "label": "synthetic angle=-0.0002, extension=0.00999999/extension-direction",
+      "raw": 0.009999999999940612,
+      "delta": -9.999999999940612e-9,
+      "length": 11.0436679998423
+    },
+    {
+      "label": "synthetic angle=-0.0002, extension=0.01/unchanged-length",
+      "delta": 0,
+      "length": 11.045327820747593
+    },
+    {
+      "label": "synthetic angle=-0.0002, extension=0.02/display-bounds",
+      "length": 15.03329637837291
+    },
+    {
+      "label": "synthetic angle=0.0002, extension=0.00999999/extension-direction",
+      "raw": 0.009999999999940612,
+      "delta": -9.999999999940612e-9,
+      "length": 11.0436679998423
+    },
+    {
+      "label": "synthetic angle=0.0002, extension=0.01/unchanged-length",
+      "delta": 0,
+      "length": 11.045327820747593
+    },
+    {
+      "label": "synthetic angle=0.0002, extension=0.02/display-bounds",
+      "length": 15.03329637837291
+    }
+  ],
+  "rows": [
+    {
+      "name": "flat/XY",
+      "valid": true,
+      "rawUm": 0,
+      "display": "0",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 10.000000000000009,
+      "svgLength": 11.000000000001442,
+      "limited": false
+    },
+    {
+      "name": "flat/XZ",
+      "valid": true,
+      "rawUm": 0,
+      "display": "0",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 10.000000000000009,
+      "svgLength": 11.000000000001442,
+      "limited": false
+    },
+    {
+      "name": "flat/YZ",
+      "valid": true,
+      "rawUm": 0,
+      "display": "0",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 10.000000000000009,
+      "svgLength": 11.000000000001442,
+      "limited": false
+    },
+    {
+      "name": "A+.050 E+.091/XY",
+      "valid": true,
+      "rawUm": 17.869917256945964,
+      "display": "+18",
+      "independentStartMm": 10.000000000000005,
+      "independentEndMm": 9.98213008274306,
+      "svgLength": 8.021680457177407,
+      "limited": false
+    },
+    {
+      "name": "A+.050 E+.091/XZ",
+      "valid": true,
+      "rawUm": -6.5992971295097265,
+      "display": "-7",
+      "independentStartMm": 9.999999999999991,
+      "independentEndMm": 10.006599297129501,
+      "svgLength": 12.099882852234726,
+      "limited": false
+    },
+    {
+      "name": "A+.050 E+.091/YZ",
+      "valid": true,
+      "rawUm": 0.03356608570259656,
+      "display": "0",
+      "independentStartMm": 9.999999999999996,
+      "independentEndMm": 9.999966433914294,
+      "svgLength": 11.012564337022752,
+      "limited": false
+    },
+    {
+      "name": "A-.050 E-.091/XY",
+      "valid": true,
+      "rawUm": -17.869692574206535,
+      "display": "-18",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 10.017869692574216,
+      "svgLength": 13.97828209570369,
+      "limited": false
+    },
+    {
+      "name": "A-.050 E-.091/XZ",
+      "valid": true,
+      "rawUm": 6.602549358742174,
+      "display": "+7",
+      "independentStartMm": 9.999999999999995,
+      "independentEndMm": 9.993397450641252,
+      "svgLength": 9.899575104206475,
+      "limited": false
+    },
+    {
+      "name": "A-.050 E-.091/YZ",
+      "valid": true,
+      "rawUm": -0.0316513044870681,
+      "display": "0",
+      "independentStartMm": 9.999999999999998,
+      "independentEndMm": 10.000031651304486,
+      "svgLength": 11.023415994085536,
+      "limited": false
+    },
+    {
+      "name": "B+.200 G/H-.129/XY",
+      "valid": true,
+      "rawUm": 3.2959746043559335e-11,
+      "display": "0",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 9.999999999999975,
+      "svgLength": 10.999999999996241,
+      "limited": false
+    },
+    {
+      "name": "B+.200 G/H-.129/XZ",
+      "valid": true,
+      "rawUm": 9.363197698484399,
+      "display": "+9",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 9.990636802301525,
+      "svgLength": 9.439466882700835,
+      "limited": false
+    },
+    {
+      "name": "B+.200 G/H-.129/YZ",
+      "valid": true,
+      "rawUm": 0.029355550200740876,
+      "display": "0",
+      "independentStartMm": 9.999999999999902,
+      "independentEndMm": 9.999970644449702,
+      "svgLength": 11.031609244215211,
+      "limited": false
+    },
+    {
+      "name": "B+.010/XY",
+      "valid": true,
+      "rawUm": 0,
+      "display": "0",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 10.000000000000009,
+      "svgLength": 11.000000000001734,
+      "limited": false
+    },
+    {
+      "name": "B+.010/XZ",
+      "valid": true,
+      "rawUm": 0.46815164373749385,
+      "display": "0",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 9.999531848356272,
+      "svgLength": 10.921974725625972,
+      "limited": false
+    },
+    {
+      "name": "B+.010/YZ",
+      "valid": true,
+      "rawUm": -1.576067356935662,
+      "display": "-2",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 10.001576067356945,
+      "svgLength": 11.262767126635278,
+      "limited": false
+    },
+    {
+      "name": "B-.010/XY",
+      "valid": true,
+      "rawUm": 0,
+      "display": "0",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 10.000000000000009,
+      "svgLength": 11.000000000001734,
+      "limited": false
+    },
+    {
+      "name": "B-.010/XZ",
+      "valid": true,
+      "rawUm": -0.4681495071375691,
+      "display": "0",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 10.000468149507146,
+      "svgLength": 11.078024917438483,
+      "limited": false
+    },
+    {
+      "name": "B-.010/YZ",
+      "valid": true,
+      "rawUm": 1.5761065561004095,
+      "display": "+2",
+      "independentStartMm": 10.000000000000009,
+      "independentEndMm": 9.998423893443908,
+      "svgLength": 10.737409174551043,
+      "limited": false
+    },
+    {
+      "name": "synthetic angle=-0.0002, extension=0",
+      "valid": true,
+      "rawUm": 10000,
+      "display": "+10000",
+      "independentStartMm": 10,
+      "independentEndMm": 0,
+      "svgLength": 7.0710678118654755,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=-0.0002, extension=0.00999999",
+      "valid": true,
+      "rawUm": 0.009999999999940612,
+      "display": "0",
+      "independentStartMm": 10,
+      "independentEndMm": 9.99999,
+      "svgLength": 11.0436679998423,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=-0.0002, extension=0.01",
+      "valid": true,
+      "rawUm": 0,
+      "display": "0",
+      "independentStartMm": 10,
+      "independentEndMm": 10,
+      "svgLength": 11.045327820747593,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=-0.0002, extension=0.01000001",
+      "valid": true,
+      "rawUm": -0.009999999999940612,
+      "display": "0",
+      "independentStartMm": 10,
+      "independentEndMm": 10.00001,
+      "svgLength": 11.04698764371456,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=-0.0002, extension=0.02",
+      "valid": true,
+      "rawUm": -10000,
+      "display": "-10000",
+      "independentStartMm": 10,
+      "independentEndMm": 20,
+      "svgLength": 15.03329637837291,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=0, extension=0",
+      "valid": true,
+      "rawUm": 10000,
+      "display": "+10000",
+      "independentStartMm": 10,
+      "independentEndMm": 0,
+      "svgLength": 7,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=0, extension=0.00999999",
+      "valid": true,
+      "rawUm": 0.009999999999940612,
+      "display": "0",
+      "independentStartMm": 10,
+      "independentEndMm": 9.99999,
+      "svgLength": 10.998333333333342,
+      "limited": false
+    },
+    {
+      "name": "synthetic angle=0, extension=0.01",
+      "valid": true,
+      "rawUm": 0,
+      "display": "0",
+      "independentStartMm": 10,
+      "independentEndMm": 10,
+      "svgLength": 11,
+      "limited": false
+    },
+    {
+      "name": "synthetic angle=0, extension=0.01000001",
+      "valid": true,
+      "rawUm": -0.009999999999940612,
+      "display": "0",
+      "independentStartMm": 10,
+      "independentEndMm": 10.00001,
+      "svgLength": 11.001666666666658,
+      "limited": false
+    },
+    {
+      "name": "synthetic angle=0, extension=0.02",
+      "valid": true,
+      "rawUm": -10000,
+      "display": "-10000",
+      "independentStartMm": 10,
+      "independentEndMm": 20,
+      "svgLength": 15,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=0.0002, extension=0",
+      "valid": true,
+      "rawUm": 10000,
+      "display": "+10000",
+      "independentStartMm": 10,
+      "independentEndMm": 0,
+      "svgLength": 7.0710678118654755,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=0.0002, extension=0.00999999",
+      "valid": true,
+      "rawUm": 0.009999999999940612,
+      "display": "0",
+      "independentStartMm": 10,
+      "independentEndMm": 9.99999,
+      "svgLength": 11.0436679998423,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=0.0002, extension=0.01",
+      "valid": true,
+      "rawUm": 0,
+      "display": "0",
+      "independentStartMm": 10,
+      "independentEndMm": 10,
+      "svgLength": 11.045327820747593,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=0.0002, extension=0.01000001",
+      "valid": true,
+      "rawUm": -0.009999999999940612,
+      "display": "0",
+      "independentStartMm": 10,
+      "independentEndMm": 10.00001,
+      "svgLength": 11.04698764371456,
+      "limited": true
+    },
+    {
+      "name": "synthetic angle=0.0002, extension=0.02",
+      "valid": true,
+      "rawUm": -10000,
+      "display": "-10000",
+      "independentStartMm": 10,
+      "independentEndMm": 20,
+      "svgLength": 15.03329637837291,
+      "limited": true
+    },
+    {
+      "name": "invalid contact",
+      "valid": false,
+      "svgLength": 11
+    }
+  ]
+}

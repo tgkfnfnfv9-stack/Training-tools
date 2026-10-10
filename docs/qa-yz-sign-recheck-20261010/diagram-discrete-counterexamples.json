@@ -1,0 +1,257 @@
+[
+  {
+    "supportHeights": [
+      0,
+      0.1,
+      0,
+      0,
+      0,
+      0,
+      -0.065,
+      -0.065
+    ],
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "raw": 0.13640400977829592,
+    "display": "0",
+    "zero": {
+      "valid": true,
+      "extension": 0.010000000000000033,
+      "point": [
+        -0.0000046815766584426145,
+        1.6300036538912028,
+        -0.6999566712739537
+      ]
+    },
+    "last": {
+      "valid": true,
+      "extension": 0.009999863595990255,
+      "point": [
+        -0.000004681576658442614,
+        1.630003790295212,
+        -0.6999566712667256
+      ]
+    },
+    "probeLength": 10.986417648590441,
+    "start": {
+      "point": [
+        -0.0000046815766584426145,
+        1.6300036538912028,
+        -0.6999566712739537
+      ],
+      "normal": [
+        1.0062604594336908e-14,
+        0.9999999985960761,
+        0.00005298913039353265
+      ],
+      "body": [
+        -0.000004681576658341989,
+        1.6400036538771636,
+        -0.6999561413826497
+      ],
+      "probe": [
+        -1.0062604594336908e-14,
+        -0.9999999985960761,
+        -0.00005298913039353265
+      ]
+    },
+    "end": {
+      "point": [
+        0.000002198894238910347,
+        1.630000122251631,
+        -0.39999620935044683
+      ],
+      "normal": [
+        0.000007093190534102427,
+        0.9999999999000783,
+        0.000012228260860596391
+      ],
+      "body": [
+        -0.000004681576658341989,
+        1.6400036538771632,
+        -0.6999561413826496
+      ],
+      "probe": [
+        -1.0062605401856682e-14,
+        -0.9999999985960765,
+        -0.000052989130393532665
+      ]
+    },
+    "svg": "<g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.009999863587431568\" data-probe-normal=\"-0.9999999991441196\" data-probe-along=\"-0.00004076086954461612\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"/><path d=\"M3,11H23\" class=\"scan-reference-face\"/><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"/><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"/><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L33.97726457192799,30.549389944485547\" class=\"scan-path\"/><circle cx=\"23\" cy=\"30.997759509860074\" r=\"1.6\" class=\"scan-contact\"/><path d=\"M23,30.997759509860074L33.97726457192799,30.549389944485547\" class=\"scan-probe\"/><rect x=\"33.97726457192799\" y=\"27.549389944485547\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-2.338962636522781 33.97726457192799 30.549389944485547)\" class=\"scan-body\"/></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"/><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"/><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g>"
+  },
+  {
+    "supportHeights": [
+      0,
+      0.2,
+      0,
+      0,
+      0,
+      0,
+      -0.129,
+      -0.129
+    ],
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "raw": 0.029355550200740876,
+    "display": "0",
+    "zero": {
+      "valid": true,
+      "extension": 0.009999999999999903,
+      "point": [
+        -0.000009363290650480678,
+        1.6300072976566942,
+        -0.6999135954317499
+      ]
+    },
+    "last": {
+      "valid": true,
+      "extension": 0.009999970644449702,
+      "point": [
+        -0.00000936329065048068,
+        1.630007327012244,
+        -0.6999135954286626
+      ]
+    },
+    "probeLength": 11.031609244215211,
+    "start": {
+      "point": [
+        -0.000009363290650480678,
+        1.6300072976566942,
+        -0.6999135954317499
+      ],
+      "normal": [
+        7.943744900516677e-14,
+        0.9999999944703672,
+        0.00010516304315995766
+      ],
+      "body": [
+        -0.000009363290649686303,
+        1.6400072976013977,
+        -0.6999125438013183
+      ],
+      "probe": [
+        -7.943744900516677e-14,
+        -0.9999999944703672,
+        -0.00010516304315995766
+      ]
+    },
+    "end": {
+      "point": [
+        0.000004397802615014911,
+        1.6300002362952013,
+        -0.399992671649412
+      ],
+      "normal": [
+        0.000014186381050016421,
+        0.9999999996199177,
+        0.000023641304282901345
+      ],
+      "body": [
+        -0.000009363290649686307,
+        1.6400072976013975,
+        -0.6999125438013182
+      ],
+      "probe": [
+        -7.94374515933454e-14,
+        -0.9999999944703675,
+        -0.00010516304315995769
+      ]
+    },
+    "svg": "<g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.009999970610214568\" data-probe-normal=\"-0.9999999965764766\" data-probe-along=\"-0.0000815217389661696\" data-diagram-limited=\"false\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"/><path d=\"M3,11H23\" class=\"scan-reference-face\"/><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"/><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"/><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L33.99510170242805,30.09877988720996\" class=\"scan-path\"/><circle cx=\"23\" cy=\"30.995519018907835\" r=\"1.6\" class=\"scan-contact\"/><path d=\"M23,30.995519018907835L33.99510170242805,30.09877988720996\" class=\"scan-probe\"/><rect x=\"33.99510170242805\" y=\"27.09877988720996\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-4.662612601183975 33.99510170242805 30.09877988720996)\" class=\"scan-body\"/></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"/><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"/><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g>"
+  },
+  {
+    "supportHeights": [
+      0,
+      0.4,
+      0,
+      0,
+      0,
+      0,
+      -0.258,
+      -0.258
+    ],
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0,
+      "A": 0,
+      "C": 0
+    },
+    "raw": 0.06307435974212128,
+    "display": "0",
+    "zero": {
+      "valid": true,
+      "extension": 0.010000000000000028,
+      "point": [
+        -0.00001872713932120161,
+        1.630014587365789,
+        -0.6998271915104392
+      ]
+    },
+    "last": {
+      "valid": true,
+      "extension": 0.009999936925640286,
+      "point": [
+        -0.00001872713932120158,
+        1.6300146504401474,
+        -0.699827191497173
+      ]
+    },
+    "probeLength": 11.034869107736053,
+    "start": {
+      "point": [
+        -0.00001872713932120161,
+        1.630014587365789,
+        -0.6998271915104392
+      ],
+      "normal": [
+        6.354996146288802e-13,
+        0.9999999778814688,
+        0.00021032608440219036
+      ],
+      "body": [
+        -0.000018727139314846614,
+        1.6400145871446037,
+        -0.6998250882495951
+      ],
+      "probe": [
+        -6.354996146288802e-13,
+        -0.9999999778814688,
+        -0.00021032608440219036
+      ]
+    },
+    "end": {
+      "point": [
+        0.000008795654088017413,
+        1.6300004723546502,
+        -0.39998534420645115
+      ],
+      "normal": [
+        0.000028372761955118665,
+        0.9999999984796708,
+        0.00004728260816834882
+      ],
+      "body": [
+        -0.000018727139314846625,
+        1.6400145871446037,
+        -0.6998250882495951
+      ],
+      "probe": [
+        -6.35499626808284e-13,
+        -0.9999999778814688,
+        -0.00021032608440219033
+      ]
+    },
+    "svg": "<g class=\"scan-geometry\" data-projection-mode=\"master-frame\" data-deviation-emphasized=\"true\" data-normal-gain=\"166666.66666666666\" data-tilt-gain=\"1000\" data-body-normal-m=\"0.009999936788700203\" data-probe-normal=\"-0.9999999863059054\" data-probe-along=\"-0.00016304347694674748\" data-diagram-limited=\"true\"><text x=\"2\" y=\"9\" class=\"scan-label\">YZ</text><text x=\"15\" y=\"8\" class=\"scan-view-direction\">↑奥</text><text x=\"34\" y=\"9\" class=\"scan-label\">計器:頭</text><path d=\"M3,11H23V34H3Z\" class=\"scan-master\"/><path d=\"M3,11H23\" class=\"scan-reference-face\"/><text x=\"6\" y=\"16\" class=\"scan-label scan-r-label\">R</text><path d=\"M23,11V34\" class=\"scan-face\"/><text x=\"16\" y=\"24\" class=\"scan-label scan-s-label\">S</text><circle cx=\"23\" cy=\"14\" r=\"1.6\" class=\"scan-zero\"/><text x=\"25\" y=\"17\" class=\"scan-label measurement-start\">0</text><g opacity=\"1\"><path d=\"M34,14L33.98946478336718,29.991038032140306\" class=\"scan-path\"/><circle cx=\"23\" cy=\"30.991038032140306\" r=\"1.6\" class=\"scan-contact\"/><path d=\"M23,30.991038032140306L33.98946478336718,29.991038032140306\" class=\"scan-probe\"/><rect x=\"33.98946478336718\" y=\"26.991038032140306\" width=\"11\" height=\"6\" rx=\"1\" transform=\"rotate(-5.199381345217038 33.98946478336718 29.991038032140306)\" class=\"scan-body\"/></g><path d=\"M61,14L61,31m-1.5,-2l1.5,2l1.5,-2\" class=\"scan-move\"/><text x=\"55\" y=\"18\" text-anchor=\"middle\" class=\"scan-view-direction\">相対</text><text x=\"51\" y=\"26\" text-anchor=\"middle\" class=\"scan-label\">手前</text><path d=\"M29,40L40,40m-2,1.5l2,-1.5l-2,-1.5\" class=\"scan-press\"/><text x=\"2\" y=\"42\" class=\"scan-label\">押込＋</text><text x=\"44\" y=\"42\" class=\"scan-label\">上</text></g>"
+  }
+]
