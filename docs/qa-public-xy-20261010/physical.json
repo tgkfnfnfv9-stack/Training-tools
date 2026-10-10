@@ -1,0 +1,111 @@
+{
+  "scope": "Public horizontal XY only; the screenshot state is not reproduced because seed/support values are unknown.",
+  "htmlSha256": "7c63eaa1c49ab749e7e898f228a6c88151185c0a5ca68566fda46e8c731c03d9",
+  "independentPlaneExample": {
+    "fixedPlaneX": 0,
+    "probeX": -1,
+    "lowerBody": [
+      0.01,
+      0,
+      0
+    ],
+    "upperBody": [
+      0.01001,
+      0.29999999983333336,
+      0
+    ],
+    "upWithBottomZero": -10,
+    "downWithTopZero": 10,
+    "downWithBottomZero": "-10 -> 0; negative readings persist until the original zero is reached"
+  },
+  "publicSynthetic": {
+    "raw": -9.999999999999593,
+    "zeroExtension": 0.01,
+    "lastExtension": 0.01001,
+    "reverse": 9.999999999999593
+  },
+  "supportRows": [
+    {
+      "case": "ideal G -0.01 mm",
+      "raw": 0.04136029411322406,
+      "display": "0",
+      "zeroExtension": 0.01,
+      "lastExtension": 0.009999958639705887,
+      "startPosition": 0,
+      "endPosition": 0.3,
+      "planeNormal": [
+        0.9999999999979556,
+        0.0000020220588235252776,
+        0
+      ],
+      "headUp": [
+        -0.0000021599264705652534,
+        0.9999999999893601,
+        0.00000407608695647837
+      ],
+      "columnRightUmOver300": -0.6479779411695761,
+      "masterRightUmOver300": -0.6066176470523691,
+      "expectedRaw": 0.04136029411712244,
+      "residual": -3.8983816175175434e-12
+    },
+    {
+      "case": "ideal G 0 mm",
+      "raw": 0,
+      "display": "0",
+      "zeroExtension": 0.01,
+      "lastExtension": 0.01,
+      "startPosition": 0,
+      "endPosition": 0.3,
+      "planeNormal": [
+        1,
+        0,
+        0
+      ],
+      "headUp": [
+        0,
+        1,
+        0
+      ],
+      "columnRightUmOver300": 0,
+      "masterRightUmOver300": 0,
+      "expectedRaw": 0,
+      "residual": 0
+    },
+    {
+      "case": "ideal G 0.01 mm",
+      "raw": -0.041360294120162955,
+      "display": "0",
+      "zeroExtension": 0.01,
+      "lastExtension": 0.01000004136029412,
+      "startPosition": 0,
+      "endPosition": 0.3,
+      "planeNormal": [
+        0.9999999999979556,
+        -0.0000020220588235252776,
+        0
+      ],
+      "headUp": [
+        0.0000021599264705652534,
+        0.9999999999893601,
+        -0.00000407608695647837
+      ],
+      "columnRightUmOver300": 0.6479779411695761,
+      "masterRightUmOver300": 0.6066176470523691,
+      "expectedRaw": -0.04136029411712244,
+      "residual": -3.040512286389685e-12
+    }
+  ],
+  "commonRightLean": {
+    "raw": 0,
+    "columnUp": [
+      0.0000099999999995,
+      0.99999999995,
+      0
+    ],
+    "normal": [
+      0.99999999995,
+      -0.0000099999999995,
+      0
+    ]
+  }
+}
