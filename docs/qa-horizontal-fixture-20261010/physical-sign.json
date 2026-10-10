@@ -1,0 +1,205 @@
+{
+  "sourceSha256": "0b2ebbd5be23f4f03129dc6a24aa0aa140971761d7e0058caae8b992713db07f",
+  "scope": "Expected sign = negative separation of a spindle-side dial from a stationary square during +Y. Expected values are analytic, independent of fixture/contact implementation.",
+  "rows": [
+    {
+      "theta": -0.001,
+      "phi": -0.002,
+      "commonRigidTransform": false,
+      "expectedUm": 899.9986500006075,
+      "observedUm": 899.9986500007208,
+      "reversedUm": -899.9986500007208,
+      "oppositeContactUm": -899.9986500007225,
+      "RendpointUm": -1.1102230246251565e-10,
+      "zeroExtensionM": 0.010000000000000012
+    },
+    {
+      "theta": -0.001,
+      "phi": -0.002,
+      "commonRigidTransform": true,
+      "expectedUm": 899.9986500006075,
+      "observedUm": 899.998650000967,
+      "reversedUm": -899.998650000967,
+      "oppositeContactUm": -899.9986500009827,
+      "RendpointUm": 7.806255641895632e-11,
+      "zeroExtensionM": 0.009999999999999995
+    },
+    {
+      "theta": -0.001,
+      "phi": 0,
+      "commonRigidTransform": false,
+      "expectedUm": 299.9999500000025,
+      "observedUm": 299.99995000018487,
+      "reversedUm": -299.99995000018487,
+      "oppositeContactUm": -299.99995000018487,
+      "RendpointUm": 1.1102230246251565e-10,
+      "zeroExtensionM": 0.010000000000000009
+    },
+    {
+      "theta": -0.001,
+      "phi": 0,
+      "commonRigidTransform": true,
+      "expectedUm": 299.9999500000025,
+      "observedUm": 299.9999500003028,
+      "reversedUm": -299.9999500003028,
+      "oppositeContactUm": -299.9999500003011,
+      "RendpointUm": -2.0816681711721685e-11,
+      "zeroExtensionM": 0.010000000000000004
+    },
+    {
+      "theta": -0.001,
+      "phi": 0.002,
+      "commonRigidTransform": false,
+      "expectedUm": -299.9999500000025,
+      "observedUm": -299.99994999997494,
+      "reversedUm": 299.99994999997494,
+      "oppositeContactUm": 299.9999499999715,
+      "RendpointUm": -1.1102230246251565e-10,
+      "zeroExtensionM": 0.010000000000000012
+    },
+    {
+      "theta": -0.001,
+      "phi": 0.002,
+      "commonRigidTransform": true,
+      "expectedUm": -299.9999500000025,
+      "observedUm": -299.9999499994702,
+      "reversedUm": 299.9999499994702,
+      "oppositeContactUm": 299.9999499994424,
+      "RendpointUm": 8.153200337090993e-11,
+      "zeroExtensionM": 0.010000000000000004
+    },
+    {
+      "theta": 0,
+      "phi": -0.002,
+      "commonRigidTransform": false,
+      "expectedUm": 599.9996000000799,
+      "observedUm": 599.9996000002321,
+      "reversedUm": -599.9996000002321,
+      "oppositeContactUm": -599.9996000002338,
+      "RendpointUm": -1.1102230246251565e-10,
+      "zeroExtensionM": 0.010000000000000012
+    },
+    {
+      "theta": 0,
+      "phi": -0.002,
+      "commonRigidTransform": true,
+      "expectedUm": 599.9996000000799,
+      "observedUm": 599.9996000006641,
+      "reversedUm": -599.9996000006641,
+      "oppositeContactUm": -599.999600000678,
+      "RendpointUm": 7.806255641895632e-11,
+      "zeroExtensionM": 0.009999999999999995
+    },
+    {
+      "theta": 0,
+      "phi": 0,
+      "commonRigidTransform": false,
+      "expectedUm": 0,
+      "observedUm": 2.220446049250313e-10,
+      "reversedUm": -2.220446049250313e-10,
+      "oppositeContactUm": -2.220446049250313e-10,
+      "RendpointUm": 1.1102230246251565e-10,
+      "zeroExtensionM": 0.010000000000000009
+    },
+    {
+      "theta": 0,
+      "phi": 0,
+      "commonRigidTransform": true,
+      "expectedUm": 0,
+      "observedUm": 4.388850394221322e-10,
+      "reversedUm": -4.388850394221322e-10,
+      "oppositeContactUm": -4.4929338027799304e-10,
+      "RendpointUm": -1.9081958235744878e-11,
+      "zeroExtensionM": 0.010000000000000004
+    },
+    {
+      "theta": 0,
+      "phi": 0.002,
+      "commonRigidTransform": false,
+      "expectedUm": -599.9996000000799,
+      "observedUm": -599.9996000000118,
+      "reversedUm": 599.9996000000118,
+      "oppositeContactUm": 599.9996000000101,
+      "RendpointUm": -1.1102230246251565e-10,
+      "zeroExtensionM": 0.010000000000000012
+    },
+    {
+      "theta": 0,
+      "phi": 0.002,
+      "commonRigidTransform": true,
+      "expectedUm": -599.9996000000799,
+      "observedUm": -599.9995999995747,
+      "reversedUm": 599.9995999995747,
+      "oppositeContactUm": 599.9995999995192,
+      "RendpointUm": 8.326672684688674e-11,
+      "zeroExtensionM": 0.010000000000000004
+    },
+    {
+      "theta": 0.001,
+      "phi": -0.002,
+      "commonRigidTransform": false,
+      "expectedUm": 299.9999500000025,
+      "observedUm": 299.9999499999715,
+      "reversedUm": -299.9999499999715,
+      "oppositeContactUm": -299.99994999997494,
+      "RendpointUm": -1.1102230246251565e-10,
+      "zeroExtensionM": 0.010000000000000012
+    },
+    {
+      "theta": 0.001,
+      "phi": -0.002,
+      "commonRigidTransform": true,
+      "expectedUm": 299.9999500000025,
+      "observedUm": 299.9999500002664,
+      "reversedUm": -299.9999500002664,
+      "oppositeContactUm": -299.999950000282,
+      "RendpointUm": 7.632783294297951e-11,
+      "zeroExtensionM": 0.009999999999999995
+    },
+    {
+      "theta": 0.001,
+      "phi": 0,
+      "commonRigidTransform": false,
+      "expectedUm": -299.9999500000025,
+      "observedUm": -299.9999499997408,
+      "reversedUm": 299.9999499997408,
+      "oppositeContactUm": 299.9999499997408,
+      "RendpointUm": 1.1102230246251565e-10,
+      "zeroExtensionM": 0.010000000000000009
+    },
+    {
+      "theta": 0.001,
+      "phi": 0,
+      "commonRigidTransform": true,
+      "expectedUm": -299.9999500000025,
+      "observedUm": -299.9999499998449,
+      "reversedUm": 299.9999499998449,
+      "oppositeContactUm": 299.9999499998466,
+      "RendpointUm": -8.673617379884035e-12,
+      "zeroExtensionM": 0.010000000000000004
+    },
+    {
+      "theta": 0.001,
+      "phi": 0.002,
+      "commonRigidTransform": false,
+      "expectedUm": -899.9986500006075,
+      "observedUm": -899.9986500005022,
+      "reversedUm": 899.9986500005022,
+      "oppositeContactUm": 899.9986500004986,
+      "RendpointUm": -1.1102230246251565e-10,
+      "zeroExtensionM": 0.010000000000000012
+    },
+    {
+      "theta": 0.001,
+      "phi": 0.002,
+      "commonRigidTransform": true,
+      "expectedUm": -899.9986500006075,
+      "observedUm": -899.9986500004622,
+      "reversedUm": 899.9986500004622,
+      "oppositeContactUm": 899.9986500004068,
+      "RendpointUm": 8.847089727481716e-11,
+      "zeroExtensionM": 0.010000000000000004
+    }
+  ],
+  "failures": []
+}

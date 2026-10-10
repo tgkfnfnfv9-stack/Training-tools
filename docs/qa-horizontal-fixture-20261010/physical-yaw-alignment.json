@@ -1,0 +1,93 @@
+{
+  "scope": "Physical underdetermination counterexample, not three expected outputs for the adopted centred fixture.",
+  "input": {
+    "profile": "used123456",
+    "anglesUm": {
+      "XY": 16.959,
+      "XZ": -8.129,
+      "YZ": -14.12
+    },
+    "supportHeightsMm": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "positions": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+    },
+    "scanLengthM": 0.3,
+    "square": {
+      "RalongBoundsM": [
+        -0.31,
+        0.01
+      ],
+      "SheightBoundsM": [
+        -0.32,
+        0
+      ],
+      "thicknessBoundsM": [
+        -0.025,
+        0.025
+      ]
+    }
+  },
+  "formulas": {
+    "Y": "[-sin(A), cos(A), 0]",
+    "Z": "Solve X·Z=-sin(B), Y·Z=-sin(C), |Z|=1, Zz>0",
+    "pitch": "atan2(Zy, sin(yaw)*Zx+cos(yaw)*Zz), ensuring R·Z=0",
+    "readingUm": "-0.3*(S·Y)*1e6",
+    "centreLineCondition": "T·Z=0 at the two R endpoints"
+  },
+  "rows": [
+    {
+      "label": "centre-line-aligned",
+      "yawRad": 0.00002709666669668185,
+      "pitchRad": 0.00004706819851644055,
+      "RendpointUm": 0,
+      "RendAlongM": -0.29999999999999993,
+      "RendAcrossThicknessM": 0,
+      "RendInsideFiniteFace": true,
+      "SreadingUm": -14.119999994786726,
+      "Sdisplay": "-14",
+      "SendCoordinateR": -0.010000000811636767,
+      "SendCoordinateThickness": 0.00001695899998474162,
+      "SendInsideFiniteFace": true
+    },
+    {
+      "label": "yaw-minus-0.05",
+      "yawRad": -0.05,
+      "pitchRad": 0.000047127159033595285,
+      "RendpointUm": 0,
+      "RendAlongM": -0.2996246717286577,
+      "RendAcrossThicknessM": 0.015001869599956136,
+      "RendInsideFiniteFace": true,
+      "SreadingUm": -14.98574441252372,
+      "Sdisplay": "-15",
+      "SendCoordinateR": -0.010000000852436353,
+      "SendCoordinateThickness": 0.00001693780565701704,
+      "SendInsideFiniteFace": true
+    },
+    {
+      "label": "yaw-plus-0.05",
+      "yawRad": 0.05,
+      "pitchRad": 0.00004712703122835441,
+      "RendpointUm": -2.032879073410321e-15,
+      "RendAlongM": -0.29962548428999075,
+      "RendAcrossThicknessM": -0.014985631918224622,
+      "RendInsideFiniteFace": true,
+      "SreadingUm": -13.290512610414046,
+      "Sdisplay": "-13",
+      "SendCoordinateR": -0.010000000772544981,
+      "SendCoordinateThickness": 0.000016937805657017043,
+      "SendInsideFiniteFace": true
+    }
+  ],
+  "failures": []
+}

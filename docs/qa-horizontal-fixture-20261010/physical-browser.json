@@ -1,0 +1,907 @@
+{
+  "sourceBrowserHtmlSha256": "5231b54fb384a9a4d3e531114687566ff97d3c4c14ac007bab35141630b1ce18",
+  "scope": "Only ideal individuals with left/right-equal support pairs are joined to the independent support-section oracle. Skipped cases are explicit, never counted as independent posture passes.",
+  "matchedStates": 21,
+  "skippedStates": 40,
+  "maxErrorUm": 3.1094060659597744e-10,
+  "rows": [
+    {
+      "name": "ideal-central-flat",
+      "method": "known ideal/used flat fixture via evaluate",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-central-B-raise-restored",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-central-B-lower-restored",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-central-E-raise-restored",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-central-E-lower-restored",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-central-G-raise-restored",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-central-G-lower-restored",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-central-H-raise-restored",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-central-H-lower-restored",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-Zminus100-flat",
+      "method": "actual Z slider",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-Zminus100-GH-raise",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0.01
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": -2.4456521736746644,
+      "beforeDisplay": "-2",
+      "afterRawUm": 2.445652173777013,
+      "afterDisplay": "+2",
+      "independentExpectedUm": 2.445652173865909,
+      "independentDisplay": "+2",
+      "errorUm": -8.889600167094613e-11
+    },
+    {
+      "name": "ideal-Zminus100-GH-raise-mobile",
+      "method": "same inputs; actual mobile viewport",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.01,
+        0.01
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": -2.4456521736746644,
+      "beforeDisplay": "-2",
+      "afterRawUm": 2.445652173777013,
+      "afterDisplay": "+2",
+      "independentExpectedUm": 2.445652173865909,
+      "independentDisplay": "+2",
+      "errorUm": -8.889600167094613e-11
+    },
+    {
+      "name": "ideal-Zminus100-GH-raise-restored",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-Zminus100-GH-lower",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        -0.01,
+        -0.01
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 2.4456521736729298,
+      "beforeDisplay": "+2",
+      "afterRawUm": -2.4456521735549686,
+      "afterDisplay": "-2",
+      "independentExpectedUm": -2.445652173865909,
+      "independentDisplay": "-2",
+      "errorUm": 3.1094060659597744e-10
+    },
+    {
+      "name": "ideal-Zminus100-GH-lower-restored",
+      "method": "actual support buttons",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-X-100",
+      "method": "actual axis slider",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": -100,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-X100",
+      "method": "actual axis slider",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 100,
+        "Y": 0,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-Y-100",
+      "method": "actual axis slider",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": -100,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-Y100",
+      "method": "actual axis slider",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 100,
+        "Z": 0,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-Z-100",
+      "method": "actual axis slider",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": -100,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 1.1102230246251565e-10,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 1.1102227705152724e-10
+    },
+    {
+      "name": "ideal-Z100",
+      "method": "actual axis slider",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 100,
+        "A": 0,
+        "C": 0
+      },
+      "config": {
+        "width": 2.72,
+        "depth": 3.68,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0
+      },
+      "beforeRawUm": 0,
+      "beforeDisplay": "0",
+      "afterRawUm": 8.326672684688674e-11,
+      "afterDisplay": "0",
+      "independentExpectedUm": 2.541098841762901e-17,
+      "independentDisplay": "0",
+      "errorUm": 8.326670143589832e-11
+    }
+  ],
+  "skipped": [
+    {
+      "name": "ideal-central-B-raise",
+      "reason": "left/right asymmetric support outside this independent yz-section oracle"
+    },
+    {
+      "name": "ideal-central-B-lower",
+      "reason": "left/right asymmetric support outside this independent yz-section oracle"
+    },
+    {
+      "name": "ideal-central-E-raise",
+      "reason": "left/right asymmetric support outside this independent yz-section oracle"
+    },
+    {
+      "name": "ideal-central-E-lower",
+      "reason": "left/right asymmetric support outside this independent yz-section oracle"
+    },
+    {
+      "name": "ideal-central-G-raise",
+      "reason": "left/right asymmetric support outside this independent yz-section oracle"
+    },
+    {
+      "name": "ideal-central-G-lower",
+      "reason": "left/right asymmetric support outside this independent yz-section oracle"
+    },
+    {
+      "name": "ideal-central-H-raise",
+      "reason": "left/right asymmetric support outside this independent yz-section oracle"
+    },
+    {
+      "name": "ideal-central-H-lower",
+      "reason": "left/right asymmetric support outside this independent yz-section oracle"
+    },
+    {
+      "name": "ideal-Zminus100-G-raise",
+      "reason": "left/right asymmetric support outside this independent yz-section oracle"
+    },
+    {
+      "name": "ideal-Zminus100-G-lower",
+      "reason": "left/right asymmetric support outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-flat",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-B-raise",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-B-raise-restored",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-B-lower",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-B-lower-restored",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-E-raise",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-E-raise-restored",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-E-lower",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-E-lower-restored",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-G-raise",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-G-raise-restored",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-G-lower",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-G-lower-restored",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-H-raise",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-H-raise-restored",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-H-lower",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-central-H-lower-restored",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Zminus100-flat",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Zminus100-G-raise",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Zminus100-GH-raise",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Zminus100-GH-raise-restored",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Zminus100-G-lower",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Zminus100-GH-lower",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Zminus100-GH-lower-restored",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-X-100",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-X100",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Y-100",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Y100",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Z-100",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    },
+    {
+      "name": "used-Z100",
+      "reason": "full generated 3D intrinsic profile outside this independent yz-section oracle"
+    }
+  ],
+  "failures": []
+}

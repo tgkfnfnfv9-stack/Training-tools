@@ -1,0 +1,34 @@
+{
+  "scope": "Exact line-segment to oriented rectangular solid minimum distance, with 4 mm arm radius subtracted. Includes first nose segment and all R/S sampled positions. Observed machine poses; this is not independent support-posture validation or full-machine collision certification.",
+  "sourceSha256": "0b2ebbd5be23f4f03129dc6a24aa0aa140971761d7e0058caae8b992713db07f",
+  "summary": {
+    "states": 912,
+    "Rsegments": 88920,
+    "Ssegments": 77520,
+    "minRadiusClearanceM": 0.005608295806580439,
+    "maxArmSegmentLengthChangeM": 5.551115123125783e-17,
+    "maxRzeroUm": 2.8796409701215e-10,
+    "maxRinteriorUm": 74.34505107478846,
+    "minMasterBottomM": 0.049884862358693716,
+    "minPalletEdgeMarginM": 0.08217228256097428,
+    "maxBottomSpreadM": 0.00011887455096026844
+  },
+  "worst": [
+    {
+      "width": 0.5,
+      "depth": 1.23,
+      "name": "support4:-0.5",
+      "used": false,
+      "state": {
+        "X": -100,
+        "Y": 100,
+        "Z": 100
+      },
+      "stage": "S",
+      "t": 1,
+      "segment": 4,
+      "clearance": 0.005608295806580439
+    }
+  ],
+  "failures": []
+}

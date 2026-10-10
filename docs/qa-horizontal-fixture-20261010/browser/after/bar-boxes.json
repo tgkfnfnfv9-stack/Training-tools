@@ -1,0 +1,284 @@
+[
+  {
+    "width": 1280,
+    "data": [
+      {
+        "selector": "#horizontalParallelMini svg",
+        "viewBox": {
+          "x": 0,
+          "y": 0,
+          "width": 56,
+          "height": 31
+        },
+        "aria": "Z平行度。バーは主軸に固定、計器はテーブルに固定。左はバー先端側から主軸を見る図。aは左9時から右向き、bは下6時から上向きに接触。右の長手図はテーブルに固定した計器を示し、オレンジの先端寄りでゼロ、固定バーに沿って右の主軸側へ300 mm移動します。",
+        "texts": [
+          {
+            "text": "a",
+            "x": 0,
+            "y": -3,
+            "width": 3.265625,
+            "height": 8,
+            "inside": false
+          },
+          {
+            "text": "b",
+            "x": 13,
+            "y": 9,
+            "width": 4,
+            "height": 8,
+            "inside": true
+          },
+          {
+            "text": "バー:主軸",
+            "x": 0,
+            "y": 16,
+            "width": 26.765625,
+            "height": 9,
+            "inside": true
+          },
+          {
+            "text": "計器:テーブル",
+            "x": 0,
+            "y": 23,
+            "width": 38.765625,
+            "height": 9,
+            "inside": false
+          },
+          {
+            "text": "300 mm",
+            "x": 33.203125,
+            "y": 17,
+            "width": 21.59375,
+            "height": 8,
+            "inside": true
+          }
+        ]
+      },
+      {
+        "selector": "#horizontalParallelFixture svg",
+        "viewBox": {
+          "x": 0,
+          "y": 0,
+          "width": 340,
+          "height": 142
+        },
+        "aria": "横形のZ方向平行度。バーは主軸に固定、計器はテーブルに固定。固定バーの側面aと下面bへ計器を当て、先端側でゼロ。Z走査ではテーブルと計器を主軸側へ300ミリ移動し、バーは動きません。",
+        "texts": [
+          {
+            "text": "a",
+            "x": 10,
+            "y": 35,
+            "width": 6.203125,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "b",
+            "x": 53,
+            "y": 81,
+            "width": 7,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "接触方向",
+            "x": 6,
+            "y": 7,
+            "width": 44,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "バー:主軸に固定",
+            "x": 147,
+            "y": 7,
+            "width": 80.0625,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "主軸",
+            "x": 310,
+            "y": 35,
+            "width": 22,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "0",
+            "x": 169,
+            "y": 60,
+            "width": 6.109375,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "b",
+            "x": 273,
+            "y": 79,
+            "width": 7,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "部材＋Z 300 mm",
+            "x": 185,
+            "y": 94,
+            "width": 83.25,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "計器:テーブルに固定 → 主軸側へ",
+            "x": 147,
+            "y": 128,
+            "width": 161.328125,
+            "height": 16,
+            "inside": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "data": [
+      {
+        "selector": "#horizontalParallelMini svg",
+        "viewBox": {
+          "x": 0,
+          "y": 0,
+          "width": 56,
+          "height": 31
+        },
+        "aria": "Z平行度。バーは主軸に固定、計器はテーブルに固定。左はバー先端側から主軸を見る図。aは左9時から右向き、bは下6時から上向きに接触。右の長手図はテーブルに固定した計器を示し、オレンジの先端寄りでゼロ、固定バーに沿って右の主軸側へ300 mm移動します。",
+        "texts": [
+          {
+            "text": "a",
+            "x": 0,
+            "y": -3,
+            "width": 3.265625,
+            "height": 8,
+            "inside": false
+          },
+          {
+            "text": "b",
+            "x": 13,
+            "y": 9,
+            "width": 4,
+            "height": 8,
+            "inside": true
+          },
+          {
+            "text": "バー:主軸",
+            "x": 0,
+            "y": 16,
+            "width": 26.765625,
+            "height": 9,
+            "inside": true
+          },
+          {
+            "text": "計器:テーブル",
+            "x": 0,
+            "y": 23,
+            "width": 38.765625,
+            "height": 9,
+            "inside": false
+          },
+          {
+            "text": "300 mm",
+            "x": 33.203125,
+            "y": 17,
+            "width": 21.59375,
+            "height": 8,
+            "inside": true
+          }
+        ]
+      },
+      {
+        "selector": "#horizontalParallelFixture svg",
+        "viewBox": {
+          "x": 0,
+          "y": 0,
+          "width": 340,
+          "height": 142
+        },
+        "aria": "横形のZ方向平行度。バーは主軸に固定、計器はテーブルに固定。固定バーの側面aと下面bへ計器を当て、先端側でゼロ。Z走査ではテーブルと計器を主軸側へ300ミリ移動し、バーは動きません。",
+        "texts": [
+          {
+            "text": "a",
+            "x": 10,
+            "y": 35,
+            "width": 6.203125,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "b",
+            "x": 53,
+            "y": 81,
+            "width": 7,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "接触方向",
+            "x": 6,
+            "y": 7,
+            "width": 44,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "バー:主軸に固定",
+            "x": 147,
+            "y": 7,
+            "width": 80.0625,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "主軸",
+            "x": 310,
+            "y": 35,
+            "width": 22,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "0",
+            "x": 169,
+            "y": 60,
+            "width": 6.109375,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "b",
+            "x": 273,
+            "y": 79,
+            "width": 7,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "部材＋Z 300 mm",
+            "x": 185,
+            "y": 94,
+            "width": 83.25,
+            "height": 16,
+            "inside": true
+          },
+          {
+            "text": "計器:テーブルに固定 → 主軸側へ",
+            "x": 147,
+            "y": 128,
+            "width": 161.328125,
+            "height": 16,
+            "inside": false
+          }
+        ]
+      }
+    ]
+  }
+]

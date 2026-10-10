@@ -1,0 +1,81 @@
+{
+  "calculationModel": "connected-frames-v1",
+  "version": 2,
+  "machineProfile": {
+    "version": 1,
+    "condition": "used",
+    "seed": 123456,
+    "keys": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "squareness": {
+      "XY": {
+        "band": 0,
+        "microns": 16.959
+      },
+      "XZ": {
+        "band": 0,
+        "microns": -8.129
+      },
+      "YZ": {
+        "band": 0,
+        "microns": -14.12
+      }
+    },
+    "guides": {
+      "X": {
+        "band": 1,
+        "microns": 32.376
+      },
+      "Y": {
+        "band": 0,
+        "microns": 10.523
+      },
+      "Z": {
+        "band": 1,
+        "microns": 52.271
+      }
+    },
+    "initialHeights": [
+      -0.15,
+      0.15,
+      0.097
+    ]
+  },
+  "bestState": {
+    "width": 2.72,
+    "depth": 2.64,
+    "columnX": 0,
+    "columnZ": 0,
+    "heights": [
+      0,
+      0,
+      0
+    ]
+  },
+  "machine": "five",
+  "mode": "",
+  "width": 2.72,
+  "depth": 2.64,
+  "heights": [
+    0,
+    0.013,
+    -0.017
+  ],
+  "sensitivity": 0.05,
+  "measurePos": 0,
+  "offset": 0.5,
+  "columnX": 0,
+  "columnZ": 0,
+  "axisPositions": {
+    "X": 37,
+    "Y": -62,
+    "Z": 81,
+    "A": 45,
+    "C": -33
+  },
+  "step": 0.001,
+  "exaggerate": false
+}
