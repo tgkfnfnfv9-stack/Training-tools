@@ -18,6 +18,15 @@ function initializeMachineAccuracy(profile,bestState){
 }
 function machineSolution(heights){
  const points=supports.map((s,i)=>({...levelCoordinates(s.x,s.z),h:heights[i]})),solution=window.Leveling.solve(points,{layout:current.supportLayout});
+ // A finite scan can reach the same support boundary through different sums.
+ // Canonicalize only roundoff-sized (one picometre) differences so its local
+ // posture always uses the solver's existing right/back cell convention.
+ // Heights remain continuous and real samples on either side remain distinct.
+ if(['horizontal','lathe'].includes(current.kind)){
+  const xs=[...new Set(points.map(p=>p.x))],zs=[...new Set(points.map(p=>p.z))],slopeAt=solution.slopeAt;
+  const snap=(value,knots)=>knots.find(k=>Math.abs(value-k)<=1e-12)??value;
+  solution.slopeAt=(x,z)=>slopeAt(snap(x,xs),snap(z,zs));
+ }
  // The interpolating sheet is an input diagram, not an elastic casting. The
  // L3 teaching foundation has a bed and two distinct three-point column seats.
  if(current.kind==='double'&&current.supportLayout==='irregular'){

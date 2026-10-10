@@ -5,22 +5,7 @@
 // frame rotates the nominal horizontal spindle, which is NOT the pallet Z axis.
 function horizontalSpindleFixture(state,solution,profile,g=geometryModel(state,solution,profile)){
  const M=window.ReferenceMeasurement,axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),body=intrinsicBodyFrame(axes,profile),frame=g.toolFrame;
- const physical=p=>{const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];},inverse=(f,v)=>[[1,0,0],[0,1,0],[0,0,1]].map(b=>M.dot(f.rotate(b),v));
- const layout=columnLayoutOffset(current),offset=physical([layout.x,0,layout.z]),anchor=physical([g.poses.tool.anchor.x,.66,g.poses.tool.anchor.z]),surface=p=>[p[0],.66+solution.heightAt(p[0],p[2])/1000,p[2]],origin=surface(anchor);
- const baseState={...state,X:0,Y:0},baseG=geometryModel(baseState,solution,profile),baseAnchor=physical([baseG.poses.tool.anchor.x,.66,baseG.poses.tool.anchor.z]),dA=M.sub(anchor,baseAnchor),dS=M.sub(origin,surface(baseAnchor));
- const nonuniform=solution.residual>1e-10||Math.abs(solution.twist)>1e-10;
- let move=[0,0,0],desired=[0,0,0];
- for(const a of axes.filter(a=>a.key==='X'||a.key==='Y')){
-  const axisFrame=a.key==='X'?window.Leveling.orientation(g.guideSlope):frame,direction=axisFrame.rotate(g.axes.find(q=>q.key===a.key).vector),distance=Math.hypot(...physical(a.vector))*a.amp*state[a.key]/100;
-  desired=M.add(desired,M.scale(direction,distance));
-  if(nonuniform){
-   const axisState={...state,[a.key]:0},axisG=geometryModel(axisState,solution,profile),axisAnchor=physical([axisG.poses.tool.anchor.x,.66,axisG.poses.tool.anchor.z]),axisDA=M.sub(anchor,axisAnchor),movesAnchor=Math.hypot(...axisDA)>1e-12;
-   const world=M.scale(M.sub(direction,movesAnchor?axisFrame.rotate(a.vector):[0,0,0]),distance);
-   move=M.add(move,M.add(inverse(body,inverse(frame,world)),axisDA));
-  }
- }
- if(!nonuniform)move=M.add(dA,inverse(body,inverse(frame,M.sub(desired,dS))));
- const raw=physical([0,2.55,-.93]),relative=M.sub(M.add(M.add(raw,move),offset),anchor),nose=M.add(origin,frame.rotate(body.rotate(relative)));
+ const nose=horizontalToolPoint([0,2.55,-.93],state,solution,profile);
  return {nose,axis:M.unit(frame.rotate(body.rotate([0,0,1]))),right:M.unit(frame.rotate(body.rotate([1,0,0]))),up:M.unit(frame.rotate(body.rotate([0,1,0])))};
 }
 function horizontalParallelism(state=positions,solution=levelSolution,profile=machineProfile){

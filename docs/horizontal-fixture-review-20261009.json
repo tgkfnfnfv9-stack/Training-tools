@@ -1,0 +1,555 @@
+{
+  "passed": true,
+  "scope": "Finite R/S fixture audit, screen geometry, world rigid transforms. Independent support-to-pose oracle is a separate test.",
+  "verification": {
+    "startedAt": "2026-10-10T00:00:40.301Z",
+    "completedAt": "2026-10-10T00:01:30.175Z",
+    "runtime": "src files loaded through tests/leveling-dom-env.cjs; generated index.html is not executed by this test",
+    "sourceHashMethod": "SHA256 of sorted src file records: relative path + NUL + content SHA256 + LF",
+    "sourceSha256": "9cd6da7fe938ee556601acd1cf2552ae7a35b896b94c29e16ed2870008859ffe",
+    "sourceUnchangedDuringRun": true,
+    "sourceFiles": {
+      "src/accuracy-ui.js": "3ceaeeb87ea49d5922ae5e0cc41710233ef9bb7f52e5a8411396a01d8b5a63c4",
+      "src/app.js": "6ba8beb045b76356f8b0ca604f4bd657309c2ceb7d8b32e97144ba962479941b",
+      "src/horizontal-parallelism-ui.js": "5abdd25753ce457a8029dd22136afce56050f651a444b5bf3c7d440c7968ae80",
+      "src/horizontal-parallelism.js": "0b43abf9a2974dc1cfda1379cb81771e9255fe3ff3014401b6b77030a1b7267a",
+      "src/index.html": "69e7a49246ab1ce011d321bbed31ba7e7b82a1651c0746b0c11017167ef2e6fc",
+      "src/intrinsic-inspection-ui.js": "1d2d0964a0cbe4e417d2128221ee997cc1cfa073ee7b8e7b08a5fb6566f10ce6",
+      "src/intrinsic-inspection.js": "dd6addc468bac25759b5018dfbecdd48fe5d65135fc3c1d299eda05daab0d9e3",
+      "src/lathe-inspection-ui.js": "1a5ca02dc1928d7b7d30c1876ae649954610afc6d0fd5617384c752c4efb8431",
+      "src/lathe-inspection.js": "c8df25e25ce6ff6d8bc7962caea991277d488c4e12ab19632a59425793150787",
+      "src/leveling-ui.js": "2aaa7693c934294bfddc774e60e516e7d9cb201808d4f90b1a6ed7cb39f06025",
+      "src/leveling.js": "929186b04770119a003a6fb29d7c3adc581833318851b59e54904cde95792328",
+      "src/machine-accuracy-ui.js": "9c33d5bab3bd1c508225879581cbe7ef8e6c60ecf5b0d8b3d15a206bc6f0d145",
+      "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+      "src/reference-measurement-ui.js": "7c0cd7e80477aea45e2dfa54a5d759ce3c3faf35d8fbb32f5aae9abb7ad77e2c",
+      "src/reference-measurement.js": "b239edae0972f72dbcb6b20c7ae48f115b550f80eadd541db3d54c1acf4d4e62",
+      "src/spindle-sweep-ui.js": "eb417b01166b732e999f4643f65963133f93e61c721e02a49c13545c26fa9263",
+      "src/spindle-sweep.js": "157567be5af80c962d855688f811a1bdb18fdf9aa99336ae375e77602b0decce",
+      "src/style.css": "13b119d7112a9d28d8250b757a64deef33c8994d8b0f307ffedec8aba2df8f1b",
+      "src/tester.css": "05818215f96effc3e1b38a7026c23c5ab66bfd84bfb147ef7641630b4f0ce663",
+      "src/tester.html": "c1cfc2b45ee63d13bf0dd38d69382901532d6e6a521050909734a9f133697866",
+      "src/tester.js": "9db022f1cdd194a7e7bb524ed6b5bcc0d0165872a40f0e03257f3f222ecc9409"
+    },
+    "testSha256": "7dbcc5e6668e00704e815887f3362384bca757aef69893f5fa0bcdfb45de65f4"
+  },
+  "summary": {
+    "states": 96,
+    "fixtures": 288,
+    "contactSamples": 10224,
+    "worldTransforms": 192,
+    "maxRendDifferenceUm": 9.870576578308032e-10,
+    "maxRinteriorDifferenceUm": 0.00006958255846511996,
+    "maxWorldReadingErrorUm": 1.746867539509367e-9,
+    "maxWorldPointErrorM": 3.1086244689504383e-15,
+    "maxFaceOutOfPlaneM": 0.000022679099941554325
+  },
+  "failureCount": 0,
+  "failures": [],
+  "rows": [
+    {
+      "input": "flat",
+      "individual": "ideal",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": 0,
+          "displayUm": 0,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        },
+        {
+          "pair": "XZ",
+          "rawUm": 0,
+          "displayUm": 0,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        },
+        {
+          "pair": "YZ",
+          "rawUm": 0,
+          "displayUm": 0,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        }
+      ]
+    },
+    {
+      "input": "flat",
+      "individual": "used/123456",
+      "heightsMm": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": 16.958999991522823,
+          "displayUm": 17,
+          "rEndpointUm": 6.661338147750939e-10,
+          "rInteriorMaxUm": 6.661338147750939e-10
+        },
+        {
+          "pair": "XZ",
+          "rawUm": 8.12899999891835,
+          "displayUm": 8,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        },
+        {
+          "pair": "YZ",
+          "rawUm": 14.119999995145655,
+          "displayUm": 14,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        }
+      ]
+    },
+    {
+      "input": "twist+",
+      "individual": "ideal",
+      "heightsMm": [
+        0.12512,
+        -0.12512,
+        0.04170666666666668,
+        -0.04170666666666668,
+        -0.04170666666666668,
+        0.04170666666666668,
+        -0.12512,
+        0.12512
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": 32.76007388910117,
+          "displayUm": 33,
+          "rEndpointUm": 1.0234868508263162e-10,
+          "rInteriorMaxUm": 0.000018561900280711363
+        },
+        {
+          "pair": "XZ",
+          "rawUm": -19.800017823147844,
+          "displayUm": -20,
+          "rEndpointUm": -6.591949208711867e-11,
+          "rInteriorMaxUm": 0.000056925575364630276
+        },
+        {
+          "pair": "YZ",
+          "rawUm": 0.0011902051497147959,
+          "displayUm": 0,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        }
+      ]
+    },
+    {
+      "input": "twist+",
+      "individual": "used/123456",
+      "heightsMm": [
+        0.12512,
+        -0.12512,
+        0.04170666666666668,
+        -0.04170666666666668,
+        -0.04170666666666668,
+        0.04170666666666668,
+        -0.12512,
+        0.12512
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": 49.7190737171211,
+          "displayUm": 50,
+          "rEndpointUm": -3.400058012914542e-10,
+          "rInteriorMaxUm": 0.000018561346903922527
+        },
+        {
+          "pair": "XZ",
+          "rawUm": -11.67090485314215,
+          "displayUm": -12,
+          "rEndpointUm": -6.591949208711867e-11,
+          "rInteriorMaxUm": 0.000056925575364630276
+        },
+        {
+          "pair": "YZ",
+          "rawUm": 14.120861990042991,
+          "displayUm": 14,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        }
+      ]
+    },
+    {
+      "input": "twist-",
+      "individual": "ideal",
+      "heightsMm": [
+        -0.12512,
+        0.12512,
+        -0.04170666666666668,
+        0.04170666666666668,
+        0.04170666666666668,
+        -0.04170666666666668,
+        0.12512,
+        -0.12512
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": -32.759925389745995,
+          "displayUm": -33,
+          "rEndpointUm": -3.41740524767431e-10,
+          "rInteriorMaxUm": 0.00001856345459294584
+        },
+        {
+          "pair": "XZ",
+          "rawUm": 19.7999818219146,
+          "displayUm": 20,
+          "rEndpointUm": 4.5102810375396984e-11,
+          "rInteriorMaxUm": 0.00005692496474196673
+        },
+        {
+          "pair": "YZ",
+          "rawUm": 0.0011902051497147959,
+          "displayUm": 0,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        }
+      ]
+    },
+    {
+      "input": "twist-",
+      "individual": "used/123456",
+      "heightsMm": [
+        -0.12512,
+        0.12512,
+        -0.04170666666666668,
+        0.04170666666666668,
+        0.04170666666666668,
+        -0.04170666666666668,
+        0.12512,
+        -0.12512
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": -15.800925456338142,
+          "displayUm": -16,
+          "rEndpointUm": 5.447031714567174e-10,
+          "rInteriorMaxUm": 0.000018563674902827287
+        },
+        {
+          "pair": "XZ",
+          "rawUm": 27.92886883543934,
+          "displayUm": 28,
+          "rEndpointUm": 4.5102810375396984e-11,
+          "rInteriorMaxUm": 0.00005692496474196673
+        },
+        {
+          "pair": "YZ",
+          "rawUm": 14.121518244694306,
+          "displayUm": 14,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        }
+      ]
+    },
+    {
+      "input": "plane+",
+      "individual": "ideal",
+      "heightsMm": [
+        -0.2192,
+        -0.0015999999999999903,
+        -0.1456,
+        0.07200000000000001,
+        -0.07200000000000001,
+        0.1456,
+        0.0015999999999999903,
+        0.2192
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": -4.0419056990259605e-10,
+          "displayUm": 0,
+          "rEndpointUm": -2.203098814490545e-10,
+          "rInteriorMaxUm": 5.134781488891349e-10
+        },
+        {
+          "pair": "XZ",
+          "rawUm": 1.474514954580286e-10,
+          "displayUm": 0,
+          "rEndpointUm": 1.1102230246251565e-10,
+          "rInteriorMaxUm": 1.1102230246251565e-10
+        },
+        {
+          "pair": "YZ",
+          "rawUm": -2.2551405187698492e-11,
+          "displayUm": 0,
+          "rEndpointUm": 1.1102230246251565e-10,
+          "rInteriorMaxUm": 2.636779683484747e-10
+        }
+      ]
+    },
+    {
+      "input": "plane+",
+      "individual": "used/123456",
+      "heightsMm": [
+        -0.2192,
+        -0.0015999999999999903,
+        -0.1456,
+        0.07200000000000001,
+        -0.07200000000000001,
+        0.1456,
+        0.0015999999999999903,
+        0.2192
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": 16.958999990502807,
+          "displayUm": 17,
+          "rEndpointUm": -2.203098814490545e-10,
+          "rInteriorMaxUm": 5.134781488891349e-10
+        },
+        {
+          "pair": "XZ",
+          "rawUm": 8.128999999079678,
+          "displayUm": 8,
+          "rEndpointUm": 1.1102230246251565e-10,
+          "rInteriorMaxUm": 1.1102230246251565e-10
+        },
+        {
+          "pair": "YZ",
+          "rawUm": 14.119999995138716,
+          "displayUm": 14,
+          "rEndpointUm": 1.1102230246251565e-10,
+          "rInteriorMaxUm": 2.8622937353617317e-10
+        }
+      ]
+    },
+    {
+      "input": "B+",
+      "individual": "ideal",
+      "heightsMm": [
+        0,
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": 0,
+          "displayUm": 0,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        },
+        {
+          "pair": "XZ",
+          "rawUm": 0.46815164373749385,
+          "displayUm": 0,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 1.249000902703301e-10
+        },
+        {
+          "pair": "YZ",
+          "rawUm": -1.576067356935662,
+          "displayUm": -2,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        }
+      ]
+    },
+    {
+      "input": "B+",
+      "individual": "used/123456",
+      "heightsMm": [
+        0,
+        0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": 16.95899999130078,
+          "displayUm": 17,
+          "rEndpointUm": 4.440892098500626e-10,
+          "rInteriorMaxUm": 4.440892098500626e-10
+        },
+        {
+          "pair": "XZ",
+          "rawUm": 8.597141626770153,
+          "displayUm": 9,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 1.249000902703301e-10
+        },
+        {
+          "pair": "YZ",
+          "rawUm": 12.543911944698852,
+          "displayUm": 13,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        }
+      ]
+    },
+    {
+      "input": "B-",
+      "individual": "ideal",
+      "heightsMm": [
+        0,
+        -0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": 0,
+          "displayUm": 0,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 1.734723475976807e-12
+        },
+        {
+          "pair": "XZ",
+          "rawUm": -0.4681495071375691,
+          "displayUm": 0,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 1.249000902703301e-10
+        },
+        {
+          "pair": "YZ",
+          "rawUm": 1.5761065561004095,
+          "displayUm": 2,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        }
+      ]
+    },
+    {
+      "input": "B-",
+      "individual": "used/123456",
+      "heightsMm": [
+        0,
+        -0.01,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "state": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "readings": [
+        {
+          "pair": "XY",
+          "rawUm": 16.958999991744868,
+          "displayUm": 17,
+          "rEndpointUm": 8.881784197001252e-10,
+          "rInteriorMaxUm": 8.881784197001252e-10
+        },
+        {
+          "pair": "XZ",
+          "rawUm": 7.660860507716777,
+          "displayUm": 8,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 1.249000902703301e-10
+        },
+        {
+          "pair": "YZ",
+          "rawUm": 15.6961272450417,
+          "displayUm": 16,
+          "rEndpointUm": 0,
+          "rInteriorMaxUm": 0
+        }
+      ]
+    }
+  ]
+}

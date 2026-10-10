@@ -86,7 +86,7 @@ function structuralSurface(x,z,solution=levelSolution){
  return {heightAt:(qx,qz)=>{const q=blend(qx,qz),h=bed.heightAt(qx,qz);return h+q.w*(q.part.heightAt(qx,qz)-h);},slopeAt:(qx,qz)=>{const q=blend(qx,qz),a=bed.slopeAt(qx,qz),b=q.part.slopeAt(qx,qz),d=q.part.heightAt(qx,qz)-bed.heightAt(qx,qz);return {lr:a.lr+q.w*(b.lr-a.lr)+q.wx*d,fb:a.fb+q.w*(b.fb-a.fb)+q.wz*d};}};
 }
 function displaySurfacePoint(x,z){
- if(current.kind==='compact')return compactSurfacePoint(levelSolution,x,z,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
+ if(['compact','horizontal','lathe'].includes(current.kind))return compactSurfacePoint(levelSolution,x,z,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  if(levelGeometry?.portal){const factor=displayFactor(),plane=levelSolution.plane,h=structuralSurface(x).heightAt(x,z)-(plane.a*x+plane.b*z+plane.c);return displayPortal().world([x,h*factor/1000,z]).map((v,i)=>v+(i===1?displayClearance():0));}
  return [x,.66+displayClearance()+displayFactor()*levelSolution.heightAt(x,z)/1000,z];
 }
@@ -98,7 +98,7 @@ function displayPortal(){
  return portalDisplayCache;
 }
 function displayPoseFrame(pose){
- if(current.kind==='compact'||current.kind==='lathe'){const p=(levelGeometry.poses[pose]||levelGeometry.poses.tool).anchor,q=levelCoordinates(p.x,p.z);return compactSupportFrame(levelSolution,q.x,q.z,displayFactor());}
+ if(['compact','horizontal','lathe'].includes(current.kind)){const p=(levelGeometry.poses[pose]||levelGeometry.poses.tool).anchor,q=levelCoordinates(p.x,p.z);return compactSupportFrame(levelSolution,q.x,q.z,displayFactor());}
  if(levelGeometry.portal){const p=displayPortal();if(pose==='tool')return p.frame;if(pose==='leftColumn'||pose==='rightColumn')return p.columns[pose==='rightColumn'?1:0].frame;
   if(pose==='work'&&levelSolution.parts){const q=levelCoordinates(levelGeometry.workPoint.x,levelGeometry.workPoint.z),s=levelSolution.parts.bed.slopeAt(q.x,q.z),factor=displayFactor();return window.Leveling.compose(p.common,window.Leveling.orientation({lr:(s.lr-levelSolution.lr)*factor,fb:(s.fb-levelSolution.fb)*factor}));}}
  return displaySupportFrame((levelGeometry.poses[pose]||levelGeometry.poses.tool).slope);
@@ -106,7 +106,7 @@ function displayPoseFrame(pose){
 let compactDisplayFrames=null,compactDisplayGeometry=null,compactDisplayFactor=0;
 function displayAxisFrame(key){
  if(current.kind==='compact'&&key==='Y'){const factor=displayFactor();if(compactDisplayGeometry!==levelGeometry||compactDisplayFactor!==factor){compactDisplayGeometry=levelGeometry;compactDisplayFactor=factor;compactDisplayFrames=compactPathFrames(positions,levelSolution,machineProfile,factor);}return compactDisplayFrames.Y;}
- if(key==='X'&&levelGeometry.guideSlope)return displaySupportFrame(levelGeometry.guideSlope);
+ if(key==='X'&&levelGeometry.guideSlope){const s=levelGeometry.guideSlope;return current.kind==='horizontal'?window.Leveling.compose(displaySupportFrame(levelSolution),displaySupportFrame({lr:s.lr-levelSolution.lr,fb:s.fb-levelSolution.fb})):displaySupportFrame(s);}
  if(current.kind==='lathe'&&key==='Z')return displayPoseFrame('work');
  return displayPoseFrame(levelGeometry.axes.find(a=>a.key===key).source);
 }
@@ -131,7 +131,7 @@ function levelMappedVisualPoint(p,pose='bed'){
  }
  if(current.kind==='compact'&&pose==='work')return compactWorkVisualPoint(p,positions,levelSolution,machineProfile,displayFactor()).map((v,i)=>v+(i===1?displayClearance():0));
  if(pose==='bed'){
-  const top=displaySurfacePoint(p[0],p[2]),slope=structuralSurface(p[0]).slopeAt(p[0],p[2]),normal=current.kind==='compact'?compactSupportFrame(levelSolution,p[0],p[2],displayFactor()).up:levelGeometry.portal?window.Leveling.compose(displayPortal().common,displaySupportFrame({lr:slope.lr-levelSolution.lr,fb:slope.fb-levelSolution.fb})).up:displaySupportFrame(slope).up,thickness=p[1]-.66;
+  const top=displaySurfacePoint(p[0],p[2]),slope=structuralSurface(p[0]).slopeAt(p[0],p[2]),normal=['compact','horizontal','lathe'].includes(current.kind)?compactSupportFrame(levelSolution,p[0],p[2],displayFactor()).up:levelGeometry.portal?window.Leveling.compose(displayPortal().common,displaySupportFrame({lr:slope.lr-levelSolution.lr,fb:slope.fb-levelSolution.fb})).up:displaySupportFrame(slope).up,thickness=p[1]-.66;
   return top.map((v,i)=>v+normal[i]*thickness);
  }
  const info=levelGeometry.poses[pose]||levelGeometry.poses.tool,rawOffset=pose==='tool'?columnLayoutOffset(current):{x:0,z:0},offset=displayCoordinates([rawOffset.x,0,rawOffset.z]);

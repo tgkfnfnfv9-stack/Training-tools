@@ -1,0 +1,3241 @@
+{
+  "root": "/workspace/Training-tools",
+  "regression": [],
+  "profiles": [
+    {
+      "id": "vertical",
+      "condition": "new",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -1.006
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 9.879
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -13.331
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 5.679
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.165
+          },
+          "Z": {
+            "band": 0,
+            "microns": 14.686
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038,
+          0.021
+        ]
+      }
+    },
+    {
+      "id": "vertical",
+      "condition": "new",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.148
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -4.963
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -12.552
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 6.878
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.996
+          },
+          "Z": {
+            "band": 0,
+            "microns": 16.329
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073
+        ]
+      }
+    },
+    {
+      "id": "vertical",
+      "condition": "new",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 4.6
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 17.059
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -10.036
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 37.429
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.53
+          },
+          "Z": {
+            "band": 0,
+            "microns": 10.044
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119,
+          -0.107
+        ]
+      }
+    },
+    {
+      "id": "vertical",
+      "condition": "used",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -5.005
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 12.01
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -45.959
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 8.694
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.551
+          },
+          "Z": {
+            "band": 0,
+            "microns": 15.804
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038,
+          0.021
+        ]
+      }
+    },
+    {
+      "id": "vertical",
+      "condition": "used",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073
+        ]
+      }
+    },
+    {
+      "id": "vertical",
+      "condition": "used",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 1,
+            "microns": 27.579
+          },
+          "XZ": {
+            "band": 2,
+            "microns": 136.071
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -39.023
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 2,
+            "microns": 138.432
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.155
+          },
+          "Z": {
+            "band": 1,
+            "microns": 39.04
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119,
+          -0.107
+        ]
+      }
+    },
+    {
+      "id": "travel",
+      "condition": "new",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -1.006
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 9.879
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -13.331
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 5.679
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.165
+          },
+          "Z": {
+            "band": 0,
+            "microns": 14.686
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038,
+          0.021,
+          -0.114,
+          -0.077
+        ]
+      }
+    },
+    {
+      "id": "travel",
+      "condition": "new",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.148
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -4.963
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -12.552
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 6.878
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.996
+          },
+          "Z": {
+            "band": 0,
+            "microns": 16.329
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149
+        ]
+      }
+    },
+    {
+      "id": "travel",
+      "condition": "new",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 4.6
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 17.059
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -10.036
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 37.429
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.53
+          },
+          "Z": {
+            "band": 0,
+            "microns": 10.044
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119,
+          -0.107,
+          -0.032,
+          0.126
+        ]
+      }
+    },
+    {
+      "id": "travel",
+      "condition": "used",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -5.005
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 12.01
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -45.959
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 8.694
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.551
+          },
+          "Z": {
+            "band": 0,
+            "microns": 15.804
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038,
+          0.021,
+          -0.114,
+          -0.077
+        ]
+      }
+    },
+    {
+      "id": "travel",
+      "condition": "used",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149
+        ]
+      }
+    },
+    {
+      "id": "travel",
+      "condition": "used",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 1,
+            "microns": 27.579
+          },
+          "XZ": {
+            "band": 2,
+            "microns": 136.071
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -39.023
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 2,
+            "microns": 138.432
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.155
+          },
+          "Z": {
+            "band": 1,
+            "microns": 39.04
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119,
+          -0.107,
+          -0.032,
+          0.126
+        ]
+      }
+    },
+    {
+      "id": "gate",
+      "condition": "new",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -1.006
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 9.879
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -13.331
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 5.679
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.165
+          },
+          "Z": {
+            "band": 0,
+            "microns": 14.686
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038,
+          0.021,
+          -0.114,
+          -0.077,
+          0.095,
+          -0.053,
+          -0.124,
+          0.087,
+          0.122,
+          0.016,
+          -0.009,
+          -0.043,
+          -0.121
+        ]
+      }
+    },
+    {
+      "id": "gate",
+      "condition": "new",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.148
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -4.963
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -12.552
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 6.878
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.996
+          },
+          "Z": {
+            "band": 0,
+            "microns": 16.329
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099,
+          0.007,
+          0.149,
+          -0.072,
+          0.117,
+          -0.013,
+          -0.056,
+          -0.046
+        ]
+      }
+    },
+    {
+      "id": "gate",
+      "condition": "new",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 4.6
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 17.059
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -10.036
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 37.429
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.53
+          },
+          "Z": {
+            "band": 0,
+            "microns": 10.044
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119,
+          -0.107,
+          -0.032,
+          0.126,
+          0.127,
+          0.087,
+          0.106,
+          -0.115,
+          -0.123,
+          0.005,
+          -0.067,
+          -0.058,
+          -0.144
+        ]
+      }
+    },
+    {
+      "id": "gate",
+      "condition": "used",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -5.005
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 12.01
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -45.959
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 8.694
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.551
+          },
+          "Z": {
+            "band": 0,
+            "microns": 15.804
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038,
+          0.021,
+          -0.114,
+          -0.077,
+          0.095,
+          -0.053,
+          -0.124,
+          0.087,
+          0.122,
+          0.016,
+          -0.009,
+          -0.043,
+          -0.121
+        ]
+      }
+    },
+    {
+      "id": "gate",
+      "condition": "used",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099,
+          0.007,
+          0.149,
+          -0.072,
+          0.117,
+          -0.013,
+          -0.056,
+          -0.046
+        ]
+      }
+    },
+    {
+      "id": "gate",
+      "condition": "used",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 1,
+            "microns": 27.579
+          },
+          "XZ": {
+            "band": 2,
+            "microns": 136.071
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -39.023
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 2,
+            "microns": 138.432
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.155
+          },
+          "Z": {
+            "band": 1,
+            "microns": 39.04
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119,
+          -0.107,
+          -0.032,
+          0.126,
+          0.127,
+          0.087,
+          0.106,
+          -0.115,
+          -0.123,
+          0.005,
+          -0.067,
+          -0.058,
+          -0.144
+        ]
+      }
+    },
+    {
+      "id": "gantry",
+      "condition": "new",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -1.006
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 9.879
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -13.331
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 5.679
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.165
+          },
+          "Z": {
+            "band": 0,
+            "microns": 14.686
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038,
+          0.021,
+          -0.114,
+          -0.077,
+          0.095,
+          -0.053
+        ]
+      }
+    },
+    {
+      "id": "gantry",
+      "condition": "new",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.148
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -4.963
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -12.552
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 6.878
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.996
+          },
+          "Z": {
+            "band": 0,
+            "microns": 16.329
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      }
+    },
+    {
+      "id": "gantry",
+      "condition": "new",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 4.6
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 17.059
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -10.036
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 37.429
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.53
+          },
+          "Z": {
+            "band": 0,
+            "microns": 10.044
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119,
+          -0.107,
+          -0.032,
+          0.126,
+          0.127,
+          0.087
+        ]
+      }
+    },
+    {
+      "id": "gantry",
+      "condition": "used",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -5.005
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 12.01
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -45.959
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 8.694
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.551
+          },
+          "Z": {
+            "band": 0,
+            "microns": 15.804
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038,
+          0.021,
+          -0.114,
+          -0.077,
+          0.095,
+          -0.053
+        ]
+      }
+    },
+    {
+      "id": "gantry",
+      "condition": "used",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      }
+    },
+    {
+      "id": "gantry",
+      "condition": "used",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 1,
+            "microns": 27.579
+          },
+          "XZ": {
+            "band": 2,
+            "microns": 136.071
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -39.023
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 2,
+            "microns": 138.432
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.155
+          },
+          "Z": {
+            "band": 1,
+            "microns": 39.04
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119,
+          -0.107,
+          -0.032,
+          0.126,
+          0.127,
+          0.087
+        ]
+      }
+    },
+    {
+      "id": "five",
+      "condition": "new",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -1.006
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 9.879
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -13.331
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 5.679
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.165
+          },
+          "Z": {
+            "band": 0,
+            "microns": 14.686
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038
+        ]
+      }
+    },
+    {
+      "id": "five",
+      "condition": "new",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.148
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -4.963
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -12.552
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 6.878
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.996
+          },
+          "Z": {
+            "band": 0,
+            "microns": 16.329
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097
+        ]
+      }
+    },
+    {
+      "id": "five",
+      "condition": "new",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 4.6
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 17.059
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -10.036
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 37.429
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.53
+          },
+          "Z": {
+            "band": 0,
+            "microns": 10.044
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119
+        ]
+      }
+    },
+    {
+      "id": "five",
+      "condition": "used",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -5.005
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 12.01
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -45.959
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 8.694
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.551
+          },
+          "Z": {
+            "band": 0,
+            "microns": 15.804
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038
+        ]
+      }
+    },
+    {
+      "id": "five",
+      "condition": "used",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097
+        ]
+      }
+    },
+    {
+      "id": "five",
+      "condition": "used",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 1,
+            "microns": 27.579
+          },
+          "XZ": {
+            "band": 2,
+            "microns": 136.071
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -39.023
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 2,
+            "microns": 138.432
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.155
+          },
+          "Z": {
+            "band": 1,
+            "microns": 39.04
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119
+        ]
+      }
+    },
+    {
+      "id": "horizontal",
+      "condition": "new",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -1.006
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 9.879
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -13.331
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 5.679
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.165
+          },
+          "Z": {
+            "band": 0,
+            "microns": 14.686
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038,
+          0.021,
+          -0.114,
+          -0.077,
+          0.095,
+          -0.053
+        ]
+      }
+    },
+    {
+      "id": "horizontal",
+      "condition": "new",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.148
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -4.963
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -12.552
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 6.878
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.996
+          },
+          "Z": {
+            "band": 0,
+            "microns": 16.329
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      }
+    },
+    {
+      "id": "horizontal",
+      "condition": "new",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 4.6
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 17.059
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -10.036
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 37.429
+          },
+          "Y": {
+            "band": 0,
+            "microns": 7.53
+          },
+          "Z": {
+            "band": 0,
+            "microns": 10.044
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119,
+          -0.107,
+          -0.032,
+          0.126,
+          0.127,
+          0.087
+        ]
+      }
+    },
+    {
+      "id": "horizontal",
+      "condition": "used",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": -5.005
+          },
+          "XZ": {
+            "band": 0,
+            "microns": 12.01
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -45.959
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 8.694
+          },
+          "Y": {
+            "band": 0,
+            "microns": 18.551
+          },
+          "Z": {
+            "band": 0,
+            "microns": 15.804
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.038,
+          0.021,
+          -0.114,
+          -0.077,
+          0.095,
+          -0.053
+        ]
+      }
+    },
+    {
+      "id": "horizontal",
+      "condition": "used",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      }
+    },
+    {
+      "id": "horizontal",
+      "condition": "used",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 1,
+            "microns": 27.579
+          },
+          "XZ": {
+            "band": 2,
+            "microns": 136.071
+          },
+          "YZ": {
+            "band": 1,
+            "microns": -39.023
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 2,
+            "microns": 138.432
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.155
+          },
+          "Z": {
+            "band": 1,
+            "microns": 39.04
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          -0.119,
+          -0.107,
+          -0.032,
+          0.126,
+          0.127,
+          0.087
+        ]
+      }
+    },
+    {
+      "id": "lathe",
+      "condition": "new",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Z"
+        ],
+        "squareness": {
+          "XZ": {
+            "band": 0,
+            "microns": -1.006
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 9.879
+          },
+          "Z": {
+            "band": 0,
+            "microns": 12.69
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.024,
+          -0.076,
+          -0.121,
+          0.121
+        ]
+      }
+    },
+    {
+      "id": "lathe",
+      "condition": "new",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Z"
+        ],
+        "squareness": {
+          "XZ": {
+            "band": 0,
+            "microns": 16.148
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 4.963
+          },
+          "Z": {
+            "band": 0,
+            "microns": 10.025
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.047,
+          -0.057,
+          -0.096,
+          -0.04
+        ]
+      }
+    },
+    {
+      "id": "lathe",
+      "condition": "new",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "new",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Z"
+        ],
+        "squareness": {
+          "XZ": {
+            "band": 0,
+            "microns": 4.6
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 17.059
+          },
+          "Z": {
+            "band": 0,
+            "microns": 13.929
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.147,
+          0.111,
+          -0.093,
+          -0.047
+        ]
+      }
+    },
+    {
+      "id": "lathe",
+      "condition": "used",
+      "seed": 0,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 0,
+        "keys": [
+          "X",
+          "Z"
+        ],
+        "squareness": {
+          "XZ": {
+            "band": 0,
+            "microns": -5.005
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 12.01
+          },
+          "Z": {
+            "band": 0,
+            "microns": 14.229
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.024,
+          -0.076,
+          -0.121,
+          0.121
+        ]
+      }
+    },
+    {
+      "id": "lathe",
+      "condition": "used",
+      "seed": 123456,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Z"
+        ],
+        "squareness": {
+          "XZ": {
+            "band": 0,
+            "microns": 16.959
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 8.129
+          },
+          "Z": {
+            "band": 0,
+            "microns": 12.125
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.047,
+          -0.057,
+          -0.096,
+          -0.04
+        ]
+      }
+    },
+    {
+      "id": "lathe",
+      "condition": "used",
+      "seed": 4294967295,
+      "value": {
+        "version": 1,
+        "condition": "used",
+        "seed": 4294967295,
+        "keys": [
+          "X",
+          "Z"
+        ],
+        "squareness": {
+          "XZ": {
+            "band": 1,
+            "microns": 27.579
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 2,
+            "microns": 136.071
+          },
+          "Z": {
+            "band": 0,
+            "microns": 15.207
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.147,
+          0.111,
+          -0.093,
+          -0.047
+        ]
+      }
+    }
+  ],
+  "schema": [
+    {
+      "id": "vertical",
+      "keys": [
+        "axisPositions",
+        "bestState",
+        "calculationModel",
+        "columnX",
+        "columnZ",
+        "depth",
+        "exaggerate",
+        "heights",
+        "machine",
+        "machineProfile",
+        "measurePos",
+        "mode",
+        "offset",
+        "sensitivity",
+        "step",
+        "supportLayout",
+        "version",
+        "width"
+      ],
+      "version": 3,
+      "model": "compact-asymmetric-bending-v4",
+      "profileKeys": [
+        "condition",
+        "guides",
+        "initialHeights",
+        "keys",
+        "seed",
+        "squareness",
+        "version"
+      ],
+      "axisKeys": [
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    {
+      "id": "travel",
+      "keys": [
+        "axisPositions",
+        "bestState",
+        "calculationModel",
+        "columnX",
+        "columnZ",
+        "depth",
+        "exaggerate",
+        "heights",
+        "machine",
+        "machineProfile",
+        "measurePos",
+        "mode",
+        "offset",
+        "sensitivity",
+        "step",
+        "version",
+        "width"
+      ],
+      "version": 2,
+      "model": "travel-guide-v2",
+      "profileKeys": [
+        "condition",
+        "guides",
+        "initialHeights",
+        "keys",
+        "seed",
+        "squareness",
+        "version"
+      ],
+      "axisKeys": [
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    {
+      "id": "gate",
+      "keys": [
+        "axisPositions",
+        "bestState",
+        "calculationModel",
+        "columnX",
+        "columnZ",
+        "depth",
+        "exaggerate",
+        "heights",
+        "machine",
+        "machineProfile",
+        "measurePos",
+        "mode",
+        "offset",
+        "sensitivity",
+        "step",
+        "supportLayout",
+        "version",
+        "width"
+      ],
+      "version": 3,
+      "model": "portal-shear-v2",
+      "profileKeys": [
+        "condition",
+        "guides",
+        "initialHeights",
+        "keys",
+        "seed",
+        "squareness",
+        "version"
+      ],
+      "axisKeys": [
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    {
+      "id": "gantry",
+      "keys": [
+        "axisPositions",
+        "bestState",
+        "calculationModel",
+        "columnX",
+        "columnZ",
+        "depth",
+        "exaggerate",
+        "heights",
+        "machine",
+        "machineProfile",
+        "measurePos",
+        "mode",
+        "offset",
+        "sensitivity",
+        "step",
+        "version",
+        "width"
+      ],
+      "version": 2,
+      "model": "portal-shear-v2",
+      "profileKeys": [
+        "condition",
+        "guides",
+        "initialHeights",
+        "keys",
+        "seed",
+        "squareness",
+        "version"
+      ],
+      "axisKeys": [
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    {
+      "id": "five",
+      "keys": [
+        "axisPositions",
+        "bestState",
+        "calculationModel",
+        "columnX",
+        "columnZ",
+        "depth",
+        "exaggerate",
+        "heights",
+        "machine",
+        "machineProfile",
+        "measurePos",
+        "mode",
+        "offset",
+        "sensitivity",
+        "step",
+        "version",
+        "width"
+      ],
+      "version": 2,
+      "model": "connected-frames-v1",
+      "profileKeys": [
+        "condition",
+        "guides",
+        "initialHeights",
+        "keys",
+        "seed",
+        "squareness",
+        "version"
+      ],
+      "axisKeys": [
+        "X",
+        "Y",
+        "Z",
+        "A",
+        "C"
+      ]
+    },
+    {
+      "id": "horizontal",
+      "keys": [
+        "axisPositions",
+        "bestState",
+        "calculationModel",
+        "columnX",
+        "columnZ",
+        "depth",
+        "exaggerate",
+        "heights",
+        "machine",
+        "machineProfile",
+        "measurePos",
+        "mode",
+        "offset",
+        "sensitivity",
+        "step",
+        "supportLayout",
+        "version",
+        "width"
+      ],
+      "version": 3,
+      "model": "horizontal-guide-v2",
+      "profileKeys": [
+        "condition",
+        "guides",
+        "initialHeights",
+        "keys",
+        "seed",
+        "squareness",
+        "version"
+      ],
+      "axisKeys": [
+        "X",
+        "Y",
+        "Z"
+      ]
+    },
+    {
+      "id": "lathe",
+      "keys": [
+        "axisPositions",
+        "bestState",
+        "calculationModel",
+        "columnX",
+        "columnZ",
+        "depth",
+        "exaggerate",
+        "heights",
+        "machine",
+        "machineProfile",
+        "measurePos",
+        "mode",
+        "offset",
+        "sensitivity",
+        "step",
+        "version",
+        "width"
+      ],
+      "version": 2,
+      "model": "lathe-carriage-v2",
+      "profileKeys": [
+        "condition",
+        "guides",
+        "initialHeights",
+        "keys",
+        "seed",
+        "squareness",
+        "version"
+      ],
+      "axisKeys": [
+        "X",
+        "Z"
+      ]
+    }
+  ],
+  "saved": [
+    {
+      "calculationModel": "compact-asymmetric-bending-v4",
+      "version": 3,
+      "supportLayout": {
+        "id": "compact-four-v1",
+        "points": [
+          {
+            "id": "compact-four-v1-p1",
+            "x": -1.04,
+            "z": -1.08,
+            "group": "bed"
+          },
+          {
+            "id": "compact-four-v1-p2",
+            "x": 1.04,
+            "z": -1.08,
+            "group": "bed"
+          },
+          {
+            "id": "compact-four-v1-p3",
+            "x": -1.04,
+            "z": 1.08,
+            "group": "bed"
+          },
+          {
+            "id": "compact-four-v1-p4",
+            "x": 1.04,
+            "z": 1.08,
+            "group": "bed"
+          }
+        ]
+      },
+      "machineProfile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073
+        ]
+      },
+      "bestState": {
+        "width": 2.08,
+        "depth": 2.16,
+        "columnX": 0,
+        "columnZ": 0,
+        "heights": [
+          0.002,
+          0,
+          0,
+          0.002
+        ]
+      },
+      "machine": "vertical",
+      "mode": "compact",
+      "width": 2.08,
+      "depth": 2.16,
+      "heights": [
+        0,
+        0.013,
+        -0.017,
+        0
+      ],
+      "sensitivity": 0.05,
+      "measurePos": 0,
+      "offset": 0.5,
+      "columnX": 0,
+      "columnZ": 0,
+      "axisPositions": {
+        "X": 37,
+        "Y": -62,
+        "Z": 81
+      },
+      "step": 0.001,
+      "exaggerate": false
+    },
+    {
+      "calculationModel": "travel-guide-v2",
+      "version": 2,
+      "machineProfile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149
+        ]
+      },
+      "bestState": {
+        "width": 4.32,
+        "depth": 2.08,
+        "columnX": 0,
+        "columnZ": 0,
+        "heights": [
+          0.139,
+          -0.014,
+          -0.038,
+          -0.046,
+          0,
+          0.132
+        ]
+      },
+      "machine": "travel",
+      "mode": "",
+      "width": 4.32,
+      "depth": 2.08,
+      "heights": [
+        0,
+        0.013,
+        -0.017,
+        0,
+        0,
+        0
+      ],
+      "sensitivity": 0.05,
+      "measurePos": 0,
+      "offset": 0.5,
+      "columnX": 0,
+      "columnZ": 0,
+      "axisPositions": {
+        "X": 37,
+        "Y": -62,
+        "Z": 81
+      },
+      "step": 0.001,
+      "exaggerate": false
+    },
+    {
+      "calculationModel": "portal-shear-v2",
+      "version": 3,
+      "supportLayout": {
+        "id": "hwacheon-l3-3000-teaching-15point-v1",
+        "points": [
+          {
+            "id": "bed-left-1",
+            "x": -0.77,
+            "z": -3.1799999999999997,
+            "group": "bed"
+          },
+          {
+            "id": "bed-center-1",
+            "x": 0,
+            "z": -3.1799999999999997,
+            "group": "bed"
+          },
+          {
+            "id": "bed-right-1",
+            "x": 0.77,
+            "z": -3.1799999999999997,
+            "group": "bed"
+          },
+          {
+            "id": "bed-left-2",
+            "x": -0.77,
+            "z": 0.020000000000000018,
+            "group": "bed"
+          },
+          {
+            "id": "bed-center-2",
+            "x": 0,
+            "z": 0.020000000000000018,
+            "group": "bed"
+          },
+          {
+            "id": "bed-right-2",
+            "x": 0.77,
+            "z": 0.020000000000000018,
+            "group": "bed"
+          },
+          {
+            "id": "bed-left-3",
+            "x": -0.77,
+            "z": 3.1799999999999997,
+            "group": "bed"
+          },
+          {
+            "id": "bed-center-3",
+            "x": 0,
+            "z": 3.1799999999999997,
+            "group": "bed"
+          },
+          {
+            "id": "bed-right-3",
+            "x": 0.77,
+            "z": 3.1799999999999997,
+            "group": "bed"
+          },
+          {
+            "id": "column-left-front",
+            "x": -1.06,
+            "z": 0.5449999999999999,
+            "group": "column-left"
+          },
+          {
+            "id": "column-left-back",
+            "x": -1.06,
+            "z": 1.0949999999999998,
+            "group": "column-left"
+          },
+          {
+            "id": "column-left-outer",
+            "x": -1.425,
+            "z": 0.8250000000000002,
+            "group": "column-left"
+          },
+          {
+            "id": "column-right-front",
+            "x": 1.06,
+            "z": 0.5449999999999999,
+            "group": "column-right"
+          },
+          {
+            "id": "column-right-back",
+            "x": 1.06,
+            "z": 1.0949999999999998,
+            "group": "column-right"
+          },
+          {
+            "id": "column-right-outer",
+            "x": 1.42,
+            "z": 0.8250000000000002,
+            "group": "column-right"
+          }
+        ]
+      },
+      "machineProfile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099,
+          0.007,
+          0.149,
+          -0.072,
+          0.117,
+          -0.013,
+          -0.056,
+          -0.046
+        ]
+      },
+      "bestState": {
+        "width": 2.85,
+        "depth": 6.84,
+        "columnX": 0,
+        "columnZ": 0,
+        "heights": [
+          -0.059,
+          0.023,
+          0.061,
+          0.108,
+          -0.009,
+          0.028,
+          0.093,
+          -0.041,
+          -0.004,
+          -0.007,
+          0.009,
+          -0.005,
+          -0.001,
+          0,
+          0.028
+        ]
+      },
+      "machine": "gate",
+      "mode": "l3-3000",
+      "width": 2.85,
+      "depth": 6.84,
+      "heights": [
+        0,
+        0.013,
+        -0.017,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sensitivity": 0.05,
+      "measurePos": 0,
+      "offset": 0.5,
+      "columnX": 0,
+      "columnZ": 0,
+      "axisPositions": {
+        "X": 37,
+        "Y": -62,
+        "Z": 81
+      },
+      "step": 0.001,
+      "exaggerate": false
+    },
+    {
+      "calculationModel": "portal-shear-v2",
+      "version": 2,
+      "machineProfile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "bestState": {
+        "width": 3.2,
+        "depth": 4.64,
+        "columnX": 0,
+        "columnZ": 0,
+        "heights": [
+          0,
+          -0.006,
+          -0.042,
+          0,
+          0,
+          0,
+          0.008,
+          -0.028
+        ]
+      },
+      "machine": "gantry",
+      "mode": "",
+      "width": 3.2,
+      "depth": 4.64,
+      "heights": [
+        0,
+        0.013,
+        -0.017,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sensitivity": 0.05,
+      "measurePos": 0,
+      "offset": 0.5,
+      "columnX": 0,
+      "columnZ": 0,
+      "axisPositions": {
+        "X": 37,
+        "Y": -62,
+        "Z": 81
+      },
+      "step": 0.001,
+      "exaggerate": false
+    },
+    {
+      "calculationModel": "connected-frames-v1",
+      "version": 2,
+      "machineProfile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097
+        ]
+      },
+      "bestState": {
+        "width": 2.72,
+        "depth": 2.64,
+        "columnX": 0,
+        "columnZ": 0,
+        "heights": [
+          0,
+          0,
+          0
+        ]
+      },
+      "machine": "five",
+      "mode": "",
+      "width": 2.72,
+      "depth": 2.64,
+      "heights": [
+        0,
+        0.013,
+        -0.017
+      ],
+      "sensitivity": 0.05,
+      "measurePos": 0,
+      "offset": 0.5,
+      "columnX": 0,
+      "columnZ": 0,
+      "axisPositions": {
+        "X": 37,
+        "Y": -62,
+        "Z": 81,
+        "A": 45,
+        "C": -33
+      },
+      "step": 0.001,
+      "exaggerate": false
+    },
+    {
+      "calculationModel": "horizontal-guide-v2",
+      "version": 3,
+      "supportLayout": {
+        "id": "haas-ec630-ngc-eight-v1",
+        "points": [
+          {
+            "id": "haas-ec630-ngc-eight-v1-p1",
+            "x": -1.36,
+            "z": -1.8399999999999999,
+            "group": "bed"
+          },
+          {
+            "id": "haas-ec630-ngc-eight-v1-p2",
+            "x": 1.36,
+            "z": -1.8399999999999999,
+            "group": "bed"
+          },
+          {
+            "id": "haas-ec630-ngc-eight-v1-p3",
+            "x": -1.36,
+            "z": -0.6133333333333334,
+            "group": "bed"
+          },
+          {
+            "id": "haas-ec630-ngc-eight-v1-p4",
+            "x": 1.36,
+            "z": -0.6133333333333334,
+            "group": "bed"
+          },
+          {
+            "id": "haas-ec630-ngc-eight-v1-p5",
+            "x": -1.36,
+            "z": 0.6133333333333332,
+            "group": "bed"
+          },
+          {
+            "id": "haas-ec630-ngc-eight-v1-p6",
+            "x": 1.36,
+            "z": 0.6133333333333332,
+            "group": "bed"
+          },
+          {
+            "id": "haas-ec630-ngc-eight-v1-p7",
+            "x": -1.36,
+            "z": 1.8399999999999999,
+            "group": "bed"
+          },
+          {
+            "id": "haas-ec630-ngc-eight-v1-p8",
+            "x": 1.36,
+            "z": 1.8399999999999999,
+            "group": "bed"
+          }
+        ]
+      },
+      "machineProfile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Y",
+          "Z"
+        ],
+        "squareness": {
+          "XY": {
+            "band": 0,
+            "microns": 16.959
+          },
+          "XZ": {
+            "band": 0,
+            "microns": -8.129
+          },
+          "YZ": {
+            "band": 0,
+            "microns": -14.12
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 1,
+            "microns": 32.376
+          },
+          "Y": {
+            "band": 0,
+            "microns": 10.523
+          },
+          "Z": {
+            "band": 1,
+            "microns": 52.271
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.097,
+          -0.073,
+          -0.11,
+          0.149,
+          -0.035,
+          0.099
+        ]
+      },
+      "bestState": {
+        "width": 2.72,
+        "depth": 3.68,
+        "columnX": 0,
+        "columnZ": 0,
+        "heights": [
+          0.025,
+          0.027,
+          0.009,
+          0.004,
+          -0.024,
+          -0.002,
+          0.031,
+          0.013
+        ]
+      },
+      "machine": "horizontal",
+      "mode": "",
+      "width": 2.72,
+      "depth": 3.68,
+      "heights": [
+        0,
+        0.013,
+        -0.017,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "sensitivity": 0.05,
+      "measurePos": 0,
+      "offset": 0.5,
+      "columnX": 0,
+      "columnZ": 0,
+      "axisPositions": {
+        "X": 37,
+        "Y": -62,
+        "Z": 81
+      },
+      "step": 0.001,
+      "exaggerate": false
+    },
+    {
+      "calculationModel": "lathe-carriage-v2",
+      "version": 2,
+      "machineProfile": {
+        "version": 1,
+        "condition": "used",
+        "seed": 123456,
+        "keys": [
+          "X",
+          "Z"
+        ],
+        "squareness": {
+          "XZ": {
+            "band": 0,
+            "microns": 16.959
+          }
+        },
+        "guides": {
+          "X": {
+            "band": 0,
+            "microns": 8.129
+          },
+          "Z": {
+            "band": 0,
+            "microns": 12.125
+          }
+        },
+        "initialHeights": [
+          -0.15,
+          0.15,
+          0.047,
+          -0.057,
+          -0.096,
+          -0.04
+        ]
+      },
+      "bestState": {
+        "width": 4,
+        "depth": 1.68,
+        "columnX": 0,
+        "columnZ": 0,
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "machine": "lathe",
+      "mode": "",
+      "width": 4,
+      "depth": 1.68,
+      "heights": [
+        0,
+        0.013,
+        -0.017,
+        0,
+        0,
+        0
+      ],
+      "sensitivity": 0.05,
+      "measurePos": 0,
+      "offset": 0.5,
+      "columnX": 0,
+      "columnZ": 0,
+      "axisPositions": {
+        "X": 37,
+        "Z": 81
+      },
+      "step": 0.001,
+      "exaggerate": false
+    }
+  ],
+  "legacy": [
+    {
+      "id": "vertical",
+      "accepted": true,
+      "exactInput": true,
+      "unchangedSeed": true
+    },
+    {
+      "id": "travel",
+      "accepted": true,
+      "exactInput": true,
+      "unchangedSeed": true
+    },
+    {
+      "id": "gate",
+      "accepted": true,
+      "exactInput": true,
+      "unchangedSeed": true
+    },
+    {
+      "id": "gantry",
+      "accepted": true,
+      "exactInput": true,
+      "unchangedSeed": true
+    },
+    {
+      "id": "five",
+      "accepted": true,
+      "exactInput": true,
+      "unchangedSeed": true
+    },
+    {
+      "id": "horizontal",
+      "accepted": true,
+      "exactInput": true,
+      "unchangedSeed": true
+    },
+    {
+      "id": "lathe",
+      "accepted": true,
+      "exactInput": true,
+      "unchangedSeed": true
+    }
+  ]
+}

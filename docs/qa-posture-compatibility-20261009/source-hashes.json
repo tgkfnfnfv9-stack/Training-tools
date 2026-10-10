@@ -1,0 +1,41 @@
+{
+  "before": {
+    "src/app.js": "f2ad4de37c33a129082836ef7d22fff3c63d051f2bc1d142cf33cbdc714fdc0a",
+    "src/leveling-ui.js": "100fe54c8c6d1b1d60f3d5e86caf41a763d2d2a7807f78709db205b26a2c6df3",
+    "src/accuracy-ui.js": "987d498c22c1c0afb3f3f106034a33096ad2075e7de975558387fa0e4715ac28",
+    "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "src/machine-accuracy-ui.js": "5123e4a167a90d2c9a08c3f5a06a8b2b7f2c41430b32bde9f2b8507545587363",
+    "src/reference-measurement-ui.js": "2012235ee60f35d31cec938cd5c69ee2ee678824e3c10a0bd64044109661f4b4",
+    "src/horizontal-parallelism-ui.js": "47c3268a7ce1e865cf3dcdaf3c4283c7170e5c5d3a45fdb727d4973b8773ba38",
+    "src/lathe-inspection.js": "c8df25e25ce6ff6d8bc7962caea991277d488c4e12ab19632a59425793150787",
+    "src/lathe-inspection-ui.js": "1a5ca02dc1928d7b7d30c1876ae649954610afc6d0fd5617384c752c4efb8431",
+    "index.html": "7c63eaa1c49ab749e7e898f228a6c88151185c0a5ca68566fda46e8c731c03d9"
+  },
+  "after": {
+    "src/app.js": "6ba8beb045b76356f8b0ca604f4bd657309c2ceb7d8b32e97144ba962479941b",
+    "src/leveling-ui.js": "2aaa7693c934294bfddc774e60e516e7d9cb201808d4f90b1a6ed7cb39f06025",
+    "src/accuracy-ui.js": "3ceaeeb87ea49d5922ae5e0cc41710233ef9bb7f52e5a8411396a01d8b5a63c4",
+    "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "src/machine-accuracy-ui.js": "5123e4a167a90d2c9a08c3f5a06a8b2b7f2c41430b32bde9f2b8507545587363",
+    "src/reference-measurement-ui.js": "7c0cd7e80477aea45e2dfa54a5d759ce3c3faf35d8fbb32f5aae9abb7ad77e2c",
+    "src/horizontal-parallelism-ui.js": "5abdd25753ce457a8029dd22136afce56050f651a444b5bf3c7d440c7968ae80",
+    "src/lathe-inspection.js": "c8df25e25ce6ff6d8bc7962caea991277d488c4e12ab19632a59425793150787",
+    "src/lathe-inspection-ui.js": "1a5ca02dc1928d7b7d30c1876ae649954610afc6d0fd5617384c752c4efb8431",
+    "index.html": "4a50bd3626ff11be85af14dcb5fd203127332c8b0c1d71d91a9878f3b50d2d0f"
+  },
+  "final": {
+    "src/app.js": "6ba8beb045b76356f8b0ca604f4bd657309c2ceb7d8b32e97144ba962479941b",
+    "src/leveling-ui.js": "2aaa7693c934294bfddc774e60e516e7d9cb201808d4f90b1a6ed7cb39f06025",
+    "src/accuracy-ui.js": "3ceaeeb87ea49d5922ae5e0cc41710233ef9bb7f52e5a8411396a01d8b5a63c4",
+    "src/machine-accuracy.js": "5be1d59049b79e93acb4379c380f8c288423ca9d7a6e0e2e9d2795d0b472a9b1",
+    "src/machine-accuracy-ui.js": "9c33d5bab3bd1c508225879581cbe7ef8e6c60ecf5b0d8b3d15a206bc6f0d145",
+    "src/reference-measurement-ui.js": "7c0cd7e80477aea45e2dfa54a5d759ce3c3faf35d8fbb32f5aae9abb7ad77e2c",
+    "src/horizontal-parallelism-ui.js": "5abdd25753ce457a8029dd22136afce56050f651a444b5bf3c7d440c7968ae80",
+    "src/lathe-inspection.js": "c8df25e25ce6ff6d8bc7962caea991277d488c4e12ab19632a59425793150787",
+    "src/lathe-inspection-ui.js": "1a5ca02dc1928d7b7d30c1876ae649954610afc6d0fd5617384c752c4efb8431",
+    "index.html": "0cca74408ba5099f77751161d2f1fb0aede39f6e68e4301f1072e9401f692929",
+    "src/intrinsic-inspection.js": "dd6addc468bac25759b5018dfbecdd48fe5d65135fc3c1d299eda05daab0d9e3",
+    "src/intrinsic-inspection-ui.js": "1d2d0964a0cbe4e417d2128221ee997cc1cfa073ee7b8e7b08a5fb6566f10ce6"
+  },
+  "finalHTMLSource": "/tmp/Training-tools-final-build/index.html"
+}

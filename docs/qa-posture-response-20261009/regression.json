@@ -1,0 +1,69 @@
+[
+  {
+    "test": "check-leveling-ui.cjs",
+    "exitCode": 0,
+    "seconds": 11.67,
+    "stdout": "Leveling UI: 190 checks passed (7 machines, single-model selections, controls, exercise, save/import/export).\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-confirmed-layouts.cjs",
+    "exitCode": 0,
+    "seconds": 59.45,
+    "stdout": "{\n  \"checks\": 330,\n  \"legacyAccepted\": 0,\n  \"legacyCompactMigrated\": 0,\n  \"legacyRejected\": 9,\n  \"legacyV1Rejected\": 9,\n  \"legacyV1CompactMigrated\": 0,\n  \"legacyKeysPreserved\": 9,\n  \"supportsExercised\": 50,\n  \"failures\": [],\n  \"timings\": [\n    {\n      \"index\": 0,\n      \"operation\": \"open\",\n      \"milliseconds\": 372.38026700000046\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 115.90139900000031\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 242.4371599999995\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"open\",\n      \"milliseconds\": 1151.9903310000009\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 488.7673750000031\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 578.1584839999996\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"open\",\n      \"milliseconds\": 229.77089700000215\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 25.645018000002892\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 127.6567819999982\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"open\",\n      \"milliseconds\": 189.2175270000007\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 24.727576999997837\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 40.94661199999973\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"open\",\n      \"milliseconds\": 587.5944949999976\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 53.12336099999811\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 214.43965200000093\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"open\",\n      \"milliseconds\": 29.16056500000559\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 36.32068900000013\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 121.79147999999986\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"open\",\n      \"milliseconds\": 82.06425899999886\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 12.869099000003189\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 58.70391900000686\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-3d-axis-controls.cjs",
+    "exitCode": 0,
+    "seconds": 110.47,
+    "stdout": "3D axis controls: 138 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-intrinsic-inspection.cjs",
+    "exitCode": 0,
+    "seconds": 0.35,
+    "stdout": "{\"passed\":true,\"checks\":1845,\"independent\":\"circle contact extrema; Gram-Schmidt least-squares plane; frozen legacy profile SHA256\",\"limits\":\"browser support/save/gesture integration verified separately; this is intrinsic teaching geometry, not actual machine metrology\"}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-random-accuracy-review.cjs",
+    "exitCode": 0,
+    "seconds": 22.25,
+    "stdout": "Random accuracy independent review: 164 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-lathe-independent-20261009.cjs",
+    "exitCode": 0,
+    "seconds": 30.41,
+    "stdout": "{\n  \"passed\": true,\n  \"assertions\": 424144,\n  \"cases\": 1020,\n  \"shortTravelCases\": 20,\n  \"cylinderCases\": 16,\n  \"meshCases\": 48,\n  \"maxError\": 6.210303382658822e-10,\n  \"remountDifference\": 0.03539294494980805,\n  \"rows\": [\n    {\n      \"name\": \"ideal\",\n      \"used\": false,\n      \"face\": 0,\n      \"flat\": 0,\n      \"dx\": -2.7755575615628914e-11,\n      \"dy\": 0,\n      \"barSide\": 0,\n      \"barTop\": 0\n    },\n    {\n      \"name\": \"ideal\",\n      \"used\": true,\n      \"face\": -3.7579390983043943,\n      \"flat\": 7.826992527158391,\n      \"dx\": 123.79637200451012,\n      \"dy\": -2.65720293390892,\n      \"barSide\": -16.958999990972917,\n      \"barTop\": -0.00575215427546516\n    },\n    {\n      \"name\": \"saddle+\",\n      \"used\": false,\n      \"face\": -5.204170427930421e-12,\n      \"flat\": -12.599855998862362,\n      \"dx\": -76.85988694055558,\n      \"dy\": -1.2785399647369753,\n      \"barSide\": 12.599974122628337,\n      \"barTop\": -0.00326968979322273\n    },\n    {\n      \"name\": \"saddle+\",\n      \"used\": true,\n      \"face\": -3.7579390983078635,\n      \"flat\": -4.772863466314184,\n      \"dx\": 46.93637205810718,\n      \"dy\": -3.9330018612477233,\n      \"barSide\": -4.3590258746815245,\n      \"barTop\": 0.0013315938664215654\n    },\n    {\n      \"name\": \"saddle-\",\n      \"used\": false,\n      \"face\": -5.204170427930421e-12,\n      \"flat\": 12.600143998771005,\n      \"dx\": 76.86011246541277,\n      \"dy\": 1.271460024892801,\n      \"barSide\": -12.600025872628457,\n      \"barTop\": -0.003269711012360288\n    },\n    {\n      \"name\": \"saddle-\",\n      \"used\": true,\n      \"face\": -3.7579390983078635,\n      \"flat\": 20.427136522744444,\n      \"dx\": 200.65659722607074,\n      \"dy\": -1.3884839242100382,\n      \"barSide\": -29.559025829697937,\n      \"barTop\": -0.019375353115316796\n    }\n  ],\n  \"scope\": \"Independent nodal support surface, common/local rigid mounts, plane-distance bisection, view-correct hole circle bisection, fixed-bracket finite-cylinder distance bisection; no physical elasticity or tilted-bore contact claim.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "test": "check-model-posture.cjs",
+    "exitCode": -15,
+    "seconds": 212.54,
+    "stdout": "",
+    "stderr": "",
+    "status": "superseded-harness",
+    "reason": "旧描画APIを使い旋盤adapterを読まない検査経路を発見したため停止。実Canvas経路と独立の共通/残差期待へ訂正後、下記で再確認。",
+    "resolvedBy": "../qa-posture-20261009/structure/legacy-canvas-check.json"
+  },
+  {
+    "test": "check-model-posture.cjs (current Canvas harness)",
+    "exitCode": 0,
+    "resultFile": "../qa-posture-20261009/structure/legacy-canvas-check.json",
+    "result": {
+      "checks": {
+        "projection": 105,
+        "surfaceNormals": 491,
+        "groundContact": 560,
+        "rigidMotion": 30,
+        "axisLabels": 224
+      },
+      "failures": []
+    }
+  }
+]

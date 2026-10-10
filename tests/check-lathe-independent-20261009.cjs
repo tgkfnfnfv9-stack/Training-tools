@@ -178,8 +178,16 @@ let meshCases=0;
 for(const [width,depth] of [[4,.5],[4,1.2],[4,1.68],[5.2,3.2]])for(const sign of [-1,0,1])for(const gain of [false,true])for(const end of [-100,100]){
  const heights=[-depth/2,depth/2].flatMap(z=>[-width/2,0,width/2].map(x=>sign*.05*x*z));
  env.read(`levelConfig.width=${width};levelConfig.depth=${depth};supportHeights=${JSON.stringify(heights)};machineProfile=${JSON.stringify(profile)};positions={X:${end},Y:0,Z:${end},A:0,C:0};$('exaggerate').checked=${gain};updateLeveling();`);
- const mesh=env.json(`(()=>{const model=createGeometry(current),caps=model.faces.filter(f=>f.pose==='latheTestBar'&&f.v.length===20),context=idealDisplayContext(current);return {factor:displayFactor(),clearance:displayClearance(),lift:context.lift,labels:model.labels.map(l=>({name:l.name,pose:l.pose,axes:l.axes})),edges:idealOutlineEdges(model).filter(e=>e.pose==='latheTestBar').length,caps:caps.map(f=>({raw:f.v,actual:f.v.map(p=>displayedModelPoint(p,f.axes,current,positions,f.pose)),ideal:f.v.map(p=>idealDisplayPoint(p,f.axes,f.pose,context))}))};})()`);
- ok(mesh.caps.length===2,'finite bar has two mesh ends');ok(mesh.edges>0,'bar included in ideal outline');ok(!mesh.labels.some(l=>l.name.includes('心押')),'tailstock removed from model');
+ const mesh=env.json(`(()=>{const model=createGeometry(current),caps=model.faces.filter(f=>f.pose==='latheTestBar'&&f.v.length===20),tail=model.faces.filter(f=>f.pose==='latheTailstockVisual'),context=idealDisplayContext(current);return {factor:displayFactor(),clearance:displayClearance(),lift:context.lift,labels:model.labels.map(l=>({name:l.name,pose:l.pose,axes:l.axes})),edges:idealOutlineEdges(model).filter(e=>e.pose==='latheTestBar').length,tail:tail.map(f=>({axes:f.axes,actual:f.v.map(p=>displayedModelPoint(p,f.axes,current,positions,f.pose)),other:f.v.map(p=>displayedModelPoint(p,f.axes,current,{...positions,X:-positions.X,Z:-positions.Z},f.pose))})),caps:caps.map(f=>({raw:f.v,actual:f.v.map(p=>displayedModelPoint(p,f.axes,current,positions,f.pose)),ideal:f.v.map(p=>idealDisplayPoint(p,f.axes,f.pose,context))}))};})()`);
+ ok(mesh.caps.length===2,'finite bar has two mesh ends');ok(mesh.edges>0,'bar included in ideal outline');
+ // The later user decision restored a visual-only tailstock. Its geometry
+ // stays fixed under X/Z and cannot contribute to an inspection result.
+ const tailstock=mesh.labels.find(l=>l.name.includes('心押'));ok(tailstock&&tailstock.pose==='latheTailstockVisual'&&tailstock.axes.length===0,'tailstock remains visual-only');ok(mesh.tail.length>0,'tailstock mesh present');
+ for(const part of mesh.tail){assert.deepEqual(part.axes,[],'tailstock has no moving axes');assertions++;part.actual.forEach((p,i)=>p.forEach((v,k)=>near(v,part.other[i][k],'tailstock fixed under X/Z',1e-12)));}
+ if(meshCases===0){
+  const dependency=env.json(`(()=>{const saved=createGeometry,before=latheInspectionGeometry();try{createGeometry=m=>{const g=saved(m);return {...g,faces:g.faces.filter(f=>f.pose!=='latheTailstockVisual'),labels:g.labels.filter(l=>l.pose!=='latheTailstockVisual')};};createGeometry(current);return {before,without:latheInspectionGeometry()};}finally{createGeometry=saved;}})()`);
+  assert.deepEqual(dependency.without,dependency.before,'removing decorative tailstock cannot alter any precision calculation');assertions++;
+ }
  const barLabel=mesh.labels.find(l=>l.name==='テストバー');ok(barLabel&&barLabel.axes.length===0,'bar is fixed to spindle');
  const turret=mesh.labels.find(l=>l.name==='タレット');ok(turret.axes.join('/')==='X/Z','turret follows X and Z');
  const scaledProfile=JSON.parse(JSON.stringify(profile));scaledProfile.squareness.XZ.microns*=mesh.factor;

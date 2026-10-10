@@ -73,16 +73,34 @@ function compactTablePathPoint(state=positions,solution=levelSolution,profile=ma
 // A material point on the horizontal pallet, shared by the model and reference
 // fixture. factor=1 is physical geometry; camera/clearance never enter here.
 function horizontalPalletPoint(raw,state=positions,solution=levelSolution,profile=machineProfile,factor=1){
- const L=window.Leveling,base=levelCoordinates(0,-.85),travel=levelCoordinates(0,.45*state.Z/100).z,z=base.z+travel;
- const slope=solution.slopeAt(base.x,z),frame=L.orientation({lr:slope.lr*factor,fb:slope.fb*factor});
+ const base=levelCoordinates(0,-.85),travel=levelCoordinates(0,.45*state.Z/100).z,z=base.z+travel;
+ const frame=compactSupportFrame(solution,base.x,z,factor),origin=compactSurfacePoint(solution,base.x,z,factor);
  const q=levelCoordinates(raw[0],raw[2]),relative=[q.x-base.x,raw[1]-.66,q.z-base.z];
  const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),direction=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)).find(a=>a.key==='Z').vector;
- if(solution.residual>1e-10||Math.abs(solution.twist)>1e-10){
-  const local=relative.map((v,i)=>v+travel*(direction[i]-(i===2?1:0)));
-  return frame.rotate(local).map((v,i)=>v+[base.x,.66+solution.heightAt(base.x,z)*factor/1000,z][i]);
+ const local=relative.map((v,i)=>v+travel*(direction[i]-(i===2?1:0)));
+ return frame.rotate(local).map((v,i)=>v+origin[i]);
+}
+// One rigid material-point map for the horizontal column, head and spindle.
+// Common bed tilt is a rigid transform of the entire residual support shape;
+// it must not be reapplied as a world-y height while the body rotates locally.
+function horizontalToolPoint(raw,state=positions,solution=levelSolution,profile=machineProfile,factor=1,keys=['X','Y']){
+ const M=window.ReferenceMeasurement,L=window.Leveling,active={...state,Y:keys.includes('Y')?state.Y:0},layout=columnLayoutOffset(current);
+ const physical=p=>{const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];};
+ const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),intrinsic=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)),body=intrinsicBodyFrame(axes,profile,factor);
+ const base=physical([layout.x,.66,current.d*.29+layout.z]),travel=physical([.55*active.X/100,0,0]),anchor=M.add(base,travel);
+ const frame=compactSupportFrame(solution,anchor[0],anchor[2],factor),origin=compactSurfacePoint(solution,anchor[0],anchor[2],factor);
+ const inverse=(f,v)=>[[1,0,0],[0,1,0],[0,0,1]].map(e=>M.dot(f.rotate(e),v));
+ const railSlopes=[-1,1].map(k=>{const q=levelCoordinates(.55*active.X/100+layout.x,current.d*.28+k*.13);return solution.slopeAt(q.x,q.z);});
+ const guide={lr:railSlopes.reduce((s,q)=>s+q.lr/2,0),fb:railSlopes.reduce((s,q)=>s+q.fb/2,0)};
+ const guideFrame=L.compose(L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),L.orientation({lr:(guide.lr-solution.lr)*factor,fb:(guide.fb-solution.fb)*factor}));
+ let correction=[0,0,0];
+ for(const a of axes.filter(a=>keys.includes(a.key))){
+  const f=a.key==='X'?guideFrame:frame,direction=f.rotate(intrinsic.find(q=>q.key===a.key).vector),distance=Math.hypot(...physical(a.vector))*a.amp*active[a.key]/100;
+  const delta=M.scale(M.sub(direction,a.key==='X'?f.rotate(a.vector):[0,0,0]),distance);
+  correction=M.add(correction,inverse(body,inverse(frame,delta)));
  }
- const moved=frame.rotate(direction);
- return frame.rotate(relative).map((v,i)=>v+travel*moved[i]+[base.x,.66+solution.heightAt(base.x,base.z)*factor/1000,base.z][i]);
+ const material=M.add(physical(raw),physical([layout.x,0,layout.z])),relative=M.add(M.sub(material,base),correction);
+ return M.add(origin,frame.rotate(body.rotate(relative)));
 }
 function compactPathFrames(state,solution,profile,factor=1){
  const q=levelCoordinates(0,-current.d*.1+.4*state.Y/100),work=compactSupportFrame(solution,q.x,q.z,factor);
@@ -125,7 +143,7 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const options={toolPoints:toolPoints.map(p=>levelCoordinates(p.x,p.z)),workPoints:[levelCoordinates(workPoint.x,workPoint.z)],axes:intrinsicAxes,length};
  const portal=toolPoints.length===2?connectedPortal(solution,toolPoints):null;
  const compact=m.kind==='compact'?compactPathFrames(state,solution,profile):null;
- if(m.kind==='lathe'){
+ if(m.kind==='lathe'||m.kind==='horizontal'){
   const t=options.toolPoints[0],w=options.workPoints[0];
   options.toolFrame=compactSupportFrame(solution,t.x,t.z);options.workFrame=compactSupportFrame(solution,w.x,w.z);
  }
@@ -139,7 +157,8 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  if(guidePoints){
   const slopes=guidePoints.map(p=>{const q=levelCoordinates(p.x,p.z);return solution.slopeAt(q.x,q.z);});
   guideSlope={lr:slopes.reduce((v,p)=>v+p.lr/slopes.length,0),fb:slopes.reduce((v,p)=>v+p.fb/slopes.length,0)};
-  options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:window.Leveling.orientation(guideSlope)}:a);
+  const guideFrame=m.kind==='horizontal'?window.Leveling.compose(window.Leveling.orientation({lr:solution.lr,fb:solution.fb}),window.Leveling.orientation({lr:guideSlope.lr-solution.lr,fb:guideSlope.fb-solution.fb})):window.Leveling.orientation(guideSlope);
+  options.axes=options.axes.map(a=>a.key==='X'?{...a,frame:guideFrame}:a);
  }
  const metric=window.Leveling.geometry(solution,options);
  const pureCompact=compact&&profile?compactPathFrames(state,solution,null):null;
@@ -148,7 +167,7 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const poses={tool:{anchor:average(toolPoints),slope:metric.toolSlope,frame:metric.toolFrame},work:{anchor:workPoint,slope:metric.workSlope,frame:metric.workFrame}};
  if(toolPoints.length===2)toolPoints.forEach((p,i)=>{const q=levelCoordinates(p.x,p.z);poses[i?'rightColumn':'leftColumn']={anchor:p,slope:portal?portal.columns[i].slope:solution.slopeAt(q.x,q.z),frame:portal?.columns[i].frame};});
  const bodyFrame=intrinsicBodyFrame(axes,profile),intrinsicUp=bodyFrame.rotate([0,1,0]),combinedUp=metric.toolFrame.rotate(intrinsicUp),combinedDirection=metric.toolFrame.rotate(bodyFrame.direction);
- const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean((compact?compactSupportFrame(solution,q.x,q.z):window.Leveling.orientation(solution.slopeAt(q.x,q.z))).rotate(intrinsicUp));});
+ const bodyLean=directionLean(combinedUp),bodyIntrinsicLean=directionLean(intrinsicUp),bodyColumns=portal?portal.columns.map(c=>directionLean(c.frame.up)):toolPoints.map(p=>{const q=levelCoordinates(p.x,p.z);return directionLean((compact||['horizontal','lathe'].includes(m.kind)?compactSupportFrame(solution,q.x,q.z):window.Leveling.orientation(solution.slopeAt(q.x,q.z))).rotate(intrinsicUp));});
  const lathe=m.kind==='lathe',bodyPosture=lathe?spindleLean(combinedDirection):bodyLean,bodyIntrinsicPosture=lathe?spindleLean(bodyFrame.direction):bodyIntrinsicLean,bodySupportPosture=lathe?spindleLean(metric.toolFrame.rotate(bodyFrame.nominal)):directionLean(metric.toolFrame.rotate([0,1,0]));
  return {...metric,portal,compact,poses,guidePoints,guideSlope,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
 }

@@ -1,0 +1,3984 @@
+{
+  "passed": false,
+  "states": 32,
+  "checks": 528,
+  "maxPositionErrorM": 0.0010314153359331502,
+  "failures": [
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": -0.5501110270650976,
+      "expected": -0.5501110255820909,
+      "error": 1.4830067174287365e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.9301391163323576,
+      "expected": -0.9301391209346452,
+      "error": 4.602287662081039e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": -0.5501927307997007,
+      "expected": -0.5501927383768697,
+      "error": 7.577169003347706e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 1.3337585000013321,
+      "expected": 1.3337584953990547,
+      "error": 4.602277448029213e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.00010064042758137462,
+      "expected": -0.00010063418811271472,
+      "error": 6.23946865989421e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -1.300036598065038,
+      "expected": -1.3000365957251807,
+      "error": 2.3398571968868964e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.2998993533736688,
+      "expected": 0.29989936097813735,
+      "error": 7.60446855485597e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.9500365986950381,
+      "expected": -0.9500365975251808,
+      "error": 1.1698573221252673e-9
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": -0.55,
+      "expected": -0.5500000075779999,
+      "error": 7.577999894259335e-9
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 2,
+      "actual": 1.3340000000000003,
+      "expected": 1.3339999953977,
+      "error": 4.60230031862352e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": 0.5498470732787554,
+      "expected": 0.5498470771110606,
+      "error": 3.832305250917045e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": 0.5498072692001782,
+      "expected": 0.5498072639720016,
+      "error": 5.228176558347286e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.00004880861771657371,
+      "expected": -0.000048806697836154395,
+      "error": 1.919880419316085e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.40003660193426244,
+      "expected": -0.4000366012143357,
+      "error": 7.199267293422906e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.2999511877822834,
+      "expected": 0.29995119012216387,
+      "error": 2.3398804560592623e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.05003660256426257,
+      "expected": -0.0500366022043357,
+      "error": 3.5992686608921076e-10
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 0.55,
+      "expected": 0.5499999947716,
+      "error": 5.228400046242143e-9
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 2,
+      "actual": 1.3340000000000003,
+      "expected": 1.3339999997999,
+      "error": 2.0010038070950031e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": -0.5746972919833578,
+      "expected": -0.5746178891472602,
+      "error": 0.00007940283609764176
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 1,
+      "actual": 2.3860805862599133,
+      "expected": 2.3860801405607477,
+      "error": 4.4569916557435363e-7
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.960672345626421,
+      "expected": -0.960902376530161,
+      "error": 0.00023003090373996393
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": -0.5930994731303798,
+      "expected": -0.593469058163295,
+      "error": 0.0003695850329151762
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 1,
+      "actual": 3.600008712525332,
+      "expected": 3.600001047779414,
+      "error": 0.00000766474591795685
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 1.280005200115216,
+      "expected": 1.27977534783007,
+      "error": 0.00022985228514604827
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.022339934055182406,
+      "expected": -0.02203384237885817,
+      "error": 0.0003060916763242376
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 1,
+      "actual": 1.4119331659830316,
+      "expected": 1.4119400790370495,
+      "error": 0.0000069130540178985456
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -1.3080827382785793,
+      "expected": -1.3079673310068907,
+      "error": 0.00011540727168868337
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.2773503271033701,
+      "expected": 0.2777244764941136,
+      "error": 0.0003741493907434834
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 1,
+      "actual": 1.426347648238431,
+      "expected": 1.4263601259236491,
+      "error": 0.00001247768521817072
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.9581142110250173,
+      "expected": -0.9580573246992143,
+      "error": 0.000056886325802918414
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "coordinate": 0,
+      "actual": -0.55,
+      "expected": -0.5503788745415162,
+      "error": 0.00037887454151619426
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "coordinate": 1,
+      "actual": 0.8408735224700702,
+      "expected": 0.8408657076554129,
+      "error": 0.000007814814657280955
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "coordinate": 2,
+      "actual": 1.3340000000000003,
+      "expected": 1.333769893427357,
+      "error": 0.00023010657264332934
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": 0.515849374958764,
+      "expected": 0.5160429487454891,
+      "error": 0.0001935737867250209
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 1,
+      "actual": 3.017365476510381,
+      "expected": 3.01736798342077,
+      "error": 0.0000025069103890551503
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.9458562004143376,
+      "expected": -0.9458640203816764,
+      "error": 0.00000781996733878465
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": 0.5068991724414484,
+      "expected": 0.5066402830387892,
+      "error": 0.0002588894026592792
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 1,
+      "actual": 3.6037359586665616,
+      "expected": 3.6037291555865156,
+      "error": 0.000006803080045969523
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 1.313941478921322,
+      "expected": 1.3139342373515275,
+      "error": 0.00000724156979448054
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.011017939514435046,
+      "expected": -0.010923296836755593,
+      "error": 0.00009464267767945317
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 1,
+      "actual": 1.4338647482669067,
+      "expected": 1.4338669134222986,
+      "error": 0.0000021651553918644595
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.40828010043088153,
+      "expected": -0.4082449284306951,
+      "error": 0.00003517200018643418
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.28880209289597175,
+      "expected": 0.28891770495703406,
+      "error": 0.00011561206106230904
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 1,
+      "actual": 1.4452660743752446,
+      "expected": 1.4452695001497178,
+      "error": 0.000003425774473209131
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.05831159052121293,
+      "expected": -0.05829442527457701,
+      "error": 0.000017165246635919562
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "coordinate": 0,
+      "actual": 0.55,
+      "expected": 0.5497386119664321,
+      "error": 0.00026138803356789975
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "coordinate": 1,
+      "actual": 0.8441454139668765,
+      "expected": 0.8441385519516749,
+      "error": 0.000006862015201614113
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "coordinate": 2,
+      "actual": 1.3340000000000003,
+      "expected": 1.333990018910448,
+      "error": 0.000009981089552191236
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": -0.5503231249017935,
+      "expected": -0.5503231356719818,
+      "error": 1.0770188296760352e-8
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": -0.5505609147930205,
+      "expected": -0.5505609165036086,
+      "error": 1.7105881155998759e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.00002134318226929806,
+      "expected": -0.00002133694215040594,
+      "error": 6.240118892118909e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -1.3000365980654187,
+      "expected": -1.300036595725276,
+      "error": 2.34014274624883e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.2999786564689807,
+      "expected": 0.2999786613440997,
+      "error": 4.875118975178339e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.9500365986954187,
+      "expected": -0.950036595185276,
+      "error": 3.5101427320327616e-9
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": -0.55,
+      "expected": -0.5500000017084,
+      "error": 1.7083999770406422e-9
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 2,
+      "actual": 1.3340000000000003,
+      "expected": 1.3339999997999,
+      "error": 2.0010038070950031e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": 0.5495549553678676,
+      "expected": 0.549554935207122,
+      "error": 2.016074562849468e-8
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.9301916163300232,
+      "expected": -0.9301916209333598,
+      "error": 4.603336600794705e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": 0.5494390852083157,
+      "expected": 0.5494390741075201,
+      "error": 1.1100795616059145e-8
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 1.3337585000039094,
+      "expected": 1.3337584954003034,
+      "error": 4.603605940900479e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.000024407770733032946,
+      "expected": -0.000024405850652525105,
+      "error": 1.920080507841071e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.40003660193437957,
+      "expected": -0.40003660121430645,
+      "error": 7.200731122480875e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.29997559042926697,
+      "expected": 0.2999755919293474,
+      "error": 1.5000804487463881e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.050036602564379695,
+      "expected": -0.05003660148430644,
+      "error": 1.0800732530569235e-9
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 0.55,
+      "expected": 0.5499999889020001,
+      "error": 1.1097999963460836e-8
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 2,
+      "actual": 1.3340000000000003,
+      "expected": 1.3339999953977,
+      "error": 4.60230031862352e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": -0.6216826867073241,
+      "expected": -0.6222347386088873,
+      "error": 0.0005520519015632663
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 1,
+      "actual": 2.396344275166093,
+      "expected": 2.3963242932597133,
+      "error": 0.00001998190637975128
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.9414895534704071,
+      "expected": -0.941496023750976,
+      "error": 0.000006470280568882103
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": -0.6753664457929294,
+      "expected": -0.6754762497369816,
+      "error": 0.0001098039440522447
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 1,
+      "actual": 3.5815432700099885,
+      "expected": 3.581538489836155,
+      "error": 0.000004780173833651702
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 1.3139521763535895,
+      "expected": 1.3139482007259806,
+      "error": 0.000003975627608898691
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.004757084776551972,
+      "expected": -0.00444379993256823,
+      "error": 0.0003132848439837419
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 1,
+      "actual": 1.4123268867219478,
+      "expected": 1.4123340695242057,
+      "error": 0.000007182802257865717
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -1.308086958203479,
+      "expected": -1.3079683944874725,
+      "error": 0.00011856371600660331
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.29522547374604846,
+      "expected": 0.29547051343250924,
+      "error": 0.00024503968646077956
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 1,
+      "actual": 1.4180292922050486,
+      "expected": 1.4180351559038116,
+      "error": 0.000005863698762986758
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.9581184636872715,
+      "expected": -0.9579413923107171,
+      "error": 0.0001770713765544274
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "coordinate": 0,
+      "actual": -0.55,
+      "expected": -0.5500853738973944,
+      "error": 0.00008537389739438073
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "coordinate": 1,
+      "actual": 0.8244648636101469,
+      "expected": 0.8244611507359184,
+      "error": 0.0000037128742285119642
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092,
+      "coordinate": 2,
+      "actual": 1.3340000000000003,
+      "expected": 1.333990018910448,
+      "error": 0.000009981089552191236
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": 0.4519879743605745,
+      "expected": 0.4509565590246413,
+      "error": 0.0010314153359331502
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 1,
+      "actual": 3.003627611608094,
+      "expected": 3.0035827807046633,
+      "error": 0.000044830903430881364
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.9723879661074961,
+      "expected": -0.9726292415911464,
+      "error": 0.00024127548365027174
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": 0.4246484697662095,
+      "expected": 0.4240623807885874,
+      "error": 0.0005860889776221345
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 1,
+      "actual": 3.617177852610852,
+      "expected": 3.617165184460566,
+      "error": 0.000012668150286110347
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 1.280033986647803,
+      "expected": 1.2797893112045233,
+      "error": 0.00024467544327966273
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.005521131618014974,
+      "expected": -0.005424231025339637,
+      "error": 0.00009690059267533635
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 1,
+      "actual": 1.4339386836487347,
+      "expected": 1.433940903331157,
+      "error": 0.0000022196824223108536
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.4082814197188077,
+      "expected": -0.4082446011746019,
+      "error": 0.000036818544205841075
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.2943888602080199,
+      "expected": 0.2944647736647104,
+      "error": 0.00007591345669050176
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 1,
+      "actual": 1.4426591152720392,
+      "expected": 1.4426604763760642,
+      "error": 0.0000013611040250438577
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.05831291988602144,
+      "expected": -0.05825809584628849,
+      "error": 0.00005482403973294803
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "coordinate": 0,
+      "actual": 0.55,
+      "expected": 0.5494451113223103,
+      "error": 0.0005548886776897133
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "coordinate": 1,
+      "actual": 0.8605540728267997,
+      "expected": 0.8605431088711694,
+      "error": 0.000010963955630383104
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092,
+      "coordinate": 2,
+      "actual": 1.3340000000000003,
+      "expected": 1.333769893427357,
+      "error": 0.00023010657264332934
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": -0.7685216199375615,
+      "expected": -0.7685216203070756,
+      "error": 3.6951408599605884e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.6824934348728025,
+      "expected": -0.6824934388909223,
+      "error": 4.018119836857181e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": -0.7686241082404245,
+      "expected": -0.7686241134869277,
+      "error": 5.2465032318593785e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 0.978478363237175,
+      "expected": 0.9784783592189019,
+      "error": 4.01827304763458e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.00008683536536535065,
+      "expected": -0.00008683078745404337,
+      "error": 4.577911307278087e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.9538409464063803,
+      "expected": -0.9538409446896462,
+      "error": 1.7167340882195958e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.4190308063092444,
+      "expected": 0.41903081162194783,
+      "error": 5.312703443838274e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.6970474686077389,
+      "expected": -0.6970474680902736,
+      "error": 5.174652928374712e-10
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": -0.7683823529411764,
+      "expected": -0.7683823581885698,
+      "error": 5.247393408680523e-9
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 2,
+      "actual": 0.9787500000000002,
+      "expected": 0.9787499959820873,
+      "error": 4.017912891285391e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": 0.7681905264799792,
+      "expected": 0.7681905272089514,
+      "error": 7.289722159242729e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.6823842182671702,
+      "expected": -0.6823842177725574,
+      "error": 4.946127951654944e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": 0.7681405976415331,
+      "expected": 0.768140593493194,
+      "error": 4.148339116660793e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 0.9786904367648439,
+      "expected": 0.9786904372595081,
+      "error": 4.946641984915345e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.00004880623994976624,
+      "expected": -0.00004880483133803488,
+      "error": 1.4086117313601176e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.29351486228867796,
+      "expected": -0.2935148617604678,
+      "error": 5.28210142292096e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.41906883748186796,
+      "expected": 0.4190688391165696,
+      "error": 1.6347016518203361e-9
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 0.7683823529411764,
+      "expected": 0.7683823487925698,
+      "error": 4.148606569387425e-9
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 2,
+      "actual": 0.9787500000000002,
+      "expected": 0.9787500004944127,
+      "error": 4.94412510931852e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": -0.7926183833913584,
+      "expected": -0.7926270014470583,
+      "error": 0.000008618055699960436
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 1,
+      "actual": 2.338627639632562,
+      "expected": 2.338626253040884,
+      "error": 0.0000013865916779209897
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.7094936768612419,
+      "expected": -0.7096180303496774,
+      "error": 0.00012435348843553573
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": -0.8107228301468713,
+      "expected": -0.8108789946776866,
+      "error": 0.0001561645308153503
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 1,
+      "actual": 3.536945779712167,
+      "expected": 3.536943279555238,
+      "error": 0.000002500156929041708
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 0.9311817149486331,
+      "expected": 0.9310565400132449,
+      "error": 0.000125174935388217
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.015144184671464908,
+      "expected": -0.015005630141516535,
+      "error": 0.00013855452994837245
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 1,
+      "actual": 1.3685937251979006,
+      "expected": 1.368596193253219,
+      "error": 0.0000024680553183387133
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.9601692178506195,
+      "expected": -0.9601171700656456,
+      "error": 0.00005204778497391871
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.40380835246556385,
+      "expected": 0.4039694039332019,
+      "error": 0.00016105146763806255
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 1,
+      "actual": 1.3806623746769788,
+      "expected": 1.3806665653586294,
+      "error": 0.000004190681650584338
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.7033899120652078,
+      "expected": -0.7033746541225987,
+      "error": 0.000015257942609148145
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "coordinate": 0,
+      "actual": -0.7683823529411764,
+      "expected": -0.768543298856686,
+      "error": 0.000160945915509636
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "coordinate": 1,
+      "actual": 0.7776805618965141,
+      "expected": 0.7776780217291339,
+      "error": 0.0000025401673802161184
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "coordinate": 2,
+      "actual": 0.9787500000000002,
+      "expected": 0.9786267598276562,
+      "error": 0.00012324017234399687
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": 0.7348185805042659,
+      "expected": 0.7348420659036038,
+      "error": 0.00002348539933794136
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 1,
+      "actual": 2.9694896519978324,
+      "expected": 2.9694901486176053,
+      "error": 4.966197728606403e-7
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.690602675382052,
+      "expected": -0.6905864320994409,
+      "error": 0.00001624328261107255
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": 0.7260397525122562,
+      "expected": 0.72591394679931,
+      "error": 0.00012580571294618093
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 1,
+      "actual": 3.545697155125668,
+      "expected": 3.545694548537574,
+      "error": 0.000002606588093811979
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 0.968317974512007,
+      "expected": 0.968334498906248,
+      "error": 0.00001652439424104646
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.008592027790428393,
+      "expected": -0.00854927425700481,
+      "error": 0.000042753533423582624
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 1,
+      "actual": 1.381136176146914,
+      "expected": 1.3811369426031956,
+      "error": 7.664562815534737e-7
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.2999315084204103,
+      "expected": -0.29991558048910455,
+      "error": 0.000015927931305725895
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.41042326964965187,
+      "expected": 0.41047295083653523,
+      "error": 0.00004968118688336576
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 1,
+      "actual": 1.3907830836185044,
+      "expected": 1.3907842529095884,
+      "error": 0.000001169291083957802
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.04315220582599194,
+      "expected": -0.0431475979933289,
+      "error": 0.000004607832663039435
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "coordinate": 0,
+      "actual": 0.7683823529411764,
+      "expected": 0.7682551107011368,
+      "error": 0.00012724224003957119
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "coordinate": 1,
+      "actual": 0.7860416916605035,
+      "expected": 0.7860390579218006,
+      "error": 0.0000026337387029062853
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "coordinate": 2,
+      "actual": 0.9787500000000002,
+      "expected": 0.9787651725972176,
+      "error": 0.00001517259721739439
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": -0.7686772416411863,
+      "expected": -0.7686772457502757,
+      "error": 4.10908940207122e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.6823712697375197,
+      "expected": -0.6823712692427024,
+      "error": 4.948172982466303e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": -0.7688942432361867,
+      "expected": -0.7688942424684714,
+      "error": 7.677153357477096e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 0.9786904367653103,
+      "expected": 0.9786904372604244,
+      "error": 4.951140608611126e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.00002865478317473445,
+      "expected": -0.000028650204786349223,
+      "error": 4.5783883852262245e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.9538409464066595,
+      "expected": -0.9538409446896974,
+      "error": 1.7169621280288538e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.41908899155906915,
+      "expected": 0.41908899540266537,
+      "error": 3.843596219077483e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.6970474686080183,
+      "expected": -0.6970474656917873,
+      "error": 2.9162309234109784e-9
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": -0.7683823529411764,
+      "expected": -0.768382352172136,
+      "error": 7.690403869275997e-10
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 2,
+      "actual": 0.9787500000000002,
+      "expected": 0.9787500004944127,
+      "error": 4.94412510931852e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": 0.7679762002004892,
+      "expected": 0.7679761851565371,
+      "error": 1.504395208407061e-8
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.6825524863412944,
+      "expected": -0.682552490360453,
+      "error": 4.019158561519021e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": 0.7678704626478067,
+      "expected": 0.7678704524808186,
+      "error": 1.0166988029247648e-8
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 0.9784783632393019,
+      "expected": 0.9784783592198182,
+      "error": 4.019483745842933e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.00003090361015124638,
+      "expected": -0.000030902201392712616,
+      "error": 1.4087585337640637e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.2935148622887639,
+      "expected": -0.29351486176045205,
+      "error": 5.283118387211516e-10
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.4190867415478617,
+      "expected": 0.4190867427305303,
+      "error": 1.1826686296956268e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.03672138449012258,
+      "expected": -0.036721383592805024,
+      "error": 8.973175535942346e-10
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 0.7683823529411764,
+      "expected": 0.768382342776136,
+      "error": 1.0165040364995548e-8
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 2,
+      "actual": 0.9787500000000002,
+      "expected": 0.9787499959820873,
+      "error": 4.017912891285391e-9
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": -0.8198770622535042,
+      "expected": -0.8200071249276808,
+      "error": 0.0001300626741765898
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 1,
+      "actual": 2.3473823094852913,
+      "expected": 2.3473790737975913,
+      "error": 0.0000032356876999983797
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.6883334063893574,
+      "expected": -0.6883160585573941,
+      "error": 0.00001734783196327694
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": -0.8580154156136566,
+      "expected": -0.8579989245311442,
+      "error": 0.000016491082512337663
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 1,
+      "actual": 3.523032446923187,
+      "expected": 3.5230317100061694,
+      "error": 7.369170176296791e-7
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 0.9683204794515833,
+      "expected": 0.9683394213977368,
+      "error": 0.000018941946153483435
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.005003334079582401,
+      "expected": -0.0048622317516493225,
+      "error": 0.00014110232793307885
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 1,
+      "actual": 1.368761971835509,
+      "expected": 1.368764504850851,
+      "error": 0.0000025330153419211854
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.9601707109730815,
+      "expected": -0.960117445130451,
+      "error": 0.000053265842630434435
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.4140923304696212,
+      "expected": 0.41421089708834324,
+      "error": 0.0001185666187220602
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 1,
+      "actual": 1.373832281208816,
+      "expected": 1.373834286599076,
+      "error": 0.000002005390260073625
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.7033914118223117,
+      "expected": -0.7033013581134486,
+      "error": 0.00009005370886305819
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "coordinate": 0,
+      "actual": -0.7683823529411764,
+      "expected": -0.7683587484972707,
+      "error": 0.00002360444390570038
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "coordinate": 1,
+      "actual": 0.7645079972985187,
+      "expected": 0.7645074772772738,
+      "error": 5.200212449540942e-7
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167,
+      "coordinate": 2,
+      "actual": 0.9787500000000002,
+      "expected": 0.9787651725972176,
+      "error": 0.00001517259721739439
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 0,
+      "actual": 0.697913714719977,
+      "expected": 0.6974442962644289,
+      "error": 0.00046941845554804296
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 1,
+      "actual": 2.9591181324214872,
+      "expected": 2.9591031631919837,
+      "error": 0.000014969229503503101
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        2.55,
+        -0.93
+      ],
+      "coordinate": 2,
+      "actual": -0.719825666224498,
+      "expected": -0.7199554765932593,
+      "error": 0.00012981036876136276
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 0,
+      "actual": 0.6787580972211862,
+      "expected": 0.6784358523886742,
+      "error": 0.00032224483251197533
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 1,
+      "actual": 3.5573487412439806,
+      "expected": 3.557343602312886,
+      "error": 0.000005138931094439414
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        3.42,
+        1.334
+      ],
+      "coordinate": 2,
+      "actual": 0.9311931338237521,
+      "expected": 0.9310614625047338,
+      "error": 0.00013167131901836715
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 0,
+      "actual": -0.0054433102364446545,
+      "expected": -0.00539976386950369,
+      "error": 0.0000435463669409648
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 1,
+      "actual": 1.3811722378253637,
+      "expected": 1.3811730194294118,
+      "error": 7.816040481500863e-7
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0,
+        1.27,
+        -0.85
+      ],
+      "coordinate": 2,
+      "actual": -0.2999319720283962,
+      "expected": -0.29991549585110666,
+      "error": 0.000016476177289559413
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 0,
+      "actual": 0.41361603013969533,
+      "expected": 0.41365264518203365,
+      "error": 0.00003661504233831714
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 1,
+      "actual": 1.3886657419859172,
+      "expected": 1.3886662339009619,
+      "error": 4.919150446980325e-7
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "raw": [
+        0.3,
+        1.27,
+        -0.5
+      ],
+      "coordinate": 2,
+      "actual": -0.04315267147566387,
+      "expected": -0.04312487538683313,
+      "error": 0.000027796088830744914
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "coordinate": 0,
+      "actual": 0.7683823529411764,
+      "expected": 0.7680705603417215,
+      "error": 0.00031179259945490756
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "coordinate": 1,
+      "actual": 0.799214256258499,
+      "expected": 0.7992096023736607,
+      "error": 0.000004653884838279332
+    },
+    {
+      "kind": "horizontal",
+      "bedDatum": true,
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167,
+      "coordinate": 2,
+      "actual": 0.9787500000000002,
+      "expected": 0.9786267598276562,
+      "error": 0.00012324017234399687
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 1.8,
+      "expected": 1.79999999424,
+      "error": 5.760000032495327e-9
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 1.8,
+      "expected": 1.79999999424,
+      "error": 5.760000032495327e-9
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 257.2768345693093,
+      "coordinate": 0,
+      "actual": 1.8,
+      "expected": 1.799618858802433,
+      "error": 0.00038114119756693654
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 257.2768345693093,
+      "coordinate": 1,
+      "actual": 0.8582448965867082,
+      "expected": 0.8582370518826414,
+      "error": 0.000007844704066783947
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 257.2768345693093,
+      "coordinate": 0,
+      "actual": 1.8,
+      "expected": 1.799618858802433,
+      "error": 0.00038114119756693654
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 257.2768345693093,
+      "coordinate": 1,
+      "actual": 0.8582448965867082,
+      "expected": 0.8582370518826414,
+      "error": 0.000007844704066783947
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 1.8,
+      "expected": 1.79999999424,
+      "error": 5.760000032495327e-9
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 1.8,
+      "expected": 1.79999999424,
+      "error": 5.760000032495327e-9
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 257.2768345693093,
+      "coordinate": 0,
+      "actual": 1.8,
+      "expected": 1.799618858802433,
+      "error": 0.00038114119756693654
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 257.2768345693093,
+      "coordinate": 1,
+      "actual": 0.8582448965867082,
+      "expected": 0.8582370518826414,
+      "error": 0.000007844704066783947
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 257.2768345693093,
+      "coordinate": 0,
+      "actual": 1.8,
+      "expected": 1.799618858802433,
+      "error": 0.00038114119756693654
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 257.2768345693093,
+      "coordinate": 1,
+      "actual": 0.8582448965867082,
+      "expected": 0.8582370518826414,
+      "error": 0.000007844704066783947
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 2.3400000000000003,
+      "expected": 2.3399999925120003,
+      "error": 7.487999997835004e-9
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 2.3400000000000003,
+      "expected": 2.3399999925120003,
+      "error": 7.487999997835004e-9
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 217.91025228010838,
+      "coordinate": 0,
+      "actual": 2.3400000000000003,
+      "expected": 2.339644514256066,
+      "error": 0.0003554857439342918
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 217.91025228010838,
+      "coordinate": 1,
+      "actual": 0.8250836607394381,
+      "expected": 0.8250774636203866,
+      "error": 0.000006197119051476463
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 217.91025228010838,
+      "coordinate": 0,
+      "actual": 2.3400000000000003,
+      "expected": 2.339644514256066,
+      "error": 0.0003554857439342918
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 217.91025228010838,
+      "coordinate": 1,
+      "actual": 0.8250836607394381,
+      "expected": 0.8250774636203866,
+      "error": 0.000006197119051476463
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 2.3400000000000003,
+      "expected": 2.3399999925120003,
+      "error": 7.487999997835004e-9
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1,
+      "coordinate": 0,
+      "actual": 2.3400000000000003,
+      "expected": 2.3399999925120003,
+      "error": 7.487999997835004e-9
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 217.91025228010838,
+      "coordinate": 0,
+      "actual": 2.3400000000000003,
+      "expected": 2.339644514256066,
+      "error": 0.0003554857439342918
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 217.91025228010838,
+      "coordinate": 1,
+      "actual": 0.8250836607394381,
+      "expected": 0.8250774636203866,
+      "error": 0.000006197119051476463
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 217.91025228010838,
+      "coordinate": 0,
+      "actual": 2.3400000000000003,
+      "expected": 2.339644514256066,
+      "error": 0.0003554857439342918
+    },
+    {
+      "kind": "lathe",
+      "bedDatum": true,
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 217.91025228010838,
+      "coordinate": 1,
+      "actual": 0.8250836607394381,
+      "expected": 0.8250774636203866,
+      "error": 0.000006197119051476463
+    }
+  ],
+  "rows": [
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 257.2768345693093
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 257.2768345693093
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 257.2768345693093
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 257.2768345693093
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 217.91025228010838
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 217.91025228010838
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 217.91025228010838
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 217.91025228010838
+    }
+  ]
+}

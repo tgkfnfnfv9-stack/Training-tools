@@ -1,0 +1,297 @@
+{
+  "passed": true,
+  "states": 32,
+  "checks": 528,
+  "maxPositionErrorM": 8.881784197001252e-16,
+  "failures": [],
+  "rows": [
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 223.6426176901092
+    },
+    {
+      "kind": "horizontal",
+      "width": 2.72,
+      "depth": 3.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 223.6426176901092
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 175.15445174820167
+    },
+    {
+      "kind": "horizontal",
+      "width": 3.8,
+      "depth": 2.7,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 175.15445174820167
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 257.2768345693093
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 257.2768345693093
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 257.2768345693093
+    },
+    {
+      "kind": "lathe",
+      "width": 4,
+      "depth": 1.68,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 257.2768345693093
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 217.91025228010838
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": -0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 217.91025228010838
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": -100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": false,
+      "end": 100,
+      "factor": 1
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": -100,
+      "factor": 217.91025228010838
+    },
+    {
+      "kind": "lathe",
+      "width": 5.2,
+      "depth": 1.2,
+      "k": 0.05,
+      "exaggerate": true,
+      "end": 100,
+      "factor": 217.91025228010838
+    }
+  ]
+}
