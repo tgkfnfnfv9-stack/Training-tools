@@ -91,7 +91,7 @@ function updateMachineAccuracy(){
   for(const value of [label,cleanNumber(measure.maxSquareness,2),cleanNumber(measure.objective,2),'固定成分']){const cell=document.createElement(row.children.length?'td':'th');if(!row.children.length)cell.setAttribute('scope','row');cell.textContent=value;row.append(cell);}
   $('accuracyComparison').append(row);
  }
- $('machineProgress').textContent=(target?'この個体の参考調整の目安内です。':'この個体の参考調整の目安まで余地があります。')+' 今の直角図と姿勢の変化を確認してください。本体の直角差とガイドの曲がり成分は残る場合があります。';
+ $('machineProgress').textContent=(target?'この個体の参考調整の目安内です。':'この個体の参考調整の目安まで余地があります。')+' 参考調整は代表位置の局所軸角度・姿勢の補助評価です。上段の有限測定、触れ、回転TIR、上面や穴芯をすべて最良にする値ではありません。各測定も確認してください。';
  const adjustment=machineBestHeights();
  $('applyBestLevel').disabled=adjustment.every((h,i)=>Math.abs(h-supportHeights[i])<.0005);
  const hints=adjustment.map((h,i)=>({i,delta:Math.round((h-supportHeights[i])*1000)/1000})).filter(q=>Math.abs(q.delta)>=.0005);

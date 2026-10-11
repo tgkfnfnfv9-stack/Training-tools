@@ -161,15 +161,23 @@ let shortTravelCases=0;
 for(const [width,depth] of [[.5,1.68],[4,.5],[.5,.5],[6/7,.72],[6/7-1e-7,.72-1e-7]])for(const X of [-100,100])for(const Z of [-100,100]){
  env.read(`levelConfig.width=${width};levelConfig.depth=${depth};supportHeights=supports.map(()=>0);machineProfile=null;positions={X:${X},Y:0,Z:${Z},A:0,C:0};updateLeveling();`);
  const a=env.json('latheInspectionGeometry()'),validX=.7*depth/1.68>=.3-1e-12,validZ=1.4*width/4>=.3-1e-12;
+ // Travel is necessary but does not guarantee a finite face. At y=1.5 the
+ // 12-gon front extends .43*depth/1.68 from its centre. The outer Z flat
+ // starts at raw x=.23 and ends at -.09, leaving .32*width/4 for the scan.
+ // Previous expectations accepted infinite planes at minimum axis travel;
+ // the 2026-10-11 independent finite-polygon audit disproved those zeros.
+ const faceValid=validX&&.43*depth/1.68>=.3-1e-12,flatValid=validZ&&.32*width/4>=.3-1e-12;
  assert.equal(a.validX,validX);assertions++;assert.equal(a.validZ,validZ);assertions++;
+ assert.equal(a.faceScan.valid,faceValid);assertions++;assert.equal(a.flatScan.valid,flatValid);assertions++;
  for(const pair of [['xStart','X'],['xEnd','X'],['zStart','Z'],['zEnd','Z']])ok(a[pair[0]][pair[1]]>=-100&&a[pair[0]][pair[1]]<=100,'scan endpoint within actual slider');
  if(!validX){assert.equal(a.face,null,'insufficient X travel is unavailable');assertions++;}
  if(!validZ)for(const key of ['flat','barSide','barTop']){assert.equal(a[key],null,'insufficient Z travel is unavailable');assertions++;}
- if(validX)near(a.face,0,'ideal face at exact minimum travel');
- if(validZ)for(const key of ['flat','barSide','barTop'])near(a[key],0,'ideal Z read at exact minimum travel');
+ if(faceValid)near(a.face,0,'ideal X reading within finite face');else {assert.equal(a.face,null,'face beyond finite turret is unavailable');assertions++;}
+ if(flatValid)near(a.flat,0,'ideal Z reading within finite flat');else {assert.equal(a.flat,null,'flat beyond finite turret is unavailable');assertions++;}
+ if(validZ)for(const key of ['barSide','barTop'])near(a[key],0,'ideal bar read at exact minimum travel');
  const markup=env.read('latheInspectionMarkup(latheInspectionGeometry(),{rootMicrons:0,tipMicrons:0})');
- if(!validX)ok(markup.includes('X —'),'invalid X is a dash, not a fabricated zero');
- if(!validZ)ok(markup.includes('Z —'),'invalid Z is a dash, not a fabricated zero');
+ if(!faceValid)ok(markup.includes('X —'),'invalid X is a dash, not a fabricated zero');
+ if(!flatValid)ok(markup.includes('Z —'),'invalid Z is a dash, not a fabricated zero');
  shortTravelCases++;
 }
 // Recovered mesh points are checked against the declared physical bar. The

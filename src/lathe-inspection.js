@@ -5,6 +5,14 @@
  // i.e. more plunger compression. All positions and extensions are metres.
  function extension(body,probe,point,normal){const d=dot(probe,normal);return Math.abs(d)<1e-10?NaN:dot(sub(point,body),normal)/d;}
  function planeScan(first,last,normalFirst,normalLast){const body=add(first,mul(normalFirst,.01)),probe=mul(normalFirst,-1);return (extension(body,probe,first,normalFirst)-extension(body,probe,last,normalLast))*1e6;}
+ // A plane intersection alone is not a valid dial contact. The caller also
+ // checks the hit against the material face bounds in the turret's frame.
+ function planeContact({body,probe,point,normal,maxExtension=.02}){
+  const e=extension(body,probe,point,normal);
+  if(!Number.isFinite(e))return {valid:false,reason:'測定子と面が平行'};
+  if(e<0||e>maxExtension)return {valid:false,reason:'測定子の範囲外'};
+  return {valid:true,extension:e,point:add(body,mul(probe,e))};
+ }
  // Spindle-centred rotating indicator, outward probe against an internal bore.
  // a=left, b=up, c=right, d=down, viewed from spindle towards turret.
  function bore(dx,dy,radius=.025){
@@ -31,5 +39,5 @@
   let s=(profile.seed^0x4c415431)>>>0;const next=()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296*2-1;},scale=profile.condition==='used'?30:10;
   return {face:next()*scale/1e6,flat:next()*scale/1e6,holeX:next()*scale/1e6,holeY:next()*scale/1e6};
  }
- return Object.freeze({model:'lathe-testbar-v2',add,sub,mul,dot,unit,extension,planeScan,bore,cylinderContact,intrinsic});
+ return Object.freeze({model:'lathe-finite-faces-v3',add,sub,mul,dot,unit,extension,planeScan,planeContact,bore,cylinderContact,intrinsic});
 });
