@@ -1,0 +1,10 @@
+{
+  "tag": "after-details",
+  "commit": "fc51b761c2677fcfe43bdbae1a279ecb25541d06",
+  "sha256": "a70468b143711048184e8983e0e5dc823da7db4fa3fa2babdd44a96ac081ba6c",
+  "states": 114,
+  "measurementRows": 2088,
+  "checks": 2089,
+  "failed": [],
+  "errors": []
+}

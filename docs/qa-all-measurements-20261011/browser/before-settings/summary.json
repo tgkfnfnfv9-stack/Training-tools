@@ -1,0 +1,10 @@
+{
+  "tag": "before-settings",
+  "commit": "baede5bfafed034f5f7d21ec9957e344dc7c8c98",
+  "sha256": "831edb95f7dbf1095563c1c8c289f52219bcf764937618c6079d4c4d32f7fa65",
+  "states": 28,
+  "measurementRows": 496,
+  "checks": 497,
+  "failed": [],
+  "errors": []
+}

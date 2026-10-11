@@ -1,0 +1,352 @@
+{
+  "url": "https://raw.githack.com/tgkfnfnfv9-stack/Training-tools/fc51b761c2677fcfe43bdbae1a279ecb25541d06/index.html",
+  "commit": "fc51b761c2677fcfe43bdbae1a279ecb25541d06",
+  "expectedSha256": "a70468b143711048184e8983e0e5dc823da7db4fa3fa2babdd44a96ac081ba6c",
+  "environment": "Linux real Chromium; 1280x1000; preview only, not GitHub Pages publication",
+  "tls": "TLS verification enabled; inherited environment proxy; environment CA trust",
+  "checks": {
+    "exactRemoteHTML": true,
+    "compactRealButtonYZ13": true,
+    "latheFiniteFacesInvalid": true,
+    "noBrowserErrors": true
+  },
+  "errors": [],
+  "browser": "154.0.8037.57",
+  "externalContentNotice": true,
+  "finalUrl": "https://raw.githack.com/tgkfnfnfv9-stack/Training-tools/fc51b761c2677fcfe43bdbae1a279ecb25541d06/index.html",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "sha256": "a70468b143711048184e8983e0e5dc823da7db4fa3fa2babdd44a96ac081ba6c",
+  "compact": {
+    "setup": "diagnostic reproducible new seed123456, all supports0, axes0; subsequent support movement uses real UI buttons",
+    "before": {
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "new",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.148
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -4.963
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -12.552
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 0,
+              "microns": 6.878
+            },
+            "Y": {
+              "band": 0,
+              "microns": 7.996
+            },
+            "Z": {
+              "band": 0,
+              "microns": 16.329
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.041,
+            0.052,
+            0.052,
+            0.041
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "YZ": {
+        "raw": 12.551999996338742,
+        "dom": "+13"
+      },
+      "supportHeights": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "after": {
+      "record": {
+        "calculationModel": "compact-asymmetric-bending-v4",
+        "version": 3,
+        "supportLayout": {
+          "id": "compact-four-v1",
+          "points": [
+            {
+              "id": "compact-four-v1-p1",
+              "x": -1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p2",
+              "x": 1.04,
+              "z": -1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p3",
+              "x": -1.04,
+              "z": 1.08,
+              "group": "bed"
+            },
+            {
+              "id": "compact-four-v1-p4",
+              "x": 1.04,
+              "z": 1.08,
+              "group": "bed"
+            }
+          ]
+        },
+        "machineProfile": {
+          "version": 1,
+          "condition": "new",
+          "seed": 123456,
+          "keys": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "squareness": {
+            "XY": {
+              "band": 0,
+              "microns": 16.148
+            },
+            "XZ": {
+              "band": 0,
+              "microns": -4.963
+            },
+            "YZ": {
+              "band": 0,
+              "microns": -12.552
+            }
+          },
+          "guides": {
+            "X": {
+              "band": 0,
+              "microns": 6.878
+            },
+            "Y": {
+              "band": 0,
+              "microns": 7.996
+            },
+            "Z": {
+              "band": 0,
+              "microns": 16.329
+            }
+          },
+          "initialHeights": [
+            -0.15,
+            0.15,
+            0.097,
+            -0.073
+          ]
+        },
+        "bestState": {
+          "width": 2.08,
+          "depth": 2.16,
+          "columnX": 0,
+          "columnZ": 0,
+          "heights": [
+            0.041,
+            0.052,
+            0.052,
+            0.041
+          ]
+        },
+        "machine": "vertical",
+        "mode": "compact",
+        "width": 2.08,
+        "depth": 2.16,
+        "heights": [
+          0.01,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "YZ": {
+        "raw": 12.528086201175903,
+        "dom": "+13"
+      },
+      "supportHeights": [
+        0.01,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "lathe": [
+    {
+      "setup": "ideal diagnostic profile=null; zero supports and axes; hidden dimension input event",
+      "width": 3.2,
+      "depth": 1.68,
+      "invalidFace": "Z",
+      "record": {
+        "calculationModel": "lathe-carriage-v2",
+        "version": 1,
+        "machine": "lathe",
+        "mode": "",
+        "width": 3.2,
+        "depth": 1.68,
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "faceX": 0,
+      "faceZ": null,
+      "validX": true,
+      "validZ": false,
+      "reasonZ": "タレット面Zの範囲外",
+      "dom": "X 0　Z —",
+      "note": "測定不可：Z タレット面Zの範囲外"
+    },
+    {
+      "setup": "ideal diagnostic profile=null; zero supports and axes; hidden dimension input event",
+      "width": 4,
+      "depth": 0.8,
+      "invalidFace": "X",
+      "record": {
+        "calculationModel": "lathe-carriage-v2",
+        "version": 1,
+        "machine": "lathe",
+        "mode": "",
+        "width": 4,
+        "depth": 0.8,
+        "heights": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "sensitivity": 0.05,
+        "measurePos": 0,
+        "offset": 0.5,
+        "columnX": 0,
+        "columnZ": 0,
+        "axisPositions": {
+          "X": 0,
+          "Z": 0
+        },
+        "step": 0.01,
+        "exaggerate": true
+      },
+      "faceX": null,
+      "faceZ": 0,
+      "validX": false,
+      "validZ": true,
+      "reasonX": "タレット面Xの範囲外",
+      "dom": "X —　Z 0",
+      "note": "測定不可：X タレット面Xの範囲外 "
+    }
+  ],
+  "passed": true
+}
