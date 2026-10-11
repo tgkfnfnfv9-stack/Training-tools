@@ -752,35 +752,6 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 #latheInspectionSecond{width:100%}
 .is-lathe-reference>.reference-intro{display:none}
 @media(max-width:380px){.lathe-inspection-columns{gap:3px}.lathe-inspection-columns h2{font-size:10px}.lathe-inspection-columns svg{height:82px}.lathe-inspection-columns p{font-size:8px}}
-.fixture-comparison{margin:10px 0;padding:10px;border:1px solid #d5cec4;border-radius:8px;background:#faf8f3;font-size:12px;line-height:1.5}
-.fixture-comparison>summary{cursor:pointer;font-weight:700;color:#44372b}
-.fixture-comparison p{margin:8px 0}
-.fixture-comparison-actions{display:flex;flex-wrap:wrap;gap:6px}
-.fixture-comparison-actions button{min-height:36px;padding:6px 9px}
-.fixture-comparison-row{padding:8px 0;border-top:1px solid #ded8cf}
-.fixture-comparison-row h4{margin:0 0 6px;font-size:12px}
-.fixture-comparison-values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
-.fixture-comparison-values>div{min-width:0;background:white;border-radius:5px;padding:6px}
-.fixture-comparison-values span,.fixture-comparison-values strong,.fixture-comparison-values small{display:block;overflow-wrap:anywhere}
-.fixture-comparison-values span{font-size:10px}
-.fixture-comparison-values strong{font-size:18px;font-variant-numeric:tabular-nums}
-.fixture-comparison-values small{font-size:10px;font-variant-numeric:tabular-nums;color:#63594f}
-.fixture-setup{margin:0 0 10px;padding:9px;border:1px solid #d5cec4;border-radius:8px;background:#f8f6f0;font-size:11px;line-height:1.45}
-.fixture-setup-actions{display:flex;align-items:end;gap:8px;flex-wrap:wrap}
-.fixture-setup label{display:flex;flex-direction:column;gap:3px}
-.fixture-setup button,.fixture-setup select{min-height:34px;font-size:12px}
-.fixture-setup p{margin:6px 0}
-.fixture-setup summary{font-weight:700;cursor:pointer}
-.fixture-geometry-controls{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
-.fixture-geometry-controls input{width:110px}
-#fixtureGeometryCanvas{display:block;width:100%;height:clamp(260px,43dvh,440px);border:1px solid #ddd6ca;border-radius:6px}
-.fixture-dialog{width:min(920px,calc(100vw - 28px));max-height:calc(100dvh - 28px);box-sizing:border-box;overflow:auto;border:1px solid #b5aca0;border-radius:12px;padding:14px;background:#faf8f3;color:#392f26;font-size:12px;line-height:1.5}
-.fixture-dialog::backdrop{background:#17283399}
-.fixture-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.fixture-dialog-heading h2{font-size:17px;margin:0}
-.fixture-dialog button,.fixture-dialog select{min-height:36px}
-.fixture-dialog label{display:flex;flex-direction:column;gap:3px}
-.fixture-dialog p{margin:8px 0}
 </style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
 .tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
 @media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}#testerDiagram{max-height:300px}}
@@ -823,7 +794,7 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 <aside id="trainingDrawer" class="training-drawer" hidden role="dialog" aria-modal="false" aria-labelledby="trainingMenuTitle">
 <div class="training-drawer-heading"><strong id="trainingMenuTitle">機械の設定</strong><button id="closeTrainingMenu" aria-label="設定メニューを閉じる">閉じる ×</button></div>
 <div class="scroll-controls" id="trainingControls" tabindex="0" role="region" aria-label="機械の設定と説明">
-<p class="drawer-group-label">表示と動き</p><details class="card viewer-settings" id="modelDisplaySettings"><summary>模型の表示・理想輪郭</summary><div id="idealComparison" class="ideal-comparison"><label class="ideal-outline-toggle"><input id="showIdealOutline" type="checkbox" checked aria-describedby="idealOutlineNote"> 理想輪郭を重ねる</label><div class="ideal-outline-legend"><span><i class="current-model-key" aria-hidden="true"></i>現在の模型</span><span><i class="ideal-outline-key" aria-hidden="true"></i>理想（薄い破線）</span></div><details class="setting-help"><summary>理想輪郭とは</summary><p id="idealOutlineNote">理想は支持の傾き・ねじれと本体の固有誤差を除いた輪郭です。寸法・軸位置は現在と同じで、上下位置だけ平均支持高さに揃えます。測定欄の展開図は接触配置を示します。初期との数値比較は▽の説明で確認できます。</p></details></div><label class="scene-view-label" for="sceneView">観察方向（正投影）</label><select id="sceneView"><option value="oblique">斜め・自由回転</option><option value="front">正面 · 左 → 右</option><option value="side">側面 · 手前 → 奥</option></select><button id="resetSceneZoom">模型の大きさを戻す</button><div class="viewer-options"><label><input id="exaggerate" type="checkbox" checked> <span id="exaggerateLabel">傾き・姿勢差を強調</span></label><label><input id="showLevelSurface" type="checkbox" checked> 支持面の高さマップ</label><label><input id="showAxes" type="checkbox" checked> 軸の矢印を表示</label><label><input id="labels" type="checkbox" checked> 部品名を表示</label></div><details class="orientation-details"><summary>軸の向きを確認</summary><section id="orientationGuide" class="orientation-guide" aria-labelledby="orientationGuideTitle"><h3 id="orientationGuideTitle">模型の向き（座標の目安）</h3><div id="orientationAxes" class="orientation-axes"></div><p>各軸の向きを別々に表示します。模型の左右回転に追従する目安で、NCの＋／−指令や支持姿勢・精度を示しません。</p><p id="orientationRotaryNote" hidden>A/Cは模型上の曲線矢印で確認します。</p></section></details><details class="viewer-help"><summary>色・表示の説明</summary><p class="viewer-caption">模型は遠近による見かけの倒れを避ける正投影です。「観察方向」で正面・側面・斜めを切り替えます。正面／側面からドラッグすると斜めの自由回転に戻ります。部材のそばの破線は床に対する鉛直・水平基準です。水準器は支持全体の平均、模型は局所支持と本体固有の姿勢を重ねます。門形の骨格は接続した支持姿勢、ラム・主軸は固有直角差を含む代表姿勢で描きます。固有直角差は軸矢印・直角図にも反映します。一様な支持の傾きでは、気泡は高い側へ動き、支持によるコラムの倒れは低い側へ向きます。本体固有差や、ねじれによる場所ごとの傾きも重なります。水準器の目安内は厳密な水平と同じではありません。<br>一本指／マウスの左右ドラッグで回転、二本指のピンチ／マウスホイールで模型を拡大・縮小できます。水準器は右枠に固定し、前後は上が奥・下が手前です。設定メニューは模型と別にスクロールします。開いている間は主画面全体が右へ縮小し、背景の操作を止めます。模型にフォーカスすると左右矢印キーで回転、＋／−キーで拡大・縮小、Homeキーで大きさを戻せます。拡大・縮小は表示だけを変え、支持高さ・軸位置・精度・保存内容は変えません。絵の下で軸を選び、左上の☰から「軸位置・デモ」を開きます。丸いアルファベットは学習用の支持点です。軸名・部品名・支持点の背景は薄い半透明で、模型が透けて見えます。<br>灰：固定　淡色：他軸の部品　赤X／緑Y／青Z／紫A／橙C：選択軸で動く部品　黄：支持点<br>小型立形の模型は傾き・姿勢差を実寸で描きます。軸間の微小な差は直角図で確認します。「直角図のずれを強調」は直角図だけを切り替え、模型と数値欄は変えません。小型の直角測定と触れは模型と同じ物理姿勢で接触を計算します。数値に表示の誇張を掛けません。器具寸法は強調を外しても模式図です。他の機種は模型の傾きと姿勢差を強調できます。黄〜緑の分割面は支持高さをつないだ面（黄＝相対的に高い、緑＝低い）です。コラム／主軸は本体の固有方向と支持姿勢を重ねた代表姿勢、テーブルは支持姿勢で描きます。非直交のXYZ全てを一つの剛体で再現する図ではありません。ねじれでは矢印は代表案内方向で、実体の動きには場所ごとの姿勢変化も重なります。軸の矢印には固有直角差を一度だけ重ねます。小型以外の模型の強調倍率は個体・寸法・配置から決め、支持調整や軸操作中に変えないため、レベル出しに合わせて絵も変化します。抽選したガイドの曲がり成分はモデル内部で固定して保持します。狭い絵では支持点と全軸名を確保し、部品名は選択軸の部品・ベース／コラムを優先して一部省略します。構造と軸構成は下の説明でも確認できます。弾性変形や荷重の移動は計算しません。</p></details></details>
+<p class="drawer-group-label">表示と動き</p><details class="card viewer-settings" id="modelDisplaySettings"><summary>模型の表示・理想輪郭</summary><div id="idealComparison" class="ideal-comparison"><label class="ideal-outline-toggle"><input id="showIdealOutline" type="checkbox" checked aria-describedby="idealOutlineNote"> 理想輪郭を重ねる</label><div class="ideal-outline-legend"><span><i class="current-model-key" aria-hidden="true"></i>現在の模型</span><span><i class="ideal-outline-key" aria-hidden="true"></i>理想（薄い破線）</span></div><details class="setting-help"><summary>理想輪郭とは</summary><p id="idealOutlineNote">理想は支持の傾き・ねじれと本体の固有誤差を除いた輪郭です。寸法・軸位置は現在と同じで、上下位置だけ平均支持高さに揃えます。測定欄の展開図は接触配置を示します。初期との数値比較は▽の説明で確認できます。</p></details></div><label class="scene-view-label" for="sceneView">観察方向（正投影）</label><select id="sceneView"><option value="oblique">斜め・自由回転</option><option value="front">正面 · 左 → 右</option><option value="side">側面 · 手前 → 奥</option></select><button id="resetSceneZoom">模型の大きさを戻す</button><div class="viewer-options"><label><input id="exaggerate" type="checkbox" checked> <span id="exaggerateLabel">傾き・姿勢差を強調</span></label><label><input id="showLevelSurface" type="checkbox" checked> 支持面の高さマップ</label><label><input id="showAxes" type="checkbox" checked> 軸の矢印を表示</label><label><input id="labels" type="checkbox" checked> 部品名を表示</label></div><details class="orientation-details"><summary>軸の向きを確認</summary><section id="orientationGuide" class="orientation-guide" aria-labelledby="orientationGuideTitle"><h3 id="orientationGuideTitle">模型の向き（座標の目安）</h3><div id="orientationAxes" class="orientation-axes"></div><p>各軸の向きを別々に表示します。模型の左右回転に追従する目安で、NCの＋／−指令や支持姿勢・精度を示しません。</p><p id="orientationRotaryNote" hidden>A/Cは模型上の曲線矢印で確認します。</p></section></details><details class="viewer-help"><summary>色・表示の説明</summary><p class="viewer-caption">模型は遠近による見かけの倒れを避ける正投影です。「観察方向」で正面・側面・斜めを切り替えます。正面／側面からドラッグすると斜めの自由回転に戻ります。部材のそばの破線は床に対する鉛直・水平基準です。水準器は支持全体の平均、模型は局所支持と本体固有の姿勢を重ねます。門形の骨格は接続した支持姿勢、ラム・主軸は固有直角差を含む代表姿勢で描きます。固有直角差は軸矢印・直角図にも反映します。一様な支持の傾きでは、気泡は高い側へ動き、支持によるコラムの倒れは低い側へ向きます。本体固有差や、ねじれによる場所ごとの傾きも重なります。水準器の目安内は厳密な水平と同じではありません。<br>一本指／マウスの左右ドラッグで回転、二本指のピンチ／マウスホイールで模型を拡大・縮小できます。水準器は右枠に固定し、前後は上が奥・下が手前です。設定メニューは模型と別にスクロールします。開いている間は主画面全体が右へ縮小し、背景の操作を止めます。模型にフォーカスすると左右矢印キーで回転、＋／−キーで拡大・縮小、Homeキーで大きさを戻せます。拡大・縮小は表示だけを変え、支持高さ・軸位置・精度・保存内容は変えません。絵の下で軸を選び、左上の☰から「軸位置・デモ」を開きます。丸いアルファベットは学習用の支持点です。軸名・部品名・支持点の背景は薄い半透明で、模型が透けて見えます。<br>灰：固定　淡色：他軸の部品　赤X／緑Y／青Z／紫A／橙C：選択軸で動く部品　黄：支持点<br>小型立形の模型は傾き・姿勢差を実寸で描きます。軸間の微小な差は直角図で確認します。「直角図のずれを強調」は直角図だけを切り替え、模型と数値欄は変えません。小型の直角測定と触れは共通の仮想主軸姿勢を使い、前後の支持応答は中央で約5倍です。模型と局所角度は元の姿勢のままです。器具寸法は強調を外しても模式図です。他の機種は模型の傾きと姿勢差を強調できます。黄〜緑の分割面は支持高さをつないだ面（黄＝相対的に高い、緑＝低い）です。コラム／主軸は本体の固有方向と支持姿勢を重ねた代表姿勢、テーブルは支持姿勢で描きます。非直交のXYZ全てを一つの剛体で再現する図ではありません。ねじれでは矢印は代表案内方向で、実体の動きには場所ごとの姿勢変化も重なります。軸の矢印には固有直角差を一度だけ重ねます。小型以外の模型の強調倍率は個体・寸法・配置から決め、支持調整や軸操作中に変えないため、レベル出しに合わせて絵も変化します。抽選したガイドの曲がり成分はモデル内部で固定して保持します。狭い絵では支持点と全軸名を確保し、部品名は選択軸の部品・ベース／コラムを優先して一部省略します。構造と軸構成は下の説明でも確認できます。弾性変形や荷重の移動は計算しません。</p></details></details>
 <details class="card" id="axisMenuSection"><summary>軸位置・デモ</summary><div id="axisMenu" class="axis-menu" role="region" aria-labelledby="axisMenuTitle"><div class="axis-menu-heading"><strong id="axisMenuTitle">軸操作</strong><button hidden id="closeAxisControls" aria-label="軸操作を閉じる">閉じる</button></div><button hidden id="axisControlsToggle" class="axis-controls-toggle" aria-expanded="false" aria-controls="axisMenu">軸操作 ▾</button><p class="hint">主画面の軸ボタン、または下の選択欄で軸を選び、位置や動きを確認します。</p><label class="select-label" for="drawerAxisSelect">操作する軸</label><select id="drawerAxisSelect" aria-label="操作する軸"></select><button id="playAxis" class="play-axis" aria-pressed="false">選んだ軸を動かす</button><button id="resetAxes" class="text-button">中央へ戻す</button><div id="axisSliders"></div><p class="hint">模型上の両端矢印は軸の向き、向き目安は名目の部材＋方向を示します。スライダーは部材位置（中央0）です。部材＋／−はNC指令の符号ではなく、テーブルが動く場合は計器の相対移動と逆になります。</p></div></details>
 <details class="card machine-menu"><summary>方式・サイズ</summary><p class="hint">機種を選び直すときは、上の「機種選択」へ。</p><div id="machineModeBox" hidden><label class="select-label" for="machineMode">この構造の方式／サイズ</label><select id="machineMode"></select></div></details>
 <p class="drawer-group-label">調整を学ぶ</p><details class="card adjustment-menu"><summary>調整の状態・手本</summary><div id="coarsePanel" class="card level-stages" aria-labelledby="levelStagesTitle">
@@ -890,35 +861,34 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 <details hidden><summary>抽選率・固有成分を見る</summary><p class="hint">各誤差項目ごとの教材用抽選率です。市場の実測統計ではありません。初期の測定値には支持姿勢と評価長も反映するため、この抽選帯と同じ値になるとは限りません。</p><div class="comparison-wrap"><table class="scenario-distribution"><caption>抽選する固有成分（直角差は300 mm基準、ガイドPVは仮想移動全域）</caption><thead><tr><th>状態</th><th>よく出る</th><th>大きめ</th><th>まれに大きい</th></tr></thead><tbody><tr><th>新品</th><td>95%：0.001〜0.020 mm</td><td colspan="2">5%：0.020〜0.040 mm</td></tr><tr><th>中古</th><td>60%：0.005〜0.020 mm</td><td>30%：0.020〜0.060 mm</td><td>10%：0.060〜0.150 mm</td></tr></tbody></table></div><p id="intrinsicMetrics" class="hint"></p>
 <div id="guideMetrics" class="guide-metrics"></div><p class="hint">この教材では、抽選したガイド真直度PV（曲がり成分）を固定成分として保持します。支持による姿勢が重なり、表示精度が変わります。実機ではガイド形状・据付姿勢・荷重の影響を個別に確認します。</p></details>
 <h3>この個体の参考調整</h3><div hidden class="comparison-wrap"><table class="accuracy-comparison"><caption>代表位置全体の補助評価（µm、同じ寸法・コラム配置）</caption><thead><tr><th>状態</th><th>直角差最大<br>300 mm基準</th><th>調整評価<br>300 mm基準</th><th>ガイド成分</th></tr></thead><tbody id="accuracyComparison"></tbody></table></div><p id="machineProgress" role="status"></p><button id="applyBestLevel">参考探索の調整例を適用（補助）</button>
-<details hidden><summary>調整評価・参考最良の意味</summary><p class="hint">全直線軸の端・中央（3軸27位置、旋盤9位置）で直角差と姿勢差を比較。直角差・左右コラム差、25%重みの相対姿勢差、15%重みの平均傾きの二乗平均を小さくします。支持高さ±0.500 mm、0.001 mm刻みの探索例です。現在が良ければ参考値も更新します。評価長を変えてもこの判定は変わりません（補助の300 mm基準）。残り＝√(現在の調整評価²−参考最良の調整評価²)が0.1 µm以内を補助練習の目安とします。上段の有限測定、触れ、回転TIR、上面9点、穴芯を一括して最良にする評価ではありません。厳密な全球最適を保証しません。</p></details>
+<details hidden><summary>調整評価・参考最良の意味</summary><p class="hint">全直線軸の端・中央（3軸27位置、旋盤9位置）で直角差と姿勢差を比較。直角差・左右コラム差、25%重みの相対姿勢差、15%重みの平均傾きの二乗平均を小さくします。支持高さ±0.500 mm、0.001 mm刻みの探索例です。現在が良ければ参考値も更新します。評価長を変えてもこの判定は変わりません（補助の300 mm基準）。残り＝√(現在の調整評価²−参考最良の調整評価²)が0.1 µm以内を補助練習の目安とします。厳密な全球最適を保証しません。</p></details>
 </details>
-<details class="card level-storage"><summary>保存・読込</summary><p id="levelSaveStatus" class="hint" role="status"></p><button id="exportLevel">調整データを保存</button><label class="import-level">調整データを読み込む<input id="importLevel" type="file" accept=".json,application/json"></label><p class="hint">現在の計算仕様・機械・方式・支持配置に対応するJSONを読み込みます。支持高さ・コラム配置・軸位置と、個体・初期支持高さ・参考最良の支持高さを保存します。器具の取付け、最初の接触ゼロ、測定結果は保存しません。読込後は現在の測定仕様で再計算します。小型の測定姿勢・旋盤の有限面・横形と旋盤の有限治具の変更後も同じ個体と支持入力を読み込めますが、測定値や接触の成立は変わる場合があります。計算仕様や支持配置が異なる旧データは自動で適用しません。ページを開き直すと新しい個体になり、ブラウザーの記録は自動復元しません。同じ個体・調整を続ける場合は、ページを離れる前にJSONを保存し、戻ってから読み込んでください。入力チェックを通ったデータだけ反映します。</p></details>
-<details class="card lesson-menu"><summary>説明・図の見方</summary><p>対応5機種の「ダイヤル測定」は主軸に取り付けたゲージを直径300 mmで旋回し、テーブル上面への直角度を比較します。右・奥・左・手前の4方向です。支持調整のたびに手前でゼロ合わせし、＋は測定子の押込み側です。表面の平面度や主軸の回転振れを測る機能ではありません。主軸軸線は本教材の主軸側の姿勢に一致すると仮定します。4方向の測定値を同時に表示し、選んだ方向を強調します。実機のゲージ可動量・接触圧は再現しません。面外では数値を表示しません。</p><p class="note ui-notice">局所軸角度図の<span class="measurement-start-note">0</span>は共通原点、<span class="measurement-length-note">300 mm</span>は角度の換算点です。有限測定図の黒い辺は基準面、●0は接触ゼロ、点線は計器本体の始終位置を結ぶ目安（連続軌跡ではありません）、オレンジ矢印は相対移動、押込＋は測定子が縮む向きです。図のずれは拡大表示します（小型は設定で強調を解除できます）。</p><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>訓練の進め方・計算の前提</summary><ol><li>初期はランダムな据付レベルと、本体の固有精度を重ねています。機械の右枠の水準器を見ながら、粗調整で平均の左右・前後の傾きを整え、模型の変化を見ます。</li><li>微調整では同じ支持点を小さく動かします。直角・倒れ・ねじれを見比べ、代表位置全体の総合評価を目安へ近づけます。本体の固有誤差とガイドの曲がりは保持されます。</li><li>上の測定図は、その支持状態で方向合わせ・ゼロ合わせをやり直した仮想測定です。開閉欄で初期と現在を同じ区間で比較できます。同じ剛体側の軸対は、支持調整で直角が変わらない場合があります。</li><li>絵の下で軸を選び、左上の☰から「軸位置・デモ」で位置を動かします。場所によって直角の変化や相対姿勢が異なることを確かめます。この訓練画面内の軸選択・表示切替では個体・支持高さ・初期の基準を保ちます。機種選択などへ離れて戻ると調整をリセットし、新しい個体と初期基準になります。</li><li>調整例は手本の支持高さを実際に適用します。手動練習と見比べ、本体の残る誤差まで支持点で消せるわけではないことを確認します。</li></ol><p id="squarenessMeasurementNote">XY・XZ・YZ図の●0は接触のゼロ位置。矢印は基準器に対する計器の移動、押込＋は測定子が縮む向きです。支持・軸位置・寸法・個体の変更ごとに、取付け・方向合わせ・区間始点への戻し・ゼロを取り直した300 mm測定の終点値を表示します。最初の器具取付けとゼロを保持して支持を変えたときの針の指示ではありません。現在位置をもとに範囲内の300 mm区間を選び、XYは比較軸の−側、XZ・YZは＋側でゼロを取ります。立形配置ではXYが手前→奥、XZが右上→下、YZが奥上→下です。機種ごとの部材移動と測定方向は基準図で確認できます。小型の直角測定と触れも模型と同じ物理姿勢を使います。図の強調は数値に影響しません。設定内の局所軸角度は現在位置の角度換算、微調整の総合評価・参考探索は代表位置の局所軸角度と姿勢の補助評価で、有限走査とは定義が異なります。</p><p>支持点をつないだ面の姿勢を、工具側と案内側に重ねる学習用の仮定です。平面になる支持配置では、支持面のねじれや軸間の直角が変化しない場合があります。格子配置は隣接する点の間を補間するため、境界で勾配が切り替わる場合があります。L3 3000参考モデルは長手ベッド9点と左右柱側各3点の部位別支持姿勢を使い、柱天端を梁で結びます。支持面の補間は剛性や荷重を解く解析ではありません。</p><p>左右回転とピンチ／ホイールの拡大・縮小は模型の見え方の変更、XYZACは部品移動、支持点は据付姿勢の調整です。支持点の外側も教材用の支持面を延長して表示します。剛性・荷重・接触による弾性変形、加工誤差の予測、実機の合否判定は扱いません。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/leveling---vmc.html" target="_blank" rel="noopener noreferrer">Haas：立形MCのレベル確認（英語）</a> ／ <a href="https://www.wylerag.com/en/support/faq/" target="_blank" rel="noopener noreferrer">WYLER：精密水準器の基礎（英語）</a></p></details></details>
+<details class="card level-storage"><summary>保存・読込</summary><p id="levelSaveStatus" class="hint" role="status"></p><button id="exportLevel">調整データを保存</button><label class="import-level">調整データを読み込む<input id="importLevel" type="file" accept=".json,application/json"></label><p class="hint">現在の計算仕様・機械・方式・支持配置に対応するJSONを読み込みます。支持高さ・コラム配置・軸位置と、個体・初期支持高さ・参考最良の支持高さを保存します。計算仕様や支持配置が異なる旧データは自動で適用しません。ページを開き直すと新しい個体になり、ブラウザーの記録は自動復元しません。同じ個体・調整を続ける場合は、ページを離れる前にJSONを保存し、戻ってから読み込んでください。入力チェックを通ったデータだけ反映します。</p></details>
+<details class="card lesson-menu"><summary>説明・図の見方</summary><p>対応5機種の「ダイヤル測定」は主軸に取り付けたゲージを直径300 mmで旋回し、テーブル上面への直角度を比較します。右・奥・左・手前の4方向です。支持調整のたびに手前でゼロ合わせし、＋は測定子の押込み側です。表面の平面度や主軸の回転振れを測る機能ではありません。主軸軸線は本教材の主軸側の姿勢に一致すると仮定します。4方向の測定値を同時に表示し、選んだ方向を強調します。実機のゲージ可動量・接触圧は再現しません。面外では数値を表示しません。</p><p class="note ui-notice">局所軸角度図の<span class="measurement-start-note">0</span>は共通原点、<span class="measurement-length-note">300 mm</span>は角度の換算点です。有限測定図の黒い辺は基準面、●0は接触ゼロ、点線は計器本体の始終位置を結ぶ目安（連続軌跡ではありません）、オレンジ矢印は相対移動、押込＋は測定子が縮む向きです。図のずれは拡大表示します（小型は設定で強調を解除できます）。</p><div class="structure card"><h2>この機械の見方</h2><p id="structureText"></p><dl><dt>軸ごとの移動構成</dt><dd id="motionText"></dd><dt>レベル出しで見るところ</dt><dd id="focusText"></dd></dl><p id="supportNote" class="note"></p><div id="sourceLinks"></div></div><details class="lesson"><summary>訓練の進め方・計算の前提</summary><ol><li>初期はランダムな据付レベルと、本体の固有精度を重ねています。機械の右枠の水準器を見ながら、粗調整で平均の左右・前後の傾きを整え、模型の変化を見ます。</li><li>微調整では同じ支持点を小さく動かします。直角・倒れ・ねじれを見比べ、代表位置全体の総合評価を目安へ近づけます。本体の固有誤差とガイドの曲がりは保持されます。</li><li>上の測定図は、その支持状態で方向合わせ・ゼロ合わせをやり直した仮想測定です。開閉欄で初期と現在を同じ区間で比較できます。同じ剛体側の軸対は、支持調整で直角が変わらない場合があります。</li><li>絵の下で軸を選び、左上の☰から「軸位置・デモ」で位置を動かします。場所によって直角の変化や相対姿勢が異なることを確かめます。この訓練画面内の軸選択・表示切替では個体・支持高さ・初期の基準を保ちます。機種選択などへ離れて戻ると調整をリセットし、新しい個体と初期基準になります。</li><li>調整例は手本の支持高さを実際に適用します。手動練習と見比べ、本体の残る誤差まで支持点で消せるわけではないことを確認します。</li></ol><p id="squarenessMeasurementNote">XY・XZ・YZ図の●0は接触のゼロ位置。矢印は基準器に対する計器の移動、押込＋は測定子が縮む向きです。毎回、方向合わせとゼロを取り直した300 mmの仮想測定を表示します。現在位置をもとに範囲内の300 mm区間を選び、XYは比較軸の−側、XZ・YZは＋側でゼロを取ります。立形配置ではXYが手前→奥、XZが右上→下、YZが奥上→下です。横形・門形・旋盤の実方向は図内の表示に従います。小型のZ送りと触れは共通の仮想主軸姿勢から接触を計算します。支持のみの中央YZ角差δに対し主軸・Z送りを基準X軸まわりに追加4δ回し、中央の前後応答を約5倍にします。固有誤差は増幅せず、補正は軸送りで変えません。数値への後掛け倍率はありません。中央以外のXZには小さな交差影響があり得ます。模型は元の姿勢で、測定図は仮想姿勢を示します。図の強調は設定で解除できます。従来の局所角度差・微調整の評価・参考探索は倍率を掛けない別計算で保持します。</p><p>支持点をつないだ面の姿勢を、工具側と案内側に重ねる学習用の仮定です。平面になる支持配置では、支持面のねじれや軸間の直角が変化しない場合があります。格子配置は隣接する点の間を補間するため、境界で勾配が切り替わる場合があります。L3 3000参考モデルは長手ベッド9点と左右柱側各3点の部位別支持姿勢を使い、柱天端を梁で結びます。支持面の補間は剛性や荷重を解く解析ではありません。</p><p>左右回転とピンチ／ホイールの拡大・縮小は模型の見え方の変更、XYZACは部品移動、支持点は据付姿勢の調整です。支持点の外側も教材用の支持面を延長して表示します。剛性・荷重・接触による弾性変形、加工誤差の予測、実機の合否判定は扱いません。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/leveling---vmc.html" target="_blank" rel="noopener noreferrer">Haas：立形MCのレベル確認（英語）</a> ／ <a href="https://www.wylerag.com/en/support/faq/" target="_blank" rel="noopener noreferrer">WYLER：精密水準器の基礎（英語）</a></p></details></details>
 </div></aside>
 <div id="trainingMainSlot" class="training-main-slot"><div id="trainingMain" class="training-main">
 <div class="training-heading"><button id="openTrainingMenu" class="training-menu-toggle" aria-label="設定メニューを開く" aria-expanded="false" aria-controls="trainingDrawer"><span aria-hidden="true">☰</span> 設定</button><div><p class="eyebrow">LEVELING LAB</p><h1 id="machineTitle"></h1><p id="machineSubtitle"></p></div></div>
 <div class="lab-grid training-workspace"><div class="viewer-panel pinned-visual"><div class="viewer-top squareness-top"><div id="inspectionCarousel" class="inspection-carousel"><div id="inspectionViewport" class="inspection-viewport"><div id="precisionReadouts" class="precision-readouts" aria-label="直角度・触れ">
-<section class="squareness-panel" aria-label="軸の直角度"><button id="measurementReferenceToggle" class="measurement-reference-toggle" aria-controls="measurementReference" aria-expanded="false" aria-label="直角の基準図を下の調整欄に表示"><span aria-hidden="true">▽</span></button><h2 class="precision-panel-title">直角度</h2><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準器による仮想測定"></div><p id="liveSquarenessUnits" class="live-squareness-units"><span id="liveSquarenessName" class="live-measurement-name">仮想測定</span> 300 mm・µm</p><p id="squarenessValuesNote" class="visually-hidden">1 µm＝0.001 mm。直角マスタに接触し、開始点を0とした300 mm仮想走査の終点指示差です。支持・軸位置・寸法・個体の変更ごとに取付け・方向合わせ・始点ゼロを取り直します。器具とゼロを保持した支持操作中の瞬間指示ではありません。＋は押込み増加、−は減少。1 µm刻みで四捨五入。設定内の局所角度換算とは別です。</p><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output></section>
+<section class="squareness-panel" aria-label="軸の直角度"><button id="measurementReferenceToggle" class="measurement-reference-toggle" aria-controls="measurementReference" aria-expanded="false" aria-label="直角の基準図を下の調整欄に表示"><span aria-hidden="true">▽</span></button><h2 class="precision-panel-title">直角度</h2><div id="liveSquareness" class="live-squareness" role="group" aria-label="基準器による仮想測定"></div><p id="liveSquarenessUnits" class="live-squareness-units"><span id="liveSquarenessName" class="live-measurement-name">仮想測定</span> 300 mm・µm</p><p id="squarenessValuesNote" class="visually-hidden">1 µm＝0.001 mm。基準器（旋盤は精密フランジ、ほかは直角マスタ）に接触し、開始点を0とした300 mm仮想走査の指示差です。＋は押込み増加、−は減少。1 µm刻みで四捨五入。小型のZ送りと触れは共通の仮想主軸姿勢を使う教材値です。前後支持応答は中央で約5倍です。実測値・局所角度換算とは別です。</p><output id="geometryStatus" hidden class="measurement-summary" aria-label="現在の直角度のずれ">現在の直角度</output></section>
 <section id="spindleSweepPanel" class="spindle-sweep-panel" aria-label="主軸のダイヤル旋回測定" aria-describedby="sweepMeasurementNote" hidden>
-<button id="spindleSweepToggle" class="sweep-readout-toggle" aria-controls="spindleSweepSelection" aria-expanded="false" aria-label="ダイヤル測定の方向選択を開く"><span class="sweep-readout-heading" aria-hidden="true"><span id="spindleSweepName" class="live-measurement-name">触れ</span><span id="spindleSweepMini" class="spindle-sweep-mini"></span><span class="sweep-readout-unit">µm</span></span><span id="sweepReadout0" class="sweep-readout-row"><span id="sweepLabel0">右</span><strong id="sweepValue0">0</strong></span><span id="sweepReadout1" class="sweep-readout-row"><span id="sweepLabel1">奥</span><strong id="sweepValue1">0</strong></span><span id="horizontalParallelMini" class="horizontal-parallel-mini"></span><span id="sweepReadout2" class="sweep-readout-row"><span id="sweepLabel2">左</span><strong id="sweepValue2">0</strong></span><span id="sweepReadout3" class="sweep-readout-row" data-selected="true"><span id="sweepLabel3">手前 <small>基準</small></span><strong id="sweepValue3">0</strong></span></button><p id="sweepMeasurementNote" class="visually-hidden">主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。支持・軸位置の変更ごとに面への配置を合わせ直し、手前で再ゼロして他の3点との差を表示します。器具取付けと最初のゼロを保持した支持操作中の瞬間指示ではありません。プラスは測定子の押込み側です。小型も模型と同じ主軸姿勢を使います。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映した有限テーブル上面を測り、手前が面外なら全4値は無効です。主軸から接触までの実腕長・測定子可動量・測定力、上面の凹凸、回転TIRはこの測定に含みません。</p></section>
-</div><section id="intrinsicInspectionPage" class="intrinsic-inspection-page" aria-label="個体固有の主軸振れと上面精度" hidden><div id="latheInspectionSecond" hidden></div><div class="intrinsic-inspection-columns"><section><h2>主軸振れ <small>固有TIR・µm</small></h2><div id="intrinsicRunoutDiagram"></div></section><section><h2>上面精度 <small>傾き除去・µm</small></h2><div id="intrinsicSurfaceDiagram"></div></section></div><p class="intrinsic-inspection-note">固有成分・取付保持中の指示ではない</p></section></div><button id="inspectionNext" class="inspection-page-control" type="button" aria-label="主軸振れと上面精度へ左スライド" aria-controls="intrinsicInspectionPage" hidden>次 ›</button><button id="inspectionPrevious" class="inspection-page-control" type="button" aria-label="直角度と触れへ右スライド" aria-controls="precisionReadouts" hidden>‹ 戻る</button><span id="inspectionPageStatus" class="visually-hidden" aria-live="polite"></span></div><div class="scene-readout-note"><span id="scene-readout-sweep-note" class="visually-hidden" hidden>主軸と上面の相対傾き</span><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
+<button id="spindleSweepToggle" class="sweep-readout-toggle" aria-controls="spindleSweepSelection" aria-expanded="false" aria-label="ダイヤル測定の方向選択を開く"><span class="sweep-readout-heading" aria-hidden="true"><span id="spindleSweepName" class="live-measurement-name">触れ</span><span id="spindleSweepMini" class="spindle-sweep-mini"></span><span class="sweep-readout-unit">µm</span></span><span id="sweepReadout0" class="sweep-readout-row"><span id="sweepLabel0">右</span><strong id="sweepValue0">0</strong></span><span id="sweepReadout1" class="sweep-readout-row"><span id="sweepLabel1">奥</span><strong id="sweepValue1">0</strong></span><span id="horizontalParallelMini" class="horizontal-parallel-mini"></span><span id="sweepReadout2" class="sweep-readout-row"><span id="sweepLabel2">左</span><strong id="sweepValue2">0</strong></span><span id="sweepReadout3" class="sweep-readout-row" data-selected="true"><span id="sweepLabel3">手前 <small>基準</small></span><strong id="sweepValue3">0</strong></span></button><p id="sweepMeasurementNote" class="visually-hidden">主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。小型では直角測定と同じ仮想主軸姿勢を使い、前後の支持応答を中央で約5倍にします。右・奥・左はその姿勢から再計算し、手前は0です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。</p></section>
+</div><section id="intrinsicInspectionPage" class="intrinsic-inspection-page" aria-label="個体固有の主軸振れと上面精度" hidden><div id="latheInspectionSecond" hidden></div><div class="intrinsic-inspection-columns"><section><h2>主軸振れ <small>回転TIR・µm</small></h2><div id="intrinsicRunoutDiagram"></div></section><section><h2>上面精度 <small>9点高さ差・µm</small></h2><div id="intrinsicSurfaceDiagram"></div></section></div><p class="intrinsic-inspection-note">固有成分・レベル調整では不変</p></section></div><button id="inspectionNext" class="inspection-page-control" type="button" aria-label="主軸振れと上面精度へ左スライド" aria-controls="intrinsicInspectionPage" hidden>次 ›</button><button id="inspectionPrevious" class="inspection-page-control" type="button" aria-label="直角度と触れへ右スライド" aria-controls="precisionReadouts" hidden>‹ 戻る</button><span id="inspectionPageStatus" class="visually-hidden" aria-live="polite"></span></div><div class="scene-readout-note"><span id="scene-readout-sweep-note" class="visually-hidden" hidden>主軸と上面の相対傾き</span><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
 <div id="viewerLevels" class="viewer-levels" role="group" aria-label="支持面の平均レベル。気泡は高い側へ動きます">
 <div class="viewer-gauge viewer-gauge-lr"><span class="viewer-gauge-title">平均 · 左右</span><strong id="stageAverageLR" class="level-direction"></strong><div class="vial" role="img" aria-label="平均の左右傾きを示す気泡" aria-describedby="stageAverageLR"><span class="center-lines"></span><span id="coarseBubbleLR" class="bubble"></span></div><div class="gauge-ends"><span>左</span><span>右</span></div></div>
 <div class="viewer-gauge viewer-gauge-fb"><span class="viewer-gauge-title">平均 · 前後</span><strong id="stageAverageFB" class="level-direction"></strong><div class="vertical-gauge"><span>奥</span><div class="vial vial-vertical" role="img" aria-label="平均の前後傾きを示す気泡。上が奥、下が手前" aria-describedby="stageAverageFB"><span class="center-lines"></span><span id="coarseBubbleFB" class="bubble"></span></div><span>手前</span></div></div>
 </div><div id="sceneViewport" class="scene-viewport"><canvas id="scene" tabindex="0" aria-label="工作機械の構造模型。左右ドラッグまたは左右矢印キーで回転。二本指のピンチ、マウスホイール、プラス・マイナスキーで拡大縮小。Homeキーで大きさを戻す"></canvas></div>
 <div id="sceneToolbar" class="scene-toolbar" role="group" aria-label="模型の軸選択"><div id="axisTabs" class="axis-tabs" role="group" aria-label="模型で確認する軸"></div></div>
 <span id="axisDemoStatus" class="axis-demo-status" role="status"></span></div>
-<div id="mainAdjustment" class="main-adjustment" role="group" aria-label="支持点の調整"><div id="adjustmentSelectionScroll" class="adjustment-selection-scroll"><section id="fixtureSetup" class="fixture-setup" hidden aria-label="有限治具の測定配置"><div class="fixture-setup-actions"><label>検査配置<select id="fixtureSelection"></select></label><button id="fixturePosition" type="button">測定位置へ</button></div><p id="fixtureSetupStatus" role="status"></p><button id="fixtureGeometryOpen" type="button" aria-haspopup="dialog" aria-controls="fixtureGeometryDialog">器具の取付け・接触を見る</button></section><div class="adjustment-tabs" role="group" aria-label="調整の段階"><button id="coarseAdjust" aria-pressed="true" aria-controls="coarsePanel">粗調整</button><button id="fineAdjust" aria-pressed="false" aria-controls="finePanel">微調整</button></div><p id="selectedSupportLabel" class="selected-support-label" role="status"></p><div id="supportMap" class="support-map" role="group" aria-label="調整する支持点"></div><section id="spindleSweepSelection" class="sweep-selection" hidden tabindex="-1" aria-labelledby="sweepSelectionTitle"><div class="measurement-reference-heading"><h2 id="sweepSelectionTitle">ダイヤルの方向</h2><button id="closeSpindleSweepSelection">閉じる ×</button></div><div id="sweepPositions" class="sweep-positions" role="group" aria-label="測定する方向を選択"><button id="sweepPosition0" aria-pressed="false"><span>右</span></button><button id="sweepPosition1" aria-pressed="false"><span>奥</span></button><button id="sweepPosition2" aria-pressed="false"><span>左</span></button><button id="sweepPosition3" aria-pressed="true"><span>手前 <small>基準</small></span></button></div><div id="horizontalParallelFixture" class="horizontal-parallel-fixture" hidden>
+<div id="mainAdjustment" class="main-adjustment" role="group" aria-label="支持点の調整"><div id="adjustmentSelectionScroll" class="adjustment-selection-scroll"><div class="adjustment-tabs" role="group" aria-label="調整の段階"><button id="coarseAdjust" aria-pressed="true" aria-controls="coarsePanel">粗調整</button><button id="fineAdjust" aria-pressed="false" aria-controls="finePanel">微調整</button></div><p id="selectedSupportLabel" class="selected-support-label" role="status"></p><div id="supportMap" class="support-map" role="group" aria-label="調整する支持点"></div><section id="spindleSweepSelection" class="sweep-selection" hidden tabindex="-1" aria-labelledby="sweepSelectionTitle"><div class="measurement-reference-heading"><h2 id="sweepSelectionTitle">ダイヤルの方向</h2><button id="closeSpindleSweepSelection">閉じる ×</button></div><div id="sweepPositions" class="sweep-positions" role="group" aria-label="測定する方向を選択"><button id="sweepPosition0" aria-pressed="false"><span>右</span></button><button id="sweepPosition1" aria-pressed="false"><span>奥</span></button><button id="sweepPosition2" aria-pressed="false"><span>左</span></button><button id="sweepPosition3" aria-pressed="true"><span>手前 <small>基準</small></span></button></div><div id="horizontalParallelFixture" class="horizontal-parallel-fixture" hidden>
 <svg viewBox="0 0 340 146" role="img" aria-label="横形のZ方向平行度。バーは主軸に固定、計器はテーブルに固定。固定バーの側面aと下面bへ計器を当て、先端側でゼロ。Z走査ではテーブルと計器を主軸側へ300ミリ移動し、バーは動きません。">
 <g fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="45" cy="57" r="18"/><path d="M8 57H26m-7-4 7 4-7 4M45 101V77m-4 7 4-7 4 7"/><path d="M166 35H292V57H166ZM292 22H306V72H292Z"/><path d="M145 112H293V131H145ZM180 112V94m-9 0h18V82h-18ZM180 82V58m-4 7 4-7 4 7"/><g stroke-dasharray="3 3" opacity=".55"><path d="M255 112V94m-9 0h18V82h-18ZM255 82V58"/></g><path d="M185 122H253m-7-4 7 4-7 4" stroke="#b34800"/></g>
 <circle cx="180" cy="58" r="2.8" fill="#b34800"/><circle cx="255" cy="58" r="2.8" fill="#fffaf5" stroke="#b34800" stroke-width="1.2"/><g fill="currentColor" font-size="11"><text x="10" y="48">a</text><text x="53" y="94">b</text><text x="6" y="20">接触方向</text><text x="147" y="20">バー:主軸に固定</text><text x="310" y="48">主軸</text><text x="169" y="73" fill="#b34800">0</text><text x="273" y="92">b</text><text x="185" y="107" fill="#b34800">部材＋Z 300 mm</text><text x="147" y="141">計器:テーブルに固定 → 主軸側へ</text></g></svg>
-<p>この欄は回転振れ成分を含めない校正円筒による中心軸平行度の基準測定です。回転TIRは同じ有限配置を利用する別の固有成分参照で、回転偏心を重ねた総指示ではありません。バーは主軸に固定、計器はテーブル（パレット）に固定します。a＝左側から右向き、b＝下側から上向きに接触。テストバー先端寄りでゼロを取り、バーを固定したままテーブルと計器を主軸側へ300 mm移動します。テーブルの部材＋Z（NC指令の符号とは区別）です。＋の読みは測定子の押込み増加です。</p>
+<p>バーは主軸に固定、計器はテーブル（パレット）に固定します。a＝左側から右向き、b＝下側から上向きに接触。テストバー先端寄りでゼロを取り、バーを固定したままテーブルと計器を主軸側へ300 mm移動します。テーブルの部材＋Z（NC指令の符号とは区別）です。＋の読みは測定子の押込み増加です。</p>
 <p>長手図の右は主軸側で、模型の画面右とは限りません。円はバー先端側から主軸側を見る接触位置の模式図です。aは左9時、bは下6時でそれぞれ始点0を取ります。直角測定では、テーブル上の直角マスタに主軸側の計器を当てます。ここでは主軸固定バーにテーブル側の計器を当てます。</p>
-<p>規定のY下端で、パレット上の高さ850 mmの箱台に200 mm以内の支柱と計器を固定します。バーは主軸に固定した直径50 mm・長さ400 mmの円筒です。主軸鼻端から350 mm→50 mmの間を、パレットのZ＋送りで300 mm測ります。</p>
-<p>「測定位置へ」で実際の軸位置を合わせます。規定位置以外へ腕を自動で延長しません。測定子は0〜20 mm、計器本体・台・バー・主軸側の有限範囲と干渉を確認し、接触が成立しなければ理由と—を表示します。主軸は回しません。支持変更後の再取付け・始点再ゼロと、初回取付け・旧ゼロ保持は比較欄で分けて確認できます。走査中の再ゼロはしません。治具は本教材の実寸仕様で、弾性・測定力・実機の固定強度は扱いません。</p>
-</div><p id="sweepContactStatus" class="sweep-contact-status" role="status">手前基準・µm（0.001 mm）</p></section><section id="measurementReference" class="measurement-reference" hidden tabindex="-1" aria-labelledby="measurementReferenceTitle"><div class="measurement-reference-heading"><h2 id="measurementReferenceTitle">直角の基準図</h2><button id="closeMeasurementReference">閉じる ×</button></div><p class="reference-intro">テーブル上の直角マスタと主軸側のスピンドル式計器による教材配置。●0から300 mm走査した終点値です。＋＝押込み増加／−＝減少。黒い基準面、オレンジの相対移動、押込＋を区別します。小型も模型と同じ物理姿勢で接触計算します。設定内の局所軸角度は別の量です。</p><div id="measurementReferenceCards" class="measurement-reference-cards"></div><p class="reference-intro">支持・軸位置・寸法・個体の変更ごとに取付け・方向合わせ・始点ゼロを取り直します。器具とゼロを保持したまま支持を変える測定ではありません。5軸はA=C=0。基準面は走査300 mm＋両端10 mm、幅50 mmの仮想校正面、計器の初期伸び10 mm・計算範囲0〜20 mmです。小型Yは模型のテーブル上面中心P（支持基準から0.50 m）の移動を使います。他の非横形の走査は姿勢一定の代表点です。非横形の直角検査は実際の主軸から計器本体までの腕、器具の取付高さ・支持台寸法を定義していません。取付姿勢を始点から輸送し、変姿勢の区間は16分割の内部点で接触を確認しますが、全治具干渉・測定力・弾性を再現しません。保存した機械入力から毎回再計算し、器具取付けとゼロ自体は保存しません。同じ固定配置で指示だけ再ゼロする逆走と、方向合わせから取り直す本測定は別です。</p></section><details id="fixtureComparison" class="fixture-comparison" hidden><summary>取付けとゼロを保持して支持調整を比較</summary><p>同じ走査区間の終点（穴は各方向）を比較します。各検査は器具を付け替える別工程です。支持点だけを変更すると初回の取付け・ゼロを保持します。軸位置・寸法・個体を変えると保持を解除します。</p><div class="fixture-comparison-actions"><button id="fixtureCapture" type="button">今の取付けとゼロを保持</button><button id="fixtureRelease" type="button" disabled>保持を解除</button></div><p id="fixtureComparisonStatus" role="status"></p><p>単位 µm。大きい数字は整数表示、その下は丸め前の生値です。回転TIRと上面の固有成分は、この瞬間指示の比較には含めません。保持した器具・ゼロは保存JSONに含みません。</p><div id="fixtureComparisonRows"></div></details></div><div class="common-support-actions"><button id="lowerSupport" aria-label="選んだ支持点を下げる">↓ 下げる</button><button id="raiseSupport" aria-label="選んだ支持点を上げる">↑ 上げる</button></div><p id="levelInputMessage" class="level-message visually-hidden" role="status"></p></div>
+<p>計器本体はパレットからバーへ届く取付け腕の先にあり、パレット上面の支持基準から0.61 mという高さとは別です。中央Y・理想支持ではバー高さは支持基準から約1.89 mで、Y位置や姿勢により変わります。捻れでパレットの姿勢が変わると、この取付け腕の移動も読みへ反映します。</p>
+<p>Yで主軸頭を動かすと、固定したバーの高さも変わります。軸位置・支持調整ごとに計器の取付け腕と始点ゼロを取り直し、300 mmのZ走査中は再取付け・再ゼロしません。移動端では、300 mmを確保できる始点へ戻して仮想測定します。主軸は回しません。基準バーは仮想の直径50 mm、校正区間300 mm＋両端10 mm。テーブル上面から立てた計器の位置・姿勢がZ移動に追従します。バーの実長、取付けや干渉は再現しません。</p>
+</div><p id="sweepContactStatus" class="sweep-contact-status" role="status">手前基準・µm（0.001 mm）</p></section><section id="measurementReference" class="measurement-reference" hidden tabindex="-1" aria-labelledby="measurementReferenceTitle"><div class="measurement-reference-heading"><h2 id="measurementReferenceTitle">直角の基準図</h2><button id="closeMeasurementReference">閉じる ×</button></div><p class="reference-intro">基準器（旋盤は精密フランジ、ほかは直角マスタ）とスピンドル式計器の教材配置。●0から300 mmの仮想測定。＋＝押込み増加／−＝減少（ID-F通常カウント）。黒い基準面、オレンジの相対移動、押込＋を区別します。小型のZ送りと触れは共通の仮想主軸姿勢で接触計算します。前後の支持応答は中央で約5倍、固有誤差はそのままです。模型・局所角度とは姿勢を区別します。</p><div id="measurementReferenceCards" class="measurement-reference-cards"></div><p class="reference-intro">支持・軸位置の変更ごとに方向合わせとゼロを自動で取り直します。5軸はA=C=0。旋盤は主軸基準の精密フランジでX走査。基準面は走査300 mm＋両端10 mm、幅50 mmの仮想校正面、計器の初期伸び10 mm・計算範囲0〜20 mmです。取付けや干渉、測定力、基準器の実寸は再現しません。姿勢変化を含む教材モデル reference-scan-v3。小型Yは模型の測定P、横形Zはパレット上面中心（支持基準から0.61 m）の移動を使います。他の走査は姿勢一定の代表点です。取付姿勢を始点から輸送し、変姿勢の区間は16分割の内部点、横形では支持境界の両側でも接触を確認します。連続経路の衝突判定ではありません。未知のガイド曲線は追加していません。保存した機械状態から毎回再計算します。旧データの局所角度・参考調整・軸位置は維持し、横形の有限測定値は今回の取付位置で再計算されます。同じ固定配置で指示だけ再ゼロする逆走と、方向合わせから取り直す本測定は別です。</p></section></div><div class="common-support-actions"><button id="lowerSupport" aria-label="選んだ支持点を下げる">↓ 下げる</button><button id="raiseSupport" aria-label="選んだ支持点を上げる">↑ 上げる</button></div><p id="levelInputMessage" class="level-message visually-hidden" role="status"></p></div>
 </div></div><button id="trainingMainShield" class="training-main-shield" hidden tabindex="-1" aria-label="設定メニューを閉じて主画面へ戻る"></button></div></div></section>
-<dialog id="fixtureGeometryDialog" class="fixture-dialog" aria-labelledby="fixtureGeometryTitle"><div class="fixture-dialog-heading"><h2 id="fixtureGeometryTitle">器具の取付け・接触</h2><button id="closeFixtureGeometry" type="button" autofocus>閉じる ×</button></div><p>現在の支持で再取付け・再ゼロした配置です。旧ゼロ保持の指示は比較欄で確認してください。検査ごとに器具を付け替えます。等縮尺・傾きの拡大なし。オレンジの点が接触点です。接触部の拡大では機械を透過表示します。</p><div class="fixture-geometry-controls"><label>表示範囲<select id="fixtureFraming"><option value="full">取付け全体</option><option value="contact">接触部を拡大</option></select></label><label>見る向き<select id="fixtureProjection"><option value="oblique">斜め</option><option value="front">正面</option><option value="side">側面</option></select></label><label id="fixtureStageControl">工程<select id="fixtureStage"><option value="S">S測定</option><option value="R">R方向合わせ</option></select></label><label>走査位置<input id="fixtureFraction" type="range" min="0" max="100" value="0" aria-label="配置図の走査位置、始点0から終点100"></label></div><canvas id="fixtureGeometryCanvas" aria-label="検査治具の等縮尺配置図"></canvas><p id="fixtureGeometryLegend"></p><p id="fixtureGeometryStatus" role="status"></p><p>ここでの走査表示は測定工程の確認用です。機械の軸スライダーと保存入力は変えません。治具の寸法は本教材で定義したもので、特定の実機用治具ではありません。</p></dialog>
 <section id="tester" hidden>
   <div class="training-heading"><div><p class="eyebrow">ELECTRICAL / TESTER BASICS</p><h1>テスターの使い方</h1><p>端子 → モード → 接続 → 読み取りを練習</p></div><button hidden id="testerBack" class="secondary">電気の訓練へ</button></div>
   <div class="training-workspace tester-workspace">
@@ -1358,13 +1328,13 @@ function updateReferenceMeasurementCopy(){
  const intros=[...$('measurementReference').querySelectorAll(':scope > .reference-intro')],note=$('squarenessValuesNote'),scanNote=$('squarenessMeasurementNote');
  if(!referenceMeasurementCopyDefaults)referenceMeasurementCopyDefaults={intros:intros.map(el=>el.textContent),note:note.textContent,scanNote:scanNote.textContent};
  const horizontal=current.kind==='horizontal',texts=horizontal?[
-  '横形は「測定位置へ」で実軸を規定位置に移して測ります。パレットに850 mmの箱台と320×320×50 mmの直角マスタを固定し、計器は主軸側の有限な短い腕へ固定します。XY/YZのSは主軸頭をY下端から中央へ300 mm、XZのSはパレットをZ＋へ300 mm動かします。表示は始点ゼロからの終点指示、＋は押込み増加です。',
-  'XYのRはY中央で上面に当ててX300 mm、YZのRはY中央で上面に当ててパレットZ300 mmで方向合わせします。XZのRはY下端のままX300 mmです。Rの両端を等指示にして固定し、Sの始点へ戻して腕を付け替え、再ゼロします。走査途中は再取付け・再ゼロしません。有限面・測定子0〜20 mm・箱台・腕・計器本体・主軸側の干渉を確認し、成立しない位置・寸法では数値を出しません。図は検査ごとの別配置です。支持変更後に取り付け直す表示と、下の保持比較は別です。'
+  '表示は、始点でゼロを取り直して300 mm送った終点値です。模型の現在位置の針を表示する機能ではありません。下の「下げる／上げる」は選んだ支持点の操作です。テーブル（パレット）上の直角マスタに、主軸側へ固定した計器を当てます。XY/YZは主軸頭をY＋（上）へ300 mm送り、YZは主軸側の縦面を下から上へ測ります。XZはパレットとマスタをZ＋（奥・主軸側）へ300 mm送り、計器はマスタから見て手前へ進みます。●0でゼロ、＋は押込み増加、−は減少。黒は基準面、オレンジは計器の相対移動です。',
+  '320×320 mm・厚み50 mmの教材用直角マスタです。R合わせはXY/XZが主軸側計器のX送り、YZが計器を止めたパレットのZ送りで、300 mmの両端を等指示にします。YZはR走査の両端で測定子が厚み50 mmの中央線を通るよう横方向も合わせます。YZは選択Z位置へ戻し、S用の腕へ付け替えてY区間始点でゼロ。走査途中は再ゼロしません。測定時はワークを外し、調整台で方向を合わせてマスタを固定し、腕は器具の横を回り込みます。初期伸び10 mm、計算範囲0〜20 mm。有限面を16分割と支持境界の両側で確認します。全機械との干渉や弾性は再現しません。保存した機械状態から毎回再計算します。Z平行度a/bは主軸固定バーとテーブル側計器の別配置です。'
  ]:referenceMeasurementCopyDefaults.intros;
  intros.forEach((el,i)=>{if(el.textContent!==texts[i])el.textContent=texts[i];});
- const noteText=horizontal?'横形は規定位置で850 mm箱台・有限短腕を用い、始点再ゼロから300 mm送った終点値を表示します。XY/YZはY下端→中央、XZはパレットZ＋。＋は押込み増加、−は減少、整数は1 µm刻み。支持操作で取付け・ゼロを保持した値は下の比較欄で確認できます。':referenceMeasurementCopyDefaults.note;
+ const noteText=horizontal?'1 µm＝0.001 mm。表示は始点でゼロを取り直した300 mm測定の終点値です。スライダーで下降しても測定方向は反転しません。テーブル上の直角マスタと主軸側固定の計器による300 mmの指示差です。XY/YZは主軸頭をY＋へ、XZはパレットをZ＋へ送ります。YZは主軸側の縦面へ接触し、下から上へ測ります。支持・軸位置の変更ごとにR方向合わせとSの始点ゼロを取り直し、走査途中は再ゼロしません。＋は押込み増加、−は減少。1 µm刻みで四捨五入。Z平行度a/bは主軸固定バーとテーブル側計器の別配置です。':referenceMeasurementCopyDefaults.note;
  if(note.textContent!==noteText)note.textContent=noteText;
- const scanText=horizontal?'横形は測定位置への移動が必要です。XY/YZは上面Rの方向合わせ後、Y下端でS用の腕に付け替えて始点ゼロを取り、主軸頭を上へ300 mm送ります。XZは横向きRをX送りで合わせ、パレットをZ＋へ300 mm動かしてSを測ります。計器は主軸側、マスタと850 mm箱台はパレット側に固定します。別の配置図でR/S・始点/終点・接触・有限治具を等縮尺で確認できます。Z平行度a/bは主軸の400 mm校正円筒と箱台側の計器で中心軸平行度を測り、回転振れ成分は別検査です。':referenceMeasurementCopyDefaults.scanNote;
+ const scanText=horizontal?'表示は始点ゼロから300 mm送った終点値です。模型の現在位置から300 mmを確保できない場合は、計算上の始点を戻します。現在位置・ゼロ位置・終点は直角の基準図で確認できます。スライダー下降中の連続した針の指示ではありません。直角マスタはテーブル（パレット）上、計器は主軸側に固定します。XYは右側の縦面、YZは主軸側の縦面に当て、主軸頭のY＋送りで下の●0から上へ300 mm測ります。XZはパレットのZ＋送りでマスタを奥へ動かし、計器は基準器から見て奥の●0から手前へ進みます。YZのR合わせでは上面へ計器を当てて主軸頭を止め、パレットをZ＋へ300 mm送り、両端を等指示にするとともに、両端の測定子が厚み50 mmの中央線を通るよう横方向も合わせます。その後、選択したZ位置へ戻します。S用の腕へ付け替え、Y区間始点でゼロにします。支持・軸位置・寸法・個体が変われば方向合わせと始点ゼロを取り直します。S走査中の再方向合わせ・再ゼロはしません。矢印は基準器に対する計器の動き、押込＋は測定子が縮む向きです。数値に図の誇張倍率を掛けません。Z平行度a/bは主軸固定バーをテーブル側計器で測る別配置です。':referenceMeasurementCopyDefaults.scanNote;
  if(scanNote.textContent!==scanText)scanNote.textContent=scanText;
 }
 // Fixed teaching fixtures. Member ownership describes mechanics, never a sign table.
@@ -1390,39 +1360,45 @@ function referenceRigidFrame(frame){
 // spindle nose. Align its top R by moving Z, return to selected Z, then scan
 // the spindle-side vertical S with the head's +Y motion. Lengths are metres.
 function horizontalYZReferenceScan(pair,state,solution,profile){
- const M=window.ReferenceMeasurement,setup=referenceSetup(pair),length=.3,model='horizontal-station-square-yz-v3',station=horizontalMeasurementStation(state);
- if(!station.valid||station.needsMove)return {valid:false,reason:station.reason||'横形の測定位置へ移動してください',setup,model,station};
+ const M=window.ReferenceMeasurement,setup=referenceSetup(pair),length=.3,model='horizontal-finite-square-yz-v2';
  const half=key=>{const a=axisConfig(current).find(a=>a.key===key),p=levelCoordinates(a.vector[0]*a.amp,a.vector[2]*a.amp);return Math.hypot(p.x,a.vector[1]*a.amp,p.z);};
  const yHalf=half('Y'),zHalf=half('Z'),invalid=reason=>({valid:false,reason,setup,model});
  if(2*yHalf<length-1e-12||2*zHalf<length-1e-12)return invalid('300 mmの走査範囲不足');
- const startPosition=-yHalf,endPosition=startPosition+length,baseStart=station.physical.Z,baseEnd=baseStart+length;
- const startState={...state,Y:startPosition/yHalf*100},stateAt=t=>({...startState,Y:(startPosition+length*t)/yHalf*100}),baseAt=t=>({...startState,Y:0,Z:(baseStart+length*t)/zHalf*100});
+ const startPosition=Math.max(-yHalf,Math.min(yHalf-length,state.Y*yHalf/100)),endPosition=startPosition+length,baseStart=Math.max(-zHalf,Math.min(zHalf-length,state.Z*zHalf/100)),baseEnd=baseStart+length;
+ const startState={...state,Y:startPosition/yHalf*100},stateAt=t=>({...startState,Y:(startPosition+length*t)/yHalf*100}),baseAt=t=>({...startState,Z:(baseStart+length*t)/zHalf*100});
  const tool=s=>{const a=horizontalSpindleFixture(s,solution,profile);return {...a,frame:{right:a.right,up:a.up,back:a.axis,rotate:v=>a.right.map((q,i)=>q*v[0]+a.up[i]*v[1]+a.axis[i]*v[2])}};};
  const pallet=s=>({point:horizontalPalletPoint([0,1.27,-.85],s,solution,profile),frame:referenceRigidFrame(geometryModel(s,solution,profile).workFrame)}),local=(v,f)=>[M.dot(v,f.right),M.dot(v,f.up),M.dot(v,f.back)];
- const pR0=pallet(baseAt(0)),pR1=pallet(baseAt(1)),tR0=tool(baseAt(0)),cornerLocal=[0,1.22,.15],contact0=M.add(pR0.point,pR0.frame.rotate(cornerLocal));
+ const pR0=pallet(baseAt(0)),pR1=pallet(baseAt(1)),tR0=tool(baseAt(0)),cornerLocal=[0,.37,.15],contact0=M.add(pR0.point,pR0.frame.rotate(cornerLocal));
  // The same world contact C must lie on R at both Z endpoints. Compute C in
  // each pallet frame, not from a head-Z tangent (the head does not move in Z).
  const contact1Local=local(M.sub(contact0,pR1.point),pR1.frame),sLocal=M.unit(M.sub(cornerLocal,contact1Local)),rLocal=M.unit(M.sub([0,1,0],M.scale(sLocal,sLocal[1]))),cross=[sLocal[1]*rLocal[2]-sLocal[2]*rLocal[1],sLocal[2]*rLocal[0]-sLocal[0]*rLocal[2],sLocal[0]*rLocal[1]-sLocal[1]*rLocal[0]];
  const bodyR=M.add(contact0,M.scale(pR0.frame.rotate(rLocal),.01)),probeR=M.scale(pR0.frame.rotate(rLocal),-1);
- const times=new Set(Array.from({length:17},(_,i)=>i/16));
+ // An explicit rigid dog-leg reaches around the 50 mm thickness: first above
+ // the square, then 100 mm outside its side, then to the contact-side body.
+ // This is a fixture route, not a claim of clearance from all machine parts.
+ const arm=(a,p,corner,body)=>{
+  const nS=p.frame.rotate(sLocal),nR=p.frame.rotate(rLocal),nT=p.frame.rotate(cross),coord=v=>{const d=M.sub(v,corner);return [M.dot(d,nT),M.dot(d,nR),M.dot(d,nS)];},point=v=>M.add(corner,M.add(M.add(M.scale(nT,v[0]),M.scale(nR,v[1])),M.scale(nS,v[2]))),n=coord(a.nose),b=coord(body),top=Math.max(.1,n[1]+.1);
+  return [a.nose,point([n[0],top,n[2]]),point([.125,top,n[2]]),point([.125,top,b[2]]),point([.125,b[1],b[2]]),body];
+ };
+ const armR=arm(tR0,pR0,contact0,bodyR),times=new Set(Array.from({length:17},(_,i)=>i/16));
  for(const p of supports){const t=(levelCoordinates(p.x,p.z).z-levelCoordinates(0,-.85).z-baseStart)/length;if(t>0&&t<1)for(const d of [-1e-8,0,1e-8])times.add(Math.max(0,Math.min(1,t+d)));}
  const alignmentSamples=[...times].sort((a,b)=>a-b).map(t=>{
-  const s=baseAt(t),p=pallet(s),a=tool(s),corner=M.add(p.point,p.frame.rotate(cornerLocal)),pose={point:corner,normal:p.frame.rotate(rLocal),body:M.add(a.nose,M.transport(M.sub(bodyR,tR0.nose),tR0.frame,a.frame)),probe:M.transport(probeR,tR0.frame,a.frame)},hit=M.contact(pose);
-  if(hit.valid){const d=local(M.sub(hit.point,corner),p.frame),along=M.dot(d,sLocal),across=M.dot(d,cross);if(along<-.310000001||along>.010000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'R面の範囲外',t,state:s,pose};}
-  return {...hit,t,state:s,pose};
+  const s=baseAt(t),p=pallet(s),a=tool(s),corner=M.add(p.point,p.frame.rotate(cornerLocal)),pose={point:corner,normal:p.frame.rotate(rLocal),body:M.add(a.nose,M.transport(M.sub(bodyR,tR0.nose),tR0.frame,a.frame)),probe:M.transport(probeR,tR0.frame,a.frame)},hit=M.contact(pose),armPoints=armR.map(v=>M.add(a.nose,M.transport(M.sub(v,tR0.nose),tR0.frame,a.frame)));
+  if(hit.valid){const d=local(M.sub(hit.point,corner),p.frame),along=M.dot(d,sLocal),across=M.dot(d,cross);if(along<-.310000001||along>.010000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'R面の範囲外',t,state:s,pose,arm:armPoints};}
+  return {...hit,t,state:s,pose,arm:armPoints};
  });
  const alignment={...M.compare(alignmentSamples[0].pose,alignmentSamples.at(-1).pose),startPosition:baseStart,endPosition:baseEnd,startState:baseAt(0),endState:baseAt(1),samples:alignmentSamples},rBad=alignmentSamples.find(s=>!s.valid);
  if(rBad)return {...invalid(rBad.reason),alignment};
  // Keep this aligned square attached while returning to the selected Z. Its
  // orientation is transported with the pallet; R is not realigned on return.
- const p0=pallet(startState),t0=tool(startState),corner=M.add(p0.point,p0.frame.rotate(cornerLocal)),normal=p0.frame.rotate(sLocal),alongStart=p0.frame.rotate(rLocal),point=M.add(M.add(corner,M.scale(normal,.01)),M.scale(alongStart,-.31)),body=M.add(point,M.scale(normal,.01)),probe=M.scale(normal,-1),start={point,normal,body,probe};
+ const p0=pallet(startState),t0=tool(startState),corner=M.add(p0.point,p0.frame.rotate(cornerLocal)),normal=p0.frame.rotate(sLocal),alongStart=p0.frame.rotate(rLocal),point=M.add(M.add(corner,M.scale(normal,.01)),M.scale(alongStart,-.31)),body=M.add(point,M.scale(normal,.01)),probe=M.scale(normal,-1),start={point,normal,body,probe},armS=arm(t0,p0,corner,body);
  const samples=Array.from({length:17},(_,i)=>i/16).map(t=>{
-  const s=stateAt(t),a=tool(s),pose={point,normal,body:M.add(a.nose,M.transport(M.sub(body,t0.nose),t0.frame,a.frame)),probe:M.transport(probe,t0.frame,a.frame)},hit=M.contact(pose);
-  if(hit.valid){const d=M.sub(hit.point,point),distance=M.dot(d,alongStart),across=M.dot(d,p0.frame.rotate(cross));if(distance<-.010000001||distance>.310000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'S面の範囲外',t,state:s,pose,along:alongStart};}
-  return {...hit,t,state:s,pose,along:alongStart};
+  const s=stateAt(t),a=tool(s),pose={point,normal,body:M.add(a.nose,M.transport(M.sub(body,t0.nose),t0.frame,a.frame)),probe:M.transport(probe,t0.frame,a.frame)},hit=M.contact(pose),armPoints=armS.map(v=>M.add(a.nose,M.transport(M.sub(v,t0.nose),t0.frame,a.frame)));
+  if(hit.valid){const d=M.sub(hit.point,point),distance=M.dot(d,alongStart),across=M.dot(d,p0.frame.rotate(cross));if(distance<-.010000001||distance>.310000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'S面の範囲外',t,state:s,pose,along:alongStart,arm:armPoints};}
+  return {...hit,t,state:s,pose,along:alongStart,arm:armPoints};
  });
  const bad=samples.find(s=>!s.valid),end=samples.at(-1).pose,result=bad?{valid:false,reason:bad.reason,failurePosition:startPosition+length*bad.t}:M.compare(start,end);
- return horizontalFixtureAttach({...result,setup,startPosition,endPosition,length,model,startState,endState:stateAt(1),returnState:startState,start,end,samples,alongStart,alongEnd:alongStart,fixture:'horizontal-finite-square',alignment,master:{corner,Rnormal:alongStart,Snormal:normal,width:.32,height:.32,thickness:.05,contactOffset:.01,palletOrigin:p0.point,localCorner:cornerLocal,localRnormal:rLocal,localSnormal:sLocal,boundsS:[-.31,.01],boundsR:[-.32,0],boundsThickness:[-.025,.025]},autoZero:true},solution,profile);
+ return {...result,setup,startPosition,endPosition,length,model,startState,endState:stateAt(1),returnState:startState,start,end,samples,alongStart,alongEnd:alongStart,fixture:'horizontal-finite-square',alignment,master:{corner,Rnormal:alongStart,Snormal:normal,width:.32,height:.32,thickness:.05,contactOffset:.01,palletOrigin:p0.point,localCorner:cornerLocal,localRnormal:rLocal,localSnormal:sLocal,boundsS:[-.31,.01],boundsR:[-.32,0],boundsThickness:[-.025,.025]},bracket:{mount:'spindle',R:armR,S:armS,sectionRadius:.004},autoZero:true};
 }
 // Finite horizontal square fixture. R is actually swept by a head-fixed arm;
 // S is read with a separate arm after R alignment. Dimensions are metres.
@@ -1430,18 +1406,17 @@ function horizontalYZReferenceScan(pair,state,solution,profile){
 // 50 mm above the pallet for XY; XZ's thickness centre is 50 mm high.
 function horizontalReferenceScan(pair,state,solution,profile){
  if(pair.key==='YZ')return horizontalYZReferenceScan(pair,state,solution,profile);
- const M=window.ReferenceMeasurement,setup=referenceSetup(pair),length=.3,axes=axisConfig(current),axis=key=>axes.find(a=>a.key===key),station=horizontalMeasurementStation(state);
- if(!station.valid||station.needsMove)return {valid:false,reason:station.reason||'横形の測定位置へ移動してください',setup,station};
+ const M=window.ReferenceMeasurement,setup=referenceSetup(pair),length=.3,axes=axisConfig(current),axis=key=>axes.find(a=>a.key===key);
  const half=key=>{const a=axis(key),p=levelCoordinates(a.vector[0]*a.amp,a.vector[2]*a.amp);return Math.hypot(p.x,a.vector[1]*a.amp,p.z);};
  const scanHalf=half(setup.scan),baseHalf=half(setup.base),invalid=reason=>({valid:false,reason,setup,model:'horizontal-finite-square-v1'});
  if(2*scanHalf<length-1e-12||2*baseHalf<length-1e-12)return invalid('300 mmの走査範囲不足');
- const startPosition=setup.scan==='Y'?-scanHalf:station.physical.Z,endPosition=startPosition+length;
+ const startPosition=Math.max(-scanHalf,Math.min(scanHalf-length,state[setup.scan]*scanHalf/100)),endPosition=startPosition+length;
  const startState={...state,[setup.scan]:startPosition/scanHalf*100},stateAt=t=>({...startState,[setup.scan]:(startPosition+length*t)/scanHalf*100});
  const tool=s=>{const t=horizontalSpindleFixture(s,solution,profile);return {...t,frame:{right:t.right,up:t.up,back:t.axis,rotate:v=>t.right.map((q,i)=>q*v[0]+t.up[i]*v[1]+t.axis[i]*v[2])}};};
  const pallet=s=>({point:horizontalPalletPoint([0,1.27,-.85],s,solution,profile),frame:referenceRigidFrame(geometryModel(s,solution,profile).workFrame)}),p0=pallet(startState);
- const offset=pair.key==='XY'?[-.15,1.26,.12]:[-.15,.90,.16],q0=M.add(p0.point,p0.frame.rotate(offset));
- const baseStart=station.physical.X-.15,baseEnd=baseStart+length;
- const baseAt=t=>({...startState,...(pair.key==='XY'?{Y:0}:{}),[setup.base]:(baseStart+length*t)/baseHalf*100}),rTool0=tool(baseAt(0)),rBracket=M.sub(q0,rTool0.nose);
+ const offset=pair.key==='XY'?[-.15,.05,0]:pair.key==='XZ'?[-.15,.05,.16]:[0,.05,.16],q0=M.add(p0.point,p0.frame.rotate(offset));
+ const baseStart=Math.max(-baseHalf,Math.min(baseHalf-length,state[setup.base]*baseHalf/100)),baseEnd=baseStart+length;
+ const baseAt=t=>({...startState,[setup.base]:(baseStart+length*t)/baseHalf*100}),rTool0=tool(baseAt(0)),rBracket=M.sub(q0,rTool0.nose);
  const contactMaterial=t=>{const a=tool(baseAt(t));return M.add(a.nose,M.transport(rBracket,rTool0.frame,a.frame));};
  const q1=contactMaterial(1),normal=M.unit(M.sub(q1,q0)),nominalAlong=pair.key==='XY'?p0.frame.up:M.scale(p0.frame.back,-1);
  const rNormal=M.unit(M.sub(nominalAlong,M.scale(normal,M.dot(nominalAlong,normal)))),cross=[normal[1]*rNormal[2]-normal[2]*rNormal[1],normal[2]*rNormal[0]-normal[0]*rNormal[2],normal[0]*rNormal[1]-normal[1]*rNormal[0]];
@@ -1454,24 +1429,24 @@ function horizontalReferenceScan(pair,state,solution,profile){
   }
   return [...fractions].sort((a,b)=>a-b);
  };
- const rBody0=M.add(q0,M.scale(rNormal,pair.key==='XY'?.01:-.01)),rProbe0=M.scale(rNormal,pair.key==='XY'?-1:1);
+ const rBody0=M.sub(q0,M.scale(rNormal,.01)),rProbe0=rNormal;
  const alignmentSamples=timesFor(setup.base,baseStart,length).map(t=>{
   const a=tool(baseAt(t)),pose={point:q0,normal:rNormal,body:M.add(a.nose,M.transport(M.sub(rBody0,rTool0.nose),rTool0.frame,a.frame)),probe:M.transport(rProbe0,rTool0.frame,a.frame)},hit=M.contact(pose);
-  if(hit.valid){const d=M.sub(hit.point,q0),along=M.dot(d,normal),across=M.dot(d,cross);if(along<-.010000001||along>.310000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'R面の範囲外',t,state:baseAt(t),pose};}
-  return {...hit,t,state:baseAt(t),pose};
+  if(hit.valid){const d=M.sub(hit.point,q0),along=M.dot(d,normal),across=M.dot(d,cross);if(along<-.010000001||along>.310000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'R面の範囲外',t,pose};}
+  return {...hit,t,pose};
  });
  const rBad=alignmentSamples.find(s=>!s.valid);if(rBad)return {...invalid(rBad.reason),alignmentSamples};
  const alignment=M.compare(alignmentSamples[0].pose,alignmentSamples.at(-1).pose);
- const point=M.add(M.add(q0,M.scale(normal,.31)),M.scale(rNormal,pair.key==='XY'?-.31:.01)),t0=tool(startState),body=M.add(point,M.scale(normal,.01)),probe=M.scale(normal,-1);
+ const point=M.add(M.add(q0,M.scale(normal,.31)),M.scale(rNormal,.01)),t0=tool(startState),body=M.add(point,M.scale(normal,.01)),probe=M.scale(normal,-1);
  const start={point,normal,body,probe},alongStart=M.scale(rNormal,setup.relativeSign);
  const samples=timesFor(setup.scan,startPosition,length).map(t=>{
   const s=stateAt(t),p=pallet(s),a=tool(s),pose={point:M.add(p.point,M.transport(M.sub(point,p0.point),p0.frame,p.frame)),normal:M.transport(normal,p0.frame,p.frame),body:M.add(a.nose,M.transport(M.sub(body,t0.nose),t0.frame,a.frame)),probe:M.transport(probe,t0.frame,a.frame)};
   const along=M.transport(alongStart,p0.frame,p.frame),hit=M.contact(pose);
-  if(hit.valid){const d=M.sub(hit.point,pose.point),distance=M.dot(d,along)*setup.relativeSign,across=M.dot(d,M.transport(cross,p0.frame,p.frame));if(distance<-.010000001||distance>.310000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'S面の範囲外',t,state:s,pose,along};}
-  return {...hit,t,state:s,pose,along};
+  if(hit.valid){const d=M.sub(hit.point,pose.point),distance=M.dot(d,along)*setup.relativeSign,across=M.dot(d,M.transport(cross,p0.frame,p.frame));if(distance<-.010000001||distance>.310000001||Math.abs(across)>.025000001)return {...hit,valid:false,reason:'S面の範囲外',t,pose,along};}
+  return {...hit,t,pose,along};
  });
  const bad=samples.find(s=>!s.valid),end=samples.at(-1).pose,result=bad?{valid:false,reason:bad.reason,failurePosition:startPosition+length*bad.t}:M.compare(start,end);
- return horizontalFixtureAttach({...result,setup,startPosition,endPosition,length,model:'horizontal-station-square-v2',startState,endState:stateAt(1),start,end,samples,alongStart,alongEnd:samples.at(-1).along,fixture:'horizontal-finite-square',alignment:{...alignment,startPosition:baseStart,endPosition:baseEnd,startState:baseAt(0),endState:baseAt(1),samples:alignmentSamples},master:{corner:q0,Rnormal:rNormal,Snormal:normal,width:.32,height:.32,thickness:.05,contactOffset:.01,palletOrigin:p0.point},autoZero:true},solution,profile);
+ return {...result,setup,startPosition,endPosition,length,model:'horizontal-finite-square-v1',start,end,samples,alongStart,alongEnd:samples.at(-1).along,fixture:'horizontal-finite-square',alignment:{...alignment,startPosition:baseStart,endPosition:baseEnd,samples:alignmentSamples},master:{corner:q0,Rnormal:rNormal,Snormal:normal,width:.32,height:.32,thickness:.05,contactOffset:.01,palletOrigin:p0.point},autoZero:true};
 }
 function referenceScan(pair,state=positions,solution=levelSolution,profile=machineProfile,geometryProvider=geometryModel){
  if(current.kind==='horizontal')return horizontalReferenceScan(pair,state,solution,profile);
@@ -1511,13 +1486,15 @@ function referenceScan(pair,state=positions,solution=levelSolution,profile=machi
  const bad=samples.find(p=>!p.valid),result=bad?{valid:false,reason:bad.reason,failurePosition:startPosition+travelLength*bad.t}:M.compare(start,end);
  return {...result,setup,startPosition,endPosition,length,model:M.model,start,end,samples,alongStart:tangent,alongEnd:samples[samples.length-1].along,fixture:anchor?(current.kind==='horizontal'?'horizontal-pallet-top':'compact-table-P'):'representative-fixed-posture'};
 }
-// Finite scans use the same physical support and intrinsic posture as the model.
-// Reinstallation/alignment and start zero remain part of the displayed procedure.
+// Both finite scanning and spindle sweep use the same fixed teaching posture.
+// No multiplier is applied to the resulting indicator displacement.
 function referenceDisplayScan(pair,state=positions,solution=levelSolution,profile=machineProfile){
- return {...referenceScan(pair,state,solution,profile),responseGain:1};
+ const teaching=current.kind==='compact';
+ const result=referenceScan(pair,state,solution,profile,teaching?compactMeasurementGeometry:geometryModel);
+ return {...result,model:teaching?'compact-shared-posture-v1':result.model,responseGain:teaching?compactMeasurementResponseGain:1};
 }
 function referenceDiagram(measurement,mini=false){
- const s=measurement.setup,M=window.ReferenceMeasurement,down=s.relativeSign<0,y0=down?14:31,horizontal=current.kind==='horizontal',rTop=horizontal;
+ const s=measurement.setup,M=window.ReferenceMeasurement,down=s.relativeSign<0,y0=down?14:31,horizontal=current.kind==='horizontal',rTop=horizontal&&(down||s.referenceFace==='top');
  const emphasized=current.kind!=='compact'||$('exaggerate').checked,normalGain=emphasized?1e6/6:17/.3,tiltGain=emphasized?1000:1;
  let bx=34,cy=down?31:14,tilt=0,bodyNormal=.01,probeNormal=-1,probeAlong=0,limited=false;
  const clip=(v,limit)=>{if(Math.abs(v)>limit)limited=true;return Math.max(-limit,Math.min(limit,v));};
@@ -1553,15 +1530,14 @@ function horizontalReferenceInterval(measurement,state=positions){
  return {key,currentPosition,startPosition,endPosition,returnTravel:startPosition-currentPosition};
 }
 function referenceCard(pair,m,before,physical=m){
- if(current.kind==='horizontal')return horizontalReferenceCard(pair,m,before);
  const display=m,beforeDisplay=before,horizontal=current.kind==='horizontal',horizontalYZ=horizontal&&pair.key==='YZ';
- const s=m.setup,alignment=horizontal?(horizontalYZ?'主軸側計器を止めてパレットをZへ300 mm送った始終点':'主軸側のR用計器をXへ300 mm送った始終点'):current.kind==='compact'?'測定Pの'+s.base+'局所送り接線':s.base+'の代表案内方向',reading=display.valid?squarenessMicronText(display.microns)+' µm':display.reason,span=m.startPosition===undefined?'':`${signed(m.startPosition*1000,1)} → ${signed(m.endPosition*1000,1)} mm（${s.scan}部材位置・中央0）`;
- const interval=horizontalReferenceInterval(m);
- const intervalNote=`<p class="measurement-interval"${interval?` data-current-position-mm="${interval.currentPosition*1000}" data-zero-position-mm="${interval.startPosition*1000}" data-end-position-mm="${interval.endPosition*1000}" data-return-travel-mm="${interval.returnTravel*1000}"`:''}><strong>300 mm測定の終点値（始点で再ゼロ）</strong>${interval?`<br>模型の現在${interval.key}：${signed(interval.currentPosition*1000,1)} mm（部材位置・中央0）。<br>測定${interval.key}：${signed(interval.startPosition*1000,1)} mmでゼロ → ${signed(interval.endPosition*1000,1)} mmの終点・${s.scanDirection}送り。${Math.abs(interval.returnTravel)>1e-9?`300 mmを確保するため、計算上は現在位置から${interval.key}を${signed(interval.returnTravel*1000,1)} mm戻して再取付け・再ゼロします。模型は現在位置です。`:'現在位置が始点です。'}`:' '+m.reason}<br>軸位置を変えるたびに取り付け・ゼロを取り直す測定結果です。移動中や支持操作中のゼロを保持した針の指示ではありません。</p>`;
+ const s=m.setup,alignment=horizontal?(horizontalYZ?'主軸側計器を止めてパレットをZへ300 mm送った始終点':'主軸側のR用計器をXへ300 mm送った始終点'):current.kind==='compact'?'測定Pの'+s.base+'局所送り接線':s.base+'の代表案内方向',reading=display.valid?squarenessMicronText(display.microns)+' µm':display.reason,teaching=current.kind==='compact',span=m.startPosition===undefined?'':`${signed(m.startPosition*1000,1)} → ${signed(m.endPosition*1000,1)} mm（${s.scan}部材位置・中央0）`;
+ const interval=horizontal?horizontalReferenceInterval(m):null;
+ const intervalNote=horizontal?`<p class="measurement-interval"${interval?` data-current-position-mm="${interval.currentPosition*1000}" data-zero-position-mm="${interval.startPosition*1000}" data-end-position-mm="${interval.endPosition*1000}" data-return-travel-mm="${interval.returnTravel*1000}"`:''}><strong>300 mm測定の終点値（始点で再ゼロ）</strong>${interval?`<br>模型の現在${interval.key}：${signed(interval.currentPosition*1000,1)} mm（部材位置・中央0）。<br>測定${interval.key}：${signed(interval.startPosition*1000,1)} mmでゼロ → ${signed(interval.endPosition*1000,1)} mmの終点・${s.scanDirection}送り。${Math.abs(interval.returnTravel)>1e-9?`300 mmを確保するため、計算上は現在位置から${interval.key}を${signed(interval.returnTravel*1000,1)} mm戻して再取付け・再ゼロします。模型は現在位置です。`:'現在位置が始点です。'}`:' '+m.reason}<br>軸位置を変えるたびに取り付け・ゼロを取り直す測定結果です。下降中の針の指示ではありません。</p>`:'';
  const xyDirectionNote=horizontal&&pair.key==='XY'?'<p>同じマスタ・取付けを保持し、上ほどマスタに対して計器本体が右へ10 µm離れる例では、下でゼロ→上の指示は−10 µm。上でゼロを取り直して下へ測れば＋10 µmです。下のゼロを保持して戻る場合は−10から0へ戻り、途中は負のままです。コラムの床に対する倒れだけでは符号は決まりません。</p>':'';
  const horizontalAlignment=horizontalYZ?'主軸側のR用計器を上面へ当てて固定し、パレットをZ＋へ300 mm送り、両端を等指示にし、測定子がR走査両端で厚み50 mmの中央線を通るよう横方向も合わせる。マスタを固定したまま選択Z位置へ戻す。':'主軸側のR用計器をXへ300 mm送り、両端を等指示に方向合わせ。';
  const horizontalNote=horizontal?`<p>小図の「計器:主軸」は計器を主軸側へ固定する意味です。${s.scan==='Y'?pair.key+'では主軸頭を上へ動かし、テーブル（パレット）とマスタは静止します。':'XZでは主軸頭は静止し、パレットとマスタを奥（主軸側）へ動かします。'}オレンジの矢印はマスタから見た計器の動きです。表示の＋X/＋Y/＋Zとスライダーは部材の移動方向で、NC指令の正負を表しません。</p><p>320×320 mm・厚み50 mmの直角マスタを、XY/YZは立て、XZは寝かせてテーブルに載せます。${horizontalAlignment}途中の接触も確認しますが、途中の指示まで0とは限りません。次にS用の腕へ付け替えて${horizontalYZ?'Y区間の下側で':'区間始点で'}ゼロにし、本体と測定子を主軸側の同じ剛体姿勢で運びます。測定時はサンプルワークを外し、調整台でRを合わせて固定します。器具の厚み側を回り込む腕を仮定し、全機械との干渉・たわみは再現しません。</p>`:'';
- return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${s.lathe?'主軸基準XZ':pair.key} <span>${reading}</span></h3>${intervalNote}<svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${s.artifact}と${s.body}の測定配置">${referenceDiagram(m)}</svg><p>${s.artifact}：${s.mount}上／計器：${horizontal?'主軸側':s.body}に固定。${s.normalDirection}側からS面に接触。</p>${horizontalNote}${xyDirectionNote}<p>① ${s.lathe?'回転中心線Zに直角な校正済みフランジ面を使用。往復台Z送りとは別。':(horizontal?horizontalAlignment:'R面を開始位置の'+alignment+'に平行に方向合わせ。')+'RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。'}<br>② ${s.zeroLocation}の●0でゼロ合わせ。<br>③ ${s.member}を部材${s.memberSign>0?'＋':'−'}${s.scan}・${s.scanDirection}へ300 mm（NC指令の符号ではありません）。基準器に対する計器は${s.relativeDirection}へ。測定子が本体へ${s.normalDirection}に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。</p><p>図の右＝${s.normalDirection}、図の上＝${s.positiveScanDirection}。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。${current.kind==='compact'?'「直角図のずれを強調」で本体の法線変位と測定子の傾きの強調を切り替えます。小型の接触計算は、模型と同じ物理姿勢を使います。器具の寸法は強調を外しても模式図です。':horizontal?'測定子の伸縮は接触計算と同じ正負で、変化を拡大します。接触点から描いた測定子と本体の位置を連動させ、測定子の傾きも強調します。器具全体を同じ縮尺で描いた図ではありません。':'本体の法線変位と測定子の傾きを別々に誇張します。'}図の変位・傾きは枠内に制限します。数値には誇張を掛けません。破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。</p>${horizontal?'':`<p>${span}。スライダーの現在位置と接触ゼロ位置は同じとは限りません。${m.valid?'':' '+m.reason}</p>`}<p>${s.lathe?'現模型は手前側刃物台です。部材−Xは手前・径外向き。ゼロの絶対半径・実寸フランジは再現しません。':horizontal?('R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から'+(pair.key==='XZ'?'50 mm':'60→360 mm')+'。理想時の器具下面のすき間はXY 50／XZ 25／YZ 50 mmで、厚み50 mmとは別です。調整台で傾きを合わせた後に固定する仮定です。支持・軸位置・寸法・個体の変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。'):current.kind==='compact'?'Y走査は模型の測定Pの移動を使います。':'この走査区間では取付部の姿勢が一定の代表点を使います。代表案内方向を、任意の取付高さの材料点接線や主軸回転中心線と同一視しません。実物の固定具寸法は再現しません。'}</p><p>初期支持状態：${beforeDisplay.valid?squarenessMicronText(beforeDisplay.microns)+' µm':beforeDisplay.reason}／現在：${reading}（同じ区間で各々ゼロ）。</p><p>設定内の局所軸角度は現在位置の角度換算です。この接触・有限走査の指示差とは定義が異なります。</p></section>`;
+ return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${s.lathe?'主軸基準XZ':pair.key} <span>${reading}</span></h3>${intervalNote}<svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${s.artifact}と${s.body}の測定配置">${referenceDiagram(m)}</svg><p>${s.artifact}：${s.mount}上／計器：${horizontal?'主軸側':s.body}に固定。${s.normalDirection}側からS面に接触。</p>${horizontalNote}${xyDirectionNote}<p>① ${s.lathe?'回転中心線Zに直角な校正済みフランジ面を使用。往復台Z送りとは別。':(horizontal?horizontalAlignment:'R面を開始位置の'+alignment+'に平行に方向合わせ。')+'RとSの直角が保証されたマスタを使用。平定盤の側面を代用しない。'}<br>② ${s.zeroLocation}の●0でゼロ合わせ。<br>③ ${s.member}を部材${s.memberSign>0?'＋':'−'}${s.scan}・${s.scanDirection}へ300 mm（NC指令の符号ではありません）。基準器に対する計器は${s.relativeDirection}へ。測定子が本体へ${s.normalDirection}に引っ込むと＋、伸びると−。固定したS面へ本体が近づく向きとは区別します。</p><p>図の右＝${s.normalDirection}、図の上＝${s.positiveScanDirection}。S面に沿う展開図で、模型のカメラとは独立です。Rは方向合わせ面、Sは読みを比較する面（旋盤はSのみ）。${current.kind==='compact'?'「直角図のずれを強調」で本体の法線変位と測定子の傾きの強調を切り替えます。小型の接触計算は、直角測定と触れに共通の仮想主軸姿勢を使います。模型と局所角度は元の姿勢です。器具の寸法は強調を外しても模式図です。':horizontal?'測定子の伸縮は接触計算と同じ正負で、変化を拡大します。接触点から描いた測定子と本体の位置を連動させ、測定子の傾きも強調します。器具全体を同じ縮尺で描いた図ではありません。':'本体の法線変位と測定子の傾きを別々に誇張します。'}図の変位・傾きは枠内に制限します。${teaching?'図と数値は同じ仮想測定姿勢から求めます。数値に後から倍率を掛けません。':'数値には誇張を掛けません。'}破線は本体の始終位置を結ぶ目安で、連続軌跡ではありません。</p>${horizontal?'':`<p>${span}。スライダーの現在位置と接触ゼロ位置は同じとは限りません。${m.valid?'':' '+m.reason}</p>`}<p>${s.lathe?'現模型は手前側刃物台です。部材−Xは手前・径外向き。ゼロの絶対半径・実寸フランジは再現しません。':horizontal?('R面の300 mm区間は両端10 mmの余白を取り、S面も端から10 mm→310 mmを走査します。厚み方向の接触は中央±25 mmの範囲です。理想時のS接触高さはパレット上面から'+(pair.key==='XZ'?'50 mm':'60→360 mm')+'。理想時の器具下面のすき間はXY 50／XZ 25／YZ 50 mmで、厚み50 mmとは別です。調整台で傾きを合わせた後に固定する仮定です。支持・軸位置・寸法・個体の変更でR合わせとSの付替え・始点ゼロを取り直します。軸端ではRとSの300 mm区間をそれぞれ確保し、各始点の頭姿勢へ腕を取り付けます。S走査中は再方向合わせ・再ゼロしません。器具と腕の位置は有限寸法の教材仮定で、全治具干渉・弾性は再現しません。Z平行度は主軸固定バーとパレット側計器の別配置です。'):current.kind==='compact'?'Y走査は模型の測定Pの移動を使います。':'この走査区間では取付部の姿勢が一定の代表点を使います。代表案内方向を、任意の取付高さの材料点接線や主軸回転中心線と同一視しません。実物の固定具寸法は再現しません。'}</p>${teaching?'<p>小型は前後の支持応答を中央位置で約5倍とする共通の仮想主軸姿勢です。支持のみの中央YZ角差δに対して、主軸とZ送りを基準X軸まわりに追加で4δ回し、300 mmの走査と直径300 mmの触れをそれぞれ接触から計算します。固有誤差は増幅しません。補正姿勢は支持・寸法ごとに固定し、テーブル送りで変えません。全位置の数値が厳密に5倍になる仕様ではありません。中央以外ではXZにも微小な交差影響があります。元の有限測定値：'+(physical.valid?squarenessMicronText(physical.microns)+' µm':physical.reason)+'。実機感度の再現ではありません。共通の剛体傾斜では補正せず、模型・局所角度・調整評価・参考最良は元の計算です。</p>':''}<p>初期支持状態：${beforeDisplay.valid?squarenessMicronText(beforeDisplay.microns)+' µm':beforeDisplay.reason}／現在：${reading}（同じ区間で各々ゼロ${teaching?'・ともに共通の仮想主軸姿勢':''}）。</p>${horizontal?'':`<p>従来の局所角度差：${squarenessMicronText(pair.deviationMicroradians*.3)} µm／300 mm換算。上の表示値とは別です。</p>`}</section>`;
 }
 </script><script>(function(root,factory){
  'use strict';
@@ -1844,7 +1820,6 @@ $('testerBack').onclick=()=>navigate('electricTopics');
 // Each catalogue entry starts a new individual, including the same machine.
 function resumeOrOpenMachine(m){openMachine(m);}
 function openMachine(m,{fromHistory=false}={}){
- if(typeof resetFixtureComparison==='function')resetFixtureComparison('');
  if(typeof spindleSweepMode!=='undefined'){spindleSweepMode=false;spindleSweepAngle=270;}
  stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.defaultMode||(m.modes?m.modes[0][0]:'');current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training',{fromHistory,initializedTraining:true});
 }
@@ -1956,7 +1931,7 @@ function createGeometry(m){
  // Keep the measured nose at -W*.24+.125; extend the chuck rear into the
  // headstock instead of leaving the previous 25 mm unsupported gap.
  withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24-.015,1.5,0,.4,.28,c.spindle,'x');},'tool');
- withGroup([],()=>{const nose=-W*.24+.125,scaleX=m===current&&levelConfig?levelConfig.width/(m.w*.8):1,tip=nose+.4/scaleX;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','400 mmテストバー');},'latheTestBar');
+ withGroup([],()=>{const nose=-W*.24+.125,tip=W*.225;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
  // Display only. Leave the centre retracted clear of the test bar.
  withGroup([],()=>{
   const x=W*.36;box(x,.805,0,.8,.08,1.1,c.fixed);box(x,1.225,0,.52,.76,.65,c.fixed,'心押台');
@@ -2193,7 +2168,7 @@ function updateSceneViewUI(){
  if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&current.kind==='horizontal')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸に固定したテストバーに対するZ方向300ミリの平行度も表示します。パレット上の計器を主軸側へ動かし、aは左右、bは上下の押込み差を始点ゼロで測ります。主軸は回しません。');
  if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&current.kind!=='horizontal')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。右・奥・左・手前の4方向です。上の3枠は基準器を使う300ミリの仮想走査、隣の4点は手前基準の相対読みです。');
 }
-function drawScene(){if(levelSolution)updateAccuracy();if(typeof updateSpindleSweep==='function')updateSpindleSweep();if(typeof updateFixtureComparison==='function')updateFixtureComparison();if(typeof updateFixtureWorkflow==='function')updateFixtureWorkflow();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
+function drawScene(){if(levelSolution)updateAccuracy();if(typeof updateSpindleSweep==='function')updateSpindleSweep();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){
  if(!['oblique','front','side'].includes(view))return;clearScenePointers();sceneView=view;
  yaw=view==='front'?0:view==='side'?Math.PI/2:-.45;updateSceneViewUI();drawScene();
@@ -2338,7 +2313,6 @@ function validLevelRecord(r){
  return r&&r.calculationModel===currentCalculationModel()&&compatibleSupportLayout(r)&&((r.version===1&&r.machineProfile===undefined)||((r.version===2||r.version===3)&&window.MachineAccuracy.valid(r.machineProfile,machineLinearKeys(),supports.length)&&validMachineBest(r)))&&r.machine===current.id&&r.mode===machineMode&&bounded(r.width,.5,20)&&bounded(r.depth,.5,20)&&Array.isArray(r.heights)&&r.heights.length===supports.length&&r.heights.every(h=>bounded(h,-.5,.5)&&Math.abs(h*1000-Math.round(h*1000))<1e-7)&&[.02,.05,.1].includes(r.sensitivity)&&[-1,0,1].includes(r.measurePos)&&bounded(r.offset,.1,2)&&['columnX','columnZ'].every(k=>r[k]===undefined||bounded(r[k],-100,100)&&Number.isInteger(r[k]))&&axisValid&&[.001,.005,.01,.05,.1].includes(r.step)&&typeof r.exaggerate==='boolean';
 }
 function applyLevelRecord(r){
- if(typeof resetFixtureComparison==='function')resetFixtureComparison('保存入力を読み込んだため、取付けとゼロの保持を解除しました。');
  resetAdjustmentProgress();
  levelConfig={width:r.width,depth:r.depth,offset:r.offset,columnX:r.columnX??0,columnZ:r.columnZ??0};supportHeights=[...r.heights];
  initializeMachineAccuracy(r.version>=2?r.machineProfile:null,r.bestState);supportHeights=[...r.heights];
@@ -2496,9 +2470,9 @@ function updateLevelStages(machineResult=null,target=false){
  const currentScore=machineEvaluation(supportHeights).objective;
  if(fineStartEvaluation){
   const delta=currentScore-fineStartEvaluation.objective,trend=delta < -1e-8?'better':delta>1e-8?'worse':'similar';
-  progress.textContent='微調整を始めた状態からの総合評価：'+(trend==='better'?'良くなりました':trend==='worse'?'悪くなっています':'ほぼ同じです')+'。代表位置の局所軸角度と姿勢の補助評価です。上段の有限測定や触れなど、全測定の改善を示すものではありません。';
+  progress.textContent='微調整を始めた状態からの総合評価：'+(trend==='better'?'良くなりました':trend==='worse'?'悪くなっています':'ほぼ同じです')+'。初期からの直角図とは別に、代表位置全体の直角と姿勢を比べます。';
   progress.setAttribute('data-before',String(fineStartEvaluation.objective));progress.setAttribute('data-current',String(currentScore));progress.setAttribute('data-delta',String(delta));progress.setAttribute('data-trend',trend);
- }else{progress.textContent='微調整開始時の比較基準はまだありません。代表位置の局所軸角度と姿勢を総合した補助評価を使います。全測定の最良値ではありません。';for(const name of ['before','current','delta','trend'])progress.setAttribute('data-'+name,'');}
+ }else{progress.textContent='微調整開始時の比較基準はまだありません。代表位置全体の直角と姿勢を総合して調整の目安を確認します。';for(const name of ['before','current','delta','trend'])progress.setAttribute('data-'+name,'');}
  const supportStatus=$('supportStageStatus');
  supportStatus.textContent=adjustmentStage==='coarse'?'粗調整 · '+(coarse?'平均の目安内':'平均の傾き調整中'):'微調整 · '+(target?(significant?'目安内・残る誤差':'調整の目安内'):'直角と姿勢を調整中');
  supportStatus.setAttribute('data-stage',adjustmentStage);supportStatus.setAttribute('data-ready',String(adjustmentStage==='coarse'?coarse:target));
@@ -2517,7 +2491,7 @@ function updateAdjustmentHint(coarse,target){
  }
  const hint=$(adjustmentStage==='coarse'?'coarseHint':'fineHint'),best=adjustmentHintValue;
  hint.setAttribute('data-support',best?String(best.i):'');hint.setAttribute('data-direction',best?String(best.direction):'');for(const [name,value] of [['before-score',best?.before],['after-score',best?.after],['step',best?.step]])hint.setAttribute('data-'+name,value===undefined?'':String(value));
- hint.textContent=adjustmentStage==='coarse'&&coarse?'平均の傾きが揃いました。微調整へ切り替え、本体や支持姿勢に残る誤差を見ます。':adjustmentStage==='fine'&&target?'この個体の調整目安に近づきました。直角の変化と、本体や支持姿勢に残る誤差を確認します。':best?String.fromCharCode(65+best.i)+'を少し'+(best.direction>0?'上げる':'下げる')+'方向を試せます。'+(adjustmentStage==='fine'?'代表位置の局所軸角度・姿勢の補助評価が良くなる候補です。上段の有限測定や触れなど、各測定の改善は別に確認してください。':'平均の傾きが小さくなる候補です。'):'単独の支持点を少し動かすだけでは改善する候補がありません。複数の支持点の関係を見直すか、調整例を試してください。';
+ hint.textContent=adjustmentStage==='coarse'&&coarse?'平均の傾きが揃いました。微調整へ切り替え、本体や支持姿勢に残る誤差を見ます。':adjustmentStage==='fine'&&target?'この個体の調整目安に近づきました。直角の変化と、本体や支持姿勢に残る誤差を確認します。':best?String.fromCharCode(65+best.i)+'を少し'+(best.direction>0?'上げる':'下げる')+'方向を試せます。'+(adjustmentStage==='fine'?'代表位置全体の総合評価が良くなる候補です。今の位置の各直角がすべて改善するとは限りません。':'平均の傾きが小さくなる候補です。'):'単独の支持点を少し動かすだけでは改善する候補がありません。複数の支持点の関係を見直すか、調整例を試してください。';
  // Keep the support-card reminder short while the full lesson stays above.
  const reminder=$('supportStageHint'),ready=adjustmentStage==='coarse'?coarse:target,mode=ready?'goal':best?'candidate':'stalled';
  reminder.textContent=ready?(adjustmentStage==='coarse'?'微調整へ。残る誤差を確認':'初期との差・残る誤差を確認'):best?String.fromCharCode(65+best.i)+'を少し'+(best.direction>0?'上げる':'下げる')+'方向へ':'単独候補なし · 参考例を比較';
@@ -2832,10 +2806,55 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const lathe=m.kind==='lathe',bodyPosture=lathe?spindleLean(combinedDirection):bodyLean,bodyIntrinsicPosture=lathe?spindleLean(bodyFrame.direction):bodyIntrinsicLean,bodySupportPosture=lathe?spindleLean(metric.toolFrame.rotate(bodyFrame.nominal)):directionLean(metric.toolFrame.rotate([0,1,0]));
  return {...metric,portal,compact,poses,guidePoints,guideSlope,toolPoints,workPoint,axes:intrinsicAxes,levelPairs,bodyLean,bodyColumns,bodyIntrinsicLean,bodyPosture,bodyIntrinsicPosture,bodySupportPosture,bodyIntrinsicDirection:bodyFrame.direction,bodyCombinedDirection:combinedDirection};
 }
-// Compatibility name for diagnostics: measurement and model now share the same
-// support-derived geometry. No measurement-only spindle rotation is applied.
+// Measurement-only teaching posture. The physical support map, fixed column,
+// saved individual and assessment geometry continue to use geometryModel.
+// A single extra pitch is fixed by the supports and the central datum, never
+// by the current table position. Both finite scans and the spindle sweep use
+// this rotation; it is not an independent multiplier on their dial readings.
+const compactMeasurementResponseGain=5;
+const compactMeasurementAdjustmentCache=new WeakMap();
+function compactMeasurementAdjustment(solution=levelSolution){
+ const identity={gain:1,angle:0,axis:[1,0,0],supportAngle:0,rotate:v=>[...v]};
+ if(current.kind!=='compact'||!solution)return identity;
+ const key=JSON.stringify([current.id,current.w,current.d,levelConfig,supports]);
+ const cached=compactMeasurementAdjustmentCache.get(solution);
+ if(cached?.key===key)return cached.value;
+ const M=window.ReferenceMeasurement,datum={X:0,Y:0,Z:0,A:0,C:0};
+ const pure=geometryModel(datum,solution,null,.3);
+ const axis=pure.directions.find(a=>a.key==='X').direction;
+ const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+ const pitch=g=>{
+  const projected=key=>{const v=g.directions.find(a=>a.key===key).direction;return M.sub(v,M.scale(axis,M.dot(axis,v)));};
+  const z=projected('Z'),y=projected('Y');
+  return Math.atan2(M.dot(z,y),M.dot(axis,cross(z,y)));
+ };
+ // Remove even the numerical residue of a common rigid seating plane.
+ const plane=solution.plane,rigid={...solution,residual:0,twist:0,
+  heightAt:(x,z)=>plane.a*x+plane.b*z+plane.c,
+  slopeAt:()=>({lr:solution.lr,fb:solution.fb}),
+  hessianAt:()=>({xx:0,xz:0,zz:0})};
+ const difference=pitch(pure)-pitch(geometryModel(datum,rigid,null,.3));
+ const supportAngle=Math.abs(difference)<1e-14?0:difference;
+ const angle=(compactMeasurementResponseGain-1)*supportAngle,c=Math.cos(angle),s=Math.sin(angle);
+ const rotate=v=>{
+  const turn=cross(axis,v),along=M.dot(axis,v);
+  return v.map((q,i)=>q*c+turn[i]*s+axis[i]*along*(1-c));
+ };
+ const value={gain:compactMeasurementResponseGain,angle,axis:[...axis],supportAngle,rotate};
+ compactMeasurementAdjustmentCache.set(solution,{key,value});
+ return value;
+}
 function compactMeasurementGeometry(state=positions,solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
- return geometryModel(state,solution,profile,length);
+ const g=geometryModel(state,solution,profile,length);
+ if(current.kind!=='compact')return g;
+ const adjustment=compactMeasurementAdjustment(solution),R=adjustment.rotate;
+ const toolFrame=window.Leveling.frame(R(g.toolFrame.right),R(g.toolFrame.up),R(g.toolFrame.back));
+ // The original pairs/leans remain physical diagnostics. This provider is for
+ // contact calculations only, which read directions and attachment frames.
+ return {...g,measurementAdjustment:adjustment,toolFrame,
+  poses:{...g.poses,tool:{...g.poses.tool,frame:toolFrame}},
+  directions:g.directions.map(a=>a.key==='Z'?{...a,direction:R(a.direction)}:a),
+  bodyCombinedDirection:R(g.bodyCombinedDirection)};
 }
 function geometrySamples(solution=levelSolution,profile=machineProfile,length=levelConfig.offset){
  const keys=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)).map(a=>a.key);
@@ -2979,13 +2998,13 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   measurements.push({key:pair.key,current:measurement,before:levelInitialSolution?beforeMeasurement:null});
   const display=measurement,reading=display.valid?squarenessMicronText(display.microns):'—';
   referenceCards.push(referenceCard(pair,measurement,beforeMeasurement,physical));
-  const descriptionText=pair.key+'・'+(display.valid?measurement.setup.zeroLocation+'を0とした300 mmの'+(current.kind==='horizontal'?'測定の終点値 ':'仮想測定 ')+reading+' µm':display.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。'+(current.kind==='horizontal'?'模型の現在位置の針の指示ではありません。':'');
+  const descriptionText=pair.key+'・'+(display.valid?measurement.setup.zeroLocation+'を0とした300 mmの'+(current.kind==='horizontal'?'測定の終点値 ':'仮想測定 ')+reading+' µm'+(current.kind==='compact'?'（触れと共通の仮想主軸姿勢）':''):display.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。'+(current.kind==='horizontal'?'模型の現在位置の針の指示ではありません。':'');
   live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${measurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}">${referenceDiagram(measurement,true)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} · 局所角度</text><g transform="translate(0,30)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
- $('liveSquarenessName').textContent=current.kind==='horizontal'?'測定の終点値':'仮想測定';
- $('liveSquarenessUnits').setAttribute('aria-label',current.kind==='horizontal'?'始点でゼロを取り直した300 mm測定の終点値・マイクロメートル。模型の現在位置の針の指示ではありません。':'仮想測定300 mm・マイクロメートル。模型と同じ支持・固有姿勢を使用。');
+ $('liveSquarenessName').textContent=current.kind==='horizontal'?'測定の終点値':current.kind==='compact'?'仮想測定（触れと共通姿勢）':'仮想測定';
+ $('liveSquarenessUnits').setAttribute('aria-label',current.kind==='horizontal'?'始点でゼロを取り直した300 mm測定の終点値・マイクロメートル。模型の現在位置の針の指示ではありません。':current.kind==='compact'?'300 mm・マイクロメートル。小型のZ送りと触れに共通の仮想主軸姿勢。前後の支持応答は中央で約5倍。数値への後掛け倍率はありません。':'仮想測定300 mm・マイクロメートル');
  $('measurementReferenceCards').innerHTML=referenceCards.join('');
  $('accuracyDiagram').style.setProperty('--diagram-min-width',g.pairs.length*88+'px');
  $('accuracyDiagram').setAttribute('viewBox',`0 0 ${g.pairs.length*112} 123`);$('accuracyDiagram').innerHTML=columns.join('');
@@ -3002,7 +3021,7 @@ function updateFineQualitative(g,initial,measurements=[]){
  $('fineFixedBody').textContent='本体の固有直角差・'+(lathe||g.portal?'主軸の方向':'コラムの倒れ')+'・ガイドの曲がりは、この個体の固定成分です。支持姿勢を重ねた変化を見ます。';
  $('finePrecisionSummary').replaceChildren();
  for(const pair of g.pairs){
-  if(!lathe){
+  if(current.kind==='horizontal'){
    // Compare the same finite, independently aligned and zeroed scans as the
    // live reading. The local axis angle can improve while this reading worsens.
    const measurement=measurements.find(m=>m.key===pair.key),before=measurement?.before,now=measurement?.current;
@@ -3017,7 +3036,7 @@ function updateFineQualitative(g,initial,measurements=[]){
   }
   const c=diagramComparison(pair,initial),row=document.createElement('p');row.className='fine-pair-reading '+c.trend;
   for(const [name,value] of Object.entries({pair:pair.key,before:c.before.deviationMicroradians,current:pair.deviationMicroradians,delta:c.delta,trend:c.trend,direction:c.direction}))row.setAttribute('data-'+name,String(value));
-  row.textContent='主軸基準'+pair.key+'局所角度：'+c.text+(c.direction==='unchanged'?'（軸間の関係はほぼ不変）':'')+(c.range?' · '+c.range:'');$('finePrecisionSummary').append(row);
+  row.textContent=pair.key+'：'+c.text+(c.direction==='unchanged'?'（軸間の関係はほぼ不変）':'')+(c.range?' · '+c.range:'');$('finePrecisionSummary').append(row);
  }
 }
 function updateAccuracy(){
@@ -3029,7 +3048,7 @@ function updateAccuracy(){
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel();
  $('exaggerateLabel').textContent=current.kind==='compact'?'直角図のずれを強調':'傾き・姿勢差を強調';
- $('modelSemantics').textContent=['horizontal','lathe'].includes(current.kind)?'構造模型／器具は「取付け・接触」で確認':current.kind==='compact'?'模型の姿勢は実寸／微小差は直角図で確認':g.portal?'柱・梁＝支持姿勢／ラム・主軸＝固有差込み':'水準器＝平均／模型＝局所＋固有';
+ $('modelSemantics').textContent=current.kind==='compact'?'模型の姿勢は実寸／微小差は直角図で確認':g.portal?'柱・梁＝支持姿勢／ラム・主軸＝固有差込み':'水準器＝平均／模型＝局所＋固有';
  // The comparison is pointwise: both states use the current axis position,
  // dimensions, layout and evaluation length. The reference-search aggregate
  // is deliberately not used for this initial/current comparison.
@@ -3073,7 +3092,7 @@ function updateAccuracy(){
  }
  postureComparison('bodyLeanComparison',initial?['front','right'].map((key,i)=>({key,label:postureLabels[i],before:initial.bodyPosture[key],current:g.bodyPosture[key]})):[],'µrad');
  $('bodyLeanNote').textContent=lathe?'固有XZ差は水平面内の主軸の方向ずれです。主軸方向に支持姿勢を重ねた模式表示で、コラムの鉛直倒れとは区別します。':'本体は抽選した固有直角差から求めたコラムの代表方向、支持はこの位置の据付姿勢です。合成は両方を回転として重ねた実値です。平均レベルが揃っても本体の倒れは残ります。';
- if(current.kind==='compact')$('bodyLeanNote').textContent+=' 前後倒れは床の鉛直に対する姿勢です。YZは測定PのY送りに対するZ送りを測るため、両方が一緒に傾けば、前倒れから後ろ倒れへ変わっても値は改善しません。上段の直角測定と触れは模型と同じ支持・固有姿勢を使います。接触ゼロ後の有限走査値と現在位置の局所角度は別の量です。';
+ if(current.kind==='compact')$('bodyLeanNote').textContent+=' 前後倒れは床の鉛直に対する姿勢です。YZは測定PのY送りに対するZ送りを測るため、両方が一緒に傾けば、前倒れから後ろ倒れへ変わっても値は改善しません。上段の直角測定と触れは共通の仮想主軸姿勢を使い、中央の前後支持応答を約5倍にしています。模型姿勢・局所角度・調整評価は元の計算です。';
  $('columnLean').textContent=lathe?'上下 '+signed(g.bodyPosture.front,2)+' µrad ／ 水平面 '+signed(g.bodyPosture.right,2)+' µrad':leanDescription(g.bodyLean.front,'後ろ倒れ','前倒れ')+' ／ '+leanDescription(g.bodyLean.right,'左倒れ','右倒れ');
  $('relativeLean').textContent='前後 '+signed(g.relativeLean.front,2)+' µrad ／ 左右 '+signed(g.relativeLean.right,2)+' µrad';
  const dual=g.columns.length===2;$('columnDifference').hidden=!dual;
@@ -3102,7 +3121,7 @@ function updateAccuracy(){
  if(['travel','gantry'].includes(current.kind))$('geometryAssumption').textContent='Xは移動位置の走行案内、Y/Zはコラム・梁側の参照姿勢です。固定ワークの姿勢をX送りへ代用しません。';
  if(['travel','horizontal'].includes(current.kind))$('geometryAssumption').textContent='Xは二本の走行レール、'+(current.kind==='travel'?'Y/Zはコラム取付部':'Yはコラム取付部、Zはパレット側')+'の姿勢を使います。取付ベースの相対変形を幾何的に近似する教材で、剛性・荷重・水平面内の曲がりは計算しません。';
  if(['vertical','compact'].includes(current.kind))$('geometryAssumption').textContent+=' Xテーブル送りではサドルの支持参照は移動せず、Yサドル送りで移動します。';
- if(current.kind==='compact')$('geometryAssumption').textContent='右端：左端の相対曲げ剛性を3：1と仮定した、2モードの板曲げ教材です。支持4点を保持して曲率エネルギーを最小にする変形面を使います。実機の剛性を同定した値ではなく、自由板の厳密解・荷重や接触の構造解析ではありません。直角図のX/Yはテーブル上面中心の仮想測定点P（支持基準から0.50 m）の実際の送り接線、Zは主軸頭の送り方向です。サドルの倒れが位置で変わることによるアッベ影響と固有誤差を含みます。設定内の局所軸角度図は現在位置の送り角の300 mm換算です。常設の仮想測定欄は、方向合わせと接触ゼロを取り直した300 mmの有限走査を元にします。小型のZ送りと触れは模型と同じ支持・固有姿勢で測定し、測定だけの追加回転は与えません。どちらも補正済みの軸固有直角度ではありません。Xではサドル支持参照を動かさず、Yで移動します。剛性・荷重・接触を解く構造解析や実機精度検査の再現ではありません。';
+ if(current.kind==='compact')$('geometryAssumption').textContent='右端：左端の相対曲げ剛性を3：1と仮定した、2モードの板曲げ教材です。支持4点を保持して曲率エネルギーを最小にする変形面を使います。実機の剛性を同定した値ではなく、自由板の厳密解・荷重や接触の構造解析ではありません。直角図のX/Yはテーブル上面中心の仮想測定点P（支持基準から0.50 m）の実際の送り接線、Zは主軸頭の送り方向です。サドルの倒れが位置で変わることによるアッベ影響と固有誤差を含みます。設定内の局所軸角度図は現在位置の送り角の300 mm換算です。常設の仮想測定欄は、方向合わせと接触ゼロを取り直した300 mmの有限走査を元にします。小型のZ送りと触れは共通の仮想主軸姿勢で測定し、中央の前後支持応答を約5倍にしています。局所角度と模型は元の姿勢のままです。どちらも補正済みの軸固有直角度ではありません。Xではサドル支持参照を動かさず、Yで移動します。剛性・荷重・接触を解く構造解析や実機精度検査の再現ではありません。';
  if(current.kind==='lathe')$('geometryAssumption').textContent+=' 径送りXでは往復台のベッド参照は移動せず、長手Zで移動します。ベッドのロールによる刃先高さ差と水平面内の曲がりは、この直角図には含みません。';
  if(dual){$('bodyLeanHeading').textContent='主軸の代表方向：本体＋支持姿勢';$('bodyLeanNote').textContent='門の骨格は接続した支持姿勢で描き、固有直角差はラム・主軸の向き、軸矢印と直角図へ重ねます。主軸方向の値と左右柱の支持倒れは別です。柱の平均倒れをラムZへ伝え、梁案内Yとの直角差を表示します。位置ごとの弾性ねじれ・主軸移動荷重は再現しません。';}
  if(dual)$('geometryAssumption').textContent+=' 左右柱の天端を梁で結び、平均倒れをラム方向へ伝えるせん断の幾何モデルです。柱・梁の接続中心を共有します。梁の反力・たわみ分布・接触荷重は計算しません。模型の門骨格は支持姿勢、ラム・主軸は固有直角差を含む代表方向に沿って描きます。';
@@ -3242,7 +3261,7 @@ function updateMachineAccuracy(){
   for(const value of [label,cleanNumber(measure.maxSquareness,2),cleanNumber(measure.objective,2),'固定成分']){const cell=document.createElement(row.children.length?'td':'th');if(!row.children.length)cell.setAttribute('scope','row');cell.textContent=value;row.append(cell);}
   $('accuracyComparison').append(row);
  }
- $('machineProgress').textContent=(target?'この個体の参考調整の目安内です。':'この個体の参考調整の目安まで余地があります。')+' 参考調整は代表位置の局所軸角度・姿勢の補助評価です。上段の有限測定、触れ、回転TIR、上面や穴芯をすべて最良にする値ではありません。各測定も確認してください。';
+ $('machineProgress').textContent=(target?'この個体の参考調整の目安内です。':'この個体の参考調整の目安まで余地があります。')+' 今の直角図と姿勢の変化を確認してください。本体の直角差とガイドの曲がり成分は残る場合があります。';
  const adjustment=machineBestHeights();
  $('applyBestLevel').disabled=adjustment.every((h,i)=>Math.abs(h-supportHeights[i])<.0005);
  const hints=adjustment.map((h,i)=>({i,delta:Math.round((h-supportHeights[i])*1000)/1000})).filter(q=>Math.abs(q.delta)>=.0005);
@@ -3324,213 +3343,48 @@ function horizontalParallelism(state=positions,solution=levelSolution,profile=ma
  const invalid=reason=>({valid:false,reason,a:{valid:false,reason},b:{valid:false,reason}});
  if(current?.kind!=='horizontal')return invalid('横形専用の測定');
  if(!levelConfig||!solution)return invalid('測定の準備中');
- const station=horizontalMeasurementStation(state);
- if(!station.valid||station.needsMove)return {...invalid(station.reason||'横形の測定位置へ移動してください'),station};
- const M=window.ReferenceMeasurement,H=window.HorizontalParallelism,length=.3,half=station.physical.Zhalf,startPosition=station.physical.Z,endPosition=startPosition+length;
- const stateAt=t=>({...state,Z:(startPosition+length*t)/half*100}),startState=stateAt(0),tool=horizontalFixtureTool(startState,solution,profile),p0=horizontalFixturePallet(startState,solution,profile);
- // A finite 400 mm bar: the measured section is 350 -> 50 mm in front of
- // the spindle face. Both the indicator housing and nose keep end clearance.
- const origin=M.sub(tool.nose,M.scale(tool.axis,.35)),bar={axis:tool.axis,origin,radius:.025,axialMin:-.05,axialMax:.35};
+ const M=window.ReferenceMeasurement,H=window.HorizontalParallelism,length=.3,axis=axisConfig(current).find(a=>a.key==='Z'),half=levelCoordinates(0,axis.amp).z;
+ if(2*half<length)return invalid('300 mmの走査範囲不足');
+ const startPosition=Math.max(-half,Math.min(half-length,state.Z*half/100)),endPosition=startPosition+length,stateAt=t=>({...state,Z:(startPosition+length*t)/half*100}),startState=stateAt(0),first=geometryModel(startState,solution,profile),tool=horizontalSpindleFixture(startState,solution,profile,first),pallet=s=>horizontalPalletPoint([0,1.27,-.85],s,solution,profile),p0=pallet(startState),f0=referenceRigidFrame(first.workFrame);
+ // A virtual 320 mm calibrated bar extends in front of the spindle nose.
+ // Scan from 310 mm in front to 10 mm in front; 10 mm end margins place the
+ // complete cylinder outside the nose. No holder collision test is implied.
+ // The rigid bracket reaches bar height; only its datum is 0.61 m high.
+ const origin=M.sub(tool.nose,M.scale(tool.axis,.31)),bar={axis:tool.axis,origin,radius:.025,axialMin:-.01,axialMax:.31};
  const breaks=supports.map(p=>(levelCoordinates(p.x,p.z).z-levelCoordinates(0,-.85).z-startPosition)/length).filter(t=>t>0&&t<1),times=[...new Set([0,1,...Array.from({length:15},(_,i)=>(i+1)/16),...breaks.flatMap(t=>[Math.max(0,t-1e-8),t,Math.min(1,t+1e-8)])])].sort((a,b)=>a-b);
+ const frames=times.map(t=>{const s=stateAt(t);return {t,point:pallet(s),frame:referenceRigidFrame(geometryModel(s,solution,profile).workFrame)};});
  const row=probe=>{
-  const startBody=M.sub(origin,M.scale(probe,bar.radius+.01)),bodyLocal=horizontalFixtureLocal(startBody,p0),probeLocal=horizontalFixtureVectorLocal(probe,p0),startPose={body:startBody,probe},housing=horizontalFixtureHousing(startPose),housingLocal=horizontalFixtureLocal(housing.center,p0),armLocal=[[housingLocal[0],.85,housingLocal[2]],housingLocal];
-  const poses=times.map(t=>{const s=stateAt(t),p=horizontalFixturePallet(s,solution,profile);return {t,state:s,body:horizontalFixtureWorld(bodyLocal,p),probe:p.frame.rotate(probeLocal)};}),measurement=H.measure({...bar,samples:poses});
-  measurement.samples=measurement.samples.map((sample,i)=>({...poses[i],...sample,pose:poses[i],arm:armLocal.map(v=>horizontalFixtureWorld(v,horizontalFixturePallet(poses[i].state,solution,profile)))}));
-  Object.assign(measurement,{startState,endState:stateAt(1),start:poses[0],end:poses.at(-1),fixture:{armLocal,stage:'bar'},bar});
-  const bad=measurement.samples.find(q=>horizontalFixtureValidateBarSample(q,bar,solution,profile));
-  if(bad){measurement.valid=false;measurement.microns=null;measurement.reason=horizontalFixtureValidateBarSample(bad,bar,solution,profile);}
-  return measurement;
+  const startBody=M.sub(origin,M.scale(probe,bar.radius+.01)),bracket=M.sub(startBody,p0);
+  const samples=frames.map(f=>({t:f.t,body:M.add(f.point,M.transport(bracket,f0,f.frame)),probe:M.transport(probe,f0,f.frame)}));
+  return H.measure({...bar,samples});
  };
  const a=row(tool.right),b=row(tool.up);
- return {valid:a.valid&&b.valid,reason:a.valid?b.reason:a.reason,a,b,startState,endState:stateAt(1),startPosition,endPosition,length,model:'horizontal-station-parallelism-v2',bar,tool,palletOrigin:p0.point,fixture:'400mm-cylinder-and-850mm-tower',autoZero:true,station};
-}
-</script><script>'use strict';
-// Finite teaching fixtures, in metres. These are declared model dimensions,
-// not dimensions or stiffness certified for the named example machine.
-const horizontalFixtureSpec=Object.freeze({version:'horizontal-station-fixtures-v1',towerHeight:.85,armRadius:.004,housingRadius:.02,housingHalfThickness:.01,housingBack:.035,barLength:.4,barRadius:.025,barStart:.35,barEnd:.05});
-function horizontalMeasurementStation(state=positions){
- const scaleX=levelConfig.width/(current.w*.8),scaleZ=levelConfig.depth/(current.d*.8),layout=columnLayoutOffset(current),xHalf=.55*scaleX,zHalf=.45*scaleZ;
- const x=-layout.x*scaleX,z=(-.08+layout.z)*scaleZ-.32,station={...state,X:x/xHalf*100,Y:-100,Z:z/zHalf*100};
- let reason='';
- if(Math.abs(x)+.15>xHalf+1e-10)reason='Xの測定位置とR合わせ300 mmが可動域外です。コラム位置または幅を戻してください';
- else if(z< -zHalf-1e-10||z+.3>zHalf+1e-10)reason='Zの測定位置と300 mm走査が可動域外です。コラム位置または奥行を戻してください';
- else if(1.45*scaleX<.64||1.45*scaleZ<.84)reason='600 mm箱台と20 mmの縁余裕をパレット内に置けません';
- const needsMove=['X','Y','Z'].some(k=>Math.abs((state[k]||0)-station[k])>1e-6);
- return {valid:!reason,reason,positions:station,physical:{X:x,Y:-.3,Z:z,Xhalf:xHalf,Zhalf:zHalf,RXstart:x-.15,RXend:x+.15,Zend:z+.3},needsMove};
-}
-function horizontalFixtureTool(state,solution,profile){const t=horizontalSpindleFixture(state,solution,profile);return {...t,point:t.nose,frame:{right:t.right,up:t.up,back:t.axis,rotate:v=>t.right.map((q,i)=>q*v[0]+t.up[i]*v[1]+t.axis[i]*v[2])}};}
-function horizontalFixturePallet(state,solution,profile){return {point:horizontalPalletPoint([0,1.27,-.85],state,solution,profile),frame:referenceRigidFrame(geometryModel(state,solution,profile).workFrame)};}
-function horizontalFixtureLocal(point,member){const M=window.ReferenceMeasurement,d=M.sub(point,member.point);return [M.dot(d,member.frame.right),M.dot(d,member.frame.up),M.dot(d,member.frame.back)];}
-function horizontalFixtureVectorLocal(v,member){const M=window.ReferenceMeasurement;return [M.dot(v,member.frame.right),M.dot(v,member.frame.up),M.dot(v,member.frame.back)];}
-function horizontalFixtureWorld(point,member){const M=window.ReferenceMeasurement;return M.add(member.point,member.frame.rotate(point));}
-function horizontalFixtureCross(a,b){return [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}
-function horizontalFixtureBox(center,axes,half,label){return {center,axes,half,label};}
-function horizontalFixtureBoxMap(box,member){return {...box,center:horizontalFixtureWorld(box.center,member),axes:box.axes.map(v=>member.frame.rotate(v))};}
-function horizontalFixtureTower(){const axes=[[1,0,0],[0,1,0],[0,0,1]];return [horizontalFixtureBox([0,.01,-.1],axes,[.3,.01,.3],'箱台の脚板'),horizontalFixtureBox([0,.42,-.1],axes,[.2,.4,.2],'箱台の柱'),horizontalFixtureBox([0,.835,-.1],axes,[.3,.015,.25],'箱台の天板')];}
-function horizontalFixtureMachineBoxes(state,solution,profile){
- const t=horizontalFixtureTool(state,solution,profile),M=window.ReferenceMeasurement,scaleX=levelConfig.width/(current.w*.8),scaleZ=levelConfig.depth/(current.d*.8),axes=[t.right,t.up,t.axis];
- const point=raw=>horizontalToolPoint(raw,state,solution,profile,1,['X']),front=current.d*.18-.06,back=current.d*.29-.35+.01;
- return [horizontalFixtureBox(M.add(t.nose,M.scale(t.axis,.1*scaleZ)),axes,[.045,.045,.1*scaleZ],'主軸鼻端（外接箱）'),horizontalFixtureBox(M.add(t.nose,M.scale(t.axis,.48*scaleZ)),axes,[.2,.2,.3*scaleZ],'主軸胴（外接箱）'),horizontalFixtureBox(M.add(t.nose,M.scale(t.axis,1.18*scaleZ)),axes,[.375*scaleX,.31,.55*scaleZ],'主軸頭'),horizontalFixtureBox(point([0,1.95,current.d*.29]),axes,[.475*scaleX,1.25,.35*scaleZ],'コラム'),horizontalFixtureBox(point([0,2,(front+back)/2]),axes,[.08*scaleX,1,(back-front)*scaleZ/2],'主軸頭案内')];
-}
-// Separating-axis test on two oriented finite boxes. Cylinders use enclosing
-// boxes for clearance: a rejection may be conservative, never a passed overlap.
-function horizontalFixtureBoxesOverlap(a,b,padding=0){
- const M=window.ReferenceMeasurement,d=M.sub(b.center,a.center),axes=[...a.axes,...b.axes,...a.axes.flatMap(u=>b.axes.map(v=>horizontalFixtureCross(u,v)))];
- return !axes.some(n=>{const length=Math.hypot(...n);if(length<1e-12)return false;const q=n.map(v=>v/length),ra=a.half.reduce((s,h,i)=>s+(h+padding)*Math.abs(M.dot(q,a.axes[i])),0),rb=b.half.reduce((s,h,i)=>s+h*Math.abs(M.dot(q,b.axes[i])),0);return Math.abs(M.dot(d,q))>=ra+rb-1e-10;});
-}
-function horizontalFixtureSegmentBox(a,b,box,radius=.004){
- const M=window.ReferenceMeasurement,p=box.axes.map(v=>M.dot(M.sub(a,box.center),v)),q=box.axes.map(v=>M.dot(M.sub(b,box.center),v));let lo=0,hi=1;
- for(let i=0;i<3;i++){const d=q[i]-p[i],h=box.half[i]+radius;if(Math.abs(d)<1e-14){if(Math.abs(p[i])>=h-1e-10)return false;}else {let a=(-h-p[i])/d,b=(h-p[i])/d;if(a>b)[a,b]=[b,a];lo=Math.max(lo,a);hi=Math.min(hi,b);if(lo>=hi-1e-10)return false;}}
- return lo<hi-1e-10;
-}
-function horizontalFixtureHousing(pose){
- const M=window.ReferenceMeasurement,n=M.unit(pose.probe),seed=Math.abs(n[1])<.9?[0,1,0]:[1,0,0],u=M.unit(horizontalFixtureCross(n,seed)),v=horizontalFixtureCross(n,u);
- return horizontalFixtureBox(M.sub(pose.body,M.scale(n,horizontalFixtureSpec.housingBack)),[n,u,v],[.01,.02,.02],'計器本体（外接箱）');
-}
-// The head-side routes are finite and kept in the clear front half-space until
-// they pass the side or above the square. No automatically extending arm.
-function horizontalFixtureArm(pair,stage,pose,tool){
- const M=window.ReferenceMeasurement,h=horizontalFixtureHousing(pose).center,local=horizontalFixtureLocal(h,tool),hub=[0,0,-.08];
- const route=['XY','XZ'].includes(pair)&&stage==='S'?[hub,[.25,0,-.08],[.25,local[1],local[2]],local]:pair==='XY'&&stage==='R'?[hub,[0,local[1],-.08],local]:[hub,[local[0],local[1],-.08],local];
- return [tool.nose,...route.map(v=>horizontalFixtureWorld(v,tool))];
-}
-function horizontalFixtureMasterBox(scan,pallet){
- const M=window.ReferenceMeasurement,m=scan.master,nS=m.Snormal,nR=m.Rnormal,nT=horizontalFixtureCross(nS,nR),yz=scan.setup.pairKey==='YZ';
- // XY/YZ use the top R; XZ uses a side R. Thickness and the full
- // rectangular solid are kept distinct from the sampled contact interval.
- const center=yz?M.add(m.corner,M.add(M.scale(nS,-.15),M.scale(nR,-.16))):M.add(m.corner,M.add(M.scale(nS,.15),M.scale(nR,scan.setup.scan==='Y'?-.16:.16)));
- return horizontalFixtureBox(center,[nS,nR,nT],[.16,.16,.025],'直角マスタ');
-}
-function horizontalFixtureFeet(master,pair){
- const M=window.ReferenceMeasurement,index=pair==='XZ'?2:1,n=master.axes[index],sign=n[1]<0?-1:1,bottom=M.sub(master.center,M.scale(n,sign*master.half[index])),xs=pair==='YZ'?[-.01,.01]:[-.12,.12],zs=pair==='XY'?[.105,.135]:[-.12,.12],axes=[[1,0,0],[0,1,0],[0,0,1]];
- return xs.flatMap(x=>zs.map(z=>{const top=(M.dot(n,bottom)-n[0]*x-n[2]*z)/n[1];return horizontalFixtureBox([x,(.85+top)/2,z],axes,[.006,(top-.85)/2,.006],'球面座付き調整足');}));
-}
-function horizontalFixtureSquareReason(sample,masterLocal,feetLocal,solution,profile){
- if(!sample.valid)return sample.reason||'接触が成立しません';
- const M=window.ReferenceMeasurement,pallet=horizontalFixturePallet(sample.state,solution,profile),tool=horizontalFixtureTool(sample.state,solution,profile),master=horizontalFixtureBoxMap(masterLocal,pallet),tower=horizontalFixtureTower().map(b=>horizontalFixtureBoxMap(b,pallet)),feet=feetLocal.map(b=>horizontalFixtureBoxMap(b,pallet)),housing=horizontalFixtureHousing(sample.pose),machine=horizontalFixtureMachineBoxes(sample.state,solution,profile),arm=sample.arm;
- if(master.axes.some(n=>!n.every(Number.isFinite)))return 'マスタ姿勢が不正';
- if(feetLocal.some(b=>b.half[1]<=0||b.half[1]>.075||Math.abs(b.center[0])+.006>.3||b.center[2]+.006>.15||b.center[2]-.006<-.35))return '調整足を箱台の天板内に固定できません';
- if(sample.point){const d=M.sub(sample.point,master.center);if(master.axes.some((n,i)=>Math.abs(M.dot(d,n))>master.half[i]+1e-8))return '固定した有限マスタの面外';}
- if(tower.some(b=>horizontalFixtureBoxesOverlap(master,b)))return '直角マスタが箱台に干渉';
- if(machine.some(b=>horizontalFixtureBoxesOverlap(master,b)))return '直角マスタが主軸側に干渉';
- if([...tower,...feet].some(b=>machine.some(q=>horizontalFixtureBoxesOverlap(b,q))))return '箱台または調整足が主軸側に干渉';
- if([...tower,...feet,master,...machine].some(b=>horizontalFixtureBoxesOverlap(housing,b)))return '計器本体が器具または主軸側に干渉';
- if(arm.some((p,i)=>i&&[master,...tower,...feet].some(b=>horizontalFixtureSegmentBox(arm[i-1],p,b))))return '取付け腕が器具に干渉';
- if(arm.slice(2).some((p,j)=>machine.some(b=>horizontalFixtureSegmentBox(arm[j+1],p,b))))return '取付け腕が主軸側に干渉';
- if(Math.max(...arm.map(p=>Math.hypot(...M.sub(p,tool.nose))))>.45+1e-10)return '450 mm以内の取付け腕で届きません';
- return '';
-}
-function horizontalFixtureAttach(scan,solution,profile){
- if(!scan.valid||!scan.startState||!scan.master)return scan;
- const M=window.ReferenceMeasurement,p0=horizontalFixturePallet(scan.startState,solution,profile),masterWorld=horizontalFixtureMasterBox(scan,p0),masterLocal={...masterWorld,center:horizontalFixtureLocal(masterWorld.center,p0),axes:masterWorld.axes.map(v=>horizontalFixtureVectorLocal(v,p0))};
- const stages=[['R',scan.alignment],['S',scan]],bad=[];
- for(const [name,part]of stages){
-  if(!part?.samples?.length)continue;
-  const first=part.samples[0],firstState=first.state||part.startState,tool0=horizontalFixtureTool(firstState,solution,profile),arm=horizontalFixtureArm(scan.setup.pairKey||scan.setup.base+scan.setup.scan,name,first.pose,tool0),armLocal=arm.map(p=>horizontalFixtureLocal(p,tool0));
-  const pair=scan.setup.pairKey||scan.setup.base+scan.setup.scan,feetLocal=horizontalFixtureFeet(masterLocal,pair);
-  part.fixture={masterLocal,armLocal,feetLocal,stage:name,pair};
-  for(const sample of part.samples){const tool=horizontalFixtureTool(sample.state,solution,profile);sample.arm=armLocal.map(p=>horizontalFixtureWorld(p,tool));
-   const reason=horizontalFixtureSquareReason(sample,masterLocal,feetLocal,solution,profile);
-   if(reason){sample.valid=false;sample.reason=reason;part.valid=false;part.reason=reason;part.microns=null;bad.push({stage:name,t:sample.t,reason});}
-  }
- }
- scan.fixtureSpec=horizontalFixtureSpec;scan.masterLocal=masterLocal;
- scan.bracket={mount:'spindle',R:scan.alignment.samples[0].arm,S:scan.samples[0].arm,sectionRadius:.004};
- if(bad.length)return {...scan,valid:false,reason:bad[0].stage+'：'+bad[0].reason,fixtureFailures:bad};
- return scan;
-}
-function horizontalFixtureBarBox(bar){const M=window.ReferenceMeasurement,seed=Math.abs(bar.axis[1])<.9?[0,1,0]:[1,0,0],a=M.unit(horizontalFixtureCross(bar.axis,seed)),b=horizontalFixtureCross(bar.axis,a);return horizontalFixtureBox(M.add(bar.origin,M.scale(bar.axis,(bar.axialMin+bar.axialMax)/2)),[a,b,bar.axis],[bar.radius,bar.radius,(bar.axialMax-bar.axialMin)/2],'テストバー（外接箱）');}
-function horizontalFixtureValidateBarSample(sample,bar,solution,profile){
- if(!sample.valid)return sample.reason;
- const p=horizontalFixturePallet(sample.state,solution,profile),tower=horizontalFixtureTower().map(b=>horizontalFixtureBoxMap(b,p)),housing=horizontalFixtureHousing(sample.pose),machine=horizontalFixtureMachineBoxes(sample.state,solution,profile),barBox=horizontalFixtureBarBox(bar),arm=sample.arm;
- if(tower.some(b=>[barBox,...machine].some(q=>horizontalFixtureBoxesOverlap(b,q))))return '箱台がバーまたは主軸側に干渉';
- if([...tower,barBox,...machine].some(b=>horizontalFixtureBoxesOverlap(housing,b)))return '計器本体が箱台・バー・主軸側に干渉';
- if(arm.some((q,i)=>i&&[barBox,...machine].some(b=>horizontalFixtureSegmentBox(arm[i-1],q,b))))return 'パレット側の短い支柱がバーまたは主軸側に干渉';
- const local=horizontalFixtureLocal(arm[0],p);
- if(Math.abs(local[0])>.28||local[2]<-.33||local[2]>.13)return '計器支柱を箱台の天板内に固定できません';
- if(Math.hypot(...window.ReferenceMeasurement.sub(arm.at(-1),arm[0]))>.2)return '200 mm以内の計器支柱で届きません';
- return '';
-}
-function horizontalCaptureFixtures(state=positions,solution=levelSolution,profile=machineProfile){
- const rows=[],payload=[];
- function capture(key,label,part,scan,kind){
-  const valid=!!part?.valid&&!!part?.fixture&&!!part.samples?.length&&part.samples.every(q=>q.valid),reason=valid?'':part?.reason||scan?.reason||'初回の取付けが成立していません';
-  rows.push({key,label,valid,microns:valid?part.microns:null,reason});
-  if(!valid){payload.push({key,label,valid:false,reason});return;}
-  const first=part.samples[0],s0=first.state,surface=kind==='bar'?horizontalFixtureTool(s0,solution,profile):horizontalFixturePallet(s0,solution,profile),bodyMember=kind==='bar'?horizontalFixturePallet(s0,solution,profile):horizontalFixtureTool(s0,solution,profile),pose=first.pose;
-  const shape=kind==='bar'?{origin:horizontalFixtureLocal(scan.bar.origin,surface),axis:horizontalFixtureVectorLocal(scan.bar.axis,surface),radius:scan.bar.radius,axialMin:scan.bar.axialMin,axialMax:scan.bar.axialMax}:{point:horizontalFixtureLocal(pose.point,surface),normal:horizontalFixtureVectorLocal(pose.normal,surface),master:part.fixture.masterLocal,feet:part.fixture.feetLocal};
-  payload.push({key,label,kind,valid:true,zero:first.extension,shape,body:horizontalFixtureLocal(pose.body,bodyMember),probe:horizontalFixtureVectorLocal(pose.probe,bodyMember),arm:part.fixture.armLocal,states:part.samples.map(q=>({t:q.t,state:q.state})),initialMicrons:part.microns});
- }
- for(const key of ['XY','XZ','YZ']){const scan=referenceScan({key},state,solution,profile);capture('square.'+key,key+' S・300 mm',scan,scan,'square');capture('square.'+key+'.R',key+' R・方向合わせ',scan.alignment||scan,scan,'square');}
- const bar=horizontalParallelism(state,solution,profile);for(const key of ['a','b'])capture('bar.'+key,'Z平行度 '+key,bar[key],bar,'bar');
- return {version:horizontalFixtureSpec.version,rows,payload,state:{...state}};
-}
-function horizontalEvaluateHeld(snapshot,solution=levelSolution,profile=machineProfile){
- const M=window.ReferenceMeasurement,rows=[];
- for(const data of snapshot.payload||[]){
-  if(!data.valid){rows.push({key:data.key,label:data.label,valid:false,microns:null,reason:'初回取付け不可：'+data.reason});continue;}
-  const samples=data.states.map(({t,state})=>{
-   const pallet=horizontalFixturePallet(state,solution,profile),tool=horizontalFixtureTool(state,solution,profile),surface=data.kind==='bar'?tool:pallet,owner=data.kind==='bar'?pallet:tool,body=horizontalFixtureWorld(data.body,owner),probe=owner.frame.rotate(data.probe),arm=data.arm.map(p=>horizontalFixtureWorld(p,owner));
-   if(data.kind==='bar'){const bar={...data.shape,origin:horizontalFixtureWorld(data.shape.origin,surface),axis:surface.frame.rotate(data.shape.axis)},pose={body,probe},hit=window.HorizontalParallelism.contact({...bar,...pose}),sample={...hit,t,state,pose,arm};const reason=horizontalFixtureValidateBarSample(sample,bar,solution,profile);return reason?{...sample,valid:false,reason}:sample;}
-   const pose={point:horizontalFixtureWorld(data.shape.point,surface),normal:surface.frame.rotate(data.shape.normal),body,probe},hit=M.contact(pose),sample={...hit,t,state,pose,arm};
-   const reason=horizontalFixtureSquareReason(sample,data.shape.master,data.shape.feet,solution,profile);
-   return reason?{...sample,valid:false,reason}:sample;
-  });
-  const bad=samples.find(q=>!q.valid),endpoint=samples.at(-1),microns=bad?null:(data.zero-endpoint.extension)*1e6;
-  rows.push({key:data.key,label:data.label,valid:!bad,microns,reason:bad?.reason||'',zero:data.zero,endpoint:bad?null:endpoint.extension,startExtension:samples[0].extension,samples});
- }
- return {rows};
-}
-function horizontalFixtureSceneGeometry(key='YZ',stage='S',fraction=0,state=positions,solution=levelSolution,profile=machineProfile){
- const station=horizontalMeasurementStation(state),M=window.ReferenceMeasurement;
- if(!station.valid)return {valid:false,reason:station.reason,boxes:[],segments:[],cylinders:[]};
- const preview=station.needsMove,measurementState=preview?station.positions:state,barMode=key==='bar'||key.startsWith('bar.'),scan=barMode?horizontalParallelism(measurementState,solution,profile):referenceScan({key},measurementState,solution,profile),part=barMode?scan.a:stage==='R'?scan.alignment:scan;
- if(!part?.samples?.length||!part?.fixture)return {valid:false,reason:scan.reason||part?.reason||'測定配置なし',boxes:[],segments:[],cylinders:[]};
- const sample=part.samples.reduce((a,b)=>Math.abs(a.t-fraction)<=Math.abs(b.t-fraction)?a:b),pallet=horizontalFixturePallet(sample.state,solution,profile),tool=horizontalFixtureTool(sample.state,solution,profile),colorBox=(box,color)=>({...box,size:box.half.map(v=>v*2),color}),scaleX=levelConfig.width/(current.w*.8),scaleZ=levelConfig.depth/(current.d*.8);
- const boxes=[colorBox(horizontalFixtureBoxMap(horizontalFixtureBox([0,-.07,0],[[1,0,0],[0,1,0],[0,0,1]],[.725*scaleX,.07,.725*scaleZ],'パレット'),pallet),'#6c8f92'),...horizontalFixtureTower().map(b=>colorBox(horizontalFixtureBoxMap(b,pallet),'#9aadb1')),...horizontalFixtureMachineBoxes(sample.state,solution,profile).map(b=>colorBox(b,'#b6c2c8'))],segments=[],cylinders=[],contacts=[];
- const displayValid=barMode?scan.valid:part.valid;
- const addIndicator=q=>{const contactValid=displayValid&&q.valid;boxes.push(colorBox(horizontalFixtureHousing(q.pose),'#e29d43'));segments.push({points:q.arm,radius:.004,color:'#525d68',label:barMode?'箱台側の支柱':'主軸側の短い腕'},{points:[q.pose.body,q.point||M.add(q.pose.body,M.scale(q.pose.probe,.01))],radius:.0025,color:contactValid?'#d26c31':'#8b9299',label:contactValid?'測定子':'未成立配置の測定子'});if(contactValid&&q.point)contacts.push(q.point);};
- if(barMode){cylinders.push({a:M.add(scan.bar.origin,M.scale(scan.bar.axis,scan.bar.axialMin)),b:M.add(scan.bar.origin,M.scale(scan.bar.axis,scan.bar.axialMax)),radius:scan.bar.radius,color:'#596b8d',label:'400 mmテストバー'});addIndicator(sample);const other=scan.b.samples?.find(q=>q.t===sample.t);if(other)addIndicator(other);}
- else {boxes.push(colorBox(horizontalFixtureBoxMap(part.fixture.masterLocal,pallet),'#486b83'),...part.fixture.feetLocal.map(b=>colorBox(horizontalFixtureBoxMap(b,pallet),'#526469')));addIndicator(sample);}
- return {valid:!!displayValid,reason:part.reason||scan.reason||'',preview,label:(barMode?'Z平行度 a/b':key+' '+stage)+'：'+(preview?'測定位置の予告・実軸は未移動':'測定配置')+'／'+Math.round(sample.t*300)+' mm',state:sample.state,boxes,segments,cylinders,contacts,contact:displayValid&&sample.valid?sample.point:null,zero:displayValid?part.samples[0].point:null,readout:part.microns,sampleFraction:sample.t};
-}
-// TIR is measured with the same finite table-side indicator at two different
-// Z positions. Intrinsic runout values are computed separately from the seed
-// at these actual distances, not copied from the former 0/300 mm labels.
-function horizontalRunoutFixtureGeometry(state=positions,solution=levelSolution,profile=machineProfile){
- const scan=horizontalParallelism(state,solution,profile),row=scan.a;
- if(!row?.valid)return {valid:false,reason:row?.reason||scan.reason,root:{valid:false,reason:row?.reason||scan.reason},tip:{valid:false,reason:row?.reason||scan.reason}};
- const point=(sample,distanceMm)=>({valid:sample.valid,reason:sample.reason,distanceMm,state:sample.state,pose:sample.pose,contact:sample.point,extension:sample.extension,arm:sample.arm,bar:scan.bar});
- return {valid:true,bar:scan.bar,root:point(row.samples.at(-1),50),tip:point(row.samples[0],350),fixture:'same-850mm-tower-and-fixed-table-indicator',turns:'パレットを各測定位置で停止し、主軸を1回転'};
-}
-function horizontalReferenceCard(pair,m,before){
- const reading=m.valid?squarenessMicronText(m.microns)+' µm':m.reason,old=before.valid?squarenessMicronText(before.microns)+' µm':before.reason,station=horizontalMeasurementStation(),interval=horizontalReferenceInterval(m),yz=pair.key==='YZ',xy=pair.key==='XY';
- const r=yz?'Y中央で上面Rへ下向きに接触し、主軸頭を止めてパレットをZ＋へ300 mm送る。両端を等指示にし、厚み方向の中央線も合わせる。':xy?'Y中央で上面Rへ下向きに接触し、主軸頭をXへ300 mm送り、両端を等指示にする。':'Y下端で横向きRへ接触し、主軸頭をXへ300 mm送り、両端を等指示にする。';
- const s=pair.key==='XZ'?'主軸頭を止め、パレット・箱台・マスタをZ＋（主軸側）へ300 mm送る。':'パレット・箱台・マスタを止め、主軸頭・計器をY下端から中央へ300 mm上げる。',height=xy?'950→1250':yz?'910→1210':'900';
- return `<section class="measurement-reference-card" data-reference-pair="${pair.key}"><h3>${pair.key} <span>${reading}</span></h3><p class="measurement-interval"${interval?` data-current-position-mm="${interval.currentPosition*1000}" data-zero-position-mm="${interval.startPosition*1000}" data-end-position-mm="${interval.endPosition*1000}"`:''}><strong>300 mm測定の終点値（始点で再ゼロ）</strong>${interval?`<br>現在${interval.key} ${signed(interval.currentPosition*1000,1)} mm／始点 ${signed(interval.startPosition*1000,1)} mm → 終点 ${signed(interval.endPosition*1000,1)} mm。部材位置・中央0。`:'<br>'+m.reason}</p><svg class="reference-diagram" viewBox="0 0 64 45" role="img" aria-label="${pair.key}のS面と主軸側計器">${referenceDiagram(m)}</svg><p>マスタと850 mm箱台：パレット固定。計器：主軸側固定。① ${r}<br>② マスタを固定したまま規定のS始点へ戻し、S用の短い腕へ付け替えてゼロ。<br>③ ${s} 途中の再取付け・再ゼロはしません。</p><p>＋は測定子の押込み増加、−は減少です。支持調整後にR合わせ・S取付け・始点ゼロを取り直した値を主欄に表示します。「取付けとゼロを保持」の比較欄では最初の部材内取付座標とゼロを固定した終点指示を別に表示します。</p><p>箱台は脚板600×600×20 mm、柱400×400×800 mm、天板600×500×30 mm。マスタ320×320×50 mmを球面座付き調整足で固定します。標準・理想時のS接触はパレット上面から${height} mmです。計器本体は直径40 mm相当・厚さ20 mm、主軸側の腕の中心線は鼻端から450 mm以内、棒半径4 mm。初期伸び10 mm、可動範囲0〜20 mm。部材・治具・鼻端・主軸胴・頭・コラムの有限範囲を確認します。円筒の外接箱を使う干渉判定は保守的です。</p><p>「器具の取付け・接触を見る」で、R/Sと始点/終点の等縮尺配置を確認できます。上の小図はS面の展開図で、針の変化のみ拡大します。規定位置以外で腕を伸ばして値を成立させません。ワークを外し、検査ごとに治具を付け替える教材手順です。実機用治具の認定、弾性・測定力・固定ボルトの強度計算は含みません。</p><p>初期支持状態：${old}／現在：${reading}（同じ規定区間で各々再ゼロ）。</p>${!station.valid?`<p>${station.reason}</p>`:''}</section>`;
+ return {valid:a.valid&&b.valid,a,b,startPosition,endPosition,length,model:H.model,bar,tool,palletOrigin:p0,fixture:'virtual-cylinder-on-physical-spindle',autoZero:true};
 }
 </script><script>'use strict';
 // Measuring/view state is deliberately separate from the saved installation.
 let spindleSweepMode=false,spindleSweepAngle=270;
 const sweepDirections=['右','奥','左','手前'];
 const defaultSweepMeasurementNote=$('sweepMeasurementNote').textContent;
-const horizontalParallelMeasurementNote='横形のZ方向平行度。校正円筒による中心軸平行度で、回転振れ成分は別の検査です。400 mm・直径50 mmのバーは主軸に固定し、計器はパレット上の850 mm箱台へ固定します。Y下端の規定位置で、主軸端面から350 mm前をゼロとし、テーブルと計器を主軸側へ300 mm動かして50 mm前を読みます。aは左から右、bは下から上へ接触します。プラスは押込み増加。主軸は回しません。表示は支持変更後に取付けと始点ゼロを取り直した値です。初回取付け・ゼロを固定した支持応答は保持比較欄に表示します。有限バー・測定子・計器本体・支柱・箱台と主軸側の干渉を確認します。';
+const horizontalParallelMeasurementNote='横形のZ方向平行度。テストバーは主軸に固定、計器はテーブル（パレット）に固定します。Z走査中はバーを固定したまま、テーブルと計器を先端側から主軸側へ300 mm移動します。直角測定はテーブル上の直角マスタを主軸側の計器で測る別の配置です。aは左側から右向きに接触、bは下側から上向きに接触します。始点でゼロ、プラスは測定子の押込み増加です。Yで主軸頭を動かすとバーの高さも変わり、支持・軸位置の変更ごとに計器の取付けと始点ゼロを取り直します。走査途中では再ゼロしません。主軸は回しません。取付け寸法や干渉を再現しない仮想配置です。';
 const sweepDot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
 const spindleSweepKinds=['compact','travel','double','gantry','five'];
 function supportsSpindleSweep(machine=current){return spindleSweepKinds.includes(machine.kind);}
-function spindleSweepGeometry(state=positions,solution=levelSolution,profile=machineProfile,factor=1){
+function spindleSweepGeometry(state=positions,solution=levelSolution,profile=machineProfile,factor=1,teaching=false){
  if(!supportsSpindleSweep()||!solution)return {valid:false,reason:'unsupported-machine'};
  if(current.kind!=='compact')return spindleSweepMachineGeometry(state,solution,profile);
  const g=geometryModel(state,solution,profile),toolSeat=levelCoordinates(g.toolPoints[0].x,g.toolPoints[0].z),workSeat=levelCoordinates(g.workPoint.x,g.workPoint.z);
  const tool=compactSupportFrame(solution,toolSeat.x,toolSeat.z,factor),work=compactSupportFrame(solution,workSeat.x,workSeat.z,factor);
  const body=intrinsicBodyFrame(axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),profile,factor);
- const axis=tool.rotate(body.rotate([0,1,0])),right=tool.rotate(body.rotate([1,0,0]));
+ const adjustment=teaching?compactMeasurementAdjustment(solution):null;
+ const rotate=v=>adjustment?adjustment.rotate(v):v;
+ const axis=rotate(tool.rotate(body.rotate([0,1,0]))),right=rotate(tool.rotate(body.rotate([1,0,0])));
  const measurement=window.SpindleSweep.measure({axis,tableNormal:work.up,right,radius:.15});
  if(!measurement.valid)return measurement;
  // These locations share the compact model's physical transforms. At factor=1
  // they contain no visual exaggeration, camera rotation, zoom or clearance.
  const layout=columnLayoutOffset(current),nosePlan=levelCoordinates(layout.x,-.3+layout.z),relative=[nosePlan.x-toolSeat.x,1.98+.3*state.Z/100-.66,nosePlan.z-toolSeat.z];
- const base=compactSurfacePoint(solution,toolSeat.x,toolSeat.z,factor),nose=tool.rotate(body.rotate(relative)).map((v,i)=>v+base[i]);
+ const base=compactSurfacePoint(solution,toolSeat.x,toolSeat.z,factor),nose=rotate(tool.rotate(body.rotate(relative))).map((v,i)=>v+base[i]);
  const tableCentre=compactTablePathPoint(state,solution,profile,factor),along=sweepDot(work.up,tableCentre.map((v,i)=>v-nose[i]))/sweepDot(work.up,measurement.axis);
  const centre=nose.map((v,i)=>v+along*measurement.axis[i]);
  const halfWidth=levelCoordinates(current.w*.78/2,0).x,halfDepth=levelCoordinates(0,current.d*.42/2).z;
@@ -3676,7 +3530,7 @@ function updateSpindleSweep(){
  if(horizontal){updateHorizontalParallelReadout();return;}
  $('horizontalParallelMini').replaceChildren();
  for(let i=0;i<4;i++){const label=$('sweepLabel'+i);label.textContent='';label.innerHTML=sweepDirections[i]+(i===3?' <small>基準</small>':'');}
- const measured=spindleSweepGeometry(positions,levelSolution,machineProfile,1),zeroValid=measured.valid&&measured.cardinal[3].onTable;
+ const measured=spindleSweepGeometry(positions,levelSolution,machineProfile,1,current.kind==='compact'),zeroValid=measured.valid&&measured.cardinal[3].onTable;
  updateSpindleSweepMini(zeroValid);
  for(let i=0;i<4;i++){
   const p=measured.cardinal?.[i],readable=zeroValid&&p?.onTable,el=$('sweepValue'+i),button=$('sweepPosition'+i);
@@ -3686,7 +3540,7 @@ function updateSpindleSweep(){
   button.setAttribute('aria-label',sweepDirections[i]+(i===3?'・基準':'')+'、'+(readable?el.textContent+'マイクロメートル':el.textContent));
   $('sweepReadout'+i).setAttribute('data-selected',button.getAttribute('aria-pressed'));
  }
- $('spindleSweepToggle').setAttribute('aria-label','ダイヤル測定。小図は測定位置の模式図で、上が奥、下が手前。'+(zeroValid?'手前がゼロ基準。':'手前で接触できないためゼロ基準と全数値は無効。')+sweepDirections.map((direction,i)=>direction+(i===3?'基準':'')+' '+$('sweepValue'+i).textContent+' マイクロメートル').join('、')+'。選択中 '+sweepDirections[Math.round(spindleSweepAngle/90)%4]+'。方向選択を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
+ $('spindleSweepToggle').setAttribute('aria-label','ダイヤル測定。小図は測定位置の模式図で、上が奥、下が手前。'+(zeroValid?'手前がゼロ基準。':'手前で接触できないためゼロ基準と全数値は無効。')+(current.kind==='compact'?'直角測定と共通の仮想主軸姿勢。':'')+sweepDirections.map((direction,i)=>direction+(i===3?'基準':'')+' '+$('sweepValue'+i).textContent+' マイクロメートル').join('、')+'。選択中 '+sweepDirections[Math.round(spindleSweepAngle/90)%4]+'。方向選択を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
  const point=measured.valid?measured.pointAt(spindleSweepAngle):null;
  $('sweepContactStatus').textContent=!measured.valid?'測定不可・主軸と上面の姿勢を確認':!zeroValid?'手前が面外・軸を中央へ':!point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）';
 }
@@ -3713,33 +3567,12 @@ for(let i=0;i<4;i++)$('sweepPosition'+i).onclick=()=>{selectSpindleSweepAngle(i*
  // i.e. more plunger compression. All positions and extensions are metres.
  function extension(body,probe,point,normal){const d=dot(probe,normal);return Math.abs(d)<1e-10?NaN:dot(sub(point,body),normal)/d;}
  function planeScan(first,last,normalFirst,normalLast){const body=add(first,mul(normalFirst,.01)),probe=mul(normalFirst,-1);return (extension(body,probe,first,normalFirst)-extension(body,probe,last,normalLast))*1e6;}
- // A plane intersection alone is not a valid dial contact. The caller also
- // checks the hit against the material face bounds in the turret's frame.
- function planeContact({body,probe,point,normal,maxExtension=.02}){
-  const e=extension(body,probe,point,normal);
-  if(!Number.isFinite(e))return {valid:false,reason:'測定子と面が平行'};
-  if(e<0||e>maxExtension)return {valid:false,reason:'測定子の範囲外'};
-  return {valid:true,extension:e,point:add(body,mul(probe,e))};
- }
  // Spindle-centred rotating indicator, outward probe against an internal bore.
  // a=left, b=up, c=right, d=down, viewed from spindle towards turret.
  function bore(dx,dy,radius=.025){
   if(Math.hypot(dx,dy)>=radius)return {valid:false,readings:null};
   const e=[[-1,0],[0,1],[1,0],[0,-1]].map(([x,y])=>{const t=x*dx+y*dy;return t+Math.sqrt(radius*radius-dx*dx-dy*dy+t*t);});
   return {valid:true,readings:e.map(v=>(e[0]-v)*1e6)};
- }
- // An outward-moving spherical tip in a finite bore. Solve for the centre
- // against the inward offset cylinder, then restore the physical wall point.
- // A root outside the cavity or stroke is not an indicator zero.
- function internalCylinderContact({body,probe,origin,direction,radius=.025,length=.06,ballRadius=.001,maxExtension=.02}){
-  const axis=unit(direction),ray=unit(probe),q=sub(body,origin),along=dot(q,axis),axialRay=dot(ray,axis),radial=sub(q,mul(axis,along)),transverse=sub(ray,mul(axis,axialRay)),r=radius-ballRadius;
-  const A=dot(transverse,transverse),B=2*dot(radial,transverse),C=dot(radial,radial)-r*r,D=B*B-4*A*C;
-  if(A<1e-12||D<0||C>0)return {valid:false,reason:'測定子基部が穴の内側にない'};
-  const extension=(-B+Math.sqrt(D))/(2*A),axial=along+extension*axialRay;
-  if(!Number.isFinite(extension)||extension<0||extension>maxExtension)return {valid:false,reason:'測定子の範囲外'};
-  if(axial<ballRadius-1e-12||axial>length-ballRadius+1e-12)return {valid:false,reason:'球測定子が穴の入口・底の範囲外'};
-  const sphereCentre=add(body,mul(ray,extension)),offset=sub(sub(sphereCentre,origin),mul(axis,axial)),point=add(sphereCentre,mul(unit(offset),ballRadius));
-  return {valid:true,extension,axial,sphereCentre,point};
  }
  // External plunger against a fixed finite cylindrical test bar. The nearest
  // forward ray intersection is the contact; an absent/out-of-stroke contact
@@ -3760,7 +3593,7 @@ for(let i=0;i<4;i++)$('sweepPosition'+i).onclick=()=>{selectSpindleSweepAngle(i*
   let s=(profile.seed^0x4c415431)>>>0;const next=()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296*2-1;},scale=profile.condition==='used'?30:10;
   return {face:next()*scale/1e6,flat:next()*scale/1e6,holeX:next()*scale/1e6,holeY:next()*scale/1e6};
  }
- return Object.freeze({model:'lathe-finite-fixtures-v4',add,sub,mul,dot,unit,extension,planeScan,planeContact,bore,internalCylinderContact,cylinderContact,intrinsic});
+ return Object.freeze({model:'lathe-testbar-v2',add,sub,mul,dot,unit,extension,planeScan,bore,cylinderContact,intrinsic});
 });
 </script><script>'use strict';
 // Lathe-only rigid assemblies on the existing support surface. Separating the
@@ -3781,203 +3614,82 @@ function latheAssembly(raw,pose,state=positions,solution=levelSolution,profile=m
  const relative=V.add(V.sub(material,base),[0,0,travel[2]]);
  return {point:V.add(origin,rotate(relative)),rotate};
 }
-const latheFixtureSpec=Object.freeze({boreRadius:.025,boreDepth:.060,holderRadius:.035,holderLength:.150,inspectionDepth:.030,arborRadius:.008,minReach:.100,maxReach:.350,carrierRadius:.017,carrierHalfThickness:.003,probeBaseRadius:.014,ballRadius:.001,adapterMin:.100,adapterMax:.450,adapterWidth:.080,nominalX:-.20/.35*100});
-function latheBoreMeasurement(state=positions,solution=levelSolution,profile=machineProfile,fixture=null){
- const V=window.LatheInspection,{add,sub,mul,dot,unit}=V,S=latheFixtureSpec,k=V.intrinsic(profile),head=latheAssembly([-current.w*.24+.125,1.5,0],'tool',state,solution,profile),mount=latheAssembly([-.09,1.5,.20],'work',state,solution,profile),seat=latheAssembly([-.09,1.5,.52],'work',state,solution,profile),axis=unit(head.rotate([1,0,0])),radial=unit(head.rotate([0,0,1])),up=unit(head.rotate([0,1,0])),holeAxis=unit(mount.rotate([1,0,0])),rear=add(mount.point,mount.rotate([0,k.holeY,k.holeX])),entry=sub(rear,mul(holeAxis,S.holderLength)),target=add(entry,mul(holeAxis,S.inspectionDepth)),reach=fixture?fixture.reach:dot(sub(target,head.point),axis),centre=add(head.point,mul(axis,reach)),cos=dot(axis,holeAxis),sin=Math.sqrt(Math.max(0,1-cos*cos)),adapterLength=Math.hypot(...sub(seat.point,mount.point));
- const axial=p=>dot(sub(p,entry),holeAxis),radialDistance=p=>Math.hypot(...sub(sub(p,entry),mul(holeAxis,axial(p)))),carrierEnds=[-1,1].map(sign=>add(centre,mul(axis,sign*S.carrierHalfThickness))),carrierAxialHalf=S.carrierHalfThickness*Math.abs(cos)+S.carrierRadius*sin,entranceReach=Math.abs(cos)>1e-12?-axial(head.point)/cos:NaN,entranceCentre=add(head.point,mul(axis,entranceReach)),carrierRadialClearance=S.boreRadius-Math.max(...carrierEnds.map(radialDistance))-S.carrierRadius,carrierEntryClearance=axial(centre)-carrierAxialHalf,carrierBottomClearance=S.boreDepth-axial(centre)-carrierAxialHalf,arborClearance=cos>0?S.boreRadius-Math.max(radialDistance(entranceCentre),radialDistance(centre))-S.arborRadius/cos:-Infinity;
- let reason=fixture&&!fixture.valid?'最初の取付けが無効：'+fixture.reason:!Number.isFinite(reach)||reach<S.minReach-1e-12||reach>S.maxReach+1e-12?'主軸治具の到達100〜350 mm範囲外':adapterLength<S.adapterMin-1e-12||adapterLength>S.adapterMax+1e-12?'ホルダ接続腕100〜450 mmの範囲外':levelCoordinates(.16,0).x<S.adapterWidth-1e-12||levelCoordinates(0,.30).z<S.adapterWidth-1e-12?'既存ホルダの80 mm取付座が不足':cos<=0||!Number.isFinite(entranceReach)||entranceReach<=0||entranceReach>reach?'穴入口へ主軸側から挿入できない':carrierRadialClearance<-1e-12?'回転ヘッドが穴の内壁と干渉':carrierEntryClearance<-1e-12||carrierBottomClearance<-1e-12?'回転ヘッドが穴の入口・底と干渉':arborClearance<-1e-12?'アーバが穴の入口・内壁と干渉':null;
- const directions=[radial,up,mul(radial,-1),mul(up,-1)],contacts=directions.map(probe=>{const body=add(centre,mul(probe,S.probeBaseRadius));return {body,probe,...V.internalCylinderContact({body,probe,origin:entry,direction:holeAxis,radius:S.boreRadius,length:S.boreDepth,ballRadius:S.ballRadius})};});
- if(!reason)reason=contacts.find(c=>!c.valid)?.reason||null;
- // Check the intervening rotation as well as the four displayed directions.
- // The carrier/shaft envelopes are continuous; tip/cavity contacts are sampled.
- if(!reason)for(let i=0;i<72;i++){const angle=i*Math.PI/36,probe=add(mul(radial,Math.cos(angle)),mul(up,Math.sin(angle))),body=add(centre,mul(probe,S.probeBaseRadius)),hit=V.internalCylinderContact({body,probe,origin:entry,direction:holeAxis,radius:S.boreRadius,length:S.boreDepth,ballRadius:S.ballRadius});if(!hit.valid){reason='回転途中：'+hit.reason;break;}}
- const valid=!reason,zeroExtension=fixture?fixture.zeroExtension:contacts[0].extension,readings=valid?contacts.map(c=>(zeroExtension-c.extension)*1e6):null,sectionAlong=Math.abs(cos)>1e-12?dot(sub(centre,entry),axis)/cos:NaN,sectionCentre=add(entry,mul(holeAxis,sectionAlong)),sectionDelta=sub(sectionCentre,centre),snapshot=fixture||{valid,reason,reach,zeroExtension:valid?zeroExtension:null,state:{...state}};
- return {valid,reason,readings,dx:valid?(readings[2]-readings[0])/2:null,dy:valid?(readings[3]-readings[1])/2:null,fixture:snapshot,head:head.point,axis,radial,up,entry,holeAxis,rear,centre,contacts,reach,adapterLength,adapterSeat:seat.point,clearance:{carrierRadial:carrierRadialClearance,carrierEntry:carrierEntryClearance,carrierBottom:carrierBottomClearance,arbor:arborClearance},geometricSectionCentreUm:{x:dot(sectionDelta,radial)*1e6,y:dot(sectionDelta,up)*1e6},spec:S};
-}
-function latheBoreFixture(state=positions,solution=levelSolution,profile=machineProfile){return latheBoreMeasurement(state,solution,profile).fixture;}
-function latheSetInspectionPosition(kind){
- if(current.kind!=='lathe')return;
- if($('fixtureSelection'))$('fixtureSelection').value=kind;
- if(typeof moveToFixtureStation==='function'){moveToFixtureStation();return;}
- positions={...positions,X:latheFixtureSpec.nominalX,Z:-100};
- if(typeof resetFixtureComparison==='function')resetFixtureComparison('測定位置へ移動したため、取付けとゼロの保持を解除しました。');
- if(typeof invalidateLevelImport==='function')invalidateLevelImport();
- updateAxisValues();updateLeveling();if(typeof saveLeveling==='function')saveLeveling();
-}
-function latheHead(state,solution,profile){return latheAssembly([-current.w*.24+.125,1.5,0],'tool',state,solution,profile);}
-function latheLocal(frame,p){const V=window.LatheInspection,d=V.sub(p,frame.point);return [[1,0,0],[0,1,0],[0,0,1]].map(e=>V.dot(frame.rotate(e),d));}
-function latheDirectionLocal(frame,p){const V=window.LatheInspection;return [[1,0,0],[0,1,0],[0,0,1]].map(e=>V.dot(frame.rotate(e),p));}
-function latheCarry(frame,p){return window.LatheInspection.add(frame.point,frame.rotate(p));}
-function latheSampleFractions(start,end,key){
- const fractions=new Set(Array.from({length:33},(_,i)=>i/32));
- if(key==='Z'){
-  const from=levelCoordinates(.08+.7*start.Z/100,0).x,to=levelCoordinates(.08+.7*end.Z/100,0).x;
-  for(const p of supports){const t=(levelCoordinates(p.x,p.z).x-from)/(to-from);if(t>0&&t<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,t+d)));}
- }
- return [...fractions].sort((a,b)=>a-b);
-}
-// A segment against the finite turret expanded by the fixture's bounding
-// radius. Clipping all half-spaces is conservative for the circular beam body.
-function latheTurretInterference(a,b,state,solution,profile,radius){
- const V=window.LatheInspection,F=latheAssembly([0,0,0],'work',state,solution,profile),A=latheLocal(F,a),B=latheLocal(F,b),delta=V.sub(B,A),sx=levelCoordinates(1,0).x,sz=levelCoordinates(0,1).z;
- const planes=[{n:[-1,0,0],c:.09*sx},{n:[1,0,0],c:.25*sx},...Array.from({length:12},(_,i)=>{const angle=i*Math.PI/6,c=Math.cos(angle),s=Math.sin(angle);return {n:[0,c,s/sz],c:.43+1.5*c+s};})];
- let lo=0,hi=1;
- for(const {n,c} of planes){const bound=c+radius*Math.hypot(...n)-V.dot(n,A),den=V.dot(n,delta);if(Math.abs(den)<1e-15){if(bound<0)return false;}else if(den>0)hi=Math.min(hi,bound/den);else lo=Math.max(lo,bound/den);if(lo>hi)return false;}
- return true;
-}
-function latheBarInterference(a,b,head,axis,radius,surfaceRadius=.025,minimum=0,maximum=.4){
- const V=window.LatheInspection,q=V.sub(a,head),d=V.sub(b,a),t0=V.dot(q,axis),dt=V.dot(d,axis),rad=V.sub(q,V.mul(axis,t0)),dr=V.sub(d,V.mul(axis,dt));let lo=0,hi=1;
- if(Math.abs(dt)<1e-15){if(t0<minimum||t0>maximum)return false;}else{const ends=[(minimum-t0)/dt,(maximum-t0)/dt].sort((x,y)=>x-y);lo=Math.max(lo,ends[0]);hi=Math.min(hi,ends[1]);if(lo>hi)return false;}
- const den=V.dot(dr,dr),t=den?Math.max(lo,Math.min(hi,-V.dot(rad,dr)/den)):lo;
- return Math.hypot(...V.add(rad,V.mul(dr,t)))<surfaceRadius+radius-1e-12;
-}
-function latheScanSetup(key,state=positions,solution=levelSolution,profile=machineProfile){
- const V=window.LatheInspection,{add,sub,mul,dot,unit}=V,face=key==='face.X'||key==='face.Z',travelKey=key==='face.X'?'X':'Z',half=travelKey==='X'?levelCoordinates(0,.35).z:levelCoordinates(.7,0).x,start={...state},end={...state,[travelKey]:state[travelKey]+.3/half*100},head=latheHead(start,solution,profile),k=V.intrinsic(profile);
- let reason=end[travelKey]>100+1e-9||start[travelKey]<-100-1e-9?'現在位置から300 mmの正方向走査ができない':null,owner,body,probe,path,raw,normal,root;
- if(face){
-  raw=key==='face.X'?[-.09,1.5,1]:[.23,1.5,.57];normal=key==='face.X'?[-Math.cos(k.face),0,-Math.sin(k.face)]:[-Math.sin(k.flat),0,-Math.cos(k.flat)];
-  const plane=latheAssembly(raw,'work',start,solution,profile);owner=head;probe=mul(plane.rotate(normal),-1);body=sub(plane.point,mul(probe,.01));root=latheAssembly([-current.w*.35+.4,1.5,.55],'tool',start,solution,profile).point;
-  const tail=sub(body,mul(probe,.05)),d=latheDirectionLocal(head,sub(tail,root)),rootLocal=latheLocal(head,root),tailLocal=latheLocal(head,tail),safeZ=levelCoordinates(0,.10).z;
-  // First go around the chuck at the headstock's outer front face, then
-  // enter the clear space in front of it, before approaching the turret.
-  path=[root,latheCarry(head,[.05,0,rootLocal[2]]),latheCarry(head,[.05,0,safeZ]),latheCarry(head,[tailLocal[0],0,safeZ]),latheCarry(head,[tailLocal[0],0,tailLocal[2]]),tail];
-  if(!reason&&(d[0]<0||d[0]>.95+1e-12||Math.abs(d[2])>.7+1e-12||Math.abs(d[1])>.15+1e-12))reason='主軸台検査梁の到達範囲外（前950・横700・縦150 mm）';
- }else{
-  owner=latheAssembly([-.09,1.5,.52],'work',start,solution,profile);root=owner.point;
-  const axis=unit(head.rotate([1,0,0])),radial=unit(head.rotate([0,0,1])),up=unit(head.rotate([0,1,0])),n=key==='bar.side'?radial:up,first=add(head.point,mul(axis,.05)),rootAxis=add(head.point,mul(axis,dot(sub(root,head.point),axis)));
-  body=add(first,mul(n,.035));probe=mul(n,-1);
-  path=key==='bar.side'?[root,add(rootAxis,mul(n,.085)),add(first,mul(n,.085))]:[root,add(root,mul(up,.085-dot(sub(root,rootAxis),up))),add(rootAxis,mul(up,.085)),add(first,mul(up,.085))];
-  const upstream=dot(sub(rootAxis,first),axis),crossSegments=path.slice(0,-2).map((p,i)=>Math.hypot(...sub(path[i+1],p)));
-  if(!reason&&(upstream<0||upstream>.35+1e-12||crossSegments.some(length=>length>.45+1e-12)))reason='タレット計器腕の到達範囲外（軸350・横450 mm）';
-  if(!reason&&(levelCoordinates(.16,0).x<.04-1e-12||levelCoordinates(0,.30).z<.04-1e-12))reason='既存ホルダの40 mm取付座が不足';
- }
- const fixture={key,kind:face?'face':'bar',valid:!reason,reason,start,end,travelKey,raw,normal,bodyLocal:latheLocal(owner,body),probeLocal:latheDirectionLocal(owner,probe),pathLocal:path.map(p=>latheLocal(owner,p)),zeroExtension:.01};
- if(!reason){const initial=latheEvaluateScan(fixture,solution,profile);if(!initial.valid){fixture.valid=false;fixture.reason=initial.reason;}else fixture.zeroExtension=initial.samples[0].extension;}
- return fixture;
-}
-function latheEvaluateScan(fixture,solution=levelSolution,profile=machineProfile){
- const V=window.LatheInspection,{add,sub,mul,dot,unit}=V,f=fixture,sx=levelCoordinates(1,0).x,sz=levelCoordinates(0,1).z;
- if(!f.valid)return {valid:false,reason:f.reason,microns:null,samples:[],fixture:f};
- const samples=latheSampleFractions(f.start,f.end,f.travelKey).map(t=>{
-  const state={...f.start,[f.travelKey]:f.start[f.travelKey]+(f.end[f.travelKey]-f.start[f.travelKey])*t},head=latheHead(state,solution,profile),owner=f.kind==='face'?head:latheAssembly([-.09,1.5,.52],'work',state,solution,profile),body=latheCarry(owner,f.bodyLocal),probe=owner.rotate(f.probeLocal),path=f.pathLocal.map(p=>latheCarry(owner,p));let hit,reason;
-  if(f.kind==='face'){
-   const plane=latheAssembly(f.raw,'work',state,solution,profile);hit=V.planeContact({body,probe,point:plane.point,normal:plane.rotate(f.normal)});
-   if(hit.valid){const local=latheLocal(plane,hit.point),material=add([f.raw[0]*sx,f.raw[1],f.raw[2]*sz],local),onFace=f.key==='face.X'?Array.from({length:12},(_,i)=>i*Math.PI/6).every(a=>Math.cos(a)*(material[1]-1.5)+Math.sin(a)*(material[2]/sz-1)<=.43+1e-9):material[0]>=-.09*sx-1e-9&&material[0]<=.25*sx+1e-9&&Math.abs(material[1]-1.5)<=.43*Math.tan(Math.PI/12)+1e-9;
-    hit={...hit,material};if(!onFace)reason='タレット測定面の範囲外';
-   }
-   if(!reason&&path.some((p,i)=>i&&latheTurretInterference(path[i-1],p,state,solution,profile,.02)))reason='主軸台検査梁が移動タレットと干渉';
-   if(!reason&&latheTurretInterference(path.at(-1),body,state,solution,profile,.008))reason='計器本体が移動タレットと干渉';
-   const axis=unit(head.rotate([1,0,0])),chuckBack=-levelCoordinates(.28,0).x;
-   if(!reason&&path.some((p,i)=>i&&latheBarInterference(path[i-1],p,head.point,axis,.02,.4,chuckBack,.02)))reason='主軸台検査梁がチャックと干渉';
-   if(!reason&&latheBarInterference(path.at(-1),body,head.point,axis,.008,.4,chuckBack,.008))reason='計器本体がチャックと干渉';
-  }else{
-   const axis=unit(head.rotate([1,0,0]));hit=V.cylinderContact(body,probe,head.point,axis,.025,.4);
-   if(path.some((p,i)=>i&&latheBarInterference(path[i-1],p,head.point,axis,.02)))reason='取付腕がテストバーと干渉';
-   if(!reason&&latheBarInterference(path.at(-1),body,head.point,axis,.008))reason='計器本体がテストバーと干渉';
-   // The chuck occupies the half-space behind its front face. Every finite
-   // beam/body point, with radius allowance, must remain ahead of that face.
-   if(!reason&&path.some(p=>dot(sub(p,head.point),axis)<.02-1e-12))reason='取付腕がチャック前面と干渉';
-   if(!reason&&Math.min(dot(sub(body,head.point),axis),dot(sub(path.at(-1),head.point),axis))<.008-1e-12)reason='計器本体がチャック前面と干渉';
-   if(!reason&&path.slice(1).some((p,i)=>i&&latheTurretInterference(path[i],p,state,solution,profile,.02)))reason='取付腕がタレットと干渉';
-  }
-  return {...hit,t,state,body,probe,path,...(reason?{valid:false,reason}:{})};
- });
- const bad=samples.find(s=>!s.valid),first=samples[0],last=samples.at(-1);
- return {valid:!bad,reason:bad?.reason||null,microns:bad?null:(f.zeroExtension-last.extension)*1e6,zero:first,last,samples,fixture:f};
-}
 function latheInspectionGeometry(state=positions,solution=levelSolution,profile=machineProfile){
- const faceScan=latheEvaluateScan(latheScanSetup('face.X',state,solution,profile),solution,profile),flatScan=latheEvaluateScan(latheScanSetup('face.Z',state,solution,profile),solution,profile),side=latheEvaluateScan(latheScanSetup('bar.side',state,solution,profile),solution,profile),top=latheEvaluateScan(latheScanSetup('bar.top',state,solution,profile),solution,profile),bore=latheBoreMeasurement(state,solution,profile);
- return {model:window.LatheInspection.model,face:faceScan.microns,flat:flatScan.microns,faceScan,flatScan,dx:bore.dx,dy:bore.dy,bore,barSide:side.microns,barTop:top.microns,side,top,validX:faceScan.fixture.end.X<=100,validZ:flatScan.fixture.end.Z<=100,xStart:faceScan.fixture.start,zStart:flatScan.fixture.start,xEnd:faceScan.fixture.end,zEnd:flatScan.fixture.end,head:latheHead(state,solution,profile).point,hole:bore.rear,barLength:.4};
-}
-function latheCaptureFixtures(state=positions,solution=levelSolution,profile=machineProfile){
- const scans=Object.fromEntries(['face.X','face.Z','bar.side','bar.top'].map(key=>[key,latheScanSetup(key,state,solution,profile)])),bore=latheBoreFixture(state,solution,profile),snapshot={state:{...state},scans,bore};return {...snapshot,rows:latheEvaluateHeld(snapshot,solution,profile).rows};
-}
-function latheEvaluateHeld(snapshot,solution=levelSolution,profile=machineProfile){
- const labels={'face.X':'タレット面X','face.Z':'タレット面Z','bar.side':'バー側面','bar.top':'バー上面'},rows=Object.entries(snapshot.scans).map(([key,f])=>{const s=latheEvaluateScan(f,solution,profile);return {key,label:labels[key],valid:s.valid,microns:s.microns,reason:s.reason};}),b=latheBoreMeasurement(snapshot.state,solution,profile,snapshot.bore);
- for(const [i,key] of ['a','b','c','d'].entries())rows.push({key:'bore.'+key,label:'穴 '+key,valid:b.valid,microns:b.valid?b.readings[i]:null,reason:b.reason});
- rows.push({key:'bore.X',label:'穴 対向指示差X',valid:b.valid,microns:b.dx,reason:b.reason},{key:'bore.height',label:'穴 対向指示差高さ',valid:b.valid,microns:b.dy,reason:b.reason});return {rows};
-}
-function latheMeasurementStation(key,state=positions){
- const X=key==='faceX'||key==='face.X'?-100:latheFixtureSpec.nominalX,next={...state,X,Z:-100};return {valid:true,reason:null,positions:next,needsMove:Math.abs(state.X-next.X)>1e-9||Math.abs(state.Z-next.Z)>1e-9};
-}
-function latheFixtureSceneGeometry(key,stage='S',fraction=0,state=positions,solution=levelSolution,profile=machineProfile){
- const V=window.LatheInspection,{add,sub,mul}=V,boxes=[],cylinders=[],segments=[],contacts=[],S=latheFixtureSpec,fraction01=Math.max(0,Math.min(1,fraction));let activeState={...state},valid=false,reason=null,measurement;
- if(key==='bore')measurement=latheBoreMeasurement(state,solution,profile);
- else{const scanKey=key==='faceX'?'face.X':key==='faceZ'?'face.Z':key==='barTop'?'bar.top':'bar.side',fixture=latheScanSetup(scanKey,state,solution,profile),scan=latheEvaluateScan(fixture,solution,profile);measurement=scan;activeState={...state,[fixture.travelKey]:state[fixture.travelKey]+(fixture.end[fixture.travelKey]-state[fixture.travelKey])*fraction01};}
- valid=measurement.valid;reason=measurement.reason;
- const head=latheHead(activeState,solution,profile),frameAxes=[[1,0,0],[0,1,0],[0,0,1]].map(e=>head.rotate(e)),body=latheAssembly([-current.w*.35,1.22,0],'tool',activeState,solution,profile);
- boxes.push({center:body.point,size:[levelCoordinates(.8,0).x,1.25,levelCoordinates(0,1.3).z],axes:frameAxes,color:'#becbd2',label:'主軸台・固定部'});
- cylinders.push({a:sub(head.point,mul(frameAxes[0],levelCoordinates(.28,0).x)),b:head.point,radius:.4,color:'#78909c',label:'チャック'});
- const work=p=>latheAssembly(p,'work',activeState,solution,profile),front=[],back=[];
- for(let i=0;i<12;i++){const a=(i+.5)*Math.PI/6,r=.43/Math.cos(Math.PI/12);front.push(work([-.09,1.5+r*Math.cos(a),1+r*Math.sin(a)]).point);back.push(work([.25,1.5+r*Math.cos(a),1+r*Math.sin(a)]).point);}
- boxes.push({vertices:front,color:'#c0d3d8'},{vertices:back,color:'#a7bdc4'});for(let i=0;i<12;i++)boxes.push({vertices:[front[i],front[(i+1)%12],back[(i+1)%12],back[i]],color:'#b5c9ce'});
- if(key==='bore'||key==='bar'||key==='barTop'){
-  const holder=work([-.09,1.5,.52]);boxes.push({center:holder.point,size:[levelCoordinates(.16,0).x,.16,levelCoordinates(0,.30).z],axes:[[1,0,0],[0,1,0],[0,0,1]].map(e=>holder.rotate(e)),color:'#8199a4',label:'既存工具ホルダ・取付座'});
- }
- if(key==='bore'){
-  const b=measurement,holeFrame=work([-.09,1.5,.20]),hy=holeFrame.rotate([0,1,0]),hz=holeFrame.rotate([0,0,1]),point=(axial,r,angle)=>add(add(b.entry,mul(b.holeAxis,axial)),add(mul(hy,r*Math.cos(angle)),mul(hz,r*Math.sin(angle))));
-  // A longitudinal cutaway exposes the actual finite cavity and blind bottom.
-  for(let i=0;i<18;i++){const a=i*Math.PI/12,c=(i+1)*Math.PI/12;boxes.push({vertices:[point(0,S.holderRadius,a),point(0,S.holderRadius,c),point(S.holderLength,S.holderRadius,c),point(S.holderLength,S.holderRadius,a)],color:'#caa67d'},{vertices:[point(0,S.boreRadius,a),point(S.boreDepth,S.boreRadius,a),point(S.boreDepth,S.boreRadius,c),point(0,S.boreRadius,c)],color:'#eed6b6'},{vertices:[point(0,S.boreRadius,a),point(0,S.holderRadius,a),point(0,S.holderRadius,c),point(0,S.boreRadius,c)],color:'#ae835b'},{vertices:[point(S.boreDepth,0,0),point(S.boreDepth,S.boreRadius,a),point(S.boreDepth,S.boreRadius,c)],color:'#ba9369'});}
-  const mid=mul(add(b.adapterSeat,b.rear),.5);boxes.push({center:mid,size:[.08,.08,b.adapterLength],axes:[[1,0,0],[0,1,0],[0,0,1]].map(e=>holeFrame.rotate(e)),color:'#a0886c',label:'80角・接続腕'});
-  // An unavailable arbor is shown only to its maximum manufactured reach.
-  const shownReach=Math.max(S.minReach,Math.min(S.maxReach,b.reach)),shownCentre=add(b.head,mul(b.axis,shownReach));
-  cylinders.push({a:b.head,b:shownCentre,radius:S.arborRadius,color:'#c66b27',label:'主軸固定アーバ φ16'});
-  if(valid){cylinders.push({a:sub(b.centre,mul(b.axis,S.carrierHalfThickness)),b:add(b.centre,mul(b.axis,S.carrierHalfThickness)),radius:S.carrierRadius,color:'#d5955c',label:'回転ヘッド'});const angle=fraction01*Math.PI*2,probe=add(mul(b.radial,Math.cos(angle)),mul(b.up,Math.sin(angle))),probeBody=add(b.centre,mul(probe,S.probeBaseRadius)),hit=V.internalCylinderContact({body:probeBody,probe,origin:b.entry,direction:b.holeAxis,radius:S.boreRadius,length:S.boreDepth,ballRadius:S.ballRadius});if(hit.valid){segments.push({points:[probeBody,hit.sphereCentre],radius:.001,color:'#b63823',label:'a→b→c→d'});contacts.push(hit.point);}}
- }else{
-  const f=measurement.fixture,owner=f.kind==='face'?head:work([-.09,1.5,.52]),path=f.pathLocal.map(p=>latheCarry(owner,p)),dialBody=latheCarry(owner,f.bodyLocal),probe=owner.rotate(f.probeLocal);
-  segments.push({points:path,radius:.02,color:'#b2906f',label:!valid?'未成立の必要取付位置':f.kind==='face'?'主軸台の有限検査梁':'タレットの有限計器腕'});cylinders.push({a:path.at(-1),b:dialBody,radius:.008,color:'#da8e4b',label:'固定計器本体'});
-  if(key==='bar'||key==='barTop')cylinders.push({a:head.point,b:add(head.point,mul(head.rotate([1,0,0]),.4)),radius:.025,color:'#7b9ca3',label:'主軸固定 φ50×400 mm'});
-  let hit;if(f.kind==='face'){const plane=work(f.raw);hit=V.planeContact({body:dialBody,probe,point:plane.point,normal:plane.rotate(f.normal)});}else hit=V.cylinderContact(dialBody,probe,head.point,head.rotate([1,0,0]),.025,.4);
-  if(valid&&hit.valid){segments.push({points:[dialBody,hit.point],radius:.001,color:'#b63823',label:'接触・押込みが＋'});contacts.push(hit.point);}
- }
- return {valid,reason,boxes,cylinders,segments,contacts,state:activeState,key,stage,fraction:fraction01,measurementConvention:'実寸・剛体教材の有限治具。変位の拡大なし。'};
-}
-function latheRunoutAtStations(data,profile=machineProfile){
- const I=window.IntrinsicInspection,r=I?.fromProfile(profile)?.runout,e=r?.eccentricityMicrons||[0,0],tilt=r?.tiltMicroradians||[0,0],root=I?I.runoutAt(e,tilt,50):0,tip=I?I.runoutAt(e,tilt,350):0,valid=data.top.valid;
- return {rootMicrons:valid?root:null,tipMicrons:valid?tip:null,valid,reason:valid?null:data.top.reason,rootAxialMm:50,tipAxialMm:350,intrinsicRootMicrons:root,intrinsicTipMicrons:tip,scope:'50/350 mm固有成分TIR。旧ゼロ保持中の総回転TIRではない。'};
+ const V=window.LatheInspection,{add,sub,mul,dot,unit}=V,k=V.intrinsic(profile),length=.3;
+ const at=(p,pose,s=state)=>latheAssembly(p,pose,s,solution,profile),sx=levelCoordinates(0,.35).z,sz=levelCoordinates(.7,0).x;
+ // At a travel end, keep a full 300 mm scan inside the slider's range.
+ const validX=2*sx>=length-1e-12,validZ=2*sz>=length-1e-12;
+ const xStart={...state,X:Math.max(-100,Math.min(state.X,100-length/sx*100))},zStart={...state,Z:Math.max(-100,Math.min(state.Z,100-length/sz*100))};
+ const xEnd={...xStart,X:Math.min(100,xStart.X+length/sx*100)},zEnd={...zStart,Z:Math.min(100,zStart.Z+length/sz*100)};
+ const front=[-.09,1.5,1],flat=[.23,1.5,1.43];
+ const f0=at(front,'work',xStart),f1=at(front,'work',xEnd),n=[-Math.cos(k.face),0,-Math.sin(k.face)];
+ const z0=at(flat,'work',zStart),z1=at(flat,'work',zEnd),nz=[Math.sin(k.flat),0,Math.cos(k.flat)];
+ const face=validX?V.planeScan(f0.point,f1.point,f0.rotate(n),f1.rotate(n)):null;
+ const flatReading=validZ?V.planeScan(z0.point,z1.point,z0.rotate(nz),z1.rotate(nz)):null;
+ const head=at([-current.w*.24+.125,1.5,0],'tool'),axis=unit(head.rotate([1,0,0])),radial=unit(head.rotate([0,0,1])),up=unit(head.rotate([0,1,0]));
+ // Fixed nominal X centre position; never re-centred against a tilted spindle.
+ // The inspection holder is now on the rear (+internal z) side.
+ const holeState={...state,X:-.20/.35*100},hole=at([-.09,1.5,.20],'work',holeState);
+ const centre=add(hole.point,hole.rotate([0,k.holeY,k.holeX])),delta=sub(centre,head.point),dx=dot(delta,radial),dy=dot(delta,up);
+ // Looking from spindle towards turret (+internal x), screen right is -z.
+ const bore=V.bore(-dx,dy);
+ // Bar stays on the spindle. Mount a plunger on the turret at a, then transport
+ // BOTH its body and its direction with the same rigid bracket throughout Z.
+ // This is extension difference, not a diameter or a doubled radial error.
+ const mountRaw=[.08,1.5,.20],mount=at(mountRaw,'work',zStart),inverse=v=>[[1,0,0],[0,1,0],[0,0,1]].map(e=>dot(mount.rotate(e),v));
+ const centreA=add(head.point,mul(axis,dot(sub(mount.point,head.point),axis))),barLength=levelCoordinates(current.w*.225-(-current.w*.24+.125),0).x;
+ const barScan=normal=>{
+  if(!validZ)return {valid:false,microns:null,reason:'travel-range'};
+  const body0=add(centreA,mul(normal,.035)),probe0=mul(normal,-1),bodyLocal=inverse(sub(body0,mount.point)),probeLocal=inverse(probe0);
+  const fractions=new Set(Array.from({length:17},(_,i)=>i/16));
+  // Include support-cell boundaries and both sides of their slope transition.
+  const startX=levelCoordinates(.08+.7*zStart.Z/100,0).x;
+  for(const p of supports){const f=(levelCoordinates(p.x,p.z).x-startX)/length;if(f>0&&f<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,f+d)));}
+  const samples=[...fractions].sort((a,b)=>a-b).map(t=>{
+   const m=at(mountRaw,'work',{...zStart,Z:zStart.Z+(zEnd.Z-zStart.Z)*t}),body=add(m.point,m.rotate(bodyLocal)),probe=m.rotate(probeLocal);
+   return {t,body,probe,...V.cylinderContact(body,probe,head.point,axis,.025,barLength)};
+  });
+  if(samples.some(s=>!s.valid))return {valid:false,microns:null,reason:samples.find(s=>!s.valid).reason,samples};
+  return {valid:true,microns:(samples[0].extension-samples.at(-1).extension)*1e6,samples};
+ };
+ const side=barScan(radial),top=barScan(up);
+ return {model:V.model,face,flat:flatReading,dx:dx*1e6,dy:dy*1e6,bore,barSide:side.microns,barTop:top.microns,side,top,validX,validZ,xStart,zStart,xEnd,zEnd,head:head.point,hole:centre,barLength};
 }
 function latheInspectionMarkup(data,runout,second=false){
  const n=v=>Number.isFinite(v)?squarenessMicronText(v):'—',svg=(label,body)=>`<svg viewBox="0 0 180 100" role="img" aria-label="${label}"><title>${label}</title>${body}</svg>`;
  const panel=(title,body,note)=>`<section><h2>${title}</h2>${body}<p>${note}</p></section>`;
  const polygon='<path d="M55 12L85 12L108 35L108 65L85 86L55 86L32 65L32 35Z" fill="#fff6ec" stroke="#6c5a4a"/>';
- if(!second)return panel('主軸振れ・µm',svg('主軸回転TIR。鼻端から50 mmと350 mmの固有成分でレベル調整では不変。取付けと最初のゼロを保持した瞬間の総指示ではありません。',`<g fill="#fff6ec" stroke="#6c5a4a"><path d="M15 18H45V74H15ZM45 39H158V53H45Z"/></g><path d="M54 30V60M146 30V60" stroke="#c45a09"/><text x="53" y="23" text-anchor="middle">a</text><text x="146" y="23" text-anchor="middle">b</text><text x="30" y="90">a ${n(runout.rootMicrons)}　b ${n(runout.tipMicrons)}</text><text x="99" y="72" text-anchor="middle">↻ 回転TIR</text>`),runout.valid?'50 / 350 mm・固有成分TIR':`測定不可：${runout.reason}`)+panel('刃物台精度・µm',svg('計器は主軸台側に固定。Xは前面、Zは主軸側フラット。始点ゼロ、押込み増加がプラス。',`${polygon}<path d="M108 35L145 23V53L108 65M85 12L122 2L145 23" fill="#fffaf4" stroke="#6c5a4a"/><path d="M60 62H94M121 56L138 42" stroke="#c45a09"/><text x="50" y="58">a → b</text><text x="119" y="77">c → d</text><text x="61" y="38">X</text><text x="122" y="35">Z</text><text x="4" y="94">X ${n(data.face)}　Z ${n(data.flat)}</text>`),data.faceScan.valid&&data.flatScan.valid?'300 mm・始点再ゼロ後':`測定不可：${!data.faceScan.valid?'X '+data.faceScan.reason+' ':''}${!data.flatScan.valid?'Z '+data.flatScan.reason:''}`);
+ if(!second)return panel('主軸振れ・µm',svg('主軸回転TIR。根元と300 mm先。レベル調整では不変。',`<g fill="#fff6ec" stroke="#6c5a4a"><path d="M15 18H45V74H15ZM45 39H158V53H45Z"/></g><path d="M54 30V60M146 30V60" stroke="#c45a09"/><text x="53" y="23" text-anchor="middle">a</text><text x="146" y="23" text-anchor="middle">b</text><text x="30" y="90">a ${Math.round(runout.rootMicrons)}　b ${Math.round(runout.tipMicrons)}</text><text x="99" y="72" text-anchor="middle">↻ 回転TIR</text>`),'固有値・レベルでは不変')+panel('刃物台精度・µm',svg('計器は主軸台側に固定。Xは前面、Zは外側フラット。始点ゼロ、押込み増加がプラス。',`${polygon}<path d="M108 35L145 23V53L108 65M85 12L122 2L145 23" fill="#fffaf4" stroke="#6c5a4a"/><path d="M60 62H94M121 56L138 42" stroke="#c45a09"/><text x="50" y="58">a → b</text><text x="119" y="77">c → d</text><text x="61" y="38">X</text><text x="122" y="35">Z</text><text x="4" y="94">X ${n(data.face)}　Z ${n(data.flat)}</text>`),data.validX&&data.validZ?'300 mm・Xは固有／Zは支持も反映':`300 mm：${!data.validX?'X走査不足 ':''}${!data.validZ?'Z走査不足':''}`);
  const marks=data.bore.valid?data.bore.readings.map(n):['—','—','—','—'];
- return panel('主軸と刃物台の穴芯',svg('主軸から刃物台を見る。主軸所有の回転計器を a左、b上、c右、d下へ回す。実際のX/Z位置で有限穴の内壁に接触し、再取付け後aでゼロ。',`${polygon}<circle cx="70" cy="49" r="17" fill="white" stroke="#6c5a4a"/><path d="M44 49H96M70 23V75" stroke="#a49386"/><circle cx="70" cy="49" r="2" fill="#c45a09"/><text x="0" y="52">a ${marks[0]}</text><text x="65" y="14">b ${marks[1]}</text><text x="110" y="52">c ${marks[2]}</text><text x="65" y="94">d ${marks[3]}</text>`),`対向指示差 X ${n(data.dx)}／高さ ${n(data.dy)} µm。${data.bore.valid?'有限穴・a再ゼロ後':'測定不可：'+data.bore.reason}<br><button type="button" id="latheBorePosition" onclick="latheSetInspectionPosition('bore')">穴測定位置へ（X公称・Z主軸側）</button><button type="button" id="latheBoreView" onclick="openFixtureGeometry('bore')">穴の取付図を見る</button>`) +panel('テストバー測定・µm',svg('主軸固定のテストバーに、タレット側のダイヤルを接触。側面は奥側から、上面は上から測る。主軸側aを0にして先端側bへZを300 mm送り、押込み増加がプラス。',`<g fill="#fff6ec" stroke="#6c5a4a"><path d="M5 13H27V33H5ZM27 24H160V29H27Z"/><rect x="121" y="5" width="26" height="12" rx="2"/></g><path d="M134 17V24M127 11H141M133 8L137 14" stroke="#c45a09" fill="none"/><path d="M45 18H110l-5,-3m5,3l-5,3" stroke="#c45a09" fill="none"/><text x="39" y="43">a 0</text><text x="130" y="43">b</text><text x="55" y="12" font-size="9">Z 300 mm →</text><text x="8" y="66">側面（奥） ${n(data.barSide)}</text><text x="8" y="85">上面 ${n(data.barTop)}</text>`),data.side.valid&&data.top.valid?'φ50×400 mm・a50→b350 mm':`測定不可：${!data.side.valid?data.side.reason:data.top.reason}`);
+ return panel('主軸と刃物台の穴芯',svg('主軸から刃物台を見る。a左、b上、c右、d下。Xは固定の公称芯位置。aでゼロ。',`${polygon}<circle cx="70" cy="49" r="17" fill="white" stroke="#6c5a4a"/><path d="M44 49H96M70 23V75" stroke="#a49386"/><circle cx="70" cy="49" r="2" fill="#c45a09"/><text x="0" y="52">a ${marks[0]}</text><text x="65" y="14">b ${marks[1]}</text><text x="110" y="52">c ${marks[2]}</text><text x="65" y="94">d ${marks[3]}</text>`),`芯差 X ${n(data.dx)}／高さ ${n(data.dy)} µm`) +panel('テストバー測定・µm',svg('主軸固定のテストバーに、タレット側のダイヤルを接触。側面は奥側から、上面は上から測る。主軸側aを0にして先端側bへZを300 mm送り、押込み増加がプラス。',`<g fill="#fff6ec" stroke="#6c5a4a"><path d="M5 13H27V33H5ZM27 24H160V29H27Z"/><rect x="121" y="5" width="26" height="12" rx="2"/></g><path d="M134 17V24M127 11H141M133 8L137 14" stroke="#c45a09" fill="none"/><path d="M45 18H110l-5,-3m5,3l-5,3" stroke="#c45a09" fill="none"/><text x="39" y="43">a 0</text><text x="130" y="43">b</text><text x="55" y="12" font-size="9">Z 300 mm →</text><text x="8" y="66">側面（奥） ${n(data.barSide)}</text><text x="8" y="85">上面 ${n(data.barTop)}</text>`),data.validZ?(data.side.valid&&data.top.valid?'バー固定・ダイヤルをZ送り':'接触範囲外・詳細は▽'):'300 mmのZ走査範囲不足');
 }
 let latheInspectionLastKey='';
 function updateLatheInspectionUI(){
- const data=latheInspectionGeometry(),runout=latheRunoutAtStations(data);
+ const data=latheInspectionGeometry(),intrinsic=window.IntrinsicInspection.fromProfile(machineProfile),runout=intrinsic?.runout||{rootMicrons:0,tipMicrons:0};
  const key=JSON.stringify([data,runout]);
  if(key!==latheInspectionLastKey||!$('liveSquareness').querySelector('.lathe-inspection-columns')){
   latheInspectionLastKey=key;$('liveSquareness').innerHTML='<div class="lathe-inspection-columns">'+latheInspectionMarkup(data,runout)+'</div>';
   $('latheInspectionSecond').innerHTML='<div class="lathe-inspection-columns">'+latheInspectionMarkup(data,runout,true)+'</div>';
  }
  $('liveSquareness').dataset.lathe=JSON.stringify({face:data.face,flat:data.flat,dx:data.dx,dy:data.dy,barSide:data.barSide,barTop:data.barTop,runout});
- if(!$('measurementReferenceCards').querySelector('.lathe-inspection-detail'))$('measurementReferenceCards').innerHTML='<article class="measurement-reference-card lathe-inspection-detail"><h3>タレット旋盤の検査・µm</h3><p>Haas STシリーズの配置を参考にした汎用2軸模型です。6点支持・機械寸法・以下の検査治具は教材の設定で、特定型式の再現ではありません。12角タレットは工具1番で固定し、割出しは実装していません。心押台は測定に使いません。</p><p>取付け：下の「測定配置」から検査を選び、「測定位置へ」で実際のX/Zを動かします。面XはX主軸側端、面Z・穴・バーはX公称芯位置、Zは主軸台側端が標準の検査位置です。現在位置からの300 mm正方向走査が軸端を超える場合も測定不可です。数値のために軸位置や支持を暗黙に変えることはありません。</p><p>面X：主軸台の前面に固定した計器にタレット前面を当て、タレットをX正方向へ300 mm送ります。面Z：工具とホルダを外し、主軸に近い内側フラットへ計器を当て、往復台をZ正方向へ300 mm送ります。両者とも始点の面法線へ計器を合わせ、10 mm伸びで接触、始点をゼロにします。伸び減少・押込み増加が＋。面Zは従来の外側とは接触側が逆です。主軸台実前面の取付座からφ40 mmの検査梁でチャックを外周へ迂回し、チャック前面から50 mm先で内側へ折れ、タレットへ接近します。前進950・横枝700・縦調整150 mmが有限の到達範囲です。計器本体は長さ50 mm・半径8 mm。移動中の有限12角タレット、チャック、面接触、伸び0〜20 mmを確認します。模型の取付基準から測定高さ840 mmまでの姿勢変化も計算します。</p><p>穴：切削工具とバーを外します。既存工具ホルダから80 mm角の腕（標準320 mm・許容100〜450 mm）を径方向へ渡し、外径70・内径50・突出150・盲穴深さ60 mmの教材ホルダを固定します。主軸には直径16 mmのアーバと回転計器を固定。鼻端から測定面への到達は100〜350 mm、目標面は入口から穴軸に沿って30 mm入った点を通る主軸直交面です。公称X・Z主軸側端では標準到達165 mm。現在の実X/Zを使い、支持を変えて芯を自動調整しません。主軸から見るa左→b上→c右→d下へ回します。基部半径14 mm・球半径1 mm・伸び0〜20 mmの測定子が傾いた有限円筒の内壁へ触れる位置を解き、aでゼロ、押込み増加を＋とします。X=(c−a)/2、高さ=(d−b)/2は対向指示差で、幾何学的な穴芯差とは区別します。半径17 mm・厚さ6 mmの回転ヘッド、アーバ、入口、底、接続腕、取付座の有限寸法と保守包絡を確認します。NCの直径指令の正負とは区別してください。</p><p>バー平行度：主軸にφ50×400 mmの理想バーを固定し、主軸は回しません。既存の工具ホルダにφ40 mmの有限腕を取り付けます。バーから85 mm離れた経路を通り、上流への腕は350 mm、径方向の各部は450 mm以内です。鼻端から50 mmのaで接触ゼロを取り、タレット側計器の本体と方向を固定したままZ正方向へ300 mm送り、350 mmのbを測ります。側面は奥側から、上面は上から当てる別取付けです。計器本体は長さ50 mm・半径8 mm、伸び0〜20 mm。値を直径誤差として2倍にしません。有限バー、チャック、タレットと腕・本体の干渉も確認します。</p><p>主軸振れ：同じ400 mmバーのa=50 mm、b=350 mmに計器を置く配置で、同じseedから生成された偏心と傾きによる固有成分TIR（1回転の最大−最小）を表示します。支持では固有成分を変えません。バー治具が成立しない場合は—です。固定取付け・旧ゼロ保持中の瞬間指示や総回転TIRとは別の量です。</p><p>上の通常値は、現在の支持・実軸位置で取付けと始点ゼロを取り直した測定です。「取付け・ゼロを保持」の比較欄は、最初の部材局所座標とゼロを保存し、支持変更後にも同じ取付けを運びます。穴の旧aも0とは限りません。最初から無効の取付けを後で勝手に有効にはしません。軸・寸法・個体を変えると保持を解除します。値が変わらない条件、丸めて同じ整数になる条件もそのまま表示します。</p><p>図は選んだ検査だけを装着した実寸の配置図です。面検査は工具・バーを外し、穴とバーも同時装着しません。接触は32分割とZ支持補間境界の両側で確認します。梁と部材の膨張包絡に接近する場合は保守的に不可とします。剛体教材であり、たわみ、接合剛性、熱、荷重を再現する実機保証ではありません。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html" target="_blank" rel="noopener">Haas公式：ST Lathe Alignment Indicating Zones</a></p></article>';
+ if(!$('measurementReferenceCards').querySelector('.lathe-inspection-detail'))$('measurementReferenceCards').innerHTML='<article class="measurement-reference-card lathe-inspection-detail"><h3>タレット旋盤の検査・µm</h3><p>Haas STシリーズの検査配置を参考にした汎用2軸模型です。12角タレットは工具1番で固定し、割出し動作は実装していません。6点支持と寸法は教材用で、特定型式の再現ではありません。</p><p>主軸振れ：主軸を回転し、テストバーの根元aと300 mm先bの最大−最小（TIR）。同じ個体の固有値で、支持調整では変わりません。</p><p>刃物台精度：計器は主軸台側に固定。Xはタレット前面をa→b、Zは外側フラットをc→dへ送ります。300 mmは教材の設定で、メーカーの検査距離ではありません。計器は始点の面法線に合わせてゼロ。押込み増加が＋。Xの面傾斜は同じ剛体内の固有差で、Zは移動中の往復台姿勢と取付高さ0.84 mも反映します。端では走査軸の始点だけを内側へ戻し、全区間を確保します。全行程が300 mm未満になる寸法では数値を出さず走査不足と表示します。</p><p>穴芯：仮想ホルダを公称X芯位置へ戻し、現在のZ位置で主軸側の計器を回して内径を測ります。図は主軸から刃物台を見る向きでa左／b上／c右／d下。aでゼロ、押込み増加が＋。芯差X=(c−a)/2、高さ=(d−b)/2。Xスライダーとは独立の芯位置検査で、支持を変えても芯合わせは取り直しません。主軸直交面の円断面による偏心検査の近似で、穴軸傾きによる楕円断面は含みません。孔径50 mm、取付高さ0.84 m。数値のXは部材の径方向（模型内部＋z、図の左向き）で、NCの直径指令の正負ではありません。タレットは奥側にあり、Xスライダーの＋は部材が主軸から離れる向き、Zの＋は主軸台から離れる向きです。</p><p>テストバー測定：バーは主軸に固定し、主軸は回さず、タレットに固定したダイヤルをZの＋（主軸側aから先端側b）へ300 mm送ります。側面は奥側から手前向き、上面は上から下向きに測定子を当てます。側面と上面は計器を付け替える別の検査です。aでゼロ、測定子の伸びが減る押込み側を＋としてbの指示を表示します。棒の直径差ではなくダイヤルの指示差で、値を2倍しません。バーは理想円筒φ50 mm。回転振れの固有値とは別の、Z送りに対する平行度の測定です。</p><p>支持・軸位置を変えると、面測定の方向合わせと始点ゼロを取り直します。バー測定も始点の軸位置に計器を取り付け直し、10 mmの伸びで接触ゼロを設定します。そこから終点までは計器本体と測定子方向を同じブラケットで運び、途中で再ゼロしません。模型の取付基準（支持から0.84 m）から接触位置までの腕の長さを計算に含めます。16分割に加え、支持補間境界の両側で接触・20 mmの測定子範囲・バー長を確認し、成立しないときは—を表示します。連続経路の治具干渉やバーの自重たわみは再現しません。穴芯の公称Xは固定です。各図の測定器・ホルダは検査用の仮想配置で、模型に検査治具の干渉やブラケット寸法は再現していません。面接触は無限平面の近似で、支持寸法を縮めたときなどの有限タレット面からの測定子の脱落は判定しません。表示は整数µmなので微小な変化が同じ整数になることがあります。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html" target="_blank" rel="noopener">Haas公式：ST Lathe Alignment Indicating Zones</a></p></article>';
  $('inspectionCarousel').style.setProperty('--inspection-height',$('precisionReadouts').getBoundingClientRect().height+'px');
 }
 </script><script>'use strict';
-// Intrinsic components come from the saved individual. Horizontal TIR uses the
-// finite fixture's 50/350 mm stations and masks unavailable contacts; support
-// changes never re-draw the intrinsic individual or add a sensitivity multiplier.
+// This page shows intrinsic components from the saved individual seed only.
+// It deliberately has no support, axis-position, camera or measurement gain input.
 let intrinsicInspectionKey='',intrinsicInspectionMachine=null,intrinsicInspectionProfile=null,intrinsicInspectionPage=0;
 let intrinsicInspectionReady=false,intrinsicInspectionFrame=0;
 // Match the existing readouts: whole micrometres, with no signed zero.
 const inspectionSigned=squarenessMicronText;
 function intrinsicRunoutMarkup(value,horizontal){
- if(horizontal){
-  const n=(value,valid)=>valid&&Number.isFinite(value)?Math.round(value):'—';
-  const root=n(value.rootMicrons,value.rootValid),tip=n(value.tipMicrons,value.tipValid);
-  const label=`主軸鼻端から50 mmと350 mmの固有成分TIR。50 mm ${root} µm、350 mm ${tip} µm。400 mmのバーを主軸に固定し、パレットの箱台に固定した計器を各位置へ移して別々に回転させます。有限治具の接触が成立する位置だけ表示します。支持操作前の取付けとゼロを保持した瞬間指示や総回転TIRとは別です。${value.reason||''}`;
-  return `<svg viewBox="0 0 136 50" role="img" aria-label="${label}"><title>${label}</title><g fill="#fffaf6" stroke="#786452" stroke-width="1.2"><path d="M112 10H125V40H112ZM36 20H112V30H36Z"/><path d="M104 17V33M44 17V33" stroke="#b34800"/></g><g fill="#302923" font-size="10"><text x="130" y="12" text-anchor="end">50 mm ${root}</text><text x="27" y="44">350 mm ${tip}</text></g></svg>`;
- }
- const label=`主軸を回転させたときの最大指示と最小指示の差。根元 ${Math.round(value.rootMicrons)} µm、300 mm先 ${Math.round(value.tipMicrons)} µm。${horizontal?'既存のZ方向平行度':'既存の4方向の触れ'}とは別の固有成分です。支持操作前の取付け・ゼロを保持した瞬間の総指示ではありません。計器の取付点・腕はモデル化していません。`;
+ const label=`主軸を回転させたときの最大指示と最小指示の差。根元 ${Math.round(value.rootMicrons)} µm、300 mm先 ${Math.round(value.tipMicrons)} µm。${horizontal?'既存のZ方向平行度':'既存の4方向の触れ'}とは別の固有成分です。`;
  const bar=horizontal?'<path d="M112 10H125V40H112ZM36 20H112V30H36Z"/><path d="M104 17V33M44 17V33" stroke="#b34800"/>':'<path d="M5 3H45V10H5ZM20 10H30V46H20Z"/><path d="M17 16H33M17 40H33" stroke="#b34800"/>';
  const text=horizontal?`<text x="129" y="13" text-anchor="end">根元 ${Math.round(value.rootMicrons)}</text><text x="30" y="44">300 mm先 ${Math.round(value.tipMicrons)}</text>`:`<text x="40" y="20">根元 ${Math.round(value.rootMicrons)}</text><text x="40" y="42">300 mm先 ${Math.round(value.tipMicrons)}</text>`;
  return `<svg viewBox="0 0 136 50" role="img" aria-label="${label}"><title>${label}</title><g fill="#fffaf6" stroke="#786452" stroke-width="1.2">${bar}</g><g fill="#302923" font-size="10">${text}</g></svg>`;
 }
 function intrinsicSurfaceMarkup(value,five){
- const label=`テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 ${Math.round(value.rangeMicrons)} µm。厳密な最小領域平面度ではありません。${five?'5軸はA=C=0の基準姿勢。':''}支持による変形や測定時の傾きは含めません。計器を付けたままの総指示ではなく、傾き除去後に左中央で再ゼロした固有成分です。`;
+ const label=`テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 ${Math.round(value.rangeMicrons)} µm。厳密な最小領域平面度ではありません。${five?'5軸はA=C=0の基準姿勢。':''}支持による変形や測定時の傾きは含めません。`;
  const marks=value.points.map((p,i)=>{const x=19+(p.x+1)*52,y=12+(1-p.back)*15;return `<circle cx="${x}" cy="${y}" r="1.7" fill="${i===3?'#b34800':'#302923'}"/><text x="${x+4}" y="${y+3}" fill="${i===3?'#984000':'#302923'}" font-size="9"${i===3?' font-weight="700"':''}>${inspectionSigned(p.microns)}</text>`;}).join('');
  return `<svg viewBox="0 0 158 58" role="img" aria-label="${label}"><title>${label}</title><rect x="14" y="5" width="140" height="43" fill="#fffaf6" stroke="#b9a28f"/><text x="1" y="13" font-size="7" fill="#775b48">奥</text><text x="0" y="46" font-size="7" fill="#775b48">前</text>${marks}<text x="15" y="55" font-size="7" fill="#775b48">傾き除去・左中0${five?'・A=C=0':''}</text><text x="154" y="55" text-anchor="end" font-size="8" fill="#775b48">差 ${Math.round(value.rangeMicrons)}</text></svg>`;
 }
@@ -4045,189 +3757,15 @@ function updateIntrinsicInspectionUI(){
  if(changed)inspectionSetPage(0,'instant');
  if(lathe){if(levelConfig&&levelSolution)updateLatheInspectionUI();inspectionUpdateNavigation();return;}
  if(!enabled){intrinsicInspectionPage=0;$('inspectionViewport').scrollLeft=0;carousel.style.removeProperty('--inspection-height');inspectionUpdateNavigation();return;}
- let runout=data.runout;
- if(current.kind==='horizontal'&&typeof horizontalRunoutFixtureGeometry==='function'){
-  const fixture=horizontalRunoutFixtureGeometry(),I=window.IntrinsicInspection;
-  runout={...data.runout,rootMicrons:I.runoutAt(data.runout.eccentricityMicrons,data.runout.tiltMicroradians,50),tipMicrons:I.runoutAt(data.runout.eccentricityMicrons,data.runout.tiltMicroradians,350),rootValid:!!fixture.root?.valid,tipValid:!!fixture.tip?.valid,reason:fixture.reason||fixture.root?.reason||fixture.tip?.reason||''};
- }
- const key=current.id+'|'+current.kind+'|'+data.seed+'|'+data.condition+'|'+JSON.stringify(runout);
+ const key=current.id+'|'+current.kind+'|'+data.seed+'|'+data.condition;
  if(key!==intrinsicInspectionKey||current!==intrinsicInspectionMachine||machineProfile!==intrinsicInspectionProfile){
   intrinsicInspectionKey=key;intrinsicInspectionMachine=current;intrinsicInspectionProfile=machineProfile;
-  $('intrinsicRunoutDiagram').innerHTML=intrinsicRunoutMarkup(runout,current.kind==='horizontal');
-  $('intrinsicRunoutDiagram').dataset.runout=JSON.stringify(runout);
+  $('intrinsicRunoutDiagram').innerHTML=intrinsicRunoutMarkup(data.runout,current.kind==='horizontal');
   $('intrinsicSurfaceDiagram').innerHTML=intrinsicSurfaceMarkup(data.surface,current.kind==='five');
   carousel.dataset.seed=String(data.seed);inspectionSetPage(0,'instant');
  }
  carousel.style.setProperty('--inspection-height',$('precisionReadouts').getBoundingClientRect().height+'px');inspectionUpdateNavigation();
 }
-</script><script>'use strict';
-// The snapshot contains material-frame fixture coordinates and the original
-// zero. Only support changes keep it; a different setup requires a new capture.
-let fixtureComparisonSnapshot=null,fixtureComparisonIdentity='',fixtureComparisonNotice='';
-let fixtureComparisonCacheKey='',fixtureComparisonFresh=null,fixtureComparisonHeld=null;
-const fixtureHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function fixtureComparisonApi(){
- if(current?.kind==='horizontal'&&typeof horizontalCaptureFixtures==='function')return {capture:horizontalCaptureFixtures,held:horizontalEvaluateHeld};
- if(current?.kind==='lathe'&&typeof latheCaptureFixtures==='function')return {capture:latheCaptureFixtures,held:latheEvaluateHeld};
- return null;
-}
-function fixtureComparisonSetupKey(){
- return JSON.stringify([current.id,positions,levelConfig.width,levelConfig.depth,levelConfig.columnX,levelConfig.columnZ,machineProfile]);
-}
-function fixtureComparisonRows(value){return Array.isArray(value)?value:value?.rows||value?.measurements||[];}
-function captureFixtureComparison(){
- const api=fixtureComparisonApi();if(!api)return;
- const snapshot=api.capture(positions,levelSolution,machineProfile),rows=fixtureComparisonRows(snapshot);
- if(!rows.some(row=>row.valid&&Number.isFinite(row.microns))){fixtureComparisonNotice='保持できる測定がありません。先に測定位置へ移動し、接触を確認してください。';updateFixtureComparison();return;}
- fixtureComparisonSnapshot=snapshot;fixtureComparisonIdentity=fixtureComparisonSetupKey();fixtureComparisonCacheKey='';fixtureComparisonNotice='取付けと初回ゼロを保持しました。支持点を上下して比較できます。';
- updateFixtureComparison();
-}
-function resetFixtureComparison(reason='保持を解除しました。'){fixtureComparisonSnapshot=null;fixtureComparisonIdentity='';fixtureComparisonCacheKey='';fixtureComparisonNotice=reason;}
-function clearFixtureComparison(){resetFixtureComparison();updateFixtureComparison();}
-function fixtureReadingMarkup(row){
- if(!row?.valid||!Number.isFinite(row.microns))return `<strong>—</strong><small>${fixtureHtml(row?.reason||'初回の接触が未成立')}</small>`;
- const raw=Object.is(row.microns,-0)?0:row.microns;
- return `<strong>${fixtureHtml(squarenessMicronText(raw))}</strong><small>生値 ${raw.toFixed(6)}</small>`;
-}
-function updateFixtureComparison(){
- const host=$('fixtureComparison');if(!host)return;
- const relevant=['horizontal','lathe'].includes(current?.kind);host.hidden=!relevant;if(!relevant){resetFixtureComparison('');return;}
- if(!levelConfig||!levelSolution)return;
- const api=fixtureComparisonApi();if(!api)return;
- if(fixtureComparisonSnapshot&&fixtureComparisonIdentity!==fixtureComparisonSetupKey()){
-  resetFixtureComparison('軸位置・寸法・個体が変わったため、保持を解除しました。新しい配置で取り付けてください。');
- }
- const cacheKey=JSON.stringify([fixtureComparisonSetupKey(),supportHeights,!!fixtureComparisonSnapshot]);
- if(cacheKey!==fixtureComparisonCacheKey){
-  fixtureComparisonFresh=fixtureComparisonRows(api.capture(positions,levelSolution,machineProfile));
-  fixtureComparisonHeld=fixtureComparisonSnapshot?fixtureComparisonRows(api.held(fixtureComparisonSnapshot,levelSolution,machineProfile)):[];
-  fixtureComparisonCacheKey=cacheKey;
- }
- const initial=fixtureComparisonRows(fixtureComparisonSnapshot),fresh=fixtureComparisonFresh,held=fixtureComparisonHeld;
- $('fixtureCapture').disabled=!fresh.some(row=>row.valid&&Number.isFinite(row.microns));
- $('fixtureRelease').disabled=!fixtureComparisonSnapshot;
- $('fixtureComparisonStatus').textContent=fixtureComparisonNotice||(fixtureComparisonSnapshot?'初回の取付け・ゼロを保持中':'測定位置を選び、接触が成立したら取付けとゼロを保持できます。');
- host.dataset.holding=String(!!fixtureComparisonSnapshot);
- const rows=fixtureComparisonSnapshot?initial:fresh;
- const markup=rows.map(row=>{
-  const key=row.key,now=fresh.find(q=>q.key===key),fixed=held.find(q=>q.key===key);
-  return `<article class="fixture-comparison-row" data-fixture-measurement="${fixtureHtml(key)}"><h4>${fixtureHtml(row.label||key)}</h4><div class="fixture-comparison-values"><div data-reading="initial" data-raw="${row.valid&&Number.isFinite(row.microns)?row.microns:''}"><span>${fixtureComparisonSnapshot?'操作前':'現在の再測定'}</span>${fixtureReadingMarkup(row)}</div><div data-reading="held" data-raw="${fixed?.valid&&Number.isFinite(fixed.microns)?fixed.microns:''}"><span>旧ゼロ保持</span>${fixtureReadingMarkup(fixtureComparisonSnapshot?fixed:{valid:false,reason:'保持操作後に表示'})}</div><div data-reading="remounted" data-raw="${now?.valid&&Number.isFinite(now.microns)?now.microns:''}"><span>再取付け・再ゼロ</span>${fixtureReadingMarkup(now)}</div></div></article>`;
- }).join('');
- if($('fixtureComparisonRows').innerHTML!==markup)$('fixtureComparisonRows').innerHTML=markup;
- // Publish the readings for browser inspection without copying each scan's
- // complete geometry into every DOM update. The actual snapshot stays intact.
- const observed=rows=>rows.map(({key,label,valid,microns,reason,zero,endpoint,startExtension})=>({key,label,valid,microns,reason,zero,endpoint,startExtension}));
- host.dataset.comparison=JSON.stringify({initial:observed(initial),held:observed(held),fresh:observed(fresh),holding:!!fixtureComparisonSnapshot});
-}
-$('fixtureCapture').onclick=captureFixtureComparison;
-$('fixtureRelease').onclick=clearFixtureComparison;
-</script><script>'use strict';
-let fixtureSelectionMachine='';
-function selectedFixtureKey(){return $('fixtureSelection')?.value|| (current?.kind==='horizontal'?'YZ':'bore');}
-function fixtureStationForSelection(){
- if(current?.kind==='horizontal'&&typeof horizontalMeasurementStation==='function')return horizontalMeasurementStation(positions);
- if(current?.kind==='lathe'&&typeof latheMeasurementStation==='function')return latheMeasurementStation(selectedFixtureKey(),positions);
- return {valid:false,reason:'測定配置の準備中'};
-}
-function moveToFixtureStation(){
- const station=fixtureStationForSelection();if(!station.valid||!station.positions)return;
- stopMotion();positions={...positions,...station.positions};
- if(typeof resetFixtureComparison==='function')resetFixtureComparison('測定位置へ移動したため、取付けとゼロの保持を解除しました。');
- updateAxisValues();saveLeveling();drawScene();
- $('fixtureSetupStatus').textContent='測定位置へ移動しました。ここで取り付け・ゼロ合わせを行います。';
-}
-function openFixtureGeometry(key){
- if(key)$('fixtureSelection').value=key;
- $('fixtureFraming').value=current.kind==='lathe'&&selectedFixtureKey()==='bore'?'contact':'full';
- const dialog=$('fixtureGeometryDialog');
- if(!dialog.open)dialog.showModal();
- drawFixtureGeometry();
-}
-function updateFixtureWorkflow(){
- const root=$('fixtureSetup');if(!root)return;
- root.hidden=!['horizontal','lathe'].includes(current?.kind)||!levelSolution;if(root.hidden)return;
- if(fixtureSelectionMachine!==current.kind){
-  fixtureSelectionMachine=current.kind;
-  const options=current.kind==='horizontal'?[['YZ','直角 YZ'],['XY','直角 XY'],['XZ','直角 XZ'],['bar','Z平行度・バー']]:[['bore','穴の内周'],['faceX','タレット面 X'],['faceZ','タレット面 Z'],['bar','バー側面'],['barTop','バー上面・回転TIR']];
-  $('fixtureSelection').innerHTML=options.map(([value,label])=>`<option value="${value}">${label}</option>`).join('');
-  $('fixtureStage').value='S';$('fixtureFraction').value='0';
- }
- const station=fixtureStationForSelection();
- $('fixturePosition').disabled=!station.valid;
- const destination=station.positions?axisConfig(current).map(a=>`${a.key} ${Number(station.positions[a.key]??positions[a.key]).toFixed(2)}%`).join(' ／ '):'';
- $('fixtureSetupStatus').textContent=station.valid?(station.needsMove?'検査用の位置へ移動して、有限治具を取り付けます。':'規定の軸位置です。接触の成立は測定欄と取付図で確認できます。')+(destination?' '+destination:''):station.reason;
- $('fixtureStageControl').hidden=current.kind!=='horizontal'||selectedFixtureKey()==='bar';
- if($('fixtureGeometryDialog').open)drawFixtureGeometry();
-}
-// All geometry is in physical world metres. This view has no displacement gain.
-// Shape metadata comes from the same finite fixtures used for the contact test.
-function fixtureSceneData(){
- const args=[selectedFixtureKey(),$('fixtureStage').value,Number($('fixtureFraction').value)/100,positions,levelSolution,machineProfile];
- if(current.kind==='horizontal'&&typeof horizontalFixtureSceneGeometry==='function')return horizontalFixtureSceneGeometry(...args);
- if(current.kind==='lathe'&&typeof latheFixtureSceneGeometry==='function')return latheFixtureSceneGeometry(...args);
- return {valid:false,reason:'測定配置の準備中'};
-}
-function fixtureShapePolygons(data){
- const faces=[],lines=[],labels=[];
- const plus=(a,b)=>a.map((v,i)=>v+b[i]),scale=(a,k)=>a.map(v=>v*k),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],norm=a=>scale(a,1/Math.hypot(...a));
- for(const box of data.boxes||[]){
-  if(box.vertices){faces.push({points:box.vertices,color:box.color||'#cad6db',label:box.label||''});continue;}
-  if(!box.center||!box.size)continue;
-  const axes=box.axes||[[1,0,0],[0,1,0],[0,0,1]],v=[];
-  for(let i=0;i<8;i++){let p=[...box.center];for(let j=0;j<3;j++)p=plus(p,scale(axes[j],box.size[j]*(i&(1<<j)?.5:-.5)));v.push(p);}
-  for(const indices of [[0,1,3,2],[4,6,7,5],[0,4,5,1],[2,3,7,6],[0,2,6,4],[1,5,7,3]])faces.push({points:indices.map(i=>v[i]),color:box.color||'#c4d5dd',label:box.label||''});
-  if(box.label)labels.push({point:box.center,text:box.label});
- }
- for(const cylinder of data.cylinders||[]){
-  const a=cylinder.a||cylinder.start,b=cylinder.b||cylinder.end,r=cylinder.radius;if(!a||!b||!Number.isFinite(r)||r<=0)continue;
-  const d=b.map((v,i)=>v-a[i]);if(Math.hypot(...d)<1e-12)continue;
-  const axis=norm(d),u=norm(cross(axis,Math.abs(axis[1])<.8?[0,1,0]:[1,0,0])),v=cross(axis,u);
-  const rings=[a,b].map(p=>Array.from({length:20},(_,i)=>{
-   const angle=i*Math.PI/10;
-   return plus(p,plus(scale(u,r*Math.cos(angle)),scale(v,r*Math.sin(angle))));
-  }));
-  faces.push({points:rings[0],color:cylinder.color||'#dfc8a8',label:cylinder.label||''},{points:rings[1],color:cylinder.color||'#dfc8a8',label:cylinder.label||''});
-  for(let i=0;i<20;i++)faces.push({points:[rings[0][i],rings[0][(i+1)%20],rings[1][(i+1)%20],rings[1][i]],color:cylinder.color||'#dfc8a8',label:cylinder.label||''});
-  if(cylinder.label)labels.push({point:a.map((q,i)=>(q+b[i])/2),text:cylinder.label});
- }
- for(const segment of data.segments||[]){const points=segment.points||(segment.a&&segment.b?[segment.a,segment.b]:null);if(points?.length){lines.push({points,color:segment.color||'#227486',radius:segment.radius||.004});if(segment.label)labels.push({point:points[Math.floor(points.length/2)],text:segment.label});}}
- const contacts=data.contacts|| (Array.isArray(data.contact)?[data.contact]:data.contact?.point?[data.contact.point]:[]);
- return {faces,lines,labels,contacts:contacts.map(p=>Array.isArray(p)?p:p.point).filter(Boolean)};
-}
-function drawFixtureGeometry(){
- const canvas=$('fixtureGeometryCanvas'),data=fixtureSceneData();
- $('fixtureGeometryStatus').textContent=(data.preview?'測定位置へ移動した後の配置予告です。実際の軸はまだ移動していません。 ':'')+(data.label?data.label+'。 ':'')+(data.reason|| (data.valid?'接触が成立しています。':'現在の位置では接触が成立しません。'));
- canvas.dataset.fixture=JSON.stringify(data);
- const rect=canvas.getBoundingClientRect();if(!rect.width)return;
- const width=rect.width,height=rect.height||300,ratio=Math.min(window.devicePixelRatio||1,2);canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);
- const ctx=canvas.getContext('2d');ctx.scale(ratio,ratio);ctx.fillStyle='#f7f6f1';ctx.fillRect(0,0,width,height);
- const {faces,lines,labels,contacts}=fixtureShapePolygons(data),view=$('fixtureProjection').value;
- $('fixtureGeometryLegend').textContent=[...new Set(labels.map(q=>q.text))].join(' ／ ');
- const project=p=>view==='front'?[p[0],-p[1],p[2]]:view==='side'?[p[2],-p[1],-p[0]]:[.82*p[0]-.57*p[2],-.90*p[1]-.25*p[0]-.36*p[2],.51*p[0]-.43*p[1]+.74*p[2]];
- const points=[...faces.flatMap(f=>f.points),...lines.flatMap(l=>l.points),...contacts];if(!points.length){ctx.fillStyle='#61574d';ctx.font='13px sans-serif';ctx.fillText('測定位置へ移動すると配置を確認できます。',14,30);return;}
- const detail=$('fixtureFraming').value==='contact'&&contacts.length>0;
- const fitPoints=detail?contacts.flatMap(p=>Array.from({length:8},(_,i)=>p.map((v,j)=>v+(i&(1<<j)?.13:-.13)))):points;
- const projected=fitPoints.map(project),lo=[0,1].map(i=>Math.min(...projected.map(p=>p[i]))),hi=[0,1].map(i=>Math.max(...projected.map(p=>p[i]))),scale=Math.min((width-32)/Math.max(.05,hi[0]-lo[0]),(height-50)/Math.max(.05,hi[1]-lo[1]));
- const screen=p=>{const q=project(p);return [width/2+(q[0]-(lo[0]+hi[0])/2)*scale,height/2+(q[1]-(lo[1]+hi[1])/2)*scale,q[2]];};
- faces.map(f=>({...f,p:f.points.map(screen)})).sort((a,b)=>b.p.reduce((s,p)=>s+p[2],0)/b.p.length-a.p.reduce((s,p)=>s+p[2],0)/a.p.length).forEach(f=>{
-  const context=/主軸台|チャック|タレット|コラム|主軸頭|主軸胴|主軸鼻端|パレット|箱台/.test(f.label)||['#c0d3d8','#a7bdc4','#b5c9ce'].includes(f.color);
-  ctx.globalAlpha=(detail&&context)?0.13:1;
-  ctx.beginPath();f.p.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.closePath();ctx.fillStyle=f.color;ctx.fill();ctx.strokeStyle='#354b5755';ctx.lineWidth=.6;ctx.stroke();
- });ctx.globalAlpha=1;
- for(const l of lines){ctx.beginPath();l.points.map(screen).forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.strokeStyle=l.color;ctx.lineWidth=Math.max(1,2*l.radius*scale);ctx.lineJoin='round';ctx.stroke();}
- for(const point of contacts){const p=screen(point);ctx.beginPath();ctx.arc(p[0],p[1],4,0,Math.PI*2);ctx.fillStyle='#c65317';ctx.fill();ctx.strokeStyle='white';ctx.lineWidth=1;ctx.stroke();}
- // A scale bar makes the distinction from the enlarged explanatory diagrams explicit.
- const bar=[.01,.02,.05,.1,.2,.5].filter(v=>v*scale<width*.3).at(-1)||.01;
- ctx.strokeStyle='#3a4c55';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(12,height-18);ctx.lineTo(12+bar*scale,height-18);ctx.stroke();ctx.font='11px sans-serif';ctx.fillStyle='#394b54';ctx.fillText(`${Math.round(bar*1000)} mm`,12,height-23);
-}
-$('fixturePosition').onclick=moveToFixtureStation;
-$('fixtureSelection').onchange=()=>{updateFixtureWorkflow();drawFixtureGeometry();};
-$('fixtureProjection').onchange=drawFixtureGeometry;
-$('fixtureFraming').onchange=drawFixtureGeometry;
-$('fixtureStage').onchange=drawFixtureGeometry;
-$('fixtureFraction').oninput=drawFixtureGeometry;
-$('fixtureGeometryOpen').onclick=()=>openFixtureGeometry();
-$('closeFixtureGeometry').onclick=()=>$('fixtureGeometryDialog').close();
 </script><script>(()=>{
   'use strict';
   const root=document.getElementById('tester');

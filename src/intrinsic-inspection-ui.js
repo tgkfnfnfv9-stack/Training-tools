@@ -1,25 +1,18 @@
 'use strict';
-// Intrinsic components come from the saved individual. Horizontal TIR uses the
-// finite fixture's 50/350 mm stations and masks unavailable contacts; support
-// changes never re-draw the intrinsic individual or add a sensitivity multiplier.
+// This page shows intrinsic components from the saved individual seed only.
+// It deliberately has no support, axis-position, camera or measurement gain input.
 let intrinsicInspectionKey='',intrinsicInspectionMachine=null,intrinsicInspectionProfile=null,intrinsicInspectionPage=0;
 let intrinsicInspectionReady=false,intrinsicInspectionFrame=0;
 // Match the existing readouts: whole micrometres, with no signed zero.
 const inspectionSigned=squarenessMicronText;
 function intrinsicRunoutMarkup(value,horizontal){
- if(horizontal){
-  const n=(value,valid)=>valid&&Number.isFinite(value)?Math.round(value):'—';
-  const root=n(value.rootMicrons,value.rootValid),tip=n(value.tipMicrons,value.tipValid);
-  const label=`主軸鼻端から50 mmと350 mmの固有成分TIR。50 mm ${root} µm、350 mm ${tip} µm。400 mmのバーを主軸に固定し、パレットの箱台に固定した計器を各位置へ移して別々に回転させます。有限治具の接触が成立する位置だけ表示します。支持操作前の取付けとゼロを保持した瞬間指示や総回転TIRとは別です。${value.reason||''}`;
-  return `<svg viewBox="0 0 136 50" role="img" aria-label="${label}"><title>${label}</title><g fill="#fffaf6" stroke="#786452" stroke-width="1.2"><path d="M112 10H125V40H112ZM36 20H112V30H36Z"/><path d="M104 17V33M44 17V33" stroke="#b34800"/></g><g fill="#302923" font-size="10"><text x="130" y="12" text-anchor="end">50 mm ${root}</text><text x="27" y="44">350 mm ${tip}</text></g></svg>`;
- }
- const label=`主軸を回転させたときの最大指示と最小指示の差。根元 ${Math.round(value.rootMicrons)} µm、300 mm先 ${Math.round(value.tipMicrons)} µm。${horizontal?'既存のZ方向平行度':'既存の4方向の触れ'}とは別の固有成分です。支持操作前の取付け・ゼロを保持した瞬間の総指示ではありません。計器の取付点・腕はモデル化していません。`;
+ const label=`主軸を回転させたときの最大指示と最小指示の差。根元 ${Math.round(value.rootMicrons)} µm、300 mm先 ${Math.round(value.tipMicrons)} µm。${horizontal?'既存のZ方向平行度':'既存の4方向の触れ'}とは別の固有成分です。`;
  const bar=horizontal?'<path d="M112 10H125V40H112ZM36 20H112V30H36Z"/><path d="M104 17V33M44 17V33" stroke="#b34800"/>':'<path d="M5 3H45V10H5ZM20 10H30V46H20Z"/><path d="M17 16H33M17 40H33" stroke="#b34800"/>';
  const text=horizontal?`<text x="129" y="13" text-anchor="end">根元 ${Math.round(value.rootMicrons)}</text><text x="30" y="44">300 mm先 ${Math.round(value.tipMicrons)}</text>`:`<text x="40" y="20">根元 ${Math.round(value.rootMicrons)}</text><text x="40" y="42">300 mm先 ${Math.round(value.tipMicrons)}</text>`;
  return `<svg viewBox="0 0 136 50" role="img" aria-label="${label}"><title>${label}</title><g fill="#fffaf6" stroke="#786452" stroke-width="1.2">${bar}</g><g fill="#302923" font-size="10">${text}</g></svg>`;
 }
 function intrinsicSurfaceMarkup(value,five){
- const label=`テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 ${Math.round(value.rangeMicrons)} µm。厳密な最小領域平面度ではありません。${five?'5軸はA=C=0の基準姿勢。':''}支持による変形や測定時の傾きは含めません。計器を付けたままの総指示ではなく、傾き除去後に左中央で再ゼロした固有成分です。`;
+ const label=`テーブル上面の固有形状。平均傾斜を除いた9点の高さ差、左中央を0。点間の最大差 ${Math.round(value.rangeMicrons)} µm。厳密な最小領域平面度ではありません。${five?'5軸はA=C=0の基準姿勢。':''}支持による変形や測定時の傾きは含めません。`;
  const marks=value.points.map((p,i)=>{const x=19+(p.x+1)*52,y=12+(1-p.back)*15;return `<circle cx="${x}" cy="${y}" r="1.7" fill="${i===3?'#b34800':'#302923'}"/><text x="${x+4}" y="${y+3}" fill="${i===3?'#984000':'#302923'}" font-size="9"${i===3?' font-weight="700"':''}>${inspectionSigned(p.microns)}</text>`;}).join('');
  return `<svg viewBox="0 0 158 58" role="img" aria-label="${label}"><title>${label}</title><rect x="14" y="5" width="140" height="43" fill="#fffaf6" stroke="#b9a28f"/><text x="1" y="13" font-size="7" fill="#775b48">奥</text><text x="0" y="46" font-size="7" fill="#775b48">前</text>${marks}<text x="15" y="55" font-size="7" fill="#775b48">傾き除去・左中0${five?'・A=C=0':''}</text><text x="154" y="55" text-anchor="end" font-size="8" fill="#775b48">差 ${Math.round(value.rangeMicrons)}</text></svg>`;
 }
@@ -87,16 +80,10 @@ function updateIntrinsicInspectionUI(){
  if(changed)inspectionSetPage(0,'instant');
  if(lathe){if(levelConfig&&levelSolution)updateLatheInspectionUI();inspectionUpdateNavigation();return;}
  if(!enabled){intrinsicInspectionPage=0;$('inspectionViewport').scrollLeft=0;carousel.style.removeProperty('--inspection-height');inspectionUpdateNavigation();return;}
- let runout=data.runout;
- if(current.kind==='horizontal'&&typeof horizontalRunoutFixtureGeometry==='function'){
-  const fixture=horizontalRunoutFixtureGeometry(),I=window.IntrinsicInspection;
-  runout={...data.runout,rootMicrons:I.runoutAt(data.runout.eccentricityMicrons,data.runout.tiltMicroradians,50),tipMicrons:I.runoutAt(data.runout.eccentricityMicrons,data.runout.tiltMicroradians,350),rootValid:!!fixture.root?.valid,tipValid:!!fixture.tip?.valid,reason:fixture.reason||fixture.root?.reason||fixture.tip?.reason||''};
- }
- const key=current.id+'|'+current.kind+'|'+data.seed+'|'+data.condition+'|'+JSON.stringify(runout);
+ const key=current.id+'|'+current.kind+'|'+data.seed+'|'+data.condition;
  if(key!==intrinsicInspectionKey||current!==intrinsicInspectionMachine||machineProfile!==intrinsicInspectionProfile){
   intrinsicInspectionKey=key;intrinsicInspectionMachine=current;intrinsicInspectionProfile=machineProfile;
-  $('intrinsicRunoutDiagram').innerHTML=intrinsicRunoutMarkup(runout,current.kind==='horizontal');
-  $('intrinsicRunoutDiagram').dataset.runout=JSON.stringify(runout);
+  $('intrinsicRunoutDiagram').innerHTML=intrinsicRunoutMarkup(data.runout,current.kind==='horizontal');
   $('intrinsicSurfaceDiagram').innerHTML=intrinsicSurfaceMarkup(data.surface,current.kind==='five');
   carousel.dataset.seed=String(data.seed);inspectionSetPage(0,'instant');
  }
