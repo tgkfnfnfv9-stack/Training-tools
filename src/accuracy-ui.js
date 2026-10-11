@@ -368,7 +368,7 @@ function updateAccuracy(){
  if(rangeKey!==accuracyRangeKey||!accuracyRange){accuracyRangeKey=rangeKey;accuracyRange=geometrySamples();}
  const g=geometryModel();
  $('exaggerateLabel').textContent=current.kind==='compact'?'直角図のずれを強調':'傾き・姿勢差を強調';
- $('modelSemantics').textContent=current.kind==='compact'?'模型の姿勢は実寸／微小差は直角図で確認':g.portal?'柱・梁＝支持姿勢／ラム・主軸＝固有差込み':'水準器＝平均／模型＝局所＋固有';
+ $('modelSemantics').textContent=['horizontal','lathe'].includes(current.kind)?'構造模型／器具は「取付け・接触」で確認':current.kind==='compact'?'模型の姿勢は実寸／微小差は直角図で確認':g.portal?'柱・梁＝支持姿勢／ラム・主軸＝固有差込み':'水準器＝平均／模型＝局所＋固有';
  // The comparison is pointwise: both states use the current axis position,
  // dimensions, layout and evaluation length. The reference-search aggregate
  // is deliberately not used for this initial/current comparison.

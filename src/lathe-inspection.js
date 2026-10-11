@@ -20,6 +20,19 @@
   const e=[[-1,0],[0,1],[1,0],[0,-1]].map(([x,y])=>{const t=x*dx+y*dy;return t+Math.sqrt(radius*radius-dx*dx-dy*dy+t*t);});
   return {valid:true,readings:e.map(v=>(e[0]-v)*1e6)};
  }
+ // An outward-moving spherical tip in a finite bore. Solve for the centre
+ // against the inward offset cylinder, then restore the physical wall point.
+ // A root outside the cavity or stroke is not an indicator zero.
+ function internalCylinderContact({body,probe,origin,direction,radius=.025,length=.06,ballRadius=.001,maxExtension=.02}){
+  const axis=unit(direction),ray=unit(probe),q=sub(body,origin),along=dot(q,axis),axialRay=dot(ray,axis),radial=sub(q,mul(axis,along)),transverse=sub(ray,mul(axis,axialRay)),r=radius-ballRadius;
+  const A=dot(transverse,transverse),B=2*dot(radial,transverse),C=dot(radial,radial)-r*r,D=B*B-4*A*C;
+  if(A<1e-12||D<0||C>0)return {valid:false,reason:'測定子基部が穴の内側にない'};
+  const extension=(-B+Math.sqrt(D))/(2*A),axial=along+extension*axialRay;
+  if(!Number.isFinite(extension)||extension<0||extension>maxExtension)return {valid:false,reason:'測定子の範囲外'};
+  if(axial<ballRadius-1e-12||axial>length-ballRadius+1e-12)return {valid:false,reason:'球測定子が穴の入口・底の範囲外'};
+  const sphereCentre=add(body,mul(ray,extension)),offset=sub(sub(sphereCentre,origin),mul(axis,axial)),point=add(sphereCentre,mul(unit(offset),ballRadius));
+  return {valid:true,extension,axial,sphereCentre,point};
+ }
  // External plunger against a fixed finite cylindrical test bar. The nearest
  // forward ray intersection is the contact; an absent/out-of-stroke contact
  // cannot be converted into a dial reading. Units: metres.
@@ -39,5 +52,5 @@
   let s=(profile.seed^0x4c415431)>>>0;const next=()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296*2-1;},scale=profile.condition==='used'?30:10;
   return {face:next()*scale/1e6,flat:next()*scale/1e6,holeX:next()*scale/1e6,holeY:next()*scale/1e6};
  }
- return Object.freeze({model:'lathe-finite-faces-v3',add,sub,mul,dot,unit,extension,planeScan,planeContact,bore,cylinderContact,intrinsic});
+ return Object.freeze({model:'lathe-finite-fixtures-v4',add,sub,mul,dot,unit,extension,planeScan,planeContact,bore,internalCylinderContact,cylinderContact,intrinsic});
 });
