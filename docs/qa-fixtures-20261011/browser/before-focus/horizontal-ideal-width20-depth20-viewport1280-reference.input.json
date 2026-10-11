@@ -1,0 +1,83 @@
+{
+  "calculationModel": "horizontal-guide-v2",
+  "version": 3,
+  "supportLayout": {
+    "id": "haas-ec630-ngc-eight-v1",
+    "points": [
+      {
+        "id": "haas-ec630-ngc-eight-v1-p1",
+        "x": -1.36,
+        "z": -1.8399999999999999,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p2",
+        "x": 1.36,
+        "z": -1.8399999999999999,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p3",
+        "x": -1.36,
+        "z": -0.6133333333333334,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p4",
+        "x": 1.36,
+        "z": -0.6133333333333334,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p5",
+        "x": -1.36,
+        "z": 0.6133333333333332,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p6",
+        "x": 1.36,
+        "z": 0.6133333333333332,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p7",
+        "x": -1.36,
+        "z": 1.8399999999999999,
+        "group": "bed"
+      },
+      {
+        "id": "haas-ec630-ngc-eight-v1-p8",
+        "x": 1.36,
+        "z": 1.8399999999999999,
+        "group": "bed"
+      }
+    ]
+  },
+  "machine": "horizontal",
+  "mode": "",
+  "width": 20,
+  "depth": 20,
+  "heights": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "sensitivity": 0.05,
+  "measurePos": 0,
+  "offset": 0.5,
+  "columnX": 0,
+  "columnZ": 0,
+  "axisPositions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+  },
+  "step": 0.01,
+  "exaggerate": true
+}

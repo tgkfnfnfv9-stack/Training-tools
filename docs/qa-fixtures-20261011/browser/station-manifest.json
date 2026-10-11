@@ -1,0 +1,160 @@
+{
+  "source": "actual revised UI fixture select + measurement-position button; observed destinations only, not expected measurements",
+  "sha256": "812d4d706652b11ce88801f93b2e88370e28b9d4f002417db1d9ecf94302456e",
+  "selections": [
+    {
+      "id": "horizontal",
+      "key": "YZ",
+      "label": "直角 YZ",
+      "axes": {
+        "X": 0,
+        "Y": -100,
+        "Z": -88.88888888888887
+      },
+      "width": 2.72,
+      "depth": 3.68
+    },
+    {
+      "id": "horizontal",
+      "key": "XY",
+      "label": "直角 XY",
+      "axes": {
+        "X": 0,
+        "Y": -100,
+        "Z": -88.88888888888887
+      },
+      "width": 2.72,
+      "depth": 3.68
+    },
+    {
+      "id": "horizontal",
+      "key": "XZ",
+      "label": "直角 XZ",
+      "axes": {
+        "X": 0,
+        "Y": -100,
+        "Z": -88.88888888888887
+      },
+      "width": 2.72,
+      "depth": 3.68
+    },
+    {
+      "id": "horizontal",
+      "key": "bar",
+      "label": "Z平行度・バー",
+      "axes": {
+        "X": 0,
+        "Y": -100,
+        "Z": -88.88888888888887
+      },
+      "width": 2.72,
+      "depth": 3.68
+    },
+    {
+      "id": "lathe",
+      "key": "bore",
+      "label": "穴の内周",
+      "axes": {
+        "X": -57.14285714285715,
+        "Z": -100
+      },
+      "width": 4,
+      "depth": 1.68
+    },
+    {
+      "id": "lathe",
+      "key": "faceX",
+      "label": "タレット面 X",
+      "axes": {
+        "X": -100,
+        "Z": -100
+      },
+      "width": 4,
+      "depth": 1.68
+    },
+    {
+      "id": "lathe",
+      "key": "faceZ",
+      "label": "タレット面 Z",
+      "axes": {
+        "X": -57.14285714285715,
+        "Z": -100
+      },
+      "width": 4,
+      "depth": 1.68
+    },
+    {
+      "id": "lathe",
+      "key": "bar",
+      "label": "バー側面",
+      "axes": {
+        "X": -57.14285714285715,
+        "Z": -100
+      },
+      "width": 4,
+      "depth": 1.68
+    },
+    {
+      "id": "lathe",
+      "key": "barTop",
+      "label": "バー上面・回転TIR",
+      "axes": {
+        "X": -57.14285714285715,
+        "Z": -100
+      },
+      "width": 4,
+      "depth": 1.68
+    }
+  ],
+  "stations": [
+    {
+      "id": "horizontal",
+      "key": "YZ",
+      "label": "直角 YZ",
+      "axes": {
+        "X": 0,
+        "Y": -100,
+        "Z": -88.88888888888887
+      },
+      "width": 2.72,
+      "depth": 3.68,
+      "coveredFixtures": [
+        "YZ",
+        "XY",
+        "XZ",
+        "bar"
+      ]
+    },
+    {
+      "id": "lathe",
+      "key": "bore",
+      "label": "穴の内周",
+      "axes": {
+        "X": -57.14285714285715,
+        "Z": -100
+      },
+      "width": 4,
+      "depth": 1.68,
+      "coveredFixtures": [
+        "bore",
+        "faceZ",
+        "bar",
+        "barTop"
+      ]
+    },
+    {
+      "id": "lathe",
+      "key": "faceX",
+      "label": "タレット面 X",
+      "axes": {
+        "X": -100,
+        "Z": -100
+      },
+      "width": 4,
+      "depth": 1.68,
+      "coveredFixtures": [
+        "faceX"
+      ]
+    }
+  ]
+}

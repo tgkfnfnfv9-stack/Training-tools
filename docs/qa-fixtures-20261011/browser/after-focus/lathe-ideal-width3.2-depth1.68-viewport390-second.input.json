@@ -1,0 +1,27 @@
+{
+  "calculationModel": "lathe-carriage-v2",
+  "version": 1,
+  "machine": "lathe",
+  "mode": "",
+  "width": 3.2,
+  "depth": 1.68,
+  "heights": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "sensitivity": 0.05,
+  "measurePos": 0,
+  "offset": 0.5,
+  "columnX": 0,
+  "columnZ": 0,
+  "axisPositions": {
+    "X": 0,
+    "Z": 0
+  },
+  "step": 0.01,
+  "exaggerate": true
+}

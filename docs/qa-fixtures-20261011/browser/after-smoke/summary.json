@@ -1,0 +1,10 @@
+{
+  "tag": "after-smoke",
+  "commit": "uncommitted-fixture-smoke",
+  "sha256": "cedb2f53afdb6f52dbd1f984f8a6c63ef4307c3c77c01eb440d8c826e5b7ae2e",
+  "states": 128,
+  "measurementRows": 1856,
+  "checks": 8217,
+  "failed": [],
+  "errors": []
+}

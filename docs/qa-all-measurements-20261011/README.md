@@ -1,5 +1,7 @@
 # 全7機種の測定・支持応答監査と修正
 
+> この文書は `fc51b761` 時点の監査記録。ここで未完とした旋盤の有限穴接触と横形の未定義長腕、および追加調査で見つかった旋盤の面・バー取付けは、[有限治具とゼロ保持の追補](../qa-fixtures-20261011/README.md)で修正・独立再確認した。現在の確認用アプリと数値は追補を参照。以下の旧版数値・画像・当時の残件は履歴として保持する。
+
 最新main `baede5bfafed034f5f7d21ec9957e344dc7c8c98` から調査し、修正担当、独立幾何担当2名、実ブラウザー担当、固有測定・保存担当を分離した。対象は現在UIの全7機種・50支持点・124数値項目。[全項目の取付先・動く部材・接触・ゼロ・有効範囲](measurement-inventory.md)を参照。
 
 製品修正コミット：[fc51b761](https://github.com/tgkfnfnfv9-stack/Training-tools/commit/fc51b761c2677fcfe43bdbae1a279ecb25541d06)。生成HTML SHA256は `a70468b143711048184e8983e0e5dc823da7db4fa3fa2babdd44a96ac081ba6c`。[この版の確認用アプリ](https://raw.githack.com/tgkfnfnfv9-stack/Training-tools/fc51b761c2677fcfe43bdbae1a279ecb25541d06/index.html)。資料・テストの追加コミットでも製品HTMLはこの版を維持する。
