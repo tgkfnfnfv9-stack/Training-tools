@@ -1,0 +1,10 @@
+{
+  "tag": "after-smoke-dialog",
+  "commit": "uncommitted-fixture-dialog-smoke",
+  "sha256": "a4d6bf4934c615322faf78fb08322b136fd9f3b8626ec20a6a299e1f3dad110c",
+  "states": 144,
+  "measurementRows": 2048,
+  "checks": 9453,
+  "failed": [],
+  "errors": []
+}

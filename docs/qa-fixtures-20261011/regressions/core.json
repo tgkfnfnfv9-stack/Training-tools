@@ -1,0 +1,114 @@
+[
+  {
+    "name": "leveling-engine",
+    "code": 0,
+    "seconds": 0.04,
+    "stdout": "Leveling engine: 83 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "name": "accuracy-engine",
+    "code": 0,
+    "seconds": 0.04,
+    "stdout": "Accuracy engine: 73 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "name": "intrinsic-inspection",
+    "code": 0,
+    "seconds": 0.06,
+    "stdout": "{\"passed\":true,\"checks\":1845,\"independent\":\"circle contact extrema; Gram-Schmidt least-squares plane; frozen legacy profile SHA256\",\"limits\":\"browser support/save/gesture integration verified separately; this is intrinsic teaching geometry, not actual machine metrology\"}\n",
+    "stderr": ""
+  },
+  {
+    "name": "confirmed-layouts",
+    "code": 0,
+    "seconds": 14.7,
+    "stdout": "{\n  \"checks\": 330,\n  \"legacyAccepted\": 0,\n  \"legacyCompactMigrated\": 0,\n  \"legacyRejected\": 9,\n  \"legacyV1Rejected\": 9,\n  \"legacyV1CompactMigrated\": 0,\n  \"legacyKeysPreserved\": 9,\n  \"supportsExercised\": 50,\n  \"failures\": [],\n  \"timings\": [\n    {\n      \"index\": 0,\n      \"operation\": \"open\",\n      \"milliseconds\": 50.01387799999998\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 15.050201000000015\n    },\n    {\n      \"index\": 0,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 28.806304000000182\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"open\",\n      \"milliseconds\": 77.1423749999999\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 9.713451000000532\n    },\n    {\n      \"index\": 1,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 37.59754299999986\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"open\",\n      \"milliseconds\": 38.912828999999874\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 5.645811000000322\n    },\n    {\n      \"index\": 2,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 32.04767600000014\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"open\",\n      \"milliseconds\": 62.8617349999995\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 11.524693000000298\n    },\n    {\n      \"index\": 3,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 50.023416\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"open\",\n      \"milliseconds\": 111.75880899999993\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 11.800864000000729\n    },\n    {\n      \"index\": 4,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 140.88414399999965\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"open\",\n      \"milliseconds\": 139.19712900000013\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 13.70128300000033\n    },\n    {\n      \"index\": 5,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 38.33770299999924\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"open\",\n      \"milliseconds\": 53.64820499999951\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"coarseAdjust raise\",\n      \"milliseconds\": 2.4159249999993335\n    },\n    {\n      \"index\": 6,\n      \"operation\": \"fineAdjust raise\",\n      \"milliseconds\": 8.287684999999328\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "irregular-leveling",
+    "code": 0,
+    "seconds": 0.07,
+    "stdout": "Irregular leveling: 621 checks passed.\n",
+    "stderr": ""
+  },
+  {
+    "name": "portal-shear-invariants",
+    "code": 0,
+    "seconds": 6.82,
+    "stdout": "{\n  \"checks\": 165,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "support-coordinate-geometry",
+    "code": 0,
+    "seconds": 0.75,
+    "stdout": "Support coordinate geometry: 32505 independent comparisons passed (mesh stations, planes, signed saddles, portal bed colours, three-point restriction, dimensions).\n",
+    "stderr": ""
+  },
+  {
+    "name": "spindle-sweep",
+    "code": 0,
+    "seconds": 2.06,
+    "stdout": "{\n  \"checks\": 323,\n  \"failures\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "multi-spindle-sweep",
+    "code": 0,
+    "seconds": 3.14,
+    "stdout": "PASS multi-machine spindle sweep independent physics: 152 checks\n",
+    "stderr": ""
+  },
+  {
+    "name": "compact-display-physical",
+    "code": 0,
+    "seconds": 14.06,
+    "stdout": "{\"cases\":60,\"axisChecks\":180,\"maxDirectionError\":8.064400801413908e-10,\"fixedColumnInvariant\":true,\"measurementsInvariant\":true}\n",
+    "stderr": ""
+  },
+  {
+    "name": "compact-fixed-column",
+    "code": 0,
+    "seconds": 1.37,
+    "stdout": "{\"cases\":18,\"fixedColumnInvariant\":true}\n",
+    "stderr": ""
+  },
+  {
+    "name": "compact-yz-exaggeration",
+    "code": 0,
+    "seconds": 2.16,
+    "stdout": "{\"cases\":15,\"measurementsInvariant\":true,\"meshSignsAndAdjustmentDirectionsMatch\":true}\n",
+    "stderr": ""
+  },
+  {
+    "name": "compact-yz-independent",
+    "code": 0,
+    "seconds": 13.5,
+    "stdout": "{\n  \"pureAngle\": [\n    {\n      \"intrinsicMicrons\": -60,\n      \"reading\": 59.99999959999981,\n      \"expected\": 59.99999960000001\n    },\n    {\n      \"intrinsicMicrons\": 60,\n      \"reading\": -59.99999959999981,\n      \"expected\": -59.99999960000001\n    }\n  ],\n  \"cases\": 162,\n  \"maxErrorMicrons\": 4.5013819061079374e-7,\n  \"oppositeSideAndRezeroCases\": 324,\n  \"examples\": [\n    {\n      \"heights\": [\n        0,\n        0,\n        0,\n        0\n      ],\n      \"reading\": 0,\n      \"independent\": 0\n    },\n    {\n      \"heights\": [\n        0.1,\n        0,\n        0,\n        0\n      ],\n      \"reading\": -0.23939075545660604,\n      \"independent\": -0.23939082212549867\n    },\n    {\n      \"heights\": [\n        -0.1,\n        0,\n        0,\n        0\n      ],\n      \"reading\": 0.2395472558560513,\n      \"independent\": 0.2395471433384172\n    },\n    {\n      \"heights\": [\n        0.1,\n        -0.1,\n        -0.1,\n        0.1\n      ],\n      \"reading\": -0.9566240180419738,\n      \"independent\": -0.9566239390895043\n    },\n    {\n      \"heights\": [\n        -0.1,\n        0.1,\n        0.1,\n        -0.1\n      ],\n      \"reading\": 0.9591280244435063,\n      \"independent\": 0.9591280543674863\n    },\n    {\n      \"heights\": [\n        0.12,\n        -0.06,\n        0.03,\n        -0.11\n      ],\n      \"reading\": -0.0957750822365433,\n      \"independent\": -0.09577488647993793\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "compact-yz-sensitivity",
+    "code": 0,
+    "seconds": 1.61,
+    "stdout": "{\n  \"scope\": \"16 support endpoint combinations per position; not a proof of global extrema\",\n  \"sweep\": [\n    {\n      \"frontBackShift\": 0.4,\n      \"heights\": [\n        -0.35000000000000003,\n        -0.45,\n        0.35000000000000003,\n        0.45\n      ],\n      \"columnFrontMicroradians\": 418.049339050724,\n      \"YUpMicroradians\": 376.4531465104954,\n      \"finiteYZ\": -12.478625003800245\n    },\n    {\n      \"frontBackShift\": 0,\n      \"heights\": [\n        0.049999999999999996,\n        -0.049999999999999996,\n        -0.049999999999999996,\n        0.049999999999999996\n      ],\n      \"columnFrontMicroradians\": 47.67898561543991,\n      \"YUpMicroradians\": 6.082793075211491,\n      \"finiteYZ\": -12.478625003795042\n    },\n    {\n      \"frontBackShift\": -0.4,\n      \"heights\": [\n        0.45,\n        0.35000000000000003,\n        -0.45,\n        -0.35000000000000003\n      ],\n      \"columnFrontMicroradians\": -322.69136781984406,\n      \"YUpMicroradians\": -364.28756036007246,\n      \"finiteYZ\": -12.478625003798511\n    }\n  ],\n  \"endpoints\": [\n    {\n      \"positions\": [\n        0,\n        0\n      ],\n      \"min\": {\n        \"value\": -16.758079548474107,\n        \"heights\": [\n          0.5,\n          -0.5,\n          -0.5,\n          0.5\n        ]\n      },\n      \"max\": {\n        \"value\": -7.179319694494354,\n        \"heights\": [\n          -0.5,\n          0.5,\n          0.5,\n          -0.5\n        ]\n      }\n    },\n    {\n      \"positions\": [\n        100,\n        100\n      ],\n      \"min\": {\n        \"value\": -66.79062370225711,\n        \"heights\": [\n          -0.5,\n          0.5,\n          0.5,\n          -0.5\n        ]\n      },\n      \"max\": {\n        \"value\": 42.829906897882616,\n        \"heights\": [\n          0.5,\n          -0.5,\n          -0.5,\n          0.5\n        ]\n      }\n    },\n    {\n      \"positions\": [\n        -100,\n        -100\n      ],\n      \"min\": {\n        \"value\": -73.50747326176182,\n        \"heights\": [\n          0.5,\n          -0.5,\n          -0.5,\n          0.5\n        ]\n      },\n      \"max\": {\n        \"value\": 49.59623417251369,\n        \"heights\": [\n          -0.5,\n          0.5,\n          0.5,\n          -0.5\n        ]\n      }\n    },\n    {\n      \"positions\": [\n        100,\n        -100\n      ],\n      \"min\": {\n        \"value\": -70.59841157578025,\n        \"heights\": [\n          -0.5,\n          0.5,\n          0.5,\n          -0.5\n        ]\n      },\n      \"max\": {\n        \"value\": 46.682412584007906,\n        \"heights\": [\n          0.5,\n          -0.5,\n          -0.5,\n          0.5\n        ]\n      }\n    },\n    {\n      \"positions\": [\n        -100,\n        100\n      ],\n      \"min\": {\n        \"value\": -77.36285108298976,\n        \"heights\": [\n          0.5,\n          -0.5,\n          -0.5,\n          0.5\n        ]\n      },\n      \"max\": {\n        \"value\": 53.401210895032136,\n        \"heights\": [\n          -0.5,\n          0.5,\n          0.5,\n          -0.5\n        ]\n      }\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "coupled-yz-sweep-independent",
+    "code": 0,
+    "seconds": 2.38,
+    "stdout": "{\n  \"checks\": 2758,\n  \"cases\": 120,\n  \"maxContactErrorMicrons\": 1.1368683772161603e-13,\n  \"maxXZCrossChangeMicrons\": 0,\n  \"coarse\": {\n    \"yz\": -0.023785308736480104,\n    \"sweep\": [\n      -0.3635359710404025,\n      -0.02394689699721475,\n      0.3395890740431895,\n      0\n    ]\n  },\n  \"scope\": \"physical plane/probe coherence plus independent support-input response, not proof of real-machine elasticity\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "site-navigation",
+    "code": 0,
+    "seconds": 2.44,
+    "stdout": "Shared site navigation: 39 journeys/state/history checks passed across six pages and seven machines.\n",
+    "stderr": ""
+  }
+]

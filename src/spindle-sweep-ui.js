@@ -3,25 +3,23 @@
 let spindleSweepMode=false,spindleSweepAngle=270;
 const sweepDirections=['右','奥','左','手前'];
 const defaultSweepMeasurementNote=$('sweepMeasurementNote').textContent;
-const horizontalParallelMeasurementNote='横形のZ方向平行度。テストバーは主軸に固定、計器はテーブル（パレット）に固定します。Z走査中はバーを固定したまま、テーブルと計器を先端側から主軸側へ300 mm移動します。直角測定はテーブル上の直角マスタを主軸側の計器で測る別の配置です。aは左側から右向きに接触、bは下側から上向きに接触します。始点でゼロ、プラスは測定子の押込み増加です。Yで主軸頭を動かすとバーの高さも変わり、支持・軸位置の変更ごとに計器の取付けと始点ゼロを取り直します。走査途中では再ゼロしません。主軸は回しません。取付け寸法や干渉を再現しない仮想配置です。';
+const horizontalParallelMeasurementNote='横形のZ方向平行度。校正円筒による中心軸平行度で、回転振れ成分は別の検査です。400 mm・直径50 mmのバーは主軸に固定し、計器はパレット上の850 mm箱台へ固定します。Y下端の規定位置で、主軸端面から350 mm前をゼロとし、テーブルと計器を主軸側へ300 mm動かして50 mm前を読みます。aは左から右、bは下から上へ接触します。プラスは押込み増加。主軸は回しません。表示は支持変更後に取付けと始点ゼロを取り直した値です。初回取付け・ゼロを固定した支持応答は保持比較欄に表示します。有限バー・測定子・計器本体・支柱・箱台と主軸側の干渉を確認します。';
 const sweepDot=(a,b)=>a.reduce((sum,v,i)=>sum+v*b[i],0);
 const spindleSweepKinds=['compact','travel','double','gantry','five'];
 function supportsSpindleSweep(machine=current){return spindleSweepKinds.includes(machine.kind);}
-function spindleSweepGeometry(state=positions,solution=levelSolution,profile=machineProfile,factor=1,teaching=false){
+function spindleSweepGeometry(state=positions,solution=levelSolution,profile=machineProfile,factor=1){
  if(!supportsSpindleSweep()||!solution)return {valid:false,reason:'unsupported-machine'};
  if(current.kind!=='compact')return spindleSweepMachineGeometry(state,solution,profile);
  const g=geometryModel(state,solution,profile),toolSeat=levelCoordinates(g.toolPoints[0].x,g.toolPoints[0].z),workSeat=levelCoordinates(g.workPoint.x,g.workPoint.z);
  const tool=compactSupportFrame(solution,toolSeat.x,toolSeat.z,factor),work=compactSupportFrame(solution,workSeat.x,workSeat.z,factor);
  const body=intrinsicBodyFrame(axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),profile,factor);
- const adjustment=teaching?compactMeasurementAdjustment(solution):null;
- const rotate=v=>adjustment?adjustment.rotate(v):v;
- const axis=rotate(tool.rotate(body.rotate([0,1,0]))),right=rotate(tool.rotate(body.rotate([1,0,0])));
+ const axis=tool.rotate(body.rotate([0,1,0])),right=tool.rotate(body.rotate([1,0,0]));
  const measurement=window.SpindleSweep.measure({axis,tableNormal:work.up,right,radius:.15});
  if(!measurement.valid)return measurement;
  // These locations share the compact model's physical transforms. At factor=1
  // they contain no visual exaggeration, camera rotation, zoom or clearance.
  const layout=columnLayoutOffset(current),nosePlan=levelCoordinates(layout.x,-.3+layout.z),relative=[nosePlan.x-toolSeat.x,1.98+.3*state.Z/100-.66,nosePlan.z-toolSeat.z];
- const base=compactSurfacePoint(solution,toolSeat.x,toolSeat.z,factor),nose=rotate(tool.rotate(body.rotate(relative))).map((v,i)=>v+base[i]);
+ const base=compactSurfacePoint(solution,toolSeat.x,toolSeat.z,factor),nose=tool.rotate(body.rotate(relative)).map((v,i)=>v+base[i]);
  const tableCentre=compactTablePathPoint(state,solution,profile,factor),along=sweepDot(work.up,tableCentre.map((v,i)=>v-nose[i]))/sweepDot(work.up,measurement.axis);
  const centre=nose.map((v,i)=>v+along*measurement.axis[i]);
  const halfWidth=levelCoordinates(current.w*.78/2,0).x,halfDepth=levelCoordinates(0,current.d*.42/2).z;
@@ -167,7 +165,7 @@ function updateSpindleSweep(){
  if(horizontal){updateHorizontalParallelReadout();return;}
  $('horizontalParallelMini').replaceChildren();
  for(let i=0;i<4;i++){const label=$('sweepLabel'+i);label.textContent='';label.innerHTML=sweepDirections[i]+(i===3?' <small>基準</small>':'');}
- const measured=spindleSweepGeometry(positions,levelSolution,machineProfile,1,current.kind==='compact'),zeroValid=measured.valid&&measured.cardinal[3].onTable;
+ const measured=spindleSweepGeometry(positions,levelSolution,machineProfile,1),zeroValid=measured.valid&&measured.cardinal[3].onTable;
  updateSpindleSweepMini(zeroValid);
  for(let i=0;i<4;i++){
   const p=measured.cardinal?.[i],readable=zeroValid&&p?.onTable,el=$('sweepValue'+i),button=$('sweepPosition'+i);
@@ -177,7 +175,7 @@ function updateSpindleSweep(){
   button.setAttribute('aria-label',sweepDirections[i]+(i===3?'・基準':'')+'、'+(readable?el.textContent+'マイクロメートル':el.textContent));
   $('sweepReadout'+i).setAttribute('data-selected',button.getAttribute('aria-pressed'));
  }
- $('spindleSweepToggle').setAttribute('aria-label','ダイヤル測定。小図は測定位置の模式図で、上が奥、下が手前。'+(zeroValid?'手前がゼロ基準。':'手前で接触できないためゼロ基準と全数値は無効。')+(current.kind==='compact'?'直角測定と共通の仮想主軸姿勢。':'')+sweepDirections.map((direction,i)=>direction+(i===3?'基準':'')+' '+$('sweepValue'+i).textContent+' マイクロメートル').join('、')+'。選択中 '+sweepDirections[Math.round(spindleSweepAngle/90)%4]+'。方向選択を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
+ $('spindleSweepToggle').setAttribute('aria-label','ダイヤル測定。小図は測定位置の模式図で、上が奥、下が手前。'+(zeroValid?'手前がゼロ基準。':'手前で接触できないためゼロ基準と全数値は無効。')+sweepDirections.map((direction,i)=>direction+(i===3?'基準':'')+' '+$('sweepValue'+i).textContent+' マイクロメートル').join('、')+'。選択中 '+sweepDirections[Math.round(spindleSweepAngle/90)%4]+'。方向選択を'+($('spindleSweepSelection').hidden?'開く':'閉じる'));
  const point=measured.valid?measured.pointAt(spindleSweepAngle):null;
  $('sweepContactStatus').textContent=!measured.valid?'測定不可・主軸と上面の姿勢を確認':!zeroValid?'手前が面外・軸を中央へ':!point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）';
 }

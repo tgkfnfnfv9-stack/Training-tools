@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "referenceSourceSha256": "03577f83368bbf1abb746f996aadaf0cb24df5d462c2ac4e870d0ef0dda8869f",
+  "summarySourceSha256": "dcec4a6657b9a63fa0af5842d5d12100f0351e21aa1dc4bad367096776f6b910",
+  "cases": [
+    {
+      "seed": 8,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 75,
+        "A": 0,
+        "C": 0
+      },
+      "operation": "coarseExample actual onclick: initial supports to flat",
+      "beforeRawUm": 28.61528325591271,
+      "currentRawUm": 29.552999952137114,
+      "absoluteChangeUm": 0.9377166962244026,
+      "independentTrend": "worse",
+      "localAngleTrend": "better",
+      "displayedTrend": "worse",
+      "text": "YZ測定：初期よりゼロから離れた",
+      "initialSupports": [
+        -0.15,
+        0.15,
+        -0.123,
+        -0.112,
+        -0.138,
+        0.017,
+        -0.017,
+        0.076
+      ]
+    },
+    {
+      "seed": 18,
+      "positions": {
+        "X": 0,
+        "Y": 0,
+        "Z": 75,
+        "A": 0,
+        "C": 0
+      },
+      "operation": "coarseExample actual onclick: initial supports to flat",
+      "beforeRawUm": 34.442200786776944,
+      "currentRawUm": -28.37299995737605,
+      "absoluteChangeUm": -6.069200829400895,
+      "independentTrend": "better",
+      "localAngleTrend": "worse",
+      "displayedTrend": "better",
+      "text": "YZ測定：初期よりゼロに近づいた",
+      "initialSupports": [
+        -0.15,
+        0.15,
+        0.058,
+        0.113,
+        -0.004,
+        -0.117,
+        0.079,
+        -0.076
+      ]
+    }
+  ],
+  "sameIntegerCases": 3,
+  "invalidCases": 3,
+  "missingInitialCase": true
+}

@@ -209,6 +209,7 @@ $('testerBack').onclick=()=>navigate('electricTopics');
 // Each catalogue entry starts a new individual, including the same machine.
 function resumeOrOpenMachine(m){openMachine(m);}
 function openMachine(m,{fromHistory=false}={}){
+ if(typeof resetFixtureComparison==='function')resetFixtureComparison('');
  if(typeof spindleSweepMode!=='undefined'){spindleSweepMode=false;spindleSweepAngle=270;}
  stopMotion();sceneZoom=1;sceneView='oblique';machineMode=m.defaultMode||(m.modes?m.modes[0][0]:'');current=displayMachine(m);positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis='X';selected=0;yaw=-.45;populateMachine();navigate('training',{fromHistory,initializedTraining:true});
 }
@@ -320,7 +321,7 @@ function createGeometry(m){
  // Keep the measured nose at -W*.24+.125; extend the chuck rear into the
  // headstock instead of leaving the previous 25 mm unsupported gap.
  withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24-.015,1.5,0,.4,.28,c.spindle,'x');},'tool');
- withGroup([],()=>{const nose=-W*.24+.125,tip=W*.225;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
+ withGroup([],()=>{const nose=-W*.24+.125,scaleX=m===current&&levelConfig?levelConfig.width/(m.w*.8):1,tip=nose+.4/scaleX;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','400 mmテストバー');},'latheTestBar');
  // Display only. Leave the centre retracted clear of the test bar.
  withGroup([],()=>{
   const x=W*.36;box(x,.805,0,.8,.08,1.1,c.fixed);box(x,1.225,0,.52,.76,.65,c.fixed,'心押台');
@@ -557,7 +558,7 @@ function updateSceneViewUI(){
  if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&current.kind==='horizontal')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸に固定したテストバーに対するZ方向300ミリの平行度も表示します。パレット上の計器を主軸側へ動かし、aは左右、bは上下の押込み差を始点ゼロで測ります。主軸は回しません。');
  if(typeof spindleSweepMode!=='undefined'&&spindleSweepMode&&current.kind!=='horizontal')$('scene').setAttribute('aria-label',$('scene').getAttribute('aria-label')+'主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。右・奥・左・手前の4方向です。上の3枠は基準器を使う300ミリの仮想走査、隣の4点は手前基準の相対読みです。');
 }
-function drawScene(){if(levelSolution)updateAccuracy();if(typeof updateSpindleSweep==='function')updateSpindleSweep();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
+function drawScene(){if(levelSolution)updateAccuracy();if(typeof updateSpindleSweep==='function')updateSpindleSweep();if(typeof updateFixtureComparison==='function')updateFixtureComparison();if(typeof updateFixtureWorkflow==='function')updateFixtureWorkflow();if(page==='training'){updateSceneViewUI();drawOrientationGuide();render($('scene'),current,yaw,$('labels').checked,selected);}}
 function setSceneView(view){
  if(!['oblique','front','side'].includes(view))return;clearScenePointers();sceneView=view;
  yaw=view==='front'?0:view==='side'?Math.PI/2:-.45;updateSceneViewUI();drawScene();

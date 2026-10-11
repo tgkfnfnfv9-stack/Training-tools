@@ -1,0 +1,106 @@
+{
+  "sameMachineInputs": true,
+  "fields": [
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "axisPositions",
+    "machineProfile",
+    "columnX",
+    "columnZ",
+    "offset"
+  ],
+  "beforeCommit": "c3768bc1a73832e73ae256fe598ba02a3fffd574",
+  "afterCommit": "c33e9f02e30559cee9ab3c4727785a30f59f5baa",
+  "beforeState": "horizontal-used-station-B+0.010-width1280-first",
+  "afterState": "horizontal-used-station-B+0.010-width1280-first",
+  "beforeAxes": {
+    "X": 0,
+    "Y": -100,
+    "Z": -88.88888888888887
+  },
+  "afterAxes": {
+    "X": 0,
+    "Y": -100,
+    "Z": -88.88888888888887
+  },
+  "measurements": {
+    "square.XY": {
+      "before": {
+        "raw": 16.958999991078734,
+        "dom": "+17",
+        "valid": true,
+        "reason": null
+      },
+      "after": {
+        "raw": 16.95899999085669,
+        "dom": "+17",
+        "valid": true,
+        "reason": null
+      }
+    },
+    "square.XZ": {
+      "before": {
+        "raw": 8.722387412021803,
+        "dom": "+9",
+        "valid": true,
+        "reason": null
+      },
+      "after": {
+        "raw": 9.486653716373958,
+        "dom": "+9",
+        "valid": true,
+        "reason": null
+      }
+    },
+    "square.YZ": {
+      "before": {
+        "raw": -12.897151435552894,
+        "dom": "-13",
+        "valid": true,
+        "reason": null
+      },
+      "after": {
+        "raw": -12.897110032567689,
+        "dom": "-13",
+        "valid": true,
+        "reason": null
+      }
+    },
+    "parallel.a": {
+      "before": {
+        "raw": 9.556002516841744,
+        "dom": "+10",
+        "valid": true,
+        "reason": null
+      },
+      "after": {
+        "raw": 9.556002472869974,
+        "dom": "+10",
+        "valid": true,
+        "reason": null
+      }
+    },
+    "parallel.b": {
+      "before": {
+        "raw": 12.89536245142192,
+        "dom": "+13",
+        "valid": true,
+        "reason": null
+      },
+      "after": {
+        "raw": 12.895362451442738,
+        "dom": "+13",
+        "valid": true,
+        "reason": null
+      }
+    }
+  },
+  "matchesAlreadyIndependentlyVerifiedAfterCase": {
+    "tag": "after-fixture-stations",
+    "name": "horizontal-used-fixture-YZ-B+0.010",
+    "measurementsExactlyEqual": true
+  }
+}

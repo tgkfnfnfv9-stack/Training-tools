@@ -1,0 +1,6919 @@
+{
+  "comparisons": [
+    {
+      "scope": "matrix",
+      "beforeStates": 1464,
+      "afterStates": 1471,
+      "matchedStates": 1457,
+      "matchedMeasurements": 25986,
+      "rawChanges": 249,
+      "DOMChanges": 36,
+      "becameInvalid": 0,
+      "unchanged": 25737,
+      "byMachine": {
+        "vertical": {
+          "measurements": 2489,
+          "rawChanges": 249,
+          "DOMChanges": 36,
+          "becameInvalid": 0
+        },
+        "horizontal": {
+          "measurements": 3893,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "travel": {
+          "measurements": 3439,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "gate": {
+          "measurements": 7581,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "gantry": {
+          "measurements": 4313,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "five": {
+          "measurements": 2147,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "lathe": {
+          "measurements": 2124,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        }
+      },
+      "nonComparableTimedMotion": [
+        {
+          "name": "vertical-used-axis-demo-moving",
+          "beforeAxes": {
+            "X": 81.58226006661408,
+            "Y": 0,
+            "Z": 0
+          },
+          "afterAxes": {
+            "X": 83.85256689225497,
+            "Y": 0,
+            "Z": 0
+          },
+          "reason": "wall-clock animation sample; each state is checked against its actual input, but not treated as a same-position before/after pair"
+        },
+        {
+          "name": "horizontal-used-axis-demo-moving",
+          "beforeAxes": {
+            "X": 80.83829484255018,
+            "Y": 0,
+            "Z": 0
+          },
+          "afterAxes": {
+            "X": 81.58662783804975,
+            "Y": 0,
+            "Z": 0
+          },
+          "reason": "wall-clock animation sample; each state is checked against its actual input, but not treated as a same-position before/after pair"
+        },
+        {
+          "name": "travel-used-axis-demo-moving",
+          "beforeAxes": {
+            "X": 80.83980388508805,
+            "Y": 0,
+            "Z": 0
+          },
+          "afterAxes": {
+            "X": 80.83508724139584,
+            "Y": 0,
+            "Z": 0
+          },
+          "reason": "wall-clock animation sample; each state is checked against its actual input, but not treated as a same-position before/after pair"
+        },
+        {
+          "name": "gate-used-axis-demo-moving",
+          "beforeAxes": {
+            "X": 78.16501735621429,
+            "Y": 0,
+            "Z": 0
+          },
+          "afterAxes": {
+            "X": 80.83829484255018,
+            "Y": 0,
+            "Z": 0
+          },
+          "reason": "wall-clock animation sample; each state is checked against its actual input, but not treated as a same-position before/after pair"
+        },
+        {
+          "name": "gantry-used-axis-demo-moving",
+          "beforeAxes": {
+            "X": 70.93805406078995,
+            "Y": 0,
+            "Z": 0
+          },
+          "afterAxes": {
+            "X": 83.39765190724988,
+            "Y": 0,
+            "Z": 0
+          },
+          "reason": "wall-clock animation sample; each state is checked against its actual input, but not treated as a same-position before/after pair"
+        },
+        {
+          "name": "five-used-axis-demo-moving",
+          "beforeAxes": {
+            "X": 83.39576406851691,
+            "Y": 0,
+            "Z": 0,
+            "A": 0,
+            "C": 0
+          },
+          "afterAxes": {
+            "X": 82.2647506003151,
+            "Y": 0,
+            "Z": 0,
+            "A": 0,
+            "C": 0
+          },
+          "reason": "wall-clock animation sample; each state is checked against its actual input, but not treated as a same-position before/after pair"
+        },
+        {
+          "name": "lathe-used-axis-demo-moving",
+          "beforeAxes": {
+            "X": 80.84300971469091,
+            "Z": 0
+          },
+          "afterAxes": {
+            "X": 81.58808315397123,
+            "Z": 0
+          },
+          "reason": "wall-clock animation sample; each state is checked against its actual input, but not treated as a same-position before/after pair"
+        }
+      ],
+      "beforeImages": 54,
+      "afterImages": 54
+    },
+    {
+      "scope": "-focus",
+      "beforeStates": 40,
+      "afterStates": 40,
+      "matchedStates": 40,
+      "matchedMeasurements": 700,
+      "rawChanges": 24,
+      "DOMChanges": 16,
+      "becameInvalid": 8,
+      "unchanged": 676,
+      "byMachine": {
+        "vertical": {
+          "measurements": 114,
+          "rawChanges": 16,
+          "DOMChanges": 8,
+          "becameInvalid": 0
+        },
+        "five": {
+          "measurements": 456,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "lathe": {
+          "measurements": 96,
+          "rawChanges": 8,
+          "DOMChanges": 8,
+          "becameInvalid": 8
+        },
+        "horizontal": {
+          "measurements": 34,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        }
+      },
+      "beforeImages": 40,
+      "afterImages": 40
+    },
+    {
+      "scope": "-details",
+      "beforeStates": 114,
+      "afterStates": 114,
+      "matchedStates": 114,
+      "matchedMeasurements": 2088,
+      "rawChanges": 72,
+      "DOMChanges": 18,
+      "becameInvalid": 0,
+      "unchanged": 2016,
+      "byMachine": {
+        "vertical": {
+          "measurements": 342,
+          "rawChanges": 72,
+          "DOMChanges": 18,
+          "becameInvalid": 0
+        },
+        "horizontal": {
+          "measurements": 306,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "travel": {
+          "measurements": 342,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "gate": {
+          "measurements": 342,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "gantry": {
+          "measurements": 342,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "five": {
+          "measurements": 342,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "lathe": {
+          "measurements": 72,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        }
+      },
+      "beforeImages": 114,
+      "afterImages": 114
+    },
+    {
+      "scope": "-settings",
+      "beforeStates": 28,
+      "afterStates": 28,
+      "matchedStates": 28,
+      "matchedMeasurements": 496,
+      "rawChanges": 16,
+      "DOMChanges": 4,
+      "becameInvalid": 0,
+      "unchanged": 480,
+      "byMachine": {
+        "vertical": {
+          "measurements": 76,
+          "rawChanges": 16,
+          "DOMChanges": 4,
+          "becameInvalid": 0
+        },
+        "horizontal": {
+          "measurements": 68,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "travel": {
+          "measurements": 76,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "gate": {
+          "measurements": 76,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "gantry": {
+          "measurements": 76,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "five": {
+          "measurements": 76,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        },
+        "lathe": {
+          "measurements": 48,
+          "rawChanges": 0,
+          "DOMChanges": 0,
+          "becameInvalid": 0
+        }
+      },
+      "beforeImages": 21,
+      "afterImages": 21
+    }
+  ],
+  "checks": [
+    {
+      "name": "matrix vertical-ideal-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-ideal-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-new-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-axis-X-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-axis-X100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-axis-Y-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-axis-Y100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-axis-Z-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-axis-Z100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-uniform matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-right-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-back-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-twist-positive matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-twist-negative matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-view-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-view-front matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-view-side matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-view-oblique matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-view-exaggerate-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-view-showIdealOutline-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-view-zoom matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-axis-demo-moving same individual/support/dimensions; timed axis position recorded separately",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-axis-demo-ended matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-width110pct matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-save-source matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-save-loaded matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-demoTwist matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-demoColumn matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-G+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-G+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-G-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-G-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-G+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-G+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-G-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-G-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-H+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-H+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-H-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-H-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-H+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-H+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-H-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-ideal-H-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-G+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-G+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-G-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-G-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-G+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-G+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-G-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-G-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-H+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-H+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-H-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-H-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-H+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-H+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-H-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-new-H-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-G+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-G+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-G-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-G-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-G+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-G+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-G-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-G-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-H+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-H+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-H-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-H-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-H+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-H+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-H-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-H-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-axis-X-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-axis-X100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-axis-Y-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-axis-Y100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-axis-Z-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-axis-Z100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-uniform matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-right-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-back-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-twist-positive matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-twist-negative matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-view-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-view-front matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-view-side matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-view-oblique matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-view-exaggerate-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-view-showIdealOutline-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-view-zoom matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-axis-demo-moving same individual/support/dimensions; timed axis position recorded separately",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-axis-demo-ended matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-width110pct matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-save-source matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-save-loaded matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-boundary-Z-52.59259-before matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-boundary-Z-52.59259-after matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-demoTwist matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-demoColumn matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-ideal-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-new-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-axis-X-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-axis-X100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-axis-Y-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-axis-Y100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-axis-Z-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-axis-Z100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-uniform matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-right-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-back-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-twist-positive matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-twist-negative matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-view-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-view-front matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-view-side matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-view-oblique matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-view-exaggerate-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-view-showIdealOutline-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-view-zoom matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-axis-demo-moving same individual/support/dimensions; timed axis position recorded separately",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-axis-demo-ended matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-width110pct matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-save-source matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-save-loaded matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-boundary-X-50.00000-before matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-boundary-X-50.00000-after matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-demoTwist matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-demoColumn matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-G+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-G+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-G-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-G-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-G+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-G+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-G-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-G-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-H+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-H+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-H-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-H-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-H+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-H+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-H-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-H-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-I+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-I+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-I-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-I-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-I+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-I+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-I-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-I-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-J+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-J+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-J-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-J-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-J+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-J+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-J-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-J-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-K+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-K+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-K-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-K-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-K+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-K+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-K-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-K-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-L+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-L+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-L-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-L-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-L+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-L+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-L-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-L-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-M+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-M+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-M-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-M-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-M+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-M+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-M-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-M-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-N+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-N+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-N-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-N-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-N+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-N+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-N-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-N-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-O+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-O+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-O-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-O-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-O+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-O+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-O-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-ideal-O-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-G+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-G+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-G-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-G-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-G+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-G+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-G-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-G-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-H+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-H+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-H-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-H-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-H+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-H+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-H-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-H-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-I+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-I+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-I-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-I-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-I+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-I+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-I-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-I-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-J+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-J+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-J-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-J-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-J+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-J+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-J-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-J-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-K+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-K+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-K-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-K-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-K+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-K+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-K-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-K-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-L+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-L+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-L-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-L-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-L+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-L+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-L-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-L-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-M+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-M+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-M-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-M-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-M+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-M+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-M-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-M-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-N+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-N+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-N-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-N-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-N+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-N+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-N-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-N-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-O+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-O+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-O-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-O-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-O+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-O+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-O-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-new-O-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-G+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-G+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-G-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-G-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-G+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-G+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-G-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-G-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-H+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-H+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-H-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-H-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-H+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-H+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-H-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-H-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-I+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-I+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-I-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-I-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-I+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-I+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-I-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-I-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-J+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-J+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-J-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-J-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-J+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-J+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-J-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-J-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-K+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-K+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-K-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-K-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-K+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-K+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-K-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-K-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-L+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-L+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-L-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-L-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-L+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-L+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-L-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-L-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-M+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-M+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-M-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-M-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-M+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-M+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-M-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-M-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-N+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-N+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-N-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-N-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-N+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-N+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-N-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-N-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-O+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-O+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-O-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-O-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-O+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-O+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-O-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-O-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-axis-X-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-axis-X100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-axis-Y-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-axis-Y100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-axis-Z-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-axis-Z100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-uniform matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-right-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-back-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-twist-positive matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-twist-negative matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-view-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-view-front matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-view-side matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-view-oblique matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-view-exaggerate-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-view-showIdealOutline-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-view-zoom matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-axis-demo-moving same individual/support/dimensions; timed axis position recorded separately",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-axis-demo-ended matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-width110pct matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-save-source matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-save-loaded matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-boundary-X-2.85714-before matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-boundary-X-2.85714-after matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-boundary-X-77.85714-before matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-boundary-X-77.85714-after matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-demoTwist matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-demoColumn matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-G+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-G+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-G-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-G-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-G+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-G+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-G-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-G-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-H+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-H+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-H-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-H-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-H+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-H+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-H-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-ideal-H-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-G+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-G+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-G-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-G-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-G+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-G+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-G-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-G-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-H+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-H+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-H-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-H-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-H+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-H+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-H-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-new-H-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-G+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-G+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-G-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-G-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-G+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-G+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-G-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-G-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-H+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-H+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-H-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-H-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-H+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-H+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-H-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-H-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-axis-X-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-axis-X100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-axis-Y-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-axis-Y100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-axis-Z-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-axis-Z100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-uniform matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-right-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-back-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-twist-positive matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-twist-negative matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-view-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-view-front matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-view-side matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-view-oblique matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-view-exaggerate-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-view-showIdealOutline-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-view-zoom matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-axis-demo-moving same individual/support/dimensions; timed axis position recorded separately",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-axis-demo-ended matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-width110pct matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-save-source matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-save-loaded matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-demoTwist matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-demoColumn matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-ideal-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-new-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-X-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-X100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-Y-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-Y100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-Z-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-Z100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-A-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-A100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-C-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-C100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-AC-nonzero matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-uniform matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-right-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-back-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-twist-positive matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-twist-negative matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-view-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-view-front matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-view-side matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-view-oblique matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-view-exaggerate-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-view-showIdealOutline-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-view-zoom matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-demo-moving same individual/support/dimensions; timed axis position recorded separately",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-axis-demo-ended matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-width110pct matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-save-source matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-save-loaded matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-boundary-X-0.00000-before matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-boundary-X-0.00000-after matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-demoColumn matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-ideal-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-new-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-A+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-A+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-A-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-A-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-A+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-A+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-A-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-A-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-C+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-C+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-C-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-C-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-C+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-C+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-C-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-C-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-D+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-D+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-D-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-D-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-D+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-D+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-D-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-D-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-E+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-E+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-E-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-E-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-E+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-E+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-E-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-E-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-F+0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-F+0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-F-0.001 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-F-0.001-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-F+0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-F+0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-F-0.010 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-F-0.010-returned matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-axis-X-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-axis-X100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-axis-Z-100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-axis-Z100 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-uniform matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-right-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-back-plane matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-twist-positive matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-twist-negative matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-view-base matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-view-front matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-view-side matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-view-oblique matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-view-exaggerate-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-view-showIdealOutline-off matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-view-zoom matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-axis-demo-moving same individual/support/dimensions; timed axis position recorded separately",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-axis-demo-ended matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-width110pct matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-save-source matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-save-loaded matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-boundary-Z--11.42857-before matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-boundary-Z--11.42857-after matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-demoTwist matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-demoColumn matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.010-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.010-width1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.010-width1280-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.010-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.010-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.010-width390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.010-width390-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix vertical-used-B+0.010-width390-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.010-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.010-width1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.010-width1280-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.010-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.010-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.010-width390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.010-width390-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix horizontal-used-B+0.010-width390-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.010-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.010-width1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.010-width1280-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.010-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.010-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.010-width390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.010-width390-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix travel-used-B+0.010-width390-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.010-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.010-width1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.010-width1280-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.010-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.010-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.010-width390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.010-width390-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gate-used-B+0.010-width390-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.010-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.010-width1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.010-width1280-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.010-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.010-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.010-width390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.010-width390-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix gantry-used-B+0.010-width390-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.010-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.010-width1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.010-width1280-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.010-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.010-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.010-width390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.010-width390-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix five-used-B+0.010-width390-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B+0.010-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B+0.010-width1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B+0.010-width1280-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B+0.010-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B+0.010-width390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix lathe-used-B+0.010-width390-second matched physical input",
+      "ok": true
+    },
+    {
+      "name": "matrix identical image filenames",
+      "ok": true
+    },
+    {
+      "name": "-focus vertical-new-focus-baseline-width1280 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus vertical-new-A+0.010-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus vertical-new-A+0.010-width1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A-100-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A-100-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A-30-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A-30-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A30-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A30-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A100-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A100-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A-100-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A-100-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A-30-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A-30-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A30-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A30-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A100-width1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A100-width1280-sweep-detail matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus lathe-ideal-width3.2-depth1.68-viewport1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus lathe-ideal-width3.2-depth1.68-viewport1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus lathe-ideal-width4-depth0.8-viewport1280-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus lathe-ideal-width4-depth0.8-viewport1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus horizontal-ideal-default-width1280-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus vertical-new-focus-baseline-width390 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus vertical-new-A+0.010-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus vertical-new-A+0.010-width390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A-100-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A-30-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A30-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-ideal-A100-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A-100-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A-30-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A30-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus five-used-A100-width390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus lathe-ideal-width3.2-depth1.68-viewport390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus lathe-ideal-width3.2-depth1.68-viewport390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus lathe-ideal-width4-depth0.8-viewport390-first matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus lathe-ideal-width4-depth0.8-viewport390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus horizontal-ideal-default-width390-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-focus identical image filenames",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width1280-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width1280-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width1280-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width1280-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width1280-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width1280-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width1280-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width1280-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width1280-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width390-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width390-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width390-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width390-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width390-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width390-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width390-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width390-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details vertical-used-B+0.010-width390-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width1280-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width1280-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width1280-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width1280-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width1280-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width1280-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width1280-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width1280-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width1280-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width390-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width390-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width390-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width390-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width390-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width390-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width390-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width390-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details horizontal-used-B+0.010-width390-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width1280-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width1280-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width1280-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width1280-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width1280-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width1280-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width1280-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width1280-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width1280-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width390-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width390-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width390-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width390-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width390-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width390-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width390-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width390-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details travel-used-B+0.010-width390-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width1280-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width1280-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width1280-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width1280-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width1280-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width1280-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width1280-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width1280-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width1280-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width390-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width390-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width390-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width390-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width390-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width390-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width390-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width390-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gate-used-B+0.010-width390-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width1280-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width1280-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width1280-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width1280-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width1280-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width1280-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width1280-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width1280-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width1280-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width390-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width390-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width390-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width390-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width390-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width390-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width390-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width390-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details gantry-used-B+0.010-width390-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width1280-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width1280-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width1280-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width1280-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width1280-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width1280-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width1280-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width1280-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width1280-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width390-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width390-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width390-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width390-reference-card2-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width390-reference-card2-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width390-reference-card2-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width390-reference-card3-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width390-reference-card3-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details five-used-B+0.010-width390-reference-card3-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details lathe-used-B+0.010-width1280-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details lathe-used-B+0.010-width1280-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details lathe-used-B+0.010-width1280-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details lathe-used-B+0.010-width390-reference-card1-scroll1 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details lathe-used-B+0.010-width390-reference-card1-scroll2 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details lathe-used-B+0.010-width390-reference-card1-scroll3 matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-details identical image filenames",
+      "ok": true
+    },
+    {
+      "name": "-settings vertical-used-B+0.010-settings matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings vertical-used-B+0.010-settings-fine matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings vertical-used-B+0.010-settings-local-angle matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings vertical-used-B+0.010-settings-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings horizontal-used-B+0.010-settings matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings horizontal-used-B+0.010-settings-fine matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings horizontal-used-B+0.010-settings-local-angle matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings horizontal-used-B+0.010-settings-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings travel-used-B+0.010-settings matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings travel-used-B+0.010-settings-fine matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings travel-used-B+0.010-settings-local-angle matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings travel-used-B+0.010-settings-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings gate-used-B+0.010-settings matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings gate-used-B+0.010-settings-fine matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings gate-used-B+0.010-settings-local-angle matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings gate-used-B+0.010-settings-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings gantry-used-B+0.010-settings matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings gantry-used-B+0.010-settings-fine matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings gantry-used-B+0.010-settings-local-angle matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings gantry-used-B+0.010-settings-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings five-used-B+0.010-settings matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings five-used-B+0.010-settings-fine matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings five-used-B+0.010-settings-local-angle matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings five-used-B+0.010-settings-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings lathe-used-B+0.010-settings matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings lathe-used-B+0.010-settings-fine matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings lathe-used-B+0.010-settings-local-angle matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings lathe-used-B+0.010-settings-reference matched physical input",
+      "ok": true
+    },
+    {
+      "name": "-settings identical image filenames",
+      "ok": true
+    }
+  ],
+  "failed": []
+}

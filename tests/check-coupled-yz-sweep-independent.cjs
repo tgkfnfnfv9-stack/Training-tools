@@ -1,7 +1,7 @@
 'use strict';
-// Independent contact oracle for the compact shared teaching pose. Expected
-// readings come from plane/ray intersections, never from rendered signs or
-// multiplier tables. Physical Ritz-shape correctness has its separate oracle.
+// Contact coherence for the compact support-derived pose. Plane/ray tests below
+// are supplemented by the 2026-10-11 independent support-input reconstruction.
+// The removed measurement-only 4-delta rotation is not a physical expectation.
 const assert=require('node:assert/strict');
 const e=require('./leveling-dom-env.cjs')({pureLeveling:true});
 const dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0),add=(a,b)=>a.map((v,i)=>v+b[i]),sub=(a,b)=>a.map((v,i)=>v-b[i]),mul=(a,s)=>a.map(v=>v*s),unit=a=>mul(a,1/Math.hypot(...a));
@@ -54,12 +54,19 @@ for(const [width,depth] of [[2.08,2.16],[.5,.5],[20,.5],[.5,20]])for(const heigh
 // and immunity to camera/diagram gain. Neither test changes support step sizes.
 e.read('levelConfig.width=2.08;levelConfig.depth=2.16;positions={X:0,Y:0,Z:0,A:0,C:0};machineProfile={guides:{},initialHeights:[0,0,0,0],squareness:{XY:{microns:33},XZ:{microns:75},YZ:{microns:-15}}};supportHeights=[0,0,0,0];updateLeveling();');
 const flat=get();close(flat.m.microns,e.read("referenceScan({key:'YZ'}).microns"),'intrinsic baseline unchanged');
-e.registry.raiseSupport.click();const raised=get();e.registry.lowerSupport.click();const returned=get();close(returned.m.microns,flat.m.microns,'support button roundtrip');
+e.registry.raiseSupport.click();const raised=get(),raisedHeights=e.json('supportHeights');e.registry.lowerSupport.click();const returned=get();close(returned.m.microns,flat.m.microns,'support button roundtrip');
 const coarse={yz:raised.m.microns-flat.m.microns,sweep:raised.s.cardinal.map((v,i)=>v.readingMicrons-flat.s.cardinal[i].readingMicrons)};
-assert.ok(Math.abs(coarse.yz)>.1&&Math.abs(coarse.yz)<.15,'coarse YZ change about .12 um, well below old 1.19 um');checks++;
-assert.ok(Math.abs(coarse.sweep[1])>.1&&Math.abs(coarse.sweep[1])<.15,'back sweep responds together');checks++;
+// Old .1..15 um bounds asserted the extra 4-delta teaching rotation. Derive
+// the replacement from support heights, the Ritz surface and probe geometry,
+// independently of both the product measurement and the product frame helpers.
+const oracle=require('./audit-independent-milling-20261011.cjs');
+const config=e.json('({kind:current.kind,w:current.w,d:current.d,width:levelConfig.width,depth:levelConfig.depth,columnX:levelConfig.columnX,columnZ:levelConfig.columnZ,profile:machineProfile,nodes:supports.map(s=>levelCoordinates(s.x,s.z))})'),state=e.json('positions');
+const expected=heights=>{const m=oracle.model(config,config.nodes.map((p,i)=>({...p,h:heights[i]})));return {yz:oracle.scan(m,config,state,'YZ').value,sweep:oracle.sweep(m,state).values};};
+const zeroExpected=expected(raisedHeights.map(()=>0)),raisedExpected=expected(raisedHeights);
+close(coarse.yz,raisedExpected.yz-zeroExpected.yz,'coarse YZ from independent physical supports',1e-7);
+coarse.sweep.forEach((v,i)=>close(v,raisedExpected.sweep[i]-zeroExpected.sweep[i],'coarse sweep from independent physical supports',1e-7));
 e.read("sceneZoom=1.8;yaw=2.7;$('exaggerate').checked=false;updateAccuracy();updateSpindleSweep();");const camera=get();assert.deepEqual(camera,returned,'camera/zoom/emphasis leave measurements unchanged');checks++;
 for(const sign of [-1,1]){
  e.read(`machineProfile=null;supportHeights=supports.map(s=>{const p=levelCoordinates(s.x,s.z);return ${sign}*(.2*p.x+.3*p.z)+.12;});updateLeveling();`);const plane=get();close(plane.m.microns,0,'rigid plane YZ remains ideal',1e-6);for(const p of plane.s.cardinal)close(p.readingMicrons,0,'rigid plane sweep remains ideal',1e-6);
 }
-console.log(JSON.stringify({checks,cases,maxContactErrorMicrons:maxContactError,maxXZCrossChangeMicrons:maxXZCrossChange,coarse,scope:'independent virtual plane/probe coherence, not proof of real-machine elasticity'},null,2));
+console.log(JSON.stringify({checks,cases,maxContactErrorMicrons:maxContactError,maxXZCrossChangeMicrons:maxXZCrossChange,coarse,scope:'physical plane/probe coherence plus independent support-input response, not proof of real-machine elasticity'},null,2));

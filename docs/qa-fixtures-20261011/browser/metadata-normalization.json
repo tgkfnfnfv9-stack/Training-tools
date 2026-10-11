@@ -1,0 +1,75 @@
+{
+  "scope": "description strings only; no inputs, raw readings, DOM readings, validity, captureRecord, checks or geometry changed",
+  "records": [
+    {
+      "tag": "after",
+      "semanticsChanged": true,
+      "procedureLabelsChanged": 432,
+      "stateAndCheckPayloadUnchanged": true,
+      "stateAndCheckPayloadSHA256": "5d98c3eb86b1469425cc9b601ff2a864b9101edd75ae35acd15079bc5ba9abbe"
+    },
+    {
+      "tag": "after-boundaries",
+      "semanticsChanged": true,
+      "procedureLabelsChanged": 0,
+      "stateAndCheckPayloadUnchanged": true,
+      "stateAndCheckPayloadSHA256": "6209f1430238f8e1cb6ec3877102bb5fe4f55ab3962d312c93d927d7a59149de"
+    },
+    {
+      "tag": "after-details",
+      "semanticsChanged": true,
+      "procedureLabelsChanged": 0,
+      "stateAndCheckPayloadUnchanged": true,
+      "stateAndCheckPayloadSHA256": "fdab146c2611db34316e74e6c048c2f47fa18c57deced136836b80d03a86639a"
+    },
+    {
+      "tag": "after-fixture-stations",
+      "semanticsChanged": true,
+      "procedureLabelsChanged": 864,
+      "stateAndCheckPayloadUnchanged": true,
+      "stateAndCheckPayloadSHA256": "d14a3e1c73d1274a40d937ec83246565829ef7971ec330fa98e4bc916bac039c"
+    },
+    {
+      "tag": "after-focus",
+      "semanticsChanged": true,
+      "procedureLabelsChanged": 0,
+      "stateAndCheckPayloadUnchanged": true,
+      "stateAndCheckPayloadSHA256": "3ee9cf2106180daaaf0837de019cddd102c0b547a1ced6d0ee45462256b0fd2e"
+    },
+    {
+      "tag": "after-interaction",
+      "semanticsChanged": true,
+      "procedureLabelsChanged": 0,
+      "stateAndCheckPayloadUnchanged": true,
+      "stateAndCheckPayloadSHA256": "c2efdff4067b82fe81b90f363b07cf714f57ebe01399347560e02b5508db85ef"
+    },
+    {
+      "tag": "after-smoke",
+      "semanticsChanged": true,
+      "procedureLabelsChanged": 0,
+      "stateAndCheckPayloadUnchanged": true,
+      "stateAndCheckPayloadSHA256": "4b3582b2b984bb685056f88c3e6f18b2a9867f4a13112c8d3d7f73fc0b113ad3"
+    },
+    {
+      "tag": "after-smoke-contact",
+      "semanticsChanged": true,
+      "procedureLabelsChanged": 0,
+      "stateAndCheckPayloadUnchanged": true,
+      "stateAndCheckPayloadSHA256": "3945db4bc9f39d6ad57999ec56f6ae6d355819e8cffcd0cfdd943562967fc693"
+    },
+    {
+      "tag": "after-smoke-dialog",
+      "semanticsChanged": true,
+      "procedureLabelsChanged": 0,
+      "stateAndCheckPayloadUnchanged": true,
+      "stateAndCheckPayloadSHA256": "230172e3a5babd083916729bd8a235fea3a98451983c2d53dac167a6fae39ae0"
+    },
+    {
+      "tag": "after-stations",
+      "semanticsChanged": true,
+      "procedureLabelsChanged": 0,
+      "stateAndCheckPayloadUnchanged": true,
+      "stateAndCheckPayloadSHA256": "423fbc369510516cdded064eef48c130c21870eefb8ff7ef7022439b58729930"
+    }
+  ]
+}
