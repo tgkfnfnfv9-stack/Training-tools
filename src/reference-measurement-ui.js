@@ -137,9 +137,26 @@ function referenceScan(pair,state=positions,solution=levelSolution,profile=machi
  const at=t=>{if(!cache.has(t))cache.set(t,geometryProvider(stateAt(t),solution,profile,.3));return cache.get(t);};
  // Only these scans relocate a sampled support anchor in geometryModel.
  const varies=(current.kind==='compact'&&setup.scan==='Y')||(current.kind==='horizontal'&&setup.scan==='Z')||(current.kind==='five'&&setup.scan==='Y');
- const first=at(0),normal=first.directions.find(a=>a.key===setup.base).direction,probe=M.scale(normal,-1),scanDirection=first.directions.find(a=>a.key===setup.scan).direction;
+ const first=at(0),frames=g=>({body:referenceRigidFrame(setup.lathe?g.workFrame:g.toolFrame),master:referenceRigidFrame(setup.lathe?g.toolFrame:g.workFrame)}),f0=frames(first);
+ let normal=first.directions.find(a=>a.key===setup.base).direction,alignment=null;
+ // Travelling column, fixed bridge and gantry: X relocates a member on the
+ // support surface. Align R by actually feeding X 300 mm. The dial tip is
+ // carried rigidly from the spindle nose; the square is carried by the
+ // table-top centre (the same physical points as the spindle sweep). The
+ // chord of the tip in the square's own frame sets R, so posture changes
+ // during this feed enter the alignment. Orientation keeps the +X convention.
+ if(['travel','double','gantry'].includes(current.kind)&&setup.base==='X'){
+  const xAxis=axisConfig(current).find(a=>a.key==='X'),xp=levelCoordinates(xAxis.vector[0]*xAxis.amp,xAxis.vector[2]*xAxis.amp),xHalf=Math.hypot(xp.x,xAxis.vector[1]*xAxis.amp,xp.z);
+  if(2*xHalf<length-1e-12)return {valid:false,reason:'300 mmの方向合わせ範囲不足',setup};
+  const xStart=Math.max(-xHalf,Math.min(xHalf-length,startState.X*xHalf/100)),xAt=t=>({...startState,X:(xStart+length*t)/xHalf*100});
+  const fixture=s=>{const q=spindleSweepMachineGeometry(s,solution,profile,true);return {nose:q.nose,table:q.tableCentre,tool:referenceRigidFrame(q.toolFrame),work:referenceRigidFrame(q.workFrame)};};
+  const r0=fixture(xAt(0)),r1=fixture(xAt(1)),bracket=M.sub(r0.table,r0.nose),tip=r=>M.add(r.nose,M.transport(bracket,r0.tool,r.tool)),local=(v,f)=>[M.dot(v,f.right),M.dot(v,f.up),M.dot(v,f.back)];
+  const chord=M.sub(local(M.sub(tip(r1),r1.table),r1.work),local(M.sub(tip(r0),r0.table),r0.work)),aligned=M.unit(f0.master.rotate(M.unit(chord)));
+  normal=M.dot(aligned,normal)<0?M.scale(aligned,-1):aligned;
+  alignment={startPosition:xStart,endPosition:xStart+length,startState:xAt(0),endState:xAt(1),chordLocal:chord,tip:[tip(r0),tip(r1)],master:[r0.table,r1.table],fixture:'spindle-nose-to-table-centre'};
+ }
+ const probe=M.scale(normal,-1),scanDirection=first.directions.find(a=>a.key===setup.scan).direction;
  const tangent=M.unit(M.sub(scanDirection,M.scale(normal,M.dot(normal,scanDirection))));
- const frames=g=>({body:referenceRigidFrame(setup.lathe?g.workFrame:g.toolFrame),master:referenceRigidFrame(setup.lathe?g.toolFrame:g.workFrame)}),f0=frames(first);
  // Moving masters follow a specified material point. Do not integrate a guide
  // tangent and silently drop the fixture height's rotational displacement.
  const breaks=current.kind==='horizontal'&&setup.scan==='Z'?supports.map(p=>(levelCoordinates(p.x,p.z).z-levelCoordinates(0,-.85).z-startPosition)/travelLength):[];
@@ -160,7 +177,7 @@ function referenceScan(pair,state=positions,solution=levelSolution,profile=machi
  // This is finite sampling, not a claim of continuous-path collision checking.
  const times=[...new Set([0,1,...(varies?Array.from({length:15},(_,i)=>(i+1)/16):[]),...breaks.filter(t=>t>0&&t<1).flatMap(t=>[Math.max(0,t-1e-8),t,Math.min(1,t+1e-8)])])].sort((a,b)=>a-b),samples=times.map(sample),end=samples[samples.length-1].pose;
  const bad=samples.find(p=>!p.valid),result=bad?{valid:false,reason:bad.reason,failurePosition:startPosition+travelLength*bad.t}:M.compare(start,end);
- return {...result,setup,startPosition,endPosition,length,model:M.model,start,end,samples,alongStart:tangent,alongEnd:samples[samples.length-1].along,fixture:anchor?(current.kind==='horizontal'?'horizontal-pallet-top':'compact-table-P'):'representative-fixed-posture'};
+ return {...result,setup,startPosition,endPosition,length,model:alignment?'reference-scan-x-feed-v4':M.model,start,end,samples,alongStart:tangent,alongEnd:samples[samples.length-1].along,fixture:anchor?(current.kind==='horizontal'?'horizontal-pallet-top':'compact-table-P'):'representative-fixed-posture',...(alignment?{alignment}:{})};
 }
 // Every machine, including the compact one, reads its dials from the physical
 // assembly posture. No posture multiplier or reading multiplier is applied.

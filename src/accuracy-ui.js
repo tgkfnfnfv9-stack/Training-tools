@@ -39,11 +39,12 @@ function connectedPortal(solution,points,factor=1){
   const foot=[p.x,residual*factor/1000,p.z],top=relative.up.map((v,j)=>foot[j]+height*v);
   return {foot,top,relative,frame:L.compose(common,relative),slope};
  });
- // A single affine shear map keeps the guide and ram directions distinct.
- // Do not orthogonalize Z against Y: column lean is allowed to change YZ.
- // This is geometric deformation, not a stiffness/load calculation.
+ // The beam spans the two column tops. The saddle and ram ride on that beam
+ // as one rigid assembly, so the ram's up is the mean column up made
+ // orthogonal to the beam: a beam roll/yaw turns Y and Z together and does
+ // not change YZ. Unequal column lean still moves and turns the whole beam.
  const unit=v=>{const n=Math.hypot(...v);return v.map(q=>q/n);};
- const right=unit(columns[1].top.map((v,i)=>v-columns[0].top[i])),up=unit(columns[0].relative.up.map((v,i)=>(v+columns[1].relative.up[i])/2));
+ const right=unit(columns[1].top.map((v,i)=>v-columns[0].top[i])),meanUp=columns[0].relative.up.map((v,i)=>(v+columns[1].relative.up[i])/2),along=meanUp.reduce((s,v,i)=>s+v*right[i],0),up=unit(meanUp.map((v,i)=>v-along*right[i]));
  const back=unit([right[1]*up[2]-right[2]*up[1],right[2]*up[0]-right[0]*up[2],right[0]*up[1]-right[1]*up[0]]),local=L.frame(right,up,back),frame=L.compose(common,local);
  const centre=columns[0].top.map((v,i)=>(v+columns[1].top[i])/2),span=Math.hypot(...columns[1].top.map((v,i)=>v-columns[0].top[i]));
  const world=p=>common.rotate(p).map((v,i)=>v+(i===1?.66+solution.plane.c*factor/1000:0));
@@ -87,10 +88,12 @@ function horizontalToolPoint(raw,state=positions,solution=levelSolution,profile=
  const M=window.ReferenceMeasurement,L=window.Leveling,active={...state,Y:keys.includes('Y')?state.Y:0},layout=columnLayoutOffset(current);
  const physical=p=>{const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];};
  const axes=axisConfig(current).filter(a=>['X','Y','Z'].includes(a.key)),intrinsic=window.MachineAccuracy.directions(axes,scaledAccuracyProfile(profile,factor)),body=intrinsicBodyFrame(axes,profile,factor);
- const base=physical([layout.x,.66,current.d*.29+layout.z]),travel=physical([.55*active.X/100,0,0]),anchor=M.add(base,travel);
+ // The column rides the two drawn rails (0.28 D +/-0.13 m). Its posture and
+ // pivot are taken on that rail centre line, the same line as the X guide.
+ const base=physical([layout.x,.66,current.d*.28+layout.z]),travel=physical([.55*active.X/100,0,0]),anchor=M.add(base,travel);
  const frame=compactSupportFrame(solution,anchor[0],anchor[2],factor),origin=compactSurfacePoint(solution,anchor[0],anchor[2],factor);
  const inverse=(f,v)=>[[1,0,0],[0,1,0],[0,0,1]].map(e=>M.dot(f.rotate(e),v));
- const railSlopes=[-1,1].map(k=>{const q=levelCoordinates(.55*active.X/100+layout.x,current.d*.28+k*.13);return solution.slopeAt(q.x,q.z);});
+ const railSlopes=[-1,1].map(k=>{const q=levelCoordinates(.55*active.X/100+layout.x,current.d*.28+layout.z+k*.13);return solution.slopeAt(q.x,q.z);});
  const guide={lr:railSlopes.reduce((s,q)=>s+q.lr/2,0),fb:railSlopes.reduce((s,q)=>s+q.fb/2,0)};
  const guideFrame=L.compose(L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),L.orientation({lr:(guide.lr-solution.lr)*factor,fb:(guide.fb-solution.fb)*factor}));
  let correction=[0,0,0];
@@ -101,6 +104,19 @@ function horizontalToolPoint(raw,state=positions,solution=levelSolution,profile=
  }
  const material=M.add(physical(raw),physical([layout.x,0,layout.z])),relative=M.add(M.sub(material,base),correction);
  return M.add(origin,frame.rotate(body.rotate(relative)));
+}
+// Lathe carriage: a rigid 0.8 m saddle on the two drawn bed rails (z=+/-0.4 m).
+// Its posture is the least-squares plane of its four pad heights, not the
+// slope at one sampled point. Heights mm, plan coordinates m, slopes mm/m.
+function latheCarriageSupport(solution,state=positions){
+ const x=.08+.7*state.Z/100,pads=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=levelCoordinates(x+i*.4,k*.4);return {i,k,x:q.x,z:q.z,h:solution.heightAt(q.x,q.z)};}));
+ const a=(pads[2].x-pads[0].x)/2,b=(pads[1].z-pads[0].z)/2,mean=pads.reduce((s,p)=>s+p.h/4,0);
+ const slope={lr:pads.reduce((s,p)=>s+p.i*p.h,0)/(4*a),fb:pads.reduce((s,p)=>s+p.k*p.h,0)/(4*b)},centre={x:(pads[0].x+pads[2].x)/2,z:(pads[0].z+pads[1].z)/2};
+ return {slope,heightAt:(px,pz)=>mean+slope.lr*(px-centre.x)+slope.fb*(pz-centre.z),pads};
+}
+function latheCarriageFrame(solution,state=positions,factor=1){
+ const L=window.Leveling,s=latheCarriageSupport(solution,state).slope;
+ return L.compose(L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),L.orientation({lr:(s.lr-solution.lr)*factor,fb:(s.fb-solution.fb)*factor}));
 }
 function compactPathFrames(state,solution,profile,factor=1){
  const q=levelCoordinates(0,-current.d*.1+.4*state.Y/100),work=compactSupportFrame(solution,q.x,q.z,factor);
@@ -129,7 +145,7 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  }else if(m.kind==='travel'){
   toolPoints=[{x:-.5+move('X')+layout.x,z:D*.29+layout.z}];workPoint={x:0,z:-D*.18};toolAxes=['Y','Z'];
  }else if(m.kind==='horizontal'){
-  toolPoints=[{x:move('X')+layout.x,z:D*.29+layout.z}];workPoint={x:0,z:-.85+move('Z')};toolAxes=['X','Y'];
+  toolPoints=[{x:move('X')+layout.x,z:D*.28+layout.z}];workPoint={x:0,z:-.85+move('Z')};toolAxes=['X','Y'];
  }else if(['double','gantry'].includes(m.kind)){
   toolPoints=[-1,1].map(k=>({x:k*(m.columnX??W*.4),z:m.kind==='gantry'?move('X'):(m.columnZ??0)}));
   workPoint={x:0,z:m.kind==='double'?move('X'):0};toolAxes=['Y','Z'];
@@ -145,14 +161,14 @@ function geometryModel(state=positions,solution=levelSolution,profile=machinePro
  const compact=m.kind==='compact'?compactPathFrames(state,solution,profile):null;
  if(m.kind==='lathe'||m.kind==='horizontal'){
   const t=options.toolPoints[0],w=options.workPoints[0];
-  options.toolFrame=compactSupportFrame(solution,t.x,t.z);options.workFrame=compactSupportFrame(solution,w.x,w.z);
+  options.toolFrame=compactSupportFrame(solution,t.x,t.z);options.workFrame=m.kind==='lathe'?latheCarriageFrame(solution,state):compactSupportFrame(solution,w.x,w.z);
  }
  if(compact){const q=options.toolPoints[0];options.toolFrame=compactSupportFrame(solution,q.x,q.z);options.workFrame=compact.work;options.axes=options.axes.map(a=>a.key==='Y'?{...a,frame:compact.Y}:a);}
  if(portal){options.toolFrame=portal.frame;options.columnFrames=portal.columns.map(c=>c.frame);if(solution.parts){const q=options.workPoints[0],s=solution.parts.bed.slopeAt(q.x,q.z);options.workFrame=window.Leveling.compose(portal.common,window.Leveling.orientation({lr:s.lr-solution.lr,fb:s.fb-solution.fb}));}}
  // A travelling column's guide direction comes from the two drawn rails.
  // The column seat behind them may follow a different local support slope:
  // this represents a deformable mounting base, without solving its stiffness.
- const guidePoints=['travel','horizontal'].includes(m.kind)?[-1,1].map(k=>({x:toolPoints[0].x,z:D*(m.kind==='travel'?.22:.28)+k*(m.kind==='travel'?.1:.13)})):m.kind==='gantry'?toolPoints:null;
+ const guidePoints=['travel','horizontal'].includes(m.kind)?[-1,1].map(k=>({x:toolPoints[0].x,z:(m.kind==='travel'?D*.22:toolPoints[0].z)+k*(m.kind==='travel'?.1:.13)})):m.kind==='gantry'?toolPoints:null;
  let guideSlope=null;
  if(guidePoints){
   const slopes=guidePoints.map(p=>{const q=levelCoordinates(p.x,p.z);return solution.slopeAt(q.x,q.z);});

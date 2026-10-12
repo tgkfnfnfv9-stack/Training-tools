@@ -34,7 +34,7 @@ function spindleSweepGeometry(state=positions,solution=levelSolution,profile=mac
 // Factor-one assembly transforms: measurement never reads drawing gain,
 // clearance, camera, zoom, or global axis positions. Compact keeps its original
 // physical path above; only the shared zero reference is changed to the front.
-function spindleSweepMachineGeometry(state,solution,profile){
+function spindleSweepMachineGeometry(state,solution,profile,pointsOnly=false){
  const m=current,L=window.Leveling,g=geometryModel(state,solution,profile),axes=axisConfig(m).filter(a=>['X','Y','Z'].includes(a.key));
  const coordinate=p=>{const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];};
  const add=(a,b)=>a.map((v,i)=>v+b[i]),subtract=(a,b)=>a.map((v,i)=>v-b[i]);
@@ -101,6 +101,9 @@ function spindleSweepMachineGeometry(state,solution,profile){
  const nose=point(travel?[-.5,1.65,-.3]:five?[0,2.15,-.3]:[.15,1.91,gz-.23],toolKeys,'tool');
  const tableCentre=point(travel?[0,1.1,-m.d*.18]:five?[0,1.56,-.45]:[0,1.12,0],workKeys,'work');
  const tableRight=poseFrame('work').rotate(rotary([1,0,0],workKeys)),tableBack=poseFrame('work').rotate(rotary([0,0,1],workKeys)),tableNormal=unit(cross(tableBack,tableRight));
+ // The same physical material points are the squareness fixture: the dial
+ // on the spindle nose and the square master on the table-top centre.
+ if(pointsOnly)return {valid:true,nose,tableCentre,toolFrame:g.toolFrame,workFrame:g.workFrame};
  // The existing representative spindle includes intrinsic posture. Portal
  // Z-part meshes follow this direction about the unchanged spindle nose.
  const axis=g.bodyCombinedDirection,right=poseFrame('tool').rotate(body.rotate([1,0,0]));
