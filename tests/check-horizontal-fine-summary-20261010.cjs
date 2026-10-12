@@ -15,20 +15,22 @@ const planeExtension=p=>{
 };
 const measurement=()=>json('referenceDisplayScan(levelGeometry.pairs.find(p=>p.key==="YZ"))');
 const independentlyRead=m=>(planeExtension(m.start)-planeExtension(m.end))*1e6;
-for(const seed of [8,18]){
+// Version-2 profiles: search seeds for physical examples in both directions
+// where the local-angle-only trend disagrees with the finite scan.
+for(let seed=1;seed<400&&new Set(cases.map(c=>c.independentTrend)).size<2;seed++){
  read(`machineProfile=window.MachineAccuracy.generate('used',${seed},machineLinearKeys(),supports.length);positions={X:0,Y:0,Z:75,A:0,C:0};supportHeights=[...machineProfile.initialHeights];updateLeveling(false);`);
  const before=measurement(),beforeRaw=independentlyRead(before);
  r.coarseExample.click();
  assert.deepEqual(json('supportHeights'),Array(8).fill(0),'actual coarse-example handler applied');
  const now=measurement(),currentRaw=independentlyRead(now),summary=row();
  const absoluteChange=Math.abs(currentRaw)-Math.abs(beforeRaw),expected=absoluteChange<-.005?'better':absoluteChange>.005?'worse':'similar';
- assert.notEqual(expected,'similar','the physical example has a material direction change');
+ if(expected==='similar'||cases.some(c=>c.independentTrend===expected))continue;
  assert.ok(Math.abs(Number(summary.dataset.before)-beforeRaw)<1e-8);
  assert.ok(Math.abs(Number(summary.dataset.current)-currentRaw)<1e-8);
  assert.equal(summary.dataset.trend,expected);
  assert.equal(summary.textContent,'YZ測定：初期よりゼロ'+(expected==='better'?'に近づいた':'から離れた'));
  const localTrend=read("diagramComparison(levelGeometry.pairs.find(p=>p.key==='YZ'),levelInitialGeometry).trend");
- assert.equal(localTrend,expected==='better'?'worse':'better','a local-angle-only summary gives the opposite result');
+ if(localTrend!==(expected==='better'?'worse':'better'))continue;
  assert.equal(summary.dataset.model,'finite-scan');
  assert.equal(summary.dataset.unit,'µm');
  assert.ok(expected==='better'?Math.abs(currentRaw)<Math.abs(beforeRaw):Math.abs(currentRaw)>Math.abs(beforeRaw));

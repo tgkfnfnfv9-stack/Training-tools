@@ -101,7 +101,7 @@ function machineCandidate(condition,seed){
 }
 function machineDrawProfile(condition){
  const seed=machineSeed();let fallback=null;
- for(let k=0;k<60;k++){const c=machineCandidate(condition,(seed+k)>>>0);if(c.ok)return c.profile;if(Number.isFinite(c.score)&&(!fallback||c.score<fallback.score))fallback=c;}
+ for(let k=0;k<60;k++){const next=(seed+k)>>>0;if(machineProfile&&next===machineProfile.seed)continue;const c=machineCandidate(condition,next);if(c.ok)return c.profile;if(Number.isFinite(c.score)&&(!fallback||c.score<fallback.score))fallback=c;}
  return (fallback||{profile:window.MachineAccuracy.generate(condition,seed,machineLinearKeys(),supports.length)}).profile;
 }
 // One support, one signed amount: the move that most lowers the largest value
