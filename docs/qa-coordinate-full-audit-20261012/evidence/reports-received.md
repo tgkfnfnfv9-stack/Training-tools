@@ -78,3 +78,14 @@
 - YZ invariant under supports (≤1e-11) for all three; rigid tilt invariant.
 - A/C table (seed 20261012): travel centre-back +0.1 XY B -5.83→-2.895 C -5.83 A +17.34; XZ B -1.46→-9.618 C -17.26 A +5.91; gate left-col-front +0.1 XY -4.21→+58.024 A +16.14, YZ A +404.87 (beam lateral move); gantry XY +0.64→+18.645 C/A +15.86. A depends on assumed S contact (travel ≤20, gate YZ 58 µm per +300 mm).
 - Notes: gate XY very sensitive to column supports (two column points -0.2/+0.15 → XY -222) – consequence of rigid beam on 2.51 m columns; travel table centre on cell boundary x=0 → left supports don't affect table posture; gantry end rows 0,1,6,7 never affect anything; outside UI range (|h|≥13 mm) representation diff.
+# RE-VERIFY compact/horizontal (rever-compact-horizontal)
+- compact: 160 cases, squareness ≤6.5e-7 µm, sweep ≤6e-10; centre response ratio 1.000 (main 5.00); no gain remnants in src except always-1 field (since removed).
+- horizontal: 96 cases ≤2.4e-9 µm; seat line = rail mean (direction diff ≤0.015 µrad, old 2.37); main mismatch 0.97 µm confirms change effective.
+- A/C table seed used/20261012 support A +0.1 centre: compact XY B -13.313 A +8.38/-4.93 C -13.313; XZ B +1.727 A +11.72/+13.45; YZ B +56.80 A +0.40/+57.20; horizontal XY B +21.455 A +4.75/+28.33 C +23.58; YZ B -73.246 A +27.31/-49.46 C -76.77; Zpar a B +16.67 A end +30.0; b B +41.70 A end +67.2.
+- Notes: compact ID not bumped (now bumped to v5); horizontal local vs finite differ due to column pitch × 2.218 m overhang; stale test check-coupled-yz (removed).
+# RE-VERIFY lathe/common (rever-lathe-common)
+- lathe 288 cases ≤0.013 µm vs DOM; boundary jump dy 10.01→0.005 µm; dims variants ok; rigid tilt invariant.
+- A/C seed 20261012 X0Z0: C+0.1 Zface B +9.70→+13.45 A +6.0/+19.45 C +13.45; D-0.2 Zface A -79.5/-77.3, bar side A +79.5/+80.1; bore A +80/+183/+233/+130 vs B 0/+104/+154/+50.
+- all 6 machines PC/phone: 0 page errors, no NaN, buttons/sliders OK, layout same as main (≤13 px text-width shifts).
+- save/load roundtrip all IDs; old IDs rejected. travel & compact IDs were unchanged at that time → now bumped (travel-guide-v3, compact-asymmetric-bending-v5).
+- barScan boundary sampling stale → updated to pad boundaries.

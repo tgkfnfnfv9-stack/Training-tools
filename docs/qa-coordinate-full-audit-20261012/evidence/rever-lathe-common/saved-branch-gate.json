@@ -1,0 +1,210 @@
+{
+  "calculationModel": "portal-rigid-beam-v3",
+  "version": 3,
+  "supportLayout": {
+    "id": "hwacheon-l3-3000-teaching-15point-v1",
+    "points": [
+      {
+        "id": "bed-left-1",
+        "x": -0.77,
+        "z": -3.1799999999999997,
+        "group": "bed"
+      },
+      {
+        "id": "bed-center-1",
+        "x": 0,
+        "z": -3.1799999999999997,
+        "group": "bed"
+      },
+      {
+        "id": "bed-right-1",
+        "x": 0.77,
+        "z": -3.1799999999999997,
+        "group": "bed"
+      },
+      {
+        "id": "bed-left-2",
+        "x": -0.77,
+        "z": 0.020000000000000018,
+        "group": "bed"
+      },
+      {
+        "id": "bed-center-2",
+        "x": 0,
+        "z": 0.020000000000000018,
+        "group": "bed"
+      },
+      {
+        "id": "bed-right-2",
+        "x": 0.77,
+        "z": 0.020000000000000018,
+        "group": "bed"
+      },
+      {
+        "id": "bed-left-3",
+        "x": -0.77,
+        "z": 3.1799999999999997,
+        "group": "bed"
+      },
+      {
+        "id": "bed-center-3",
+        "x": 0,
+        "z": 3.1799999999999997,
+        "group": "bed"
+      },
+      {
+        "id": "bed-right-3",
+        "x": 0.77,
+        "z": 3.1799999999999997,
+        "group": "bed"
+      },
+      {
+        "id": "column-left-front",
+        "x": -1.06,
+        "z": 0.5449999999999999,
+        "group": "column-left"
+      },
+      {
+        "id": "column-left-back",
+        "x": -1.06,
+        "z": 1.0949999999999998,
+        "group": "column-left"
+      },
+      {
+        "id": "column-left-outer",
+        "x": -1.425,
+        "z": 0.8250000000000002,
+        "group": "column-left"
+      },
+      {
+        "id": "column-right-front",
+        "x": 1.06,
+        "z": 0.5449999999999999,
+        "group": "column-right"
+      },
+      {
+        "id": "column-right-back",
+        "x": 1.06,
+        "z": 1.0949999999999998,
+        "group": "column-right"
+      },
+      {
+        "id": "column-right-outer",
+        "x": 1.42,
+        "z": 0.8250000000000002,
+        "group": "column-right"
+      }
+    ]
+  },
+  "machineProfile": {
+    "version": 1,
+    "condition": "new",
+    "seed": 4049035322,
+    "keys": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "squareness": {
+      "XY": {
+        "band": 0,
+        "microns": -11.534
+      },
+      "XZ": {
+        "band": 0,
+        "microns": -16.312
+      },
+      "YZ": {
+        "band": 0,
+        "microns": 12.112
+      }
+    },
+    "guides": {
+      "X": {
+        "band": 0,
+        "microns": 3.199
+      },
+      "Y": {
+        "band": 0,
+        "microns": 7.141
+      },
+      "Z": {
+        "band": 0,
+        "microns": 15.502
+      }
+    },
+    "initialHeights": [
+      -0.15,
+      0.15,
+      0.104,
+      -0.042,
+      0.097,
+      0.116,
+      0.143,
+      -0.074,
+      0.025,
+      0.058,
+      0.009,
+      0.137,
+      0.027,
+      0.037,
+      0.098
+    ]
+  },
+  "bestState": {
+    "width": 2.85,
+    "depth": 6.84,
+    "columnX": 0,
+    "columnZ": 0,
+    "heights": [
+      -0.383,
+      0.291,
+      0.297,
+      0.275,
+      0.104,
+      0.109,
+      0.403,
+      -0.081,
+      -0.075,
+      0.018,
+      0.009,
+      0.152,
+      0.036,
+      0.037,
+      0.098
+    ]
+  },
+  "machine": "gate",
+  "mode": "l3-3000",
+  "width": 2.85,
+  "depth": 6.84,
+  "heights": [
+    -0.15,
+    0.16,
+    0.104,
+    -0.042,
+    0.097,
+    0.116,
+    0.143,
+    -0.074,
+    0.025,
+    0.058,
+    0.009,
+    0.137,
+    0.027,
+    0.037,
+    0.098
+  ],
+  "sensitivity": 0.05,
+  "measurePos": 0,
+  "offset": 0.5,
+  "columnX": 0,
+  "columnZ": 0,
+  "axisPositions": {
+    "X": 37,
+    "Y": 0,
+    "Z": 0
+  },
+  "step": 0.01,
+  "exaggerate": true
+}
