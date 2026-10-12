@@ -7,7 +7,7 @@ const near=(a,b,t=1e-8)=>assert(Math.abs(a-b)<=t,`${a} != ${b}`);
 const setstate=s=>read(`positions=${lit(s)};levelGeometry=geometryModel();`);
 function groups(k){const g=new Map;for(const f of json(`createGeometry(current).faces.filter(f=>f.axes.includes('${k}'))`)){const id=lit([f.pose,f.axes]);if(!g.has(id))g.set(id,{pose:f.pose,axes:f.axes,points:[]});g.get(id).points.push(...f.v);}return [...g.values()];}
 function centres(g){return json(`(${lit(g)}).map(g=>{const p=g.points.map(p=>displayedModelPoint(p,g.axes,current,positions,g.pose));return [0,1,2].map(i=>p.reduce((sum,vertex)=>sum+vertex[i]/p.length,0));})`);}
-for(const kind of ['compact','horizontal','travel','double','gantry','five','lathe']){
+for(const kind of ['compact','horizontal','travel','double','gantry','lathe']){
  e.storage.clear();read(`openMachine(machines.find(m=>m.kind==='${kind}'));$('exaggerate').checked=false;machineReference=null;`);
  const keys=json('machineLinearKeys()'), supports=json('supports'), zero={X:0,Y:0,Z:0,A:0,C:0};
  const profile=json("window.MachineAccuracy.generate('new',78129,machineLinearKeys(),supports.length)");
@@ -32,7 +32,7 @@ for(const kind of ['compact','horizontal','travel','double','gantry','five','lat
   const gs=groups(key),centre=centres(gs);setstate({...s,[key]:value+.01});const plus=centres(gs);setstate({...s,[key]:value-.01});const minus=centres(gs);setstate(s);
   if(c.name==='neutral'||/^[XYZ]{2}[+-]10um$/.test(c.name))gs.forEach((a,i)=>check(kind+'/'+c.name+'/'+key+'/'+value+'/'+a.pose+'/'+a.axes+' real mesh movement follows its physical guide',()=>{const tangent=unit(sub(plus[i],minus[i])),expected=kind==='lathe'&&key==='Z'?[1,0,0]:g.directions.find(d=>d.key===key).direction;assert(Math.hypot(...sub(tangent,expected))<1e-8);}));
   result.motion.push({kind,fixture:c.name,axis:key,position:value,groups:gs.map((a,i)=>({pose:a.pose,axes:a.axes,centre:centre[i],tangent:unit(sub(plus[i],minus[i])),guide:g.directions.find(d=>d.key===key).direction,guideDifference:Math.hypot(...sub(unit(sub(plus[i],minus[i])),g.directions.find(d=>d.key===key).direction))}))});
-  if(['compact','travel','double','gantry','five'].includes(kind)){
+  if(['compact','travel','double','gantry'].includes(kind)){
    const d=json(`(()=>{const g=spindleSweepGeometry();return {axis:g.measurement.axis,nose:g.nose,centre:g.centre,points:g.cardinal.map(p=>({contact:p.contact,ringPoint:p.ringPoint,reading:p.readingMicrons}))};})()`);
    const extension=d.points.map(p=>dot(sub(d.nose.map((v,i)=>v+p.ringPoint[i]),p.contact),d.axis));
    d.points.forEach((p,i)=>check(kind+'/'+c.name+'/'+key+'/'+value+'/dial'+i+' increased contact compression is positive',()=>near(p.reading,(extension[3]-extension[i])*1e6)));
@@ -43,7 +43,7 @@ for(const kind of ['compact','horizontal','travel','double','gantry','five','lat
  console.log(kind+' done rows='+result.rows.length);
 }
 {const l=lit,u=unit,out={P:[],Z:[],guideOnly:[],bodyReferences:[]};
-for(const kind of ['compact','horizontal','travel','double','gantry','five','lathe']){
+for(const kind of ['compact','horizontal','travel','double','gantry','lathe']){
  e.storage.clear();read(`openMachine(machines.find(m=>m.kind==='${kind}'));$('exaggerate').checked=false;machineReference=null;`);
  const p=json("window.MachineAccuracy.generate('new',78129,machineLinearKeys(),supports.length)");for(const q of Object.values(p.squareness))q.microns=0;for(const q of Object.values(p.guides))q.microns=0;
  for(const f of ['neutral','support+.01','support-.01','XZ+10','XZ-10','analyticBow+','analyticBow-']){

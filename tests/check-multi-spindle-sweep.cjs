@@ -43,7 +43,7 @@ function oracle(m){
  return {axis,normal,points,readings:heights.map(h=>(h-heights[3])*1e6),inside:points.map(p=>{const q=uv(p);return m.five?dot(q,q)<=1+1e-9:q.every(v=>v>=-1e-9&&v<=1+1e-9);})};
 }
 const env=makeEnvironment({pureLeveling:true});
-for(const kind of ['compact','travel','double','gantry','five']){
+for(const kind of ['compact','travel','double','gantry']){
  env.read(`openMachine(machines.find(m=>m.kind==='${kind}'));`);env.registry.exaggerate.checked=false;
  const count=env.read('supports.length'),profile=MachineAccuracy.generate('used',78612,['X','Y','Z'],count);
  env.read(`machineProfile=${JSON.stringify(profile)};machineReference=null;`);
@@ -70,24 +70,5 @@ for(const kind of ['compact','travel','double','gantry','five']){
  env.read('supportHeights=supports.map(()=>0);updateLeveling();');
  check(kind+' restoring supports restores readings exactly',()=>vn(env.json('spindleSweepGeometry().cardinal.map(p=>p.readingMicrons)'),base,1e-10));
 }
-// An ideal five-axis top tilted about X is y=-tan(A)*z. C rotates the
-// material footprint, not the infinite plane, so it cannot change readings.
-env.read("openMachine(machines.find(m=>m.kind==='five'));machineProfile=null;supportHeights=supports.map(()=>0);positions={X:0,Y:0,Z:0,A:50,C:0};updateLeveling();");env.registry.exaggerate.checked=false;
-for(const C of [-100,-31,0,47,100]){
- env.read(`positions.C=${C};updateLeveling();`);
- check('five A/C analytic slope '+C,()=>vn(env.json('spindleSweepGeometry().cardinal.map(p=>p.readingMicrons)'),[-.15*Math.tan(.225)*1e6,-.3*Math.tan(.225)*1e6,-.15*Math.tan(.225)*1e6,0],2e-7));
-}
-// Independent physical ellipse oracle after deliberately unequal support
-// scaling. C rotates the ellipse and can change contact validity, although
-// its plane (and therefore numerical ideal readings) stays the same.
-let partialFootprints=0;
-for(const [width,depth] of [[.9,3],[3,.8]])for(const A of [0,65])for(const C of [0,25,50]){
- env.read(`levelConfig.width=${width};levelConfig.depth=${depth};positions={X:0,Y:0,Z:0,A:${A},C:${C}};supportHeights=supports.map(()=>0);updateLeveling();`);
- const expected=oracle(model(env)),actual=env.json('spindleSweepGeometry()');
- if(expected.inside.some(Boolean)&&expected.inside.some(v=>!v))partialFootprints++;
- check(`five anisotropic physical footprint ${width}/${depth}/${A}/${C}`,()=>{vn(actual.tableCentre,model(env).centre,2e-12);actual.cardinal.forEach((p,j)=>{vn(p.contact,expected.points[j],2e-11);assert.equal(p.onTable,expected.inside[j]);});});
- check(`five unequal scaling retains plane-based values ${width}/${depth}/${A}/${C}`,()=>vn(actual.cardinal.map(p=>p.readingMicrons),expected.readings,3e-7));
-}
-check('ellipse tests include both inside and outside contacts on one table',()=>assert.ok(partialFootprints>0));
 for(const kind of ['horizontal','lathe']){env.read(`openMachine(machines.find(m=>m.kind==='${kind}'));`);check(kind+' remains unsupported for top-face sweep',()=>{assert.equal(env.json('spindleSweepGeometry()').valid,false);assert.equal(env.registry.spindleSweepPanel.hidden,kind==='lathe');if(kind==='horizontal'){assert.equal(env.registry.spindleSweepPanel.getAttribute('data-measurement'),'z-parallel');assert.equal(env.registry.sweepPositions.hidden,true);}});}
 if(failures.length){console.error(failures.join('\n'));process.exitCode=1;}else console.log(`PASS multi-machine spindle sweep independent physics: ${checks} checks`);

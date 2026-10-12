@@ -42,7 +42,7 @@ check('mechanical category has predictable parent navigation',()=>{
  r.mechanical.click();visiblePage('topics');r.leveling.click();visiblePage('catalog');
  r.navBack.click();visiblePage('topics');r.navHome.click();visiblePage('home');
 });
-for(let index=0;index<7;index++){
+for(let index=0;index<read('machines.length');index++){
  r.mechanical.click();r.leveling.click();r.machineGrid.children[index].click();
  check('shared navigation remains outside settings for machine '+index,()=>visiblePage('training'));
  r.raiseSupport.click();r.fineAdjust.click();r.raiseSupport.click();
@@ -69,9 +69,9 @@ for(let index=0;index<7;index++){
  });
 }
 check('switching machine while settings were open cannot leak old axis options',()=>{
- r.mechanical.click();r.leveling.click();r.machineGrid.children[5].click();
- r.openTrainingMenu.click();r.drawerAxisSelect.change('C');r.axisMenuSection.open=true;
- r.changeMachine.click();r.machineGrid.children[6].click();visiblePage('training');closedDrawer();
+ r.mechanical.click();r.leveling.click();r.machineGrid.children[0].click();
+ r.openTrainingMenu.click();r.drawerAxisSelect.change('Y');r.axisMenuSection.open=true;
+ r.changeMachine.click();r.machineGrid.children[5].click();visiblePage('training');closedDrawer();
  assert.deepEqual(r.drawerAxisSelect.children.map(o=>o.value),['X','Z']);
  assert.equal(read('selectedAxis'),'X');assert(!r.axisMenuSection.open);
  const before=json('levelRecord()');r.raiseSupport.click();
@@ -82,20 +82,20 @@ check('switching machine while settings were open cannot leak old axis options',
 // A demo notice describes one machine and must not follow a different lesson.
 const demo=createEnvironment(),d=demo.registry;
 demo.context.requestAnimationFrame=()=>1;demo.context.cancelAnimationFrame=()=>{};
-check('finished C-axis demo notice does not follow navigation into the XZ lathe',()=>{
- d.mechanical.click();d.leveling.click();d.machineGrid.children[5].click();
- d.openTrainingMenu.click();d.drawerAxisSelect.change('C');d.playAxis.click();
- assert.match(d.axisDemoStatus.textContent,/C軸.*確認中/);
+check('finished Y-axis demo notice does not follow navigation into the XZ lathe',()=>{
+ d.mechanical.click();d.leveling.click();d.machineGrid.children[0].click();
+ d.openTrainingMenu.click();d.drawerAxisSelect.change('Y');d.playAxis.click();
+ assert.match(d.axisDemoStatus.textContent,/Y軸.*確認中/);
  d.openTrainingMenu.click();d.resetAxes.click();
- assert.match(d.axisDemoStatus.textContent,/C軸.*終了/);
+ assert.match(d.axisDemoStatus.textContent,/Y軸.*終了/);
  d.changeMachine.click();assert.equal(d.axisDemoStatus.textContent,'');
- d.machineGrid.children[6].click();assert.equal(d.axisDemoStatus.textContent,'');
+ d.machineGrid.children[5].click();assert.equal(d.axisDemoStatus.textContent,'');
  assert.deepEqual(demo.json('axisConfig(current).map(a=>a.key)'),['X','Z']);
 });
 check('leaving a running demo clears its notice after stopping the animation',()=>{
  d.openTrainingMenu.click();d.playAxis.click();assert.match(d.axisDemoStatus.textContent,/確認中/);
  d.navHome.click();assert.equal(demo.read('motionFrame'),null);assert.equal(d.axisDemoStatus.textContent,'');
- d.mechanical.click();d.leveling.click();d.machineGrid.children[6].click();assert.equal(d.axisDemoStatus.textContent,'');
+ d.mechanical.click();d.leveling.click();d.machineGrid.children[5].click();assert.equal(d.axisDemoStatus.textContent,'');
 });
 check('direct machine initialization clears the former machine demo notice',()=>{
  d.openTrainingMenu.click();d.playAxis.click();
@@ -138,4 +138,4 @@ check('browser history restores electrical lessons through the shared entry life
  assert.equal(hist.context.resetCalls,resets+1,'history entry must release stale probe connections just like the lesson card');
  traverse(-1);assert.equal(hist.read('page'),'electricTopics');traverse(1);assert.equal(hist.read('page'),'tester');
 });
-console.log(`Shared site navigation: ${checks} journeys/state/history checks passed across six pages and seven machines.`);
+console.log(`Shared site navigation: ${checks} journeys/state/history checks passed across six pages and ${read('machines.length')} machines.`);

@@ -8,7 +8,7 @@ const M=require('../src/reference-measurement.js');
 let checks=0,scans=0,roundTrips=0,maxMovementResidual=0;
 const near=(a,b,t=2e-9,label='')=>{checks++;assert.ok(Number.isFinite(a)&&Math.abs(a-b)<=t,`${label}: ${a} versus ${b}`);};
 const sub=(a,b)=>a.map((v,i)=>v-b[i]);
-for(const kind of ['compact','horizontal','travel','double','gantry','five','lathe']){
+for(const kind of ['compact','horizontal','travel','double','gantry','lathe']){
  env.storage.clear();env.read(`openMachine(machines.find(m=>m.kind==='${kind}'));initializeMachineAccuracy(window.MachineAccuracy.generate('used',20261007,machineLinearKeys(),supports.length));$('exaggerate').checked=false;`);
  const dimensions=env.json('({width:levelConfig.width,depth:levelConfig.depth})');
  for(const sign of [-1,1])for(const scale of [1,.83]){

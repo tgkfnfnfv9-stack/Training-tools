@@ -19,7 +19,7 @@ async function main(){
  // predate connected-frames-v1: even identical support counts do not authorize
  // silently interpreting their heights with a different structural model.
  for(const item of legacy){
-  storage.clear();open(item.index);const old=item.values.record,before=record();
+  storage.clear();const old=item.values.record,index=read(`machines.findIndex(m=>m.id===${JSON.stringify(old.machine)})`);open(index<0?0:index);const before=record();
   label=`legacy/${item.index}/${item.mode}/${item.condition}/${item.stage}`;
   test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(old)})`)),false));
   await load(old);
@@ -27,8 +27,8 @@ async function main(){
   const v1=structuredClone(old);v1.version=1;delete v1.machineProfile;delete v1.bestState;
   label+='/v1';test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(v1)})`)),false));await load(v1);test(()=>assert.deepEqual(record(),before));results.legacyV1Rejected++;
  }
- for(const index of [0,1,2,3,4,5,6]){
-  storage.clear();const records=legacy.filter(q=>q.index===index&&q.condition==='new'&&q.stage==='initial');
+ for(const index of json('machines.map((m,i)=>i)')){
+  storage.clear();const records=legacy.filter(q=>q.values.record.machine===read(`machines[${index}].id`)&&q.condition==='new'&&q.stage==='initial');
   for(const q of records)storage.set('training-level-v1:'+q.values.record.machine+':'+q.values.record.mode,JSON.stringify(q.values.record));
   const originals=[...storage];open(index);label=`old-local-key/${index}`;
   test(()=>{for(const [key,value]of originals){assert.equal(storage.get(key),value);assert.notEqual(read('levelKey()'),key);}assert.match(r.levelSaveStatus.textContent,/新しい個体|再抽選/);});
@@ -41,11 +41,11 @@ async function main(){
  test(()=>{assert.equal(storage.get(previousL3.key),previousText);assert.notEqual(read('levelKey()'),previousL3.key);assert.equal(currentL3.heights.length,15);assert.notEqual(currentL3.supportLayout.id,previousL3.record.supportLayout.id);assert.match(r.levelSaveStatus.textContent,/新しい個体|再抽選/);});
  label='L3/previous-24-point-import-is-rejected';test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(previousL3.record)})`)),false));
  await load(previousL3.record);test(()=>{assert.deepEqual(record(),currentL3);assert.equal(storage.get(previousL3.key),previousText);assert.match(r.levelInputMessage.textContent,/旧|配置|対応/);});
- const counts=[4,8,6,15,8,3,6];
- for(let index=0;index<7;index++){
+ const counts=json('machines.map(m=>({vertical:4,horizontal:8,travel:6,gate:15,gantry:8,lathe:6})[m.id])');
+ for(let index=0;index<read('machines.length');index++){
   storage.clear();let start=performance.now();open(index);results.timings.push({index,operation:'open',milliseconds:performance.now()-start});
   label=`current-layout/${index}`;const initial=record(),profile=json('machineProfile');
-  test(()=>{assert.equal(read('supports.length'),counts[index]);assert.equal(initial.version,[0,1,3].includes(index)?3:2);assert.equal(initial.calculationModel,[3,4].includes(index)?'portal-shear-v2':index===2?'travel-guide-v2':index===6?'lathe-carriage-v2':index===1?'horizontal-guide-v2':index===0?'compact-asymmetric-bending-v4':'connected-frames-v1');assert.equal(read('validLevelRecord(levelRecord())'),true);});
+  test(()=>{assert.equal(read('supports.length'),counts[index]);assert.equal(initial.version,[0,1,3].includes(index)?3:2);assert.equal(initial.calculationModel,[3,4].includes(index)?'portal-shear-v2':index===2?'travel-guide-v2':read('current.id')==='lathe'?'lathe-carriage-v2':index===1?'horizontal-guide-v2':index===0?'compact-asymmetric-bending-v4':'connected-frames-v1');assert.equal(read('validLevelRecord(levelRecord())'),true);});
   if(index===3){
    label='L3/requested-nine-bed-points-and-original-column-coordinates';
    const stations=[240,3440,6600],expected=[...[-770,0,770].flatMap(x=>stations.map(z=>[x,z-3420])),...[-1060,1060].flatMap(x=>[3965,4515].map(z=>[x,z-3420])),[-1425,825],[1420,825]].map(([x,z])=>[x/1000,z/1000]);

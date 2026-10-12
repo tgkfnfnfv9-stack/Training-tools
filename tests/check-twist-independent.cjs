@@ -26,7 +26,7 @@ const bracket=f=>{const u=unit(f.u),r=unit(sub(f.r,mul(u,dot(f.r,u))));return fr
 const carry=(v,a,b)=>b.apply([dot(v,a.r),dot(v,a.u),dot(v,a.b)]);
 const lambda=q=>dot(q.n,sub(q.p,q.b))/dot(q.n,q.u);
 const read=(a,b)=>(lambda(a)-lambda(b))*1e6;
-const kinds=['compact','horizontal','travel','double','gantry','five','lathe'];
+const kinds=['compact','horizontal','travel','double','gantry','lathe'];
 const zero={X:0,Y:0,Z:0,A:0,C:0};
 function independentMachine(kind,meta,points,k,surface){
  const {w,d,sx,sz}=meta,common=plane(points),R=surfaceFrame({lr:common.a,fb:common.b});

@@ -93,7 +93,7 @@ near(M.compare(transform(zero),transform(end)).microns,M.compare(zero,end).micro
 // angle(a,b)=pi/2+delta; n dot b=-sin(delta), hence I=r*L*sin(delta).
 // r comes from the physical traversal definition: XY towards +comparison,
 // XZ/YZ towards -comparison. This is not a rendered/readout sign table.
-for(const kind of ['compact','horizontal','travel','double','gantry','five','lathe']){
+for(const kind of ['compact','horizontal','travel','double','gantry','lathe']){
  e.storage.clear();e.read(`openMachine(machines.find(m=>m.kind==='${kind}'));supportHeights=supports.map(()=>0);updateLeveling();`);
  const pairs=kind==='lathe'?['XZ']:['XY','XZ','YZ'];
  for(const pair of pairs)for(const q of [-10,0,10]){
@@ -137,7 +137,13 @@ for(const svg of e.registry.liveSquareness.querySelectorAll('svg')){
 const physicalChecks=checks;
 const restore=create();
 for(const old of baseline.states){
- restore.storage.clear();restore.read(`openMachine(machines.find(m=>m.kind==='${old.kind}'));`);
+ restore.storage.clear();
+ if(!restore.read(`machines.some(m=>m.id===${JSON.stringify(old.record.machine)})`)){
+  restore.read('openMachine(machines[0]);');const before=restore.json('levelRecord()');
+  assert.equal(Boolean(restore.read(`validLevelRecord(${JSON.stringify(old.record)})`)),false,old.kind+' removed machine save rejected');
+  assert.deepEqual(restore.json('levelRecord()'),before);continue;
+ }
+ restore.read(`openMachine(machines.find(m=>m.id===${JSON.stringify(old.record.machine)}));`);
  assert.equal(restore.read(`validLevelRecord(${JSON.stringify(old.record)})`),true,old.kind+' accepts old saved record');
  restore.read(`applyLevelRecord(${JSON.stringify(old.record)});updateLeveling();`);
  assert.deepEqual(restore.json('levelRecord()'),old.record,old.kind+' saved coordinate meaning');
@@ -159,4 +165,4 @@ for(const old of palletBaseline.states){
  restore.read(`levelConfig.width=${old.size[0]};levelConfig.depth=${old.size[1]};supportHeights=supports.map((p,i)=>${old.uniform}?.1:[.02,-.03,.04,-.01,.05,-.04,.01,-.02][i]);positions={X:19,Y:-21,Z:${old.Z},A:0,C:0};$('exaggerate').checked=${old.factor};updateLeveling();`);
  palletBaseline.raw.forEach((p,i)=>vec(restore.json(`displayedModelPoint(${JSON.stringify(p)},['Z'],current,positions,'work')`),old.points[i],1e-10,`pallet model regression ${old.size}/${old.uniform}/${old.factor}/${old.Z}`));
 }
-console.log(`Reference fixtures: ${physicalChecks} independent geometry comparisons, ${checks-physicalChecks} v2 regression comparisons, plus fixture validity and 7 saved-state compatibility groups passed.`);
+console.log(`Reference fixtures: ${physicalChecks} independent geometry comparisons, ${checks-physicalChecks} v2 regression comparisons, plus fixture validity and ${baseline.states.length} saved-state compatibility groups passed.`);

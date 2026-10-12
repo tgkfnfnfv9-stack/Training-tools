@@ -5,7 +5,6 @@ const e=create({pureLeveling:true}),r=e.registry;let checks=0;
 const expected={
  compact:{XY:['手前・右側','奥',-1],XZ:['上・右側','下',-1],YZ:['上・奥側','下',-1]},
  travel:{XY:['手前・右側','奥',1],XZ:['上・右側','下',-1],YZ:['上・奥側','下',-1]},
- five:{XY:['手前・右側','奥',-1],XZ:['上・右側','下',-1],YZ:['上・奥側','下',-1]},
  horizontal:{XY:['下・右側','上',1],XZ:['奥・右側','手前',1],YZ:['奥・上側','手前',1]},
  double:{XY:['左・奥側','右',1],XZ:['上・奥側','下',-1],YZ:['上・右側','下',-1]},
  gantry:{XY:['左・奥側','右',1],XZ:['上・奥側','下',-1],YZ:['上・右側','下',-1]},
@@ -28,4 +27,4 @@ for(const [kind,pairs] of Object.entries(expected)){
   }
  }
 }
-console.log(`Reference zero locations: ${checks} checks, all19 physical directions, SVG zero ends and both travel limits passed.`);
+console.log(`Reference zero locations: ${checks} checks, all current physical directions, SVG zero ends and both travel limits passed.`);

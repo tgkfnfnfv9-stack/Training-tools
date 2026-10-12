@@ -16,7 +16,7 @@ const add=(a,b)=>a.map((q,i)=>q+b[i]);
 const scale=(a,s)=>a.map(q=>q*s);
 const normalize=a=>scale(a,1/Math.hypot(...a));
 const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
-const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const variants=()=>json('machines.map((m,index)=>[index,m.id==="vertical"?"compact":m.id==="gate"?"l3-3000":""])');
 const env=makeEnvironment();
 const {registry:r,read,json,storage}=env;
 read('Math.random=()=>.271828;');
@@ -127,14 +127,14 @@ function assertCurrentLesson(){
  return {before,after};
 }
 
-for(const [index,mode] of variants){
+for(const [index,mode] of variants()){
  storage.clear();open(index,mode);const label=`${index}/${mode}`;
  const profile=setProfile(index%2?'used':'new',42+index);
  check(`全構造で初期と現在は同条件なら同じ ${label}`,()=>{
   const {before,after}=assertCurrentLesson();after.pairs.forEach((p,i)=>near(p.error,before.pairs[i].error));
   assert.equal(read('levelInitialSolution.twist'),read('levelSolution.twist'));
   assert.deepEqual(json('machineProfile'),profile);
-  if(index===6){assert.equal(r.accuracyMetrics.querySelectorAll('#accuracy-before-XY').length,0);assert.equal(r.accuracyMetrics.querySelectorAll('#accuracy-before-YZ').length,0);}
+  if(read('current.id')==='lathe'){assert.equal(r.accuracyMetrics.querySelectorAll('#accuracy-before-XY').length,0);assert.equal(r.accuracyMetrics.querySelectorAll('#accuracy-before-YZ').length,0);}
  });
  read('setSupportHeight(0,supportHeights[0]+.001)');
  check(`1µm支持調整後の値とDOMは初期からの実差 ${label}`,()=>{
@@ -203,18 +203,6 @@ for(const [b,c,trend] of [[10,-20,'worse'],[-20,-10,'better'],[10,-10,'similar']
   const value=json(`accuracyChange(${b},${c})`);near(value.delta,c-b);near(value.absoluteChange,Math.abs(c)-Math.abs(b));assert.equal(value.trend,trend);
  });
 }
-
-// A three-support machine is always a single plane. Common rigid inclination
-// can change its lean while preserving every intrinsic pair angle.
-storage.clear();open(5);const three=setProfile('used',99);
-read('supportHeights=supports.map(s=>Math.round((.05+.08*s.x/(current.w*.4)-.03*s.z/(current.d*.4))*1000)/1000);updateLeveling();');
-check('3点は姿勢が変化してもねじれと相対直角度を増やさない',()=>{
- const {before,after}=assertCurrentLesson();near(before.twist,0);near(after.twist,0);
- after.pairs.forEach((p,i)=>near(p.error,before.pairs[i].error));assert.notEqual(after.toolLean.front,before.toolLean.front);
- assert.deepEqual(json('machineProfile'),three);
-});
-read('supportHeights=supportHeights.map(h=>h+.001);updateLeveling();');
-check('共通の高さ移動は比較でも精度不変として扱う',()=>{assertCurrentLesson();for(const p of json('levelGeometry.pairs'))assert.equal(data(r['accuracy-trend-'+p.key],'trend'),'similar');});
 
 async function finish(){
  storage.clear();open(0,'compact');setProfile('used',123);

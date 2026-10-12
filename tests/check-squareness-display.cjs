@@ -1,7 +1,7 @@
 'use strict';
 const assert=require('node:assert/strict'),create=require('./leveling-dom-env.cjs');
 const e=create(),r=e.registry;let checks=0;
-for(let i=0;i<7;i++){
+for(let i=0;i<e.read('machines.length');i++){
  e.storage.clear();e.read(`openMachine(machines[${i}])`);
  const pairs=e.json('levelGeometry.pairs'),svgs=r.liveSquareness.querySelectorAll('svg');
  assert.deepEqual(svgs.map(s=>s.dataset.pair),pairs.map(p=>p.key));

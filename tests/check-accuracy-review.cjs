@@ -58,7 +58,7 @@ async function main(){
   const anchor=json(`levelGeometry.poses.${pose}.anchor`),p=[anchor.x,.66,anchor.z];
   return sub(json(`levelVisualPoint(${JSON.stringify(p.map((v,i)=>v+vector[i]))},'${pose}')`),json(`levelVisualPoint(${JSON.stringify(p)},'${pose}')`));
  }
- for(const [index,mode] of [[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']]){
+ for(const [index,mode] of json('machines.map((m,index)=>[index,m.id==="vertical"?"compact":m.id==="gate"?"l3-3000":""])')){
   open(index,mode);
   read('supportHeights=supports.map(s=>{const p=levelCoordinates(s.x,s.z);return .027*p.x-.019*p.z+.05;});updateLeveling(false);');
   check('構造別・複合平面の直角保持 '+index+' '+mode,()=>{for(const p of current().pairs){near(p.errorMicrons,0);near(p.angleDegrees,90);}});
@@ -110,10 +110,8 @@ async function main(){
  open(3,'l3-3000');r.supportWidth.change('5');r.supportDepth.change('1.3');
  read('supportHeights=supports.map(s=>Math.round(.2*(s.x/(current.w*.4))*(s.z/(current.d*.4))*100)/100);levelExercise={solved:false};updateLeveling(false);');
  check('門の調整目標は平均の相殺で左右の倒れ差を見落とさない',()=>{const g=current();assert.ok(Math.abs(g.columns[1].front-g.columns[0].front)>20);assert.equal(read('levelExercise.solved'),false);assert.doesNotMatch(r.diagnosis.textContent,/教材の調整目標内/);});
- open(6);preset('twist');
+ open(read('machines.findIndex(m=>m.id==="lathe")'));preset('twist');
  check('旋盤は主軸基準 XZ と NC 送り Z を区別し Y 軸を表示しない',()=>{assert.deepEqual(current().pairs.map(p=>p.key),['XZ']);assert.deepEqual(current().axes.map(p=>p.key),['X','Z']);assert.match(r.accuracyMetrics.textContent,/主軸基準XZ.*送りZとは別/);assert.match(r.geometryAssumption.textContent,/NC送りX–Zの案内直角度ではありません/);assert.match(r.geometryAssumption.textContent,/Y軸はありません/);assert.equal(r.columnLayout.hidden,true);});
- open(5);check('三点支持のねじれデモを無効化',()=>assert.equal(r.demoTwist.disabled,true));
- r.demoColumn.click();check('三点支持のコラム倒れデモも相対直角は保持',()=>{assert.ok(Math.abs(current().toolLean.front)>1);for(const p of current().pairs)near(p.errorMicrons,0);});
 
  open(0,'compact');r.demoColumn.click();r.exaggerate.checked=false;r.exaggerate.onchange();
  check('前倒れの描画符号は床基準角度と一致',()=>{const up=unit(poseDirection([0,1,0],'tool'));assert.ok(up[2]<0);near(Math.atan2(-up[2],up[1])*1e6,current().toolLean.front);});

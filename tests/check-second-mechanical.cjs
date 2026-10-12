@@ -9,7 +9,7 @@ const result=[];
 // This first block is a cross-layer equality check, not an independent physics
 // oracle: model vertices and measurement poses are both production outputs.
 // Independent physical expectations follow below.
-for(const kind of ['compact','horizontal','travel','double','gantry','five','lathe']) {
+for(const kind of ['compact','horizontal','travel','double','gantry','lathe']) {
  env.storage.clear();env.read(`openMachine(machines.find(m=>m.kind==='${kind}'));$('exaggerate').checked=false;`);
  const pairs=kind==='lathe'?['XZ']:['XY','XZ','YZ'];
  for(const dimension of [0,1])for(const sign of [-1,1]) {
@@ -68,7 +68,7 @@ for(const kind of ['travel','horizontal','lathe'])for(const sign of [-1,1])for(c
  }
 }
 let rigidScans=0;
-for(const kind of ['compact','horizontal','travel','double','gantry','five','lathe']) {
+for(const kind of ['compact','horizontal','travel','double','gantry','lathe']) {
  env.storage.clear();env.read(`openMachine(machines.find(m=>m.kind==='${kind}'));$('exaggerate').checked=false;levelConfig.columnX=63;levelConfig.columnZ=-71;supportHeights=supports.map(p=>{const q=levelCoordinates(p.x,p.z);return .071*q.x-.039*q.z+.04;});machineProfile={guides:{},initialHeights:supports.map(()=>0),squareness:${JSON.stringify(kind==='lathe'?{XZ:{microns:70}}:{XY:{microns:70},XZ:{microns:-81},YZ:{microns:92}})}};positions={X:-61,Y:87,Z:-95,A:0,C:0};updateLeveling();`);
  for(const pair of kind==='lathe'?['XZ']:['XY','XZ','YZ']) {
   const a=(kind==='lathe'?70:({XY:70,XZ:-81,YZ:92}[pair]))/300000,expected=(pair==='XY'?1:-1)*.3*Math.sin(a)*1e6,actual=env.json(`referenceScan({key:'${pair}'})`);

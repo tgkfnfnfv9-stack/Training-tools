@@ -5,7 +5,7 @@ const assert=require('node:assert/strict');
 const createEnvironment=require('./leveling-dom-env.cjs');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const e=createEnvironment(),{registry:r,read,json,storage}=e;
-const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const variants=()=>json('machines.map((m,index)=>[index,m.id==="vertical"?"compact":m.id==="gate"?"l3-3000":""])');
 let checks=0;
 function check(name,fn){try{fn();checks++;}catch(error){throw new Error(name+': '+error.message,{cause:error});}}
 function near(a,b,tolerance=1e-7){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tolerance,`${a} != ${b}`);}
@@ -14,7 +14,7 @@ let sweepTextExceptions=new Map(),sweepAriaExceptions=new Map();
 const sweepSceneDescription='主軸とテーブル上面の相対傾きを直径300ミリで比較する4点のダイヤル測定値も同時に表示します。右・奥・左・手前の4方向です。上の3枠は基準器を使う300ミリの仮想走査、隣の4点は手前基準の相対読みです。';
 function prepareSweepExceptions(){
  sweepTextExceptions=new Map();sweepAriaExceptions=new Map();
- if(!['compact','travel','double','gantry','five'].includes(read('current.kind')))return;
+ if(!['compact','travel','double','gantry'].includes(read('current.kind')))return;
  const g=json('(()=>{const m=spindleSweepGeometry();return {valid:m.valid,cardinal:m.cardinal,point:m.valid?m.pointAt(spindleSweepAngle):null,angle:spindleSweepAngle};})()'),zero=g.valid&&g.cardinal[3].onTable;
  const number=v=>{const magnitude=Math.round(Math.abs(v));return magnitude===0?'0':(v<0?'-':'+')+magnitude;};
  const direction=['右','奥','左','手前'];
@@ -28,7 +28,7 @@ function prepareSweepExceptions(){
  for(const id of ['sweepCurrentAngle','sweepCurrentValue','sweepDial','runSpindleSweep'])assert.equal(r[id],undefined);
  const diameter=r.spindleSweepPanel.querySelectorAll('.sweep-diameter');assert.equal(diameter.length,0);sweepTextExceptions.set(r.spindleSweepPanel.querySelectorAll('.sweep-readout-unit')[0],'µm');
  sweepTextExceptions.set(r.sweepContactStatus,!g.valid?'測定不可・主軸と上面の姿勢を確認':!zero?'手前が面外・軸を中央へ':!g.point?.onTable?'測定子が面外・軸を中央へ':'手前基準・µm（0.001 mm）');
- sweepTextExceptions.set(r.sweepMeasurementNote,'主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。5軸はA/Cの姿勢を反映したテーブル上面を測ります。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。');
+ sweepTextExceptions.set(r.sweepMeasurementNote,'主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。');
 }
 // Only the dedicated position labels and approved current 300 mm readings
 // may contain numbers. Adjustment amounts and initial/delta values stay hidden.
@@ -72,7 +72,7 @@ function nonnumeric(){
  for(const el of visibleElements(r.training)){
   let label=el.getAttribute('aria-label')||'';
   if(sweepAriaExceptions.has(el)){assert.equal(label,sweepAriaExceptions.get(el));label='';}
-  if(el===r.scene&&['compact','travel','double','gantry','five'].includes(read('current.kind'))){assert.ok(label.endsWith(sweepSceneDescription));label=label.slice(0,-sweepSceneDescription.length);}
+  if(el===r.scene&&['compact','travel','double','gantry'].includes(read('current.kind'))){assert.ok(label.endsWith(sweepSceneDescription));label=label.slice(0,-sweepSceneDescription.length);}
   if(el.classList.contains('live-pair-error-value')||el.classList.contains('live-squareness-diagram')){assert.match(label,/仮想測定|範囲|A\/C/);label='';}
   let aria=label.replace(/(?:5|2)軸/g,'').replace(/15か所/g,'');
   for(const identity of [read('current.name'),...json('supports.map(s=>s.name)')])aria=aria.split(identity).join('');
@@ -109,7 +109,7 @@ function verifyDiagrams(){
   assert.doesNotMatch(visibleText(svg),/[0-9°µμ]/);
  }
 }
-for(const [index,mode] of variants)for(const condition of ['new','used']){
+for(const [index,mode] of variants())for(const condition of ['new','used']){
  const profile=loadProfile(index,mode,condition),label=index+'/'+mode+'/'+condition;
  check('fresh coarse and all-detail numeric suppression '+label,()=>{assert.equal(read('levelRecord().step'),.01);assert.equal(r.coarsePanel.hidden,false);assert.equal(r.finePanel.hidden,true);nonnumeric();hintCandidate('coarseHint','coarse');});
  const original=json('levelRecord()'),initial=json('levelInitialGeometry');
@@ -123,7 +123,6 @@ for(const [index,mode] of variants)for(const condition of ['new','used']){
  check('fine entry has its own aggregate comparison, not a new initial angle '+label,()=>{near(Number(r.fineOverallProgress.getAttribute('data-before')),coarseScore);assert.equal(r.fineOverallProgress.getAttribute('data-trend'),'similar');assert.equal(r.coarsePanel.hidden,true);assert.equal(r.finePanel.hidden,false);assert.equal(read('levelRecord().step'),.001);hintCandidate('fineHint','fine');});
  const actualBest=json('machineBestHeights()');if(!r.fineExample.disabled)r.fineExample.click();
  check('reference example applies real heights and real target '+label,()=>{assert.deepEqual(json('supportHeights'),actualBest);assert(read('machineEvaluation(supportHeights).objective')<=coarseScore+1e-8);assert.equal(r.fineStatus.getAttribute('data-target'),'true');near(Number(r.fineStatus.getAttribute('data-gap')),read('updateMachineAccuracy().gap'));assert.match(r.fineStatus.textContent,/目安内/);assert.doesNotMatch(r.fineStatus.textContent,/完全|合格|すべて改善/);assert.deepEqual(json('machineProfile'),profile);verifyDiagrams();nonnumeric();});
- if(index===5)check('planar supports cannot fabricate pair changes '+label,()=>{for(const local of r.accuracyDiagram.querySelectorAll('g').filter(g=>g.dataset.pair)){near(Number(local.getAttribute('data-delta')),0,1e-7);assert.equal(local.getAttribute('data-direction'),'unchanged');assert.equal(local.querySelectorAll('.pair-change-area').length,0);}assert.match(r.fineTwist.textContent,/平面/);});
  const saved=json('levelRecord()');read(`applyLevelRecord(${JSON.stringify(saved)});buildSupports();updateLeveling();`);
  check('JSON restores real data and discards unsaved fine-entry history '+label,()=>{assert.deepEqual(json('levelRecord()'),saved);assert.equal(read('fineStartEvaluation'),null);assert.match(r.fineOverallProgress.textContent,/まだありません/);assert.equal(r.finePanel.hidden,false);verifyDiagrams();});
  r.coarseAdjust.click();r.fineAdjust.click();r.startLevelExercise.click();

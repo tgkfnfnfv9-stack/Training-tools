@@ -20,7 +20,7 @@ function setSurface(e,expression,state={X:0,Y:0,Z:0,A:0,C:0}){e.read(`positions=
 function arrow(e,key){return unit(e.json(`(()=>{const a=axisIndicators(current,createGeometry(current)).find(a=>a.key==='${key}'),o=a.points[0].map((v,i)=>(v+a.points[1][i])/2),p=a.points.map(q=>levelAxisVisualPoint(q,o,a.pose,a.bodyOrigin,a.key));return p[1].map((v,i)=>v-p[0][i]);})()`));}
 function world(e,p,axes,pose='tool'){return e.json(`levelMappedBodyVisualPoint(displayTransformedPoint(${JSON.stringify(p)},${JSON.stringify(axes)},current,positions,'${pose}'),'${pose}')`);}
 
-for(const index of [0,1,2,6]){
+for(const index of pure.json('machines.map((m,index)=>({id:m.id,index})).filter(m=>["vertical","horizontal","travel","lathe"].includes(m.id)).map(m=>m.index)')){
  open(pure,index);
  for(const expression of ['.04','.04+.017*q.x-.023*q.z','.02+.031*q.z']){
   setSurface(pure,expression);
@@ -111,7 +111,7 @@ for(const gain of [false,true]){
 
 // Moving the cross-slide X does not relocate the carriage's bearing seat.
 // Z moves that seat along the bed; the rendered cross-slide still moves in X.
-open(pure,6);
+open(pure,pure.read('machines.findIndex(m=>m.id==="lathe")'));
 for(const Z of [-100,0,100]){
  let baseline,anchor;
  for(const X of [-100,0,100]){
@@ -144,7 +144,7 @@ check('same travel deformation improves or worsens according to intrinsic sign',
 
 (async()=>{
  const live=makeEnvironment();
- for(const [index,id] of [[0,'compact-asymmetric-bending-v4'],[1,'horizontal-guide-v2'],[2,'travel-guide-v2'],[6,'lathe-carriage-v2']]){
+ for(const [index,id] of [[0,'compact-asymmetric-bending-v4'],[1,'horizontal-guide-v2'],[2,'travel-guide-v2'],[live.read('machines.findIndex(m=>m.id==="lathe")'),'lathe-carriage-v2']]){
   open(live,index);const keys=live.json('machineLinearKeys()');
   const profile=MachineAccuracy.generate('used',67123+index,keys,live.read('supports.length'));
   live.read(`initializeMachineAccuracy(${JSON.stringify(profile)});supportHeights=supports.map(()=>0);updateLeveling();`);const flat=values(live);
