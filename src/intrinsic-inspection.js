@@ -5,7 +5,7 @@
  if(root)root.IntrinsicInspection=api;
 })(typeof window!=='undefined'?window:typeof globalThis!=='undefined'?globalThis:null,function(){
  'use strict';
- const model='intrinsic-inspection-v1',lengthMm=300,referenceIndex=3;
+ const model='intrinsic-inspection-v2',lengthMm=300,referenceIndex=3;
  // This independent stream derives from the existing individual seed. It neither
  // consumes nor changes the version-1 profile's random sequence or saved schema.
  const seedSalt=0x49535031;
@@ -45,7 +45,8 @@
  }
  // Invented teaching ranges, not machine specifications or market statistics:
  // new: eccentricity radius 0.5–2.5 µm, tilt 2–15 µrad, raw heights ±4 µm;
- // used: radius 1–6 µm, tilt 5–40 µrad, raw heights ±12 µm.
+ // used: radius 1–4 µm, tilt 5–25 µrad, raw heights ±7 µm (v2: a used
+ // individual stays within the 20 µm teaching tolerance at its best setting).
  // Independent directions retain cancellation naturally, with no value clamp.
  // No support, axis position, camera or rotary posture enters this model. The
  // five-axis chart represents the same A=C=0 intrinsic reference inspection.
@@ -56,9 +57,9 @@
    const magnitude=minimum+(maximum-minimum)*rng(),angle=2*Math.PI*rng();
    return [magnitude*Math.cos(angle),magnitude*Math.sin(angle)];
   };
-  const eccentricity=used?radial(1,6):radial(.5,2.5);
-  const tilt=used?radial(5,40):radial(2,15);
-  const scale=used?12:4,heights=grid.map(()=>scale*(2*rng()-1));
+  const eccentricity=used?radial(1,4):radial(.5,2.5);
+  const tilt=used?radial(5,25):radial(2,15);
+  const scale=used?7:4,heights=grid.map(()=>scale*(2*rng()-1));
   return {model,seed:profile.seed,condition:profile.condition,runout:runout(eccentricity,tilt),surface:surface(heights)};
  }
  return Object.freeze({model,lengthMm,referenceIndex,grid,runoutAt,runout,surface,fromProfile});

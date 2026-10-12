@@ -8,7 +8,10 @@
  // Teaching probabilities per error item, NOT measured market statistics.
  // Angular errors are signed micrometres over a fixed 300 mm reference.
  const referenceLength=.3;
- const distributions={new:[{weight:95,min:1,max:20},{weight:5,min:20,max:40}],used:[{weight:60,min:5,max:20},{weight:30,min:20,max:60},{weight:10,min:60,max:150}]};
+ // Version 2 keeps every intrinsic item at or below 25 µm. The page then only
+ // accepts a drawn individual whose best support setting brings every displayed
+ // reading within 20 µm (0.02 mm) while the installed twist exceeds it.
+ const distributions={new:[{weight:80,min:1,max:10},{weight:20,min:10,max:18}],used:[{weight:60,min:5,max:15},{weight:40,min:15,max:25}]};
  const quantize=v=>Math.round(v*1000)/1000;
  function random(seed){let value=seed>>>0;return ()=>{value=(value+0x6D2B79F5)>>>0;let t=value;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
  function generate(condition,seed,keys,count){

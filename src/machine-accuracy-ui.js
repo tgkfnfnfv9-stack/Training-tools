@@ -10,7 +10,7 @@ function machineSeed(){
 }
 function initializeMachineAccuracy(profile,bestState){
  const restored=profile&&window.MachineAccuracy.valid(profile,machineLinearKeys(),supports.length);
- machineProfile=restored?JSON.parse(JSON.stringify(profile)):window.MachineAccuracy.generate('new',machineSeed(),machineLinearKeys(),supports.length);
+ machineProfile=restored?JSON.parse(JSON.stringify(profile)):machineDrawProfile('new');
  machineReference=null;machineSavedBest=restored&&bestState?JSON.parse(JSON.stringify(bestState)):null;
  $('machineCondition').value=machineProfile.condition;
  if(!restored)supportHeights=[...machineProfile.initialHeights];
@@ -34,47 +34,107 @@ function machineSolution(heights){
  }
  return current.kind==='compact'?window.Leveling.compactBending(solution,levelConfig.width,levelConfig.depth):solution;
 }
-function machineEvaluation(heights){
- const solution=machineSolution(heights),samples=geometrySamples(solution,machineProfile,window.MachineAccuracy.referenceLength);
- return machineEvaluationFrom(samples,solution);
-}
-function machineEvaluationFrom(samples,solution){
- const values=[];
- for(const {geometry:g} of samples){
-  g.pairs.forEach(p=>values.push(p.deviationMicroradians*.3));
-  // Relative posture is a supplementary objective; paired-axis errors take
-  // priority. Gate disagreement cannot disappear behind an average frame.
-  values.push(g.relativeLean.front*.3*.25,g.relativeLean.right*.3*.25);
-  if(g.columns.length===2)values.push((g.columns[1].front-g.columns[0].front)*.3);
+// Teaching tolerance for every displayed dial value (µm, = 0.02 mm). The
+// average level enters with 0.02 mm/m treated like 20 µm.
+const machineTolerance=20;
+// Fine-adjustment decisions use the dial values at the standard measurement
+// position (every axis at its centre), the same position a new draw starts at.
+function machineStandardState(){return Object.fromEntries(Object.keys(positions).map(k=>[k,0]));}
+// Every leveling-dependent dial value shown on the page, from the same
+// measurement functions as the display. No gain or offset is applied.
+function machineReadings(heights,profile=machineProfile,state=machineStandardState()){
+ const solution=machineSolution(heights),readings=[],add=(key,label,value)=>readings.push({key,label,microns:Number.isFinite(value)?value:null});
+ if(current.kind==='lathe'){
+  if(typeof latheInspectionGeometry==='function'){const L=latheInspectionGeometry(state,solution,profile);add('face','刃物台X送り',L.face);add('flat','往復台Z送り',L.flat);add('barSide','テストバー側面',L.barSide);add('barTop','テストバー上面',L.barTop);add('dx','穴芯X',L.dx);add('dy','穴芯高さ',L.dy);}
+ }else{
+  for(const p of geometryModel(state,solution,profile).pairs){const m=referenceScan(p,state,solution,profile);add(p.key,'直角'+p.key,m.valid?m.microns:null);}
+  if(current.kind==='horizontal'){const h=horizontalParallelism(state,solution,profile);add('parallelA','Z平行・横',h.a?.microns);add('parallelB','Z平行・縦',h.b?.microns);}
+  else if(supportsSpindleSweep()){const w=spindleSweepGeometry(state,solution,profile,1);for(let i=0;i<3;i++)add('sweep'+i,'触れ・'+sweepDirections[i],w.valid&&w.cardinal[i].onTable?w.cardinal[i].readingMicrons:null);}
  }
- const weight=Math.sqrt(samples.length)*.15;
- values.push(solution.lr*300*weight,solution.fb*300*weight);
- return {values,objective:window.MachineAccuracy.rms(values),maxSquareness:Math.max(...samples.flatMap(s=>s.geometry.pairs.map(p=>Math.abs(p.deviationMicroradians*.3))))};
+ return {solution,readings};
+}
+function machineEvaluation(heights,profile=machineProfile){
+ const {solution,readings}=machineReadings(heights,profile),level=[solution.lr*1000,solution.fb*1000];
+ const values=[...readings.map(r=>r.microns??0),...level],maxReading=Math.max(0,...readings.map(r=>Math.abs(r.microns??0)));
+ return {readings,level,values,objective:window.MachineAccuracy.rms(values),maxReading,maxSquareness:maxReading,worst:Math.max(maxReading,...level.map(Math.abs))};
+}
+// Linear sensitivity of every value to each support (finite difference about
+// level supports). It only steers searches and hints; results are re-evaluated.
+let machineLinearCache=null;
+function machineLinearModel(profile=machineProfile){
+ const key=JSON.stringify([current.id,current.kind,supports.length,levelConfig]);
+ if(machineLinearCache?.key===key)return machineLinearCache;
+ const zeros=supports.map(()=>0),base=machineEvaluation(zeros,profile).values,step=.05;
+ const columns=zeros.map((_,i)=>{const h=[...zeros];h[i]=step;return machineEvaluation(h,profile).values.map((v,j)=>(v-base[j])/step);});
+ machineLinearCache={key,matrix:base.map((_,j)=>columns.map(c=>c[j]))};
+ return machineLinearCache;
+}
+function machineBestSearch(profile,start){
+ const {matrix}=machineLinearModel(profile);let heights=[...start],metric=machineEvaluation(heights,profile),best={heights,metric};
+ for(let round=0;round<3;round++){
+  const bias=metric.values.map((v,j)=>v-matrix[j].reduce((sum,q,i)=>sum+q*heights[i],0));
+  const next=window.MachineAccuracy.optimize(matrix,bias,heights).heights,nextMetric=machineEvaluation(next,profile);
+  if(!(nextMetric.objective<best.metric.objective-1e-9))break;
+  best={heights:next,metric:nextMetric};heights=next;metric=nextMetric;
+ }
+ return best;
 }
 function findMachineReference(key){
- const zeros=supports.map(()=>0),bias=machineEvaluation(zeros).values;
- const columns=zeros.map((_,i)=>{
-  const plus=[...zeros],minus=[...zeros];plus[i]=.05;minus[i]=-.05;
-  const a=machineEvaluation(plus).values,b=machineEvaluation(minus).values;
-  return a.map((v,j)=>(v-b[j])/.1);
- });
- const matrix=bias.map((_,i)=>columns.map(c=>c[i]));
- const searched=window.MachineAccuracy.optimize(matrix,bias,machineProfile.initialHeights);
+ const zeros=supports.map(()=>0),searched=machineBestSearch(machineProfile,machineProfile.initialHeights);
  const saved=machineSavedBest&&['width','depth','columnX','columnZ'].every(k=>machineSavedBest[k]===levelConfig[k])?[machineSavedBest.heights]:[];
- const candidates=[searched.heights,zeros,machineProfile.initialHeights,...saved].map(heights=>({heights:[...heights],metric:machineEvaluation(heights)}));
+ const candidates=[searched,...[zeros,machineProfile.initialHeights,...saved].map(heights=>({heights:[...heights],metric:machineEvaluation(heights)}))];
  const best=candidates.reduce((a,b)=>a.metric.objective<=b.metric.objective?a:b);
  return {key,initial:machineEvaluation(machineProfile.initialHeights),best};
+}
+// Draw individuals until one is adjustable: after coarse leveling (a rigid
+// plane change, which leaves every dial value unchanged) at least one value
+// exceeds 20 µm, and the best support setting brings all of them within 15 µm.
+// The accepted seed alone is saved, so a restore regenerates the same profile.
+function machineCandidate(condition,seed){
+ const profile=window.MachineAccuracy.generate(condition,seed,machineLinearKeys(),supports.length),inspection=window.IntrinsicInspection?.fromProfile(profile);
+ const fixed=[...Object.values(profile.guides).map(g=>g.microns),...(inspection?[inspection.runout.rootMicrons,inspection.runout.tipMicrons,inspection.surface.rangeMicrons]:[])];
+ if(Math.max(...fixed)>machineTolerance)return {profile,ok:false,score:Infinity};
+ const initial=machineEvaluation(profile.initialHeights,profile);
+ if(initial.maxReading<=machineTolerance)return {profile,ok:false,score:Infinity};
+ const best=machineBestSearch(profile,profile.initialHeights);
+ return {profile,ok:best.metric.maxReading<=machineTolerance*.75&&best.metric.worst<=machineTolerance,score:best.metric.worst};
+}
+function machineDrawProfile(condition){
+ const seed=machineSeed();let fallback=null;
+ for(let k=0;k<60;k++){const c=machineCandidate(condition,(seed+k)>>>0);if(c.ok)return c.profile;if(Number.isFinite(c.score)&&(!fallback||c.score<fallback.score))fallback=c;}
+ return (fallback||{profile:window.MachineAccuracy.generate(condition,seed,machineLinearKeys(),supports.length)}).profile;
+}
+// One support, one signed amount: the move that most lowers the largest value
+// in the linear model, then confirmed by a full re-evaluation.
+function machineFineHint(heights=supportHeights){
+ const {matrix}=machineLinearModel(),now=machineEvaluation(heights),worst=v=>Math.max(...v.map(Math.abs));let best=null;
+ for(let i=0;i<heights.length;i++)for(let k=-500;k<=500;k++){
+  const delta=k/1000,height=Math.round((heights[i]+delta)*1000)/1000;if(!k||Math.abs(height)>.5)continue;
+  const values=now.values.map((v,j)=>v+matrix[j][i]*delta),score=worst(values)+1e-4*Math.abs(delta);
+  if(!best||score<best.score)best={i,delta,score,predicted:values};
+ }
+ const label=values=>{const items=[...now.readings.map((r,j)=>({label:r.label,value:values[j]})),{label:'平均の左右傾き',value:values[now.readings.length],level:true},{label:'平均の前後傾き',value:values[now.readings.length+1],level:true}];return items.reduce((a,b)=>Math.abs(b.value)>Math.abs(a.value)?b:a);};
+ const current=label(now.values),apply=(i,delta)=>{const next=[...heights];next[i]=Math.round((heights[i]+delta)*1000)/1000;return machineEvaluation(next);};
+ if(best&&best.score<worst(now.values)-.5){const after=apply(best.i,best.delta);if(after.worst<now.worst)return {now,current,move:{i:best.i,delta:best.delta,after,worstAfter:after.worst}};}
+ // When no single move lowers the largest value, step one support toward the
+ // reference setting; several values then fall together in later steps.
+ if(machineReference){
+  const target=machineBestHeights(),order=heights.map((h,i)=>({i,delta:Math.round((target[i]-h)*1000)/1000})).filter(q=>Math.abs(q.delta)>=.001).sort((a,b)=>Math.abs(b.delta)-Math.abs(a.delta));
+  for(const q of order){const after=apply(q.i,q.delta);if(after.objective<now.objective-1e-6)return {now,current,move:{i:q.i,delta:q.delta,after,worstAfter:after.worst,towardReference:true}};}
+ }
+ return {now,current,move:null};
 }
 function updateMachineAccuracy(){
  if(!machineProfile){$('machineScenario').hidden=true;return null;}
  $('machineScenario').hidden=false;
  const key=JSON.stringify([current.id,current.kind,machineProfile,levelConfig.width,levelConfig.depth,levelConfig.columnX,levelConfig.columnZ]);
  if(!machineReference||machineReference.key!==key)machineReference=findMachineReference(key);
- const metric=machineEvaluationFrom(accuracyRange,levelSolution);
+ const metric=machineEvaluation(supportHeights);
  // A manually discovered better result becomes the reference, too.
  if(metric.objective<machineReference.best.metric.objective-1e-8)machineReference.best={heights:[...supportHeights],metric:machineEvaluation(supportHeights)};
  const best=machineReference.best,initial=machineReference.initial;
- const gap=Math.sqrt(Math.max(0,metric.objective**2-best.metric.objective**2)),target=gap<=.1;
+ // Target: every displayed value and the average level within 0.02 mm.
+ const gap=Math.sqrt(Math.max(0,metric.objective**2-best.metric.objective**2)),target=metric.worst<=machineTolerance+1e-6;
  const total=Math.max(.000001,Math.sqrt(Math.max(0,initial.objective**2-best.metric.objective**2)));
  const progress=Math.max(0,Math.min(100,(1-gap/total)*100));
  const condition=machineProfile.condition==='new'?'新品':'中古';
@@ -119,7 +179,7 @@ function validMachineBest(record){
 }
 function drawMachine(condition){
  stopMotion();invalidateLevelImport();resetAdjustmentProgress();$('adjustStep').value='0.01';adjustmentStage='coarse';
- machineProfile=window.MachineAccuracy.generate(condition,machineSeed(),machineLinearKeys(),supports.length);machineReference=null;machineSavedBest=null;
+ machineProfile=machineDrawProfile(condition);machineReference=null;machineSavedBest=null;
  supportHeights=[...machineProfile.initialHeights];positions={X:0,Y:0,Z:0,A:0,C:0};updateAxisValues();levelExercise={solved:false};
  $('machineCondition').value=condition;$('levelInputMessage').textContent=(condition==='used'?'中古':'新品')+'の別個体と据付状態を抽選しました。';updateLeveling();
 }

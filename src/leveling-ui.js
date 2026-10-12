@@ -176,7 +176,9 @@ function updateLevelStages(machineResult=null,target=false){
  $('coarseBubbleLR').style.left=(50+bubbleOffset(levelSolution.lr))+'%';
  // Positive front/back slope is high at the back: the vertical bubble moves up.
  $('coarseBubbleFB').style.setProperty('--bubble-position',(50-bubbleOffset(levelSolution.fb))+'%');
- const significant=machineProfile&&Math.max(...accuracyRange.flatMap(s=>s.geometry.pairs.map(p=>Math.abs(p.deviationMicroradians*.3))),...Object.values(machineProfile.guides).map(g=>g.microns))>20.000001;
+ // Every displayed value is inside the target when target is true; only a
+ // fixed guide component can still exceed 20 µm.
+ const significant=machineProfile&&Math.max(...Object.values(machineProfile.guides).map(g=>g.microns))>20.000001;
  $('fineStatus').textContent=target?(significant?'支持姿勢の調整目安内。残る誤差も確認':'微調整の目安内。本体や支持姿勢に残る誤差を確認'):'直角と姿勢を見ながら微調整';
  $('fineStatus').setAttribute('data-target',String(target));$('fineStatus').setAttribute('data-body-significant',String(!!significant));if(machineResult)$('fineStatus').setAttribute('data-gap',String(machineResult.gap));
  $('fineStatus').className='stage-status'+(target&&!significant?' within':'');
@@ -198,6 +200,7 @@ function updateLevelStages(machineResult=null,target=false){
 function updateAdjustmentHint(coarse,target){
  const step=Number($('adjustStep').value),key=JSON.stringify([current.id,current.kind,supportHeights,levelConfig,machineProfile,step]);
  const score=heights=>adjustmentStage==='coarse'?(()=>{const s=machineSolution(heights);return s.lr*s.lr+s.fb*s.fb;})():machineEvaluation(heights).objective;
+ if(adjustmentStage==='fine'&&machineProfile)return updateFineReadingHint(target,key);
  if(key!==adjustmentHintKey){
   const before=score(supportHeights),threshold=Math.max(1e-12,Math.abs(before)*1e-10);let best=null;
   for(let i=0;i<supports.length;i++)for(const direction of [-1,1]){
@@ -213,6 +216,23 @@ function updateAdjustmentHint(coarse,target){
  const reminder=$('supportStageHint'),ready=adjustmentStage==='coarse'?coarse:target,mode=ready?'goal':best?'candidate':'stalled';
  reminder.textContent=ready?(adjustmentStage==='coarse'?'微調整へ。残る誤差を確認':'初期との差・残る誤差を確認'):best?String.fromCharCode(65+best.i)+'を少し'+(best.direction>0?'上げる':'下げる')+'方向へ':'単独候補なし · 参考例を比較';
  reminder.setAttribute('data-mode',mode);reminder.setAttribute('data-support',mode==='candidate'?String(best.i):'');reminder.setAttribute('data-direction',mode==='candidate'?String(best.direction):'');
+}
+// Fine stage: name the dial value outside 0.02 mm and the single support move
+// (amount and direction) that lowers the largest value, read from the dials,
+// not from the level vial.
+function updateFineReadingHint(target,key){
+ if(key!==adjustmentHintKey){adjustmentHintKey=key;adjustmentHintValue=machineFineHint();}
+ const worstText=item=>item.level?cleanNumber(Math.abs(item.value)/1000,3)+' mm/m':cleanNumber(Math.abs(item.value),0)+' µm';
+ const h=adjustmentHintValue,move=h.move,name=i=>String.fromCharCode(65+i),value=v=>squarenessMicronText(v)+' µm',hint=$('fineHint'),reminder=$('supportStageHint');
+ const over=h.now.readings.filter(r=>r.microns!==null&&Math.abs(r.microns)>machineTolerance).map(r=>r.label+' '+value(r.microns));
+ hint.setAttribute('data-support',move?String(move.i):'');hint.setAttribute('data-direction',move?String(Math.sign(move.delta)):'');hint.setAttribute('data-amount',move?String(move.delta):'');
+ hint.setAttribute('data-before-score',String(h.now.worst));hint.setAttribute('data-after-score',move?String(move.worstAfter):'');hint.setAttribute('data-step','0.001');
+ const action=move?name(move.i)+'を'+cleanNumber(Math.abs(move.delta),3)+' mm'+(move.delta>0?'上げる':'下げる'):'';
+ hint.textContent=target?'測定値はすべて0.02 mm（20 µm）以内です。'+(move?'さらに詰めるなら '+action+'。':''):
+  (over.length?'0.02 mm超え：'+over.join('、')+'。':'')+(h.current.level&&Math.abs(h.current.value)>machineTolerance?' '+h.current.label+'が'+worstText(h.current)+'で0.02 mm/mを超えています。粗調整で平均の傾きを戻してから続けてください。':move?' ダイヤルの値から見ると、'+action+(move.towardReference?'と、参考の支持関係へ近づき、全体の値がまとめて下がり始めます（最大 約'+cleanNumber(move.worstAfter,0)+' µm、軸中央の測定値で判断）。':'と、いちばん大きい'+h.current.label+'（'+worstText(h.current)+'）が下がり、全体の最大が約'+cleanNumber(move.worstAfter,0)+' µmになります（軸中央の測定値で判断）。'):' 1点だけ動かして良くなる支持点がありません。調整例を比べてください。');
+ const mode=target?'goal':move?'candidate':'stalled';
+ reminder.textContent=target?'全測定値 0.02 mm以内':move?action:'単独候補なし · 参考例を比較';
+ reminder.setAttribute('data-mode',mode);reminder.setAttribute('data-support',move?String(move.i):'');reminder.setAttribute('data-direction',move?String(Math.sign(move.delta)):'');
 }
 // The input shows what the learner has moved, while the solver and saved
 // record continue to use the original absolute support heights.
