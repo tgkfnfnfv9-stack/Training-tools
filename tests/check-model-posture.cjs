@@ -22,7 +22,7 @@ const ctx={
  measureText(text){const px=Number(/(\d+)px/.exec(this.font||'10px')?.[1]||10);return {width:[...text].reduce((n,ch)=>n+(/[\x00-\x7f]/.test(ch)?.56:1)*px,0)};}
 };
 r.scene.getContext=()=>ctx;r.scene.getBoundingClientRect=()=>({width,height});
-const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const variants=json("machines.map((machine,index)=>[index,machine.defaultMode||''])");
 const subtract=(a,b)=>a.map((v,i)=>v-b[i]);
 const unit=v=>v.map(q=>q/Math.hypot(...v));
 // Independent orthonormal basis for a height gradient in m/m.
@@ -30,7 +30,7 @@ function rotateGradient(g,v){const right=unit([1,g[0],0]),up=unit([-g[0],1,-g[1]
 const near=(a,b,e=1e-8)=>assert(Math.abs(a-b)<=e,`${a} != ${b}`);
 const pointNear=(a,b,e=1e-8)=>assert(Math.hypot(...subtract(a,b))<=e,`${JSON.stringify(a)} != ${JSON.stringify(b)}`);
 const literal=JSON.stringify;
-const result={checks:{projection:0,surfaceNormals:0,groundContact:0,rigidMotion:0,axisLabels:0},failures:[]};
+const result={checks:{projection:0,surfaceNormals:0,groundContact:0,axisLabels:0},failures:[]};
 let name='';
 function check(kind,fn){try{fn();result.checks[kind]++;}catch(e){result.failures.push({kind,name,message:e.message});}}
 function open(index,mode){storage.clear();read(`openMachine(machines[${index}]);`);if(mode)r.machineMode.change(mode);}
@@ -41,7 +41,7 @@ function screenFunction(){
  const project=p=>{const [x,y,z]=p,xx=x*Math.cos(yaw)+z*Math.sin(yaw),zz=-x*Math.sin(yaw)+z*Math.cos(yaw);return [xx/11,-((y-1.65)*Math.cos(pitch)+zz*Math.sin(pitch))/11];};
  const fit=json('displayFramingPoints(current,createGeometry(current))').map(project);
  const minX=Math.min(...fit.map(p=>p[0])),maxX=Math.max(...fit.map(p=>p[0])),minY=Math.min(...fit.map(p=>p[1])),maxY=Math.max(...fit.map(p=>p[1]));
- // The five approved milling models use narrower side margins. The physical
+ // The compact milling models use narrower side margins. The physical
  // vertices and independent projection oracle remain unchanged.
  const compactView=['compact','travel','double','gantry','five'].includes(read('current.kind')),shortView=compactView&&height<160;
  const margin=compactView?Math.min(44,width*.12):Math.min(56,width*.16),scale=Math.min((width-2*margin)/(maxX-minX),Math.max(24,height-(shortView?12:48))/(maxY-minY))*read('sceneZoom');
@@ -166,18 +166,6 @@ for(const [index,mode] of variants){
 open(1,'');setHeights('s=>{const p=levelCoordinates(s.x,s.z);return .06*p.x-.08*p.x*p.z;}');r.sceneView.change('front');
 name='horizontal/average-versus-local';
 check('surfaceNormals',()=>{const p=observeColumn();assert(read('levelSolution.lr')>0);assert(read('levelGeometry.poses.tool.slope.lr')<0);assert(parseFloat(r.coarseBubbleLR.style.left)>50);assert(p.dx>0);});
-// Mapping the physical dimensions before A/C rotation preserves every rigid
-// face even with a forty-fold width/depth aspect ratio.
-open(5,'');
-for(const [w,d] of [[.5,20],[20,.5]]){
- read(`levelConfig.width=${w};levelConfig.depth=${d};positions={X:0,Y:0,Z:0,A:0,C:0};`);setHeights('s=>.2*s.x/(current.w*.4)-.1*s.z/(current.d*.4)');
- const rotating=json('createGeometry(current).faces').filter(f=>f.axes.includes('A')||f.axes.includes('C'));
- const lengths=rotating.map(f=>f.v.map((p,i)=>Math.hypot(...subtract(world(p,f),world(f.v[(i+1)%f.v.length],f)))));
- for(const A of [-100,0,100])for(const C of [-100,-50,0,50,100]){
-  read(`positions.A=${A};positions.C=${C};updateLeveling(false);`);name='five/'+w+'x'+d+'/A='+A+'/C='+C;
-  check('rigidMotion',()=>{rotating.forEach((f,j)=>f.v.forEach((p,i)=>near(Math.hypot(...subtract(world(p,f),world(f.v[(i+1)%f.v.length],f))),lengths[j][i],1e-8)));matchPolygon(rotating.find(f=>f.axes.includes('C')));});
- }
-}
 // Fixed views may collapse a direction to a point, but keep its axis name.
 for(const [index,mode] of variants){
  open(index,mode);const kind=read('current.kind'),axes=json('axisConfig(current).map(a=>a.key)');

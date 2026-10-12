@@ -63,7 +63,7 @@ check('touch targets and scroll/transform contracts are present',()=>{
  assert.match(css,/\.common-support-actions button\{[^}]*min-height:44px/);
  const toggleRule=/\.training-menu-toggle[^{}]*\{([^}]*)\}/.exec(css)[1];assert(/(?:min-width|width):44px/.test(toggleRule)&&/(?:min-height|height):44px/.test(toggleRule),'menu trigger needs a 44px touch target');
 });
-const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const variants=json("machines.map((machine,index)=>[index,machine.defaultMode||''])");
 const sizes=[[320,480,232,116],[320,568,232,240],[390,844,302,430],[568,320,232,132],[844,390,384,180],[1024,768,800,440],[1363,936,1000,600]];
 for(const [index,mode] of variants){
  storage.clear();read(`openMachine(machines[${index}]);`);if(mode)r.machineMode.change(mode);const kind=read('current.kind');
@@ -99,9 +99,9 @@ for(const [index,mode] of variants){
  });
  check('shield closes the drawer instead of activating the background '+kind,()=>{const before=state();open();r.trainingMainShield.click();closed();assert.equal(context.document.activeElement,r.openTrainingMenu);assert.deepEqual(state(),before);});
 }
-read('openMachine(machines[5]);');open();
-check('active axis selection stays synchronized with the available five-axis model',()=>{assert.deepEqual(r.drawerAxisSelect.children.map(o=>o.value),['X','Y','Z','A','C']);r.drawerAxisSelect.change('C');assert.equal(read('selectedAxis'),'C');assert.equal(r.axisTabs.children.find(b=>b.getAttribute('aria-pressed')==='true').textContent,'C軸');assert(!r.trainingDrawer.hidden);});
-r.closeTrainingMenu.click();read('openMachine(machines[6]);');open();
+read("openMachine(machines.find(m=>m.id==='vertical'));");open();
+check('active axis selection stays synchronized with the available compact model',()=>{assert.deepEqual(r.drawerAxisSelect.children.map(o=>o.value),['X','Y','Z']);r.drawerAxisSelect.change('Y');assert.equal(read('selectedAxis'),'Y');assert.equal(r.axisTabs.children.find(b=>b.getAttribute('aria-pressed')==='true').textContent,'Y軸');assert(!r.trainingDrawer.hidden);});
+r.closeTrainingMenu.click();read("openMachine(machines.find(m=>m.id==='lathe'));");open();
 check('lathe drawer exposes XZ only',()=>assert.deepEqual(r.drawerAxisSelect.children.map(o=>o.value),['X','Z']));
 r.changeMachine.click();
 check('leaving the exercise closes settings and removes background inertness',()=>{assert.equal(read('page'),'catalog');closed();assert.equal(r.training.hidden,true);});

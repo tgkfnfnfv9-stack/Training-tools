@@ -23,10 +23,10 @@ near(M.compare(zero,end(.01-.0001*.3**2)).microns,9);
 near(M.integrate(t=>[-.0002*.3*t,1,0],.3).value[0],-.000009,1e-12);
 assert.equal(M.contact({...zero,probe:[0,1,0]}).valid,false);
 assert.equal(M.contact({...zero,body:[.03,0,0]}).valid,false);
-// All 19 actual UI adapters under rigid zero-support conditions. Fixture owners
+// All current UI adapters under rigid zero-support conditions. Fixture owners
 // are stated independently as moving table or moving indicator, not renderer data.
-const e=create({pureLeveling:true}),owners={compact:{XY:'table',XZ:'head',YZ:'head'},horizontal:{XY:'head',XZ:'table',YZ:'table'},travel:{XY:'head',XZ:'head',YZ:'head'},double:{XY:'head',XZ:'head',YZ:'head'},gantry:{XY:'head',XZ:'head',YZ:'head'},five:{XY:'table',XZ:'head',YZ:'head'},lathe:{XZ:'head'}};
-const memberTravel={compact:{XY:-1,XZ:-1,YZ:-1},horizontal:{XY:1,XZ:1,YZ:1},travel:{XY:1,XZ:-1,YZ:-1},double:{XY:1,XZ:-1,YZ:-1},gantry:{XY:1,XZ:-1,YZ:-1},five:{XY:-1,XZ:-1,YZ:-1},lathe:{XZ:-1}};
+const e=create({pureLeveling:true}),owners={compact:{XY:'table',XZ:'head',YZ:'head'},horizontal:{XY:'head',XZ:'table',YZ:'table'},travel:{XY:'head',XZ:'head',YZ:'head'},double:{XY:'head',XZ:'head',YZ:'head'},gantry:{XY:'head',XZ:'head',YZ:'head'},lathe:{XZ:'head'}};
+const memberTravel={compact:{XY:-1,XZ:-1,YZ:-1},horizontal:{XY:1,XZ:1,YZ:1},travel:{XY:1,XZ:-1,YZ:-1},double:{XY:1,XZ:-1,YZ:-1},gantry:{XY:1,XZ:-1,YZ:-1},lathe:{XZ:-1}};
 let pairs=0;
 for(const [kind,entries] of Object.entries(owners)){
  e.storage.clear();e.read(`openMachine(machines.find(m=>m.kind==='${kind}'));supportHeights=supports.map(()=>0);updateLeveling();`);
@@ -43,8 +43,8 @@ for(const [kind,entries] of Object.entries(owners)){
   }
  }
 }
-assert.equal(pairs,19);
-console.log(`Reference plane geometry: ${checks} numeric assertions; 19 setups x ideal/positive/negative; independent invariants passed.`);
+assert.equal(pairs,Object.values(owners).reduce((n,p)=>n+Object.keys(p).length,0));
+console.log(`Reference plane geometry: ${checks} numeric assertions; ${pairs} setups x ideal/positive/negative; independent invariants passed.`);
 // A grid-gradient jump is integrated on its two open cells, with known area.
 near(M.integrate(t=>[t<.37?1e-4:-2e-4,1,0],.3,[.37]).value[0],.3*(.37*1e-4-.63*2e-4),1e-12);
 // The horizontal master now follows the pallet top material point, H=.61 m

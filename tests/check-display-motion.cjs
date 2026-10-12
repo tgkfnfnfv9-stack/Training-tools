@@ -6,7 +6,7 @@
 const assert=require('node:assert/strict');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const {registry:r,read,json,storage}=require('./leveling-dom-env.cjs')({pureLeveling:true});
-const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const variants=()=>json('machines.map((m,index)=>[index,m.id==="vertical"?"compact":m.id==="gate"?"l3-3000":""])');
 const literal=JSON.stringify,sub=(a,b)=>a.map((v,i)=>v-b[i]),length=v=>Math.hypot(...v),unit=v=>v.map(q=>q/length(v));
 const result={checks:{planarMotion:0,localContact:0,fixedAnchorMotion:0,averageVersusLocal:0},maximumDirectionDifference:0,maximumContactDifference:0,failures:[]};
 let name='';
@@ -38,7 +38,7 @@ const originState={X:37,Y:-23,Z:19,A:44,C:-36};
 // Compound slopes exercise the second-order difference between graph tangents
 // and an orthonormal support frame. Unequal support dimensions also exercise
 // physical mapping before rotary motion and linear-stroke conversion.
-for(const [index,mode] of variants){
+for(const [index,mode] of variants()){
  open(index,mode);profile();const kind=read('current.kind'),defaultSize=json('[levelConfig.width,levelConfig.depth]');
  read('levelConfig.columnX=35;levelConfig.columnZ=-21;');
  for(const [width,depth] of [defaultSize,[.5,20],[20,.5]])for(const plane of [[0,0],[.18,.12],[-.16,.13]])for(const exaggerated of [false,true]){
@@ -56,7 +56,7 @@ for(const [index,mode] of variants){
 // column travels. A single average guide cannot erase that change: roots must
 // remain on the height graph. Internal slides have fixed anchors and do match
 // their representative guide, even inside a group with a nonzero parent move.
-for(const [index,mode] of variants){
+for(const [index,mode] of variants()){
  open(index,mode);if(read('supports.length')===3)continue;profile();const kind=read('current.kind'),defaultSize=json('[levelConfig.width,levelConfig.depth]');
  read('levelConfig.columnX=35;levelConfig.columnZ=-21;');
  for(const [width,depth] of [defaultSize,[.5,20],[20,.5]])for(const deformation of ['twist','middle'])for(const exaggerated of [false,true]){

@@ -13,7 +13,7 @@ function near(a,b,tolerance=1e-8){assert.ok(Number.isFinite(a)&&Number.isFinite(
 const dot=(a,b)=>a.reduce((s,q,i)=>s+q*b[i],0);
 const magnitude=a=>Math.hypot(...a);
 const difference=(a,b)=>a.map((q,i)=>q-b[i]);
-const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const variants=env=>env.json('machines.map((m,index)=>[index,m.id==="vertical"?"compact":m.id==="gate"?"l3-3000":""])');
 function open(env,index,mode){env.read(`openMachine(machines[${index}])`);if(mode)env.registry.machineMode.change(mode);}
 function setProfile(env,condition,seed){
  const profile=MachineAccuracy.generate(condition,seed,env.json('machineLinearKeys()'),env.read('supports.length'));
@@ -21,7 +21,7 @@ function setProfile(env,condition,seed){
  return profile;
 }
 const pure=makeEnvironment({pureLeveling:true});
-for(const [index,mode] of variants){
+for(const [index,mode] of variants(pure)){
  open(pure,index,mode);
  const label=`${index}/${mode}`;
  const count=pure.read('supports.length');
@@ -53,7 +53,7 @@ for(const [index,mode] of variants){
 
 const live=makeEnvironment();
 live.read('Math.random=()=>.315159;');
-for(const [index,mode] of variants){
+for(const [index,mode] of variants(live)){
  live.storage.clear();open(live,index,mode);const label=`${index}/${mode}`;
  for(const condition of ['new','used']){
   const profile=setProfile(live,condition,4294967295-index);

@@ -53,13 +53,13 @@ function tick(time){const entries=[...pending.values()];pending.clear();for(cons
 let paths=[],texts=[],path=[];
 const canvas={scale(){},fillRect(){},beginPath(){path=[];},moveTo(x,y){assert(Number.isFinite(x)&&Number.isFinite(y));path.push([x,y]);},lineTo(x,y){assert(Number.isFinite(x)&&Number.isFinite(y));path.push([x,y]);},closePath(){},arc(){},fill(){},fillText(text,x,y){assert(Number.isFinite(x)&&Number.isFinite(y));texts.push(text);},measureText(text){return {width:text.length*6};},stroke(){if(this.lineWidth===4||this.lineWidth===2.5)paths.push({color:this.strokeStyle,width:this.lineWidth,points:path.map(p=>[...p])});}};
 r.scene.getBoundingClientRect=()=>({width:390,height:340});r.scene.getContext=()=>canvas;
-const layouts=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const layouts=json("machines.map((machine,index)=>[index,machine.defaultMode||''])");
 function referenceTips(){return r.orientationAxes.children.map(svg=>{
  const line=svg.querySelectorAll('line')[0];return [svg.getAttribute('aria-label'),Number(line.getAttribute('x2')),Number(line.getAttribute('y2'))];
 });}
 for(const [index,mode] of layouts){
  read(`openMachine(machines[${index}])`);if(mode)r.machineMode.change(mode);pending.clear();
- const keys=json('axisConfig(current).map(a=>a.key)'),colors=json('axisColors');
+ const kind=read('current.kind'),keys=json('axisConfig(current).map(a=>a.key)'),colors=json('axisColors');
  check('available axes only '+index+' '+mode,()=>{
   assert.deepEqual(r.axisTabs.children.map(b=>b.textContent),keys.map(k=>k+'軸'));
   assert.deepEqual(json('axisIndicators(current,createGeometry(current)).map(a=>a.key)'),keys);
@@ -82,7 +82,7 @@ for(const [index,mode] of layouts){
  }
  const linearKeys=keys.filter(k=>['X','Y','Z'].includes(k));
  check('reference axes are separate while actual motion arrows stay on the model '+index+' '+mode,()=>{
-  assert(!r.orientationGuide.hidden);assert.equal(r.orientationRotaryNote.hidden,index!==5);
+  assert(!r.orientationGuide.hidden);assert(r.orientationRotaryNote.hidden);
   assert.deepEqual(r.orientationAxes.children.map(svg=>svg.getAttribute('aria-label')),linearKeys.map(k=>k+'軸の向きの目安'));
   assert.equal(texts.filter(text=>linearKeys.includes(text)).length,0,'bare coordinate labels no longer occupy the Canvas');
   for(const svg of r.orientationAxes.children){assert.equal(svg.getAttribute('viewBox'),'0 0 96 116');assert.equal(svg.getAttribute('role'),'img');assert.equal(svg.querySelectorAll('line').length,1);assert.equal(svg.querySelectorAll('text')[0].getAttribute('y'),'19');}
@@ -93,7 +93,7 @@ for(const [index,mode] of layouts){
   assert.notDeepEqual(referenceTips(),tipsBeforeRotation);assert.deepEqual(json('levelRecord()'),recordBeforeRotation);
  });
  read('yaw=Math.PI/2;drawScene()');
- const quarterTurn=index===6?{X:[76,72],Z:[48,100]}:index===1?{X:[48,100],Y:[48,44],Z:[76,72]}:(index===3&&mode==='l3-3000')||index===4?{X:[76,72],Y:[48,100],Z:[48,44]}:{X:[48,100],Y:[76,72],Z:[48,44]};
+ const quarterTurn=kind==='lathe'?{X:[76,72],Z:[48,100]}:kind==='horizontal'?{X:[48,100],Y:[48,44],Z:[76,72]}:['double','gantry'].includes(kind)?{X:[76,72],Y:[48,100],Z:[48,44]}:{X:[48,100],Y:[76,72],Z:[48,44]};
  check('reference directions preserve machine-specific assignments at a quarter turn '+index+' '+mode,()=>{
   referenceTips().forEach(([label,x,y],i)=>{assert.equal(label,linearKeys[i]+'軸の向きの目安');const expected=quarterTurn[linearKeys[i]];assert(Math.abs(x-expected[0])<1e-9);assert(Math.abs(y-expected[1])<1e-9);});
  });
@@ -114,21 +114,7 @@ const tipsBeforeZeroSize=referenceTips();r.scene.getBoundingClientRect=()=>({wid
 read('rotate(.23)');
 check('reference SVG updates even when the model or settings have no measurable size',()=>{assert.notDeepEqual(referenceTips(),tipsBeforeZeroSize);for(const svg of r.orientationAxes.children)assert.equal(svg.getAttribute('viewBox'),'0 0 96 116');});
 r.scene.getBoundingClientRect=()=>({width:390,height:340});
-read('openMachine(machines[5])');pending.clear();
-for(const angle of [-90,0,75]){
- read(`positions.A=${angle};positions.X=42;positions.Y=-31;`);
- const indicator=json("axisIndicators(current,createGeometry(current)).find(a=>a.key==='C')"),state=json('positions');
- check('C curved arrow follows the tilted A parent '+angle,()=>{
-  assert(indicator.curved);assert.equal(indicator.pose,'work');
-  const pivot=json('displayCoordinates([0,1.25,-.45])'),translation=json("displayMovement(['X','Y','A'],current,positions,'work')");
-  indicator.points.forEach((p,i)=>{
-   const t=-Math.PI*.65+i/24*Math.PI*1.3,base=json(`displayCoordinates(${JSON.stringify([Math.cos(t)*.8,1.68,-.45+Math.sin(t)*.8])})`),a=angle*.45/100,dy=base[1]-pivot[1],dz=base[2]-pivot[2];
-   const rotated=[base[0],pivot[1]+dy*Math.cos(a)-dz*Math.sin(a),pivot[2]+dy*Math.sin(a)+dz*Math.cos(a)],expected=rotated.map((v,j)=>v+translation[j]);
-   p.forEach((v,j)=>assert(Math.abs(v-expected[j])<1e-12));
-  });
- });
-}
-read('openMachine(machines[0])');pending.clear();
+read("openMachine(machines.find(m=>m.id==='vertical'))");pending.clear();
 r.axisControlsToggle.click();r.closeAxisControls.click();
 check('explicit close restores main menu trigger focus',()=>{assert(r.trainingDrawer.hidden);assert.equal(r.axisControlsToggle.getAttribute('aria-expanded'),'false');assert.equal(focused,r.openTrainingMenu);});
 r.axisControlsToggle.click();r.scene.setPointerCapture=()=>{};

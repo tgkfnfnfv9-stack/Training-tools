@@ -7,8 +7,8 @@ function near(a,b,tolerance=1e-9){assert.ok(Math.abs(a-b)<tolerance,`${a} != ${b
 async function main(){
  const env=createEnvironment({pureLeveling:true}),{registry:r,read,json,storage,context}=env;
  const open=i=>read(`openMachine(machines[${i}])`),preset=t=>context.document.querySelectorAll('[data-preset]').find(b=>b.dataset.preset===t).click();
- const counts=[4,8,6,15,8,3,6];
- for(let i=0;i<7;i++){
+ const counts=json('machines.map(m=>({vertical:4,horizontal:8,travel:6,gate:15,gantry:8,lathe:6})[m.id])');
+ for(let i=0;i<read('machines.length');i++){
   storage.clear();open(i);
   check(`機種${i}:支持点数`,()=>assert.equal(read('supports.length'),counts[i]));
   check(`機種${i}:初期水平`,()=>{near(read('levelSolution.lr'),0);near(read('levelSolution.fb'),0);assert.equal(r.localLevel.textContent,'0.000 mm/m');});
@@ -87,8 +87,6 @@ async function main(){
  r.showLevelSurface.checked=false;r.showLevelSurface.onchange();check('支持面の表示切替は計算値を変えない',()=>{assert.equal(read('levelSurfaceFaces(current).length'),0);assert.deepEqual(json('[levelSolution.lr,levelSolution.fb,levelSolution.twist,levelSolution.residual]'),metrics);});r.showLevelSurface.checked=true;r.showLevelSurface.onchange();
  r.startLevelExercise.click();check('調整問題は目標外から開始',()=>assert.equal(read('levelExercise.solved'),false));
  for(let i=0;i<counts[2];i++)r['height'+i].change('0');check('手動調整で練習達成',()=>{assert.equal(read('levelExercise.solved'),true);assert.match(r.levelExerciseStatus.textContent,/達成/);});
- storage.clear();open(5);r.supportWidth.change('20');r.supportDepth.change('20');read('Math.random=()=>.5');r.startLevelExercise.click();
- check('3点・最大寸法でも問題は目標外',()=>assert.equal(read('levelExercise.solved'),false));
  storage.clear();open(2);r.height0.change('0.2');const original=json('levelRecord()');
  const mutations=[r=>r.version=2,r=>r.machine='lathe',r=>r.mode='standard',r=>r.width='2',r=>r.depth=.49,r=>r.width=20.01,r=>r.heights.pop(),r=>r.heights[0]=.51,r=>r.heights[0]=null,r=>r.sensitivity=.03,r=>r.measurePos=.5,r=>r.offset=2.01,r=>r.step=.03,r=>r.exaggerate='false'];
  async function importData(data,size=100){r.importLevel.files=[{size,text:async()=>typeof data==='string'?data:JSON.stringify(data)}];await r.importLevel.onchange({target:r.importLevel});}
@@ -126,6 +124,6 @@ async function main(){
  const oldSetter=context.localStorage.setItem;context.localStorage.setItem=()=>{throw new Error('Storage denied');};r.up0.click();
  check('保存不可でも操作継続',()=>{assert.match(r.levelSaveStatus.textContent,/自動保存できません/);assert.ok(Number.isFinite(read('levelSolution.lr')));});context.localStorage.setItem=oldSetter;
  storage.set(read('levelKey()'),'{bad JSON');open(2);check('壊れた自動保存を安全に無視',()=>assert.ok(read('supportHeights.every(h=>h===0)')));
- if(failures.length){console.error(`${checks} checks run; ${failures.length} failed:\n`+failures.join('\n'));process.exitCode=1;}else console.log(`Leveling UI: ${checks} checks passed (7 machines, single-model selections, controls, exercise, save/import/export).`);
+ if(failures.length){console.error(`${checks} checks run; ${failures.length} failed:\n`+failures.join('\n'));process.exitCode=1;}else console.log(`Leveling UI: ${checks} checks passed (${read('machines.length')} machines, single-model selections, controls, exercise, save/import/export).`);
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});

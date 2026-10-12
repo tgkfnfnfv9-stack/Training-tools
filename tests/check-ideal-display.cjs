@@ -7,10 +7,10 @@ const assert=require('node:assert/strict');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const {registry:r,read,json,storage}=require('./leveling-dom-env.cjs')({pureLeveling:true});
 for(const file of ['lathe-inspection.js','lathe-inspection-ui.js'])read(require('node:fs').readFileSync('src/'+file,'utf8'));
-const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const variants=json("machines.map((machine,index)=>[index,machine.defaultMode||''])");
 const states=[{X:0,Y:0,Z:0,A:0,C:0},{X:73,Y:-42,Z:55,A:-67,C:82},{X:-100,Y:100,Z:-100,A:100,C:-100}];
 const literal=JSON.stringify,subtract=(a,b)=>a.map((v,i)=>v-b[i]),norm=v=>Math.hypot(...v),unit=v=>v.map(n=>n/norm(v));
-const result={checks:{nominalGeometry:0,flatAgreement:0,supportAdjustment:0,intrinsicRemoval:0,linearMotion:0,rotaryRigidity:0,viewAndToggle:0},vertices:0,maximumPointDifference:0,failures:[]};
+const result={checks:{nominalGeometry:0,flatAgreement:0,supportAdjustment:0,intrinsicRemoval:0,linearMotion:0,viewAndToggle:0},vertices:0,maximumPointDifference:0,failures:[]};
 let name='';
 function check(kind,fn){try{fn();result.checks[kind]++;}catch(e){result.failures.push({kind,name,message:e.message});}}
 function pointNear(a,b,tolerance=1e-8){const d=norm(subtract(a,b));result.maximumPointDifference=Math.max(result.maximumPointDifference,d);assert(d<tolerance,`${literal(a)} != ${literal(b)} (${d})`);}
@@ -97,16 +97,6 @@ for(const [index,mode] of variants){
  for(const enabled of [false,true])for(const view of ['front','side','oblique'])for(const zoom of [.65,1,1.8]){
   r.showIdealOutline.checked=enabled;r.showIdealOutline.change();read(`setSceneView(${literal(view)});setSceneZoom(${zoom});`);name=kind+'/toggle='+enabled+'/'+view+'/zoom='+zoom;
   check('viewAndToggle',()=>{assert.deepEqual(physicalState(),stateBefore);assert.deepEqual([...storage],savedBefore);assert(read('validLevelRecord(levelRecord())'),'view operations produced an invalid saved record');assert.equal(Object.hasOwn(json('levelRecord()'),'showIdealOutline'),false);const p=parameters();pointNear(idealPoint(q,['X','Y'],'work'),expectedPoint(q,['X','Y'],'work',p));});
- }
-}
-// Rotary motion preserves physical rigid edges after anisotropic mapping.
-// Compare real model faces, rather than repeating the angle transform only.
-open(5,'');profile();setHeights((s,i)=>[.3,-.2,.1][i]);
-for(const [width,depth] of [[.5,20],[20,.5]]){
- read(`levelConfig.width=${width};levelConfig.depth=${depth};`);setState(states[0]);const faces=bodyFaces().filter(f=>f.axes.includes('A')||f.axes.includes('C')),base=idealFaces(faces).points,lengths=base.map((points,j)=>points.map((p,i)=>norm(subtract(p,points[(i+1)%points.length]))));
- for(const A of [-100,-37,0,63,100])for(const C of [-100,-50,0,50,100]){
-  setState({...states[1],A,C});const actual=idealFaces(faces).points;name=`five/${width}x${depth}/A=${A}/C=${C}`;
-  check('rotaryRigidity',()=>faces.forEach((f,j)=>f.v.forEach((_,i)=>assert(Math.abs(norm(subtract(actual[j][i],actual[j][(i+1)%f.v.length]))-lengths[j][i])<1e-8,'rotary motion distorts physical edge length'))));
  }
 }
 console.log(JSON.stringify(result,null,2));if(result.failures.length)process.exitCode=1;

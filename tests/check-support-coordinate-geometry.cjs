@@ -4,7 +4,7 @@
 const assert=require('node:assert/strict'),environment=require('./leveling-dom-env.cjs');
 const env=environment({pureLeveling:true});let checks=0;
 const near=(a,b,t=1e-9)=>{assert.ok(Math.abs(a-b)<t,`${a} != ${b}`);checks++;};
-for(let index=0;index<7;index++){
+for(let index=0;index<env.read('machines.length');index++){
  env.storage.clear();env.read(`openMachine(machines[${index}]);`);
  const data=env.json('({kind:current.kind,supports,vertices:createGeometry(current).faces.filter(f=>f.pose===\'bed\'&&f.color===\'#80949c\').flatMap(f=>f.v)})');
  for(const p of data.supports){assert.ok(data.vertices.some(v=>Math.abs(v[0]-p.x)<1e-10&&Math.abs(v[2]-p.z)<1e-10),`${data.kind}: missing support vertex ${p.x},${p.z}`);checks++;}

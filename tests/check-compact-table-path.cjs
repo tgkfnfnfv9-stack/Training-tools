@@ -119,9 +119,9 @@ for(const pair of [['X','Y'],['X','Z'],['Y','Z']])check(`flat intrinsic ${pair} 
 // Values captured on the last published calculation model before this change.
 // These are compatibility fixtures, not evidence of real-machine accuracy.
 const oldOtherSix=[[.9199999985078794,.0006993799993696259,4.06999999417705],[-.000071343999908735,3.6399999967867096,0],[48.374545402677406,0,0],[50.19991187076952,0,0],[0,0,0],[.000038639999989665835]];
-for(let index=1;index<7;index++){
+for(let index=1;index<e.read('machines.length');index++){
  open(e,index);surface('.02*q.x*q.z+.013*q.x-.017*q.z',{X:37,Y:-29,Z:18,A:0,C:0});
- check(`other machine ${index} keeps published numerical behavior`,()=>vectorNear(values(),oldOtherSix[index-1],1e-8));
+ check(`other machine ${index} keeps published numerical behavior`,()=>vectorNear(values(),oldOtherSix[['horizontal','travel','gate','gantry','five','lathe'].indexOf(e.read('current.id'))],1e-8));
 }
 
 (async()=>{

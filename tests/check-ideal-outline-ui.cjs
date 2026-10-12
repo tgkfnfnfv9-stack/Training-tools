@@ -24,7 +24,7 @@ const ctx={strokeStyle:'#000000',fillStyle:'#000000',lineWidth:1,globalAlpha:1,d
 function finite(...values){assert(values.every(Number.isFinite),'non-finite Canvas coordinate');coordinates+=values.length;}
 function paint(op){operations.push({...op,signature:JSON.stringify(op)});}
 r.scene.getContext=()=>ctx;r.scene.getBoundingClientRect=()=>({width,height});
-const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const variants=json("machines.map((machine,index)=>[index,machine.defaultMode||''])");
 const sizes=[[232,100],[232,151],[302,305],[384,210],[669,720]];
 let checks=0,maximumIdealSegments=0,maximumIdealToCurrentRatio=0;
 function check(name,fn){try{fn();checks++;}catch(error){throw new Error(name+': '+error.message);}}
@@ -81,12 +81,6 @@ for(const [index,mode] of variants){
   }
   check('screen overlay follows the viewing scale '+kind+'/'+size.join('x')+'/'+view,()=>{assert(lengths.every(l=>l>0));near(lengths[0]/lengths[1],.65);near(lengths[2]/lengths[1],1.8);});
  }
-}
-read('openMachine(machines[5]);');
-for(const axis of ['A','C']){
- read(`positions={X:0,Y:0,Z:0,A:0,C:0};selectedAxis=${JSON.stringify(axis)};updateLeveling(false);`);const zero=addedPaint(toggle(true),toggle(false)).map(e=>e.op.signature);
- read(`positions.${axis}=100;updateLeveling(false);`);const moved=addedPaint(toggle(true),toggle(false)).map(e=>e.op.signature);
- check('rotary position changes the displayed ideal outline '+axis,()=>assert.notDeepEqual(moved,zero));
 }
 // A planar triangulation does not create an extra comparison seam.
 const face=v=>({v,axes:[],pose:'tool',color:'#8b9da3',shade:1});

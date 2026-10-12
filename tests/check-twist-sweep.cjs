@@ -95,7 +95,7 @@ for(const kind of ['travel','gantry']){
 // Actual supports: these exercise each real interpolation, compact bending,
 // and separate fixed-portal seats without deriving expected values from it.
 const integration=[];
-for(const kind of ['compact','travel','double','gantry','five']){
+for(const kind of ['compact','travel','double','gantry']){
  open(kind);
  check(kind+' ideal state is zero',()=>vector(env.json('spindleSweepGeometry().cardinal.map(p=>p.readingMicrons)'),[0,0,0,0]));
  for(const sign of [-1,1])for(const X of [-100,-.00001,0,.00001,100]){
@@ -120,12 +120,6 @@ for(const kind of ['compact','travel','double','gantry','five']){
  // A plane shared by every seat must not be misreported as a relative twist.
  env.read('positions={X:0,Y:0,Z:0,A:0,C:0};supportHeights=supports.map(s=>{const q=levelCoordinates(s.x,s.z);return .02+.03*q.x-.02*q.z;});updateLeveling();');
  check(kind+' shared rigid seating plane',()=>vector(env.json('spindleSweepGeometry().cardinal.map(p=>p.readingMicrons)'),[0,0,0,0]));
-}
-open('five');
-for(const A of [-100,-50,0,50,100])for(const C of [-100,0,100]){
- env.read(`positions.A=${A};positions.C=${C};updateLeveling();`);
- const a=.45*A/100,expected=[-.15*Math.tan(a)*1e6,-.3*Math.tan(a)*1e6,-.15*Math.tan(a)*1e6,0];
- check(`5-axis commanded tilt is not a machine error ${A}/${C}`,()=>vector(env.json('spindleSweepGeometry().cardinal.map(p=>p.readingMicrons)'),expected));
 }
 for(const kind of ['horizontal','lathe']){open(kind);check(kind+' remains excluded',()=>{assert.equal(env.read('supportsSpindleSweep()'),false);assert.equal(env.registry.spindleSweepPanel.hidden,true);});}
 if(failures.length){console.error(failures.join('\n'));process.exitCode=1;}else console.log(JSON.stringify({checks,failures,integration},null,2));

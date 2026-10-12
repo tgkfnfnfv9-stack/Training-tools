@@ -16,7 +16,7 @@ const open=(e,i)=>e.read(`openMachine(machines[${i}]);`);
 const pairValues=e=>e.json('levelGeometry.pairs.map(p=>p.deviationMicroradians)');
 const setHeights=(e,h)=>e.read(`supportHeights=${JSON.stringify(h)};updateLeveling();`);
 const pure=makeEnvironment({pureLeveling:true});
-for(let i=0;i<7;i++){
+for(let i=0;i<pure.read('machines.length');i++){
  open(pure,i);const id=pure.read('current.id'),n=pure.read('supports.length');
  const heights=Array.from({length:n},(_,j)=>[.021,-.017,.006,-.011,.013,-.009][j%6]);
  setHeights(pure,heights);const original=pairValues(pure);
@@ -37,7 +37,7 @@ for(let i=0;i<7;i++){
 // Profile squareness is independent of support errors. A common rigid tilt
 // preserves those fixed pairwise angles even though every body is tilted.
 const live=makeEnvironment();
-for(let i=0;i<7;i++){
+for(let i=0;i<pure.read('machines.length');i++){
  open(live,i);const id=live.read('current.id');
  const profile=MachineAccuracy.generate('used',1234+i,live.json('machineLinearKeys()'),live.read('supports.length'));
  live.read(`initializeMachineAccuracy(${JSON.stringify(profile)});supportHeights=supports.map(s=>{const q=levelCoordinates(s.x,s.z);return .03+.017*q.x-.021*q.z;});updateLeveling();`);
@@ -136,7 +136,7 @@ for(const index of [2,4])for(const X of [-100,0,100]){
 (async()=>{
  // Exercise the actual up/down button handlers. A correct machineSolution
  // alone is insufficient if updateLeveling retains a different old solver.
- for(let i=0;i<7;i++){
+ for(let i=0;i<pure.read('machines.length');i++){
   open(live,i);live.read('setTrainingMenuOpen(false);supportHeights=supports.map(()=>0);updateLeveling();');
   for(const selected of (i===3?[0,9,10,12]:[0])){
    const before=pairValues(live);live.read(`selected=${selected};`);
@@ -150,7 +150,7 @@ for(const index of [2,4])for(const X of [-100,0,100]){
    check(`UI reverse restores angles ${i}/${selected}`,()=>vectorNear(pairValues(live),before,1e-7));
   }
  }
- for(let i=0;i<7;i++){
+ for(let i=0;i<pure.read('machines.length');i++){
   open(live,i);const id=live.read('current.id');
   live.read('supportHeights=supports.map((s,i)=>[.021,-.017,.006][i%3]);positions={X:23,Y:-47,Z:51,A:19,C:-31};updateLeveling();');
   const record=live.json('levelRecord()'),pairs=pairValues(live);

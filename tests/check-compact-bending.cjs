@@ -86,9 +86,9 @@ live.read('setTrainingMenuOpen(true);sceneZoom=1.7;yaw=.9;setTrainingMenuOpen(fa
 check('camera and sidebar leave calculated and saved state unchanged',()=>{vectorNear(values(live),before);assert.deepEqual(live.json('levelRecord()'),record);});
 
 const oldOtherSix=[[.9199999985078794,.0006993799993696259,4.06999999417705],[-.000071343999908735,3.6399999967867096,0],[48.374545402677406,0,0],[50.19991187076952,0,0],[0,0,0],[.000038639999989665835]];
-for(let index=1;index<7;index++){
+for(let index=1;index<e.read('machines.length');index++){
  e.read(`openMachine(machines[${index}]);`);surface('.02*q.x*q.z+.013*q.x-.017*q.z',{X:37,Y:-29,Z:18,A:0,C:0});
- check('other-machine published regression '+index,()=>vectorNear(e.json('levelGeometry.pairs.map(p=>p.deviationMicroradians)'),oldOtherSix[index-1],1e-8));
+ check('other-machine published regression '+index,()=>vectorNear(e.json('levelGeometry.pairs.map(p=>p.deviationMicroradians)'),oldOtherSix[['horizontal','travel','gate','gantry','five','lathe'].indexOf(e.read('current.id'))],1e-8));
 }
 (async()=>{
  check('changed bending assumptions have their own model ID',()=>assert.equal(record.calculationModel,'compact-asymmetric-bending-v4'));

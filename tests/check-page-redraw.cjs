@@ -13,7 +13,7 @@ function fresh(previous,label){
  check(label+' neutral axes and default adjustment',()=>{assert(json('Object.values(positions)').every(v=>v===0));assert.equal(read('adjustmentStage'),'coarse');assert.equal(state().step,.01);assert.equal(read('fineStartEvaluation'),null);assert.equal(read('levelConfig.columnX'),0);assert.equal(read('levelConfig.columnZ'),0);assert.equal(read('levelConfig.width'),read('Number((current.w*.8).toFixed(2))'));assert.equal(read('levelConfig.depth'),read('Number((current.d*.8).toFixed(2))'));});
 }
 (async()=>{
- for(let index=0;index<7;index++){
+ for(let index=0;index<read('machines.length');index++){
   read(`openMachine(machines[${index}])`);
   r.fineAdjust.click();r.raiseSupport.click();r.supportWidth.change('7.1');read('positions.X=41;updateAxisValues();saveLeveling();');
   const adjusted=state();
@@ -32,5 +32,5 @@ function fresh(previous,label){
   reload.read(`openMachine(machines[${index}])`);
   check(index+' reload ignores previous browser snapshot',()=>{assert.notEqual(reload.read('machineProfile.seed'),adjusted.machineProfile.seed);assert.deepEqual(reload.json('supportHeights'),reload.json('machineProfile.initialHeights'));assert(reload.json('Object.values(positions)').every(v=>v===0));});
  }
- console.log(`Page-entry redraw: ${checks} assertions across all 7 machines passed; explicit JSON round trips preserved.`);
+ console.log(`Page-entry redraw: ${checks} assertions across all ${read('machines.length')} machines passed; explicit JSON round trips preserved.`);
 })().catch(error=>{console.error(error);process.exitCode=1;});

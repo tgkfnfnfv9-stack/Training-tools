@@ -47,7 +47,7 @@ async function main(){
  check('electrical to mechanical navigation hides old lesson',()=>{assert.equal(read('page'),'training');assert.equal(r.tester.hidden,true);assert.equal(r.training.hidden,false);});
  // Axis transforms must keep every unrelated component fixed, and preserve
  // rigid distances even for nested A/C rotary movement.
- for(const [index,mode] of [[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']]){
+ for(const [index,mode] of json('machines.map((m,index)=>[index,m.id==="vertical"?"compact":m.id==="gate"?"l3-3000":""])')){
   storage.clear();read(`openMachine(machines[${index}])`);if(mode)r.machineMode.change(mode);
   for(const axis of json('axisConfig(current)')){
    const base={X:0,Y:0,Z:0,A:0,C:0},moved={...base,[axis.key]:73};
@@ -92,7 +92,7 @@ async function main(){
  // Seed the user-facing profiles deterministically so this integration suite
  // verifies the same identities and JSON shapes on every run.
  let seed=13001;context.window.crypto={getRandomValues:values=>{values[0]=seed++;return values;}};
- const layouts=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+ const layouts=json('machines.map((m,index)=>[index,m.id==="vertical"?"compact":m.id==="gate"?"l3-3000":""])');
  for(const [index,mode] of layouts){
   storage.clear();read(`openMachine(machines[${index}])`);if(mode)r.machineMode.change(mode);pending.clear();
   const initial=json('machineProfile'),keys=json('machineLinearKeys()');
@@ -120,7 +120,7 @@ async function main(){
   const record=json('levelRecord()'),angles=json('levelGeometry.pairs');
   r.exportLevel.click();const exported=JSON.parse(await context.exportedBlob.text());
   check('export includes exact used profile '+index+' '+mode,()=>assert.deepEqual(exported,record));
-  read(`openMachine(machines[${(index+1)%7}]);openMachine(machines[${index}]);`);if(mode)r.machineMode.change(mode);pending.clear();
+  read(`openMachine(machines[${(index+1)%read('machines.length')}]);openMachine(machines[${index}]);`);if(mode)r.machineMode.change(mode);pending.clear();
   r.importLevel.files=[{size:100,text:async()=>JSON.stringify(record)}];await r.importLevel.onchange({target:r.importLevel});
   check('profile and precision reproduce after explicit JSON import '+index+' '+mode,()=>{assert.deepEqual(json('levelRecord()'),record);assert.deepEqual(json('levelGeometry.pairs'),angles);assert.equal(r.machineCondition.value,'used');assert.match(r.levelInputMessage.textContent,/読み込み/);});
   const corrupted=structuredClone(record);corrupted.machineProfile.guides[keys[0]].microns+=.001;
@@ -147,7 +147,7 @@ async function main(){
     for(let i=0;i<keys.length;i++)for(let j=i+1;j<keys.length;j++){
      const dot=vectors[i].reduce((sum,v,k)=>sum+v*vectors[j][k],0);// Lathe arrows describe NC feed X/Z; its separate squareness lesson
      // compares spindle Z against feed X and retains the intrinsic defect.
-     near(-Math.asin(dot),index===6?0:profile.squareness[keys[i]+keys[j]].microns/.3/1e6*factor,1e-10);
+     near(-Math.asin(dot),read('current.id')==='lathe'?0:profile.squareness[keys[i]+keys[j]].microns/.3/1e6*factor,1e-10);
     }
    });
    for(const key of keys){

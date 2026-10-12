@@ -10,7 +10,7 @@ r.scene.getContext=()=>ctx;
 let width=390,height=340;r.scene.getBoundingClientRect=()=>({width,height});
 for(const size of [[390,340],[320,225],[720,500]]){
  [width,height]=size;
- for(let i=0;i<7;i++){
+ for(let i=0;i<read('machines.length');i++){
   storage.clear();read(`openMachine(machines[${i}])`);
   for(const mode of i===0?['compact']:i===3?['l3-3000']:['']){
    if(mode)r.machineMode.change(mode);
@@ -27,4 +27,4 @@ for(const size of [[390,340],[320,225],[720,500]]){
  }
 }
 assert.ok(frames>100&&calls>10000);
-console.log(`Accuracy Canvas: ${frames} rendered frames, ${calls} finite drawing operations passed (3 sizes, 7 machines, 2 extra modes).`);
+console.log(`Accuracy Canvas: ${frames} rendered frames, ${calls} finite drawing operations passed (3 sizes, ${read('machines.length')} machines, 2 extra modes).`);

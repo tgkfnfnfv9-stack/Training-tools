@@ -35,7 +35,7 @@ r.scene.getBoundingClientRect=()=>({width:390,height:340});
 const span=()=>{assert(scene.trace.supports.length>=2);const [a,b]=scene.trace.supports;return Math.hypot(a[0]-b[0],a[1]-b[1]);};
 const physical=()=>json('({record:levelRecord(),heights:supportHeights,positions,solution:levelSolution,geometry:levelGeometry,profile:machineProfile,reference:machineReference,stage:adjustmentStage,fineStart:fineStartEvaluation})');
 function resetView(){read('clearScenePointers();setSceneZoom(1)');}
-const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const variants=json("machines.map((machine,index)=>[index,machine.defaultMode||''])");
 for(const [index,mode] of variants){
  storage.clear();read(`openMachine(machines[${index}])`);if(mode)r.machineMode.change(mode);
  const before=physical(),saved=[...storage],yaw=read('yaw');
@@ -55,7 +55,7 @@ for(const [index,mode] of variants){
  check(`return to one-finger rotation changes only the view ${index}/${mode}`,()=>{near(read('yaw'),yaw+.09);assert.deepEqual(physical(),before);assert.deepEqual([...storage],saved);assert(!captures.size);});
  check(`selected axis keeps current gesture instructions ${index}/${mode}`,()=>{assert.match(r.scene.getAttribute('aria-label'),/二本指.*ピンチ.*ホイール/);assert.match(r.scene.getAttribute('aria-label'),/Home/);});
 }
-read('openMachine(machines[5])');
+read("openMachine(machines.find(m=>m.id==='vertical'))");
 const original=physical();
 check('secondary mouse/pen and right button cannot start gestures',()=>{
  for(const extra of [{pointerType:'mouse',isPrimary:false},{pointerType:'pen',isPrimary:false},{pointerType:'mouse',button:2}]){
@@ -119,7 +119,7 @@ check('opening settings cancels a pinch and blocks background gestures until clo
  down(1,100);move(1,110);near(read('yaw'),view.yaw+.09);end('pointerup',1);assert.equal(wheel(-80),1);assert(read('sceneZoom')>view.sceneZoom);assert.deepEqual(physical(),before);assert.deepEqual([...storage],saved);
 });
 for(const view of ['front','side']){
- read('openMachine(machines[5])');const teaching=physical(),saved=[...storage];
+ read("openMachine(machines.find(m=>m.id==='vertical'))");const teaching=physical(),saved=[...storage];
  check(`${view} selection has an exact orthographic direction and preserves zoom/model`,()=>{
   read('setSceneZoom(1.25)');r.sceneView.change(view);assert.equal(read('sceneView'),view);near(read('yaw'),view==='front'?0:Math.PI/2);near(read('scenePitch()'),0);near(read('sceneZoom'),1.25);
   assert.equal(r.sceneView.closest('.viewer-settings').closest('#trainingControls'),r.trainingControls);assert.equal(r.sceneView.closest('#sceneToolbar'),null);assert.deepEqual(physical(),teaching);assert.deepEqual([...storage],saved);
@@ -150,6 +150,6 @@ for(const view of ['front','side']){
  });
 }
 check('opening another machine starts with the normal viewing scale and fresh pointers',()=>{
- read("setSceneView('side');setSceneZoom(1.8)");down(1,100);read('openMachine(machines[6])');near(read('sceneZoom'),1);assert.equal(read('sceneView'),'oblique');assert.equal(r.sceneView.value,'oblique');assert.equal(read('scenePointers.size'),0);assert(!captures.size);assert.deepEqual(json('axisConfig(current).map(a=>a.key)'),['X','Z']);
+ read("setSceneView('side');setSceneZoom(1.8)");down(1,100);read("openMachine(machines.find(m=>m.id==='lathe'))");near(read('sceneZoom'),1);assert.equal(read('sceneView'),'oblique');assert.equal(r.sceneView.value,'oblique');assert.equal(read('scenePointers.size'),0);assert(!captures.size);assert.deepEqual(json('axisConfig(current).map(a=>a.key)'),['X','Z']);
 });
 console.log(`Scene zoom: ${checks} interaction/rendering checks passed; ${frames} Canvas frames and ${coordinates} finite coordinate values inspected.`);

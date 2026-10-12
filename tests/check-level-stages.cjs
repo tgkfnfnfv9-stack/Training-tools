@@ -8,7 +8,7 @@ const createEnvironment=require('./leveling-dom-env.cjs');
 const MachineAccuracy=require('../src/machine-accuracy.js');
 const irregularHeightOracle=require('./irregular-height-oracle.cjs');
 const env=createEnvironment(),{registry:r,read,json,storage}=env;
-const variants=[[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']];
+const variants=()=>json('machines.map((m,index)=>[index,m.id==="vertical"?"compact":m.id==="gate"?"l3-3000":""])');
 let checks=0;
 const failures=[];
 function check(name,fn){checks++;try{fn();}catch(error){failures.push(name+': '+error.message);}}
@@ -55,7 +55,7 @@ function expected(heights,factor=1){
  return {posture,up,toolSlope,workSlope,guideSlope:g.guidePoints?g.guidePoints.map(p=>{const q=coordinate(p);return independentSlope(points,q.x,q.z);}).reduce((s,p,i,list)=>({lr:s.lr+p.lr/list.length,fb:s.fb+p.fb/list.length}),{lr:0,fb:0}):null,axes,directions,toolRotate,bodyRotate,slopes};
 }
 function open(index,mode){storage.clear();read(`openMachine(machines[${index}])`);if(mode)r.machineMode.change(mode);const profile=MachineAccuracy.generate('used',123,json('machineLinearKeys()'),read('supports.length'));read(`initializeMachineAccuracy(${JSON.stringify(profile)});supportHeights=[...machineProfile.initialHeights];updateLeveling();`);return profile;}
-for(const [index,mode] of variants){
+for(const [index,mode] of variants()){
  const profile=open(index,mode),label=index+'/'+mode;
  check('初期は同じ個体精度と非水平な支持高さ '+label,()=>{assert.deepEqual(json('machineProfile'),profile);assert.deepEqual(json('supportHeights'),profile.initialHeights);assert.ok(Math.hypot(read('levelSolution.lr'),read('levelSolution.fb'))>.02);});
  check('粗/微切替は調整量だけを変える '+label,()=>{
@@ -88,7 +88,7 @@ for(const [index,mode] of variants){
   check('矢印は固有方向を1回だけ、中心は実可動部へ追従 '+label+' '+exaggerated,()=>{
    const factor=exaggerated?read('levelGeometry.visualFactor'):1,wanted=expected(json('supportHeights'),factor),arrows=json('axisIndicators(current,createGeometry(current))');
    for(const a of arrows.filter(a=>!a.curved)){
-    const origin=scale(add(...a.points),.5),endpoints=a.points.map(p=>json(`levelAxisVisualPoint(${JSON.stringify(p)},${JSON.stringify(origin)},'${a.pose}',${JSON.stringify(a.bodyOrigin)},'${a.key}')`)),actual=unit(sub(endpoints[1],endpoints[0])),slope=a.pose==='tool'?wanted.toolSlope:wanted.workSlope,expectedDirection=read('!!levelGeometry.portal || current.kind==="compact"')?unit(json(`displayAxisFrame('${a.key}').rotate(accuracyVisualVector('${a.key}'))`)):supportRotation({lr:([1,2].includes(index)&&a.key==='X'?wanted.guideSlope:slope).lr*factor,fb:([1,2].includes(index)&&a.key==='X'?wanted.guideSlope:slope).fb*factor})(index===6&&a.key==='Z'?wanted.axes.find(q=>q.key==='Z').vector:wanted.directions[wanted.axes.findIndex(q=>q.key===a.key)]);
+    const origin=scale(add(...a.points),.5),endpoints=a.points.map(p=>json(`levelAxisVisualPoint(${JSON.stringify(p)},${JSON.stringify(origin)},'${a.pose}',${JSON.stringify(a.bodyOrigin)},'${a.key}')`)),actual=unit(sub(endpoints[1],endpoints[0])),slope=a.pose==='tool'?wanted.toolSlope:wanted.workSlope,expectedDirection=read('!!levelGeometry.portal || current.kind==="compact"')?unit(json(`displayAxisFrame('${a.key}').rotate(accuracyVisualVector('${a.key}'))`)):supportRotation({lr:([1,2].includes(index)&&a.key==='X'?wanted.guideSlope:slope).lr*factor,fb:([1,2].includes(index)&&a.key==='X'?wanted.guideSlope:slope).fb*factor})(read('current.id')==='lathe'&&a.key==='Z'?wanted.axes.find(q=>q.key==='Z').vector:wanted.directions[wanted.axes.findIndex(q=>q.key===a.key)]);
     actual.forEach((v,i)=>near(v,expectedDirection[i],1e-11));scale(add(...endpoints),.5).forEach((v,i)=>near(v,a.bodyOrigin[i],1e-11));
     const bodyPoints=json(`createGeometry(current).faces.filter(f=>f.axes.includes('${a.key}')).flatMap(f=>f.v.map(p=>displayedModelPoint(p,f.axes,current,positions,f.pose)))`),center=[0,1,2].map(i=>(Math.min(...bodyPoints.map(p=>p[i]))+Math.max(...bodyPoints.map(p=>p[i])))/2);center.forEach((v,i)=>near(v,a.bodyOrigin[i],1e-11));
    }
@@ -97,7 +97,6 @@ for(const [index,mode] of variants){
  check('同じ保存JSONを復元して合成姿勢と固定倍率が戻る '+label,()=>{
   const record=json('levelRecord()'),posture=json('levelGeometry.bodyPosture'),factor=read('levelGeometry.visualFactor');assert.equal(read('validLevelRecord(levelRecord())'),true);read(`applyLevelRecord(${JSON.stringify(record)});buildSupports();updateLeveling();`);assert.deepEqual(json('levelRecord()'),record);assert.deepEqual(json('levelGeometry.bodyPosture'),posture);near(read('levelGeometry.visualFactor'),factor,1e-12);
  });
- if(index===5)check('3点支持のねじれ0と本体精度の残存を両立',()=>{r.zero.click();near(read('levelSolution.twist'),0,0);near(read('levelSolution.residual'),0,0);assert.ok(Math.hypot(...Object.values(json('levelGeometry.bodyPosture')))>.1);});
 }
 open(0,'compact');
 check('粗目安は局所読みに依存せず左右/前後の平均だけ',()=>{

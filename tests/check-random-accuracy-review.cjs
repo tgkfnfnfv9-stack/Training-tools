@@ -71,7 +71,7 @@ async function main(){
  const guideValues=()=>json('machineProfile.guides');
  const setHeight=(i,value)=>r['height'+i].change(String(value-read(`machineProfile.initialHeights[${i}]`)));
  async function importRecord(record){r.importLevel.files=[{size:100,text:async()=>JSON.stringify(record)}];await r.importLevel.onchange({target:r.importLevel});}
- for(const [index,mode] of [[0,'compact'],[1,''],[2,''],[3,'l3-3000'],[4,''],[5,''],[6,'']]){
+ for(const [index,mode] of json('machines.map((m,index)=>[index,m.id==="vertical"?"compact":m.id==="gate"?"l3-3000":""])')){
   storage.clear();open(index,mode);const first=snapshot();let profile=json('machineProfile');
   check('個体は初期表示時に直ちに保存 '+index+' '+mode,()=>{assert.equal(first.version,[0,1,3].includes(index)?3:2);assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))),first);assert.deepEqual(first.heights,profile.initialHeights);assert.equal(read('validLevelRecord(levelRecord())'),true);});
   open(index,mode);
