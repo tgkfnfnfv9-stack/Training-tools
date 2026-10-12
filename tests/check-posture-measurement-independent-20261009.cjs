@@ -36,7 +36,8 @@ function machine(kind,nodes,state,profile,width,depth){
  const at=(raw,owner,s=state)=>{
   let base,seat,relative,I=v=>v;
   if(kind==='horizontal'){
-   base=physical(owner==='tool'?[0,.66,1.334]:[0,.66,-.85]);
+   // horizontal-rail-v3: the column seat/pivot is the drawn rail centre line 0.28 D.
+   base=physical(owner==='tool'?[0,.66,.28*4.6]:[0,.66,-.85]);
    seat=plus(base,owner==='tool'?[.55*wx*s.X/100,0,0]:[0,0,.45*wz*s.Z/100]);
    relative=minus(physical(raw),base);
    if(owner==='tool'){relative[1]+=.3*s.Y/100;I=v=>spin(v,A,2);}
@@ -48,7 +49,9 @@ function machine(kind,nodes,state,profile,width,depth){
    if(owner==='work')relative[2]+=.35*wz*s.X/100;
    if(owner==='tool')I=v=>spin(v,B,1);
   }
-  const m=S.mount(seat[0],seat[2]),F=basis.map(v=>turn(m.F,I(v)));
+  // lathe-carriage-v3: the carriage rests on four rail pads (x+/-0.4, z=+/-0.4).
+  const padMount=()=>{const P=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=physical([.08+.7*s.Z/100+i*.4,0,k*.4]);return {i,k,x:q[0],z:q[2],h:S.sample(q[0],q[2]).h};})),ha=(P[2].x-P[0].x)/2,hb=(P[1].z-P[0].z)/2,mean=P.reduce((v,q)=>v+q.h/4,0),pa=P.reduce((v,q)=>v+q.i*q.h,0)/(4*ha),pb=P.reduce((v,q)=>v+q.k*q.h,0)/(4*hb),cx=(P[0].x+P[2].x)/2,cz=(P[0].z+P[1].z)/2,x=seat[0],z=seat[2],h=mean+pa*(x-cx)+pb*(z-cz),local=seatAxes(pa-S.a,pb-S.b);return {F:local.map(v=>turn(S.C,v)),p:plus(turn(S.C,[x,h-S.a*x-S.b*z-S.c,z]),[0,.66+S.c,0])};};
+  const m=kind!=='horizontal'&&owner==='work'?padMount():S.mount(seat[0],seat[2]),F=basis.map(v=>turn(m.F,I(v)));
   return {point:plus(m.p,turn(F,relative)),F,seat,origin:m.p};
  };
  return {S,at,physical,wx,wz};

@@ -47,9 +47,10 @@ function latheInspectionGeometry(state=positions,solution=levelSolution,profile=
   if(!validZ)return {valid:false,microns:null,reason:'travel-range'};
   const body0=add(centreA,mul(normal,.035)),probe0=mul(normal,-1),bodyLocal=inverse(sub(body0,mount.point)),probeLocal=inverse(probe0);
   const fractions=new Set(Array.from({length:17},(_,i)=>i/16));
-  // Include support-cell boundaries and both sides of their slope transition.
-  const startX=levelCoordinates(.08+.7*zStart.Z/100,0).x;
-  for(const p of supports){const f=(levelCoordinates(p.x,p.z).x-startX)/length;if(f>0&&f<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,f+d)));}
+  // Include where a carriage rail pad (centre +/-0.4 m) crosses a support-cell
+  // boundary, on both sides of that slope transition.
+  for(const offset of [-.4,.4]){const startX=levelCoordinates(.08+.7*zStart.Z/100+offset,0).x;
+  for(const p of supports){const f=(levelCoordinates(p.x,p.z).x-startX)/length;if(f>0&&f<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,f+d)));}}
   const samples=[...fractions].sort((a,b)=>a-b).map(t=>{
    const m=at(mountRaw,'work',{...zStart,Z:zStart.Z+(zEnd.Z-zStart.Z)*t}),body=add(m.point,m.rotate(bodyLocal)),probe=m.rotate(probeLocal);
    return {t,body,probe,...V.cylinderContact(body,probe,head.point,axis,.025,barLength)};

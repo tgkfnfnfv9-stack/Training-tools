@@ -127,7 +127,7 @@ for(let index=1;index<e.read('machines.length');index++){
 (async()=>{
  open(live);surface('.02*q.x*q.z',{...state,X:41,Y:-53},live);
  const saved=live.json('levelRecord()'),before=values(live);
- check('new bending semantics have a distinct calculation identity',()=>assert.equal(saved.calculationModel,'compact-asymmetric-bending-v4'));
+ check('new bending semantics have a distinct calculation identity',()=>assert.equal(saved.calculationModel,'compact-asymmetric-bending-v5'));
  surface('0',state,live);live.read(`applyLevelRecord(${JSON.stringify(saved)});updateLeveling();`);
  check('save restores exact data and trajectory angles',()=>{assert.deepEqual(live.json('levelRecord()'),saved);vectorNear(values(live),before,1e-7);});
  for(const id of ['compact-table-path-v3','compact-saddle-v2','connected-frames-v1']){

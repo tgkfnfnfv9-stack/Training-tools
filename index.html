@@ -1506,7 +1506,7 @@ function referenceScan(pair,state=positions,solution=levelSolution,profile=machi
 // Every machine, including the compact one, reads its dials from the physical
 // assembly posture. No posture multiplier or reading multiplier is applied.
 function referenceDisplayScan(pair,state=positions,solution=levelSolution,profile=machineProfile){
- return {...referenceScan(pair,state,solution,profile),responseGain:1};
+ return referenceScan(pair,state,solution,profile);
 }
 function referenceDiagram(measurement,mini=false){
  const s=measurement.setup,M=window.ReferenceMeasurement,down=s.relativeSign<0,y0=down?14:31,horizontal=current.kind==='horizontal',rTop=horizontal&&(down||s.referenceFace==='top');
@@ -2299,7 +2299,7 @@ navigate('home');
 // All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
 let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,levelGeometry=null;
 const levelCalculationModel='connected-frames-v1';
-function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-rigid-beam-v3':current.kind==='travel'?'travel-guide-v2':current.kind==='horizontal'?'horizontal-rail-v3':current.kind==='compact'?'compact-asymmetric-bending-v4':current.kind==='lathe'?'lathe-carriage-v3':levelCalculationModel;}
+function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-rigid-beam-v3':current.kind==='travel'?'travel-guide-v3':current.kind==='horizontal'?'horizontal-rail-v3':current.kind==='compact'?'compact-asymmetric-bending-v5':current.kind==='lathe'?'lathe-carriage-v3':levelCalculationModel;}
 function levelStoragePrefix(){return 'training-level-'+currentCalculationModel()+':';}
 // An asynchronous file may finish after another import or a newer training state.
 let levelImportRequest=0,levelSessionEpoch=0,levelRevision=0;
@@ -2979,7 +2979,7 @@ function accuracyDiagram(g,initial=levelInitialGeometry){
   const display=measurement,reading=display.valid?squarenessMicronText(display.microns):'—';
   referenceCards.push(referenceCard(pair,measurement,beforeMeasurement,physical));
   const descriptionText=pair.key+'・'+(display.valid?measurement.setup.zeroLocation+'を0とした300 mmの'+(current.kind==='horizontal'?'測定の終点値 ':'仮想測定 ')+reading+' µm':display.reason)+'。計器は'+measurement.setup.body+'に固定。基準器に対して'+measurement.setup.relativeDirection+'へ移動。押込み'+measurement.setup.normalDirection+'が増えると＋。'+(current.kind==='horizontal'?'模型の現在位置の針の指示ではありません。':'');
-  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${measurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}">${referenceDiagram(measurement,true)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" data-support-response-gain="${display.responseGain}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
+  live.push(`<div class="live-squareness-item"><svg class="live-squareness-diagram" viewBox="0 0 64 45" role="img" aria-label="${descriptionText}" aria-describedby="squarenessMeasurementNote" data-pair="${pair.key}" data-base="${measurement.setup.base}" data-other="${measurement.setup.scan}" data-measurement-length-m="0.3" data-view-right="${measurement.setup.normalDirection}" data-view-up="${measurement.setup.positiveScanDirection}" data-local-angle-microradians="${pair.deviationMicroradians}" data-measurement-model="${measurement.model}" data-zero-location-measurement="${measurement.setup.zeroLocation}" data-relative-direction="${measurement.setup.relativeDirection}" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}">${referenceDiagram(measurement,true)}</svg><div class="live-pair-values" data-pair="${pair.key}" aria-label="${pair.key}の仮想測定値" aria-describedby="liveSquarenessUnits squarenessValuesNote"><span class="live-pair-base-value visually-hidden">接触開始 0</span><span class="live-pair-error-value" data-reading-microns="${display.valid?display.microns:''}" data-physical-reading-microns="${physical.valid?physical.microns:''}" data-reading-model="${display.model}" aria-label="${descriptionText}">${reading}</span><span class="live-pair-unit" aria-hidden="true"> µm</span></div></div>`);
   return `<g transform="translate(${i*112},0)" ${attributes}><text x="56" y="14" text-anchor="middle" class="pair-title">${pair.key} · 局所角度</text><g transform="translate(0,30)">${markup}</g></g>`;
  });
  $('liveSquareness').innerHTML=live.join('');
@@ -3625,9 +3625,10 @@ function latheInspectionGeometry(state=positions,solution=levelSolution,profile=
   if(!validZ)return {valid:false,microns:null,reason:'travel-range'};
   const body0=add(centreA,mul(normal,.035)),probe0=mul(normal,-1),bodyLocal=inverse(sub(body0,mount.point)),probeLocal=inverse(probe0);
   const fractions=new Set(Array.from({length:17},(_,i)=>i/16));
-  // Include support-cell boundaries and both sides of their slope transition.
-  const startX=levelCoordinates(.08+.7*zStart.Z/100,0).x;
-  for(const p of supports){const f=(levelCoordinates(p.x,p.z).x-startX)/length;if(f>0&&f<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,f+d)));}
+  // Include where a carriage rail pad (centre +/-0.4 m) crosses a support-cell
+  // boundary, on both sides of that slope transition.
+  for(const offset of [-.4,.4]){const startX=levelCoordinates(.08+.7*zStart.Z/100+offset,0).x;
+  for(const p of supports){const f=(levelCoordinates(p.x,p.z).x-startX)/length;if(f>0&&f<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,f+d)));}}
   const samples=[...fractions].sort((a,b)=>a-b).map(t=>{
    const m=at(mountRaw,'work',{...zStart,Z:zStart.Z+(zEnd.Z-zStart.Z)*t}),body=add(m.point,m.rotate(bodyLocal)),probe=m.rotate(probeLocal);
    return {t,body,probe,...V.cylinderContact(body,probe,head.point,axis,.025,barLength)};

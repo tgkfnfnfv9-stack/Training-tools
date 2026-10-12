@@ -36,12 +36,12 @@ for(const index of [3,4]){
  check(`portal ${index} reversing a common vertical translation restores`,()=>vectorNear(values(pure),before,1e-8));
 }
 
-// Equal lateral lean of the columns is NOT a common rigid-machine rotation:
-// the long bed is flat and the line joining their tops stays horizontal.
-// That line and the mean column-up direction need not be perpendicular.
+// Equal lateral lean of the columns is NOT a common rigid-machine rotation.
+// The saddle and ram ride the beam as one rigid assembly (portal-rigid-beam-v3):
+// the ram up is orthogonalized to the beam, so Y and Z turn together.
 open(pure,3);pure.registry.exaggerate.checked=false;
 update(pure,lateral);
-check('same-direction lateral lean changes YZ at first order',()=>assert.ok(Math.abs(pure.read("levelGeometry.pairs.find(p=>p.key==='YZ').deviationMicroradians"))>1));
+check('same-direction lateral lean keeps the rigid ram square to the beam (YZ)',()=>near(pure.read("levelGeometry.pairs.find(p=>p.key==='YZ').deviationMicroradians"),0,1e-7));
 check('same-direction lateral lean with flat bed preserves XY',()=>near(pure.read("levelGeometry.pairs.find(p=>p.key==='XY').deviationMicroradians"),0,1e-7));
 update(pure,opposite);
 check('opposite symmetric lateral lean cancels in the mean-up model',()=>near(pure.read("levelGeometry.pairs.find(p=>p.key==='YZ').deviationMicroradians"),0,1e-5));
@@ -101,7 +101,7 @@ for(const sign of [-1,1]){
  update(pure,lateral);const finish=pure.read(`geometryModel(positions,levelSolution,${JSON.stringify(profile)}).pairs.find(p=>p.key==='YZ').deviationMicroradians`);
  outcomes.push(Math.abs(finish)-Math.abs(start));
 }
-check('same lateral adjustment improves one signed intrinsic YZ and worsens the other',()=>assert.ok(outcomes[0]*outcomes[1]<0));
+check('a lateral support adjustment cannot cancel a signed intrinsic YZ of a rigid beam/ram',()=>{for(const v of outcomes)near(v,0,1e-6);});
 
 (async()=>{
  const live=makeEnvironment();open(live,3);

@@ -182,7 +182,7 @@ function referenceScan(pair,state=positions,solution=levelSolution,profile=machi
 // Every machine, including the compact one, reads its dials from the physical
 // assembly posture. No posture multiplier or reading multiplier is applied.
 function referenceDisplayScan(pair,state=positions,solution=levelSolution,profile=machineProfile){
- return {...referenceScan(pair,state,solution,profile),responseGain:1};
+ return referenceScan(pair,state,solution,profile);
 }
 function referenceDiagram(measurement,mini=false){
  const s=measurement.setup,M=window.ReferenceMeasurement,down=s.relativeSign<0,y0=down?14:31,horizontal=current.kind==='horizontal',rTop=horizontal&&(down||s.referenceFace==='top');

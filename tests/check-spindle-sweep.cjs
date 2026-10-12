@@ -180,8 +180,8 @@ surface('i===2?.2:0',zero,live);const modeRecord=live.json('levelRecord()');
 check('compact machine shows squareness and four-position readings simultaneously',()=>{assert.equal(live.read('spindleSweepMode'),true);assert.equal(live.registry.spindleSweepPanel.hidden,false);assert.equal(live.registry.liveSquareness.hidden,false);assert.equal(live.registry.liveSquarenessUnits.hidden,false);assert.equal(live.registry.squarenessValuesNote.hidden,false);assert.equal(live.registry.axisTabs.hidden,false);assert.equal(live.registry.toggleSpindleSweep,undefined);});
 check('UI four positions retain directions without angle notation',()=>{for(let i=0;i<4;i++){const button=live.registry['sweepPosition'+i],label=button.getAttribute('aria-label');assert.match(label,new RegExp('^'+['右','奥','左','手前'][i]));assert.doesNotMatch(label+button.textContent,/°|(?:0|90|180|270)度/);}});
 const uiValues=()=>Array.from({length:4},(_,i)=>Number(live.registry['sweepValue'+i].getAttribute('data-reading-microns')));
-const displayed=drawnIndependentReadings(live,true).readings;
-check('all four displayed values equal independent shared teaching-posture contact geometry',()=>vectorNear(uiValues(),displayed,2e-7));
+const displayed=drawnIndependentReadings(live,false).readings;
+check('all four displayed values equal independent physical-posture contact geometry (no multiplier)',()=>vectorNear(uiValues(),displayed,2e-7));
 check('mode selection does not rewrite installation or profile data',()=>assert.deepEqual(live.json('levelRecord()'),modeRecord));
 for(let i=0;i<4;i++){
  live.registry['sweepPosition'+i].click();
@@ -190,7 +190,7 @@ for(let i=0;i<4;i++){
 check('static position key retains no round operation, dial face or duplicate current readout',()=>{for(const id of ['runSpindleSweep','sweepDial','sweepCurrentAngle','sweepCurrentValue'])assert.equal(live.registry[id],undefined);for(const name of ['runSpindleSweep','stopSpindleSweep','spindleSweepTimer','spindleSweepProgress','sweepDialMarkup','drawSpindleSweep'])assert.equal(live.read('typeof '+name),'undefined');assert.equal(live.registry.spindleSweepPanel.querySelectorAll('svg').length,1);assert.equal(live.registry.spindleSweepMiniZero.textContent,'手前0');});
 check('selecting the four fixed points never starts an animation timer',()=>{const timers=live.timers.length;for(let i=0;i<4;i++)live.registry['sweepPosition'+i].click();assert.equal(live.timers.length,timers);vectorNear(uiValues(),displayed,1e-8);assert.deepEqual(live.json('levelRecord()'),modeRecord);});
 live.read('selected=2;');live.registry.raiseSupport.click();
-check('a support button immediately changes the dial readings through the common teaching posture',()=>{assert.ok(uiValues().some((v,i)=>Math.abs(v-displayed[i])>.001));vectorNear(uiValues(),drawnIndependentReadings(live,true).readings,2e-7);});
+check('a support button immediately changes the dial readings through the physical posture',()=>{assert.ok(uiValues().some((v,i)=>Math.abs(v-displayed[i])>.001));vectorNear(uiValues(),drawnIndependentReadings(live,false).readings,2e-7);});
 live.registry.lowerSupport.click();
 check('reverse support operation restores all visible dial readings',()=>vectorNear(uiValues(),displayed,1e-8));
 const plainReadings=uiValues();live.registry.exaggerate.checked=true;live.registry.exaggerate.onchange();
