@@ -1,0 +1,5670 @@
+{
+ "commit": "e0e62e7c19dd78a4afab08d5d94a24d3b723cf36",
+ "machine": "vertical(kind compact)",
+ "cases": [
+  {
+   "scenario": {
+    "name": "new-seed20261012-center",
+    "seed": 20261012,
+    "condition": "new",
+    "state": {
+     "X": 0,
+     "Y": 0,
+     "Z": 0
+    },
+    "op": {
+     "index": 0,
+     "delta": 0.1
+    }
+   },
+   "profileSquareness_um": {
+    "XY": -1.338,
+    "XZ": 13.943,
+    "YZ": -18.206
+   },
+   "heightsBefore": [
+    -0.15,
+    0.15,
+    0.021,
+    -0.02
+   ],
+   "heightsAfter": [
+    -0.05,
+    0.15,
+    0.021,
+    -0.02
+   ],
+   "product": {
+    "before": {
+     "supportHeights": [
+      -0.15,
+      0.15,
+      0.021,
+      -0.02
+     ],
+     "adjustment": {
+      "gain": 5,
+      "angle": 0.000010887857540083161,
+      "supportAngle": 0.0000027219643850207902,
+      "axis": [
+       0.9999999965760199,
+       0.00008275240366839229,
+       -4.743701022573481e-12
+      ]
+     },
+     "pairs": {
+      "XY": {
+       "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "master",
+        "member": "サドル＋テーブル",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "奥",
+        "memberSign": -1,
+        "relativeSign": 1,
+        "zeroLocation": "手前・右側",
+        "scanDirection": "手前"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -12.722820301082002,
+        "text": "-13",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010012722820301082,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.00001272282027819406,
+         -7.631483342869516e-10,
+         -6.705917295914594e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "compact-table-P"
+       },
+       "display": {
+        "valid": true,
+        "microns": -12.722820301082002,
+        "text": "-13",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010012722820301082,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.00001272282027819406,
+         -7.631483342869516e-10,
+         -6.705917299725581e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       },
+       "local300_um": -12.722836017138459,
+       "levelPairLocal300_um": -11.384834198891076,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -12.722820301082002,
+        "text": "-13",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010012722820301082,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.00001272282027819406,
+         -7.631483342869516e-10,
+         -6.705917299725581e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       }
+      },
+      "XZ": {
+       "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・右側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -2.117582368135751e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.00002482572101938571,
+         -0.29999999799362104,
+         -0.00002206441884035578
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -2.117582368135751e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.00002482572099801912,
+         -0.299999997735605,
+         -0.000025330776090347152
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -10.033562412892868,
+       "levelPairLocal300_um": -23.97656247609512,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -2.117582368135751e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.00002482572099801912,
+         -0.299999997735605,
+         -0.000025330776090347152
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      },
+      "YZ": {
+       "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "奥",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・奥側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 19.023076974466687,
+        "text": "+19",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009980976923025534,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000014792965417060271,
+         -0.2999999990167349,
+         -0.00000304134188392792
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 22.289434223965802,
+        "text": "+22",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009977710565776034,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000014793103922874459,
+         -0.2999999987918257,
+         -0.000003041341887522267
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -19.023076987212296,
+       "levelPairLocal300_um": -0.8174992096038909,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 22.289434223965802,
+        "text": "+22",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009977710565776034,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000014793103922874459,
+         -0.2999999987918257,
+         -0.000003041341887522267
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      }
+     },
+     "sweep": {
+      "display": [
+       {
+        "deg": 0,
+        "reading": 16.16128564208944,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 22.28900876754888,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 6.127723125459439,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "physical": [
+       {
+        "deg": 0,
+        "reading": 14.528106995078,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 19.02265148817998,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 4.494544493101981,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "dom": [
+       {
+        "label": "右",
+        "text": "+16",
+        "reading": "16.16128564208944"
+       },
+       {
+        "label": "奥",
+        "text": "+22",
+        "reading": "22.28900876754888"
+       },
+       {
+        "label": "左",
+        "text": "+6",
+        "reading": "6.127723125459439"
+       },
+       {
+        "label": "手前 基準",
+        "text": "0",
+        "reading": "0"
+       }
+      ]
+     },
+     "dom": [
+      {
+       "text": "-13",
+       "reading": "-12.722820301082002",
+       "physical": "-12.722820301082002",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+10",
+       "reading": "10.033562411023572",
+       "physical": "10.033562411023572",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+22",
+       "reading": "22.289434223965802",
+       "physical": "19.023076974466687",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      }
+     ],
+     "lean": {
+      "bodyLean": {
+       "front": -73.54806295673977,
+       "right": -49.30719562905683
+      },
+      "bodyPosture": {
+       "front": -73.54806295673977,
+       "right": -49.30719562905683
+      },
+      "bodyIntrinsic": {
+       "front": -60.686874018748156,
+       "right": -46.476666752251056
+      },
+      "bodySupport": {
+       "front": -12.86118892871236,
+       "right": -2.8305288358517795
+      },
+      "toolLean": {
+       "front": -12.86118892871236,
+       "right": -2.8305288358517795
+      },
+      "relativeLean": {
+       "front": -2.721964308901226,
+       "right": 79.92187492693992
+      },
+      "columnLeanText": "後ろ倒れ 73.55 µrad ／ 左倒れ 49.31 µrad",
+      "bodyLeanRows": [
+       "前後倒れ：現在 -73.55 µrad",
+       "左右倒れ：現在 -49.31 µrad"
+      ]
+     },
+     "intrinsic": {
+      "runout": {
+       "rootMicrons": 3.1700853956863284,
+       "tipMicrons": 6.665654213072801,
+       "lengthMm": 300,
+       "eccentricityMicrons": [
+        -1.497121902527635,
+        -0.5205635052113925
+       ],
+       "tiltMicroradians": [
+        -6.0855166479363145,
+        0.8731069247764685
+       ]
+      },
+      "surfaceRange": 4.035357850293319
+     }
+    },
+    "after": {
+     "supportHeights": [
+      -0.05,
+      0.15,
+      0.021,
+      -0.02
+     ],
+     "adjustment": {
+      "gain": 5,
+      "angle": 0.000007694937411352041,
+      "supportAngle": 0.0000019237343528380103,
+      "axis": [
+       0.999999998611127,
+       0.000052704326875249404,
+       3.319060493150888e-10
+      ]
+     },
+     "pairs": {
+      "XY": {
+       "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "master",
+        "member": "サドル＋テーブル",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "奥",
+        "memberSign": -1,
+        "relativeSign": 1,
+        "zeroLocation": "手前・右側",
+        "scanDirection": "手前"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -9.384176208002485,
+        "text": "-9",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010009384176208003,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.000009384176201712377,
+         -3.4357263696200224e-10,
+         3.4607387240035367e-16
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "compact-table-P"
+       },
+       "display": {
+        "valid": true,
+        "microns": -9.384176208002485,
+        "text": "-9",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010009384176208003,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.000009384176201712377,
+         -3.4357263696200224e-10,
+         3.46073872399142e-16
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       },
+       "local300_um": -9.384184436931541,
+       "levelPairLocal300_um": -8.046183151480765,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -12.722820301082002,
+        "text": "-13",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010012722820301082,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.00001272282027819406,
+         -7.631483342869516e-10,
+         -6.705917299725581e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       }
+      },
+      "XZ": {
+       "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・右側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 3.0023124507911474,
+        "text": "+3",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009996997687549209,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000015811298002864696,
+         -0.2999999982749595,
+         -0.000027857015424364654
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 3.002312450792882,
+        "text": "+3",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009996997687549207,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.00001581129799186655,
+         -0.2999999980517197,
+         -0.000030165496636854857
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -3.00231245084182,
+       "levelPairLocal300_um": -16.94531249156132,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -2.117582368135751e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.00002482572099801912,
+         -0.299999997735605,
+         -0.000025330776090347152
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      },
+      "YZ": {
+       "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "奥",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・奥側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 18.78327637721243,
+        "text": "+19",
+        "zeroExtension_m": 0.009999999999999998,
+        "endExtension_m": 0.009981216723622786,
+        "zeroContact": [
+         5.293955920339377e-23,
+         -5.293955920339377e-23,
+         1.734723475976807e-18
+        ],
+        "endContact": [
+         0.000012809573132381735,
+         -0.29999999900128443,
+         -0.000009073739065928316
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 21.09175759427116,
+        "text": "+21",
+        "zeroExtension_m": 0.009999999999999998,
+        "endExtension_m": 0.009978908242405727,
+        "zeroContact": [
+         5.293955920339377e-23,
+         -5.293955920339377e-23,
+         1.734723475976807e-18
+        ],
+        "endContact": [
+         0.00001280964533500757,
+         -0.29999999884786344,
+         -0.00000907373906354654
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -18.783276389486193,
+       "levelPairLocal300_um": -0.5775747883491066,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 22.289434223965802,
+        "text": "+22",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009977710565776034,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000014793103922874459,
+         -0.2999999987918257,
+         -0.000003041341887522267
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      }
+     },
+     "sweep": {
+      "display": [
+       {
+        "deg": 0,
+        "reading": 12.046988120771728,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 21.091663737023126,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 9.044675616251398,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "physical": [
+       {
+        "deg": 0,
+        "reading": 10.892747500975444,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 18.783182503294704,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 7.890435002319258,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "dom": [
+       {
+        "label": "右",
+        "text": "+12",
+        "reading": "12.046988120771728"
+       },
+       {
+        "label": "奥",
+        "text": "+21",
+        "reading": "21.091663737023126"
+       },
+       {
+        "label": "左",
+        "text": "+9",
+        "reading": "9.044675616251398"
+       },
+       {
+        "label": "手前 基準",
+        "text": "0",
+        "reading": "0"
+       }
+      ]
+     },
+     "dom": [
+      {
+       "text": "-9",
+       "reading": "-9.384176208002485",
+       "physical": "-9.384176208002485",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+3",
+       "reading": "3.002312450792882",
+       "physical": "3.0023124507911474",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+21",
+       "reading": "21.09175759427116",
+       "physical": "18.78327637721243",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      }
+     ],
+     "lean": {
+      "bodyLean": {
+       "front": -92.85671830261691,
+       "right": -42.696618717851166
+      },
+      "bodyPosture": {
+       "front": -92.85671830261691,
+       "right": -42.696618717851166
+      },
+      "bodyIntrinsic": {
+       "front": -60.686874018748156,
+       "right": -46.476666752251056
+      },
+      "bodySupport": {
+       "front": -32.16984425501353,
+       "right": 3.7800480907722203
+      },
+      "toolLean": {
+       "front": -32.16984425501353,
+       "right": 3.7800480907722203
+      },
+      "relativeLean": {
+       "front": -1.9237342784886415,
+       "right": 56.484375000460375
+      },
+      "columnLeanText": "後ろ倒れ 92.86 µrad ／ 左倒れ 42.70 µrad",
+      "bodyLeanRows": [
+       "前後倒れ：現在 -92.86 µrad",
+       "左右倒れ：現在 -42.70 µrad"
+      ]
+     },
+     "intrinsic": {
+      "runout": {
+       "rootMicrons": 3.1700853956863284,
+       "tipMicrons": 6.665654213072801,
+       "lengthMm": 300,
+       "eccentricityMicrons": [
+        -1.497121902527635,
+        -0.5205635052113925
+       ],
+       "tiltMicroradians": [
+        -6.0855166479363145,
+        0.8731069247764685
+       ]
+      },
+      "surfaceRange": 4.035357850293319
+     }
+    }
+   },
+   "oracle": {
+    "before": {
+     "g1": {
+      "delta": 0.000002721962365315814,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.01001272282030108,
+       "contactEnd": [
+        -0.000012722820278192326,
+        -7.631483342869516e-10,
+        -6.705917298307209e-18
+       ],
+       "microns": -12.722820301080267
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009989966437588977,
+       "microns": 10.033562411023572
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009980976923381388,
+       "microns": 19.023076618612453
+      },
+      "sweep": [
+       14.528106995078,
+       19.022651488179978,
+       4.494544493101978,
+       0
+      ],
+      "local300": {
+       "XY": -12.722836017115208,
+       "XZ": -10.033562412892872,
+       "YZ": -19.023076631361
+      },
+      "columnLean": {
+       "front": -73.54806295673977,
+       "right": -49.307195629056814
+      }
+     },
+     "g5": {
+      "delta": 0.000002721962365315814,
+      "extraAngle": 0.000010887849461263255,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.01001272282030108,
+       "contactEnd": [
+        -0.000012722820278192326,
+        -7.631483342869516e-10,
+        -6.705917298307209e-18
+       ],
+       "microns": -12.722820301080267
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009989966437588977,
+       "microns": 10.033562411023572
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009977710568555532,
+       "microns": 22.289431444468683
+      },
+      "sweep": [
+       16.161284430266438,
+       22.28900634390288,
+       6.127721913636444,
+       0
+      ],
+      "local300": {
+       "XY": -12.722836017115208,
+       "XZ": -10.033562412892872,
+       "YZ": -19.023076631361
+      },
+      "columnLean": {
+       "front": -73.54806295673977,
+       "right": -49.307195629056814
+      }
+     }
+    },
+    "after": {
+     "g1": {
+      "delta": 0.0000019237362250857395,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010009384176208001,
+       "contactEnd": [
+        -0.000009384176201712377,
+        -3.4357263696189636e-10,
+        3.4607387239964685e-16
+       ],
+       "microns": -9.38417620800075
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009996997687549207,
+       "microns": 3.002312450792882
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009981216723328051,
+       "microns": 18.783276671948887
+      },
+      "sweep": [
+       10.892747500975446,
+       18.783182503294707,
+       7.890435002319258,
+       0
+      ],
+      "local300": {
+       "XY": -9.384184436967242,
+       "XZ": -3.002312450841826,
+       "YZ": -18.783276684220176
+      },
+      "columnLean": {
+       "front": -92.8567183026169,
+       "right": -42.69661871785116
+      }
+     },
+     "g5": {
+      "delta": 0.0000019237362250857395,
+      "extraAngle": 0.000007694944900342958,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010009384176208001,
+       "contactEnd": [
+        -0.000009384176201712377,
+        -3.4357263696189636e-10,
+        3.4607387239964685e-16
+       ],
+       "microns": -9.38417620800075
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009996997687549206,
+       "microns": 3.002312450794617
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009978908239864298,
+       "microns": 21.09176013570177
+      },
+      "sweep": [
+       12.046989244120372,
+       21.09166598372041,
+       9.044676739600039,
+       0
+      ],
+      "local300": {
+       "XY": -9.384184436967242,
+       "XZ": -3.002312450841826,
+       "YZ": -18.783276684220176
+      },
+      "columnLean": {
+       "front": -92.8567183026169,
+       "right": -42.69661871785116
+      }
+     }
+    }
+   },
+   "conditionC": {
+    "XZ": {
+     "reZeroExtension_m": 0.009999999999999998,
+     "endExtension_m": 0.009996997687548385,
+     "microns": 3.0023124516134065,
+     "normalChange_urad": 0
+    },
+    "YZ": {
+     "reZeroExtension_m": 0.01,
+     "endExtension_m": 0.009981216690574083,
+     "microns": 18.783309425916826,
+     "normalChange_urad": 11.128783369727032
+    },
+    "XY": {
+     "reZeroExtension_m": 0.01,
+     "endExtension_m": 0.01000938417620679,
+     "microns": -9.384176206789913
+    }
+   },
+   "conditionA": {
+    "status": "条件不足",
+    "reason": "小型の直角マスタの寸法・テーブル上の設置位置、接触点の高さ、計器腕の取付点が製品に定義されていない（referenceScanは開始接触点を原点[0,0,0]・本体を法線方向0.01 mに置く抽象配置）。",
+    "hypothesisH_onlyForScale": {
+     "XY": {
+      "dHead_um": [
+       3.3053670183908,
+       23.94718142739727,
+       9.655189853387258
+      ],
+      "dTable_um": [
+       11.685379341843682,
+       24.393907188668962,
+       10.106626581216776
+      ],
+      "startExtensionChange_um": -8.380039104167794,
+      "startReadingShift_um": 8.380039104167794
+     },
+     "XZ": {
+      "dHead_um": [
+       3.3052418879403787,
+       29.73977800913019,
+       9.655671811215072
+      ],
+      "dTable_um": [
+       15.023894381112209,
+       30.449063793458464,
+       10.053558476552649
+      ],
+      "startExtensionChange_um": -11.718711148149051,
+      "startReadingShift_um": 11.718711148149051
+     },
+     "YZ": {
+      "dHead_um": [
+       3.3052418879403787,
+       29.73977800913019,
+       9.655671811215072
+      ],
+      "dTable_um": [
+       15.023894381112209,
+       30.449063793458464,
+       10.053558476552649
+      ],
+      "startExtensionChange_um": -0.3983764673727946,
+      "startReadingShift_um": 0.3983764673727946
+     }
+    },
+    "hypothesisH_note": "仮定H（製品未定義・本報告者の仮定）: 開始接触点の材料点=テーブル上面P、計器は主軸頭と剛体、マスタはテーブルと剛体。A≈C+startReadingShift。参考の桁評価のみ。"
+   },
+   "checkDiff_productMinusOracle": {
+    "before.XY.physical": -1.7355006320940447e-12,
+    "before.XY.display": -1.7355006320940447e-12,
+    "before.XY.local300": -2.3250734670909878e-11,
+    "before.XZ.physical": 0,
+    "before.XZ.display": 0,
+    "before.XZ.local300": 3.552713678800501e-15,
+    "before.YZ.physical": 3.5585423319162146e-7,
+    "before.YZ.display": 0.0000027794971195760354,
+    "before.YZ.local300": -3.558512950974091e-7,
+    "after.XY.physical": -1.7355006320940447e-12,
+    "after.XY.display": -1.7355006320940447e-12,
+    "after.XY.local300": 3.5701219758266234e-11,
+    "after.XZ.physical": -1.7346124536743446e-12,
+    "after.XZ.display": -1.7350565428841946e-12,
+    "after.XZ.local300": 5.773159728050814e-15,
+    "after.YZ.physical": -2.947364556860066e-7,
+    "after.YZ.display": -0.0000025414306072946147,
+    "after.YZ.local300": 2.9473398299728615e-7,
+    "before.sweep.display.maxAbsDiff": 0.0000024236459985615966,
+    "before.sweep.physical.maxAbsDiff": 3.552713678800501e-15,
+    "before.delta": 2.0197049764346462e-12,
+    "before.columnLean.front": 0,
+    "after.sweep.display.maxAbsDiff": 0.0000022466972851020728,
+    "after.sweep.physical.maxAbsDiff": 3.552713678800501e-15,
+    "after.delta": -1.8722477291993893e-12,
+    "after.columnLean.front": -1.4210854715202004e-14
+   }
+  },
+  {
+   "scenario": {
+    "name": "new-seed20261012-offcenter",
+    "seed": 20261012,
+    "condition": "new",
+    "state": {
+     "X": 50,
+     "Y": -60,
+     "Z": 40
+    },
+    "op": {
+     "index": 0,
+     "delta": 0.1
+    }
+   },
+   "profileSquareness_um": {
+    "XY": -1.338,
+    "XZ": 13.943,
+    "YZ": -18.206
+   },
+   "heightsBefore": [
+    -0.15,
+    0.15,
+    0.021,
+    -0.02
+   ],
+   "heightsAfter": [
+    -0.05,
+    0.15,
+    0.021,
+    -0.02
+   ],
+   "product": {
+    "before": {
+     "supportHeights": [
+      -0.15,
+      0.15,
+      0.021,
+      -0.02
+     ],
+     "adjustment": {
+      "gain": 5,
+      "angle": 0.000010887857540083161,
+      "supportAngle": 0.0000027219643850207902,
+      "axis": [
+       0.9999999965760199,
+       0.00008275240366839229,
+       -4.743701022573481e-12
+      ]
+     },
+     "pairs": {
+      "XY": {
+       "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "master",
+        "member": "サドル＋テーブル",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "奥",
+        "memberSign": -1,
+        "relativeSign": 1,
+        "zeroLocation": "手前・右側",
+        "scanDirection": "手前"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -12.722699956986203,
+        "text": "-13",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010012722699956988,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -1.0587911840678754e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         -0.000012722699918086763,
+         -9.948954252710821e-10,
+         4.694097707031787e-17
+        ],
+        "startPosition": 0.06,
+        "endPosition": -0.24,
+        "model": "reference-scan-v3",
+        "fixture": "compact-table-P"
+       },
+       "display": {
+        "valid": true,
+        "microns": -12.722699956984467,
+        "text": "-13",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010012722699956986,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -1.0587911840678754e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         -0.000012722699918086763,
+         -9.948954252708704e-10,
+         4.6940977065464797e-17
+        ],
+        "startPosition": 0.06,
+        "endPosition": -0.24,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       },
+       "local300_um": -12.722783759171962,
+       "levelPairLocal300_um": -11.384780323290363,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -12.722699956984467,
+        "text": "-13",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010012722699956986,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -1.0587911840678754e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         -0.000012722699918086763,
+         -9.948954252708704e-10,
+         4.6940977065464797e-17
+        ],
+        "startPosition": 0.06,
+        "endPosition": -0.24,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       }
+      },
+      "XZ": {
+       "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・右側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 15.498305975931299,
+        "text": "+15",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009984501694024069,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000030290464539646858,
+         -0.29999999725908616,
+         -0.000022064418840447054
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 15.49830597121632,
+        "text": "+15",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009984501694028784,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.00003029046451356529,
+         -0.2999999970010701,
+         -0.000025330776090438425
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -15.498305982823691,
+       "levelPairLocal300_um": -29.441306060431017,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 15.49830597121632,
+        "text": "+15",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009984501694028784,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.00003029046451356529,
+         -0.2999999970010701,
+         -0.000025330776090438425
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      },
+      "YZ": {
+       "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "奥",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・奥側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 13.61713760531305,
+        "text": "+14",
+        "zeroExtension_m": 0.009999999999999998,
+        "endExtension_m": 0.009986382862394685,
+        "zeroContact": [
+         5.293955920339377e-23,
+         -5.293955920339377e-23,
+         1.734723475976807e-18
+        ],
+        "endContact": [
+         0.00001479273617454184,
+         -0.29999999920731996,
+         -0.000008447281252637467
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 16.88349485833539,
+        "text": "+17",
+        "zeroExtension_m": 0.009999999999999998,
+        "endExtension_m": 0.009983116505141663,
+        "zeroContact": [
+         5.293955920339377e-23,
+         -5.293955920339377e-23,
+         1.734723475976807e-18
+        ],
+        "endContact": [
+         0.00001479287468634717,
+         -0.29999999904126984,
+         -0.000008447281253837896
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -13.61713760998946,
+       "levelPairLocal300_um": 4.588488895282903,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 16.88349485833539,
+        "text": "+17",
+        "zeroExtension_m": 0.009999999999999998,
+        "endExtension_m": 0.009983116505141663,
+        "zeroContact": [
+         5.293955920339377e-23,
+         -5.293955920339377e-23,
+         1.734723475976807e-18
+        ],
+        "endContact": [
+         0.00001479287468634717,
+         -0.29999999904126984,
+         -0.000008447281253837896
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      }
+     },
+     "sweep": {
+      "display": [
+       {
+        "deg": 0,
+        "reading": 18.752164815794103,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 22.006023507024643,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 3.25385869123054,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "physical": [
+       {
+        "deg": 0,
+        "reading": 17.11898616597809,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 18.739666226087166,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 1.6206800601090763,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "dom": [
+       {
+        "label": "右",
+        "text": "+19",
+        "reading": "18.752164815794103"
+       },
+       {
+        "label": "奥",
+        "text": "+22",
+        "reading": "22.006023507024643"
+       },
+       {
+        "label": "左",
+        "text": "+3",
+        "reading": "3.25385869123054"
+       },
+       {
+        "label": "手前 基準",
+        "text": "0",
+        "reading": "0"
+       }
+      ]
+     },
+     "dom": [
+      {
+       "text": "-13",
+       "reading": "-12.722699956984467",
+       "physical": "-12.722699956986203",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+15",
+       "reading": "15.49830597121632",
+       "physical": "15.498305975931299",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+17",
+       "reading": "16.88349485833539",
+       "physical": "13.61713760531305",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      }
+     ],
+     "lean": {
+      "bodyLean": {
+       "front": -73.54806295673977,
+       "right": -49.30719562905683
+      },
+      "bodyPosture": {
+       "front": -73.54806295673977,
+       "right": -49.30719562905683
+      },
+      "bodyIntrinsic": {
+       "front": -60.686874018748156,
+       "right": -46.476666752251056
+      },
+      "bodySupport": {
+       "front": -12.86118892871236,
+       "right": -2.8305288358517795
+      },
+      "toolLean": {
+       "front": -12.86118892871236,
+       "right": -2.8305288358517795
+      },
+      "relativeLean": {
+       "front": -1.7786801298335408,
+       "right": 98.13768687623579
+      },
+      "columnLeanText": "後ろ倒れ 73.55 µrad ／ 左倒れ 49.31 µrad",
+      "bodyLeanRows": [
+       "前後倒れ：現在 -73.55 µrad",
+       "左右倒れ：現在 -49.31 µrad"
+      ]
+     },
+     "intrinsic": {
+      "runout": {
+       "rootMicrons": 3.1700853956863284,
+       "tipMicrons": 6.665654213072801,
+       "lengthMm": 300,
+       "eccentricityMicrons": [
+        -1.497121902527635,
+        -0.5205635052113925
+       ],
+       "tiltMicroradians": [
+        -6.0855166479363145,
+        0.8731069247764685
+       ]
+      },
+      "surfaceRange": 4.035357850293319
+     }
+    },
+    "after": {
+     "supportHeights": [
+      -0.05,
+      0.15,
+      0.021,
+      -0.02
+     ],
+     "adjustment": {
+      "gain": 5,
+      "angle": 0.000007694937411352041,
+      "supportAngle": 0.0000019237343528380103,
+      "axis": [
+       0.999999998611127,
+       0.000052704326875249404,
+       3.319060493150888e-10
+      ]
+     },
+     "pairs": {
+      "XY": {
+       "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "master",
+        "member": "サドル＋テーブル",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "奥",
+        "memberSign": -1,
+        "relativeSign": 1,
+        "zeroLocation": "手前・右側",
+        "scanDirection": "手前"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -9.384116098649226,
+        "text": "-9",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010009384116098651,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -1.0587911840678754e-22,
+         -4.0389678347315804e-28
+        ],
+        "endContact": [
+         -0.000009384116087158417,
+         -4.6438090509970153e-10,
+         -2.4225015894729178e-15
+        ],
+        "startPosition": 0.06,
+        "endPosition": -0.24,
+        "model": "reference-scan-v3",
+        "fixture": "compact-table-P"
+       },
+       "display": {
+        "valid": true,
+        "microns": -9.38411609864749,
+        "text": "-9",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.01000938411609865,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -1.0587911840678754e-22,
+         -4.0389678347315804e-28
+        ],
+        "endContact": [
+         -0.000009384116087158417,
+         -4.6438090509948977e-10,
+         -2.4225015894620126e-15
+        ],
+        "startPosition": 0.06,
+        "endPosition": -0.24,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       },
+       "local300_um": -9.38415867247576,
+       "levelPairLocal300_um": -8.046156243674774,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -12.722699956984467,
+        "text": "-13",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010012722699956986,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -1.0587911840678754e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         -0.000012722699918086763,
+         -9.948954252708704e-10,
+         4.6940977065464797e-17
+        ],
+        "startPosition": 0.06,
+        "endPosition": -0.24,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       }
+      },
+      "XZ": {
+       "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・右側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 6.86449192623291,
+        "text": "+7",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009993135508073767,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000019673477467714237,
+         -0.29999999798303295,
+         -0.00002785701542105756
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 6.86449192404022,
+        "text": "+7",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.00999313550807596,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000019673477454521665,
+         -0.29999999775979314,
+         -0.000030165496633547763
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -6.864491926831538,
+       "levelPairLocal300_um": -20.807491976831837,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 15.49830597121632,
+        "text": "+15",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009984501694028784,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.00003029046451356529,
+         -0.2999999970010701,
+         -0.000025330776090438425
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      },
+      "YZ": {
+       "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "奥",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・奥側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 14.96261620891233,
+        "text": "+15",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009985037383791088,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000012809453627583805,
+         -0.2999999990762875,
+         -0.000012894399237592044
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 17.271097427735278,
+        "text": "+17",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009982728902572265,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000012809525832157256,
+         -0.2999999989522662,
+         -0.000012894399234519849
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -14.962616215115368,
+       "levelPairLocal300_um": 3.2431198289433802,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 16.88349485833539,
+        "text": "+17",
+        "zeroExtension_m": 0.009999999999999998,
+        "endExtension_m": 0.009983116505141663,
+        "zeroContact": [
+         5.293955920339377e-23,
+         -5.293955920339377e-23,
+         1.734723475976807e-18
+        ],
+        "endContact": [
+         0.00001479287468634717,
+         -0.29999999904126984,
+         -0.000008447281253837896
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      }
+     },
+     "sweep": {
+      "display": [
+       {
+        "deg": 0,
+        "reading": 13.878078678334852,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 20.891665356882296,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 7.013586678547444,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "physical": [
+       {
+        "deg": 0,
+        "reading": 12.723838057513989,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 18.58318412305998,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 5.859346065545992,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "dom": [
+       {
+        "label": "右",
+        "text": "+14",
+        "reading": "13.878078678334852"
+       },
+       {
+        "label": "奥",
+        "text": "+21",
+        "reading": "20.891665356882296"
+       },
+       {
+        "label": "左",
+        "text": "+7",
+        "reading": "7.013586678547444"
+       },
+       {
+        "label": "手前 基準",
+        "text": "0",
+        "reading": "0"
+       }
+      ]
+     },
+     "dom": [
+      {
+       "text": "-9",
+       "reading": "-9.38411609864749",
+       "physical": "-9.384116098649226",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+7",
+       "reading": "6.86449192404022",
+       "physical": "6.86449192623291",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+17",
+       "reading": "17.271097427735278",
+       "physical": "14.96261620891233",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      }
+     ],
+     "lean": {
+      "bodyLean": {
+       "front": -92.85671830261691,
+       "right": -42.696618717851166
+      },
+      "bodyPosture": {
+       "front": -92.85671830261691,
+       "right": -42.696618717851166
+      },
+      "bodyIntrinsic": {
+       "front": -60.686874018748156,
+       "right": -46.476666752251056
+      },
+      "bodySupport": {
+       "front": -32.16984425501353,
+       "right": 3.7800480907722203
+      },
+      "toolLean": {
+       "front": -32.16984425501353,
+       "right": 3.7800480907722203
+      },
+      "relativeLean": {
+       "front": -1.2570730207532783,
+       "right": 69.35830662454076
+      },
+      "columnLeanText": "後ろ倒れ 92.86 µrad ／ 左倒れ 42.70 µrad",
+      "bodyLeanRows": [
+       "前後倒れ：現在 -92.86 µrad",
+       "左右倒れ：現在 -42.70 µrad"
+      ]
+     },
+     "intrinsic": {
+      "runout": {
+       "rootMicrons": 3.1700853956863284,
+       "tipMicrons": 6.665654213072801,
+       "lengthMm": 300,
+       "eccentricityMicrons": [
+        -1.497121902527635,
+        -0.5205635052113925
+       ],
+       "tiltMicroradians": [
+        -6.0855166479363145,
+        0.8731069247764685
+       ]
+      },
+      "surfaceRange": 4.035357850293319
+     }
+    }
+   },
+   "oracle": {
+    "before": {
+     "g1": {
+      "delta": 0.000002721962365315814,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.06,
+       "endY_m": -0.24,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010012722699956986,
+       "contactEnd": [
+        -0.000012722699918086763,
+        -9.948954252708704e-10,
+        4.694097706733282e-17
+       ],
+       "microns": -12.722699956986203
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009984501694024069,
+       "microns": 15.498305975931299
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009986382862722356,
+       "microns": 13.617137277644604
+      },
+      "sweep": [
+       17.11898616597809,
+       18.739666226087163,
+       1.620680060109073,
+       0
+      ],
+      "local300": {
+       "XY": -12.722783638897116,
+       "XZ": -15.49830598282369,
+       "YZ": -13.617137282320746
+      },
+      "columnLean": {
+       "front": -73.54806295673977,
+       "right": -49.307195629056814
+      }
+     },
+     "g5": {
+      "delta": 0.000002721962365315814,
+      "extraAngle": 0.000010887849461263255,
+      "XY": {
+       "startY_m": 0.06,
+       "endY_m": -0.24,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010012722699956986,
+       "contactEnd": [
+        -0.000012722699918086763,
+        -9.948954252708704e-10,
+        4.694097706733282e-17
+       ],
+       "microns": -12.722699956986203
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009984501694028784,
+       "microns": 15.49830597121632
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009983116507892974,
+       "microns": 16.88349210702579
+      },
+      "sweep": [
+       18.752163603971102,
+       22.006021083378652,
+       3.253857479407553,
+       0
+      ],
+      "local300": {
+       "XY": -12.722783638897116,
+       "XZ": -15.49830598282369,
+       "YZ": -13.617137282320746
+      },
+      "columnLean": {
+       "front": -73.54806295673977,
+       "right": -49.307195629056814
+      }
+     }
+    },
+    "after": {
+     "g1": {
+      "delta": 0.0000019237362250857395,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.06,
+       "endY_m": -0.24,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010009384116098622,
+       "contactEnd": [
+        -0.000009384116087130662,
+        -4.643809050983251e-10,
+        -2.4225015894620126e-15
+       ],
+       "microns": -9.38411609862147
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009993135508073767,
+       "microns": 6.86449192623291
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009985037383932575,
+       "microns": 14.962616067424813
+      },
+      "sweep": [
+       12.723838057513989,
+       18.583184123059976,
+       5.85934606554599,
+       0
+      ],
+      "local300": {
+       "XY": -9.384158680156208,
+       "XZ": -6.864491926831536,
+       "YZ": -14.962616073628276
+      },
+      "columnLean": {
+       "front": -92.8567183026169,
+       "right": -42.69661871785116
+      }
+     },
+     "g5": {
+      "delta": 0.0000019237362250857395,
+      "extraAngle": 0.000007694944900342958,
+      "XY": {
+       "startY_m": 0.06,
+       "endY_m": -0.24,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010009384116098622,
+       "contactEnd": [
+        -0.000009384116087130662,
+        -4.643809050983251e-10,
+        -2.4225015894620126e-15
+       ],
+       "microns": -9.38411609862147
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.00999313550807596,
+       "microns": 6.86449192404022
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009982728900467057,
+       "microns": 17.271099532943644
+      },
+      "sweep": [
+       13.878079801683496,
+       20.891667603579574,
+       7.013587801896079,
+       0
+      ],
+      "local300": {
+       "XY": -9.384158680156208,
+       "XZ": -6.864491926831536,
+       "YZ": -14.962616073628276
+      },
+      "columnLean": {
+       "front": -92.8567183026169,
+       "right": -42.69661871785116
+      }
+     }
+    }
+   },
+   "conditionC": {
+    "XZ": {
+     "reZeroExtension_m": 0.01,
+     "endExtension_m": 0.009993135508070924,
+     "microns": 6.864491929076122,
+     "normalChange_urad": 0
+    },
+    "YZ": {
+     "reZeroExtension_m": 0.01,
+     "endExtension_m": 0.009986539711010255,
+     "microns": 13.46028898974519,
+     "normalChange_urad": 12.203623443450546
+    },
+    "XY": {
+     "reZeroExtension_m": 0.01,
+     "endExtension_m": 0.010009384116097576,
+     "microns": -9.384116097575431
+    }
+   },
+   "conditionA": {
+    "status": "条件不足",
+    "reason": "小型の直角マスタの寸法・テーブル上の設置位置、接触点の高さ、計器腕の取付点が製品に定義されていない（referenceScanは開始接触点を原点[0,0,0]・本体を法線方向0.01 mに置く抽象配置）。",
+    "hypothesisH_onlyForScale": {
+     "XY": {
+      "dHead_um": [
+       3.3053353363787785,
+       27.093878882000766,
+       9.655557671101045
+      ],
+      "dTable_um": [
+       14.35660343296341,
+       22.780876361538915,
+       10.074870175735828
+      ],
+      "startExtensionChange_um": -11.050930792678908,
+      "startReadingShift_um": 11.050930792678908
+     },
+     "XZ": {
+      "dHead_um": [
+       3.3052102058617194,
+       32.88647546373369,
+       9.656039628880286
+      ],
+      "dTable_um": [
+       17.69537523324538,
+       27.28267443119492,
+       9.915495661094731
+      ],
+      "startExtensionChange_um": -14.38959914823999,
+      "startReadingShift_um": 14.38959914823999
+     },
+     "YZ": {
+      "dHead_um": [
+       3.3052102058617194,
+       32.88647546373369,
+       9.656039628880286
+      ],
+      "dTable_um": [
+       17.69537523324538,
+       27.28267443119492,
+       9.915495661094731
+      ],
+      "startExtensionChange_um": -0.2602241273376545,
+      "startReadingShift_um": 0.2602241273376545
+     }
+    },
+    "hypothesisH_note": "仮定H（製品未定義・本報告者の仮定）: 開始接触点の材料点=テーブル上面P、計器は主軸頭と剛体、マスタはテーブルと剛体。A≈C+startReadingShift。参考の桁評価のみ。"
+   },
+   "checkDiff_productMinusOracle": {
+    "before.XY.physical": 0,
+    "before.XY.display": 1.7355006320940447e-12,
+    "before.XY.local300": -1.202748460826797e-7,
+    "before.XZ.physical": 0,
+    "before.XZ.display": 0,
+    "before.XZ.local300": -1.7763568394002505e-15,
+    "before.YZ.physical": 3.276684470421287e-7,
+    "before.YZ.display": 0.0000027513095979259106,
+    "before.YZ.local300": -3.2766871349565463e-7,
+    "after.XY.physical": -2.7755575615628914e-11,
+    "after.XY.display": -2.602007498353487e-11,
+    "after.XY.local300": 7.680448277369578e-9,
+    "after.XZ.physical": 0,
+    "after.XZ.display": 0,
+    "after.XZ.local300": -1.7763568394002505e-15,
+    "after.YZ.physical": 1.4148751681375416e-7,
+    "after.YZ.display": -0.0000021052083667427723,
+    "after.YZ.local300": -1.4148709226446954e-7,
+    "before.sweep.display.maxAbsDiff": 0.0000024236459914561692,
+    "before.sweep.physical.maxAbsDiff": 3.552713678800501e-15,
+    "before.delta": 2.0197049764346462e-12,
+    "before.columnLean.front": 0,
+    "after.sweep.display.maxAbsDiff": 0.0000022466972779966454,
+    "after.sweep.physical.maxAbsDiff": 3.552713678800501e-15,
+    "after.delta": -1.8722477291993893e-12,
+    "after.columnLean.front": -1.4210854715202004e-14
+   }
+  },
+  {
+   "scenario": {
+    "name": "used-seed7-center-D",
+    "seed": 7,
+    "condition": "used",
+    "state": {
+     "X": 0,
+     "Y": 0,
+     "Z": 0
+    },
+    "op": {
+     "index": 3,
+     "delta": 0.1
+    }
+   },
+   "profileSquareness_um": {
+    "XY": 5.929,
+    "XZ": -40.858,
+    "YZ": 8.599
+   },
+   "heightsBefore": [
+    -0.15,
+    0.15,
+    0.01,
+    -0.061
+   ],
+   "heightsAfter": [
+    -0.15,
+    0.15,
+    0.01,
+    0.039
+   ],
+   "product": {
+    "before": {
+     "supportHeights": [
+      -0.15,
+      0.15,
+      0.01,
+      -0.061
+     ],
+     "adjustment": {
+      "gain": 5,
+      "angle": 0.000011845733586386994,
+      "supportAngle": 0.0000029614333965967484,
+      "axis": [
+       0.9999999970089722,
+       0.0000773437498620356,
+       2.632128066755505e-10
+      ]
+     },
+     "pairs": {
+      "XY": {
+       "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "master",
+        "member": "サドル＋テーブル",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "奥",
+        "memberSign": -1,
+        "relativeSign": 1,
+        "zeroLocation": "手前・右側",
+        "scanDirection": "手前"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -6.457411443994837,
+        "text": "-6",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010006457411443997,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -1.0587911840678754e-22,
+         5.048709793414476e-29
+        ],
+        "endContact": [
+         -0.0000064574114350714196,
+         -3.394711553256744e-10,
+         1.888525989378353e-16
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "compact-table-P"
+       },
+       "display": {
+        "valid": true,
+        "microns": -6.457411443994837,
+        "text": "-6",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010006457411443997,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -1.0587911840678754e-22,
+         5.048709793414476e-29
+        ],
+        "endContact": [
+         -0.0000064574114350714196,
+         -3.3947115532578027e-10,
+         1.8885259893611874e-16
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       },
+       "local300_um": -6.45741912509918,
+       "levelPairLocal300_um": -12.386427893144088,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -6.457411443994837,
+        "text": "-6",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010006457411443997,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -1.0587911840678754e-22,
+         5.048709793414476e-29
+        ],
+        "endContact": [
+         -0.0000064574114350714196,
+         -3.3947115532578027e-10,
+         1.8885259893611874e-16
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       }
+      },
+      "XZ": {
+       "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・右側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 66.9439369135761,
+        "text": "+67",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009933056063086424,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000023203124380631948,
+         -0.29999999163251817,
+         7.831705066287753e-7
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 66.94393691357956,
+        "text": "+67",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.00993305606308642,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.00002320312438065797,
+         -0.29999999162074725,
+         -0.000002770549480769475
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -66.94393746915043,
+       "levelPairLocal300_um": -26.085937469214578,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 66.94393691357956,
+        "text": "+67",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.00993305606308642,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.00002320312438065797,
+         -0.29999999162074725,
+         -0.000002770549480769475
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      },
+      "YZ": {
+       "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "奥",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・奥側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -7.708321511111505,
+        "text": "-8",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010007708321511113,
+        "zeroContact": [
+         -2.6469779601696886e-23,
+         2.6469779601696886e-23,
+         -1.734723475976807e-18
+        ],
+        "endContact": [
+         -0.00004374097826399267,
+         -0.29999999663225146,
+         -0.000006925151018263506
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": -4.154601525210855,
+        "text": "-4",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010004154601525213,
+        "zeroContact": [
+         -2.6469779601696886e-23,
+         2.6469779601696886e-23,
+         -1.734723475976807e-18
+        ],
+        "endContact": [
+         -0.000043740901765692545,
+         -0.2999999967025252,
+         -0.000006925151021531725
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": 7.708321511959996,
+       "levelPairLocal300_um": -0.889507053473093,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -4.154601525210855,
+        "text": "-4",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010004154601525213,
+        "zeroContact": [
+         -2.6469779601696886e-23,
+         2.6469779601696886e-23,
+         -1.734723475976807e-18
+        ],
+        "endContact": [
+         -0.000043740901765692545,
+         -0.2999999967025252,
+         -0.000006925151021531725
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      }
+     },
+     "sweep": {
+      "display": [
+       {
+        "deg": 0,
+        "reading": 31.393948062234223,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": -4.156042469146124,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": -35.54999053138035,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "physical": [
+       {
+        "deg": 0,
+        "reading": 29.617087985016898,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": -7.709762634971228,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": -37.32685061998812,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "dom": [
+       {
+        "label": "右",
+        "text": "+31",
+        "reading": "31.393948062234223"
+       },
+       {
+        "label": "奥",
+        "text": "-4",
+        "reading": "-4.156042469146124"
+       },
+       {
+        "label": "左",
+        "text": "-36",
+        "reading": "-35.54999053138035"
+       },
+       {
+        "label": "手前 基準",
+        "text": "0",
+        "reading": "0"
+       }
+      ]
+     },
+     "dom": [
+      {
+       "text": "-6",
+       "reading": "-6.457411443994837",
+       "physical": "-6.457411443994837",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+67",
+       "reading": "66.94393691357956",
+       "physical": "66.9439369135761",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "-4",
+       "reading": "-4.154601525210855",
+       "physical": "-7.708321511111505",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      }
+     ],
+     "lean": {
+      "bodyLean": {
+       "front": 2.6105683244455027,
+       "right": 145.8027082928009
+      },
+      "bodyPosture": {
+       "front": 2.6105683244455027,
+       "right": 145.8027082928009
+      },
+      "bodyIntrinsic": {
+       "front": 28.66064197050129,
+       "right": 136.19333338927012
+      },
+      "bodySupport": {
+       "front": -26.050073754754294,
+       "right": 9.609374980880647
+      },
+      "toolLean": {
+       "front": -26.050073754754294,
+       "right": 9.609374980880647
+      },
+      "relativeLean": {
+       "front": -2.9614332531475966,
+       "right": 86.95312492610591
+      },
+      "columnLeanText": "前倒れ 2.61 µrad ／ 右倒れ 145.80 µrad",
+      "bodyLeanRows": [
+       "前後倒れ：現在 +2.61 µrad",
+       "左右倒れ：現在 +145.80 µrad"
+      ]
+     },
+     "intrinsic": {
+      "runout": {
+       "rootMicrons": 10.742436782922594,
+       "tipMicrons": 17.426166102190106,
+       "lengthMm": 300,
+       "eccentricityMicrons": [
+        -4.100979789709663,
+        -3.4687103905003345
+       ],
+       "tiltMicroradians": [
+        -8.260655686612358,
+        -7.479181015633269
+       ]
+      },
+      "surfaceRange": 17.045570509508252
+     }
+    },
+    "after": {
+     "supportHeights": [
+      -0.15,
+      0.15,
+      0.01,
+      0.039
+     ],
+     "adjustment": {
+      "gain": 5,
+      "angle": 0.000008652813446267785,
+      "supportAngle": 0.0000021632033615669464,
+      "axis": [
+       0.999999995452034,
+       0.00009537259584188784,
+       -1.8472611672922242e-10
+      ]
+     },
+     "pairs": {
+      "XY": {
+       "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "master",
+        "member": "サドル＋テーブル",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "奥",
+        "memberSign": -1,
+        "relativeSign": 1,
+        "zeroLocation": "手前・右側",
+        "scanDirection": "手前"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -3.1187705592256725,
+        "text": "-3",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010003118770559226,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.0000031187705499119422,
+         -2.410091584469508e-10,
+         -6.401315271613039e-17
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "compact-table-P"
+       },
+       "display": {
+        "valid": true,
+        "microns": -3.1187705592256725,
+        "text": "-3",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010003118770559226,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.0000031187705499119422,
+         -2.410091584468449e-10,
+         -6.401315271623136e-17
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       },
+       "local300_um": -3.118772931182096,
+       "levelPairLocal300_um": -9.04777933793434,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -6.457411443994837,
+        "text": "-6",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010006457411443997,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -1.0587911840678754e-22,
+         5.048709793414476e-29
+        ],
+        "endContact": [
+         -0.0000064574114350714196,
+         -3.3947115532578027e-10,
+         1.8885259893611874e-16
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       }
+      },
+      "XZ": {
+       "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・右側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 59.9126870876026,
+        "text": "+60",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009940087312912398,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.00002861177817110351,
+         -0.2999999925216519,
+         0.000008879462598476504
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 59.912687087600865,
+        "text": "+60",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.0099400873129124,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000028611778176878405,
+         -0.29999999258725357,
+         0.000006283618617199094
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -59.91268748585769,
+       "levelPairLocal300_um": -19.054687488001377,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 66.94393691357956,
+        "text": "+67",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.00993305606308642,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.00002320312438065797,
+         -0.29999999162074725,
+         -0.000002770549480769475
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      },
+      "YZ": {
+       "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "奥",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・奥側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -7.948608640633362,
+        "text": "-8",
+        "zeroExtension_m": 0.009999999999999997,
+        "endExtension_m": 0.01000794860864063,
+        "zeroContact": [
+         3.970466940254533e-23,
+         6.617444900424222e-24,
+         3.469446951953614e-18
+        ],
+        "endContact": [
+         -0.00003130099127615353,
+         -0.2999999982603351,
+         9.308539693827361e-7
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": -5.352764659303025,
+        "text": "-5",
+        "zeroExtension_m": 0.009999999999999997,
+        "endExtension_m": 0.0100053527646593,
+        "zeroContact": [
+         3.970466940254533e-23,
+         6.617444900424222e-24,
+         3.469446951953614e-18
+        ],
+        "endContact": [
+         -0.00003130096428450491,
+         -0.2999999983178851,
+         9.308539692821222e-7
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": 7.948608641558311,
+       "levelPairLocal300_um": -0.6495356822245885,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -4.154601525210855,
+        "text": "-4",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.010004154601525213,
+        "zeroContact": [
+         -2.6469779601696886e-23,
+         2.6469779601696886e-23,
+         -1.734723475976807e-18
+        ],
+        "endContact": [
+         -0.000043740901765692545,
+         -0.2999999967025252,
+         -0.000006925151021531725
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      }
+     },
+     "sweep": {
+      "display": [
+       {
+        "deg": 0,
+        "reading": 27.279650382291578,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": -5.353387534442648,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": -32.63303791673423,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "physical": [
+       {
+        "deg": 0,
+        "reading": 25.981728342860478,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": -7.949231621381071,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": -33.93095996424155,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "dom": [
+       {
+        "label": "右",
+        "text": "+27",
+        "reading": "27.279650382291578"
+       },
+       {
+        "label": "奥",
+        "text": "-5",
+        "reading": "-5.353387534442648"
+       },
+       {
+        "label": "左",
+        "text": "-33",
+        "reading": "-32.63303791673423"
+       },
+       {
+        "label": "手前 基準",
+        "text": "0",
+        "reading": "0"
+       }
+      ]
+     },
+     "dom": [
+      {
+       "text": "-3",
+       "reading": "-3.1187705592256725",
+       "physical": "-3.1187705592256725",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+60",
+       "reading": "59.912687087600865",
+       "physical": "59.9126870876026",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "-5",
+       "reading": "-5.352764659303025",
+       "physical": "-7.948608640633362",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      }
+     ],
+     "lean": {
+      "bodyLean": {
+       "front": 29.598208863905594,
+       "right": 104.33636238173105
+      },
+      "bodyPosture": {
+       "front": 29.598208863905594,
+       "right": 104.33636238173105
+      },
+      "bodyIntrinsic": {
+       "front": 28.66064197050129,
+       "right": 136.19333338927012
+      },
+      "bodySupport": {
+       "front": 0.9375670802384541,
+       "right": -31.85697102661229
+      },
+      "toolLean": {
+       "front": 0.9375670802384541,
+       "right": -31.85697102661229
+      },
+      "relativeLean": {
+       "front": -2.1632033653515776,
+       "right": 63.51562496043212
+      },
+      "columnLeanText": "前倒れ 29.60 µrad ／ 右倒れ 104.34 µrad",
+      "bodyLeanRows": [
+       "前後倒れ：現在 +29.60 µrad",
+       "左右倒れ：現在 +104.34 µrad"
+      ]
+     },
+     "intrinsic": {
+      "runout": {
+       "rootMicrons": 10.742436782922594,
+       "tipMicrons": 17.426166102190106,
+       "lengthMm": 300,
+       "eccentricityMicrons": [
+        -4.100979789709663,
+        -3.4687103905003345
+       ],
+       "tiltMicroradians": [
+        -8.260655686612358,
+        -7.479181015633269
+       ]
+      },
+      "surfaceRange": 17.045570509508252
+     }
+    }
+   },
+   "oracle": {
+    "before": {
+     "g1": {
+      "delta": 0.0000029614353308502345,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010006457411443993,
+       "contactEnd": [
+        -0.000006457411435069685,
+        -3.3947115532546263e-10,
+        1.8885259893884504e-16
+       ],
+       "microns": -6.457411443993102
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009933056063086422,
+       "microns": 66.94393691357783
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010007708321464782,
+       "microns": -7.7083214647822444
+      },
+      "sweep": [
+       29.617087985016923,
+       -7.709762634971224,
+       -37.32685061998814,
+       0
+      ],
+      "local300": {
+       "XY": -6.457419125093455,
+       "XZ": -66.94393746915044,
+       "YZ": 7.708321465628187
+      },
+      "columnLean": {
+       "front": 2.6105683244455014,
+       "right": 145.80270829280093
+      }
+     },
+     "g5": {
+      "delta": 0.0000029614353308502345,
+      "extraAngle": 0.000011845741323400938,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010006457411443993,
+       "contactEnd": [
+        -0.000006457411435069685,
+        -3.3947115532546263e-10,
+        1.8885259893884504e-16
+       ],
+       "microns": -6.457411443993102
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.00993305606308642,
+       "microns": 66.94393691357956
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010004154599157777,
+       "microns": -4.154599157776481
+      },
+      "sweep": [
+       31.393949222786368,
+       -4.1560401480418765,
+       -35.549989370828236,
+       0
+      ],
+      "local300": {
+       "XY": -6.457419125093455,
+       "XZ": -66.94393746915044,
+       "YZ": 7.708321465628187
+      },
+      "columnLean": {
+       "front": 2.6105683244455014,
+       "right": 145.80270829280093
+      }
+     }
+    },
+    "after": {
+     "g1": {
+      "delta": 0.000002163201062777304,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010003118770559224,
+       "contactEnd": [
+        -0.0000031187705499119422,
+        -2.410091584469508e-10,
+        -6.401315271671099e-17
+       ],
+       "microns": -3.118770559223938
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009940087312912398,
+       "microns": 59.9126870876026
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010007948608555407,
+       "microns": -7.948608555406397
+      },
+      "sweep": [
+       25.981728342860485,
+       -7.949231621381066,
+       -33.93095996424155,
+       0
+      ],
+      "local300": {
+       "XY": -3.1187729312249437,
+       "XZ": -59.9126874858577,
+       "YZ": 7.948608556339167
+      },
+      "columnLean": {
+       "front": 29.598208863905594,
+       "right": 104.33636238173106
+      }
+     },
+     "g5": {
+      "delta": 0.000002163201062777304,
+      "extraAngle": 0.000008652804251109216,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010003118770559224,
+       "contactEnd": [
+        -0.0000031187705499119422,
+        -2.410091584469508e-10,
+        -6.401315271671099e-17
+       ],
+       "microns": -3.118770559223938
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.0099400873129124,
+       "microns": 59.912687087600865
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010005352767332627,
+       "microns": -5.352767332626393
+      },
+      "sweep": [
+       27.279649003017774,
+       -5.353390292990268,
+       -32.63303929600804,
+       0
+      ],
+      "local300": {
+       "XY": -3.1187729312249437,
+       "XZ": -59.9126874858577,
+       "YZ": 7.948608556339167
+      },
+      "columnLean": {
+       "front": 29.598208863905594,
+       "right": 104.33636238173106
+      }
+     }
+    }
+   },
+   "conditionC": {
+    "XZ": {
+     "reZeroExtension_m": 0.010000000000000002,
+     "endExtension_m": 0.009940087312895945,
+     "microns": 59.91268710405645,
+     "normalChange_urad": 0
+    },
+    "YZ": {
+     "reZeroExtension_m": 0.01,
+     "endExtension_m": 0.010007947941835339,
+     "microns": -7.947941835338354,
+     "normalChange_urad": 11.128743465094935
+    },
+    "XY": {
+     "reZeroExtension_m": 0.01,
+     "endExtension_m": 0.010003118770558718,
+     "microns": -3.1187705587173986
+    }
+   },
+   "conditionA": {
+    "status": "条件不足",
+    "reason": "小型の直角マスタの寸法・テーブル上の設置位置、接触点の高さ、計器腕の取付点が製品に定義されていない（referenceScanは開始接触点を原点[0,0,0]・本体を法線方向0.01 mに置く抽象配置）。",
+    "hypothesisH_onlyForScale": {
+     "XY": {
+      "dHead_um": [
+       -20.73265141010429,
+       25.339097315058012,
+       -13.493299903553218
+      ],
+      "dTable_um": [
+       -12.353143725838612,
+       25.781641310063108,
+       -13.041501997174826
+      ],
+      "startExtensionChange_um": -8.379530937556222,
+      "startReadingShift_um": 8.379530937556222
+     },
+     "XZ": {
+      "dHead_um": [
+       -20.731971304679686,
+       17.2428050493334,
+       -13.493169517320158
+      ],
+      "dTable_um": [
+       -9.014013423583798,
+       17.947601678613978,
+       -13.094766637966604
+      ],
+      "startExtensionChange_um": -11.718012357766215,
+      "startReadingShift_um": 11.718012357766215
+     },
+     "YZ": {
+      "dHead_um": [
+       -20.731971304679686,
+       17.2428050493334,
+       -13.493169517320158
+      ],
+      "dTable_um": [
+       -9.014013423583798,
+       17.947601678613978,
+       -13.094766637966604
+      ],
+      "startExtensionChange_um": -0.3986388512574388,
+      "startReadingShift_um": 0.3986388512574388
+     }
+    },
+    "hypothesisH_note": "仮定H（製品未定義・本報告者の仮定）: 開始接触点の材料点=テーブル上面P、計器は主軸頭と剛体、マスタはテーブルと剛体。A≈C+startReadingShift。参考の桁評価のみ。"
+   },
+   "checkDiff_productMinusOracle": {
+    "before.XY.physical": -1.7346124536743446e-12,
+    "before.XY.display": -1.7346124536743446e-12,
+    "before.XY.local300": -5.724309914967307e-12,
+    "before.XZ.physical": -1.7337242752546445e-12,
+    "before.XZ.display": 0,
+    "before.XZ.local300": 1.4210854715202004e-14,
+    "before.YZ.physical": -4.63292604280241e-8,
+    "before.YZ.display": -0.0000023674343738733228,
+    "before.YZ.local300": 4.633180861191022e-8,
+    "after.XY.physical": -1.7346124536743446e-12,
+    "after.XY.display": -1.7346124536743446e-12,
+    "after.XY.local300": 4.284750332317344e-11,
+    "after.XZ.physical": 0,
+    "after.XZ.display": 0,
+    "after.XZ.local300": 1.4210854715202004e-14,
+    "after.YZ.physical": -8.522696415269593e-8,
+    "after.YZ.display": 0.0000026733233680076296,
+    "after.YZ.local300": 8.521914374171047e-8,
+    "before.sweep.display.maxAbsDiff": 0.0000023211042474713395,
+    "before.sweep.physical.maxAbsDiff": 2.4868995751603507e-14,
+    "before.delta": -1.9342534860719617e-12,
+    "before.columnLean.front": 1.3322676295501878e-15,
+    "after.sweep.display.maxAbsDiff": 0.0000027585476196634318,
+    "after.sweep.physical.maxAbsDiff": 7.105427357601002e-15,
+    "after.delta": 2.2987896423073224e-12,
+    "after.columnLean.front": 0
+   }
+  },
+  {
+   "scenario": {
+    "name": "zero-heights-noOp-check-pure-rigid",
+    "seed": 20261012,
+    "condition": "new",
+    "state": {
+     "X": 0,
+     "Y": 0,
+     "Z": 0
+    },
+    "heights": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "op": {
+     "index": 0,
+     "delta": 0.1
+    }
+   },
+   "profileSquareness_um": {
+    "XY": -1.338,
+    "XZ": 13.943,
+    "YZ": -18.206
+   },
+   "heightsBefore": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "heightsAfter": [
+    0.1,
+    0,
+    0,
+    0
+   ],
+   "product": {
+    "before": {
+     "supportHeights": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "adjustment": {
+      "gain": 5,
+      "angle": 0,
+      "supportAngle": 0,
+      "axis": [
+       1,
+       0,
+       0
+      ]
+     },
+     "pairs": {
+      "XY": {
+       "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "master",
+        "member": "サドル＋テーブル",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "奥",
+        "memberSign": -1,
+        "relativeSign": 1,
+        "zeroLocation": "手前・右側",
+        "scanDirection": "手前"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -1.3379999999948295,
+        "text": "-1",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010001337999999995,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.0000013379999999948294,
+         0,
+         0
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "compact-table-P"
+       },
+       "display": {
+        "valid": true,
+        "microns": -1.3379999999948295,
+        "text": "-1",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010001337999999995,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.0000013379999999948294,
+         0,
+         0
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       },
+       "local300_um": -1.3380000000000003,
+       "levelPairLocal300_um": 0,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -12.722820301082002,
+        "text": "-13",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010012722820301082,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.00001272282027819406,
+         -7.631483342869516e-10,
+         -6.705917299725581e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       }
+      },
+      "XZ": {
+       "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・右側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -13.942999994980346,
+        "text": "-14",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.01001394299999498,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0,
+         -0.2999999991235534,
+         -0.000018206062174785992
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": -13.942999994980346,
+        "text": "-14",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.01001394299999498,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0,
+         -0.2999999991235534,
+         -0.000018206062174785992
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": 13.943,
+       "levelPairLocal300_um": 0,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -2.117582368135751e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.00002482572099801912,
+         -0.299999997735605,
+         -0.000025330776090347152
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      },
+      "YZ": {
+       "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "奥",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・奥側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 18.205999988822956,
+        "text": "+18",
+        "zeroExtension_m": 0.009999999999999998,
+        "endExtension_m": 0.009981794000011176,
+        "zeroContact": [
+         6.617444900424222e-24,
+         0,
+         1.734723475976807e-18
+        ],
+        "endContact": [
+         0.000013943081193740284,
+         -0.2999999991235534,
+         -6.218614338748818e-11
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 18.205999988822956,
+        "text": "+18",
+        "zeroExtension_m": 0.009999999999999998,
+        "endExtension_m": 0.009981794000011176,
+        "zeroContact": [
+         6.617444900424222e-24,
+         0,
+         1.734723475976807e-18
+        ],
+        "endContact": [
+         0.000013943081193740284,
+         -0.2999999991235534,
+         -6.218614338748818e-11
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -18.206,
+       "levelPairLocal300_um": 0,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 22.289434223965802,
+        "text": "+22",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009977710565776034,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000014793103922874459,
+         -0.2999999987918257,
+         -0.000003041341887522267
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      }
+     },
+     "sweep": {
+      "display": [
+       {
+        "deg": 0,
+        "reading": 2.131531096130073,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 18.206062227974794,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 16.074531131844722,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "physical": [
+       {
+        "deg": 0,
+        "reading": 2.131531096130073,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 18.206062227974794,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 16.074531131844722,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "dom": [
+       {
+        "label": "右",
+        "text": "+2",
+        "reading": "2.131531096130073"
+       },
+       {
+        "label": "奥",
+        "text": "+18",
+        "reading": "18.206062227974794"
+       },
+       {
+        "label": "左",
+        "text": "+16",
+        "reading": "16.074531131844722"
+       },
+       {
+        "label": "手前 基準",
+        "text": "0",
+        "reading": "0"
+       }
+      ]
+     },
+     "dom": [
+      {
+       "text": "-1",
+       "reading": "-1.3379999999948295",
+       "physical": "-1.3379999999948295",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "-14",
+       "reading": "-13.942999994980346",
+       "physical": "-13.942999994980346",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+18",
+       "reading": "18.205999988822956",
+       "physical": "18.205999988822956",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      }
+     ],
+     "lean": {
+      "bodyLean": {
+       "front": -60.686874018748156,
+       "right": -46.476666752251056
+      },
+      "bodyPosture": {
+       "front": -60.686874018748156,
+       "right": -46.476666752251056
+      },
+      "bodyIntrinsic": {
+       "front": -60.686874018748156,
+       "right": -46.476666752251056
+      },
+      "bodySupport": {
+       "front": 0,
+       "right": 0
+      },
+      "toolLean": {
+       "front": 0,
+       "right": 0
+      },
+      "relativeLean": {
+       "front": 0,
+       "right": 0
+      },
+      "columnLeanText": "後ろ倒れ 60.69 µrad ／ 左倒れ 46.48 µrad",
+      "bodyLeanRows": [
+       "前後倒れ：現在 -60.69 µrad",
+       "左右倒れ：現在 -46.48 µrad"
+      ]
+     },
+     "intrinsic": {
+      "runout": {
+       "rootMicrons": 3.1700853956863284,
+       "tipMicrons": 6.665654213072801,
+       "lengthMm": 300,
+       "eccentricityMicrons": [
+        -1.497121902527635,
+        -0.5205635052113925
+       ],
+       "tiltMicroradians": [
+        -6.0855166479363145,
+        0.8731069247764685
+       ]
+      },
+      "surfaceRange": 4.035357850293319
+     }
+    },
+    "after": {
+     "supportHeights": [
+      0.1,
+      0,
+      0,
+      0
+     ],
+     "adjustment": {
+      "gain": 5,
+      "angle": -0.000003192920077756908,
+      "supportAngle": -7.98230019439227e-7,
+      "axis": [
+       0.9999999995485567,
+       -0.00003004807691224263,
+       -1.39111467156492e-10
+      ]
+     },
+     "pairs": {
+      "XY": {
+       "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "master",
+        "member": "サドル＋テーブル",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "奥",
+        "memberSign": -1,
+        "relativeSign": 1,
+        "zeroLocation": "手前・右側",
+        "scanDirection": "手前"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 2.0006805608579343,
+        "text": "+2",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009997999319439144,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         2.6469779601696886e-23,
+         -2.524354896707238e-29
+        ],
+        "endContact": [
+         0.0000020006805603097616,
+         -4.675735817997081e-11,
+         3.092417868233265e-17
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "compact-table-P"
+       },
+       "display": {
+        "valid": true,
+        "microns": 2.0006805608579343,
+        "text": "+2",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009997999319439144,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         2.6469779601696886e-23,
+         -2.524354896707238e-29
+        ],
+        "endContact": [
+         0.0000020006805603097616,
+         -4.675735817986493e-11,
+         3.0924178681878266e-17
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       },
+       "local300_um": 2.000679898348491,
+       "levelPairLocal300_um": 3.338679364380966,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -12.722820301082002,
+        "text": "-13",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010012722820301082,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.00001272282027819406,
+         -7.631483342869516e-10,
+         -6.705917299725581e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       }
+      },
+      "XZ": {
+       "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・右側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -20.97424997100049,
+        "text": "-21",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010020974249971,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.000009014423026136587,
+         -0.29999999817147566,
+         -0.000023998658747196307
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": -20.97424997100049,
+        "text": "-21",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010020974249971,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.000009014423028259888,
+         -0.29999999824657225,
+         -0.000023040782729154437
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": 20.974249988087777,
+       "levelPairLocal300_um": 7.03124999939713,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -2.117582368135751e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.00002482572099801912,
+         -0.299999997735605,
+         -0.000025330776090347152
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      },
+      "YZ": {
+       "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "奥",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・奥側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 17.966733044185585,
+        "text": "+18",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009982033266955815,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.00001195970710810057,
+         -0.29999999916296305,
+         -0.000006031925709958433
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 17.008857024849306,
+        "text": "+17",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009982991142975151,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.00001195971349443377,
+         -0.29999999921879994,
+         -0.000006031925711037431
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -17.966733054928344,
+       "levelPairLocal300_um": 0.23939075545358077,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 22.289434223965802,
+        "text": "+22",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009977710565776034,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000014793103922874459,
+         -0.2999999987918257,
+         -0.000003041341887522267
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      }
+     },
+     "sweep": {
+      "display": [
+       {
+        "deg": 0,
+        "reading": -1.9827664332990005,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 17.008717202312237,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 18.991483635611235,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "physical": [
+       {
+        "deg": 0,
+        "reading": -1.5038284201506635,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 17.966593231236004,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 19.470421651386665,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "dom": [
+       {
+        "label": "右",
+        "text": "-2",
+        "reading": "-1.9827664332990005"
+       },
+       {
+        "label": "奥",
+        "text": "+17",
+        "reading": "17.008717202312237"
+       },
+       {
+        "label": "左",
+        "text": "+19",
+        "reading": "18.991483635611235"
+       },
+       {
+        "label": "手前 基準",
+        "text": "0",
+        "reading": "0"
+       }
+      ]
+     },
+     "dom": [
+      {
+       "text": "+2",
+       "reading": "2.0006805608579343",
+       "physical": "2.0006805608579343",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "-21",
+       "reading": "-20.97424997100049",
+       "physical": "-20.97424997100049",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+17",
+       "reading": "17.008857024849306",
+       "physical": "17.966733044185585",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      }
+     ],
+     "lean": {
+      "bodyLean": {
+       "front": -79.99552931593458,
+       "right": -39.86608992276698
+      },
+      "bodyPosture": {
+       "front": -79.99552931593458,
+       "right": -39.86608992276698
+      },
+      "bodyIntrinsic": {
+       "front": -60.686874018748156,
+       "right": -46.476666752251056
+      },
+      "bodySupport": {
+       "front": -19.308655339187816,
+       "right": 6.610576917090891
+      },
+      "toolLean": {
+       "front": -19.308655339187816,
+       "right": 6.610576917090891
+      },
+      "relativeLean": {
+       "front": 0.7982300301373222,
+       "right": -23.437500002470504
+      },
+      "columnLeanText": "後ろ倒れ 80.00 µrad ／ 左倒れ 39.87 µrad",
+      "bodyLeanRows": [
+       "前後倒れ：現在 -80.00 µrad",
+       "左右倒れ：現在 -39.87 µrad"
+      ]
+     },
+     "intrinsic": {
+      "runout": {
+       "rootMicrons": 3.1700853956863284,
+       "tipMicrons": 6.665654213072801,
+       "lengthMm": 300,
+       "eccentricityMicrons": [
+        -1.497121902527635,
+        -0.5205635052113925
+       ],
+       "tiltMicroradians": [
+        -6.0855166479363145,
+        0.8731069247764685
+       ]
+      },
+      "surfaceRange": 4.035357850293319
+     }
+    }
+   },
+   "oracle": {
+    "before": {
+     "g1": {
+      "delta": 0,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010001337999999995,
+       "contactEnd": [
+        -0.0000013379999999948294,
+        0,
+        0
+       ],
+       "microns": -1.3379999999948295
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.01001394299999498,
+       "microns": -13.942999994980346
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009981794000011176,
+       "microns": 18.20599998882469
+      },
+      "sweep": [
+       2.1315310961300713,
+       18.206062227974794,
+       16.074531131844722,
+       0
+      ],
+      "local300": {
+       "XY": -1.3380000000002092,
+       "XZ": 13.943000000000001,
+       "YZ": -18.206
+      },
+      "columnLean": {
+       "front": -60.68687401874815,
+       "right": -46.476666752251056
+      }
+     },
+     "g5": {
+      "delta": 0,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010001337999999995,
+       "contactEnd": [
+        -0.0000013379999999948294,
+        0,
+        0
+       ],
+       "microns": -1.3379999999948295
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.01001394299999498,
+       "microns": -13.942999994980346
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009981794000011176,
+       "microns": 18.20599998882469
+      },
+      "sweep": [
+       2.1315310961300713,
+       18.206062227974794,
+       16.074531131844722,
+       0
+      ],
+      "local300": {
+       "XY": -1.3380000000002092,
+       "XZ": 13.943000000000001,
+       "YZ": -18.206
+      },
+      "columnLean": {
+       "front": -60.68687401874815,
+       "right": -46.476666752251056
+      }
+     }
+    },
+    "after": {
+     "g1": {
+      "delta": -7.982299721498659e-7,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009997999319439144,
+       "contactEnd": [
+        0.0000020006805603097616,
+        -4.675735817994434e-11,
+        3.092417868190351e-17
+       ],
+       "microns": 2.0006805608561997
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010020974249971002,
+       "microns": -20.974249971002223
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.00998203326739687,
+       "microns": 17.966732603130406
+      },
+      "sweep": [
+       -1.5038284201506635,
+       17.966593231236004,
+       19.470421651386665,
+       0
+      ],
+      "local300": {
+       "XY": 2.0006798983366907,
+       "XZ": 20.974249988087777,
+       "YZ": -17.96673261387113
+      },
+      "columnLean": {
+       "front": -79.99552931593458,
+       "right": -39.866089922766974
+      }
+     },
+     "g5": {
+      "delta": -7.982299721498659e-7,
+      "extraAngle": -0.0000031929198885994635,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009997999319439144,
+       "contactEnd": [
+        0.0000020006805603097616,
+        -4.675735817994434e-11,
+        3.092417868190351e-17
+       ],
+       "microns": 2.0006805608561997
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.010020974249971002,
+       "microns": -20.974249971002223
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.00998299114335946,
+       "microns": 17.0088566405404
+      },
+      "sweep": [
+       -1.982766404925389,
+       17.00871725905946,
+       18.991483663984848,
+       0
+      ],
+      "local300": {
+       "XY": 2.0006798983366907,
+       "XZ": 20.974249988087777,
+       "YZ": -17.96673261387113
+      },
+      "columnLean": {
+       "front": -79.99552931593458,
+       "right": -39.866089922766974
+      }
+     }
+    }
+   },
+   "conditionC": {
+    "XZ": {
+     "reZeroExtension_m": 0.010000000000000002,
+     "endExtension_m": 0.010020974249976762,
+     "microns": -20.974249976759772,
+     "normalChange_urad": 0
+    },
+    "YZ": {
+     "reZeroExtension_m": 0.009999999999999998,
+     "endExtension_m": 0.009982033500376608,
+     "microns": 17.96649962339074,
+     "normalChange_urad": 11.128893106727514
+    },
+    "XY": {
+     "reZeroExtension_m": 0.01,
+     "endExtension_m": 0.00999799931943864,
+     "microns": 2.000680561361004
+    }
+   },
+   "conditionA": {
+    "status": "条件不足",
+    "reason": "小型の直角マスタの寸法・テーブル上の設置位置、接触点の高さ、計器腕の取付点が製品に定義されていない（referenceScanは開始接触点を原点[0,0,0]・本体を法線方向0.01 mに置く抽象配置）。",
+    "hypothesisH_onlyForScale": {
+     "XY": {
+      "dHead_um": [
+       3.305615611540338,
+       23.947296249104966,
+       9.655199209382403
+      ],
+      "dTable_um": [
+       11.68534866414199,
+       24.39330507630899,
+       10.106633395318143
+      ],
+      "startExtensionChange_um": -8.379733052601653,
+      "startReadingShift_um": 8.379733052601653
+     },
+     "XZ": {
+      "dHead_um": [
+       3.305895283496203,
+       29.73989283772127,
+       9.655606667713368
+      ],
+      "dTable_um": [
+       15.024169422012864,
+       30.44792245487926,
+       10.05349645838427
+      ],
+      "startExtensionChange_um": -11.718274138516662,
+      "startReadingShift_um": 11.718274138516662
+     },
+     "YZ": {
+      "dHead_um": [
+       3.305895283496203,
+       29.73989283772127,
+       9.655606667713368
+      ],
+      "dTable_um": [
+       15.024169422012864,
+       30.44792245487926,
+       10.05349645838427
+      ],
+      "startExtensionChange_um": -0.3979420541696026,
+      "startReadingShift_um": 0.3979420541696026
+     }
+    },
+    "hypothesisH_note": "仮定H（製品未定義・本報告者の仮定）: 開始接触点の材料点=テーブル上面P、計器は主軸頭と剛体、マスタはテーブルと剛体。A≈C+startReadingShift。参考の桁評価のみ。"
+   },
+   "checkDiff_productMinusOracle": {
+    "before.XY.physical": 0,
+    "before.XY.display": 0,
+    "before.XY.local300": 2.0894397323445446e-13,
+    "before.XZ.physical": 0,
+    "before.XZ.display": 0,
+    "before.XZ.local300": -1.7763568394002505e-15,
+    "before.YZ.physical": -1.7337242752546445e-12,
+    "before.YZ.display": -1.7337242752546445e-12,
+    "before.YZ.local300": 0,
+    "after.XY.physical": 1.7346124536743446e-12,
+    "after.XY.display": 1.7346124536743446e-12,
+    "after.XY.local300": 1.1800338484135864e-11,
+    "after.XZ.physical": 1.7337242752546445e-12,
+    "after.XZ.display": 1.7337242752546445e-12,
+    "after.XZ.local300": 0,
+    "after.YZ.physical": 4.4105517815751227e-7,
+    "after.YZ.display": 3.843089046995374e-7,
+    "after.YZ.local300": -4.410572138624502e-7,
+    "before.sweep.display.maxAbsDiff": 1.7763568394002505e-15,
+    "before.sweep.physical.maxAbsDiff": 1.7763568394002505e-15,
+    "before.delta": 0,
+    "before.columnLean.front": -7.105427357601002e-15,
+    "after.sweep.display.maxAbsDiff": 5.6747222032527134e-8,
+    "after.sweep.physical.maxAbsDiff": 0,
+    "after.delta": -4.7289361130713496e-14,
+    "after.columnLean.front": 0
+   }
+  },
+  {
+   "scenario": {
+    "name": "rigid-tilt-check(all+0.1 on left)",
+    "seed": 20261012,
+    "condition": "new",
+    "state": {
+     "X": 0,
+     "Y": 0,
+     "Z": 0
+    },
+    "op": {
+     "indices": [
+      0,
+      2
+     ],
+     "delta": 0.1
+    }
+   },
+   "profileSquareness_um": {
+    "XY": -1.338,
+    "XZ": 13.943,
+    "YZ": -18.206
+   },
+   "heightsBefore": [
+    -0.15,
+    0.15,
+    0.021,
+    -0.02
+   ],
+   "heightsAfter": [
+    -0.05,
+    0.15,
+    0.121,
+    -0.02
+   ],
+   "product": {
+    "before": {
+     "supportHeights": [
+      -0.15,
+      0.15,
+      0.021,
+      -0.02
+     ],
+     "adjustment": {
+      "gain": 5,
+      "angle": 0.000010887857540083161,
+      "supportAngle": 0.0000027219643850207902,
+      "axis": [
+       0.9999999965760199,
+       0.00008275240366839229,
+       -4.743701022573481e-12
+      ]
+     },
+     "pairs": {
+      "XY": {
+       "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "master",
+        "member": "サドル＋テーブル",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "奥",
+        "memberSign": -1,
+        "relativeSign": 1,
+        "zeroLocation": "手前・右側",
+        "scanDirection": "手前"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -12.722820301082002,
+        "text": "-13",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010012722820301082,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.00001272282027819406,
+         -7.631483342869516e-10,
+         -6.705917295914594e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "compact-table-P"
+       },
+       "display": {
+        "valid": true,
+        "microns": -12.722820301082002,
+        "text": "-13",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010012722820301082,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.00001272282027819406,
+         -7.631483342869516e-10,
+         -6.705917299725581e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       },
+       "local300_um": -12.722836017138459,
+       "levelPairLocal300_um": -11.384834198891076,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -12.722820301082002,
+        "text": "-13",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010012722820301082,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.00001272282027819406,
+         -7.631483342869516e-10,
+         -6.705917299725581e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       }
+      },
+      "XZ": {
+       "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・右側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -2.117582368135751e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.00002482572101938571,
+         -0.29999999799362104,
+         -0.00002206441884035578
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -2.117582368135751e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.00002482572099801912,
+         -0.299999997735605,
+         -0.000025330776090347152
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -10.033562412892868,
+       "levelPairLocal300_um": -23.97656247609512,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -2.117582368135751e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.00002482572099801912,
+         -0.299999997735605,
+         -0.000025330776090347152
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      },
+      "YZ": {
+       "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "奥",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・奥側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 19.023076974466687,
+        "text": "+19",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009980976923025534,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000014792965417060271,
+         -0.2999999990167349,
+         -0.00000304134188392792
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 22.289434223965802,
+        "text": "+22",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009977710565776034,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000014793103922874459,
+         -0.2999999987918257,
+         -0.000003041341887522267
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -19.023076987212296,
+       "levelPairLocal300_um": -0.8174992096038909,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 22.289434223965802,
+        "text": "+22",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009977710565776034,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000014793103922874459,
+         -0.2999999987918257,
+         -0.000003041341887522267
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      }
+     },
+     "sweep": {
+      "display": [
+       {
+        "deg": 0,
+        "reading": 16.16128564208944,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 22.28900876754888,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 6.127723125459439,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "physical": [
+       {
+        "deg": 0,
+        "reading": 14.528106995078,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 19.02265148817998,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 4.494544493101981,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "dom": [
+       {
+        "label": "右",
+        "text": "+16",
+        "reading": "16.16128564208944"
+       },
+       {
+        "label": "奥",
+        "text": "+22",
+        "reading": "22.28900876754888"
+       },
+       {
+        "label": "左",
+        "text": "+6",
+        "reading": "6.127723125459439"
+       },
+       {
+        "label": "手前 基準",
+        "text": "0",
+        "reading": "0"
+       }
+      ]
+     },
+     "dom": [
+      {
+       "text": "-13",
+       "reading": "-12.722820301082002",
+       "physical": "-12.722820301082002",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+10",
+       "reading": "10.033562411023572",
+       "physical": "10.033562411023572",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+22",
+       "reading": "22.289434223965802",
+       "physical": "19.023076974466687",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      }
+     ],
+     "lean": {
+      "bodyLean": {
+       "front": -73.54806295673977,
+       "right": -49.30719562905683
+      },
+      "bodyPosture": {
+       "front": -73.54806295673977,
+       "right": -49.30719562905683
+      },
+      "bodyIntrinsic": {
+       "front": -60.686874018748156,
+       "right": -46.476666752251056
+      },
+      "bodySupport": {
+       "front": -12.86118892871236,
+       "right": -2.8305288358517795
+      },
+      "toolLean": {
+       "front": -12.86118892871236,
+       "right": -2.8305288358517795
+      },
+      "relativeLean": {
+       "front": -2.721964308901226,
+       "right": 79.92187492693992
+      },
+      "columnLeanText": "後ろ倒れ 73.55 µrad ／ 左倒れ 49.31 µrad",
+      "bodyLeanRows": [
+       "前後倒れ：現在 -73.55 µrad",
+       "左右倒れ：現在 -49.31 µrad"
+      ]
+     },
+     "intrinsic": {
+      "runout": {
+       "rootMicrons": 3.1700853956863284,
+       "tipMicrons": 6.665654213072801,
+       "lengthMm": 300,
+       "eccentricityMicrons": [
+        -1.497121902527635,
+        -0.5205635052113925
+       ],
+       "tiltMicroradians": [
+        -6.0855166479363145,
+        0.8731069247764685
+       ]
+      },
+      "surfaceRange": 4.035357850293319
+     }
+    },
+    "after": {
+     "supportHeights": [
+      -0.05,
+      0.15,
+      0.121,
+      -0.02
+     ],
+     "adjustment": {
+      "gain": 5,
+      "angle": 0.000010887857540083185,
+      "supportAngle": 0.000002721964385020796,
+      "axis": [
+       0.9999999993988057,
+       0.0000346754807584617,
+       -4.743701031290272e-12
+      ]
+     },
+     "pairs": {
+      "XY": {
+       "setup": {
+        "base": "X",
+        "scan": "Y",
+        "owner": "master",
+        "member": "サドル＋テーブル",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "奥",
+        "memberSign": -1,
+        "relativeSign": 1,
+        "zeroLocation": "手前・右側",
+        "scanDirection": "手前"
+       },
+       "physical": {
+        "valid": true,
+        "microns": -12.722820301085472,
+        "text": "-13",
+        "zeroExtension_m": 0.009999999999999998,
+        "endExtension_m": 0.010012722820301084,
+        "zeroContact": [
+         1.734723475976807e-18,
+         2.6469779601696886e-23,
+         7.888609052210118e-31
+        ],
+        "endContact": [
+         -0.000012722820300179946,
+         -1.5147428281567e-10,
+         -6.705917310694692e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "compact-table-P"
+       },
+       "display": {
+        "valid": true,
+        "microns": -12.722820301085472,
+        "text": "-13",
+        "zeroExtension_m": 0.009999999999999998,
+        "endExtension_m": 0.010012722820301084,
+        "zeroContact": [
+         1.734723475976807e-18,
+         2.6469779601696886e-23,
+         7.888609052210118e-31
+        ],
+        "endContact": [
+         -0.000012722820300179946,
+         -1.5147428281578912e-10,
+         -6.705917310466711e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       },
+       "local300_um": -12.72283601713846,
+       "levelPairLocal300_um": -11.38483419889108,
+       "initialDisplay": {
+        "valid": true,
+        "microns": -12.722820301082002,
+        "text": "-13",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.010012722820301082,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         -0.00001272282027819406,
+         -7.631483342869516e-10,
+         -6.705917299725581e-18
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "compact-table-P",
+        "responseGain": 5
+       }
+      },
+      "XZ": {
+       "setup": {
+        "base": "X",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "右",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・右側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 10.033562411025306,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588977,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -5.293955920339377e-23,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.000010402644193481178,
+         -0.29999999884045675,
+         -0.000022064418840228177
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -5.293955920339377e-23,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.000010402644184517862,
+         -0.2999999985824407,
+         -0.000025330776090219555
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -10.03356241289287,
+       "levelPairLocal300_um": -23.976562476095133,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 10.033562411023572,
+        "text": "+10",
+        "zeroExtension_m": 0.010000000000000002,
+        "endExtension_m": 0.009989966437588978,
+        "zeroContact": [
+         -1.734723475976807e-18,
+         -2.117582368135751e-22,
+         6.310887241768095e-30
+        ],
+        "endContact": [
+         0.00002482572099801912,
+         -0.299999997735605,
+         -0.000025330776090347152
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      },
+      "YZ": {
+       "setup": {
+        "base": "Y",
+        "scan": "Z",
+        "owner": "body",
+        "member": "主軸頭＋工具",
+        "body": "主軸頭",
+        "mount": "テーブル",
+        "normalDirection": "奥",
+        "relativeDirection": "下",
+        "memberSign": -1,
+        "relativeSign": -1,
+        "zeroLocation": "上・奥側",
+        "scanDirection": "下"
+       },
+       "physical": {
+        "valid": true,
+        "microns": 19.023076974466687,
+        "text": "+19",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009980976923025534,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         3.698885535639338e-7,
+         -0.2999999993812266,
+         -0.000003041341883801285
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "reference-scan-v3",
+        "fixture": "representative-fixed-posture"
+       },
+       "display": {
+        "valid": true,
+        "microns": 22.289434223965802,
+        "text": "+22",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009977710565776034,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         3.700270701909016e-7,
+         -0.2999999991563241,
+         -0.000003041341887395632
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       },
+       "local300_um": -19.0230769872123,
+       "levelPairLocal300_um": -0.8174992096038929,
+       "initialDisplay": {
+        "valid": true,
+        "microns": 22.289434223965802,
+        "text": "+22",
+        "zeroExtension_m": 0.01,
+        "endExtension_m": 0.009977710565776034,
+        "zeroContact": [
+         0,
+         0,
+         0
+        ],
+        "endContact": [
+         0.000014793103922874459,
+         -0.2999999987918257,
+         -0.000003041341887522267
+        ],
+        "startPosition": 0.3,
+        "endPosition": 0,
+        "model": "compact-shared-posture-v1",
+        "fixture": "representative-fixed-posture",
+        "responseGain": 5
+       }
+      }
+     },
+     "sweep": {
+      "display": [
+       {
+        "deg": 0,
+        "reading": 16.161285642089446,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 22.289008767548875,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 6.12772312545943,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "physical": [
+       {
+        "deg": 0,
+        "reading": 14.52810699507801,
+        "onTable": true
+       },
+       {
+        "deg": 90,
+        "reading": 19.02265148817999,
+        "onTable": true
+       },
+       {
+        "deg": 180,
+        "reading": 4.494544493101978,
+        "onTable": true
+       },
+       {
+        "deg": 270,
+        "reading": 0,
+        "onTable": true
+       }
+      ],
+      "dom": [
+       {
+        "label": "右",
+        "text": "+16",
+        "reading": "16.161285642089446"
+       },
+       {
+        "label": "奥",
+        "text": "+22",
+        "reading": "22.289008767548875"
+       },
+       {
+        "label": "左",
+        "text": "+6",
+        "reading": "6.12772312545943"
+       },
+       {
+        "label": "手前 基準",
+        "text": "0",
+        "reading": "0"
+       }
+      ]
+     },
+     "dom": [
+      {
+       "text": "-13",
+       "reading": "-12.722820301085472",
+       "physical": "-12.722820301085472",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+10",
+       "reading": "10.033562411023572",
+       "physical": "10.033562411025306",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      },
+      {
+       "text": "+22",
+       "reading": "22.289434223965802",
+       "physical": "19.023076974466687",
+       "model": "compact-shared-posture-v1",
+       "gain": "5"
+      }
+     ],
+     "lean": {
+      "bodyLean": {
+       "front": -73.54806286696505,
+       "right": -1.2302726316276063
+      },
+      "bodyPosture": {
+       "front": -73.54806286696505,
+       "right": -1.2302726316276063
+      },
+      "bodyIntrinsic": {
+       "front": -60.686874018748156,
+       "right": -46.476666752251056
+      },
+      "bodySupport": {
+       "front": -12.861188941400428,
+       "right": 45.24639416157745
+      },
+      "toolLean": {
+       "front": -12.861188941400428,
+       "right": 45.24639416157745
+      },
+      "relativeLean": {
+       "front": -2.7219643506355045,
+       "right": 79.92187492693996
+      },
+      "columnLeanText": "後ろ倒れ 73.55 µrad ／ 左倒れ 1.23 µrad",
+      "bodyLeanRows": [
+       "前後倒れ：現在 -73.55 µrad",
+       "左右倒れ：現在 -1.23 µrad"
+      ]
+     },
+     "intrinsic": {
+      "runout": {
+       "rootMicrons": 3.1700853956863284,
+       "tipMicrons": 6.665654213072801,
+       "lengthMm": 300,
+       "eccentricityMicrons": [
+        -1.497121902527635,
+        -0.5205635052113925
+       ],
+       "tiltMicroradians": [
+        -6.0855166479363145,
+        0.8731069247764685
+       ]
+      },
+      "surfaceRange": 4.035357850293319
+     }
+    }
+   },
+   "oracle": {
+    "before": {
+     "g1": {
+      "delta": 0.000002721962365315814,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.01001272282030108,
+       "contactEnd": [
+        -0.000012722820278192326,
+        -7.631483342869516e-10,
+        -6.705917298307209e-18
+       ],
+       "microns": -12.722820301080267
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009989966437588977,
+       "microns": 10.033562411023572
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009980976923381388,
+       "microns": 19.023076618612453
+      },
+      "sweep": [
+       14.528106995078,
+       19.022651488179978,
+       4.494544493101978,
+       0
+      ],
+      "local300": {
+       "XY": -12.722836017115208,
+       "XZ": -10.033562412892872,
+       "YZ": -19.023076631361
+      },
+      "columnLean": {
+       "front": -73.54806295673977,
+       "right": -49.307195629056814
+      }
+     },
+     "g5": {
+      "delta": 0.000002721962365315814,
+      "extraAngle": 0.000010887849461263255,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.01001272282030108,
+       "contactEnd": [
+        -0.000012722820278192326,
+        -7.631483342869516e-10,
+        -6.705917298307209e-18
+       ],
+       "microns": -12.722820301080267
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009989966437588977,
+       "microns": 10.033562411023572
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009977710568555532,
+       "microns": 22.289431444468683
+      },
+      "sweep": [
+       16.161284430266438,
+       22.28900634390288,
+       6.127721913636444,
+       0
+      ],
+      "local300": {
+       "XY": -12.722836017115208,
+       "XZ": -10.033562412892872,
+       "YZ": -19.023076631361
+      },
+      "columnLean": {
+       "front": -73.54806295673977,
+       "right": -49.307195629056814
+      }
+     }
+    },
+    "after": {
+     "g1": {
+      "delta": 0.0000027219642686330296,
+      "extraAngle": 0,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.01001272282030108,
+       "contactEnd": [
+        -0.000012722820300179946,
+        -1.5147428281573618e-10,
+        -6.705917310630005e-18
+       ],
+       "microns": -12.722820301080267
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009989966437588978,
+       "microns": 10.033562411021837
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009980976923154217,
+       "microns": 19.023076845783166
+      },
+      "sweep": [
+       14.52810699507801,
+       19.022651488179992,
+       4.494544493101984,
+       0
+      ],
+      "local300": {
+       "XY": -12.72283601714184,
+       "XZ": -10.03356241289287,
+       "YZ": -19.023076858532157
+      },
+      "columnLean": {
+       "front": -73.54806286696508,
+       "right": -1.2302726316276027
+      }
+     },
+     "g5": {
+      "delta": 0.0000027219642686330296,
+      "extraAngle": 0.000010887857074532118,
+      "XY": {
+       "startY_m": 0.3,
+       "endY_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.01001272282030108,
+       "contactEnd": [
+        -0.000012722820300179946,
+        -1.5147428281573618e-10,
+        -6.705917310630005e-18
+       ],
+       "microns": -12.722820301080267
+      },
+      "XZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.00998996643758898,
+       "microns": 10.033562411020103
+      },
+      "YZ": {
+       "startZ_m": 0.3,
+       "endZ_m": 0,
+       "zeroExtension_m": 0.01,
+       "endExtension_m": 0.009977710566044379,
+       "microns": 22.289433955621426
+      },
+      "sweep": [
+       16.16128557225679,
+       22.289008627883575,
+       6.1277230556267845,
+       0
+      ],
+      "local300": {
+       "XY": -12.72283601714184,
+       "XZ": -10.03356241289287,
+       "YZ": -19.023076858532157
+      },
+      "columnLean": {
+       "front": -73.54806286696508,
+       "right": -1.2302726316276027
+      }
+     }
+    }
+   },
+   "conditionC": {
+    "XZ": {
+     "reZeroExtension_m": 0.009999999999999998,
+     "endExtension_m": 0.009989966437588975,
+     "microns": 10.033562411023572,
+     "normalChange_urad": 0
+    },
+    "YZ": {
+     "reZeroExtension_m": 0.010000000000000002,
+     "endExtension_m": 0.00998097692338139,
+     "microns": 19.023076618612453,
+     "normalChange_urad": 0
+    },
+    "XY": {
+     "reZeroExtension_m": 0.01,
+     "endExtension_m": 0.010012722820301082,
+     "microns": -12.722820301082002
+    }
+   },
+   "conditionA": {
+    "status": "条件不足",
+    "reason": "小型の直角マスタの寸法・テーブル上の設置位置、接触点の高さ、計器腕の取付点が製品に定義されていない（referenceScanは開始接触点を原点[0,0,0]・本体を法線方向0.01 mに置く抽象配置）。",
+    "hypothesisH_onlyForScale": {
+     "XY": {
+      "dHead_um": [
+       24.04071738502657,
+       50.00060739979162,
+       -2.0469737016526324e-10
+      ],
+      "dTable_um": [
+       24.038447385784814,
+       50.00079971528848,
+       -2.0816681711721685e-10
+      ],
+      "startExtensionChange_um": 0.0022699877020813785,
+      "startReadingShift_um": -0.0022699877020813785
+     },
+     "XZ": {
+      "dHead_um": [
+       24.041778174392437,
+       50.00060739757117,
+       -2.7755575615628914e-10
+      ],
+      "dTable_um": [
+       24.038589889789296,
+       50.00141139754888,
+       -2.220446049250313e-10
+      ],
+      "startExtensionChange_um": 0.003188218059291469,
+      "startReadingShift_um": -0.003188218059291469
+     },
+     "YZ": {
+      "dHead_um": [
+       24.041778174392437,
+       50.00060739757117,
+       -2.7755575615628914e-10
+      ],
+      "dTable_um": [
+       24.038589889789296,
+       50.00141139754888,
+       -2.220446049250313e-10
+      ],
+      "startExtensionChange_um": 1.4330970149003263e-7,
+      "startReadingShift_um": -1.4330970149003263e-7
+     }
+    },
+    "hypothesisH_note": "仮定H（製品未定義・本報告者の仮定）: 開始接触点の材料点=テーブル上面P、計器は主軸頭と剛体、マスタはテーブルと剛体。A≈C+startReadingShift。参考の桁評価のみ。"
+   },
+   "checkDiff_productMinusOracle": {
+    "before.XY.physical": -1.7355006320940447e-12,
+    "before.XY.display": -1.7355006320940447e-12,
+    "before.XY.local300": -2.3250734670909878e-11,
+    "before.XZ.physical": 0,
+    "before.XZ.display": 0,
+    "before.XZ.local300": 3.552713678800501e-15,
+    "before.YZ.physical": 3.5585423319162146e-7,
+    "before.YZ.display": 0.0000027794971195760354,
+    "before.YZ.local300": -3.558512950974091e-7,
+    "after.XY.physical": -5.204725539442734e-12,
+    "after.XY.display": -5.204725539442734e-12,
+    "after.XY.local300": 3.3804070653786766e-12,
+    "after.XZ.physical": 3.469224907348689e-12,
+    "after.XZ.display": 3.469224907348689e-12,
+    "after.XZ.local300": 0,
+    "after.YZ.physical": 1.286835207281456e-7,
+    "after.YZ.display": 2.683443760531645e-7,
+    "after.YZ.local300": -1.2868014209743706e-7,
+    "before.sweep.display.maxAbsDiff": 0.0000024236459985615966,
+    "before.sweep.physical.maxAbsDiff": 3.552713678800501e-15,
+    "before.delta": 2.0197049764346462e-12,
+    "before.columnLean.front": 0,
+    "after.sweep.display.maxAbsDiff": 1.396652997698311e-7,
+    "after.sweep.physical.maxAbsDiff": 5.329070518200751e-15,
+    "after.delta": 1.1638776659832813e-13,
+    "after.columnLean.front": 2.842170943040401e-14
+   }
+  }
+ ]
+}

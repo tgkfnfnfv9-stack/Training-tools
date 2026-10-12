@@ -1,0 +1,80 @@
+{
+ "vertical": {
+  "initialObjective": 15.162592622104125,
+  "constantOffsetInvariant": true,
+  "bestObjective": 13.795753806169383,
+  "appliedObjective": 13.795753806169383,
+  "appliedEqualsBest": true,
+  "meanHeightBefore": -0.0135,
+  "meanHeightAfter": -0.013000000000000001,
+  "singleStepImprovements": 0,
+  "evalSamples": 27,
+  "target": "true",
+  "gap": "0"
+ },
+ "horizontal": {
+  "initialObjective": 18.78779917095232,
+  "constantOffsetInvariant": true,
+  "bestObjective": 16.780138744607637,
+  "appliedObjective": 16.780138744607637,
+  "appliedEqualsBest": true,
+  "meanHeightBefore": 0.010750000000000001,
+  "meanHeightAfter": 0.010750000000000001,
+  "singleStepImprovements": 0,
+  "evalSamples": 27,
+  "target": "true",
+  "gap": "0"
+ },
+ "travel": {
+  "initialObjective": 18.192411127717584,
+  "constantOffsetInvariant": true,
+  "bestObjective": 14.49214150335197,
+  "appliedObjective": 14.49214150335197,
+  "appliedEqualsBest": true,
+  "meanHeightBefore": -0.0006666666666666649,
+  "meanHeightAfter": -0.003499999999999994,
+  "singleStepImprovements": 0,
+  "evalSamples": 27,
+  "target": "true",
+  "gap": "0"
+ },
+ "gate": {
+  "initialObjective": 90.43921797104532,
+  "constantOffsetInvariant": true,
+  "bestObjective": 3.3579797436306196,
+  "appliedObjective": 3.3579797436306196,
+  "appliedEqualsBest": true,
+  "meanHeightBefore": -0.0020666666666666676,
+  "meanHeightAfter": 0.0013999999999999965,
+  "singleStepImprovements": 0,
+  "evalSamples": 27,
+  "target": "true",
+  "gap": "0"
+ },
+ "gantry": {
+  "initialObjective": 16.275031984556122,
+  "constantOffsetInvariant": true,
+  "bestObjective": 7.00390493076534,
+  "appliedObjective": 7.00390493076534,
+  "appliedEqualsBest": true,
+  "meanHeightBefore": 0.057375,
+  "meanHeightAfter": 0.057,
+  "singleStepImprovements": 0,
+  "evalSamples": 27,
+  "target": "true",
+  "gap": "0"
+ },
+ "lathe": {
+  "initialObjective": 8.059788221460012,
+  "constantOffsetInvariant": true,
+  "bestObjective": 5.343569051382846,
+  "appliedObjective": 5.343569051382846,
+  "appliedEqualsBest": true,
+  "meanHeightBefore": -0.0025,
+  "meanHeightAfter": -0.002,
+  "singleStepImprovements": 0,
+  "evalSamples": 9,
+  "target": "true",
+  "gap": "0"
+ }
+}

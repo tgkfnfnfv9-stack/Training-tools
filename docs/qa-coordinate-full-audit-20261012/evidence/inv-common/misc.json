@@ -1,0 +1,526 @@
+{
+ "compactGain": [
+  {
+   "label": "flat",
+   "h": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "names": [
+    "左・手前",
+    "右・手前",
+    "左・奥",
+    "右・奥"
+   ],
+   "pairs": [
+    {
+     "key": "XY",
+     "local300": -1.3380000000000003,
+     "physical": -1.3379999999948295,
+     "displayed": -1.3379999999948295
+    },
+    {
+     "key": "XZ",
+     "local300": 13.943,
+     "physical": -13.942999994980346,
+     "displayed": -13.942999994980346
+    },
+    {
+     "key": "YZ",
+     "local300": -18.206,
+     "physical": 18.205999988822956,
+     "displayed": 18.205999988822956
+    }
+   ],
+   "sweepPhysical": [
+    2.131531096130073,
+    18.206062227974794,
+    16.074531131844722,
+    0
+   ],
+   "sweepDisplayed": [
+    2.131531096130073,
+    18.206062227974794,
+    16.074531131844722,
+    0
+   ],
+   "adj": {
+    "gain": 5,
+    "angle": 0,
+    "supportAngle": 0
+   },
+   "modelDrawUsesGain": false
+  },
+  {
+   "label": "back-left +0.1 (twist)",
+   "h": [
+    0,
+    0,
+    0.1,
+    0
+   ],
+   "names": [
+    "左・手前",
+    "右・手前",
+    "左・奥",
+    "右・奥"
+   ],
+   "pairs": [
+    {
+     "key": "XY",
+     "local300": -4.676671596011714,
+     "physical": -4.676669866490735,
+     "displayed": -4.676669866490735
+    },
+    {
+     "key": "XZ",
+     "local300": 6.911750015188885,
+     "physical": -6.9117500145765565,
+     "displayed": -6.9117500145765565
+    },
+    {
+     "key": "YZ",
+     "local300": -18.445423441616647,
+     "physical": 18.445423429994808,
+     "displayed": 19.40329945104499
+    }
+   ],
+   "sweepPhysical": [
+    5.766890604843044,
+    18.445531224215074,
+    12.67864061937203,
+    0
+   ],
+   "sweepDisplayed": [
+    6.245828618588825,
+    19.40340725160886,
+    13.157578633020035,
+    0
+   ],
+   "adj": {
+    "gain": 5,
+    "angle": 0.0000031929200777569483,
+    "supportAngle": 7.982300194392371e-7
+   },
+   "modelDrawUsesGain": false
+  },
+  {
+   "label": "both back +0.1 (plane fb)",
+   "h": [
+    0,
+    0,
+    0.1,
+    0.1
+   ],
+   "names": [
+    "左・手前",
+    "右・手前",
+    "左・奥",
+    "右・奥"
+   ],
+   "pairs": [
+    {
+     "key": "XY",
+     "local300": -1.3380000000000003,
+     "physical": -1.3379999999948295,
+     "displayed": -1.3379999999948295
+    },
+    {
+     "key": "XZ",
+     "local300": 13.943,
+     "physical": -13.942999994980346,
+     "displayed": -13.942999994980346
+    },
+    {
+     "key": "YZ",
+     "local300": -18.206000000000003,
+     "physical": 18.205999988826424,
+     "displayed": 18.205999988826424
+    }
+   ],
+   "sweepPhysical": [
+    2.131531096130074,
+    18.206062227974794,
+    16.074531131844722,
+    0
+   ],
+   "sweepDisplayed": [
+    2.131531096130074,
+    18.206062227974794,
+    16.074531131844722,
+    0
+   ],
+   "adj": {
+    "gain": 5,
+    "angle": 0,
+    "supportAngle": 0
+   },
+   "modelDrawUsesGain": false
+  }
+ ],
+ "comparison": {
+  "vertical": [
+   {
+    "key": "XY",
+    "sameInterval": true,
+    "start": 0.3,
+    "end": 0,
+    "nowZeroExt": 0.010000000000000002,
+    "beforeZeroExt": 0.01,
+    "now": -3.1228821274053438,
+    "before": -6.461538198178005,
+    "initialHeightsUsed": "[-0.15,0.15,-0.001,0.07]"
+   },
+   {
+    "key": "XZ",
+    "sameInterval": true,
+    "start": 0.3,
+    "end": 0,
+    "nowZeroExt": 0.01,
+    "beforeZeroExt": 0.010000000000000004,
+    "now": 13.817312493447087,
+    "before": 20.84856247498712,
+    "initialHeightsUsed": "[-0.15,0.15,-0.001,0.07]"
+   },
+   {
+    "key": "YZ",
+    "sameInterval": true,
+    "start": 0.3,
+    "end": 0,
+    "nowZeroExt": 0.01,
+    "beforeZeroExt": 0.01,
+    "now": 3.155737654820384,
+    "before": 4.353387899908717,
+    "initialHeightsUsed": "[-0.15,0.15,-0.001,0.07]"
+   }
+  ],
+  "horizontal": [
+   {
+    "key": "XY",
+    "sameInterval": true,
+    "start": 0,
+    "end": 0.3,
+    "nowZeroExt": 0.010000000000000012,
+    "beforeZeroExt": 0.01000000000000001,
+    "now": -2.430977222253952,
+    "before": -2.4309506147911915,
+    "initialHeightsUsed": "[-0.15,0.15,-0.135,0.1,-0.031,0.038,0.016,0.096]"
+   },
+   {
+    "key": "XZ",
+    "sameInterval": true,
+    "start": 0,
+    "end": 0.3,
+    "nowZeroExt": 0.009999999999999993,
+    "beforeZeroExt": 0.009999999999999992,
+    "now": 27.310356042779468,
+    "before": 31.991107232797606,
+    "initialHeightsUsed": "[-0.15,0.15,-0.135,0.1,-0.031,0.038,0.016,0.096]"
+   },
+   {
+    "key": "YZ",
+    "sameInterval": true,
+    "start": 0,
+    "end": 0.3,
+    "nowZeroExt": 0.009999999999999978,
+    "beforeZeroExt": 0.010000000000000049,
+    "now": 15.902230995176042,
+    "before": 0.1440824496500709,
+    "initialHeightsUsed": "[-0.15,0.15,-0.135,0.1,-0.031,0.038,0.016,0.096]"
+   }
+  ],
+  "travel": [
+   {
+    "key": "XY",
+    "sameInterval": true,
+    "start": 0,
+    "end": 0.3,
+    "nowZeroExt": 0.01,
+    "beforeZeroExt": 0.010000000000000002,
+    "now": 10.991276921118107,
+    "before": 10.991351382343487,
+    "initialHeightsUsed": "[-0.15,0.15,0.068,-0.076,-0.108,0.012]"
+   },
+   {
+    "key": "XZ",
+    "sameInterval": true,
+    "start": 0.3,
+    "end": 0,
+    "nowZeroExt": 0.01,
+    "beforeZeroExt": 0.010000000000000002,
+    "now": 7.279444422138639,
+    "before": 8.494722194858987,
+    "initialHeightsUsed": "[-0.15,0.15,0.068,-0.076,-0.108,0.012]"
+   },
+   {
+    "key": "YZ",
+    "sameInterval": true,
+    "start": 0.3,
+    "end": 0,
+    "nowZeroExt": 0.01,
+    "beforeZeroExt": 0.010000000000000002,
+    "now": 7.588999999190438,
+    "before": 7.588999999193907,
+    "initialHeightsUsed": "[-0.15,0.15,0.068,-0.076,-0.108,0.012]"
+   }
+  ],
+  "gate": [
+   {
+    "key": "XY",
+    "sameInterval": true,
+    "start": 0,
+    "end": 0.3,
+    "nowZeroExt": 0.010000000000000002,
+    "beforeZeroExt": 0.009999999999999998,
+    "now": -22.038037257440454,
+    "before": -22.038180643542056,
+    "initialHeightsUsed": "[-0.15,0.15,-0.038,-0.111,-0.015,0.019,-0.086,-0.018,-0.066,0.056,0.083,-0.134,-0.044,-0.083,0.07]"
+   },
+   {
+    "key": "XZ",
+    "sameInterval": true,
+    "start": 0.28,
+    "end": -0.019999999999999962,
+    "nowZeroExt": 0.010000000000000002,
+    "beforeZeroExt": 0.009999999999999998,
+    "now": -11.059895073965361,
+    "before": -11.059895113896962,
+    "initialHeightsUsed": "[-0.15,0.15,-0.038,-0.111,-0.015,0.019,-0.086,-0.018,-0.066,0.056,0.083,-0.134,-0.044,-0.083,0.07]"
+   },
+   {
+    "key": "YZ",
+    "sameInterval": true,
+    "start": 0.28,
+    "end": -0.019999999999999962,
+    "nowZeroExt": 0.010000000000000002,
+    "beforeZeroExt": 0.010000000000000002,
+    "now": -166.31057750342293,
+    "before": -166.31057790833515,
+    "initialHeightsUsed": "[-0.15,0.15,-0.038,-0.111,-0.015,0.019,-0.086,-0.018,-0.066,0.056,0.083,-0.134,-0.044,-0.083,0.07]"
+   }
+  ],
+  "gantry": [
+   {
+    "key": "XY",
+    "sameInterval": true,
+    "start": 0,
+    "end": 0.3,
+    "nowZeroExt": 0.009999999999999998,
+    "beforeZeroExt": 0.009999999999999998,
+    "now": 46.306879347493556,
+    "before": 46.306921054202824,
+    "initialHeightsUsed": "[-0.15,0.15,-0.07,-0.031,-0.107,0.143,0.09,-0.07]"
+   },
+   {
+    "key": "XZ",
+    "sameInterval": true,
+    "start": 0.28,
+    "end": -0.019999999999999962,
+    "nowZeroExt": 0.009999999999999998,
+    "beforeZeroExt": 0.009999999999999998,
+    "now": -4.662478504870171,
+    "before": -4.662478525853386,
+    "initialHeightsUsed": "[-0.15,0.15,-0.07,-0.031,-0.107,0.143,0.09,-0.07]"
+   },
+   {
+    "key": "YZ",
+    "sameInterval": true,
+    "start": 0.28,
+    "end": -0.019999999999999962,
+    "nowZeroExt": 0.01,
+    "beforeZeroExt": 0.010000000000000002,
+    "now": 13.817999994995834,
+    "before": 13.817999995060019,
+    "initialHeightsUsed": "[-0.15,0.15,-0.07,-0.031,-0.107,0.143,0.09,-0.07]"
+   }
+  ],
+  "lathe": [
+   {
+    "key": "XZ",
+    "sameInterval": true,
+    "start": 0.3,
+    "end": 0,
+    "nowZeroExt": 0.01,
+    "beforeZeroExt": 0.01,
+    "now": 16.00873008215237,
+    "before": 16.007642501539994,
+    "initialHeightsUsed": "[-0.15,0.15,0.024,-0.04,0.026,-0.029]"
+   }
+  ]
+ },
+ "saveLoad": {
+  "vertical": {
+   "calculationModel": "compact-asymmetric-bending-v4",
+   "version": 3,
+   "keys": [
+    "calculationModel",
+    "version",
+    "supportLayout",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "valid": true,
+   "same": true,
+   "rejectsOtherModel": true,
+   "savesOffset": 0.5,
+   "savesProfileSeed": 468326738
+  },
+  "horizontal": {
+   "calculationModel": "horizontal-guide-v2",
+   "version": 3,
+   "keys": [
+    "calculationModel",
+    "version",
+    "supportLayout",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "valid": true,
+   "same": true,
+   "rejectsOtherModel": true,
+   "savesOffset": 0.5,
+   "savesProfileSeed": 2729126852
+  },
+  "travel": {
+   "calculationModel": "travel-guide-v2",
+   "version": 2,
+   "keys": [
+    "calculationModel",
+    "version",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "valid": true,
+   "same": true,
+   "rejectsOtherModel": true,
+   "savesOffset": 0.5,
+   "savesProfileSeed": 1276666299
+  },
+  "gate": {
+   "calculationModel": "portal-shear-v2",
+   "version": 3,
+   "keys": [
+    "calculationModel",
+    "version",
+    "supportLayout",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "valid": true,
+   "same": true,
+   "rejectsOtherModel": true,
+   "savesOffset": 0.5,
+   "savesProfileSeed": 2646619672
+  },
+  "gantry": {
+   "calculationModel": "portal-shear-v2",
+   "version": 2,
+   "keys": [
+    "calculationModel",
+    "version",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "valid": true,
+   "same": true,
+   "rejectsOtherModel": true,
+   "savesOffset": 0.5,
+   "savesProfileSeed": 3971937378
+  },
+  "lathe": {
+   "calculationModel": "lathe-carriage-v2",
+   "version": 2,
+   "keys": [
+    "calculationModel",
+    "version",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "valid": true,
+   "same": true,
+   "rejectsOtherModel": true,
+   "savesOffset": 0.5,
+   "savesProfileSeed": 1634508105
+  }
+ }
+}

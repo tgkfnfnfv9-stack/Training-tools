@@ -1,0 +1,1449 @@
+{
+ "commit": "d9c37904f4ea05e94e20c193b50d2be447c305ab",
+ "machines": {
+  "vertical": {
+   "id": "vertical",
+   "kind": "compact",
+   "w": 2.6,
+   "d": 2.7,
+   "grid": [
+    2,
+    2
+   ],
+   "layoutId": "compact-four-v1",
+   "supportLayout": null,
+   "calc": "compact-asymmetric-bending-v4",
+   "levelConfig": {
+    "width": 2.08,
+    "depth": 2.16,
+    "offset": 0.5,
+    "columnX": 0,
+    "columnZ": 0
+   },
+   "supports": [
+    {
+     "label": "A",
+     "name": "左・手前",
+     "raw": {
+      "x": -1.04,
+      "z": -1.08
+     },
+     "level": {
+      "x": -1.04,
+      "z": -1.08
+     },
+     "group": "bed"
+    },
+    {
+     "label": "B",
+     "name": "右・手前",
+     "raw": {
+      "x": 1.04,
+      "z": -1.08
+     },
+     "level": {
+      "x": 1.04,
+      "z": -1.08
+     },
+     "group": "bed"
+    },
+    {
+     "label": "C",
+     "name": "左・奥",
+     "raw": {
+      "x": -1.04,
+      "z": 1.08
+     },
+     "level": {
+      "x": -1.04,
+      "z": 1.08
+     },
+     "group": "bed"
+    },
+    {
+     "label": "D",
+     "name": "右・奥",
+     "raw": {
+      "x": 1.04,
+      "z": 1.08
+     },
+     "level": {
+      "x": 1.04,
+      "z": 1.08
+     },
+     "group": "bed"
+    }
+   ],
+   "axes": [
+    {
+     "key": "X",
+     "part": "テーブル",
+     "direction": "左右",
+     "vector": [
+      1,
+      0,
+      0
+     ],
+     "amp": 0.45
+    },
+    {
+     "key": "Y",
+     "part": "サドル＋テーブル",
+     "direction": "前後",
+     "vector": [
+      0,
+      0,
+      1
+     ],
+     "amp": 0.4
+    },
+    {
+     "key": "Z",
+     "part": "主軸頭＋工具",
+     "direction": "上下",
+     "vector": [
+      0,
+      1,
+      0
+     ],
+     "amp": 0.3
+    }
+   ],
+   "sources": [
+    {
+     "key": "X",
+     "source": "work"
+    },
+    {
+     "key": "Y",
+     "source": "work"
+    },
+    {
+     "key": "Z",
+     "source": "tool"
+    }
+   ],
+   "toolPoints": [
+    {
+     "x": 0,
+     "z": 0.783
+    }
+   ],
+   "workPoint": {
+    "x": 0,
+    "z": -0.27
+   },
+   "guidePoints": null,
+   "bodyAxis": "Z",
+   "sweepSupported": true,
+   "profile": {
+    "seed": 1020338446,
+    "squareness": {
+     "XY": {
+      "band": 0,
+      "microns": 1.946
+     },
+     "XZ": {
+      "band": 0,
+      "microns": -9.247
+     },
+     "YZ": {
+      "band": 0,
+      "microns": -11.637
+     }
+    },
+    "initialHeights": [
+     -0.15,
+     0.15,
+     -0.061,
+     0.037
+    ]
+   },
+   "record": [
+    "calculationModel",
+    "version",
+    "supportLayout",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "steps": [
+    "0.001",
+    "0.005",
+    "0.01",
+    "0.05",
+    "0.1"
+   ]
+  },
+  "horizontal": {
+   "id": "horizontal",
+   "kind": "horizontal",
+   "w": 3.4,
+   "d": 4.6,
+   "grid": [
+    2,
+    4
+   ],
+   "layoutId": "haas-ec630-ngc-eight-v1",
+   "supportLayout": null,
+   "calc": "horizontal-guide-v2",
+   "levelConfig": {
+    "width": 2.72,
+    "depth": 3.68,
+    "offset": 0.5,
+    "columnX": 0,
+    "columnZ": 0
+   },
+   "supports": [
+    {
+     "label": "A",
+     "name": "左・手前",
+     "raw": {
+      "x": -1.36,
+      "z": -1.8399999999999999
+     },
+     "level": {
+      "x": -1.36,
+      "z": -1.84
+     },
+     "group": "bed"
+    },
+    {
+     "label": "B",
+     "name": "右・手前",
+     "raw": {
+      "x": 1.36,
+      "z": -1.8399999999999999
+     },
+     "level": {
+      "x": 1.36,
+      "z": -1.84
+     },
+     "group": "bed"
+    },
+    {
+     "label": "C",
+     "name": "左・中間1",
+     "raw": {
+      "x": -1.36,
+      "z": -0.6133333333333334
+     },
+     "level": {
+      "x": -1.36,
+      "z": -0.6133333333333334
+     },
+     "group": "bed"
+    },
+    {
+     "label": "D",
+     "name": "右・中間1",
+     "raw": {
+      "x": 1.36,
+      "z": -0.6133333333333334
+     },
+     "level": {
+      "x": 1.36,
+      "z": -0.6133333333333334
+     },
+     "group": "bed"
+    },
+    {
+     "label": "E",
+     "name": "左・中間2",
+     "raw": {
+      "x": -1.36,
+      "z": 0.6133333333333332
+     },
+     "level": {
+      "x": -1.36,
+      "z": 0.6133333333333332
+     },
+     "group": "bed"
+    },
+    {
+     "label": "F",
+     "name": "右・中間2",
+     "raw": {
+      "x": 1.36,
+      "z": 0.6133333333333332
+     },
+     "level": {
+      "x": 1.36,
+      "z": 0.6133333333333332
+     },
+     "group": "bed"
+    },
+    {
+     "label": "G",
+     "name": "左・奥",
+     "raw": {
+      "x": -1.36,
+      "z": 1.8399999999999999
+     },
+     "level": {
+      "x": -1.36,
+      "z": 1.84
+     },
+     "group": "bed"
+    },
+    {
+     "label": "H",
+     "name": "右・奥",
+     "raw": {
+      "x": 1.36,
+      "z": 1.8399999999999999
+     },
+     "level": {
+      "x": 1.36,
+      "z": 1.84
+     },
+     "group": "bed"
+    }
+   ],
+   "axes": [
+    {
+     "key": "X",
+     "part": "コラム＋主軸頭",
+     "direction": "左右",
+     "vector": [
+      1,
+      0,
+      0
+     ],
+     "amp": 0.55
+    },
+    {
+     "key": "Y",
+     "part": "主軸頭＋工具",
+     "direction": "上下",
+     "vector": [
+      0,
+      1,
+      0
+     ],
+     "amp": 0.3
+    },
+    {
+     "key": "Z",
+     "part": "パレット台＋ワーク",
+     "direction": "主軸方向（前後）",
+     "vector": [
+      0,
+      0,
+      1
+     ],
+     "amp": 0.45
+    }
+   ],
+   "sources": [
+    {
+     "key": "X",
+     "source": "tool"
+    },
+    {
+     "key": "Y",
+     "source": "tool"
+    },
+    {
+     "key": "Z",
+     "source": "work"
+    }
+   ],
+   "toolPoints": [
+    {
+     "x": 0,
+     "z": 1.3339999999999999
+    }
+   ],
+   "workPoint": {
+    "x": 0,
+    "z": -0.85
+   },
+   "guidePoints": [
+    {
+     "x": 0,
+     "z": 1.158
+    },
+    {
+     "x": 0,
+     "z": 1.4180000000000001
+    }
+   ],
+   "bodyAxis": "Y",
+   "sweepSupported": false,
+   "profile": {
+    "seed": 2549878193,
+    "squareness": {
+     "XY": {
+      "band": 0,
+      "microns": -9.212
+     },
+     "XZ": {
+      "band": 0,
+      "microns": 11.614
+     },
+     "YZ": {
+      "band": 0,
+      "microns": -3.594
+     }
+    },
+    "initialHeights": [
+     -0.15,
+     0.15,
+     -0.142,
+     -0.077,
+     0.018,
+     0.021,
+     -0.126,
+     -0.119
+    ]
+   },
+   "record": [
+    "calculationModel",
+    "version",
+    "supportLayout",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "steps": [
+    "0.001",
+    "0.005",
+    "0.01",
+    "0.05",
+    "0.1"
+   ]
+  },
+  "travel": {
+   "id": "travel",
+   "kind": "travel",
+   "w": 5.4,
+   "d": 2.6,
+   "grid": [
+    3,
+    2
+   ],
+   "layoutId": null,
+   "supportLayout": null,
+   "calc": "travel-guide-v2",
+   "levelConfig": {
+    "width": 4.32,
+    "depth": 2.08,
+    "offset": 0.5,
+    "columnX": 0,
+    "columnZ": 0
+   },
+   "supports": [
+    {
+     "label": "A",
+     "name": "左・手前",
+     "raw": {
+      "x": -2.16,
+      "z": -1.04
+     },
+     "level": {
+      "x": -2.16,
+      "z": -1.04
+     },
+     "group": null
+    },
+    {
+     "label": "B",
+     "name": "中央・手前",
+     "raw": {
+      "x": 0,
+      "z": -1.04
+     },
+     "level": {
+      "x": 0,
+      "z": -1.04
+     },
+     "group": null
+    },
+    {
+     "label": "C",
+     "name": "右・手前",
+     "raw": {
+      "x": 2.16,
+      "z": -1.04
+     },
+     "level": {
+      "x": 2.16,
+      "z": -1.04
+     },
+     "group": null
+    },
+    {
+     "label": "D",
+     "name": "左・奥",
+     "raw": {
+      "x": -2.16,
+      "z": 1.04
+     },
+     "level": {
+      "x": -2.16,
+      "z": 1.04
+     },
+     "group": null
+    },
+    {
+     "label": "E",
+     "name": "中央・奥",
+     "raw": {
+      "x": 0,
+      "z": 1.04
+     },
+     "level": {
+      "x": 0,
+      "z": 1.04
+     },
+     "group": null
+    },
+    {
+     "label": "F",
+     "name": "右・奥",
+     "raw": {
+      "x": 2.16,
+      "z": 1.04
+     },
+     "level": {
+      "x": 2.16,
+      "z": 1.04
+     },
+     "group": null
+    }
+   ],
+   "axes": [
+    {
+     "key": "X",
+     "part": "コラム＋主軸頭",
+     "direction": "長手（左右）",
+     "vector": [
+      1,
+      0,
+      0
+     ],
+     "amp": 1
+    },
+    {
+     "key": "Y",
+     "part": "主軸頭の前後スライド",
+     "direction": "前後",
+     "vector": [
+      0,
+      0,
+      1
+     ],
+     "amp": 0.35
+    },
+    {
+     "key": "Z",
+     "part": "主軸頭＋工具",
+     "direction": "上下",
+     "vector": [
+      0,
+      1,
+      0
+     ],
+     "amp": 0.3
+    }
+   ],
+   "sources": [
+    {
+     "key": "X",
+     "source": "work"
+    },
+    {
+     "key": "Y",
+     "source": "tool"
+    },
+    {
+     "key": "Z",
+     "source": "tool"
+    }
+   ],
+   "toolPoints": [
+    {
+     "x": -0.5,
+     "z": 0.754
+    }
+   ],
+   "workPoint": {
+    "x": 0,
+    "z": -0.46799999999999997
+   },
+   "guidePoints": [
+    {
+     "x": -0.5,
+     "z": 0.4720000000000001
+    },
+    {
+     "x": -0.5,
+     "z": 0.672
+    }
+   ],
+   "bodyAxis": "Z",
+   "sweepSupported": true,
+   "profile": {
+    "seed": 2415008580,
+    "squareness": {
+     "XY": {
+      "band": 0,
+      "microns": -3.375
+     },
+     "XZ": {
+      "band": 0,
+      "microns": 14.171
+     },
+     "YZ": {
+      "band": 0,
+      "microns": 2.2
+     }
+    },
+    "initialHeights": [
+     -0.15,
+     0.15,
+     -0.054,
+     -0.107,
+     -0.03,
+     0.021
+    ]
+   },
+   "record": [
+    "calculationModel",
+    "version",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "steps": [
+    "0.001",
+    "0.005",
+    "0.01",
+    "0.05",
+    "0.1"
+   ]
+  },
+  "gate": {
+   "id": "gate",
+   "kind": "double",
+   "w": 3.5625,
+   "d": 8.55,
+   "grid": null,
+   "layoutId": "hwacheon-l3-3000-teaching-15point-v1",
+   "supportLayout": "irregular",
+   "calc": "portal-shear-v2",
+   "levelConfig": {
+    "width": 2.85,
+    "depth": 6.84,
+    "offset": 0.5,
+    "columnX": 0,
+    "columnZ": 0
+   },
+   "supports": [
+    {
+     "label": "A",
+     "name": "長手ベッド左 1",
+     "raw": {
+      "x": -0.77,
+      "z": -3.1799999999999997
+     },
+     "level": {
+      "x": -0.77,
+      "z": -3.1799999999999993
+     },
+     "group": "bed"
+    },
+    {
+     "label": "B",
+     "name": "長手ベッド中央 1",
+     "raw": {
+      "x": 0,
+      "z": -3.1799999999999997
+     },
+     "level": {
+      "x": 0,
+      "z": -3.1799999999999993
+     },
+     "group": "bed"
+    },
+    {
+     "label": "C",
+     "name": "長手ベッド右 1",
+     "raw": {
+      "x": 0.77,
+      "z": -3.1799999999999997
+     },
+     "level": {
+      "x": 0.77,
+      "z": -3.1799999999999993
+     },
+     "group": "bed"
+    },
+    {
+     "label": "D",
+     "name": "長手ベッド左 2",
+     "raw": {
+      "x": -0.77,
+      "z": 0.020000000000000018
+     },
+     "level": {
+      "x": -0.77,
+      "z": 0.020000000000000018
+     },
+     "group": "bed"
+    },
+    {
+     "label": "E",
+     "name": "長手ベッド中央 2",
+     "raw": {
+      "x": 0,
+      "z": 0.020000000000000018
+     },
+     "level": {
+      "x": 0,
+      "z": 0.020000000000000018
+     },
+     "group": "bed"
+    },
+    {
+     "label": "F",
+     "name": "長手ベッド右 2",
+     "raw": {
+      "x": 0.77,
+      "z": 0.020000000000000018
+     },
+     "level": {
+      "x": 0.77,
+      "z": 0.020000000000000018
+     },
+     "group": "bed"
+    },
+    {
+     "label": "G",
+     "name": "長手ベッド左 3",
+     "raw": {
+      "x": -0.77,
+      "z": 3.1799999999999997
+     },
+     "level": {
+      "x": -0.77,
+      "z": 3.1799999999999993
+     },
+     "group": "bed"
+    },
+    {
+     "label": "H",
+     "name": "長手ベッド中央 3",
+     "raw": {
+      "x": 0,
+      "z": 3.1799999999999997
+     },
+     "level": {
+      "x": 0,
+      "z": 3.1799999999999993
+     },
+     "group": "bed"
+    },
+    {
+     "label": "I",
+     "name": "長手ベッド右 3",
+     "raw": {
+      "x": 0.77,
+      "z": 3.1799999999999997
+     },
+     "level": {
+      "x": 0.77,
+      "z": 3.1799999999999993
+     },
+     "group": "bed"
+    },
+    {
+     "label": "J",
+     "name": "左柱側・手前",
+     "raw": {
+      "x": -1.06,
+      "z": 0.5449999999999999
+     },
+     "level": {
+      "x": -1.06,
+      "z": 0.5449999999999998
+     },
+     "group": "column-left"
+    },
+    {
+     "label": "K",
+     "name": "左柱側・奥",
+     "raw": {
+      "x": -1.06,
+      "z": 1.0949999999999998
+     },
+     "level": {
+      "x": -1.06,
+      "z": 1.0949999999999995
+     },
+     "group": "column-left"
+    },
+    {
+     "label": "L",
+     "name": "左柱側・外端",
+     "raw": {
+      "x": -1.425,
+      "z": 0.8250000000000002
+     },
+     "level": {
+      "x": -1.425,
+      "z": 0.8250000000000001
+     },
+     "group": "column-left"
+    },
+    {
+     "label": "M",
+     "name": "右柱側・手前",
+     "raw": {
+      "x": 1.06,
+      "z": 0.5449999999999999
+     },
+     "level": {
+      "x": 1.06,
+      "z": 0.5449999999999998
+     },
+     "group": "column-right"
+    },
+    {
+     "label": "N",
+     "name": "右柱側・奥",
+     "raw": {
+      "x": 1.06,
+      "z": 1.0949999999999998
+     },
+     "level": {
+      "x": 1.06,
+      "z": 1.0949999999999995
+     },
+     "group": "column-right"
+    },
+    {
+     "label": "O",
+     "name": "右柱側・外端",
+     "raw": {
+      "x": 1.42,
+      "z": 0.8250000000000002
+     },
+     "level": {
+      "x": 1.42,
+      "z": 0.8250000000000001
+     },
+     "group": "column-right"
+    }
+   ],
+   "axes": [
+    {
+     "key": "X",
+     "part": "テーブル＋ワーク",
+     "direction": "長手（前後）",
+     "vector": [
+      0,
+      0,
+      1
+     ],
+     "amp": 0.7
+    },
+    {
+     "key": "Y",
+     "part": "主軸サドル＋ラム",
+     "direction": "門幅（左右）",
+     "vector": [
+      1,
+      0,
+      0
+     ],
+     "amp": 0.65
+    },
+    {
+     "key": "Z",
+     "part": "ラム＋主軸・工具",
+     "direction": "上下",
+     "vector": [
+      0,
+      1,
+      0
+     ],
+     "amp": 0.28
+    }
+   ],
+   "sources": [
+    {
+     "key": "X",
+     "source": "work"
+    },
+    {
+     "key": "Y",
+     "source": "tool"
+    },
+    {
+     "key": "Z",
+     "source": "tool"
+    }
+   ],
+   "toolPoints": [
+    {
+     "x": -1.1,
+     "z": 0.825
+    },
+    {
+     "x": 1.1,
+     "z": 0.825
+    }
+   ],
+   "workPoint": {
+    "x": 0,
+    "z": 0
+   },
+   "guidePoints": null,
+   "bodyAxis": "Z",
+   "sweepSupported": true,
+   "profile": {
+    "seed": 3216956370,
+    "squareness": {
+     "XY": {
+      "band": 0,
+      "microns": -14.203
+     },
+     "XZ": {
+      "band": 0,
+      "microns": -6.328
+     },
+     "YZ": {
+      "band": 0,
+      "microns": -11.461
+     }
+    },
+    "initialHeights": [
+     -0.15,
+     0.15,
+     -0.109,
+     -0.043,
+     0.127,
+     0.063,
+     -0.087,
+     -0.026,
+     0.117,
+     -0.081,
+     -0.149,
+     -0.074,
+     -0.134,
+     -0.011,
+     -0.002
+    ]
+   },
+   "record": [
+    "calculationModel",
+    "version",
+    "supportLayout",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "steps": [
+    "0.001",
+    "0.005",
+    "0.01",
+    "0.05",
+    "0.1"
+   ]
+  },
+  "gantry": {
+   "id": "gantry",
+   "kind": "gantry",
+   "w": 4,
+   "d": 5.8,
+   "grid": [
+    2,
+    4
+   ],
+   "layoutId": null,
+   "supportLayout": null,
+   "calc": "portal-shear-v2",
+   "levelConfig": {
+    "width": 3.2,
+    "depth": 4.64,
+    "offset": 0.5,
+    "columnX": 0,
+    "columnZ": 0
+   },
+   "supports": [
+    {
+     "label": "A",
+     "name": "左・手前",
+     "raw": {
+      "x": -1.6,
+      "z": -2.32
+     },
+     "level": {
+      "x": -1.6,
+      "z": -2.32
+     },
+     "group": null
+    },
+    {
+     "label": "B",
+     "name": "右・手前",
+     "raw": {
+      "x": 1.6,
+      "z": -2.32
+     },
+     "level": {
+      "x": 1.6,
+      "z": -2.32
+     },
+     "group": null
+    },
+    {
+     "label": "C",
+     "name": "左・中間",
+     "raw": {
+      "x": -1.6,
+      "z": -0.7733333333333334
+     },
+     "level": {
+      "x": -1.6,
+      "z": -0.7733333333333333
+     },
+     "group": null
+    },
+    {
+     "label": "D",
+     "name": "右・中間",
+     "raw": {
+      "x": 1.6,
+      "z": -0.7733333333333334
+     },
+     "level": {
+      "x": 1.6,
+      "z": -0.7733333333333333
+     },
+     "group": null
+    },
+    {
+     "label": "E",
+     "name": "左・中間",
+     "raw": {
+      "x": -1.6,
+      "z": 0.7733333333333332
+     },
+     "level": {
+      "x": -1.6,
+      "z": 0.7733333333333332
+     },
+     "group": null
+    },
+    {
+     "label": "F",
+     "name": "右・中間",
+     "raw": {
+      "x": 1.6,
+      "z": 0.7733333333333332
+     },
+     "level": {
+      "x": 1.6,
+      "z": 0.7733333333333332
+     },
+     "group": null
+    },
+    {
+     "label": "G",
+     "name": "左・奥",
+     "raw": {
+      "x": -1.6,
+      "z": 2.32
+     },
+     "level": {
+      "x": -1.6,
+      "z": 2.32
+     },
+     "group": null
+    },
+    {
+     "label": "H",
+     "name": "右・奥",
+     "raw": {
+      "x": 1.6,
+      "z": 2.32
+     },
+     "level": {
+      "x": 1.6,
+      "z": 2.32
+     },
+     "group": null
+    }
+   ],
+   "axes": [
+    {
+     "key": "X",
+     "part": "門全体＋主軸側",
+     "direction": "長手（前後）",
+     "vector": [
+      0,
+      0,
+      1
+     ],
+     "amp": 0.7
+    },
+    {
+     "key": "Y",
+     "part": "主軸サドル＋ラム",
+     "direction": "門幅（左右）",
+     "vector": [
+      1,
+      0,
+      0
+     ],
+     "amp": 0.65
+    },
+    {
+     "key": "Z",
+     "part": "ラム＋主軸・工具",
+     "direction": "上下",
+     "vector": [
+      0,
+      1,
+      0
+     ],
+     "amp": 0.28
+    }
+   ],
+   "sources": [
+    {
+     "key": "X",
+     "source": "work"
+    },
+    {
+     "key": "Y",
+     "source": "tool"
+    },
+    {
+     "key": "Z",
+     "source": "tool"
+    }
+   ],
+   "toolPoints": [
+    {
+     "x": -1.6,
+     "z": 0
+    },
+    {
+     "x": 1.6,
+     "z": 0
+    }
+   ],
+   "workPoint": {
+    "x": 0,
+    "z": 0
+   },
+   "guidePoints": [
+    {
+     "x": -1.6,
+     "z": 0
+    },
+    {
+     "x": 1.6,
+     "z": 0
+    }
+   ],
+   "bodyAxis": "Z",
+   "sweepSupported": true,
+   "profile": {
+    "seed": 1907065469,
+    "squareness": {
+     "XY": {
+      "band": 1,
+      "microns": 22.919
+     },
+     "XZ": {
+      "band": 0,
+      "microns": 4.303
+     },
+     "YZ": {
+      "band": 0,
+      "microns": -8.759
+     }
+    },
+    "initialHeights": [
+     -0.15,
+     0.15,
+     0.042,
+     0.011,
+     -0.134,
+     -0.024,
+     0.048,
+     0.142
+    ]
+   },
+   "record": [
+    "calculationModel",
+    "version",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "steps": [
+    "0.001",
+    "0.005",
+    "0.01",
+    "0.05",
+    "0.1"
+   ]
+  },
+  "lathe": {
+   "id": "lathe",
+   "kind": "lathe",
+   "w": 5,
+   "d": 2.1,
+   "grid": [
+    3,
+    2
+   ],
+   "layoutId": null,
+   "supportLayout": null,
+   "calc": "lathe-carriage-v2",
+   "levelConfig": {
+    "width": 4,
+    "depth": 1.68,
+    "offset": 0.5,
+    "columnX": 0,
+    "columnZ": 0
+   },
+   "supports": [
+    {
+     "label": "A",
+     "name": "左・手前",
+     "raw": {
+      "x": -2,
+      "z": -0.8400000000000001
+     },
+     "level": {
+      "x": -2,
+      "z": -0.84
+     },
+     "group": null
+    },
+    {
+     "label": "B",
+     "name": "中央・手前",
+     "raw": {
+      "x": 0,
+      "z": -0.8400000000000001
+     },
+     "level": {
+      "x": 0,
+      "z": -0.84
+     },
+     "group": null
+    },
+    {
+     "label": "C",
+     "name": "右・手前",
+     "raw": {
+      "x": 2,
+      "z": -0.8400000000000001
+     },
+     "level": {
+      "x": 2,
+      "z": -0.84
+     },
+     "group": null
+    },
+    {
+     "label": "D",
+     "name": "左・奥",
+     "raw": {
+      "x": -2,
+      "z": 0.8400000000000001
+     },
+     "level": {
+      "x": -2,
+      "z": 0.84
+     },
+     "group": null
+    },
+    {
+     "label": "E",
+     "name": "中央・奥",
+     "raw": {
+      "x": 0,
+      "z": 0.8400000000000001
+     },
+     "level": {
+      "x": 0,
+      "z": 0.84
+     },
+     "group": null
+    },
+    {
+     "label": "F",
+     "name": "右・奥",
+     "raw": {
+      "x": 2,
+      "z": 0.8400000000000001
+     },
+     "level": {
+      "x": 2,
+      "z": 0.84
+     },
+     "group": null
+    }
+   ],
+   "axes": [
+    {
+     "key": "X",
+     "part": "タレット＋工具",
+     "direction": "径方向",
+     "vector": [
+      0,
+      0,
+      1
+     ],
+     "amp": 0.35
+    },
+    {
+     "key": "Z",
+     "part": "往復台＋タレット",
+     "direction": "主軸方向（左右）",
+     "vector": [
+      1,
+      0,
+      0
+     ],
+     "amp": 0.7
+    }
+   ],
+   "sources": [
+    {
+     "key": "X",
+     "source": "work"
+    },
+    {
+     "key": "Z",
+     "source": "tool"
+    }
+   ],
+   "toolPoints": [
+    {
+     "x": -1.75,
+     "z": 0
+    }
+   ],
+   "workPoint": {
+    "x": 0.08,
+    "z": 0.15
+   },
+   "guidePoints": null,
+   "bodyAxis": "Z",
+   "sweepSupported": false,
+   "profile": {
+    "seed": 4050966627,
+    "squareness": {
+     "XZ": {
+      "band": 0,
+      "microns": -12.423
+     }
+    },
+    "initialHeights": [
+     -0.15,
+     0.15,
+     0.056,
+     0.127,
+     -0.042,
+     0.138
+    ]
+   },
+   "record": [
+    "calculationModel",
+    "version",
+    "machineProfile",
+    "bestState",
+    "machine",
+    "mode",
+    "width",
+    "depth",
+    "heights",
+    "sensitivity",
+    "measurePos",
+    "offset",
+    "columnX",
+    "columnZ",
+    "axisPositions",
+    "step",
+    "exaggerate"
+   ],
+   "steps": [
+    "0.001",
+    "0.005",
+    "0.01",
+    "0.05",
+    "0.1"
+   ]
+  }
+ }
+}

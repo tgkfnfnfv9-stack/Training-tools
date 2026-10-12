@@ -1,0 +1,1 @@
+inv-compact report received (returned inline; key: gain=5 alters measurement posture YZ/sweep; display = cond B only; A 条件不足)
