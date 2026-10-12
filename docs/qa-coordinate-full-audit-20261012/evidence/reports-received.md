@@ -72,3 +72,9 @@
 - C: travel XY -6.09 XZ +5.68 YZ +4.85; gate -98.47/-77.18/+13.93; gantry +31.09/-13.84/+14.81. A squareness 条件不足 (arm/master position undefined); gate YZ start jump -389 µm from 2.51 m column lean. Sweep A uniform offset: travel +24.09, gate +82.52, gantry -1.69.
 - Sweep: measures relative tilt spindle axis vs table normal (2 comps); 奥=右+左 with front zero; cannot separate column lean vs table tilt, spindle vs Z guide, intrinsic vs support.
 - Extensions 9.94-10.39 mm.
+# RE-VERIFY after fix (rever-portal, commit e464c7f)
+- B reproduced: travel ≤9e-10, gate ≤0.0021, gantry ≤0.0017 µm; sweep ≤1e-6. 240 normal + 90 rigid tilt + 108 extreme + 96 non-default config. 0 integer/—/面外 mismatches.
+- Alignment interval with clamp matches (travel X=100: 700→1000 mm).
+- YZ invariant under supports (≤1e-11) for all three; rigid tilt invariant.
+- A/C table (seed 20261012): travel centre-back +0.1 XY B -5.83→-2.895 C -5.83 A +17.34; XZ B -1.46→-9.618 C -17.26 A +5.91; gate left-col-front +0.1 XY -4.21→+58.024 A +16.14, YZ A +404.87 (beam lateral move); gantry XY +0.64→+18.645 C/A +15.86. A depends on assumed S contact (travel ≤20, gate YZ 58 µm per +300 mm).
+- Notes: gate XY very sensitive to column supports (two column points -0.2/+0.15 → XY -222) – consequence of rigid beam on 2.51 m columns; travel table centre on cell boundary x=0 → left supports don't affect table posture; gantry end rows 0,1,6,7 never affect anything; outside UI range (|h|≥13 mm) representation diff.
