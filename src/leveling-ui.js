@@ -160,6 +160,26 @@ function levelAxisVisualPoint(p,origin,pose,bodyOrigin=levelMappedBodyVisualPoin
 }
 // Level is out when every support has the same height (0.01 mm grid).
 function levelFlat(heights=supportHeights){const mean=heights.reduce((a,h)=>a+h,0)/heights.length;return heights.every(h=>Math.abs(h-mean)<.0005);}
+// Edge slopes (mm/m) of the support surface between its outer support lines.
+function edgeLevels(solution=levelSolution){
+ const P=supports.map(p=>levelCoordinates(p.x,p.z)),x0=Math.min(...P.map(p=>p.x)),x1=Math.max(...P.map(p=>p.x)),z0=Math.min(...P.map(p=>p.z)),z1=Math.max(...P.map(p=>p.z)),h=(x,z)=>solution.heightAt(x,z);
+ return {frontLR:(h(x1,z0)-h(x0,z0))/(x1-x0),backLR:(h(x1,z1)-h(x0,z1))/(x1-x0),leftFB:(h(x0,z1)-h(x0,z0))/(z1-z0),rightFB:(h(x1,z1)-h(x1,z0))/(z1-z0)};
+}
+// Level pages: 0 = two average vials, 1 = four edge vials (twist). Swipe or
+// use the arrows. View state only; it is not saved and changes no result.
+let levelPage=0;
+function setLevelPage(page){
+ levelPage=page?1:0;$('levelPageAverage').hidden=levelPage!==0;$('levelPageFour').hidden=levelPage!==1;
+ $('levelPagePrev').disabled=levelPage===0;$('levelPageNext').disabled=levelPage===1;$('levelPageName').textContent=levelPage?'四辺':'平均';
+}
+function initializeLevelPages(){
+ $('levelPagePrev').onclick=()=>setLevelPage(0);$('levelPageNext').onclick=()=>setLevelPage(1);
+ let start=null;const area=$('viewerLevels');
+ area.addEventListener('pointerdown',e=>{start={x:e.clientX,y:e.clientY};});
+ area.addEventListener('pointerup',e=>{if(!start)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(Math.abs(dx)>30&&Math.abs(dx)>Math.abs(dy))setLevelPage(dx<0?1:0);});
+ area.addEventListener('pointercancel',()=>{start=null;});
+ setLevelPage(0);
+}
 function updateLevelStages(machineResult=null,target=false){
  // Single leveling stage (2026-10-13): 0.01 mm steps, read from the level vials.
  // Ready when every support sits at one height: average tilt, twist and the
@@ -182,12 +202,14 @@ function updateLevelStages(machineResult=null,target=false){
  $('coarseBubbleLR').style.left=(50+bubbleOffset(levelSolution.lr))+'%';
  // Positive front/back slope is high at the back: the vertical bubble moves up.
  $('coarseBubbleFB').style.setProperty('--bubble-position',(50-bubbleOffset(levelSolution.fb))+'%');
- // Twist vial: the left-right slope at the back minus that at the front (the
- // same level read at both ends). Centre = no twist; right = back right-high.
- const twist=levelSolution.twist;
- $('coarseBubbleTwist').style.left=(50+bubbleOffset(twist))+'%';
- $('stageTwist').textContent=Math.abs(twist)<=.020000001?'目安内':twist>0?'奥が右高い':'奥が左高い';
- $('stageTwist').setAttribute('data-value',String(twist));
+ // Four-edge vials (second level page): the same level placed along the front
+ // and back edges (left-right) and the left and right edges (front-back).
+ // Front vs back left-right readings differ by the twist; so do left vs right.
+ const edge=edgeLevels();
+ for(const [id,value,negative,positive,vertical] of [['levelFrontLR',edge.frontLR,'左が高い','右が高い',false],['levelBackLR',edge.backLR,'左が高い','右が高い',false],['levelLeftFB',edge.leftFB,'手前が高い','奥が高い',true],['levelRightFB',edge.rightFB,'手前が高い','奥が高い',true]]){
+  if(vertical)$(id+'Bubble').style.setProperty('--bubble-position',(50-bubbleOffset(value))+'%');else $(id+'Bubble').style.left=(50+bubbleOffset(value))+'%';
+  $(id+'Text').textContent=Math.abs(value)<=.020000001?'目安内':value>0?positive:negative;$(id+'Text').setAttribute('data-value',String(value));
+ }
  // Every displayed value is inside the target when target is true; only a
  // fixed guide component can still exceed 20 µm.
  const significant=machineProfile&&Math.max(...Object.values(machineProfile.guides).map(g=>g.microns))>20.000001;
@@ -365,3 +387,4 @@ $('importLevel').onchange=async event=>{
   applyLevelRecord(data);updateLeveling();$('levelInputMessage').textContent='調整データを読み込みました。';$('levelSaveStatus').textContent='同じ機種・支持配置の調整データを読み込みました。';
  }catch(error){if(isCurrent()){const message=error.message==='calculation-model'?'読込できません。計算仕様が異なる旧版データです。旧データは変更していません。新しい仕様で保存したJSONを選んでください。':error.message==='support-layout'?'読込できません。支持配置が異なる旧版データです。同じ機種・支持配置で保存したJSONを選んでください。':'読込できません。同じ機械・方式の調整JSONと、数値範囲を確認してください。';$('levelInputMessage').textContent=message;$('levelSaveStatus').textContent=message;}}
 };
+initializeLevelPages();

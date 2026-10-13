@@ -751,4 +751,9 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 #latheInspectionSecond{width:100%}
 .is-lathe-reference>.reference-intro{display:none}
 @media(max-width:380px){.lathe-inspection-columns{gap:3px}.lathe-inspection-columns h2{font-size:10px}.lathe-inspection-columns svg{height:82px}.lathe-inspection-columns p{font-size:8px}}
-.viewer-gauge-twist .gauge-ends span{font-size:9px;white-space:nowrap}
+.level-page{display:flex;flex-direction:column;justify-content:center;gap:inherit;min-height:0;flex:1 1 auto;touch-action:pan-y}
+.level-four-middle{display:flex;gap:4px;justify-content:center;min-height:0;flex:0 1 116px}
+.level-four-middle .viewer-gauge-fb{flex:1 1 0;min-width:0}
+.level-page-nav{display:flex;align-items:center;justify-content:center;gap:4px;font-size:10px;line-height:12px;color:#315f50;white-space:nowrap}
+.level-page-button{min-width:24px;min-height:28px;padding:0 4px;font-size:14px;line-height:1;border-radius:6px;background:#fff}
+.level-page-nav{flex-wrap:nowrap;max-width:100%;overflow:hidden}
