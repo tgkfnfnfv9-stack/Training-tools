@@ -31,5 +31,5 @@
   let s=(profile.seed^0x4c415431)>>>0;const next=()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296*2-1;},scale=profile.condition==='used'?30:10;
   return {face:next()*scale/1e6,flat:next()*scale/1e6,holeX:next()*scale/1e6,holeY:next()*scale/1e6};
  }
- return Object.freeze({model:'lathe-testbar-v2',add,sub,mul,dot,unit,extension,planeScan,bore,cylinderContact,intrinsic});
+ return Object.freeze({model:'lathe-testbar-v3',add,sub,mul,dot,unit,extension,planeScan,bore,cylinderContact,intrinsic});
 });

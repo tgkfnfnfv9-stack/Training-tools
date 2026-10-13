@@ -32,7 +32,27 @@ function machineSolution(heights){
  if(current.kind==='double'&&current.supportLayout==='irregular'){
   solution.parts=Object.fromEntries(['bed','column-left','column-right'].map(group=>[group,window.Leveling.solve(points.filter((p,i)=>supports[i].group===group))]));
  }
+ if(current.layoutId==='compact-six-v1')return compactSixSolution(points,solution);
  return current.kind==='compact'?window.Leveling.compactBending(solution,levelConfig.width,levelConfig.depth):solution;
+}
+// Six-point vertical (compact-six-sag-v1). The four corner bolts seat the bed
+// with the compact twist plate. Each middle bolt that departs from that seat
+// by r bends the bed front-to-back as a sag mode (1-Z^2), with the share
+// compactSixSagShare of r (bed vs bolt stiffness ratio). This share is a
+// declared teaching assumption: one middle bolt +0.1 mm gives about 10 µm YZ
+// over 300 mm at the axis centre. A support plane (all six on one plane) gives
+// r=0, so a rigid tilt never bends the bed. Common seating uses the six-point
+// least-squares plane of the solver.
+const compactSixSagShare=.5;
+function compactSixSolution(points,solution){
+ const zs=[...new Set(points.map(p=>p.z))].sort((a,b)=>a-b),xs=[...new Set(points.map(p=>p.x))].sort((a,b)=>a-b),zm=zs[1],a=(xs[1]-xs[0])/2,b=(zs[2]-zs[0])/2,xm=(xs[0]+xs[1])/2;
+ const corners=points.filter(p=>p.z!==zm),bent=window.Leveling.compactBending(window.Leveling.solve(corners),levelConfig.width,levelConfig.depth);
+ const middle=side=>{const p=points.find(q=>q.z===zm&&q.x===xs[side]);return p.h-bent.heightAt(p.x,p.z);},rL=middle(0),rR=middle(1),k=compactSixSagShare;
+ const q=(x,z)=>{const X=(x-xm)/a,Z=(z-zm)/b;return {X,Z,m:k*(rL*(1-X)+rR*(1+X))/2,dm:k*(rR-rL)/(2*a)};};
+ const heightAt=(x,z)=>{const s=q(x,z);return bent.heightAt(x,z)+s.m*(1-s.Z*s.Z);};
+ const slopeAt=(x,z)=>{const s=q(x,z),base=bent.slopeAt(x,z);return {lr:base.lr+s.dm*(1-s.Z*s.Z),fb:base.fb-2*s.m*s.Z/b};};
+ const hessianAt=(x,z)=>{const s=q(x,z),H=bent.hessianAt(x,z);return {xx:H.xx,zz:H.zz-2*s.m/(b*b),xz:H.xz-2*s.dm*s.Z/b};};
+ return {...solution,heightAt,slopeAt,hessianAt,bending:{...bent.bending,kind:'corner-ritz-plus-middle-sag',sagShare:k,middleResidual:[rL,rR]}};
 }
 // Teaching tolerance for every displayed dial value (µm, = 0.02 mm). The
 // average level enters with 0.02 mm/m treated like 20 µm.

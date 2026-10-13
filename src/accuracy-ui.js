@@ -109,7 +109,7 @@ function horizontalToolPoint(raw,state=positions,solution=levelSolution,profile=
 // Its posture is the least-squares plane of its four pad heights, not the
 // slope at one sampled point. Heights mm, plan coordinates m, slopes mm/m.
 function latheCarriageSupport(solution,state=positions){
- const x=.08+.7*state.Z/100,pads=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=levelCoordinates(x+i*.4,k*.4);return {i,k,x:q.x,z:q.z,h:solution.heightAt(q.x,q.z)};}));
+ const x=.08+latheZTravel*state.Z/100,pads=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=levelCoordinates(x+i*.4,k*.4);return {i,k,x:q.x,z:q.z,h:solution.heightAt(q.x,q.z)};}));
  const a=(pads[2].x-pads[0].x)/2,b=(pads[1].z-pads[0].z)/2,mean=pads.reduce((s,p)=>s+p.h/4,0);
  const slope={lr:pads.reduce((s,p)=>s+p.i*p.h,0)/(4*a),fb:pads.reduce((s,p)=>s+p.k*p.h,0)/(4*b)},centre={x:(pads[0].x+pads[2].x)/2,z:(pads[0].z+pads[1].z)/2};
  return {slope,heightAt:(px,pz)=>mean+slope.lr*(px-centre.x)+slope.fb*(pz-centre.z),pads};

@@ -2,6 +2,7 @@
 // 編集する場合、機械の名称・説明・モデル種別はこの一覧で変更できます。
 const machines = [
 {id:'vertical',name:'小型立形・4点支持',tag:'テーブルXY・主軸頭Z',example:'ロボドリル系を参考にした小型教材',kind:'compact',w:2.6,d:2.7,grid:[2,2],defaultMode:'compact',layoutId:'compact-four-v1',structure:'片側コラムから主軸頭が張り出す小型立形。テーブルがX・Y、主軸頭がZ方向へ移動します。標準サイズは扱いません。',focus:'4点支持の平均傾きと、ベースのねじれ。',impact:'全体の傾きと、案内面の相対関係が変わるねじれを分けて学びます。',supportEvidence:'4点の教材用配置です。特定のロボドリル型式の基礎図や荷重配分の再現ではありません。',source:'https://www.fanuc.co.jp/ja/product/robodrill/alphadibplus.html'},
+{id:'vertical6',name:'立形・6点支持',tag:'テーブルXY・主軸頭Z・中間ボルト',example:'中型立形の教材モデル',kind:'compact',w:3.9,d:3.5,grid:[2,3],defaultMode:'compact',layoutId:'compact-six-v1',structure:'小型立形を一回り大きくした固定コラムの立形。テーブルがX・Y、主軸頭がZ方向へ移動します。左右に手前・中間・奥の3点ずつ、合計6点で支えます。',focus:'中間ボルトによるベッドの前後たわみと、奥のコラムの前後倒れ。',impact:'四隅のねじれに加え、中間ボルトでベッドが反り、テーブルよりコラムが大きく前後に倒れる関係を学びます。',supportEvidence:'6点の教材用配置です。中間ボルトの効き（ベッド剛性と支持剛性の比）は仮定値で、特定型式の基礎図・荷重配分の再現ではありません。'},
 {id:'horizontal',name:'横形・Haas EC-630',tag:'NGC・8点支持',example:'Haas EC-630（NGC）の据付手順を参考',kind:'horizontal',w:3.4,d:4.6,grid:[2,4],layoutId:'haas-ec630-ngc-eight-v1',structure:'横向き主軸と回転パレットを備える横形。Haas EC-630（NGC）の据付手順にある四隅4本と中央4本、合計8本を反映します。',focus:'8点の支持関係と、移動位置による姿勢の違い。',impact:'直線軸の幾何関係と支持面の変化を確認します。',supportEvidence:'支持数8本はHaas公式据付手順で確認。間隔・寸法は教材用の概略配置です。主支持・補助支持の荷重配分、パレット交換機構は再現しません。',source:'https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/-ec-630--installation---ngc.html'},
 {id:'travel',name:'立形・移動コラム',tag:'テーブル固定・コラム移動',example:'固定テーブルの長尺加工機',kind:'travel',w:5.4,d:2.6,grid:[3,2],structure:'テーブルとワークは固定。コラムがX方向に走り、主軸頭側がY・Z方向に移動します。',focus:'長いベッドの各位置と、コラムの移動に伴う姿勢。',impact:'端だけでなく、中間位置の案内精度・姿勢も確認します。',source:'https://www.mazak.com/jp-ja/products/vtc/'},
 {id:'gate',name:'固定門形・L3 3000',tag:'L3構造参考・教材用15点',example:'長手ベッド9点＋左右柱側各3点',kind:'double',w:3.5625,d:8.55,grid:null,defaultMode:'l3-3000',layoutId:'hwacheon-l3-3000-teaching-15point-v1',previousLayouts:['hwacheon-l3-3000-foundation-r139'],supportLayout:'irregular',columnZ:.825,columnX:1.10,structure:'長手ベッドと左右柱側の張り出しを持つ固定門形。テーブルX、主軸サドルY、ラムZの構成です。L3 3000の構造を参考に、長手ベッドを3×3の9点、左右柱側を各3点とした合計15点の教材用配置です。',focus:'長手ベッド9点と、左右柱側各3点の支持関係。',impact:'不規則な支持面の幾何補間により姿勢を比較します。実機の剛性・荷重・基礎アンカー・弾性変形を再現する解析ではありません。',supportEvidence:'メーカー作成L-SERIES Rev1.39の基礎図は24か所ですが、この教材は長手ベッドを9点に簡略化しています。柱側6点は同図の座標を参考にしています。実機の15点支持を示すものではなく、主支持／補助支持や荷重配分は再現しません。',source:'https://hmeholdings.com/wp-content/uploads/2023/03/L-SERIES.pdf'},
@@ -9,6 +10,9 @@ const machines = [
 {id:'lathe',name:'NC旋盤・タレット2軸',tag:'X径方向・Z主軸方向',example:'Haas STシリーズのタレット構造・検査配置を参考',kind:'lathe',w:5,d:2.1,grid:[3,2],structure:'主軸台を固定し、奥側の12角タレットをX（径方向）、往復台ごとZ（主軸方向）へ動かします。工具1番で固定し、タレット割出しとY軸は実装していません。',focus:'ベッド長手方向の各位置での横断方向の水準器。',impact:'ベッドのねじれと主軸・刃物台の関係を確認します。回転振れは固有値、Z面・穴芯・テストバーのダイヤル測定は支持姿勢も反映します。',supportEvidence:'6点支持と寸法は教材用の概略配置です。特定のST型式の基礎図や剛性を再現した模型ではありません。',source:'https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html'}
 ];
 // 内部の描画座標は左右=x、上=y、奥=z。工作機械の軸名は機構ごとに明示して割り当てる。
+// Lathe carriage Z travel (m per 100 %) reaches the spindle nose with the
+// tool station, so the 300 mm test bar can be read from 10 mm to 290 mm.
+const latheZTravel=.9,latheTestBarLength=.3,latheTestBarStations=[.01,.29],latheToolStationX=-.1675;
 const axisColors={X:'#d35455',Y:'#208768',Z:'#397ed1',A:'#8e5caf',C:'#bc6a2f'};
 let positions={X:0,Y:0,Z:0,A:0,C:0}, selectedAxis='X', machineMode='compact';
 function displayMachine(base){return {...base};}
@@ -19,7 +23,7 @@ function axisConfig(m){
  if(m.kind==='horizontal')return [a('X','コラム＋主軸頭','左右',[1,0,0],.55),a('Y','主軸頭＋工具','上下',[0,1,0],.3),a('Z','パレット台＋ワーク','主軸方向（前後）',[0,0,1],.45)];
  if(['double','gantry'].includes(m.kind))return [a('X',m.kind==='double'?'テーブル＋ワーク':'門全体＋主軸側','長手（前後）',[0,0,1],.7),a('Y','主軸サドル＋ラム','門幅（左右）',[1,0,0],.65),a('Z','ラム＋主軸・工具','上下',[0,1,0],.28)];
  if(m.kind==='five')return [a('X','トラニオン一式','左右',[1,0,0],.35),a('Y','サドル＋トラニオン一式','前後',[0,0,1],.35),a('Z','主軸頭＋工具','上下',[0,1,0],.3),a('A','揺りかご＋テーブル','X軸回りの傾斜',[1,0,0],.55),a('C','回転テーブル＋ワーク','テーブル軸回りの回転',[0,1,0],1.1)];
- return [a('X','タレット＋工具','径方向',[0,0,1],.35),a('Z','往復台＋タレット','主軸方向（左右）',[1,0,0],.7)];
+ return [a('X','タレット＋工具','径方向',[0,0,1],.35),a('Z','往復台＋タレット','主軸方向（左右）',[1,0,0],latheZTravel)];
 }
 function transformedPoint(p,axes,m,state=positions){
  let q=[...p];
@@ -319,7 +323,8 @@ function createGeometry(m){
  // Keep the measured nose at -W*.24+.125; extend the chuck rear into the
  // headstock instead of leaving the previous 25 mm unsupported gap.
  withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24-.015,1.5,0,.4,.28,c.spindle,'x');},'tool');
- withGroup([],()=>{const nose=-W*.24+.125,tip=W*.225;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
+ // 300 mm test bar from the spindle nose (lathe-carriage-v4).
+ withGroup([],()=>{const nose=-W*.24+.125,tip=nose+latheTestBarLength;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
  // Display only. Leave the centre retracted clear of the test bar.
  withGroup([],()=>{
   const x=W*.36;box(x,.805,0,.8,.08,1.1,c.fixed);box(x,1.225,0,.52,.76,.65,c.fixed,'心押台');

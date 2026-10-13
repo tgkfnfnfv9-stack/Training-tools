@@ -2,7 +2,7 @@
 // All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
 let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,levelGeometry=null;
 const levelCalculationModel='connected-frames-v1';
-function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-rigid-beam-v3':current.kind==='travel'?'travel-guide-v3':current.kind==='horizontal'?'horizontal-rail-v3':current.kind==='compact'?'compact-asymmetric-bending-v5':current.kind==='lathe'?'lathe-carriage-v3':levelCalculationModel;}
+function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-rigid-beam-v3':current.kind==='travel'?'travel-guide-v3':current.kind==='horizontal'?'horizontal-rail-v3':current.kind==='compact'?(current.layoutId==='compact-six-v1'?'compact-six-sag-v1':'compact-asymmetric-bending-v5'):current.kind==='lathe'?'lathe-carriage-v4':levelCalculationModel;}
 function levelStoragePrefix(){return 'training-level-'+currentCalculationModel()+':';}
 // An asynchronous file may finish after another import or a newer training state.
 let levelImportRequest=0,levelSessionEpoch=0,levelRevision=0;
