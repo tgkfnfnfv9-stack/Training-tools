@@ -182,6 +182,12 @@ function updateLevelStages(machineResult=null,target=false){
  $('coarseBubbleLR').style.left=(50+bubbleOffset(levelSolution.lr))+'%';
  // Positive front/back slope is high at the back: the vertical bubble moves up.
  $('coarseBubbleFB').style.setProperty('--bubble-position',(50-bubbleOffset(levelSolution.fb))+'%');
+ // Twist vial: the left-right slope at the back minus that at the front (the
+ // same level read at both ends). Centre = no twist; right = back right-high.
+ const twist=levelSolution.twist;
+ $('coarseBubbleTwist').style.left=(50+bubbleOffset(twist))+'%';
+ $('stageTwist').textContent=Math.abs(twist)<=.020000001?'目安内':twist>0?'奥が右高い':'奥が左高い';
+ $('stageTwist').setAttribute('data-value',String(twist));
  // Every displayed value is inside the target when target is true; only a
  // fixed guide component can still exceed 20 µm.
  const significant=machineProfile&&Math.max(...Object.values(machineProfile.guides).map(g=>g.microns))>20.000001;
