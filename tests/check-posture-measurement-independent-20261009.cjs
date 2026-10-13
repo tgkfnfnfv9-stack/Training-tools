@@ -44,13 +44,13 @@ function machine(kind,nodes,state,profile,width,depth){
    else relative=plus(relative,times(minus(zIntrinsic,[0,0,1]),.45*wz*s.Z/100));
   }else{
    base=physical(owner==='tool'?[-1.75,.66,0]:owner==='tailstock'?[1.8,.66,0]:[.08,.66,.15]);
-   seat=plus(base,owner==='work'?[.7*wx*s.Z/100,0,0]:[0,0,0]);
+   seat=plus(base,owner==='work'?[.9*wx*s.Z/100,0,0]:[0,0,0]);
    relative=minus(physical(raw),base);
    if(owner==='work')relative[2]+=.35*wz*s.X/100;
    if(owner==='tool')I=v=>spin(v,B,1);
   }
-  // lathe-carriage-v3: the carriage rests on four rail pads (x+/-0.4, z=+/-0.4).
-  const padMount=()=>{const P=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=physical([.08+.7*s.Z/100+i*.4,0,k*.4]);return {i,k,x:q[0],z:q[2],h:S.sample(q[0],q[2]).h};})),ha=(P[2].x-P[0].x)/2,hb=(P[1].z-P[0].z)/2,mean=P.reduce((v,q)=>v+q.h/4,0),pa=P.reduce((v,q)=>v+q.i*q.h,0)/(4*ha),pb=P.reduce((v,q)=>v+q.k*q.h,0)/(4*hb),cx=(P[0].x+P[2].x)/2,cz=(P[0].z+P[1].z)/2,x=seat[0],z=seat[2],h=mean+pa*(x-cx)+pb*(z-cz),local=seatAxes(pa-S.a,pb-S.b);return {F:local.map(v=>turn(S.C,v)),p:plus(turn(S.C,[x,h-S.a*x-S.b*z-S.c,z]),[0,.66+S.c,0])};};
+  // lathe-carriage-v4 (Z travel 0.9 m): the carriage rests on four rail pads (x+/-0.4, z=+/-0.4).
+  const padMount=()=>{const P=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=physical([.08+.9*s.Z/100+i*.4,0,k*.4]);return {i,k,x:q[0],z:q[2],h:S.sample(q[0],q[2]).h};})),ha=(P[2].x-P[0].x)/2,hb=(P[1].z-P[0].z)/2,mean=P.reduce((v,q)=>v+q.h/4,0),pa=P.reduce((v,q)=>v+q.i*q.h,0)/(4*ha),pb=P.reduce((v,q)=>v+q.k*q.h,0)/(4*hb),cx=(P[0].x+P[2].x)/2,cz=(P[0].z+P[1].z)/2,x=seat[0],z=seat[2],h=mean+pa*(x-cx)+pb*(z-cz),local=seatAxes(pa-S.a,pb-S.b);return {F:local.map(v=>turn(S.C,v)),p:plus(turn(S.C,[x,h-S.a*x-S.b*z-S.c,z]),[0,.66+S.c,0])};};
   const m=kind!=='horizontal'&&owner==='work'?padMount():S.mount(seat[0],seat[2]),F=basis.map(v=>turn(m.F,I(v)));
   return {point:plus(m.p,turn(F,relative)),F,seat,origin:m.p};
  };
@@ -71,7 +71,7 @@ function cylinderHit(body,probe,origin,axis,radius=.025,loAxial=-Infinity,hiAxia
 }
 const span=(value,half)=>{const start=Math.max(-half,Math.min(half-.3,value*half/100));return [start/half*100,(start+.3)/half*100];};
 function fixtureBar(m,state,kind,details){
- const [z0,z1]=span(state.Z,kind==='horizontal'?.45*m.wz:.7*m.wx),s0={...state,Z:z0},s1={...state,Z:z1};
+ const [z0,z1]=span(state.Z,kind==='horizontal'?.45*m.wz:.9*m.wx),s0={...state,Z:z0},s1={...state,Z:z1};
  const head=m.at(kind==='horizontal'?[0,2.55,-.93]:[-1.075,1.5,0],'tool'),axis=head.F[kind==='horizontal'?2:0];
  const origin=kind==='horizontal'?minus(head.point,times(axis,.31)):head.point;
  const raw=kind==='horizontal'?[0,1.27,-.85]:[.08,1.5,.20],mount0=m.at(raw,'work',s0),mount1=m.at(raw,'work',s1);
@@ -83,7 +83,7 @@ function fixtureBar(m,state,kind,details){
   const e0=cylinderHit(b0,u0,origin,axis,.025,lo,hi),e1=cylinderHit(b1,u1,origin,axis,.025,lo,hi);
   result[key]=e0&&e1?(e0.extension-e1.extension)*1e6:null;
   if(details){
-   const physicalStart=kind==='horizontal'?(-.85+.45*z0/100)*m.wz:(.08+.7*z0/100)*m.wx,coordinate=kind==='horizontal'?'z':'x',ts=new Set(Array.from({length:17},(_,i)=>i/16));
+   const physicalStart=kind==='horizontal'?(-.85+.45*z0/100)*m.wz:(.08+.9*z0/100)*m.wx,coordinate=kind==='horizontal'?'z':'x',ts=new Set(Array.from({length:17},(_,i)=>i/16));
    for(const p of m.S.nodes){const t=(p[coordinate]-physicalStart)/.3;if(t>0&&t<1)for(const delta of [-1e-8,0,1e-8])ts.add(t+delta);}
    details[key]={origin,axis,samples:[...ts].sort((a,b)=>a-b).map(t=>{const mount=m.at(raw,'work',{...s0,Z:z0+(z1-z0)*t}),body=plus(mount.point,turn(mount.F,arm)),probe=turn(mount.F,direction);return {t,body,probe,...cylinderHit(body,probe,origin,axis,.025,lo,hi)};})};
   }
@@ -91,7 +91,7 @@ function fixtureBar(m,state,kind,details){
  return result;
 }
 function lathe(m,state,fixed){
- const [x0,x1]=span(state.X,.35*m.wz),[z0,z1]=span(state.Z,.7*m.wx),result=fixtureBar(m,state,'lathe');
+ const [x0,x1]=span(state.X,.35*m.wz),[z0,z1]=span(state.Z,.9*m.wx),result=fixtureBar(m,state,'lathe');
  for(const [key,raw,start,end,normal] of [
   ['face',[-.09,1.5,1],{...state,X:x0},{...state,X:x1},[-Math.cos(fixed.face),0,-Math.sin(fixed.face)]],
   ['flat',[.23,1.5,1.43],{...state,Z:z0},{...state,Z:z1},[Math.sin(fixed.flat),0,Math.cos(fixed.flat)]]]){
@@ -165,7 +165,7 @@ function run(){
    for(let s=0;s<count;s++)for(const d of [-.01,-.001,.001,.01])inputs.push([`support${s}:${d}`,(x,z,i)=>i===s?d:0]);
    for(const [name,h] of inputs)for(const profile of [null,used]){
     const nodes=zs.flatMap((z,j)=>xs.map((x,i)=>({x,z,mm:h(x,z,j*xs.length+i)}))),heights=nodes.map(q=>q.mm);
-    const seam=kind==='horizontal'?(-depth/6/(depth/3.68)+.85)/.45*100:-.08/.7*100;
+    const seam=kind==='horizontal'?(-depth/6/(depth/3.68)+.85)/.45*100:-.08/.9*100;
     const states=[{X:0,Y:0,Z:0},{X:-100,Y:-100,Z:-100},{X:100,Y:100,Z:100},{X:57,Y:43,Z:29},...[-1e-5,0,1e-5].map(d=>({X:-31,Y:67,Z:seam+d}))].map(s=>({...s,A:0,C:0}));
     // All individual support steps at central and asymmetric positions; full
     // endpoints/seams for each signed twist/plane and each support dimension.
@@ -212,7 +212,7 @@ function run(){
     const x=1.1*width/2.72>=.3-1e-12,z=.9*depth/3.68>=.3-1e-12;
     for(const [key,want] of [['XY',x],['XZ',x&&z],['YZ',z]]){const got=env.json(`referenceScan({key:'${key}'})`);compare(Number(got.valid),Number(want),`${kind} finite square interval ${width}/${depth}/${key}`);if(want)compare(got.microns,0,`${kind} minimum exact interval ideal ${key}`);}
    }else{
-    const got=env.json('latheInspectionGeometry()'),x=.7*depth/1.68>=.3-1e-12,z=1.4*width/4>=.3-1e-12;
+    const got=env.json('latheInspectionGeometry()'),x=.7*depth/1.68>=.3-1e-12,z=1.8*width/4>=.3-1e-12;
     compare(Number(got.validX),Number(x),`${kind} finite X interval`);compare(Number(got.validZ),Number(z),`${kind} finite Z interval`);
     if(x)compare(got.face,0,`${kind} minimum interval ideal face`);if(z)for(const key of ['flat','barSide','barTop'])compare(got[key],0,`${kind} minimum interval ideal ${key}`);
    }

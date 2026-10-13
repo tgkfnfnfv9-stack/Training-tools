@@ -24,10 +24,10 @@ function independentSurface(heights,width=4,depth=1.68){
 }
 function mount(raw,owner,state,S,profile,width=4,depth=1.68){
  const spatial=p=>[p[0]*width/4,p[1],p[2]*depth/1.68],seat0=spatial(owner==='tool'?[-1.75,.66,0]:[.08,.66,.15]),seat=[...seat0];
- if(owner==='work')seat[0]+=.7*state.Z/100*width/4;
+ if(owner==='work')seat[0]+=.9*state.Z/100*width/4;
  // Carriage (lathe-carriage-v3): rigid saddle on the two drawn rails z=+/-0.4,
  // pads at its centre x+/-0.4. Plane of the four pad heights, independently.
- const padPlane=()=>{const cx=seat[0],P=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=spatial([.08+.7*state.Z/100+i*.4,0,k*.4]);return {i,k,x:q[0],z:q[2],h:S.at(q[0],q[2]).h};})),ha=(P[2].x-P[0].x)/2,hb=(P[1].z-P[0].z)/2,m=P.reduce((v,q)=>v+q.h/4,0),a=P.reduce((v,q)=>v+q.i*q.h,0)/(4*ha),b=P.reduce((v,q)=>v+q.k*q.h,0)/(4*hb);return {h:m+b*(seat[2]-(P[0].z+P[1].z)/2)+a*(cx-(P[0].x+P[2].x)/2),a,b};};
+ const padPlane=()=>{const cx=seat[0],P=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=spatial([.08+.9*state.Z/100+i*.4,0,k*.4]);return {i,k,x:q[0],z:q[2],h:S.at(q[0],q[2]).h};})),ha=(P[2].x-P[0].x)/2,hb=(P[1].z-P[0].z)/2,m=P.reduce((v,q)=>v+q.h/4,0),a=P.reduce((v,q)=>v+q.i*q.h,0)/(4*ha),b=P.reduce((v,q)=>v+q.k*q.h,0)/(4*hb);return {h:m+b*(seat[2]-(P[0].z+P[1].z)/2)+a*(cx-(P[0].x+P[2].x)/2),a,b};};
  const s=owner==='work'?padPlane():S.at(seat[0],seat[2]),C=frame(S.a,S.b),F=frame(s.a-S.a,s.b-S.b),angle=owner==='tool'?(profile?.squareness?.XZ?.microns||0)/300000:0;
  const R=v=>turn(C,turn(F,ry(v,angle))),basis=[[1,0,0],[0,1,0],[0,0,1]].map(R),p=sub(spatial(raw),seat0);
  if(owner==='work')p[2]+=.35*state.X/100*depth/1.68;
@@ -65,13 +65,16 @@ function oracle(heights,state,profile,width=4,depth=1.68){
  const S=independentSurface(heights,width,depth),at=(p,owner,s=state)=>mount(p,owner,s,S,profile,width,depth);
  // Intrinsic amplitudes are supplied fixed input data. Only geometry and the
  // resulting signs are independently derived; this does not validate RNG stats.
- const fixed=API.intrinsic(profile),X0={...state,X:Math.min(state.X,100-.3/(.35*depth/1.68)*100)},Z0={...state,Z:Math.min(state.Z,100-.3/(.7*width/4)*100)},X1={...X0,X:X0.X+.3/(.35*depth/1.68)*100},Z1={...Z0,Z:Z0.Z+.3/(.7*width/4)*100};
+ const fixed=API.intrinsic(profile),X0={...state,X:Math.min(state.X,100-.3/(.35*depth/1.68)*100)},Z0={...state,Z:Math.min(state.Z,100-.3/(.9*width/4)*100)},X1={...X0,X:X0.X+.3/(.35*depth/1.68)*100},Z1={...Z0,Z:Z0.Z+.3/(.9*width/4)*100};
+ // lathe-testbar-v3: a 300 mm bar on the nose (display x -1.075); the turret
+ // tool station (display x -0.1675 at Z=0) is read from 10 mm to 290 mm.
+ const station=a=>({...state,Z:(-1.075+a/(width/4)+.1675)/.9*100}),B0=station(.01),B1=station(.29),validBar=[B0.Z,B1.Z].every(z=>z>=-100-1e-9&&z<=100+1e-9);
  const face0=at([-.09,1.5,1],'work',X0),face1=at([-.09,1.5,1],'work',X1),N=[-Math.cos(fixed.face),0,-Math.sin(fixed.face)],flat0=at([.23,1.5,1.43],'work',Z0),flat1=at([.23,1.5,1.43],'work',Z1),M=[Math.sin(fixed.flat),0,Math.cos(fixed.flat)];
  const head=at([-1.075,1.5,0],'tool'),axis=head.R([1,0,0]),radial=head.R([0,0,1]),up=head.R([0,1,0]),holeMount=at([-.09,1.5,.20],'work',{...state,X:-.20/.35*100}),hole=add(holeMount.point,holeMount.R([0,fixed.holeY,fixed.holeX])),delta=sub(hole,head.point),dx=dot(delta,radial),dy=dot(delta,up);
- const bracket0=at([.08,1.5,.20],'work',Z0),bracket1=at([.08,1.5,.20],'work',Z1),centreA=add(head.point,scale(axis,dot(sub(bracket0.point,head.point),axis)));
+ const bracket0=at([-.1675,1.5,.20],'work',B0),bracket1=at([-.1675,1.5,.20],'work',B1),centreA=add(head.point,scale(axis,dot(sub(bracket0.point,head.point),axis)));
  const barRead=normal=>{
   const firstBody=add(centreA,scale(normal,.035)),probe=scale(normal,-1),offset=inverse(bracket0.basis,sub(firstBody,bracket0.point)),localProbe=inverse(bracket0.basis,probe),lastBody=add(bracket1.point,turn(bracket1.basis,offset)),lastProbe=turn(bracket1.basis,localProbe);
-  const first=cylinderContact(firstBody,probe,head.point,axis,.025,2.2*width/4),last=cylinderContact(lastBody,lastProbe,head.point,axis,.025,2.2*width/4);
+  const first=cylinderContact(firstBody,probe,head.point,axis,.025,.3),last=cylinderContact(lastBody,lastProbe,head.point,axis,.025,.3);
   ok(first&&last,'fixed bar contacts within finite length');
   // Reinstall at b with a new radial probe instead of preserving the bracket.
   // This is a different arrangement from merely reversing and re-zeroing.
@@ -79,7 +82,7 @@ function oracle(heights,state,profile,width=4,depth=1.68){
   ok(resetFirst&&resetLast,'remounted reverse contacts valid');
   return {microns:(first.extension-last.extension)*1e6,remountedReverse:(resetFirst.extension-resetLast.extension)*1e6,first,last,firstBody,lastBody,probe,lastProbe};
  };
- return {face:planeReading(face0.point,face1.point,face0.R(N),face1.R(N)),flat:planeReading(flat0.point,flat1.point,flat0.R(M),flat1.R(M)),dx:dx*1e6,dy:dy*1e6,bore:boreReadings(dx,dy),barSide:barRead(radial),barTop:barRead(up),X0,Z0};
+ return {face:planeReading(face0.point,face1.point,face0.R(N),face1.R(N)),flat:planeReading(flat0.point,flat1.point,flat0.R(M),flat1.R(M)),dx:dx*1e6,dy:dy*1e6,bore:boreReadings(dx,dy),barSide:validBar?barRead(radial):null,barTop:validBar?barRead(up):null,X0,Z0,B0,B1,validBar};
 }
 // Contact signs and fixed-configuration reversal are physical constraints.
 for(const sign of [-1,1]){
@@ -116,7 +119,7 @@ const rows=[];let remountDifference=0;
 for(const [width,depth] of [[4,1.68],[5.2,1.2]])for(const c of supportCases)for(const used of [false,true]){
  const heights=[-depth/2,depth/2].flatMap((z,j)=>[-width/2,0,width/2].map((x,i)=>c.h(x,z,j*3+i))),p=used?profile:null;
  env.read(`levelConfig.width=${width};levelConfig.depth=${depth};machineProfile=${JSON.stringify(p)};supportHeights=${JSON.stringify(heights)};`);
- for(const X of [-100,0,100])for(const Z of [-100,-.08/.7*100-1e-5,-.08/.7*100+1e-5,0,100]){
+ for(const X of [-100,0,100])for(const Z of [-100,-.08/.9*100-1e-5,-.08/.9*100+1e-5,0,100]){
   const state={X,Y:0,Z,A:0,C:0};env.read(`positions=${JSON.stringify(state)};updateLeveling();`);
   const actual=env.json('latheInspectionGeometry()'),expected=oracle(heights,state,p,width,depth);
   near(actual.xStart.Z,state.Z,'X scan retains requested Z position',1e-12);
@@ -129,9 +132,9 @@ for(const [width,depth] of [[4,1.68],[5.2,1.2]])for(const c of supportCases)for(
    const samples=actual[scan].samples,first=samples[0],last=samples.at(-1),goal=expected[field];
    for(const [got,want,label] of [[first.body,goal.firstBody,'initial body'],[last.body,goal.lastBody,'final body'],[first.probe,goal.probe,'initial probe'],[last.probe,goal.lastProbe,'final probe']])got.forEach((v,i)=>near(v,want[i],`${field} ${label} ${i}`,1e-12));
    const S=independentSurface(heights,width,depth),head=mount([-1.075,1.5,0],'tool',state,S,p,width,depth),axis=head.R([1,0,0]);
-   const initial=mount([.08,1.5,.20],'work',expected.Z0,S,p,width,depth),localBody=inverse(initial.basis,sub(goal.firstBody,initial.point)),localProbe=inverse(initial.basis,goal.probe);
+   const initial=mount([-.1675,1.5,.20],'work',expected.B0,S,p,width,depth),localBody=inverse(initial.basis,sub(goal.firstBody,initial.point)),localProbe=inverse(initial.basis,goal.probe);
    for(const sample of samples){
-    const sampleState={...expected.Z0,Z:expected.Z0.Z+.3/(.7*width/4)*100*sample.t},placed=mount([.08,1.5,.20],'work',sampleState,S,p,width,depth),wantedBody=add(placed.point,turn(placed.basis,localBody)),wantedProbe=turn(placed.basis,localProbe);
+    const sampleState={...expected.B0,Z:expected.B0.Z+(expected.B1.Z-expected.B0.Z)*sample.t},placed=mount([-.1675,1.5,.20],'work',sampleState,S,p,width,depth),wantedBody=add(placed.point,turn(placed.basis,localBody)),wantedProbe=turn(placed.basis,localProbe);
     sample.body.forEach((v,i)=>near(v,wantedBody[i],`${field} intermediate body ${i}`,1e-12));sample.probe.forEach((v,i)=>near(v,wantedProbe[i],`${field} intermediate probe ${i}`,1e-12));
     const hit=cylinderContact(wantedBody,wantedProbe,head.point,axis,.025,2.2*width/4);ok(hit,'sample has independent cylinder contact');near(sample.extension,hit.extension,`${field} sample contact`,1e-12);near(sample.axial,hit.axial,`${field} sample axial`,1e-12);
    }
@@ -163,13 +166,15 @@ assert.equal(JSON.stringify(Intrinsic.fromProfile(profile).runout),runoutSnapsho
 let shortTravelCases=0;
 for(const [width,depth] of [[.5,1.68],[4,.5],[.5,.5],[6/7,.72],[6/7-1e-7,.72-1e-7]])for(const X of [-100,100])for(const Z of [-100,100]){
  env.read(`levelConfig.width=${width};levelConfig.depth=${depth};supportHeights=supports.map(()=>0);machineProfile=null;positions={X:${X},Y:0,Z:${Z},A:0,C:0};updateLeveling();`);
- const a=env.json('latheInspectionGeometry()'),validX=.7*depth/1.68>=.3-1e-12,validZ=1.4*width/4>=.3-1e-12;
+ const a=env.json('latheInspectionGeometry()'),validX=.7*depth/1.68>=.3-1e-12,validZ=1.8*width/4>=.3-1e-12,validBar=[.01,.29].every(a=>Math.abs((-1.075+a/(width/4)+.1675)/.9*100)<=100+1e-9);
  assert.equal(a.validX,validX);assertions++;assert.equal(a.validZ,validZ);assertions++;
  for(const pair of [['xStart','X'],['xEnd','X'],['zStart','Z'],['zEnd','Z']])ok(a[pair[0]][pair[1]]>=-100&&a[pair[0]][pair[1]]<=100,'scan endpoint within actual slider');
  if(!validX){assert.equal(a.face,null,'insufficient X travel is unavailable');assertions++;}
- if(!validZ)for(const key of ['flat','barSide','barTop']){assert.equal(a[key],null,'insufficient Z travel is unavailable');assertions++;}
+ if(!validZ){assert.equal(a.flat,null,'insufficient Z travel is unavailable');assertions++;}
+ if(!validBar)for(const key of ['barSide','barTop']){assert.equal(a[key],null,'bar stations beyond Z travel are unavailable');assertions++;}
  if(validX)near(a.face,0,'ideal face at exact minimum travel');
- if(validZ)for(const key of ['flat','barSide','barTop'])near(a[key],0,'ideal Z read at exact minimum travel');
+ if(validZ)near(a.flat,0,'ideal Z read at exact minimum travel');
+ if(validBar)for(const key of ['barSide','barTop'])near(a[key],0,'ideal bar read');
  const markup=env.read('latheInspectionMarkup(latheInspectionGeometry(),{rootMicrons:0,tipMicrons:0})');
  if(!validX)ok(markup.includes('X —'),'invalid X is a dash, not a fabricated zero');
  if(!validZ)ok(markup.includes('Z —'),'invalid Z is a dash, not a fabricated zero');

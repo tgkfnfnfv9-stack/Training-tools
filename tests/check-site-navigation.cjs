@@ -71,7 +71,7 @@ for(let index=0;index<read('machines.length');index++){
 check('switching machine while settings were open cannot leak old axis options',()=>{
  r.mechanical.click();r.leveling.click();r.machineGrid.children[0].click();
  r.openTrainingMenu.click();r.drawerAxisSelect.change('Y');r.axisMenuSection.open=true;
- r.changeMachine.click();r.machineGrid.children[5].click();visiblePage('training');closedDrawer();
+ r.changeMachine.click();r.machineGrid.children[read("catalogMachines.findIndex(m=>m.id==='lathe')")].click();visiblePage('training');closedDrawer();
  assert.deepEqual(r.drawerAxisSelect.children.map(o=>o.value),['X','Z']);
  assert.equal(read('selectedAxis'),'X');assert(!r.axisMenuSection.open);
  const before=json('levelRecord()');r.raiseSupport.click();

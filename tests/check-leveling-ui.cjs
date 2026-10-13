@@ -7,7 +7,7 @@ function near(a,b,tolerance=1e-9){assert.ok(Math.abs(a-b)<tolerance,`${a} != ${b
 async function main(){
  const env=createEnvironment({pureLeveling:true}),{registry:r,read,json,storage,context}=env;
  const open=i=>read(`openMachine(machines[${i}])`),preset=t=>context.document.querySelectorAll('[data-preset]').find(b=>b.dataset.preset===t).click();
- const counts=json('machines.map(m=>({vertical:4,horizontal:8,travel:6,gate:15,gantry:8,lathe:6})[m.id])');
+ const counts=json('machines.map(m=>({vertical:4,horizontal:8,travel:6,gate:15,gantry:8,lathe:6,vertical6:6})[m.id])');
  for(let i=0;i<read('machines.length');i++){
   storage.clear();open(i);
   check(`機種${i}:支持点数`,()=>assert.equal(read('supports.length'),counts[i]));
