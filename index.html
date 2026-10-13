@@ -789,7 +789,7 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 <section id="home"><div class="intro"><p class="eyebrow">TRAINING LIBRARY</p><h1>どちらを学びますか？</h1><p>電気と機械。現場の理解を、一つずつ深める。</p></div><div class="category-grid"><button class="category" id="electric"><span class="symbol">⚡</span><h2>電気</h2><p>回路・制御・点検の基礎</p><span class="go">テスターの使い方 →</span></button><button class="category" id="mechanical"><span class="symbol">⚙</span><h2>機械</h2><p>工作機械の構造と調整</p><span class="go">訓練項目を見る →</span></button></div></section>
 <section id="electricTopics" hidden><div class="intro"><p class="eyebrow">ELECTRICAL TRAINING</p><h1>電気の訓練</h1><p>テスターの準備、測定モード、つなぎ方を順番に学びます。</p></div><button class="topic" id="testerEntry"><span class="topic-icon">01</span><div><h2>テスターの使い方</h2><p>DC・AC電圧、抵抗、導通、低電圧の電流を模擬測定</p><span class="pill">初めてのテスター</span></div><span class="topic-arrow">→</span></button></section>
 <section id="topics" hidden><div class="intro"><p class="eyebrow">MECHANICAL TRAINING</p><h1>機械の訓練</h1><p>まずは、据付と精度の土台となるレベル出しから。</p></div><button class="topic" id="leveling"><span class="topic-icon">01</span><div><h2>工作機械のレベル出し</h2><p>支持点の調整で、ねじれ・コラムの倒れ・直角度の変化を3Dで学ぶ</p><span class="pill">7つの構造カテゴリ</span></div><span class="topic-arrow">→</span></button></section>
-<section id="catalog" hidden><div class="intro"><p class="eyebrow">LEVELING / MACHINE TYPES</p><h1>機械の構造を選ぶ</h1><p>支持配置と、動く側・固定する側の違いで選びましょう。</p></div><p class="note">3Dは外装を省いた教材用の構造模式図です。小型は4点、EC-630は8点の概略配置、L3 3000参考モデルは長手ベッド9点・柱側6点の教材用15点です。実機の支持配置そのものではありません。ほかの機種は従来の学習用配置です。</p><div id="machineGrid" class="machine-grid"></div><details class="survey"><summary>分類の考え方・調査資料</summary><p>立形は小型4点のみ。横形はHaas EC-630（NGC）、固定門形はHWACHEON L3 3000を参考にしています。「立形／横形」は主軸の向き、「門形／片持ち」は構造、「5軸」は制御軸の構成です。これらは重なります。立形でも門形構造の機械があり、門形にも5軸機があります。</p><p>追加候補：NCフライス、ヘッド旋回式5軸、複合加工機、平面・円筒研削盤、テーブル形／床上形横中ぐり盤。詳しくは同梱の調査資料をご覧ください。</p></details></section>
+<section id="catalog" hidden><div class="intro"><p class="eyebrow">LEVELING / MACHINE TYPES</p><h1>機械の構造を選ぶ</h1><p>支持配置と、動く側・固定する側の違いで選びましょう。</p></div><p class="note">3Dは外装を省いた教材用の構造模式図です。小型は4点、6点支持の立形は左右3点ずつ（中間ボルトの効きは仮定値）、EC-630は8点の概略配置、L3 3000参考モデルは長手ベッド9点・柱側6点の教材用15点です。実機の支持配置そのものではありません。ほかの機種は従来の学習用配置です。</p><div id="machineGrid" class="machine-grid"></div><details class="survey"><summary>分類の考え方・調査資料</summary><p>立形は小型4点のみ。横形はHaas EC-630（NGC）、固定門形はHWACHEON L3 3000を参考にしています。「立形／横形」は主軸の向き、「門形／片持ち」は構造、「5軸」は制御軸の構成です。これらは重なります。立形でも門形構造の機械があり、門形にも5軸機があります。</p><p>追加候補：NCフライス、ヘッド旋回式5軸、複合加工機、平面・円筒研削盤、テーブル形／床上形横中ぐり盤。詳しくは同梱の調査資料をご覧ください。</p></details></section>
 <section id="training" hidden><div id="trainingShell" class="training-shell">
 <aside id="trainingDrawer" class="training-drawer" hidden role="dialog" aria-modal="false" aria-labelledby="trainingMenuTitle">
 <div class="training-drawer-heading"><strong id="trainingMenuTitle">機械の設定</strong><button id="closeTrainingMenu" aria-label="設定メニューを閉じる">閉じる ×</button></div>
@@ -1636,9 +1636,13 @@ const machines = [
 {id:'travel',name:'立形・移動コラム',tag:'テーブル固定・コラム移動',example:'固定テーブルの長尺加工機',kind:'travel',w:5.4,d:2.6,grid:[3,2],structure:'テーブルとワークは固定。コラムがX方向に走り、主軸頭側がY・Z方向に移動します。',focus:'長いベッドの各位置と、コラムの移動に伴う姿勢。',impact:'端だけでなく、中間位置の案内精度・姿勢も確認します。',source:'https://www.mazak.com/jp-ja/products/vtc/'},
 {id:'gate',name:'固定門形・L3 3000',tag:'L3構造参考・教材用15点',example:'長手ベッド9点＋左右柱側各3点',kind:'double',w:3.5625,d:8.55,grid:null,defaultMode:'l3-3000',layoutId:'hwacheon-l3-3000-teaching-15point-v1',previousLayouts:['hwacheon-l3-3000-foundation-r139'],supportLayout:'irregular',columnZ:.825,columnX:1.10,structure:'長手ベッドと左右柱側の張り出しを持つ固定門形。テーブルX、主軸サドルY、ラムZの構成です。L3 3000の構造を参考に、長手ベッドを3×3の9点、左右柱側を各3点とした合計15点の教材用配置です。',focus:'長手ベッド9点と、左右柱側各3点の支持関係。',impact:'不規則な支持面の幾何補間により姿勢を比較します。実機の剛性・荷重・基礎アンカー・弾性変形を再現する解析ではありません。',supportEvidence:'メーカー作成L-SERIES Rev1.39の基礎図は24か所ですが、この教材は長手ベッドを9点に簡略化しています。柱側6点は同図の座標を参考にしています。実機の15点支持を示すものではなく、主支持／補助支持や荷重配分は再現しません。',source:'https://hmeholdings.com/wp-content/uploads/2023/03/L-SERIES.pdf'},
 {id:'gantry',name:'移動門形・ガントリー',tag:'テーブル固定・門全体が移動',example:'固定門形とは動く側が逆',kind:'gantry',w:4,d:5.8,grid:[2,4],structure:'テーブルとワークは固定。左右の走行レール上を門全体がX方向に移動します。',focus:'左右走行レールの相対姿勢と、移動範囲の基礎・支持。',impact:'左右レールの関係と門の姿勢を確認します。同期駆動などの機種固有の調整は別途必要です。',source:'https://www.shibaura-machine.co.jp/jp/product/machinetool/lineup/s_new/spec.html'},
-{id:'lathe',name:'NC旋盤・タレット2軸',tag:'X径方向・Z主軸方向',example:'Haas STシリーズのタレット構造・検査配置を参考',kind:'lathe',w:5,d:2.1,grid:[3,2],structure:'主軸台を固定し、奥側の12角タレットをX（径方向）、往復台ごとZ（主軸方向）へ動かします。工具1番で固定し、タレット割出しとY軸は実装していません。',focus:'ベッド長手方向の各位置での横断方向の水準器。',impact:'ベッドのねじれと主軸・刃物台の関係を確認します。回転振れは固有値、Z面・穴芯・テストバーのダイヤル測定は支持姿勢も反映します。',supportEvidence:'6点支持と寸法は教材用の概略配置です。特定のST型式の基礎図や剛性を再現した模型ではありません。',source:'https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html'}
+{id:'lathe',name:'NC旋盤・タレット2軸',tag:'X径方向・Z主軸方向',example:'Haas STシリーズのタレット構造・検査配置を参考',kind:'lathe',w:5,d:2.1,grid:[3,2],structure:'主軸台を固定し、奥側の12角タレットをX（径方向）、往復台ごとZ（主軸方向）へ動かします。工具1番で固定し、タレット割出しとY軸は実装していません。',focus:'ベッド長手方向の各位置での横断方向の水準器。',impact:'ベッドのねじれと主軸・刃物台の関係を確認します。回転振れは固有値、Z面・穴芯・テストバーのダイヤル測定は支持姿勢も反映します。',supportEvidence:'6点支持と寸法は教材用の概略配置です。特定のST型式の基礎図や剛性を再現した模型ではありません。',source:'https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html'},
+{id:'vertical6',name:'立形・6点支持',tag:'テーブルXY・主軸頭Z・中間ボルト',example:'中型立形の教材モデル',kind:'compact',w:3.9,d:3.5,grid:[2,3],defaultMode:'compact',layoutId:'compact-six-v1',structure:'小型立形を一回り大きくした固定コラムの立形。テーブルがX・Y、主軸頭がZ方向へ移動します。左右に手前・中間・奥の3点ずつ、合計6点で支えます。',focus:'中間ボルトによるベッドの前後たわみと、奥のコラムの前後倒れ。',impact:'四隅のねじれに加え、中間ボルトでベッドが反り、テーブルよりコラムが大きく前後に倒れる関係を学びます。',supportEvidence:'6点の教材用配置です。中間ボルトの効き（ベッド剛性と支持剛性の比）は仮定値で、特定型式の基礎図・荷重配分の再現ではありません。'},
 ];
 // 内部の描画座標は左右=x、上=y、奥=z。工作機械の軸名は機構ごとに明示して割り当てる。
+// Lathe carriage Z travel (m per 100 %) reaches the spindle nose with the
+// tool station, so the 300 mm test bar can be read from 10 mm to 290 mm.
+const latheZTravel=.9,latheTestBarLength=.3,latheTestBarStations=[.01,.29],latheToolStationX=-.1675;
 const axisColors={X:'#d35455',Y:'#208768',Z:'#397ed1',A:'#8e5caf',C:'#bc6a2f'};
 let positions={X:0,Y:0,Z:0,A:0,C:0}, selectedAxis='X', machineMode='compact';
 function displayMachine(base){return {...base};}
@@ -1649,7 +1653,7 @@ function axisConfig(m){
  if(m.kind==='horizontal')return [a('X','コラム＋主軸頭','左右',[1,0,0],.55),a('Y','主軸頭＋工具','上下',[0,1,0],.3),a('Z','パレット台＋ワーク','主軸方向（前後）',[0,0,1],.45)];
  if(['double','gantry'].includes(m.kind))return [a('X',m.kind==='double'?'テーブル＋ワーク':'門全体＋主軸側','長手（前後）',[0,0,1],.7),a('Y','主軸サドル＋ラム','門幅（左右）',[1,0,0],.65),a('Z','ラム＋主軸・工具','上下',[0,1,0],.28)];
  if(m.kind==='five')return [a('X','トラニオン一式','左右',[1,0,0],.35),a('Y','サドル＋トラニオン一式','前後',[0,0,1],.35),a('Z','主軸頭＋工具','上下',[0,1,0],.3),a('A','揺りかご＋テーブル','X軸回りの傾斜',[1,0,0],.55),a('C','回転テーブル＋ワーク','テーブル軸回りの回転',[0,1,0],1.1)];
- return [a('X','タレット＋工具','径方向',[0,0,1],.35),a('Z','往復台＋タレット','主軸方向（左右）',[1,0,0],.7)];
+ return [a('X','タレット＋工具','径方向',[0,0,1],.35),a('Z','往復台＋タレット','主軸方向（左右）',[1,0,0],latheZTravel)];
 }
 function transformedPoint(p,axes,m,state=positions){
  let q=[...p];
@@ -1858,7 +1862,10 @@ function buildSupports(){
  const map=$('supportMap');map.replaceChildren();map.classList.toggle('many-supports',supports.length>8);map.setAttribute('aria-label',supports.length>8?supports.length+'か所の支持点。上下にスクロールして選択':'調整する支持点');supports.forEach((s,i)=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',String.fromCharCode(65+i)+'、'+s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.dataset.support=String(i);b.onclick=()=>{if(!trainingMenuOpen)selectSupport(i);};map.append(b);});
  const controls=$('supportControls');controls.replaceChildren();supports.forEach((s,i)=>{const row=document.createElement('div');row.className='support-row'+(i===selected?' selected':'');const id=String.fromCharCode(65+i);row.innerHTML=`<label><span class="point-id">${id}</span>${s.name}</label><button id="down${i}" aria-label="${id}を下げる">下げる</button><span id="supportState${i}" class="support-adjustment-state"></span><input hidden type="number" id="height${i}" aria-label="${id}の抽選時からの調整量" min="${-.5-supportBaseline(i)}" max="${.5-supportBaseline(i)}" step="0.001" value="${supportAdjustment(i)}"><button id="up${i}" aria-label="${id}を上げる">上げる</button>`;controls.append(row);$('down'+i).onclick=()=>changeSupportHeight(i,-Number($('adjustStep').value));$('up'+i).onclick=()=>changeSupportHeight(i,Number($('adjustStep').value));$('height'+i).onchange=()=>setSupportHeight(i,supportHeightFromAdjustment(i,$('height'+i).value.trim()===''?NaN:Number($('height'+i).value)));$('height'+i).oninput=()=>{invalidateLevelImport();const field=$('height'+i),value=supportHeightFromAdjustment(i,field.value.trim()===''?NaN:Number(field.value));if(bounded(value,-.5,.5))setSupportHeight(i,value,true);};});
 }
-const grid=$('machineGrid');machines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>resumeOrOpenMachine(m);grid.append(card);});
+// Catalog order: the six-point vertical sits right below the compact one;
+// the list order above (and saved indices) stays as it was.
+const catalogMachines=[...machines].sort((a,b)=>(a.id==='vertical6'?.5:machines.indexOf(a))-(b.id==='vertical6'?.5:machines.indexOf(b)));
+const grid=$('machineGrid');catalogMachines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>resumeOrOpenMachine(m);grid.append(card);});
 // 部品に軸の親子関係を持たせ、固定部は動かさない。
 function createGeometry(m){
  const faces=[],labels=[],references=[],c={base:'#80949c',fixed:'#799198',table:'#4c9b8b',spindle:'#dfab62',rail:'#c8d6d9',work:'#d1ddd7'};
@@ -1949,7 +1956,8 @@ function createGeometry(m){
  // Keep the measured nose at -W*.24+.125; extend the chuck rear into the
  // headstock instead of leaving the previous 25 mm unsupported gap.
  withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24-.015,1.5,0,.4,.28,c.spindle,'x');},'tool');
- withGroup([],()=>{const nose=-W*.24+.125,tip=W*.225;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
+ // 300 mm test bar from the spindle nose (lathe-carriage-v4).
+ withGroup([],()=>{const nose=-W*.24+.125,tip=nose+latheTestBarLength;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
  // Display only. Leave the centre retracted clear of the test bar.
  withGroup([],()=>{
   const x=W*.36;box(x,.805,0,.8,.08,1.1,c.fixed);box(x,1.225,0,.52,.76,.65,c.fixed,'心押台');
@@ -2303,7 +2311,7 @@ navigate('home');
 // All dimensions are teaching parameters. mm never enter the 3D geometry without conversion.
 let supportHeights=[],levelSolution=null,levelConfig=null,levelExercise=null,levelGeometry=null;
 const levelCalculationModel='connected-frames-v1';
-function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-rigid-beam-v3':current.kind==='travel'?'travel-guide-v3':current.kind==='horizontal'?'horizontal-rail-v3':current.kind==='compact'?'compact-asymmetric-bending-v5':current.kind==='lathe'?'lathe-carriage-v3':levelCalculationModel;}
+function currentCalculationModel(){return ['double','gantry'].includes(current.kind)?'portal-rigid-beam-v3':current.kind==='travel'?'travel-guide-v3':current.kind==='horizontal'?'horizontal-rail-v3':current.kind==='compact'?(current.layoutId==='compact-six-v1'?'compact-six-sag-v1':'compact-asymmetric-bending-v5'):current.kind==='lathe'?'lathe-carriage-v4':levelCalculationModel;}
 function levelStoragePrefix(){return 'training-level-'+currentCalculationModel()+':';}
 // An asynchronous file may finish after another import or a newer training state.
 let levelImportRequest=0,levelSessionEpoch=0,levelRevision=0;
@@ -2782,7 +2790,7 @@ function horizontalToolPoint(raw,state=positions,solution=levelSolution,profile=
 // Its posture is the least-squares plane of its four pad heights, not the
 // slope at one sampled point. Heights mm, plan coordinates m, slopes mm/m.
 function latheCarriageSupport(solution,state=positions){
- const x=.08+.7*state.Z/100,pads=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=levelCoordinates(x+i*.4,k*.4);return {i,k,x:q.x,z:q.z,h:solution.heightAt(q.x,q.z)};}));
+ const x=.08+latheZTravel*state.Z/100,pads=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=levelCoordinates(x+i*.4,k*.4);return {i,k,x:q.x,z:q.z,h:solution.heightAt(q.x,q.z)};}));
  const a=(pads[2].x-pads[0].x)/2,b=(pads[1].z-pads[0].z)/2,mean=pads.reduce((s,p)=>s+p.h/4,0);
  const slope={lr:pads.reduce((s,p)=>s+p.i*p.h,0)/(4*a),fb:pads.reduce((s,p)=>s+p.k*p.h,0)/(4*b)},centre={x:(pads[0].x+pads[2].x)/2,z:(pads[0].z+pads[1].z)/2};
  return {slope,heightAt:(px,pz)=>mean+slope.lr*(px-centre.x)+slope.fb*(pz-centre.z),pads};
@@ -3206,7 +3214,27 @@ function machineSolution(heights){
  if(current.kind==='double'&&current.supportLayout==='irregular'){
   solution.parts=Object.fromEntries(['bed','column-left','column-right'].map(group=>[group,window.Leveling.solve(points.filter((p,i)=>supports[i].group===group))]));
  }
+ if(current.layoutId==='compact-six-v1')return compactSixSolution(points,solution);
  return current.kind==='compact'?window.Leveling.compactBending(solution,levelConfig.width,levelConfig.depth):solution;
+}
+// Six-point vertical (compact-six-sag-v1). The four corner bolts seat the bed
+// with the compact twist plate. Each middle bolt that departs from that seat
+// by r bends the bed front-to-back as a sag mode (1-Z^2), with the share
+// compactSixSagShare of r (bed vs bolt stiffness ratio). This share is a
+// declared teaching assumption: one middle bolt +0.1 mm gives about 10 µm YZ
+// over 300 mm at the axis centre. A support plane (all six on one plane) gives
+// r=0, so a rigid tilt never bends the bed. Common seating uses the six-point
+// least-squares plane of the solver.
+const compactSixSagShare=.5;
+function compactSixSolution(points,solution){
+ const zs=[...new Set(points.map(p=>p.z))].sort((a,b)=>a-b),xs=[...new Set(points.map(p=>p.x))].sort((a,b)=>a-b),zm=zs[1],a=(xs[1]-xs[0])/2,b=(zs[2]-zs[0])/2,xm=(xs[0]+xs[1])/2;
+ const corners=points.filter(p=>p.z!==zm),bent=window.Leveling.compactBending(window.Leveling.solve(corners),levelConfig.width,levelConfig.depth);
+ const middle=side=>{const p=points.find(q=>q.z===zm&&q.x===xs[side]);return p.h-bent.heightAt(p.x,p.z);},rL=middle(0),rR=middle(1),k=compactSixSagShare;
+ const q=(x,z)=>{const X=(x-xm)/a,Z=(z-zm)/b;return {X,Z,m:k*(rL*(1-X)+rR*(1+X))/2,dm:k*(rR-rL)/(2*a)};};
+ const heightAt=(x,z)=>{const s=q(x,z);return bent.heightAt(x,z)+s.m*(1-s.Z*s.Z);};
+ const slopeAt=(x,z)=>{const s=q(x,z),base=bent.slopeAt(x,z);return {lr:base.lr+s.dm*(1-s.Z*s.Z),fb:base.fb-2*s.m*s.Z/b};};
+ const hessianAt=(x,z)=>{const s=q(x,z),H=bent.hessianAt(x,z);return {xx:H.xx,zz:H.zz-2*s.m/(b*b),xz:H.xz-2*s.dm*s.Z/b};};
+ return {...solution,heightAt,slopeAt,hessianAt,bending:{...bent.bending,kind:'corner-ritz-plus-middle-sag',sagShare:k,middleResidual:[rL,rR]}};
 }
 // Teaching tolerance for every displayed dial value (µm, = 0.02 mm). The
 // average level enters with 0.02 mm/m treated like 20 µm.
@@ -3658,7 +3686,7 @@ for(let i=0;i<4;i++)$('sweepPosition'+i).onclick=()=>{selectSpindleSweepAngle(i*
   let s=(profile.seed^0x4c415431)>>>0;const next=()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296*2-1;},scale=profile.condition==='used'?30:10;
   return {face:next()*scale/1e6,flat:next()*scale/1e6,holeX:next()*scale/1e6,holeY:next()*scale/1e6};
  }
- return Object.freeze({model:'lathe-testbar-v2',add,sub,mul,dot,unit,extension,planeScan,bore,cylinderContact,intrinsic});
+ return Object.freeze({model:'lathe-testbar-v3',add,sub,mul,dot,unit,extension,planeScan,bore,cylinderContact,intrinsic});
 });
 </script><script>'use strict';
 // Lathe-only rigid assemblies on the existing support surface. Separating the
@@ -3667,7 +3695,7 @@ function latheAssembly(raw,pose,state=positions,solution=levelSolution,profile=m
  const V=window.LatheInspection,L=window.Leveling,scale=p=>{const q=levelCoordinates(p[0],p[2]);return [q.x,p[1],q.z];};
  const bar=pose==='latheTestBar';if(bar)pose='tool';
  const base=scale(pose==='tool'?[-current.w*.35,.66,0]:[.08,.66,.15]);
- const travel=pose==='work'?scale([.7*state.Z/100,0,.35*state.X/100]):[0,0,0],seat=V.add(base,[travel[0],0,0]);
+ const travel=pose==='work'?scale([latheZTravel*state.Z/100,0,.35*state.X/100]):[0,0,0],seat=V.add(base,[travel[0],0,0]);
  // The carriage (work) rests on four rail pads; the headstock keeps its seat.
  const carriage=pose==='work'?latheCarriageSupport(solution,state):null;
  const common=L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),slope=carriage?carriage.slope:solution.slopeAt(seat[0],seat[2]),local=L.orientation({lr:(slope.lr-solution.lr)*factor,fb:(slope.fb-solution.fb)*factor});
@@ -3683,7 +3711,7 @@ function latheAssembly(raw,pose,state=positions,solution=levelSolution,profile=m
 }
 function latheInspectionGeometry(state=positions,solution=levelSolution,profile=machineProfile){
  const V=window.LatheInspection,{add,sub,mul,dot,unit}=V,k=V.intrinsic(profile),length=.3;
- const at=(p,pose,s=state)=>latheAssembly(p,pose,s,solution,profile),sx=levelCoordinates(0,.35).z,sz=levelCoordinates(.7,0).x;
+ const at=(p,pose,s=state)=>latheAssembly(p,pose,s,solution,profile),sx=levelCoordinates(0,.35).z,sz=levelCoordinates(latheZTravel,0).x;
  // At a travel end, keep a full 300 mm scan inside the slider's range.
  const validX=2*sx>=length-1e-12,validZ=2*sz>=length-1e-12;
  const xStart={...state,X:Math.max(-100,Math.min(state.X,100-length/sx*100))},zStart={...state,Z:Math.max(-100,Math.min(state.Z,100-length/sz*100))};
@@ -3700,28 +3728,32 @@ function latheInspectionGeometry(state=positions,solution=levelSolution,profile=
  const centre=add(hole.point,hole.rotate([0,k.holeY,k.holeX])),delta=sub(centre,head.point),dx=dot(delta,radial),dy=dot(delta,up);
  // Looking from spindle towards turret (+internal x), screen right is -z.
  const bore=V.bore(-dx,dy);
- // Bar stays on the spindle. Mount a plunger on the turret at a, then transport
- // BOTH its body and its direction with the same rigid bracket throughout Z.
+ // 300 mm bar (φ50) fixed on the spindle nose. The plunger sits on the turret
+ // tool station; its body and direction ride the carriage rigidly. The carriage
+ // is fed in Z so the station passes from 10 mm to 290 mm along the bar (280 mm).
+ // The two Z positions come from the bar stations, not from the slider.
  // This is extension difference, not a diameter or a doubled radial error.
- const mountRaw=[.08,1.5,.20],mount=at(mountRaw,'work',zStart),inverse=v=>[[1,0,0],[0,1,0],[0,0,1]].map(e=>dot(mount.rotate(e),v));
- const centreA=add(head.point,mul(axis,dot(sub(mount.point,head.point),axis))),barLength=levelCoordinates(current.w*.225-(-current.w*.24+.125),0).x;
+ const layoutScale=levelCoordinates(1,0).x,nose=-current.w*.24+.125,stationZ=a=>(nose+a/layoutScale-latheToolStationX)/latheZTravel*100;
+ const barStart={...state,Z:stationZ(latheTestBarStations[0])},barEnd={...state,Z:stationZ(latheTestBarStations[1])},validBar=[barStart.Z,barEnd.Z].every(z=>z>=-100-1e-9&&z<=100+1e-9);
+ const mountRaw=[latheToolStationX,1.5,.20],mount=at(mountRaw,'work',barStart),inverse=v=>[[1,0,0],[0,1,0],[0,0,1]].map(e=>dot(mount.rotate(e),v));
+ const centreA=add(head.point,mul(axis,dot(sub(mount.point,head.point),axis))),barLength=latheTestBarLength,scanLength=latheTestBarStations[1]-latheTestBarStations[0];
  const barScan=normal=>{
-  if(!validZ)return {valid:false,microns:null,reason:'travel-range'};
+  if(!validBar)return {valid:false,microns:null,reason:'travel-range'};
   const body0=add(centreA,mul(normal,.035)),probe0=mul(normal,-1),bodyLocal=inverse(sub(body0,mount.point)),probeLocal=inverse(probe0);
   const fractions=new Set(Array.from({length:17},(_,i)=>i/16));
   // Include where a carriage rail pad (centre +/-0.4 m) crosses a support-cell
   // boundary, on both sides of that slope transition.
-  for(const offset of [-.4,.4]){const startX=levelCoordinates(.08+.7*zStart.Z/100+offset,0).x;
-  for(const p of supports){const f=(levelCoordinates(p.x,p.z).x-startX)/length;if(f>0&&f<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,f+d)));}}
+  for(const offset of [-.4,.4]){const startX=levelCoordinates(.08+latheZTravel*barStart.Z/100+offset,0).x;
+  for(const p of supports){const f=(levelCoordinates(p.x,p.z).x-startX)/scanLength;if(f>0&&f<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,f+d)));}}
   const samples=[...fractions].sort((a,b)=>a-b).map(t=>{
-   const m=at(mountRaw,'work',{...zStart,Z:zStart.Z+(zEnd.Z-zStart.Z)*t}),body=add(m.point,m.rotate(bodyLocal)),probe=m.rotate(probeLocal);
+   const m=at(mountRaw,'work',{...barStart,Z:barStart.Z+(barEnd.Z-barStart.Z)*t}),body=add(m.point,m.rotate(bodyLocal)),probe=m.rotate(probeLocal);
    return {t,body,probe,...V.cylinderContact(body,probe,head.point,axis,.025,barLength)};
   });
   if(samples.some(s=>!s.valid))return {valid:false,microns:null,reason:samples.find(s=>!s.valid).reason,samples};
   return {valid:true,microns:(samples[0].extension-samples.at(-1).extension)*1e6,samples};
  };
  const side=barScan(radial),top=barScan(up);
- return {model:V.model,face,flat:flatReading,dx:dx*1e6,dy:dy*1e6,bore,barSide:side.microns,barTop:top.microns,side,top,validX,validZ,xStart,zStart,xEnd,zEnd,head:head.point,hole:centre,barLength};
+ return {model:V.model,face,flat:flatReading,dx:dx*1e6,dy:dy*1e6,bore,barSide:side.microns,barTop:top.microns,side,top,validX,validZ,xStart,zStart,xEnd,zEnd,barStart,barEnd,head:head.point,hole:centre,barLength,barStations:latheTestBarStations};
 }
 function latheInspectionMarkup(data,runout,second=false){
  const n=v=>Number.isFinite(v)?squarenessMicronText(v):'—',svg=(label,body)=>`<svg viewBox="0 0 180 100" role="img" aria-label="${label}"><title>${label}</title>${body}</svg>`;
@@ -3729,7 +3761,7 @@ function latheInspectionMarkup(data,runout,second=false){
  const polygon='<path d="M55 12L85 12L108 35L108 65L85 86L55 86L32 65L32 35Z" fill="#fff6ec" stroke="#6c5a4a"/>';
  if(!second)return panel('主軸振れ・µm',svg('主軸回転TIR。根元と300 mm先。レベル調整では不変。',`<g fill="#fff6ec" stroke="#6c5a4a"><path d="M15 18H45V74H15ZM45 39H158V53H45Z"/></g><path d="M54 30V60M146 30V60" stroke="#c45a09"/><text x="53" y="23" text-anchor="middle">a</text><text x="146" y="23" text-anchor="middle">b</text><text x="30" y="90">a ${Math.round(runout.rootMicrons)}　b ${Math.round(runout.tipMicrons)}</text><text x="99" y="72" text-anchor="middle">↻ 回転TIR</text>`),'固有値・レベルでは不変')+panel('刃物台精度・µm',svg('計器は主軸台側に固定。Xは前面、Zは外側フラット。始点ゼロ、押込み増加がプラス。',`${polygon}<path d="M108 35L145 23V53L108 65M85 12L122 2L145 23" fill="#fffaf4" stroke="#6c5a4a"/><path d="M60 62H94M121 56L138 42" stroke="#c45a09"/><text x="50" y="58">a → b</text><text x="119" y="77">c → d</text><text x="61" y="38">X</text><text x="122" y="35">Z</text><text x="4" y="94">X ${n(data.face)}　Z ${n(data.flat)}</text>`),data.validX&&data.validZ?'300 mm・Xは固有／Zは支持も反映':`300 mm：${!data.validX?'X走査不足 ':''}${!data.validZ?'Z走査不足':''}`);
  const marks=data.bore.valid?data.bore.readings.map(n):['—','—','—','—'];
- return panel('主軸と刃物台の穴芯',svg('主軸から刃物台を見る。a左、b上、c右、d下。Xは固定の公称芯位置。aでゼロ。',`${polygon}<circle cx="70" cy="49" r="17" fill="white" stroke="#6c5a4a"/><path d="M44 49H96M70 23V75" stroke="#a49386"/><circle cx="70" cy="49" r="2" fill="#c45a09"/><text x="0" y="52">a ${marks[0]}</text><text x="65" y="14">b ${marks[1]}</text><text x="110" y="52">c ${marks[2]}</text><text x="65" y="94">d ${marks[3]}</text>`),`芯差 X ${n(data.dx)}／高さ ${n(data.dy)} µm`) +panel('テストバー測定・µm',svg('主軸固定のテストバーに、タレット側のダイヤルを接触。側面は奥側から、上面は上から測る。主軸側aを0にして先端側bへZを300 mm送り、押込み増加がプラス。',`<g fill="#fff6ec" stroke="#6c5a4a"><path d="M5 13H27V33H5ZM27 24H160V29H27Z"/><rect x="121" y="5" width="26" height="12" rx="2"/></g><path d="M134 17V24M127 11H141M133 8L137 14" stroke="#c45a09" fill="none"/><path d="M45 18H110l-5,-3m5,3l-5,3" stroke="#c45a09" fill="none"/><text x="39" y="43">a 0</text><text x="130" y="43">b</text><text x="55" y="12" font-size="9">Z 300 mm →</text><text x="8" y="66">側面（奥） ${n(data.barSide)}</text><text x="8" y="85">上面 ${n(data.barTop)}</text>`),data.validZ?(data.side.valid&&data.top.valid?'バー固定・ダイヤルをZ送り':'接触範囲外・詳細は▽'):'300 mmのZ走査範囲不足');
+ return panel('主軸と刃物台の穴芯',svg('主軸から刃物台を見る。a左、b上、c右、d下。Xは固定の公称芯位置。aでゼロ。',`${polygon}<circle cx="70" cy="49" r="17" fill="white" stroke="#6c5a4a"/><path d="M44 49H96M70 23V75" stroke="#a49386"/><circle cx="70" cy="49" r="2" fill="#c45a09"/><text x="0" y="52">a ${marks[0]}</text><text x="65" y="14">b ${marks[1]}</text><text x="110" y="52">c ${marks[2]}</text><text x="65" y="94">d ${marks[3]}</text>`),`芯差 X ${n(data.dx)}／高さ ${n(data.dy)} µm`) +panel('テストバー測定・µm',svg('主軸固定のテストバーに、タレット側のダイヤルを接触。側面は奥側から、上面は上から測る。主軸端から10 mmのaを0にして、290 mmのbへZを280 mm送り、押込み増加がプラス。',`<g fill="#fff6ec" stroke="#6c5a4a"><path d="M5 13H27V33H5ZM27 24H160V29H27Z"/><rect x="121" y="5" width="26" height="12" rx="2"/></g><path d="M134 17V24M127 11H141M133 8L137 14" stroke="#c45a09" fill="none"/><path d="M45 18H110l-5,-3m5,3l-5,3" stroke="#c45a09" fill="none"/><text x="39" y="43">a 0</text><text x="130" y="43">b</text><text x="50" y="12" font-size="9">Z 280 mm →</text><text x="8" y="66">側面（奥） ${n(data.barSide)}</text><text x="8" y="85">上面 ${n(data.barTop)}</text>`),data.side.reason==='travel-range'?'Z走査範囲不足':data.side.valid&&data.top.valid?'バー300 mm・a10→b290 mm':'接触範囲外・詳細は▽');
 }
 let latheInspectionLastKey='';
 function updateLatheInspectionUI(){
@@ -3740,7 +3772,7 @@ function updateLatheInspectionUI(){
   $('latheInspectionSecond').innerHTML='<div class="lathe-inspection-columns">'+latheInspectionMarkup(data,runout,true)+'</div>';
  }
  $('liveSquareness').dataset.lathe=JSON.stringify({face:data.face,flat:data.flat,dx:data.dx,dy:data.dy,barSide:data.barSide,barTop:data.barTop,runout});
- if(!$('measurementReferenceCards').querySelector('.lathe-inspection-detail'))$('measurementReferenceCards').innerHTML='<article class="measurement-reference-card lathe-inspection-detail"><h3>タレット旋盤の検査・µm</h3><p>Haas STシリーズの検査配置を参考にした汎用2軸模型です。12角タレットは工具1番で固定し、割出し動作は実装していません。6点支持と寸法は教材用で、特定型式の再現ではありません。</p><p>主軸振れ：主軸を回転し、テストバーの根元aと300 mm先bの最大−最小（TIR）。同じ個体の固有値で、支持調整では変わりません。</p><p>刃物台精度：計器は主軸台側に固定。Xはタレット前面をa→b、Zは外側フラットをc→dへ送ります。300 mmは教材の設定で、メーカーの検査距離ではありません。計器は始点の面法線に合わせてゼロ。押込み増加が＋。Xの面傾斜は同じ剛体内の固有差で、Zは移動中の往復台姿勢と取付高さ0.84 mも反映します。端では走査軸の始点だけを内側へ戻し、全区間を確保します。全行程が300 mm未満になる寸法では数値を出さず走査不足と表示します。</p><p>穴芯：仮想ホルダを公称X芯位置へ戻し、現在のZ位置で主軸側の計器を回して内径を測ります。図は主軸から刃物台を見る向きでa左／b上／c右／d下。aでゼロ、押込み増加が＋。芯差X=(c−a)/2、高さ=(d−b)/2。Xスライダーとは独立の芯位置検査で、支持を変えても芯合わせは取り直しません。主軸直交面の円断面による偏心検査の近似で、穴軸傾きによる楕円断面は含みません。孔径50 mm、取付高さ0.84 m。数値のXは部材の径方向（模型内部＋z、図の左向き）で、NCの直径指令の正負ではありません。タレットは奥側にあり、Xスライダーの＋は部材が主軸から離れる向き、Zの＋は主軸台から離れる向きです。</p><p>テストバー測定：バーは主軸に固定し、主軸は回さず、タレットに固定したダイヤルをZの＋（主軸側aから先端側b）へ300 mm送ります。側面は奥側から手前向き、上面は上から下向きに測定子を当てます。側面と上面は計器を付け替える別の検査です。aでゼロ、測定子の伸びが減る押込み側を＋としてbの指示を表示します。棒の直径差ではなくダイヤルの指示差で、値を2倍しません。バーは理想円筒φ50 mm。回転振れの固有値とは別の、Z送りに対する平行度の測定です。</p><p>支持・軸位置を変えると、面測定の方向合わせと始点ゼロを取り直します。バー測定も始点の軸位置に計器を取り付け直し、10 mmの伸びで接触ゼロを設定します。そこから終点までは計器本体と測定子方向を同じブラケットで運び、途中で再ゼロしません。模型の取付基準（支持から0.84 m）から接触位置までの腕の長さを計算に含めます。16分割に加え、支持補間境界の両側で接触・20 mmの測定子範囲・バー長を確認し、成立しないときは—を表示します。連続経路の治具干渉やバーの自重たわみは再現しません。穴芯の公称Xは固定です。各図の測定器・ホルダは検査用の仮想配置で、模型に検査治具の干渉やブラケット寸法は再現していません。面接触は無限平面の近似で、支持寸法を縮めたときなどの有限タレット面からの測定子の脱落は判定しません。表示は整数µmなので微小な変化が同じ整数になることがあります。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html" target="_blank" rel="noopener">Haas公式：ST Lathe Alignment Indicating Zones</a></p></article>';
+ if(!$('measurementReferenceCards').querySelector('.lathe-inspection-detail'))$('measurementReferenceCards').innerHTML='<article class="measurement-reference-card lathe-inspection-detail"><h3>タレット旋盤の検査・µm</h3><p>Haas STシリーズの検査配置を参考にした汎用2軸模型です。12角タレットは工具1番で固定し、割出し動作は実装していません。6点支持と寸法は教材用で、特定型式の再現ではありません。</p><p>主軸振れ：主軸を回転し、テストバーの根元aと300 mm先bの最大−最小（TIR）。同じ個体の固有値で、支持調整では変わりません。</p><p>刃物台精度：計器は主軸台側に固定。Xはタレット前面をa→b、Zは外側フラットをc→dへ送ります。300 mmは教材の設定で、メーカーの検査距離ではありません。計器は始点の面法線に合わせてゼロ。押込み増加が＋。Xの面傾斜は同じ剛体内の固有差で、Zは移動中の往復台姿勢と取付高さ0.84 mも反映します。端では走査軸の始点だけを内側へ戻し、全区間を確保します。全行程が300 mm未満になる寸法では数値を出さず走査不足と表示します。</p><p>穴芯：仮想ホルダを公称X芯位置へ戻し、現在のZ位置で主軸側の計器を回して内径を測ります。図は主軸から刃物台を見る向きでa左／b上／c右／d下。aでゼロ、押込み増加が＋。芯差X=(c−a)/2、高さ=(d−b)/2。Xスライダーとは独立の芯位置検査で、支持を変えても芯合わせは取り直しません。主軸直交面の円断面による偏心検査の近似で、穴軸傾きによる楕円断面は含みません。孔径50 mm、取付高さ0.84 m。数値のXは部材の径方向（模型内部＋z、図の左向き）で、NCの直径指令の正負ではありません。タレットは奥側にあり、Xスライダーの＋は部材が主軸から離れる向き、Zの＋は主軸台から離れる向きです。</p><p>テストバー測定：バーは主軸に固定し、主軸は回さず、長さ300 mm・φ50のバーを主軸端に付け、タレットの工具位置に固定したダイヤルを、主軸端から10 mmのaから290 mmのbまでZの＋へ280 mm送ります（両端10 mmは余白）。側面は奥側から手前向き、上面は上から下向きに測定子を当てます。側面と上面は計器を付け替える別の検査です。aでゼロ、測定子の伸びが減る押込み側を＋としてbの指示を表示します。棒の直径差ではなくダイヤルの指示差で、値を2倍しません。バーは理想円筒。回転振れの固有値とは別の、Z送りに対する平行度の測定です。</p><p>支持・軸位置を変えると、面測定の方向合わせと始点ゼロを取り直します。バー測定も始点の軸位置に計器を取り付け直し、10 mmの伸びで接触ゼロを設定します。そこから終点までは計器本体と測定子方向を同じブラケットで運び、途中で再ゼロしません。模型の取付基準（支持から0.84 m）から接触位置までの腕の長さを計算に含めます。16分割に加え、支持補間境界の両側で接触・20 mmの測定子範囲・バー長を確認し、成立しないときは—を表示します。連続経路の治具干渉やバーの自重たわみは再現しません。穴芯の公称Xは固定です。各図の測定器・ホルダは検査用の仮想配置で、模型に検査治具の干渉やブラケット寸法は再現していません。面接触は無限平面の近似で、支持寸法を縮めたときなどの有限タレット面からの測定子の脱落は判定しません。表示は整数µmなので微小な変化が同じ整数になることがあります。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html" target="_blank" rel="noopener">Haas公式：ST Lathe Alignment Indicating Zones</a></p></article>';
  $('inspectionCarousel').style.setProperty('--inspection-height',$('precisionReadouts').getBoundingClientRect().height+'px');
 }
 </script><script>'use strict';

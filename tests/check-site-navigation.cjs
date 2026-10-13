@@ -71,7 +71,7 @@ for(let index=0;index<read('machines.length');index++){
 check('switching machine while settings were open cannot leak old axis options',()=>{
  r.mechanical.click();r.leveling.click();r.machineGrid.children[0].click();
  r.openTrainingMenu.click();r.drawerAxisSelect.change('Y');r.axisMenuSection.open=true;
- r.changeMachine.click();r.machineGrid.children[5].click();visiblePage('training');closedDrawer();
+ r.changeMachine.click();r.machineGrid.children[read("catalogMachines.findIndex(m=>m.id==='lathe')")].click();visiblePage('training');closedDrawer();
  assert.deepEqual(r.drawerAxisSelect.children.map(o=>o.value),['X','Z']);
  assert.equal(read('selectedAxis'),'X');assert(!r.axisMenuSection.open);
  const before=json('levelRecord()');r.raiseSupport.click();
@@ -89,13 +89,13 @@ check('finished Y-axis demo notice does not follow navigation into the XZ lathe'
  d.openTrainingMenu.click();d.resetAxes.click();
  assert.match(d.axisDemoStatus.textContent,/Y軸.*終了/);
  d.changeMachine.click();assert.equal(d.axisDemoStatus.textContent,'');
- d.machineGrid.children[5].click();assert.equal(d.axisDemoStatus.textContent,'');
+ d.machineGrid.children[demo.read("catalogMachines.findIndex(m=>m.id==='lathe')")].click();assert.equal(d.axisDemoStatus.textContent,'');
  assert.deepEqual(demo.json('axisConfig(current).map(a=>a.key)'),['X','Z']);
 });
 check('leaving a running demo clears its notice after stopping the animation',()=>{
  d.openTrainingMenu.click();d.playAxis.click();assert.match(d.axisDemoStatus.textContent,/確認中/);
  d.navHome.click();assert.equal(demo.read('motionFrame'),null);assert.equal(d.axisDemoStatus.textContent,'');
- d.mechanical.click();d.leveling.click();d.machineGrid.children[5].click();assert.equal(d.axisDemoStatus.textContent,'');
+ d.mechanical.click();d.leveling.click();d.machineGrid.children[demo.read("catalogMachines.findIndex(m=>m.id==='lathe')")].click();assert.equal(d.axisDemoStatus.textContent,'');
 });
 check('direct machine initialization clears the former machine demo notice',()=>{
  d.openTrainingMenu.click();d.playAxis.click();

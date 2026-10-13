@@ -6,9 +6,13 @@ const machines = [
 {id:'travel',name:'立形・移動コラム',tag:'テーブル固定・コラム移動',example:'固定テーブルの長尺加工機',kind:'travel',w:5.4,d:2.6,grid:[3,2],structure:'テーブルとワークは固定。コラムがX方向に走り、主軸頭側がY・Z方向に移動します。',focus:'長いベッドの各位置と、コラムの移動に伴う姿勢。',impact:'端だけでなく、中間位置の案内精度・姿勢も確認します。',source:'https://www.mazak.com/jp-ja/products/vtc/'},
 {id:'gate',name:'固定門形・L3 3000',tag:'L3構造参考・教材用15点',example:'長手ベッド9点＋左右柱側各3点',kind:'double',w:3.5625,d:8.55,grid:null,defaultMode:'l3-3000',layoutId:'hwacheon-l3-3000-teaching-15point-v1',previousLayouts:['hwacheon-l3-3000-foundation-r139'],supportLayout:'irregular',columnZ:.825,columnX:1.10,structure:'長手ベッドと左右柱側の張り出しを持つ固定門形。テーブルX、主軸サドルY、ラムZの構成です。L3 3000の構造を参考に、長手ベッドを3×3の9点、左右柱側を各3点とした合計15点の教材用配置です。',focus:'長手ベッド9点と、左右柱側各3点の支持関係。',impact:'不規則な支持面の幾何補間により姿勢を比較します。実機の剛性・荷重・基礎アンカー・弾性変形を再現する解析ではありません。',supportEvidence:'メーカー作成L-SERIES Rev1.39の基礎図は24か所ですが、この教材は長手ベッドを9点に簡略化しています。柱側6点は同図の座標を参考にしています。実機の15点支持を示すものではなく、主支持／補助支持や荷重配分は再現しません。',source:'https://hmeholdings.com/wp-content/uploads/2023/03/L-SERIES.pdf'},
 {id:'gantry',name:'移動門形・ガントリー',tag:'テーブル固定・門全体が移動',example:'固定門形とは動く側が逆',kind:'gantry',w:4,d:5.8,grid:[2,4],structure:'テーブルとワークは固定。左右の走行レール上を門全体がX方向に移動します。',focus:'左右走行レールの相対姿勢と、移動範囲の基礎・支持。',impact:'左右レールの関係と門の姿勢を確認します。同期駆動などの機種固有の調整は別途必要です。',source:'https://www.shibaura-machine.co.jp/jp/product/machinetool/lineup/s_new/spec.html'},
-{id:'lathe',name:'NC旋盤・タレット2軸',tag:'X径方向・Z主軸方向',example:'Haas STシリーズのタレット構造・検査配置を参考',kind:'lathe',w:5,d:2.1,grid:[3,2],structure:'主軸台を固定し、奥側の12角タレットをX（径方向）、往復台ごとZ（主軸方向）へ動かします。工具1番で固定し、タレット割出しとY軸は実装していません。',focus:'ベッド長手方向の各位置での横断方向の水準器。',impact:'ベッドのねじれと主軸・刃物台の関係を確認します。回転振れは固有値、Z面・穴芯・テストバーのダイヤル測定は支持姿勢も反映します。',supportEvidence:'6点支持と寸法は教材用の概略配置です。特定のST型式の基礎図や剛性を再現した模型ではありません。',source:'https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html'}
+{id:'lathe',name:'NC旋盤・タレット2軸',tag:'X径方向・Z主軸方向',example:'Haas STシリーズのタレット構造・検査配置を参考',kind:'lathe',w:5,d:2.1,grid:[3,2],structure:'主軸台を固定し、奥側の12角タレットをX（径方向）、往復台ごとZ（主軸方向）へ動かします。工具1番で固定し、タレット割出しとY軸は実装していません。',focus:'ベッド長手方向の各位置での横断方向の水準器。',impact:'ベッドのねじれと主軸・刃物台の関係を確認します。回転振れは固有値、Z面・穴芯・テストバーのダイヤル測定は支持姿勢も反映します。',supportEvidence:'6点支持と寸法は教材用の概略配置です。特定のST型式の基礎図や剛性を再現した模型ではありません。',source:'https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html'},
+{id:'vertical6',name:'立形・6点支持',tag:'テーブルXY・主軸頭Z・中間ボルト',example:'中型立形の教材モデル',kind:'compact',w:3.9,d:3.5,grid:[2,3],defaultMode:'compact',layoutId:'compact-six-v1',structure:'小型立形を一回り大きくした固定コラムの立形。テーブルがX・Y、主軸頭がZ方向へ移動します。左右に手前・中間・奥の3点ずつ、合計6点で支えます。',focus:'中間ボルトによるベッドの前後たわみと、奥のコラムの前後倒れ。',impact:'四隅のねじれに加え、中間ボルトでベッドが反り、テーブルよりコラムが大きく前後に倒れる関係を学びます。',supportEvidence:'6点の教材用配置です。中間ボルトの効き（ベッド剛性と支持剛性の比）は仮定値で、特定型式の基礎図・荷重配分の再現ではありません。'},
 ];
 // 内部の描画座標は左右=x、上=y、奥=z。工作機械の軸名は機構ごとに明示して割り当てる。
+// Lathe carriage Z travel (m per 100 %) reaches the spindle nose with the
+// tool station, so the 300 mm test bar can be read from 10 mm to 290 mm.
+const latheZTravel=.9,latheTestBarLength=.3,latheTestBarStations=[.01,.29],latheToolStationX=-.1675;
 const axisColors={X:'#d35455',Y:'#208768',Z:'#397ed1',A:'#8e5caf',C:'#bc6a2f'};
 let positions={X:0,Y:0,Z:0,A:0,C:0}, selectedAxis='X', machineMode='compact';
 function displayMachine(base){return {...base};}
@@ -19,7 +23,7 @@ function axisConfig(m){
  if(m.kind==='horizontal')return [a('X','コラム＋主軸頭','左右',[1,0,0],.55),a('Y','主軸頭＋工具','上下',[0,1,0],.3),a('Z','パレット台＋ワーク','主軸方向（前後）',[0,0,1],.45)];
  if(['double','gantry'].includes(m.kind))return [a('X',m.kind==='double'?'テーブル＋ワーク':'門全体＋主軸側','長手（前後）',[0,0,1],.7),a('Y','主軸サドル＋ラム','門幅（左右）',[1,0,0],.65),a('Z','ラム＋主軸・工具','上下',[0,1,0],.28)];
  if(m.kind==='five')return [a('X','トラニオン一式','左右',[1,0,0],.35),a('Y','サドル＋トラニオン一式','前後',[0,0,1],.35),a('Z','主軸頭＋工具','上下',[0,1,0],.3),a('A','揺りかご＋テーブル','X軸回りの傾斜',[1,0,0],.55),a('C','回転テーブル＋ワーク','テーブル軸回りの回転',[0,1,0],1.1)];
- return [a('X','タレット＋工具','径方向',[0,0,1],.35),a('Z','往復台＋タレット','主軸方向（左右）',[1,0,0],.7)];
+ return [a('X','タレット＋工具','径方向',[0,0,1],.35),a('Z','往復台＋タレット','主軸方向（左右）',[1,0,0],latheZTravel)];
 }
 function transformedPoint(p,axes,m,state=positions){
  let q=[...p];
@@ -228,7 +232,10 @@ function buildSupports(){
  const map=$('supportMap');map.replaceChildren();map.classList.toggle('many-supports',supports.length>8);map.setAttribute('aria-label',supports.length>8?supports.length+'か所の支持点。上下にスクロールして選択':'調整する支持点');supports.forEach((s,i)=>{const b=document.createElement('button');b.className='map-point'+(selected===i?' active':'');b.textContent=String.fromCharCode(65+i);b.setAttribute('aria-label',String.fromCharCode(65+i)+'、'+s.name+'の支持点を選択');b.setAttribute('aria-pressed',selected===i?'true':'false');b.dataset.support=String(i);b.onclick=()=>{if(!trainingMenuOpen)selectSupport(i);};map.append(b);});
  const controls=$('supportControls');controls.replaceChildren();supports.forEach((s,i)=>{const row=document.createElement('div');row.className='support-row'+(i===selected?' selected':'');const id=String.fromCharCode(65+i);row.innerHTML=`<label><span class="point-id">${id}</span>${s.name}</label><button id="down${i}" aria-label="${id}を下げる">下げる</button><span id="supportState${i}" class="support-adjustment-state"></span><input hidden type="number" id="height${i}" aria-label="${id}の抽選時からの調整量" min="${-.5-supportBaseline(i)}" max="${.5-supportBaseline(i)}" step="0.001" value="${supportAdjustment(i)}"><button id="up${i}" aria-label="${id}を上げる">上げる</button>`;controls.append(row);$('down'+i).onclick=()=>changeSupportHeight(i,-Number($('adjustStep').value));$('up'+i).onclick=()=>changeSupportHeight(i,Number($('adjustStep').value));$('height'+i).onchange=()=>setSupportHeight(i,supportHeightFromAdjustment(i,$('height'+i).value.trim()===''?NaN:Number($('height'+i).value)));$('height'+i).oninput=()=>{invalidateLevelImport();const field=$('height'+i),value=supportHeightFromAdjustment(i,field.value.trim()===''?NaN:Number(field.value));if(bounded(value,-.5,.5))setSupportHeight(i,value,true);};});
 }
-const grid=$('machineGrid');machines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>resumeOrOpenMachine(m);grid.append(card);});
+// Catalog order: the six-point vertical sits right below the compact one;
+// the list order above (and saved indices) stays as it was.
+const catalogMachines=[...machines].sort((a,b)=>(a.id==='vertical6'?.5:machines.indexOf(a))-(b.id==='vertical6'?.5:machines.indexOf(b)));
+const grid=$('machineGrid');catalogMachines.forEach(m=>{const card=document.createElement('button');card.className='machine-card';card.setAttribute('aria-label',m.name+'の訓練画面へ');card.innerHTML=`<canvas class="thumbnail" id="thumb-${m.id}" aria-label="${m.name}の構造模式図"></canvas><div class="content"><span class="pill">${m.tag}</span><h2>${m.name}</h2><p>${m.example}</p><span class="go">この構造を見てみる →</span></div>`;card.onclick=()=>resumeOrOpenMachine(m);grid.append(card);});
 // 部品に軸の親子関係を持たせ、固定部は動かさない。
 function createGeometry(m){
  const faces=[],labels=[],references=[],c={base:'#80949c',fixed:'#799198',table:'#4c9b8b',spindle:'#dfab62',rail:'#c8d6d9',work:'#d1ddd7'};
@@ -319,7 +326,8 @@ function createGeometry(m){
  // Keep the measured nose at -W*.24+.125; extend the chuck rear into the
  // headstock instead of leaving the previous 25 mm unsupported gap.
  withGroup([],()=>{box(-W*.35,1.22,0,.8,1.25,1.3,c.fixed,'主軸台');cyl(-W*.24-.015,1.5,0,.4,.28,c.spindle,'x');},'tool');
- withGroup([],()=>{const nose=-W*.24+.125,tip=W*.225;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
+ // 300 mm test bar from the spindle nose (lathe-carriage-v4).
+ withGroup([],()=>{const nose=-W*.24+.125,tip=nose+latheTestBarLength;cyl((nose+tip)/2,1.5,0,.025,tip-nose,c.work,'x','テストバー');},'latheTestBar');
  // Display only. Leave the centre retracted clear of the test bar.
  withGroup([],()=>{
   const x=W*.36;box(x,.805,0,.8,.08,1.1,c.fixed);box(x,1.225,0,.52,.76,.65,c.fixed,'心押台');

@@ -41,11 +41,11 @@ async function main(){
  test(()=>{assert.equal(storage.get(previousL3.key),previousText);assert.notEqual(read('levelKey()'),previousL3.key);assert.equal(currentL3.heights.length,15);assert.notEqual(currentL3.supportLayout.id,previousL3.record.supportLayout.id);assert.match(r.levelSaveStatus.textContent,/新しい個体|再抽選/);});
  label='L3/previous-24-point-import-is-rejected';test(()=>assert.equal(Boolean(read(`validLevelRecord(${JSON.stringify(previousL3.record)})`)),false));
  await load(previousL3.record);test(()=>{assert.deepEqual(record(),currentL3);assert.equal(storage.get(previousL3.key),previousText);assert.match(r.levelInputMessage.textContent,/旧|配置|対応/);});
- const counts=json('machines.map(m=>({vertical:4,horizontal:8,travel:6,gate:15,gantry:8,lathe:6})[m.id])');
+ const counts=json('machines.map(m=>({vertical:4,horizontal:8,travel:6,gate:15,gantry:8,lathe:6,vertical6:6})[m.id])');
  for(let index=0;index<read('machines.length');index++){
   storage.clear();let start=performance.now();open(index);results.timings.push({index,operation:'open',milliseconds:performance.now()-start});
   label=`current-layout/${index}`;const initial=record(),profile=json('machineProfile');
-  test(()=>{assert.equal(read('supports.length'),counts[index]);assert.equal(initial.version,[0,1,3].includes(index)?3:2);assert.equal(initial.calculationModel,[3,4].includes(index)?'portal-rigid-beam-v3':index===2?'travel-guide-v3':read('current.id')==='lathe'?'lathe-carriage-v3':index===1?'horizontal-rail-v3':index===0?'compact-asymmetric-bending-v5':'connected-frames-v1');assert.equal(read('validLevelRecord(levelRecord())'),true);});
+  test(()=>{assert.equal(read('supports.length'),counts[index]);assert.equal(initial.version,[0,1,3,6].includes(index)?3:2);assert.equal(initial.calculationModel,read('current.id')==='vertical6'?'compact-six-sag-v1':[3,4].includes(index)?'portal-rigid-beam-v3':index===2?'travel-guide-v3':read('current.id')==='lathe'?'lathe-carriage-v4':index===1?'horizontal-rail-v3':index===0?'compact-asymmetric-bending-v5':'connected-frames-v1');assert.equal(read('validLevelRecord(levelRecord())'),true);});
   if(index===3){
    label='L3/requested-nine-bed-points-and-original-column-coordinates';
    const stations=[240,3440,6600],expected=[...[-770,0,770].flatMap(x=>stations.map(z=>[x,z-3420])),...[-1060,1060].flatMap(x=>[3965,4515].map(z=>[x,z-3420])),[-1425,825],[1420,825]].map(([x,z])=>[x/1000,z/1000]);

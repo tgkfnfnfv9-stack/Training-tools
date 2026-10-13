@@ -7,7 +7,7 @@ function near(a,b,tolerance=1e-9){assert.ok(Math.abs(a-b)<tolerance,`${a} != ${b
 async function main(){
  const env=createEnvironment({pureLeveling:true}),{registry:r,read,json,storage,context}=env;
  const open=i=>read(`openMachine(machines[${i}])`),preset=t=>context.document.querySelectorAll('[data-preset]').find(b=>b.dataset.preset===t).click();
- const counts=json('machines.map(m=>({vertical:4,horizontal:8,travel:6,gate:15,gantry:8,lathe:6})[m.id])');
+ const counts=json('machines.map(m=>({vertical:4,horizontal:8,travel:6,gate:15,gantry:8,lathe:6,vertical6:6})[m.id])');
  for(let i=0;i<read('machines.length');i++){
   storage.clear();open(i);
   check(`機種${i}:支持点数`,()=>assert.equal(read('supports.length'),counts[i]));
@@ -23,7 +23,7 @@ async function main(){
   preset('front');check(`機種${i}:手前高符号`,()=>{assert.ok(read('levelSolution.fb')<0);near(read('levelSolution.lr'),0,i===3?.001/read('levelConfig.width'):1e-9);assert.ok(parseFloat(r.bubbleFB.style.left)<50);assert.match(r.bubbleTextFB.textContent,/手前/);});
   if(counts[i]>3){preset('twist');r.measurePos.change('-1');const front=parseFloat(r.localLevel.textContent);r.measurePos.change('1');check(`機種${i}:位置切替ねじれ`,()=>{assert.ok(front<0);assert.ok(parseFloat(r.localLevel.textContent)>0);assert.ok(read('levelSolution.residual')>(i===3?0:.09));});}
   else{const before=json('supportHeights');preset('twist');check(`機種${i}:無効プリセット無変更`,()=>assert.deepEqual(json('supportHeights'),before));}
-  if(counts[i]>4){preset('middle');check(`機種${i}:全方向の中間支持反映`,()=>{assert.ok(read('supportHeights.some(h=>h===.15)'));assert.ok(read('levelSolution.residual')>(i===3?0:.04));assert.ok(!r.diagnosis.textContent.includes('目標内'));assert.ok(read('levelSurfaceFaces(current).some(f=>f.height>.1)'));});}
+  if(counts[i]>4){preset('middle');check(`機種${i}:全方向の中間支持反映`,()=>{assert.ok(read('supportHeights.some(h=>h===.15)'));assert.ok(read('levelSolution.residual')>(i===3?0:.04));assert.ok(!r.diagnosis.textContent.includes('目標内'));assert.ok(read(`levelSurfaceFaces(current).some(f=>f.height>(current.id==='vertical6'?.05:.1))`));});}
   r.zero.click();check(`機種${i}:リセット`,()=>{assert.ok(read('supportHeights.every(h=>h===0)'));near(read('levelSolution.residual'),0);near(read('levelSolution.twist'),0);assert.ok(r.diagnosis.textContent.includes('目標内'));});
  }
  // Pure-support save checks use an unchanged machine: new layouts require a real intrinsic profile.
