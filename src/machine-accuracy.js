@@ -24,7 +24,9 @@
   const squareness={},guides={};
   for(let i=0;i<keys.length;i++)for(let j=i+1;j<keys.length;j++){const q=draw();squareness[keys[i]+keys[j]]={...q,microns:q.microns*(rng()<.5?-1:1)};}
   for(const key of keys)guides[key]=draw();
-  const initialHeights=Array.from({length:count},()=>quantize(rng()*.3-.15));
+  // Version 3: installed heights on the 0.01 mm adjustment grid, so leveling
+  // with 0.01 mm steps can bring every support to exactly one height.
+  const initialHeights=Array.from({length:count},()=>Math.round((rng()*.3-.15)*100)/100);
   // A nonzero installation fault is guaranteed, independently of guide accuracy.
   initialHeights[0]=-.15;initialHeights[1]=.15;
   return {version:1,condition,seed,keys:[...keys],squareness,guides,initialHeights};

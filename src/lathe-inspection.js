@@ -26,10 +26,12 @@
   if(axial<0||axial>length)return {valid:false,reason:'bar-length'};
   return {valid:true,extension,axial,point:add(body,mul(ray,extension))};
  }
+ // Intrinsic face/flat angles (rad) and hole offsets (m). Used: ±15 µm (v4), so
+ // a level-out individual stays within the 20 µm teaching tolerance.
  function intrinsic(profile){
   if(!profile)return {face:0,flat:0,holeX:0,holeY:0};
-  let s=(profile.seed^0x4c415431)>>>0;const next=()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296*2-1;},scale=profile.condition==='used'?30:10;
+  let s=(profile.seed^0x4c415431)>>>0;const next=()=>{s=(Math.imul(s,1664525)+1013904223)>>>0;return s/4294967296*2-1;},scale=profile.condition==='used'?15:10;
   return {face:next()*scale/1e6,flat:next()*scale/1e6,holeX:next()*scale/1e6,holeY:next()*scale/1e6};
  }
- return Object.freeze({model:'lathe-testbar-v3',add,sub,mul,dot,unit,extension,planeScan,bore,cylinderContact,intrinsic});
+ return Object.freeze({model:'lathe-testbar-v4',add,sub,mul,dot,unit,extension,planeScan,bore,cylinderContact,intrinsic});
 });

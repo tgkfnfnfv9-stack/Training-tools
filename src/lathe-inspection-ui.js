@@ -34,7 +34,11 @@ function latheInspectionGeometry(state=positions,solution=levelSolution,profile=
  const head=at([-current.w*.24+.125,1.5,0],'tool'),axis=unit(head.rotate([1,0,0])),radial=unit(head.rotate([0,0,1])),up=unit(head.rotate([0,1,0]));
  // Fixed nominal X centre position; never re-centred against a tilted spindle.
  // The inspection holder is now on the rear (+internal z) side.
- const holeState={...state,X:-.20/.35*100},hole=at([-.09,1.5,.20],'work',holeState);
+ // Stations along the spindle line (lathe-testbar-v4). The bore check is made
+ // with the carriage brought up to the chuck, at the bar's a-station Z, so it
+ // does not depend on the slider Z.
+ const layoutScale=levelCoordinates(1,0).x,nose=-current.w*.24+.125,stationZ=a=>(nose+a/layoutScale-latheToolStationX)/latheZTravel*100;
+ const holeState={...state,X:-.20/.35*100,Z:Math.max(-100,Math.min(100,stationZ(latheTestBarStations[0])))},hole=at([-.09,1.5,.20],'work',holeState);
  const centre=add(hole.point,hole.rotate([0,k.holeY,k.holeX])),delta=sub(centre,head.point),dx=dot(delta,radial),dy=dot(delta,up);
  // Looking from spindle towards turret (+internal x), screen right is -z.
  const bore=V.bore(-dx,dy);
@@ -43,7 +47,6 @@ function latheInspectionGeometry(state=positions,solution=levelSolution,profile=
  // is fed in Z so the station passes from 10 mm to 290 mm along the bar (280 mm).
  // The two Z positions come from the bar stations, not from the slider.
  // This is extension difference, not a diameter or a doubled radial error.
- const layoutScale=levelCoordinates(1,0).x,nose=-current.w*.24+.125,stationZ=a=>(nose+a/layoutScale-latheToolStationX)/latheZTravel*100;
  const barStart={...state,Z:stationZ(latheTestBarStations[0])},barEnd={...state,Z:stationZ(latheTestBarStations[1])},validBar=[barStart.Z,barEnd.Z].every(z=>z>=-100-1e-9&&z<=100+1e-9);
  const mountRaw=[latheToolStationX,1.5,.20],mount=at(mountRaw,'work',barStart),inverse=v=>[[1,0,0],[0,1,0],[0,0,1]].map(e=>dot(mount.rotate(e),v));
  const centreA=add(head.point,mul(axis,dot(sub(mount.point,head.point),axis))),barLength=latheTestBarLength,scanLength=latheTestBarStations[1]-latheTestBarStations[0];
@@ -63,7 +66,7 @@ function latheInspectionGeometry(state=positions,solution=levelSolution,profile=
   return {valid:true,microns:(samples[0].extension-samples.at(-1).extension)*1e6,samples};
  };
  const side=barScan(radial),top=barScan(up);
- return {model:V.model,face,flat:flatReading,dx:dx*1e6,dy:dy*1e6,bore,barSide:side.microns,barTop:top.microns,side,top,validX,validZ,xStart,zStart,xEnd,zEnd,barStart,barEnd,head:head.point,hole:centre,barLength,barStations:latheTestBarStations};
+ return {model:V.model,face,flat:flatReading,dx:dx*1e6,dy:dy*1e6,bore,barSide:side.microns,barTop:top.microns,side,top,validX,validZ,xStart,zStart,xEnd,zEnd,barStart,barEnd,head:head.point,hole:centre,holeState,barLength,barStations:latheTestBarStations};
 }
 function latheInspectionMarkup(data,runout,second=false){
  const n=v=>Number.isFinite(v)?squarenessMicronText(v):'—',svg=(label,body)=>`<svg viewBox="0 0 180 100" role="img" aria-label="${label}"><title>${label}</title>${body}</svg>`;
@@ -82,6 +85,6 @@ function updateLatheInspectionUI(){
   $('latheInspectionSecond').innerHTML='<div class="lathe-inspection-columns">'+latheInspectionMarkup(data,runout,true)+'</div>';
  }
  $('liveSquareness').dataset.lathe=JSON.stringify({face:data.face,flat:data.flat,dx:data.dx,dy:data.dy,barSide:data.barSide,barTop:data.barTop,runout});
- if(!$('measurementReferenceCards').querySelector('.lathe-inspection-detail'))$('measurementReferenceCards').innerHTML='<article class="measurement-reference-card lathe-inspection-detail"><h3>タレット旋盤の検査・µm</h3><p>Haas STシリーズの検査配置を参考にした汎用2軸模型です。12角タレットは工具1番で固定し、割出し動作は実装していません。6点支持と寸法は教材用で、特定型式の再現ではありません。</p><p>主軸振れ：主軸を回転し、テストバーの根元aと300 mm先bの最大−最小（TIR）。同じ個体の固有値で、支持調整では変わりません。</p><p>刃物台精度：計器は主軸台側に固定。Xはタレット前面をa→b、Zは外側フラットをc→dへ送ります。300 mmは教材の設定で、メーカーの検査距離ではありません。計器は始点の面法線に合わせてゼロ。押込み増加が＋。Xの面傾斜は同じ剛体内の固有差で、Zは移動中の往復台姿勢と取付高さ0.84 mも反映します。端では走査軸の始点だけを内側へ戻し、全区間を確保します。全行程が300 mm未満になる寸法では数値を出さず走査不足と表示します。</p><p>穴芯：仮想ホルダを公称X芯位置へ戻し、現在のZ位置で主軸側の計器を回して内径を測ります。図は主軸から刃物台を見る向きでa左／b上／c右／d下。aでゼロ、押込み増加が＋。芯差X=(c−a)/2、高さ=(d−b)/2。Xスライダーとは独立の芯位置検査で、支持を変えても芯合わせは取り直しません。主軸直交面の円断面による偏心検査の近似で、穴軸傾きによる楕円断面は含みません。孔径50 mm、取付高さ0.84 m。数値のXは部材の径方向（模型内部＋z、図の左向き）で、NCの直径指令の正負ではありません。タレットは奥側にあり、Xスライダーの＋は部材が主軸から離れる向き、Zの＋は主軸台から離れる向きです。</p><p>テストバー測定：バーは主軸に固定し、主軸は回さず、長さ300 mm・φ50のバーを主軸端に付け、タレットの工具位置に固定したダイヤルを、主軸端から10 mmのaから290 mmのbまでZの＋へ280 mm送ります（両端10 mmは余白）。側面は奥側から手前向き、上面は上から下向きに測定子を当てます。側面と上面は計器を付け替える別の検査です。aでゼロ、測定子の伸びが減る押込み側を＋としてbの指示を表示します。棒の直径差ではなくダイヤルの指示差で、値を2倍しません。バーは理想円筒。回転振れの固有値とは別の、Z送りに対する平行度の測定です。</p><p>支持・軸位置を変えると、面測定の方向合わせと始点ゼロを取り直します。バー測定も始点の軸位置に計器を取り付け直し、10 mmの伸びで接触ゼロを設定します。そこから終点までは計器本体と測定子方向を同じブラケットで運び、途中で再ゼロしません。模型の取付基準（支持から0.84 m）から接触位置までの腕の長さを計算に含めます。16分割に加え、支持補間境界の両側で接触・20 mmの測定子範囲・バー長を確認し、成立しないときは—を表示します。連続経路の治具干渉やバーの自重たわみは再現しません。穴芯の公称Xは固定です。各図の測定器・ホルダは検査用の仮想配置で、模型に検査治具の干渉やブラケット寸法は再現していません。面接触は無限平面の近似で、支持寸法を縮めたときなどの有限タレット面からの測定子の脱落は判定しません。表示は整数µmなので微小な変化が同じ整数になることがあります。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html" target="_blank" rel="noopener">Haas公式：ST Lathe Alignment Indicating Zones</a></p></article>';
+ if(!$('measurementReferenceCards').querySelector('.lathe-inspection-detail'))$('measurementReferenceCards').innerHTML='<article class="measurement-reference-card lathe-inspection-detail"><h3>タレット旋盤の検査・µm</h3><p>Haas STシリーズの検査配置を参考にした汎用2軸模型です。12角タレットは工具1番で固定し、割出し動作は実装していません。6点支持と寸法は教材用で、特定型式の再現ではありません。</p><p>主軸振れ：主軸を回転し、テストバーの根元aと300 mm先bの最大−最小（TIR）。同じ個体の固有値で、支持調整では変わりません。</p><p>刃物台精度：計器は主軸台側に固定。Xはタレット前面をa→b、Zは外側フラットをc→dへ送ります。300 mmは教材の設定で、メーカーの検査距離ではありません。計器は始点の面法線に合わせてゼロ。押込み増加が＋。Xの面傾斜は同じ剛体内の固有差で、Zは移動中の往復台姿勢と取付高さ0.84 mも反映します。端では走査軸の始点だけを内側へ戻し、全区間を確保します。全行程が300 mm未満になる寸法では数値を出さず走査不足と表示します。</p><p>穴芯：仮想ホルダを公称X芯位置へ戻し、往復台をチャック近く（テストバーaと同じZ位置・主軸端から約90 mm）へ寄せて、主軸側の計器を回して内径を測ります。Zスライダーの位置には依存しません。図は主軸から刃物台を見る向きでa左／b上／c右／d下。aでゼロ、押込み増加が＋。芯差X=(c−a)/2、高さ=(d−b)/2。Xスライダーとは独立の芯位置検査で、支持を変えても芯合わせは取り直しません。主軸直交面の円断面による偏心検査の近似で、穴軸傾きによる楕円断面は含みません。孔径50 mm、取付高さ0.84 m。数値のXは部材の径方向（模型内部＋z、図の左向き）で、NCの直径指令の正負ではありません。タレットは奥側にあり、Xスライダーの＋は部材が主軸から離れる向き、Zの＋は主軸台から離れる向きです。</p><p>テストバー測定：バーは主軸に固定し、主軸は回さず、長さ300 mm・φ50のバーを主軸端に付け、タレットの工具位置に固定したダイヤルを、主軸端から10 mmのaから290 mmのbまでZの＋へ280 mm送ります（両端10 mmは余白）。側面は奥側から手前向き、上面は上から下向きに測定子を当てます。側面と上面は計器を付け替える別の検査です。aでゼロ、測定子の伸びが減る押込み側を＋としてbの指示を表示します。棒の直径差ではなくダイヤルの指示差で、値を2倍しません。バーは理想円筒。回転振れの固有値とは別の、Z送りに対する平行度の測定です。</p><p>支持・軸位置を変えると、面測定の方向合わせと始点ゼロを取り直します。バー測定も始点の軸位置に計器を取り付け直し、10 mmの伸びで接触ゼロを設定します。そこから終点までは計器本体と測定子方向を同じブラケットで運び、途中で再ゼロしません。模型の取付基準（支持から0.84 m）から接触位置までの腕の長さを計算に含めます。16分割に加え、支持補間境界の両側で接触・20 mmの測定子範囲・バー長を確認し、成立しないときは—を表示します。連続経路の治具干渉やバーの自重たわみは再現しません。穴芯の公称Xは固定です。各図の測定器・ホルダは検査用の仮想配置で、模型に検査治具の干渉やブラケット寸法は再現していません。面接触は無限平面の近似で、支持寸法を縮めたときなどの有限タレット面からの測定子の脱落は判定しません。表示は整数µmなので微小な変化が同じ整数になることがあります。</p><p><a href="https://www.haascnc.com/service/troubleshooting-and-how-to/how-to/st-lathe-alignment-indicating-zones-.html" target="_blank" rel="noopener">Haas公式：ST Lathe Alignment Indicating Zones</a></p></article>';
  $('inspectionCarousel').style.setProperty('--inspection-height',$('precisionReadouts').getBoundingClientRect().height+'px');
 }
