@@ -752,7 +752,12 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 #latheInspectionSecond{width:100%}
 .is-lathe-reference>.reference-intro{display:none}
 @media(max-width:380px){.lathe-inspection-columns{gap:3px}.lathe-inspection-columns h2{font-size:10px}.lathe-inspection-columns svg{height:82px}.lathe-inspection-columns p{font-size:8px}}
-.viewer-gauge-twist .gauge-ends span{font-size:9px;white-space:nowrap}
+.level-page{display:flex;flex-direction:column;justify-content:center;gap:inherit;min-height:0;flex:1 1 auto;touch-action:pan-y}
+.level-four-middle{display:flex;gap:4px;justify-content:center;min-height:0;flex:0 1 116px}
+.level-four-middle .viewer-gauge-fb{flex:1 1 0;min-width:0}
+.level-page-nav{display:flex;align-items:center;justify-content:center;gap:4px;font-size:10px;line-height:12px;color:#315f50;white-space:nowrap}
+.level-page-button{min-width:24px;min-height:28px;padding:0 4px;font-size:14px;line-height:1;border-radius:6px;background:#fff}
+.level-page-nav{flex-wrap:nowrap;max-width:100%;overflow:hidden}
 </style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
 .tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
 @media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}#testerDiagram{max-height:300px}}
@@ -874,10 +879,12 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 <section id="spindleSweepPanel" class="spindle-sweep-panel" aria-label="主軸のダイヤル旋回測定" aria-describedby="sweepMeasurementNote" hidden>
 <button id="spindleSweepToggle" class="sweep-readout-toggle" aria-controls="spindleSweepSelection" aria-expanded="false" aria-label="ダイヤル測定の方向選択を開く"><span class="sweep-readout-heading" aria-hidden="true"><span id="spindleSweepName" class="live-measurement-name">触れ</span><span id="spindleSweepMini" class="spindle-sweep-mini"></span><span class="sweep-readout-unit">µm</span></span><span id="sweepReadout0" class="sweep-readout-row"><span id="sweepLabel0">右</span><strong id="sweepValue0">0</strong></span><span id="sweepReadout1" class="sweep-readout-row"><span id="sweepLabel1">奥</span><strong id="sweepValue1">0</strong></span><span id="horizontalParallelMini" class="horizontal-parallel-mini"></span><span id="sweepReadout2" class="sweep-readout-row"><span id="sweepLabel2">左</span><strong id="sweepValue2">0</strong></span><span id="sweepReadout3" class="sweep-readout-row" data-selected="true"><span id="sweepLabel3">手前 <small>基準</small></span><strong id="sweepValue3">0</strong></span></button><p id="sweepMeasurementNote" class="visually-hidden">主軸と理想平面の相対傾きを直径300 mmで測ります。右・奥・左・手前の4方向です。手前をゼロ基準として、他の3点は手前との差を表示します。プラスは測定子の押込み側です。小型も直角測定と同じ物理姿勢を使い、倍率を掛けません。右・奥・左はその姿勢から計算し、手前は0です。門形の柱・梁は支持姿勢、ラム・主軸は測定と同じ固有差を含む代表方向で表示します。実際の上面の凹凸、主軸の回転振れ、測定子の荷重は再現しません。</p></section>
 </div><section id="intrinsicInspectionPage" class="intrinsic-inspection-page" aria-label="個体固有の主軸振れと上面精度" hidden><div id="latheInspectionSecond" hidden></div><div class="intrinsic-inspection-columns"><section><h2>主軸振れ <small>回転TIR・µm</small></h2><div id="intrinsicRunoutDiagram"></div></section><section><h2>上面精度 <small>9点高さ差・µm</small></h2><div id="intrinsicSurfaceDiagram"></div></section></div><p class="intrinsic-inspection-note">固有成分・レベル調整では不変</p></section></div><button id="inspectionNext" class="inspection-page-control" type="button" aria-label="主軸振れと上面精度へ左スライド" aria-controls="intrinsicInspectionPage" hidden>次 ›</button><button id="inspectionPrevious" class="inspection-page-control" type="button" aria-label="直角度と触れへ右スライド" aria-controls="precisionReadouts" hidden>‹ 戻る</button><span id="inspectionPageStatus" class="visually-hidden" aria-live="polite"></span></div><div class="scene-readout-note"><span id="scene-readout-sweep-note" class="visually-hidden" hidden>主軸と上面の相対傾き</span><span id="modelSemantics">水準器＝平均／模型＝局所＋固有</span><span id="sceneDirection">斜め：左右回転</span></div></div>
-<div id="viewerLevels" class="viewer-levels" role="group" aria-label="支持面の平均レベルとねじれ。気泡は高い側へ動きます">
-<div class="viewer-gauge viewer-gauge-lr"><span class="viewer-gauge-title">平均 · 左右</span><strong id="stageAverageLR" class="level-direction"></strong><div class="vial" role="img" aria-label="平均の左右傾きを示す気泡" aria-describedby="stageAverageLR"><span class="center-lines"></span><span id="coarseBubbleLR" class="bubble"></span></div><div class="gauge-ends"><span>左</span><span>右</span></div></div>
+<div id="viewerLevels" class="viewer-levels" role="group" aria-label="支持面の水準器。左右にスライドで、平均2本と、四辺に置いた4本（ねじれ調整）を切り替えます。気泡は高い側へ動きます">
+<div id="levelPageAverage" class="level-page" aria-label="平均の水準器"><div class="viewer-gauge viewer-gauge-lr"><span class="viewer-gauge-title">平均 · 左右</span><strong id="stageAverageLR" class="level-direction"></strong><div class="vial" role="img" aria-label="平均の左右傾きを示す気泡" aria-describedby="stageAverageLR"><span class="center-lines"></span><span id="coarseBubbleLR" class="bubble"></span></div><div class="gauge-ends"><span>左</span><span>右</span></div></div>
 <div class="viewer-gauge viewer-gauge-fb"><span class="viewer-gauge-title">平均 · 前後</span><strong id="stageAverageFB" class="level-direction"></strong><div class="vertical-gauge"><span>奥</span><div class="vial vial-vertical" role="img" aria-label="平均の前後傾きを示す気泡。上が奥、下が手前" aria-describedby="stageAverageFB"><span class="center-lines"></span><span id="coarseBubbleFB" class="bubble"></span></div><span>手前</span></div></div>
-<div class="viewer-gauge viewer-gauge-lr viewer-gauge-twist"><span class="viewer-gauge-title">ねじれ · 奥−手前</span><strong id="stageTwist" class="level-direction"></strong><div class="vial" role="img" aria-label="ねじれを示す気泡。奥の左右傾きから手前の左右傾きを引いた差。中央なら手前と奥の左右傾きが同じ" aria-describedby="stageTwist"><span class="center-lines"></span><span id="coarseBubbleTwist" class="bubble"></span></div><div class="gauge-ends"><span>奥が左高</span><span>奥が右高</span></div></div>
+</div>
+<div id="levelPageFour" class="level-page level-page-four" aria-label="四辺の水準器・ねじれ調整" hidden><div class="viewer-gauge viewer-gauge-lr"><span class="viewer-gauge-title">奥辺 · 左右</span><strong id="levelBackLRText" class="level-direction"></strong><div class="vial" role="img" aria-label="奥の辺に置いた水準器の左右傾き" aria-describedby="levelBackLRText"><span class="center-lines"></span><span id="levelBackLRBubble" class="bubble"></span></div><div class="gauge-ends"><span>左</span><span>右</span></div></div><div class="level-four-middle" aria-label="左辺と右辺の前後傾き"><div class="viewer-gauge viewer-gauge-fb"><span class="viewer-gauge-title">左辺</span><strong id="levelLeftFBText" class="level-direction"></strong><div class="vertical-gauge"><span>奥</span><div class="vial vial-vertical" role="img" aria-label="左の辺に置いた水準器の前後傾き。上が奥" aria-describedby="levelLeftFBText"><span class="center-lines"></span><span id="levelLeftFBBubble" class="bubble"></span></div><span>手前</span></div></div><div class="viewer-gauge viewer-gauge-fb"><span class="viewer-gauge-title">右辺</span><strong id="levelRightFBText" class="level-direction"></strong><div class="vertical-gauge"><span>奥</span><div class="vial vial-vertical" role="img" aria-label="右の辺に置いた水準器の前後傾き。上が奥" aria-describedby="levelRightFBText"><span class="center-lines"></span><span id="levelRightFBBubble" class="bubble"></span></div><span>手前</span></div></div></div><div class="viewer-gauge viewer-gauge-lr"><span class="viewer-gauge-title">手前辺 · 左右</span><strong id="levelFrontLRText" class="level-direction"></strong><div class="vial" role="img" aria-label="手前の辺に置いた水準器の左右傾き" aria-describedby="levelFrontLRText"><span class="center-lines"></span><span id="levelFrontLRBubble" class="bubble"></span></div><div class="gauge-ends"><span>左</span><span>右</span></div></div></div>
+<div class="level-page-nav"><button id="levelPagePrev" class="level-page-button" aria-label="平均の水準器へ" disabled>‹</button><span id="levelPageName">平均</span><button id="levelPageNext" class="level-page-button" aria-label="四辺の水準器へ（ねじれ）">›</button></div>
 </div><div id="sceneViewport" class="scene-viewport"><canvas id="scene" tabindex="0" aria-label="工作機械の構造模型。左右ドラッグまたは左右矢印キーで回転。二本指のピンチ、マウスホイール、プラス・マイナスキーで拡大縮小。Homeキーで大きさを戻す"></canvas></div>
 <div id="sceneToolbar" class="scene-toolbar" role="group" aria-label="模型の軸選択"><div id="axisTabs" class="axis-tabs" role="group" aria-label="模型で確認する軸"></div></div>
 <span id="axisDemoStatus" class="axis-demo-status" role="status"></span></div>
@@ -2473,6 +2480,26 @@ function levelAxisVisualPoint(p,origin,pose,bodyOrigin=levelMappedBodyVisualPoin
 }
 // Level is out when every support has the same height (0.01 mm grid).
 function levelFlat(heights=supportHeights){const mean=heights.reduce((a,h)=>a+h,0)/heights.length;return heights.every(h=>Math.abs(h-mean)<.0005);}
+// Edge slopes (mm/m) of the support surface between its outer support lines.
+function edgeLevels(solution=levelSolution){
+ const P=supports.map(p=>levelCoordinates(p.x,p.z)),x0=Math.min(...P.map(p=>p.x)),x1=Math.max(...P.map(p=>p.x)),z0=Math.min(...P.map(p=>p.z)),z1=Math.max(...P.map(p=>p.z)),h=(x,z)=>solution.heightAt(x,z);
+ return {frontLR:(h(x1,z0)-h(x0,z0))/(x1-x0),backLR:(h(x1,z1)-h(x0,z1))/(x1-x0),leftFB:(h(x0,z1)-h(x0,z0))/(z1-z0),rightFB:(h(x1,z1)-h(x1,z0))/(z1-z0)};
+}
+// Level pages: 0 = two average vials, 1 = four edge vials (twist). Swipe or
+// use the arrows. View state only; it is not saved and changes no result.
+let levelPage=0;
+function setLevelPage(page){
+ levelPage=page?1:0;$('levelPageAverage').hidden=levelPage!==0;$('levelPageFour').hidden=levelPage!==1;
+ $('levelPagePrev').disabled=levelPage===0;$('levelPageNext').disabled=levelPage===1;$('levelPageName').textContent=levelPage?'四辺':'平均';
+}
+function initializeLevelPages(){
+ $('levelPagePrev').onclick=()=>setLevelPage(0);$('levelPageNext').onclick=()=>setLevelPage(1);
+ let start=null;const area=$('viewerLevels');
+ area.addEventListener('pointerdown',e=>{start={x:e.clientX,y:e.clientY};});
+ area.addEventListener('pointerup',e=>{if(!start)return;const dx=e.clientX-start.x,dy=e.clientY-start.y;start=null;if(Math.abs(dx)>30&&Math.abs(dx)>Math.abs(dy))setLevelPage(dx<0?1:0);});
+ area.addEventListener('pointercancel',()=>{start=null;});
+ setLevelPage(0);
+}
 function updateLevelStages(machineResult=null,target=false){
  // Single leveling stage (2026-10-13): 0.01 mm steps, read from the level vials.
  // Ready when every support sits at one height: average tilt, twist and the
@@ -2495,12 +2522,14 @@ function updateLevelStages(machineResult=null,target=false){
  $('coarseBubbleLR').style.left=(50+bubbleOffset(levelSolution.lr))+'%';
  // Positive front/back slope is high at the back: the vertical bubble moves up.
  $('coarseBubbleFB').style.setProperty('--bubble-position',(50-bubbleOffset(levelSolution.fb))+'%');
- // Twist vial: the left-right slope at the back minus that at the front (the
- // same level read at both ends). Centre = no twist; right = back right-high.
- const twist=levelSolution.twist;
- $('coarseBubbleTwist').style.left=(50+bubbleOffset(twist))+'%';
- $('stageTwist').textContent=Math.abs(twist)<=.020000001?'目安内':twist>0?'奥が右高い':'奥が左高い';
- $('stageTwist').setAttribute('data-value',String(twist));
+ // Four-edge vials (second level page): the same level placed along the front
+ // and back edges (left-right) and the left and right edges (front-back).
+ // Front vs back left-right readings differ by the twist; so do left vs right.
+ const edge=edgeLevels();
+ for(const [id,value,negative,positive,vertical] of [['levelFrontLR',edge.frontLR,'左が高い','右が高い',false],['levelBackLR',edge.backLR,'左が高い','右が高い',false],['levelLeftFB',edge.leftFB,'手前が高い','奥が高い',true],['levelRightFB',edge.rightFB,'手前が高い','奥が高い',true]]){
+  if(vertical)$(id+'Bubble').style.setProperty('--bubble-position',(50-bubbleOffset(value))+'%');else $(id+'Bubble').style.left=(50+bubbleOffset(value))+'%';
+  $(id+'Text').textContent=Math.abs(value)<=.020000001?'目安内':value>0?positive:negative;$(id+'Text').setAttribute('data-value',String(value));
+ }
  // Every displayed value is inside the target when target is true; only a
  // fixed guide component can still exceed 20 µm.
  const significant=machineProfile&&Math.max(...Object.values(machineProfile.guides).map(g=>g.microns))>20.000001;
@@ -2678,6 +2707,7 @@ $('importLevel').onchange=async event=>{
   applyLevelRecord(data);updateLeveling();$('levelInputMessage').textContent='調整データを読み込みました。';$('levelSaveStatus').textContent='同じ機種・支持配置の調整データを読み込みました。';
  }catch(error){if(isCurrent()){const message=error.message==='calculation-model'?'読込できません。計算仕様が異なる旧版データです。旧データは変更していません。新しい仕様で保存したJSONを選んでください。':error.message==='support-layout'?'読込できません。支持配置が異なる旧版データです。同じ機種・支持配置で保存したJSONを選んでください。':'読込できません。同じ機械・方式の調整JSONと、数値範囲を確認してください。';$('levelInputMessage').textContent=message;$('levelSaveStatus').textContent=message;}}
 };
+initializeLevelPages();
 </script><script>'use strict';
 // Geometry lesson: sampled support slopes are assumed to set each rigid assembly's
 // posture. This is deliberately separate from an elastic/load model of a machine.
