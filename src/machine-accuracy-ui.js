@@ -78,71 +78,30 @@ function machineEvaluation(heights,profile=machineProfile){
  const values=[...readings.map(r=>r.microns??0),...level],maxReading=Math.max(0,...readings.map(r=>Math.abs(r.microns??0)));
  return {readings,level,values,objective:window.MachineAccuracy.rms(values),maxReading,maxSquareness:maxReading,worst:Math.max(maxReading,...level.map(Math.abs))};
 }
-// Linear sensitivity of every value to each support (finite difference about
-// level supports). It only steers searches and hints; results are re-evaluated.
-let machineLinearCache=null;
-function machineLinearModel(profile=machineProfile){
- const key=JSON.stringify([current.id,current.kind,supports.length,levelConfig]);
- if(machineLinearCache?.key===key)return machineLinearCache;
- const zeros=supports.map(()=>0),base=machineEvaluation(zeros,profile).values,step=.05;
- const columns=zeros.map((_,i)=>{const h=[...zeros];h[i]=step;return machineEvaluation(h,profile).values.map((v,j)=>(v-base[j])/step);});
- machineLinearCache={key,matrix:base.map((_,j)=>columns.map(c=>c[j]))};
- return machineLinearCache;
-}
-function machineBestSearch(profile,start){
- const {matrix}=machineLinearModel(profile);let heights=[...start],metric=machineEvaluation(heights,profile),best={heights,metric};
- for(let round=0;round<3;round++){
-  const bias=metric.values.map((v,j)=>v-matrix[j].reduce((sum,q,i)=>sum+q*heights[i],0));
-  const next=window.MachineAccuracy.optimize(matrix,bias,heights).heights,nextMetric=machineEvaluation(next,profile);
-  if(!(nextMetric.objective<best.metric.objective-1e-9))break;
-  best={heights:next,metric:nextMetric};heights=next;metric=nextMetric;
- }
- return best;
-}
+// Reference state = level out: every support at one height (any common height
+// gives the same readings, a rigid plane change).
 function findMachineReference(key){
- const zeros=supports.map(()=>0),searched=machineBestSearch(machineProfile,machineProfile.initialHeights);
- const saved=machineSavedBest&&['width','depth','columnX','columnZ'].every(k=>machineSavedBest[k]===levelConfig[k])?[machineSavedBest.heights]:[];
- const candidates=[searched,...[zeros,machineProfile.initialHeights,...saved].map(heights=>({heights:[...heights],metric:machineEvaluation(heights)}))];
- const best=candidates.reduce((a,b)=>a.metric.objective<=b.metric.objective?a:b);
- return {key,initial:machineEvaluation(machineProfile.initialHeights),best};
+ const zeros=supports.map(()=>0);
+ return {key,initial:machineEvaluation(machineProfile.initialHeights),best:{heights:zeros,metric:machineEvaluation(zeros)}};
 }
-// Draw individuals until one is adjustable: after coarse leveling (a rigid
-// plane change, which leaves every dial value unchanged) at least one value
-// exceeds 20 µm, and the best support setting brings all of them within 15 µm.
+// Draw individuals until one is adjustable by leveling alone: installed, at
+// least one value exceeds 20 µm; with the level out, all are within 20 µm.
 // The accepted seed alone is saved, so a restore regenerates the same profile.
 function machineCandidate(condition,seed){
  const profile=window.MachineAccuracy.generate(condition,seed,machineLinearKeys(),supports.length),inspection=window.IntrinsicInspection?.fromProfile(profile);
  const fixed=[...Object.values(profile.guides).map(g=>g.microns),...(inspection?[inspection.runout.rootMicrons,inspection.runout.tipMicrons,inspection.surface.rangeMicrons]:[])];
  if(Math.max(...fixed)>machineTolerance)return {profile,ok:false,score:Infinity};
+ // Installed: something above 0.02 mm. Level out (all supports equal): every
+ // support-dependent reading within 0.02 mm.
  const initial=machineEvaluation(profile.initialHeights,profile);
  if(initial.maxReading<=machineTolerance)return {profile,ok:false,score:Infinity};
- const best=machineBestSearch(profile,profile.initialHeights);
- return {profile,ok:best.metric.maxReading<=machineTolerance*.75&&best.metric.worst<=machineTolerance,score:best.metric.worst};
+ const level=machineEvaluation(supports.map(()=>0),profile);
+ return {profile,ok:level.maxReading<=machineTolerance,score:level.maxReading};
 }
 function machineDrawProfile(condition){
  const seed=machineSeed();let fallback=null;
- for(let k=0;k<60;k++){const next=(seed+k)>>>0;if(machineProfile&&next===machineProfile.seed)continue;const c=machineCandidate(condition,next);if(c.ok)return c.profile;if(Number.isFinite(c.score)&&(!fallback||c.score<fallback.score))fallback=c;}
+ for(let k=0;k<200;k++){const next=(seed+k)>>>0;if(machineProfile&&next===machineProfile.seed)continue;const c=machineCandidate(condition,next);if(c.ok)return c.profile;if(Number.isFinite(c.score)&&(!fallback||c.score<fallback.score))fallback=c;}
  return (fallback||{profile:window.MachineAccuracy.generate(condition,seed,machineLinearKeys(),supports.length)}).profile;
-}
-// One support, one signed amount: the move that most lowers the largest value
-// in the linear model, then confirmed by a full re-evaluation.
-function machineFineHint(heights=supportHeights){
- const {matrix}=machineLinearModel(),now=machineEvaluation(heights),worst=v=>Math.max(...v.map(Math.abs));let best=null;
- for(let i=0;i<heights.length;i++)for(let k=-500;k<=500;k++){
-  const delta=k/1000,height=Math.round((heights[i]+delta)*1000)/1000;if(!k||Math.abs(height)>.5)continue;
-  const values=now.values.map((v,j)=>v+matrix[j][i]*delta),score=worst(values)+1e-4*Math.abs(delta);
-  if(!best||score<best.score)best={i,delta,score,predicted:values};
- }
- const label=values=>{const items=[...now.readings.map((r,j)=>({label:r.label,value:values[j]})),{label:'平均の左右傾き',value:values[now.readings.length],level:true},{label:'平均の前後傾き',value:values[now.readings.length+1],level:true}];return items.reduce((a,b)=>Math.abs(b.value)>Math.abs(a.value)?b:a);};
- const current=label(now.values),apply=(i,delta)=>{const next=[...heights];next[i]=Math.round((heights[i]+delta)*1000)/1000;return machineEvaluation(next);};
- if(best&&best.score<worst(now.values)-.5){const after=apply(best.i,best.delta);if(after.worst<now.worst)return {now,current,move:{i:best.i,delta:best.delta,after,worstAfter:after.worst}};}
- // When no single move lowers the largest value, step one support toward the
- // reference setting; several values then fall together in later steps.
- if(machineReference){
-  const target=machineBestHeights(),order=heights.map((h,i)=>({i,delta:Math.round((target[i]-h)*1000)/1000})).filter(q=>Math.abs(q.delta)>=.001).sort((a,b)=>Math.abs(b.delta)-Math.abs(a.delta));
-  for(const q of order){const after=apply(q.i,q.delta);if(after.objective<now.objective-1e-6)return {now,current,move:{i:q.i,delta:q.delta,after,worstAfter:after.worst,towardReference:true}};}
- }
- return {now,current,move:null};
 }
 function updateMachineAccuracy(){
  if(!machineProfile){$('machineScenario').hidden=true;return null;}
@@ -153,8 +112,8 @@ function updateMachineAccuracy(){
  // A manually discovered better result becomes the reference, too.
  if(metric.objective<machineReference.best.metric.objective-1e-8)machineReference.best={heights:[...supportHeights],metric:machineEvaluation(supportHeights)};
  const best=machineReference.best,initial=machineReference.initial;
- // Target: every displayed value and the average level within 0.02 mm.
- const gap=Math.sqrt(Math.max(0,metric.objective**2-best.metric.objective**2)),target=metric.worst<=machineTolerance+1e-6;
+ // Target: the level is out (every support at one height).
+ const gap=Math.sqrt(Math.max(0,metric.objective**2-best.metric.objective**2)),target=levelFlat();
  const total=Math.max(.000001,Math.sqrt(Math.max(0,initial.objective**2-best.metric.objective**2)));
  const progress=Math.max(0,Math.min(100,(1-gap/total)*100));
  const condition=machineProfile.condition==='new'?'新品':'中古';

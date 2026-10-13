@@ -56,7 +56,8 @@ async function main(){
   const buttons=r.supportMap.querySelectorAll('.map-point');
   for(let point=0;point<counts[index];point++){
    label=`support/${index}/${point}`;buttons.find(b=>Number(b.dataset.support)===point).click();
-   for(const [control,step]of [['coarseAdjust',.01],['fineAdjust',.001]]){
+   // Single 0.01 mm leveling stage (fine stage removed 2026-10-13).
+   for(const [control,step]of [['coarseAdjust',.01]]){
     r[control].click();const before=json('supportHeights');start=performance.now();r.raiseSupport.click();const elapsed=performance.now()-start;
     if(point===counts[index]-1)results.timings.push({index,operation:control+' raise',milliseconds:elapsed});
     test(()=>{json('supportHeights').forEach((v,i)=>near(v,before[i]+(i===point?step:0)));assert.deepEqual(json('({profile:machineProfile,initial:levelInitialGeometry,initialSolution:levelInitialSolution})'),state);assert.deepEqual(JSON.parse(storage.get(read('levelKey()'))),record());});

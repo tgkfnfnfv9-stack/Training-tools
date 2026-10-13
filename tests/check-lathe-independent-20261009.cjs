@@ -70,7 +70,7 @@ function oracle(heights,state,profile,width=4,depth=1.68){
  // tool station (display x -0.1675 at Z=0) is read from 10 mm to 290 mm.
  const station=a=>({...state,Z:(-1.075+a/(width/4)+.1675)/.9*100}),B0=station(.01),B1=station(.29),validBar=[B0.Z,B1.Z].every(z=>z>=-100-1e-9&&z<=100+1e-9);
  const face0=at([-.09,1.5,1],'work',X0),face1=at([-.09,1.5,1],'work',X1),N=[-Math.cos(fixed.face),0,-Math.sin(fixed.face)],flat0=at([.23,1.5,1.43],'work',Z0),flat1=at([.23,1.5,1.43],'work',Z1),M=[Math.sin(fixed.flat),0,Math.cos(fixed.flat)];
- const head=at([-1.075,1.5,0],'tool'),axis=head.R([1,0,0]),radial=head.R([0,0,1]),up=head.R([0,1,0]),holeMount=at([-.09,1.5,.20],'work',{...state,X:-.20/.35*100}),hole=add(holeMount.point,holeMount.R([0,fixed.holeY,fixed.holeX])),delta=sub(hole,head.point),dx=dot(delta,radial),dy=dot(delta,up);
+ const head=at([-1.075,1.5,0],'tool'),axis=head.R([1,0,0]),radial=head.R([0,0,1]),up=head.R([0,1,0]),holeMount=at([-.09,1.5,.20],'work',{...state,X:-.20/.35*100,Z:Math.max(-100,Math.min(100,(-1.075+.01/(width/4)+.1675)/.9*100))}),hole=add(holeMount.point,holeMount.R([0,fixed.holeY,fixed.holeX])),delta=sub(hole,head.point),dx=dot(delta,radial),dy=dot(delta,up);
  const bracket0=at([-.1675,1.5,.20],'work',B0),bracket1=at([-.1675,1.5,.20],'work',B1),centreA=add(head.point,scale(axis,dot(sub(bracket0.point,head.point),axis)));
  const barRead=normal=>{
   const firstBody=add(centreA,scale(normal,.035)),probe=scale(normal,-1),offset=inverse(bracket0.basis,sub(firstBody,bracket0.point)),localProbe=inverse(bracket0.basis,probe),lastBody=add(bracket1.point,turn(bracket1.basis,offset)),lastProbe=turn(bracket1.basis,localProbe);

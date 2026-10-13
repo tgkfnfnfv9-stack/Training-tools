@@ -46,7 +46,8 @@ async function main(){
   for(let i=0;i<count;i++){
    const before=snapshot(),saved=[...storage];selectedButton(i).click();name=kind+'/support='+i;
    check('supportSelection',()=>{assert.equal(read('selected'),i);assert.deepEqual(snapshot(),before);assert.deepEqual([...storage],saved);assert.match(r.selectedSupportLabel.textContent,new RegExp(String.fromCharCode(65+i)));assert.equal(r.supportMap.querySelectorAll('.map-point').filter(b=>b.getAttribute('aria-pressed')==='true').length,1);});
-   for(const [stage,step] of [['coarseAdjust',.01],['fineAdjust',.001]]){
+   // Single 0.01 mm leveling stage (fine stage removed 2026-10-13).
+   for(const [stage,step] of [['coarseAdjust',.01]]){
     const heights=json('supportHeights'),profile=json('machineProfile'),initial=json('levelInitialGeometry'),initialSolution=json('levelInitialSolution');r[stage].click();const stageBefore=json('supportHeights');name=kind+'/support='+i+'/'+stage;
     check('stageSteps',()=>{assert.deepEqual(stageBefore,heights);near(read("Number($('adjustStep').value)"),step);assert.equal(read('selected'),i);assert.deepEqual(json('machineProfile'),profile);assert.deepEqual(json('levelInitialGeometry'),initial);assert.deepEqual(json('levelInitialSolution'),initialSolution);});
     commonRaise();check('stageSteps',()=>{const actual=json('supportHeights');actual.forEach((h,j)=>near(h,stageBefore[j]+(j===i?step:0)));near(record().step,step);assert.equal(read('selected'),i);});
@@ -82,8 +83,9 @@ async function main(){
   check('saveImportExport',()=>{assert.deepEqual(record(),exported);assert.match(r.levelInputMessage.textContent,/読み込み/);assert(read('validLevelRecord(levelRecord())'));assert.deepEqual(json('machineProfile'),exported.machineProfile);});
   for(const legacy of [.005,.05,.1]){
    const data=structuredClone(exported);data.step=legacy;await importRecord(data);const currentIdentity=identity();name=kind+'/legacy-load='+legacy;
-   check('legacyStep',()=>assert.deepEqual(record(),data));
-   r.closeTrainingMenu.click();selectedButton(count-1).click();const before=json('supportHeights'),canonical=legacy>=.01?.01:.001;commonRaise();name=kind+'/legacy-first-visible='+legacy;
+   // Loading normalises the step to the single 0.01 mm stage.
+   check('legacyStep',()=>assert.deepEqual(record(),{...data,step:.01}));
+   r.closeTrainingMenu.click();selectedButton(count-1).click();const before=json('supportHeights'),canonical=.01;commonRaise();name=kind+'/legacy-first-visible='+legacy;
    check('legacyStep',()=>{const actual=json('supportHeights');actual.forEach((h,i)=>near(h,before[i]+(i===count-1?canonical:0)));near(record().step,canonical);assert.deepEqual(identity(),currentIdentity);assert(read('validLevelRecord(levelRecord())'));});
    commonLower();name=kind+'/legacy-next-visible='+legacy;check('legacyStep',()=>{assert.deepEqual(json('supportHeights'),before);near(record().step,canonical);});
    r.openTrainingMenu.click();
