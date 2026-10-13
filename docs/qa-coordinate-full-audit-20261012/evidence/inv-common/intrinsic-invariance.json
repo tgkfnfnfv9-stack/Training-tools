@@ -1,0 +1,1236 @@
+{
+ "seed": 20261012,
+ "fails": 0,
+ "checks": [
+  {
+   "name": "vertical flat XY: local-angle x300mm µm",
+   "expected": -1.338,
+   "observed": -1.3380000000000003,
+   "ok": true
+  },
+  {
+   "name": "vertical flat XZ: local-angle x300mm µm",
+   "expected": 13.943000000000001,
+   "observed": 13.943,
+   "ok": true
+  },
+  {
+   "name": "vertical flat YZ: local-angle x300mm µm",
+   "expected": -18.206,
+   "observed": -18.206,
+   "ok": true
+  },
+  {
+   "name": "vertical flat XY: finite scan (base X, scan Y, zero 手前・右側) µm",
+   "expected": -1.3379999999955645,
+   "observed": -1.3379999999948295,
+   "ok": true
+  },
+  {
+   "name": "vertical flat XZ: finite scan (base X, scan Z, zero 上・右側) µm",
+   "expected": -13.942999994980333,
+   "observed": -13.942999994980346,
+   "ok": true
+  },
+  {
+   "name": "vertical flat YZ: finite scan (base Y, scan Z, zero 上・奥側) µm",
+   "expected": 18.20599998882494,
+   "observed": 18.205999988822956,
+   "ok": true
+  },
+  {
+   "name": "vertical flat sweep R/B/L/F µm (spindle=intrinsic Z)",
+   "expected": [
+    2.131531118799369,
+    18.206062247638073,
+    16.074531128838704,
+    0
+   ],
+   "observed": [
+    2.131531096130073,
+    18.206062227974794,
+    16.074531131844722,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "vertical rigid plane: pair angles unchanged (max |Δ| µrad)",
+   "expected": 0,
+   "observed": 7.815970093361102e-14,
+   "ok": true
+  },
+  {
+   "name": "vertical rigid plane: finite-scan readings unchanged (max |Δ| µm)",
+   "expected": 0,
+   "observed": 3.467448550509289e-12,
+   "ok": true
+  },
+  {
+   "name": "vertical rigid plane: sweep unchanged (max |Δ| µm)",
+   "expected": 0,
+   "observed": 1.0658141036401503e-14,
+   "ok": true
+  },
+  {
+   "name": "vertical rigid plane: combined lean shift = plane rotation (front,right µrad)",
+   "expected": [
+    -199.9999973333334,
+    -299.9999910000004
+   ],
+   "observed": [
+    -200.00000369899948,
+    -299.9999924936385
+   ],
+   "ok": true
+  },
+  {
+   "name": "vertical settings metric uses evaluation length (errorMicrons/conv300 ratio, offset m)",
+   "expected": 1.6666666666666667,
+   "observed": [
+    1.6666666666666665,
+    1.6666666666666667,
+    1.6666666666666667
+   ],
+   "ok": null
+  },
+  {
+   "name": "horizontal flat XY: local-angle x300mm µm",
+   "expected": -1.338,
+   "observed": -1.3380000000000003,
+   "ok": true
+  },
+  {
+   "name": "horizontal flat XZ: local-angle x300mm µm",
+   "expected": 13.943000000000001,
+   "observed": 13.943,
+   "ok": true
+  },
+  {
+   "name": "horizontal flat YZ: local-angle x300mm µm",
+   "expected": -18.206,
+   "observed": -18.206,
+   "ok": true
+  },
+  {
+   "name": "horizontal flat XY: finite scan (base X, scan Y, zero 下・右側) µm",
+   "expected": -1.3379999999955645,
+   "observed": -1.3379999999896253,
+   "ok": true
+  },
+  {
+   "name": "horizontal flat XZ: finite scan (base X, scan Z, zero 奥・右側) µm",
+   "expected": -13.942999994980333,
+   "observed": -13.942999994992489,
+   "ok": true
+  },
+  {
+   "name": "horizontal flat YZ: finite scan (base Z, scan Y, zero 下・奥側) µm",
+   "expected": -18.20599998882494,
+   "observed": -18.205999988658156,
+   "ok": true
+  },
+  {
+   "name": "horizontal rigid plane: pair angles unchanged (max |Δ| µrad)",
+   "expected": 0,
+   "observed": 7.105427357601002e-15,
+   "ok": true
+  },
+  {
+   "name": "horizontal rigid plane: finite-scan readings unchanged (max |Δ| µm)",
+   "expected": 0,
+   "observed": 5.776628064779743e-10,
+   "ok": true
+  },
+  {
+   "name": "horizontal rigid plane: combined lean shift = plane rotation (front,right µrad)",
+   "expected": [
+    -199.9999973333334,
+    -299.9999910000004
+   ],
+   "observed": [
+    -199.99999706573342,
+    -299.9999909108004
+   ],
+   "ok": true
+  },
+  {
+   "name": "horizontal settings metric uses evaluation length (errorMicrons/conv300 ratio, offset m)",
+   "expected": 1.6666666666666667,
+   "observed": [
+    1.6666666666666665,
+    1.6666666666666667,
+    1.6666666666666667
+   ],
+   "ok": null
+  },
+  {
+   "name": "travel flat XY: local-angle x300mm µm",
+   "expected": -1.338,
+   "observed": -1.3380000000000003,
+   "ok": true
+  },
+  {
+   "name": "travel flat XZ: local-angle x300mm µm",
+   "expected": 13.943000000000001,
+   "observed": 13.943,
+   "ok": true
+  },
+  {
+   "name": "travel flat YZ: local-angle x300mm µm",
+   "expected": -18.206,
+   "observed": -18.206,
+   "ok": true
+  },
+  {
+   "name": "travel flat XY: finite scan (base X, scan Y, zero 手前・右側) µm",
+   "expected": -1.3379999999955645,
+   "observed": -1.3379999999948295,
+   "ok": true
+  },
+  {
+   "name": "travel flat XZ: finite scan (base X, scan Z, zero 上・右側) µm",
+   "expected": -13.942999994980333,
+   "observed": -13.942999994980346,
+   "ok": true
+  },
+  {
+   "name": "travel flat YZ: finite scan (base Y, scan Z, zero 上・奥側) µm",
+   "expected": 18.20599998882494,
+   "observed": 18.205999988822956,
+   "ok": true
+  },
+  {
+   "name": "travel flat sweep R/B/L/F µm (spindle=intrinsic Z)",
+   "expected": [
+    2.131531118799369,
+    18.206062247638073,
+    16.074531128838704,
+    0
+   ],
+   "observed": [
+    2.131531096130073,
+    18.206062227974794,
+    16.074531131844722,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "travel rigid plane: pair angles unchanged (max |Δ| µrad)",
+   "expected": 0,
+   "observed": 2.1316282072803006e-14,
+   "ok": true
+  },
+  {
+   "name": "travel rigid plane: finite-scan readings unchanged (max |Δ| µm)",
+   "expected": 0,
+   "observed": 3.467448550509289e-12,
+   "ok": true
+  },
+  {
+   "name": "travel rigid plane: sweep unchanged (max |Δ| µm)",
+   "expected": 0,
+   "observed": 5.773159728050814e-15,
+   "ok": true
+  },
+  {
+   "name": "travel rigid plane: combined lean shift = plane rotation (front,right µrad)",
+   "expected": [
+    -199.9999973333334,
+    -299.9999910000004
+   ],
+   "observed": [
+    -200.00000369899948,
+    -299.9999924936385
+   ],
+   "ok": true
+  },
+  {
+   "name": "travel settings metric uses evaluation length (errorMicrons/conv300 ratio, offset m)",
+   "expected": 1.6666666666666667,
+   "observed": [
+    1.6666666666666665,
+    1.6666666666666667,
+    1.6666666666666667
+   ],
+   "ok": null
+  },
+  {
+   "name": "gate flat XY: local-angle x300mm µm",
+   "expected": -1.338,
+   "observed": -1.3380000000000003,
+   "ok": true
+  },
+  {
+   "name": "gate flat XZ: local-angle x300mm µm",
+   "expected": 13.943000000000001,
+   "observed": 13.943,
+   "ok": true
+  },
+  {
+   "name": "gate flat YZ: local-angle x300mm µm",
+   "expected": -18.206,
+   "observed": -18.206,
+   "ok": true
+  },
+  {
+   "name": "gate flat XY: finite scan (base X, scan Y, zero 左・奥側) µm",
+   "expected": -1.3379999999955645,
+   "observed": -1.3379999999948295,
+   "ok": true
+  },
+  {
+   "name": "gate flat XZ: finite scan (base X, scan Z, zero 上・奥側) µm",
+   "expected": -13.942999994980333,
+   "observed": -13.942999994980346,
+   "ok": true
+  },
+  {
+   "name": "gate flat YZ: finite scan (base Y, scan Z, zero 上・右側) µm",
+   "expected": 18.20599998882494,
+   "observed": 18.205999988822956,
+   "ok": true
+  },
+  {
+   "name": "gate flat sweep R/B/L/F µm (spindle=intrinsic Z)",
+   "expected": [
+    2.131531073460775,
+    -13.943000061389961,
+    -16.074531134850737,
+    0
+   ],
+   "observed": [
+    2.131531096130073,
+    -13.94300003571465,
+    -16.074531131844722,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "gate rigid plane: pair angles unchanged (max |Δ| µrad)",
+   "expected": 0,
+   "observed": 5.684341886080802e-14,
+   "ok": true
+  },
+  {
+   "name": "gate rigid plane: finite-scan readings unchanged (max |Δ| µm)",
+   "expected": 0,
+   "observed": 1.7355006320940447e-12,
+   "ok": true
+  },
+  {
+   "name": "gate rigid plane: sweep unchanged (max |Δ| µm)",
+   "expected": 0,
+   "observed": 2.842170943040401e-14,
+   "ok": true
+  },
+  {
+   "name": "gate rigid plane: combined lean shift = plane rotation (front,right µrad)",
+   "expected": [
+    -199.9999973333334,
+    -299.9999910000004
+   ],
+   "observed": [
+    -199.99999244682843,
+    -299.9999903503679
+   ],
+   "ok": true
+  },
+  {
+   "name": "gate settings metric uses evaluation length (errorMicrons/conv300 ratio, offset m)",
+   "expected": 1.6666666666666667,
+   "observed": [
+    1.6666666666666665,
+    1.6666666666666667,
+    1.6666666666666667
+   ],
+   "ok": null
+  },
+  {
+   "name": "gantry flat XY: local-angle x300mm µm",
+   "expected": -1.338,
+   "observed": -1.3380000000000003,
+   "ok": true
+  },
+  {
+   "name": "gantry flat XZ: local-angle x300mm µm",
+   "expected": 13.943000000000001,
+   "observed": 13.943,
+   "ok": true
+  },
+  {
+   "name": "gantry flat YZ: local-angle x300mm µm",
+   "expected": -18.206,
+   "observed": -18.206,
+   "ok": true
+  },
+  {
+   "name": "gantry flat XY: finite scan (base X, scan Y, zero 左・奥側) µm",
+   "expected": -1.3379999999955645,
+   "observed": -1.3379999999948295,
+   "ok": true
+  },
+  {
+   "name": "gantry flat XZ: finite scan (base X, scan Z, zero 上・奥側) µm",
+   "expected": -13.942999994980333,
+   "observed": -13.942999994980346,
+   "ok": true
+  },
+  {
+   "name": "gantry flat YZ: finite scan (base Y, scan Z, zero 上・右側) µm",
+   "expected": 18.20599998882494,
+   "observed": 18.205999988822956,
+   "ok": true
+  },
+  {
+   "name": "gantry flat sweep R/B/L/F µm (spindle=intrinsic Z)",
+   "expected": [
+    2.131531073460775,
+    -13.943000061389961,
+    -16.074531134850737,
+    0
+   ],
+   "observed": [
+    2.131531096130073,
+    -13.94300003571465,
+    -16.074531131844722,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "gantry rigid plane: pair angles unchanged (max |Δ| µrad)",
+   "expected": 0,
+   "observed": 1.3500311979441904e-13,
+   "ok": true
+  },
+  {
+   "name": "gantry rigid plane: finite-scan readings unchanged (max |Δ| µm)",
+   "expected": 0,
+   "observed": 1.7355006320940447e-12,
+   "ok": true
+  },
+  {
+   "name": "gantry rigid plane: sweep unchanged (max |Δ| µm)",
+   "expected": 0,
+   "observed": 1.2434497875801753e-14,
+   "ok": true
+  },
+  {
+   "name": "gantry rigid plane: combined lean shift = plane rotation (front,right µrad)",
+   "expected": [
+    -199.9999973333334,
+    -299.9999910000004
+   ],
+   "observed": [
+    -199.99999244682837,
+    -299.9999903503678
+   ],
+   "ok": true
+  },
+  {
+   "name": "gantry settings metric uses evaluation length (errorMicrons/conv300 ratio, offset m)",
+   "expected": 1.6666666666666667,
+   "observed": [
+    1.6666666666666665,
+    1.6666666666666667,
+    1.6666666666666667
+   ],
+   "ok": null
+  },
+  {
+   "name": "lathe flat XZ: local-angle x300mm µm",
+   "expected": -1.338,
+   "observed": -1.3380000000000003,
+   "ok": true
+  },
+  {
+   "name": "lathe flat XZ: finite scan (base Z, scan X, zero 奥・右側) µm",
+   "expected": 1.3379999999955645,
+   "observed": 1.3379999999948295,
+   "ok": true
+  },
+  {
+   "name": "lathe rigid plane: pair angles unchanged (max |Δ| µrad)",
+   "expected": 0,
+   "observed": 8.881784197001252e-16,
+   "ok": true
+  },
+  {
+   "name": "lathe rigid plane: finite-scan readings unchanged (max |Δ| µm)",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "lathe rigid plane: spindle up/down shift",
+   "expected": 299.9999910000004,
+   "observed": 299.9990989970748,
+   "ok": true
+  },
+  {
+   "name": "lathe settings metric uses evaluation length (errorMicrons/conv300 ratio, offset m)",
+   "expected": 1.6666666666666667,
+   "observed": [
+    1.6666666666666665
+   ],
+   "ok": null
+  }
+ ],
+ "summary": {
+  "vertical": {
+   "flat": {
+    "pairs": [
+     {
+      "key": "XY",
+      "dev": -4.460000000000001,
+      "conv300": -1.3380000000000003,
+      "errLen": -2.2300000000000004
+     },
+     {
+      "key": "XZ",
+      "dev": 46.47666666666667,
+      "conv300": 13.943,
+      "errLen": 23.238333333333333
+     },
+     {
+      "key": "YZ",
+      "dev": -60.68666666666667,
+      "conv300": -18.206,
+      "errLen": -30.343333333333334
+     }
+    ],
+    "scans": [
+     {
+      "key": "XY",
+      "valid": true,
+      "microns": -1.3379999999948295,
+      "physical": -1.3379999999948295,
+      "relSign": 1,
+      "base": "X",
+      "scan": "Y",
+      "zero": "手前・右側"
+     },
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": -13.942999994980346,
+      "physical": -13.942999994980346,
+      "relSign": -1,
+      "base": "X",
+      "scan": "Z",
+      "zero": "上・右側"
+     },
+     {
+      "key": "YZ",
+      "valid": true,
+      "microns": 18.205999988822956,
+      "physical": 18.205999988822956,
+      "relSign": -1,
+      "base": "Y",
+      "scan": "Z",
+      "zero": "上・奥側"
+     }
+    ],
+    "sweep": [
+     2.131531096130073,
+     18.206062227974794,
+     16.074531131844722,
+     0
+    ],
+    "lean": {
+     "front": -60.686874018748156,
+     "right": -46.476666752251056
+    },
+    "live": [
+     "-1",
+     "-14",
+     "+18"
+    ]
+   },
+   "tilt": {
+    "pairs": [
+     {
+      "key": "XY",
+      "dev": -4.46,
+      "conv300": -1.3379999999999999,
+      "errLen": -2.23
+     },
+     {
+      "key": "XZ",
+      "dev": 46.476666666666745,
+      "conv300": 13.943000000000023,
+      "errLen": 23.238333333333372
+     },
+     {
+      "key": "YZ",
+      "dev": -60.68666666666667,
+      "conv300": -18.206,
+      "errLen": -30.343333333333334
+     }
+    ],
+    "scans": [
+     {
+      "key": "XY",
+      "valid": true,
+      "microns": -1.3379999999965642,
+      "physical": -1.3379999999965642,
+      "relSign": 1,
+      "base": "X",
+      "scan": "Y",
+      "zero": "手前・右側"
+     },
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": -13.942999994980346,
+      "physical": -13.942999994980346,
+      "relSign": -1,
+      "base": "X",
+      "scan": "Z",
+      "zero": "上・右側"
+     },
+     {
+      "key": "YZ",
+      "valid": true,
+      "microns": 18.205999988826424,
+      "physical": 18.205999988826424,
+      "relSign": -1,
+      "base": "Y",
+      "scan": "Z",
+      "zero": "上・奥側"
+     }
+    ],
+    "sweep": [
+     2.131531096130076,
+     18.206062227974805,
+     16.07453113184473,
+     0
+    ],
+    "lean": {
+     "front": -260.6868777177476,
+     "right": -346.47665924588955
+    },
+    "live": [
+     "-1",
+     "-14",
+     "+18"
+    ]
+   }
+  },
+  "horizontal": {
+   "flat": {
+    "pairs": [
+     {
+      "key": "XY",
+      "dev": -4.460000000000001,
+      "conv300": -1.3380000000000003,
+      "errLen": -2.2300000000000004
+     },
+     {
+      "key": "XZ",
+      "dev": 46.47666666666667,
+      "conv300": 13.943,
+      "errLen": 23.238333333333333
+     },
+     {
+      "key": "YZ",
+      "dev": -60.68666666666667,
+      "conv300": -18.206,
+      "errLen": -30.343333333333334
+     }
+    ],
+    "scans": [
+     {
+      "key": "XY",
+      "valid": true,
+      "microns": -1.3379999999896253,
+      "physical": -1.3379999999896253,
+      "relSign": 1,
+      "base": "X",
+      "scan": "Y",
+      "zero": "下・右側"
+     },
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": -13.942999994992489,
+      "physical": -13.942999994992489,
+      "relSign": -1,
+      "base": "X",
+      "scan": "Z",
+      "zero": "奥・右側"
+     },
+     {
+      "key": "YZ",
+      "valid": true,
+      "microns": -18.205999988658156,
+      "physical": -18.205999988658156,
+      "relSign": 1,
+      "base": "Z",
+      "scan": "Y",
+      "zero": "下・奥側"
+     }
+    ],
+    "sweep": null,
+    "lean": {
+     "front": 0,
+     "right": 4.460000000000001
+    },
+    "live": [
+     "-1",
+     "-14",
+     "-18"
+    ]
+   },
+   "tilt": {
+    "pairs": [
+     {
+      "key": "XY",
+      "dev": -4.460000000000008,
+      "conv300": -1.3380000000000023,
+      "errLen": -2.230000000000004
+     },
+     {
+      "key": "XZ",
+      "dev": 46.47666666666667,
+      "conv300": 13.943,
+      "errLen": 23.238333333333333
+     },
+     {
+      "key": "YZ",
+      "dev": -60.68666666666667,
+      "conv300": -18.206,
+      "errLen": -30.343333333333334
+     }
+    ],
+    "scans": [
+     {
+      "key": "XY",
+      "valid": true,
+      "microns": -1.3379999994119625,
+      "physical": -1.3379999994119625,
+      "relSign": 1,
+      "base": "X",
+      "scan": "Y",
+      "zero": "下・右側"
+     },
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": -13.942999994935242,
+      "physical": -13.942999994935242,
+      "relSign": -1,
+      "base": "X",
+      "scan": "Z",
+      "zero": "奥・右側"
+     },
+     {
+      "key": "YZ",
+      "valid": true,
+      "microns": -18.205999988937446,
+      "physical": -18.205999988937446,
+      "relSign": 1,
+      "base": "Z",
+      "scan": "Y",
+      "zero": "下・奥側"
+     }
+    ],
+    "sweep": null,
+    "lean": {
+     "front": -199.99999706573342,
+     "right": -295.53999091080044
+    },
+    "live": [
+     "-1",
+     "-14",
+     "-18"
+    ]
+   }
+  },
+  "travel": {
+   "flat": {
+    "pairs": [
+     {
+      "key": "XY",
+      "dev": -4.460000000000001,
+      "conv300": -1.3380000000000003,
+      "errLen": -2.2300000000000004
+     },
+     {
+      "key": "XZ",
+      "dev": 46.47666666666667,
+      "conv300": 13.943,
+      "errLen": 23.238333333333333
+     },
+     {
+      "key": "YZ",
+      "dev": -60.68666666666667,
+      "conv300": -18.206,
+      "errLen": -30.343333333333334
+     }
+    ],
+    "scans": [
+     {
+      "key": "XY",
+      "valid": true,
+      "microns": -1.3379999999948295,
+      "physical": -1.3379999999948295,
+      "relSign": 1,
+      "base": "X",
+      "scan": "Y",
+      "zero": "手前・右側"
+     },
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": -13.942999994980346,
+      "physical": -13.942999994980346,
+      "relSign": -1,
+      "base": "X",
+      "scan": "Z",
+      "zero": "上・右側"
+     },
+     {
+      "key": "YZ",
+      "valid": true,
+      "microns": 18.205999988822956,
+      "physical": 18.205999988822956,
+      "relSign": -1,
+      "base": "Y",
+      "scan": "Z",
+      "zero": "上・奥側"
+     }
+    ],
+    "sweep": [
+     2.131531096130073,
+     18.206062227974794,
+     16.074531131844722,
+     0
+    ],
+    "lean": {
+     "front": -60.686874018748156,
+     "right": -46.476666752251056
+    },
+    "live": [
+     "-1",
+     "-14",
+     "+18"
+    ]
+   },
+   "tilt": {
+    "pairs": [
+     {
+      "key": "XY",
+      "dev": -4.46,
+      "conv300": -1.3379999999999999,
+      "errLen": -2.23
+     },
+     {
+      "key": "XZ",
+      "dev": 46.47666666666669,
+      "conv300": 13.943000000000007,
+      "errLen": 23.238333333333344
+     },
+     {
+      "key": "YZ",
+      "dev": -60.68666666666667,
+      "conv300": -18.206,
+      "errLen": -30.343333333333334
+     }
+    ],
+    "scans": [
+     {
+      "key": "XY",
+      "valid": true,
+      "microns": -1.3379999999965642,
+      "physical": -1.3379999999965642,
+      "relSign": 1,
+      "base": "X",
+      "scan": "Y",
+      "zero": "手前・右側"
+     },
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": -13.942999994980346,
+      "physical": -13.942999994980346,
+      "relSign": -1,
+      "base": "X",
+      "scan": "Z",
+      "zero": "上・右側"
+     },
+     {
+      "key": "YZ",
+      "valid": true,
+      "microns": 18.205999988826424,
+      "physical": 18.205999988826424,
+      "relSign": -1,
+      "base": "Y",
+      "scan": "Z",
+      "zero": "上・奥側"
+     }
+    ],
+    "sweep": [
+     2.131531096130079,
+     18.206062227974794,
+     16.07453113184472,
+     0
+    ],
+    "lean": {
+     "front": -260.6868777177476,
+     "right": -346.47665924588955
+    },
+    "live": [
+     "-1",
+     "-14",
+     "+18"
+    ]
+   }
+  },
+  "gate": {
+   "flat": {
+    "pairs": [
+     {
+      "key": "XY",
+      "dev": -4.460000000000001,
+      "conv300": -1.3380000000000003,
+      "errLen": -2.2300000000000004
+     },
+     {
+      "key": "XZ",
+      "dev": 46.47666666666667,
+      "conv300": 13.943,
+      "errLen": 23.238333333333333
+     },
+     {
+      "key": "YZ",
+      "dev": -60.68666666666667,
+      "conv300": -18.206,
+      "errLen": -30.343333333333334
+     }
+    ],
+    "scans": [
+     {
+      "key": "XY",
+      "valid": true,
+      "microns": -1.3379999999948295,
+      "physical": -1.3379999999948295,
+      "relSign": 1,
+      "base": "X",
+      "scan": "Y",
+      "zero": "左・奥側"
+     },
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": -13.942999994980346,
+      "physical": -13.942999994980346,
+      "relSign": -1,
+      "base": "X",
+      "scan": "Z",
+      "zero": "上・奥側"
+     },
+     {
+      "key": "YZ",
+      "valid": true,
+      "microns": 18.205999988822956,
+      "physical": 18.205999988822956,
+      "relSign": -1,
+      "base": "Y",
+      "scan": "Z",
+      "zero": "上・右側"
+     }
+    ],
+    "sweep": [
+     2.131531096130073,
+     -13.94300003571465,
+     -16.074531131844722,
+     0
+    ],
+    "lean": {
+     "front": 46.476666752251056,
+     "right": 60.686874018748156
+    },
+    "live": [
+     "-1",
+     "-14",
+     "+18"
+    ]
+   },
+   "tilt": {
+    "pairs": [
+     {
+      "key": "XY",
+      "dev": -4.460000000000002,
+      "conv300": -1.3380000000000005,
+      "errLen": -2.230000000000001
+     },
+     {
+      "key": "XZ",
+      "dev": 46.47666666666661,
+      "conv300": 13.942999999999982,
+      "errLen": 23.238333333333305
+     },
+     {
+      "key": "YZ",
+      "dev": -60.68666666666664,
+      "conv300": -18.205999999999992,
+      "errLen": -30.34333333333332
+     }
+    ],
+    "scans": [
+     {
+      "key": "XY",
+      "valid": true,
+      "microns": -1.3379999999930947,
+      "physical": -1.3379999999930947,
+      "relSign": 1,
+      "base": "X",
+      "scan": "Y",
+      "zero": "左・奥側"
+     },
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": -13.94299999497861,
+      "physical": -13.94299999497861,
+      "relSign": -1,
+      "base": "X",
+      "scan": "Z",
+      "zero": "上・奥側"
+     },
+     {
+      "key": "YZ",
+      "valid": true,
+      "microns": 18.205999988822956,
+      "physical": 18.205999988822956,
+      "relSign": -1,
+      "base": "Y",
+      "scan": "Z",
+      "zero": "上・右側"
+     }
+    ],
+    "sweep": [
+     2.1315310961300544,
+     -13.94300003571464,
+     -16.074531131844694,
+     0
+    ],
+    "lean": {
+     "front": -153.52332569457738,
+     "right": -239.31311633161977
+    },
+    "live": [
+     "-1",
+     "-14",
+     "+18"
+    ]
+   }
+  },
+  "gantry": {
+   "flat": {
+    "pairs": [
+     {
+      "key": "XY",
+      "dev": -4.460000000000001,
+      "conv300": -1.3380000000000003,
+      "errLen": -2.2300000000000004
+     },
+     {
+      "key": "XZ",
+      "dev": 46.47666666666667,
+      "conv300": 13.943,
+      "errLen": 23.238333333333333
+     },
+     {
+      "key": "YZ",
+      "dev": -60.68666666666667,
+      "conv300": -18.206,
+      "errLen": -30.343333333333334
+     }
+    ],
+    "scans": [
+     {
+      "key": "XY",
+      "valid": true,
+      "microns": -1.3379999999948295,
+      "physical": -1.3379999999948295,
+      "relSign": 1,
+      "base": "X",
+      "scan": "Y",
+      "zero": "左・奥側"
+     },
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": -13.942999994980346,
+      "physical": -13.942999994980346,
+      "relSign": -1,
+      "base": "X",
+      "scan": "Z",
+      "zero": "上・奥側"
+     },
+     {
+      "key": "YZ",
+      "valid": true,
+      "microns": 18.205999988822956,
+      "physical": 18.205999988822956,
+      "relSign": -1,
+      "base": "Y",
+      "scan": "Z",
+      "zero": "上・右側"
+     }
+    ],
+    "sweep": [
+     2.131531096130073,
+     -13.94300003571465,
+     -16.074531131844722,
+     0
+    ],
+    "lean": {
+     "front": 46.476666752251056,
+     "right": 60.686874018748156
+    },
+    "live": [
+     "-1",
+     "-14",
+     "+18"
+    ]
+   },
+   "tilt": {
+    "pairs": [
+     {
+      "key": "XY",
+      "dev": -4.460000000000002,
+      "conv300": -1.3380000000000005,
+      "errLen": -2.230000000000001
+     },
+     {
+      "key": "XZ",
+      "dev": 46.47666666666669,
+      "conv300": 13.943000000000007,
+      "errLen": 23.238333333333344
+     },
+     {
+      "key": "YZ",
+      "dev": -60.6866666666668,
+      "conv300": -18.20600000000004,
+      "errLen": -30.3433333333334
+     }
+    ],
+    "scans": [
+     {
+      "key": "XY",
+      "valid": true,
+      "microns": -1.3379999999930947,
+      "physical": -1.3379999999930947,
+      "relSign": 1,
+      "base": "X",
+      "scan": "Y",
+      "zero": "左・奥側"
+     },
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": -13.94299999497861,
+      "physical": -13.94299999497861,
+      "relSign": -1,
+      "base": "X",
+      "scan": "Z",
+      "zero": "上・奥側"
+     },
+     {
+      "key": "YZ",
+      "valid": true,
+      "microns": 18.205999988822956,
+      "physical": 18.205999988822956,
+      "relSign": -1,
+      "base": "Y",
+      "scan": "Z",
+      "zero": "上・右側"
+     }
+    ],
+    "sweep": [
+     2.1315310961300677,
+     -13.943000035714663,
+     -16.074531131844733,
+     0
+    ],
+    "lean": {
+     "front": -153.52332569457732,
+     "right": -239.31311633161965
+    },
+    "live": [
+     "-1",
+     "-14",
+     "+18"
+    ]
+   }
+  },
+  "lathe": {
+   "flat": {
+    "pairs": [
+     {
+      "key": "XZ",
+      "dev": -4.460000000000001,
+      "conv300": -1.3380000000000003,
+      "errLen": -2.2300000000000004
+     }
+    ],
+    "scans": [
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": 1.3379999999948295,
+      "physical": 1.3379999999948295,
+      "relSign": -1,
+      "base": "Z",
+      "scan": "X",
+      "zero": "奥・右側"
+     }
+    ],
+    "sweep": null,
+    "lean": {
+     "front": 0,
+     "right": 4.460000000000001
+    },
+    "live": [
+     "+1"
+    ]
+   },
+   "tilt": {
+    "pairs": [
+     {
+      "key": "XZ",
+      "dev": -4.460000000000002,
+      "conv300": -1.3380000000000005,
+      "errLen": -2.230000000000001
+     }
+    ],
+    "scans": [
+     {
+      "key": "XZ",
+      "valid": true,
+      "microns": 1.3379999999948295,
+      "physical": 1.3379999999948295,
+      "relSign": -1,
+      "base": "Z",
+      "scan": "X",
+      "zero": "奥・右側"
+     }
+    ],
+    "sweep": null,
+    "lean": {
+     "front": 299.9990989970748,
+     "right": 4.46000011149881
+    },
+    "live": [
+     "+1"
+    ]
+   }
+  }
+ }
+}

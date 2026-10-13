@@ -1,0 +1,5094 @@
+{
+ "maxAbsDiffMicrons": 0.0008432242491061004,
+ "mismatches": [],
+ "rows": [
+  {
+   "id": "travel",
+   "label": "{\"width\":4,\"depth\":2.3,\"columnX\":60,\"columnZ\":-40}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "+14",
+     "expRaw": 13.869636200950982,
+     "dom": "+14",
+     "domRaw": 13.869636200817409,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-8",
+     "expRaw": -7.578223372731174,
+     "dom": "-8",
+     "domRaw": -7.5782233729723005,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999902919,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-1",
+     "dom": "-1"
+    },
+    {
+     "exp": "+6",
+     "dom": "+6"
+    },
+    {
+     "exp": "+7",
+     "dom": "+7"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4,\"depth\":2.3,\"columnX\":60,\"columnZ\":-40} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "+11",
+     "expRaw": 11.000080808733562,
+     "dom": "+11",
+     "domRaw": 11.00008080884285,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "0",
+     "expRaw": 0.48436252044273265,
+     "dom": "0",
+     "domRaw": 0.48436252042712014,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998935514,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+4",
+     "dom": "+4"
+    },
+    {
+     "exp": "+7",
+     "dom": "+7"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4,\"depth\":2.3,\"columnX\":60,\"columnZ\":-40}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "+14",
+     "expRaw": 13.870767322215343,
+     "dom": "+14",
+     "domRaw": 13.870767322097382,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-8",
+     "expRaw": -7.577820930649779,
+     "dom": "-8",
+     "domRaw": -7.577820930868354,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998737755,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-9",
+     "dom": "-9"
+    },
+    {
+     "exp": "-10",
+     "dom": "-10"
+    },
+    {
+     "exp": "-1",
+     "dom": "-1"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4,\"depth\":2.3,\"columnX\":60,\"columnZ\":-40} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "+11",
+     "expRaw": 11.000517308561164,
+     "dom": "+11",
+     "domRaw": 11.000517308880353,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "0",
+     "expRaw": 0.4845178386714971,
+     "dom": "0",
+     "domRaw": 0.4845178383731247,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999868051,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-1",
+     "dom": "-1"
+    },
+    {
+     "exp": "-3",
+     "dom": "-3"
+    },
+    {
+     "exp": "-2",
+     "dom": "-2"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4,\"depth\":2.3,\"columnX\":60,\"columnZ\":-40}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-7",
+     "expRaw": -6.938192720837288,
+     "dom": "-7",
+     "domRaw": -6.938192720781777,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+51",
+     "expRaw": 50.8742602297798,
+     "dom": "+51",
+     "domRaw": 50.874260229410304,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998833165,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-8",
+     "dom": "-8"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-7",
+     "dom": "-7"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4,\"depth\":2.3,\"columnX\":60,\"columnZ\":-40} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-10",
+     "expRaw": -9.809439387217095,
+     "dom": "-10",
+     "domRaw": -9.809439387227503,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+59",
+     "expRaw": 58.93624303769662,
+     "dom": "+59",
+     "domRaw": 58.93624303764458,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998824491,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+9",
+     "dom": "+9"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-29",
+     "dom": "-29"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4,\"depth\":2.3,\"columnX\":60,\"columnZ\":-40}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "-7",
+     "expRaw": -6.936916572030868,
+     "dom": "-7",
+     "domRaw": -6.936916571989235,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+51",
+     "expRaw": 50.8747143037995,
+     "dom": "+51",
+     "domRaw": 50.87471430399899,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998893881,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-3",
+     "dom": "-3"
+    },
+    {
+     "exp": "-5",
+     "dom": "-5"
+    },
+    {
+     "exp": "-2",
+     "dom": "-2"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4,\"depth\":2.3,\"columnX\":60,\"columnZ\":-40} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "-10",
+     "expRaw": -9.807549629845674,
+     "dom": "-10",
+     "domRaw": -9.807549630072923,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+59",
+     "expRaw": 58.93691570765976,
+     "dom": "+59",
+     "domRaw": 58.936915707893945,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998911227,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+15",
+     "dom": "+15"
+    },
+    {
+     "exp": "-8",
+     "dom": "-8"
+    },
+    {
+     "exp": "-23",
+     "dom": "-23"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":5,\"depth\":1.9,\"columnX\":-80,\"columnZ\":70}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "-7",
+     "expRaw": -6.523211982920399,
+     "dom": "-7",
+     "domRaw": -6.523211983135504,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+51",
+     "expRaw": 51.04621845969208,
+     "dom": "+51",
+     "domRaw": 51.046218459653915,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999999044802,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-14",
+     "dom": "-14"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-24",
+     "dom": "-24"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":5,\"depth\":1.9,\"columnX\":-80,\"columnZ\":70} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "-9",
+     "expRaw": -9.305171483342534,
+     "dom": "-9",
+     "domRaw": -9.305171483038958,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+59",
+     "expRaw": 59.14526291649243,
+     "dom": "+59",
+     "domRaw": 59.14526291695386,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999873255,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-3",
+     "dom": "-3"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-45",
+     "dom": "-45"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":5,\"depth\":1.9,\"columnX\":-80,\"columnZ\":70}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-7",
+     "expRaw": -6.519017556390338,
+     "dom": "-7",
+     "domRaw": -6.519017556709528,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+51",
+     "expRaw": 51.04765758026826,
+     "dom": "+51",
+     "domRaw": 51.04765758005142,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998810614,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "-4",
+     "dom": "-4"
+    },
+    {
+     "exp": "-7",
+     "dom": "-7"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":5,\"depth\":1.9,\"columnX\":-80,\"columnZ\":70} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-9",
+     "expRaw": -9.298960267826658,
+     "dom": "-9",
+     "domRaw": -9.298960267835332,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+59",
+     "expRaw": 59.147394929693824,
+     "dom": "+59",
+     "domRaw": 59.14739492954811,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999999128069,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+18",
+     "dom": "+18"
+    },
+    {
+     "exp": "-6",
+     "dom": "-6"
+    },
+    {
+     "exp": "-24",
+     "dom": "-24"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":5,\"depth\":1.9,\"columnX\":-80,\"columnZ\":70}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-7",
+     "expRaw": -6.527405999339278,
+     "dom": "-7",
+     "domRaw": -6.527405999443362,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+51",
+     "expRaw": 51.04477814326866,
+     "dom": "+51",
+     "domRaw": 51.04477814336407,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999907776,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":5,\"depth\":1.9,\"columnX\":-80,\"columnZ\":70} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-9",
+     "expRaw": -9.311381865972566,
+     "dom": "-9",
+     "domRaw": -9.311381865752255,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+59",
+     "expRaw": 59.143128481422764,
+     "dom": "+59",
+     "domRaw": 59.14312848187033,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998840104,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":5,\"depth\":1.9,\"columnX\":-80,\"columnZ\":70}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "-7",
+     "expRaw": -6.525854269886014,
+     "dom": "-7",
+     "domRaw": -6.525854270104589,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+51",
+     "expRaw": 51.04531122486489,
+     "dom": "+51",
+     "domRaw": 51.0453112247955,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998734286,
+     "dom": "+9",
+     "domRaw": 8.626999998815817,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-24",
+     "dom": "-24"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-34",
+     "dom": "-34"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":5,\"depth\":1.9,\"columnX\":-80,\"columnZ\":70} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "-9",
+     "expRaw": -9.30908412563776,
+     "dom": "-9",
+     "domRaw": -9.30908412595348,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+59",
+     "expRaw": 59.14391851954276,
+     "dom": "+59",
+     "domRaw": 59.143918519400515,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999855561,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-15",
+     "dom": "-15"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-58",
+     "dom": "-58"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":0.6,\"depth\":2.08}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999999081232,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-25",
+     "dom": "-25"
+    },
+    {
+     "exp": "-33",
+     "dom": "-33"
+    },
+    {
+     "exp": "-9",
+     "dom": "-9"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":0.6,\"depth\":2.08} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999999143681,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+105",
+     "dom": "+105"
+    },
+    {
+     "exp": "-42",
+     "dom": "-42"
+    },
+    {
+     "exp": "-147",
+     "dom": "-147"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":0.6,\"depth\":2.08}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999902572,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-9",
+     "dom": "-9"
+    },
+    {
+     "exp": "-3",
+     "dom": "-3"
+    },
+    {
+     "exp": "+7",
+     "dom": "+7"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":0.6,\"depth\":2.08} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998760306,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+123",
+     "dom": "+123"
+    },
+    {
+     "exp": "-5",
+     "dom": "-5"
+    },
+    {
+     "exp": "-128",
+     "dom": "-128"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":0.6,\"depth\":2.08}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998888676,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":0.6,\"depth\":2.08} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999999001434,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":0.6,\"depth\":2.08}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999918358,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-34",
+     "dom": "-34"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":0.6,\"depth\":2.08} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998949392,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+93",
+     "dom": "+93"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4.32,\"depth\":0.8}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+57",
+     "expRaw": 56.91253709162562,
+     "dom": "+57",
+     "domRaw": 56.91253709151113,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998848778,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-45",
+     "dom": "-45"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-55",
+     "dom": "-55"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4.32,\"depth\":0.8} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+66",
+     "expRaw": 66.2809092003766,
+     "dom": "+66",
+     "domRaw": 66.28090920061426,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998833165,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-39",
+     "dom": "-39"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-85",
+     "dom": "-85"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4.32,\"depth\":0.8}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+57",
+     "expRaw": 56.921933008336964,
+     "dom": "+57",
+     "domRaw": 56.92193300786512,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999880541,
+     "dom": "+9",
+     "domRaw": 8.626999998807145,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-5",
+     "dom": "-5"
+    },
+    {
+     "exp": "-21",
+     "dom": "-21"
+    },
+    {
+     "exp": "-15",
+     "dom": "-15"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4.32,\"depth\":0.8} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+66",
+     "expRaw": 66.29482873754013,
+     "dom": "+66",
+     "domRaw": 66.29482873728686,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998853982,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+10",
+     "dom": "+10"
+    },
+    {
+     "exp": "-27",
+     "dom": "-27"
+    },
+    {
+     "exp": "-37",
+     "dom": "-37"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4.32,\"depth\":0.8}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+57",
+     "expRaw": 56.903133595700986,
+     "dom": "+57",
+     "domRaw": 56.90313359519618,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998845308,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4.32,\"depth\":0.8} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+66",
+     "expRaw": 66.26697398610416,
+     "dom": "+66",
+     "domRaw": 66.26697398638345,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998734286,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4.32,\"depth\":0.8}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+57",
+     "expRaw": 56.90661396347968,
+     "dom": "+57",
+     "domRaw": 56.90661396365315,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998871328,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-71",
+     "dom": "-71"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-80",
+     "dom": "-80"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "travel",
+   "label": "{\"width\":4.32,\"depth\":0.8} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+66",
+     "expRaw": 66.27213195111413,
+     "dom": "+66",
+     "domRaw": 66.27213195145588,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998803676,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-69",
+     "dom": "-69"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-116",
+     "dom": "-116"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":3,\"depth\":6}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "+21",
+     "expRaw": 20.82921501203941,
+     "dom": "+21",
+     "domRaw": 20.82911846443443,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-36",
+     "expRaw": -35.91489325689007,
+     "dom": "-36",
+     "domRaw": -35.91489326057289,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998810614,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-15",
+     "dom": "-15"
+    },
+    {
+     "exp": "-34",
+     "dom": "-34"
+    },
+    {
+     "exp": "-20",
+     "dom": "-20"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":3,\"depth\":6} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "-75",
+     "expRaw": -74.83928910848557,
+     "dom": "-75",
+     "domRaw": -74.83934335725424,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-83",
+     "expRaw": -82.55223737642196,
+     "dom": "-83",
+     "domRaw": -82.55223727749416,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998812348,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-52",
+     "dom": "-52"
+    },
+    {
+     "exp": "-81",
+     "dom": "-81"
+    },
+    {
+     "exp": "-29",
+     "dom": "-29"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":3,\"depth\":6}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "+20",
+     "expRaw": 19.89939534679727,
+     "dom": "+20",
+     "domRaw": 19.8993279037947,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-5",
+     "expRaw": -5.02651674854672,
+     "dom": "-5",
+     "domRaw": -5.0265167211953345,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998909493,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "0",
+     "dom": "0"
+    },
+    {
+     "exp": "-5",
+     "dom": "-5"
+    },
+    {
+     "exp": "-5",
+     "dom": "-5"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":3,\"depth\":6} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-75",
+     "expRaw": -75.05869897186935,
+     "dom": "-75",
+     "domRaw": -75.05873327867847,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-52",
+     "expRaw": -51.66407301395934,
+     "dom": "-52",
+     "domRaw": -51.6640728814733,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998912963,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-33",
+     "dom": "-33"
+    },
+    {
+     "exp": "-52",
+     "dom": "-52"
+    },
+    {
+     "exp": "-19",
+     "dom": "-19"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":3,\"depth\":6}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "+36",
+     "expRaw": 35.791627798867005,
+     "dom": "+36",
+     "domRaw": 35.79107504290795,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-34",
+     "expRaw": -34.20900316310205,
+     "dom": "-34",
+     "domRaw": -34.20900316606843,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998912963,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "—",
+     "dom": "—"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":3,\"depth\":6} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-71",
+     "expRaw": -71.375484952221,
+     "dom": "-71",
+     "domRaw": -71.37540932737086,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-81",
+     "expRaw": -80.8467472542991,
+     "dom": "-81",
+     "domRaw": -80.8467471473534,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998914698,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "—",
+     "dom": "—"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":3,\"depth\":6}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "+36",
+     "expRaw": 35.79162784703681,
+     "dom": "+36",
+     "domRaw": 35.79107510203253,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-34",
+     "expRaw": -34.2094253303702,
+     "dom": "-34",
+     "domRaw": -34.20942533072582,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998798471,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-21",
+     "dom": "-21"
+    },
+    {
+     "exp": "-34",
+     "dom": "-34"
+    },
+    {
+     "exp": "-13",
+     "dom": "-13"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":3,\"depth\":6} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "-71",
+     "expRaw": -71.37548488846298,
+     "dom": "-71",
+     "domRaw": -71.37540926512031,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-81",
+     "expRaw": -80.8469101707919,
+     "dom": "-81",
+     "domRaw": -80.84691006289557,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999880194,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-56",
+     "dom": "-56"
+    },
+    {
+     "exp": "-81",
+     "dom": "-81"
+    },
+    {
+     "exp": "-25",
+     "dom": "-25"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.6,\"depth\":7.5}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "+20",
+     "expRaw": 19.92657013692202,
+     "dom": "+20",
+     "domRaw": 19.926475958430625,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-26",
+     "expRaw": -26.331686459395502,
+     "dom": "-26",
+     "domRaw": -26.331686459364274,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998810614,
+     "dom": "+9",
+     "domRaw": 8.626999998807145,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-10",
+     "dom": "-10"
+    },
+    {
+     "exp": "-25",
+     "dom": "-25"
+    },
+    {
+     "exp": "-15",
+     "dom": "-15"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.6,\"depth\":7.5} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "-69",
+     "expRaw": -68.54942773727376,
+     "dom": "-69",
+     "domRaw": -68.54947064785857,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-64",
+     "expRaw": -63.642215978461714,
+     "dom": "-64",
+     "domRaw": -63.642215941182506,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998814084,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-45",
+     "dom": "-45"
+    },
+    {
+     "exp": "-62",
+     "dom": "-62"
+    },
+    {
+     "exp": "-17",
+     "dom": "-17"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.6,\"depth\":7.5}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "+19",
+     "expRaw": 18.85382056601888,
+     "dom": "+19",
+     "domRaw": 18.853758325370478,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-1",
+     "expRaw": -1.2793048493851822,
+     "dom": "-1",
+     "domRaw": -1.2793048285615616,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998909493,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+2",
+     "dom": "+2"
+    },
+    {
+     "exp": "-1",
+     "dom": "-1"
+    },
+    {
+     "exp": "-3",
+     "dom": "-3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.6,\"depth\":7.5} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-69",
+     "expRaw": -68.80148580776756,
+     "dom": "-69",
+     "domRaw": -68.80151756639627,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-39",
+     "expRaw": -38.59006455247255,
+     "dom": "-39",
+     "domRaw": -38.59006448905453,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998912963,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-28",
+     "dom": "-28"
+    },
+    {
+     "exp": "-39",
+     "dom": "-39"
+    },
+    {
+     "exp": "-10",
+     "dom": "-10"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.6,\"depth\":7.5}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "+34",
+     "expRaw": 33.523389961155964,
+     "dom": "+34",
+     "domRaw": 33.522898002928336,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-25",
+     "expRaw": -24.624982764001256,
+     "dom": "-25",
+     "domRaw": -24.624982763201547,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998912963,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "—",
+     "dom": "—"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.6,\"depth\":7.5} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-65",
+     "expRaw": -65.40171102540141,
+     "dom": "-65",
+     "domRaw": -65.40163309107922,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-62",
+     "expRaw": -61.93594744311956,
+     "dom": "-62",
+     "domRaw": -61.93594739534007,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998912963,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "—",
+     "dom": "—"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.6,\"depth\":7.5}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "+34",
+     "expRaw": 33.523390021895565,
+     "dom": "+34",
+     "domRaw": 33.52289807739828,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-25",
+     "expRaw": -24.625432403849178,
+     "dom": "-25",
+     "domRaw": -24.625432400829027,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998798471,
+     "dom": "+9",
+     "domRaw": 8.626999998807145,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-18",
+     "dom": "-18"
+    },
+    {
+     "exp": "-25",
+     "dom": "-25"
+    },
+    {
+     "exp": "-7",
+     "dom": "-7"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.6,\"depth\":7.5} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "-65",
+     "expRaw": -65.40171094635178,
+     "dom": "-65",
+     "domRaw": -65.40163301414769,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "-62",
+     "expRaw": -61.936120961631616,
+     "dom": "-62",
+     "domRaw": -61.9361209125615,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999880194,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-50",
+     "dom": "-50"
+    },
+    {
+     "exp": "-62",
+     "dom": "-62"
+    },
+    {
+     "exp": "-12",
+     "dom": "-12"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.85,\"depth\":1}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998808879,
+     "dom": "+9",
+     "domRaw": 8.626999998815817,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-134",
+     "dom": "-134"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-139",
+     "dom": "-139"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.85,\"depth\":1} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998812348,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-290",
+     "dom": "-290"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-264",
+     "dom": "-264"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.85,\"depth\":1}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998909493,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-46",
+     "dom": "-46"
+    },
+    {
+     "exp": "-99",
+     "dom": "-99"
+    },
+    {
+     "exp": "-52",
+     "dom": "-52"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.85,\"depth\":1} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998909493,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-197",
+     "dom": "-197"
+    },
+    {
+     "exp": "-378",
+     "dom": "-378"
+    },
+    {
+     "exp": "-181",
+     "dom": "-181"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.85,\"depth\":1}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998911227,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "—",
+     "dom": "—"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.85,\"depth\":1} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998907758,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "—",
+     "dom": "—"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.85,\"depth\":1}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998800205,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-142",
+     "dom": "-142"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-132",
+     "dom": "-132"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":2.85,\"depth\":1} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999880194,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-294",
+     "dom": "-294"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-260",
+     "dom": "-260"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":0.6,\"depth\":6.84}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "-30",
+     "expRaw": -29.987242928308095,
+     "dom": "-30",
+     "domRaw": -29.987242886123088,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998810614,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-28",
+     "dom": "-28"
+    },
+    {
+     "exp": "-9",
+     "dom": "-9"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":0.6,\"depth\":6.84} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "-71",
+     "expRaw": -70.96684332169762,
+     "dom": "-71",
+     "domRaw": -70.96684378059965,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998814084,
+     "dom": "+9",
+     "domRaw": 8.626999998807145,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-69",
+     "dom": "-69"
+    },
+    {
+     "exp": "+40",
+     "dom": "+40"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":0.6,\"depth\":6.84}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "-3",
+     "expRaw": -2.682566319385862,
+     "dom": "-3",
+     "domRaw": -2.6825660666279783,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998800205,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-5",
+     "dom": "-5"
+    },
+    {
+     "exp": "-3",
+     "dom": "-3"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":0.6,\"depth\":6.84} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "-44",
+     "expRaw": -43.66646977853675,
+     "dom": "-44",
+     "domRaw": -43.66646986172541,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998803676,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "-75",
+     "dom": "-75"
+    },
+    {
+     "exp": "-44",
+     "dom": "-44"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":0.6,\"depth\":6.84}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "-28",
+     "expRaw": -28.249389836105394,
+     "dom": "-28",
+     "domRaw": -28.249389987010723,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999880194,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "—",
+     "dom": "—"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":0.6,\"depth\":6.84} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "-69",
+     "expRaw": -69.24332430315212,
+     "dom": "-69",
+     "domRaw": -69.24332449602389,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998800205,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "—",
+     "dom": "—"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":0.6,\"depth\":6.84}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "-28",
+     "expRaw": -28.258647813951544,
+     "dom": "-28",
+     "domRaw": -28.258647913401504,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998810614,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-28",
+     "dom": "-28"
+    },
+    {
+     "exp": "+25",
+     "dom": "+25"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gate",
+   "label": "{\"width\":0.6,\"depth\":6.84} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "-69",
+     "expRaw": -69.24689699213705,
+     "dom": "-69",
+     "domRaw": -69.24689717124726,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998814084,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "-69",
+     "dom": "-69"
+    },
+    {
+     "exp": "+61",
+     "dom": "+61"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.5,\"depth\":5}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "-10",
+     "expRaw": -10.35463829519509,
+     "dom": "-10",
+     "domRaw": -10.35504655697711,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707471505766677,
+     "dom": "+14",
+     "domRaw": 13.70747152466649,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998812348,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.5,\"depth\":5} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "+5",
+     "expRaw": 4.919508501328648,
+     "dom": "+5",
+     "domRaw": 4.919304195159444,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.70703947245651,
+     "dom": "+14",
+     "domRaw": 13.707039478894067,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998810614,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.5,\"depth\":5}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-10",
+     "expRaw": -10.354973676331147,
+     "dom": "-10",
+     "domRaw": -10.355236672752662,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707507861459439,
+     "dom": "+14",
+     "domRaw": 13.70750787540835,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998912963,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+13",
+     "dom": "+13"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.5,\"depth\":5} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "+5",
+     "expRaw": 4.9194640278221735,
+     "dom": "+5",
+     "domRaw": 4.919284053947829,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707039721887194,
+     "dom": "+14",
+     "domRaw": 13.707039726761765,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998911227,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+2",
+     "dom": "+2"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.5,\"depth\":5}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-10",
+     "expRaw": -10.354219651625627,
+     "dom": "-10",
+     "domRaw": -10.35480601843837,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707435150779949,
+     "dom": "+14",
+     "domRaw": 13.707435173801464,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998912963,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+9",
+     "dom": "+9"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+5",
+     "dom": "+5"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.5,\"depth\":5} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "+5",
+     "expRaw": 4.919564013645614,
+     "dom": "+5",
+     "domRaw": 4.919329358522156,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.70703922342828,
+     "dom": "+14",
+     "domRaw": 13.707039230502483,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998914698,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.5,\"depth\":5}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "-10",
+     "expRaw": -10.354374552337674,
+     "dom": "-10",
+     "domRaw": -10.354895019219073,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707448601246384,
+     "dom": "+14",
+     "domRaw": 13.707448624052793,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998800205,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+10",
+     "dom": "+10"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+4",
+     "dom": "+4"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.5,\"depth\":5} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "+5",
+     "expRaw": 4.919543474228225,
+     "dom": "+5",
+     "domRaw": 4.919320048641166,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707039316447622,
+     "dom": "+14",
+     "domRaw": 13.707039321733324,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998800205,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":2.9,\"depth\":4.2}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "-18",
+     "expRaw": -17.62645726376827,
+     "dom": "-18",
+     "domRaw": -17.627044572653823,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.70767290008977,
+     "dom": "+14",
+     "domRaw": 13.707672929604357,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998812348,
+     "dom": "+9",
+     "domRaw": 8.626999998807145,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":2.9,\"depth\":4.2} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "+4",
+     "expRaw": 4.3191558980887335,
+     "dom": "+4",
+     "domRaw": 4.318862346738839,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707056685009073,
+     "dom": "+14",
+     "domRaw": 13.707056692938494,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998808879,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":2.9,\"depth\":4.2}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-18",
+     "expRaw": -17.6269163561487,
+     "dom": "-18",
+     "domRaw": -17.627303926440533,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707735937880036,
+     "dom": "+14",
+     "domRaw": 13.707735961957997,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998909493,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":2.9,\"depth\":4.2} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "+4",
+     "expRaw": 4.319095020716146,
+     "dom": "+4",
+     "domRaw": 4.318834781179628,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707057115763464,
+     "dom": "+14",
+     "domRaw": 13.707057123325123,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998911227,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+2",
+     "dom": "+2"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":2.9,\"depth\":4.2}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "-18",
+     "expRaw": -17.62585574682264,
+     "dom": "-18",
+     "domRaw": -17.626698971071747,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707609860885706,
+     "dom": "+14",
+     "domRaw": 13.707609896501314,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998912963,
+     "dom": "+9",
+     "domRaw": 8.626999998807145,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+9",
+     "dom": "+9"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+5",
+     "dom": "+5"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":2.9,\"depth\":4.2} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "+4",
+     "expRaw": 4.319235658297588,
+     "dom": "+4",
+     "domRaw": 4.318898500377949,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707056253942431,
+     "dom": "+14",
+     "domRaw": 13.70705626219798,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998911227,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":2.9,\"depth\":4.2}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "-18",
+     "expRaw": -17.62607831252462,
+     "dom": "-18",
+     "domRaw": -17.626826848197304,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707633185575109,
+     "dom": "+14",
+     "domRaw": 13.707633217866984,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998800205,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+10",
+     "dom": "+10"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+4",
+     "dom": "+4"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":2.9,\"depth\":4.2} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "+4",
+     "expRaw": 4.3192061472338565,
+     "dom": "+4",
+     "domRaw": 4.318885123736141,
+     "reason": null,
+     "productReason": null
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.70705641304086,
+     "dom": "+14",
+     "domRaw": 13.707056422592249,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999880194,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.2,\"depth\":0.8}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998812348,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.2,\"depth\":0.8} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998814084,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.2,\"depth\":0.8}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998911227,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+13",
+     "dom": "+13"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.2,\"depth\":0.8} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998911227,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+2",
+     "dom": "+2"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.2,\"depth\":0.8}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998909493,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+9",
+     "dom": "+9"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+5",
+     "dom": "+5"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.2,\"depth\":0.8} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998914698,
+     "dom": "+9",
+     "domRaw": 8.626999998815817,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.2,\"depth\":0.8}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999880194,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+10",
+     "dom": "+10"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+4",
+     "dom": "+4"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":3.2,\"depth\":0.8} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "XZ": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "X alignment range < 300 mm",
+     "productReason": "300 mmの方向合わせ範囲不足"
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998800205,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":0.6,\"depth\":4.64}",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.709723105301968,
+     "dom": "+14",
+     "domRaw": 13.709723184800875,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998810614,
+     "dom": "+9",
+     "domRaw": 8.62699999880541,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":0.6,\"depth\":4.64} op",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707246506776752,
+     "dom": "+14",
+     "domRaw": 13.707246543447072,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998812348,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":0.6,\"depth\":4.64}",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.711055869558564,
+     "dom": "+14",
+     "domRaw": 13.711055926965768,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998803676,
+     "dom": "+9",
+     "domRaw": 8.626999998810614,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+23",
+     "dom": "+23"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":0.6,\"depth\":4.64} op",
+   "positions": {
+    "X": 100,
+    "Y": -100,
+    "Z": 100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707255600032415,
+     "dom": "+14",
+     "domRaw": 13.707255632594908,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998800205,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+12",
+     "dom": "+12"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":0.6,\"depth\":4.64}",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.708390369203405,
+     "dom": "+14",
+     "domRaw": 13.708390463875938,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998800205,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+15",
+     "dom": "+15"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":0.6,\"depth\":4.64} op",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707237410849615,
+     "dom": "+14",
+     "domRaw": 13.707237453568915,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.62699999880194,
+     "dom": "+9",
+     "domRaw": 8.626999998814084,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "面外",
+     "dom": "面外"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+4",
+     "dom": "+4"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":0.6,\"depth\":4.64}",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.708883481925934,
+     "dom": "+14",
+     "domRaw": 13.708883569838251,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998810614,
+     "dom": "+9",
+     "domRaw": 8.626999998812348,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+10",
+     "dom": "+10"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  },
+  {
+   "id": "gantry",
+   "label": "{\"width\":0.6,\"depth\":4.64} op",
+   "positions": {
+    "X": -63,
+    "Y": 22,
+    "Z": -71
+   },
+   "sq": {
+    "XY": {
+     "exp": "—",
+     "expRaw": null,
+     "dom": "—",
+     "domRaw": null,
+     "reason": "scan range < 300 mm",
+     "productReason": "300 mmの走査範囲不足"
+    },
+    "XZ": {
+     "exp": "+14",
+     "expRaw": 13.707240776344998,
+     "dom": "+14",
+     "domRaw": 13.707240817298349,
+     "reason": null,
+     "productReason": null
+    },
+    "YZ": {
+     "exp": "+9",
+     "expRaw": 8.626999998814084,
+     "dom": "+9",
+     "domRaw": 8.626999998808879,
+     "reason": null,
+     "productReason": null
+    }
+   },
+   "sweep": [
+    {
+     "exp": "+11",
+     "dom": "+11"
+    },
+    {
+     "exp": "+14",
+     "dom": "+14"
+    },
+    {
+     "exp": "+3",
+     "dom": "+3"
+    },
+    {
+     "exp": "0",
+     "dom": "0"
+    }
+   ]
+  }
+ ]
+}

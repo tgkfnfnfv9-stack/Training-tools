@@ -14,8 +14,9 @@ const keys=['X','Y','Z'];
 const axisVectors=[{key:'X',vector:[1,0,0],source:'work'},{key:'Y',vector:[0,0,1],source:'work'},{key:'Z',vector:[0,1,0],source:'tool'}];
 check('抽選確率と300 mmの基準は教材設定どおり',()=>{
  assert.equal(MachineAccuracy.referenceLength,.3);
- assert.deepEqual(MachineAccuracy.distributions.new,[{weight:95,min:1,max:20},{weight:5,min:20,max:40}]);
- assert.deepEqual(MachineAccuracy.distributions.used,[{weight:60,min:5,max:20},{weight:30,min:20,max:60},{weight:10,min:60,max:150}]);
+ // Version 2: every intrinsic item stays at or below 25 µm.
+ assert.deepEqual(MachineAccuracy.distributions.new,[{weight:80,min:1,max:10},{weight:20,min:10,max:18}]);
+ assert.deepEqual(MachineAccuracy.distributions.used,[{weight:60,min:5,max:15},{weight:40,min:15,max:25}]);
 });
 for(const condition of ['new','used']){
  const bins=MachineAccuracy.distributions[condition].map(()=>0);let positive=0,negative=0;
@@ -141,9 +142,14 @@ async function main(){
  // a 0.020 mm support perturbation gives gap > .1 while RMS difference < .1.
  // sqrt(now² - floor²), not now - floor, must govern completion.
  read('supportHeights=machineBestHeights();supportHeights[0]=Math.round((supportHeights[0]+(supportHeights[0]<=.48?.02:-.02))*1000)/1000;levelExercise={solved:false};updateLeveling();');
- check('固有誤差床が大きくても実際の残調整を達成と誤判定しない',()=>{
+ check('0.02 mm超えが残る間は達成と判定しない',()=>{
   const m=evalNow(),best=json('machineReference.best.metric'),result=json('updateMachineAccuracy()');
-  assert.ok(m.objective-best.objective<.1,'RMSの単純差なら誤判定する個体');const independentGap=Math.sqrt(m.objective*m.objective-best.objective*best.objective);assert.ok(independentGap>.1);near(result.gap,independentGap);assert.ok(result.gap>.1);assert.equal(result.target,false);assert.equal(read('levelExercise.solved'),false);
+  // Completion is every displayed dial value and the average level within
+  // 0.02 mm (20 µm; 0.02 mm/m), not closeness to the search result.
+  const independentGap=Math.sqrt(Math.max(0,m.objective*m.objective-best.objective*best.objective));near(result.gap,independentGap);
+  assert.equal(result.target,Math.max(...m.values.map(Math.abs))<=20.000001);
+  read('supportHeights=supports.map((p,i)=>(p.x>0)===(p.z>0)?.5:-.5);levelExercise={solved:false};updateLeveling();');
+  const far=evalNow();assert.ok(Math.max(...far.values.map(Math.abs))>20,'a ±0.5 mm diagonal twist moves a value beyond 0.02 mm');assert.equal(json('updateMachineAccuracy()').target,false);assert.equal(read('levelExercise.solved'),false);
  });
  storage.clear();open(0,'compact');
  const preserved=snapshot(),preservedObjective=json('machineReference.best.metric.objective');

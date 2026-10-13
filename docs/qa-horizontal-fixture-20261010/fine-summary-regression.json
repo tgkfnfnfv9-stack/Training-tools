@@ -1,7 +1,7 @@
 {
   "passed": true,
-  "referenceSourceSha256": "0b2ebbd5be23f4f03129dc6a24aa0aa140971761d7e0058caae8b992713db07f",
-  "summarySourceSha256": "6b2817c680d9ef7ab8916dc7909577b73d16c35ffc71135dfc0c48034563cb0f",
+  "referenceSourceSha256": "1650a84b5642d102b8752e9edb3c176b6c175e33d82e591fb73f9225305c5557",
+  "summarySourceSha256": "38bc2a52ff61e6b97d8ea1f095485e25a0e123b4a5c495d019634ff21abc936d",
   "cases": [
     {
       "seed": 8,
@@ -13,9 +13,9 @@
         "C": 0
       },
       "operation": "coarseExample actual onclick: initial supports to flat",
-      "beforeRawUm": 28.61528325591271,
-      "currentRawUm": 29.552999952137114,
-      "absoluteChangeUm": 0.9377166962244026,
+      "beforeRawUm": 16.443851589042005,
+      "currentRawUm": 17.387999990174652,
+      "absoluteChangeUm": 0.9441484011326473,
       "independentTrend": "worse",
       "localAngleTrend": "better",
       "displayedTrend": "worse",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "seed": 18,
+      "seed": 11,
       "positions": {
         "X": 0,
         "Y": 0,
@@ -41,9 +41,9 @@
         "C": 0
       },
       "operation": "coarseExample actual onclick: initial supports to flat",
-      "beforeRawUm": 34.442200786776944,
-      "currentRawUm": -28.37299995737605,
-      "absoluteChangeUm": -6.069200829400895,
+      "beforeRawUm": -13.644846961121186,
+      "currentRawUm": 10.304999997884021,
+      "absoluteChangeUm": -3.3398469632371643,
       "independentTrend": "better",
       "localAngleTrend": "worse",
       "displayedTrend": "better",
@@ -51,12 +51,12 @@
       "initialSupports": [
         -0.15,
         0.15,
-        0.058,
-        0.113,
-        -0.004,
-        -0.117,
-        0.079,
-        -0.076
+        -0.067,
+        -0.031,
+        -0.037,
+        0.025,
+        -0.112,
+        0.029
       ]
     }
   ],

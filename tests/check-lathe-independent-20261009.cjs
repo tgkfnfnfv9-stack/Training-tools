@@ -25,7 +25,10 @@ function independentSurface(heights,width=4,depth=1.68){
 function mount(raw,owner,state,S,profile,width=4,depth=1.68){
  const spatial=p=>[p[0]*width/4,p[1],p[2]*depth/1.68],seat0=spatial(owner==='tool'?[-1.75,.66,0]:[.08,.66,.15]),seat=[...seat0];
  if(owner==='work')seat[0]+=.7*state.Z/100*width/4;
- const s=S.at(seat[0],seat[2]),C=frame(S.a,S.b),F=frame(s.a-S.a,s.b-S.b),angle=owner==='tool'?(profile?.squareness?.XZ?.microns||0)/300000:0;
+ // Carriage (lathe-carriage-v3): rigid saddle on the two drawn rails z=+/-0.4,
+ // pads at its centre x+/-0.4. Plane of the four pad heights, independently.
+ const padPlane=()=>{const cx=seat[0],P=[-1,1].flatMap(i=>[-1,1].map(k=>{const q=spatial([.08+.7*state.Z/100+i*.4,0,k*.4]);return {i,k,x:q[0],z:q[2],h:S.at(q[0],q[2]).h};})),ha=(P[2].x-P[0].x)/2,hb=(P[1].z-P[0].z)/2,m=P.reduce((v,q)=>v+q.h/4,0),a=P.reduce((v,q)=>v+q.i*q.h,0)/(4*ha),b=P.reduce((v,q)=>v+q.k*q.h,0)/(4*hb);return {h:m+b*(seat[2]-(P[0].z+P[1].z)/2)+a*(cx-(P[0].x+P[2].x)/2),a,b};};
+ const s=owner==='work'?padPlane():S.at(seat[0],seat[2]),C=frame(S.a,S.b),F=frame(s.a-S.a,s.b-S.b),angle=owner==='tool'?(profile?.squareness?.XZ?.microns||0)/300000:0;
  const R=v=>turn(C,turn(F,ry(v,angle))),basis=[[1,0,0],[0,1,0],[0,0,1]].map(R),p=sub(spatial(raw),seat0);
  if(owner==='work')p[2]+=.35*state.X/100*depth/1.68;
  const origin=add(turn(C,[seat[0],s.h-S.a*seat[0]-S.b*seat[2]-S.c,seat[2]]),[0,.66+S.c,0]);

@@ -1,0 +1,22 @@
+{
+ "new": {
+  "rootTIR": 3.1700853956863284,
+  "ownRoot": 3.170085044970867,
+  "tipTIR": 6.665654213072801,
+  "ownTip": 6.665651745212773,
+  "surfaceRange": 4.035357850293319,
+  "planeAddedInvariant": true,
+  "fromProfileArgs": 1,
+  "supportInputs": "none (signature fromProfile(profile))"
+ },
+ "used": {
+  "rootTIR": 7.42521348921582,
+  "ownRoot": 7.425212667743573,
+  "tipTIR": 16.649203790792956,
+  "ownTip": 16.649198347615368,
+  "surfaceRange": 12.106073550879955,
+  "planeAddedInvariant": true,
+  "fromProfileArgs": 1,
+  "supportInputs": "none (signature fromProfile(profile))"
+ }
+}

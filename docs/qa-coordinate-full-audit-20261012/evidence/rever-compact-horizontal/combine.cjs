@@ -1,0 +1,11 @@
+'use strict';
+const fs=require('fs'),r=f=>JSON.parse(fs.readFileSync(__dirname+'/'+f,'utf8'));
+const c=r('results-compact.json'),h=r('results-horizontal.json'),s=r('results-saveload.json'),b=r('results-browser.json'),d=r('results-horizontal-decompose.json');
+const out={branch:'fix/compact-physical-posture-20261012',head:require('child_process').execSync('git -C /home/user/Training-tools rev-parse HEAD').toString().trim(),
+ compact:{cases:c.cases.length,maxAbsDiffDomVsOracle_um:c.maxErr.sq,maxAbsDiffSweep_um:c.maxErr.sw,textMismatches:c.maxErr.sqText+c.maxErr.swText,mismatches:c.mismatches,gainTrace:c.gainTrace,rigidTilt:{maxProductSqDiff:c.rigidTilt.maxProductSqDiff,maxProductSweepDiff:c.rigidTilt.maxProductSweepDiff,oracleA:c.rigidTilt.oracleA_afterRigidTilt,sweepA:c.rigidTilt.sweepA},ritzPerUnitTwist:c.ritzCoefficientsPerUnitTwist,
+  controlOnMain:'control-main-compact.cjs -> results-compact-MAIN-control.json: same oracle vs main e0e62e7 gives support-response ratio 5.00 (gain present); branch ratio 1.000'},
+ horizontal:{cases:h.cases.length,maxAbsDiffSquareness_um:h.maxErr.sq,maxAbsDiffParallelism_um:h.maxErr.par,maxAbsDiffLocalAngle_urad:h.maxErr.local,textMismatches:h.maxErr.text,mismatches:h.mismatches,railLine:{seatPathVsRailGuide_max_urad_seat028:h.railLine.max_028,seatPathVsRailGuide_max_urad_old029:h.railLine.max_029_oldDefinition,nosePathVsRailGuide_max_urad:h.railLine.maxNose_028},productLinePoints:h.productLinePoints,rigidTilt:{maxSqDiff:h.rigidTilt.maxSqDiff,maxParDiff:h.rigidTilt.maxParDiff,oracleA:h.rigidTilt.oracleA,oracleParA:h.rigidTilt.oracleParA},outOfRange:h.outOfRange,localVsFiniteDecomposition:d,
+  controlOnMain:'ROOT=main-wt run-horizontal.cjs -> results-horizontal-MAIN-control.json: main (seat 0.29D) disagrees with rail-centre oracle (max 0.97 um, 30 text mismatches); branch agrees'},
+ saveLoad:{node:s,browser:b.saveLoad},browser:{worstRawDiff_um:b.worstRawDiffMicrons,textMismatches:b.textMismatches,pageErrors:b.errors,cases:b.cases},
+ detail:{compactCases:'results-compact.json',horizontalCases:'results-horizontal.json'}};
+fs.writeFileSync(__dirname+'/results.json',JSON.stringify(out,null,1));console.log('ok',fs.statSync(__dirname+'/results.json').size);

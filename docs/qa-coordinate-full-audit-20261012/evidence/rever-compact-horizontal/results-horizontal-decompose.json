@@ -1,0 +1,29 @@
+[
+ {
+  "heights": "initial",
+  "B": 21.454895091359283,
+  "localX300": -5.267000000000004,
+  "chordX300": 22.45371527770815,
+  "columnPitchChangeOver300mmX_urad": 12.498001724328518,
+  "noseOverhangZ_m": -2.2180000000000004,
+  "noseHeight_m": 1.8899999999999997
+ },
+ {
+  "heights": "after A+0.1",
+  "B": 21.45455897289983,
+  "localX300": -5.267000000000001,
+  "chordX300": 22.453715362786337,
+  "columnPitchChangeOver300mmX_urad": 12.498001761646606,
+  "noseOverhangZ_m": -2.2180000000000004,
+  "noseHeight_m": 1.8899999999999997
+ },
+ {
+  "heights": "flat",
+  "B": -5.2669999997256856,
+  "localX300": -5.267,
+  "chordX300": -5.267,
+  "columnPitchChangeOver300mmX_urad": 0,
+  "noseOverhangZ_m": -2.2180000000000004,
+  "noseHeight_m": 1.8899999999999997
+ }
+]

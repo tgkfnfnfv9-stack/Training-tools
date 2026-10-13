@@ -6,10 +6,12 @@ function latheAssembly(raw,pose,state=positions,solution=levelSolution,profile=m
  const bar=pose==='latheTestBar';if(bar)pose='tool';
  const base=scale(pose==='tool'?[-current.w*.35,.66,0]:[.08,.66,.15]);
  const travel=pose==='work'?scale([.7*state.Z/100,0,.35*state.X/100]):[0,0,0],seat=V.add(base,[travel[0],0,0]);
- const common=L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),slope=solution.slopeAt(seat[0],seat[2]),local=L.orientation({lr:(slope.lr-solution.lr)*factor,fb:(slope.fb-solution.fb)*factor});
+ // The carriage (work) rests on four rail pads; the headstock keeps its seat.
+ const carriage=pose==='work'?latheCarriageSupport(solution,state):null;
+ const common=L.orientation({lr:solution.lr*factor,fb:solution.fb*factor}),slope=carriage?carriage.slope:solution.slopeAt(seat[0],seat[2]),local=L.orientation({lr:(slope.lr-solution.lr)*factor,fb:(slope.fb-solution.fb)*factor});
  const body=pose==='tool'?intrinsicBodyFrame(axisConfig(current),profile,factor):{rotate:v=>v};
  const rotate=v=>common.rotate(local.rotate(body.rotate(v)));
- const plane=solution.plane,residual=solution.heightAt(seat[0],seat[2])-(plane.a*seat[0]+plane.b*seat[2]+plane.c);
+ const plane=solution.plane,residual=(carriage?carriage.heightAt(seat[0],seat[2]):solution.heightAt(seat[0],seat[2]))-(plane.a*seat[0]+plane.b*seat[2]+plane.c);
  const origin=V.add(common.rotate([seat[0],residual*factor/1000,seat[2]]),[0,.66+plane.c*factor/1000,0]);
  // Support dimensions scale the machine layout and bar length, but never the
  // calibrated 50 mm circular cross-section around the spindle centre line.
@@ -45,9 +47,10 @@ function latheInspectionGeometry(state=positions,solution=levelSolution,profile=
   if(!validZ)return {valid:false,microns:null,reason:'travel-range'};
   const body0=add(centreA,mul(normal,.035)),probe0=mul(normal,-1),bodyLocal=inverse(sub(body0,mount.point)),probeLocal=inverse(probe0);
   const fractions=new Set(Array.from({length:17},(_,i)=>i/16));
-  // Include support-cell boundaries and both sides of their slope transition.
-  const startX=levelCoordinates(.08+.7*zStart.Z/100,0).x;
-  for(const p of supports){const f=(levelCoordinates(p.x,p.z).x-startX)/length;if(f>0&&f<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,f+d)));}
+  // Include where a carriage rail pad (centre +/-0.4 m) crosses a support-cell
+  // boundary, on both sides of that slope transition.
+  for(const offset of [-.4,.4]){const startX=levelCoordinates(.08+.7*zStart.Z/100+offset,0).x;
+  for(const p of supports){const f=(levelCoordinates(p.x,p.z).x-startX)/length;if(f>0&&f<1)for(const d of [-1e-8,0,1e-8])fractions.add(Math.max(0,Math.min(1,f+d)));}}
   const samples=[...fractions].sort((a,b)=>a-b).map(t=>{
    const m=at(mountRaw,'work',{...zStart,Z:zStart.Z+(zEnd.Z-zStart.Z)*t}),body=add(m.point,m.rotate(bodyLocal)),probe=m.rotate(probeLocal);
    return {t,body,probe,...V.cylinderContact(body,probe,head.point,axis,.025,barLength)};

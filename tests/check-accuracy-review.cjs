@@ -99,7 +99,7 @@ async function main(){
  // along X. The seat/guide relative deformation is a geometric assumption.
  check('移動コラムはレールと柱座の姿勢差でXZが変わり、柱YZは保持',()=>{assert.ok(Math.abs(travelLeft)>1);assert.ok(travelLeft*pair(current(),'XZ').errorMicrons>0);near(pair(current(),'YZ').errorMicrons,0);assert.notEqual(current().toolLean.front,travelLean);near(current().toolPoints[0].x,.5);});
  open(1);preset('twist');axis('X',-100);const horizontalLeft=pair(current(),'YZ').errorMicrons;axis('X',100);
- check('横形は Y が上下、Z が前後の対応で直角度を表示',()=>{assert.ok(horizontalLeft*pair(current(),'YZ').errorMicrons<0);assert.ok(Math.abs(pair(current(),'XY').errorMicrons)>.001);assert.deepEqual(current().axes.find(a=>a.key==='Y').vector,[0,1,0]);});
+ check('横形は Y が上下、Z が前後の対応で直角度を表示',()=>{assert.ok(horizontalLeft*pair(current(),'YZ').errorMicrons<0);assert.ok(Math.abs(pair(current(),'XY').errorMicrons)<1e-6);assert.deepEqual(current().axes.find(a=>a.key==='Y').vector,[0,1,0]);});
  for(const [index,mode] of [[3,'l3-3000'],[4,'']]){
   open(index,mode);preset('twist');
   check('門形の左右逆向き倒れを保持 '+index+' '+mode,()=>{const g=current();assert.equal(g.columns.length,2);assert.ok(g.columns[0].front<0&&g.columns[1].front>0);assert.ok(!r.columnDifference.hidden);assert.match(r.columnDifference.textContent,/左右の前後倒れ差/);});

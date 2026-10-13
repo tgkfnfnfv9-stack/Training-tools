@@ -1,0 +1,94 @@
+{
+  "calculationModel": "portal-shear-v2",
+  "version": 2,
+  "machineProfile": {
+    "version": 1,
+    "condition": "new",
+    "seed": 3375215419,
+    "keys": [
+      "X",
+      "Y",
+      "Z"
+    ],
+    "squareness": {
+      "XY": {
+        "band": 1,
+        "microns": 28.704
+      },
+      "XZ": {
+        "band": 0,
+        "microns": -14.134
+      },
+      "YZ": {
+        "band": 0,
+        "microns": 16.19
+      }
+    },
+    "guides": {
+      "X": {
+        "band": 0,
+        "microns": 2.911
+      },
+      "Y": {
+        "band": 0,
+        "microns": 14.734
+      },
+      "Z": {
+        "band": 0,
+        "microns": 5.045
+      }
+    },
+    "initialHeights": [
+      -0.15,
+      0.15,
+      0.035,
+      -0.091,
+      -0.02,
+      0.026,
+      -0.086,
+      -0.005
+    ]
+  },
+  "bestState": {
+    "width": 3.2,
+    "depth": 4.64,
+    "columnX": 0,
+    "columnZ": 0,
+    "heights": [
+      0,
+      -0.01,
+      -0.072,
+      0,
+      0,
+      0,
+      0.014,
+      -0.048
+    ]
+  },
+  "machine": "gantry",
+  "mode": "",
+  "width": 3.2,
+  "depth": 4.64,
+  "heights": [
+    -0.15,
+    0.16,
+    0.035,
+    -0.091,
+    -0.02,
+    0.026,
+    -0.086,
+    -0.005
+  ],
+  "sensitivity": 0.05,
+  "measurePos": 0,
+  "offset": 0.5,
+  "columnX": 0,
+  "columnZ": 0,
+  "axisPositions": {
+    "X": 37,
+    "Y": 0,
+    "Z": 0
+  },
+  "step": 0.01,
+  "exaggerate": true
+}

@@ -1,0 +1,719 @@
+{
+ "fails": 0,
+ "results": [
+  {
+   "name": "vertical: raise D(1.040,1.080) +0.2mm -> mean LR mm/m",
+   "expected": 0.04807692307692308,
+   "observed": 0.04807692307692308,
+   "ok": true
+  },
+  {
+   "name": "vertical: same -> mean FB mm/m",
+   "expected": 0.0462962962962963,
+   "observed": 0.046296296296296294,
+   "ok": true
+  },
+  {
+   "name": "vertical: LR bubble toward high side (right)",
+   "expected": "left%>50",
+   "observed": 64.42307692307692,
+   "ok": true
+  },
+  {
+   "name": "vertical: FB bubble toward high side (back=up)",
+   "expected": "top%<50",
+   "observed": 36.111111111111114,
+   "ok": true
+  },
+  {
+   "name": "vertical: LR text",
+   "expected": "右が高い",
+   "observed": "右が高い",
+   "ok": true
+  },
+  {
+   "name": "vertical: twist(back-front LR) mm/m",
+   "expected": 0.09615384615384616,
+   "observed": 0.09615384615384616,
+   "ok": true
+  },
+  {
+   "name": "vertical: twist text",
+   "expected": "奥が手前より右高",
+   "observed": "支持面のねじれ：奥が手前より右高",
+   "ok": true
+  },
+  {
+   "name": "vertical back-high: combined lean front µrad",
+   "expected": 99.99999966666667,
+   "observed": 99.99999966666667,
+   "ok": true
+  },
+  {
+   "name": "vertical back-high: combined lean right µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "vertical back-high: front label",
+   "expected": "前倒れ",
+   "observed": "本体＋支持の前後倒れ：前倒れ / 前倒れ 100.00 µrad ／ 倒れは表示桁未満",
+   "ok": true
+  },
+  {
+   "name": "vertical back-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0,
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "vertical back-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": 0,
+    "right": 0
+   },
+   "ok": true
+  },
+  {
+   "name": "vertical right-high: combined lean front µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "vertical right-high: combined lean right µrad",
+   "expected": -99.99999966666667,
+   "observed": -99.99999966666667,
+   "ok": true
+  },
+  {
+   "name": "vertical right-high: right label",
+   "expected": "左倒れ",
+   "observed": "本体＋支持の左右倒れ：左倒れ / 倒れは表示桁未満 ／ 左倒れ 100.00 µrad",
+   "ok": true
+  },
+  {
+   "name": "vertical right-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0,
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "vertical right-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": 0,
+    "right": 0
+   },
+   "ok": true
+  },
+  {
+   "name": "horizontal: raise H(1.360,1.840) +0.2mm -> mean LR mm/m",
+   "expected": 0.01838235294117647,
+   "observed": 0.01838235294117647,
+   "ok": true
+  },
+  {
+   "name": "horizontal: same -> mean FB mm/m",
+   "expected": 0.02445652173913044,
+   "observed": 0.024456521739130432,
+   "ok": true
+  },
+  {
+   "name": "horizontal: LR bubble toward high side (right)",
+   "expected": "left%>50",
+   "observed": 55.51470588235294,
+   "ok": true
+  },
+  {
+   "name": "horizontal: FB bubble toward high side (back=up)",
+   "expected": "top%<50",
+   "observed": 42.663043478260875,
+   "ok": true
+  },
+  {
+   "name": "horizontal: LR text",
+   "expected": "目安内",
+   "observed": "目安内",
+   "ok": true
+  },
+  {
+   "name": "horizontal: twist(back-front LR) mm/m",
+   "expected": 0.07352941176470588,
+   "observed": 0.07352941176470588,
+   "ok": true
+  },
+  {
+   "name": "horizontal: twist text",
+   "expected": "奥が手前より右高",
+   "observed": "支持面のねじれ：奥が手前より右高",
+   "ok": true
+  },
+  {
+   "name": "horizontal back-high: combined lean front µrad",
+   "expected": 99.99999966666667,
+   "observed": 99.99999966666667,
+   "ok": true
+  },
+  {
+   "name": "horizontal back-high: combined lean right µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "horizontal back-high: front label",
+   "expected": "前倒れ",
+   "observed": "本体＋支持の前後倒れ：前倒れ / 前倒れ 100.00 µrad ／ 倒れは表示桁未満",
+   "ok": true
+  },
+  {
+   "name": "horizontal back-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0,
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "horizontal back-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": -1.4210854715202004e-14,
+    "right": 0
+   },
+   "ok": true
+  },
+  {
+   "name": "horizontal right-high: combined lean front µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "horizontal right-high: combined lean right µrad",
+   "expected": -99.99999966666667,
+   "observed": -99.99999966666667,
+   "ok": true
+  },
+  {
+   "name": "horizontal right-high: right label",
+   "expected": "左倒れ",
+   "observed": "本体＋支持の左右倒れ：左倒れ / 倒れは表示桁未満 ／ 左倒れ 100.00 µrad",
+   "ok": true
+  },
+  {
+   "name": "horizontal right-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0,
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "horizontal right-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": 0,
+    "right": 0
+   },
+   "ok": true
+  },
+  {
+   "name": "travel: raise F(2.160,1.040) +0.2mm -> mean LR mm/m",
+   "expected": 0.023148148148148147,
+   "observed": 0.023148148148148147,
+   "ok": true
+  },
+  {
+   "name": "travel: same -> mean FB mm/m",
+   "expected": 0.032051282051282055,
+   "observed": 0.03205128205128205,
+   "ok": true
+  },
+  {
+   "name": "travel: LR bubble toward high side (right)",
+   "expected": "left%>50",
+   "observed": 56.94444444444444,
+   "ok": true
+  },
+  {
+   "name": "travel: FB bubble toward high side (back=up)",
+   "expected": "top%<50",
+   "observed": 40.38461538461539,
+   "ok": true
+  },
+  {
+   "name": "travel: LR text",
+   "expected": "右が高い",
+   "observed": "右が高い",
+   "ok": true
+  },
+  {
+   "name": "travel: twist(back-front LR) mm/m",
+   "expected": 0.046296296296296294,
+   "observed": 0.046296296296296294,
+   "ok": true
+  },
+  {
+   "name": "travel: twist text",
+   "expected": "奥が手前より右高",
+   "observed": "支持面のねじれ：奥が手前より右高",
+   "ok": true
+  },
+  {
+   "name": "travel back-high: combined lean front µrad",
+   "expected": 99.99999966666667,
+   "observed": 99.99999966666667,
+   "ok": true
+  },
+  {
+   "name": "travel back-high: combined lean right µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "travel back-high: front label",
+   "expected": "前倒れ",
+   "observed": "本体＋支持の前後倒れ：前倒れ / 前倒れ 100.00 µrad ／ 倒れは表示桁未満",
+   "ok": true
+  },
+  {
+   "name": "travel back-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0,
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "travel back-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": 0,
+    "right": 0
+   },
+   "ok": true
+  },
+  {
+   "name": "travel right-high: combined lean front µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "travel right-high: combined lean right µrad",
+   "expected": -99.99999966666667,
+   "observed": -99.99999966666667,
+   "ok": true
+  },
+  {
+   "name": "travel right-high: right label",
+   "expected": "左倒れ",
+   "observed": "本体＋支持の左右倒れ：左倒れ / 倒れは表示桁未満 ／ 左倒れ 100.00 µrad",
+   "ok": true
+  },
+  {
+   "name": "travel right-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0,
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "travel right-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": 0,
+    "right": 0
+   },
+   "ok": true
+  },
+  {
+   "name": "gate: raise O(1.420,0.825) +0.2mm -> mean LR mm/m",
+   "expected": 0.0234791835684078,
+   "observed": 0.023479183568407808,
+   "ok": true
+  },
+  {
+   "name": "gate: same -> mean FB mm/m",
+   "expected": 0.001554775248057384,
+   "observed": 0.001554775248057384,
+   "ok": true
+  },
+  {
+   "name": "gate: LR bubble toward high side (right)",
+   "expected": "left%>50",
+   "observed": 57.043755070522344,
+   "ok": true
+  },
+  {
+   "name": "gate: FB bubble toward high side (back=up)",
+   "expected": "top%<50",
+   "observed": 49.53356742558279,
+   "ok": true
+  },
+  {
+   "name": "gate: LR text",
+   "expected": "右が高い",
+   "observed": "右が高い",
+   "ok": true
+  },
+  {
+   "name": "gate: twist evaluated at bbox corners (nearest support distance m)",
+   "expected": "corners on supports?",
+   "observed": {
+    "corners": {
+     "x0": -1.425,
+     "x1": 1.42,
+     "z0": -3.1799999999999993,
+     "z1": 3.1799999999999993
+    },
+    "nearest": [
+     0.655,
+     0.6499999999999999,
+     0.655,
+     0.6499999999999999
+    ]
+   },
+   "ok": true,
+   "note": "informational"
+  },
+  {
+   "name": "gate: own bed-only 3x3 edge twist vs product twist (raised column-right-outer)",
+   "expected": 0,
+   "observed": 0.01522452499244735,
+   "ok": null,
+   "note": "informational: different definitions"
+  },
+  {
+   "name": "gate: raise bed-right-3 +0.2: own bed 3x3 edge twist vs product twist",
+   "expected": 0.12987012987012989,
+   "observed": 0.06709719119647885,
+   "ok": null,
+   "note": "informational: product uses TPS extrapolated to bbox corners"
+  },
+  {
+   "name": "gate: twist text sign for bed-right-3 raise",
+   "expected": "奥が手前より右高",
+   "observed": "支持面のねじれ：奥が手前より右高",
+   "ok": true
+  },
+  {
+   "name": "gate back-high: combined lean front µrad",
+   "expected": 99.99999966666667,
+   "observed": 99.99999966666667,
+   "ok": true
+  },
+  {
+   "name": "gate back-high: combined lean right µrad",
+   "expected": 0,
+   "observed": -1.097383667446322e-16,
+   "ok": true
+  },
+  {
+   "name": "gate back-high: front label",
+   "expected": "前倒れ",
+   "observed": "本体＋支持の前後倒れ：前倒れ / 前倒れ 100.00 µrad ／ 倒れは表示桁未満",
+   "ok": true
+  },
+  {
+   "name": "gate back-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0,
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "gate back-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": 0,
+    "right": -1.0973838462586792e-16
+   },
+   "ok": true
+  },
+  {
+   "name": "gate right-high: combined lean front µrad",
+   "expected": 0,
+   "observed": -2.239720742980069e-16,
+   "ok": true
+  },
+  {
+   "name": "gate right-high: combined lean right µrad",
+   "expected": -99.99999966666667,
+   "observed": -99.99999966666668,
+   "ok": true
+  },
+  {
+   "name": "gate right-high: right label",
+   "expected": "左倒れ",
+   "observed": "本体＋支持の左右倒れ：左倒れ / 倒れは表示桁未満 ／ 左倒れ 100.00 µrad",
+   "ok": true
+  },
+  {
+   "name": "gate right-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0,
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "gate right-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": -2.2397207657375496e-16,
+    "right": 0
+   },
+   "ok": true
+  },
+  {
+   "name": "gantry: raise H(1.600,2.320) +0.2mm -> mean LR mm/m",
+   "expected": 0.015625,
+   "observed": 0.015625,
+   "ok": true
+  },
+  {
+   "name": "gantry: same -> mean FB mm/m",
+   "expected": 0.019396551724137935,
+   "observed": 0.01939655172413793,
+   "ok": true
+  },
+  {
+   "name": "gantry: LR bubble toward high side (right)",
+   "expected": "left%>50",
+   "observed": 54.6875,
+   "ok": true
+  },
+  {
+   "name": "gantry: FB bubble toward high side (back=up)",
+   "expected": "top%<50",
+   "observed": 44.18103448275862,
+   "ok": true
+  },
+  {
+   "name": "gantry: LR text",
+   "expected": "目安内",
+   "observed": "目安内",
+   "ok": true
+  },
+  {
+   "name": "gantry: twist(back-front LR) mm/m",
+   "expected": 0.0625,
+   "observed": 0.0625,
+   "ok": true
+  },
+  {
+   "name": "gantry: twist text",
+   "expected": "奥が手前より右高",
+   "observed": "支持面のねじれ：奥が手前より右高",
+   "ok": true
+  },
+  {
+   "name": "gantry back-high: combined lean front µrad",
+   "expected": 99.99999966666667,
+   "observed": 99.99999966666668,
+   "ok": true
+  },
+  {
+   "name": "gantry back-high: combined lean right µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "gantry back-high: front label",
+   "expected": "前倒れ",
+   "observed": "本体＋支持の前後倒れ：前倒れ / 前倒れ 100.00 µrad ／ 倒れは表示桁未満",
+   "ok": true
+  },
+  {
+   "name": "gantry back-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0,
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "gantry back-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": 0,
+    "right": 0
+   },
+   "ok": true
+  },
+  {
+   "name": "gantry right-high: combined lean front µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "gantry right-high: combined lean right µrad",
+   "expected": -99.99999966666667,
+   "observed": -99.99999966666668,
+   "ok": true
+  },
+  {
+   "name": "gantry right-high: right label",
+   "expected": "左倒れ",
+   "observed": "本体＋支持の左右倒れ：左倒れ / 倒れは表示桁未満 ／ 左倒れ 100.00 µrad",
+   "ok": true
+  },
+  {
+   "name": "gantry right-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0,
+    0,
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "gantry right-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": 0,
+    "right": 0
+   },
+   "ok": true
+  },
+  {
+   "name": "lathe: raise F(2.000,0.840) +0.2mm -> mean LR mm/m",
+   "expected": 0.025,
+   "observed": 0.025,
+   "ok": true
+  },
+  {
+   "name": "lathe: same -> mean FB mm/m",
+   "expected": 0.039682539682539694,
+   "observed": 0.03968253968253969,
+   "ok": true
+  },
+  {
+   "name": "lathe: LR bubble toward high side (right)",
+   "expected": "left%>50",
+   "observed": 57.5,
+   "ok": true
+  },
+  {
+   "name": "lathe: FB bubble toward high side (back=up)",
+   "expected": "top%<50",
+   "observed": 38.095238095238095,
+   "ok": true
+  },
+  {
+   "name": "lathe: LR text",
+   "expected": "右が高い",
+   "observed": "右が高い",
+   "ok": true
+  },
+  {
+   "name": "lathe: twist(back-front LR) mm/m",
+   "expected": 0.05,
+   "observed": 0.05,
+   "ok": true
+  },
+  {
+   "name": "lathe: twist text",
+   "expected": "奥が手前より右高",
+   "observed": "支持面のねじれ：奥が手前より右高",
+   "ok": true
+  },
+  {
+   "name": "lathe back-high: spindle up/down µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "lathe back-high: spindle horizontal-plane µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "lathe back-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "lathe back-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": 0,
+    "right": 0
+   },
+   "ok": true
+  },
+  {
+   "name": "lathe right-high: spindle up/down µrad",
+   "expected": 99.99999966666667,
+   "observed": 99.99999966666667,
+   "ok": true
+  },
+  {
+   "name": "lathe right-high: spindle horizontal-plane µrad",
+   "expected": 0,
+   "observed": 0,
+   "ok": true
+  },
+  {
+   "name": "lathe right-high: label",
+   "expected": "上向き",
+   "observed": "主軸の上下方向：上向き",
+   "ok": true
+  },
+  {
+   "name": "lathe right-high: rigid plane leaves all pair angles 0 (no intrinsic)",
+   "expected": 0,
+   "observed": [
+    0
+   ],
+   "ok": true
+  },
+  {
+   "name": "lathe right-high: relative lean 0",
+   "expected": 0,
+   "observed": {
+    "front": 0,
+    "right": 0
+   },
+   "ok": true
+  }
+ ]
+}

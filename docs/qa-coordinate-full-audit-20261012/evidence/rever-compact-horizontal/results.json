@@ -1,0 +1,1456 @@
+{
+ "branch": "fix/compact-physical-posture-20261012",
+ "head": "e464c7f98667d1fdb231cf5adb8c4bc0ddc60997",
+ "compact": {
+  "cases": 160,
+  "maxAbsDiffDomVsOracle_um": 6.4798513754738e-7,
+  "maxAbsDiffSweep_um": 6.338680691442278e-10,
+  "textMismatches": 0,
+  "mismatches": [],
+  "gainTrace": [
+   {
+    "op": "A+0.1",
+    "productYZChange": -0.23946111345901588,
+    "oracleYZChange": -0.23946159134410916,
+    "physicalAngleChange_urad": -0.7982053048086613,
+    "expectedFrom300mm": -0.23946159144259838,
+    "ratioProductToPhysical": 0.9999980043350978,
+    "productXY": [
+     2.1769999999816934,
+     5.515680560834458
+    ],
+    "productXZ": [
+     10.906999997596644,
+     3.8757500022031097
+    ],
+    "productSweepBackChange": -0.23946900293643658,
+    "oracleSweepBackChange": -0.2394690029605684
+   },
+   {
+    "op": "D+0.1",
+    "productYZChange": -0.23946111346075138,
+    "oracleYZChange": -0.23946119752371597,
+    "physicalAngleChange_urad": -0.7982039920023993,
+    "expectedFrom300mm": -0.2394611976007198,
+    "ratioProductToPhysical": 0.9999996489495356,
+    "productXY": [
+     2.1769999999816934,
+     5.515680560834458
+    ],
+    "productXZ": [
+     10.906999997596644,
+     3.8757500022031097
+    ],
+    "productSweepBackChange": -0.23946900293643747,
+    "oracleSweepBackChange": -0.2394690029605684
+   },
+   {
+    "op": "twist0.1",
+    "productYZChange": -0.9569054384098861,
+    "oracleYZChange": -0.9569051774502295,
+    "physicalAngleChange_urad": -3.189683925788689,
+    "expectedFrom300mm": -0.9569051777366067,
+    "ratioProductToPhysical": 1.0000002727121378,
+    "productXY": [
+     2.1769999999816934,
+     15.531786409448896
+    ],
+    "productXZ": [
+     10.906999997596644,
+     -17.217999939131424
+    ],
+    "productSweepBackChange": -0.9578759846292497,
+    "oracleSweepBackChange": -0.9578759848638541
+   },
+   {
+    "op": "rigid front-back C,D+0.1",
+    "productYZChange": 1.7346124536743446e-12,
+    "oracleYZChange": -1.6769398403226887e-7,
+    "physicalAngleChange_urad": -5.59461184934662e-7,
+    "expectedFrom300mm": -1.678383554803986e-7,
+    "ratioProductToPhysical": -0.00001034391581596963,
+    "productXY": [
+     2.1769999999816934,
+     2.1769999999816934
+    ],
+    "productXZ": [
+     10.906999997596644,
+     10.906999997596644
+    ],
+    "productSweepBackChange": 6.217248937900877e-15,
+    "oracleSweepBackChange": 2.220446049250313e-10
+   }
+  ],
+  "rigidTilt": {
+   "maxProductSqDiff": 5.0306980803327406e-11,
+   "maxProductSweepDiff": 5.329070518200751e-15,
+   "oracleA": [
+    {
+     "k": "XY",
+     "A": 0.8415327467856115,
+     "Bbase": 0.8415327467925504
+    },
+    {
+     "k": "XZ",
+     "A": 14.467363241697784,
+     "Bbase": 14.467363241649212
+    },
+    {
+     "k": "YZ",
+     "A": -6.225046370012325,
+     "Bbase": -6.225046370064366
+    }
+   ],
+   "sweepA": [
+    4.481758392960167,
+    -5.503846474685936,
+    -9.985604867868147,
+    -4.440892098500626e-10
+   ]
+  },
+  "ritzPerUnitTwist": [
+   0.12672890326115718,
+   0.024819459697666375
+  ],
+  "controlOnMain": "control-main-compact.cjs -> results-compact-MAIN-control.json: same oracle vs main e0e62e7 gives support-response ratio 5.00 (gain present); branch ratio 1.000"
+ },
+ "horizontal": {
+  "cases": 96,
+  "maxAbsDiffSquareness_um": 2.418205191645484e-9,
+  "maxAbsDiffParallelism_um": 8.933795925258892e-10,
+  "maxAbsDiffLocalAngle_urad": 2.2737367544323206e-13,
+  "textMismatches": 0,
+  "mismatches": [],
+  "railLine": {
+   "seatPathVsRailGuide_max_urad_seat028": 0.014901161193847656,
+   "seatPathVsRailGuide_max_urad_old029": 2.369144048659255,
+   "nosePathVsRailGuide_max_urad": 142.57147905015177
+  },
+  "productLinePoints": [
+   {
+    "toolPoints": [
+     {
+      "x": 0.165,
+      "z": 1.288
+     }
+    ],
+    "guidePoints": [
+     {
+      "x": 0.165,
+      "z": 1.158
+     },
+     {
+      "x": 0.165,
+      "z": 1.4180000000000001
+     }
+    ],
+    "D": 4.6
+   },
+   {
+    "toolPoints": [
+     {
+      "x": 0.539,
+      "z": 0.92
+     }
+    ],
+    "guidePoints": [
+     {
+      "x": 0.539,
+      "z": 0.79
+     },
+     {
+      "x": 0.539,
+      "z": 1.05
+     }
+    ],
+    "D": 4.6
+   },
+   {
+    "toolPoints": [
+     {
+      "x": -0.03900000000000001,
+      "z": 1.748
+     }
+    ],
+    "guidePoints": [
+     {
+      "x": -0.03900000000000001,
+      "z": 1.6179999999999999
+     },
+     {
+      "x": -0.03900000000000001,
+      "z": 1.8780000000000001
+     }
+    ],
+    "D": 4.6
+   }
+  ],
+  "rigidTilt": {
+   "maxSqDiff": 6.36642738527371e-10,
+   "maxParDiff": 6.435847410557471e-10,
+   "oracleA": [
+    {
+     "k": "XY",
+     "Aend": 14.324524637208263,
+     "AzeroPoint": -4.336808689942018e-11,
+     "Bbase": 14.324524637236019
+    },
+    {
+     "k": "XZ",
+     "Aend": -18.086695546948654,
+     "AzeroPoint": 7.979727989493313e-11,
+     "Bbase": -18.08669554699549
+    },
+    {
+     "k": "YZ",
+     "Aend": -93.08848297978102,
+     "AzeroPoint": -4.163336342344337e-11,
+     "Bbase": -93.08848297976714
+    }
+   ],
+   "oracleParA": [
+    {
+     "ch": "a",
+     "Aend": -1.2798945497102117,
+     "Bbase": -1.2798945496148018
+    },
+    {
+     "ch": "b",
+     "Aend": 18.279285853541744,
+     "Bbase": 18.2792858536545
+    }
+   ]
+  },
+  "outOfRange": {
+   "cfg": {
+    "width": 2.72,
+    "depth": 1,
+    "columnX": 0,
+    "columnZ": 0
+   },
+   "product": {
+    "sq": [
+     {
+      "pair": "XY",
+      "local": -17.55666666666668,
+      "value": "21.469533127489726",
+      "text": "+21"
+     },
+     {
+      "pair": "XZ",
+      "local": 50.72504532059419,
+      "value": "",
+      "text": "—"
+     },
+     {
+      "pair": "YZ",
+      "local": -685.4103659058455,
+      "value": "",
+      "text": "—"
+     }
+    ],
+    "par": [
+     {
+      "value": "",
+      "text": "—"
+     },
+     {
+      "value": "",
+      "text": "—"
+     }
+    ]
+   },
+   "oracle": [
+    {
+     "k": "XY",
+     "valid": true
+    },
+    {
+     "k": "XZ",
+     "valid": false
+    },
+    {
+     "k": "YZ",
+     "valid": false
+    }
+   ],
+   "oraclePar": false
+  },
+  "localVsFiniteDecomposition": [
+   {
+    "heights": "initial",
+    "B": 21.454895091359283,
+    "localX300": -5.267000000000004,
+    "chordX300": 22.45371527770815,
+    "columnPitchChangeOver300mmX_urad": 12.498001724328518,
+    "noseOverhangZ_m": -2.2180000000000004,
+    "noseHeight_m": 1.8899999999999997
+   },
+   {
+    "heights": "after A+0.1",
+    "B": 21.45455897289983,
+    "localX300": -5.267000000000001,
+    "chordX300": 22.453715362786337,
+    "columnPitchChangeOver300mmX_urad": 12.498001761646606,
+    "noseOverhangZ_m": -2.2180000000000004,
+    "noseHeight_m": 1.8899999999999997
+   },
+   {
+    "heights": "flat",
+    "B": -5.2669999997256856,
+    "localX300": -5.267,
+    "chordX300": -5.267,
+    "columnPitchChangeOver300mmX_urad": 0,
+    "noseOverhangZ_m": -2.2180000000000004,
+    "noseHeight_m": 1.8899999999999997
+   }
+  ],
+  "controlOnMain": "ROOT=main-wt run-horizontal.cjs -> results-horizontal-MAIN-control.json: main (seat 0.29D) disagrees with rail-centre oracle (max 0.97 um, 30 text mismatches); branch agrees"
+ },
+ "saveLoad": {
+  "node": {
+   "compact": {
+    "machine": "vertical",
+    "calculationModel": "compact-asymmetric-bending-v4",
+    "storageKey": "training-level-compact-asymmetric-bending-v4:vertical:compact:compact-four-v1",
+    "readingsBefore": {
+     "sq": [
+      [
+       "-10.041276504588886",
+       "-10"
+      ],
+      [
+       "-3.520953852574962",
+       "-4"
+      ],
+      [
+       "55.691388035312286",
+       "+56"
+      ]
+     ],
+     "sw": [
+      [
+       "26.944634083117066",
+       "+27"
+      ],
+      [
+       "57.41022185305365",
+       "+57"
+      ],
+      [
+       "30.465587769936583",
+       "+30"
+      ],
+      [
+       "0",
+       "0"
+      ]
+     ]
+    },
+    "readingsDisturbed": {
+     "sq": [
+      [
+       "-6.1016689076910655",
+       "-6"
+      ],
+      [
+       "-13.740636630650908",
+       "-14"
+      ],
+      [
+       "56.83021010631506",
+       "+57"
+      ]
+     ],
+     "sw": [
+      [
+       "21.357128166862392",
+       "+21"
+      ],
+      [
+       "56.45489319461232",
+       "+56"
+      ],
+      [
+       "35.09776502774993",
+       "+35"
+      ],
+      [
+       "0",
+       "0"
+      ]
+     ]
+    },
+    "readingsAfterImport": {
+     "sq": [
+      [
+       "-10.041276504588886",
+       "-10"
+      ],
+      [
+       "-3.520953852574962",
+       "-4"
+      ],
+      [
+       "55.691388035312286",
+       "+56"
+      ]
+     ],
+     "sw": [
+      [
+       "26.944634083117066",
+       "+27"
+      ],
+      [
+       "57.41022185305365",
+       "+57"
+      ],
+      [
+       "30.465587769936583",
+       "+30"
+      ],
+      [
+       "0",
+       "0"
+      ]
+     ]
+    },
+    "roundTripEqual": true,
+    "importMessage": "調整データを読み込みました。",
+    "oldId": "compact-asymmetric-bending-v3",
+    "oldRejectedMessage": "読込できません。計算仕様が異なる旧版データです。旧データは変更していません。新しい仕様で保存したJSONを選んでください。",
+    "stateUnchangedAfterReject": true,
+    "savedFields": {
+     "heights": [
+      0.012,
+      -0.033,
+      0.101,
+      -0.087
+     ],
+     "axisPositions": {
+      "X": 40,
+      "Y": -55,
+      "Z": 30
+     },
+     "columnX": 20,
+     "columnZ": -10,
+     "seed": 20261012
+    }
+   },
+   "horizontal": {
+    "machine": "horizontal",
+    "calculationModel": "horizontal-rail-v3",
+    "storageKey": "training-level-horizontal-rail-v3:horizontal::haas-ec630-ngc-eight-v1",
+    "readingsBefore": {
+     "sq": [
+      [
+       "8.826837266145276",
+       "+9"
+      ],
+      [
+       "-28.12693450229657",
+       "-28"
+      ],
+      [
+       "-47.65994306367427",
+       "-48"
+      ]
+     ],
+     "sw": [
+      [
+       "-33.36402334083027",
+       "-33"
+      ],
+      [
+       "61.84043662870418",
+       "+62"
+      ],
+      [
+       "0",
+       "0"
+      ],
+      [
+       "",
+       "300 mm"
+      ]
+     ]
+    },
+    "readingsDisturbed": {
+     "sq": [
+      [
+       "11.456736318417663",
+       "+11"
+      ],
+      [
+       "-19.369952429060948",
+       "-19"
+      ],
+      [
+       "-44.32850664378568",
+       "-44"
+      ]
+     ],
+     "sw": [
+      [
+       "-9.912349762372653",
+       "-10"
+      ],
+      [
+       "44.05970342741608",
+       "+44"
+      ],
+      [
+       "0",
+       "0"
+      ],
+      [
+       "",
+       "300 mm"
+      ]
+     ]
+    },
+    "readingsAfterImport": {
+     "sq": [
+      [
+       "8.826837266145276",
+       "+9"
+      ],
+      [
+       "-28.12693450229657",
+       "-28"
+      ],
+      [
+       "-47.65994306367427",
+       "-48"
+      ]
+     ],
+     "sw": [
+      [
+       "-33.36402334083027",
+       "-33"
+      ],
+      [
+       "61.84043662870418",
+       "+62"
+      ],
+      [
+       "0",
+       "0"
+      ],
+      [
+       "",
+       "300 mm"
+      ]
+     ]
+    },
+    "roundTripEqual": true,
+    "importMessage": "調整データを読み込みました。",
+    "oldId": "horizontal-guide-v2",
+    "oldRejectedMessage": "読込できません。計算仕様が異なる旧版データです。旧データは変更していません。新しい仕様で保存したJSONを選んでください。",
+    "stateUnchangedAfterReject": true,
+    "savedFields": {
+     "heights": [
+      0.05,
+      -0.02,
+      0.11,
+      -0.07,
+      0,
+      0.03,
+      -0.04,
+      0.09
+     ],
+     "axisPositions": {
+      "X": 70,
+      "Y": -60,
+      "Z": 45
+     },
+     "columnX": 55,
+     "columnZ": -80,
+     "seed": 20261012
+    }
+   },
+   "outOfRange": {
+    "compactDepth06": {
+     "sq": [
+      [
+       "",
+       "—"
+      ],
+      [
+       "66.94393688978263",
+       "+67"
+      ],
+      [
+       "-8.263356283275126",
+       "-8"
+      ]
+     ],
+     "sw": [
+      [
+       "",
+       "—"
+      ],
+      [
+       "",
+       "—"
+      ],
+      [
+       "",
+       "—"
+      ],
+      [
+       "",
+       "面外"
+      ]
+     ]
+    },
+    "compactX100Y100": {
+     "sq": [
+      [
+       "-6.457300945443556",
+       "-6"
+      ],
+      [
+       "57.03474909364396",
+       "+57"
+      ],
+      [
+       "-18.764066093088573",
+       "-19"
+      ]
+     ],
+     "sw": [
+      [
+       "",
+       "—"
+      ],
+      [
+       "",
+       "—"
+      ],
+      [
+       "",
+       "—"
+      ],
+      [
+       "",
+       "面外"
+      ]
+     ]
+    },
+    "compactXm100Ym100": {
+     "sq": [
+      [
+       "-6.457417172369209",
+       "-6"
+      ],
+      [
+       "76.85312464587521",
+       "+77"
+      ],
+      [
+       "2.821178955648984",
+       "+3"
+      ]
+     ],
+     "sw": [
+      [
+       "34.26248521641048",
+       "+34"
+      ],
+      [
+       "-8.32815676552564",
+       "-8"
+      ],
+      [
+       "-42.59064198193612",
+       "-43"
+      ],
+      [
+       "0",
+       "0"
+      ]
+     ]
+    }
+   }
+  },
+  "browser": {
+   "compact": {
+    "calculationModel": "compact-asymmetric-bending-v4",
+    "roundTrip": true,
+    "changedWhenDisturbed": true,
+    "importMessage": "調整データを読み込みました。",
+    "oldId": "compact-asymmetric-bending-v3",
+    "rejectMessage": "読込できません。計算仕様が異なる旧版データです。旧データは変更していません。新しい仕様で保存したJSONを選んでください。",
+    "unchangedAfterReject": true,
+    "before": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "-15.616791956652582",
+       "text": "-16"
+      },
+      {
+       "pair": "XZ",
+       "value": "8.234857421927922",
+       "text": "+8"
+      },
+      {
+       "pair": "YZ",
+       "value": "53.63769419095866",
+       "text": "+54"
+      }
+     ],
+     "sw": [
+      {
+       "value": "32.56615852380041",
+       "text": "+33"
+      },
+      {
+       "value": "56.89745900647281",
+       "text": "+57"
+      },
+      {
+       "value": "24.3313004826724",
+       "text": "+24"
+      },
+      {
+       "value": "0",
+       "text": "0"
+      }
+     ]
+    },
+    "after": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "-15.616791956652582",
+       "text": "-16"
+      },
+      {
+       "pair": "XZ",
+       "value": "8.234857421927922",
+       "text": "+8"
+      },
+      {
+       "pair": "YZ",
+       "value": "53.63769419095866",
+       "text": "+54"
+      }
+     ],
+     "sw": [
+      {
+       "value": "32.56615852380041",
+       "text": "+33"
+      },
+      {
+       "value": "56.89745900647281",
+       "text": "+57"
+      },
+      {
+       "value": "24.3313004826724",
+       "text": "+24"
+      },
+      {
+       "value": "0",
+       "text": "0"
+      }
+     ]
+    }
+   },
+   "horizontal": {
+    "calculationModel": "horizontal-rail-v3",
+    "roundTrip": true,
+    "changedWhenDisturbed": true,
+    "importMessage": "調整データを読み込みました。",
+    "oldId": "horizontal-guide-v2",
+    "rejectMessage": "読込できません。計算仕様が異なる旧版データです。旧データは変更していません。新しい仕様で保存したJSONを選んでください。",
+    "unchangedAfterReject": true,
+    "before": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "18.081115226912733",
+       "text": "+18"
+      },
+      {
+       "pair": "XZ",
+       "value": "-18.619068375592615",
+       "text": "-19"
+      },
+      {
+       "pair": "YZ",
+       "value": "-126.51139541136267",
+       "text": "-127"
+      }
+     ],
+     "sw": [
+      {
+       "value": "-1.8703080747681233",
+       "text": "-2"
+      },
+      {
+       "value": "71.35386265217682",
+       "text": "+71"
+      },
+      {
+       "value": "0",
+       "text": "0"
+      },
+      {
+       "value": "",
+       "text": "300 mm"
+      }
+     ]
+    },
+    "after": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "18.081115226912733",
+       "text": "+18"
+      },
+      {
+       "pair": "XZ",
+       "value": "-18.619068375592615",
+       "text": "-19"
+      },
+      {
+       "pair": "YZ",
+       "value": "-126.51139541136267",
+       "text": "-127"
+      }
+     ],
+     "sw": [
+      {
+       "value": "-1.8703080747681233",
+       "text": "-2"
+      },
+      {
+       "value": "71.35386265217682",
+       "text": "+71"
+      },
+      {
+       "value": "0",
+       "text": "0"
+      },
+      {
+       "value": "",
+       "text": "300 mm"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "browser": {
+  "worstRawDiff_um": 1.819065715835677e-7,
+  "textMismatches": 0,
+  "pageErrors": [],
+  "cases": [
+   {
+    "case": {
+     "mi": 0,
+     "seed": 20261012,
+     "cfg": {
+      "width": 2.08,
+      "depth": 2.16,
+      "columnX": 0,
+      "columnZ": 0
+     },
+     "state": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "op": [
+      0.1,
+      0,
+      0,
+      0
+     ]
+    },
+    "heights": [
+     -0.05,
+     0.15,
+     0.021,
+     -0.02
+    ],
+    "dom": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "-13.313176207735076",
+       "text": "-13"
+      },
+      {
+       "pair": "XZ",
+       "value": "1.7273121645823564",
+       "text": "+2"
+      },
+      {
+       "pair": "YZ",
+       "value": "56.800463742061325",
+       "text": "+57"
+      }
+     ],
+     "sw": [
+      {
+       "value": "29.263850339559006",
+       "text": "+29"
+      },
+      {
+       "value": "56.8003881535359",
+       "text": "+57"
+      },
+      {
+       "value": "27.53653781397689",
+       "text": "+28"
+      },
+      {
+       "value": "0",
+       "text": "0"
+      }
+     ]
+    },
+    "oracle": {
+     "XY": -13.313176207738545,
+     "XZ": 1.7273121645823564,
+     "YZ": 56.80046373921291,
+     "sweep": [
+      {
+       "raw": 29.26385033985568,
+       "onTable": true
+      },
+      {
+       "raw": 56.800388153699366,
+       "onTable": true
+      },
+      {
+       "raw": 27.53653781406573,
+       "onTable": true
+      },
+      {
+       "raw": 0,
+       "onTable": true
+      }
+     ]
+    }
+   },
+   {
+    "case": {
+     "mi": 0,
+     "seed": 20261012,
+     "cfg": {
+      "width": 2.08,
+      "depth": 2.16,
+      "columnX": 63,
+      "columnZ": -71
+     },
+     "state": {
+      "X": 81,
+      "Y": -94,
+      "Z": 30
+     },
+     "op": [
+      0,
+      0,
+      0,
+      -0.08
+     ]
+    },
+    "heights": [
+     -0.15,
+     0.15,
+     0.021,
+     -0.1
+    ],
+    "dom": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "-19.322425675125793",
+       "text": "-19"
+      },
+      {
+       "pair": "XZ",
+       "value": "18.159506885733272",
+       "text": "+18"
+      },
+      {
+       "pair": "YZ",
+       "value": "54.6285660999006",
+       "text": "+55"
+      }
+     ],
+     "sw": [
+      {
+       "value": "41.516728140824846",
+       "text": "+42"
+      },
+      {
+       "value": "64.87394800232042",
+       "text": "+65"
+      },
+      {
+       "value": "23.357219861495572",
+       "text": "+23"
+      },
+      {
+       "value": "0",
+       "text": "0"
+      }
+     ]
+    },
+    "oracle": {
+     "XY": -19.322425675125793,
+     "XZ": 18.159506885714187,
+     "YZ": 54.62856594439652,
+     "sweep": [
+      {
+       "raw": 41.516728140789105,
+       "onTable": true
+      },
+      {
+       "raw": 64.87394800247515,
+       "onTable": true
+      },
+      {
+       "raw": 23.357219861575018,
+       "onTable": true
+      },
+      {
+       "raw": 0,
+       "onTable": true
+      }
+     ]
+    }
+   },
+   {
+    "case": {
+     "mi": 0,
+     "seed": 7,
+     "cfg": {
+      "width": 2.08,
+      "depth": 2.16,
+      "columnX": 0,
+      "columnZ": 0
+     },
+     "state": {
+      "X": 100,
+      "Y": 100,
+      "Z": 0
+     },
+     "op": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "heights": [
+     -0.15,
+     0.15,
+     0.01,
+     -0.061
+    ],
+    "dom": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "-6.457300945443556",
+       "text": "-6"
+      },
+      {
+       "pair": "XZ",
+       "value": "57.03474909364396",
+       "text": "+57"
+      },
+      {
+       "pair": "YZ",
+       "value": "-18.764066093088573",
+       "text": "-19"
+      }
+     ],
+     "sw": [
+      {
+       "value": "",
+       "text": "—"
+      },
+      {
+       "value": "",
+       "text": "—"
+      },
+      {
+       "value": "",
+       "text": "—"
+      },
+      {
+       "value": "",
+       "text": "面外"
+      }
+     ]
+    },
+    "oracle": {
+     "XY": -6.457300945445291,
+     "XZ": 57.0347490936457,
+     "YZ": -18.764066156393838,
+     "sweep": [
+      {
+       "raw": 24.708544390739107,
+       "onTable": true
+      },
+      {
+       "raw": -7.617661363701345,
+       "onTable": true
+      },
+      {
+       "raw": -32.32620575432943,
+       "onTable": true
+      },
+      {
+       "raw": 0,
+       "onTable": false
+      }
+     ]
+    }
+   },
+   {
+    "case": {
+     "mi": 0,
+     "seed": 7,
+     "cfg": {
+      "width": 2.08,
+      "depth": 0.6,
+      "columnX": 0,
+      "columnZ": 0
+     },
+     "state": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "op": [
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "heights": [
+     -0.15,
+     0.15,
+     0.01,
+     -0.061
+    ],
+    "dom": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "",
+       "text": "—"
+      },
+      {
+       "pair": "XZ",
+       "value": "66.94393688978263",
+       "text": "+67"
+      },
+      {
+       "pair": "YZ",
+       "value": "-8.263356283275126",
+       "text": "-8"
+      }
+     ],
+     "sw": [
+      {
+       "value": "",
+       "text": "—"
+      },
+      {
+       "value": "",
+       "text": "—"
+      },
+      {
+       "value": "",
+       "text": "—"
+      },
+      {
+       "value": "",
+       "text": "面外"
+      }
+     ]
+    },
+    "oracle": {
+     "XY": null,
+     "XZ": 66.9439368897809,
+     "YZ": -8.263356465181698,
+     "sweep": [
+      {
+       "raw": 29.33597718401959,
+       "onTable": true
+      },
+      {
+       "raw": -8.271984172525393,
+       "onTable": true
+      },
+      {
+       "raw": -37.60796135632294,
+       "onTable": true
+      },
+      {
+       "raw": 0,
+       "onTable": false
+      }
+     ]
+    }
+   },
+   {
+    "case": {
+     "mi": 1,
+     "seed": 20261012,
+     "cfg": {
+      "width": 2.72,
+      "depth": 3.68,
+      "columnX": 0,
+      "columnZ": 0
+     },
+     "state": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "op": [
+      0.1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "heights": [
+     -0.05,
+     0.15,
+     0.021,
+     -0.02,
+     0.127,
+     0.097,
+     -0.108,
+     0.001
+    ],
+    "dom": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "21.4545589732381",
+       "text": "+21"
+      },
+      {
+       "pair": "XZ",
+       "value": "-12.321715403473474",
+       "text": "-12"
+      },
+      {
+       "pair": "YZ",
+       "value": "-73.24565648148159",
+       "text": "-73"
+      }
+     ],
+     "sw": [
+      {
+       "value": "16.66591814895868",
+       "text": "+17"
+      },
+      {
+       "value": "41.696414028551814",
+       "text": "+42"
+      },
+      {
+       "value": "0",
+       "text": "0"
+      },
+      {
+       "value": "",
+       "text": "300 mm"
+      }
+     ]
+    },
+    "oracle": {
+     "XY": 21.45455897289983,
+     "XZ": -12.321715403315615,
+     "YZ": -73.24565648120576,
+     "a": 16.66591814895521,
+     "b": 41.69641402810079
+    }
+   },
+   {
+    "case": {
+     "mi": 1,
+     "seed": 424242,
+     "cfg": {
+      "width": 2.72,
+      "depth": 3.68,
+      "columnX": 55,
+      "columnZ": -80
+     },
+     "state": {
+      "X": 70,
+      "Y": -60,
+      "Z": 45
+     },
+     "op": [
+      0,
+      0,
+      0,
+      -0.08,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "heights": [
+     -0.15,
+     0.15,
+     0.053,
+     -0.116,
+     0.003,
+     -0.083,
+     0.108,
+     -0.118
+    ],
+    "dom": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "-28.276319532779397",
+       "text": "-28"
+      },
+      {
+       "pair": "XZ",
+       "value": "-20.849689309042006",
+       "text": "-21"
+      },
+      {
+       "pair": "YZ",
+       "value": "18.28871883989558",
+       "text": "+18"
+      }
+     ],
+     "sw": [
+      {
+       "value": "-21.964455023372466",
+       "text": "-22"
+      },
+      {
+       "value": "-37.72948269812476",
+       "text": "-38"
+      },
+      {
+       "value": "0",
+       "text": "0"
+      },
+      {
+       "value": "",
+       "text": "300 mm"
+      }
+     ]
+    },
+    "oracle": {
+     "XY": -28.276319533060423,
+     "XZ": -20.849689309128742,
+     "YZ": 18.288718839673535,
+     "a": -21.964455023261444,
+     "b": -37.72948269768067
+    }
+   },
+   {
+    "case": {
+     "mi": 1,
+     "seed": 7,
+     "cfg": {
+      "width": 2.72,
+      "depth": 1,
+      "columnX": 0,
+      "columnZ": 0
+     },
+     "state": {
+      "X": 0,
+      "Y": 0,
+      "Z": 0
+     },
+     "op": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ]
+    },
+    "heights": [
+     -0.15,
+     0.15,
+     0.01,
+     -0.061,
+     0.143,
+     -0.076,
+     0.113,
+     -0.093
+    ],
+    "dom": {
+     "sq": [
+      {
+       "pair": "XY",
+       "value": "8.428049913002111",
+       "text": "+8"
+      },
+      {
+       "pair": "XZ",
+       "value": "",
+       "text": "—"
+      },
+      {
+       "pair": "YZ",
+       "value": "",
+       "text": "—"
+      }
+     ],
+     "sw": [
+      {
+       "value": "",
+       "text": "—"
+      },
+      {
+       "value": "",
+       "text": "—"
+      },
+      {
+       "value": "",
+       "text": "—"
+      },
+      {
+       "value": "",
+       "text": "300 mm"
+      }
+     ]
+    },
+    "oracle": {
+     "XY": 8.428049911891888,
+     "XZ": null,
+     "YZ": null,
+     "a": null,
+     "b": null
+    }
+   }
+  ]
+ },
+ "detail": {
+  "compactCases": "results-compact.json",
+  "horizontalCases": "results-horizontal.json"
+ }
+}

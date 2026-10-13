@@ -1,0 +1,461 @@
+{
+ "cases": 240,
+ "tiltScenarios": 90,
+ "extremeScenarios": 108,
+ "maxAbsSquarenessDiffMicrons": 0.002105368795968232,
+ "maxAbsSweepDiffMicrons": 0.0000010171029209971039,
+ "displayMismatches": [
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "pair": "XZ",
+   "expected": "+2961",
+   "expectedRaw": 2961.2635243925247,
+   "dom": "+2960",
+   "domRaw": 2959.8556584910393
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 1,
+   "expected": "+2819",
+   "expectedRaw": 2819.3395774928526,
+   "dom": "+2818",
+   "domRaw": 2817.9915470955502
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 2,
+   "expected": "-265",
+   "expectedRaw": -264.93921520502965,
+   "dom": "-266",
+   "domRaw": -265.5622898014862
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "pair": "XZ",
+   "expected": "+3113",
+   "expectedRaw": 3113.055749579335,
+   "dom": "+3112",
+   "domRaw": 3111.6838746099415
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 0,
+   "expected": "+3634",
+   "expectedRaw": 3633.9156202139475,
+   "dom": "+3621",
+   "domRaw": 3620.8218688651464
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 1,
+   "expected": "+23581",
+   "expectedRaw": 23580.68628539416,
+   "dom": "+23564",
+   "domRaw": 23563.74757149692
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 2,
+   "expected": "+19947",
+   "expectedRaw": 19946.77066518021,
+   "dom": "+19943",
+   "domRaw": 19942.925702631772
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sweep": 0,
+   "expected": "+5093",
+   "expectedRaw": 5093.164705062315,
+   "dom": "+5080",
+   "domRaw": 5080.270444758036
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sweep": 1,
+   "expected": "+22795",
+   "expectedRaw": 22794.94498869327,
+   "dom": "+22778",
+   "domRaw": 22778.20370417694
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sweep": 2,
+   "expected": "+17702",
+   "expectedRaw": 17701.78028363095,
+   "dom": "+17698",
+   "domRaw": 17697.933259418904
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 0,
+   "expected": "+41340",
+   "expectedRaw": 41340.06360884743,
+   "dom": "+41102",
+   "domRaw": 41102.20107883686
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 1,
+   "expected": "+97487",
+   "expectedRaw": 97487.46384895108,
+   "dom": "+97448",
+   "domRaw": 97448.15623007965
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 2,
+   "expected": "+56147",
+   "expectedRaw": 56147.40024010366,
+   "dom": "+56346",
+   "domRaw": 56345.955151242786
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "pair": "XZ",
+   "expected": "-2499",
+   "expectedRaw": -2498.8322056678244,
+   "dom": "-2525",
+   "domRaw": -2524.9802091038
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "pair": "XZ",
+   "expected": "-5804",
+   "expectedRaw": -5803.665361497068,
+   "dom": "-5900",
+   "domRaw": -5900.136671195084
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sweep": 0,
+   "expected": "+23667",
+   "expectedRaw": 23667.066095684262,
+   "dom": "+23930",
+   "domRaw": 23930.274834271888
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sweep": 1,
+   "expected": "+3685",
+   "expectedRaw": 3684.6357154333655,
+   "dom": "+3706",
+   "domRaw": 3705.908787414956
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "sweep": 2,
+   "expected": "-19982",
+   "expectedRaw": -19982.430380250902,
+   "dom": "-20224",
+   "domRaw": -20224.366046856936
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 0,
+   "expected": "+49887",
+   "expectedRaw": 49886.8791139507,
+   "dom": "面外",
+   "domRaw": null
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 1,
+   "expected": "+186757",
+   "expectedRaw": 186756.6658313844,
+   "dom": "+189547",
+   "domRaw": 189547.30508761568
+  },
+  {
+   "id": "gate",
+   "seed": 20261012,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 2,
+   "expected": "+136870",
+   "expectedRaw": 136869.7867174338,
+   "dom": "+141012",
+   "domRaw": 141012.03429503055
+  },
+  {
+   "id": "gate",
+   "seed": 12345,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "pair": "XY",
+   "expected": "-2618",
+   "expectedRaw": -2617.5685255809944,
+   "dom": "-2615",
+   "domRaw": -2615.162725897286
+  },
+  {
+   "id": "gate",
+   "seed": 12345,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 0,
+   "expected": "+4290",
+   "expectedRaw": 4289.561749322997,
+   "dom": "+4288",
+   "domRaw": 4288.427906280374
+  },
+  {
+   "id": "gate",
+   "seed": 12345,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 1,
+   "expected": "+21349",
+   "expectedRaw": 21348.648127663,
+   "dom": "+21346",
+   "domRaw": 21346.202407459838
+  },
+  {
+   "id": "gate",
+   "seed": 12345,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 2,
+   "expected": "+17059",
+   "expectedRaw": 17059.08637834,
+   "dom": "+17058",
+   "domRaw": 17057.774501179465
+  },
+  {
+   "id": "gate",
+   "seed": 12345,
+   "label": "extreme",
+   "positions": {
+    "X": -100,
+    "Y": 100,
+    "Z": -100
+   },
+   "pair": "XY",
+   "expected": "-6917",
+   "expectedRaw": -6917.381473099006,
+   "dom": "-6918",
+   "domRaw": -6918.082755838377
+  },
+  {
+   "id": "gate",
+   "seed": 12345,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "pair": "XZ",
+   "expected": "+8113",
+   "expectedRaw": 8113.35954931003,
+   "dom": "+8125",
+   "domRaw": 8125.272295035427
+  },
+  {
+   "id": "gate",
+   "seed": 12345,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 0,
+   "expected": "+12822",
+   "expectedRaw": 12821.563366632943,
+   "dom": "+12847",
+   "domRaw": 12847.109773275615
+  },
+  {
+   "id": "gate",
+   "seed": 12345,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 1,
+   "expected": "+5390",
+   "expectedRaw": 5389.771696925009,
+   "dom": "+5398",
+   "domRaw": 5397.631531773724
+  },
+  {
+   "id": "gate",
+   "seed": 12345,
+   "label": "extreme",
+   "positions": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+   },
+   "sweep": 2,
+   "expected": "-7432",
+   "expectedRaw": -7431.79166970794,
+   "dom": "-7449",
+   "domRaw": -7449.478241501891
+  }
+ ],
+ "heightStateMismatches": [],
+ "nMismatch": 188
+}

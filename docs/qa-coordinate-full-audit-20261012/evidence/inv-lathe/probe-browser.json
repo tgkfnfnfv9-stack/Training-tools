@@ -1,0 +1,86 @@
+{
+ "errors": [],
+ "before": {
+  "dataset": {
+   "face": -3.7579390983043943,
+   "flat": 7.826992527158391,
+   "dx": 123.79637200451012,
+   "dy": -2.65720293390892,
+   "barSide": -16.958999990972917,
+   "barTop": -0.00575215427546516,
+   "runout": {
+    "rootMicrons": 11.98505076393485,
+    "tipMicrons": 14.39028429697391,
+    "lengthMm": 300,
+    "eccentricityMicrons": [
+     2.16720185711206,
+     5.5869129726579665
+    ],
+    "tiltMicroradians": [
+     -2.2177268761710467,
+     4.832450216570674
+    ]
+   }
+  },
+  "liveText": "主軸振れ・µm主軸回転TIR。根元と300 mm先。レベル調整では不変。aba 12 b 14↻ 回転TIR固有値・レベルでは不変刃物台精度・µm計器は主軸台側に固定。Xは前面、Zは外側フラット。始点ゼロ、押込み増加がプラス。a → bc → dXZX -4 Z +8300 mm・Xは固有／Zは支持も反映",
+  "secondText": "主軸と刃物台の穴芯主軸から刃物台を見る。a左、b上、c右、d下。Xは固定の公称芯位置。aでゼロ。a 0b +127c +248d +121芯差 X +124／高さ -3 µmテストバー測定・µm主軸固定のテストバーに、タレット側のダイヤルを接触。側面は奥側から、上面は上から測る。主軸側aを0にして先端側bへZを300 mm送り、押込み増加がプラス。a 0bZ 300 mm →側面（奥） -17上面 0バー固定・ダイヤルをZ送り",
+  "refCards": {
+   "xzCards": 0,
+   "latheDetail": true
+  },
+  "metrics": "主軸基準XZ（送りZとは別）+28.27 µm初期からほぼ同じ角度・端/中央90.003239° · 90°との差端・中央の比較 +28.27 〜 +28.27 µm本体の固有成分と支持姿勢を重ねた現在の測定値です。",
+  "intrinsicColumnsDisplay": "none",
+  "localLevel": "0.000 mm/m | 0.000 mm/m | measurePos=0 | twist 0.000000 mm/m",
+  "measurePosOptions": [
+   "手前",
+   "中央",
+   "奥"
+  ],
+  "calc": "lathe-carriage-v2",
+  "storageKeyPrefix": "training-level-lathe-carriage-v2:"
+ },
+ "after": {
+  "dataset": {
+   "face": -3.7579390983304153,
+   "flat": 7.82699252760595,
+   "dx": 167.5450033171021,
+   "dy": -4.9101649913211585,
+   "barSide": -16.960366802496253,
+   "barTop": -7.505752313896608,
+   "runout": {
+    "rootMicrons": 11.98505076393485,
+    "tipMicrons": 14.39028429697391,
+    "lengthMm": 300,
+    "eccentricityMicrons": [
+     2.16720185711206,
+     5.5869129726579665
+    ],
+    "tiltMicroradians": [
+     -2.2177268761710467,
+     4.832450216570674
+    ]
+   }
+  },
+  "liveText": "主軸振れ・µm主軸回転TIR。根元と300 mm先。レベル調整では不変。aba 12 b 14↻ 回転TIR固有値・レベルでは不変刃物台精度・µm計器は主軸台側に固定。Xは前面、Zは外側フラット。始点ゼロ、押込み増加がプラス。a → bc → dXZX -4 Z +8300 mm・Xは固有／Zは支持も反映",
+  "secondText": "主軸と刃物台の穴芯主軸から刃物台を見る。a左、b上、c右、d下。Xは固定の公称芯位置。aでゼロ。a 0b +173c +335d +163芯差 X +168／高さ -5 µmテストバー測定・µm主軸固定のテストバーに、タレット側のダイヤルを接触。側面は奥側から、上面は上から測る。主軸側aを0にして先端側bへZを300 mm送り、押込み増加がプラス。a 0bZ 300 mm →側面（奥） -17上面 -8バー固定・ダイヤルをZ送り",
+  "refCards": {
+   "xzCards": 0,
+   "latheDetail": true
+  },
+  "metrics": "主軸基準XZ（送りZとは別）+28.26 µm初期からほぼ同じ角度・端/中央90.003239° · 90°との差端・中央の比較 +28.26 〜 +28.27 µm本体の固有成分と支持姿勢を重ねた現在の測定値です。",
+  "intrinsicColumnsDisplay": "none",
+  "localLevel": "0.000 mm/m | 0.000 mm/m | measurePos=0 | twist -0.025000 mm/m",
+  "measurePosOptions": [
+   "手前",
+   "中央",
+   "奥"
+  ],
+  "calc": "lathe-carriage-v2",
+  "storageKeyPrefix": "training-level-lathe-carriage-v2:"
+ },
+ "levels": [
+  "-1: 0.000 mm/m | 0.000 mm/m",
+  "0: 0.000 mm/m | 0.000 mm/m",
+  "1: 0.000 mm/m | 0.000 mm/m"
+ ]
+}

@@ -1,0 +1,179 @@
+[
+ {
+  "case": "raise 左・奥 +0.100",
+  "pair": "XY",
+  "ownLocal300": -0.000013524725950215676,
+  "productLocal300": -0.000013524725950215676,
+  "ownB": -0.000013524725950215676,
+  "productScanB": -0.000013524726477642801,
+  "ownA_endMinusStart": -0.0001333151558807945,
+  "A_minus_B": -0.00011979042993057883
+ },
+ {
+  "case": "raise 左・奥 +0.100",
+  "pair": "XZ",
+  "ownLocal300": -1.2152777759547535,
+  "productLocal300": -1.2152777759547535,
+  "ownB": 1.21527777595143,
+  "productScanB": 1.2152777759521367,
+  "ownA_endMinusStart": 11.979166656374755,
+  "A_minus_B": 10.763888880423325
+ },
+ {
+  "case": "raise 左・奥 +0.100",
+  "pair": "YZ",
+  "ownLocal300": -5.082197683525802e-16,
+  "productLocal300": 0,
+  "ownB": 5.082197683525802e-16,
+  "productScanB": 0,
+  "ownA_endMinusStart": -3.3386752108067883,
+  "A_minus_B": -3.3386752108067888
+ },
+ {
+  "case": "raise 左・奥 +0.100",
+  "slopes": {
+   "tool": {
+    "lr": -0.03993055555555556,
+    "fb": 0.01112891737891738
+   },
+   "guide": {
+    "lr": -0.03587962962962963,
+    "fb": 0.01112891737891738
+   },
+   "work": {
+    "lr": 0,
+    "fb": 0
+   }
+  },
+  "productToolLean": {
+   "front": 11.128917378457931,
+   "right": 39.93055553433314
+  },
+  "productRelLean": {
+   "front": 11.128917378457931,
+   "right": 39.93055553433314
+  },
+  "ownToolLean": {
+   "front": 11.128917378457931,
+   "right": 39.93055553433314
+  }
+ },
+ {
+  "case": "raise 中央・手前 +0.100",
+  "pair": "XY",
+  "ownLocal300": 0.00004490209022308823,
+  "productLocal300": 0.00004490209022308823,
+  "ownB": 0.00004490209022308823,
+  "productScanB": 0.00004490209246088561,
+  "ownA_endMinusStart": -0.00044260631768799165,
+  "A_minus_B": -0.00048750840791107985
+ },
+ {
+  "case": "raise 中央・手前 +0.100",
+  "pair": "XZ",
+  "ownLocal300": -1.2152777768610241,
+  "productLocal300": -1.2152777768610241,
+  "ownB": 1.2152777768577003,
+  "productScanB": 1.215277776859397,
+  "ownA_endMinusStart": -11.979166651499396,
+  "A_minus_B": -13.194444428357096
+ },
+ {
+  "case": "raise 中央・手前 +0.100",
+  "pair": "YZ",
+  "ownLocal300": -2.032879073410321e-15,
+  "productLocal300": 0,
+  "ownB": 2.032879073410321e-15,
+  "productScanB": 1.734723475976807e-12,
+  "ownA_endMinusStart": -3.3386751881394794,
+  "A_minus_B": -3.3386751881394816
+ },
+ {
+  "case": "raise 中央・手前 +0.100",
+  "slopes": {
+   "tool": {
+    "lr": 0.006365740740740739,
+    "fb": -0.036948005698005694
+   },
+   "guide": {
+    "lr": 0.010416666666666664,
+    "fb": -0.036948005698005694
+   },
+   "work": {
+    "lr": -0.03356481481481481,
+    "fb": -0.04807692307692308
+   }
+  },
+  "productToolLean": {
+   "front": -36.94800568119244,
+   "right": -6.365740740654753
+  },
+  "productRelLean": {
+   "front": 11.128917358689122,
+   "right": -39.93055554286489
+  },
+  "ownToolLean": {
+   "front": -36.94800568119244,
+   "right": -6.365740740654753
+  }
+ },
+ {
+  "case": "raise 右・奥 +0.100",
+  "pair": "XY",
+  "ownLocal300": 0,
+  "productLocal300": 0,
+  "ownB": 0,
+  "productScanB": 0,
+  "ownA_endMinusStart": 0,
+  "A_minus_B": 0
+ },
+ {
+  "case": "raise 右・奥 +0.100",
+  "pair": "XZ",
+  "ownLocal300": 0,
+  "productLocal300": 0,
+  "ownB": 0,
+  "productScanB": 0,
+  "ownA_endMinusStart": 3.819444444134897,
+  "A_minus_B": 3.819444444134897
+ },
+ {
+  "case": "raise 右・奥 +0.100",
+  "pair": "YZ",
+  "ownLocal300": 0,
+  "productLocal300": 0,
+  "ownB": 0,
+  "productScanB": 0,
+  "ownA_endMinusStart": 0,
+  "A_minus_B": 0
+ },
+ {
+  "case": "raise 右・奥 +0.100",
+  "slopes": {
+   "tool": {
+    "lr": 0,
+    "fb": 0
+   },
+   "guide": {
+    "lr": 0,
+    "fb": 0
+   },
+   "work": {
+    "lr": 0.012731481481481483,
+    "fb": 0
+   }
+  },
+  "productToolLean": {
+   "front": 0,
+   "right": 0
+  },
+  "productRelLean": {
+   "front": 0,
+   "right": 12.7314814807936
+  },
+  "ownToolLean": {
+   "front": 0,
+   "right": 0
+  }
+ }
+]

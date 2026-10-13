@@ -1,0 +1,68 @@
+seed 20261012 used squareness {
+  XY: { band: 0, microns: -5.267 },
+  XZ: { band: 0, microns: 15.218 },
+  YZ: { band: 1, microns: -56.223 }
+}
+
+# support 0 (左・手前) -0.15 -> -0.05
+XY prodB before 22.03 +22 after 22.029 +22 | indepB after 22.029 | A start +5 4.751 A end +29 C +24 | diff 0 0 arm 1.242
+XZ prodB before -7.643 -8 after -12.322 -12 | indepB after -12.322 | A start +5 4.68 A end -8 C -12 | diff -0 0 arm 1.262
+YZ prodB before -88.997 -89 after -73.246 -73 | indepB after -73.246 | A start +27 27.31 A end -49 C -77 | diff -0 -0 arm 1.246
+par a prodB before 30.018 after 16.666 +17 | A start +13 A end +30 C +17 | diff -0 -0 bracket 1.339
+par b prodB before 67.236 after 41.696 +42 | A start +26 A end +67 C +42 | diff 0 0 bracket 1.305
+local300 prod after XY:-4.692 XZ:15.217 YZ:-84.593 indep rail {"XY":-15.640306390614711,"XZ":50.724452539762865} YZ -84.593 seatX {"XY":-17.556666666713344,"XZ":50.724170722804125}
+lean prod {"front":-134.9184774795291,"right":-1.4368993341943095} {"front":-134.9184776761092,"right":-1.4368993406031612} indep [{"columnFront":-134.918477397239,"columnRight":-1.436899347727945,"spindleAxisPitch":-134.91847739355683,"palletUpFront":0.40760869565215174,"palletUpRight":-9.114250319440725,"palletZdirPitch":187.8180372135029},{"columnFront":-134.918477397239,"columnRight":-1.436899347727945,"spindleAxisPitch":-134.91847739355683,"palletUpFront":-40.35326084766165,"palletUpRight":-2.021059782605945,"palletZdirPitch":147.05752749169432}]
+UI after ["+22","-12","-73"] a 左右=+17 b 上下=+42 始点=0 走査=300 mm | 後ろ倒れ 134.92 µrad ／ 左倒れ 1.44 µrad
+
+# support 4 (左・中間2) 0.127 -> 0.227
+XY prodB before 22.03 +22 after 41.668 +42 | indepB after 41.668 | A start -10 -10.151 A end +7 C +17 | diff 0 -0 arm 1.242
+XZ prodB before -7.643 -8 after -12.324 -12 | indepB after -12.324 | A start -10 -10.001 A end -16 C -6 | diff -0 -0 arm 1.262
+YZ prodB before -88.997 -89 after -97.703 -98 | indepB after -97.703 | A start -27 -27.328 A end -129 C -101 | diff -0 0 arm 1.246
+par a prodB before 30.018 after 33.612 +34 | A start -29 A end +5 C +34 | diff -0 -0 bracket 1.339
+par b prodB before 67.236 after 66.136 +66 | A start -126 A end -59 C +66 | diff 0 0 bracket 1.305
+local300 prod after XY:-4.278 XZ:15.218 YZ:-109.049 indep rail {"XY":-14.261629952827198,"XZ":50.7282783657766} YZ -109.049 seatX {"XY":-17.556666666993593,"XZ":50.727659498078}
+lean prod {"front":-134.9184774795291,"right":-1.4368993341943095} {"front":-175.6793459771424,"right":13.728541938865842} indep [{"columnFront":-134.918477397239,"columnRight":-1.436899347727945,"spindleAxisPitch":-134.91847739355683,"palletUpFront":0.40760869565215174,"palletUpRight":-9.114250319440725,"palletZdirPitch":187.8180372135029},{"columnFront":-175.6793460069355,"columnRight":13.728541937613116,"spindleAxisPitch":-175.6793460161683,"palletUpFront":0.40760869565215174,"palletUpRight":-9.114250319440725,"palletZdirPitch":187.8180372135029}]
+UI after ["+42","-12","-98"] a 左右=+34 b 上下=+66 始点=0 走査=300 mm | 後ろ倒れ 175.68 µrad ／ 右倒れ 13.73 µrad
+
+# support 6 (左・奥) -0.108 -> -0.008
+XY prodB before 22.03 +22 after 2.392 +2 | indepB after 2.392 | A start -14 -14.476 A end +1 C +16 | diff 0 -0 arm 1.242
+XZ prodB before -7.643 -8 after -1.708 -2 | indepB after -1.708 | A start -14 -14.259 A end -22 C -8 | diff -0 -0 arm 1.262
+YZ prodB before -88.997 -89 after -76.769 -77 | indepB after -76.769 | A start +27 27.316 A end -49 C -77 | diff -0 0 arm 1.246
+par a prodB before 30.018 after 30.047 +30 | A start -41 A end -11 C +30 | diff -0 0 bracket 1.339
+par b prodB before 67.236 after 55.007 +55 | A start +76 A end +131 C +55 | diff 0 -0 bracket 1.305
+local300 prod after XY:-5.106 XZ:15.219 YZ:-84.592 indep rail {"XY":-17.018982845525176,"XZ":50.72896887301889} YZ -84.592 seatX {"XY":-17.556666666910623,"XZ":50.72886788637747}
+lean prod {"front":-134.9184774795291,"right":-1.4368993341943095} {"front":-94.15760831993686,"right":20.162365252693967} indep [{"columnFront":-134.918477397239,"columnRight":-1.436899347727945,"spindleAxisPitch":-134.91847739355683,"palletUpFront":0.40760869565215174,"palletUpRight":-9.114250319440725,"palletZdirPitch":187.8180372135029},{"columnFront":-94.15760842170336,"columnRight":20.162365273898214,"spindleAxisPitch":-94.15760841675659,"palletUpFront":0.40760869565215174,"palletUpRight":-9.114250319440725,"palletZdirPitch":187.8180372135029}]
+UI after ["+2","-2","-77"] a 左右=+30 b 上下=+55 始点=0 走査=300 mm | 後ろ倒れ 94.16 µrad ／ 右倒れ 20.16 µrad
+
+# support 7 (右・奥) 0.001 -> -0.099
+XY prodB before 22.03 +22 after 2.392 +2 | indepB after 2.392 | A start -14 -14.466 A end +1 C +16 | diff 0 0 arm 1.242
+XZ prodB before -7.643 -8 after -1.708 -2 | indepB after -1.708 | A start -14 -14.251 A end -22 C -8 | diff -0 -0 arm 1.262
+YZ prodB before -88.997 -89 after -101.226 -101 | indepB after -101.226 | A start -27 -27.32 A end -129 C -101 | diff -0 -0 arm 1.246
+par a prodB before 30.018 after 29.983 +30 | A start -41 A end -11 C +30 | diff -0 -0 bracket 1.339
+par b prodB before 67.236 after 79.464 +79 | A start -76 A end +4 C +80 | diff 0 0 bracket 1.305
+local300 prod after XY:-5.106 XZ:15.219 YZ:-109.049 indep rail {"XY":-17.018982851439045,"XZ":50.72896887301889} YZ -109.049 seatX {"XY":-17.556666666910623,"XZ":50.72886788637747}
+lean prod {"front":-134.9184774795291,"right":-1.4368993341943095} {"front":-175.6793464183328,"right":20.162365532153842} indep [{"columnFront":-134.918477397239,"columnRight":-1.436899347727945,"spindleAxisPitch":-134.91847739355683,"palletUpFront":0.40760869565215174,"palletUpRight":-9.114250319440725,"palletZdirPitch":187.8180372135029},{"columnFront":-175.67934602677963,"columnRight":20.16236546700028,"spindleAxisPitch":-175.67934601754996,"palletUpFront":0.40760869565215174,"palletUpRight":-9.114250319440725,"palletZdirPitch":187.8180372135029}]
+UI after ["+2","-2","-101"] a 左右=+30 b 上下=+79 始点=0 走査=300 mm | 後ろ倒れ 175.68 µrad ／ 右倒れ 20.16 µrad
+
+# support 6 (左・奥) -0.108 -> -0.098
+XY prodB before 22.03 +22 after 20.066 +20 | indepB after 20.066 | A start -1 -1.448 A end +20 C +21 | diff 0 0 arm 1.242
+XZ prodB before -7.643 -8 after -7.049 -7 | indepB after -7.049 | A start -1 -1.426 A end -9 C -8 | diff -0 -0 arm 1.262
+YZ prodB before -88.997 -89 after -87.775 -88 | indepB after -87.775 | A start +3 2.732 A end -85 C -88 | diff -0 -0 arm 1.246
+par a prodB before 30.018 after 30.021 +30 | A start -4 A end +26 C +30 | diff -0 -0 bracket 1.339
+par b prodB before 67.236 after 66.013 +66 | A start +8 A end +74 C +66 | diff 0 0 bracket 1.305
+local300 prod after XY:-4.733 XZ:15.218 YZ:-95.598 indep rail {"XY":-15.778174035284113,"XZ":50.72555085546666} YZ -95.598 seatX {"XY":-17.556666666659055,"XZ":50.725216821032085}
+lean prod {"front":-134.9184774795291,"right":-1.4368993341943095} {"front":-130.84239057049768,"right":0.7230271241905458} indep [{"columnFront":-134.918477397239,"columnRight":-1.436899347727945,"spindleAxisPitch":-134.91847739355683,"palletUpFront":0.40760869565215174,"palletUpRight":-9.114250319440725,"palletZdirPitch":187.8180372135029},{"columnFront":-130.84239051901613,"columnRight":0.7230271126570774,"spindleAxisPitch":-130.84239052060863,"palletUpFront":0.40760869565215174,"palletUpRight":-9.114250319440725,"palletZdirPitch":187.8180372135029}]
+UI after ["+20","-7","-88"] a 左右=+30 b 上下=+66 始点=0 走査=300 mm | 後ろ倒れ 130.84 µrad ／ 右倒れ 0.72 µrad
+
+extremes
+support 0 = 0.5 mm (UI上限 ±0.5) {"XY":{"valid":true,"display":"+22"},"XZ":{"valid":true,"display":"-38"},"YZ":{"valid":true,"display":"+13"}} {"a":{"valid":true,"display":"-57"},"b":{"valid":true,"display":"-99"}} [ '+22', '-38', '+13' ] a 左右=-57 b 上下=-99 始点=0 走査=300 mm 始点0・＋は押込み増加・µm（0.001 mm）
+support 6 = 0.5 mm (UI上限 ±0.5) {"XY":{"valid":true,"display":"-97"},"XZ":{"valid":true,"display":"+28"},"YZ":{"valid":true,"display":"-15"}} {"a":{"valid":true,"display":"+30"},"b":{"valid":true,"display":"-7"}} [ '-97', '+28', '-15' ] a 左右=+30 b 上下=-7 始点=0 走査=300 mm 始点0・＋は押込み増加・µm（0.001 mm）
+support 6 = -0.5 mm (UI上限 ±0.5) {"XY":{"valid":true,"display":"+99"},"XZ":{"valid":true,"display":"-31"},"YZ":{"valid":true,"display":"-137"}} {"a":{"valid":true,"display":"+30"},"b":{"valid":true,"display":"+115"}} [ '+99', '-31', '-137' ] a 左右=+30 b 上下=+115 始点=0 走査=300 mm 始点0・＋は押込み増加・µm（0.001 mm）
+support 7 = 0.5 mm (UI上限 ±0.5) {"XY":{"valid":true,"display":"+120"},"XZ":{"valid":true,"display":"-37"},"YZ":{"valid":true,"display":"-28"}} {"a":{"valid":true,"display":"+30"},"b":{"valid":true,"display":"+6"}} [ '+120', '-37', '-28' ] a 左右=+30 b 上下=+6 始点=0 走査=300 mm 始点0・＋は押込み増加・µm（0.001 mm）
+saddle ±0.5 mm {"XY":{"valid":true,"display":"-5"},"XZ":{"valid":true,"display":"-40"},"YZ":{"valid":true,"display":"-56"}} {"a":{"valid":true,"display":"-87"},"b":{"valid":true,"display":"+56"}} [ '-5', '-40', '-56' ] a 左右=-87 b 上下=+56 始点=0 走査=300 mm 始点0・＋は押込み増加・µm（0.001 mm）
+front/back ±0.5 mm {"XY":{"valid":true,"display":"-5"},"XZ":{"valid":true,"display":"-15"},"YZ":{"valid":true,"display":"+14"}} {"a":{"valid":true,"display":"-16"},"b":{"valid":true,"display":"-211"}} [ '-5', '-15', '+14' ] a 左右=-16 b 上下=-211 始点=0 走査=300 mm 始点0・＋は押込み増加・µm（0.001 mm）
+
+A large [{"label":"support 6 +0.5","result":{"XY":{"start":"-88","end":"-105","startExtMm":10.087951772685352,"endExtMm":10.105321072165708},"XZ":{"start":"-87","end":"-94","startExtMm":10.086637938611956,"endExtMm":10.094288758935358},"YZ":{"start":"+166","end":"+151","startExtMm":9.833972002109755,"endExtMm":9.84862263077043},"par_a":{"start":"-252","end":"-222"},"par_b":{"start":"+458","end":"+451"}}},{"label":"front/back ±0.5","result":{"XY":{"start":"-7","end":"+12","startExtMm":10.006565191279638,"endExtMm":9.987500298858734},"XZ":{"start":"-6","end":"-30","startExtMm":10.006469466076195,"endExtMm":10.029919965224488},"YZ":{"start":"+91","end":"+42","startExtMm":9.909466806180122,"endExtMm":9.95786642870026},"par_a":{"start":"-27","end":"-48"},"par_b":{"start":"-638","end":"-849"}}}]
+sens [{"pair":"XY","offsetLocal":[-0.15,0.05,-0.3],"B_end_microns":25.779203562264346,"display":"+26"},{"pair":"XY","offsetLocal":[-0.15,0.25,-0.3],"B_end_microns":25.779557436095626,"display":"+26"},{"pair":"XY","offsetLocal":[-0.15,0.05,-0.15],"B_end_microns":23.904503350873075,"display":"+24"},{"pair":"XY","offsetLocal":[-0.15,0.25,-0.15],"B_end_microns":23.904857225531817,"display":"+24"},{"pair":"XY","offsetLocal":[-0.15,0.05,0],"B_end_microns":22.029803136711447,"display":"+22"},{"pair":"XY","offsetLocal":[-0.15,0.25,0],"B_end_microns":22.03015701161652,"display":"+22"},{"pair":"XY","offsetLocal":[-0.15,0.05,0.15],"B_end_microns":20.155102919184458,"display":"+20"},{"pair":"XY","offsetLocal":[-0.15,0.25,0.15],"B_end_microns":20.15545679455444,"display":"+20"},{"pair":"XY","offsetLocal":[-0.15,0.05,0.3],"B_end_microns":18.280402698828134,"display":"+18"},{"pair":"XY","offsetLocal":[-0.15,0.25,0.3],"B_end_microns":18.280756575134866,"display":"+18"},{"pair":"XZ","offsetLocal":[-0.15,0.05,-0.13999999999999999],"B_end_microns":-7.640780813025078,"display":"-8"},{"pair":"XZ","offsetLocal":[-0.15,0.25,-0.13999999999999999],"B_end_microns":-5.343439148512361,"display":"-5"},{"pair":"XZ","offsetLocal":[-0.15,0.05,0.010000000000000009],"B_end_microns":-7.641731125331355,"display":"-8"},{"pair":"XZ","offsetLocal":[-0.15,0.25,0.010000000000000009],"B_end_microns":-5.344389459371879,"display":"-5"},{"pair":"XZ","offsetLocal":[-0.15,0.05,0.16],"B_end_microns":-7.64251179738093,"display":"-8"},{"pair":"XZ","offsetLocal":[-0.15,0.25,0.16],"B_end_microns":-5.345170130004185,"display":"-5"},{"pair":"XZ","offsetLocal":[-0.15,0.05,0.31],"B_end_microns":-7.643122829088799,"display":"-8"},{"pair":"XZ","offsetLocal":[-0.15,0.25,0.31],"B_end_microns":-5.345781160581015,"display":"-5"},{"pair":"XZ","offsetLocal":[-0.15,0.05,0.45999999999999996],"B_end_microns":-7.6435642204306795,"display":"-8"},{"pair":"XZ","offsetLocal":[-0.15,0.25,0.45999999999999996],"B_end_microns":-5.3462225507155265,"display":"-5"}]
+invalidUI {"s":[{"k":"XY","valid":false,"reason":"300 mmの走査範囲不足"},{"k":"XZ","valid":false,"reason":"300 mmの走査範囲不足"},{"k":"YZ","valid":true}],"par":{"valid":true},"live":["—","—","-89"],"sweep":["+231","+66","0","300 mm"],"status":"始点0・＋は押込み増加・µm（0.001 mm）"}
+facts {"nose":[-0.0000027216511683730918,2.5503202069782995,-0.9297449834618297],"axis":[2.610807850348902e-9,-0.00013491847706645756,0.9999999908985022],"palletDatum":[-0.000005559247001230984,1.2700004035072272,-0.850000248705395],"columnSeat":[{"x":0,"z":1.3339999999999999}],"workPoint":{"x":0,"z":-0.85},"guidePoints":[{"x":0,"z":1.158},{"x":0,"z":1.4180000000000001}]}

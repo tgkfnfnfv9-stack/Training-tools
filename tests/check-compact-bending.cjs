@@ -91,7 +91,7 @@ for(let index=1;index<e.read('machines.length');index++){
  check('other-machine published regression '+index,()=>vectorNear(e.json('levelGeometry.pairs.map(p=>p.deviationMicroradians)'),oldOtherSix[['horizontal','travel','gate','gantry','five','lathe'].indexOf(e.read('current.id'))],1e-8));
 }
 (async()=>{
- check('changed bending assumptions have their own model ID',()=>assert.equal(record.calculationModel,'compact-asymmetric-bending-v4'));
+ check('changed bending assumptions have their own model ID',()=>assert.equal(record.calculationModel,'compact-asymmetric-bending-v5'));
  surface('0',zero,live);live.read(`applyLevelRecord(${JSON.stringify(record)});updateLeveling();`);
  check('save reload reproduces all data and angles',()=>{assert.deepEqual(live.json('levelRecord()'),record);vectorNear(values(live),before);});
  for(const id of ['compact-table-path-v3','compact-saddle-v2','connected-frames-v1']){

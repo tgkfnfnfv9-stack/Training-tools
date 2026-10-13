@@ -121,7 +121,10 @@ for(const [index,mode] of variants){
       if(kind==='compact')return [(read(`levelSolution.heightAt(${x+eps},${z})`)-read(`levelSolution.heightAt(${x-eps},${z})`))/(2*eps),(read(`levelSolution.heightAt(${x},${z+eps})`)-read(`levelSolution.heightAt(${x},${z-eps})`))/(2*eps)];
       return [(read(`levelSolution.heightAt(${x+eps},${z})`)-h)/eps,(read(`levelSolution.heightAt(${x},${z+eps})`)-h)/eps];
      });
-     const gradient=[0,1].map(k=>slopes.reduce((sum,s)=>sum+s[k]/slopes.length,0)*factor/1000),expected=unit([-gradient[0],1,-gradient[1]]);
+     // lathe-carriage-v3: the carriage posture is the plane of four rail pads.
+     const pads=kind==='lathe'&&pose==='work'?[-1,1].flatMap(i=>[-1,1].map(k=>{const [x,z]=mapping({x:info.anchor.x+i*.4,z:k*.4});return {i,k,x,z,h:read(`levelSolution.heightAt(${x},${z})`)};})):null;
+     const padSlope=pads?[pads.reduce((v,q)=>v+q.i*q.h,0)/(2*(pads[2].x-pads[0].x)),pads.reduce((v,q)=>v+q.k*q.h,0)/(2*(pads[1].z-pads[0].z))]:null;
+     const gradient=[0,1].map(k=>(padSlope?padSlope[k]:slopes.reduce((sum,s)=>sum+s[k]/slopes.length,0))*factor/1000),expected=unit([-gradient[0],1,-gradient[1]]);
      const a=[info.anchor.x,.66,info.anchor.z],b=[info.anchor.x,1.66,info.anchor.z];
      const actual=unit(subtract(json(`displayedModelPoint(${literal(b)},[],current,positions,${literal(pose)})`),json(`displayedModelPoint(${literal(a)},[],current,positions,${literal(pose)})`)));
      // Connected portal frames and seats have independent endpoint/analytic
