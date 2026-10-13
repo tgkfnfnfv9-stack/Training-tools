@@ -751,3 +751,4 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 #latheInspectionSecond{width:100%}
 .is-lathe-reference>.reference-intro{display:none}
 @media(max-width:380px){.lathe-inspection-columns{gap:3px}.lathe-inspection-columns h2{font-size:10px}.lathe-inspection-columns svg{height:82px}.lathe-inspection-columns p{font-size:8px}}
+.viewer-gauge-twist .gauge-ends span{font-size:9px;white-space:nowrap}
