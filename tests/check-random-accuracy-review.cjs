@@ -105,7 +105,7 @@ async function main(){
   check('据付状態の再出題はガイドや固有直角度を再抽選しない '+index+' '+mode,()=>{assert.deepEqual(json('machineProfile'),profile);assert.deepEqual(guideValues(),guides);assert.equal(read('validLevelRecord(levelRecord())'),true);});
  }
  storage.clear();open(0,'compact');const unchanged=json('machineProfile'),before=read('supportHeights[0]');r.fineAdjust.click();r.up0.click();
- check('最小調整量は0.001 mmで表示と保存が同期',()=>{near(read('supportHeights[0]'),before+.001);assert.equal(r.height0.value,'0.001');assert.deepEqual(snapshot().machineProfile,unchanged);});
+ check('調整量は0.01 mmで表示と保存が同期',()=>{near(read('supportHeights[0]'),before+.01);assert.equal(r.height0.value,'0.010');assert.deepEqual(snapshot().machineProfile,unchanged);});
  r.height0.value='.1234';r.height0.oninput({target:r.height0});
  check('入力中は表記を保ち計算を0.001 mmへ丸める',()=>{assert.equal(r.height0.value,'.1234');near(read('supportHeights[0]'),unchanged.initialHeights[0]+.123);});r.height0.change();
  check('入力確定後は三桁へ揃える',()=>assert.equal(r.height0.value,'0.123'));
@@ -153,7 +153,8 @@ async function main(){
  });
  storage.clear();open(0,'compact');
  const preserved=snapshot(),preservedObjective=json('machineReference.best.metric.objective');
- check('最良の支持高さも個体と同じJSONへ保存する',()=>{assert.deepEqual(preserved.bestState,json('machineBestRecord()'));assert.ok(preservedObjective<read('machineEvaluation(supports.map(()=>0)).objective')-.0001);});
+ check('最良の支持高さも個体と同じJSONへ保存する',()=>{assert.deepEqual(preserved.bestState,json('machineBestRecord()'));// Reference = level out (every support at one height), 2026-10-13.
+  assert.ok(Math.abs(preservedObjective-read('machineEvaluation(supports.map(()=>0)).objective'))<1e-9);});
  // Simulate a weaker later search: a genuinely better saved candidate must
  // survive despite the current state being worse than that saved candidate.
  read('window.reviewOriginalAccuracy=window.MachineAccuracy;window.MachineAccuracy={...window.MachineAccuracy,optimize:()=>({heights:supports.map(()=>0),value:0})};');

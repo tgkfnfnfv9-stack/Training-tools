@@ -13,7 +13,7 @@ async function main(){
   check(`機種${i}:支持点数`,()=>assert.equal(read('supports.length'),counts[i]));
   check(`機種${i}:初期水平`,()=>{near(read('levelSolution.lr'),0);near(read('levelSolution.fb'),0);assert.equal(r.localLevel.textContent,'0.000 mm/m');});
   check(`機種${i}:支持面と全支持点を表示`,()=>{const mesh=json('levelSurfaceFaces(current)'),points=json('supports');assert.ok(mesh.length>0);if(i===3){const faces=json('createGeometry(current).faces');points.forEach((p,index)=>assert(faces.some(f=>f.pose==='support:'+index)));for(const f of mesh)for(const v of f.v)assert(v.every(Number.isFinite));}else for(const p of points)assert.ok(mesh.some(f=>f.v.some(v=>Math.abs(v[0]-p.x)<1e-10&&Math.abs(v[2]-p.z)<1e-10)));});
-  r.fineAdjust.click();r.up0.click();check(`機種${i}:高さ＋連動`,()=>{near(read('supportHeights[0]'),.001);assert.equal(r.height0.value,'0.001');assert.ok(read('levelSolution.heightAt(...[levelCoordinates(supports[0].x,supports[0].z).x,levelCoordinates(supports[0].x,supports[0].z).z])')>.0009);});
+  r.fineAdjust.click();r.up0.click();check(`機種${i}:高さ＋連動`,()=>{near(read('supportHeights[0]'),.01);assert.equal(r.height0.value,'0.010');assert.ok(read('levelSolution.heightAt(...[levelCoordinates(supports[0].x,supports[0].z).x,levelCoordinates(supports[0].x,supports[0].z).z])')>.0009);});
   r.down0.click();check(`機種${i}:高さ−連動`,()=>near(read('supportHeights[0]'),0));
   check(`機種${i}:中間支持の可否`,()=>assert.equal(r.middlePreset.disabled,counts[i]<=4));
   check(`機種${i}:3点ねじれ無効`,()=>assert.equal(r.twistPreset.disabled,counts[i]===3));
@@ -34,9 +34,10 @@ async function main(){
   open(machine);check(`機種${mode}:単一方式と支持点`,()=>{assert.equal(read('machineMode'),mode);assert(r.machineModeBox.hidden);assert.equal(read('current.kind'),kind);assert.equal(read('supports.length'),count);assert.ok(Number.isFinite(read('levelSolution.lr')));});
  }
  storage.clear();open(2);
- r.adjustStep.change('0.1');r.up0.click();check('調整量切替',()=>near(read('supportHeights[0]'),.1));
- for(let n=0;n<8;n++)r.up0.click();check('＋上限制限',()=>{near(read('supportHeights[0]'),.5);assert.equal(r.up0.disabled,true);});
- for(let n=0;n<12;n++)r.down0.click();check('−下限制限',()=>{near(read('supportHeights[0]'),-.5);assert.equal(r.down0.disabled,true);});
+ // The step is fixed at 0.01 mm (single leveling stage, 2026-10-13).
+ r.adjustStep.change('0.1');r.up0.click();check('調整量は0.01 mm固定',()=>near(read('supportHeights[0]'),.01));
+ for(let n=0;n<60;n++)r.up0.click();check('＋上限制限',()=>{near(read('supportHeights[0]'),.5);assert.equal(r.up0.disabled,true);});
+ for(let n=0;n<120;n++)r.down0.click();check('−下限制限',()=>{near(read('supportHeights[0]'),-.5);assert.equal(r.down0.disabled,true);});
  r.height0.change('.23');check('高さ数値入力',()=>{near(read('supportHeights[0]'),.23);assert.equal(r.height0.value,'0.230');});
  for(const value of ['', 'not-a-number','-0.51','0.51']){r.height0.change(value);check('無効高さ拒否 '+JSON.stringify(value),()=>{near(read('supportHeights[0]'),.23);assert.equal(r.height0.value,'0.230');assert.match(r.levelInputMessage.textContent,/調整可能/);});}
  const typeHeight=(i,value)=>{const input=r['height'+i];input.value=value;input.oninput({target:input});};
@@ -96,10 +97,10 @@ async function main(){
  const precise=structuredClone(original);precise.heights[0]=.123;await importData(precise);
  check('JSON値と表示値の桁が矛盾しない',()=>near(read('supportHeights[0]'),Number(r.height0.value)));
  const valid=structuredClone(original);valid.width=4;valid.depth=5;valid.heights=[.1,-.1,.2,-.2,.05,-.05];valid.sensitivity=.1;valid.measurePos=-1;valid.offset=1.5;valid.step=.05;valid.exaggerate=false;
- typeHeight(0,'.333');await importData(valid);check('有効JSONのみ反映して編集中の欄も全同期',()=>{assert.deepEqual(json('levelRecord()'),valid);assert.match(r.levelInputMessage.textContent,/読み込みました/);synchronized();assert.equal(r.height0.value,'0.100');});
+ typeHeight(0,'.333');await importData(valid);check('有効JSONのみ反映して編集中の欄も全同期',()=>{assert.deepEqual(json('levelRecord()'),{...valid,step:.01});assert.match(r.levelInputMessage.textContent,/読み込みました/);synchronized();assert.equal(r.height0.value,'0.100');});
  const bodyBeforeExport=[...env.body.children];
  r.exportLevel.click();check('JSONダウンロード開始はlive DOMの非表示リンクから行う',()=>{assert.equal(env.downloads.length,1);assert.match(env.downloads[0].download,/leveling-travel-standard\.json/);assert.equal(env.downloads[0].connected,true);assert.equal(env.downloads[0].hidden,true);assert.deepEqual(env.body.children,bodyBeforeExport);assert.match(r.levelSaveStatus.textContent,/開始しました/);});
- const exported=JSON.parse(await context.exportedBlob.text());check('エクスポート内容一致',()=>assert.deepEqual(exported,valid));
+ const exported=JSON.parse(await context.exportedBlob.text());check('エクスポート内容一致',()=>assert.deepEqual(exported,{...valid,step:.01}));
  check('エクスポートURLは即解放せず30秒保持',()=>{assert.equal(context.revokedUrl,undefined);assert.equal(env.timerDelays.at(-1),30000);});
  env.timers.forEach(fn=>fn());check('エクスポートURL解放',()=>assert.equal(context.revokedUrl,'blob:test'));
  const originalCreate=context.document.createElement,originalAppend=env.body.append,originalUrl=context.URL.createObjectURL,originalBlob=context.Blob,originalTimeout=context.setTimeout;

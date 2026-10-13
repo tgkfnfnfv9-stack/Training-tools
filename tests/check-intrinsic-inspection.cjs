@@ -60,15 +60,15 @@ for(let n=0;n<50;n++){
  near(base.points[3].microns,0,0,'left-middle reference exactly zero');
  near(base.rangeMicrons,Math.max(...expected)-Math.min(...expected),1e-10,'peak valley unaffected by gauge zero');
 }
-// Frozen version-2 profile hashes (2026-10-12: intrinsic items at most 25 µm).
+// Frozen version-3 profile hashes (2026-10-13: installed heights on the 0.01 mm grid).
 // Seed stream, shape and save compatibility from this version on.
 const fixtures=[
- ['new',0,['X','Y','Z'],4,'fbf1193dc04e02e32c5e71744d4ae9d85a631e157fc4ce8cb22b9d9734723a4e'],
- ['new',4294967295,['X','Y','Z'],15,'4f4e1f46d481d7bbb4815e4ef54fa896317d3c21210c96396555e22202627a90'],
- ['new',12345,['X','Z'],6,'7bf89317b464e55a1b8fb4a9027bd6422613eb3c879c3ca2387205bcae95ef35'],
- ['used',0,['X','Y','Z'],4,'70a61648ac24f937b3434b5ecfe0563f2ddd1abf74448d7270929015f26f7d78'],
- ['used',4294967295,['X','Y','Z'],15,'e4b577e96ca26909d9d8ebf6d6d3979c521d1032ba39d0167cda95c20ec8fda6'],
- ['used',12345,['X','Z'],6,'1572f89bd96c5362023ebc921dabfa456a964efbbf3a66cdd34551962946f64a']
+ ['new',0,['X','Y','Z'],4,'27fc147e0aff7526dbe98f9c6adf970c541d562e6b210cacd66f1fbf066ccc18'],
+ ['new',4294967295,['X','Y','Z'],15,'6ba6a4188fa838321cdf3ba5b418b992c7e72aba8e28f350d5634f088f2bdc6b'],
+ ['new',12345,['X','Z'],6,'6b35b9ebc476913c505615ac333707fac6181fb3271d2792122c2f604ae98ba1'],
+ ['used',0,['X','Y','Z'],4,'e62b7e5216acd7c5e6f50ff006902cdb55386d1b44e2fe9f47343ee8fc9b2ba5'],
+ ['used',4294967295,['X','Y','Z'],15,'f6c87b3b1459eba71048dc9387492587b80d0ce561761854119d2cafb0d51eb3'],
+ ['used',12345,['X','Z'],6,'77ad794cb2b0a4dd2ba3de62c00d0068d7ff1ed3cd28f03eb43602b7ba0384eb']
 ];
 for(const [condition,seed,keys,count,hash] of fixtures){
  const p=A.generate(condition,seed,keys,count),before=JSON.stringify(p),inspection=I.fromProfile(p);
