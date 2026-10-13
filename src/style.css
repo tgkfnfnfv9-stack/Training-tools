@@ -757,3 +757,15 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 .level-page-nav{display:flex;align-items:center;justify-content:center;gap:4px;font-size:10px;line-height:12px;color:#315f50;white-space:nowrap}
 .level-page-button{min-width:24px;min-height:28px;padding:0 4px;font-size:14px;line-height:1;border-radius:6px;background:#fff}
 .level-page-nav{flex-wrap:nowrap;max-width:100%;overflow:hidden}
+/* Four-edge level page: fit any frame height without overlap. The vertical
+   pair takes the remaining height; the left-right pair keeps a short vial. */
+#levelPageFour{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:2px;min-height:0;overflow:hidden}
+#levelPageFour .viewer-gauge-lr .gauge-ends{display:none}
+#levelPageFour .viewer-gauge-lr .vial{height:18px;margin:2px 0}
+#levelPageFour .viewer-gauge-lr .bubble{top:1px;width:20px;height:14px}
+#levelPageFour .viewer-gauge-title{line-height:12px}
+#levelPageFour .level-four-middle{min-height:0;display:flex;gap:4px;flex:none}
+#levelPageFour .level-four-middle .viewer-gauge-fb{min-height:0;flex:1 1 0;display:flex;flex-direction:column}
+#levelPageFour .level-four-middle .vertical-gauge{min-height:0;flex:1 1 auto;grid-template-rows:10px minmax(14px,1fr) 10px;margin-top:1px;line-height:10px;font-size:9px}
+#levelPageFour .level-four-middle .vertical-gauge .vial{height:100%;min-height:14px;width:20px}
+#levelPageFour .level-four-middle .vial-vertical .bubble{left:3px;width:12px;height:14px;top:clamp(7px,var(--bubble-position,50%),calc(100% - 7px))}
