@@ -89,13 +89,13 @@ check('finished Y-axis demo notice does not follow navigation into the XZ lathe'
  d.openTrainingMenu.click();d.resetAxes.click();
  assert.match(d.axisDemoStatus.textContent,/Y軸.*終了/);
  d.changeMachine.click();assert.equal(d.axisDemoStatus.textContent,'');
- d.machineGrid.children[5].click();assert.equal(d.axisDemoStatus.textContent,'');
+ d.machineGrid.children[demo.read("catalogMachines.findIndex(m=>m.id==='lathe')")].click();assert.equal(d.axisDemoStatus.textContent,'');
  assert.deepEqual(demo.json('axisConfig(current).map(a=>a.key)'),['X','Z']);
 });
 check('leaving a running demo clears its notice after stopping the animation',()=>{
  d.openTrainingMenu.click();d.playAxis.click();assert.match(d.axisDemoStatus.textContent,/確認中/);
  d.navHome.click();assert.equal(demo.read('motionFrame'),null);assert.equal(d.axisDemoStatus.textContent,'');
- d.mechanical.click();d.leveling.click();d.machineGrid.children[5].click();assert.equal(d.axisDemoStatus.textContent,'');
+ d.mechanical.click();d.leveling.click();d.machineGrid.children[demo.read("catalogMachines.findIndex(m=>m.id==='lathe')")].click();assert.equal(d.axisDemoStatus.textContent,'');
 });
 check('direct machine initialization clears the former machine demo notice',()=>{
  d.openTrainingMenu.click();d.playAxis.click();

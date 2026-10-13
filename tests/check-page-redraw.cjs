@@ -20,7 +20,7 @@ function fresh(previous,label){
   r.openTrainingMenu.click();r.closeTrainingMenu.click();read("selectAxis('Z');sceneZoom=1.7;drawScene();");
   check(index+' ordinary controls preserve individual and data',()=>assert.deepEqual(state(),adjusted));
   listeners.pageshow({persisted:false});check(index+' ordinary pageshow preserves state',()=>assert.deepEqual(state(),adjusted));
-  r.changeMachine.click();r.machineGrid.children[index].click();fresh(adjusted,index+' catalogue return');
+  r.changeMachine.click();r.machineGrid.children[read(`catalogMachines.indexOf(machines[${index}])`)].click();fresh(adjusted,index+' catalogue return');
   const before=state();r.navHome.click();read("navigate('training',{fromHistory:true})");fresh(before,index+' history entry');
   const beforeCache=state();listeners.pageshow({persisted:true});fresh(beforeCache,index+' BFCache restore');
   r.importLevel.files=[{size:100,text:async()=>JSON.stringify(adjusted)}];await r.importLevel.onchange({target:r.importLevel});
