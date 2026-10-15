@@ -1,4 +1,9 @@
-.circuit-visual{background:#fbfcfa}
+#circuitVisual{display:flex;flex-direction:column;flex:1 1 auto;min-height:0;background:#fbfcfa}
+#tester.circuit-mode #testerDiagram,#tester.circuit-mode #testerReadout,#tester.circuit-mode .tester-visual-top,#tester.circuit-mode #testerControls>.tester-card:not(:first-child),#tester.circuit-mode #testerControls>details,#tester.circuit-mode #testerReset{display:none}
+#tester.circuit-mode #testerControls>.tester-card:first-child>:not(.section-title):not(.tester-case-tabs){display:none}
+#tester.circuit-mode .tester-visual{background:#fbfcfa}
+[data-circuit-tab][aria-pressed=true]{background:#fff0c5;border-color:#d3a72f;color:#5b3b00;font-weight:700}
+#circuitCards>.card{margin-top:12px}
 .circuit-visual-top{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px 4px;font-size:13px}
 .circuit-visual-top strong{font-size:13px}
 .circuit-scroll{flex:1 1 auto;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;padding:0 6px}
@@ -47,5 +52,4 @@
 .circuit-chip.on{background:#ffe7c2}
 .circuit-picked{font-size:12px}
 .circuit-result{font-weight:650;color:#1f6b53}
-.circuit-visual{padding-bottom:0}
 @media(max-width:560px){.circuit-meter strong{font-size:18px;min-width:5ch;white-space:nowrap}#circuitReadingNote{font-size:10px}.circuit-meter-mode{white-space:nowrap}}

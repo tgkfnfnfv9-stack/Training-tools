@@ -162,8 +162,8 @@ function supportList(m){
  for(let j=0;j<nz;j++)for(let i=0;i<nx;i++)list.push({x:(i/(nx-1)-.5)*m.w*.8,z:(j/(nz-1)-.5)*m.d*.8,name:`${nx===2?(i?'右':'左'):(['左','中央','右'][i])}・${j===0?'手前':j===nz-1?'奥':'中間'}`});
  return m.layoutId?list.map((p,i)=>({...p,name:m.id==='horizontal'?p.name.replace('中間','中間'+Math.floor(i/2)):p.name,id:m.layoutId+'-p'+(i+1),group:'bed'})):list;
 }
-const pageParents={topics:'home',catalog:'topics',training:'catalog',electricTopics:'home',tester:'electricTopics',circuit:'electricTopics'};
-const pageTitles={home:'トップ',topics:'機械',catalog:'機種選択',training:'レベル調整',electricTopics:'電気',tester:'テスターの使い方',circuit:'回路の断線探し'};
+const pageParents={topics:'home',catalog:'topics',training:'catalog',electricTopics:'home',tester:'electricTopics'};
+const pageTitles={home:'トップ',topics:'機械',catalog:'機種選択',training:'レベル調整',electricTopics:'電気',tester:'テスターの使い方'};
 let machineSessionInitialized=false;
 function resetTrainingPanels(){
  const walk=node=>{for(const child of node.children||[]){if(child.tagName==='DETAILS')child.open=false;walk(child);}};walk($('trainingControls'));
@@ -174,20 +174,20 @@ function navigate(next,{fromHistory=false,initializedTraining=false}={}){
  if(next==='training'&&page!==next&&machineSessionInitialized&&!initializedTraining){openMachine(machines.find(m=>m.id===current.id),{fromHistory});return;}
  const previous=page;
  clearScenePointers();setAxisMenuOpen(false);
- if(next!==previous){resetTrainingPanels();document.activeElement?.blur?.();if(next==='tester'&&window.resetTesterLesson)window.resetTesterLesson();if(next==='circuit'&&window.resetCircuitLesson)window.resetCircuitLesson();}
+ if(next!==previous){resetTrainingPanels();document.activeElement?.blur?.();if(next==='tester'&&window.resetTesterLesson)window.resetTesterLesson();}
  if(next!=='training')stopMotion();if(next!==previous)$('axisDemoStatus').textContent='';page=next;for(const id of Object.keys(pageTitles))$(id).hidden=id!==next;
- document.body.classList.toggle('in-lab',next==='training'||next==='tester'||next==='circuit');
+ document.body.classList.toggle('in-lab',next==='training'||next==='tester');
  document.body.classList.toggle('in-mechanical-lab',next==='training');
  const controls=$(next+'Controls');if(controls)controls.scrollTop=0;
  $('navHome').hidden=next==='home';$('navBack').hidden=next==='home'||next==='training';$('changeMachine').hidden=next!=='training';
  $('navBack').onclick=()=>navigate(pageParents[page]||'home');
- const paths=next==='circuit'?[['home','トップ'],['electricTopics','電気'],['circuit','回路の断線探し']]:next==='electricTopics'||next==='tester'?[['home','トップ'],['electricTopics','電気'],['tester','テスターの使い方']]:[['home','トップ'],['topics','機械'],['catalog','機種選択'],['training','レベル調整']];
+ const paths=next==='electricTopics'||next==='tester'?[['home','トップ'],['electricTopics','電気'],['tester','テスターの使い方']]:[['home','トップ'],['topics','機械'],['catalog','機種選択'],['training','レベル調整']];
  const depth=paths.findIndex(([dest])=>dest===next);
  $('crumbs').replaceChildren();paths.slice(0,depth+1).forEach(([dest,label],i)=>{
   if(depth>0&&i===0)return;
-  if(i>1){const separator=document.createElement('span');separator.className='crumb-separator';separator.textContent='›';separator.hidden=next==='training'||next==='tester'||next==='circuit';$('crumbs').append(separator);}
+  if(i>1){const separator=document.createElement('span');separator.className='crumb-separator';separator.textContent='›';separator.hidden=next==='training'||next==='tester';$('crumbs').append(separator);}
   const el=document.createElement(i===depth?'span':'button');el.textContent=label;
-  if(i===depth){el.setAttribute('id','navCurrent');el.setAttribute('aria-current','page');el.setAttribute('tabindex','-1');}else{el.hidden=next==='training'||next==='tester'||next==='circuit';el.onclick=()=>navigate(dest);}
+  if(i===depth){el.setAttribute('id','navCurrent');el.setAttribute('aria-current','page');el.setAttribute('tabindex','-1');}else{el.hidden=next==='training'||next==='tester';el.onclick=()=>navigate(dest);}
   $('crumbs').append(el);
  });
  document.title=pageTitles[next]+'｜社内訓練ツール';
@@ -208,7 +208,6 @@ window.addEventListener('popstate',event=>{
 });
 $('mechanical').onclick=()=>navigate('topics');$('electric').onclick=()=>navigate('electricTopics');$('leveling').onclick=()=>navigate('catalog');$('changeMachine').onclick=()=>navigate('catalog');
 $('testerEntry').onclick=()=>navigate('tester');
-$('circuitEntry').onclick=()=>navigate('circuit');$('circuitBack').onclick=()=>navigate('electricTopics');
 $('testerBack').onclick=()=>navigate('electricTopics');
 // Each catalogue entry starts a new individual, including the same machine.
 function resumeOrOpenMachine(m){openMachine(m);}

@@ -19,7 +19,7 @@ async function main(){
   for(const file of ['leveling.js','machine-accuracy.js','reference-measurement.js','reference-measurement-ui.js','app.js','leveling-ui.js','accuracy-ui.js','machine-accuracy-ui.js','tester.js'])assert.ok(built.includes(fs.readFileSync('src/'+file,'utf8')),file+' latest source is missing from bundled page');
  });
  check('source and bundled markup have balanced tags and unique static IDs',()=>{
-  const source=fs.readFileSync('src/index.html','utf8').replace('<!-- TESTER_LESSON -->',fs.readFileSync('src/tester.html','utf8')).replace('<!-- CIRCUIT_LESSON -->',fs.readFileSync('src/circuit-fault.html','utf8'));
+  const source=fs.readFileSync('src/index.html','utf8').replace('<!-- TESTER_LESSON -->',fs.readFileSync('src/tester.html','utf8'));
   const voids=new Set(['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']);
   for(const html of [source,built]){
    const markup=html.replace(/<script\b[\s\S]*?<\/script>/gi,'').replace(/<style\b[\s\S]*?<\/style>/gi,'');

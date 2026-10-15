@@ -3,7 +3,6 @@ root = Path(__file__).resolve().parent
 source = root / 'src'
 html = (source / 'index.html').read_text(encoding='utf-8')
 html = html.replace('<!-- TESTER_LESSON -->', (source / 'tester.html').read_text(encoding='utf-8'))
-html = html.replace('<!-- CIRCUIT_LESSON -->', (source / 'circuit-fault.html').read_text(encoding='utf-8'))
 html = html.replace('<link rel="stylesheet" href="style.css">', '<style>' + (source / 'style.css').read_text(encoding='utf-8') + '</style>')
 html = html.replace('<link rel="stylesheet" href="tester.css">', '<style>' + (source / 'tester.css').read_text(encoding='utf-8') + '</style>')
 html = html.replace('<link rel="stylesheet" href="circuit-fault.css">', '<style>' + (source / 'circuit-fault.css').read_text(encoding='utf-8') + '</style>')

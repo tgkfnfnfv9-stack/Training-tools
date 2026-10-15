@@ -2,9 +2,9 @@
 // Wire-break hunting page. Draws the circuit with JIS-style symbols, places
 // tester leads on terminals, and runs the sequence in real time.
 (function(){
- const CF=window.CircuitFault;if(!CF||!document.getElementById('circuit'))return;
+ const CF=window.CircuitFault;if(!CF||!document.getElementById('circuitDiagram'))return;
  const $c=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
- let problem=null,state=null,red=null,black=null,nextLead='red',mode='volt',answerMode=false,picked=new Set(),repaired=new Set(),measurements=0,lastKey='',timer=null,revealed=false;
+ let active=false,problem=null,state=null,red=null,black=null,nextLead='red',mode='volt',answerMode=false,picked=new Set(),repaired=new Set(),measurements=0,lastKey='',timer=null,revealed=false;
  function seed(){const v=new Uint32Array(1);if(window.crypto?.getRandomValues)window.crypto.getRandomValues(v);else v[0]=Math.floor(Math.random()*4294967296);return v[0];}
  function newProblem(){
   problem=CF.generate(seed(),Number($c('circuitBreaks').value)||2);
@@ -104,7 +104,7 @@
   $c('circuitResult').textContent=(hits.length?'正解 '+hits.length+'本（緑の線は修理しました）。':'')+(misses.length?'違う線 '+misses.length+'本。':'')+(!hits.length&&!misses.length?'線を選んでから答え合わせをします。':'')+(remain?'残りの断線 '+remain+'本。':'全部見つけました！ 測定回数 '+measurements+'回。正常に動くか確かめましょう。');
   update();
  }
- function tick(){if(!problem||document.getElementById('circuit').hidden||!state.power)return;CF.step(problem.circuit,state,.25);update();}
+ function tick(){if(!problem||!active||document.getElementById('tester').hidden||!state.power)return;CF.step(problem.circuit,state,.25);update();}
  $c('circuitNew').onclick=newProblem;$c('circuitBreaks').onchange=newProblem;
  $c('circuitPower').onclick=()=>{state.power=!state.power;if(!state.power){state.relay={};state.timer={};}update();};
  $c('circuitMccb').onclick=()=>{state.mccb=!state.mccb;update();};
@@ -114,7 +114,17 @@
  $c('circuitAnswerMode').onclick=()=>{answerMode=!answerMode;update();};
  $c('circuitCheck').onclick=check;
  $c('circuitReveal').onclick=()=>{revealed=true;$c('circuitResult').textContent='赤い点線が断線です（'+problem.broken.map(wireName).join('、')+'）。';update();};
- window.resetCircuitLesson=()=>{if(!problem)newProblem();};
+ // Practice tab on the tester page: the fault-finding diagram and cards replace
+ // the single-part lesson while selected; the other tabs return to it.
+ function setCircuitMode(on){
+  active=on;$c('tester').classList.toggle('circuit-mode',on);$c('circuitVisual').hidden=!on;$c('circuitCards').hidden=!on;
+  document.querySelector('[data-circuit-tab]').setAttribute('aria-pressed',String(on));
+  if(on){document.querySelectorAll('[data-tester-case]').forEach(b=>b.setAttribute('aria-pressed','false'));if(!problem)newProblem();else update();}
+ }
+ document.querySelector('[data-circuit-tab]').addEventListener('click',()=>setCircuitMode(true));
+ document.querySelectorAll('[data-tester-case]').forEach(b=>b.addEventListener('click',()=>{if(active)setCircuitMode(false);}));
+ const resetTester=window.resetTesterLesson;window.resetTesterLesson=()=>{setCircuitMode(false);resetTester?.();};
+ window.setCircuitMode=setCircuitMode;
  window.circuitFaultDebug=()=>({problem,state,red,black,mode,picked:[...picked],repaired:[...repaired]});
  timer=setInterval(tick,250);
 })();
