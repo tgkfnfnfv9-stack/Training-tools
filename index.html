@@ -801,11 +801,66 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 .tester-controls .text-button{min-height:44px}
 @media(max-width:560px){.tester-readout span{font-size:12px}.tester-card{padding:14px}.tester-readout{padding:8px 12px}}
 @media(max-width:950px) and (orientation:landscape) and (max-height:600px){body.in-lab #tester .training-heading{padding-top:4px;padding-bottom:4px}}
+</style><style>#circuitVisual{display:flex;flex-direction:column;flex:1 1 auto;min-height:0;background:#fbfcfa}
+#tester.circuit-mode #testerDiagram,#tester.circuit-mode #testerReadout,#tester.circuit-mode .tester-visual-top,#tester.circuit-mode #testerControls>.tester-card:not(:first-child),#tester.circuit-mode #testerControls>details,#tester.circuit-mode #testerReset{display:none}
+#tester.circuit-mode #testerControls>.tester-card:first-child>:not(.section-title):not(.tester-case-tabs){display:none}
+#tester.circuit-mode .tester-visual{background:#fbfcfa}
+[data-circuit-tab][aria-pressed=true]{background:#fff0c5;border-color:#d3a72f;color:#5b3b00;font-weight:700}
+#circuitCards>.card{margin-top:12px}
+.circuit-visual-top{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px 4px;font-size:13px}
+.circuit-visual-top strong{font-size:13px}
+.circuit-scroll{flex:1 1 auto;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;padding:0 6px}
+#circuitDiagram{display:block;width:100%;min-width:var(--circuit-width,600px);max-width:900px;height:auto;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif}
+.cf-wire{fill:none;stroke:#2c3e48;stroke-width:1.6;stroke-linejoin:round}
+.cf-wire.picked{stroke:#e07b00;stroke-width:3.2;stroke-dasharray:6 3}
+.cf-wire.broken{stroke:#d1343b;stroke-width:3.2;stroke-dasharray:4 4}
+.cf-wire.repaired{stroke:#2f9e5b;stroke-width:3}
+.cf-wire-hit{fill:none;stroke:transparent;stroke-width:16}
+#circuitDiagram.answering .cf-wire-hit{cursor:pointer}
+#circuitDiagram.answering .cf-wire-hit:hover{stroke:#e07b0033}
+.cf-line{fill:none;stroke:#1b2a33;stroke-width:1.6;stroke-linecap:round}
+.cf-thin{fill:none;stroke:#1b2a33;stroke-width:1.1}
+.cf-dash{fill:none;stroke:#1b2a33;stroke-width:1.1;stroke-dasharray:2 2}
+.cf-label{font-size:9px;fill:#1b2a33}
+.cf-bus{font-size:12px;font-weight:700;fill:#1b2a33}
+.cf-number{font-size:8px;fill:#6c7f89}
+.cf-coil{fill:#fff;stroke:#1b2a33;stroke-width:1.4}
+.cf-coil.on{fill:#ffd9a6}
+.cf-lamp{fill:#fff;stroke:#1b2a33;stroke-width:1.4}
+.cf-lamp-text{font-size:8px;font-weight:700;fill:#1b2a33}
+.cf-motor{fill:#fff;stroke:#1b2a33;stroke-width:1.6}
+.cf-motor.run{fill:#c9efd6}.cf-motor.hum{fill:#ffe0a8}
+.cf-term{fill:#1b2a33}.cf-term.junction{fill:#1b2a33}
+.cf-term-hit{fill:transparent;cursor:pointer}
+.cf-term-hit:hover{fill:#ffbc4644}
+#circuitDiagram.answering .cf-term-hit{pointer-events:none}
+.cf-probe{fill:none;stroke-width:2.6}
+.cf-probe-text{font-size:9px;font-weight:700}
+.circuit-meter{display:flex;align-items:center;gap:10px;padding:6px 12px;background:#1f2a30;color:#e9f3ee;min-height:44px}
+.circuit-meter strong{font:700 22px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#b8ff9a;min-width:7ch}
+.circuit-meter[data-kind=danger] strong{color:#ff8a80;font-size:13px;font-family:inherit}
+.circuit-meter[data-kind=float] strong{color:#ffe08a}
+.circuit-meter-mode{font-size:11px;background:#33454e;border-radius:4px;padding:2px 6px}
+#circuitReadingNote{font-size:11px;color:#c7d6d0;line-height:1.35}
+.circuit-name{font-weight:650;margin:4px 0 10px}
+.circuit-normal{font-size:13px;background:#f3f7f6;border-radius:8px;padding:8px 10px}
+.circuit-switches,.circuit-buttons,.circuit-modes,.circuit-leads,.circuit-answer-buttons{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+.circuit-switches button,.circuit-buttons button,.circuit-modes button,.circuit-leads button,.circuit-answer-buttons button,.circuit-toggle{min-height:44px}
+.circuit-power[aria-pressed=true]{background:#d1343b;color:#fff;border-color:#d1343b}
+.circuit-pb[aria-pressed=true],.circuit-modes [aria-pressed=true],.circuit-toggle[aria-pressed=true]{background:#fff0c5;border-color:#d3a72f;font-weight:700}
+.lead-red[aria-pressed=true]{background:#d1343b;color:#fff;border-color:#d1343b}
+.lead-black[aria-pressed=true]{background:#222;color:#fff;border-color:#222}
+.circuit-status{display:flex;flex-wrap:wrap;gap:6px}
+.circuit-chip{font-size:12px;background:#eef2f3;border-radius:12px;padding:3px 9px}
+.circuit-chip.on{background:#ffe7c2}
+.circuit-picked{font-size:12px}
+.circuit-result{font-weight:650;color:#1f6b53}
+@media(max-width:560px){.circuit-meter strong{font-size:18px;min-width:5ch;white-space:nowrap}#circuitReadingNote{font-size:10px}.circuit-meter-mode{white-space:nowrap}}
 </style></head>
 <body><header><div class="brand"><span class="brand-mark">T</span><div>社内訓練ツール<small>構造を見て、調整して、理解する</small></div></div><span class="version">訓練シミュレーター</span></header>
 <main><nav id="siteNav" class="site-navigation" aria-label="教材の移動"><button id="navHome" class="nav-home">トップ</button><button id="navBack" class="nav-back" hidden>‹ 戻る</button><button id="changeMachine" class="nav-back" hidden>‹ 機種選択</button><div id="crumbs" class="breadcrumbs" aria-label="現在位置"></div></nav>
 <section id="home"><div class="intro"><p class="eyebrow">TRAINING LIBRARY</p><h1>どちらを学びますか？</h1><p>電気と機械。現場の理解を、一つずつ深める。</p></div><div class="category-grid"><button class="category" id="electric"><span class="symbol">⚡</span><h2>電気</h2><p>回路・制御・点検の基礎</p><span class="go">テスターの使い方 →</span></button><button class="category" id="mechanical"><span class="symbol">⚙</span><h2>機械</h2><p>工作機械の構造と調整</p><span class="go">訓練項目を見る →</span></button></div></section>
-<section id="electricTopics" hidden><div class="intro"><p class="eyebrow">ELECTRICAL TRAINING</p><h1>電気の訓練</h1><p>テスターの準備、測定モード、つなぎ方を順番に学びます。</p></div><button class="topic" id="testerEntry"><span class="topic-icon">01</span><div><h2>テスターの使い方</h2><p>DC・AC電圧、抵抗、導通、低電圧の電流を模擬測定</p><span class="pill">初めてのテスター</span></div><span class="topic-arrow">→</span></button></section>
+<section id="electricTopics" hidden><div class="intro"><p class="eyebrow">ELECTRICAL TRAINING</p><h1>電気の訓練</h1><p>テスターの準備、測定モード、つなぎ方を順番に学び、回路の断線探しで実践します。</p></div><button class="topic" id="testerEntry"><span class="topic-icon">01</span><div><h2>テスターの使い方</h2><p>DC・AC電圧、抵抗、導通、低電圧の電流を模擬測定。シーケンス回路の断線探しも</p><span class="pill">初めてのテスター</span></div><span class="topic-arrow">→</span></button></section>
 <section id="topics" hidden><div class="intro"><p class="eyebrow">MECHANICAL TRAINING</p><h1>機械の訓練</h1><p>まずは、据付と精度の土台となるレベル出しから。</p></div><button class="topic" id="leveling"><span class="topic-icon">01</span><div><h2>工作機械のレベル出し</h2><p>支持点の調整で、ねじれ・コラムの倒れ・直角度の変化を3Dで学ぶ</p><span class="pill">7つの構造カテゴリ</span></div><span class="topic-arrow">→</span></button></section>
 <section id="catalog" hidden><div class="intro"><p class="eyebrow">LEVELING / MACHINE TYPES</p><h1>機械の構造を選ぶ</h1><p>支持配置と、動く側・固定する側の違いで選びましょう。</p></div><p class="note">3Dは外装を省いた教材用の構造模式図です。小型は4点、6点支持の立形は左右3点ずつ（中間ボルトの効きは仮定値）、EC-630は8点の概略配置、L3 3000参考モデルは長手ベッド9点・柱側6点の教材用15点です。実機の支持配置そのものではありません。ほかの機種は従来の学習用配置です。</p><div id="machineGrid" class="machine-grid"></div><details class="survey"><summary>分類の考え方・調査資料</summary><p>立形は小型4点のみ。横形はHaas EC-630（NGC）、固定門形はHWACHEON L3 3000を参考にしています。「立形／横形」は主軸の向き、「門形／片持ち」は構造、「5軸」は制御軸の構成です。これらは重なります。立形でも門形構造の機械があり、門形にも5軸機があります。</p><p>追加候補：NCフライス、ヘッド旋回式5軸、複合加工機、平面・円筒研削盤、テーブル形／床上形横中ぐり盤。詳しくは同梱の調査資料をご覧ください。</p></details></section>
 <section id="training" hidden><div id="trainingShell" class="training-shell">
@@ -917,10 +972,48 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
       <div class="tester-visual-top"><strong id="testerVisualTitle">乾電池のDC電圧</strong><span class="pill">画面内の模擬測定</span></div>
       <svg id="testerDiagram" viewBox="0 0 600 300" role="img" aria-labelledby="testerSvgTitle testerSvgDesc"></svg>
       <div id="testerReadout" class="tester-readout" role="status" aria-live="polite"><strong id="testerResult">未測定</strong><span id="testerFeedback">下の操作欄で、リードと測定モードを選びましょう。</span></div>
+      <div id="circuitVisual" class="circuit-visual" hidden><div class="circuit-visual-top"><strong id="circuitTitle">回路</strong><span id="circuitSupply" class="pill"></span></div>
+      <div id="circuitScroll" class="circuit-scroll"><svg id="circuitDiagram" role="img" aria-label="シーケンス回路図。端子をタップしてテスターのリードを当てます"></svg></div>
+      <div id="circuitMeter" class="circuit-meter" role="status" aria-live="polite"><span class="circuit-meter-mode" id="circuitMeterMode">AC V</span><strong id="circuitReading">---</strong><span id="circuitReadingNote">端子をタップしてリードを当てる</span></div>
+    </div>
     </div>
     <div class="controls-bar">操作・手順 ↓ この下をスクロール</div>
     <div id="testerControls" class="scroll-controls tester-controls" tabindex="0" role="region" aria-label="テスターの操作と説明">
-      <div class="card tester-card"><div class="section-title"><h2>測るものを選ぶ</h2><button id="testerReset" class="text-button">最初から</button></div><div class="tester-case-tabs" aria-label="測定の練習"><button data-tester-case="voltage" aria-pressed="true">DC電圧</button><button data-tester-case="acvoltage" aria-pressed="false">AC電圧</button><button data-tester-case="current" aria-pressed="false">DC電流</button><button data-tester-case="resistance" aria-pressed="false">抵抗</button><button data-tester-case="continuity" aria-pressed="false">導通</button></div><p id="testerProgress" class="tester-progress" role="status"></p><p class="hint">完了は各教材の基本操作1回（測定 → 接続解除 → OFF）の達成です。電流は赤リードをVΩに戻す操作も必要です。値・向き・断線の比較は追加練習です。</p><button id="testerResetAll" class="text-button">全練習の記録を消して最初から</button><p id="testerGoal" class="tester-goal"></p><p class="hint">乾電池・低電圧の交流源・単体部品を使う画面内の練習です。電流は3Vと120Ωの理想回路で計算します。商用電源や制御盤での操作は扱いません。</p></div>
+      <div class="card tester-card"><div class="section-title"><h2>測るものを選ぶ</h2><button id="testerReset" class="text-button">最初から</button></div><div class="tester-case-tabs" aria-label="測定の練習"><button data-tester-case="voltage" aria-pressed="true">DC電圧</button><button data-tester-case="acvoltage" aria-pressed="false">AC電圧</button><button data-tester-case="current" aria-pressed="false">DC電流</button><button data-tester-case="resistance" aria-pressed="false">抵抗</button><button data-tester-case="continuity" aria-pressed="false">導通</button><button data-circuit-tab aria-pressed="false">断線探し</button></div><p id="testerProgress" class="tester-progress" role="status"></p><p class="hint">完了は各教材の基本操作1回（測定 → 接続解除 → OFF）の達成です。電流は赤リードをVΩに戻す操作も必要です。値・向き・断線の比較は追加練習です。</p><button id="testerResetAll" class="text-button">全練習の記録を消して最初から</button><p id="testerGoal" class="tester-goal"></p><p class="hint">乾電池・低電圧の交流源・単体部品を使う画面内の練習です。電流は3Vと120Ωの理想回路で計算します。商用電源や制御盤での操作は扱いません。</p></div>
+      <div id="circuitCards" hidden><div class="card"><div class="section-title"><h2>問題</h2><button id="circuitNew" class="text-button">新しい問題</button></div>
+        <p id="circuitName" class="circuit-name"></p>
+        <label class="select-label" for="circuitBreaks">断線の本数</label><select id="circuitBreaks"><option value="1">1本</option><option value="2" selected>2本</option></select>
+        <p class="hint">5種類の回路（自己保持・インターロック・信号機・スターデルタ・電動機主回路）と電源（AC100V・AC200V・AC24V、主回路は3相200V）をランダムに選び、配線をランダムに断線させます。</p>
+        <p class="circuit-normal"><strong>正常な動き：</strong><span id="circuitNormal"></span></p>
+      </div>
+      <div class="card"><h2>1. 動かして症状を見る</h2>
+        <div class="circuit-switches"><button id="circuitPower" class="circuit-power" aria-pressed="false">電源 OFF</button><button id="circuitMccb" class="circuit-toggle" aria-pressed="true" hidden>MCCB 入</button></div>
+        <div id="circuitButtons" class="circuit-buttons" aria-label="押しボタン"></div>
+        <p class="hint">押しボタンはタップで「押したまま」、もう一度タップで離します。押したまま電圧や抵抗を測れます。</p>
+        <div id="circuitStatus" class="circuit-status" role="status"></div>
+      </div>
+      <div class="card"><h2>2. テスターで測る</h2>
+        <div class="circuit-modes" role="group" aria-label="テスターのレンジ"><button data-circuit-mode="volt" aria-pressed="true">AC電圧（V）</button><button data-circuit-mode="ohm" aria-pressed="false">抵抗（Ω）</button></div>
+        <div class="circuit-leads"><span>次に当てるリード：</span><button id="circuitLeadRed" class="lead-red" aria-pressed="true">赤</button><button id="circuitLeadBlack" class="lead-black" aria-pressed="false">黒</button><button id="circuitClearLeads" class="text-button">リードを外す</button></div>
+        <p id="circuitCount" class="hint"></p>
+        <p class="hint">電圧は電源ONで、抵抗は必ず電源OFFで測ります。図の小さな数字は線番です。</p>
+      </div>
+      <div class="card"><h2>3. 断線した線を答える</h2>
+        <button id="circuitAnswerMode" class="circuit-toggle" aria-pressed="false">断線した線を選ぶ</button>
+        <p class="hint">「選ぶ」をONにして、図の線（端子と端子の間）をタップすると印が付きます。</p>
+        <p id="circuitPicked" class="circuit-picked"></p>
+        <div class="circuit-answer-buttons"><button id="circuitCheck">答え合わせ</button><button id="circuitReveal" class="text-button">答えを見る</button></div>
+        <p id="circuitResult" class="circuit-result" role="status"></p>
+      </div>
+      <details class="lesson"><summary>探し方のコツ</summary><ol>
+        <li>まず電源を入れて押しボタンを操作し、どのランプ・コイルが動かないか（症状）を確認します。</li>
+        <li><strong>電圧法（電源ON）</strong>：黒リードをN（またはS）に当てたまま、赤リードをPから順に回路に沿って動かします。電圧がある所と無い所の境目に断線があります。</li>
+        <li>線の両端に直接当てる方法もあります。電流が流れるはずの線で、両端に電源電圧が出たら、その線が断線しています（正常な線は0V）。</li>
+        <li>負荷（コイル・ランプ）の先が断線していると、電流が流れないので負荷の両端の電圧は0Vになり、負荷のN側の端子にも電源電圧が出ます。</li>
+        <li><strong>抵抗法（電源OFF）</strong>：線の両端を測り、0Ωなら正常、OLなら断線です。押しボタンは押したままにすると、その先まで測れます。</li>
+        <li>主回路で1相が切れると電動機はうなって回りません。電動機端子の線間で100V（半分）の所があれば、その相を疑います。</li>
+        <li>通電中にΩレンジで測ってはいけません。画面でも警告が出ます。</li>
+      </ol></details></div>
       <div class="card tester-card"><h2>1. リードを差す</h2><p class="hint">黒はCOM。電圧・抵抗・導通の赤はVΩ、電流の赤は対応するA端子です。実機のmA端子・ヒューズ・測定範囲は機種ごとに確認します。</p><div class="tester-leads"><label for="testerBlackLead">黒リード<select id="testerBlackLead"><option value="none">まだ差していない</option><option value="com">COM</option></select></label><label for="testerRedLead">赤リード<select id="testerRedLead"><option value="none">まだ差していない</option><option value="vohm">VΩ</option><option value="a">A（電流用）</option></select></label></div><p id="testerJackNotice" class="tester-inline-note" hidden>A端子は電流の直列測定専用です。電圧・抵抗・導通ではVΩに戻してください。A端子で電源の両端へ並列接続すると短絡につながります。</p></div>
       <div class="card tester-card"><h2>2. 測定モードを選ぶ</h2><div class="tester-mode-tabs" aria-label="テスターの測定モード"><button data-tester-mode="off" aria-pressed="true">OFF</button><button data-tester-mode="dcv" aria-pressed="false">V⎓<small>DC電圧</small></button><button data-tester-mode="acv" aria-pressed="false">V〜<small>AC電圧</small></button><button data-tester-mode="dca" aria-pressed="false">A⎓<small>DC電流</small></button><button data-tester-mode="ohm" aria-pressed="false">Ω<small>抵抗</small></button><button data-tester-mode="beep" aria-pressed="false">導通<small>ブザー</small></button></div><p class="hint">V⎓は直流、V〜は交流。この教材はオートレンジ設定の模式図です。実機では記号・レンジ・最大入力を取扱説明書で確認します。</p></div>
       <div class="card tester-card"><h2>3. 接続して読み取る</h2><div id="testerPreparationBox" hidden><label class="tester-check"><input id="testerPrepared" type="checkbox"><span id="testerPreparationLabel">電源を外し、残留電圧がないことを確認した</span></label><p id="testerPreparationHint" class="hint">抵抗・導通は通電中に測りません。コンデンサ等がある回路は、所定の放電手順と無電圧の確認が必要です。この教材の部品は電源から切り離されています。</p></div><div id="testerVoltageCaseBox"><label for="testerVoltageCase">電池の教材値<select id="testerVoltageCase"><option value="1.5">1.5 V</option><option value="1">1.0 V（比較用）</option></select></label></div><div id="testerResistanceCaseBox" hidden><label for="testerResistanceCase">抵抗の教材値<select id="testerResistanceCase"><option value="1000">1 kΩ</option><option value="100">100 Ω</option><option value="10000">10 kΩ</option></select></label></div><div id="testerCurrentConnectionBox" hidden><label for="testerCurrentConnection">電流計の接続<select id="testerCurrentConnection"><option value="series">回路を開き、切れ目へ直列</option><option value="parallel">電源の両端へ並列（誤操作の確認）</option></select></label></div><div id="testerPolarityBox"><label for="testerPolarity"><span id="testerPolarityLabel">プローブを当てる向き</span><select id="testerPolarity"><option value="normal">赤を＋、黒を−</option><option value="reverse">赤を−、黒を＋（比較）</option></select></label></div><div id="testerWireBox" hidden><label for="testerWire">配線の状態<select id="testerWire"><option value="connected">つながっている</option><option value="broken">途中で切れている</option></select></label></div><ol id="testerCompletionSteps" class="tester-completion-steps"></ol><p id="testerConnectionHint" class="tester-connection-hint"></p><button id="testerMeasure" class="tester-primary">プローブを両端に当てて測る</button><button id="testerDisconnect" class="tester-disconnect">プローブを離す</button><p id="testerFeedbackDetail" class="tester-feedback-detail" role="status"></p><p class="hint">測定中は設定を変更できません。「プローブを離す」を押してから、端子・モード・測るものを変えます。「最初から」は接続も解除します。</p></div>
@@ -3985,5 +4078,463 @@ function updateIntrinsicInspectionUI(){
   $('testerReset').addEventListener('click',()=>reset());$('testerResetAll').addEventListener('click',()=>{completed={};reset('voltage');});
   window.resetTesterLesson=()=>reset('voltage');
   reset('voltage');
+})();
+</script><script>(function(root,factory){
+ 'use strict';
+ const api=factory();
+ if(typeof module==='object'&&module.exports)module.exports=api;
+ if(root)root.CircuitFault=api;
+})(typeof window!=='undefined'?window:typeof globalThis!=='undefined'?globalThis:null,function(){
+ 'use strict';
+ // Teaching model of a control panel for wire-break hunting with a tester.
+ // Terminals are joined by wires (each one breakable). Closed contacts and
+ // wires are ideal conductors; coils, lamps and motor windings are resistive
+ // loads. AC voltages are solved as complex phasors (nodal analysis), so a
+ // load with no current shows the full supply voltage on its far terminal,
+ // and an open phase of a motor shows the midpoint voltage, as on a real
+ // panel. Resistance readings are DC with the supply disconnected.
+ const model='circuit-fault-v1';
+ const C={add:(a,b)=>[a[0]+b[0],a[1]+b[1]],sub:(a,b)=>[a[0]-b[0],a[1]-b[1]],mul:(a,b)=>[a[0]*b[0]-a[1]*b[1],a[0]*b[1]+a[1]*b[0]],div:(a,b)=>{const d=b[0]*b[0]+b[1]*b[1];return [(a[0]*b[0]+a[1]*b[1])/d,(a[1]*b[0]-a[0]*b[1])/d];},abs:a=>Math.hypot(a[0],a[1]),polar:(r,deg)=>[r*Math.cos(deg*Math.PI/180),r*Math.sin(deg*Math.PI/180)]};
+ // DC resistance of loads by control voltage (teaching values).
+ const loadOhms={100:{coil:220,timer:4700,lamp:2200},200:{coil:880,timer:9400,lamp:8200},24:{coil:36,timer:1200,lamp:560}};
+ function random(seed){let value=seed>>>0;return ()=>{value=(value+0x6D2B79F5)>>>0;let t=value;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return ((t^(t>>>14))>>>0)/4294967296;};}
+
+ // ---- Ladder layout -------------------------------------------------------
+ // A block starts at the P bus. Its prefix runs along the first row; when it
+ // has several rows, a vertical sub-bus after the prefix feeds every row, as in
+ // a typical relay sequence drawing. An item is a device element or
+ // {par:[[items],[items]]}, branches stacked downward and rejoined.
+ const SLOT=64,ROW=46,LOADW=40;
+ function Builder(){
+  const b={terminals:{},wires:[],elements:[],labels:[],n:0};
+  b.t=(x,y,extra={})=>{const id='t'+(b.n++);b.terminals[id]={id,x,y,...extra};return id;};
+  b.wire=(a,c,pts)=>{const A=b.terminals[a],B=b.terminals[c];b.wires.push({id:'w'+b.wires.length,a,b:c,pts:pts||[[A.x,A.y],[B.x,B.y]]});};
+  return b;
+ }
+ const isLoad=it=>it&&['coil','lamp','timer'].includes(it.type);
+ function itemsWidth(items){return items.reduce((w,it)=>w+(it.par?Math.max(...it.par.map(itemsWidth))+18:isLoad(it)?0:SLOT),0);}
+ function itemsHeight(items){return Math.max(1,...items.map(it=>it.par?it.par.reduce((h,br)=>h+itemsHeight(br),0):1));}
+ // Place items from terminal `from` at (x,y); returns the last terminal.
+ function placeSeries(b,items,from,x,y,endX){
+  let cur=from,cx=x;
+  for(const it of items){
+   if(it.par){
+    const w=Math.max(...it.par.map(itemsWidth)),jx=cx+8,ex=jx+w+10;let row=y;const ends=[];
+    const split=b.t(jx,y,{junction:true}),C0=b.terminals[cur];b.wire(cur,split,[[C0.x,C0.y],[jx,y]]);
+    it.par.forEach((br,k)=>{
+     let s=split;
+     if(k>0){s=b.t(jx,row,{junction:true});b.wire(split,s,[[jx,y],[jx,row]]);}
+     const e=placeSeries(b,br,s,jx,row,null);
+     ends.push({e,row});row+=itemsHeight(br)*ROW;
+    });
+    const join=b.t(ex,y,{junction:true});
+    for(const {e,row:r} of ends){const E=b.terminals[e];b.wire(e,join,r===y?[[E.x,E.y],[ex,y]]:[[E.x,E.y],[ex,r],[ex,y]]);}
+    cur=join;cx=ex;continue;
+   }
+   const lx=isLoad(it)?endX-LOADW-14:cx+10,rx=isLoad(it)?endX-14:cx+SLOT-10;
+   const l=b.t(lx,y),r=b.t(rx,y);
+   const L=b.terminals[cur];b.wire(cur,l,[[L.x,L.y],[lx,y]]);
+   b.elements.push({...it,id:'e'+b.elements.length,pins:[l,r],x:(lx+rx)/2,y});
+   cur=r;cx=isLoad(it)?endX:cx+SLOT;
+  }
+  return cur;
+ }
+ function ladder(blocks,opts){
+  const b=Builder(),PX=34,NX=opts.width-34,top=54;let y=top;
+  const pTaps=[],nTaps=[];
+  for(const block of blocks){
+   const rows=block.rows||[[]],prefix=block.prefix||[];
+   const p=b.t(PX,y,{bus:'P'});pTaps.push(p);
+   let after=placeSeries(b,prefix,p,PX,y,NX);
+   const subX=PX+itemsWidth(prefix)+(rows.length>1?16:0);
+   let rowY=y;const subTaps=[];
+   rows.forEach((row,i)=>{
+    let start=after;
+    if(rows.length>1){
+     const tap=b.t(subX,rowY,{junction:true});
+     if(i===0){const A=b.terminals[after];b.wire(after,tap,[[A.x,A.y],[subX,rowY]]);}
+     else b.wire(subTaps[i-1],tap,[[subX,subY(i-1)],[subX,rowY]]);
+     subTaps.push(tap);start=tap;
+    }
+    const end=placeSeries(b,row,start,rows.length>1?subX:b.terminals[after].x,rowY,NX);
+    const n=b.t(NX,rowY,{bus:'N'});nTaps.push(n);const E=b.terminals[end];b.wire(end,n,[[E.x,E.y],[NX,rowY]]);
+    rowY+=itemsHeight(row)*ROW;
+   });
+   function subY(i){return b.terminals[subTaps[i]].y;}
+   y=Math.max(rowY,y+itemsHeight(prefix)*ROW)+10;
+  }
+  // Bus segments between taps are ordinary (breakable) wires.
+  const bus=(taps,x,name)=>{const top=b.t(x,top0,{bus:name,source:name});const sorted=[...taps].sort((a,c)=>b.terminals[a].y-b.terminals[c].y);let prev=top;for(const t of sorted){b.wire(prev,t);prev=t;}return top;};
+  const top0=24;
+  const P=bus(pTaps,PX,'P'),N=bus(nTaps,NX,'N');
+  b.sources={[P]:'P',[N]:'N'};
+  b.height=y+10;b.width=opts.width;
+  b.labels.push({x:PX,y:14,text:'P'},{x:NX,y:14,text:'N'});
+  return b;
+ }
+
+ // ---- Circuit catalogue --------------------------------------------------
+ const pb=(dev,nc,label)=>({type:'contact',dev,nc:!!nc,device:'pb',label:label||dev});
+ const a=(dev,label)=>({type:'contact',dev,nc:false,device:'relay',label:label||dev});
+ const bb=(dev,label)=>({type:'contact',dev,nc:true,device:'relay',label:label||dev});
+ const ta=(dev,label)=>({type:'contact',dev,nc:false,device:'timer',label:label||dev});
+ const tb=(dev,label)=>({type:'contact',dev,nc:true,device:'timer',label:label||dev});
+ const thr=(dev)=>({type:'contact',dev,nc:true,device:'thr',label:dev});
+ const coil=(dev,label)=>({type:'coil',dev,label:label||dev});
+ const timer=(dev,seconds)=>({type:'timer',dev,label:dev,seconds});
+ const lamp=(dev,color,label)=>({type:'lamp',dev,color,label:label||dev});
+ const catalogue=[
+  {id:'selfhold',name:'自己保持回路（運転・停止）',normal:'PB1（運転）を押すとMCが入り、PB1を離しても自己保持でMCが入ったまま。RL（運転）点灯、GL（停止）消灯。PB0（停止）でMCが切れ、GL点灯に戻る。',
+   pbs:{PB0:'停止（b）',PB1:'運転（a）'},
+   blocks:[{prefix:[pb('PB0',true,'PB0'),{par:[[pb('PB1',false,'PB1')],[a('MC')]]}],rows:[[coil('MC')]]},{prefix:[a('MC')],rows:[[lamp('RL','#e34b3f','RL')]]},{prefix:[bb('MC')],rows:[[lamp('GL','#2f9e5b','GL')]]}]},
+  {id:'interlock',name:'インターロック回路（正転・逆転）',normal:'PBF（正転）でMCF、PBR（逆転）でMCRが自己保持。相手のb接点でインターロックし、両方同時には入らない。PB0（停止）で両方切れる。正転RL・逆転YL点灯。',
+   pbs:{PB0:'停止（b）',PBF:'正転（a）',PBR:'逆転（a）'},
+   blocks:[{prefix:[pb('PB0',true,'PB0')],rows:[[{par:[[pb('PBF',false,'PBF')],[a('MCF')]]},bb('MCR'),coil('MCF')],[{par:[[pb('PBR',false,'PBR')],[a('MCR')]]},bb('MCF'),coil('MCR')]]},{prefix:[a('MCF')],rows:[[lamp('RL','#e34b3f','RL')]]},{prefix:[a('MCR')],rows:[[lamp('YL','#e2b100','YL')]]}]},
+  {id:'signal',name:'信号機回路（タイマ2個）',normal:'B-PBSを押すとCR1が自己保持し、白（WL）と黄（YL）が点灯。T1（4秒）で白が消え、さらにT2（2秒）で黄が消えて緑（GL）が点灯。Y-PBSで全部消える。',
+   pbs:{BPBS:'B-PBS（a）',YPBS:'Y-PBS（b）'},
+   blocks:[{prefix:[{par:[[pb('BPBS',false,'B-PBS')],[a('CR1')]]}],rows:[[pb('YPBS',true,'Y-PBS'),coil('CR1')],[timer('T1',4)],[tb('T1'),lamp('WL','#f4f4f4','WL')],[tb('T2'),lamp('YL','#e2b100','YL')],[ta('T1'),timer('T2',2)],[ta('T2'),lamp('GL','#2f9e5b','GL')]]}]},
+  {id:'stardelta',name:'スター・デルタ始動回路（制御回路）',normal:'PB1でMCとMCS（Y）が入りY始動、YL点灯。タイマT（5秒）でMCSが切れMCD（Δ）が入り、RL点灯。MCSとMCDは互いのb接点でインターロック。PB0で停止。',
+   pbs:{PB0:'停止（b）',PB1:'始動（a）'},
+   blocks:[{prefix:[thr('THR'),pb('PB0',true,'PB0'),{par:[[pb('PB1',false,'PB1')],[a('MC')]]}],rows:[[coil('MC')],[timer('T',5)],[tb('T'),bb('MCD'),coil('MCS')],[{par:[[ta('T')],[a('MCD')]]},bb('MCS'),coil('MCD')]]},{prefix:[a('MCS')],rows:[[lamp('YL','#e2b100','YL')]]},{prefix:[a('MCD')],rows:[[lamp('RL','#e34b3f','RL')]]}]},
+  {id:'motor',name:'電動機の主回路（強電・3相200V）',three:true,normal:'MCCBを入れ、PB1でMCが自己保持すると、主回路のMC主接点が閉じて電動機Mが回る（RL点灯）。PB0で停止（GL点灯）。操作回路はR-S間の200V。',
+   pbs:{PB0:'停止（b）',PB1:'運転（a）'}}
+ ];
+ const supplies=[{volts:100,label:'AC100V'},{volts:200,label:'AC200V'},{volts:24,label:'AC24V'}];
+
+ // Three-phase main circuit with its operating circuit (R-S, 200 V).
+ function motorCircuit(width){
+  const b=Builder(),xs=[44,84,124],names=['R','S','T'],tops=xs.map((x,i)=>b.t(x,24,{bus:names[i],source:names[i]}));
+  b.labels.push(...xs.map((x,i)=>({x,y:14,text:names[i]})));
+  const pole=(el,y,dev)=>xs.map((x,i)=>{const l=b.t(x,y-14),r=b.t(x,y+14);b.elements.push({...el,id:'e'+b.elements.length,pins:[l,r],x,y,vertical:true,label:i===0?el.label:''});return [l,r];});
+  const join=(from,to)=>from.forEach((f,i)=>b.wire(f,to[i]));
+  const mccb=pole({type:'contact',dev:'MCCB',nc:false,device:'mccb',label:'MCCB'},70);
+  join(tops,mccb.map(p=>p[0]));
+  // Control taps after the MCCB on R and S.
+  const tapR=b.t(xs[0],112,{junction:true}),tapS=b.t(xs[1],120,{junction:true});
+  b.wire(mccb[0][1],tapR);b.wire(mccb[1][1],tapS);
+  const mc=pole({type:'contact',dev:'MC',nc:false,device:'relay',label:'MC'},170);
+  b.wire(tapR,mc[0][0]);b.wire(tapS,mc[1][0]);b.wire(mccb[2][1],mc[2][0]);
+  const th=pole({type:'heater',dev:'THR',label:'THR'},240);
+  join(mc.map(p=>p[1]),th.map(p=>p[0]));
+  const motorY=330,uvw=xs.map((x,i)=>b.t(x,motorY-28,{label:['U','V','W'][i]}));
+  join(th.map(p=>p[1]),uvw);
+  const star=b.t(84,motorY+18,{internal:true});
+  uvw.forEach((t,i)=>b.elements.push({type:'winding',dev:'M',id:'e'+b.elements.length,pins:[t,star],x:xs[i],y:motorY,hidden:true,label:''}));
+  b.elements.push({type:'motor',dev:'M',id:'e'+b.elements.length,pins:[],x:84,y:motorY+4,label:'M 3~'});
+  // Operating circuit as a ladder to the right, fed from R (P) and S (N).
+  const PX=170,NX=width-30,rowsY=[150,196,242,288],P=b.t(PX,112,{junction:true}),N=b.t(NX,120,{junction:true});
+  b.wire(tapR,P,[[xs[0],112],[PX,112]]);b.wire(tapS,N,[[xs[1],120],[NX,120]]);
+  const pT=rowsY.map(y=>b.t(PX,y,{bus:'P'})),nT=rowsY.map(y=>b.t(NX,y,{bus:'N'}));
+  [P,...pT].reduce((p,t)=>{b.wire(p,t);return t;});[N,...nT].reduce((p,t)=>{b.wire(p,t);return t;});
+  const rung=(i,items)=>{const end=placeSeries(b,items,pT[i],PX,rowsY[i],NX);const E=b.terminals[end];b.wire(end,nT[i],[[E.x,E.y],[NX,rowsY[i]]]);};
+  rung(0,[thr('THR'),pb('PB0',true,'PB0'),{par:[[pb('PB1',false,'PB1')],[a('MC')]]},coil('MC')]);
+  rung(2,[a('MC'),lamp('RL','#e34b3f','RL')]);rung(3,[bb('MC'),lamp('GL','#2f9e5b','GL')]);
+  b.labels.push({x:PX,y:104,text:'R'},{x:NX,y:104,text:'S'});
+  b.sources=Object.fromEntries(tops.map((t,i)=>[t,names[i]]));
+  b.height=380;b.width=width;
+  return b;
+ }
+
+ function build(circuitId,volts,width=640){
+  const def=catalogue.find(c=>c.id===circuitId);if(!def)throw new TypeError('回路が不正です。');
+  const b=def.three?motorCircuit(width):ladder(def.blocks,{width});
+  const supply=def.three?{label:'3相AC200V（操作回路 R-S 200V）',volts:200,three:true}:{...supplies.find(s=>s.volts===volts),three:false};
+  const ohms=loadOhms[supply.three?200:supply.volts];
+  for(const e of b.elements){
+   if(e.type==='coil')e.ohms=ohms.coil;else if(e.type==='timer')e.ohms=ohms.timer;else if(e.type==='lamp')e.ohms=ohms.lamp;else if(e.type==='winding')e.ohms=4.2;
+  }
+  const devices={};
+  for(const e of b.elements){
+   if(e.type==='contact'&&e.device==='pb')devices[e.dev]={kind:'pb'};
+   if(e.type==='coil')devices[e.dev]={kind:'relay'};
+   if(e.type==='timer')devices[e.dev]={kind:'timer',seconds:e.seconds};
+   if(e.device==='mccb')devices.MCCB={kind:'mccb'};
+  }
+  const circuit={model,id:def.id,name:def.name,normal:def.normal,pbs:def.pbs,supply,terminals:b.terminals,wires:b.wires,elements:b.elements,labels:b.labels,sources:b.sources,devices,width:b.width,height:b.height};
+  circuit.numbers=wireNumbers(circuit);
+  return circuit;
+ }
+ // 線番: one number per node of the intact wiring (contacts and loads separate
+ // nodes). The supply buses keep their names.
+ function wireNumbers(circuit){
+  const groups=unionFind(Object.keys(circuit.terminals),circuit.wires.map(w=>[w.a,w.b]));
+  const out={},names={};let next=1;
+  for(const [t,s] of Object.entries(circuit.sources))names[groups.find(t)]=s;
+  const order=Object.values(circuit.terminals).sort((p,q)=>p.y-q.y||p.x-q.x);
+  for(const t of order){const g=groups.find(t.id);if(!(g in names))names[g]=String(next++);out[t.id]=names[g];}
+  return out;
+ }
+ function unionFind(ids,pairs){
+  const parent=Object.fromEntries(ids.map(i=>[i,i])),find=i=>{while(parent[i]!==i){parent[i]=parent[parent[i]];i=parent[i];}return i;};
+  for(const [p,q] of pairs){const a=find(p),b=find(q);if(a!==b)parent[a]=b;}
+  return {find};
+ }
+
+ // ---- State and solving ----------------------------------------------------
+ function initialState(circuit){
+  return {power:false,mccb:true,pressed:{},broken:[],relay:{},timer:{},thrTripped:false};
+ }
+ function contactClosed(circuit,state,e){
+  let active=false;
+  if(e.device==='pb')active=!!state.pressed[e.dev];
+  else if(e.device==='relay')active=!!state.relay[e.dev];
+  else if(e.device==='timer')active=(state.timer[e.dev]||0)>=circuit.devices[e.dev].seconds-1e-9;
+  else if(e.device==='thr')active=!!state.thrTripped;
+  else if(e.device==='mccb')return !!state.mccb;
+  return e.nc?!active:active;
+ }
+ // Conductor groups for the present device states.
+ function groupsOf(circuit,state){
+  const broken=new Set(state.broken),pairs=circuit.wires.filter(w=>!broken.has(w.id)).map(w=>[w.a,w.b]);
+  for(const e of circuit.elements){if((e.type==='contact'&&contactClosed(circuit,state,e))||e.type==='heater')pairs.push(e.pins);}
+  return unionFind(Object.keys(circuit.terminals),pairs);
+ }
+ function sourcePhasor(circuit,name){
+  const V=circuit.supply.volts;
+  if(circuit.supply.three)return C.polar(V/Math.sqrt(3),{R:90,S:-30,T:210}[name]);
+  return name==='P'?[V,0]:[0,0];
+ }
+ function loadEdges(circuit,groups){
+  return circuit.elements.filter(e=>e.ohms).map(e=>({e,a:groups.find(e.pins[0]),b:groups.find(e.pins[1]),r:e.ohms}));
+ }
+ // Complex nodal solution. Unknown groups linked to a fixed group get a value;
+ // isolated groups stay floating (null).
+ function solve(circuit,state){
+  const groups=groupsOf(circuit,state),fixed={};
+  if(state.power)for(const [t,name] of Object.entries(circuit.sources))fixed[groups.find(t)]=sourcePhasor(circuit,name);
+  const edges=loadEdges(circuit,groups),adj={};
+  for(const ed of edges){(adj[ed.a]=adj[ed.a]||[]).push(ed.b);(adj[ed.b]=adj[ed.b]||[]).push(ed.a);}
+  const reach=new Set(Object.keys(fixed)),queue=[...reach];
+  while(queue.length){const g=queue.pop();for(const h of adj[g]||[])if(!reach.has(h)){reach.add(h);queue.push(h);}}
+  const unknown=[...reach].filter(g=>!(g in fixed)),index=Object.fromEntries(unknown.map((g,i)=>[g,i])),n=unknown.length;
+  const A=Array.from({length:n},()=>Array.from({length:n},()=>[0,0])),rhs=Array.from({length:n},()=>[0,0]);
+  for(const {a,b,r} of edges){
+   if(a===b)continue;const y=[1/r,0];
+   for(const [p,q] of [[a,b],[b,a]]){
+    if(!(p in index))continue;const i=index[p];A[i][i]=C.add(A[i][i],y);
+    if(q in index)A[i][index[q]]=C.sub(A[i][index[q]],y);else if(q in fixed)rhs[i]=C.add(rhs[i],C.mul(y,fixed[q]));
+   }
+  }
+  const x=gauss(A,rhs),potential={...fixed};unknown.forEach((g,i)=>potential[g]=x[i]);
+  const at=t=>{const g=groups.find(t);return g in potential?potential[g]:null;};
+  return {groups,at,edges,potential};
+ }
+ function gauss(A,b){
+  const n=b.length,M=A.map((row,i)=>[...row.map(v=>[...v]),[...b[i]]]);
+  for(let c=0;c<n;c++){
+   let p=c;for(let r=c+1;r<n;r++)if(C.abs(M[r][c])>C.abs(M[p][c]))p=r;
+   [M[c],M[p]]=[M[p],M[c]];const d=M[c][c];if(C.abs(d)<1e-15)continue;
+   for(let j=c;j<=n;j++)M[c][j]=C.div(M[c][j],d);
+   for(let r=0;r<n;r++)if(r!==c){const f=M[r][c];if(C.abs(f)===0)continue;for(let j=c;j<=n;j++)M[r][j]=C.sub(M[r][j],C.mul(f,M[c][j]));}
+  }
+  return M.map(row=>row[n]);
+ }
+ // Energized loads at the present state.
+ function loadVoltages(circuit,solution){
+  const out={};
+  for(const ed of solution.edges){const pa=solution.at(ed.e.pins[0]),pb=solution.at(ed.e.pins[1]);out[ed.e.id]=pa&&pb?C.abs(C.sub(pa,pb)):0;}
+  return out;
+ }
+ const rated=circuit=>circuit.supply.volts;
+ // Advance the sequence by dt seconds: relays follow their coils (iterated to
+ // a stable state), timers accumulate while their coil is energized.
+ function step(circuit,state,dt=0){
+  const on=(v,e)=>v[e.id]>=.7*rated(circuit);
+  let v=loadVoltages(circuit,solve(circuit,state));
+  for(const e of circuit.elements)if(e.type==='timer')state.timer[e.dev]=on(v,e)?(state.timer[e.dev]||0)+dt:0;
+  for(let k=0;k<16;k++){
+   v=loadVoltages(circuit,solve(circuit,state));let changed=false;
+   for(const e of circuit.elements){
+    if(e.type==='coil'&&!!state.relay[e.dev]!==on(v,e)){state.relay[e.dev]=on(v,e);changed=true;}
+    if(e.type==='timer'&&!on(v,e)&&state.timer[e.dev]){state.timer[e.dev]=0;changed=true;}
+   }
+   if(!changed)break;
+  }
+  return status(circuit,state);
+ }
+ function status(circuit,state){
+  const s=solve(circuit,state),v=loadVoltages(circuit,s),lit={},energized={};
+  for(const e of circuit.elements){
+   if(e.type==='lamp')lit[e.dev]=v[e.id]>=.7*rated(circuit);
+   if(e.type==='coil'||e.type==='timer')energized[e.dev]=v[e.id]>=.7*rated(circuit);
+  }
+  const windings=circuit.elements.filter(e=>e.type==='winding').map(e=>v[e.id]);
+  const phase=circuit.supply.volts/Math.sqrt(3);
+  const motor=windings.length?(windings.every(w=>w>=.8*phase)?'run':windings.some(w=>w>.1*phase)?'hum':'stop'):null;
+  return {lit,energized,motor,timer:{...state.timer}};
+ }
+
+ // ---- Tester ---------------------------------------------------------------
+ function measure(circuit,state,red,black,mode){
+  if(!red||!black)return {kind:'none',text:'リード未接続'};
+  if(mode==='ohm'){
+   if(state.power)return {kind:'danger',text:'危険：通電中にΩレンジで測らない',detail:'電源を切ってから抵抗を測ります（テスター破損・感電の危険）。'};
+   const ohms=resistance(circuit,state,red,black);
+   if(ohms===Infinity)return {kind:'ohm',value:Infinity,text:'OL',detail:'導通なし（開いている）'};
+   return {kind:'ohm',value:ohms,text:ohms<1?'0.0 Ω':ohms<1000?ohms.toFixed(0)+' Ω':(ohms/1000).toFixed(2)+' kΩ',detail:ohms<1?'導通あり':'負荷を通って導通'};
+  }
+  if(!state.power)return {kind:'volt',value:0,text:'0.0 V',detail:'電源OFF'};
+  const s=solve(circuit,state),pa=s.at(red),pb=s.at(black);
+  if(!pa||!pb){
+   if(s.groups.find(red)===s.groups.find(black))return {kind:'volt',value:0,text:'0.0 V',detail:''};
+   return {kind:'float',value:0,text:'≈0 V',detail:'浮いている（どこにもつながらない）ため数字がふらつく'};
+  }
+  const value=C.abs(C.sub(pa,pb));
+  return {kind:'volt',value,text:value.toFixed(1)+' V',detail:''};
+ }
+ // DC resistance between two terminals with the supply disconnected. Present
+ // contact states (held push buttons, MCCB) apply; relays are released.
+ function resistance(circuit,state,from,to){
+  const off={...state,power:false,relay:{},timer:{}},groups=groupsOf(circuit,off),a=groups.find(from),b=groups.find(to);
+  if(a===b)return 0;
+  const edges=circuit.elements.filter(e=>e.ohms).map(e=>({a:groups.find(e.pins[0]),b:groups.find(e.pins[1]),g:1/e.ohms})).filter(e=>e.a!==e.b);
+  const adj={};for(const e of edges){(adj[e.a]=adj[e.a]||[]).push(e.b);(adj[e.b]=adj[e.b]||[]).push(e.a);}
+  const seen=new Set([a]),queue=[a];while(queue.length){const g=queue.pop();for(const h of adj[g]||[])if(!seen.has(h)){seen.add(h);queue.push(h);}}
+  if(!seen.has(b))return Infinity;
+  const nodes=[...seen].filter(g=>g!==b),index=Object.fromEntries(nodes.map((g,i)=>[g,i])),n=nodes.length;
+  const A=Array.from({length:n},()=>Array.from({length:n},()=>[0,0])),rhs=Array.from({length:n},()=>[0,0]);
+  for(const e of edges){if(!seen.has(e.a))continue;for(const [p,q] of [[e.a,e.b],[e.b,e.a]]){if(!(p in index))continue;const i=index[p];A[i][i]=C.add(A[i][i],[e.g,0]);if(q in index)A[i][index[q]]=C.sub(A[i][index[q]],[e.g,0]);}}
+  rhs[index[a]]=[1,0];
+  return gauss(A,rhs)[index[a]][0];
+ }
+
+ // ---- Problems --------------------------------------------------------------
+ function generate(seed,breaks=2,width=640){
+  const rng=random(seed),def=catalogue[Math.floor(rng()*catalogue.length)],volts=supplies[Math.floor(rng()*supplies.length)].volts;
+  const circuit=build(def.id,volts,width),ids=circuit.wires.map(w=>w.id),broken=[];
+  while(broken.length<Math.min(breaks,ids.length)){const id=ids[Math.floor(rng()*ids.length)];if(!broken.includes(id))broken.push(id);}
+  return {seed,circuit,broken};
+ }
+ return Object.freeze({model,catalogue,supplies,build,generate,initialState,step,status,measure,resistance,solve,contactClosed,random});
+});
+</script><script>'use strict';
+// Wire-break hunting page. Draws the circuit with JIS-style symbols, places
+// tester leads on terminals, and runs the sequence in real time.
+(function(){
+ const CF=window.CircuitFault;if(!CF||!document.getElementById('circuitDiagram'))return;
+ const $c=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
+ let active=false,problem=null,state=null,red=null,black=null,nextLead='red',mode='volt',answerMode=false,picked=new Set(),repaired=new Set(),measurements=0,lastKey='',timer=null,revealed=false;
+ function seed(){const v=new Uint32Array(1);if(window.crypto?.getRandomValues)window.crypto.getRandomValues(v);else v[0]=Math.floor(Math.random()*4294967296);return v[0];}
+ function newProblem(){
+  problem=CF.generate(seed(),Number($c('circuitBreaks').value)||2);
+  state=CF.initialState(problem.circuit);state.broken=[...problem.broken];
+  red=black=null;nextLead='red';answerMode=false;picked=new Set();repaired=new Set();measurements=0;lastKey='';revealed=false;
+  const c=problem.circuit;
+  $c('circuitTitle').textContent=c.name;$c('circuitSupply').textContent=c.supply.three?c.supply.label:c.supply.label+'（操作回路）';
+  $c('circuitName').textContent=c.name+'／'+(c.supply.three?c.supply.label:c.supply.label)+'／断線 '+problem.broken.length+'本';
+  $c('circuitNormal').textContent=c.normal;$c('circuitResult').textContent='';
+  $c('circuitMccb').hidden=!c.devices.MCCB;
+  const box=$c('circuitButtons');box.replaceChildren();
+  for(const [dev,label] of Object.entries(c.pbs)){const b=document.createElement('button');b.className='circuit-pb';b.dataset.pb=dev;b.setAttribute('aria-pressed','false');b.textContent=label;b.onclick=()=>{state.pressed[dev]=!state.pressed[dev];update();};box.append(b);}
+  update();
+ }
+ const el=(name,attrs={},text)=>{const e=document.createElementNS(NS,name);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;};
+ function contactSymbol(g,e,closed){
+  const T=problem.circuit.terminals,[l,r]=e.pins.map(p=>T[p]);
+  if(e.vertical){
+   const x=e.x,y0=l.y,y1=r.y,m=(y0+y1)/2;
+   g.append(el('path',{d:`M${x},${y0}V${m-8}M${x},${m+8}V${y1}`,class:'cf-line'}));
+   g.append(el('path',{d:closed?`M${x},${m-8}L${x},${m+8}`:`M${x},${m+8}L${x-9},${m-7}`,class:'cf-line'}));
+   if(e.device==='mccb')g.append(el('path',{d:`M${x-4},${m-12}l8,8m0,-8l-8,8`,class:'cf-thin'}));
+   if(e.label)g.append(el('text',{x:x-14,y:m+4,class:'cf-label','text-anchor':'end'},e.label));
+   return;
+  }
+  const x=e.x,y=e.y;
+  g.append(el('path',{d:`M${l.x},${y}H${x-9}M${x+9},${y}H${r.x}`,class:'cf-line'}));
+  if(e.nc){g.append(el('path',{d:`M${x+9},${y}v7`,class:'cf-line'}));g.append(el('path',{d:closed?`M${x-9},${y}L${x+11},${y+2}`:`M${x-9},${y}L${x+12},${y-8}`,class:'cf-line'}));}
+  else g.append(el('path',{d:closed?`M${x-9},${y}L${x+9},${y}`:`M${x-9},${y}L${x+9},${y-10}`,class:'cf-line'}));
+  if(e.device==='pb'){g.append(el('path',{d:`M${x},${y-5}V${y-16}`,class:'cf-dash'}));g.append(el('path',{d:`M${x-6},${y-21}v5h12v-5`,class:'cf-thin'}));}
+  if(e.device==='timer')g.append(el('path',{d:`M${x+2},${y-4}v-8m-6,0a6,5 0 0 1 12,0`,class:'cf-thin'}));
+  if(e.device==='thr')g.append(el('path',{d:`M${x-3},${y-6}v-6h6v6`,class:'cf-thin'}));
+  g.append(el('text',{x:x,y:y+(e.device==='pb'?-25:e.device==='timer'?-20:-14),class:'cf-label','text-anchor':'middle'},e.label));
+ }
+ function draw(st){
+  const c=problem.circuit,T=c.terminals,svg=$c('circuitDiagram'),broken=new Set(revealed?problem.broken:[]);
+  svg.setAttribute('viewBox',`0 0 ${c.width} ${c.height}`);svg.replaceChildren();
+  svg.style.setProperty('--circuit-width',c.width+'px');
+  const wires=el('g'),parts=el('g'),terms=el('g');
+  for(const w of c.wires){
+   const d='M'+w.pts.map(p=>p.join(',')).join('L'),cls='cf-wire'+(picked.has(w.id)?' picked':'')+(repaired.has(w.id)?' repaired':'')+(broken.has(w.id)&&!repaired.has(w.id)?' broken':'');
+   wires.append(el('path',{d,class:cls}));
+   const hit=el('path',{d,class:'cf-wire-hit','data-wire':w.id});hit.addEventListener('click',()=>{if(!answerMode)return;picked.has(w.id)?picked.delete(w.id):picked.add(w.id);update();});wires.append(hit);
+   const mid=w.pts[Math.floor(w.pts.length/2)-(w.pts.length%2?0:1)],next=w.pts[Math.min(w.pts.length-1,Math.floor(w.pts.length/2))],mx=(mid[0]+next[0])/2,my=(mid[1]+next[1])/2;
+   if(Math.hypot(next[0]-mid[0],next[1]-mid[1])>26)wires.append(el('text',{x:mx+2,y:my-3,class:'cf-number'},c.numbers[w.a]));
+  }
+  for(const e of c.elements){
+   if(e.hidden)continue;const g=el('g',{class:'cf-part'});
+   if(e.type==='contact')contactSymbol(g,e,false);
+   else if(e.type==='coil'||e.type==='timer'){const [l,r]=e.pins.map(p=>T[p]),on=st.energized[e.dev];g.append(el('path',{d:`M${l.x},${e.y}H${e.x-14}M${e.x+14},${e.y}H${r.x}`,class:'cf-line'}));g.append(el('rect',{x:e.x-14,y:e.y-8,width:28,height:16,class:'cf-coil'+(on?' on':'')}));g.append(el('text',{x:e.x,y:e.y-12,class:'cf-label','text-anchor':'middle'},e.label+(e.type==='timer'?' '+e.seconds+'s':'')));}
+   else if(e.type==='lamp'){const [l,r]=e.pins.map(p=>T[p]),on=st.lit[e.dev];g.append(el('path',{d:`M${l.x},${e.y}H${e.x-11}M${e.x+11},${e.y}H${r.x}`,class:'cf-line'}));g.append(el('circle',{cx:e.x,cy:e.y,r:11,class:'cf-lamp',style:on?`fill:${e.color}`:''}));g.append(el('text',{x:e.x,y:e.y+3.5,class:'cf-lamp-text','text-anchor':'middle'},e.label));}
+   else if(e.type==='heater'){const [l,r]=e.pins.map(p=>T[p]);g.append(el('path',{d:`M${e.x},${l.y}V${e.y-6}h5v12h-5V${r.y}`,class:'cf-line'}));if(e.label)g.append(el('text',{x:e.x-14,y:e.y+4,class:'cf-label','text-anchor':'end'},e.label));}
+   else if(e.type==='motor'){g.append(el('circle',{cx:e.x,cy:e.y,r:26,class:'cf-motor'+(st.motor==='run'?' run':st.motor==='hum'?' hum':'')}));g.append(el('text',{x:e.x,y:e.y+4,class:'cf-lamp-text','text-anchor':'middle'},st.motor==='hum'?'M うなる':e.label));}
+   parts.append(g);
+  }
+  for(const l of c.labels)parts.append(el('text',{x:l.x,y:l.y,class:'cf-bus','text-anchor':'middle'},l.text));
+  for(const t of Object.values(T)){
+   if(t.internal)continue;
+   terms.append(el('circle',{cx:t.x,cy:t.y,r:t.junction||t.bus?2.4:2.8,class:'cf-term'+(t.junction?' junction':'')}));
+   if(t.label)terms.append(el('text',{x:t.x+6,y:t.y-4,class:'cf-label'},t.label));
+   const hit=el('circle',{cx:t.x,cy:t.y,r:11,class:'cf-term-hit','data-term':t.id});
+   hit.addEventListener('click',()=>{if(answerMode)return;if(nextLead==='red'){red=t.id;nextLead='black';}else{black=t.id;nextLead='red';}update();});
+   terms.append(hit);
+  }
+  for(const [id,color,text] of [[red,'#d1343b','赤'],[black,'#222','黒']]){
+   if(!id)continue;const t=T[id];terms.append(el('circle',{cx:t.x,cy:t.y,r:7,class:'cf-probe',style:`stroke:${color}`}));terms.append(el('text',{x:t.x,y:t.y-10,class:'cf-probe-text','text-anchor':'middle',style:`fill:${color}`},text));
+  }
+  svg.append(wires,parts,terms);
+ }
+ function update(){
+  if(!problem)return;
+  const c=problem.circuit,st=CF.step(c,state,0);
+  draw(st);
+  $c('circuitPower').textContent=state.power?'電源 ON':'電源 OFF';$c('circuitPower').setAttribute('aria-pressed',String(state.power));
+  $c('circuitMccb').textContent=state.mccb?'MCCB 入':'MCCB 切';$c('circuitMccb').setAttribute('aria-pressed',String(state.mccb));
+  for(const b of $c('circuitButtons').children){const on=!!state.pressed[b.dataset.pb];b.setAttribute('aria-pressed',String(on));b.textContent=c.pbs[b.dataset.pb]+(on?'：押している':'');}
+  const chips=[...Object.entries(st.energized).map(([d,on])=>(on?'● ':'○ ')+d+(c.devices[d]?.kind==='timer'&&on?' '+Math.min(c.devices[d].seconds,state.timer[d]||0).toFixed(1)+'s':'')),...Object.entries(st.lit).map(([d,on])=>(on?'◉ ':'○ ')+d+(on?' 点灯':' 消灯'))];
+  if(st.motor)chips.push('M：'+({run:'回転',hum:'うなる（欠相）',stop:'停止'}[st.motor]));
+  $c('circuitStatus').replaceChildren(...chips.map(t=>{const s=document.createElement('span');s.textContent=t;s.className='circuit-chip'+(t[0]==='●'||t[0]==='◉'?' on':'');return s;}));
+  const m=CF.measure(c,state,red,black,mode);
+  $c('circuitMeterMode').textContent=mode==='ohm'?'Ω':'AC V';$c('circuitReading').textContent=m.text;$c('circuitReadingNote').textContent=m.detail||(red&&black?'赤 '+label(red)+'／黒 '+label(black):'端子をタップしてリードを当てる');
+  $c('circuitMeter').dataset.kind=m.kind;
+  const key=[red,black,mode,state.power].join('|');if(red&&black&&key!==lastKey){measurements++;lastKey=key;}
+  $c('circuitCount').textContent='測定回数：'+measurements;
+  $c('circuitLeadRed').setAttribute('aria-pressed',String(nextLead==='red'));$c('circuitLeadBlack').setAttribute('aria-pressed',String(nextLead==='black'));
+  for(const b of document.querySelectorAll('[data-circuit-mode]'))b.setAttribute('aria-pressed',String(b.dataset.circuitMode===mode));
+  $c('circuitAnswerMode').setAttribute('aria-pressed',String(answerMode));$c('circuitAnswerMode').textContent=answerMode?'線を選んでいます（タップで印）':'断線した線を選ぶ';
+  $c('circuitPicked').textContent=picked.size?'選んだ線：'+[...picked].map(id=>wireName(id)).join('、'):'まだ選んでいません';
+  $c('circuitDiagram').classList.toggle('answering',answerMode);
+ }
+ function label(id){const t=problem.circuit.terminals[id];return (t.label||'')+'線番'+problem.circuit.numbers[id];}
+ function wireName(id){const w=problem.circuit.wires.find(x=>x.id===id);return '線番'+problem.circuit.numbers[w.a]+'の線';}
+ function check(){
+  const left=problem.broken.filter(id=>!repaired.has(id)),hits=[...picked].filter(id=>left.includes(id)),misses=[...picked].filter(id=>!left.includes(id));
+  hits.forEach(id=>{repaired.add(id);state.broken=state.broken.filter(x=>x!==id);});picked=new Set();
+  const remain=problem.broken.filter(id=>!repaired.has(id)).length;
+  $c('circuitResult').textContent=(hits.length?'正解 '+hits.length+'本（緑の線は修理しました）。':'')+(misses.length?'違う線 '+misses.length+'本。':'')+(!hits.length&&!misses.length?'線を選んでから答え合わせをします。':'')+(remain?'残りの断線 '+remain+'本。':'全部見つけました！ 測定回数 '+measurements+'回。正常に動くか確かめましょう。');
+  update();
+ }
+ function tick(){if(!problem||!active||document.getElementById('tester').hidden||!state.power)return;CF.step(problem.circuit,state,.25);update();}
+ $c('circuitNew').onclick=newProblem;$c('circuitBreaks').onchange=newProblem;
+ $c('circuitPower').onclick=()=>{state.power=!state.power;if(!state.power){state.relay={};state.timer={};}update();};
+ $c('circuitMccb').onclick=()=>{state.mccb=!state.mccb;update();};
+ for(const b of document.querySelectorAll('[data-circuit-mode]'))b.onclick=()=>{mode=b.dataset.circuitMode;update();};
+ $c('circuitLeadRed').onclick=()=>{nextLead='red';update();};$c('circuitLeadBlack').onclick=()=>{nextLead='black';update();};
+ $c('circuitClearLeads').onclick=()=>{red=black=null;nextLead='red';update();};
+ $c('circuitAnswerMode').onclick=()=>{answerMode=!answerMode;update();};
+ $c('circuitCheck').onclick=check;
+ $c('circuitReveal').onclick=()=>{revealed=true;$c('circuitResult').textContent='赤い点線が断線です（'+problem.broken.map(wireName).join('、')+'）。';update();};
+ // Practice tab on the tester page: the fault-finding diagram and cards replace
+ // the single-part lesson while selected; the other tabs return to it.
+ function setCircuitMode(on){
+  active=on;$c('tester').classList.toggle('circuit-mode',on);$c('circuitVisual').hidden=!on;$c('circuitCards').hidden=!on;
+  document.querySelector('[data-circuit-tab]').setAttribute('aria-pressed',String(on));
+  if(on){document.querySelectorAll('[data-tester-case]').forEach(b=>b.setAttribute('aria-pressed','false'));if(!problem)newProblem();else update();}
+ }
+ document.querySelector('[data-circuit-tab]').addEventListener('click',()=>setCircuitMode(true));
+ document.querySelectorAll('[data-tester-case]').forEach(b=>b.addEventListener('click',()=>{if(active)setCircuitMode(false);}));
+ const resetTester=window.resetTesterLesson;window.resetTesterLesson=()=>{setCircuitMode(false);resetTester?.();};
+ window.setCircuitMode=setCircuitMode;
+ window.circuitFaultDebug=()=>({problem,state,red,black,mode,picked:[...picked],repaired:[...repaired]});
+ timer=setInterval(tick,250);
 })();
 </script></body></html>
