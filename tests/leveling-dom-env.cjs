@@ -46,7 +46,7 @@ module.exports=function createEnvironment(options={}){
   }
  }
  const root=new El('document');
- const html=fs.readFileSync('src/index.html','utf8').replace('<!-- TESTER_LESSON -->',fs.readFileSync('src/tester.html','utf8')).replace(/<script[\s\S]*?<\/script>/g,'');parse(html,root);
+ const html=fs.readFileSync('src/index.html','utf8').replace('<!-- TESTER_LESSON -->',fs.readFileSync('src/tester.html','utf8')).replace('<!-- CIRCUIT_LESSON -->',fs.readFileSync('src/circuit-fault.html','utf8')).replace(/<script[\s\S]*?<\/script>/g,'');parse(html,root);
  const body=root.querySelectorAll('body')[0];
  const context={document:{body,hidden:false,getElementById:id=>registry[id]||null,createElement:tag=>new El(tag),querySelectorAll:s=>root.querySelectorAll(s),addEventListener(){}},
   window:{scrollTo(){},addEventListener(){},resetTesterLesson(){context.resetCalls++;},...(options.window||{})},resetCalls:0,

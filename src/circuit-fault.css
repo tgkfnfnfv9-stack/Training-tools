@@ -1,0 +1,51 @@
+.circuit-visual{background:#fbfcfa}
+.circuit-visual-top{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px 4px;font-size:13px}
+.circuit-visual-top strong{font-size:13px}
+.circuit-scroll{flex:1 1 auto;min-height:0;overflow:auto;-webkit-overflow-scrolling:touch;padding:0 6px}
+#circuitDiagram{display:block;width:100%;min-width:var(--circuit-width,600px);max-width:900px;height:auto;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif}
+.cf-wire{fill:none;stroke:#2c3e48;stroke-width:1.6;stroke-linejoin:round}
+.cf-wire.picked{stroke:#e07b00;stroke-width:3.2;stroke-dasharray:6 3}
+.cf-wire.broken{stroke:#d1343b;stroke-width:3.2;stroke-dasharray:4 4}
+.cf-wire.repaired{stroke:#2f9e5b;stroke-width:3}
+.cf-wire-hit{fill:none;stroke:transparent;stroke-width:16}
+#circuitDiagram.answering .cf-wire-hit{cursor:pointer}
+#circuitDiagram.answering .cf-wire-hit:hover{stroke:#e07b0033}
+.cf-line{fill:none;stroke:#1b2a33;stroke-width:1.6;stroke-linecap:round}
+.cf-thin{fill:none;stroke:#1b2a33;stroke-width:1.1}
+.cf-dash{fill:none;stroke:#1b2a33;stroke-width:1.1;stroke-dasharray:2 2}
+.cf-label{font-size:9px;fill:#1b2a33}
+.cf-bus{font-size:12px;font-weight:700;fill:#1b2a33}
+.cf-number{font-size:8px;fill:#6c7f89}
+.cf-coil{fill:#fff;stroke:#1b2a33;stroke-width:1.4}
+.cf-coil.on{fill:#ffd9a6}
+.cf-lamp{fill:#fff;stroke:#1b2a33;stroke-width:1.4}
+.cf-lamp-text{font-size:8px;font-weight:700;fill:#1b2a33}
+.cf-motor{fill:#fff;stroke:#1b2a33;stroke-width:1.6}
+.cf-motor.run{fill:#c9efd6}.cf-motor.hum{fill:#ffe0a8}
+.cf-term{fill:#1b2a33}.cf-term.junction{fill:#1b2a33}
+.cf-term-hit{fill:transparent;cursor:pointer}
+.cf-term-hit:hover{fill:#ffbc4644}
+#circuitDiagram.answering .cf-term-hit{pointer-events:none}
+.cf-probe{fill:none;stroke-width:2.6}
+.cf-probe-text{font-size:9px;font-weight:700}
+.circuit-meter{display:flex;align-items:center;gap:10px;padding:6px 12px;background:#1f2a30;color:#e9f3ee;min-height:44px}
+.circuit-meter strong{font:700 22px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:#b8ff9a;min-width:7ch}
+.circuit-meter[data-kind=danger] strong{color:#ff8a80;font-size:13px;font-family:inherit}
+.circuit-meter[data-kind=float] strong{color:#ffe08a}
+.circuit-meter-mode{font-size:11px;background:#33454e;border-radius:4px;padding:2px 6px}
+#circuitReadingNote{font-size:11px;color:#c7d6d0;line-height:1.35}
+.circuit-name{font-weight:650;margin:4px 0 10px}
+.circuit-normal{font-size:13px;background:#f3f7f6;border-radius:8px;padding:8px 10px}
+.circuit-switches,.circuit-buttons,.circuit-modes,.circuit-leads,.circuit-answer-buttons{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+.circuit-switches button,.circuit-buttons button,.circuit-modes button,.circuit-leads button,.circuit-answer-buttons button,.circuit-toggle{min-height:44px}
+.circuit-power[aria-pressed=true]{background:#d1343b;color:#fff;border-color:#d1343b}
+.circuit-pb[aria-pressed=true],.circuit-modes [aria-pressed=true],.circuit-toggle[aria-pressed=true]{background:#fff0c5;border-color:#d3a72f;font-weight:700}
+.lead-red[aria-pressed=true]{background:#d1343b;color:#fff;border-color:#d1343b}
+.lead-black[aria-pressed=true]{background:#222;color:#fff;border-color:#222}
+.circuit-status{display:flex;flex-wrap:wrap;gap:6px}
+.circuit-chip{font-size:12px;background:#eef2f3;border-radius:12px;padding:3px 9px}
+.circuit-chip.on{background:#ffe7c2}
+.circuit-picked{font-size:12px}
+.circuit-result{font-weight:650;color:#1f6b53}
+.circuit-visual{padding-bottom:0}
+@media(max-width:560px){.circuit-meter strong{font-size:18px;min-width:5ch;white-space:nowrap}#circuitReadingNote{font-size:10px}.circuit-meter-mode{white-space:nowrap}}

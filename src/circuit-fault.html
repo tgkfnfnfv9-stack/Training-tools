@@ -1,0 +1,47 @@
+<section id="circuit" hidden>
+  <div class="training-heading"><div><p class="eyebrow">ELECTRICAL / FAULT FINDING</p><h1>回路の断線探し</h1><p>電源を入れて電圧、切って抵抗。テスターで断線を見つける</p></div><button hidden id="circuitBack" class="secondary">電気の訓練へ</button></div>
+  <div class="training-workspace tester-workspace circuit-workspace">
+    <div class="pinned-visual tester-visual circuit-visual">
+      <div class="circuit-visual-top"><strong id="circuitTitle">回路</strong><span id="circuitSupply" class="pill"></span></div>
+      <div id="circuitScroll" class="circuit-scroll"><svg id="circuitDiagram" role="img" aria-label="シーケンス回路図。端子をタップしてテスターのリードを当てます"></svg></div>
+      <div id="circuitMeter" class="circuit-meter" role="status" aria-live="polite"><span class="circuit-meter-mode" id="circuitMeterMode">AC V</span><strong id="circuitReading">---</strong><span id="circuitReadingNote">端子をタップしてリードを当てる</span></div>
+    </div>
+    <div class="controls-bar">操作・手順 ↓ この下をスクロール</div>
+    <div id="circuitControls" class="scroll-controls tester-controls circuit-controls" tabindex="0" role="region" aria-label="断線探しの操作">
+      <div class="card"><div class="section-title"><h2>問題</h2><button id="circuitNew" class="text-button">新しい問題</button></div>
+        <p id="circuitName" class="circuit-name"></p>
+        <label class="select-label" for="circuitBreaks">断線の本数</label><select id="circuitBreaks"><option value="1">1本</option><option value="2" selected>2本</option></select>
+        <p class="hint">5種類の回路（自己保持・インターロック・信号機・スターデルタ・電動機主回路）と電源（AC100V・AC200V・AC24V、主回路は3相200V）をランダムに選び、配線をランダムに断線させます。</p>
+        <p class="circuit-normal"><strong>正常な動き：</strong><span id="circuitNormal"></span></p>
+      </div>
+      <div class="card"><h2>1. 動かして症状を見る</h2>
+        <div class="circuit-switches"><button id="circuitPower" class="circuit-power" aria-pressed="false">電源 OFF</button><button id="circuitMccb" class="circuit-toggle" aria-pressed="true" hidden>MCCB 入</button></div>
+        <div id="circuitButtons" class="circuit-buttons" aria-label="押しボタン"></div>
+        <p class="hint">押しボタンはタップで「押したまま」、もう一度タップで離します。押したまま電圧や抵抗を測れます。</p>
+        <div id="circuitStatus" class="circuit-status" role="status"></div>
+      </div>
+      <div class="card"><h2>2. テスターで測る</h2>
+        <div class="circuit-modes" role="group" aria-label="テスターのレンジ"><button data-circuit-mode="volt" aria-pressed="true">AC電圧（V）</button><button data-circuit-mode="ohm" aria-pressed="false">抵抗（Ω）</button></div>
+        <div class="circuit-leads"><span>次に当てるリード：</span><button id="circuitLeadRed" class="lead-red" aria-pressed="true">赤</button><button id="circuitLeadBlack" class="lead-black" aria-pressed="false">黒</button><button id="circuitClearLeads" class="text-button">リードを外す</button></div>
+        <p id="circuitCount" class="hint"></p>
+        <p class="hint">電圧は電源ONで、抵抗は必ず電源OFFで測ります。図の小さな数字は線番です。</p>
+      </div>
+      <div class="card"><h2>3. 断線した線を答える</h2>
+        <button id="circuitAnswerMode" class="circuit-toggle" aria-pressed="false">断線した線を選ぶ</button>
+        <p class="hint">「選ぶ」をONにして、図の線（端子と端子の間）をタップすると印が付きます。</p>
+        <p id="circuitPicked" class="circuit-picked"></p>
+        <div class="circuit-answer-buttons"><button id="circuitCheck">答え合わせ</button><button id="circuitReveal" class="text-button">答えを見る</button></div>
+        <p id="circuitResult" class="circuit-result" role="status"></p>
+      </div>
+      <details class="lesson"><summary>探し方のコツ</summary><ol>
+        <li>まず電源を入れて押しボタンを操作し、どのランプ・コイルが動かないか（症状）を確認します。</li>
+        <li><strong>電圧法（電源ON）</strong>：黒リードをN（またはS）に当てたまま、赤リードをPから順に回路に沿って動かします。電圧がある所と無い所の境目に断線があります。</li>
+        <li>線の両端に直接当てる方法もあります。電流が流れるはずの線で、両端に電源電圧が出たら、その線が断線しています（正常な線は0V）。</li>
+        <li>負荷（コイル・ランプ）の先が断線していると、電流が流れないので負荷の両端の電圧は0Vになり、負荷のN側の端子にも電源電圧が出ます。</li>
+        <li><strong>抵抗法（電源OFF）</strong>：線の両端を測り、0Ωなら正常、OLなら断線です。押しボタンは押したままにすると、その先まで測れます。</li>
+        <li>主回路で1相が切れると電動機はうなって回りません。電動機端子の線間で100V（半分）の所があれば、その相を疑います。</li>
+        <li>通電中にΩレンジで測ってはいけません。画面でも警告が出ます。</li>
+      </ol></details>
+    </div>
+  </div>
+</section>

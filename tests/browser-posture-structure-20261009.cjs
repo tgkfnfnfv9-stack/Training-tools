@@ -4,7 +4,7 @@
 const fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const mode=process.argv[2]||'after',root=path.resolve(__dirname,'..'),source=mode==='before'?'/workspace/Training-tools-before':root;
 const out=path.join(root,'docs/qa-posture-20261009/structure',mode);fs.mkdirSync(out,{recursive:true});
-let html=fs.readFileSync(path.join(source,'src/index.html'),'utf8').replace('<!-- TESTER_LESSON -->',fs.readFileSync(path.join(source,'src/tester.html'),'utf8'));
+let html=fs.readFileSync(path.join(source,'src/index.html'),'utf8').replace('<!-- TESTER_LESSON -->',fs.readFileSync(path.join(source,'src/tester.html'),'utf8')).replace('<!-- CIRCUIT_LESSON -->',fs.readFileSync(path.join(source,'src/circuit-fault.html'),'utf8'));
 html=html.replace(/<link rel="stylesheet" href="([^"]+)">/g,(_,file)=>'<style>'+fs.readFileSync(path.join(source,'src',file),'utf8')+'</style>').replace(/<script src="([^"]+)"><\/script>/g,(_,file)=>'<script>'+fs.readFileSync(path.join(source,'src',file),'utf8')+'</script>');
 (async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']}),page=await browser.newPage({viewport:{width:1280,height:1000}}),errors=[],records=[];page.on('pageerror',e=>errors.push(String(e)));await page.route('http://posture.local/**',r=>r.fulfill({contentType:'text/html',body:html}));await page.goto('http://posture.local/');
  for(const id of ['horizontal','lathe'])for(const [name,pattern,widthScale,depthScale] of [['flat','flat',1,1],['positive-twist','positive',1,1],['negative-twist','negative',1,1],['plane','plane',1,1],['dimensions','positive',id==='horizontal'?2:1,id==='lathe'?2:1]]){
