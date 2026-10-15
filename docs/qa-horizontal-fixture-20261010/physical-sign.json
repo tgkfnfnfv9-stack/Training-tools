@@ -1,5 +1,5 @@
 {
-  "sourceSha256": "0b2ebbd5be23f4f03129dc6a24aa0aa140971761d7e0058caae8b992713db07f",
+  "sourceSha256": "34bbe9ff1b063de78b11b25b81f6d780bfa477101b918a53f87416351f6328aa",
   "scope": "Expected sign = negative separation of a spindle-side dial from a stationary square during +Y. Expected values are analytic, independent of fixture/contact implementation.",
   "rows": [
     {

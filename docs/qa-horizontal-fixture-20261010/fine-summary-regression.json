@@ -1,7 +1,7 @@
 {
   "passed": true,
-  "referenceSourceSha256": "1650a84b5642d102b8752e9edb3c176b6c175e33d82e591fb73f9225305c5557",
-  "summarySourceSha256": "38bc2a52ff61e6b97d8ea1f095485e25a0e123b4a5c495d019634ff21abc936d",
+  "referenceSourceSha256": "34bbe9ff1b063de78b11b25b81f6d780bfa477101b918a53f87416351f6328aa",
+  "summarySourceSha256": "96f0b7651bc79de45d025079d9c61730f20fd5302e820c22783cd1b5f82ad70a",
   "cases": [
     {
       "seed": 8,
@@ -13,9 +13,9 @@
         "C": 0
       },
       "operation": "coarseExample actual onclick: initial supports to flat",
-      "beforeRawUm": 16.443851589042005,
+      "beforeRawUm": 17.165870753687447,
       "currentRawUm": 17.387999990174652,
-      "absoluteChangeUm": 0.9441484011326473,
+      "absoluteChangeUm": 0.22212923648720562,
       "independentTrend": "worse",
       "localAngleTrend": "better",
       "displayedTrend": "worse",
@@ -23,12 +23,12 @@
       "initialSupports": [
         -0.15,
         0.15,
-        -0.123,
-        -0.112,
-        -0.138,
-        0.017,
-        -0.017,
-        0.076
+        -0.12,
+        -0.11,
+        -0.14,
+        0.02,
+        -0.02,
+        0.08
       ]
     },
     {
@@ -41,9 +41,9 @@
         "C": 0
       },
       "operation": "coarseExample actual onclick: initial supports to flat",
-      "beforeRawUm": -13.644846961121186,
+      "beforeRawUm": -11.462640330741833,
       "currentRawUm": 10.304999997884021,
-      "absoluteChangeUm": -3.3398469632371643,
+      "absoluteChangeUm": -1.1576403328578113,
       "independentTrend": "better",
       "localAngleTrend": "worse",
       "displayedTrend": "better",
@@ -51,12 +51,12 @@
       "initialSupports": [
         -0.15,
         0.15,
-        -0.067,
-        -0.031,
-        -0.037,
-        0.025,
-        -0.112,
-        0.029
+        -0.07,
+        -0.03,
+        -0.04,
+        0.02,
+        -0.11,
+        0.03
       ]
     }
   ],

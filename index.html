@@ -770,42 +770,20 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 #levelPageFour .level-four-middle .vertical-gauge{min-height:0;flex:1 1 auto;grid-template-rows:10px minmax(14px,1fr) 10px;margin-top:1px;line-height:10px;font-size:9px}
 #levelPageFour .level-four-middle .vertical-gauge .vial{height:100%;min-height:14px;width:20px}
 #levelPageFour .level-four-middle .vial-vertical .bubble{left:3px;width:12px;height:14px;top:clamp(7px,var(--bubble-position,50%),calc(100% - 7px))}
-</style><style>/* Tester lesson: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
-.tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}.tester-visual{background:#e8eff1;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}.tester-visual-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:13px 16px;font-size:13px}.tester-visual-top .pill{white-space:nowrap}#testerDiagram{display:block;width:100%;height:auto;max-height:360px;background:#eef3f4}.tester-readout{display:flex;gap:8px;flex-direction:column;padding:12px 16px;background:#fff;border-top:1px solid #d4e0e4;min-height:100px}.tester-readout strong{font-size:20px;line-height:1.2;font-variant-numeric:tabular-nums}.tester-readout span{font-size:12px;line-height:1.6;color:var(--muted)}.tester-readout[data-status="success"]{border-left:4px solid #166f62}.tester-readout[data-status="blocked"]{border-left:4px solid #b05a27}.tester-controls{display:grid;gap:14px;min-width:0}.tester-card h2{font-size:17px}.tester-case-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.tester-mode-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.tester-case-tabs button,.tester-mode-tabs button{min-height:48px;font-size:13px;padding:7px 5px;font-weight:650}.tester-mode-tabs small{display:block;font-size:10px;font-weight:400}.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--green);border-color:var(--green);color:white}.tester-goal{font-size:13px;font-weight:650;margin:12px 0}.tester-leads{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tester-controls label{font-size:12px;display:block;font-weight:600}.tester-controls select{min-height:48px;margin-top:5px;font-weight:400}.tester-leads label:first-child{border-top:3px solid #334550;padding-top:6px}.tester-leads label:last-child{border-top:3px solid #c64242;padding-top:6px}.tester-inline-note{background:#fff3e6;border-left:3px solid #bc6433;padding:10px;font-size:12px}.tester-controls .tester-check{display:flex;gap:10px;align-items:center;min-height:48px;font-size:13px;line-height:1.55}.tester-check input{width:22px;height:22px;flex:none;accent-color:var(--green)}.tester-connection-hint{background:#f0f5f4;padding:10px;border-radius:6px;font-size:13px}.tester-primary{background:var(--green);color:white;width:100%;font-weight:700;min-height:48px}.tester-primary:hover{background:#125b53;color:white}.tester-disconnect{width:100%;margin-top:8px;min-height:44px;font-size:13px}.tester-steps{padding-left:23px;font-size:13px}.tester-steps li{padding:3px 0}.tester-interpretation{font-size:13px;background:#f4f7f7;padding:12px;border-radius:6px}.tester-reference summary{cursor:pointer;font-weight:650;font-size:13px}.tester-reference p,.tester-reference li{font-size:12px}.tester-reference ul{padding-left:21px}.tester-reference li{margin-bottom:10px}.tester-reference a{color:var(--green);overflow-wrap:anywhere}.tester-reference{margin:0}.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
-@media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}#testerDiagram{max-height:300px}}
-@media(max-width:560px){.tester-visual-top{padding:8px 12px;font-size:12px}.tester-visual-top .pill{font-size:10px}#testerDiagram{height:clamp(150px,26svh,240px);max-height:240px}.tester-readout{min-height:76px;padding:9px 12px;gap:4px}.tester-readout strong{font-size:18px}.tester-readout span{font-size:11px;line-height:1.5}.tester-card{padding:16px}.tester-leads{gap:8px}.tester-case-tabs button{font-size:12px}.tester-mode-tabs button{font-size:13px}}
+</style><style>/* Tester page: the parent layout pins .pinned-visual and scrolls .scroll-controls. */
+.tester-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(350px,1fr);gap:22px;align-items:start}
+.tester-visual{background:#fbfcfa;border:1px solid #d4e0e4;border-radius:14px;overflow:hidden;min-width:0}
+.tester-controls{display:grid;gap:14px;min-width:0}
+.tester-controls:focus-visible{outline:2px solid #ffbc46;outline-offset:-2px}
+.tester-controls details p{font-size:12px}
+@media(max-width:950px){.tester-workspace{grid-template-columns:1fr}.tester-visual{align-self:start}.tester-controls{gap:12px}}
 /* Permit the fixed mobile visual to shrink without losing the reading. */
-@media(max-width:950px){.tester-visual{display:flex;flex-direction:column;min-height:0}.tester-visual-top{flex:none}#testerDiagram{flex:1;min-height:0;height:auto}.tester-readout{flex:none;min-height:0}.tester-readout span{font-size:11px;line-height:1.5}.tester-controls{display:block}.tester-controls>.card{margin-bottom:12px}}
+@media(max-width:950px){.tester-visual{display:flex;flex-direction:column;min-height:0}.tester-controls{display:block}.tester-controls>.card{margin-bottom:12px}}
 /* Override the mechanical desktop wrapper; mobile in-lab layout has stronger selectors. */
-.tester-workspace>.scroll-controls{display:grid;grid-column:2;grid-row:1}.tester-workspace>.pinned-visual{grid-column:1;grid-row:1}
+.tester-workspace>.scroll-controls{display:grid;grid-column:2;grid-row:1}
+.tester-workspace>.pinned-visual{grid-column:1;grid-row:1}
 @media(max-width:950px){.tester-workspace>.scroll-controls{display:block;grid-column:auto;grid-row:auto}.tester-workspace>.pinned-visual{grid-column:auto;grid-row:auto}}
-
-.tester-feedback-detail{font-size:13px;line-height:1.6;padding:10px 12px;border-left:3px solid #90aba3;background:#f0f5f4;border-radius:4px}.tester-feedback-detail[data-status="blocked"]{border-color:#b05a27;background:#fff3e6}
-.tester-primary:disabled,.tester-primary:disabled:hover{background:#dfe9e6;color:#415a52;opacity:1;border-color:#cfdbd6}
-/* Six modes and five lessons remain within the independently scrolling controls. */
-.tester-case-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.tester-mode-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}.tester-progress{font-size:12px;line-height:1.7;background:#edf6f1;border-radius:6px;padding:10px}.tester-case-tabs [data-complete="true"]::after{content:" ✓"}.tester-completion-steps{display:flex;flex-wrap:wrap;gap:7px 14px;padding:0;list-style:none;font-size:12px;color:var(--green)}.tester-controls [id$="CaseBox"],#testerCurrentConnectionBox{margin-bottom:12px}
-
-/* Site identity applies to controls; electrical lead and measurement colours stay. */
-.tester-visual,#testerDiagram{background:#f1f0ed;border-color:var(--line)}
-.tester-readout{border-color:var(--line)}
-.tester-case-tabs [aria-pressed="true"],.tester-mode-tabs [aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:white}
-.tester-primary{background:var(--accent);border-color:var(--accent)}
-.tester-primary:hover{background:#913a00;color:#fff}
-.tester-primary:disabled,.tester-primary:disabled:hover{background:#ebe8e3;color:#655f58;border-color:#d4cdc4}
-.tester-connection-hint,.tester-interpretation,.tester-progress{background:var(--surface)}
-.tester-feedback-detail{background:var(--surface);border-color:#aaa096}
-.tester-feedback-detail[data-status="blocked"]{background:#fff3e6;border-color:#b05a27}
-.tester-controls select{font-size:16px}
-.tester-controls .hint,.tester-reference p,.tester-reference li,.tester-controls label{font-size:13px}
-.tester-mode-tabs small{font-size:11px}
-.tester-controls .text-button{min-height:44px}
-@media(max-width:560px){.tester-readout span{font-size:12px}.tester-card{padding:14px}.tester-readout{padding:8px 12px}}
-@media(max-width:950px) and (orientation:landscape) and (max-height:600px){body.in-lab #tester .training-heading{padding-top:4px;padding-bottom:4px}}
 </style><style>#circuitVisual{display:flex;flex-direction:column;flex:1 1 auto;min-height:0;background:#fbfcfa}
-#tester.circuit-mode #testerDiagram,#tester.circuit-mode #testerReadout,#tester.circuit-mode .tester-visual-top,#tester.circuit-mode #testerControls>.tester-card:not(:first-child),#tester.circuit-mode #testerControls>details,#tester.circuit-mode #testerReset{display:none}
-#tester.circuit-mode #testerControls>.tester-card:first-child>:not(.section-title):not(.tester-case-tabs){display:none}
-#tester.circuit-mode .tester-visual{background:#fbfcfa}
-[data-circuit-tab][aria-pressed=true]{background:#fff0c5;border-color:#d3a72f;color:#5b3b00;font-weight:700}
 #circuitCards>.card{margin-top:12px}
 .circuit-visual-top{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 12px 4px;font-size:13px}
 .circuit-visual-top strong{font-size:13px}
@@ -860,7 +838,7 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 <body><header><div class="brand"><span class="brand-mark">T</span><div>社内訓練ツール<small>構造を見て、調整して、理解する</small></div></div><span class="version">訓練シミュレーター</span></header>
 <main><nav id="siteNav" class="site-navigation" aria-label="教材の移動"><button id="navHome" class="nav-home">トップ</button><button id="navBack" class="nav-back" hidden>‹ 戻る</button><button id="changeMachine" class="nav-back" hidden>‹ 機種選択</button><div id="crumbs" class="breadcrumbs" aria-label="現在位置"></div></nav>
 <section id="home"><div class="intro"><p class="eyebrow">TRAINING LIBRARY</p><h1>どちらを学びますか？</h1><p>電気と機械。現場の理解を、一つずつ深める。</p></div><div class="category-grid"><button class="category" id="electric"><span class="symbol">⚡</span><h2>電気</h2><p>回路・制御・点検の基礎</p><span class="go">テスターの使い方 →</span></button><button class="category" id="mechanical"><span class="symbol">⚙</span><h2>機械</h2><p>工作機械の構造と調整</p><span class="go">訓練項目を見る →</span></button></div></section>
-<section id="electricTopics" hidden><div class="intro"><p class="eyebrow">ELECTRICAL TRAINING</p><h1>電気の訓練</h1><p>テスターの準備、測定モード、つなぎ方を順番に学び、回路の断線探しで実践します。</p></div><button class="topic" id="testerEntry"><span class="topic-icon">01</span><div><h2>テスターの使い方</h2><p>DC・AC電圧、抵抗、導通、低電圧の電流を模擬測定。シーケンス回路の断線探しも</p><span class="pill">初めてのテスター</span></div><span class="topic-arrow">→</span></button></section>
+<section id="electricTopics" hidden><div class="intro"><p class="eyebrow">ELECTRICAL TRAINING</p><h1>電気の訓練</h1><p>テスターを回路に当てて、断線した線を探します。</p></div><button class="topic" id="testerEntry"><span class="topic-icon">01</span><div><h2>テスターの使い方</h2><p>シーケンス回路の断線を、電圧（電源ON）と抵抗（電源OFF）で探す練習</p><span class="pill">断線探し</span></div><span class="topic-arrow">→</span></button></section>
 <section id="topics" hidden><div class="intro"><p class="eyebrow">MECHANICAL TRAINING</p><h1>機械の訓練</h1><p>まずは、据付と精度の土台となるレベル出しから。</p></div><button class="topic" id="leveling"><span class="topic-icon">01</span><div><h2>工作機械のレベル出し</h2><p>支持点の調整で、ねじれ・コラムの倒れ・直角度の変化を3Dで学ぶ</p><span class="pill">7つの構造カテゴリ</span></div><span class="topic-arrow">→</span></button></section>
 <section id="catalog" hidden><div class="intro"><p class="eyebrow">LEVELING / MACHINE TYPES</p><h1>機械の構造を選ぶ</h1><p>支持配置と、動く側・固定する側の違いで選びましょう。</p></div><p class="note">3Dは外装を省いた教材用の構造模式図です。小型は4点、6点支持の立形は左右3点ずつ（中間ボルトの効きは仮定値）、EC-630は8点の概略配置、L3 3000参考モデルは長手ベッド9点・柱側6点の教材用15点です。実機の支持配置そのものではありません。ほかの機種は従来の学習用配置です。</p><div id="machineGrid" class="machine-grid"></div><details class="survey"><summary>分類の考え方・調査資料</summary><p>立形は小型4点のみ。横形はHaas EC-630（NGC）、固定門形はHWACHEON L3 3000を参考にしています。「立形／横形」は主軸の向き、「門形／片持ち」は構造、「5軸」は制御軸の構成です。これらは重なります。立形でも門形構造の機械があり、門形にも5軸機があります。</p><p>追加候補：NCフライス、ヘッド旋回式5軸、複合加工機、平面・円筒研削盤、テーブル形／床上形横中ぐり盤。詳しくは同梱の調査資料をご覧ください。</p></details></section>
 <section id="training" hidden><div id="trainingShell" class="training-shell">
@@ -966,21 +944,17 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
 </div><p id="sweepContactStatus" class="sweep-contact-status" role="status">手前基準・µm（0.001 mm）</p></section><section id="measurementReference" class="measurement-reference" hidden tabindex="-1" aria-labelledby="measurementReferenceTitle"><div class="measurement-reference-heading"><h2 id="measurementReferenceTitle">直角の基準図</h2><button id="closeMeasurementReference">閉じる ×</button></div><p class="reference-intro">基準器（旋盤は精密フランジ、ほかは直角マスタ）とスピンドル式計器の教材配置。●0から300 mmの仮想測定。＋＝押込み増加／−＝減少（ID-F通常カウント）。黒い基準面、オレンジの相対移動、押込＋を区別します。小型のZ送りと触れも、模型・局所角度と同じ物理姿勢で接触計算し、倍率を掛けません。</p><div id="measurementReferenceCards" class="measurement-reference-cards"></div><p class="reference-intro">支持・軸位置の変更ごとに方向合わせとゼロを自動で取り直します。旋盤は主軸基準の精密フランジでX走査。基準面は走査300 mm＋両端10 mm、幅50 mmの仮想校正面、計器の初期伸び10 mm・計算範囲0〜20 mmです。取付けや干渉、測定力、基準器の実寸は再現しません。姿勢変化を含む教材モデル reference-scan-v3。小型Yは模型の測定P、横形Zはパレット上面中心（支持基準から0.61 m）の移動を使います。他の走査は姿勢一定の代表点です。取付姿勢を始点から輸送し、変姿勢の区間は16分割の内部点、横形では支持境界の両側でも接触を確認します。連続経路の衝突判定ではありません。未知のガイド曲線は追加していません。保存した機械状態から毎回再計算します。旧データの局所角度・参考調整・軸位置は維持し、横形の有限測定値は今回の取付位置で再計算されます。同じ固定配置で指示だけ再ゼロする逆走と、方向合わせから取り直す本測定は別です。</p></section></div><div class="common-support-actions"><button id="lowerSupport" aria-label="選んだ支持点を下げる">↓ 下げる</button><button id="raiseSupport" aria-label="選んだ支持点を上げる">↑ 上げる</button></div><p id="levelInputMessage" class="level-message visually-hidden" role="status"></p></div>
 </div></div><button id="trainingMainShield" class="training-main-shield" hidden tabindex="-1" aria-label="設定メニューを閉じて主画面へ戻る"></button></div></div></section>
 <section id="tester" hidden>
-  <div class="training-heading"><div><p class="eyebrow">ELECTRICAL / TESTER BASICS</p><h1>テスターの使い方</h1><p>端子 → モード → 接続 → 読み取りを練習</p></div><button hidden id="testerBack" class="secondary">電気の訓練へ</button></div>
+  <div class="training-heading"><div><p class="eyebrow">ELECTRICAL / TESTER</p><h1>テスターの使い方</h1><p>シーケンス回路の断線を、電圧（電源ON）と抵抗（電源OFF）で探す練習</p></div><button hidden id="testerBack" class="secondary">電気の訓練へ</button></div>
   <div class="training-workspace tester-workspace">
     <div class="pinned-visual tester-visual">
-      <div class="tester-visual-top"><strong id="testerVisualTitle">乾電池のDC電圧</strong><span class="pill">画面内の模擬測定</span></div>
-      <svg id="testerDiagram" viewBox="0 0 600 300" role="img" aria-labelledby="testerSvgTitle testerSvgDesc"></svg>
-      <div id="testerReadout" class="tester-readout" role="status" aria-live="polite"><strong id="testerResult">未測定</strong><span id="testerFeedback">下の操作欄で、リードと測定モードを選びましょう。</span></div>
-      <div id="circuitVisual" class="circuit-visual" hidden><div class="circuit-visual-top"><strong id="circuitTitle">回路</strong><span id="circuitSupply" class="pill"></span></div>
+      <div id="circuitVisual" class="circuit-visual"><div class="circuit-visual-top"><strong id="circuitTitle">回路</strong><span id="circuitSupply" class="pill"></span></div>
       <div id="circuitScroll" class="circuit-scroll"><svg id="circuitDiagram" role="img" aria-label="シーケンス回路図。端子をタップしてテスターのリードを当てます"></svg></div>
       <div id="circuitMeter" class="circuit-meter" role="status" aria-live="polite"><span class="circuit-meter-mode" id="circuitMeterMode">AC V</span><strong id="circuitReading">---</strong><span id="circuitReadingNote">端子をタップしてリードを当てる</span></div>
     </div>
     </div>
     <div class="controls-bar">操作・手順 ↓ この下をスクロール</div>
-    <div id="testerControls" class="scroll-controls tester-controls" tabindex="0" role="region" aria-label="テスターの操作と説明">
-      <div class="card tester-card"><div class="section-title"><h2>測るものを選ぶ</h2><button id="testerReset" class="text-button">最初から</button></div><div class="tester-case-tabs" aria-label="測定の練習"><button data-tester-case="voltage" aria-pressed="true">DC電圧</button><button data-tester-case="acvoltage" aria-pressed="false">AC電圧</button><button data-tester-case="current" aria-pressed="false">DC電流</button><button data-tester-case="resistance" aria-pressed="false">抵抗</button><button data-tester-case="continuity" aria-pressed="false">導通</button><button data-circuit-tab aria-pressed="false">断線探し</button></div><p id="testerProgress" class="tester-progress" role="status"></p><p class="hint">完了は各教材の基本操作1回（測定 → 接続解除 → OFF）の達成です。電流は赤リードをVΩに戻す操作も必要です。値・向き・断線の比較は追加練習です。</p><button id="testerResetAll" class="text-button">全練習の記録を消して最初から</button><p id="testerGoal" class="tester-goal"></p><p class="hint">乾電池・低電圧の交流源・単体部品を使う画面内の練習です。電流は3Vと120Ωの理想回路で計算します。商用電源や制御盤での操作は扱いません。</p></div>
-      <div id="circuitCards" hidden><div class="card"><div class="section-title"><h2>問題</h2><button id="circuitNew" class="text-button">新しい問題</button></div>
+    <div id="testerControls" class="scroll-controls tester-controls" tabindex="0" role="region" aria-label="断線探しの操作と説明">
+      <div id="circuitCards"><div class="card"><div class="section-title"><h2>問題</h2><button id="circuitNew" class="text-button">新しい問題</button></div>
         <p id="circuitName" class="circuit-name"></p>
         <label class="select-label" for="circuitBreaks">断線の本数</label><select id="circuitBreaks"><option value="1">1本</option><option value="2" selected>2本</option></select>
         <p class="hint">5種類の回路（自己保持・インターロック・信号機・スターデルタ・電動機主回路）と電源（AC100V・AC200V・AC24V、主回路は3相200V）をランダムに選び、配線をランダムに断線させます。</p>
@@ -1013,13 +987,8 @@ body.in-mechanical-lab #training .main-adjustment{display:flex;flex-direction:co
         <li><strong>抵抗法（電源OFF）</strong>：線の両端を測り、0Ωなら正常、OLなら断線です。押しボタンは押したままにすると、その先まで測れます。</li>
         <li>主回路で1相が切れると電動機はうなって回りません。電動機端子の線間で100V（半分）の所があれば、その相を疑います。</li>
         <li>通電中にΩレンジで測ってはいけません。画面でも警告が出ます。</li>
-      </ol></details></div>
-      <div class="card tester-card"><h2>1. リードを差す</h2><p class="hint">黒はCOM。電圧・抵抗・導通の赤はVΩ、電流の赤は対応するA端子です。実機のmA端子・ヒューズ・測定範囲は機種ごとに確認します。</p><div class="tester-leads"><label for="testerBlackLead">黒リード<select id="testerBlackLead"><option value="none">まだ差していない</option><option value="com">COM</option></select></label><label for="testerRedLead">赤リード<select id="testerRedLead"><option value="none">まだ差していない</option><option value="vohm">VΩ</option><option value="a">A（電流用）</option></select></label></div><p id="testerJackNotice" class="tester-inline-note" hidden>A端子は電流の直列測定専用です。電圧・抵抗・導通ではVΩに戻してください。A端子で電源の両端へ並列接続すると短絡につながります。</p></div>
-      <div class="card tester-card"><h2>2. 測定モードを選ぶ</h2><div class="tester-mode-tabs" aria-label="テスターの測定モード"><button data-tester-mode="off" aria-pressed="true">OFF</button><button data-tester-mode="dcv" aria-pressed="false">V⎓<small>DC電圧</small></button><button data-tester-mode="acv" aria-pressed="false">V〜<small>AC電圧</small></button><button data-tester-mode="dca" aria-pressed="false">A⎓<small>DC電流</small></button><button data-tester-mode="ohm" aria-pressed="false">Ω<small>抵抗</small></button><button data-tester-mode="beep" aria-pressed="false">導通<small>ブザー</small></button></div><p class="hint">V⎓は直流、V〜は交流。この教材はオートレンジ設定の模式図です。実機では記号・レンジ・最大入力を取扱説明書で確認します。</p></div>
-      <div class="card tester-card"><h2>3. 接続して読み取る</h2><div id="testerPreparationBox" hidden><label class="tester-check"><input id="testerPrepared" type="checkbox"><span id="testerPreparationLabel">電源を外し、残留電圧がないことを確認した</span></label><p id="testerPreparationHint" class="hint">抵抗・導通は通電中に測りません。コンデンサ等がある回路は、所定の放電手順と無電圧の確認が必要です。この教材の部品は電源から切り離されています。</p></div><div id="testerVoltageCaseBox"><label for="testerVoltageCase">電池の教材値<select id="testerVoltageCase"><option value="1.5">1.5 V</option><option value="1">1.0 V（比較用）</option></select></label></div><div id="testerResistanceCaseBox" hidden><label for="testerResistanceCase">抵抗の教材値<select id="testerResistanceCase"><option value="1000">1 kΩ</option><option value="100">100 Ω</option><option value="10000">10 kΩ</option></select></label></div><div id="testerCurrentConnectionBox" hidden><label for="testerCurrentConnection">電流計の接続<select id="testerCurrentConnection"><option value="series">回路を開き、切れ目へ直列</option><option value="parallel">電源の両端へ並列（誤操作の確認）</option></select></label></div><div id="testerPolarityBox"><label for="testerPolarity"><span id="testerPolarityLabel">プローブを当てる向き</span><select id="testerPolarity"><option value="normal">赤を＋、黒を−</option><option value="reverse">赤を−、黒を＋（比較）</option></select></label></div><div id="testerWireBox" hidden><label for="testerWire">配線の状態<select id="testerWire"><option value="connected">つながっている</option><option value="broken">途中で切れている</option></select></label></div><ol id="testerCompletionSteps" class="tester-completion-steps"></ol><p id="testerConnectionHint" class="tester-connection-hint"></p><button id="testerMeasure" class="tester-primary">プローブを両端に当てて測る</button><button id="testerDisconnect" class="tester-disconnect">プローブを離す</button><p id="testerFeedbackDetail" class="tester-feedback-detail" role="status"></p><p class="hint">測定中は設定を変更できません。「プローブを離す」を押してから、端子・モード・測るものを変えます。「最初から」は接続も解除します。</p></div>
-      <div class="card tester-card"><h2>読み取りのポイント</h2><ol id="testerSteps" class="tester-steps"></ol><p id="testerInterpretation" class="tester-interpretation"></p></div>
-      <details class="card tester-card tester-reference"><summary>実機を使う前に・電流測定との違い</summary><p>測定前に本体とリードの破損を確認し、プローブのつばより先へ指を出さないようにします。商用電源・制御盤・通電設備の実習はこの教材に含めません。</p><p><strong>電流は別の接続です。</strong>対応する電流端子・レンジ・ヒューズ定格を確認し、電源を切って回路を開き、テスターを直列に入れます。電流端子のまま電源や部品へ並列接続してはいけません。この教材では3V・120Ωの理想回路のみを扱います。25mAが流れる計算で、テスター内部の電圧降下・電池の内部抵抗・実機の精度は再現しません。</p><p>導通のブザーが鳴る抵抗値、OLの意味や入力端子名は機種で異なります。実機の取扱説明書を優先してください。</p></details>
-      <details class="card tester-card tester-reference"><summary>参照したメーカー公式資料</summary><ul><li><a href="https://www.hioki.com/global/learning/usage/testers_2.html" target="_blank" rel="noopener noreferrer">HIOKI：DC電流の直列接続・AC電圧の実効値（英語）</a></li><li><a href="https://www.hioki.com/jp-ja/learning/how-to/h-d-multimeter.html" target="_blank" rel="noopener noreferrer">HIOKI：デジタルマルチメーターの使い方</a></li><li><a href="https://www.hioki.com/jp-ja/learning/methods/voltage-measurement-methods.html" target="_blank" rel="noopener noreferrer">HIOKI：電圧の測定方法</a></li><li><a href="https://www.hioki.com/jp-ja/learning/methods/resistance-measurement-methods.html" target="_blank" rel="noopener noreferrer">HIOKI：抵抗の測定方法</a></li><li><a href="https://www.fluke.com/en-us/learn/blog/digital-multimeters/how-to-test-for-continuity" target="_blank" rel="noopener noreferrer">Fluke：導通の確認方法（英語）</a></li><li><a href="https://media.fluke.com/f640860c-6f58-4c4c-8096-b10800c17e13_original%20file.pdf" target="_blank" rel="noopener noreferrer">Fluke 287/289：取扱説明書（英語PDF）</a></li></ul><p class="hint">説明用の配置・数値です。特定機種の操作部や精度を再現していません。</p></details>
+      </ol></details>
+      <details class="lesson"><summary>実機で測る前に</summary><p class="hint">黒はCOM、赤はVΩに差し、レンジを確かめてから当てます。本体とリードの破損を確認し、プローブのつばより先へ指を出しません。抵抗・導通は電源を切り、無電圧を確認してから測ります。制御盤での作業は職場の手順と資格に従ってください。この画面は学習用の模擬測定で、特定機種の精度や内部回路は再現しません。</p></details></div>
     </div>
   </div>
 </section>
@@ -3964,121 +3933,6 @@ function updateIntrinsicInspectionUI(){
  }
  carousel.style.setProperty('--inspection-height',$('precisionReadouts').getBoundingClientRect().height+'px');inspectionUpdateNavigation();
 }
-</script><script>(()=>{
-  'use strict';
-  const root=document.getElementById('tester');
-  if(!root)return;
-  const $=id=>document.getElementById(id);
-  const lessons={
-    voltage:{title:'乾電池のDC電圧',mode:'dcv',goal:'まず乾電池のDC電圧を1回測り、接続解除・OFFまで練習します。追加練習では1.5Vと1.0V、逆向きの符号を比較します。',connection:'電圧は対象の両端へ並列接続。赤を＋、黒を−に当てます。',steps:['黒をCOM、赤をVΩに差す。','V⎓（DC電圧）を選ぶ。','電池の教材値と向きを選び、両端へ当ててVと符号を読む。','プローブを離し、OFFに戻すと練習完了。'],interpretation:'赤と黒を逆にすると負の表示になります。1.0Vと1.5Vは比較用の値です。電圧の値だけで電池の負荷時性能を判断できません。'},
-    acvoltage:{title:'低電圧交流源のAC電圧',mode:'acv',goal:'画面内の6V実効値・50Hz正弦波交流源をAC電圧モードで測ります。',connection:'交流電圧も並列接続。端子1と端子2へ当て、向きを逆にしても同じ実効値です。',steps:['黒をCOM、赤をVΩに差す。','V〜（AC電圧）を選ぶ。','交流源の両端へ当て、6.000 V ACの実効値を読む。','プローブを離し、OFFに戻すと練習完了。'],interpretation:'6.000 V ACは正弦波の実効値（RMS）です。瞬間値やピーク値ではありません。プローブを逆にしても表示は同じです。教材は低電圧交流源の模擬測定で、コンセントの実習は含みません。'},
-    current:{title:'低電圧回路のDC電流',mode:'dca',goal:'3Vの電池と120Ωの負荷の理想回路に、テスターを直列に入れて電流を読みます。',connection:'電源を切って回路を開き、切れ目へ直列接続します。電源の両端への並列接続は遮断します。',steps:['回路の電源を切り、無電圧・残留電圧なしを確認して回路を開く。','黒をCOM、赤を対応する電流用A端子へ差し、A⎓（DC電流）を選ぶ。','「切れ目へ直列」を選び、準備を確認する。','「直列接続して模擬電源を入れる」を押し、25.00 mAを読む。','「電源を切ってプローブを離す」を押し、VΩへ戻してからOFFにする。'],interpretation:'I＝V÷R＝3÷120＝0.025 A＝25.00 mA。テスターを流れる経路に直列に入れます。表示は理想計算で、実機の内部抵抗・ヒューズ・分解能は再現しません。実機は対応端子・レンジ・ヒューズ定格を確認します。'},
-    resistance:{title:'単体抵抗の抵抗値',mode:'ohm',goal:'まず電源から切り離した単体抵抗を1回測り、接続解除・OFFまで練習します。追加練習では100Ω・1kΩ・10kΩの単位を比較します。',connection:'電源・残留電圧がないことを確認し、抵抗の両端へ当てます。',steps:['対象の電源を切り離し、残留電圧がないことを確認する。','黒をCOM、赤をVΩに差し、Ω（抵抗）を選ぶ。','抵抗の教材値を選び、両端へ当ててΩ・kΩの単位を読む。','プローブを離し、OFFに戻すと練習完了。'],interpretation:'1 kΩ＝1000 Ω、10 kΩ＝10000 Ω。プローブの向きは問いません。回路につながったままでは並列経路の影響で単体の抵抗値と異なる場合があります。'},
-    continuity:{title:'配線の導通確認',mode:'beep',goal:'まず電源のない配線を1回測り、接続解除・OFFまで練習します。追加練習では「つながる」と「切れる」を比較します。',connection:'電源・残留電圧がないことを確認し、配線の両端へ当てます。',steps:['配線を電源から外し、残留電圧がないことを確認する。','黒をCOM、赤をVΩに差し、導通（ブザー）を選ぶ。','つながる配線と途中で切れた配線を、プローブを離して切り替える。','表示とブザーを読み、プローブを離してOFFに戻す。'],interpretation:'接続された配線は0.3 Ω・模擬ブザーあり、断線はOL・ブザーなし。OLはこの教材では開放状態です。ブザーのしきい値は機種により違い、音だけで配線品質を保証しません。音は鳴らさず表示で示します。'}
-  };
-  const modes={off:'OFF',dcv:'V⎓',acv:'V〜',dca:'A⎓',ohm:'Ω',beep:'導通'};
-  // The same label centres determine the selected dial direction.
-  const dialLabels={off:{x:52,y:121,size:11},dcv:{x:78,y:100,size:12},acv:{x:121,y:99,size:12},dca:{x:173,y:106,size:12},ohm:{x:180,y:133,size:13},beep:{x:175,y:165,size:11}};
-  let completed={},state;
-  const initial=lesson=>({lesson,mode:'off',black:'none',red:'none',prepared:false,polarity:'normal',wire:'connected',voltage:'1.5',resistance:'1000',connection:'series',measured:false,hadReading:false,disconnected:false,status:'idle',message:'下の操作欄で、リードと測定モードを選びましょう。'});
-  function reading(){
-    if(!state.measured)return state.mode==='off'?'OFF':'—';
-    if(state.lesson==='voltage')return (state.polarity==='reverse'?'−':'')+Number(state.voltage).toFixed(3)+' V';
-    if(state.lesson==='acvoltage')return '6.000 V AC';
-    if(state.lesson==='current')return '25.00 mA';
-    if(state.lesson==='resistance')return state.resistance==='100'?'100.0 Ω':(Number(state.resistance)/1000).toFixed(3)+' kΩ';
-    return state.wire==='broken'?'OL':'0.3 Ω';
-  }
-  function finish(){
-    if(state.hadReading&&state.disconnected&&state.mode==='off'&&(state.lesson!=='current'||state.red==='vohm')){
-      completed[state.lesson]=true;
-      state.message='練習完了。測定 → 接続解除 → OFFまで確認できました。';
-    }
-  }
-  function fresh(message='設定を確認してから測りましょう。'){state.measured=false;state.status='idle';state.message=message;finish();render();}
-  function renderDiagram(){
-    const measured=state.measured,reverse=['voltage','acvoltage'].includes(state.lesson)&&state.polarity==='reverse';
-    const redX=reverse?535:350,blackX=reverse?350:535,targetY=155,probeY=measured?targetY:214,redJack=state.red==='a'?60:174;
-    let target;
-    if(state.lesson==='voltage'){
-      target=`<rect x="368" y="116" width="151" height="79" rx="10" fill="#eef0da" stroke="#879260" stroke-width="3"/><rect x="350" y="135" width="18" height="40" rx="3" fill="#bdc5a0"/><path d="M519 155H535" stroke="#687a82" stroke-width="4"/><text x="400" y="149" font-size="23" font-weight="700">${Number(state.voltage).toFixed(1)} V</text><text x="409" y="177" font-size="16">乾電池</text><text x="341" y="119" font-size="24" fill="#bb3636">＋</text><text x="524" y="120" font-size="26">−</text>`;
-    }else if(state.lesson==='acvoltage'){
-      target='<path d="M350 155H408M480 155H535" stroke="#687a82" stroke-width="4"/><circle cx="444" cy="155" r="36" fill="#e0ecf5" stroke="#4b80a5" stroke-width="3"/><path d="M420 155Q432 125 444 155T468 155" fill="none" stroke="#367ba8" stroke-width="3"/><text x="365" y="110" font-size="20" font-weight="700">6 V RMS · 50 Hz</text><text x="360" y="207" font-size="15">端子1　低電圧交流源　端子2</text>';
-    }else if(state.lesson==='current'){
-      target='<path d="M350 155V85H400M480 85H535V115M535 129V155" stroke="#687a82" stroke-width="4" fill="none"/><rect x="400" y="73" width="80" height="24" rx="4" fill="#e5d7a9" stroke="#8b774b" stroke-width="2"/><text x="410" y="64" font-size="18">120 Ω</text><path d="M517 115H553M525 129H545" stroke="#687a82" stroke-width="4"/><text x="552" y="130" font-size="16">3 V</text><text x="327" y="182" font-size="15">負荷側</text><text x="490" y="182" font-size="15">電池−側</text><text x="386" y="198" font-size="15">回路の切れ目</text>';
-    }else if(state.lesson==='resistance'){
-      const band={100:'#8b4513',1000:'#c64242',10000:'#e8a137'}[state.resistance],label=state.resistance==='100'?'100 Ω':Number(state.resistance)/1000+' kΩ';
-      target=`<path d="M350 155H400M488 155H535" stroke="#687a82" stroke-width="4"/><rect x="400" y="135" width="88" height="40" rx="5" fill="#e5d7a9" stroke="#8b774b" stroke-width="3"/><path d="M413 136V174" stroke="#8b4513" stroke-width="5"/><path d="M431 136V174" stroke="#222222" stroke-width="5"/><path d="M449 136V174" stroke="${band}" stroke-width="5"/><path d="M477 136V174" stroke="#c5a342" stroke-width="4"/><text x="400" y="116" font-size="21" font-weight="700">${label}</text><text x="373" y="200" font-size="15">電源から切り離した抵抗</text>`;
-    }else{
-      target=state.wire==='broken'?'<path d="M350 155H429M459 155H535" stroke="#3a7370" stroke-width="7"/><path d="M435 145L448 166M447 145L434 166" stroke="#bd633b" stroke-width="3"/><text x="406" y="118" font-size="21" font-weight="700">断線</text>':'<path d="M350 155H535" stroke="#3a7370" stroke-width="7"/><text x="389" y="118" font-size="21" font-weight="700">導通する配線</text>';
-      target+='<text x="389" y="199" font-size="15">電源のない配線</text>';
-    }
-    const dial=dialLabels[state.mode],angle=Math.atan2(dial.x-119,143-dial.y)*180/Math.PI;
-    const labels=Object.entries(dialLabels).map(([key,p])=>`<text x="${p.x}" y="${p.y}" font-size="${p.size}" text-anchor="middle" dominant-baseline="middle">${modes[key]}</text>`).join('');
-    const blackWire=state.black==='com'?`<path d="M117 218V270H${blackX}V${probeY}" fill="none" stroke="#2e3c47" stroke-width="5" stroke-linejoin="round"/>`:'';
-    const redWire=state.red!=='none'?`<path d="M${redJack} 218V248H${redX}V${probeY}" fill="none" stroke="#c64242" stroke-width="5" stroke-linejoin="round"/>`:'';
-    const probes=(state.black==='com'?`<rect x="${blackX-5}" y="${probeY+3}" width="10" height="20" rx="3" fill="#2e3c47"/><path d="M${blackX} ${probeY}v8" stroke="#8b9ca5" stroke-width="3"/>`:'')+(state.red!=='none'?`<rect x="${redX-5}" y="${probeY+3}" width="10" height="20" rx="3" fill="#c64242"/><path d="M${redX} ${probeY}v8" stroke="#8b9ca5" stroke-width="3"/>`:'');
-    const beep=measured&&state.lesson==='continuity'&&state.wire==='connected';
-    const current=state.lesson==='current';
-    const description=`${lessons[state.lesson].title}。黒リードは${state.black==='com'?'COM':'未接続'}、赤リードは${state.red==='vohm'?'VΩ':state.red==='a'?'電流用A':'未接続'}。モード${modes[state.mode]}。${measured?(current?'回路の切れ目に直列接続し、模擬電源ON、表示':'プローブを両端に接続し、表示')+reading():'プローブを対象から離した状態'}。${beep?'模擬ブザーあり':''}`;
-    const hint=current?(measured?'直列 · 模擬電源ON':state.connection==='parallel'?'並列は誤操作 · 測定を遮断':'模擬電源OFF · 直列の準備'):['voltage','acvoltage'].includes(state.lesson)?'電圧は並列':'電源なし・残留電圧なし';
-    const svgReading=state.lesson==='acvoltage'&&measured?'6.000 V':reading();
-    $('testerDiagram').innerHTML=`<title id="testerSvgTitle">テスターと測定対象の接続図</title><desc id="testerSvgDesc">${description}</desc><g fill="#203a47" font-family="system-ui,sans-serif"><rect x="25" y="17" width="189" height="215" rx="16" fill="#dbc45a" stroke="#a18f36" stroke-width="3"/><rect x="42" y="37" width="155" height="51" rx="5" fill="#e5eed7" stroke="#738363"/><text x="120" y="71" text-anchor="middle" font-family="monospace" font-size="23" font-weight="700">${svgReading}</text>${labels}<circle cx="119" cy="143" r="27" fill="#495b64"/><path d="M119 157V125" stroke="#faf6d9" stroke-width="6" stroke-linecap="round" transform="rotate(${angle} 119 143)"/><text x="49" y="191" font-size="15">A</text><text x="99" y="191" font-size="14">COM</text><text x="157" y="191" font-size="14">VΩ</text><circle cx="60" cy="213" r="9" fill="#883f37"/><circle cx="117" cy="213" r="9" fill="#283945"/><circle cx="174" cy="213" r="9" fill="#883f37"/>${target}${blackWire}${redWire}${probes}<circle cx="350" cy="155" r="5" fill="#879ca7"/><circle cx="535" cy="155" r="5" fill="#879ca7"/><text x="305" y="27" font-size="15" font-weight="650">${current?'回路の切れ目へ直列':'測定対象の両端へ接続'}</text><text x="304" y="46" font-size="12">${hint}</text>${beep?'<text x="353" y="290" font-size="17" fill="#166f62" font-weight="700">♪ ブザーあり（表示のみ）</text>':''}</g>`;
-  }
-  function render(){
-    const lesson=lessons[state.lesson],current=state.lesson==='current';
-    $('testerVisualTitle').textContent=lesson.title;$('testerGoal').textContent=lesson.goal;$('testerConnectionHint').textContent=lesson.connection;
-    $('testerSteps').innerHTML=lesson.steps.map(text=>`<li>${text}</li>`).join('');$('testerInterpretation').textContent=lesson.interpretation;
-    $('testerPreparationBox').hidden=['voltage','acvoltage'].includes(state.lesson);
-    $('testerPreparationLabel').textContent=current?'模擬電源を切り、無電圧・残留電圧なしを確認して回路を開いた':'電源を外し、残留電圧がないことを確認した';
-    $('testerPreparationHint').textContent=current?'準備後に直列接続し、測定時だけ模擬電源を入れます。解除ボタンで電源を切ってからプローブを離します。':'抵抗・導通は通電中に測りません。この教材の対象は電源から切り離されています。実機にコンデンサ等がある場合は所定の放電手順と無電圧確認が必要です。';
-    $('testerPolarityBox').hidden=!['voltage','acvoltage'].includes(state.lesson);
-    $('testerPolarityLabel').textContent=state.lesson==='acvoltage'?'端子の向き（交流の実効値は極性なし）':'プローブを当てる向き';
-    const polarityOptions=$('testerPolarity').options;
-    if(polarityOptions){polarityOptions[0].textContent=state.lesson==='acvoltage'?'赤を端子1、黒を端子2':'赤を＋、黒を−';polarityOptions[1].textContent=state.lesson==='acvoltage'?'赤を端子2、黒を端子1（比較）':'赤を−、黒を＋（比較）';}
-    $('testerWireBox').hidden=state.lesson!=='continuity';$('testerVoltageCaseBox').hidden=state.lesson!=='voltage';$('testerResistanceCaseBox').hidden=state.lesson!=='resistance';$('testerCurrentConnectionBox').hidden=!current;
-    for(const [id,key] of controls)$(id).value=state[key];$('testerPrepared').checked=state.prepared;$('testerJackNotice').hidden=state.red!=='a';
-    root.querySelectorAll('[data-tester-case]').forEach(button=>{button.setAttribute('aria-pressed',String(button.dataset.testerCase===state.lesson));button.dataset.complete=String(!!completed[button.dataset.testerCase]);});
-    root.querySelectorAll('[data-tester-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.testerMode===state.mode)));
-    $('testerReadout').dataset.status=state.status;
-    $('testerResult').textContent=state.measured?reading()+(state.lesson==='continuity'?(state.wire==='connected'?' · ブザーあり':' · ブザーなし'):''):state.status==='blocked'?'設定を確認':'未測定';
-    $('testerFeedback').textContent=state.status==='blocked'?'設定を確認してください。理由は下の操作欄へ。':state.measured?'表示を読み、測定後は接続を解除します。':'端子 → モード → 接続 → 読み取り → 解除 → OFF';
-    $('testerFeedbackDetail').textContent=state.message;$('testerFeedbackDetail').dataset.status=state.status;
-    $('testerProgress').textContent=`完了 ${Object.keys(completed).length} / 5：${Object.keys(lessons).map(key=>(completed[key]?'✓ ':'○ ')+({voltage:'DC電圧',acvoltage:'AC電圧',current:'DC電流',resistance:'抵抗',continuity:'導通'}[key])).join(' ／ ')}`;
-    const steps=[['測定して値を読む',state.hadReading],['プローブを離す',state.disconnected],...(current?[['赤をVΩに戻す',state.red==='vohm'&&state.disconnected]]:[]),['OFFに戻す',state.mode==='off'&&state.disconnected]];
-    $('testerCompletionSteps').innerHTML=steps.map(([text,done])=>`<li>${done?'✓':'○'} ${text}</li>`).join('');
-    for(const [id] of controls)$(id).disabled=state.measured;$('testerPrepared').disabled=state.measured;
-    root.querySelectorAll('[data-tester-mode]').forEach(button=>button.disabled=state.measured);root.querySelectorAll('[data-tester-case]').forEach(button=>button.disabled=state.measured);
-    $('testerMeasure').disabled=state.measured;$('testerMeasure').textContent=state.measured?'測定中 · 接続を解除して終了':current?'直列接続して模擬電源を入れる':'プローブを両端に当てて測る';
-    $('testerDisconnect').disabled=!state.measured;$('testerDisconnect').textContent=current?'電源を切ってプローブを離す':'プローブを離す';renderDiagram();
-  }
-  function measure(){
-    if(state.measured)return;
-    const current=state.lesson==='current';let warning='';
-    if(current&&state.connection==='parallel')warning='電流計を電源の両端へ並列接続すると短絡につながります。模擬電源は入りません。回路を開き、切れ目への直列接続を選んでください。';
-    else if(!current&&state.red==='a')warning='赤リードが電流用A端子です。電池や部品の両端への接続は短絡につながるため、VΩへ差し替えてください。';
-    else if(state.black!=='com'||state.red!==(current?'a':'vohm'))warning=current?'黒をCOM、赤を対応する電流用A端子に差してください。電圧用VΩ端子で電流を測りません。':'黒をCOM、赤をVΩへ差してから測定します。';
-    else if(!['voltage','acvoltage'].includes(state.lesson)&&!state.prepared)warning=current?'電流測定は、電源を切り、無電圧・残留電圧なしを確認して回路を開いてから直列接続します。準備を確認してください。':'抵抗・導通の測定前に、対象の電源を外し、残留電圧がないことを確認してください。';
-    else if(state.mode!==lessons[state.lesson].mode)warning=`この測定は「${modes[lessons[state.lesson].mode]}」モードです。プローブを離した状態でモードを合わせてください。`;
-    if(warning){state.status='blocked';state.message=warning;}
-    else{
-      state.measured=true;state.hadReading=true;state.disconnected=false;state.status='success';
-      state.message=current?'電源OFFで直列接続し、模擬電源をONにしました。3 V ÷ 120 Ω＝25.00 mA。解除は電源を切ってから行います。':state.lesson==='acvoltage'?'6.000 V ACは実効値です。逆向きでも同じ値になります。':state.lesson==='voltage'?(state.polarity==='reverse'?'−の符号は、プローブの極性が逆であることを示します。':'電池の両端へ並列接続。単位Vと＋／−の符号も確認します。'):state.lesson==='resistance'?`${reading()}。ΩとkΩの単位を確認します。`:state.wire==='connected'?'低い抵抗値なので模擬ブザーあり。音は鳴らさず、表示で示しています。':'OL・模擬ブザーなし。この教材では配線が途中で切れています。';
-    }
-    render();
-  }
-  function reset(lesson=state.lesson){state=initial(lesson);render();}
-  const controls=[['testerBlackLead','black'],['testerRedLead','red'],['testerPolarity','polarity'],['testerWire','wire'],['testerVoltageCase','voltage'],['testerResistanceCase','resistance'],['testerCurrentConnection','connection']];
-  root.querySelectorAll('[data-tester-case]').forEach(button=>button.addEventListener('click',()=>{if(!state.measured)reset(button.dataset.testerCase);}));
-  root.querySelectorAll('[data-tester-mode]').forEach(button=>button.addEventListener('click',()=>{if(state.measured)return;state.mode=button.dataset.testerMode;fresh();}));
-  for(const [id,key] of controls)$(id).addEventListener('change',event=>{if(state.measured)return;state[key]=event.target.value;fresh();});
-  $('testerPrepared').addEventListener('change',event=>{if(state.measured)return;state.prepared=event.target.checked;fresh();});
-  $('testerMeasure').addEventListener('click',measure);
-  $('testerDisconnect').addEventListener('click',()=>{if(!state.measured)return;state.disconnected=true;fresh(state.lesson==='current'?'模擬電源をOFFにしてプローブを離しました。赤をVΩに戻し、OFFにしてください。':'プローブを離しました。OFFにすると練習完了です。');});
-  $('testerReset').addEventListener('click',()=>reset());$('testerResetAll').addEventListener('click',()=>{completed={};reset('voltage');});
-  window.resetTesterLesson=()=>reset('voltage');
-  reset('voltage');
-})();
 </script><script>(function(root,factory){
  'use strict';
  const api=factory();
@@ -4408,12 +4262,12 @@ function updateIntrinsicInspectionUI(){
  return Object.freeze({model,catalogue,supplies,build,generate,initialState,step,status,measure,resistance,solve,contactClosed,random});
 });
 </script><script>'use strict';
-// Wire-break hunting page. Draws the circuit with JIS-style symbols, places
+// Tester page: wire-break hunting. Draws the circuit with JIS-style symbols, places
 // tester leads on terminals, and runs the sequence in real time.
 (function(){
  const CF=window.CircuitFault;if(!CF||!document.getElementById('circuitDiagram'))return;
  const $c=id=>document.getElementById(id),NS='http://www.w3.org/2000/svg';
- let active=false,problem=null,state=null,red=null,black=null,nextLead='red',mode='volt',answerMode=false,picked=new Set(),repaired=new Set(),measurements=0,lastKey='',timer=null,revealed=false;
+ let problem=null,state=null,red=null,black=null,nextLead='red',mode='volt',answerMode=false,picked=new Set(),repaired=new Set(),measurements=0,lastKey='',timer=null,revealed=false;
  function seed(){const v=new Uint32Array(1);if(window.crypto?.getRandomValues)window.crypto.getRandomValues(v);else v[0]=Math.floor(Math.random()*4294967296);return v[0];}
  function newProblem(){
   problem=CF.generate(seed(),Number($c('circuitBreaks').value)||2);
@@ -4513,7 +4367,7 @@ function updateIntrinsicInspectionUI(){
   $c('circuitResult').textContent=(hits.length?'正解 '+hits.length+'本（緑の線は修理しました）。':'')+(misses.length?'違う線 '+misses.length+'本。':'')+(!hits.length&&!misses.length?'線を選んでから答え合わせをします。':'')+(remain?'残りの断線 '+remain+'本。':'全部見つけました！ 測定回数 '+measurements+'回。正常に動くか確かめましょう。');
   update();
  }
- function tick(){if(!problem||!active||document.getElementById('tester').hidden||!state.power)return;CF.step(problem.circuit,state,.25);update();}
+ function tick(){if(!problem||document.getElementById('tester').hidden||!state.power)return;CF.step(problem.circuit,state,.25);update();}
  $c('circuitNew').onclick=newProblem;$c('circuitBreaks').onchange=newProblem;
  $c('circuitPower').onclick=()=>{state.power=!state.power;if(!state.power){state.relay={};state.timer={};}update();};
  $c('circuitMccb').onclick=()=>{state.mccb=!state.mccb;update();};
@@ -4523,17 +4377,9 @@ function updateIntrinsicInspectionUI(){
  $c('circuitAnswerMode').onclick=()=>{answerMode=!answerMode;update();};
  $c('circuitCheck').onclick=check;
  $c('circuitReveal').onclick=()=>{revealed=true;$c('circuitResult').textContent='赤い点線が断線です（'+problem.broken.map(wireName).join('、')+'）。';update();};
- // Practice tab on the tester page: the fault-finding diagram and cards replace
- // the single-part lesson while selected; the other tabs return to it.
- function setCircuitMode(on){
-  active=on;$c('tester').classList.toggle('circuit-mode',on);$c('circuitVisual').hidden=!on;$c('circuitCards').hidden=!on;
-  document.querySelector('[data-circuit-tab]').setAttribute('aria-pressed',String(on));
-  if(on){document.querySelectorAll('[data-tester-case]').forEach(b=>b.setAttribute('aria-pressed','false'));if(!problem)newProblem();else update();}
- }
- document.querySelector('[data-circuit-tab]').addEventListener('click',()=>setCircuitMode(true));
- document.querySelectorAll('[data-tester-case]').forEach(b=>b.addEventListener('click',()=>{if(active)setCircuitMode(false);}));
- const resetTester=window.resetTesterLesson;window.resetTesterLesson=()=>{setCircuitMode(false);resetTester?.();};
- window.setCircuitMode=setCircuitMode;
+ // The tester page is this practice. Each visit starts a fresh problem.
+ window.resetTesterLesson=newProblem;
+ newProblem();
  window.circuitFaultDebug=()=>({problem,state,red,black,mode,picked:[...picked],repaired:[...repaired]});
  timer=setInterval(tick,250);
 })();
