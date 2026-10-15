@@ -16,7 +16,7 @@ async function main(){
   const scripts=[...built.matchAll(/<script>([\s\S]*?)<\/script>/g)];assert.equal(scripts.length,15);
   for(const match of scripts)new vm.Script(match[1]);
   assert.doesNotMatch(built,/<!-- TESTER_LESSON -->/);
-  for(const file of ['leveling.js','machine-accuracy.js','reference-measurement.js','reference-measurement-ui.js','app.js','leveling-ui.js','accuracy-ui.js','machine-accuracy-ui.js','tester.js'])assert.ok(built.includes(fs.readFileSync('src/'+file,'utf8')),file+' latest source is missing from bundled page');
+  for(const file of ['leveling.js','machine-accuracy.js','reference-measurement.js','reference-measurement-ui.js','app.js','leveling-ui.js','accuracy-ui.js','machine-accuracy-ui.js','circuit-fault.js','circuit-fault-ui.js'])assert.ok(built.includes(fs.readFileSync('src/'+file,'utf8')),file+' latest source is missing from bundled page');
  });
  check('source and bundled markup have balanced tags and unique static IDs',()=>{
   const source=fs.readFileSync('src/index.html','utf8').replace('<!-- TESTER_LESSON -->',fs.readFileSync('src/tester.html','utf8'));
@@ -32,17 +32,9 @@ async function main(){
  });
  // Run real electrical code in the same DOM/context as mechanical navigation.
  // Standard DOM exposes SELECT.options; the minimal fixture omits this property.
- r.testerPolarity.options=r.testerPolarity.children;
- vm.runInContext(fs.readFileSync('src/tester.js','utf8'),context,{filename:'tester.js'});
  const trigger=(id,type='click',value)=>{const el=r[id];if(value!==undefined)el.value=value;assert(!el.disabled,id+' disabled');if(el.events[type])return el.events[type]({target:el});return el['on'+type]?.({target:el});};
- const button=(attr,value)=>r.tester.querySelectorAll('['+attr+']').find(el=>el.attrs[attr]===value);
- const clickButton=el=>{assert(!el.disabled);el.events.click({target:el});};
  r.electric.click();r.testerEntry.click();
- check('integrated tester entry, labels and fixed-view class',()=>{assert.equal(read('page'),'tester');assert(context.document.body.classList.contains('in-lab'));assert.equal(r.tester.hidden,false);assert.match(r.testerResult.textContent,/未測定/);assert.equal(r.testerPolarity.options[0].textContent,'赤を＋、黒を−');});
- clickButton(button('data-tester-case','current'));trigger('testerBlackLead','change','com');trigger('testerRedLead','change','a');clickButton(button('data-tester-mode','dca'));r.testerPrepared.checked=true;trigger('testerPrepared','change');trigger('testerMeasure');
- check('integrated current connection shows energized serial diagram',()=>{assert.match(r.testerResult.textContent,/25.00 mA/);assert.match(r.testerDiagram.innerHTML,/直列 · 模擬電源ON/);assert(r.testerRedLead.disabled);});
- trigger('testerDisconnect');trigger('testerRedLead','change','vohm');clickButton(button('data-tester-mode','off'));
- check('integrated electrical completion reaches 1 of 5',()=>assert.match(r.testerProgress.textContent,/1 \/ 5/));
+ check('integrated tester entry shows the wire-break practice and fixed-view class',()=>{assert.equal(read('page'),'tester');assert(context.document.body.classList.contains('in-lab'));assert.equal(r.tester.hidden,false);assert.equal(r.circuitVisual.hidden,false);assert.equal(r.circuitCards.hidden,false);assert(!r.tester.querySelectorAll('[data-tester-case]').length);});
  r.testerBack.click();read("navigate('home')");r.mechanical.click();r.leveling.click();r.machineGrid.children[0].click();
  check('electrical to mechanical navigation hides old lesson',()=>{assert.equal(read('page'),'training');assert.equal(r.tester.hidden,true);assert.equal(r.training.hidden,false);});
  // Axis transforms must keep every unrelated component fixed, and preserve

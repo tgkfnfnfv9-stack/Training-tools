@@ -1,11 +1,11 @@
 {
   "phase": "after",
-  "sourceSha256": "0b2ebbd5be23f4f03129dc6a24aa0aa140971761d7e0058caae8b992713db07f",
+  "sourceSha256": "34bbe9ff1b063de78b11b25b81f6d780bfa477101b918a53f87416351f6328aa",
   "scope": "Independent yz-section support oracle, angle root for moving-table R calibration, and stationary-square/head-Y S contact. Product pose/alignment functions are observations only.",
   "summary": {
     "states": 324,
     "comparisons": 55728,
-    "maxReadingErrorUm": 6.508926730930398e-10,
+    "maxReadingErrorUm": 6.903064786456525e-10,
     "maxContactCoordinateErrorM": 1.7763568394002505e-15,
     "maxREndpointUm": 2.688821387764051e-10,
     "maxRInteriorUm": 292.83760493796325,
@@ -4505,7 +4505,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -594.2530863393553,
+        "rawUm": -594.2530863394662,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -4765,7 +4765,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -564.0925009293436,
+        "rawUm": -564.0925009294546,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -4869,7 +4869,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": 110.59077911052852,
+        "rawUm": 110.59077911063955,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -4921,7 +4921,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -624.4136671597986,
+        "rawUm": -624.4136671599097,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -4973,7 +4973,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -624.41366715941,
+        "rawUm": -624.413667159299,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -6169,7 +6169,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -29.999999949958944,
+        "rawUm": -29.999999949847922,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -10121,7 +10121,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -683.7017831089771,
+        "rawUm": -683.7017831090881,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -10173,7 +10173,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -683.7017831091435,
+        "rawUm": -683.7017831090881,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -10277,7 +10277,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": 80.70237017722067,
+        "rawUm": 80.7023701772762,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -10329,7 +10329,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -653.4825021802075,
+        "rawUm": -653.4825021802093,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -15061,7 +15061,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": 38.33260829357553,
+        "rawUm": 38.332608293603286,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -15113,7 +15113,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -108.00884943328037,
+        "rawUm": -108.00884943322487,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -15269,7 +15269,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": 68.38048800996907,
+        "rawUm": 68.38048800994132,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -15373,7 +15373,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -77.96097068487295,
+        "rawUm": -77.96097068492845,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -15477,7 +15477,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": 8.284728540324318,
+        "rawUm": 8.284728540352074,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -15633,7 +15633,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": 382.2896717674985,
+        "rawUm": 382.2896717674967,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -15789,7 +15789,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -1085.1603003606097,
+        "rawUm": -1085.1603003606651,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -15893,7 +15893,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": 408.734263808979,
+        "rawUm": 408.73426380895125,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -15945,7 +15945,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -1054.674821277777,
+        "rawUm": -1054.674821277888,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -16153,7 +16153,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -1115.645764550954,
+        "rawUm": -1115.6457645508985,
         "setup": {
           "base": "Z",
           "scan": "Y",
@@ -16205,7 +16205,7 @@
       },
       "oldOrNew": {
         "valid": true,
-        "rawUm": -1115.6457645508985,
+        "rawUm": -1115.645764550954,
         "setup": {
           "base": "Z",
           "scan": "Y",

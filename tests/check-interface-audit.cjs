@@ -9,31 +9,6 @@ function near(actual,expected){assert(Math.abs(actual-expected)<1e-9,`${actual} 
 async function main(){
  const env=createEnvironment(),{registry:r,read,json,context,storage}=env;
  let seed=23000;context.window.crypto={getRandomValues:values=>{values[0]=seed++;return values;}};
- r.testerPolarity.options=r.testerPolarity.children;
- vm.runInContext(fs.readFileSync('src/tester.js','utf8'),context,{filename:'tester.js'});
- const modeButton=mode=>r.tester.querySelectorAll('[data-tester-mode]').find(b=>b.dataset.testerMode===mode);
- const caseButton=kind=>r.tester.querySelectorAll('[data-tester-case]').find(b=>b.dataset.testerCase===kind);
- const press=b=>{assert(!b.disabled);return b.events.click({target:b});};
- const change=(id,value)=>{assert(!r[id].disabled);r[id].value=value;return r[id].events.change({target:r[id]});};
- // Compare the selector's visible tip with the literal SVG mode labels. The
- // diagram must teach the same setting as the chosen mode button.
- for(const [mode,label] of [['off','OFF'],['dcv','V⎓'],['acv','V〜'],['dca','A⎓'],['ohm','Ω'],['beep','導通']]){
-  press(modeButton(mode));
-  check('meter selector points at '+label,()=>{
-   const svg=r.testerDiagram.innerHTML;
-   const needle=/d="M119 157V125"[^>]*transform="rotate\(([-.\d]+) 119 143\)"/.exec(svg);assert(needle,'visible selector missing');
-   const texts=[...svg.matchAll(/<text\s+x="([-\d.]+)"\s+y="([-\d.]+)"([^>]*)>([^<]*)<\/text>/g)];
-   const text=texts.find(m=>m[4]===label&&Number(/font-size="([\d.]+)"/.exec(m[3])?.[1]||12)<20);assert(text,'mode label missing');
-   const font=Number(/font-size="([\d.]+)"/.exec(text[3])?.[1]||12);
-   // Respect actual SVG alignment. Older left-baseline text needs a modest
-   // font-width tolerance; middle-anchored text has an explicit exact centre.
-   const centreAnchored=/text-anchor="middle"/.test(text[3]),middleBaseline=/dominant-baseline="middle"/.test(text[3]);
-   const x=Number(text[1])+(centreAnchored?0:Array.from(label).length*font*.3),y=Number(text[2])-(middleBaseline?0:font*.3);
-   const angle=Number(needle[1])*Math.PI/180,expected=Math.atan2(x-119,143-y);
-   const gap=Math.abs(Math.atan2(Math.sin(angle-expected),Math.cos(angle-expected)))*180/Math.PI;
-   assert(gap<=(centreAnchored&&middleBaseline?1e-9:20),`selector is ${gap.toFixed(1)}° away from the ${label} label`);
-  });
- }
  // Non-primary mouse/pen and right-button pointers are not gestures. Touch
  // pointers have separate pinch coverage. Capture loss names the real pointer.
  read('openMachine(machines[0])');
@@ -75,21 +50,6 @@ async function main(){
  r.machineCondition.change('used');const fresh=json('levelRecord()'),freshMessage=r.levelInputMessage.textContent;
  rejectRead(Error('file access failed'));await failedRead;
  check('late read failure cannot replace the new-individual message',()=>{assert.deepEqual(json('levelRecord()'),fresh);assert.equal(r.levelInputMessage.textContent,freshMessage);});
- // The electrical diagram and completion flow must agree for every lesson, and
- // a page visit must retain completion while releasing an active measurement.
- read("navigate('home')");r.electric.click();r.testerEntry.click();
- for(const [kind,mode,result,requiresPreparation] of [['voltage','dcv','1.500 V',false],['acvoltage','acv','6.000 V AC',false],['current','dca','25.00 mA',true],['resistance','ohm','1.000 kΩ',true],['continuity','beep','0.3 Ω',true]]){
-  press(caseButton(kind));change('testerBlackLead','com');change('testerRedLead',kind==='current'?'a':'vohm');press(modeButton(mode));
-  if(requiresPreparation){r.testerPrepared.checked=true;r.testerPrepared.events.change({target:r.testerPrepared});}
-  press(r.testerMeasure);
-  check('active '+kind+' locks all mode and lesson changes',()=>{assert(r.testerResult.textContent.startsWith(result));assert(modeButton('off').disabled);assert(caseButton('voltage').disabled);assert(r.testerBlackLead.disabled);assert(r.testerDisconnect.disabled===false);});
-  press(r.testerDisconnect);if(kind==='current')change('testerRedLead','vohm');press(modeButton('off'));
-  check('completed '+kind+' has its matching mode and disconnected graph',()=>{assert.equal(caseButton(kind).dataset.complete,'true');assert.match(r.testerDiagram.innerHTML,/プローブを対象から離した状態/);assert.match(r.testerDiagram.innerHTML,/>OFF<\/text>/);assert.equal(r.testerDisconnect.disabled,true);});
- }
- check('all five electrical lessons complete',()=>assert.match(r.testerProgress.textContent,/完了 5 \/ 5/));
- press(caseButton('current'));change('testerBlackLead','com');change('testerRedLead','a');press(modeButton('dca'));r.testerPrepared.checked=true;r.testerPrepared.events.change({target:r.testerPrepared});press(r.testerMeasure);
- r.testerBack.click();r.testerEntry.click();
- check('re-entering tester releases previous current and keeps completed lessons',()=>{assert.match(r.testerProgress.textContent,/完了 5 \/ 5/);assert.match(r.testerResult.textContent,/未測定/);assert.equal(r.testerBlackLead.value,'none');assert.equal(r.testerRedLead.value,'none');assert.equal(r.testerMeasure.disabled,false);});
  // The desktop mechanical shell hides the document and scrolls its controls.
  // It must be released on every exit, including a direct electrical transition.
  check('mechanical fixed shell never leaks into the catalog or electrical lesson',()=>{
